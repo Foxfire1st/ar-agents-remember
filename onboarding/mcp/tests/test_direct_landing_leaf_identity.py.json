@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
-        "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+        "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+        "content": "sha256:16721c027c0c55f130aa5db6e7ef06590c775dde9734f32d575332e748783602",
         "locator": {
           "kind": "symbol",
-          "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+          "name": "test_control_recover_on_the_interrupted_running_generation_is_admitted"
         }
       },
-      "facet": "The public interrupted direct generation recover refuses as lifecycle-control-not-legal; it is not executor success.",
-      "id": "PRF-JJE0TB",
+      "facet": "After stopping execution at admission, public recover completes the same running generation/key and leaves no retained closing receipts; this vehicle does not itself prove a post-code-leg interruption.",
+      "id": "PRF-J7918B",
       "invariant": "INV-6DFQ9P",
       "origin": {
-        "handoffEntry": "MIK-R52@v1 rule 8 direct-leaf-identity",
-        "leaf": "260928-MIK-L52"
+        "handoffEntry": "L143-curator-recovery-revision",
+        "leaf": "260928-MIK-L143"
       }
     },
     {
       "anchor": {
-        "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+        "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
         "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
             "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
             "locator": {
               "kind": "symbol",
@@ -55,15 +55,15 @@
       ]
     },
     "2": {
-      "note": "Public recover is currently unavailable and preserves the generation.",
+      "note": "Public recover completes the interrupted generation with its key/counter unchanged and clears the retained receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
-            "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:16721c027c0c55f130aa5db6e7ef06590c775dde9734f32d575332e748783602",
             "locator": {
               "kind": "symbol",
-              "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_admitted"
             }
           },
           "kind": "test"
@@ -71,12 +71,12 @@
       ]
     },
     "3": {
-      "note": "The real executor settles the kept receipt independently of public-control legality.",
+      "note": "The real executor settles the kept receipt independently of public-control admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
-            "content": "sha256:548934e82e5e220b140fd93002e4dcd1e92ec5c4e6729607d544809cd40c6431",
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:fa5a29b44b288b30fd0fdd13e85e2b3fa2b94a9eb630e079feb59c8bc2a50b54",
             "locator": {
               "kind": "symbol",
               "name": "test_recovery_through_operation_control_settles_the_kept_closing_receipt"

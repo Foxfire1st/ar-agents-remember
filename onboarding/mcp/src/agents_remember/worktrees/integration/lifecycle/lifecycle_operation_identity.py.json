@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+        "content": "sha256:6e5e9b3efcc9f545307510c28ff4d3d2d09d3e2eda135be60cb3359dba30f029",
+        "locator": {
+          "kind": "symbol",
+          "name": "completed_direct_owner"
+        }
+      },
+      "id": "RLZ-3D2QBP",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      },
+      "rationale": "I put the single owner predicate here so offer and check read the same fingerprint, key, counter and status.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`operation_state_fingerprint` hashes advancing code/memory contract cells without ledger commit identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
             "content": "sha256:2a4b37e666048f51aab3ed6e7b4a21d418aa9c85e62db4a2e26ebecca8555dfd",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
             "content": "sha256:2a3758076235d80361ccf166a1d12b6e24c85768f37051a2a9635529d6637352",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
             "content": "sha256:45b2f64f76b247176066dffd25cf68885af73b6a420706c4c30dc0465f69d4cc",
             "locator": {
               "kind": "symbol",
@@ -55,11 +74,59 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
             "content": "sha256:2a4b37e666048f51aab3ed6e7b4a21d418aa9c85e62db4a2e26ebecca8555dfd",
             "locator": {
               "kind": "symbol",
               "name": "operation_state_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Doorless direct identity is bound to the same operation-key derivation as admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:6fe1e1ad88ec719ea68214740fab4fb491f6ca95106ce93190c76e65d15a700a",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Completed owner and idempotent retired-record checks use the record itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:6e5e9b3efcc9f545307510c28ff4d3d2d09d3e2eda135be60cb3359dba30f029",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_direct_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The retired-record check recognises only completed doorless direct records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:1288d06b4d978256cacf5ff02a1fe451e086b819e01a2633241c7d919b207c16",
+            "locator": {
+              "kind": "symbol",
+              "name": "retired_direct_record"
             }
           },
           "kind": "code"

@@ -2,45 +2,13 @@
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "No external domain source is required to establish this repository-owned implementation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
-            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_completed_disposition"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "note": "Direct retire uses the shared owner predicate while existing integration and worker guards stay in force; direct supersede is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
-            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_completed_disposition"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "No meaningful cross-repository reference applies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
-            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
+            "blob": "cc69b9d1a4ee21d7057406891463fd33f0d5c094",
+            "content": "sha256:c95e1da155e233c245ccaa6fad5ffa50219d8495af87fa7e3c822db279d70fe5",
             "locator": {
               "kind": "symbol",
               "name": "require_completed_disposition"

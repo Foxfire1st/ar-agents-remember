@@ -1,0 +1,79 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Cancel-and-restart was weighed and rejected because it cannot continue a half-published generation; future recovery controls must preserve the accepted identity rather than strand or replace it."
+  },
+  "alternatives": [
+    {
+      "option": "Admit public recover on the accepted doorless direct record and settle its kept receipt in that call.",
+      "reason": "The existing executor can continue the same generation; dispatch need not invent a closeout door.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat cancel and a fresh direct landing as the continuation route and retain public recover refusal.",
+      "reason": "Cancel abandons rather than continues the accepted generation and is unavailable once a leg has moved.",
+      "reconsider_when": "An explicitly approved replacement protocol can continue an already partly published direct generation without losing its recorded authority or history.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Direct dispatch bypasses ordinary closeout door checks only on its admitted direct record.",
+    "Ordinary closeout records without task intent keep their existing treatment.",
+    "Proof must distinguish same-generation public completion and receipt settlement from executor-only success."
+  ],
+  "context": "Missing task intent stripped public recover from direct records, while cancel was available only before either leg changed, stranding a code-first interrupted publication.",
+  "decider": "Architect97e0320d under the Manager-accepted durable08236bba ruling, retained by e55c0093.",
+  "id": "DEC-5RNVES",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-6DFQ9P"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-3N9432"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "blob": "434d45bc71bdc6e739827062531ec2cdbe1970f2",
+        "content": "sha256:8247b4751f8814567be6b20878bd9287267e94104b0d8b2c4e8a848d93304eb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resume"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R143",
+        "packet": "requirements/MIK-R143-v1-a-completed-direct-landing-is-recognised-as-its-owners.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L143-BOTH-CASES-ARE-BUILT-THE-OWNER-IS-RECOGNISED-AND-THE-CONTROL-RECOVERS-AN-INTERRUPTED-DIRECT-LANDING-RULING.json points3-5,7; e55c0093 point8 retains this interrupted-case ruling."
+      ],
+      "path": "knowledge-handoff-ea40194f.json"
+    },
+    "handoffEntry": "L143-public-recover-choice",
+    "leaf": "260928-MIK-L143",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

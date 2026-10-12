@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Derives a stable fingerprint of the lifecycle cells that change only when a sequential operation advances, so repair can prove the exact accepted contract state.
+Owns stable lifecycle fingerprints and operation keys, plus the shared identity predicates for completed and retired direct-landing records.
 
 ## Code Commentary
 
@@ -57,6 +57,12 @@ No additional cross-repository evidence applies.
 
 Closeout identity hashes normalized durable input and candidate provenance. Finalization identity now hashes the exact UTF-8 value returned by `contract_publication_text`, the same normalize/validate/serialize owner used by the writer and organizational reset. A no-op or verified-existing closeout can therefore retain its generation through exact publication without fabricated Git evidence.
 
-## Current Landed Composition
+## Operation Identity And Direct Ownership
 
 `operation_key` is owned here: SHA-256 over the canonical resolved contract path, operation kind and fingerprint separated by NUL bytes. Callers import this identity directly; the coordinator no longer owns its implementation.
+
+`direct_landing_identity` recognises only a doorless direct record whose fingerprint derives its stored operation key. `completed_direct_owner` additionally requires active disposition and completed status. When an expected generation is supplied, its counter must match; production control pins that counter upstream. The record model normalises an omitted stored generation to 1, so absence is not a reachable predicate state. Both the control offer and completed-disposition check consume this same predicate, not parallel door-based identity checks. `retired_direct_record` is the separate idempotent retire re-answer.
+
+- Doorless direct identity is bound to the same operation-key derivation as admission. [5]
+- Completed owner and idempotent retired-record checks use the record itself. [6]
+- The retired-record check recognises only completed doorless direct records. [7]

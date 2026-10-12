@@ -10,7 +10,10 @@
 
 ## What This Area Is
 
-The real direct recovery executor settles its kept closing receipt in the same call. Public lifecycle control may refuse recover for a direct generation that binds no task intent; executor settlement and public admission are distinct claims.
+Public lifecycle recover admits the current canonical-leaf-bound doorless direct generation on its retained record, runs its real recovery executor and settles the kept closing receipt as landed when that call completes. Missing taskIntent alone does not strip this direct control; generations missing both compatible intent and admitted leaf input retain the legacy reuse barrier. A completed direct owner may retire, never supersede, under the shared record predicate and unchanged integrated/live-claim/worker-exit restrictions. Exact replay retains the generation; only a changed request may replace retired terminal evidence. Earlier door-carrying direct records remain readable but offer no controls.
+
+- Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion. [5]
+- Completed direct retire is offered using the shared record-based owner predicate. [6]
 
 
 The durable lifecycle-operation authority: enclosure location, journal storage, generation start

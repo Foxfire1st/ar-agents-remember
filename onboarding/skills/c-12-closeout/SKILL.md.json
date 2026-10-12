@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
           "end": 297,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
         "locator": {
           "end": 276,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:27ca657a0b1eca2fa0d6d092fd366221e2200287963218ec6bb2a35dc1a03f93",
         "locator": {
           "end": 275,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:a91135f339e2a13f11d377b503c86f1766afbcc1b176fa3fb23c795397cd3936",
         "locator": {
           "end": 404,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
           "end": 297,
@@ -98,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+        "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
         "content": "sha256:66eda4457cd57ba1179e3f908870e4c44ea39441a5d5ab45605aad53f399ede4",
         "locator": {
           "end": 41,
@@ -127,6 +127,22 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Public direct recover continues the admitted generation and settles its retained closing receipt on completion.\n\nAnchor: `_resume`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }
@@ -242,12 +258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d63da593ea1e7963d4614532c2194827b81bdbb",
+            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
             "content": "sha256:3d2c5914a7ba54fd8d39f36f3963dcf1b95fa154f1d242a81bd0fb177a80663a",
             "locator": {
-              "end": 152,
+              "end": 153,
               "kind": "line_range",
-              "start": 144
+              "start": 145
             }
           },
           "kind": "code"

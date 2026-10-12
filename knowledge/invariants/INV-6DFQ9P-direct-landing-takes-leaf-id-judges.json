@@ -6,13 +6,17 @@
     ],
     "justification": "Inferring the wrong owner can close another leaf history or turn unavailable public recovery into a false success claim."
   },
-  "applicability": "Direct leaf ownership selection and the admitted recovery executor boundary.",
+  "applicability": "Direct leaf history-owner selection and public recovery of an admitted interrupted canonical-leaf-bound doorless direct generation.",
   "conditions": [
     "An explicit valid leaf_id selects and closes that history, including rowless history.",
-    "A proven bound_leaf_id selects the admitted leaf before optional caller leaf_id; only absence of both selectors takes the legacy sole-open-owner inference."
+    "A proven bound_leaf_id selects the admitted leaf before optional caller leaf_id; only absence of both selectors takes the legacy sole-open-owner inference.",
+    "Public recover pins the expected accepted generation, continues its existing effective input and settles its kept closing receipt on completion."
   ],
   "exclusions": [
-    "Public lifecycle-control recovery is refused for legacy direct generations lacking both compatible TaskIntent and an admitted canonical leaf input. Current canonical-leaf-bound generations retain their advertised controls; the retained historical public-refusal proof has legacy scope, not current-bound public-route success."
+    "Public lifecycle-control recovery is refused for legacy direct generations lacking both compatible TaskIntent and an admitted canonical leaf input. Current canonical-leaf-bound generations retain their advertised controls; the retained historical public-refusal proof has legacy scope, not current-bound public-route success.",
+    "Ordinary closeout records without task intent retain their separate refusal treatment.",
+    "Earlier-shape direct records carrying a closeout door publication offer no controls.",
+    "Retirement does not reopen a converted history already closed for the same leaf."
   ],
   "id": "INV-6DFQ9P",
   "origin": {
@@ -26,9 +30,9 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "direct_landing takes leaf_id (judges/closes the named leaf, refuses another leaf's open file, names leaf_id when none-or-several are open); the ruled substitute pair covers control recovery.",
+  "statement": "direct_landing takes leaf_id (judges/closes the named leaf, refuses another leaf's open file, names leaf_id when none-or-several are open); public recovery continues its accepted interrupted canonical-leaf-bound doorless generation and settles the kept closing receipt in the same call.",
   "status": "proposed",
   "supersedes": []
 }

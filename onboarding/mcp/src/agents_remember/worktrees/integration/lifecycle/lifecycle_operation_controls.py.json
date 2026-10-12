@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+        "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resume"
+        }
+      },
+      "id": "RLZ-324NWH",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "L143-curator-recovery-revision",
+        "leaf": "260928-MIK-L143"
+      },
+      "rationale": "Dispatches the direct record to its existing recovery executor without ordinary closeout door checks and settles its retained receipt on completion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+        "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resume"
+        }
+      },
+      "id": "RLZ-BECF82",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      },
+      "rationale": "I admitted recover for doorless direct records here and settle the kept receipt in the same call.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "`_resume` checks retained generation and exact publication evidence before worker relaunch.",
@@ -23,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
             "content": "sha256:e1d4225c6b92512836fd7295854262168512eb379ea59ef399509fc9bd5520ab",
             "locator": {
               "kind": "symbol",
@@ -39,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
             "content": "sha256:48491fc955a32e5c770972ce73838a0bb4afe434bd83bfe75f9374fcec75c0fa",
             "locator": {
               "kind": "symbol",
@@ -55,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
             "content": "sha256:8f3776e30cd01a7e1671fdf78dde3e5df4be3a768fb0eb492282350ccfaf439e",
             "locator": {
               "kind": "symbol",

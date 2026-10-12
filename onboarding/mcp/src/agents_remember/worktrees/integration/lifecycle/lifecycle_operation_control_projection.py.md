@@ -16,7 +16,7 @@ Legal recovery controls consult initial-door and direct-landing evidence without
 
 It builds a context from the canonical record and contract, classifies recovery needs, and returns exact resume/retry/cancel/cleanup controls and arguments without mutation.
 
-The legacy reuse filter withholds recover/retry for closeout/direct-landing generations missing compatible taskIntent only when no admitted direct input leaf binding supplies the replacement. _without_legacy_generation_reuse preserves direct controls when _direct_generation_bound finds DirectLandingOperationInput.leafTaskDocumentRef. Missing both bindings retains the barrier; genuine ref/input/history contradictions and developer decisions are not bypassed. Cancellation controls remain separate.
+The legacy reuse filter withholds recover/retry for closeout/direct-landing generations missing compatible taskIntent only when no admitted direct input leaf binding supplies the replacement. _without_legacy_generation_reuse preserves doorless direct controls when _direct_generation_bound finds DirectLandingOperationInput.leafTaskDocumentRef. Missing both bindings retains the barrier; genuine ref/input/history contradictions and developer decisions are not bypassed. Cancellation controls remain separate. Any readable direct record carrying a door publication returns no controls before other branches. Completed direct disposition uses the same completed_direct_owner predicate as admission: only authorized, unintegrated, worker-exited ownership with an idle integration claim may retire; exact retired ownership re-offers retire idempotently. Direct supersede is never offered and its refusal names a new direct_landing request. The existing cancelled-generation successor is a separate boundary.
 
 ### Conventions
 
@@ -28,8 +28,7 @@ the public function or model instead of re-deriving its lower-level state machin
 - Controls are projections of current durable evidence; unavailable actions stay absent and no control may imply a transition the journal cannot validate.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
-- A legacy missing-intent closeout/direct-landing generation never projects `recover`/`retry`;
-  only terminal retire/republish routes remain reachable through other seams.
+- Missing-intent closeouts and legacy direct generations without admitted leaf input withhold recover/retry. Current canonical-leaf-bound doorless direct generations keep their real controls; earlier door-bearing direct records offer none.
 
 ### Todos
 
@@ -80,3 +79,6 @@ Per the ordinary CCR intent boundary, legacy absence alone cannot authorize reus
 Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
 
 - Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence. [6]
+
+- Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable. [7]
+- Earlier door-bearing direct records remain readable but offer no controls. [8]

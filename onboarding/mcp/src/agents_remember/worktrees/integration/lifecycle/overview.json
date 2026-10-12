@@ -82,6 +82,40 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "434d45bc71bdc6e739827062531ec2cdbe1970f2",
+            "content": "sha256:8247b4751f8814567be6b20878bd9287267e94104b0d8b2c4e8a848d93304eb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Completed direct retire is offered using the shared record-based owner predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_direct_controls"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

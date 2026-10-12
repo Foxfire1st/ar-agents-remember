@@ -1,0 +1,1065 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L143",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0NJSDM",
+      "items": [
+        "sha256:34c5214a9e70e55933a6197821de365caf4639a4e6433f7697511cd91a173ea3"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0SH3NX",
+      "items": [
+        "sha256:49cef3a3a0ee65bd8765ae740125a82831dec0e619fde2eaab920d1f763f261f"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:49cef3a3a0ee65bd8765ae740125a82831dec0e619fde2eaab920d1f763f261f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+            "content": "sha256:62441929118df8b1dc35a941ef405b3603961a62fb0a2bfe698576d044979e61",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingTests.test_public_recover_control_completes_cut_generation"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "before": {
+            "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+            "content": "sha256:62441929118df8b1dc35a941ef405b3603961a62fb0a2bfe698576d044979e61",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingTests.test_public_recover_control_completes_cut_generation"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "id": "PRF-030VJ8"
+        },
+        {
+          "after": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:57c32a416ee982d4ef32c218a5e4c36fb9c2d34f89193a06760cf10637896ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_generation_bound"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": {
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+            "content": "sha256:5e6c611b39e50ccbc11188edbd085d591392aae6ed8ec6fd595186029040adcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_generation_bound"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "id": "RLZ-8MJABX"
+        },
+        {
+          "after": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:28ce14e95d693ca6f1455cb97298e719c61cc59da89b3d2901893c9199e5e19f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_legacy_generation_reuse"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": {
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+            "content": "sha256:4eb8bfe6e999de484e6aa9986fa9af5dc1356deedc6fd13a97ad3815bdc92993",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_legacy_generation_reuse"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "id": "RLZ-H09C2P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-19KCGB",
+      "items": [
+        "sha256:bb0169fb6142e5e4fece45c9b5369aa20f808fc0bb5015dda1c6f1b2016a7b9b"
+      ],
+      "reason": "Preserve the landed canonical-leaf-bound direct-create retry/recovery obligation. The type check and doorless exception retain that same admitted leaf input; completed retirement and receipt settlement do not authorize an ambiguous ref/history cut or a second code commit.",
+      "revision": 1,
+      "subject": "INV-ZVQ6Z5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 3
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 3
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 2
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3PGHMF",
+      "items": [
+        "sha256:4942371bfad07399a5f60a9d62575ba6997266a494b010e8a3c0ec9375fdfd7d"
+      ],
+      "reason": "Examined every member, realization and current proof metadata. The exact judged-tree publication, restoration/CAS and frozen-history joint guarantee does not promise a door or permanent completed replay for direct controls. Guarantee, members and routes are preserved; direct-control ownership is a separate obligation, not a new member inferred from the worktrees route.",
+      "revision": 4,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-9RTXE8"
+        },
+        {
+          "after": {
+            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "9839ce45b822079538e21d026314231a390ede55",
+            "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-B2Q04N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-50W1D2",
+      "items": [
+        "sha256:0637e253794f1dde7d06ab99c621cbde062ce0472578b90067f28dcfd2005c99"
+      ],
+      "reason": "The expected-old take-back primitive is unchanged. The same-fingerprint replay is still checked before retired terminal replacement: only cancelled-unpublished refusal replaces itself with the same request.",
+      "revision": 1,
+      "subject": "INV-BEYEV2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5HCVQR",
+      "items": [
+        "sha256:189ab1b738fb4e145933e797d1dcfaf64379cc7577c0abfda45b697491658aaa"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-702YKC",
+      "items": [
+        "sha256:56ac3058d0fe05e8f79f300352b715c44c62541eac4ac6a14c7d748a8b5bd322"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+            "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingTests.test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "before": {
+            "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+            "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingTests.test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "id": "PRF-JVVPJZ"
+        },
+        {
+          "after": {
+            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "content": "sha256:55189ffb8ab8268ad7dd79b1e6ceb3604be043fd82c038fe3095e91c7f857e83",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationStore.replace_terminal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "before": {
+            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "content": "sha256:55189ffb8ab8268ad7dd79b1e6ceb3604be043fd82c038fe3095e91c7f857e83",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationStore.replace_terminal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "id": "RLZ-V04B7M"
+        },
+        {
+          "after": {
+            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "9839ce45b822079538e21d026314231a390ede55",
+            "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-XM924V"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-73CSAC",
+      "items": [
+        "sha256:71679756415f8d3c2a905b7ad5fa0a9252780787fa8d82751249d4a8f6aaaa72"
+      ],
+      "reason": "Repeated unpublished-refusal retries and terminal replacement primitives retain their meaning; the added retired terminal case concerns a different request after exact replay has been handled.",
+      "revision": 1,
+      "subject": "INV-ZGFZXT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "9839ce45b822079538e21d026314231a390ede55",
+            "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-ECBACM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7N36Q6",
+      "items": [
+        "sha256:bbeb561bf6072247030233895896de9b734fedf177ab2e8552ac2d019b9d1283"
+      ],
+      "reason": "Preserve the retired historical record: fingerprint equality still precedes terminal replacement, and repeated unpublished cancellations remain retryable. A changed request after completed retirement does not change the unpublished-retry obligation or revive this retired record.",
+      "revision": 1,
+      "subject": "INV-0JMW0S"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8PBBA5",
+      "items": [
+        "sha256:f6e5a3288bff94eeac30bc1b67ff5b45f9824f9147e580bea891668ba698c90a"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9G7VG8",
+      "items": [
+        "sha256:b1e20d14097f52c4906e4df4a8a8c27cac25fd6f784c919dbfabe88224b3892b"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:b1e20d14097f52c4906e4df4a8a8c27cac25fd6f784c919dbfabe88224b3892b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9Y73CS",
+      "items": [
+        "sha256:f9ecaf08163683d371248380733171b75b612be1d362e135e5d8db68f26dc9ec"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:f9ecaf08163683d371248380733171b75b612be1d362e135e5d8db68f26dc9ec"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AA5KFM",
+      "items": [
+        "sha256:dfbf5888c33cab170411f33eee6f2f1e12ec933ce28e8fb124fc541ab25c2703"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D39SEQ",
+      "items": [
+        "sha256:ae22edf955d309a450681f8316231287c7dc82cef9546450c3581d840ddb31fa"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E36D61",
+      "items": [
+        "sha256:24f29809295f00b4eaa432018dc28b3af1117df0546ce7ba4f76d147deedfb18"
+      ],
+      "reason": "This registration selects the distinct public completed-direct-disposition integration suite; source-derived membership and no-execution catalog ownership are preserved. It adds no new catalog invariant.",
+      "subject": "hunk:sha256:24f29809295f00b4eaa432018dc28b3af1117df0546ce7ba4f76d147deedfb18"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ETDB66",
+      "items": [
+        "sha256:261f135a0e92cb24e8173200c73f52132634526849c28ac00d93d09ffb30b936"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:261f135a0e92cb24e8173200c73f52132634526849c28ac00d93d09ffb30b936"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F1XT7D",
+      "items": [
+        "sha256:61376a83c0099a37680ab3fb23c3ab322985b6ebd6f189629a751533c17e2857"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R143",
+          "packet": "requirements/MIK-R143-v1-a-completed-direct-landing-is-recognised-as-its-owners.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            },
+            "path": "mcp/tests/test_completed_direct_landing_disposition.py"
+          },
+          "before": "absent",
+          "id": "PRF-J2EHTZ"
+        },
+        {
+          "after": {
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:16721c027c0c55f130aa5db6e7ef06590c775dde9734f32d575332e748783602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_admitted"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": "absent",
+          "id": "PRF-J7918B"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "id": "PRF-JJE0TB"
+        },
+        {
+          "after": {
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "id": "PRF-Y7VF8B"
+        },
+        {
+          "after": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-324NWH"
+        },
+        {
+          "after": {
+            "blob": "be0ead7895aaa5341e86fbb96bd03f3cbdfa0cef",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "before": {
+            "blob": "be0ead7895aaa5341e86fbb96bd03f3cbdfa0cef",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "id": "RLZ-3F29H9"
+        },
+        {
+          "after": {
+            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "content": "sha256:f4cfe814999642cfa8119a06ee4badf6104e3989421341f8b00436ece890dff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "9839ce45b822079538e21d026314231a390ede55",
+            "content": "sha256:f4cfe814999642cfa8119a06ee4badf6104e3989421341f8b00436ece890dff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-QQ206R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-F4VSFC",
+      "items": [
+        "sha256:fd924fc52776120d1578487ce7fc60d56da79798b4c2430ee62b0f84952cf205"
+      ],
+      "reason": "Preserve the landed bound_leaf_id precedence and legacy-only missing-binding refusal; extend the current canonical-leaf-bound doorless generation with public same-generation recovery and in-call receipt settlement. Keep ordinary closeout and earlier door-bearing direct boundaries, withdraw the old current refusal proof, and preserve the distinct admission/first-leg public witnesses. Four reset L143 entries are natively replaced under the explicit Owner decision; historical IDs remain sealed. Evidence (L143-curator-recovery-revision): Owner-admitted native replacement of four reset L143 realization IDs; preserved source objects in operands2 and old504f075e; full same-origin target/proof cohort retained. Historical evidence and verdicts remain in the original input; this is static native recomposition, not a fresh test run.",
+      "revision": 3,
+      "subject": "INV-6DFQ9P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "78c0be7fdd1ba1d013b8200419123e1a5c41ade6",
+            "content": "sha256:260152d5a71ab00d5a5b2ae0ec83f6089b417da413a7d0de366864d57d7e86fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:74ca5b0945e70f00f344fe9664d6f91d5a99b7678c4e0ba52c140d194b46876c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G6JQ9D",
+      "items": [
+        "sha256:6bebea66c2e2f49ace048e6b026e0089a733d3bd4f97a92090e0f9164e8a955c"
+      ],
+      "reason": "Keep the retired incident record and its historical claim unchanged, not as a new permanent invariant. Only the two live direct-test consumer registrations are added to the incoming catalog; no deleted database-era artifact is resurrected.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GJ4YEX",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Catalog consumer membership remains source-derived declaration, not execution proof. The completed-direct test reuses two existing artifacts without changing their identity, ownership, lifetime or replacement contracts; count-qualified historical observations do not pin later populations.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H4JTQN",
+      "items": [
+        "sha256:7ea54534381281eed9a271db65a8871a7d6d4417eec38f8fff8fd62c528cd217"
+      ],
+      "reason": "This instruction sentence presents the already-governed public same-generation recovery and receipt settlement; the enduring direct obligation is authored separately, not another invariant per generated guidance sentence.",
+      "subject": "hunk:sha256:7ea54534381281eed9a271db65a8871a7d6d4417eec38f8fff8fd62c528cd217"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HBM5XH",
+      "items": [
+        "sha256:ab52994b9782164caa9463bf8e0f10bc1ac01b798ed6652ae9ac56ee999d2675"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:ab52994b9782164caa9463bf8e0f10bc1ac01b798ed6652ae9ac56ee999d2675"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JS6JAA",
+      "items": [
+        "sha256:9e99fef42275308527b0fac5f8b5ad5ff5272bf3d5be0a09ef4cceaf98229e02"
+      ],
+      "reason": "Current explicit-direct-owner and exact-pair regression summary is compatible with the strengthened owner/control witnesses. Lane populations are source-derived, not pinned; no operative claim places every future direct suite in unit-regression or preserves the former refusal. References 1711/1712/1713 after the historical block concern comparison facts, not L143 controls. Old snapshot totals in superseded inventory are not current assertions.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8PJF2P",
+          "revision": 1
+        },
+        {
+          "id": "INV-HM7Z8C",
+          "revision": 1
+        },
+        {
+          "id": "INV-NQKEQS",
+          "revision": 1
+        },
+        {
+          "id": "INV-X16RQH",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y6DF2N",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ6Z5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JX644N",
+      "items": [
+        "sha256:bd8e6f13a6c3f0a3b15c58a34000903429c815e4450a1a9e3339ce3d4597f024"
+      ],
+      "reason": "The grant/start/retention, exact-pair publication and same-generation code/memory completion guarantee remains. The direct owner disposition and receipt settlement add no grant, publication gate or second code output; canonical leaf input and genuine ambiguity refusal remain separate requirements. All six member records and source/proof metadata are examined; guarantee, membership and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-GJYFFP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M7T0D2",
+      "items": [
+        "sha256:5f4d792123974800d5560be160343d784ce319afd480b6882ad905a3ac1579e6"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:5f4d792123974800d5560be160343d784ce319afd480b6882ad905a3ac1579e6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MAVEVY",
+      "items": [
+        "sha256:6e3f5c7a2e909d46e6c6b682b4e16338280ad0e96e01f019092d47f40313a3a5"
+      ],
+      "reason": "This hidden generated instruction copy has no admitted independent card; it is byte-identical to the canonical closeout skill whose recovery sentence and card are updated. Its root route account remains valid. No separate architecture or invariant is inferred from a generated mirror.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N9Q9TX",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Lane membership comes from the current source and selects tests without executing them. The distinct completed-direct-disposition suite is registered in integration while the existing ownership/landing suites retain their declared lanes; historical population observations are not permanent counts.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QH86PF",
+      "items": [
+        "sha256:4297fb2a0519518404e1d66077e199b8a6839e9a407227c6a2bd28384f98fa19"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:4297fb2a0519518404e1d66077e199b8a6839e9a407227c6a2bd28384f98fa19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RQJ99F",
+      "items": [
+        "sha256:32e635af209f64a64f2937031047a19da58be70cd3262e90d326b9e33eda780d"
+      ],
+      "reason": "Exact-pair publication judgment, task-worktree environment and qualified read-boundary claims do not require a claimed door for a direct landing or prohibit public direct recover. The original functional/lifecycle inventory is explicitly historical in one closed details block; do not rewrite it as a live prescription. References 309/310 are unrelated unchanged setup evidence, not L143 disposition authority.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TVBRJX",
+      "items": [
+        "sha256:7db72431553ad9a1d87b7f8d5ed508678aaa675f85626f09b91895154bbb017b"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:7db72431553ad9a1d87b7f8d5ed508678aaa675f85626f09b91895154bbb017b"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3BGCAT",
+          "revision": 1
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 1
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-V4Z150",
+      "items": [
+        "sha256:6b3077756e9928acda77b33152e9a7964b52a5485923bd78ba7cbaefc50623e2"
+      ],
+      "reason": "Examined every member, realization and current proof metadata. Replacing the direct member's temporary public-refusal boundary does not weaken actual-pair judgment, strict history, named owner or retained records. Public recover reuses the direct executor; retirement grants no publication judgment. Guarantee, members and routes are preserved; direct-control ownership is a separate obligation, not a new member inferred from the worktrees route.",
+      "revision": 1,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V9XPD8",
+      "items": [
+        "sha256:7e127743e53b1870f2004eb7ac5921c297b880766759cebdb6b6fe4d9e69615d"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:7e127743e53b1870f2004eb7ac5921c297b880766759cebdb6b6fe4d9e69615d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "78c0be7fdd1ba1d013b8200419123e1a5c41ade6",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1393,
+              "kind": "line_range",
+              "start": 1393
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1391,
+              "kind": "line_range",
+              "start": 1391
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "c926873470b77adb63c9cb686cf58cf37a1145f4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 416
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 415
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "78c0be7fdd1ba1d013b8200419123e1a5c41ade6",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 535
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "78c0be7fdd1ba1d013b8200419123e1a5c41ade6",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1551,
+              "kind": "line_range",
+              "start": 1551
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1549,
+              "kind": "line_range",
+              "start": 1549
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "c926873470b77adb63c9cb686cf58cf37a1145f4",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VJARE9",
+      "items": [],
+      "reason": "Preserve the landed catalog registration meaning, origins and IDs; renew only the source currency of the Manager-unioned same-ID witnesses after additive direct-test registrations. Catalog declaration does not claim execution.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "78c0be7fdd1ba1d013b8200419123e1a5c41ade6",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2206,
+              "kind": "line_range",
+              "start": 2206
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2204,
+              "kind": "line_range",
+              "start": 2204
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VR0H3S",
+      "items": [],
+      "reason": "Preserve the landed catalog registration meaning, origins and IDs; renew only the source currency of the Manager-unioned same-ID witnesses after additive direct-test registrations. Catalog declaration does not claim execution.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:27bb70cf5a301222bf480c30f4bcc92223c4da9550aca631d0e02d8deb426009",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_retire_proof_through_public_tool"
+            },
+            "path": "mcp/tests/test_completed_direct_landing_disposition.py"
+          },
+          "before": "absent",
+          "id": "PRF-42YN1X"
+        },
+        {
+          "after": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            },
+            "path": "mcp/tests/test_completed_direct_landing_disposition.py"
+          },
+          "before": "absent",
+          "id": "PRF-FWX9TV"
+        },
+        {
+          "after": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:6e5e9b3efcc9f545307510c28ff4d3d2d09d3e2eda135be60cb3359dba30f029",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_direct_owner"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3D2QBP"
+        },
+        {
+          "after": {
+            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4F8E1Q"
+        },
+        {
+          "after": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_direct_controls"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": "absent",
+          "id": "RLZ-5HMHRZ"
+        },
+        {
+          "after": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BECF82"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-WZAXMX",
+      "items": [],
+      "reason": "The shared direct owner, offered retire, public recovery and retired-request boundary are made explicit without fabricating a closeout door. Public witnesses cover same-generation recovery and caller/terminal refusal separately.",
+      "revision": 1,
+      "subject": "INV-3N9432"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YBQFDZ",
+      "items": [
+        "sha256:9f5fe52e03a4cbad9759fdba360372af11926c38476bf47a3deeda6e9bf867a1"
+      ],
+      "reason": "Current exact-pair judge and separated MQC/review admission remain true; leaf recovery does not mean direct recovery is forbidden. The whole earlier inventory through EOF is explicitly historical. Current setup/native-launch prose is unaffected; reference 286 is unchanged source. No current supersede/claimed-direct-door claim was found.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YS9J85",
+      "items": [
+        "sha256:b3e10d0a2565e4663c073bf51224315efd44dafa53a8a75edee1143f6bcc7fd1"
+      ],
+      "reason": "This direct control projection implements the already-governed admitted-leaf recovery and completed-owner/no-door boundary; no independent invariant is created for the type guard, comment or each repeated projection branch.",
+      "subject": "hunk:sha256:b3e10d0a2565e4663c073bf51224315efd44dafa53a8a75edee1143f6bcc7fd1"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

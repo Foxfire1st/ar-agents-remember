@@ -392,10 +392,12 @@ When changing worktree coordination:
 
 ## CCR Intent And Certification Composition
 
-Route reviews, closeout doors and lifecycle candidates now share canonical task intent and
-content-digested direct evidence dependencies. Direct landing requires its admitted canonical leaf input; missing taskIntent alone does not reject that bound direct generation, while absence of both supported bindings retains the legacy reuse barrier;
-contract publication rejects a door without current intent. Task publication classifies
-semantic versus observational edits before deriving affected queue scopes.
+Route reviews, closeout doors and ordinary closeout lifecycle candidates share canonical task intent and content-digested direct evidence dependencies; contract publication rejects a door without current intent. Direct landing instead binds the granted canonical leaf on its admitted request, not a claimed closeout door or canonical task-intent identity. Missing taskIntent alone does not reject that bound direct generation; missing both supported bindings retains the legacy reuse barrier. Completed doorless ownership is derived from the stored kind, fingerprint-derived key, generation, status and disposition. Subject to unchanged caller, worker-exit, integrated-state and idle-claim restrictions, the owner may retire, never supersede. Earlier door-bearing direct records remain readable but offer no controls. Exact request replay retains its generation; only a changed request may replace retired terminal evidence, and a converted successor still needs its own open leaf history. Public recover continues the accepted interrupted generation and settles the retained closing on completion. Omitted stored generation uses model default 1. Ordinary closeout rules remain separate. Task publication classifies semantic versus observational edits before deriving affected queue scopes.
+
+- Completed direct ownership is the shared doorless record predicate. [79]
+- Public direct recover completes the accepted generation and settles the retained receipt. [80]
+- An exact direct replay retains its generation; a changed request can replace retired terminal evidence. [81]
+
 `services.CertificationMemoryRailsPort` supplies the memory-domain registry contribution
 without importing memory quality upward. The quality and integration routes now compose frozen
 admission, journal-selected original certificates and R21 suffix execution.
@@ -1108,7 +1110,7 @@ The routes, each with a refusal test through its public entry point (`test_knowl
 | --- | --- | --- |
 | Closeout validator | `integration/closeout/curator_coherence._require_knowledge_gate` | The full gate over the authority's exact candidate; `curator-coherence-knowledge-gate-refused`. |
 | Closeout memory commit | `modules/closeout_external` | Closes the history file, validates the exact tree as a leaf publication against the parent tip, restores on refusal (F2). |
-| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Gate (the leaf is the one open history file's owner, gap 2), close, validate the exact tree, keep the closing until the generation is decided; an exact retry of an in-flight generation reaches it before the gate (F3). |
+| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, closes its owner, then judges and validates the retained closed tree; refusal restores the closing. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
 | Cancellation | `integration/lifecycle/control/cancellation` | Checks receipts before anything moves; restores a cancelled direct landing's closing. |
 | Record landing | `modules/record_landing` | Probe first (F7); the landed memory commit validates against the task's memory base, and a leaf's history file is closed in it. |
 | Master and checkpoint landing | `modules/integrate._knowledge_gate_block` | The validator on the master's memory commit and every entry at a path the net code diff changed `current` at its code commit (rule 4; F4: `unverifiable` refuses too). |
@@ -1130,7 +1132,7 @@ payload and the direct-landing preview). **Inert until the cutover.**
 
 - The port, the landing request and the direct verdict. [63]
 
-- Direct landing's gate and closing. [64]
+- Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
 
 
 - Current custody/release of historical pins; no creation. [1]

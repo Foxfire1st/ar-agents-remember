@@ -4,9 +4,7 @@
 
 [Nearest governing overview](overview.md)
 
-Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
-candidate. The commit fields identify the latest real commit touching this file; they do not
-identify or claim a future commit for these working changes.
+Current operative account reconciles the admitted L94 create/verify route and L143 owner/recovery changes on the Manager-synced working candidate. The older L9 evidence retains only its explicitly historical scope; source reading is not a new executed test or CODE verdict.
 
 ## Purpose
 
@@ -30,6 +28,8 @@ facts in the typed input. Ledger paths, bytes, digests and a ledger-commit messa
 
 The admitted generation pins its canonical leaf, effective messages, code mode/tree and memory state. Verify mode records the existing code identity; create mode binds and proves the one provisional output before pairing memory. Interrupted accepted create output reuses that same code commit and completes/reconciles memory; exact repeat and public recovery never create a second code commit. Real ambiguity stays on the advertised developer-decision path. No closeout-door or ledger-byte publication is invented.
 
+A completed doorless generation retired by its authorized owner stays readable for audit. Only a changed request may replace that retired terminal record with a fresh generation; an exact same-request replay retains the existing generation. Converted successors still require their own admitted open leaf history, not reopening the prior closed leaf. Public direct recover continues the accepted generation and settles its kept closing receipt on successful completion; ordinary closeout intent and door guards remain separate.
+
 ### 260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)
 
 Direct landing is one of MIK-R09's leaf-publication routes. On converted memory (the layout marker in the checkout's
@@ -43,19 +43,13 @@ preview payload and object count identical to base).
 - **The gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
   the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
   `reports/`, `MEMORY_CONTENT_EXCLUDES`), and asks `direct_gate_verdict` through the port; any refusal raises
-  `direct-landing-knowledge-gate-refused`. It returns the explicitly supplied valid leaf identity, or infers the sole open history owner when the caller omits `leaf_id`; wrong/open and invalid owners refuse by name. The preview calls it too, so it refuses exactly as the apply.
-- **The closing and the exact tree.** `_close_gated_leaf` gates, closes the owner's history file
-  (`close_owner_history`, MIK-R07 rule 7), and validates the exact tree it will commit through
-  `memory_commit_refusal(..., leaf_publication=True)` against `HEAD` (`direct-landing-knowledge-validation-refused`).
-  Any refusal or exception restores the file.
+  `direct-landing-knowledge-gate-refused`. Preview uses the proven canonical `bound_leaf_id` before optional caller `leaf_id`; only when both selectors are absent does legacy selection infer the sole open history owner. A supplied valid identity is not a sole-open inference. Named invalid/foreign owners refuse within the source-selection rules. Apply uses the distinct select → close → judge sequence below.
+- **Apply selection, closing, then judgment.** `_close_gated_leaf` first selects the exact history source through `_select_gated_history`/`direct_gate_source`, then closes that owner's history and captures the retained closed memory snapshot. `direct_gate_verdict` judges that exact closed tree with the selected source; `memory_commit_refusal(..., leaf_publication=True)` validates the same tree against `HEAD`. Any refusal or exception after closing restores the history and cache-ignore bytes. A replay that commits nothing returns no closing and remains bound to its already-paired head tree. Preview judgment and apply's select → close → judge sequence are distinct.
 - **The closing lives until the generation is decided (review R1 F3; R2-2, R2-5; R3-1).** `_start_or_observe_direct_landing`
   first settles the kept closings (`_settle_kept_closing`; an unreadable receipt refuses as
   `direct-landing-closing-receipt-unreadable`), then checks `_in_flight_retry`: an exact retry of the series'
   in-flight generation (same contract path, code commit, candidate tree, effective input and approval note,
-  `_same_request`) prepares **without** the gate and reaches `_create_direct_landing`'s existing-generation check,
-  which resumes it or reports the conflict; that generation was gated when it was admitted.
-  `_prepare_direct_landing_candidate(identity, *, gated)` returns the input, the candidate and the closing (restored if
-  building the input fails). `_admit_direct_landing` writes the generation's receipt (`keep_direct_closing`) before
+  `_same_request`) reuses the retained record directly: `record, created = current, False`. It does not call preparation, claim another review or call `_admit_direct_landing`; its accepted input was judged at admission. New/nonmatching requests use `_prepare_direct_landing_candidate(identity, *, enforce_owner=True)` followed by `_admit_direct_landing`. Owner enforcement is disabled only while a live conflicting generation must retain its input-conflict refusal precedence. Preparation returns the input, candidate and closing, restoring the closing if input construction fails. `_admit_direct_landing` writes the generation's receipt (`keep_direct_closing`) before
   creating it and keeps the closing only when the journal **creates** a generation; an input conflict, a failing
   create, any exception, or a replayed generation restores it in process and drops only this call's receipt
   (`_undo_closing`). A receipt Git cannot write (`hash-object` failing) restores and refuses as
@@ -72,16 +66,16 @@ preview payload and object count identical to base).
 - The preview refuses as the apply. [2]
 
 
-- Settle, exact retry, prepare, admit, and settle again. [3]
+- Exact in-flight retry reuses the retained record without preparation or admission; other requests prepare and admit, then execution settles receipts. [3]
 
 
 - Only a created generation keeps the closing. [4]
 
 
-- The prepared input, the candidate and the closing. [5]
+- Preparation takes identity and enforce_owner, selects/closes/judges before retaining the exact admitted snapshot, and restores on failure. [5]
 
 
-- The exact memory tree, the gate and the closing validated as a leaf publication. [6]
+- Apply selects the history source, closes it, judges the exact retained closed tree and validates that same tree as leaf publication, restoring on refusal. [6]
 
 
 ### Conventions
@@ -113,8 +107,7 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets were checked in the L9 code checkout. The cited ranges support
-the current working-candidate behavior; historical entries below retain their original scope.
+References 3, 5 and 6 below are re-authored for the current retained-record retry and select → close → judge implementation. Reference 7 and the create-mode reference retain the landed L94 account. Other original L9 references and test descriptions retain their original historical evidence scope; they are not fresh execution or current gate-order certification.
 
 - Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
@@ -140,3 +133,5 @@ source is configured for this file's claims.
 No additional configured cross-repository evidence is claimed.
 
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
+
+- Exact direct replay retains its generation; only a changed request may replace retired completed evidence. [14]

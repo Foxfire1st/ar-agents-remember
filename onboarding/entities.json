@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:9bc38fef7bc11ddc1de1d2b7ae2ea61cc327316538063fd9bab0c61b808c8678",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:0f765bc2dcf4c715068f78a3659053af844c1e783850d5109959f557ea0a1d1e",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:78334e01841f3edf7966468e2fc130757a77aa97da9d16493a05166347a87698",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:8a42883742de5bb67811b56bd75ca2056b7f40e55427162b5f9bb007effca913",
             "locator": {
               "kind": "symbol",
@@ -101,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:c4d00ddb632af514dd84a2a1df82481bbc8b8a9d9495b9766b7a923f86662a9e",
             "locator": {
-              "end": 496,
+              "end": 497,
               "kind": "line_range",
-              "start": 489
+              "start": 490
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -114,12 +114,12 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:97baf7cb74933938fd44dff425ea36a1ba3a56a4886eecc5bf01021e3eb82fda",
             "locator": {
-              "end": 504,
+              "end": 505,
               "kind": "line_range",
-              "start": 499
+              "start": 500
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -144,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -198,6 +198,40 @@
               "name": "_converted_adopt_gate"
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A direct record binds the accepted effective input without a closeout door or canonical task intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eee0c9bf8a90ccf04448ee3002d63b468403bfe4",
+            "content": "sha256:0ba071bb133b1efea24e7aa7e020f44ec4784642f1c05f8f726e3914d3bb630e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Direct recovery continues that accepted input and settles the kept closing receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "434d45bc71bdc6e739827062531ec2cdbe1970f2",
+            "content": "sha256:8247b4751f8814567be6b20878bd9287267e94104b0d8b2c4e8a848d93304eb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }

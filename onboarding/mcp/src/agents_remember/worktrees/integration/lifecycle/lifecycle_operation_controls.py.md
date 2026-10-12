@@ -12,7 +12,7 @@ Task-addressed lifecycle controls derived from durable and live evidence.
 
 ### Logic
 
-Recovery and resume validate the retained generation, exact door, and current code/memory input. The control owner no longer classifies or refuses a ledger byte/tree contradiction, and successor admission composes only code and memory messages. Real Git and publication contradictions still flow through the owning evidence checks.
+Recovery and resume validate the retained generation and current code/memory input. Closeout paths retain their exact door checks; direct landing is admitted by its own request and has no door by design. The control owner no longer classifies or refuses a ledger byte/tree contradiction, and successor admission composes only code and memory messages. Real Git and publication contradictions still flow through the owning evidence checks.
 
 The public surface is `LifecycleControlCommand`, `control_operation`. The control seam revalidates
 the configured contract and generation under lease, reconciles worker exit and control mutations,
@@ -52,7 +52,7 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `_resume` checks retained generation and exact publication evidence before worker relaunch. [1]
+- Direct recovery continues its retained generation and settles its closing receipt in the same call; the closeout path keeps its publication checks. [1]
 - `_resume_arguments` retains the admitted code/memory messages in the successor correction. [2]
 - `_closeout_resume_admission` combines current candidate evidence with code/memory input for resume. [3]
 
@@ -76,13 +76,13 @@ and the current contract/door evidence remain required where the operation owner
 
 ## 260821-CLIVE Task-Addressed Control Semantics
 
-Cancel, recover, retry, resume, retire, and supersede operate on canonical door+journal authority.
+Controls operate on canonical journal authority; closeout actions additionally use their door authority. A direct landing has no door: supersede is neither offered nor admitted, and its named refusal points to a new `direct_landing` call. Retire is the completed owner disposition. An admitted direct recover calls the existing real executor on that same generation and settles the kept closing receipt as landed when completion succeeds, before returning the projection.
 Cancel stops the worker, ignores retained private preparation as an approval prerequisite, and
 publishes the reset/cancelled outcome with its waiting successor after exact worker-exit and Git
 proof. Public closeout resume accepts the repaired fixed candidate and starts at the first failed or
 stale gate while retaining the exact passing prefix; publication still revalidates the waiting door,
 projection, and authority. Integrate and direct-landing retain their independent recovery semantics.
-Missing initial doors and competing declarations refuse.
+Missing initial closeout doors and competing closeout declarations refuse. These door checks are not applied to doorless direct recovery; closeout treatment is otherwise unchanged.
 
 ## Shared Control-Action Vocabulary
 

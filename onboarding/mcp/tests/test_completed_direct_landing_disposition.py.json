@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_completed_direct_landing_disposition.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+        "content": "sha256:27bb70cf5a301222bf480c30f4bcc92223c4da9550aca631d0e02d8deb426009",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_owner_retire_proof_through_public_tool"
+        }
+      },
+      "facet": "Public owner retire is idempotent; a different caller is refused, direct supersede names the no-door/new-request refusal, and changed plain code subsequently completes generation 2.",
+      "id": "PRF-42YN1X",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+        "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+        }
+      },
+      "facet": "With accepted code at the work branch and memory at its before head, public recover completes the same generation/key, settles the receipt, closes the named history, and refuses a completed retry and a wrong expected generation.",
+      "id": "PRF-FWX9TV",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+        "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+        }
+      },
+      "facet": "The explicit code-at-accepted-head/memory-before-head fixture completes the same public direct generation/key, settles its receipt and closes its selected history; terminal and wrong-generation recovery are refused.",
+      "id": "PRF-J2EHTZ",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "L143-curator-recovery-revision",
+        "leaf": "260928-MIK-L143"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public owner retire is idempotent, strangers refuse, supersede names a new direct call and advanced code completes in generation 2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:27bb70cf5a301222bf480c30f4bcc92223c4da9550aca631d0e02d8deb426009",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_retire_proof_through_public_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "First-leg-only public recovery preserves generation/key, settles the receipt and refuses repeated/wrong-generation requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Converted successor names another leaf and closes the proper history without reopening the prior leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fed227b3f5b012ff9933907bf9325537f8679843",
+            "content": "sha256:c9547b140a880b6c41ff6a298886be3a8f1da90d5a53e3a7e5b26e3f636cd50d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_retire_converted_successor_names_another_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integrated-contract refusal agrees with its empty control offer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:13adcbf1faebef444c8cf1b8ccce376da1306bd5b154b5ca48ec5a5e1cbbe867",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integrated_contract_offers_nothing_and_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An omitted stored generation becomes 1 and is judged normally without an exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:aa682a78672c7cb39975025e8a430cfc86e799e918503240905543c3082de41f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_generation_normalizes_without_exception"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The shared predicate, control offer, recovery executor dispatch and terminal replacement must agree across files; otherwise a completed owner is unreachable or a half-published direct generation is stranded."
+  },
+  "applicability": "Completed and interrupted doorless direct-landing lifecycle generations admitted by their own request.",
+  "conditions": [
+    "The record kind is direct-landing, its key binds its contract path and fingerprint, and the expected generation is pinned upstream.",
+    "A completed active generation must be unintegrated with no active integration claim and a proven-exited worker; caller authority remains required for retire.",
+    "Interrupted public recovery continues the accepted generation and settles its kept closing receipt when completion succeeds."
+  ],
+  "exclusions": [
+    "A direct record carrying an earlier-shape closeout door publication offers no controls.",
+    "Direct supersede is unavailable because no door is claimed; use a new direct_landing request for changed code after retirement.",
+    "Ordinary closeout intent/door treatment and the direct recovery executor algorithm are separate unchanged owners.",
+    "An exact replay retains its generation; retirement does not permit reopening the same converted leaf history."
+  ],
+  "id": "INV-3N9432",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_completed_direct_landing_disposition.py (15 tests) + test_direct_landing_leaf_identity.py turned test; focused 67 passed/11 subtests; evidence-lifecycle PASS 91; freeze d13c8eb8 on 4db4d05b; round-4 CODE PASS verdict",
+        "Owner-admitted native replacement of four reset L143 realization IDs; preserved source objects in operands2 and old504f075e; full same-origin target/proof cohort retained. Historical evidence and verdicts remain in the original input; this is static native recomposition, not a fresh test run."
+      ],
+      "path": "knowledge-handoff-ea40194f.json"
+    },
+    "handoffEntry": "MIK-R143@v1",
+    "leaf": "260928-MIK-L143",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A completed direct landing is owned on what its record carries, offered controls mirror admission, and public recovery continues the interrupted same generation and settles its receipt.",
+  "status": "proposed",
+  "supersedes": []
+}

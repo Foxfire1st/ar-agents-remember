@@ -10,7 +10,9 @@ Agent doctrine for closing out approved Agents Remember edits as code and memory
 
 ## Code Commentary
 
-Every later converted landing is judged again: leaf integration judges the closeout pair, recorded leaf landing judges the supplied landed memory against the recorded memory base, with the recorded closeout code when the landed code equals or descends from it, otherwise the landed code, and master final/checkpoint/recorded routes run validator, net staleness, chain and authentic-history checks. Direct landing may explicitly name its history owner with `leaf_id`. The incoming instruction's intent-less public-recovery warning applies to legacy generations without either compatible task intent or the admitted canonical-leaf input; the real executor's kept closing receipt remains separate. Current `leafTaskDocumentRef`-bound direct generations retain their advertised recovery controls, so absent task intent alone is not a public-recovery refusal.
+Every later converted landing is judged again: leaf integration judges the closeout pair, recorded leaf landing judges the supplied landed memory against the recorded memory base, with the recorded closeout code when the landed code equals or descends from it, otherwise the landed code, and master final/checkpoint/recorded routes run validator, net staleness, chain and authentic-history checks. Direct landing may explicitly name its history owner with `leaf_id`. The incoming instruction's intent-less public-recovery warning applies to legacy generations without either compatible task intent or the admitted canonical-leaf input; the real executor's kept closing receipt remains separate. Current `leafTaskDocumentRef`-bound doorless direct generations retain their advertised recovery controls, so absent task intent alone is not a public-recovery refusal. Public recovery continues the accepted generation through the existing executor and settles its kept closing receipt in the same call when completion succeeds. Ordinary missing-intent closeout treatment and earlier door-bearing direct records remain separate.
+
+- Public direct recover continues the admitted generation and settles its retained closing receipt on completion. [10]
 
 The skill owns closeout sequencing while the worktree manager owns start, integration, finalization, and cleanup: ordinary closeout preview and apply run against the enclosure contract with explicit nonblank commit messages per enabled leg, and operation control resumes or cancels the advertised generation only. On converted memory both tools ask the mandatory invariant gate about the exact candidate pair, and the memory commit records exactly the tree the gate judged.
 
@@ -37,7 +39,7 @@ Bind the canonical leaf reference and current readable grant. With code_commit, 
 - Contextual authority and the developer hand-off protocol [4]
 
 
-- Closeout-approval as the sole explicit human gate [5]
+- Closeout-approval as the sole explicit human commit gate [5]
 
 
 - No-disabled-memory preconditions and abandon-and-restart way out [6]
