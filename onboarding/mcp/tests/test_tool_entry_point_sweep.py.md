@@ -4,6 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
+- The self-contained world seeds user settings through the protected-settings guard under pytest’s isolated XDG home; its code repository is a workspace sibling, not a coordination-root child. The benign census includes `direct_execution_grant` and explicit canonical leaf identity for direct landing. The invalid-input control omits required `repo_id`, not the now-optional citation contract.
 - EntryPointWorld, classifier/constants and control classes are now defined in this file, not only extracted owners.
 - STATE_DEPENDENT_RAISERS is empty and the derived matrix population retains lifecycle_finalize_task only.
 - UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
@@ -248,3 +249,6 @@ the real entry point — and this module grew **1274 → 1353 lines** in the cha
 Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_integrate` and `worktree_record_landing` (owner L111, repaired under MIK-R111 rule 7); `UNMARKED_NOT_OK` holds `memory_quality_check` (owner L110, repaired under MIK-R110 rule 4). A repair removes its entry in the same change; each pin stays asserted equal to what the sweep observes, in both directions.
 
 </details>
+
+- The self-contained world obtains its protected-settings write path and uses a workspace-sibling code repository. [55]
+- The benign census includes grant input and canonical direct-landing leaf identity. [56]

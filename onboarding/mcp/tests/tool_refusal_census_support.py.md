@@ -18,7 +18,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Grant failure dispatch
 
-The refusal driver adds the canonical grant failure input under its current ambient API. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
+The refusal driver adds the canonical grant failure input under its current ambient API. Its `direct_landing` failure request also names the canonical absent leaf explicitly, so the intended refusal is reached through the current input grammar. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
 
 ## Historical original card — preserved, not the current operative account
 
@@ -126,3 +126,5 @@ out is inside the disposable world the calling test module builds.
 No repository or external-system boundary is proved by this module.
 
 </details>
+
+- The direct-landing failure input includes its explicit absent canonical leaf. [9]

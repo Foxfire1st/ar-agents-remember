@@ -18,6 +18,8 @@ The memory-quality row also admits `cutCardCount` and `addedFileCount`, with `cu
 - Authored uses distinguish cut justification/addition requirement placement from blocking repair work. [5]
 - Quality row bound remains1500 with sync/start/poll production paths. [6]
 
+Both baseline status and adoption rows explicitly admit `legacyCards`, whose caller use is to correct the named old-format cards blocking readiness or adoption. The field is actionable input, not an authorization to adopt legacy memory; row bounds remain unchanged.
+
 ## Evidence
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
@@ -25,3 +27,6 @@ No Domain Documentation sources are configured; the evidence below is repository
 - Real output must satisfy its row and enforced production bound. [1]
 - Actual delivery guard must preserve an in-bound projection. [2]
 - Generic strip-and-cap supplies cases for unprojected tools. [3]
+
+- Baseline status names the caller use of legacyCards. [7]
+- Baseline adoption names the caller use of legacyCards. [8]

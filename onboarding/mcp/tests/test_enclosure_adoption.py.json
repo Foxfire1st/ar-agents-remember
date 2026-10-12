@@ -16,6 +16,22 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df58dee6a89d40c7370dcbfb281a6e3842ff9906",
+            "content": "sha256:aa8595be7d1f50f16e27729919bde6ab3e7db01c81ef98330f0b080cfce78271",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_is_the_default_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

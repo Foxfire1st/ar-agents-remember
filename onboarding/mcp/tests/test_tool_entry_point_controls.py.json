@@ -475,6 +475,23 @@
           "kind": "test"
         }
       ]
+    },
+    "6": {
+      "note": "The retained handler deadline control names server_info and checks cleanup plus the next call.\n\nAnchor: `ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

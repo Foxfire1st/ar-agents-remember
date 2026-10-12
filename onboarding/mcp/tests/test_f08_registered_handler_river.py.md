@@ -13,6 +13,8 @@ startup.
 
 ## Code Commentary
 
+The retained read-only vehicle is the registered `server_info` handler, not the removed `ping` tool. Its required response fields change no caller, startup or first-event assertion.
+
 Four cases run the actual `create_server` + registered-handler + session path instead of
 a manually installed writer: bound first-call fields, unbound chat with harness, caller
 fixed after binding rewrite, and fresh-process first call. The module is the reply to
@@ -22,3 +24,5 @@ the retained E1 gap, not a second copy of the river unit surface.
 
 - Bound first call through the registered handler carries caller and facts. [1]
 - A fresh process writes its first call through startup. [2]
+
+- The first-call protocol vehicle is registered server_info. [3]

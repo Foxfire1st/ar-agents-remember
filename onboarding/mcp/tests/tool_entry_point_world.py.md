@@ -20,6 +20,8 @@ The delegation-policy stub path comes from `user_settings_path_for_write` before
 
 The benign entry-point world includes the absent-task give invocation without an architect role binding. It is fixture/driver preparation; its consumers own assertions and sweep acceptance. Never construct this world outside pytest isolation or treat a driver row as a live MCP/server result.
 
+The shared benign table follows the retained public roster and omits removed provider, search, lifecycle and auxiliary tool vehicles; retained internal services do not restore those registrations. `_returned_arm` reads the log-named whole result and delegates to `_judge_delivered`, which validates it under the registered model and checks the delivered envelope and keys before calling `_refusal_arm`. Refusal marks still come from the delivered answer. This is the supported tip composition; the former `_validated_whole` and `_ok_false_arm` helpers are no longer present.
+
 ## Evidence
 
 - The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding, never a fallback. [2]
@@ -29,3 +31,9 @@ The benign entry-point world includes the absent-task give invocation without an
 
 - The world obtains the guarded settings path before settings-parent creation and stub writing. [6]
 - A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty. [7]
+
+- The returned-call arm reads the log-named whole result and delegates validation and delivered-answer judging. [8]
+
+- The delivered-answer refusal arm classifies ok:false from delivered code and actionable-next marks. [9]
+
+- The shared benign table omits retired public tools. [10]

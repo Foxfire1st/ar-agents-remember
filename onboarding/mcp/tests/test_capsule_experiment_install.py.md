@@ -12,7 +12,7 @@ tree, the returned run record and the compiled capsule text. It is the proof sur
 (the per-run recorded selection with no silent switch), behaviour 3 (the cutover and its
 deduplication screens) and behaviour 5 (the run record and the way back).
 
-This module is **new in 260915-CAPS-L9** and is **uncommitted on `ar/260915-caps-l9-ar`**; it is not
+Historical creation account, not current branch or commit state: this module was **new in 260915-CAPS-L9** and **uncommitted on `ar/260915-caps-l9-ar`** then; it is not
 one of the six lane-manifest `D9` modules (its row is registered and the loader names the same six as
 at the clean base), and its two consumer rows in `mcp/tests/evidence-lifecycle.toml` are the measured
 catalog delta this leaf contributes.
@@ -70,6 +70,8 @@ catalog delta this leaf contributes.
 
 The machine-settings preservation fixture writes its own default seed into its private temporary coordination tree before either install. Both installs compare against those pre-existing bytes; the test establishes preservation, and does not depend on installation creating missing private settings.
 
+The registered selected-run case enters the real tool-call log context and reads `experiment` from the retained whole result named by the delivered answer’s `log`. Selection source and capsule delivery are asserted there; an overflow answer’s omitted field is not the fact being tested. The unselected run remains the separate legacy/no-record control.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -83,3 +85,5 @@ The machine-settings preservation fixture writes its own default seed into its p
 - The two consumer rows this leaf adds to the catalog's consumer proof. [7]
 
 - Private machine settings pre-exist both installations and retain their bytes. [8]
+
+- Selected-run facts are asserted from the retained logged whole result. [9]

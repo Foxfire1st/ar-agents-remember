@@ -46,6 +46,8 @@ The recorded-meaning review models separate eligible steps, readable none and un
 
 - The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
 
+Memory-quality response codes reach the shared shaping guard without a model length ceiling; malformed/over-long codes are converted there with whole-result custody, not raised first. The current tool-answer interim map explicitly assigns `direct_execution_grant` to L111. No response-model, tool-roster or semantic-acceptance owner moves.
+
 ## Grant and direct-create records
 
 DirectExecutionGrant is external task-local authority; observer directGrant is display-only. Direct response adds candidateTree/candidatePaths/codeCommitMessage facts, and lifecycle direct input carries exact canonical leaf plus prospective codeBefore. No task-document flag or anticipated commit hash is introduced.

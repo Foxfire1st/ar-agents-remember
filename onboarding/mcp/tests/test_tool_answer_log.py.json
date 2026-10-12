@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
+            "blob": "d7ec13e3a24ae84172ae886dbf01c2b0cf735c94",
             "content": "sha256:55a294ea804b53d35dd3586e907f035e6fc38c403460d8e6947826d594beef2e",
             "locator": {
               "kind": "symbol",
@@ -44,6 +44,23 @@
             "locator": {
               "kind": "symbol",
               "name": "ToolAnswerEnclosureTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Real temporary-root paths obey the exact preservation or length-and-digest rule.\n\nAnchor: `ToolAnswerLogTests.test_home_folder_path_follows_the_length_rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7ec13e3a24ae84172ae886dbf01c2b0cf735c94",
+            "content": "sha256:6ab4de03b441a04dcaeb3bc72e2070286d92677e9bfcbde64358e6010b711f3e",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 279
             }
           },
           "kind": "test"

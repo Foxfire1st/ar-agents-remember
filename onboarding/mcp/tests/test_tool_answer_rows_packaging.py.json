@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
               "kind": "symbol",
@@ -55,11 +55,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
             "content": "sha256:f37a402e535a54fbbb7fddecbf6c928c248af5c72b5285329b9847898f2e899e",
             "locator": {
               "kind": "symbol",
               "name": "test_coherence_paths_derive_the_row_cases"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fixture width is authored and the owned root is cleaned at context exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_width_case_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Embedded XDG roots share that fixture and restore through patch.dict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_case_xdg"
             }
           },
           "kind": "test"

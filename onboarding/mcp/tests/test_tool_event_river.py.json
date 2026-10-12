@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:08d5c48dae4b07c0f5b153ce18688efb5646a8b48f25b3638bb15bc031faf97e",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:1033db1d98a5d76b7eab55db81804024709f1f86f4ea90b24100e8e61b273ab8",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_unbound_server_writes_a_chat_without_a_role_with_its_harness"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:8d97babfc2f5d387acab6a7bf55cd3bf17c3dee9c32bc04cd33843c2749d217d",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:2582f568ae1f8d805a070d4630b7a62c08adeb7f9093145a12f91877cdb6ec6c",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_failed_write_answers_as_written_and_next_events_carry_then_clear"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:27b76044ac3f5065a8b82e461dcc591b244e917f5933c3ab046e3565065dac57",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:4119a9203ecc134561eed3ffb2bcaa1576ce98638e05b53404c7d75059bb3cd7",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:640814848c4ab4f6f34fbbf221a1e0f6334699c5317fc56b6602f0eccf69e59b",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_one_function_serves_the_age_cut_and_the_size_cut"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:27b76044ac3f5065a8b82e461dcc591b244e917f5933c3ab046e3565065dac57",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:ff8e633da7c8e36c31a9a687e93554a31b993aa0fe276f52c35c9b99853332e8",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:b148eec9c7669bcfe73630bf5090f4fc554241d98b5a2893eb5947f12c96017a",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_caller_is_read_once_at_start"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:ff7ac8f5f3233c4d22f27a6185ceca96e8532b11b260d7953cdef9c656557451",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:5acd598c98ad57137933db972918e70cd3431c4dcdc6189798ed0e4f5f8897c4",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:c498f3db6e93cfcbf7effde81c9f7660dfb0f1747c465efe23a37d6bc08223c3",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:3b40582d35a60955e28b352d35426f7a880373c2913862ff8b6ef37764adc678",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_fresh_process_writes_its_first_call_through_startup"
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
         "locator": {
           "kind": "symbol",
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:6d2141526622729c651574b46751484f9a011a038877a84d810cc10ff830affb",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:c9f336e830d4b873dacbb3becdac0178353e60a4cbbb98139150349062d1da11",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_every_append_lands_at_or_under_the_ceiling"
@@ -190,8 +190,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:fd2e34ed8718963c924523ade2e16b7953a1dc17825d6bcc011fe99225ac66f4",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:6e172fdfb6a2c73e163ae906867c4fa21da6de4f270979d98d9bc6795573b77b",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_bound_task_title_is_read_once_at_snapshot"
@@ -207,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:ea21f99e8261f4970e383bf92d42b7111a9d82a1490b06f72df7a799675f808f",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:9594a9f4caa5126a7c5f3ebc3112f5be71d9d9e9b062f5a11505a385f899abfb",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_failed_removal_counts_and_leaves_the_file_ungrown"
@@ -224,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:7ae9b0d0ea24a2ce3652ee70e7802ec39d3cb2fa5a20f59eebd945b5d66aeabd",
         "locator": {
           "kind": "symbol",
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
@@ -258,8 +258,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
@@ -275,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
         "locator": {
           "kind": "symbol",
@@ -292,8 +292,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
@@ -309,8 +309,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
@@ -326,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
         "locator": {
           "kind": "symbol",
@@ -343,8 +343,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:3ebb5f5713c56cc824a82662c53830fd24b6331cbbc5c5321749bfa9c048e010",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:1034c181756b8a89a1d2d77d218093ab5672a27fba8d6a87832e47cc2de6fb4f",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_registered_startup_writes_a_bound_first_call"
@@ -360,8 +360,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
@@ -377,7 +377,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:e0a6d350d25a5e0aa817044d618973969cdcba18a306fbac556304bc53b4163e",
         "locator": {
           "kind": "symbol",
@@ -394,8 +394,8 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-        "content": "sha256:8ac518d7b9341e24cf5f8b04a5016cdb2055f77e573cf4a434e33c4590c2bd19",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+        "content": "sha256:8632d0d3002f548527c91187e5e7aaaf4eeed8c57b491209427027eb6cf92037",
         "locator": {
           "kind": "symbol",
           "name": "ToolEventRiverTests.test_stream_with_missing_lock_creates_no_observer_file"
@@ -411,7 +411,7 @@
     },
     {
       "anchor": {
-        "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+        "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
         "content": "sha256:cd014c75fd15d4bb527c0738f5fb29ec003db0c068444e6db94d19924a41765e",
         "locator": {
           "kind": "symbol",
@@ -471,6 +471,23 @@
             "locator": {
               "kind": "symbol",
               "name": "test_every_append_lands_at_or_under_the_ceiling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Role-message fixtures carry UUID recipients and current binding/sender shapes at the actual lookup boundary.\n\nAnchor: `ToolEventRiverTests._send_as`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:2d53ca1be7dfe56573e74916179d204e2cb78e4b93d1a89d4de1a050cc878dcf",
+            "locator": {
+              "end": 678,
+              "kind": "line_range",
+              "start": 649
             }
           },
           "kind": "test"

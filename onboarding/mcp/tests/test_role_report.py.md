@@ -12,6 +12,8 @@ The focused suite proves the one read-only report route's serving, confinement a
 
 Coverage: every launchable role's report is read unchanged (task-bound and taskless); a caller cannot name a path; missing, unreadable and outside-root reports each answer their own refusal; a rewritten receipt cannot substitute a sibling, handover or nested file; a damaged, non-regular or symlinked receipt answers the report-specific refusal; an absent access alias still serves the canonical file while a retargeted alias gets its own refusal; a FIFO is refused before opening; the read is bounded; another execution or selection cannot read the report.
 
+The receipt helper seeds the canonical task-notes report root for non-leaf task roles and the workspace report root for taskless roles; leaf report-access binding remains separate. This prepares the current report-reader contract without adding a caller-selected report path.
+
 ### 260928-MIK-L126 Current Delta — Task-Page Report Targets
 
 Two cases prove the task page's exact report targets: a task-page target opens current and
@@ -32,3 +34,5 @@ The current source and test assertions below establish the documented ownership;
 - A missing report, an unreadable one and a recorded path outside the product root each answer their own named refusal. [3]
 - A receipt rewritten to name a sibling, handover or nested file is refused because the served name is launch-derived. [4]
 - An absent report-access alias still serves the canonical recorded file; a retargeted alias receives its distinct refusal. [5]
+
+- Receipt setup seeds canonical non-leaf and taskless report roots. [6]

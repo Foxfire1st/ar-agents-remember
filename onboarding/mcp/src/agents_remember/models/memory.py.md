@@ -43,9 +43,11 @@ are present in the agent-facing response schema instead of relying only on the f
 
 For 260821-DAGQC-L2 the quality wire has one extra-forbid discriminated request union. `sync` and
 `start` share only repository, normalized-check input, detail limit, and optional contract path;
-`poll` permits only repository and run id. The response status vocabulary includes typed
+`poll` permits repository, run id and the original contract path on a candidate poll. The response status vocabulary includes typed
 `capacity-reached` and `run-not-found`, both with bounded guidance, in addition to live and terminal
 run states.
+
+The optional memory-quality `code` has no model-level length ceiling. Malformed or over-long codes must reach the shared answer guard, which emits `invalid-code` while retaining the original whole result; model validation must not raise first. Candidate `poll` also carries its original contract path, while official polling omits it.
 
 ## Invariants And Boundaries
 
@@ -82,7 +84,7 @@ readiness artifact with the existing rendered checklist path and zero/actionable
 ## 260821-DAGQC-L2 Canonical Memory-Quality Request
 
 The public request is exactly one discriminator-selected object. `sync` and `start` carry execution
-inputs; `poll` carries only `repo_id` and `run_id`. Extra fields are refused by the models, so the
+inputs; `poll` carries `repo_id`, `run_id` and the original candidate contract when scoped. Extra fields are refused by the models, so the
 registration, payload adapter, controller, and published schema share one grammar. The response adds
 `capacity-reached` and bounded guidance without inventing an admitted run.
 
@@ -127,3 +129,5 @@ and D-33 names the memory-quality and citation surfaces.
 - `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
 - `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
 - The context-packet wire face includes its matching `error` field. [6]
+
+- Memory-quality codes reach the shared guard without a model length rejection. [8]

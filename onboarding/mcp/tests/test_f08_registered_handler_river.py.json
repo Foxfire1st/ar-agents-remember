@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
-        "content": "sha256:a16ded8ded9e5a0cb72b14e6519f0a7f81b9765fb9a1147ef8866109d0cdd826",
+        "blob": "fc6c8d2b29d516b1d5449d1c0add0f4b5f081f52",
+        "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
         "locator": {
           "kind": "symbol",
           "name": "test_f08_bound_first_call_through_registered_handler"
@@ -47,6 +47,22 @@
             "locator": {
               "kind": "symbol",
               "name": "test_f08_fresh_process_first_call_through_registered_handler"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The first-call protocol vehicle is registered server_info.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc6c8d2b29d516b1d5449d1c0add0f4b5f081f52",
+            "content": "sha256:0f69719ddb53afcb9760221cddb54cad35c91bbf229c57a75221a2b1d3a56ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_server_info"
             }
           },
           "kind": "test"

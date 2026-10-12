@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
-        "content": "sha256:b812f31630e6e5809ed13808fc0b46297968df0e2d2a4a15520973745558a815",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+        "content": "sha256:0c799bed674fd4ec5f4d0d66c924d14b2159c3d659109cadb7c9f88d9d55390d",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
         "locator": {
           "end": 28,
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -183,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
-        "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+        "content": "sha256:f35564b88d082ebc8277f88251110099eace023668849cdc17856dc7aa54752b",
         "locator": {
           "kind": "symbol",
           "name": "sweep"
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -237,8 +237,8 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
-        "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+        "content": "sha256:f35564b88d082ebc8277f88251110099eace023668849cdc17856dc7aa54752b",
         "locator": {
           "kind": "symbol",
           "name": "EntryPointWorld.sweep"
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
         "locator": {
           "kind": "symbol",
@@ -291,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
         "locator": {
           "kind": "symbol",
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
@@ -327,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -345,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+        "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -363,12 +363,29 @@
     }
   ],
   "references": {
+    "10": {
+      "note": "The shared benign table omits retired public tools.\n\nAnchor: `EntryPointWorld.benign`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:f1824f06864e1586dd9c22cbb92d3abc4680313e408c11c97df3465f4986c60d",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 681
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding, never a fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
             "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
             "locator": {
               "kind": "symbol",
@@ -400,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
             "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
             "locator": {
               "kind": "symbol",
@@ -416,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
             "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
             "locator": {
               "kind": "symbol",
@@ -432,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
             "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
             "locator": {
               "end": 498,
@@ -456,6 +473,38 @@
               "name": "test_building_the_world_with_the_users_own_environment_is_refused"
             },
             "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The returned-call arm reads the log-named whole result and delegates validation and delivered-answer judging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The delivered-answer refusal arm classifies ok:false from delivered code and actionable-next marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:a5a7fee973a3d7e5d8b2202b333cd02d381249d1cc1bbe974c1e34d52a95d2da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_arm"
+            }
           },
           "kind": "test"
         }

@@ -29,6 +29,8 @@ The rule-6 contract table population for MIK-R108: one row per registered tool a
   the retained L109/L111 interim populations. L110's ten retained tools and L112's
   retained tools keep their final rows. A leaf does not land while a row names it.
 
+The table-local log witnesses retain ordinary-path preservation within the 200-character domain and exact length/digest shortening beyond it. Runtime-install row fixtures use the user-settings location and normalize its XDG prefix for their authored case dimensions; these fixture values are not production settings writes or a changed token ceiling.
+
 ## Grant answer row scope
 
 The added direct_execution_grant row belongs to the interim answer contract; its map/roster assertions are structural evidence, not L94 completion or full-final answer acceptance. Retained final-row exceptions and historical counts remain attributed.
@@ -37,3 +39,6 @@ The added direct_execution_grant row belongs to the interim answer contract; its
 
 - Each row carries fields, uses, cases, bound and interim ownership. [1]
 - Rows are validated against missing uses, extra fields and over-bound cases. [2]
+
+- An explicitly over-long log path becomes its exact length and digest. [3]
+- Authored install-case dimensions normalize the current user-settings XDG prefix. [4]

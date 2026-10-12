@@ -22,8 +22,12 @@ second river row; failed writes answer as written while the count rides the next
 and clears after success; every append lands at or under the 16 MiB ceiling with the
 shared age/size cut; and a connected stream changes no file while naming the last feed.
 
+The surviving unit vehicle is `server_info` with its required response fields. Message fixtures use UUID recipients and the current launch-binding/StartingAgent shapes, patching the actual `_resolve_recipient` and `_deliver` lookups. These fixture repairs preserve facts-only events and role attribution rather than restoring removed tools or proving live host delivery.
+
 ## Evidence
 
 - The river test class pins each feed behavior end to end. [1]
 - Bound first call writes one event with caller and facts. [2]
 - Every append lands at or under the ceiling. [3]
+
+- Role-message fixtures carry UUID recipients and current binding/sender shapes at the actual lookup boundary. [4]

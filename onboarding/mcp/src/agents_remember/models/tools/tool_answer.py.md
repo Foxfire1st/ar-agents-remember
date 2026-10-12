@@ -6,6 +6,7 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
+- `direct_execution_grant` explicitly belongs to L111 in `INTERIM_TOOL_LEAF`; the roster/table must carry the same current tool rather than inferring interim ownership from a fallback.
 - Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.
 - The repaired current source explicitly assigns `retire_child` and `role_start_set` to
   L100 in `INTERIM_TOOL_LEAF` and includes L100 in `INTERIM_LEAVES`; these two declared
@@ -64,3 +65,5 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 - Each tool resolves its own bound from the exception table or the default. [4]
 
 </details>
+
+- The grant tool has explicit L111 interim ownership. [5]

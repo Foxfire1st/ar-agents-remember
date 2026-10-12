@@ -66,6 +66,10 @@ Recorded-meaning regression uses compose_review over converted trees, exact owne
 
 - Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
 
+## Tool regression witnesses on current input surfaces
+
+Surviving river and choke controls use `server_info` rather than the removed `ping`. Report fixtures seed canonical roots, the self-contained sweep obtains the guarded user-settings path and carries explicit grant/direct-leaf input, and overflow-sensitive tests assert displaced facts in the logged whole result. Packaging witnesses author fixture/XDG dimensions before production and compare emitted objects unchanged; log-path witnesses separate preservation within the length domain from exact length/digest shortening. These are assertion contracts, not a fresh whole-lane result or installed-host acceptance.
+
 ## Direct grant and preservation evidence
 
 Grant/dashboard, direct-leaf role/integration refusal, direct landing and no-grant closeout parity cases exercise their named fixture scopes. Low-level synthetic grants and consumer/lane catalogs are preparation/declarations, not live architect, host or fresh acceptance evidence. Enclosed/master response-preservation uses the explicit source-bound scrubbed comparison, not raw byte equality.
