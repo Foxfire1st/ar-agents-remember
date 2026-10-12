@@ -28,6 +28,11 @@ switches, the right-rail River/Chat toggle and its persistence, and the resizabl
 
 Vitest + Testing Library; views are selected by their radio name; fixtures come from the gallery.
 
+The scanline-removal case mounts `CockpitShell` and asserts that `.crt-overlay` is absent.
+It reads the actual `index.css` and requires no overlay selector, flicker keyframe or repeating
+line gradient, while retaining the alarm `pulse` and `html[data-effects="off"]` rules. This is
+source/render regression coverage, not a browser contrast measurement or a fresh execution here.
+
 ### Invariants And Boundaries
 
 The suite binds the shell's default view, the layout bleed set, the hidden-not-unmounted layer
@@ -148,10 +153,15 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
+
 - The suite mounts the shell and switches views through the mode bar. [13]
+
 - The layout matrix sources the retained pages only through their injected views. [14]
+
 - The view list the bar renders. [15]
+
 - The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [31]
+
 
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [28]
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [29]
@@ -165,8 +175,12 @@ No relevant domain documentation was found for this file.
 - The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). [38]
 - `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. [39]
 
+
 - The toggle cases assert the same document-chat node across the River/Chat switch. [40]
+
 - Both rail asides stay mounted under full-bleed views. [41]
+
+- The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze. [42]
 
 ### Cross-Repo References
 

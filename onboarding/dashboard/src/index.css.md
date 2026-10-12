@@ -19,9 +19,10 @@ S1 added the `webtui` slot); Panda's PostCSS plugin injects the generated
 `webtui` — slotted between `effects` and `tokens` so Panda tokens/recipes/utilities always beat
 WebTUI on a conflict, while the unlayered freeze below stays above it all. `@layer reset` (box-sizing + html/body
 reset), `@layer base` (body typography + the `h2`/`.muted`/`.raw-list` utilities moved here from the
-monolith), `@layer effects` (the global `.crt-overlay` — scanlines + the re-centred vignette +
-flicker). Four app-wide keyframes now live here: `flicker` (the CRT overlay), the shared `pulse` (the ≤3/s alarm
-flash used by blocked/alarm dots, signal-lost, `caution--alarm`, and the cockpit rail / topology), and —
+monolith). `effects` remains an empty slot in the order declaration: no scanline/vignette overlay rule or
+`flicker` keyframe remains, and Cockpit no longer mounts an overlay element. The two live app-wide
+keyframes are the shared `pulse` (the ≤3/s alarm flash used by blocked/alarm dots, signal-lost,
+`caution--alarm`, and the cockpit rail / topology), and —
 260715-FEUI-L2 — **`pulseSlow`** (the cockpit STATE pulse, developer ruling 2026-07-16): a SLOW
 ease-in-out opacity dip to 0.45 at 50%, driven at 2.4 s by `data/stateGrammar.ts`'s
 `PULSE_ANIMATION` and rendered only by `panels/session-cockpit/StateDot.tsx` — NEVER
@@ -76,7 +77,7 @@ The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` a
 the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
 `test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
 stays sovereign only while WebTUI ships no `!important` animation/transition — also asserted). Canvas animation is GSAP/Motion,
-not CSS keyframes (`05f` §8): `flicker` + `pulse` + (260715-FEUI-L2) `pulseSlow` are the global keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
+not CSS keyframes (`05f` §8): `pulse` + (260715-FEUI-L2) `pulseSlow` are the live global keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
 `animation: pulse …`), and `pulseSlow` is the RULED cockpit state pulse whose only sanctioned
 driver is the grammar/StateDot pair (2.4 s ease-in-out, never steps()). The native busy glyph
 and its `paseoAgentSpin` keyframe went with the dashboard sidebar (MIK-R75 rule 7). *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
@@ -86,9 +87,10 @@ reindex pulse from GSAP `data-fx='reindex'`.)*
 
 ### 2026-07-24 Curator Delta
 
-The CRT effects overlay no longer uses full-screen `mix-blend-mode:multiply`. Its unchanged translucent
-scanline and vignette treatment can remain a static compositor layer rather than forcing a whole-screen
-re-raster for scroll, video, or animation invalidations.
+The former CRT overlay avoided full-screen `mix-blend-mode:multiply` because that treatment forced
+whole-screen re-raster on scroll, video and animation invalidations. That causal performance lesson
+is historical: the overlay element, scanline/vignette rule and flicker keyframe are now removed.
+It is not a current instruction to mount or retain a static compositor overlay.
 
 ## Evidence
 

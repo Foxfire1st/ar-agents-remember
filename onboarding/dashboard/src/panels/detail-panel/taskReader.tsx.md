@@ -2,108 +2,41 @@
 
 ## Governing Overview
 
-[panels/ overview](../overview.md)
+[Panels overview](../overview.md)
 
 ## Purpose
 
-The task-document reader grammar of the DetailPanel, extracted from `DetailPanel.tsx`
-by the 260731-EFA-L8 split. Owns `TaskContent`, the master overview/step rendering
-(`MasterOverview`, `MasterSection`, `TaskReader`), the sub-task index with cross-series
-jumps (`SubTaskIndex`), the slice list, spine lane, section/bullets/step-list
-primitives, skipped dispositions, code examples, and the on-demand task-body notice.
-
-
-## 260831-CCR-L23 Task-Requirement Boundary
-
-L23 mounts a `TaskRequirementBoundary` around both `MasterOverview` and
-`TaskReader`. The boundary renders a `TaskRequirementLinksProvider`
-(`grammar/TaskRequirementLinks.tsx`) scoped to the viewed task document
-(`repo=doc.repository`, `master=dirName(doc.docPath)`,
-`document=taskDocumentRefForDoc(doc)?.path`) and forwards the panel's
-`onOpenNotes` as its `onOpenArtifact`. Task prose and the mounted
-`TaskNotes` surface therefore see the registered requirement listing and can
-open requirement packets through the internal reader. Non-requirement rendering is
-unchanged.
+Compose one fixed document reader skeleton per sprint, master and task form. Identity/head, bounded block implementations and own-view dispatch have their own modules; this file owns their page order, selected-document state lifetime and navigation wiring.
 
 ## Code Commentary
 
-### Logic
+The shared head contains the objective first under the title, then facts/notes. A sprint composes Now, its scoped closeout queue, inline Order rows, grouped Masters, Requirements, Registers, Decisions/Open questions, Further notes and Notes. A master keeps Now, grouped Tasks, Requirements, Decisions/Open questions, Further notes and Notes; its task order remains received order. A task keeps Steps, Review, Requirements, Design, proposed-code titles, Decisions/Open questions, one References and reports block, Further notes and the single Notes line. Each block omits actual absence; introducing structured prose and discarded-before-start audit remain meaningful content, not duplicate lists.
 
-Since 260815-DAG-L14 `SubTaskIndex` also renders typed sprint rows: a row carrying a
-`masterRef` (with a projected target via `docPathForRef`) opens the commanded master document
-directly through `MasterRefIndexRow` (the `⇒` master link — the sprint → master leg of the
-drill-down); an unprojected `masterRef` target falls through to the older slice/static behaviors.
+Every reader is keyed by `docIdentity`: choosing a different document resets its own view, objective/note/row expansion, while body arrival for the same identity preserves reader state. `TaskRequirementBoundary` scopes the existing requirement-link provider to the viewed repository/task document and forwards internal artifact navigation on every form. Own-view content uses `DocContentView`; form-specific collection, whole-graph and code-example views stay here.
 
-`TaskReaderSections` walks the task document sections; `SubTaskIndex` renders rows and
-guards the `linkedLifecycleId` cross-series jump; `TaskBodyNotice` reflects the
-on-demand body state; the small primitives (`Section`, `Bullets`, `StepList`,
-`CodeExample`) render markdown-model content without a markdown renderer.
+Task report requests pass the task-root-relative document path from `taskDocumentRefForDoc`, falling back to docPath only when no reference resolves. A projected filesystem path is not the server's canonical report address. Ancillary references/reports and Notes are mounted after body loading settles; the task's final Notes island reads the root-folder count, never the note tree or content. Full-body unavailability keeps honest summary fallback.
 
-### 260928-MIK-L126 Current Delta — Decision Preview
+Typed commanded-master and cross-series index navigation moved to task-groups.tsx. DecisionPreview moved to skeletons.tsx but remains re-exported for existing consumers; its five-newest-authored and whole-log semantics are preserved. A graph-less sprint can still show its scoped closeout queue; the full wave-grid graph is now an Order own view, not a second inline list. Discard-before-start remains an audit distinct from live rows and completion totals. A master-less series retains the clickable slice-list fallback and its creation ordering.
 
-`DecisionPreview` draws the five newest authored decisions newest-first with an
-`all N decisions` link opening the whole log on its own reader page. Ordering comes from
-`orderDecisionsNewestFirst` (parsed recorded time, stable fallback); product-written records
-are muted per the architect time-order ruling. The task page mounts the `TaskNotes` line,
-references and recorded reports; the preview's `DecisionList` (taskReader line 936,
-used by `DecisionPreview` at 981) renders the newest five on the task page, while
-the whole log renders separately in the reader (`DecisionsPane` at
-NotesReaderViewer 457 onward, newest-first, product records muted).
+## Boundaries
 
-### Conventions
+No authored document-model mutation, lifecycle acceptance or native review occurs here. The grant control posts Give/Revoke through its dedicated adapter; this is external-store mutation, not task JSON authoring or browser permission authority. Form-specific rendering follows projected form with the model's older-cache fallback. Shared Panel/Markdown/token styling remains unchanged; pageStyles.ts scopes the task-page look. The lifecycle spine, change-set authority, requirement reader and Notes transport keep their existing owners.
 
-Presentational grammar; the panel owns data wiring.
+## Landed direct-grant control in the fixed pages
 
-### Invariants And Boundaries
+The sync retains L94's `rowDirectGrant`/`DirectGrantControl` block and `grantButton` style byte-for-byte at their landed owner. The React import gains `useEffect`, `useRef` and `useState`; `ReactNode` was already imported. The control offers developer Give/Revoke only for an authored subTask with a canonical document reference, disables pending actions, and exposes typed refusal. The backend owns the ordinary-start evidence gate; a local badge or control state cannot authorize direct execution.
 
-The reader renders `TaskDocNode`/`SeriesNode` content only and never mutates it.
+`leafRowGrant` supplies the giver badge and preserved control through the `LeafExtra` row adapter to master Now, waiting Tasks, and leaf group-view rows. `TaskDirectGrant` places the selected leaf's badge/control directly below DocHead. Row badges are beside the drill-in link, not inside it; the selected badge is below rather than inside the bounded head. These are explicit placement differences, not an equivalent-layout claim. Sprint/master rows receive no leaf control. Passing the adapter into task-groups avoids importing the reader back into the row module.
 
-### Todos
-
-None recorded.
-
-## Task-local direct grant control
-
-The task reader shows readable grant badges/giver details on canonical leaf and child rows. DirectGrantControl offers developer Give/Revoke for kind=subTask with a canonical docRef and disables actions while a request is pending; it does not filter ordinary start evidence in the browser; the backend owns the complete ordinary-start evidence gate, posts through the grant adapter and surfaces typed refusal. It consumes live projection/get evidence; local UI state or a badge cannot authorize execution or write task JSON.
+Reviewer source-only placement/sync PASS does not establish whole-feature or MEMORY acceptance. The retained Worker eslint capture exits 1 with exactly the three Owner-admitted L150 errors in the unchanged control; the reader is not lint-clean. The inherited Python-format hunk, absent new layout picture and spent ONE campaign remain separately disclosed in task evidence. New memory review is delta reading only.
 
 ## Evidence
 
-### Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation source is
-configured for this file.
-
-No relevant domain documentation was found.
-
-### Repo-Internal References
-
-- The reader entry and master overview mount optional graph content. [1]
-- The sub-task index composes rows in received order. [2]
-- The slice list orders and opens authored task documents. [3]
-- StepList renders implementation steps, nested substeps, and explicit skip dispositions. [4]
-
-- The preview draws five newest decisions with the whole-log link. [5]
-- The task page mounts the notes line, references and reports. [6]
-
-### Cross-Repo References
-
-No cross-repository implementation source governs this file.
-
-No applicable cross-repository source was found.
-
-
-## 260815-DAG-L12 Sprint Graph Section
-
-`MasterOverview` mounts optional `SprintGraphSection` graph content and, independently, this sprint's
-scoped `CloseoutQueue` (`sprintRef` = the viewed doc's ref). Graph absence is valid for a reviewed
-atomic-sequential sprint and does not hide scheduling state. A non-sprint master still omits both
-sprint-only surfaces.
-
-## 260821-CLIVE Discard Audit And Graph-Less Scheduling
-
-`DiscardedSubTaskHistory` renders discarded number/name, reason, `discardedAt`, and proof fingerprint
-in a separate `Discarded before start` section. It is audit history, not part of the live sub-task list
-or completion count. The queue mount is outside the optional graph branch so a graph-less sprint can
-still show exact-current scheduling projection state. `MasterOverviewHeader` is a behavior-preserving
-extraction of the existing kind/title/status header, body notice, and change-set bar;
-it keeps `MasterOverview` within the function-size gate without changing render order or conditions. No aggregate token summary renders anywhere in the reader.
+- Reader entry dispatch selects the sprint/master/task skeleton for the resolved document. [1]
+- Typed form pages retain their index and own-view composition owners. [2]
+- The master-less slice fallback retains authored-document navigation and creation ordering. [3]
+- Task-only steps are rendered by the shared table owner rather than the retired StepList primitive. [4]
+- The relocated preview preserves newest-authored selection and whole-log navigation. [5]
+- Task references/reports use a task-root-relative document address after body loading settles. [6]
+- The landed control retains its authored-leaf guard, pending state and typed refusal without browser authorization authority. [7]
+- Leaf-row and selected-leaf adapters place the preserved badge/control in the fixed page structure. [8]

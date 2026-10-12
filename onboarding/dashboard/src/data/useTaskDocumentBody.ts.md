@@ -7,7 +7,7 @@ frontend source overview governs this reader-state hook.
 
 ## Purpose
 
-Owns visible task-document body hydration, availability state, and revision-aware browser-session
+Owns visible task-document body hydration, availability state, and revision-aware mounted-hook-instance
 caching. It gives `DetailPanel` one authoritative state for rendering complete task content first and
 for delaying lower-priority reader requests until the body fetch has either succeeded or failed.
 
@@ -19,8 +19,13 @@ for delaying lower-priority reader requests until the body fetch has either succ
 only the currently displayed document through `fetchTaskDocument`, stores the successful body payload
 separately under the combined key, and merges that payload into the current summary at render time.
 The effect depends on the stable path/revision identity rather than the projected `TaskDocNode` object,
-so analytics projection replacement does not cancel or duplicate an unchanged request. The merge
-explicitly keeps summary arrays when the response omits them. The hook reports `loading`, `available`,
+so analytics projection replacement does not cancel or duplicate an unchanged request. The body supplies
+long-form objective, requirements, design, code, decisions, questions, references, sections and sub-task
+content; absent response fields retain the summary. Identity, status, progress and review facts remain
+those of the current summary. For a matching body revision, marked truncated status/step text is restored
+only when the body carries a strictly longer string; steps must agree in count and ordered IDs. A matching
+review round can restore the full findings list or longer marked descriptions without replacing the
+summary's whole-round counts. The hook reports `loading`, `available`,
 or `unavailable`; `documentFor(doc)` substitutes a body only when that document's path and revision
 match.
 
@@ -44,18 +49,15 @@ components unmounted until body hydration reaches a terminal state.
   accidentally retry it.
 - Summary content remains renderable while loading and is the fallback when the full body is unavailable.
 - No retry timer or request fan-out is introduced here.
-- The endpoint returns a full fetch-time task node. Its present scalar fields (including status, steps,
-  title, and progress counters) can mask fresher summary values because `bodyRevision` hashes authored
-  body fields only; this pre-existing staleness window is not solved by the hook.
+- A cached body never replaces the current summary's head, step states, review round or aggregate counts.
+  Matching-revision hydration expands previews; an older body contributes long reader content only.
 - The hook does not decide which task document is visible and does not perform path confinement; those
   responsibilities stay with `DetailPanel` and the serving endpoint respectively.
 
 ### Todos
 
-- Reviewer note: consider a follow-up to widen `bodyRevision` or prune cached payload fields if the
-  product requires post-hydration progress/status freshness. This leaf preserves the existing
-  endpoint and revision contract.
-- The browser-session cache is revision-safe but unbounded; it has no eviction policy.
+- The mounted hook instance keeps revision-safe, unbounded body/state storage with no eviction
+  policy. Unmounting discards that hook-local cache; it is not browser-session persistence.
 
 ## Evidence
 

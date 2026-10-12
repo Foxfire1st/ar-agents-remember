@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_task_page_skeleton_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29ad1ea0b9e4a72cc76e66be63dbc0bd0a63bcbc",
+            "content": "sha256:cbdc66439773739c9ef533a35ba83a140207c7f6650d11a756c4bedb44e2c332",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

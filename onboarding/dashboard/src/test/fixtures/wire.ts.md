@@ -59,8 +59,14 @@ shapes and vocabularies the fixture contract explicitly measures.
 - **The bases** cit:([`BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`, `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`], dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
   `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Since 260815-DAG-L14 `BASE_TASK_DOC` also defaults `seats: []` (the new required
 `TaskDocNode` field). Each is annotated with the
-  mirror type AND assembled from a served row, so it is pinned from both sides at once: a required field
-  the server adds fails to compile until it is filled, and it can only be filled from a served row.
+  generated mirror type, so a new required field fails compilation until the base supplies it.
+  Values have distinct origins: copied served fields, derived fields and explicit neutral defaults.
+  In BASE_TASK_DOC, form is recomputed from served kind/orchestrates; type is an empty string,
+  headerNotes an empty list and statusNoteTruncated false. Those four typed neutral/recomputed
+  defaults are Owner-admitted; construction does not prove they were copied from the sample.
+  Existing literal collection defaults predate this change. This is not permission to invent wire
+  fields or cast past the generated contract. The source header's stronger every-value-from-served
+  sentence is retained as the Owner's mark52, not an operative provenance guarantee here.
   **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `carryoverDoneAt`, …) are left
   off on purpose — a default gate nobody asked for would silently change what an attention-queue test is
   measuring.
@@ -100,8 +106,10 @@ shapes and vocabularies the fixture contract explicitly measures.
 
 - A test builds a projection node here or annotates/`satisfies` it — it does not cast it.
   `wireFixtureGuard.test.ts`'s failure message says so in as many words.
-- The bases must stay served-derived. Replacing a `SERVED_*.field` with a literal removes the second
-  pin and leaves only "the mirror could produce this".
+- Keep wire-shape authority distinct from initializer provenance: copied served fields retain the
+  sample pin; a derived or neutral default supplies type-correct construction, not producer-value
+  evidence. BASE_TASK_DOC's four stated defaults are the scoped Owner-admitted exception; do not
+  broaden it into arbitrary consumer-authored semantics or an undocumented exception elsewhere.
 - `projection()` must keep deriving `metrics`. Passing a hand-written `metrics` override is possible and
   is the escape hatch, not the default.
 - The conversation grammar is NOT here — it lives in `fixtures/conversationWire.ts`, which mirrors a
@@ -149,9 +157,9 @@ does not.
 - The sample covers declared structural paths except explicit residue. [9]
 - Every sampled registered vocabulary value must be legal. [10]
 - The contract keeps master and series sub-task row fields distinct. [11]
-- How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. [12]
+- Required base fields are typed, with copied, derived and explicitly neutral defaults distinguished; optional behavior is requested deliberately. [12]
 - `demandServed` and the eight served anchors it demands the snapshot keep. [13]
-- The eight bases, each annotated with a generated mirror type and filled from `SERVED`. [14]
+- The eight bases are annotated with generated mirror types and rooted in served samples; that does not make every initializer a copied value. [14]
 - `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. [15]
 - `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. [16]
 - `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. [17]

@@ -21,6 +21,9 @@ contract (jsdom cannot evaluate media queries or `ch` units).
 - `leafLineStyles`: one ellipsized leaf line whose visible character range grows with the
   viewport — `maxWidth: min(100%, 30ch)` base, stepped up to `48ch` at `sm` and `72ch` at
   `lg` (Panda CSS breakpoints); exported so tests pin the ch-based growth.
+- nodeFade supplies a 150ms opacity/border-colour transition; nodeHot/nodeDim/nodeMarked express the
+  selected/related/dimmed state. The graph caller omits nodeFade under reduced motion while preserving
+  its shared pointer rest; this CSS does not own the delay.
 - The remaining exports are Panda `css()`/`cva()` tokens: `graph` (column flex),
   `wave`/`waveHead`, `waveGrid`, `box`/`boxHead`/`boxTitle`, the `frontier` cva
   (landed/ready/waiting/in-flight/abandoned color variants), `leaves`/`leafLine`, `lump`, and

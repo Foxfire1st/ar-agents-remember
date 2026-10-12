@@ -12,7 +12,7 @@ the PTY renderer measurement harness (260715-FEUI-L6, master OQ-B); `/dev/bench`
 gallery; `/dev/flows` = the lifecycle-design canvas (orchestration L0);
 `/dev/document-chat-host` + `/dev/fake-paseo-host` = the MIK-R121 cross-workspace chat repair rig
 (real document chat against the fake two-workspace host running the real plugin bridge);
-otherwise a small index.
+`/dev/task-skeletons?form=sprint|master|task` = the real DetailPanel on an isolated seeded surface; `long=1` and `rich=1` disclose synthetic content modes, and `width` sets the panel container. Otherwise a small index.
 
 ## Code Commentary
 

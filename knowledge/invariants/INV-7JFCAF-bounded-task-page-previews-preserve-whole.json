@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Projection bounds and view navigation must jointly preserve content/count truth across independent owners."
+  },
+  "applicability": "Task-document summary/body projection and bounded document own views.",
+  "conditions": [
+    "Header notes have6 summary slots, decisions5 and review findings25; counts name whole populations.",
+    "Requirements/references preview8 lines and registers5 rows.",
+    "Back uses the same actual scroll owner selected on entry."
+  ],
+  "exclusions": [
+    "Virtualizing or dropping complete content.",
+    "Treating visible-row length as total or open-finding count."
+  ],
+  "id": "INV-7JFCAF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R127-v1-a-task-page-has-one-skeleton-per-form.md rules1-9; source/card witnesses in this entry; approved D219 objective-first amendment. No fresh test execution."
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "curator-bounded-summary-and-own-view",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bounded task-page previews preserve whole producer counts and one-link access to complete content; own-view Back restores the scroll owner captured at entry, rather than converting a clipped preview into a new content authority.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Document-keyed state prevents an expansion or own view from another task leaking into the selected task while avoiding destructive resets on ordinary refresh."
+  },
+  "applicability": "Local expansion/own-view state of a selected sprint/master/task document reader.",
+  "conditions": [
+    "A different docIdentity starts with the objective clipped, note/row disclosures closed and the main page selected.",
+    "Same-document refresh preserves the open state."
+  ],
+  "exclusions": [
+    "Resetting the panel scroll position on document navigation (separate deferred mark).",
+    "Changing task identity or durable state."
+  ],
+  "id": "INV-1XA7H3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/selection-state.test.tsx: five tests; with the key taken out four fail and the same-document case passes (notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f6/checks/selection-tests-without-the-key.log)"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "F5-V02",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "What a reader opened on a task page belongs to that document: the next document selected starts with its objective held, its note lines closed, its rows closed and its page instead of a view of its own, while the same document keeps what is open when its data arrive again.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/skeleton-order.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb35667be29b799df362995160248b6f2e780f10",
+            "content": "sha256:b246b2beed3e74fec1817d9fa975bb51c66fabc9ccc733396d25fbc146f7b61e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

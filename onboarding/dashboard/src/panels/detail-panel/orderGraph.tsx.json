@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/detail-panel/orderGraph.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+        "content": "sha256:19533bb46ab6513b3480fc58739f99fba9345ed7c450e8bb72ed04dd0da3abc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "OrderBlock"
+        }
+      },
+      "id": "RLZ-4ZVZXW",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L127-F5 sprint Order block",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the block: the row of what is done with the link to the whole graph, the rows by wave, the key and the line that says what it is drawn from.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+        "content": "sha256:28a76feb47ac1c69c6a6efa121e4139f3868af5c1f8963ccc010c004b87f0885",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderRows"
+        }
+      },
+      "id": "RLZ-DST0RZ",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L127-F5 sprint Order block",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Sorts the projected units into the row of work in progress and one row per server wave; it derives no wave and no state of its own.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+        "content": "sha256:29a2f989edbe12efddfeb51bb90665e862c50471aa00dfeb2759338ebcb5463e",
+        "locator": {
+          "kind": "symbol",
+          "name": "OrderRowsView"
+        }
+      },
+      "id": "RLZ-EDFDJW",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Wires pointer and focus of the rows to the shared rest logic and gives every mark its state: none, self, related or other.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The Order preview preserves projected wave/frontier facts and keeps the complete graph one link away.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+            "content": "sha256:19533bb46ab6513b3480fc58739f99fba9345ed7c450e8bb72ed04dd0da3abc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrderBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared rest/focus/reduced-motion behavior governs inline relations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+            "content": "sha256:29a2f989edbe12efddfeb51bb90665e862c50471aa00dfeb2759338ebcb5463e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrderRowsView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/detail-panel/older-server.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "170d3ca3914cc9d0b633d6ae2eb96087ea6a9370",
+        "content": "sha256:27c4471e5270c6bacdb8ba3cda1b0c228dd95f0ff64cd0712d759ffa6e6a7a3c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4BA1K8",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The witness of the recovery clause: both recordings reach the page as the text of a snapshot frame through connectState and as the answer of /api/task-document, with no cast and no fixture builder.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "170d3ca3914cc9d0b633d6ae2eb96087ea6a9370",
+            "content": "sha256:27c4471e5270c6bacdb8ba3cda1b0c228dd95f0ff64cd0712d759ffa6e6a7a3c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

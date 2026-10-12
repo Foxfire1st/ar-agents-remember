@@ -23,8 +23,9 @@ the compact `TaskNotes` line + resolved references + recorded reports remain the
 
 - `NotesReaderViewer.tsx` — the screen. LEFT RAIL = the shared `ExplorerTree` fed one folder at a
   time from `/api/notes/folder`, filling to the open note, emptying a vanished folder with the
-  server's reason, and holding at most 32 folders with LRU eviction that never touches the open
-  note chain. CONTENT PANE = the opened note (`/api/notes/read`) rendered by **reusing
+  server's reason, and targeting 32 cached folders with LRU eviction. The inserted directory and
+  the open note’s ancestor folders are protected: if no unprotected victim exists, eviction stops
+  above the target. This is not an unconditional 32-folder ceiling. CONTENT PANE = the opened note (`/api/notes/read`) rendered by **reusing
   `DualPane`**: a markdown note takes DualPane's partnerless-markdown path (the File Viewer's route-overview
   treatment), a text note renders through DualPane's `CodeSide` (read-only CodeMirror), a binary note
   degrades to the byte-count placeholder; loading/failed show a local `note-status` placeholder. The view is

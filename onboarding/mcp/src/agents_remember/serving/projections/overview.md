@@ -160,6 +160,15 @@ The projection route attaches the newest validated lifecycle operation to its ow
 serves bounded phase, timing, command, report, and recovery guidance. Durable store state remains
 authority; projection never exposes worker or resume identity.
 
+## Summary Windows And Full-Body Identity
+
+The task-document reader computes whole counts before bounded preview selection (six header notes,
+five decisions and twenty-five review findings); the full-body mode retains complete strings/collections.
+Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
+status, step/sub-step note/outcome and review changes participate in body revision identity. These
+read-only projection/display additions preserve the bounded canonical enumeration and graph-only
+on-demand joins below; they create no task, acceptance or scheduling authority.
+
 ## 260815-DAG-L14 Projection Route
 
 `snapshots_impl/_task_documents.py` passes `SubTaskRef.masterRef` through and projects

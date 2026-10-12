@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
             "content": "sha256:d60672d97d7348ea7c088e8a2f419f15b7e9315a72449a636c2fab1bf82c599b",
             "locator": {
-              "end": 9,
+              "end": 10,
               "kind": "line_range",
-              "start": 9
+              "start": 10
             },
             "path": "dashboard/src/index.css"
           },

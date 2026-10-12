@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/series-form-dispatch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4944f0d1dda7e3bfe3e652fce39b8817497cdc0",
+            "content": "sha256:ac493d26d41eebae3eefab2d3872d6c10c3e8fd93c86509f45ebb5a147b9024d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

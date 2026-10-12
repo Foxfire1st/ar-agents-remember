@@ -27,6 +27,16 @@ labels (`← {predecessorTitle} — {reason}`, keyed by ref) when present. The c
 memoized; no layout algorithm lives here (coordinates come from the server-derived
 `waveIndex` — the documented L12-R3 fallback).
 
+### Shared marking and Markdown edges
+
+useRestHighlight waits GRAPH_REST_MS (180ms) before pointer marking, preserves the old mark while
+resting on a neighbor and marks keyboard focus immediately. The whole graph also supports a pinned
+node surviving blur. relatedGraphNodes includes the selected master's segments, its predecessors and
+its dependents by qualified references. Both helpers are shared by the inline sprint Order rows.
+useReducedMotion disables the fade, not the rest. Unmount clears the outstanding timer.
+GraphPredecessors renders the edge reason through inline Markdown, preserving actual links.
+These interactions do not replace projected wave/frontier authority or introduce another graph model.
+
 ### Conventions
 
 - Deterministic render: nodes arrive ordered; the component preserves that order.
@@ -51,7 +61,7 @@ None.
 - The wire model consumed. [2]
 - The responsive grid/leaf contracts. [3]
 - The component forcing suite. [4]
-- The sprint page that mounts it. [5]
+- The sprint Order own view mounts this complete graph rather than a second inline wave-grid list. [5]
 
 ### Cross-Repo References
 

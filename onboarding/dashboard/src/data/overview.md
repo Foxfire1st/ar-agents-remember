@@ -37,7 +37,9 @@ The per-hunk marker scope keeps one answer per changed path per surface, so reop
 asks nothing. `useReviewFileClassification` is no longer an exported hook. A dataset review names no
 comparison and its marker scope asks nothing.
 
+
 - One file's classification as a single read; a transport failure is `unavailable`. [2]
+
 - The scope that keeps it per surface, only for a tree comparison. [3]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
@@ -55,8 +57,12 @@ lane. A dataset review names no comparison, so the lane hook and marker scope as
 (`ReviewLaneSummary`), from the same summary response, on the counted/partial state and on the refused state alike
 (ruling Q6); the entry therefore never asks for it more eagerly than for the intent counts (MIK-R32 rule 9).
 
+
 - The adapter's own statement: the server classifies once and this file only carries the answer. [4]
-- The two reads; none for a dataset review. [5]
+
+
+- The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison. [5]
+
 - The summary carries the lane's count on both answered states. [6]
 
 ## 260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address
@@ -119,19 +125,37 @@ memory is converted.
 
 - The module comment: what the adapter carries and the three answers it keeps apart. [60]
 - The answer of the route. [61]
+
 - One entry on both code sides. [62]
+
+
 - The request, addressed by number, recorded or invariants, with the optional signal. [63]
+
+
 - The transient codes and the retry delays. [64]
+
+
 - The bounded retry of a transient refusal. [65]
+
+
 - One answer as a read state. [66]
+
+
 - The comparison a payload names; without it no tree read is made. [67]
+
+
 - The entries hook aborts a superseded read and returns null without a comparison. [68]
+
+
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
+
 - The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
 - A superseded request is aborted and only the newer answer is shown. [71]
 - Loading stays shown during the retries. [72]
 - Unavailable is shown only after the bounded number of retries. [73]
+
 - No camelCase key in the real body. [74]
+
 
 ## 260921-ICR-L44 The Family Mirror Carries Each Source's Locator, Ranges And State
 
@@ -410,6 +434,16 @@ ingestion, ordering/filtering, scheduling, and lifecycle authority remain unchan
   history/index/resume is now served by the `conversation/` and `conversation-library/` projections
   documented above.
 
+## Task-Body Currentness And Report Addressing
+
+`useTaskDocumentBody` hydrates longer/full body content by path and body revision without replacing
+current summary identity, status, progress or review aggregates. A matching body revision can restore
+body previews/full collections, while a changed-summary mismatch retains its current facts. First body
+loading settles before the page's ancillary Notes/report/counter requests mount; this is page scheduling,
+not a second transport owner. `taskReports.ts` still lists recorded starts in one bounded request;
+the relocated page passes each reader target the path inside the task root rather than its physical
+projected file path. None of these display changes grants canonical task or report write authority.
+
 ## Hot Path Summary
 
 TES-L6 adds sprint-qualified command-seat projection here: terminal rows carry stored
@@ -487,9 +521,15 @@ No applicable cross-repository source was found for these browser state/authorit
 - Structural task hierarchy and diagnostic spawn ancestry are built as separate models. [23]
 - The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. [24]
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
+
 - Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
+
+
 - The server series builder sorts only fully stamped rows before projection. [27]
+
+
 - The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
+
 
 ## Current Requirement Artifact Boundary
 
@@ -558,15 +598,29 @@ some other kind mapped onto one. The entry request names **no subject at all**, 
 of the same rule: it asks the server to select one. The file's own card carries the type-by-type
 detail.
 
+
 - The route's read-only client and its comparison call. [29]
+
+
 - **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
+
+
 - **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
+
 - **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
+
 - The endpoint the comparison call reaches, with no path among its parameters. [33]
+
 - The closed selector union, the two kinds the server admits. [34]
+
 - The no-store-mutation boundary, stated in the module header. [35]
+
+
 - The typed result the client returns unchanged. [36]
+
+
 - The field-for-field mirror of the server's review payload. [37]
+
 
 ## 260921-ICR-L2 The Review Client Mirrors The Inventory And Asks For The Task's Own Review
 
@@ -582,11 +636,19 @@ parameters at all** when there is none, which is the task-context request. The m
 field the server omits is absent here rather than defaulted — now covers an entire absent identity, and
 no fallback value was introduced for it.
 
+
 - **The inventory's wire types, including the byte form of a name this surface cannot print.** [38]
+
+
 - **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
+
+
 - The payload whose comparison may be absent, and the pane that says which question was answered. [40]
+
 - **The request that omits the selector when there is none — the task-context entry.** [41]
-- The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. [42]
+
+- Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. [42]
+
 
 ## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
 
@@ -626,13 +688,19 @@ request still names the task context alone.
 The consumer is the `panels/` route's Source pane, which mounts the new renderer beneath an openable
 inventory row; the file's own card carries the type-by-type detail.
 
+
 - **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** [43]
+
 - **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [44]
 - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
 - **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** [46]
+
 - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
+
 - Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. [48]
+
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
+
 
 ## The Review Reads' Transport Owner
 
@@ -674,7 +742,9 @@ changes what a successful master read carries, not what a failed one reports —
 **routed to R12/R24**. `data/changeset.ts`'s card carries the body update and citation
 re-derivation.
 
+
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
+
 
 ## 260921-ICR-L10 The Review Client Carries A Page, And One Normaliser Owns The Two Spellings Of "No Page"
 
@@ -773,7 +843,9 @@ said something the server did not:
 - **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
 - **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
 - **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
+
 - **The optional family context whose absence says the body did not come from this route.** [58]
+
 
 
 ## Current enclosure-only composition

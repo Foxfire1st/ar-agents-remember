@@ -3,8 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-        "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskReportRows"
+        }
+      },
+      "id": "RLZ-26N9GM",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Bounded recorded-start rows retain the counted complete explorer link.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "content": "sha256:cd701df369ce2b4945dadf6575293fe93ec053552aaa60bb6095648743ec0cc3",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskReferencesAndReports"
+        }
+      },
+      "id": "RLZ-8VD0T2",
+      "invariant": "INV-ANN2YJ",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (e)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one block that draws references and reports under one heading, 'References and reports'.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "content": "sha256:dd42f8568cf691d1a33e5c8ebf0283b47f782376ed0d1ab103a166feadfe00a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReferenceRow"
+        }
+      },
+      "id": "RLZ-C7X56M",
+      "invariant": "INV-E9DYQ7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (f)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws a reference as its words carrying the link and its path as plain text beside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
         "locator": {
           "kind": "symbol",
           "name": "TaskNotes"
@@ -18,6 +72,24 @@
       },
       "rationale": "This component draws the Notes line from the root folder total only, and opens the folder target the reader understands.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReferenceRows"
+        }
+      },
+      "id": "RLZ-VTYFGA",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Complete reference rows retain actual provider/server-resolved navigation.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -33,6 +105,22 @@
               "name": "listFolder"
             },
             "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:59bebb3e951a81ae0760dbbb178f415e4127df07eb2c3ee58b9c5d46a49c64ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "useResolvedNotes"
+            }
           },
           "kind": "code"
         }

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Whole declared progress and one next-step mark prevent a visually bounded table from lying about the task; the state derivation and table live separately."
+  },
+  "applicability": "The task-page Steps table and step/substep progress marks.",
+  "conditions": [
+    "Counts/marks include every declared step and nested step.",
+    "The first not-done step is the next mark; derived skipped/done state is not a second task authority."
+  ],
+  "exclusions": [
+    "Drawing nested notes, which is deferred separately.",
+    "Changing canonical task step state."
+  ],
+  "id": "INV-DMAS27",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'draws mark, number, title and state per step, with the progress in the heading', 'marks the first step that is not done as the next one'"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The steps of a task are one table with mark, number, title and state per step; the marks and the count in the heading run over every declared step, nested ones too, and the first step that is not done is marked as the next one.",
+  "status": "proposed",
+  "supersedes": []
+}

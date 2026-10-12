@@ -1,0 +1,126 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The documented rejected import-cycle and extraction alternatives constrain where the retained control can live and how fixed-page rows obtain it."
+  },
+  "alternatives": [
+    {
+      "option": "Keep rowDirectGrant and DirectGrantControl byte-identical in taskReader; pass a LeafExtra function to the three leaf row kinds and draw selected-leaf control below DocHead.",
+      "reason": "Preserves landed control and test IDs while avoiding a reader/groups import cycle and keeps the bounded L127 head unchanged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Import the reader control directly into task-groups.",
+      "reason": "The reader already imports groups; reversing the dependency introduces a lint-rejected import cycle.",
+      "reconsider_when": "An admitted dependency restructuring provides an acyclic owner without changing the preserved control contract.",
+      "status": "rejected"
+    },
+    {
+      "option": "Extract the landed control into a new source file during this sync.",
+      "reason": "Moves the incoming control out of its landed owner and gives an added file the three inherited diagnostics; not admitted by the current port/closeout scope.",
+      "reconsider_when": "The inherited lint debt is repaired under its owner and a separately admitted extraction preserves the control and dependencies.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Selected-leaf badge is below the head; row badge is beside its link. These are explicit placement differences, not layout equivalence.",
+    "Only authored leaf rows/selected leaves receive the control; sprint/master exclusions and unchanged control/test bytes remain as source-qualified.",
+    "No new execution campaign, no whole-feature or MEMORY acceptance is implied by this decision."
+  ],
+  "context": "The direct-execution grant of MIK-R94 is shown in the task pages of MIK-R127 as it was on the pages before: on a master page each leaf row carries, beside its link, the badge with the giver where the leaf has a grant and the developer's control where the leaf is an authored task; on a task page the badge and the control stand under the head. The control and its helper are the landed code of MIK-R94, unchanged; only their call sites are placed in the new page structure. The rows take what the page adds to a leaf row as a function, because the row file cannot import the reader without an import cycle. Producer evidence: notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f9-on-857c7e5f/checks/l94-dashboard-tests.log (the nine tests of dashboard/src/panels/detail-panel/directGrantControl.test.tsx and the three of the grant's data module pass; the test file holds the bytes of the head); notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/sync-port-F9-on-857c7e5f.md (the ported hunks by file and line, the landed blocks compared byte for byte); notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/lint-record-F9-on-857c7e5f.md (the lint shows the three findings of the landed control and no other) Independent source-only placement/sync PASS: code-F9-857c7e5f-source-delta-verdict.md; no independent whole MEMORY grade or new execution.",
+  "decider": "Manager admitted L94 port preservation and source-delta continuation; Worker selected the acyclic row-adapter composition, source-only checked by Reviewer.",
+  "id": "DEC-T49E67",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "content": "sha256:8288d72b4ad3ed83fa7665c841ecc1a2781e6204bd0fb21f94671c7ae3e26287",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectGrantControl"
+        },
+        "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "content": "sha256:e4868e847d0a6b3cc2c219d4daa3e9c144bb3d12d18c9525b7224cbf13082b24",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowDirectGrant"
+        },
+        "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "content": "sha256:93044e5625357201d6ccf7473e491dd93818b4e81e46e7655bfe377c14c552a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "leafRowGrant"
+        },
+        "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "content": "sha256:43aa31f3bd0ca6e274db2984d5b48a278d61067b530d27cf7b83a028634fc552",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDirectGrant"
+        },
+        "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+        "content": "sha256:3b006595eaa5da0d884db33d12e04a2809c0042e3ed94c8c9b7604e13303220c",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafExtra"
+        },
+        "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "d4feecf411b06a3ce8d89a8be0fc0ca4faf88a85",
+        "content": "sha256:3de348a9b6e4f41f9a17d35b15e3970b5bb8fbc9d97a1ed883d4ba657d35e56c",
+        "locator": {
+          "kind": "symbol",
+          "name": "grantButton"
+        },
+        "path": "dashboard/src/panels/detail-panel/styles.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-replacement-and-renewal.json"
+    },
+    "handoffEntry": "L127 sync: the grant control of MIK-R94 in the task pages",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -4,6 +4,24 @@
     {
       "anchor": {
         "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+        "content": "sha256:aae4ce295eec7cb19758ecfdc94fc2320e525a8c8143706d3e87f50d144f1e78",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_task_reports"
+        }
+      },
+      "id": "RLZ-1Z16AC",
+      "invariant": "INV-GHZ8VQ",
+      "origin": {
+        "handoffEntry": "L127-F5 reports request",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The server's side defines the accepted forms of doc and refuses every other with 400, 'reports need the task document under this master'. Its comment makes the same wrong statement about dashboard paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
         "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
         "locator": {
           "kind": "symbol",

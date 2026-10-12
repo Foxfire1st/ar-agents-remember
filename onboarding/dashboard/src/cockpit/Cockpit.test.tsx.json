@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
-            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
-            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:ebdb381736927365a91e8048047c976911b24579448d9c6f494333e9a5045519",
             "locator": {
               "kind": "file"
             },
@@ -53,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
             "content": "sha256:0006f532816355515ca7b8825f236bddaa6c76fc721f96234f8f71b2e07b3932",
             "locator": {
               "kind": "symbol",
@@ -104,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
-            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
             "locator": {
               "kind": "file"
             }
@@ -119,12 +119,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
             "content": "sha256:dcbca4b3c626c1009559e837cf8833f2e00bccc1211ecac30198cb4598a36e14",
             "locator": {
-              "end": 810,
+              "end": 830,
               "kind": "line_range",
-              "start": 782
+              "start": 802
             }
           },
           "kind": "test"
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:605a3c8c62f810db79cee396a2e28df327b841366e5a9f81e5c3f15fef51af35",
             "locator": {
               "end": 818,
@@ -154,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
             "content": "sha256:7e3ee178fab22c2723bf326d2b17a5fda3173a28fdac77ae925c9578ecb1865f",
             "locator": {
               "kind": "symbol",
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
             "content": "sha256:e5d87286054a19ade1d7fb042fe56ff23faa4a7753171d51d1052315288c2c74",
             "locator": {
               "kind": "symbol",
@@ -234,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
             "locator": {
               "kind": "symbol",
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
             "locator": {
               "kind": "symbol",
@@ -268,8 +268,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
-            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
             "locator": {
               "kind": "file"
             }
@@ -283,8 +283,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
-            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze.\n\nAnchor: describe(\"no scanline layer over the cockpit",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
+            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
             "locator": {
               "kind": "file"
             }

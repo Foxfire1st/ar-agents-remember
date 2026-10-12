@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The overlay cuts letters and reduces readability across every view. The developer explicitly requested removing the global strip, not merely dimming or hiding it on task pages."
+  },
+  "alternatives": [
+    {
+      "option": "Remove the globally mounted scanline overlay, its CSS and flicker; do not expose a switch to restore it.",
+      "reason": "The overlay cuts letters and reduces readability across every view.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the global CRT strip over the application.",
+      "reason": "The developer explicitly requested removing the global strip, not merely dimming or hiding it on task pages.",
+      "reconsider_when": "A later developer-approved global rendering design explicitly replaces this readability choice.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Alarm pulse and the effects-off animation freeze remain; the effects cascade name is an empty ordering slot, not an overlay."
+  ],
+  "context": "D223 contrasts the proposal with the built dashboard global CRT strip; architect ruling a407a3e3 keeps the empty effects cascade slot.",
+  "decider": "developer D223; architect a407a3e3",
+  "id": "DEC-HCRZTM",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
+        "content": "sha256:368e66c4203e6e765465eb6e096b05d5d30b338eae66fb2cb0ce90c738fe64c6",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/index.css"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-decisions-family.json"
+    },
+    "handoffEntry": "dashboard-without-scanline-layer",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

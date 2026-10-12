@@ -48,27 +48,15 @@
       ]
     },
     "3": {
-      "note": "The master reader mounts the scoped queue independently of its optional graph section.",
+      "note": "The sprint reader retains its scoped CloseoutQueue independently of the optional Order preview and graph own view.",
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
-            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "blob": "15d1e88ad44244d392fe5d663457cdeb48fda888",
+            "content": "sha256:91a574b8a85a110788822e80737698d9174ee6a637ef1a59915db5cc1ab8df2e",
             "locator": {
               "kind": "symbol",
-              "name": "MasterOverview"
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphSection"
+              "name": "SprintPageBody"
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -99,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:aaf4594f61d735a88a3580e6cd5f5763836b37158ba663039a45051a4dc7aedd",
             "locator": {
-              "end": 717,
+              "end": 725,
               "kind": "line_range",
-              "start": 717
+              "start": 725
             },
             "path": "dashboard/src/types/projection.ts"
           },

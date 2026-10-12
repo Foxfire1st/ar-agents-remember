@@ -143,7 +143,7 @@ omits it).
 | [`FamilyTree.tsx`](review/FamilyTree.tsx.md) | The family tree: each family with its joint guarantee and the full statements of its members, unchanged siblings included. |
 | [`changeTriage.ts`](review/changeTriage.ts.md), [`ChangeBadges.tsx`](review/ChangeBadges.tsx.md), [`changeTraversal.ts`](review/changeTraversal.ts.md), [`triageOrderPreference.ts`](review/triageOrderPreference.ts.md) | Change kinds in the tree: order, counts and labels; badges, breakdown and the triage bar; the `j`/`k` traversal; the order preference. |
 | [`FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md), [`SubjectReview.tsx`](review/SubjectReview.tsx.md) | The central reading path: the family guarantee, the carried member context, the selected intent, the linked expressions and the evidence, with statements and evidence of the server-selected subject. |
-| [`SourceExplorer.tsx`](review/SourceExplorer.tsx.md), [`SourceContent.tsx`](review/SourceContent.tsx.md) | The complete list of changed files, independent of the selection, and what one listed file opens into: its content at the two bound code trees. |
+| [`ChangeSetViewer.tsx`](changeset/ChangeSetViewer.tsx.md), [`SourceContent.tsx`](review/SourceContent.tsx.md) | Changed-file navigation belongs to the comparison page; the selected source opens as its bound operands. The former SourceExplorer inventory is historical. |
 | [`ReviewRecordPanes.tsx`](review/ReviewRecordPanes.tsx.md), [`KnowledgeStatements.tsx`](review/KnowledgeStatements.tsx.md) | The record panes behind the "Technical details" disclosure: the knowledge, source, evidence and submission records of one admitted payload, and the statement area that draws each side by its declared state. |
 
 ### The reviewer stays mounted across subject selection
@@ -205,28 +205,46 @@ All mounted cases mount the real `ReviewSurface` and stub only `fetch`.
   - [`review/walkStore.capture-provenance.json`](review/walkStore.capture-provenance.json.md): 7 served bodies of the store-authored world of `mcp/tests/test_review_change_kinds.py`. They are [entries](review/walkStore.entries.captured.json.md), [shared](review/walkStore.shared.captured.json.md), [sharedPage](review/walkStore.sharedPage.captured.json.md), [FAM-F00001](review/walkStore.FAM-F00001.captured.json.md), [FAM-F00002](review/walkStore.FAM-F00002.captured.json.md), [FAM-F00001Continued](review/walkStore.FAM-F00001Continued.captured.json.md) and [INV-PPPPPP](review/walkStore.INV-PPPPPP.captured.json.md);
   - [`review/walkUnavailable.capture-provenance.json`](review/walkUnavailable.capture-provenance.json.md): the one genuine refused body [`walkUnavailable.refused.captured.json`](review/walkUnavailable.refused.captured.json.md) that the status-reveal cases replay.
 
+
 - The cockpit mounts the reviewer for a change-set target that carries a review, with its optional subject and history view. [130]
+
+
 - The surface's hook composes navigation, read cycle, cache, selection, refresh and retry, and the reading status. [131]
+
 - The workspace is mounted over the answer or the frame, and the records only over an answer. [132]
 - The read cycle: the read state bound to its question, and the task-context frame. [133]
 - The bounded cache of one mounted surface and its generation test. [134]
 - The one failure and refusal block, with the retry control of a network failure. [135]
 - The record panes behind the "Technical details" disclosure. [136]
 - The reading-area column is one node whose content alone is swapped. [137]
+
 - The weights of the change kinds and the two orders, which only reorder. [138]
+
 - The order preference and its storage key. [139]
+
 - The stops in displayed order, the stop at a partial family's control, and the end messages. [140]
+
+
 - A step focuses and clicks the stop, and the chords are bound on the reviewer's zone only when the tree has change facts. [141]
+
+
 - The end message is given out only beside the rows it was said for and is dropped in the commit that shows other rows. [142]
+
 - The tree draws the walked families, hands the traversal the rows it shows, and mounts the triage bar only with change facts. [143]
 - One step of the walk: an in-tree selection keeps, any other selection and another comparison replace. [144]
+
 - The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree. [145]
+
 - Every selection numbers the tree intent, keeping only with `keepTree`. [146]
+
 - A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again. [147]
+
 - The catalogue lists a row for every family the tree shows while one is kept. [148]
 - The kept tag and the scope line that counts kept families apart. [149]
 - The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it. [150]
+
 - The page controls: a next page only for a published cursor, and the refusal of a requested page. [151]
+
 - The mounted case of the key walk on real data. [152]
 - The mounted cases of the reviewer between a selection and its answer. [153]
 
@@ -325,7 +343,9 @@ more-hunks note no longer says "the full file shows every one".
 - Marks only from the owner's response, placed on its side lines. [5]
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 - A lane window marks each neighbour its context shows (the L32 F5 carry). [7]
+
 - The scope provided around the landed workspace body. [8]
+
 - The unknown-membership target state in the main reading area. [9]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane: Two Destinations After The Families, And One Classification Everywhere
@@ -439,8 +459,12 @@ added words marked in place, and both texts are reconstructed byte for byte; eac
 side's own row, or from its pane or filtered field rows; dataset reviews get no word diff.
 
 - The decision, the ratio and rule 1a. [15]
+
 - The tree-comparison scope, the statement area and the changed guarantee. [16]
+
+
 - Each side's text from its own row, the filtered field rows, and the text-first decision. [17]
+
 - The rail's labels compare bytes on a tree comparison; with MIK-L33's change facts the badges state a text change and the labels do not repeat it. [18]
 - On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. [19]
 
@@ -552,7 +576,9 @@ from a leaf-wide read of the same comparison; dataset reviews make no tree read.
 
 - The card component. [24]
 - Grouping by (path, range) and the bounded-roster scope. [25]
+
 - Cards for a tree comparison, marks only from the same comparison. [26]
+
 - The conforming example on real data. [27]
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
@@ -630,7 +656,9 @@ unselected centre opened. The cards' planning marks come only from a leaf-wide r
 the payload was composed over (`pinnedWorklist`).
 
 - The panel, the notice, or nothing. [122]
+
 - Planning marks only from a leaf-wide read of the same comparison. [123]
+
 - The body passes the knowledge panel to the family, member and unselected centres. [124]
 - The panel: status line, degraded sides, diff, currentness, worklist. [125]
 - The notice for a loading and for an unavailable read; nothing for any other phase. [126]
@@ -688,7 +716,9 @@ lives there; what belongs here is the panel-level fact: both of the dashboard's 
 `includeLeaves: true`, superseding the `includeLeaves: false` optimisation commit `a1521685` introduced.
 
 - The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`. [39]
+
 - The bar's request for the net's per-leaf attribution. [40]
+
 
 ## 260921-ICR-L25 The Change-Set Bar Names An Unrecorded Range, And The Jump Sits Above The Tree
 
@@ -761,7 +791,14 @@ every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeo
 
 ## Hot Path Summary
 
-Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. `detail-panel/taskReader.tsx` mounts the requirement-link context and the five-newest decision preview; `notes-reader/NotesReaderViewer.tsx` owns the kind-aware content transport and takeover, with the shared `ExplorerTree` fed one folder at a time.
+Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form, with one objective-first
+head, omitted empty blocks, bounded previews and full own views. `detail-panel/taskReader.tsx` owns
+form order and identity-keyed reader state; docHead/taskBlocks/skeletons/docViews/task-groups own their
+head, tables, shared blocks/views and grouped indexes. Task references/reports have one placed heading,
+Notes stays one root-count line, and current summary facts remain authoritative through body hydration.
+The page-local appearance lives in pageStyles without repainting shared Panel/Markdown/tokens.
+`detail-panel/taskReader.tsx` mounts the shared requirement-link context on every form and composes
+the relocated five-newest decision preview from skeletons; `notes-reader/NotesReaderViewer.tsx` owns the kind-aware content transport and takeover, with the shared `ExplorerTree` fed one folder at a time.
 
 ## Governing Overview
 
@@ -951,9 +988,15 @@ No applicable cross-repository source was found.
 
 ### Repo-Internal References
 
+
 - The `Cockpit` view map contains the declared view map. [41]
-- The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. [42]
-- The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. [43]
+
+
+- The current Chats cockpit keeps RoleChatsPane mounted while hidden; the former SessionsView topology is historical, not a current mount. [42]
+
+
+- The current persistent Chats layer mounts one RoleChatsPane; the former SessionsView selected-context wiring is historical, not a current mount. [43]
+
 - Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. [44]
 - The production application route is owned by `App`. [45]
 - The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
@@ -962,10 +1005,16 @@ No applicable cross-repository source was found.
 - The shared composer surface is implemented by `SessionComposer`. [49]
 - Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. [50]
 - `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. [52]
+
 - `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. [53]
+
 - The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. [54]
+
 - The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`. [55]
-- The typed fixture factories provide lifecycle and projection nodes. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`. [56]
+
+
+- The typed lifecycle and projection factories are shape-aligned; the served lifecycle binding supplies copied identities without making every content/default value served-derived. [56]
+
 - The hand-kept snapshot payload provides the generated timestamp. [57]
 - `Dot` renders its state glyph inside `aria-hidden="true"`. [58]
 
@@ -1120,7 +1169,7 @@ for projected targets and falls back for unprojected ones.
 
 ## 260815-DAG-L12 Route Impact
 
-New child route [sprint-graph](sprint-graph/overview.md): the optional sprint execution graph wave-grid view (≤3 boxes per row, ellipsized leaf lines, atomic lumps, textual predecessor labels, narrow single-column fallback). `detail-panel/taskReader.tsx` mounts graph content when present and mounts the sprint-scoped `CloseoutQueue` independently, so graph-less atomic-sequential sprints still expose scheduling state (L12-R5); `detail-panel/model.ts` `MasterDocView` carries optional `executionGraphView` (L12-R4).
+New child route [sprint-graph](sprint-graph/overview.md): the optional sprint execution graph wave-grid view (≤3 boxes per row, ellipsized leaf lines, atomic lumps, textual predecessor labels, narrow single-column fallback). `detail-panel/taskReader.tsx` composes the inline Order rows and opens the complete graph in its own view when present, while mounting the sprint-scoped `CloseoutQueue` independently, so graph-less atomic-sequential sprints still expose scheduling state (L12-R5); `detail-panel/model.ts` `MasterDocView` carries optional `executionGraphView` (L12-R4).
 
 ## 260821-CLIVE Projection And Discard Panels
 
@@ -1184,10 +1233,16 @@ its counter effect reads the leaf or master change-set request only. It is displ
 sense the panel is: the bar offers a navigation, and the surface it opens generates no semantic
 judgment and publishes no assessment.
 
+
 - **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** [59]
+
 - **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** [60]
+
 - **The one liveness predicate both gated entries read.** [61]
+
+
 - The client the hook calls, whose `ReviewEntry` has no path field on purpose. [62]
+
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
 
@@ -1198,8 +1253,12 @@ the listed generation rather than re-resolving the live tip. No panel was added 
 takeover dispatch changed; the reviewer entry, its liveness gate and its read are untouched
 by this leaf.
 
+
 - **The entry threading the published generation into the viewer target.** [63]
+
+
 - **The generation state the button carries from a successful master read.** [64]
+
 
 ## 260921-ICR-L6 The Review Panel's Statement Area Gets Its Own Component
 
@@ -1512,10 +1571,14 @@ independently by the verifier in `f1v/raw/vf1-live-scan.json` (`leavesAttempted:
 live family renders the same 2 excerpts as before, and nothing on this route may be read as a claim that live
 data exercises the divergent path.
 
+
 - **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** [109]
+
 - Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. [110]
 - Per-side resolution and observed identities attach to the same recorded-address key. [111]
+
 - **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** [112]
+
 - **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** [113]
 - **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** [114]
 
@@ -1544,8 +1607,12 @@ The existing ReviewReadCycle retains exact member content and source claims only
   publications cause no read. A live push while the same panel stays open is not delivered.
 
 - The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). [115]
+
 - The entry mounted in place of a change-set button. [116]
+
+
 - The leaf-scoped facts and re-validation generation. [117]
+
 
 **`review/` — the reviewer.**
 

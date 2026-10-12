@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Compatibility must omit genuinely absent optional display blocks without weakening the current producer contract or using an impossible consumer-authored fixture."
+  },
+  "applicability": "A current task reader receiving an older task-document projection without the newly added display fields.",
+  "conditions": [
+    "An absent whole review state omits its block/count without error.",
+    "Recorded genuine producer envelopes exercise compatibility, not invented wire casts."
+  ],
+  "exclusions": [
+    "Making current producer review counts optional.",
+    "Declaring negative recorded age values a permanent normative guarantee."
+  ],
+  "id": "INV-9PWR57",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/older-server.test.tsx: five tests; notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f7/checks/counter-run-review-block-without-its-guard.log; instrument notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f7/instruments/record_payload.py (SHA-256 140cfb4a07776ede49b6251139d539e9ceffb1d415592a6671ea34cba261b3e8); notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/role-launch/260928-MIK-L127-worker-7b2c4e19-5d63-4a8f-b1e0-127000000a01-F7.md; the focused set of the reports: 331 passed in 40 files"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 failure and recovery",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task document from a server of an older build, which lacks the fields this task added, is drawn without the blocks those fields feed and without an error: a page of this build reads what the task-document projection of commit 3c2285d1 sends and draws no Review block, no count of findings, no status note and no header notes.",
+  "status": "proposed",
+  "supersedes": []
+}

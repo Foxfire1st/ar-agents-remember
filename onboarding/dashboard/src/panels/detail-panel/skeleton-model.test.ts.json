@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/skeleton-model.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e0d91378a48a8a0e5e814264653dd9ae76f96b",
+            "content": "sha256:1fa8c62f1b6119439e8b9f797c265882131cbc1b684f2be9df82e4c77bb308a8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

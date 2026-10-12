@@ -21,27 +21,28 @@ are more. The page of a master shows its own references and the link. Rendered b
 
 ### Logic
 
-`TaskNotes({repo, master, references, onOpenNotes})` fetches the root folder with
-`listFolder(repo, master, "")` on mount / identity change (the `let live` cancellation
-idiom). An unreachable API renders the notes failure state — but a missing folder
-answer (`exists: false`) still applies the resolved references: the effect sets
-the resolution map regardless of folder existence and resets all three pieces of
-state on every selection. Requirement links come from their separate
-`useTaskRequirementLinks` context and render even on notes failure. Only a
-rejected request pair leaves references unresolved.
+The read-only hooks separate three bounded requests: useResolvedNotes makes one content-keyed
+reference resolution. Its key remains `references.join('\0')`, not JSON serialization:
+`[]` and one empty reference share that key. `useEffectEvent` supplies the list current when the
+keyed effect runs, without adding array identity as a request trigger. useTaskReports lists recorded starts for a task-root-relative document path;
+useNotesFolderTotal reads the root folder count, never walks descendants. Each drops late answers
+on identity change. useTaskNotesData preserves the joint wrapper; the task page uses two disjoint
+islands so references/reports can precede Further notes while the one Notes line stays last, without
+duplicating requests. An unavailable report list is stated, not converted into an empty result.
 
-- **Notes line**: one line under `Notes` naming the root folder's entry count with a link
-  opening the reader at the notes root. No total over the tree is computed.
-- **References** (`references.length > 0`): resolved by the one `resolveNoteReferences`
-  request; each item renders the whole reference string as a link-styled `<button>`
-  (`note-ref-<n>`) that calls `onOpenNotes({repo, master, path})` where it names an
-  existing note; a miss renders the usual `<Markdown inline>` bullet.
-- **Reports**: the recorded starts for this task via `listTaskReports` (newest first, at
-  most twenty rows, `task-reports-explorer-link` to the reports folder where more exist);
-  zero recorded reports render `task-reports-empty` while keeping the Notes link; an
-  unreadable reports record renders `task-reports-failed`.
-- `onOpenNotes` is **optional** — a context without the takeover (e.g. the master-overview list in a test)
-  still renders the surface; the rows are then inert.
+- **Notes line:** only the actual root-folder total, with the notes-root artifact target; no tree
+  rows, note content or whole-tree count is fetched for the page.
+- **References:** one References and reports heading on a task. The first eight rows have an
+  all-link when needed; whole views reuse the same resolved affordance. A whole Markdown link draws
+  its label as the link and its destination beside it. Reserved requirement addresses resolve through
+  the requirement-link provider; ordinary note links require the server's resolution. Unresolved
+  values remain plain/inline text, never an invented internal target.
+- **Reports:** product-recorded starts, newest first and capped at twenty by their API, with available
+  role/request targets and a folder link for the complete list. A report not yet written is disabled;
+  an unreadable record is distinct from no reports.
+- The optional onOpenNotes callback carries the shared kind-tagged artifact target. Without a
+  takeover callback the surface remains visible but opens nothing. Requirement navigation retains
+  its own provider rather than being tied to the notes-folder result.
 
 **Retired (L17):** the bespoke inline `NoteReader` (its own `noteBox`/`noteHead`/sticky-close chrome and the
 markdown/text/binary rendering) was removed. Reading a note now happens in the full Notes Reader view, whose
@@ -64,15 +65,17 @@ notes and requirement listings are read-only view state; opening stays delegated
 
 ### Conventions
 
-Panda `css` local styles mirroring `DetailPanel`'s section/heading/row idioms; testids follow the house
+Shared pageParts/pageStyles block and row primitives, rather than a second private notes-heading/list style; testids follow the house
 position pattern (`notes-root-count`, `notes-root-link`, `note-ref-1`, `task-reports-empty`, `task-reports-failed`, `task-reports-explorer-link`). No `note-open-*` testid exists in the carried source.
 
 ### Invariants And Boundaries
 
-No mutation surface of any kind: the component only GETs one folder and POSTs one reference
-request, and holds them as view state. Links are
-only ever created from the server's own answers (resolved references, recorded report rows),
-so a link can never point outside the series' notes tree — and opening is delegated to `onOpenNotes`, never a local
+No mutation surface: the page makes one root-folder read, one reference-resolution request and,
+for a task, one recorded-report list request, holding them as view state. Links are
+only ever created from the server's own answers (resolved references, recorded report rows).
+Resolved note references remain notes-tree targets; reserved requirement links use their separate
+provider and recorded-report targets retain their role/request identity. Opening is delegated to
+`onOpenNotes`, never a local
 write. No request grows with the tree: one root-folder read, one bounded reference request,
 one bounded reports request.
 
@@ -109,3 +112,5 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 
 - References resolve through one request; reports read newest-first capped at twenty. [9]
+
+- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \[11] [10]

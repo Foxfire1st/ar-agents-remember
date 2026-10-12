@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Separating head identity/facts from requirement text prevents duplicate or hidden obligation content across the shared head and form blocks."
+  },
+  "applicability": "The head and requirement block of fixed sprint/master/task document pages.",
+  "conditions": [
+    "Each fact is drawn only where the document supplies it.",
+    "A primary requirement can appear as a head link while its text belongs once to Requirements."
+  ],
+  "exclusions": [
+    "Requirement-file body serving and authoring.",
+    "Other dashboard panels."
+  ],
+  "id": "INV-M01WK7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'leads with the objective, then the labelled facts, then the notes', 'draws the primary requirement as its link and its text once, under Requirements'; the focused set of the reports: 331 passed in 40 files"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The head of a task page draws its facts as a strip of labelled facts with the label above the value, and the primary requirement stands there as its link while its text stands once, under Requirements.",
+  "status": "proposed",
+  "supersedes": []
+}

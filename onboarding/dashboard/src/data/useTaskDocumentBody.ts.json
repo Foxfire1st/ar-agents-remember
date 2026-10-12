@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/useTaskDocumentBody.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0023b5ebee87ba18db185d17163f865e3f3ea332",
+        "content": "sha256:95bc04aaaadf24db1bc94bac01115d5a9a6ff66c200d480fd21240752ef15128",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeTaskDocumentBody"
+        }
+      },
+      "id": "RLZ-ZJ4AM6",
+      "invariant": "INV-S18MK6",
+      "origin": {
+        "handoffEntry": "curator-body-revision-hydration-currentness",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Merges whole content while preserving current summary-owned facts.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results.",
@@ -35,12 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "blob": "5fc47d2f0162a9f76bea5427359161727342a013",
             "content": "sha256:3e75639dc967c5251bc603dfa3620f2b36b8ff690c74215c355fdf044a6bea04",
             "locator": {
-              "end": 71,
+              "end": 67,
               "kind": "line_range",
-              "start": 18
+              "start": 14
             },
             "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },

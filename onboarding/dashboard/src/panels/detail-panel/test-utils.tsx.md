@@ -34,6 +34,12 @@ Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new
 
 **`stubCounters` takes one optional argument, and it is what lets a test choose which answer the Intent review control reads.** Since `260921-ICR-L47` it is `stubCounters(reviewSummary?: unknown)` and answers `/api/review/intent/summary` (previously `reviewEntry` answering `/api/review/intent/entries`, which the entry no longer reads) with whatever the caller passes — counts, partial counts, or an unavailable refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
 
+`stubNotes` dispatches an explicit first-matching route table. D229 factors response construction,
+query parsing, task-body selection, folder pagination, reference resolution and empty report payloads
+into named helpers, avoiding one oversized fetch callback. `noteResolutions` reads the reference list
+from the POST body; this is a test double, not a live read. `stubCounters` gives the reports route a
+well-shaped empty reports object instead of its generic counters payload.
+
 ### Conventions
 
 Fixtures are typed through the projection mirror so a fixture that compiles is a shape
@@ -72,3 +78,5 @@ No applicable cross-repository source was found.
 No helper behavior changed. `seriesNode()` now defaults the required `discardedCount: 0` and
 `discardedSubTasks: []` fields so every detail-panel fixture remains a valid projected series. The
 existing required `seats` and repository-qualified topology defaults remain intact.
+
+- The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. \[2] [2]

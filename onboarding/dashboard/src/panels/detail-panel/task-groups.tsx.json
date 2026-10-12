@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/panels/detail-panel/task-groups.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+        "content": "sha256:3a76eff7e606222874ff9e11f60d9e83ce1a40a217b4450ec5ecf45670cf2e22",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewWord"
+        }
+      },
+      "id": "RLZ-ASRZ5R",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The review cell of a master's table of tasks in work; reads openFindings.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+        "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
+        "locator": {
+          "kind": "symbol",
+          "name": "SprintRowsViewBody"
+        }
+      },
+      "id": "RLZ-C7FVQY",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the scope of a row of the sprint document through the Markdown grammar.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every group retains exact commanded-master, linked-series and authored-slice navigation precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:aba38f42661a875610cbed5400f820a24b1ddfe100be1eae71e4172339a646d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRowTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rows lacking a projected master remain in status groups and the all-row view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:804d93a098cfc83451d08690a5a1f125bd2eec7b14fd76e5f3303b21350c91b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprintEntries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gone group keeps discarded-before-start history reachable without live tasks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:40e30c5752b1f7cdaf23837da71e1aa16366667f48d8dbd43fb341824c6f8440",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterTasksBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The raw sprint view keeps row and master truth visibly separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintRowsViewBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reader supplies an acyclic leaf-row addition; master Now retains its dedicated step-count element.\n\nAnchor: `LeafExtra` `MasterNowRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:3b006595eaa5da0d884db33d12e04a2809c0042e3ed94c8c9b7604e13303220c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafExtra"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:86a56d831270d27b6a8ca2a0f8610ef24a53ecad4dad69bb7c76520a56135856",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNowRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

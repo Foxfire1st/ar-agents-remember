@@ -7,9 +7,10 @@
 ## Purpose
 
 The Panda CSS recipes of the DetailPanel, extracted from `DetailPanel.tsx` by the
-260731-EFA-L8 split. Owns sizing, the phase stepper, state badges, series/sub-task
-slice list, cross-master button, breadcrumb, worktree spine lanes, and reader
-typography.
+260731-EFA-L8 split. Owns the detail container, lifecycle phase/identity chrome, breadcrumb,
+master-less slice fallback, worktree spine and change-set/brief-state disclosure styles.
+The fixed document pages and their rows now use pageStyles.ts; retired old-page recipe definitions
+are not a second appearance owner.
 
 ## Code Commentary
 
@@ -36,6 +37,10 @@ The `sizing` flex rule preserves the panel's fill behavior.
 
 None recorded.
 
+## Retained direct-grant action recipe
+
+`grantButton` is the landed L94 inline action recipe, retained byte-for-byte through the page port. The control stays beside, never nested within, the drill-in link; pending requests use its disabled styling. Fixed page appearance still belongs to pageStyles.ts. The preserved double-quoted block carries the disclosed Prettier debt; this card claims source preservation, not a new layout capture or formatter pass.
+
 ## Evidence
 
 ### Docs References
@@ -55,3 +60,5 @@ No relevant domain documentation was found.
 No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
+
+- The landed inline grant action recipe retains its pending-disabled treatment. [4]

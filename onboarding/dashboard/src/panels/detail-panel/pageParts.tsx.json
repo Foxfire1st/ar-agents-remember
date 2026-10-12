@@ -1,0 +1,126 @@
+{
+  "path": "dashboard/src/panels/detail-panel/pageParts.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+        "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
+        "locator": {
+          "kind": "symbol",
+          "name": "wantsToOpen"
+        }
+      },
+      "id": "RLZ-2YCQ8R",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one rule for a row that opens on a click: a click on a link or a button and a click that ends a text selection do not open it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+        "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "Clip"
+        }
+      },
+      "id": "RLZ-MNHD63",
+      "invariant": "INV-E9DYQ7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (f)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Renders the text of a note through the Markdown grammar, so a link in a note is an anchor or a button.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+        "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "Clip"
+        }
+      },
+      "id": "RLZ-VCE0TJ",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one-line text that opens in place: it holds the text to one line, says with aria-expanded whether it is open, and opens no view.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One-line Markdown can open in place and truthfully labels a remaining summary preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+            "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Clip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Link/button clicks and text selection do not trigger row expansion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+            "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
+            "locator": {
+              "kind": "symbol",
+              "name": "wantsToOpen"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Keyboard expansion belongs to the row itself, not its nested controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+            "content": "sha256:da21dddbd4edb2227181ed80354a96876d33cba2997a335f908cad1329dd2f15",
+            "locator": {
+              "kind": "symbol",
+              "name": "opensOn"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Long progress populations use an aggregate bar instead of unreadable individual marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62bb0cac1c86d8a7b609db998a140186d2b304e0",
+            "content": "sha256:a5409587ebb2ca945415ec47a338190b6526709bf0983d0721a85d6c17a7fd14",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepMarks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

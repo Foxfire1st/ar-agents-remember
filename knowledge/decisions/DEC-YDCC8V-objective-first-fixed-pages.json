@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The reader learns the task purpose before status/detail, with bounded prose retaining first-screen facts. The developer rejected that built order as contrary to the promised design."
+  },
+  "alternatives": [
+    {
+      "option": "Bounded objective directly below the title and before facts on all forms.",
+      "reason": "The reader learns the task purpose before status/detail, with bounded prose retaining first-screen facts.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the earlier proposal/packet objective position after the first form-specific blocks.",
+      "reason": "The developer rejected that built order as contrary to the promised design.",
+      "reconsider_when": "A new developer-approved page design explicitly changes the objective order.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "All three forms share the head; the rest of the proposal remains, not a new arbitrary section order."
+  ],
+  "context": "The approved proposal placed Objective after the form-specific Now/steps blocks; the developer explicitly corrected that order in DEVELOPER-DIRECTION.md D219.",
+  "decider": "developer D219, architect recorded interpretation",
+  "id": "DEC-YDCC8V",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-PHG1PR"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-M01WK7"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-decisions-family.json"
+    },
+    "handoffEntry": "objective-first-fixed-pages",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -137,6 +137,22 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "The landed inline grant action recipe retains its pending-disabled treatment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4feecf411b06a3ce8d89a8be0fc0ca4faf88a85",
+            "content": "sha256:3de348a9b6e4f41f9a17d35b15e3970b5bb8fbc9d97a1ed883d4ba657d35e56c",
+            "locator": {
+              "kind": "symbol",
+              "name": "grantButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

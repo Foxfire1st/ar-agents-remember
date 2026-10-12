@@ -75,8 +75,9 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
 - **Shared consumers.** `Cockpit` wires `connectState` and one `connectEvents` connection with two
   consumers (the Event River and the gated seat-event reconciler). `CockpitShell` owns the refcounted
   catalog poll driver, the eager/cross-tab reconciler and the screen wake lock. The
-  top bar carries the master caution, the serving-build stamp (with a proven client/serving mismatch
-  offered as an operator reload) and the agent-notifier heartbeat badge (absent tick renders
+  top bar carries the master caution, the serving-build stamp (a proven client/serving mismatch
+  adds a tooltip cue to reload through the browser, not a shell reload button) and the
+  agent-notifier heartbeat badge (absent tick renders
   nothing).
 - **Selection and chat.** `selectedId` is a typed selection key normalized through
   `lifecycleSelectionKey`; `selectedLifecycleId` derives the lifecycle context. The right rail's
@@ -103,8 +104,9 @@ shared honest-motion gate.
 
 ### Invariants And Boundaries
 
-- Server authority is read-only; selection and view state are local and lifted. The one browser
-  mutation is the operator's explicit reload on a proven bundle mismatch.
+- The shell treats projected server evidence as read-only; selection and view state are local
+  and lifted. A proven bundle mismatch is a tooltip cue, with no reload-client action in the
+  shell. Any browser reload remains operator-owned outside that cue.
 - The shell pins to `100vh` with `overflow:hidden`, so rails and viewport scroll internally and the
   bars stay fixed. Full-bleed hides the rails, never the alarm summary.
 - The left rail is why `grammar/Dot.tsx` cannot lean on colour alone: the attention queue and the
@@ -117,13 +119,14 @@ shared honest-motion gate.
 
 No additional work is asserted by this card.
 
-### FEUI-L9R Reviewed Candidate Delta
+### FEUI-L9R account — current source correction
 
 `ServingBuildStamp` now compares the executing bundle fingerprint with
 `servingBuild.dashboardBuild`. It exposes unknown, matching, or mismatching diagnostic evidence;
-only a definite mismatch renders the explicit `reload client` button. Reload remains operator-owned
-because a stateful terminal tab may contain drafts or interaction. An older server without the
-optional fingerprint remains neutral rather than falsely stale.
+only a definite mismatch appends “reload to update” to the stamp’s tooltip. The current owner
+renders a span, not the formerly described `reload client` button; reload remains an operator
+browser action, not a shell control. An older server without the optional fingerprint remains
+neutral rather than falsely stale.
 
 ### Logic
 
@@ -182,7 +185,7 @@ HUMANIZED uptime (`humanizeDuration(Date.now() - bootedAt)`, one time format in 
 start stamp stays in the tooltip — was a second 12h clock, V15); the brand `title` + each fact-chip
 (`dim`, `caution`, `connBadge`) are `whiteSpace:nowrap` and the `statusRow` is `flex-wrap:wrap` so the
 bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the lifecycle counts are
-explicitly scope-labeled `tasks N running · N blocked · N tok` with a tooltip naming them
+explicitly scope-labeled `tasks N running · N blocked` with a tooltip naming them
 lifecycle/task-scoped (a different authority from the Chats rail's chat-seat states — R7, no backend
 change). **260731-EFA-L4** gives that same `dim` span a `data-testid="task-metrics"` and appends one
 CONDITIONAL segment to it: `· {metrics.awaitingDeveloperCount} awaiting you`, rendered only while
@@ -190,7 +193,9 @@ CONDITIONAL segment to it: `· {metrics.awaitingDeveloperCount} awaiting you`, r
 `sum(1 for lc in ...)` line per bucket and now expands `STATE_COUNT_FIELDS` (derived from the live-state
 vocabulary), so `awaiting-developer` has a bucket at last; before that a lifecycle which had stopped and
 handed the turn back was inside `lifecycleCount` and `totalTokens` and inside **none** of the numbers on
-this bar. At zero the span emits the byte-identical `tasks N running · N blocked · N tok` it always did —
+this bar. The current bar displays running/blocked and conditional awaiting, not a token chip;
+this does not remove the underlying `totalTokens` metric. At zero awaiting, the span emits
+`tasks N running · N blocked` —
 running/blocked are the workspace's standing rhythm and read fine at zero, while a permanent
 `0 awaiting you` would be the same reassurance-zero lie the `⚠ N waiting` chip refuses to tell. The
 client mirror of the reducer rollup is `metricsFor(lifecycles)` in `types/projection.ts`, and `Metrics`
@@ -238,14 +243,14 @@ re-indentation); review R2 judged it wiring, not feature logic (O-R2-2).
 ### Conventions
 
 Panda `css`/`cva`/`cx`. The marker classes (`cockpit--shell`/`shell__body`/`rail`/`viewport`) are kept
-via `cx` for tests/structure; `shell__body` carries `data-fullbleed` for the rails-hide assertion. The
-`crt-overlay` div is the global effects class (`index.css`). `useShouldAnimate` is imported from
+via `cx` for tests/structure; `shell__body` carries `data-fullbleed` for the rails-hide assertion. The dashboard no longer mounts a `crt-overlay` element; the scanline/vignette overlay and its sole flicker keyframe were removed, while the global effects cascade slot and determinism freeze remain. `useShouldAnimate` is imported from
 `panels/engine-room/` (the shared honest-motion gate).
 
 ### Invariants And Boundaries
 
-Server authority is read-only; selection state is local + lifted. The one browser mutation is the
-operator's explicit reload on a proven bundle mismatch. The shell pins to `100vh` + `overflow:hidden` so the
+The shell treats projected server evidence as read-only; selection state is local + lifted. A proven
+bundle mismatch contributes a tooltip cue, not a shell reload action; the operator may reload through
+the browser. The shell pins to `100vh` + `overflow:hidden` so the
 rails/viewport scroll internally and the bars stay fixed. The master-caution lives in the always-visible
 top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
 writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag

@@ -26,8 +26,15 @@ Since 260815-DAG-L14 `TaskDocBody` and `SeriesDetailPanel` thread `docPathForRef
 
 ### Logic
 
-`TaskDocBody` maps the displayed document kind to the reader surface; the panel
-variants wire the reader to the panel chrome (header, stepper, back-link).
+`TaskDocBody` first resolves a drilled document, then selects SprintOverview or MasterOverview
+for a master by docForm; other documents use TaskReader. SeriesDetailPanel also uses the resolved
+series document's form, with the model adapter as fallback. All branches share the complete
+projected document pool and body state; a direct, series and lifecycle path must not disagree on form.
+
+Selected-document panel chrome owns Back/parent navigation only. The document's single ID/title and
+objective are inside DocHead, not repeated in Panel's title. EmptyDetailPanel retains its separate
+empty-selection title/backdrop. Reader-local own views and expansion reset on document identity,
+not on the arrival of another projection object.
 
 ### Conventions
 

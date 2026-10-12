@@ -10,6 +10,16 @@ Generated JSON Schema for the dashboard projection contract: typed projections, 
 
 ## Code Commentary
 
+### Task-reader display definitions
+
+Generated task display definitions now include form, header-note label/value rows and total, status
+note/preview flag, review state/finding rows and top-level step note/outcome flags. The Python schema
+uses construction defaults for many of these fields; do not confuse a defaulted JSON Schema property
+with the generated TypeScript mirror's required present field. The real producer supplies whole-round
+openFindings and totalFindings before bounding the findings slice. A genuine older producer supplies
+no review state; the recovery proof does not weaken the current producer's count obligation.
+
+
 The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.schema.json:1981-1981.
 
 L23 adds the closed `LifecycleOperationProjection` schema and the optional `EnclosureNode.lifecycleOperation` reference. Operation kind, status, and phase are closed vocabularies; process/resume identities remain absent from the public schema. Since 260831-CCR (commit `99dc249b`) the schema adds the optional `LifecycleOperationProjection.taskIntent` reference to the `TaskIntentIdentity` definition and the new `TaskIntentIdentity` `` entry carrying the closed `task-intent/v1` schema and the 64-hex digest pattern.

@@ -1,6 +1,61 @@
 {
   "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "content": "sha256:f21bb4ed973d6fce10ceafbb6ffbe238ef556a5b0a27eb2286f531e9856e4aa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "GraphPredecessors"
+        }
+      },
+      "id": "RLZ-BV81PB",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the reason of an edge of the whole graph through the Markdown grammar.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "content": "sha256:032ede3a6fc72c348dab59296f93f491152201d8bbdd2035af22c00e6fcf03b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReducedMotion"
+        }
+      },
+      "id": "RLZ-PWT969",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Reads the reader's wish for reduced motion; exported for the rows, which drop the fade on it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "15f76aada9eb203b8005cc4dcc281552d1f5ea95",
+        "content": "sha256:292ca2a27e7af02425de5c78691fd924c319a23077541d8bc9d84953e38f628d",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRestHighlight"
+        }
+      },
+      "id": "RLZ-TQMDXJ",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one rest logic of rule 11 (180 ms, at once on focus); exported so the rows and the graph cannot drift apart.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The wave-grid component and box renderer.",
@@ -23,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:aba557ba3e3dd7a0538e54add74e8b5a26632e69e6fbd0805b7b5e653c9c6735",
             "locator": {
               "kind": "symbol",
@@ -83,17 +138,17 @@
       ]
     },
     "5": {
-      "note": "The sprint page that mounts it.",
+      "note": "The sprint Order own view mounts this complete graph rather than a second inline wave-grid list.",
       "targets": [
         {
           "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
+            "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+            "content": "sha256:af592f172b0641f43098950639df9c6576c90fa15a937449204db16749eda386",
             "locator": {
               "kind": "symbol",
-              "name": "SprintGraphSection"
+              "name": "OrderGraphViewBody"
             },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
           },
           "kind": "code"
         }

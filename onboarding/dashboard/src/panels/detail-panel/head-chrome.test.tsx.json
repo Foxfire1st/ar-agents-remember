@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/head-chrome.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d57d71117e816946fbb1af6f4dc67e8abd4a8cc5",
+            "content": "sha256:e50f7ec91a27b8e8e3cd0f2140828843ae47b3ee3c55f93d5a9201879e85d663",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

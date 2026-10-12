@@ -30,6 +30,11 @@ not-found` in the serving status idiom.
   `<button>` link (`note-ref-1`) whose click fires `onOpenNotes` with the resolved path; a
   code-path reference stays plain text with no link testid, asserted only after the
   resolve answer has arrived so resolution is settled.
+- **request-key stability** — equal-content array rerenders do not send another resolution POST;
+  changing the joined content sends the current list. The F9 regression separately pins the historical
+  joined-key collision: `[]` and `[""]` share a key, so the new empty-text row appears without a second
+  resolution request. The earlier different-content-to-empty-text case does send a request; it is not
+  the same transition.
 - **recorded reports** — the task's recorded starts render newest-first capped at twenty
   with the explorer link; an unreadable record keeps the Notes link.
 
@@ -50,9 +55,9 @@ reader.
 
 ### Invariants And Boundaries
 
-The suite pins the no-mutation posture indirectly: every interaction is a GET-backed
-render or a callback dispatch; there is nothing to submit, and nothing here reads
-`/api/notes/read`.
+The suite pins a read-only view: folder/report reads and the reference-resolution POST obtain
+view data, while clicks dispatch callbacks. The POST resolves references; it is not document
+mutation. Nothing here reads `/api/notes/read`, which belongs to the reader.
 
 ## Evidence
 
@@ -68,3 +73,5 @@ A stubbed-fetch component suite; nothing crosses repositories.
 - The folder entry type shaped by the suite's stub payload. [2]
 - The component suite's `stubNotesApi` returns the directly evidenced folder payload. [3]
 - The moved note-content suite covering the reader this surface opens. [4]
+
+- Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. \[5] [5]

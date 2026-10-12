@@ -19,7 +19,10 @@ loading/error/settled states and the notice surface.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Loading/error/settled and TaskBodyNotice ownership remain the contract. The settled body assertions
+now scope requirements to their block and read free-form Evidence through the Further-notes own view
+with Back, rather than assuming all body text is inline. The reports stub is a typed bounded response,
+not backend acceptance or proof that a product test was rerun here.
 
 ### Todos
 

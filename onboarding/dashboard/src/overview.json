@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 363,
@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
+            "blob": "c9b65d9877cdc2f9732fff8390cf9319481cd743",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1226,
+              "end": 1292,
               "kind": "line_range",
-              "start": 1225
+              "start": 1291
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
               "end": 389,
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
               "end": 414,
@@ -276,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
               "end": 587,
@@ -294,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
               "end": 36,
@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -330,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
             "locator": {
               "kind": "symbol",
@@ -401,7 +401,7 @@
         },
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
             "locator": {
               "kind": "symbol",
@@ -435,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -481,12 +481,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 801,
+              "end": 809,
               "kind": "line_range",
-              "start": 800
+              "start": 808
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

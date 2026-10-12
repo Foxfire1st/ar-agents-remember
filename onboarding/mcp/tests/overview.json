@@ -72,11 +72,11 @@
       ]
     },
     "1414": {
-      "note": "The lane row.\n\nAnchor: `mcp/tests/test_review_change_kinds.py`",
+      "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:ff02417d0b98f26db3afb4f15f2c9b641013621b2b0cb63cc98da2bf231ea367",
             "locator": {
               "end": 1513,
@@ -141,11 +141,11 @@
       ]
     },
     "1418": {
-      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_closeout_gate.py`",
+      "note": "The two lane rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:42ebbab70fda652fa2d2d54cc8868f99a344e34c64ee1e28d1e20311bc01a144",
             "locator": {
               "end": 1328,
@@ -212,11 +212,11 @@
       ]
     },
     "1422": {
-      "note": "The lane row.\n\nAnchor: `mcp/tests/test_review_unexplained_lane.py`",
+      "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:d474b8d6bbe4390579a3960fe4603ef79ee019acc8740c97962f768cea714af3",
             "locator": {
               "end": 1535,
@@ -247,11 +247,11 @@
       ]
     },
     "1424": {
-      "note": "The lane row.\n\nAnchor: `mcp/tests/test_reconsideration_surfacing.py`",
+      "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
             "locator": {
               "end": 1497,
@@ -317,11 +317,11 @@
       ]
     },
     "1428": {
-      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_reader.py`",
+      "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:3fa272a05b44543f3da9782b476754c98759ff557a010423fd1c94bbcf2a7543",
             "locator": {
               "end": 1360,
@@ -559,11 +559,11 @@
       ]
     },
     "1442": {
-      "note": "The decision-record lane row.\n\nAnchor: `mcp/tests/test_knowledge_decisions.py`",
+      "note": "The decision-record lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:50c16b556a53dd2329e7c9182e662cc3854332049cb6a963d866c3afab06b6dd",
             "locator": {
               "end": 1338,
@@ -647,11 +647,11 @@
       ]
     },
     "1447": {
-      "note": "The lane registration.\n\nAnchor: `mcp/tests/test_family_route_conditions.py`",
+      "note": "The lane registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:a17907f39daf90ffacc9763311632a6f9dd4c3e457e56043f4b35b35cb95dd44",
             "locator": {
               "end": 1287,
@@ -716,11 +716,11 @@
       ]
     },
     "1451": {
-      "note": "The planned-effects lane row.\n\nAnchor: `mcp/tests/test_planned_knowledge_effects.py`",
+      "note": "The planned-effects lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
             "locator": {
               "end": 1474,
@@ -734,11 +734,11 @@
       ]
     },
     "1452": {
-      "note": "The planned-effects module's consumer line.\n\nAnchor: `mcp/tests/test_planned_knowledge_effects.py`",
+      "note": "The planned-effects module's consumer line.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
             "locator": {
               "end": 1474,
@@ -788,11 +788,11 @@
       ]
     },
     "1455": {
-      "note": "The onboarding gate's lane row.\n\nAnchor: `mcp/tests/test_onboarding_trace_gate.py`",
+      "note": "The onboarding gate's lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:9d120ddedbdd0042f420abd24edd88c72ff5c1af816b2511d22bc9b5c6496001",
             "locator": {
               "end": 1443,
@@ -824,11 +824,11 @@
       ]
     },
     "1457": {
-      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_currentness.py`",
+      "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
             "locator": {
               "end": 1335,
@@ -842,11 +842,11 @@
       ]
     },
     "1458": {
-      "note": "The consumer addition.\n\nAnchor: `mcp/tests/test_knowledge_currentness.py`",
+      "note": "The consumer addition.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
             "locator": {
               "end": 1335,
@@ -860,11 +860,11 @@
       ]
     },
     "1459": {
-      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_worklist.py`",
+      "note": "The two lane rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:39b1bee59a973b92195fa242a575d7ca959ea50e2ef304ee8302131723796518",
             "locator": {
               "end": 1386,
@@ -1244,11 +1244,11 @@
       ]
     },
     "1481": {
-      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_file_canonical.py`",
+      "note": "The two lane rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:0e608abff77a6d0c8beda795077995a8f75aebc3828fd8d52e78839c70c12568",
             "locator": {
               "end": 1343,
@@ -1528,11 +1528,11 @@
       ]
     },
     "1497": {
-      "note": "Its lane registration.\n\nAnchor: `mcp/tests/test_read_anchor_memo.py`",
+      "note": "Its lane registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:5e0c7ca4242e1591235774996ce78d5f96dbdd73802849c0b35e51bdb166414f",
             "locator": {
               "end": 1493,
@@ -1719,11 +1719,11 @@
       ]
     },
     "1507": {
-      "note": "The unit-regression registry includes the revision-selection test module.\n\nAnchor: `unit-regression = [`",
+      "note": "The unit-regression registry includes the revision-selection test module.",
       "targets": [
         {
           "anchor": {
-            "blob": "75ae9541024fb1d4279b7a505551d0aa15df24af",
+            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -2809,16 +2809,16 @@
       ]
     },
     "1570": {
-      "note": "The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins.\n\nAnchor: `scripts/e2e_harness`",
+      "note": "The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:4c051d39d8f9c183b225f1750c8015a07e7718bc4024cf76b7b8d05ef652221f",
             "locator": {
-              "end": 2620,
+              "end": 2621,
               "kind": "line_range",
-              "start": 2618
+              "start": 2619
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2827,11 +2827,11 @@
       ]
     },
     "1571": {
-      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_citation_index_resilience.py`",
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:4fbb56fc340ff2dc75e72f23d3fcc966083e099ac5b752099644ca8135499ea9",
             "locator": {
               "end": 1192,
@@ -2845,16 +2845,16 @@
       ]
     },
     "1572": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2863,16 +2863,16 @@
       ]
     },
     "1573": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2881,16 +2881,16 @@
       ]
     },
     "1574": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2899,16 +2899,16 @@
       ]
     },
     "1575": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2917,16 +2917,16 @@
       ]
     },
     "1576": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2935,16 +2935,16 @@
       ]
     },
     "1577": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2953,16 +2953,16 @@
       ]
     },
     "1578": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2971,16 +2971,16 @@
       ]
     },
     "1579": {
-      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 2687,
+              "end": 2688,
               "kind": "line_range",
-              "start": 2685
+              "start": 2686
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2989,11 +2989,11 @@
       ]
     },
     "1580": {
-      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_citation_index_resilience.py`",
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:4fbb56fc340ff2dc75e72f23d3fcc966083e099ac5b752099644ca8135499ea9",
             "locator": {
               "end": 1192,
@@ -3059,11 +3059,11 @@
       ]
     },
     "1584": {
-      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_memory_backfill.py`",
+      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:78fbd9e0fcbae938a47198330ca1b09d726d108e010d4bc63af3ed4e0e90c122",
             "locator": {
               "end": 1414,
@@ -3165,11 +3165,11 @@
       ]
     },
     "1590": {
-      "note": "The L4 census module's lane row, which closed the gap the L4 route section recorded.\n\nAnchor: `mcp/tests/test_memory_attribution_producers.py`",
+      "note": "The L4 census module's lane row, which closed the gap the L4 route section recorded.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:b9c23eecf4e308f557f14e38998ff9b02ac4d083f744c161a06c90fa6cedf3a2",
             "locator": {
               "end": 546,
@@ -3304,16 +3304,16 @@
       ]
     },
     "1598": {
-      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.\n\nAnchor: `mcp/tests/test_terminal_liveness_pane_authority.py`",
+      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:61bedbd1b4c7075e988d68ad7dd8b230c0c2a455a198619313120971778aff36",
             "locator": {
-              "end": 1614,
+              "end": 1615,
               "kind": "line_range",
-              "start": 1612
+              "start": 1613
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3612,11 +3612,11 @@
       ]
     },
     "1615": {
-      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "note": "The read fixture and its registered contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
               "end": 32,
@@ -3630,11 +3630,11 @@
       ]
     },
     "1616": {
-      "note": "The unit-lane row the read's selection module occupies.\n\nAnchor: `mcp/tests/test_knowledge_read_scope.py`",
+      "note": "The unit-lane row the read's selection module occupies.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
               "end": 34,
@@ -3666,11 +3666,11 @@
       ]
     },
     "1618": {
-      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "note": "The read fixture and its registered contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
               "end": 32,
@@ -3684,11 +3684,11 @@
       ]
     },
     "1619": {
-      "note": "The unit-lane row the read's selection module occupies.\n\nAnchor: `mcp/tests/test_knowledge_read_scope.py`",
+      "note": "The unit-lane row the read's selection module occupies.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
               "end": 34,
@@ -3787,11 +3787,11 @@
       ]
     },
     "1625": {
-      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "note": "**The fixture and the governed contract it is registered under.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
               "end": 17,
@@ -3805,11 +3805,11 @@
       ]
     },
     "1626": {
-      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "note": "**The fixture and the governed contract it is registered under.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
               "end": 17,
@@ -4010,11 +4010,11 @@
       ]
     },
     "1638": {
-      "note": "**260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract.\n\nAnchor: `synthetic-test-evidence-candidate`",
+      "note": "**260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:625ef3f6d144761540680ace49bdf598cd4131a520507bf4bfe597d1b91012c0",
             "locator": {
               "end": 57,
@@ -4028,11 +4028,11 @@
       ]
     },
     "1639": {
-      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "note": "The read fixture and its registered contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
               "end": 32,
@@ -4064,11 +4064,11 @@
       ]
     },
     "1641": {
-      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "note": "**The fixture and the governed contract it is registered under.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
               "end": 17,
@@ -4207,11 +4207,11 @@
       ]
     },
     "1649": {
-      "note": "**The four consumer registrations the two governed-support consumers and the item-16 case obliged.**\n\nAnchor: `mcp/tests/test_evidence_catalog_gate_boundaries.py`",
+      "note": "**The four consumer registrations the two governed-support consumers and the item-16 case obliged.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
             "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
             "locator": {
               "end": 145,

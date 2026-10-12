@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/taskReports.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a17b594530ab671e7682f7fab0c324c0d5d83ce8",
+        "content": "sha256:ba3f56645a09697bcf0d112725d75f122820c0911672c02103c4044c278814ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "listTaskReports"
+        }
+      },
+      "id": "RLZ-PHS465",
+      "invariant": "INV-GHZ8VQ",
+      "origin": {
+        "handoffEntry": "L127-F5 reports request",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Builds the request. Its card and the comment above docRefPath say that dashboard document paths carry the /tasks/<repo>/ prefix; a projected docPath is the file path. By the architect's ruling the card is corrected to say which form the request has.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The per-task reports URL is built from repo, master and doc.",

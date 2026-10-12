@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "An open finding beyond the summary window otherwise becomes a false zero; count ownership spans the model, producer, task/master displays and full review view."
+  },
+  "applicability": "Task review whole-count projection and every reader displaying that review.",
+  "conditions": [
+    "The server computes openFindings over the whole recorded round before the first25 summary window.",
+    "Readers use the required projected integer, never count open flags in a preview."
+  ],
+  "exclusions": [
+    "Making openFindings optional to accommodate older producers.",
+    "Claiming no review exists merely because the preview has no open row."
+  ],
+  "id": "INV-Z8HF38",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_page_skeleton_projection.py: 1 on the two-finding document, 10 and 100 where the summary carries 25; dashboard/src/panels/detail-panel/page-look.test.tsx: 26 findings with the last open read '1 of 26 findings open' in the Now row and in the Review block; scripts/sync-projection-types.py --check current"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "F5-V03",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The count of open findings shown for a review round is the count of the whole round: the server counts the open findings before it cuts the summary to its first 25 and sends the number as openFindings, and no reader counts the open flags of the findings it carries.",
+  "status": "proposed",
+  "supersedes": []
+}

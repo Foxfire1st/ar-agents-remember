@@ -11,6 +11,11 @@ The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,98
 TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
 base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
 
+The task samples also exercise the fixed reader's model-derived form, header/type/status-note fields,
+whole review counts and step preview flags required by the current generated mirror. These are
+manual sampled values, not evidence that every fixture-base initializer was copied from a served row.
+The builder card distinguishes copied identities, recomputed form and admitted neutral values.
+
 **It is NOT generated.** This file is a hand-maintained sample. The TypeScript mirror it is checked
 against is generated and stale-checked from the Pydantic projection schema, so sample coverage and
 producer-to-TypeScript provenance are separate claims. `fixtures/wire.ts` draws that boundary:
@@ -121,6 +126,10 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
    `e2e-production/cockpit.production.spec.ts` all distinguish manual sample coverage from generated
    mirror provenance.
 
+## Manual direct-grant display samples
+
+The L94 sync adds two `directGrant` examples: the first series child's row and the first task-document row each carry the same fabricated developer giver/time node. These hand-maintained shape samples exercise display fields in the generated mirror; they are not live external grants, proof of ordinary-start eligibility, or browser authorization. The current sample remains manual, and no new visual/sandbox qualification is claimed for the port.
+
 ## Evidence
 
 ### Docs References
@@ -192,3 +201,5 @@ wire-fixture consumers have a cursor-carrying sample matching the regenerated sc
 Two sampled decisions carry explicit `product_record: false`, so the hand-maintained fixture
 exercises the product-record marking the projection serves: authored decisions stay unmarked
 while writer constants mark records.
+
+- Two hand-maintained giver/time samples exercise directGrant display shape, not external authority. [19]

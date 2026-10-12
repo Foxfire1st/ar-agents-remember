@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/skeleton-notwice.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90473baa386e1f51ff84044f8f62fc84f46e20bf",
+            "content": "sha256:ac7cf86c3b66d2ee4613b99c6e880f603e82379700c5e60242650cda98393aa0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

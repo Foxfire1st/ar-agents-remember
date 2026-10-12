@@ -45,11 +45,12 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 2. **`served ⊇ mirror`** — held by passing the fixture through `asServedProjection` plus the
    `@ts-expect-error` pins at the bottom.
 3. **`fixture ⊇ mirror`** — **sample coverage** through `MirrorOnlyPaths` and `fixtureMustSample`;
-   the residue (exactly `projection.servingBuild` and `projection.agentNotifierHeartbeat`) is named
-   in `KnownUnsampled` and `allowlistMustStayEarned`.
+   the current residue has three paths: `projection.servingBuild`,
+   `projection.agentNotifierHeartbeat`, and `projection.supervisorHeartbeat`. `KnownUnsampled`
+   names them and `allowlistMustStayEarned` rejects stale allowances.
 
 **The walls of the walk, derived rather than described.**
-`AbsorbingPaths`/`INDEX_SIGNATURE_SITES` (seven absorbing nodes) and
+`AbsorbingPaths`/`INDEX_SIGNATURE_SITES` (currently fifteen index-signature keys) and
 `ClosedUnionPaths`/`VOCABULARIES` (every literal-union path registered and sampled) are `Record`s
 over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:225-249; dashboard/src/test/contract.test.ts:289-430).
 `valuesAt` reads every value at a dotted path, fanning out over arrays
@@ -62,11 +63,12 @@ lifecycle state`; `mirror does not invent fields the server cannot send`) carry
 the runtime membership, non-vacuity, bucket-uniqueness, spelling-parity, and inverted-pin checks
 cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:559-564).
 
-### 260831-LOCR-L17 — the observer-health vocabulary entries
+### Historical 260831-LOCR-L17 — the observer-health vocabulary entries
 
 `VOCABULARIES` gained the five `projection.terminalObserverHealth.*` paths (the closed unions
 `status`, `schemaVersion`, `activeFailureCategory`, `activeFailureSummary`, `activeFailureType`),
-and `KnownUnsampled` is deliberately UNCHANGED at its two entries: the new field is sampled by
+and at that leaf’s epoch `KnownUnsampled` remained at two entries (not the current three-path
+census above): the new field was sampled by
 `fixtures/snapshot.json`, so allowlisting it instead would have failed
 `allowlistMustStayEarned` and left the mirror's new surface unmeasured. Two consequences are worth
 recording, because both were live failure modes in this leaf's review round. First, this registry is
@@ -91,7 +93,8 @@ value is missing or null reads as a failure instead of passing vacuously.
 - The fixture enters through `asServedProjection` and nowhere else.
 - `INDEX_SIGNATURE_SITES` and `VOCABULARIES` are `Record`s over derived path unions; never convert
   their keys to an untyped list.
-- `KnownUnsampled` is meant to stay two entries long.
+- `KnownUnsampled` names the actual current unsampled residue (three paths here), not a permanent
+  two-entry quota. Its entries must remain earned by the derived fixture/mirror checks.
 - A vacuous check must read as a failure; both the per-path vocabulary loop and the absorbing-node
   loop assert a non-zero sample count first.
 
@@ -127,7 +130,7 @@ makes the behaviour load-bearing HERE.
 - The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. [4]
 - `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. [5]
 - `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. [6]
-- `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. [7]
+- `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the current fifteen index-signature keys, derived and closed. [7]
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
 - Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
 - Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. [10]

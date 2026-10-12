@@ -547,21 +547,25 @@ The family-population tests read expected membership and claim identities from t
 
 | Observer-to-notifier handoff latency | `test_serving_notifier_handoff.py` | `LOCR-R04@v1`'s completion-relative relay proof, eight cases over one disposable world that enters the real `_serving_lifespan` under a deadline-correct virtual clock, so the real observation loop, the real `TerminalCatalogLivenessSweeper.refresh`, the real catalog commit boundary and the real `run_agent_notifier_sweep` are what is measured. The two loops share no wake-up channel: the observer polls every `P` (1.0 s) after each attempt returns and the sweeper admits one full sweep per `F` (10.0 s) from the previous full sweep's **start**, while the notifier evaluates the durable catalog and sleeps `N` (10.0 s) after its pass returns — so the delivered worst phase is `F + P + R_observer + D_commit + N + R_notifier`, 21.0 s of logical scheduling for the default knobs plus only measured overrun. Each case asserts the bound **and** its decomposition from measured terms, and each protects one clause: the nominal phase, the previous full sweep's own overrun, a starting-row fast-path overrun, a notifier pass in flight at the commit (whose interval starts at its own completion, not at the commit), committed-truth-only reads (a read attempted before the commit and returned after it carries the committed rows in the notifier's own `include_terminated=True` scope), coalesced missed ticks for both loops, a live pass that did not observe the fact being unable to satisfy the stage, and notifier disablement with in-place re-enabling. The oracle documents three relations it deliberately does **not** assert — the telescoping decomposition, the observer phase's maximum, and `bound` as the sum — because each holds in every reachable state; an assertion that cannot fail is not evidence. Unit lane: no HTTP request, no server, no process. |
 
-- The lane row. [1414]
+
+
 - The packet's examples: ready once current rows answer every item; a new edit reopens two. [1415]
-- One refusal test per public route entry, starting with the worktree closeout. [1416]
 - The sync-merge cases. [1417]
-- The two lane rows. [1418]
+
+
 - The folder-master finalize cases. [1419]
 - The four reopen cases. [1420]
 - Buckets and destinations reconcile; long paths answer typed. [1421]
-- The lane row. [1422]
+
+
 - The registry compared as a set. [1423]
-- The lane row. [1424]
+
+
 - The module's own statement of its fixture. [1425]
 - The walk-tree case (F16, R3-1, R3-2). [1426]
 - The route case: every view, 503 unwired, nothing written. [1427]
-- The lane row. [1428]
+
+
 - The cards-read case and its four helpers. [1429]
 - The proof admission at the route. [1430]
 - The Q8 case. [1431]
@@ -575,24 +579,32 @@ The family-population tests read expected membership and claim identities from t
 - The two MIK-R25 lane rows. [1439]
 - A repeat read writes nothing. [1440]
 - Archival deletes only the task's own artifacts. [1441]
-- The decision-record lane row. [1442]
+
+
 - A lifted decision round-trips with its requirement endpoints reported. [1443]
 - A decision is never an export (review F6). [1444]
 - The leaf-read lane row. [1445]
 - The leaf-read module's two consumer lines. [1446]
-- The lane registration. [1447]
+
+
 - The conforming directory move. [1448]
 - A forged legacy ID does not make a record exported. [1449]
 - The writer refuses an unsupported admission claim. [1450]
-- The planned-effects lane row. [1451]
-- The planned-effects module's consumer line. [1452]
+
+
+
+
 - The paging lane row. [1453]
 - The paging module's two consumer lines. [1454]
-- The onboarding gate's lane row. [1455]
+
+
 - The gate cases' fixture description. [1456]
-- The lane row. [1457]
-- The consumer addition. [1458]
-- The two lane rows. [1459]
+
+
+
+
+
+
 - The lane row. [1460]
 - The three consumer additions. [1461]
 - The migration-pass case. [1462]
@@ -614,7 +626,8 @@ The family-population tests read expected membership and claim identities from t
 - The parallel-merge case. [1478]
 - The lane row. [1479]
 - The nine fixtures and the model each must parse as. [1480]
-- The two lane rows. [1481]
+
+
 - The module's own statement of what it pins. [1482]
 - Its lane registration. [1483]
 - **The new route-level case: the served `200`, the state after serialization, and the unknown leaf that is still a named `404`.** [1484]
@@ -630,7 +643,8 @@ The family-population tests read expected membership and claim identities from t
 - Its lane registration. [1494]
 - The module's own statement of what it protects. [1495]
 - Availability loss reported, not remembered. [1496]
-- Its lane registration. [1497]
+
+
 - The three new lane rows beside their siblings. [1498]
 - **The movement module's own statement of what it measures, and the fixture it authors through the store's operations.** [1499]
 - **The packet's conforming example and the non-conforming reading measured beside it.** [1500]
@@ -640,7 +654,8 @@ The family-population tests read expected membership and claim identities from t
 - The multi-ended line, the named-instead-of-denied withdrawal, and the member-wise family pairing. [1504]
 - **The three lane rows and the six consumer rows the same change registered.** [1505]
 - **The re-contracted mechanism case in the surface module.** [1506]
-- The unit-regression registry includes the revision-selection test module. [1507]
+
+
 - The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. [1508]
 - **The fixture that makes retained populations real: two independently built text-tree snapshots under one namespace, with heads read from what is retained.** [1509]
 - **The single retained pair compared head to head, with the before head recorded on a known-empty after side.** [1510]
@@ -703,27 +718,40 @@ The family-population tests read expected membership and claim identities from t
 - Interactive catalog names missing authority without eligibility. [1567]
 - The citation index's exclusion register, its ruled caps and its reported-skip behaviour, defended case by case. [1568]
 - The divergence between the register's re-inclusion rule and Git's, measured on both sides. [1569]
-- The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins. [1570]
-- The lane rows that admit both L14 modules to the `unit-regression` lane. [1571]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1572]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1573]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1574]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1575]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1576]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1577]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1578]
-- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1579]
-- The lane rows that admit both L14 modules to the `unit-regression` lane. [1580]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - The live public-surface inventory contract for the advertised MCP tool tuple. [1581]
 - The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. [1582]
 - The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. [1583]
-- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
+
+
 - The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. [1585]
 - The L36 lane registration the fail-closed manifest requires. [1586]
 - The L37 structural half: the pause's import closure is disjoint from every publication module. [1587]
 - The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. [1588]
 - The lane registration the fail-closed manifest requires for that module. [1589]
-- The L4 census module's lane row, which closed the gap the L4 route section recorded. [1590]
+
+
 - The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions. [1591]
 - The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires. [1592]
 - The shared fixtures the L27 module imports instead of rebuilding. [1593]
@@ -731,7 +759,8 @@ The family-population tests read expected membership and claim identities from t
 - **260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item. [1595]
 - The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. [1596]
 - The lane registration the fail-closed manifest requires for that module (row 165 after the KS-L2 and KS-L3 insertions). [1597]
-- The architecture-fitness lane registration the fail-closed manifest requires for that proof. [1598]
+
+
 - The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires. [1599]
 - The shared fixtures the L27 module imports instead of rebuilding. [1600]
 - **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. [1601]
@@ -748,18 +777,24 @@ The family-population tests read expected membership and claim identities from t
 - The lookup that ran and could not answer, refused as unavailable rather than absent. [1612]
 - The lookup that could not be run at all, reported as the same fact. [1613]
 - The continuation bindings, each with its own control, and the read-only property on a real file. [1614]
-- The read fixture and its registered contract. [1615]
-- The unit-lane row the read's selection module occupies. [1616]
+
+
+
+
 - The two integration-lane rows the read's boundary and path modules occupy. [1617]
-- The read fixture and its registered contract. [1618]
-- The unit-lane row the read's selection module occupies. [1619]
+
+
+
+
 - **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [1620]
 - **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion.** [1621]
 - **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** [1622]
 - **The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.** [1623]
 - The expansion, the visible unattributed gap, and the filter that narrows the display and never the comparison. [1624]
-- **The fixture and the governed contract it is registered under.** [1625]
-- **The fixture and the governed contract it is registered under.** [1626]
+
+
+
+
 - **The harness that owns the admitted candidate and the recorded fixture.** [1627]
 - **The refusal an over-budget population raises, which is why the loops live inside their cases.** [1628]
 - The publish refusal names the one omitted member, for each of the nine. [1629]
@@ -771,10 +806,13 @@ The family-population tests read expected membership and claim identities from t
 - The freeze branch keeps its own named refusal. [1635]
 - **The signal suite's 28 cases, including the nine-parameter required-field table and the two halves of "a conclusion is unrepresentable".** [1636]
 - The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires. [1637]
-- **260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract. [1638]
-- The read fixture and its registered contract. [1639]
+
+
+
+
 - The two integration-lane rows the read's boundary and path modules occupy. [1640]
-- **The fixture and the governed contract it is registered under.** [1641]
+
+
 - The new case module and its lane marker. [1642]
 - The forbidden-name set the whole payload schema is walked against. [1643]
 - The row-level proof that a full render stores nothing. [1644]
@@ -782,7 +820,8 @@ The family-population tests read expected membership and claim identities from t
 - The transport case: typed result, a 400 and a 503. [1646]
 - The two `consumers` registrations the module obliged. [1647]
 - The five lane rows, appended rather than inserted. [1648]
-- **The four consumer registrations the two governed-support consumers and the item-16 case obliged.** [1649]
+
+
 - **The budget pair the populations are measured against, and the `UsageError` that makes an over-budget lane execute zero tests.** [1650]
 - The scaffold the sibling imports, still exported from the kept module. [1651]
 - The publication-input cases in their new home, asserting the declaration is the model's own field order. [1652]
@@ -849,3 +888,47 @@ The family-population tests read expected membership and claim identities from t
 
 
 - Shared outline/change facts keep one definition [1713]
+
+## Native renewal of retained reference claims
+
+- The lane row. [1414]
+- One refusal test per public route entry, starting with the worktree closeout. [1416]
+- The two lane rows. [1418]
+- The lane row. [1422]
+- The lane row. [1424]
+- The lane row. [1428]
+- The decision-record lane row. [1442]
+- The lane registration. [1447]
+- The planned-effects lane row. [1451]
+- The planned-effects module's consumer line. [1452]
+- The onboarding gate's lane row. [1455]
+- The lane row. [1457]
+- The consumer addition. [1458]
+- The two lane rows. [1459]
+- The two lane rows. [1481]
+- Its lane registration. [1497]
+- The unit-regression registry includes the revision-selection test module. [1507]
+- The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins. [1570]
+- The lane rows that admit both L14 modules to the `unit-regression` lane. [1571]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1572]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1573]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1574]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1575]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1576]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1577]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1578]
+- The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [1579]
+- The lane rows that admit both L14 modules to the `unit-regression` lane. [1580]
+- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
+- The L4 census module's lane row, which closed the gap the L4 route section recorded. [1590]
+- The architecture-fitness lane registration the fail-closed manifest requires for that proof. [1598]
+- The read fixture and its registered contract. [1615]
+- The unit-lane row the read's selection module occupies. [1616]
+- The read fixture and its registered contract. [1618]
+- The unit-lane row the read's selection module occupies. [1619]
+- **The fixture and the governed contract it is registered under.** [1625]
+- **The fixture and the governed contract it is registered under.** [1626]
+- **260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract. [1638]
+- The read fixture and its registered contract. [1639]
+- **The fixture and the governed contract it is registered under.** [1641]
+- **The four consumer registrations the two governed-support consumers and the item-16 case obliged.** [1649]

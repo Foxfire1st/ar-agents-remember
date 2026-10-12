@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/dev/taskSkeletonDocs.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The rich exports are deliberately made-up developer-view documents and answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2262d6a78f28bc5cefd9f0c79c8c81f9935a526",
+            "content": "sha256:247322910d242b986d2532d6b0f5412e84dbfce838cefb4ef03b601a3a02532d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

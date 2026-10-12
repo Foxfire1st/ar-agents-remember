@@ -71,9 +71,12 @@ projection boundary is current enclosure ownership: fleeting lifecycles still do
 fresh non-terminal promotion/gate lifecycles may bridge the enclosure materialization window, but older
 non-fleeting event-backed lifecycles drop from the live view when their enclosure is deleted or re-owned.
 `read_providers` reads each worktree's **isolated provider stack** (surface 4) bound to
-worktree/repo/role. Since 260707-HFX2-L13, `TaskDocNode` in the always-on projection is a bounded,
-body-free summary with `bodyRevision`; the dashboard reads one selected full body through
-`read_task_document_body`, while identity/progress/step/navigation fields remain in the summary.
+worktree/repo/role. `TaskDocNode` in the always-on projection is a bounded-content summary with
+`bodyRevision`, not a full body. L127 adds the model-derived form, display type/branch/status note,
+whole header/review/decision counts, bounded head/text previews and truncation flags. Whole counts
+are computed before their preview windows. Step/sub-step notes and outcome previews are projected
+without making every projected field a drawn page block. The dashboard reads one selected full body
+through `read_task_document_body`; current summary identity/progress/step/review facts remain authoritative.
 
 Slice 5e adds the **Engine Room process map** surface: `Analytics.engineProcesses` — a second derived
 analytics surface (like `attentionQueue`) composed by `reducer.build_engine_processes` into one

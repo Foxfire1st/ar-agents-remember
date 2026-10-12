@@ -1,0 +1,164 @@
+{
+  "path": "dashboard/src/panels/detail-panel/docHead.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocFacts"
+        }
+      },
+      "id": "RLZ-0N51EK",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the strip: one cell per fact, the label above the value, the chain from sprint to task among them.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "visibleHeadNotes"
+        }
+      },
+      "id": "RLZ-FHP136",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Leaves out a note the strip states in a fact of its own: 'Master' and 'Parent portfolio' where the chain names a parent, 'Primary requirement' where that fact stands. What it leaves out takes no place of the six.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownHeadNotes"
+        }
+      },
+      "id": "RLZ-H14A6D",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Applies the bound of six over the short notes in the strip and the long ones in the lines together, and counts what is left.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "PrimaryFact"
+        }
+      },
+      "id": "RLZ-MSWTZ4",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the primary requirement as its link only; the requirement's sentence is left to the Requirements block.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeadNotes"
+        }
+      },
+      "id": "RLZ-PSYJP4",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws each note as a label and its text and gives the link to all notes where the bound cut some.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "content": "sha256:1ec5a815bf7fa2da75cef49002d09e9efbb173924c0087ef4ef70687d19cf10a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ObjectiveLead"
+        }
+      },
+      "id": "RLZ-W8JDSE",
+      "invariant": "INV-ANN2YJ",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (e)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The only place the objective is drawn; the body of the page has no objective block any more.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every form shares identity, objective-first placement, independent fact strip and note head.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+            "content": "sha256:4a88aa07d18b9d657eea6bc7946cbac1549267b79874ba9dcaf108938b255e7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocHead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+            "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownHeadNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The objective exposes bounded text in place and offers its long full text through a counted own view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+            "content": "sha256:1ec5a815bf7fa2da75cef49002d09e9efbb173924c0087ef4ef70687d19cf10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObjectiveLead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

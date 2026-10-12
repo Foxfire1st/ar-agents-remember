@@ -32,6 +32,22 @@ document model, `task_doc`'s write-time validation and `write_task_doc` all stay
 
 ## Code Commentary
 
+### Bounded summaries and whole reader bodies
+
+`_task_doc_form` uses the TaskDocument model's sprint classification, not a title or client heuristic.
+The always-on summary bounds long note/outcome/status/finding-description strings to 400 characters,
+header notes to six carried rows and findings to twenty-five; totals name the complete collections.
+The review producer counts open flags before cutting the findings list. The on-demand body carries
+every note/finding and whole strings, with clear tested preview flags. A carried six-header-note
+summary is not the same as the head's six drawn-note bound after independent strip facts are suppressed.
+
+`bodyRevision` also hashes statusNote, headerNotes, type, complete steps and reviewState, in addition
+to the existing long reader content and sprint structure. This makes displayed-field changes invalidate
+an open cached body. The client still keeps current summary identity/status/progress/review aggregates
+rather than allowing a fetch-time body to become current fact authority. Nested notes are preserved as
+body data, but the current nested-row renderer does not draw them or label their summary truncation.
+
+
 - `read_task_documents`
 - `read_task_document_body` (since 260921-ICR-L42: resolves the requested canonical file and graph-named master inputs without task-corpus enumeration, then
   joins optional external grant census evidence before projecting the body; it no longer calls
@@ -105,7 +121,6 @@ Summaries, full bodies and series children join readable external grant evidence
 The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
 - Canonicalized requirement text reader for typed packet refs. [1]
 - Canonicalized open-question reader for typed acceptance obligations. [2]
-- Body revision hashing of typed intent slots. [3]
 - The tolerant read edge: strict first, only `extra_forbidden` keys dropped, every other failure still `None`. [4]
 - Targeted pruning of exactly the addressed keys from a deep copy. [5]
 - The pruning pass bound and the residual unprunable-loc gap it exists to stop. [6]
@@ -113,10 +128,8 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. [8]
 - The durable-data writer takes an already-validated document, so it can write no unknown key. [9]
 - The reader projects every canonical task document, and the removed summary bound with the rationale for its removal. [10]
-- The dead-text element a withheld document produced, unchanged by this leaf. [11]
 - The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. [12]
 - The closeout-queue reader skips a payload that fails model validation. Historical site counting and unchanged-source comparison belong to the retained task evidence, not this current-source reference. [13]
-- The on-demand body read: resolve, confine under `tasks/`, read one file, project with the graph-only join table. [14]
 - The body read's master join table: none without a graph, otherwise only the graph-named masters that carry the schema. [15]
 - The named-path probe that returns exactly the enumeration's subset for those tails, in the same order. [16]
 - The only consumer of `master_docs`, which looks masters up solely by graph ref. [17]
@@ -241,4 +254,8 @@ corpus the isolated HTTP route median fell from 0.591 s to 0.019 s for a leaf an
   before/after, with concurrent master+leaf reads and projector CPU, belongs to L50 (review finding
   L42-R1-F1). None of these is claimed here.
 
+
+- Body revision hashing of typed intent slots. [3]
+- An unresolved authored-document row stays visibly non-clickable; the historical withheld-document surface now belongs to the grouped row module. [11]
+- The on-demand body resolves one canonical document and graph-named masters; optional external grant-store I/O is separate from canonical corpus enumeration. [14]
 - Task summaries/body/series join optional external grants while canonical task-corpus reads remain bounded. [20]

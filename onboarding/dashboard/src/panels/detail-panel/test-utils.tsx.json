@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc54d477f29632154125cbb3bcf40f7bac7adf9f",
+            "blob": "914288253ff65ecc63e3356c0dd4eeec0ff6afb1",
             "content": "sha256:f574f97f02412800d9d57880d6478eb1d34116305712722ba7cd871dc1519c20",
             "locator": {
               "kind": "symbol",
@@ -57,6 +57,23 @@
               "end": 302,
               "kind": "line_range",
               "start": 273
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "914288253ff65ecc63e3356c0dd4eeec0ff6afb1",
+            "content": "sha256:9c449f7efc17eecc1778d5a46b838e043afc3f2bf545d4ff559e1fc97e130e7e",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 454
             }
           },
           "kind": "code"

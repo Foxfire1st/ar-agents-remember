@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/summary-bounds.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c00ffc6fdf6f0ed759a6dc2d968ced3cbaa6f4ed",
+            "content": "sha256:1b46ac1551ea1a347c1dc1ae253cfa405726df26d3bd9f41ad2e440c6815456f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "content": "sha256:a35aab99f13fd4512cf7c8c83b318a6a7c130dd4cfcb7e556a1d15e30c96aa3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "StepSubList"
+        }
+      },
+      "id": "RLZ-28EM4Y",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the reason of a skipped nested step through the Markdown grammar, as SkippedDisposition does for a step's own.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "StepsBlock"
+        }
+      },
+      "id": "RLZ-53QNQ9",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the table and its heading with the progress; it is the only place a task's steps are drawn.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewBlock"
+        }
+      },
+      "id": "RLZ-6W4RY6",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The Review block of a task; its count reads openFindings and its rows are the open findings it carries.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewBlock"
+        }
+      },
+      "id": "RLZ-ZZ1QF9",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Steps aside where no review state is sent; with that line taken out the witness fails.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The step table carries projected progress and delegates state/mark mappings to the pure model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepsBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Whole-round counts remain authoritative despite the eight-row open-finding preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Nested state/title/skip reasons are shown, but nested notes are not rendered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "content": "sha256:a35aab99f13fd4512cf7c8c83b318a6a7c130dd4cfcb7e556a1d15e30c96aa3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepSubList"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

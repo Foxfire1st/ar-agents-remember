@@ -14,6 +14,16 @@ digest) and attaches it optionally to the lifecycle operation projection.
 
 ## Code Commentary
 
+### Task-reader wire fields
+
+The generated TaskDocNode carries required sprint/master/task `form`, type, headerNotes and
+statusNoteTruncated; branch/status note, headerNotesTotal and reviewState remain optional.
+A present TaskReviewStateNode requires whole-round openFindings and totalFindings, independently of
+the findings preview array. TaskStepNode requires note/outcome truncation flags beside optional prose;
+TaskSubStepNode adds optional note without a truncation flag. The consumer's supported older-recording
+recovery is not permission to hand-invent a malformed present review object missing required counts.
+
+
 The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
 
 ### Logic

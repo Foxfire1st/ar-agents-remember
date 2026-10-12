@@ -35,8 +35,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:1c03c04dd6c7f73bf43e9f2e85d317f5784ced76c7217239b3a2982f55a732e4",
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:87de9ad2eefc88f68c0d0eb3325a1f47f9963a55402f485a5f75ed4e8938da0e",
             "locator": {
               "kind": "symbol",
               "name": "FamilyCenter"
@@ -47,8 +47,8 @@
         },
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:a7e72b33b5cb9df4eca702f5997c953dbb6e5ee5e37f6eb35e7857d7e211cb99",
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:49316658683ba17dfbca01d3bed03b2549d3680e5929df741f56ecdf0ccd39d9",
             "locator": {
               "kind": "symbol",
               "name": "FamilyMemberContext"
@@ -183,7 +183,7 @@
       ]
     },
     "112": {
-      "note": "**The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.**\n\nAnchor: \"function unlistedPathNote\"; \"function listedOrPlainPath\"",
+      "note": "**The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.**",
       "targets": [
         {
           "anchor": {
@@ -320,11 +320,11 @@
       ]
     },
     "116": {
-      "note": "The entry mounted in place of a change-set button.\n\nAnchor: \"<IntentReviewEntry\"",
+      "note": "The entry mounted in place of a change-set button.",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -337,11 +337,11 @@
       ]
     },
     "117": {
-      "note": "The leaf-scoped facts and re-validation generation.\n\nAnchor: `useIntentEntryGeneration`",
+      "note": "The leaf-scoped facts and re-validation generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
             "locator": {
               "kind": "symbol",
@@ -353,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
             "locator": {
               "kind": "symbol",
@@ -589,7 +589,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -824,8 +824,8 @@
         },
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-            "content": "sha256:f0a31d9c76a7f2eaf908be6d2a1d260859f88d35e2e14b60a2624d5384d63bc9",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
             "locator": {
               "kind": "symbol",
               "name": "outcomeMessage"
@@ -1222,7 +1222,7 @@
       ]
     },
     "16": {
-      "note": "The tree-comparison scope, the statement area and the changed guarantee.\n\nAnchor: \"export function IntentWordDiffScope({\"; \"export function IntentStatementBody({\"; \"export function guaranteeTextChange(\"",
+      "note": "The tree-comparison scope, the statement area and the changed guarantee.",
       "targets": [
         {
           "anchor": {
@@ -1492,8 +1492,8 @@
         },
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
             "locator": {
               "kind": "symbol",
               "name": "CenterExpressions"
@@ -1613,11 +1613,11 @@
       ]
     },
     "40": {
-      "note": "The bar's request for the net's per-leaf attribution.\n\nAnchor: `includeLeaves`",
+      "note": "The bar's request for the net's per-leaf attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:f0fc39c848021c17128b9162a968b9260ec644e3e1cee3b433c263b22785570f",
             "locator": {
               "end": 112,
@@ -1635,7 +1635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
               "kind": "symbol",
@@ -1648,29 +1648,15 @@
       ]
     },
     "42": {
-      "note": "The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it.\n\nAnchor: \"The sole product-facing Chats cockpit is never unmounted\"; \"<SessionsView\"",
+      "note": "The current Chats cockpit keeps RoleChatsPane mounted while hidden; the former SessionsView topology is historical, not a current mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:d6b6b5b02ed0eb28da0548763e42f6517d687516f5f2337170cf5dbcdd8f49f2",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
             "locator": {
-              "end": 812,
-              "kind": "line_range",
-              "start": 808
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:6f44f6254ec9019b79d7ee0ad0120bf93787c0c532e17dd9bab6bb8e0881730b",
-            "locator": {
-              "end": 815,
-              "kind": "line_range",
-              "start": 814
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1679,16 +1665,15 @@
       ]
     },
     "43": {
-      "note": "The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props.\n\nAnchor: \"<SessionsView\"; \"active={view === \\\"chats\\\" && !takeover}\"; \"selectedLeafKey={viewedLeafKey}\"",
+      "note": "The current persistent Chats layer mounts one RoleChatsPane; the former SessionsView selected-context wiring is historical, not a current mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:120f35b1e97b33314dc8e25e29780394ce276369f1878f8fba2ffd1008b22866",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
             "locator": {
-              "end": 816,
-              "kind": "line_range",
-              "start": 815
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1696,25 +1681,12 @@
         },
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:321dfb2796157b97cccb9a0074dd3d4c41ce87bff8defc8119177d8b736f3ea9",
             "locator": {
               "end": 814,
               "kind": "line_range",
               "start": 814
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:d19c11eb27e47be864563bc9c5e69c5b59ae34485df276228baa69dfc8d44701",
-            "locator": {
-              "end": 818,
-              "kind": "line_range",
-              "start": 818
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1927,29 +1899,15 @@
       ]
     },
     "53": {
-      "note": "`DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content.\n\nAnchor: \"function DetailPanelImpl({\"; \"export function displayedReaderDoc({\"; \"export function TaskReader({\"",
+      "note": "`DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content.",
       "targets": [
         {
           "anchor": {
-            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
-            "content": "sha256:36eb7db918cf362094b42a7696eb4db5dcda6113c52439a2bce0cbc199739ab5",
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:c8150dcbcc14f9af288755d9698b804f56e7e450b0df2f2af54283478deb6825",
             "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:4964fe68aa3c975f552f2e17aaa78397f5fbb9de4af93e005e065f753f10e667",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 123
+              "kind": "symbol",
+              "name": "displayedReaderDoc"
             },
             "path": "dashboard/src/panels/detail-panel/model.ts"
           },
@@ -1957,14 +1915,26 @@
         },
         {
           "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "blob": "15d1e88ad44244d392fe5d663457cdeb48fda888",
+            "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
             "locator": {
-              "end": 679,
-              "kind": "line_range",
-              "start": 643
+              "kind": "symbol",
+              "name": "TaskReader"
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fc47d2f0162a9f76bea5427359161727342a013",
+            "content": "sha256:36eb7db918cf362094b42a7696eb4db5dcda6113c52439a2bce0cbc199739ab5",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },
           "kind": "code"
         }
@@ -2032,8 +2002,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:0534cf1582e34631a47f2cbd7edb0f72e90fc6c331031ed4a256df6fc8ff3002",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
             "locator": {
               "kind": "symbol",
               "name": "SERVED_LIFECYCLE"
@@ -2044,8 +2014,8 @@
         },
         {
           "anchor": {
-            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
-            "content": "sha256:c13cd1e912daf0a1b709084429ede3f46694a201c77086a57baa5233ea55743e",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "content": "sha256:9218a35ede1b356e59b2071632ffa1bbcd7f21b68d73f3220b6b303a83cb45ab",
             "locator": {
               "kind": "symbol",
               "name": "BASE_LIFECYCLE"
@@ -2056,7 +2026,7 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
             "locator": {
               "kind": "symbol",
@@ -2068,7 +2038,7 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
             "locator": {
               "kind": "symbol",
@@ -2081,11 +2051,11 @@
       ]
     },
     "56": {
-      "note": "The typed fixture factories provide lifecycle and projection nodes. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`.",
+      "note": "The typed lifecycle and projection factories are shape-aligned; the served lifecycle binding supplies copied identities without making every content/default value served-derived.",
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
             "locator": {
               "kind": "symbol",
@@ -2097,7 +2067,7 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
             "locator": {
               "kind": "symbol",
@@ -2109,12 +2079,11 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:0534cf1582e34631a47f2cbd7edb0f72e90fc6c331031ed4a256df6fc8ff3002",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
             "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 78
+              "kind": "symbol",
+              "name": "SERVED_LIFECYCLE"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -2158,11 +2127,11 @@
       ]
     },
     "59": {
-      "note": "**The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.**\n\nAnchor: \"Intent review\"",
+      "note": "**The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.**",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
             "locator": {
               "end": 4,
@@ -2214,7 +2183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
             "locator": {
               "kind": "symbol",
@@ -2231,8 +2200,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:6e5aed5f9e75c36249c3ac82fc41b73ad452b2e93138e25f06cab45c61f75fc2",
             "locator": {
               "kind": "symbol",
               "name": "intentReviewEntries"
@@ -2256,11 +2225,11 @@
       ]
     },
     "63": {
-      "note": "**The entry threading the published generation into the viewer target.**\n\nAnchor: \"onClick={() => onOpen(generation ? { ...target, generation } : target)}\"",
+      "note": "**The entry threading the published generation into the viewer target.**",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
             "locator": {
               "end": 164,
@@ -2274,11 +2243,11 @@
       ]
     },
     "64": {
-      "note": "**The generation state the button carries from a successful master read.**\n\nAnchor: `MasterNetPins`",
+      "note": "**The generation state the button carries from a successful master read.**",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
             "content": "sha256:4dd45319d504e435e90b3725ad32226213bb54dc2a0ad5d29c657e2b01bd9e12",
             "locator": {
               "end": 14,

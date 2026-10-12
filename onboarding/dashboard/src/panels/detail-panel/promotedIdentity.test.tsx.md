@@ -19,7 +19,9 @@ promoted document's title/identity.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Current assertions check `doc-form=task`, the real promoted identity/title and separate step ID/title
+cells. They open the Further-notes view and return before checking wrong-master fallbacks; the parent
+navigation callback remains task-document scoped, not a generic lifecycle placeholder.
 
 ### Todos
 

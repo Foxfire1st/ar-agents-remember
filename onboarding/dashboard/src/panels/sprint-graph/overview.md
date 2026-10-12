@@ -23,12 +23,14 @@ refs or re-derives waves.
 
 ## Hot Path Summary
 
-`SprintGraphSection` (in `detail-panel/taskReader.tsx`) mounts `SprintGraphView` plus the
-sprint-scoped `CloseoutQueue` on the sprint page; the view groups `graphView.nodes` by
-`waveIndex` into rows and renders one `GraphBox` per node — a segment box with leaf lines
-or an atomic lump, a frontier badge, and textual predecessor labels with reasons. Start at
-`SprintGraphView.tsx` for the component, `styles.ts` for the declarative grid/leaf-line
-contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof.
+The sprint/master fixed reader's Order block (in `detail-panel/orderGraph.tsx`) shows bounded
+producer-ordered rows and opens the complete `SprintGraphView` in an own view. The sprint-scoped
+`CloseoutQueue` remains an independent taskReader section, including graphless sprints; opening the
+graph does not own/reset that queue. The view groups `graphView.nodes` by received `waveIndex` and
+renders one `GraphBox` per node with segment leaves or an atomic lump, frontier and textual reasons.
+Rest has no active/master or focus/leaf mark; a qualified hover/focus changes visual marks without
+re-deriving edges, waves or counts. Start at `SprintGraphView.tsx`, `styles.ts` and the shell tests.
+The former always-inline `SprintGraphSection` integration is retired, not another page shell.
 
 ## Route Model
 
@@ -39,7 +41,7 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
 - `SprintGraphView.test.tsx` — component tests: zero-edge, segmented-master, frontier
   badges, narrow declarations, ellipsis contract (L12-R7 scenario evidence).
 - `SprintGraphPage.test.tsx` — shell-level reachability (L12-R5) plus scenario-reset proof: the real
-  `DetailPanel` mounts the graph view and sprint-scoped `CloseoutQueue`, keeps the queue reachable
+  `DetailPanel` opens the graph from Order and retains the independently sprint-scoped `CloseoutQueue`, keeps the queue reachable
   for graphless sprints, and proves the canonical dev/test reset clears both a seeded authoritative
   queue and its mounted derived UI without introducing a second reset owner.
 
@@ -63,7 +65,9 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
 
 - The wave-grid component groups projected nodes into wave rows. [1]
 - The exported responsive layout contracts. [2]
-- The master reader mounts the scoped queue independently of its optional graph section. [3]
+
+- The sprint reader retains its scoped CloseoutQueue independently of the optional Order preview and graph own view. [3]
+
 - The shell suite proves graph/queue reachability, graphless queue access, and mounted canonical-reset clearance. [4]
 - The render-ready wire model this route consumes. [5]
 - The deterministic mermaid document-diagram sibling of this view. [6]

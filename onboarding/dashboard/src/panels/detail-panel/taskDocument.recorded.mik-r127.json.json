@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskDocument.recorded.mik-r127.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "727751f8432601e1b429148f5c393ab421407ccb",
+        "content": "sha256:d8902933946e912061a88e55ea6ad145fd827c0b102898812008c45717135c55",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7BV3NA",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "What this task's projection sends for the same two documents; the pair of the base recording.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stored inputs, producer outputs and historical provenance define the payload's exact recovery opportunity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "727751f8432601e1b429148f5c393ab421407ccb",
+            "content": "sha256:d8902933946e912061a88e55ea6ad145fd827c0b102898812008c45717135c55",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

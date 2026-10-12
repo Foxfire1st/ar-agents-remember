@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
+            "blob": "bf0734d692b9f692063961e9667d537008a28d2d",
             "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
         },
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
+            "blob": "bf0734d692b9f692063961e9667d537008a28d2d",
             "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "A bounded order preview must retain all graph units/reasons through the full view without becoming an alternative topology owner."
+  },
+  "applicability": "Sprint Order preview and its complete graph own view.",
+  "conditions": [
+    "Rows use the producer wave/state and exclude finished masters from active rows.",
+    "Landed units remain a count and the full graph stays one link away."
+  ],
+  "exclusions": [
+    "Re-deriving graph waves or master task order.",
+    "Treating the bounded preview as the entire graph."
+  ],
+  "id": "INV-XJ42YM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/order-block.test.tsx: 'draws what is not finished in rows by wave and what has landed as a count', 'keeps the whole graph one link away and returns'; dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx; notes/run3/task-page-proposal/compare-look-repair-2.html (block by block, Order); the reason of an edge is drawn as a link since F6"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "L127-F5 sprint Order block",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Order block of a sprint draws the masters that are not finished in one row per wave from the projected execution graph, with the server's wave and state, shows what has landed as a count, and keeps the whole graph with the tasks of every unit and the reason of every edge one link away in a view of its own.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-        "content": "sha256:b500adade27093aeef1c49a094b3d928f2901b440ec4f1e610f01b3a4b9c32db",
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:5cd27bafa78bfa61a0991b4eb80aac562a66ab8a42403d18e0d2abf593c75d80",
+        "locator": {
+          "kind": "symbol",
+          "name": "primaryRequirement"
+        }
+      },
+      "id": "RLZ-6GCZGM",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Picks the one primary requirement of a document with its id and version, so the head and the Requirements block name the same line.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
         "locator": {
           "kind": "symbol",
           "name": "orderDecisionsNewestFirst"
@@ -18,6 +36,114 @@
       },
       "rationale": "This shared helper orders decisions by parsed recorded time with a stable fallback, used by both the preview and the whole-log page.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:c89be5656420ad59749572504b8c0778b970d4220b0da996b106d307b7c5917b",
+        "locator": {
+          "kind": "symbol",
+          "name": "reviewSummary"
+        }
+      },
+      "id": "RLZ-DTWWZV",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one-line summary of a review; reads openFindings.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
+        "locator": {
+          "kind": "symbol",
+          "name": "docForm"
+        }
+      },
+      "id": "RLZ-G6JP82",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Classifies explicit form with the model-rule fallback, independent of visible child counts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
+        "locator": {
+          "kind": "symbol",
+          "name": "substepDisplayState"
+        }
+      },
+      "id": "RLZ-KT4Z9R",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Maps the status of a nested step to the same four states a top step has.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:a6e281fc366a73b40645259ceb48f01a70f69881db8bd4bc083b4b8bb3b8fda0",
+        "locator": {
+          "kind": "symbol",
+          "name": "docIdentity"
+        }
+      },
+      "id": "RLZ-MY1HNA",
+      "invariant": "INV-1XA7H3",
+      "origin": {
+        "handoffEntry": "F5-V02",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Says what makes two selections the same document: its file, or repository and id where a series stands in for a document without a file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
+        "locator": {
+          "kind": "symbol",
+          "name": "seriesAsMasterDoc"
+        }
+      },
+      "id": "RLZ-MZ21TT",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "A series-only adapter remains a master and invents none of the missing document blocks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "content": "sha256:4f7c453d2eb641318c96b4529fa89aab08c835b73020cc5b99a5c63b218dbac9",
+        "locator": {
+          "kind": "symbol",
+          "name": "stepMarkStates"
+        }
+      },
+      "id": "RLZ-QTMXBW",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Gives one state per declared step, parents and nested steps alike, so the marks and the count agree on the task page and in a master's table.",
+      "role": "primary-authority"
     }
   ],
   "references": {

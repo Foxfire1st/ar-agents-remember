@@ -272,12 +272,16 @@ models/projections/workspace.py schema --A--> generated types/projection.ts
   with `npm run typecheck` plus the contract vitest and not with Python tests alone (`LOCR-R17@v1`
   measured exactly that: a type-only allowlist turns `tsc` green while the runtime walk still fails
   `no served value at projection.terminalObserverHealth.status`).
-- **Fixture builders against the mirror.** Enforced by `tsc -b`. Every base in
-  `test/fixtures/wire.ts` is assembled from `snapshot.json` **and annotated with its mirror type**,
-  so it is pinned from both sides: a required field the mirror gains fails to compile until it is
-  filled, and it can only be filled from a served row. Call-site overrides go through
-  `Overrides<O, Node>` rather than `Partial<Node>`. `test/wireFixtureGuard.test.ts` refuses the
-  one-token moves by which a fixture opts out of the mirror altogether.
+- **Fixture builders against the mirror.** Enforced by `tsc -b`. Bases in
+  `test/fixtures/wire.ts` are annotated with the generated mirror type, so a new required field
+  must be supplied to compile. That is contract conformance, not proof that every initializer
+  was copied from the manual served sample: origins include copied cells, recomputed model facts
+  and explicitly admitted neutral defaults. L127's four admitted additions are derived `form`,
+  empty `type`, empty `headerNotes` and false `statusNoteTruncated` (see the owning wire card).
+  Earlier literal collections remain historical builder inputs. This narrow admission is not
+  permission to invent undeclared fields or claim neutral values were copied. Call-site overrides
+  go through `Overrides<O, Node>` rather than `Partial<Node>`; the fixture guard still refuses
+  the one-token moves by which a fixture opts out of the mirror altogether.
 - **Generated mirror against the sampled payload.** Enforced by `test/contract.test.ts`, and it
   is **not** a one-way containment. Three type-level directions: the mirror declares everything the
   sample carries (`ServedOnlyPaths` fed to `mirrorMustDeclare`, which fails naming the missing

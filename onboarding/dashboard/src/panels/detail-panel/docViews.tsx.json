@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/panels/detail-panel/docViews.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
+        "content": "sha256:a3a14e86982285d5cd6b1113e4a00ced3c20d3b2b97449cdf7f66666ce7783b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordViews"
+        }
+      },
+      "id": "RLZ-BBY38K",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The view of all findings; its count reads openFindings.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared content-view dispatch preserves form-specific collection ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
+            "content": "sha256:b14c8fa608fd63395f6f38a41d39791bfc3dc9ce8e8fecf50e572e3b7239efe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocContentView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reference views retain server-resolved artifact handlers rather than flattening links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
+            "content": "sha256:c8552683e4682a3c70a666a6acd713aef8b44df71b6b90a317dcc1d7132c7f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferencesView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Record views preserve complete section bodies and whole-round review counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
+            "content": "sha256:a3a14e86982285d5cd6b1113e4a00ced3c20d3b2b97449cdf7f66666ce7783b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordViews"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

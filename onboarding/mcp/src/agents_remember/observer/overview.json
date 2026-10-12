@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
             "content": "sha256:8d1efc19c36180f62c59d70753c8e50dc619df01d31668cbc9bef341503534f8",
             "locator": {
-              "end": 38,
+              "end": 41,
               "kind": "line_range",
-              "start": 38
+              "start": 41
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },
@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -286,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "a6fa39a171f5944c5f21864e0a81e97c3911a51c",
             "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
             "locator": {
               "end": 209,

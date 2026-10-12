@@ -341,7 +341,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:971cea5611164418877435778b240396bde6ab329b4f459e437fd029e72c0e5c",
             "locator": {
               "end": 563,
@@ -354,12 +354,12 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:4febe9305bdcf88985d693776ac3ca954a03c75b80f6c7702ee91ba410a1f6a1",
             "locator": {
-              "end": 797,
+              "end": 832,
               "kind": "line_range",
-              "start": 789
+              "start": 824
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -367,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:8559661a3931118b1672c7cc3d4b2f32aa157c9bdd61f407feceda1947d80a2e",
             "locator": {
               "end": 557,
@@ -380,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
             "locator": {
-              "end": 830,
+              "end": 865,
               "kind": "line_range",
-              "start": 830
+              "start": 865
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -398,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
+            "blob": "91be4dd3d61eb623cfd83862a3c4978636fccdd4",
             "content": "sha256:39b878c8890c499c29061dff9302b67d369376876e49d896d2b1f5b859bb5363",
             "locator": {
               "kind": "symbol",
@@ -411,11 +411,11 @@
       ]
     },
     "28": {
-      "note": "The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates.\n\nAnchor: \"GENERATED FILE\", \"is NOT generated; it remains a hand-maintained\", \"fixture-coverage guard\", \"def check\", \"def main\"",
+      "note": "The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates.",
       "targets": [
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
+            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
             "content": "sha256:c2bf5021b544e1bfe592d8e2a9412c95408aa10143a16a263841f69607846b3a",
             "locator": {
               "end": 24,
@@ -428,7 +428,7 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
             "content": "sha256:0fe35945de3839b430de57e38d38345b5ea32cd57ba071ec316fe800bdc3d6f2",
             "locator": {
               "end": 22,
@@ -441,7 +441,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
             "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
             "locator": {
               "end": 1,
@@ -481,7 +481,7 @@
       ]
     },
     "29": {
-      "note": "The route's read-only client and its comparison call.\n\nAnchor: \"export const intentReview = (\"",
+      "note": "The route's read-only client and its comparison call.",
       "targets": [
         {
           "anchor": {
@@ -517,7 +517,7 @@
       ]
     },
     "30": {
-      "note": "**The entry call: the task context alone, because a selector is what it is being asked for.**\n\nAnchor: \"export const intentReviewEntries = (\"",
+      "note": "**The entry call: the task context alone, because a selector is what it is being asked for.**",
       "targets": [
         {
           "anchor": {
@@ -551,8 +551,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:15c52525a249fceaaca83fcc5c766824f608d9b221047a6e09e3bb2fba336664",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:494d09652a67833a98c55a7fa7f5647a9630d71c6355a7cb85d093dc166ba880",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSubjectPresence"
@@ -594,7 +594,7 @@
       ]
     },
     "33": {
-      "note": "The endpoint the comparison call reaches, with no path among its parameters.\n\nAnchor: `review`",
+      "note": "The endpoint the comparison call reaches, with no path among its parameters.",
       "targets": [
         {
           "anchor": {
@@ -643,7 +643,7 @@
       ]
     },
     "35": {
-      "note": "The no-store-mutation boundary, stated in the module header.\n\nAnchor: \"NO store mutation\"",
+      "note": "The no-store-mutation boundary, stated in the module header.",
       "targets": [
         {
           "anchor": {
@@ -661,7 +661,7 @@
       ]
     },
     "36": {
-      "note": "The typed result the client returns unchanged.\n\nAnchor: \"export interface ReviewResult {\"",
+      "note": "The typed result the client returns unchanged.",
       "targets": [
         {
           "anchor": {
@@ -679,7 +679,7 @@
       ]
     },
     "37": {
-      "note": "The field-for-field mirror of the server's review payload.\n\nAnchor: \"export interface ReviewPayload {\"",
+      "note": "The field-for-field mirror of the server's review payload.",
       "targets": [
         {
           "anchor": {
@@ -725,8 +725,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:86f1b75ddb3214a95c982e72c4025dbfed303e4ec5b5a4d69d2d7115e6a6d1e5",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceInventory"
@@ -754,8 +754,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:ddf039cf6d2d565ab835ebb360c8d26dcfe58601c01c32a0d5782c3a94be1ceb",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:0d1fc3fb34c2a83ac997a203c89912e95c91fddf442d21f980b500da2b9f12c1",
             "locator": {
               "kind": "symbol",
               "name": "ReviewStaleness"
@@ -767,7 +767,7 @@
       ]
     },
     "4": {
-      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.\n\nAnchor: \"server classifies once and this adapter only carries the answer\"",
+      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.",
       "targets": [
         {
           "anchor": {
@@ -789,8 +789,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
-            "content": "sha256:9624cf94c71075e6f6e98ec6e957d2057507ac25f87b466d7d11c0ed15d7adb2",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:7e4c0ce4bbe39799ee714e0b38f6c7de88371a6748771b95b10117f0b6c3f2c6",
             "locator": {
               "kind": "symbol",
               "name": "ReviewPayload"
@@ -801,8 +801,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:33e36359efd8dd337f7f07c83b33db59401b55633d4a9e8c96a71f50d6fece3a",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:5a9fad2941727c8a91d16d06d6f40a6464ec5c3d266a7e668cf13aff791e4473",
             "locator": {
               "kind": "symbol",
               "name": "ReviewKnowledgePane"
@@ -831,17 +831,17 @@
       ]
     },
     "42": {
-      "note": "The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content.",
+      "note": "Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:eb0d94f603c3f21dcb6426d17428e00487a4e353eb973e050d57c4e430581f4c",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:335ea7b3eadaa98c1fbaaaf8a34a21c953fdc1ea2d43753075dcbe78482b1084",
             "locator": {
               "kind": "symbol",
-              "name": "InventoryRows"
+              "name": "ChangeList"
             },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
         },
@@ -864,8 +864,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:92f1296ffc3e502b070bc17e51563baa866342e1c5c3c1461bd6f23acae1b788",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:b39e7eed0a61eb599bc7207972784cb8ac9914aa98592ac56f0cbb44e6de98f0",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceSideState"
@@ -940,7 +940,7 @@
       ]
     },
     "47": {
-      "note": "**The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.**\n\nAnchor: `beforeCodeTreeId`; `afterCodeTreeId`",
+      "note": "**The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.**",
       "targets": [
         {
           "anchor": {
@@ -1000,7 +1000,7 @@
       ]
     },
     "49": {
-      "note": "The renderer the expansion's fields feed, and its three state-decided branches.\n\nAnchor: \"function Sides({\"; `review-source-no-diff-claimed`",
+      "note": "The renderer the expansion's fields feed, and its three state-decided branches.",
       "targets": [
         {
           "anchor": {
@@ -1018,7 +1018,7 @@
       ]
     },
     "5": {
-      "note": "The two reads; none for a dataset review.",
+      "note": "The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison.",
       "targets": [
         {
           "anchor": {
@@ -1034,11 +1034,11 @@
         },
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
-            "content": "sha256:85ae7bf244b16c318bb7fcecf8bf2ae78463929ac183ea270e2af2f0ab260cdd",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
-              "name": "useReviewFileClassification"
+              "name": "readFileClassification"
             },
             "path": "dashboard/src/data/reviewLane.ts"
           },
@@ -1075,8 +1075,8 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:1c410c09aa1b4add923bf21b04096e4a924fcfe6de6178aa374d72a899913547",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:5916c4a623a8d92d33dd2e79fe2de9624a4b08b8f31d531a8769a86d5dda886a",
             "locator": {
               "kind": "symbol",
               "name": "masterFileDiff"

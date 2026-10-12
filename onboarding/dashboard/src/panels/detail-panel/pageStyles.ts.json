@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/detail-panel/pageStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The root scopes proposal ground/code/link styling to an inline-size page container.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "content": "sha256:b8f6d12fa291cd4d4a7bd5a213fbc901e7f153a784282002b912a3053d6de1a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "All three form badges share one scoped recipe with distinct state colours.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "content": "sha256:81f655e98837354e888e7b9a738a05ddaf73f699fab2cb94bbd527f4903437f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "formBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

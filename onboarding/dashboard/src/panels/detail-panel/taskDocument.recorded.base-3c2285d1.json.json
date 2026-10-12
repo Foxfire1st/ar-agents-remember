@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskDocument.recorded.base-3c2285d1.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e7d9f29a4a11de4b19b75c43d31e38ab40b115c",
+        "content": "sha256:b21846410aba540920d8d53453d3b62d47c47fb1bbab544a2605726e4ec85b6d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B1YJHK",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "What the base build's projection sends for one made-up master and its task with a review round; names its build, producer, command and source documents. Renewed with the recording instrument, never edited by hand.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stored inputs, producer outputs and historical provenance define the payload's exact recovery opportunity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e7d9f29a4a11de4b19b75c43d31e38ab40b115c",
+            "content": "sha256:b21846410aba540920d8d53453d3b62d47c47fb1bbab544a2605726e4ec85b6d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

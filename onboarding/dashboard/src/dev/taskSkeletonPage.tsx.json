@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/dev/taskSkeletonPage.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The selected DEV fixture and limited fetch override are scoped and restored.\n\nAnchor: `TaskSkeletonPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489f957c0e84a77512f8863658e3baf091574cc1",
+            "content": "sha256:7e5692b21d4dc2a9aeae4f98c0bb9de04231f6d8065d1ed74b855c288f5aaf8f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

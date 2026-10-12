@@ -11,6 +11,20 @@ on task-aware analytics while preserving runtime ids only as observation/correla
 
 ## Code Commentary
 
+### Task-reader display projection
+
+The served TaskDocNode adds model-derived sprint/master/task `form`, type, optional branch/status note,
+header-note label/value rows and their total, and optional review state. A present current-server review
+state always carries the whole-round `openFindings` and `totalFindings`; a reader must not recount flags
+in the capped findings slice. The Python fields have construction defaults and the generated TypeScript
+wire mirror requires counts; this is a producer obligation, not a claim that JSON Schema rejects every
+omitted default. An older payload omits the entire review state.
+
+Top-level step outcome/note and finding-description previews have explicit truncation flags. Nested
+step notes are projected but have no corresponding truncation flag and are not drawn by the current
+task-page nested-row renderer. Projection is observation only, never review or lifecycle authority.
+
+
 L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser receives task-addressed operation progress without internal operation identity.
 
 ### Logic
@@ -64,7 +78,6 @@ No Domain Documentation source is configured.
 ### Repo-Internal References
 
 - Pickup and expectation analytics carry structural references. [1]
-- Task documents remain the real projected hierarchy. [2]
 - The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). [3]
 - Workspace projection is the schema authority consumed by generation. [4]
 
@@ -111,4 +124,6 @@ by that number.
 
 - The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings. [5]
 
+
+- Task documents remain the real projected hierarchy. [2]
 - Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt). [6]
