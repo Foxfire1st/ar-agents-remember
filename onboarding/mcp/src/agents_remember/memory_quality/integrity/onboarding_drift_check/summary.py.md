@@ -15,6 +15,13 @@ metadata table, so legacy discovery would answer an unread "checked, 0" instead 
 
 ## Code Commentary
 
+### Landing-report scope
+
+The converted summary explicitly calls the shared converted checker with `include_landing=False`. It remains a validator/reference-state summary; the landing census belongs to quality-check callers rather than this drift-summary route; admitted leaf callers carry their leaf base. Skipping landing acquisition here changes no summary count, filing mode, reference-state classification or existing validator refusal.
+
+- The converted drift summary suppresses landing acquisition while preserving validator/reference measurements. [13]
+
+
 ### Logic
 
 The helper discovers sidecar onboarding, inline onboarding, and entity catalog

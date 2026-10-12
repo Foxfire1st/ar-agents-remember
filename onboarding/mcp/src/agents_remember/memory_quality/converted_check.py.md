@@ -14,6 +14,13 @@ holds `knowledge/layout.json`.
 
 ## Code Commentary
 
+### Landing-report scope
+
+The converted check optionally joins landing observations to `reportOnlyFindings` and exposes cut-card counts/rows plus added-file counts/bytes/rows. Its `landing_base` is separate from the validator `base`: admitted leaves use the contract base so committed leaf progress remains visible. `include_landing=False` lets the drift summary measure only validator/reference state without acquiring the landing census. Landing rows never enter `findings`, change `ok`, or count as actionable.
+
+- Landing facts join only the report-only population; their leaf base is independent from the validator base. [9]
+
+
 ### Logic
 
 - `LEGACY_FORMAT_CHECKS`: `style.update_history.history_order`, `style.citations.range_resolution` and

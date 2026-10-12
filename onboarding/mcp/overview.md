@@ -41,6 +41,13 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
 
+## Landing observations and human review
+
+The existing memory-quality answer now carries cut-card and added-file counts with bounded first rows, while the logged whole result and a full leaf checklist retain complete observations. These rows are report-only: they create no automated refusal, actionable repair count, new public tool or landing-time semantic judgment. The canonical and shipped Curator role sources require the handover to name the task change that made removed text untrue and put evidence/working files in the task record or scratch root, not memory. The Reviewer role source reads both reports and judges unsupported removals and requirement-unplaced additions in the independent memory lane. Source and assertion inspection here supplies no new compiled-harness, test or closeout acceptance.
+
+
+- bounded landing answer and human-review role contract [288]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -2126,6 +2133,8 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 (including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
+
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 

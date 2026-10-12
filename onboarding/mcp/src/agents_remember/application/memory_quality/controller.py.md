@@ -12,6 +12,13 @@ and translates registry outcomes into stable public results.
 
 ## Code Commentary
 
+### Landing-report scope
+
+The full quality execution binds two independent base ports: knowledge validation still uses its converted operation base, while landing observations use the contract's admitted memory/code base. Resolving the landing port changes neither candidate capture/revalidation nor existing refusing findings; it retains cuts and additions already committed within the leaf.
+
+- Full execution supplies the contract-bound landing base separately from the validator base. [25]
+
+
 ### Logic
 
 `run_memory_quality_request` executes an explicit sync request. `start_memory_quality_request`
@@ -208,7 +215,9 @@ report-only findings of the leaf's onboarding gate:
   arguments, and a refusal is the same single `memory-refresh-attestation-failed` finding with the same
   text. This is every production leaf before MIK-R37, including this master's own leaves.
 
-- The checklist's leaf block hands the gate the changed paths and the accepted identities. [8]
+The checklist's leaf block hands the gate the changed paths and the accepted identities.
+
+Anchor: "gate_findings, gate_report_only = _onboarding_refresh_gate(" [8] |  | mcp/src/agents_remember/application/memory_quality/controller.py:747-753 |
 - The dispatch: the history-file gate on a converted tree, today's gate otherwise. [9]
 - Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. [10]
 
@@ -230,7 +239,9 @@ they join the checklist (ruling 2026-09-30T01:56:39 Q3):
   today's gate runs as before; this leaf's own memory-quality runs returned no worklist and no
   `onboardingTrace`.
 
-- The report-only findings pass through the filter. [11]
+The report-only findings pass through the filter.
+
+Anchor: "report_only.extend(_needed_rows_dropped(" [11] |  | mcp/src/agents_remember/application/memory_quality/controller.py:755-755 |
 - The filter and the adjusted count. [12]
 - The raw count is 2 and the response count 1; only the stray row remains. [13]
 
@@ -261,10 +272,14 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 - **Unconverted runs are unchanged:** with no gate and no worklist, neither `knowledgeGate` nor `knowledgeWorklist`
   appears and the count is what it was; this curation's own `memory_quality_check` runs returned neither.
 
-- The run evaluates the gate and briefs it. [14]
+The run evaluates the gate and briefs it.
+
+Anchor: "gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)"; "response.update(_knowledge_briefs(worklist, gate))" [14] |  | mcp/src/agents_remember/application/memory_quality/controller.py:478-478; mcp/src/agents_remember/application/memory_quality/controller.py:517-517 |
 - The gate carried to the checklist. [15]
 - The gate over the exact curator candidate; `None` where it does not apply. [16]
-- Each gate finding is one repair finding, each open item counted once. [17]
+Each gate finding is one repair finding, each open item counted once.
+
+Anchor: "repair_findings.extend(_with_gate(gate_findings, prepared.gate))" [17] | `_with_gate`; `_onboarding_findings_beside` | mcp/src/agents_remember/application/memory_quality/controller.py:819-840; mcp/src/agents_remember/application/memory_quality/controller.py:843-852; mcp/src/agents_remember/application/memory_quality/controller.py:754-754 |
 - The census blockers, split out. [18]
 
 ## Evidence
@@ -279,7 +294,9 @@ No configured Domain Documentation source applies; the controller contract is re
 
 - The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
 - Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
-- Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.
+
+Anchor: "if not execution.publish_curator_report"; "_attach_curator_checklist(" [21] | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:635-789; mcp/src/agents_remember/application/memory_quality/controller.py:518-518; mcp/src/agents_remember/application/memory_quality/controller.py:522-522 |
 - R03 candidate-tree freezing and change refusal around curator publication. [22]
 
 - Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run. [23]

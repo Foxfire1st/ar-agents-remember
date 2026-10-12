@@ -9,6 +9,12 @@ This account controls the named changed seams; contradictory earlier card wordin
 - The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]
 
 
+## Landing evidence in the independent memory lane
+
+The independent MEMORY review reads both landing populations in the quality result. Removed text without a named task change is a finding; an added file outside the knowledge without a place in the task requirement is a finding. These are human judgments, not automatic refusing diagnostics. CODE evidence, MEMORY findings/pass count and Manager acceptance/transaction authority stay separate.
+
+- The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions. [33]
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.

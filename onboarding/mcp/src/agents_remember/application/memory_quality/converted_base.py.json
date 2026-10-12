@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7eb9ae6764be53756edd162c6aa7be2c3ae1ac7",
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
             "content": "sha256:01bf9fc88437fed2191c77e702c1d3ae38c51b829948ae022f2d131765991694",
             "locator": {
               "end": 10,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7eb9ae6764be53756edd162c6aa7be2c3ae1ac7",
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
             "content": "sha256:44aa3356ccd572471b8a54e00107c5121779c659cf8878937277c8a6676da6d6",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7eb9ae6764be53756edd162c6aa7be2c3ae1ac7",
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
             "content": "sha256:39937fa2511217356f733d6edd1a7d9ec4956c8a979434bc9260817bd39fc7e1",
             "locator": {
               "kind": "symbol",
@@ -73,13 +73,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
               "name": "_comparison_bases"
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The landing base resolves the admitted commit, base listing, code deletion evidence and code-named renames independently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
+            "content": "sha256:7c70a3a8ca954a2318c9081cdc45e724afae94492bc3f1de31034dc202c93251",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_base_port"
+            }
           },
           "kind": "code"
         }

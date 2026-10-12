@@ -9,6 +9,13 @@ This account controls the named changed seams; contradictory earlier card wordin
 - Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [10]
 
 
+## Landing evidence and retained intent
+
+A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
+
+- Evidence and working files stay outside the memory worktree. [11]
+- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [12]
+
 ## Message/file transport
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
@@ -71,7 +78,7 @@ Lifting is guidance only; nothing enforces it mechanically.
 
 ### Bound native intake and admission
 
-Read the rendered task-document files named in the handover with the harness's own file tools before acting; document changes go through task_doc only, since edits to copies are never read back. Use `arMcpContext.readerArguments` and each tool's actual schema; `task_context` carries both canonical task and enclosure contract. Resolve the named source/field before reporting it missing. Read immutable baseline/candidate knowledge before semantic changes, preserve the baseline, contain outputs in the selected memory root and read admitted records back.
+Read the rendered task-document files named in the handover with the harness's own file tools before acting; document changes go through task_doc only, since edits to copies are never read back. Use `arMcpContext.readerArguments` and each tool's actual schema; `task_context` carries both canonical task and enclosure contract. Resolve the named source/field before reporting it missing. Read immutable baseline/candidate knowledge before semantic changes, preserve the baseline, contain knowledge/onboarding outputs in the selected memory root and read admitted records back. Evidence/report outputs instead follow the task/scratch custody boundary stated above.
 
 The existing MIK writer remains authoritative. Use only the source-bound command admitted for the selected runtime. If this compiled capsule exposes no writer and admits no such command, report the required records not written; that is a capsule capability limit, not a general absence of MIK’s writer. Another installation, unscoped call or internal writer cannot substitute.
 

@@ -50,6 +50,19 @@ The incoming qualified boundary is preserved here, not replaced by the parked sh
 
 Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
 
+### Landing evidence and human review
+
+A converted memory-quality result reports measured card/overview cuts and files newly added outside `onboarding/`, `knowledge/` and `system/`. The full result retains both lists, each addition's byte size and their summed bytes; the bounded answer carries the two counts and first rows. These are descriptive reports, not new refusing checks, actionable findings or landing gates. The Curator keeps evidence and working files in task/scratch custody, never in the memory worktree, and names this task's change behind every reported cut; deleting text to clear a quality finding is not permitted. The independent Reviewer reads both reports in the MEMORY lane and raises missing cut reasons or extra-knowledge additions with no requirement place.
+
+Canonical role instructions own these duties. The package and eight harness surfaces propagate them without separate authority. The sixteen Curator/Reviewer harness copies remain sidecar-only propagation homes; their nearest governing root overview carries this shared substantive account.
+
+- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [311]
+- New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
+- Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result. [313]
+- Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [314]
+- For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [315]
+- Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [316]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -150,6 +163,8 @@ renamed or moved, this section is updated in the same onboarding pass.
 | Dashboard bundle release build | `scripts/sync-dashboard.py` places the Vite output `dashboard/dist/` into `package_data/dashboard/`, which is not under version control, and refuses a `dist` that does not carry the fingerprint of the current build inputs. Its `--check` mode writes nothing and reports whether the placed bundle still matches `dashboard/dist`. No hook runs the script. A checkout without a bundle answers `503` on the static surface and names the build command. | `scripts/sync-dashboard.py`, `serving/static.py` |
 
 ## Hot Path Summary
+
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 A leaf's closeout commits its code and its memory content. A memory commit names its code commit in a `Code-Commit` trailer, and the consumer ledger `memory.md` is derived from those trailers and never committed as content.
 

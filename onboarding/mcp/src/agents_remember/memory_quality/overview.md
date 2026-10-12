@@ -111,6 +111,13 @@ closeout-admission consumer is behind `D32` — the readiness comparison is only
 status is `ready-for-closeout`, which no leaf on this master has reached — and that condition belongs
 in any statement of the fix's reach.
 
+## Landing observations, not another gate
+
+`landing_report.py` owns the shared measure: at least eight removed base lines and strictly more than twice the added lines, with order-insensitive multiset deltas. It observes shortened/removed cards and overviews, exempts only proven leaf source deletion when code sides are known, and follows code-named Git renames. It also inventories candidate additions outside `onboarding/`, `knowledge/` and `system/`, retaining sizes and the sum without following symlink targets or counting Git administration. The converted drift slot includes these report-only rows by default; application callers bind the admitted contract base independently from the validator base, and bare diagnostic callers retain their comparison-base fallback. Neither population changes refusing findings, `ok` or the actionable count. The drift-summary reader explicitly uses `include_landing=False`, so its validator/reference counts and conditional report/snapshot filing remain separate. Complete full-leaf rows belong in the enclosure checklist and whole-result log, never as working evidence inside memory.
+
+
+- report-only landing measurement with separate read-summary scope [80]
+
 ## Purpose
 
 The knowledge validator refuses deletion of any record a comparison base holds: retirement retains its file. A merge-moved disagreeing row is report-only only outside leaf publication; at publication every mismatch refuses. These narrow mandatory invariant checks are not the full curator memory-quality operation.
@@ -121,6 +128,8 @@ groups integrity checks that compare onboarding to source state and style
 checks that enforce repository memory conventions.
 
 ## Hot Path Summary
+
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 `worktrees/modules/memory_candidate_pair.py` — moved out of this route by commit `806649b9` — binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable. `knowledge_validator/` (MIK-R22) is the mandatory validator for converted text knowledge: one rule registry, run before any converted memory commit.
 

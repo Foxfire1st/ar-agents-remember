@@ -9,6 +9,13 @@ This account controls the named changed seams; contradictory earlier card wordin
 - Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [9]
 
 
+## Landing evidence and retained intent
+
+A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
+
+- Evidence and working files stay outside the memory worktree. [10]
+- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [11]
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
@@ -32,7 +39,7 @@ Each of these stages repairs faults in its own work or instrument and corrects i
 
 MEMORY passes keep a separate count under the same settings limit as CODE; beyond-limit approval is the Architect’s or developer’s, recorded by the Manager.
 
-Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Outputs stay inside the selected memory root and another installation’s writer cannot substitute for the admitted source-bound command.
+Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Knowledge/onboarding outputs stay inside the selected memory root; evidence and working files stay in task/scratch custody. Another installation’s writer cannot substitute for the admitted source-bound command.
 
 Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action.
 Citation authoring previews the finite card list in one call and repairs it in one call through
@@ -48,7 +55,7 @@ Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. sc
 
 ## Invariants And Boundaries
 
-Only admitted memory/onboarding is writable. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. Operator harness, model, effort, serviceTier, launchArgs, sessionCommands and promptKeywords remain settings, outside Curator authority. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer decisions remain in the own chat.
+Only admitted memory/onboarding is writable as knowledge; task-report and scratch custody remain the separate admitted evidence/working-file destinations. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. Operator harness, model, effort, serviceTier, launchArgs, sessionCommands and promptKeywords remain settings, outside Curator authority. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer decisions remain in the own chat.
 
 ## Working folders and reports
 
@@ -116,7 +123,7 @@ No additional work is asserted by this card. Actual project publication and sema
 | --- | --- | --- |
 | Bound intake, source-bound capability gap and report-only scope. | lines 11-33 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-33 |
 | Converted cards/writer, authored rationale, family/sibling obligations, full MQC/coherence and comparison. | lines 89-188 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:89-188 |
-| Turn truth, permitted memory surface and prohibited source/task/Git writes. | lines 223-273 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:223-273 |
+| Turn truth, permitted memory surface and prohibited source/task/Git writes. | lines 178-247 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:178-247 |
 
 ### Docs References
 

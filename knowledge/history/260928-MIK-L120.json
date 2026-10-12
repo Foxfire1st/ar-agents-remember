@@ -1,0 +1,1082 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L120",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-21R4N0",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The L120 delta adds test_landing_report.py at531 and1380 to the existing curator-coherence support and Node-lockfile artifact consumer lists. Parsed full base/candidate catalogs and the leaf diff show no artifact or contract identity/metadata change from this leaf. Current card20-26,41,45,114-121 and296-301 already explain artifact ownership, actual shared-support consumers and reachability-not-execution. No new mechanism/body claim is needed; incoming role-message and L43 registrations in5-7 and35-39 must remain. This is no impact on the file-card contract, not zero source change; stale references still need independent scoped repair.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2D84B2",
+      "items": [
+        "sha256:999a799a46ad042630dc41f6255f833a5b640031238c1901e1de9f18b7a5c68c",
+        "sha256:ac72127601c7b36780892b5c348a813f299425cfeda84a21a356ce0a3ef28653"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2N5PMK",
+      "items": [
+        "sha256:f12890f954d80ce0753340a0ff316e03857dd127a4dc87ff233270946b6470c9"
+      ],
+      "reason": "Curator whole-file additions require cut causality and task/scratch custody; step 3 and the unchanged handoff template still require per-target authored rationale and optional role. No realization parser/schema obligation changes.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2QQWWE",
+      "items": [
+        "sha256:37de986bafed60cc4d8a6e53e7bab1698bea1ff5a7045a1724e66219d79c306f"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VXHQMN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3ADFXE",
+      "items": [
+        "sha256:c6208c2599bc6852fb256c87aa0a6ddf5875f5b4581a434a84f2ece8a0a09c8b"
+      ],
+      "reason": "Canonical and packaged role sources preserve own-file intake/task_doc-only mutations and task/scratch custody; all twenty retained role copies match canonical bytes. Added landing duties move no role/task or permission authority; generation provenance is inherited, not a fresh installation test.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-3N2D9M",
+      "items": [
+        "sha256:812944f6754bab4e6c9c2d6d1dfeea95d5c42c688a99d5898d556d880e836659"
+      ],
+      "reason": "Five duties inspected; memory scrutiny does not change parent questions, notices, successor returns or literal-guard limits. Current successor record/member revisions and declared routes are preserved. Source currentness is renewed by the member cover rows; this is not new execution or a renewed CODE verdict.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4HMD49",
+      "items": [
+        "sha256:9c68b012536f0eba146fdc26236969ebffe3e8d8ee0a68b02ff9222135d500a7",
+        "sha256:a1ee5605cc9c79c1da91f782f89b40e4e58f869fa2e031c8ff04ce963c13d4d9"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-MN85JH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4J90HY",
+      "items": [
+        "sha256:59835a1a5096087631028d4dec204e636cd686697d8aada5131fb966b798878f"
+      ],
+      "reason": "Reviewer judgment of the two reports remains separate MEMORY evidence with sealed IDs, its own pass count and ordinary limits. No CODE review-state reset, extra round authorization or Manager gate transfer is introduced.",
+      "revision": 2,
+      "subject": "INV-V7M37D"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5ZM49Y",
+      "items": [
+        "sha256:f0e7cce17fa29dd1c22144a95e643fcd60344a4c625da34fc783220c395bcf28"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1391,
+              "kind": "line_range",
+              "start": 1391
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1389,
+              "kind": "line_range",
+              "start": 1389
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 415
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 535
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1549,
+              "kind": "line_range",
+              "start": 1549
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1547,
+              "kind": "line_range",
+              "start": 1547
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6DTY1E",
+      "items": [],
+      "reason": "Owner-listed same-ID entry renewal after L94 paired sync: actual declaration is matched within its artifact path or files/lane key; authored ID, role and rationale stay as-bound. This renews the source witness only, not old rationale truth or fresh test execution.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6V426K",
+      "items": [
+        "sha256:28eb5def27dc8d18a0da5943897a2810b0690d60abe1b98767ee532fa0785f31",
+        "sha256:62eb53fc695faf72d89264f634c03a2db24851708a432e254e394992192425a0"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-77FV9Y",
+      "items": [
+        "sha256:f34c7d71eaff240c6743f7d00699f913fc9a1bdc87e6a950e555969267d571f1"
+      ],
+      "reason": "Imports and passing the admitted leaf landing-base port adapt the existing operation to the report owner. They change no acquisition/transaction or semantic publication guarantee; their current local contract is maintained in this file card.",
+      "subject": "hunk:sha256:f34c7d71eaff240c6743f7d00699f913fc9a1bdc87e6a950e555969267d571f1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
+            "content": "sha256:cb7061e16be29da70c3fc96f2f37e4d72fe2d9ece460a324b3435d7485e39817",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_result_answer"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "before": {
+            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "content": "sha256:8e057ae8d82e9b879d5cd089fca06c045de96b21b015f1ba18037f7a2f9ea80d",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_result_answer"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "id": "RLZ-T06K6F"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-81RA8D",
+      "items": [
+        "sha256:bf77c31230b08e98f1dbdc666710a3b2858d4d9d6122c56b31f4fa5722921787"
+      ],
+      "reason": "The added answer helper carries whole cut/add counts and at most the shared row bound without replacing the logger payload or existing outcome/recovery counts. The status projection guarantee is preserved; the new diagnostic carries no actionable/refusing authority.",
+      "revision": 1,
+      "subject": "INV-1V9ARB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8706DJ",
+      "items": [
+        "sha256:da4f683065b4d61ce31ad34db4f80da73d8ac4fcce34ad0ce51c330f37260468"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1V9ARB",
+          "revision": 1
+        },
+        {
+          "id": "INV-701KQ9",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH0QZ1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-8MP9TR",
+      "items": [
+        "sha256:f480753edb0d21513b263f66d6271856e39527db9db87209a4969fb835ed569e"
+      ],
+      "reason": "Three duties inspected; new report-only material retains bounded status/full corpus, finite citation selection and exact-set/CAS publication. Current successor record/member revisions and declared routes are preserved. Source currentness is renewed by the member cover rows; this is not new execution or a renewed CODE verdict.",
+      "revision": 1,
+      "subject": "FAM-ZVFPWJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9ESHCM",
+      "items": [
+        "sha256:63c0757fd8aa764b8bb7fdc8bec6498610a6fa7b6ca3246de3eec8135f90b948"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9RTYH5",
+      "items": [
+        "sha256:5c3837687f5c9d6231fd78ac48f2c46ded445acee8c4dc2bc52470aa1a35b9b2"
+      ],
+      "reason": "Imports and the adapter landing-base argument propagate the leaf request to the same report owner. No independent guarantee or new refusal is carried by these plumbing hunks; the file card documents this role.",
+      "subject": "hunk:sha256:5c3837687f5c9d6231fd78ac48f2c46ded445acee8c4dc2bc52470aa1a35b9b2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AH32XN",
+      "items": [
+        "sha256:74532ac06d608a83da6ee53077e8f947e3db557212c5006bba087ae26f5261f0"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BETV4K",
+      "items": [
+        "sha256:6f159f7b5e8b45a54d03afe3df53b13ca047b3338cc9ff0aed3372b13316ab1a",
+        "sha256:3b660f27fc9171efadf0e4787045b11de156f62c38645e8aa266c1abfca7da7b"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-AHY1E5"
+        },
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-Q70RTA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CRM53F",
+      "items": [
+        "sha256:c51600765b62d53a95c31157059313b50778e13a96249a85169c48d334923dec"
+      ],
+      "reason": "Added landing duties neither alter the orientation reference nor parent-routed questions, pending recovery or quoted developer-answer provenance. The whole-file witnesses remain propagation pointers, not proof of native delivery.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVYHVP",
+      "items": [
+        "sha256:d5d8c6f1c602c5051677b1546bbdd297f7f6c4b93a9fdb937651c0064de0f06b",
+        "sha256:13645417626252964c829613b2c1d8aeccd3e7eca851d08fae289d72f2e492a7"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2204,
+              "kind": "line_range",
+              "start": 2204
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2202,
+              "kind": "line_range",
+              "start": 2202
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E0BYR5",
+      "items": [],
+      "reason": "Owner-listed same-ID entry renewal after L94 paired sync: actual declaration is matched within its artifact path or files/lane key; authored ID, role and rationale stay as-bound. This renews the source witness only, not old rationale truth or fresh test execution.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eec47f7a079cc975cb05fbe98596679c69b7de92",
+            "content": "sha256:74ca5b0945e70f00f344fe9664d6f91d5a99b7678c4e0ba52c140d194b46876c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:9b12859d249a28fc9f3b86fd71709f75e09e99e0d3007de756d2d4d662e1b349",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E4KRPD",
+      "items": [
+        "sha256:89ecd2b00583fc904a6e7941eb0c7390320ecba03e8873b73d14c25135995e66"
+      ],
+      "reason": "Retired record retained as historical union-merge repair only. The current leaf adds two live landing-test consumer lines to existing artifacts; it does not resurrect deleted DB-era rows or revive an exactly-two-total-consumers permanent rule.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EHSF8A",
+      "items": [
+        "sha256:cad8a8c250e954fa5fca1d79a1536a2a2323690644916224765ec3000ec270ad",
+        "sha256:f6f8d8035aec81bfb36766ba3240039a56a9bbc095ff127d58c7c78d51c35cf6"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FEHPFE",
+      "items": [
+        "sha256:88b4267fecf9aaa6d34b1b27b25f5cdb178bf35734db61e9fe100a4e22f172f9"
+      ],
+      "reason": "Imports and passing the admitted leaf landing-base port adapt the existing operation to the report owner. They change no acquisition/transaction or semantic publication guarantee; their current local contract is maintained in this file card.",
+      "subject": "hunk:sha256:88b4267fecf9aaa6d34b1b27b25f5cdb178bf35734db61e9fe100a4e22f172f9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 2
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 2
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 2
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-FM0BZ3",
+      "items": [
+        "sha256:8f111497684021c7684013ab162e628cc92d1ccc1dc597946457f4810c3189aa"
+      ],
+      "reason": "Five duties inspected; template/parser/_targets unchanged. Cut justification does not replace authored target rationale or whole-run refusal. Current successor record/member revisions and declared routes are preserved. Source currentness is renewed by the member cover rows; this is not new execution or a renewed CODE verdict.",
+      "revision": 4,
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J7WJKV",
+      "items": [
+        "sha256:2ef028d7e410f5d2c6a083a81186db297c278e1c5ce9384e18a8e7d153d0c07c"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M47H4Z",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The sole L120 delta adds test_landing_report.py at180 under unit-regression. Full source membership is the authority; card20,30-36 and48 already describe selection rather than execution and landing suites under this lane, without pinning a current total. No lane semantics, mechanism or isolation policy changed. Preserve incoming role-message/L43 registrations and their current prose; independent reference repair is still required.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MDA32B",
+      "items": [
+        "sha256:cc0bea2e5873113381ed71b3e6dc35562f3b3d3926210745363b11490abfe5d5"
+      ],
+      "reason": "Imports and the adapter landing-base argument propagate the leaf request to the same report owner. No independent guarantee or new refusal is carried by these plumbing hunks; the file card documents this role.",
+      "subject": "hunk:sha256:cc0bea2e5873113381ed71b3e6dc35562f3b3d3926210745363b11490abfe5d5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-JH0BAQ"
+        },
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VESCVY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MK0Q0B",
+      "items": [
+        "sha256:9500d3a90a4d9fdd1a201d27c1e300d6de6fd54a4e53965912418d3c95264dff"
+      ],
+      "reason": "Cut reasons and outside-knowledge inventory extend content of direct Curator-to-Reviewer memory handoffs, not their routing. Exact peer freezes remain peer-owned; Manager retains only named owner occasions and transaction/landing authority.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NJSBDQ",
+      "items": [
+        "sha256:67700bab76367a64a3f922ee9b8ceda042e102386adfbc66ea7a25496ae43fa8"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NM13V2",
+      "items": [
+        "sha256:b6e3fade1af3af2175c9c694ce74ac63cd594bfde21ee03112f4a13b3839fee2"
+      ],
+      "reason": "Imports and passing the admitted leaf landing-base port adapt the existing operation to the report owner. They change no acquisition/transaction or semantic publication guarantee; their current local contract is maintained in this file card.",
+      "subject": "hunk:sha256:b6e3fade1af3af2175c9c694ce74ac63cd594bfde21ee03112f4a13b3839fee2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        },
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-R22534"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NNEK2K",
+      "items": [
+        "sha256:6794bf80e1328d377985f1a1ca233122c9ec4a5bc3c1a22e367d8603cec47dc4"
+      ],
+      "reason": "Cut/add review duties add evidence inside the existing assignment. Helper work stays checked/credited by its seat, boundary acts stay seat-owned, independent review remains external and Curator retains one writer.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Q6RY52",
+      "items": [
+        "sha256:d674e7a18b966c0f3c301eefc82efa55c3b050f751af5b660473927286a688ec"
+      ],
+      "reason": "Three duties inspected; launcher/settings unchanged, role mirrors equal canonical. No new behavioral surface or route. Current successor record/member revisions and declared routes are preserved. Source currentness is renewed by the member cover rows; this is not new execution or a renewed CODE verdict.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q8G86Q",
+      "items": [
+        "sha256:3b6440e4cb7609126995547bc1b668305b29b675f408f19d21f35e23fcb25041"
+      ],
+      "reason": "This generated reviewer mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJYN0B",
+      "items": [
+        "sha256:24be299cef55f640cd28b5f4fe1b8f5accb80c0472decd9c60f6d3e24cbb1e2c"
+      ],
+      "reason": "Imports and the adapter landing-base argument propagate the leaf request to the same report owner. No independent guarantee or new refusal is carried by these plumbing hunks; the file card documents this role.",
+      "subject": "hunk:sha256:24be299cef55f640cd28b5f4fe1b8f5accb80c0472decd9c60f6d3e24cbb1e2c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SK8D3X",
+      "items": [
+        "sha256:bb3f1c43b50a9e39ff2c7981cf335467b4a1463a0bfebfa5babe21ace509919a",
+        "sha256:d3c8376b983396c4041a4b2b45581078c32037722212a0a7e199be670fa642e4"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R120",
+          "packet": "requirements/MIK-R120-v1-a-landing-shows-what-it-cuts-from-a-card-and-what-it-adds-beside-the-knowledge.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_added_file_reported_with_size_and_sum"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-D21JXC"
+        },
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_closeout_phase_passes_with_landing_aboard"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-GT1X76"
+        },
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_card_over_measure_reports_both_numbers"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-KH67GA"
+        },
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_answer_carries_two_counts_first_rows_within_bound"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q24TE8"
+        },
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_operations_hold_both_populations_without_new_refusals"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-RV55G1"
+        },
+        {
+          "after": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checklist_actionable_parity_on_real_populations"
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "before": "absent",
+          "id": "PRF-W41VPM"
+        },
+        {
+          "after": {
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2SM0BY"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-TYQV3G",
+      "items": [],
+      "reason": "Introduces the report-only landing visibility guarantee without changing existing refusing checks; all supplied proof facets describe source assertions, not a fresh pytest execution.",
+      "revision": 1,
+      "subject": "INV-NRXFWN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V90CZ3",
+      "items": [
+        "sha256:49fe43f11502c4d2c74be5ea5e80db42ba98ab930496bcd5d96656a7291e0ef8"
+      ],
+      "reason": "One sorted unit-regression row admits the new landing-test module through the existing lane catalog. This local registration is not a distinct invariant, increased budget, alternate execution lane or native passing evidence.",
+      "subject": "hunk:sha256:49fe43f11502c4d2c74be5ea5e80db42ba98ab930496bcd5d96656a7291e0ef8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 2
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-X0H1ZQ",
+      "items": [
+        "sha256:6446948a335ffa0fb9fe3b082dfd37cbbe3f9373d758e0713822da06de9d3970"
+      ],
+      "reason": "Six duties inspected; reports stay in peer MEMORY loop, without Manager relay or authority/bookkeeping transfer. Current successor record/member revisions and declared routes are preserved. Source currentness is renewed by the member cover rows; this is not new execution or a renewed CODE verdict.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XX48WD",
+      "items": [
+        "sha256:0a79435086e6ffbe4f23f8c7ddf0ed749a2e23a02addf892b77886daaad6c0ff",
+        "sha256:30e12ad2dcf5e2578fb709830b1b535b8468c5d8892079aec15ecbcd2b249de8"
+      ],
+      "reason": "This generated curator mirror remains byte-equal to the canonical source. Its existing sidecar is a propagation-only companion, not an independent role authority; the new cut/add review duties are documented in the canonical and packaged role cards. The mirror gains no independent contract or hand-authored copy; its source-first/task_doc-only write and task/scratch boundaries are preserved.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YM0KCE",
+      "items": [
+        "sha256:210d69043c6760c067379a5af3b1b449878f7054b275c33a860c70593c26be5e"
+      ],
+      "reason": "These inserted constants and carry_landing_answer implement the already-admitted bounded status projection and the new report-only obligation. They add local projection mechanics, not a separate invariant from the governing records.",
+      "subject": "hunk:sha256:210d69043c6760c067379a5af3b1b449878f7054b275c33a860c70593c26be5e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        },
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-R5RASM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZDBDTS",
+      "items": [
+        "sha256:bbfe69e1b446c67c4cc88243eaab2107471291632bfb14f38a982a4566db23b3"
+      ],
+      "reason": "Curator/Reviewer landing reasons are reviewed inside the same direct peer lane. Post-PASS code concerns still go to Worker and Reviewer, absent behavior is never written as knowledge, code repair stays Worker-owned, and disputed authority stays Manager-owned.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

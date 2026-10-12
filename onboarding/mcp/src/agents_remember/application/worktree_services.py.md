@@ -10,6 +10,13 @@ Builds the default service bundle that lets lower-level worktree operations use 
 
 ## Code Commentary
 
+### Landing-report scope
+
+`MemoryQualityAdapter.drift_context` binds the context's admitted leaf landing base separately from `knowledge_base`. Lower-level quality-phase consumers receive the same report-only comparison through their existing service port, without importing application base logic, changing the validator's operation base or weakening any closeout guard.
+
+- The memory-quality adapter carries the admitted landing base through the existing drift context. [13]
+
+
 ### Logic
 
 ProviderLifecycleAdapter translates the worktree-owned setup specification into provider-owned requests and delegates setup/status/teardown. MemoryQualityAdapter delegates check-group discovery, drift context and memory checks. CitationGuardAdapter obtains the memory-quality citation cache guard.

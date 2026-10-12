@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
             "content": "sha256:75b7ed5a92ef0d7e2459f3a00fa14949169a49c3e1bf392c7d74ddee506a6fe9",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
             "content": "sha256:7ffeea4af79244d4abd4126047905b151d77c78d3a01cacbd2dceb14e410f6a4",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,62 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
             "content": "sha256:2890ee446679ca00af8cddbe42d9881687d87e4a3f6717ed347b6f64f1d75c50",
             "locator": {
               "kind": "symbol",
               "name": "delivery_shaped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The quality row admits cutCardCount, addedFileCount, cutCards and addedFiles.\n\nAnchor: QUALITY_ROW_FIELDS",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
+            "content": "sha256:ec1378492a90810abd1437070948819b9fdca1b9e0a5bcc05533c3057871060c",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Authored uses distinguish cut justification/addition requirement placement from blocking repair work.\n\nAnchor: QUALITY_ROW_USES",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
+            "content": "sha256:f23460b30c8658ba04ec9cb65c3c5f99d4fd413e2efc850ce8489940476f1b29",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Quality row bound remains1500 with sync/start/poll production paths.\n\nAnchor: QUALITY_ROW_BOUND and QUALITY_PRODUCTION_PATHS",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d93502d0bb94af40aa116bafaca7f71f1b0b9a44",
+            "content": "sha256:fe4d7ce1d97feed420a8b4fe93210b6d8080f28605c4b0512a142dda433dc7b6",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 222
             }
           },
           "kind": "test"

@@ -172,6 +172,8 @@ Worker implements the approved leaf and leaves code uncommitted. Reviewer examin
 
 ## Hot Path Summary
 
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
+
 Manager, orchestrator and curator handoffs name actual code/memory output refs and scoped onboarding evidence. They never require a ledger commit, cache freshness proof or cache-repair transaction; downstream consumers can rebuild the ledger from committed attribution.
 
 ## Detailed Route Context
@@ -256,6 +258,15 @@ and only their documented direct-child scope.
 Strategist, designer, worker, reviewer, curator, and investigator are target-only roles. The
 role-table tool rows document bound capability, not settings keys. Plane authorization
 failures never retry as ambient launches. Native sub-agents work inside the seat's assignment with its permissions and working folder; the seat organises their work, verifies and credits it, and performs all boundary acts itself. They hold no AR seat, start no role and cannot supply independent review of their author; they never become AR role seats.
+
+### Landing evidence duties
+
+The Curator keeps knowledge outputs in memory, but evidence in the task record and working files in the admitted scratch root. Its handover names the change of this task that made each reported cut's removed text untrue; text is never removed to clear a quality finding. The Reviewer's independent MEMORY check reads both reports and raises missing named cut changes and extra-knowledge added files lacking a place in the requirement. The reports themselves are descriptive, refuse no quality/gate/closeout operation and add no actionable count. Generated package and harness copies propagate these canonical duties without acquiring authority. Normal full contract-scoped MQC/coherence and the bounded report-only assignment exception remain distinct.
+
+- Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [29]
+- For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [30]
+- Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
+- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [32]
 
 ## Conventions
 

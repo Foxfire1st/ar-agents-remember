@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
+            "blob": "d1d0afc7aacaf6d39dce059af736004038b70818",
             "content": "sha256:5d246fffd9db7dec40eb538866f499e691778abb88b97474cc0cefe71c0c3a43",
             "locator": {
-              "end": 202,
+              "end": 199,
               "kind": "line_range",
-              "start": 202
+              "start": 199
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -80,12 +80,28 @@
         }
       ]
     },
+    "13": {
+      "note": "The converted drift summary suppresses landing acquisition while preserving validator/reference measurements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c92f85bd17a38efd422a38c3757d66162a171b5e",
+            "content": "sha256:1deb890214a2f83f84eaf379e3b482d7e670856aae6c9e0788c4823a6799e4c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_converted_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`.",
       "targets": [
         {
           "anchor": {
-            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "blob": "af90a5e881dbd08f059ec7d77453b13da9a65f36",
             "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
             "locator": {
               "kind": "symbol",
@@ -136,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "blob": "a248f8962fa6fda00bdfb8526233512bca0d21b7",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -205,23 +221,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "blob": "c92f85bd17a38efd422a38c3757d66162a171b5e",
             "content": "sha256:433e1755ab5abb07f8c97d249f6909510febede82bb7c1b080691e18194525f6",
             "locator": {
               "kind": "symbol",
               "name": "_write_drift_snapshot"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
-            "content": "sha256:939937f982310879eb87e0fff7de9d71280c31e41a6d97c2bfa7c418eadb0531",
-            "locator": {
-              "end": 347,
-              "kind": "line_range",
-              "start": 308
             }
           },
           "kind": "code"

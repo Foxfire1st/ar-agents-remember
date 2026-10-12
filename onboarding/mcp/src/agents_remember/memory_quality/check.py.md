@@ -11,6 +11,13 @@ payload for MCP closeout workflows.
 
 ## Code Commentary
 
+### Landing-report scope
+
+`DriftCheckContext.landing_base` is an optional independent landing resolver. The converted drift-slot dispatch forwards it to `converted_knowledge_check` alongside the existing `knowledge_base`: contract-bound reports compare with the admitted leaf base, while validator classification keeps its operation-base semantics. This is context propagation, not another refusing check or registry entry.
+
+- The converted dispatch forwards independent validator and landing base ports. [18]
+
+
 ### Logic
 
 The module registers style checks by name, defines the drift integrity check

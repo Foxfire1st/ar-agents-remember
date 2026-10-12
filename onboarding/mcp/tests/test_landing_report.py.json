@@ -1,0 +1,255 @@
+{
+  "path": "mcp/tests/test_landing_report.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_added_file_reported_with_size_and_sum"
+        }
+      },
+      "facet": "Only added paths outside the three knowledge folders are reported, with exact per-file sizes and the byte sum; the report stays non-refusing.",
+      "id": "PRF-D21JXC",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_closeout_phase_passes_with_landing_aboard"
+        }
+      },
+      "facet": "The real services-bound closeout quality phase remains ok with both landing populations under a scratch contract; it is not a real leaf closeout.",
+      "id": "PRF-GT1X76",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_card_over_measure_reports_both_numbers"
+        }
+      },
+      "facet": "A ten-removed/one-added card yields one named cut with both numbers, ok true and no refusing findings.",
+      "id": "PRF-KH67GA",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_answer_carries_two_counts_first_rows_within_bound"
+        }
+      },
+      "facet": "A 200-cut payload retains the full count, first bounded slim rows and a token-bounded answer; no log acquisition is claimed by this fixture.",
+      "id": "PRF-Q24TE8",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_operations_hold_both_populations_without_new_refusals"
+        }
+      },
+      "facet": "The actual check with both landing populations has identical ok/refusal findings to its control.",
+      "id": "PRF-RV55G1",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+        "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_checklist_actionable_parity_on_real_populations"
+        }
+      },
+      "facet": "Check-derived payloads render landing paths without changing checklist status or actionable counts.",
+      "id": "PRF-W41VPM",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A measured card reports its exact removed/added numbers with no refusing finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_card_over_measure_reports_both_numbers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Known absence on both code sides is not a source deletion; actual base-present/candidate-absent deletion is exempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:bf3e1d57f3de03738b974243b96e6025fb0a77d6c58cdfec1488d3bdd66ee2da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_proven_deleted_source_card_not_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Added paths carry individual sizes and a total while the knowledge roots are excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_added_file_reported_with_size_and_sum"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Two hundred cut rows keep whole counts and bounded slim first rows within the answer token limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_answer_carries_two_counts_first_rows_within_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Discovered role-source mirrors hold all listed sentences; canonical capsule assertions check all three Curator sentences and only the Reviewer removed-text phrase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:1c9026636a794eb2b01ab9951d31fb1ab3bc95b8b6e27fcd9a98ed00d79a70ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_texts_hold_landing_sentences_everywhere"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The admitted memory base retains cuts/additions across a mid-leaf commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:a7ade1c9e2a0a3456ece9227da3aacd5dfce9701b7490c02ba9f49ba7f02ae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_base_reports_committed_and_keeps_older_base_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Real knowledge-gate evaluation is complete and non-refusing with the populations aboard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:f29e9eecbf12964d452b1a2afedc3cfbc1e69114d84a6f886cd2f5629f35e71c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_gate_evaluates_landed_candidate_clean"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The actual closeout-quality phase reports landed and clean counts with unchanged zero refusing findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_closeout_phase_passes_with_landing_aboard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Repeated-line hash work is compared at two sizes and the shared measure remains true.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:777274d78a5b22e0722fe012723b952c46c63f187f3dfac9511d563d31a1e3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_line_delta_work_is_linear_in_card_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

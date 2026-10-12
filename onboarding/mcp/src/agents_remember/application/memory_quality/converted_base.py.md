@@ -15,6 +15,13 @@ candidate deleted or moved is reported (`R22.6-carried-stale`), not refused as a
 
 ## Code Commentary
 
+### Landing-report scope
+
+The landing report has a separate leaf-base port. `leaf_base_request` selects the contract's admitted memory commit and paired code base; `leaf_base_request_for_context` does the same for context-owning consumers. `leaf_base_port` resolves cards, the complete base-path listing, known code-base paths and code-named Git renames. Converted-base cache reuse remains shared, but this landing comparison does not replace the validator's HEAD-derived operation base. Without a contract/base request, diagnostic callers retain their established fallback. An unreadable or unconvertible memory base returns a named problem for report-only observation, not a new validator refusal. An unreadable code-base listing leaves deletion evidence unknown, and an unreadable Git rename listing supplies no named renames; neither silently establishes a deletion or a move.
+
+- The landing base resolves the admitted commit, base listing, code deletion evidence and code-named renames independently. [6]
+
+
 ### Logic
 
 - `_port(code)` wraps `knowledge_writer.base_side.writer_bases` as a `KnowledgeBasePort`: `(memory root, candidate)

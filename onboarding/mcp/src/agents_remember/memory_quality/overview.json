@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
+            "blob": "941d66fefe8b89ac48af25f6d58d4c27fea45502",
             "content": "sha256:711c0aa61626676446bacbf2e9ad740caba552a95fe0dde52c1363fdc5a20609",
             "locator": {
               "kind": "symbol",
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
             "content": "sha256:edd4e53b3a92f67842ae50ef0a4484cd315a1cc3f4460053f86c5e4feb06281b",
             "locator": {
-              "end": 960,
+              "end": 1012,
               "kind": "line_range",
-              "start": 924
+              "start": 976
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -450,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
             "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
             "locator": {
               "kind": "symbol",
@@ -501,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "blob": "9951f90b943b0432c74df2ab36b18c593838c2bc",
             "content": "sha256:e2f343ff9a4e6af1114910f1ea83d70c0a16ee1c83b605b21883a6f8893eb1c7",
             "locator": {
               "kind": "symbol",
@@ -838,7 +838,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:ecfbfe33ca6ca959a7089a708440062186d28a630d620ac9ca9e26158918b503",
             "locator": {
               "kind": "symbol",
@@ -935,7 +935,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "065bbd456f5e22da5fc337ecdefc2dab2d9d08f9",
             "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
             "locator": {
               "kind": "symbol",
@@ -947,7 +947,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "065bbd456f5e22da5fc337ecdefc2dab2d9d08f9",
             "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
             "locator": {
               "kind": "symbol",
@@ -959,7 +959,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "065bbd456f5e22da5fc337ecdefc2dab2d9d08f9",
             "content": "sha256:de25952f4238188c46711c4b8e473e4349a4db18c80cb9025c62361aaf933a5a",
             "locator": {
               "end": 71,
@@ -1006,7 +1006,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "065bbd456f5e22da5fc337ecdefc2dab2d9d08f9",
             "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
             "locator": {
               "kind": "symbol",
@@ -1018,7 +1018,7 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "blob": "065bbd456f5e22da5fc337ecdefc2dab2d9d08f9",
             "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
             "locator": {
               "kind": "symbol",
@@ -1129,7 +1129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
             "content": "sha256:3c918e2da84a47cea7db603139138c6e6449401f4c5f24ea92a45981c56c143a",
             "locator": {
               "kind": "symbol",
@@ -1146,7 +1146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
             "content": "sha256:ea17ccdd0945abadf165282bdc72a4f0dfb830e132696250b0d74b9fb6f1da72",
             "locator": {
               "kind": "symbol",
@@ -1290,12 +1290,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
             "content": "sha256:2208746a1a33b3fdea0cb67417fbed8e562c0adf174452631e3fa247a61bcafc",
             "locator": {
-              "end": 190,
+              "end": 193,
               "kind": "line_range",
-              "start": 189
+              "start": 192
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
           },
@@ -1394,7 +1394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1544,7 +1544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -1578,7 +1578,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1595,7 +1595,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
             "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
             "locator": {
               "kind": "symbol",
@@ -1675,12 +1675,82 @@
         }
       ]
     },
+    "80": {
+      "note": "report-only landing measurement with separate read-summary scope",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:1e1076394b6314c16631d21734ed87e8b4d0f75d9cbd800d89d5ad4db80eb8de",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:6d4bcb3d0bfe0964745bb253c1e2a801b14ba05ef343502a146803d27adf6583",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:6bad4a593a3107e64f2a24ea9125601facea3714714899795a937205a01a414b",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c92f85bd17a38efd422a38c3757d66162a171b5e",
+            "content": "sha256:1deb890214a2f83f84eaf379e3b482d7e670856aae6c9e0788c4823a6799e4c2",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "Projection admission precedes staging; declined claims retain their original bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
+            "blob": "941d66fefe8b89ac48af25f6d58d4c27fea45502",
             "content": "sha256:502a9eb1d6a45360d4edbdfc1bb93ef896cb3bc2e2ad41125ebcf7c600f87dfe",
             "locator": {
               "kind": "symbol",

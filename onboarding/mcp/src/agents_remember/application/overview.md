@@ -38,6 +38,13 @@ The reviewer projection reads the reviewed owner’s history from the resolved a
 
 direct_execution_grants owns architect admission and pre-start grant mutation/reclamation. task_scoped_mcp retains exact enclosure readers and adds canonical granted-leaf/master-series readers; callers supply identities, not roots, and current grant authority is not a launch receipt or runtime setting.
 
+## Independent landing base and bounded answer
+
+`memory_quality/converted_base.py` supplies a separate admitted leaf-base request/port for landing observations. The quality controller, `MemoryQualityAdapter.drift_context` and the proved-view final checker pass that port beside the existing validator base; they do not replace HEAD/conversion-based validator classification, candidate revalidation or certification guards. The converted drift-slot result retains cut-card and added-file observations against the contract base, including committed leaf progress. `memory_quality/answer.py` carries complete counts and bounded slim first rows without expanding normal delivery or treating report-only observations as blocking work. This extends composition and presentation only, not prepared-closeout eligibility, Git publication or semantic acceptance.
+
+
+- independent leaf-base composition and bounded answer [455]
+
 ## Historical prior application route — preserved, not the current operative account
 
 <details>
@@ -1297,6 +1304,8 @@ reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
+
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 

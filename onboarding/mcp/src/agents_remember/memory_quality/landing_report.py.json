@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/landing_report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One shared predicate owns the eight-line and strict removed-to-added measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:55a7585fcc16135ea7342326cdeb38cde74def87ecf80a51be2fec100c7a49f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_cut_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Line deltas compare multisets with linear hashing work and ignore line order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:abdc7dcbf32067b353786eb9fa8f2f63315d97c6511c4834ce0dd32c2425ffda",
+            "locator": {
+              "kind": "symbol",
+              "name": "multiset_line_delta"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shortened and wholly removed cards apply the shared measure and proven-deletion boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:c590b4b20e7fb170d57e30c4a59f8136299de65b88c516909c907eb5ecd73edf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Candidate additions exclude the three knowledge roots and retain sizes and the sum.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:7231d410a266a219ebaa565158546a12622d588abb1626067ad98305350a06dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "added_file_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Working-tree inventory counts file/link entries without following targets or including Git administration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:2bbbd4fb73915d460347616351d0f2792fb9ac8514209ab43e8dedce92451663",
+            "locator": {
+              "kind": "symbol",
+              "name": "walk_candidate_listing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Leaf-bound reports retain committed changes and keep the diagnostic fallback distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:5f99e1f26e64944af11643dfc51360e31bb8f1a937d1c0543a1ef7d827d22c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_report_for_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The pure report keeps landing facts report-only and names an unreadable base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:2b673dbb1e353edd22ee5953c7732b6aa49cb7396075b14f9819e3c4f2ea6f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_landing_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The operation-level gate and closeout-quality cases compare landed and clean populations without claiming a live transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1ec122275f7b7eb101249771239eb1553fc818",
+            "content": "sha256:cda894581b1323d0f7d721f72aef3449f490f1b54f57493bafe044862f2ff5c4",
+            "locator": {
+              "end": 1057,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

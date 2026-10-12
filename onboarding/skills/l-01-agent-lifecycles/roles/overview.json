@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 96,
+              "end": 99,
               "kind": "line_range",
-              "start": 93
+              "start": 96
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e1c8a592a55478c12d7244b3087fa8789a4c908",
+            "blob": "2235a3e382d20aa35f1bba0b8099a09a5a904cf8",
             "content": "sha256:079de00442547608494ea779313d31548d090d062f696bc106bca3c6c57d6bc4",
             "locator": {
               "end": 49,
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a962df7626a9e1fe0da0d69825aa828e6c840c6",
+            "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
             "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
               "end": 18,
@@ -224,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 104,
@@ -260,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd187129994e86112236dc28d7d52fa0251cb361",
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
             "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
             "locator": {
               "end": 8,
@@ -444,6 +444,37 @@
         }
       ]
     },
+    "29": {
+      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated.\n\nAnchor: Process step7 and final working-folder/report paragraph",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:b2d2b85db8c7fd89807992475fa635ff3835cd305ee5a0043974e53c3939a45d",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:6a4364374bb1c56589a98126bc07037848f43cc2c50069010d893b8100a581f4",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The curator process carries exact retained-sibling authoring and readback.",
       "targets": [
@@ -455,6 +486,60 @@
               "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding.\n\nAnchor: Outputs: every reported cut",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.\n\nAnchor: Process step8: independent MEMORY verdict",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.\n\nAnchor: check_landing_report",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:2b673dbb1e353edd22ee5953c7732b6aa49cb7396075b14f9819e3c4f2ea6f8c",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
           "kind": "code"
         }
@@ -514,12 +599,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
-              "end": 175,
+              "end": 181,
               "kind": "line_range",
-              "start": 175
+              "start": 181
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

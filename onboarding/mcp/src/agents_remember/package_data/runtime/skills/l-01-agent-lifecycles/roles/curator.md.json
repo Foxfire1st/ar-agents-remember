@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
-        "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+        "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+        "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
         "locator": {
           "kind": "file"
         }
@@ -37,6 +37,40 @@
         }
       ]
     },
+    "10": {
+      "note": "Evidence and working files stay outside the memory worktree.\n\nAnchor: lines 107-110",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:b2d2b85db8c7fd89807992475fa635ff3835cd305ee5a0043974e53c3939a45d",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every reported cut has task-change causality; finding-clearing deletion is forbidden.\n\nAnchor: lines 141-148",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.\n\nAnchor: `memory_quality_check`",
       "targets": [
@@ -59,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
             "content": "sha256:7979f990bee5061a061df5dd00b315be4679a1e8bd3d0302ba20565a5a0d4a42",
             "locator": {
-              "end": 119,
+              "end": 120,
               "kind": "line_range",
-              "start": 115
+              "start": 116
             }
           },
           "kind": "code"
@@ -93,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
               "end": 99,
@@ -110,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
             "content": "sha256:f51112201ff416c2fdfbff42072127b3a0fdf55c5702b1f0fdd27c6e0c767b46",
             "locator": {
               "end": 88,

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
-        "content": "sha256:8e057ae8d82e9b879d5cd089fca06c045de96b21b015f1ba18037f7a2f9ea80d",
+        "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
+        "content": "sha256:cb7061e16be29da70c3fc96f2f37e4d72fe2d9ece460a324b3435d7485e39817",
         "locator": {
           "kind": "symbol",
           "name": "quality_result_answer"
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
             "content": "sha256:a714d023277f003eb288453661d9cd5398e45ddeba8451832ae102732866e3dd",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
             "content": "sha256:ad4053875a98f23c981f9d9198a9916e941e5fbc0d12548b63896b9d9f30755d",
             "locator": {
               "kind": "symbol",
@@ -74,11 +74,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
             "content": "sha256:e7decea95606a3baf358ae71e46158e5d89ef98f60f478f768b3b7e2b97f6df3",
             "locator": {
               "kind": "symbol",
               "name": "quality_poll_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The converted answer carries complete landing counts and bounded slim first rows without narrowing retained results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
+            "content": "sha256:8231a631e68b412e798b03b24e7915a6b33ebada2442887e77644d07b14f53bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_landing_answer"
             }
           },
           "kind": "code"

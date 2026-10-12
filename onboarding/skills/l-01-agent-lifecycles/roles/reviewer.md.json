@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
         "content": "sha256:2127da3e03bc26085319233af46b94eef3a73611aa3fe3c9f1aedc29aebd6742",
         "locator": {
-          "end": 239,
+          "end": 242,
           "kind": "line_range",
-          "start": 229
+          "start": 232
         }
       },
       "id": "RLZ-165F81",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -90,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
         "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
         "locator": {
           "end": 21,
@@ -109,12 +109,12 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
         "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
         "locator": {
-          "end": 198,
+          "end": 201,
           "kind": "line_range",
-          "start": 197
+          "start": 200
         }
       },
       "id": "RLZ-QBXQTV",
@@ -128,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -145,8 +145,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+        "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+        "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
         "locator": {
           "kind": "file"
         }
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
               "end": 101,
@@ -202,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
             "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
             "locator": {
-              "end": 131,
+              "end": 134,
               "kind": "line_range",
-              "start": 124
+              "start": 127
             }
           },
           "kind": "code"
@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 104,
@@ -272,6 +272,23 @@
               "end": 249,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions.\n\nAnchor: lines 105-111",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "code"

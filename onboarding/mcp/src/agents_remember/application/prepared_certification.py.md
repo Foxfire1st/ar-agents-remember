@@ -15,6 +15,13 @@ on to the application rank in `806649b9`, which is why its card lives under `app
 
 ## Code Commentary
 
+### Landing-report scope
+
+The final quality run binds the context's admitted leaf-base resolver alongside its unchanged converted validator-base port. Landing cut/addition observations therefore keep the leaf-base epoch even when this consumer checks a proved physical code view. This wiring grants no new certification, prepared-closeout or transaction authority; existing refusals remain owned by their current guards.
+
+- The proved-view quality run passes the leaf landing port without replacing its validator or certification guards. [18]
+
+
 ### Logic
 
 The adapter preserves canonical logical scope roots while final HEAD-based checks read the proved
@@ -76,7 +83,9 @@ before. The path has no production caller today (ruling 2026-09-30T14:38:47 gap 
 with a named reason until it can close the history file"); `certification/execution.py::execute_selected_closeout`
 carries the same check at its entry. Tested by `test_the_prepared_closeout_path_fails_closed_on_converted_memory`.
 
-- The refusal before anything is realized. [3]
+The refusal before anything is realized.
+
+Anchor: "unclosable = prepared_closeout_refusal(request.handoff.contract)" [3] |  | mcp/src/agents_remember/application/prepared_certification.py:357-359 |
 - Both prepared entry points refuse on converted memory. [4]
 
 ### Conventions

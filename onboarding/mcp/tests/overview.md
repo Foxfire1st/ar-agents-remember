@@ -70,6 +70,28 @@ Recorded-meaning regression uses compose_review over converted trees, exact owne
 
 Grant/dashboard, direct-leaf role/integration refusal, direct landing and no-grant closeout parity cases exercise their named fixture scopes. Low-level synthetic grants and consumer/lane catalogs are preparation/declarations, not live architect, host or fresh acceptance evidence. Enclosed/master response-preservation uses the explicit source-bound scrubbed comparison, not raw byte equality.
 
+### Landing-report regression scope
+
+`test_landing_report.py` declares controls for measured cuts and the below-measure boundary, proven-deleted sources versus unproven absence, route overviews and full card removals, code-named renames versus duplicate-blob copies, admitted leaf-base comparison after commits and base updates, extra-knowledge file sizes, symlinks without target traversal, Git administrative exclusions, unreadable-base notes, bounded answer rows and linear line-multiset work. Its operation/checklist/gate/adapter cases distinguish descriptive rows from existing refusals; the closeout-phase fixture mocks adjacent services, so it is not whole-landing acceptance.
+
+The role-text case scans generated raw role files, then compiles two canonical role/operation capsules. It is not a live every-harness consumption witness. The module is selected once in `unit-regression` and consumes the two existing curator-coherence-support and Node-lockfile artifacts. Registration and these source-described assertions establish neither a new invocation nor a PASS.
+
+- Source controls cover cut measure, threshold, deletion proof and overviews. [1716]
+
+- Source cases retain committed leaf deltas and exclude files already present in an updated base. [1717]
+
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. [1718]
+
+- Fixture assertions keep landing reports non-refusing while preserving existing refusals; adjacent closeout services are mocked. [1719]
+
+- Source cases inventory live/dangling links at own size and bound counted multiset hash work. [1720]
+
+- The source checks raw generated texts and two canonical compiled capsules; it is not every live harness execution. [1721]
+
+- The landing-report module is selected in unit-regression; registration is not execution. [1722]
+
+- The landing-report module consumes two existing governed artifacts; its consumer addition changes no artifact/contract identity. [1723]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -359,6 +381,8 @@ surfaced with the support question rather than an assertion that the citation is
 
 Preserve useful shared fixtures only for real consumers. Fake inspectors, synthetic profile inputs, hand-built report payloads and pending finalizers must stay labeled as such. A source-range citation proves the described assertion exists; only a retained execution record proves it ran. Whole-master review and aggregation must assess actual protection rather than historical test names or counts.
 ## Hot Path Summary
+
+Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 

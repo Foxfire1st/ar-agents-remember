@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+        "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
         "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
         "locator": {
           "kind": "symbol",
@@ -85,12 +85,29 @@
         }
       ]
     },
+    "13": {
+      "note": "The memory-quality adapter carries the admitted landing base through the existing drift context.\n\nAnchor: `MemoryQualityAdapter.drift_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "content": "sha256:df4c5faac7fc15acf748d9f813b6d3d3d7740b7fbc0c0d005555b38eb8bdf432",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Provider translation/delegation",
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
             "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
             "locator": {
               "kind": "symbol",
@@ -106,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
               "kind": "symbol",
@@ -133,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
             "content": "sha256:e8631085ca39581f014971b5b39c6506cc83d58972b7c6f27c96b84c8e52e979",
             "locator": {
               "kind": "symbol",
@@ -149,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
             "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
             "locator": {
               "kind": "symbol",
@@ -210,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
             "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
             "locator": {
               "kind": "symbol",

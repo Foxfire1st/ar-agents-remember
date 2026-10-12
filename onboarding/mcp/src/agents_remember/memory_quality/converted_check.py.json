@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/converted_check.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+        "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_knowledge_check"
+        }
+      },
+      "id": "RLZ-2SM0BY",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      },
+      "rationale": "This check joins the landing report to the quality result the Curator and Reviewer consume.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The legacy-format checks and their not-applicable result.",
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:ecfbfe33ca6ca959a7089a708440062186d28a630d620ac9ca9e26158918b503",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:ea3c1f567d4ea70924548f9d40a0a91e823cd9ab33e727b7749586c934487652",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:4f4d571509f070b6b194d8cc2e2e4397b1c13948dd9445303efc599732feb22d",
             "locator": {
               "kind": "symbol",
@@ -100,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -111,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
             "content": "sha256:2ea7090ba8f226dac8a812a416add05ecbe607a0b29ca776b4ae8d61b1231d28",
             "locator": {
               "kind": "symbol",
@@ -145,6 +164,22 @@
           "anchor": {
             "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:f50d3d5405afa140c996968bb535428102504f7cf6fd2890a3a84d6f15ecbf70",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Landing facts join only the report-only population; their leaf base is independent from the validator base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e84340750f75fccf1717916773f7cb7ec5119",
+            "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"
