@@ -103,6 +103,10 @@ observer write side through `kernel/primitives/observer_paths.py`).
 - Readers may consume observer projection/reducer APIs; observer event mutation remains
   with its write-side owner. Layering permits serving to consume lower observer APIs.
 
+## Grant census and bounded task reads
+
+Full body requests still avoid canonical task-corpus enumeration and read only graph-named masters. External direct-grant annotation adds an explicit task-addressed grant census and retained legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. Summary/series canonical enumeration and ordering remain unchanged.
+
 ## Evidence
 
 ### Repo-Internal References

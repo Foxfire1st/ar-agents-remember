@@ -16,6 +16,10 @@ Admission refuses a published legacy contract with status, reason, the raw cell 
 
 Rule 4 refuses without the configured-authority check across the lifecycle layer: closeout preview and apply, sync, integrate, checkpoint landing, record landing, pause, cleanup, finalize, reopen and reopen-series, and the operation-control entry, plus direct-landing preview and apply raising the same status with the same detail. The five knowledge-gate sites answer the refusal instead of nothing-to-judge, and the behind-entry gate realizations refuse by name. Tool-level closeout, reopen, cleanup, and finalize cases close the module on published legacy contracts.
 
+## Granted fixture, disabled-memory refusal
+
+Direct tool/apply probes seed their canonical leaf grant rather than enable a settings flag. Their status/detail equality covers these disabled-contract probes, not universal preview/apply response parity or successful direct publication.
+
 ## Evidence
 
 

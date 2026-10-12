@@ -125,6 +125,10 @@ key, so this read is served from the gate's memo. Tested through the real valida
 | `curator_coherence_render.py` | [curator_coherence_render.py.md](curator_coherence_render.py.md) | covered |
 | `integration_reopen.py` | [integration_reopen.py.md](integration_reopen.py.md) | covered |
 
+## Series leaf grant predicate
+
+A series door targeting a canonical leaf reads its current grant, replacing global settings policy. Ordinary enclosed leaf/door behavior remains unchanged; the source predicate does not execute independent review or borrow queue authority.
+
 ## Evidence
 
 ### Docs And Boundary References

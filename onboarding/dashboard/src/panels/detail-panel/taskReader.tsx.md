@@ -45,8 +45,8 @@ on-demand body state; the small primitives (`Section`, `Bullets`, `StepList`,
 `all N decisions` link opening the whole log on its own reader page. Ordering comes from
 `orderDecisionsNewestFirst` (parsed recorded time, stable fallback); product-written records
 are muted per the architect time-order ruling. The task page mounts the `TaskNotes` line,
-references and recorded reports; the preview's `DecisionList` (taskReader line 776,
-used by `DecisionPreview` at 821) renders the newest five on the task page, while
+references and recorded reports; the preview's `DecisionList` (taskReader line 936,
+used by `DecisionPreview` at 981) renders the newest five on the task page, while
 the whole log renders separately in the reader (`DecisionsPane` at
 NotesReaderViewer 457 onward, newest-first, product records muted).
 
@@ -61,6 +61,10 @@ The reader renders `TaskDocNode`/`SeriesNode` content only and never mutates it.
 ### Todos
 
 None recorded.
+
+## Task-local direct grant control
+
+The task reader shows readable grant badges/giver details on canonical leaf and child rows. DirectGrantControl offers developer Give/Revoke for kind=subTask with a canonical docRef and disables actions while a request is pending; it does not filter ordinary start evidence in the browser; the backend owns the complete ordinary-start evidence gate, posts through the grant adapter and surfaces typed refusal. It consumes live projection/get evidence; local UI state or a badge cannot authorize execution or write task JSON.
 
 ## Evidence
 

@@ -29,6 +29,10 @@ The rule-6 contract table population for MIK-R108: one row per registered tool a
   the retained L109/L111 interim populations. L110's ten retained tools and L112's
   retained tools keep their final rows. A leaf does not land while a row names it.
 
+## Grant answer row scope
+
+The added direct_execution_grant row belongs to the interim answer contract; its map/roster assertions are structural evidence, not L94 completion or full-final answer acceptance. Retained final-row exceptions and historical counts remain attributed.
+
 ## Evidence
 
 - Each row carries fields, uses, cases, bound and interim ownership. [1]

@@ -40,6 +40,10 @@ The lowest ref writer requires the private preparation capability. `CheckoutRefr
 
 No new file-local follow-up is identified by this source reconciliation.
 
+## Shared direct-leaf checkout guard
+
+Before publishing ordinary integration into a dirty shared master checkout, the addressed direct-leaf guard names an occupying granted canonical sibling, including a Completed dirty/incomplete leaf under the actual tri-state pair/document/dirt predicate. Without such a grant the former dirty-checkout refusal remains; a clean checkout follows ordinary integration admission. This is a product-interface guard, not shell isolation.
+
 ## Evidence
 
 ### Docs References
@@ -59,3 +63,5 @@ These current source spans identify the implementation owners and the specific a
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+- The dirty shared checkout guard names an occupying granted leaf, including a qualifying Completed dirty/incomplete sibling. [6]

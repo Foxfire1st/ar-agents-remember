@@ -16,6 +16,10 @@ It builds the fixture world, calls registered tools through it and closes its se
 
 The delegation-policy stub path comes from `user_settings_path_for_write` before its settings parent is created or its bytes are written. Building the world with the account-default settings path raises with the temporary-XDG remedy and leaves that configuration folder unchanged. Pytest's existing moved configuration folder remains supported; the stub bytes and the classifier/sweep contract are unchanged. The world may already have constructed its own disposable fixture repositories before this refusal: this is not a promise of zero temporary-world effects.
 
+## Grant firing input
+
+The benign entry-point world includes the absent-task give invocation without an architect role binding. It is fixture/driver preparation; its consumers own assertions and sweep acceptance. Never construct this world outside pytest isolation or treat a driver row as a live MCP/server result.
+
 ## Evidence
 
 - The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding, never a fallback. [2]

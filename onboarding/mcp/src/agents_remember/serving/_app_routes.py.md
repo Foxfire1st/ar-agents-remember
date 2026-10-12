@@ -38,6 +38,10 @@ health row, and neither can change the projection revision, the ETag, the 304 pa
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/_app_routes.py`.
 
+## Developer grant endpoint
+
+The serving router mounts the developer direct-execution-grant POST route through developer_grant_tool. Canonical task/giver/start validation and exact store behavior belong to that handler; the router does not authorize an agent or make task_doc a grant writer.
+
 ## Evidence
 
 ### Repo-Internal References

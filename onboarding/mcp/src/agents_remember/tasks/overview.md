@@ -226,6 +226,10 @@ Finalization refuses its unreadable-naming population, while retirement refuses 
 - The retirement probe refuses a model that cannot parse a retired row. [33]
 - Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [34]
 
+## One-way plan with external annotation
+
+JSON stays the authored plan source. Renderer accepts optional supplied direct-grant evidence; store reads it per publication batch and reuses it only within that batch. Rendered Markdown is an annotation snapshot, not permission, and no grant field is serialized into TaskDocument.
+
 ## Evidence
 
 ### Repo-Internal References

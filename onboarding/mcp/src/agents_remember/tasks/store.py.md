@@ -53,6 +53,10 @@ therefore no longer be written back to disk as current task truth.
 
 `restore_task_doc_sources` restores an accepted JSON/Markdown source set when its derived-file publication fails, so a failed task-document copy refresh leaves canonical sources as they were.
 
+## Publication-time grant snapshot
+
+Markdown publication reads the external grant census once per batch and coordination-root/repository/task key, then reuses that batch-local value; the next batch reads again. Absent/unreadable display evidence does not block authoring. Grants are never serialized into canonical task JSON, and rendered Markdown is only a publication-time annotation snapshot, not direct permission. Exact JSON actual-read evidence, task-intent publishability and exception rollback stay intact; rollback is not crash atomicity.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -94,3 +98,5 @@ exposing a parent audit without removal or deleting the child without the audit.
 Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, newly published containers must
 carry the exact canonical intent identity and writers may not emit the sentinel. The batch writer
 enforces this for route-review-bearing documents, so a legacy review cannot be persisted as current.
+
+- Markdown publication reads the external grant census once per batch and coordination-root/repository/task key, then reuses that batch-local value; the next batch reads again. [8]

@@ -22,6 +22,10 @@ The prepared start writes each held seat’s handover and `heldOpeningPrompt` be
 
 The prepared receipt and start answer carry launch-choice metadata, instruction composition, task-document files and predecessor reports. `_reserve_message_binding_projection` recovers the archived receipt for the selection and records its request, workspace and report as `predecessorReports`; `_launch_prepared_role_session` stores choices, instruction composition, task-document files and predecessor reports on the receipt.
 
+## Grant-backed leaf preparation and revival
+
+Dashboard leaf Revive uses the shared grant-aware scope verifier before native bridge revival. It compares the saved canonical leaf and contract against the current pair: readable direct grant plus master series contract, or ordinary leaf enclosure. Stored direct-looking context is not permission. Receipt UUID/reconciliation, capacity, launch-before-runtime and report ownership remain with their existing owners.
+
 ## Evidence
 
 
@@ -53,3 +57,5 @@ Investigator dispatch uses the existing selection admission lock; options expose
 - Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
 - The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]

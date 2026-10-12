@@ -21,6 +21,10 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 The pre-successor CUR-C04 source concatenated the baseline rather than composed notes. The current moving producer candidate now inserts the composed instructions; source correction is visible, but its genuine successor custody/independent disposition has not yet been adopted. Metadata and a source edit alone are not a CODE PASS or host-actual witness.
 
+## Grant-backed leaf preparation and revival
+
+Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location. Historical host/custody limitations remain separately attributed.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -79,3 +83,5 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 - Checks reuse, explicit refresh and changed daemon home in the key. [5]
 
 </details>
+
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]

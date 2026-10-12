@@ -18,6 +18,10 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Granted leaf worktree-start refusal
+
+Before worktree_start prepares an enclosure, the application owner resolves the exact canonical leaf id/path and reads its current grant. A granted or unreadable-grant leaf refuses with direct-leaf-no-enclosure; the readable case names role_start on the same leaf and master series checkouts as the remedy. Series and genuinely ungranted/unresolved leaf cases keep ordinary start admission. The predicate creates no enclosure and does not authorize from a harness setting.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

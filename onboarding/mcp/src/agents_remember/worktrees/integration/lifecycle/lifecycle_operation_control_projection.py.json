@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+        "content": "sha256:5e6c611b39e50ccbc11188edbd085d591392aae6ed8ec6fd595186029040adcc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_direct_generation_bound"
+        }
+      },
+      "id": "RLZ-8MJABX",
+      "invariant": "INV-ZVQ6Z5",
+      "origin": {
+        "handoffEntry": "L94-CODE-F04",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The leaf-binding predicate the exemption reads: a direct-landing generation bound to its leaf on its own input reuses nothing unsafely.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+        "content": "sha256:4eb8bfe6e999de484e6aa9986fa9af5dc1356deedc6fd13a97ad3815bdc92993",
+        "locator": {
+          "kind": "symbol",
+          "name": "_without_legacy_generation_reuse"
+        }
+      },
+      "id": "RLZ-H09C2P",
+      "invariant": "INV-ZVQ6Z5",
+      "origin": {
+        "handoffEntry": "L94-CODE-F04",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Exempts a bound direct-landing generation from the legacy recover/retry strip, so the public worktree_operation_control recover call executes its advertised action on a mechanically recoverable cut instead of refusing it.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "`_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
             "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
             "locator": {
               "kind": "symbol",
@@ -23,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
             "content": "sha256:54a9129eada47ca06e11fc8b7a1a4807771735e884dc778d287f2656064072bc",
             "locator": {
               "kind": "symbol",
@@ -39,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
             "content": "sha256:fe850989cc7d8c401c086c7c8cf938437cb30e2d623a2ce698bdcbfe45423957",
             "locator": {
               "kind": "symbol",
@@ -55,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
             "content": "sha256:f06fa090af964a9f8936477b92737cf271cc62746d9ff581aa8cc78a1364f9a9",
             "locator": {
               "kind": "symbol",
@@ -67,15 +104,43 @@
       ]
     },
     "5": {
-      "note": "Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`)",
+      "note": "Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
-            "content": "sha256:4cfa4b2f6669c2287a94e3970639493131ac8593dae9178b032a20f8bdf41e52",
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+            "content": "sha256:4eb8bfe6e999de484e6aa9986fa9af5dc1356deedc6fd13a97ad3815bdc92993",
             "locator": {
               "kind": "symbol",
               "name": "_without_legacy_generation_reuse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+            "content": "sha256:5e6c611b39e50ccbc11188edbd085d591392aae6ed8ec6fd595186029040adcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_generation_bound"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
+            "content": "sha256:d6798d20bfa4a8ce762aba2349db95d78ca3c025db9c70a61db33e361bfc879e",
+            "locator": {
+              "end": 602,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

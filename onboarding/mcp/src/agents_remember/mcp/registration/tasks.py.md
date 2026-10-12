@@ -12,8 +12,7 @@ already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
-`register_task_tools(server, config)` declares the task-document authoring tool plus the two
-task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
+register_task_tools declares the reopen, finalizer, task-document, curator-coherence and closeout-queue groups. direct_execution_grant is registered by closeout.py/_register_direct_landing_tools, not this task registrar; its launch-bound architect authority and external pre-start grant checks remain at their application/store owners.
 
 ## Code Commentary
 

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb05d3562deb40c5112d16386be5776a7512fede",
+        "blob": "cf8cfd0fdf5361f907231562c169c1072fa30c94",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 162,
+          "end": 163,
           "kind": "line_range",
-          "start": 161
+          "start": 162
         }
       },
       "id": "RLZ-F6DSAT",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "fb05d3562deb40c5112d16386be5776a7512fede",
+        "blob": "cf8cfd0fdf5361f907231562c169c1072fa30c94",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 162,
+          "end": 163,
           "kind": "line_range",
-          "start": 161
+          "start": 162
         }
       },
       "id": "RLZ-N47KE8",
@@ -42,16 +42,15 @@
   ],
   "references": {
     "1": {
-      "note": "Current candidate roster is the literal PUBLIC_TOOLS, measured as 39 distinct names, not the reference header's 40.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "Current literal PUBLIC_TOOLS contains the grant function alongside role_start_set and retire_child; its measured42 source names, not the reference header40, own advertisement.",
       "targets": [
         {
           "anchor": {
-            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
-            "content": "sha256:46bcd614015b5844aa8ee6eda9941f0cf14e07a3675f87c16d1e895c9b3fe43a",
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
+            "content": "sha256:e350dfcfdd6c38297a6676b1d4c429c249932623ff950ec463590c523000870c",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 22
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },

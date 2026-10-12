@@ -116,6 +116,10 @@ probes call `integration_gate_block` directly with chain proof held passing; the
 
 - None.
 
+## Direct fixture binding
+
+The configured direct-landing fixture grants the exact canonical gate_case/leaf.json task and passes that same task reference to its direct route. Fixture preparation is not the product grant owner or a fresh execution receipt; gate/restoration assertions keep their existing narrow facets. The leaf-aware no-open case asserts the named landing leaf; the two-open case asserts both landing and sibling leaves instead of the retired generic file-count wording. Neither assertion admits a landing.
+
 ## Evidence
 
 - The module docstring: every route test enters through the route's own entry. [13]

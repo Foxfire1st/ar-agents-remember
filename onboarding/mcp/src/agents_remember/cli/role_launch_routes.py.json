@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
         "content": "sha256:88034b4afc1f485adb84ad61febdba4c9ab9d2dbc30be1dc402670e0b5b63bd4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
         "content": "sha256:88034b4afc1f485adb84ad61febdba4c9ab9d2dbc30be1dc402670e0b5b63bd4",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
         "content": "sha256:a9d860d9179f4847e4174b60849fb9500e33ed3a8c0d4e44a1b68014fecfb402",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
         "content": "sha256:8f45fa15e8afda704f68961f25e28e57f5dcab29adaf517cbd865bcfa37498a2",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
-        "content": "sha256:5bf0d2e702aad9bcd78ee1f627e0399d00b00bae4f959caebfa4dca4bf5a2d86",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
+        "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
           "name": "_revive_execution"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
-        "content": "sha256:d08c83bb4cc9d734e249c86b9ab34f7e0eb28e7457ebbeee5d3f47d6f82347f4",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
+        "content": "sha256:ca78e2a5484b6c27a7b422efd759d22994a4962591ecd6571bc97807cdc8047f",
         "locator": {
           "kind": "file"
         }
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "7f2d846d83c3157f3f5484d71a06e3318cc42fab",
+        "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
         "content": "sha256:88034b4afc1f485adb84ad61febdba4c9ab9d2dbc30be1dc402670e0b5b63bd4",
         "locator": {
           "kind": "symbol",
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
             "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
             "locator": {
-              "end": 793,
+              "end": 808,
               "kind": "line_range",
-              "start": 763
+              "start": 778
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -188,6 +188,23 @@
             "content": "sha256:e34646cff1e1539c34b12fb277878206e3ecea19e767da7b5eecee4fa227ce18",
             "locator": {
               "end": 629,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
+            "content": "sha256:ca78e2a5484b6c27a7b422efd759d22994a4962591ecd6571bc97807cdc8047f",
+            "locator": {
+              "end": 911,
               "kind": "line_range",
               "start": 1
             }
@@ -265,12 +282,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+            "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1065,
+              "end": 1070,
               "kind": "line_range",
-              "start": 1025
+              "start": 1030
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

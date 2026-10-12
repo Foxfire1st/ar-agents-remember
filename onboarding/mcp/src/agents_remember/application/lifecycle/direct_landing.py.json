@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1e56a216f8de1aeedbede51a4f99cc0adad64f",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
             "content": "sha256:f2ca60bec427d7837229c3891918ed53e9e59ee40575cfd1561be2161b7e5f2a",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "1b1e56a216f8de1aeedbede51a4f99cc0adad64f",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
             "content": "sha256:b503876d205c0545ae477ec9a819903d779de5c6f8b4fb7bd003e4dd13934bed",
             "locator": {
               "kind": "symbol",
@@ -71,6 +71,23 @@
             "locator": {
               "kind": "symbol",
               "name": "direct_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The application boundary preserves current grant admission and journal-owned direct recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

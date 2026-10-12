@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
         "content": "sha256:11f874ff6a27ddc24e46a53e83f8b367646bb86d0e42e13810f3c12260b419fd",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
         "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "blob": "7771ebd9aa5aefb17abadc2fdaf7d93a22610586",
         "content": "sha256:b058daa859694f257c35e3861a3ec873f04337495ee248bb6a1952c5b4ac4140",
         "locator": {
           "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
             "locator": {
               "kind": "symbol",
@@ -84,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
             "locator": {
-              "end": 45,
+              "end": 47,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             }
           },
           "kind": "code"
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:ef0b929d18193b628ffd6b04697b43b520433b140ac8981ebdd404627b802fb7",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
             "locator": {
               "kind": "symbol",
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
             "content": "sha256:db08fdd411786e5288c10612f19f9008b933b596c7d2f4d60cffb27cae6e889e",
             "locator": {
               "kind": "symbol",
@@ -218,6 +218,23 @@
               "name": "task_doc_tool"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Branch review is canonical-leaf opt-in under the live grant, not a runtime setting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
+            "content": "sha256:01894303981a5214405f456df923d035ad88e5c72947f68a9f6e4fbc6f605941",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }

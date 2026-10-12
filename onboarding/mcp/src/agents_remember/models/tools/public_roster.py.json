@@ -85,12 +85,12 @@
       ]
     },
     "14": {
-      "note": "Current working PUBLIC_TOOLS contains39 unique advertised names and the read/diff/integrity knowledge tail; the landed73-name count belongs only to the separately preserved L74 historical source.",
+      "note": "Current working PUBLIC_TOOLS contains42 unique advertised names, distinct from historical73 and actual runtime list_tools.",
       "targets": [
         {
           "anchor": {
-            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
-            "content": "sha256:46bcd614015b5844aa8ee6eda9941f0cf14e07a3675f87c16d1e895c9b3fe43a",
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
+            "content": "sha256:e350dfcfdd6c38297a6676b1d4c429c249932623ff950ec463590c523000870c",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -105,12 +105,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
-              "end": 42,
+              "end": 44,
               "kind": "line_range",
-              "start": 42
+              "start": 44
             }
           },
           "kind": "code"
@@ -139,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
             "content": "sha256:8652b23fc284dc92543c7ef98b222e9bc81a50adde9beaf70c84e827f5f63465",
             "locator": {
-              "end": 64,
+              "end": 68,
               "kind": "line_range",
-              "start": 61
+              "start": 65
             }
           },
           "kind": "code"
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
             "locator": {
               "end": 19,
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2feb4ad814b0f23f06a843578432e92ee658d51e",
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",

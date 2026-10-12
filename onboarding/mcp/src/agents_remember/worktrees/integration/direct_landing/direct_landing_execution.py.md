@@ -10,9 +10,7 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Executes and recovers the actual memory-content output of an accepted direct-landing generation.
-The code commit already exists; this module either commits changed memory with its attribution or
-reuses the accepted clean memory HEAD.
+Executes and recovers the memory-content output of an accepted direct-landing generation. Code already exists in verify mode, or is the one proven provisional create output; this module pairs changed memory with its attribution or reuses the accepted clean memory HEAD.
 
 ## Code Commentary
 
@@ -55,6 +53,10 @@ message rendering.
 
 No new file-local follow-up is established by this documentation pass.
 
+## Accepted-create recovery
+
+Create execution receives the accepted provisional code output and converges its memory leg under the same generation. An interrupted code/ref/memory observation must be reconciled or reported as the retained developer-decision state; retry/recover does not allocate another code commit. Existing memory proof, exact tree/ref/message validation, unchanged-head reuse and best-effort cache refresh retain their owners.
+
 ## Evidence
 
 ### Docs References
@@ -83,3 +85,5 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- Memory execution converges the same accepted create generation without a second code publication. [6]

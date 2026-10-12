@@ -34,6 +34,10 @@ The reviewer projection reads the reviewed owner’s history from the resolved a
 
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
 
+## Canonical grant and reader authority
+
+direct_execution_grants owns architect admission and pre-start grant mutation/reclamation. task_scoped_mcp retains exact enclosure readers and adds canonical granted-leaf/master-series readers; callers supply identities, not roots, and current grant authority is not a launch receipt or runtime setting.
+
 ## Historical prior application route — preserved, not the current operative account
 
 <details>

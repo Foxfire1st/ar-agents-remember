@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An instruction omitting canonical leaf, preview-tree binding or same-generation recovery sends later agents to an invalid or unsafe publication route."
+  },
+  "applicability": "Canonical c12 direct-landing instructions and generated copies.",
+  "conditions": [
+    "Named-leaf verification and creation use their declared schema and current generation recovery owner."
+  ],
+  "exclusions": [
+    "Instruction presence is not live execution or whole-CODE acceptance.",
+    "Ordinary master closeout does not create a dirty-checkout code commit."
+  ],
+  "id": "INV-J8MBSE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "skills/c-12-closeout/SKILL.md Granted Branch-Direct Landing section; scripts/sync-skills.py --check clean with 9 emitted copies byte-equal; worker journal R4 section; R5 verdict 88c054160ffdffef415a01cdf0f09161bb59aa68944469379856e72944c46755"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CODE-F10",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The canonical c12 closeout instructions show schema-valid named-leaf verify and create forms and describe generation journaling with code-proven/memory-missing and memory-proven/ledger-missing recovery and no second code commit, identically across all generated copies.",
+  "status": "proposed",
+  "supersedes": []
+}

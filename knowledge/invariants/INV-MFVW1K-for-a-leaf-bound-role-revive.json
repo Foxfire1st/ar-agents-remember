@@ -6,10 +6,10 @@
     ],
     "justification": "Checking immutable launch scope before resume prevents an old agent resuming into a different current enclosure."
   },
-  "applicability": "Revive of leaf-bound worker, reviewer or curator.",
+  "applicability": "Revival of leaf-bound worker, reviewer or curator, including grant-backed direct leaves.",
   "conditions": [],
   "exclusions": [
-    "Taskless and sprint/master contexts follow their separate rules."
+    "Taskless and sprint/master contexts retain their separate rules."
   ],
   "id": "INV-MFVW1K",
   "origin": {
@@ -23,9 +23,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "For a leaf-bound role Revive first compares the task reference and contract path the launch recorded in the receipt (`arMcpContext.taskContext`) with the pair computed now from the leaf document alone, and refuses with both values when they differ or when none was recorded; the comparison creates and starts nothing and no bridge call is made.",
+  "statement": "Before reviving a leaf-bound role, compare the receipt canonical task/contract pair with the current product-resolved pair: a granted direct leaf uses its readable grant and master series contract, an enclosed leaf its canonical enclosure. Missing or changed identity refuses with both values before bridge revival; this comparison creates or starts nothing.",
   "status": "proposed",
   "supersedes": []
 }

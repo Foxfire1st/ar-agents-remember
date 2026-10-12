@@ -36,6 +36,10 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
+## Direct-create retry and public recover
+
+A mechanically recoverable interrupted direct-create generation is requeued through its advertised public recovery owner and completed under that same accepted input. Code/ref/history contradictions retain the developer-decision result. This branch does not invent a door, erase memory pairing or allocate another code commit.
+
 ## Evidence
 
 ### Docs References
@@ -90,3 +94,5 @@ control classification, and public responses therefore share one exhaustive acti
 ## CCR-R18@v1 Rebinding Controls And Previews
 
 260831-CCR-L18 routed the control-layer projection rewrites through the envelope binders: `_preview_completed_supersede` now returns `bind_projection_result(operation_projection(record, contract=contract), {...})` for the `would-supersede` dry-run preview, and `_resume_closeout_successor` uses `bind_projection_result` with a `LifecycleRecommendedAction` (`apply-closeout-successor` → `worktree_closeout_apply`) plus guidance instead of mutating a `model_copy` projection. Every rewritten control projection therefore rebinds its component digests to the exact journal revision through the sole validator.
+
+- A mechanically recoverable interrupted direct-create generation is requeued through its advertised public recovery owner and completed under that same accepted input. [5]

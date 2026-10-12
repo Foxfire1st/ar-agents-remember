@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/serving/direct_execution_grants.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f3d52a1546d87cf43a6fd70f7013753d28e4d739",
+        "content": "sha256:a83bf7ccaa09aca17f580894712cc8c1482893085ef5c61c98a5fad149d7b2bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "developer_grant_tool"
+        }
+      },
+      "id": "RLZ-MYPXK4",
+      "invariant": "INV-8PJF2P",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-policy",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The developer dashboard owner writes the same canonical grant through its give/revoke route.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f3d52a1546d87cf43a6fd70f7013753d28e4d739",
+        "content": "sha256:a1f85392bd641be96673b6fe8ff89b0a9cf0d66c924c10861b06cc8a52eda82a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restore_removed_grant"
+        }
+      },
+      "id": "RLZ-RQ2PBY",
+      "invariant": "INV-X16RQH",
+      "origin": {
+        "handoffEntry": "L94-CODE-F08",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The same post-unlink remediation on the developer (dashboard control) route, so neither writer can clobber a concurrently started grant.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns the dashboard developer route for the same shared leaf grants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3d52a1546d87cf43a6fd70f7013753d28e4d739",
+            "content": "sha256:6b80f26ae374c8ef29fbaa54211e7d4205b5073f416636d38944e360c47585a9",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

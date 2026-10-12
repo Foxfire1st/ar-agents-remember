@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Store gates and the two mutation owners jointly prevent a leaf agent or settings copy from authorizing its own direct publication."
+  },
+  "applicability": "Prospective direct-leaf admission and product grant mutations.",
+  "conditions": [
+    "The canonical task is a subTask and ordinary unstarted evidence admits the change."
+  ],
+  "exclusions": [
+    "Arbitrary shell writes are not prevented.",
+    "Already accepted generations retain advertised completion/recovery authority."
+  ],
+  "id": "INV-8PJF2P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R94@v1, D63/D74 and canonical Architect amendments"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CUR-grant-policy",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Direct execution is an external canonical-leaf grant read at the call; only the developer dashboard control and launch-bound architect product function mutate it before work starts, and task authoring or a harness setting cannot self-grant.",
+  "status": "proposed",
+  "supersedes": []
+}

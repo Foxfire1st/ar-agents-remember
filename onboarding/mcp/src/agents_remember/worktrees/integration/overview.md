@@ -316,6 +316,10 @@ master is reclaimed with `worktree_abandon` and is never closed out. And
 "this organizational master is abandoned, not completed" rather than the generic
 not-durably-published message.
 
+## Direct pair evidence and shared checkout
+
+Direct code intent/proof resolves the checkout actually holding the series work branch. Create and interrupted memory convergence retain one accepted generation; ordinary integration preserves dirty-checkout refusal and additionally names the active direct leaf when present.
+
 ## Historical milestone context: 260831-LOCR-L30/L34 Checkpoint Landing On This Route
 
 This section preserves the earlier milestone account. Its ledger-commit and cache-validation behavior was superseded by the current two-output Git transaction described above; it is not an instruction for current closeout or integration.

@@ -42,6 +42,10 @@ accepted state from queue rows, task prose, or cache files.
 
 No new file-local follow-up is established by this documentation pass.
 
+## Accepted direct-create identity
+
+The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. A codeBefore snapshot distinguishes create from verify-existing and identifies the admitted pre-publication ref/tip; empty code message and no codeBefore describe verification. The coordinator retains accepted input, gate-policy snapshots and mutation/output evidence before branch publication, not full pre-code check verdict results. No anticipated code commit is invented.
+
 ## Evidence
 
 ### Docs References
@@ -75,3 +79,5 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. [7]

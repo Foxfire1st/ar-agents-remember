@@ -18,6 +18,23 @@
         }
       ]
     },
+    "10": {
+      "note": "The strict response adds optional candidateTree, candidatePaths and codeCommitMessage for code-create preview/output evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
+            "content": "sha256:b16c86a53496c169d35e95b6dfde089aad617015072c8098a04cd51cf3805bc0",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The response model shape for the direct landing operation.",
       "targets": [
@@ -39,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
             "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 215,
+              "end": 160,
               "kind": "line_range",
-              "start": 215
+              "start": 160
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -65,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
             "content": "sha256:b073771cdf30495fb5f193ff5a8e947aa61b532aea79c2fd105fbfd77246b442",
             "locator": {
-              "end": 31,
+              "end": 28,
               "kind": "line_range",
-              "start": 31
+              "start": 28
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -78,12 +95,12 @@
         },
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
             "content": "sha256:7a898b51a6ce8d0eadace4bed8976d3ac0b282d9385d94ff9e4d4fd3ad5583cc",
             "locator": {
-              "end": 229,
+              "end": 166,
               "kind": "line_range",
-              "start": 229
+              "start": 166
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -143,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
             "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
             "locator": {
               "kind": "symbol",
@@ -154,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
             "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
             "locator": {
               "kind": "symbol",
@@ -165,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
             "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
             "locator": {
               "kind": "symbol",

@@ -10,36 +10,25 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Coordinates branch-addressed delivery for a sanctioned leaf implemented without its own worktree
-enclosure. It verifies already committed code, accepts an exact memory candidate, and creates or
-observes one direct-landing journal generation. Ordinary series closeout and integration are
-separate routes.
+Coordinates explicitly selected publication for a granted canonical leaf on its master series branch, without its own enclosure. Verify-existing mode binds an already committed code output; create mode judges and commits the previewed code/memory pair under the same direct journal. Ordinary closeout and integration remain separate routes.
 
 ## Code Commentary
 
 ### Logic
 
-`DirectLandingRequest` carries the exact code commit, memory message, approval intent, optional
-candidate tree, optional `leaf_id`, and dry-run selection. The supplied leaf identity participates in operation input and retry identity. The policy gate requires `directExecutionEnabled`.
-`_direct_landing_after_policy` requires a series contract, normalizes the effective memory message,
-requires intent, and rereads configured contract authority. The application boundary owns configured
-admission and serialized execution; this module consumes the admitted contract.
+DirectLandingRequest selects the exact canonical leaf and requires its current external grant. With code_commit, it verifies the existing local series HEAD; without code_commit, create mode requires code_commit_message, memory_commit_message and the prior code candidate_tree proof on apply. Configured series admission and branch/root identity remain mandatory; a harness switch supplies no authority.
 
-`_verify_code_commit` first proves that the requested commit is the exact local series-branch HEAD,
-then resolves its tree. Apply requires the supplied pre-commit candidate tree to match. This module
-checks the candidate proof; it neither creates the code commit nor runs the caller's quality gate.
-Preview reads repository/ref facts and does not parse or mutate a ledger.
+The optional `leaf_id` selects the history owner and participates in the immutable operation input and retry identity; it is distinct from the required canonical `leaf_task_document_ref` and grant. `_direct_landing_after_policy` retains series-contract shape, effective-message normalization, nonblank approval intent and configured contract rereading. The application still owns configured admission and serialized execution. Preview prefers the proven `bound_leaf_id` over the optional caller `leaf_id`. During a live generation, `_select_gated_history` leaves the leaf selector unset while owner enforcement is off, so `direct-landing-input-conflict` retains precedence; a new request cannot evade that conflict through a history-gate refusal.
+
+_verify_code_commit is the verify-existing route: it proves exact local series HEAD/tree and creates no code commit. Create preview binds the exact pair without branch/content publication. Apply checks the previewed tree/checkout, claims only policy-required review, creates a provisional Git object, judges the exact invariant/knowledge pair, persists the accepted input/policy/generation, then journals code intent and publishes/proves the branch output before memory convergence. The thirteen-row census describes those reached checks and the explicitly ruled door/leaf-taskIntent substitutes; it does not run an automatic strict-quality, full-MQC or affected-closure campaign or journal full pre-code verdict results. Before branch publication is the boundary, not before every Git object creation. Canonical leafTaskDocumentRef replaces the direct task-intent binding; hooks are not an added gate.
 
 For apply, `_direct_memory_admission_snapshot` verifies the checked-out memory branch. Real content
 dirt triggers reversible cache preparation before the accepted snapshot is captured; cache-only
 dirt does not. Memory snapshots exclude the consumer cache while retaining actual ref and object
 identity. `_prepare_direct_landing_candidate` stores code/tree and memory repository/ref/snapshot
-facts in the typed input. Ledger paths, bytes, digests, and commit messages are absent from that input.
+facts in the typed input. Ledger paths, bytes, digests and a ledger-commit message are absent from that input; the effective memory message and create-mode codeCommitMessage are retained.
 
-`_create_direct_landing` admits the request itself: contract, code commit/tree, candidate, and
-normalized inputs. It carries no closeout-door publication. The runtime executes or reconciles the
-same generation. Success includes the lifecycle-operation projection; an existing generation that
-requires action returns the closed public `refused` outcome with that evidence nested.
+The admitted generation pins its canonical leaf, effective messages, code mode/tree and memory state. Verify mode records the existing code identity; create mode binds and proves the one provisional output before pairing memory. Interrupted accepted create output reuses that same code commit and completes/reconciles memory; exact repeat and public recovery never create a second code commit. Real ambiguity stays on the advertised developer-decision path. No closeout-door or ledger-byte publication is invented.
 
 ### 260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)
 
@@ -98,8 +87,7 @@ preview payload and object count identical to base).
 ### Conventions
 
 Execution is synchronous and journaled. Concurrency serialization is owned by configured
-application authority, while crash recovery is owned by the durable operation. The code leg is
-verified-existing, and the only mutation message is the memory-content message.
+application authority, while crash recovery is owned by the durable operation. Verify-existing mode creates no code commit and needs no code message; create mode carries an explicit code message and prospective codeBefore. Both retain memory intent and same-generation recovery.
 
 ### Invariants And Boundaries
 
@@ -128,10 +116,7 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-
-- Policy, normalized request, exact code proof, and the preview, which writes no memory content and since MIK-R09 refuses exactly as the apply on converted memory. [7]
-
-
+- Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
 
 
@@ -153,3 +138,5 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]

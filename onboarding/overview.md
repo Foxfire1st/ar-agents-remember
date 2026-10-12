@@ -46,6 +46,10 @@ The incoming qualified boundary is preserved here, not replaced by the parked sh
 
 | Tool report files | Executed mutating actions file verbose payloads as report files under `temp/tool-reports/<tool>/`; the response keeps the outcome and a `reportPath`. Reads are the tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs. They change no local branch, HEAD, working-tree file, Git index, task document or requirement packet; Git runs with `GIT_OPTIONAL_LOCKS=0`. Reads file no per-call report. Their only admitted writes are (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. No directory is created except to hold one of those files. Unrecorded tree captures use a scratch object directory, never the repository. A read that cannot keep this boundary refuses by name, with no fallback write location. Retention is applied when a report is written. | `kernel/primitives/tool_reports.py` |
 
+## Task-local direct execution
+
+Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

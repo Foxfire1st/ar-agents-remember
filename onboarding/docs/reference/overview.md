@@ -24,6 +24,10 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Task-local direct execution
+
+Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

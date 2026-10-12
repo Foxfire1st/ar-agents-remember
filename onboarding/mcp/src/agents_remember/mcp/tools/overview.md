@@ -26,6 +26,10 @@ projection helpers do not restore their removed public adapters.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Grant response adapter
+
+direct_execution_grant_payload shapes the strict result and the pure facade exports it. Payload/import/registry membership is not authority; caller and store checks stay at the application/kernel owners.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
         "content": "sha256:447c4d08122d8772ffbb4a60055feda8f0a52e89a317f73c989d56c39d947b64",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
         "content": "sha256:e4910a773ed01ec31d7a4c1bba99bfe6616321322b9302f28da036069eb2a807",
         "locator": {
           "kind": "symbol",
@@ -37,26 +37,26 @@
     },
     {
       "anchor": {
-        "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
         "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
         "locator": {
           "kind": "symbol",
           "name": "test_cli_never_advertises_a_removed_member"
         }
       },
-      "facet": "The CLI help offers no removed member and unknown tokens stay invalid requests.",
-      "id": "PRF-WACVBP",
+      "facet": "Rendered start --help excludes the removed enum choice and documents external/removal-refusal words; this case does not exercise unknown-token parsing.",
+      "id": "PRF-WF6JMA",
       "invariant": "INV-8R2CRC",
       "origin": {
-        "handoffEntry": "L50-CODE-R1-F06",
-        "leaf": "260928-MIK-L50"
+        "handoffEntry": "L94-M1-F02-help-only-proof",
+        "leaf": "260928-MIK-L94"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
         "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
         "locator": {
           "kind": "symbol",
@@ -69,7 +69,7 @@
         "handoffEntry": "L50-CODE-R1-F06",
         "leaf": "260928-MIK-L50"
       },
-      "rationale": "The CLI never offers the removed mode while unknown answers stay invalid requests.",
+      "rationale": "The rendered CLI help excludes the removed enum member and includes supported external/removal-refusal prose; this help-only test does not pass or parse an unknown token.",
       "role": "unclassified"
     }
   ],

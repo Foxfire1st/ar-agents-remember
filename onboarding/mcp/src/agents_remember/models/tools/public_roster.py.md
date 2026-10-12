@@ -2,11 +2,11 @@
 
 ## Current operative account — MIK-R112 after L74 sync
 
-`PUBLIC_TOOLS` is the one cycle-free literal owner, currently41 unique names in the working source, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple still ends knowledge_read, knowledge_diff and knowledge_integrity_check; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set` and native `retire_child`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
+`PUBLIC_TOOLS` is the one cycle-free literal owner, currently42 unique names in the working source, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple still ends knowledge_read, knowledge_diff and knowledge_integrity_check; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child` and `direct_execution_grant`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
 
 The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
 
-- Current working PUBLIC_TOOLS contains39 unique advertised names and the read/diff/integrity knowledge tail; the landed73-name count belongs only to the separately preserved L74 historical source. [14]
+- Current working PUBLIC_TOOLS contains42 unique advertised names, distinct from historical73 and actual runtime list_tools. [14]
 
 ## Historical landed L74 card — preserved, not the current operative account
 

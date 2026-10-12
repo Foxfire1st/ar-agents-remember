@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/application/direct_execution_grants.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+        "content": "sha256:a1f85392bd641be96673b6fe8ff89b0a9cf0d66c924c10861b06cc8a52eda82a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restore_removed_grant"
+        }
+      },
+      "id": "RLZ-6FDS1Z",
+      "invariant": "INV-X16RQH",
+      "origin": {
+        "handoffEntry": "L94-CODE-F08",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Post-unlink re-proof on the architect route: when the leaf started between proof and removal, the exact removed record is re-created and the revoke is refused with the started words.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+        "content": "sha256:94945ca21869f4e3304e36110b74c577d421f3969540025fba96d1525728a795",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reclaim_leaf_started_besides_status"
+        }
+      },
+      "id": "RLZ-EZ3QJB",
+      "invariant": "INV-Y6DF2N",
+      "origin": {
+        "handoffEntry": "L94-CODE-F09",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Runs the ordinary prove_task_unstarted with leaf and row statuses masked to planning: abandonment alone never counts as work, while seat, report, locator, enclosure, operation and commit evidence still do, and an unresolvable binding preserves.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+        "content": "sha256:450c0f0585c2fc3a3eee0f323702c51caa5cc020d25b3fee39e86dbce8e80f3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reclaim_decision"
+        }
+      },
+      "id": "RLZ-MF53PM",
+      "invariant": "INV-Y6DF2N",
+      "origin": {
+        "handoffEntry": "L94-CODE-F09",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Decides each grant's fate: non-abandoned leaves keep their grants, worked abandoned leaves are preserved with the rule-5 reason, and only never-worked abandoned leaves with clean checkouts are reclaimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+        "content": "sha256:d4efc91db9bfa35767a62c9d7f3fc6111a57bbb62baffc58c0e74a162b8ff0f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_direct_sibling"
+        }
+      },
+      "id": "RLZ-PTYGJA",
+      "invariant": "INV-HM7Z8C",
+      "origin": {
+        "handoffEntry": "L94-CUR-shared-checkout",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The canonical grant census and leaf status find the other active direct leaf for the product guards.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+        "content": "sha256:4f7a233626206312070201ecd2a1efc5d95da5d89b86d718bc9aad3eda225b04",
+        "locator": {
+          "kind": "symbol",
+          "name": "direct_execution_grant_tool"
+        }
+      },
+      "id": "RLZ-XWBKCP",
+      "invariant": "INV-8PJF2P",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-policy",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The public function admits only a launch-bound architect and delegates canonical pre-start mutation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns architect grant authority, pre-start mutation, reclamation and the open-direct-sibling guard",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184826d8b3757651e483fd8e9ded264a529d469",
+            "content": "sha256:481ab692c58fa0b46cf60dc0e91f514022645a4d907c155335c137102b2474fa",
+            "locator": {
+              "end": 770,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -16,6 +16,10 @@ certification, curator coherence, or independent review during normal execution;
 only an explicit developer request. The older altitude-ladder wording below is historical
 pre-R12 documentation and is superseded for these routes.
 
+## Granted direct publication contract
+
+direct_landing selects the exact canonical leaf. With code_commit it verifies existing code; without it create mode needs code_commit_message, memory_commit_message and the previewed code candidate_tree on apply. Direct create executes its own pre-code exact-pair census before one provisional code commit and pairs memory in the same accepted generation. This explicit direct route is the exception to ordinary closeout/integration no-test/review execution, not a new generic transaction gate or settings fallback.
+
 ## Historical pre-CCR-R12 EFA-L8 Change
 
 The tool-registration functions gained bare-`*` keyword-only signatures (the 19
@@ -39,7 +43,7 @@ unchanged.
 
 `register_closeout_tools(server, config)` declares the **landing half** of a task:
 `direct_landing` (the explicitly selected branch-addressed delivery for a leaf implemented without
-an enclosure — L16-R8, policy-gated by `directExecutionEnabled`),
+an enclosure, requiring its current external canonical-leaf grant),
 `worktree_closeout_preview`, `worktree_closeout_apply`,
 `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_abandon`.
 
@@ -85,8 +89,7 @@ Current IAS policy treats coverage as diagnostic and production CRAP above 20 as
 
 ### Logic
 
-Current registered signatures expose only code and memory commit messages; direct landing
-accepts only the memory message because its code commit already exists. Integration and checkpoint
+Current registered signatures expose code and memory commit messages. Direct landing requires the canonical leaf reference: verify-existing needs no code message, while create needs its code_commit_message and applicable memory_commit_message. Integration and checkpoint
 landing take no ledger message, and PR landing records only code plus optional memory content.
 The retained ledger is a downstream computed cache, never an MCP-requested Git output.
 
@@ -152,7 +155,7 @@ Keep registered signatures and descriptions aligned with the application request
 - Keep `CloseoutApproval` separate from `CloseoutCommitMessages`.
 - The public direct-landing description must distinguish its narrow leaf-without-enclosure route
   from ordinary master/series closeout and integration; contract kind alone does not select direct
-  execution, and those ordinary lifecycle routes never require `directExecutionEnabled`.
+  execution, and those ordinary lifecycle routes do not gain a grant prerequisite.
 - Preview is the non-mutating inspection surface, but it is not durable authority that apply may
   trust. Preview and direct apply each normalize the same effective input independently; apply
   additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
@@ -233,7 +236,7 @@ run: full mode through the pinned Dagger executor.
 
 ## 260821-CLIVE-L1 Public Surface
 
-Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code and memory fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. Direct landing accepts memory intent only: verified-existing code is not applicable. The memory message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
+Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code and memory fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. For direct landing, verify-existing accepts memory intent without a code message; create accepts explicit code and memory intent with the canonical bound leaf and previewed tree. The memory message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
 
 ## 260821-CLIVE-L2 Current Contract
 

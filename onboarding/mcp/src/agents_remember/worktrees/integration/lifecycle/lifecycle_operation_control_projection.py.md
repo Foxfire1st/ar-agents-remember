@@ -16,13 +16,7 @@ Legal recovery controls consult initial-door and direct-landing evidence without
 
 It builds a context from the canonical record and contract, classifies recovery needs, and returns exact resume/retry/cancel/cleanup controls and arguments without mutation.
 
-Since 260831-CCR (commit `99dc249b`) the recovery/retry controls of a legacy missing-intent
-closeout or direct-landing generation are withheld: `_without_legacy_generation_reuse`  filters out every `recover`/`retry` control when the record is a
-closeout/direct-landing operation whose `taskIntent` is not a `TaskIntentIdentity`
-(`isinstance(record.taskIntent, TaskIntentIdentity)`, line 127-128). The filter is applied at
-every return of `legal_operation_controls` , so public control projection never
-advertises recovery of a generation whose intent is absent. The intended exit-proven
-cancellation-pending state keeps its `cancel` control (that is not a reuse action).
+The legacy reuse filter withholds recover/retry for closeout/direct-landing generations missing compatible taskIntent only when no admitted direct input leaf binding supplies the replacement. _without_legacy_generation_reuse preserves direct controls when _direct_generation_bound finds DirectLandingOperationInput.leafTaskDocumentRef. Missing both bindings retains the barrier; genuine ref/input/history contradictions and developer decisions are not bypassed. Cancellation controls remain separate.
 
 ### Conventions
 
@@ -40,6 +34,10 @@ the public function or model instead of re-deriving its lower-level state machin
 ### Todos
 
 None recorded.
+
+## Direct-create recovery controls
+
+Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence. A mechanically recoverable cut advertises public recovery; real contradictions keep developer-decision. Controls are a projection of current evidence, not permission to bypass the mutation owner.
 
 ## Evidence
 
@@ -60,7 +58,7 @@ The following current source boundaries establish the ledger-retirement behavior
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-- Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`) [5]
+- Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls. [5]
 
 ### Cross-Repo References
 
@@ -71,10 +69,7 @@ No additional cross-repository evidence applies.
 
 ## CCR-R02@v2 Missing-Intent Control Barrier
 
-Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, legacy absence cannot authorize
-recovery; the L25 repair (commit `99dc249b`) removes `recover`/`retry` from the public legal
-controls of every missing-intent closeout/direct-landing path while preserving the exit-proven
-cancellation route.
+Per the ordinary CCR intent boundary, legacy absence alone cannot authorize reuse. The MIK-R94 direct exception binds leafTaskDocumentRef on accepted input; only generations missing both compatible intent and that direct binding lose recover/retry. Exit-proven cancellation and genuinely ambiguous-generation decisions remain.
 
 ## CCR-R18@v1 Exact Same-Generation Cancellation Cell
 
@@ -83,3 +78,5 @@ cancellation route.
 ## CCR-L42 current candidate
 
 Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
+
+- Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence. [6]

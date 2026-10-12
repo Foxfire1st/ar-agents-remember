@@ -24,6 +24,10 @@ The helpers render applied task mutations, preview JSON/Markdown diffs, progress
 
 None recorded.
 
+## Grant-aware preview rendering
+
+Preview Markdown is the candidate document rendered with an optional readable external leaf grant. Without that argument it retains the old rendered bytes; master rendering ignores it. Preview and publication share rendering intent but separate calls may observe different current grants. No grant is serialized into authored task JSON, and not every mutation response promises directGrant. Queue authority and authoring ownership are unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -38,3 +42,5 @@ No configured domain-documentation source applies to this repository-internal ro
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+- Preview Markdown is the candidate document rendered with an optional readable external leaf grant. [3]

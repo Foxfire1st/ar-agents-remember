@@ -9,10 +9,10 @@
   "applicability": "Direct leaf ownership selection and the admitted recovery executor boundary.",
   "conditions": [
     "An explicit valid leaf_id selects and closes that history, including rowless history.",
-    "Without leaf_id exactly one open owner is inferred."
+    "A proven bound_leaf_id selects the admitted leaf before optional caller leaf_id; only absence of both selectors takes the legacy sole-open-owner inference."
   ],
   "exclusions": [
-    "Public lifecycle-control recovery for an intent-less direct generation is refused; executor recovery is separately evidenced, not public-route success."
+    "Public lifecycle-control recovery is refused for legacy direct generations lacking both compatible TaskIntent and an admitted canonical leaf input. Current canonical-leaf-bound generations retain their advertised controls; the retained historical public-refusal proof has legacy scope, not current-bound public-route success."
   ],
   "id": "INV-6DFQ9P",
   "origin": {
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "direct_landing takes leaf_id (judges/closes the named leaf, refuses another leaf's open file, names leaf_id when none-or-several are open); the ruled substitute pair covers control recovery.",
   "status": "proposed",

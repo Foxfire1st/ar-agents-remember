@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b9569b49697946b6e6716b6beb7ec9ef2e554397",
+        "content": "sha256:241c0486c3ee2d6edb42da12430b4727c7b2bf1adf9c2b44ed7fa21fc521f439",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_grant"
+        }
+      },
+      "id": "RLZ-KWAJ66",
+      "invariant": "INV-8PJF2P",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-policy",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The addressed gate reads current grant bytes and refuses missing/unreadable authority without a settings fallback.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns the shared file representation, addressing, live reads and publication primitives for direct-execution grants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9569b49697946b6e6716b6beb7ec9ef2e554397",
+            "content": "sha256:c4198d4319ef3437433565704aec3a39a43014bd3236c83bb799dc66be237291",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

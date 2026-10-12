@@ -168,6 +168,10 @@ with `committed_changed_paths` keeping its deliberate `is_file` filter so a dele
 change. This route's closeout worklists are exactly what the family feeds, so the defect was a
 closeout-input defect as much as a change-set one; `ACCEPTANCE.md` A24 is the row that measures it.
 
+## Branch-holding checkout reader
+
+checkout_holding_branch selects the actual non-bare, non-detached owner of the named branch so a series code mutation has a concrete intent/proof checkout. It reads repository facts; it is not a grant, code publisher or quality gate.
+
 ## Historical code-object custody and release
 
 The module retains historical pin vocabulary, custody observations and explicit release; it creates no commit/ref and freezes no canonical generation. [12] [13]

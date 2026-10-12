@@ -16,6 +16,10 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Grant failure dispatch
+
+The refusal driver adds the canonical grant failure input under its current ambient API. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

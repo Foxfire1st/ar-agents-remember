@@ -13,11 +13,15 @@ Documents `c-09-git-worktree-manager`, the Git worktree lifecycle manager for Ag
 
 ## Code Commentary
 
-Task identity is settled before worktree creation: a master owns the root `series-contract.md` plus its integration branch, and each build leaf owns its enclosure contract. The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. Standalone/new/final work stops for developer approval, while subordinate accepted-series work continues under recorded series authority.
+Task identity is settled before worktree creation: a master owns the root `series-contract.md` plus its integration branch, and each ungranted enclosed build leaf owns its enclosure contract. The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. Standalone/new/final work stops for developer approval, while subordinate accepted-series work continues under recorded series authority.
 
 External memory incompatibility is interactive and offers `reconciliation` or `custom` handling — there is no `disabled-memory` recovery choice. Memory cannot be disabled for a task: a start naming the removed `disabled` mode or the removed `disabled-memory` answer is refused by name (`memory-opt-out-refused`) before any worktree is created. A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (dry run first), then `worktree_start` at the same address without `memory_mode`. The common incompatibility trigger remains starting off a freshly-merged gated branch whose PR merge commit the ledger has not mapped; `memory.md` stays an ignored consumer cache whose absence, staleness, or malformed bytes never make an otherwise valid pair incompatible.
 
 Integration follows applicable authority (`ff-only` for unmoved sources, `replay` for parallel work); the recorded `source_branch` is the integration target. Lifecycle finalization proves the landed commit reachable from the recorded local source branch, runs or verifies cleanup, and reconciles task documents to `Completed`. The closeout preview runs no quality/test/memory/certification/review tool but does ask the mandatory invariant gate on converted memory. Atomic-series activation is scoped to the exact canonical series contract; terminal cleanup releases only the exact still-selected contract.
+
+## Granted direct workspace
+
+A granted canonical leaf works in its master series checkouts without leaf worktree_start or an enclosure. Product role preparation keeps report/scratch artifacts in the separate group and refuses missing authority/roots or another active direct sibling. Ordinary ungranted enclosure start/attach, source-edge sync and transaction recovery retain their owners; directness is not a shell permission or OS sandbox.
 
 ## Evidence
 

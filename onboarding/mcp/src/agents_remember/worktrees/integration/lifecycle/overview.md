@@ -88,6 +88,10 @@ File-Level Onboarding Map above are unaffected — the map carries no deleted ca
 | `lifecycle_completed_disposition.py` | [lifecycle_completed_disposition.py.md](lifecycle_completed_disposition.py.md) | covered |
 | `control/cancellation.py` | [control/cancellation.py.md](control/cancellation.py.md) | covered |
 
+## Same-generation direct recovery
+
+Public retry/recover advertises mechanically recoverable direct-create cuts from the accepted generation evidence. Real ref/input/history contradictions retain developer decision; no control invents a second code commit or bypasses its mutation owner.
+
 ## Evidence
 
 ### Docs And Boundary References
@@ -105,10 +109,7 @@ The following current source owns the changed behavior; no external domain sourc
 
 260831-CCR-L18 made this route's projection and store generation-coherent: `lifecycle_operation_projection.py` now builds the coherent/incoherent envelope with revision-bound identity, component bindings, worker/approval observations, recommended-action derivation, and the `bind_projection_result`/`bind_projection_decision` rebinding helpers; `lifecycle_operation_store.py` owns the monotonic `recordRevision` advance (exactly once per accepted mutation, revision-1 create gate); `lifecycle_operation_control_projection.py` adds the explicit `termination-required` cancel cell; `worker/termination.py` projects durable-termination evidence only; and `observation/projection.py` routes location/unreadable decisions through the binder. File-level detail lives in the route sidecars.
 
-Current closeout and direct-landing journal writes require canonical `taskIntent`. A
-terminal legacy generation without intent is archived byte-for-byte before an intent-bound
-successor is published; active missing-intent generations refuse reuse and require a
-developer decision. Closeout claim and launch verify the same intent/dependency authority
+Ordinary closeout journals require canonical `taskIntent`. An admitted direct-landing journal instead carries its canonical leaf binding on DirectLandingOperationInput; missing taskIntent alone does not withhold its mechanically supported controls. Legacy generations lacking both compatible intent and the direct binding retain the ordinary archive/reuse barrier and developer-decision path. Closeout claim and launch verify the same intent/dependency authority
 as the waiting door. No currentness check silently rewrites a live legacy record.
 
 ## Meaningful Revision And Wait Ownership

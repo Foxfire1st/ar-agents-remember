@@ -50,6 +50,10 @@ currentness agree byte-for-byte.
 
 None recorded.
 
+## Series leaf grant admission
+
+A branch-addressed series door naming a canonical leaf requires its current external grant; missing/unreadable authority yields closeout-door-leaf-without-grant instead of a settings-policy result. An ordinary enclosed leaf keeps its own exact binding. This predicate validates source authority; it does not execute review or borrow permission from a queue projection.
+
 ## Evidence
 
 ### Docs References
@@ -82,3 +86,5 @@ No additional cross-repository evidence applies.
 
 Door source generations now carry the `closeout-door/v1` declaration and transitions fail closed on
 dependency staleness (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+- A branch-addressed series door naming a canonical leaf requires its current external grant; missing/unreadable authority yields closeout-door-leaf-without-grant instead of a settings-policy result. [6]

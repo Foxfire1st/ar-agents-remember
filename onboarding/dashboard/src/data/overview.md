@@ -455,6 +455,10 @@ ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focu
 | Stream liveness and visible-tab wake policy | [streamLiveness.ts](streamLiveness.ts.md) · [screenWakeLock.ts](screenWakeLock.ts.md) |
 | Review client family mirror | [reviewFamily.ts](reviewFamily.ts.md) |
 
+## Grant mutation adapter
+
+directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserves typed refusal. The adapter shapes transport only; product grant and ordinary-start authority remain server-owned.
+
 ## Evidence
 
 ### Docs References

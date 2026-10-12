@@ -51,6 +51,10 @@ text from colliding (see INV-NBCGCF). The stored decision shape is unchanged.
 
 None.
 
+## Display-only grant projection
+
+Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt). None means no displayed readable grant. This observer schema neither reads nor writes the store and cannot authorize direct execution; TaskDocument remains unchanged. Generated projection schema/types mirror this display model.
+
 ## Evidence
 
 ### Docs References
@@ -106,3 +110,5 @@ however many candidates the sprint has waiting. `sourceProblems` keeps `max_leng
 by that number.
 
 - The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings. [5]
+
+- Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt). [6]

@@ -56,6 +56,9 @@ layer and in the application, memory and command-line layers, and proved by `mcp
 - The commit whose closed history files are frozen: the recorded, completed closeout's. [70]
 - The memory trees of a commit that publishes a leaf. [71]
 
+## Granted master-checkout work
+
+Granted direct leaves reuse admitted master series checkouts without their own enclosure. Direct create judges the exact pair before one code publication and completes memory under the same generation; verify-existing remains separate. Shared-checkout guards name a competing active direct leaf, with no OS/shell confinement claim.
 
 ## Historical code-object pins
 
@@ -390,7 +393,7 @@ When changing worktree coordination:
 ## CCR Intent And Certification Composition
 
 Route reviews, closeout doors and lifecycle candidates now share canonical task intent and
-content-digested direct evidence dependencies. Direct landing refuses absent/stale intent;
+content-digested direct evidence dependencies. Direct landing requires its admitted canonical leaf input; missing taskIntent alone does not reject that bound direct generation, while absence of both supported bindings retains the legacy reuse barrier;
 contract publication rejects a door without current intent. Task publication classifies
 semantic versus observational edits before deriving affected queue scopes.
 `services.CertificationMemoryRailsPort` supplies the memory-domain registry contribution

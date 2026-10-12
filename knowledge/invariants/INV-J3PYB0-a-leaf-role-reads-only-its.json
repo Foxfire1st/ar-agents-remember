@@ -5,7 +5,7 @@
     ],
     "justification": "Spans the leaf enclosure and task-documents: own-document-only reads as real files with a pre-first-turn INDEX entry is the D124/D125 containment mechanism; public writes refresh only the own leaf's copies."
   },
-  "applicability": "Every leaf role's reading of its own rendered task document.",
+  "applicability": "Ordinary enclosed leaf roles reading their own rendered task document.",
   "conditions": [
     "The copy is a real enclosure/task-documents file for the agent's own leaf.",
     "One INDEX entry exists before the first turn.",
@@ -13,7 +13,8 @@
   ],
   "exclusions": [
     "Reading another leaf's document.",
-    "Git-tree or in-memory-only copies presented as the readable file."
+    "Git-tree or in-memory-only copies presented as the readable file.",
+    "Granted-direct leaf roles use their admitted master-series contract and own group/task-documents placement; this enclosure guarantee does not promise direct automatic public-write refresh."
   ],
   "id": "INV-J3PYB0",
   "origin": {
@@ -27,7 +28,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A leaf role reads only its own rendered leaf document as a real enclosure/task-documents file, with one INDEX entry before the first turn; public writes rendering that own leaf refresh its copies atomically.",
   "status": "proposed",

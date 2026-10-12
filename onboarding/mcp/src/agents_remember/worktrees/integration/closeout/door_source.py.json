@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
             "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
             "content": "sha256:8431caf1263b6a4271a1d76ed24393cf9563b58a153836c41ac7bcccd664708c",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
             "content": "sha256:e17bd8466aec55d482a03797951f23407f4ad59cae2b5ae5d5d050ba23077869",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
             "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
             "locator": {
               "kind": "symbol",
@@ -71,11 +71,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
             "content": "sha256:9d35a80598001b42e3546a0e5d235430817acd8978f03d5011e2ca3d5309f8fd",
             "locator": {
               "kind": "symbol",
               "name": "_transitioned_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A branch-addressed series door naming a canonical leaf requires its current external grant; missing/unreadable authority yields closeout-door-leaf-without-grant instead of a settings-policy result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
+            "content": "sha256:5ef72ed587862b4a31bd2f082691aea3660e487a2b040c5296c0589c251766b5",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

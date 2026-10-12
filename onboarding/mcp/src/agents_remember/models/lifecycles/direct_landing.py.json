@@ -101,6 +101,23 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bd4bc6d4bdbf03d9c42e54ca14745ce1a38aab0",
+            "content": "sha256:d32a022a9a32da9658783d7e763301dfc55301e8aa966013dbd05e797c86989c",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

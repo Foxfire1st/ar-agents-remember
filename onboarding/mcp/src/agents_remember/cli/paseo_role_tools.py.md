@@ -42,6 +42,10 @@ The Worker successor/addendum reports the composed 1835-line file breaches the 1
 
 `_agent_override` passes speed `featureValues` through even without an agent/model/effort override, and still refuses a model or effort without its agent. The start answer carries launch-choice metadata, task-document files and any warning beside preparation. `send_role_message` collects the sender's own execution reports before delivery when its receipt matches the bound agent; a collection failure is recorded and returned alongside the delivered message rather than blocking it.
 
+## Grant-backed leaf preparation and revival
+
+Message-time leaf resume uses the same call-time grant-aware scope verifier as dashboard Revive before native resume. The saved canonical leaf and master series contract must equal the current granted pair; an ordinary leaf retains its enclosure comparison. Receipt evidence never replaces the live grant. Recipient identity, parent-first remedies, uncertain delivery, report collection and role containment remain separate contracts.
+
 ## Evidence
 
 
@@ -87,3 +91,5 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 - The resolved-recipient prologue constructs a filed identity from shared attachment/link/store primitives; unfinished-start holding returns before this function is called. [12]
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
+
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]

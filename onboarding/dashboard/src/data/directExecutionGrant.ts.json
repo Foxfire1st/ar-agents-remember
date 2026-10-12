@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/directExecutionGrant.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Posts the developer grant control request for one canonical leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3784f167e541e75b761fec8e28bb932e6f0d2a9",
+            "content": "sha256:6977e7fadd52a87c2edb14ae32408768c8ef73d08c6c3761d1a4752bc31ef932",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

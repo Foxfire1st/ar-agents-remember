@@ -10,7 +10,7 @@ candidate's actual advertised roster and current request schemas.
 
 ## Code Commentary
 
-The candidate literal PUBLIC_TOOLS has 39 distinct entries. This reference source still
+The candidate literal PUBLIC_TOOLS has 42 distinct entries. This reference source still
 states 40 and contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
@@ -35,7 +35,7 @@ but cannot advertise removed tools or turn a transport acceptance into implement
 
 ## Current evidence
 
-- Current candidate roster is the literal PUBLIC_TOOLS, measured as 39 distinct names, not the reference header's 40. [1]
+
 - Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]
 
 ## Historical superseded account (non-operative)
@@ -104,3 +104,5 @@ review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:
 `task.json` is not covered by the refusal). The rest of the row, including standalone support and that the parent
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
 (`mcp/registration/tasks.py`) and the c-09 skill.
+
+- Current literal PUBLIC_TOOLS contains the grant function alongside role_start_set and retire_child; its measured42 source names, not the reference header40, own advertisement. [1]

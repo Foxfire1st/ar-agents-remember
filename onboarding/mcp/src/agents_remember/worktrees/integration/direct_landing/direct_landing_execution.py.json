@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
         "content": "sha256:b9305c3bc5b156027ba6da8574ac256628432061178f4065072357ef4ddf5e4f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
         "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
         "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
         "locator": {
           "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+            "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
             "content": "sha256:cd45b2305222e7a01b8cf90918e4bfc0aa663889712936c7d5608c97b083a8f4",
             "locator": {
               "kind": "symbol",
@@ -101,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+            "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
             "content": "sha256:ca950dc7f3c5055a50c38ff9505d804052841476cb989ec5be27b9d2a8a755e5",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
             "locator": {
               "kind": "symbol",
@@ -141,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:74cede5d5666ede7da4a51fd2363de10a55831288779e487efe58a8475d97748",
             "locator": {
               "kind": "symbol",
@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
+            "blob": "2da2dc4bfbe4ae28461f95f0d5124d66e7a29b48",
             "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
             "locator": {
               "kind": "symbol",
@@ -196,6 +196,23 @@
             "path": "mcp/tests/test_direct_landing.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Memory execution converges the same accepted create generation without a second code publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
+            "content": "sha256:64f7982459a74d6267d7124932b1e5fe231f666e8c19ec82e9173a0210830a4f",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

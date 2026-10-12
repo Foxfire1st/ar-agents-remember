@@ -1,0 +1,43 @@
+{
+  "path": "mcp/tests/test_no_grant_closeout_parity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d2603fceb44f5f97256f000b367b300be6e91f47",
+        "content": "sha256:88e3d9995ec6b831ba0af37b6725371f25767d15d8ca110f8a8ea5c645541e43",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoGrantCloseoutParityTest.test_before_after_implementation_parity"
+        }
+      },
+      "facet": "Each named lifecycle phase has equal source-bound baseline/pristine/unrelated-grant responses after explicit volatility/root scrubbing.",
+      "id": "PRF-S8NQJ4",
+      "invariant": "INV-F029P2",
+      "origin": {
+        "handoffEntry": "L94-CODE-F14",
+        "leaf": "260928-MIK-L94"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compares unchanged enclosed leaf and master lifecycle answers across source-bound baseline and candidate fixtures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2603fceb44f5f97256f000b367b300be6e91f47",
+            "content": "sha256:7cfb98bdaaaa17d34a17e08571481f8c852aba543616f9d4c0a6a631d26f211a",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

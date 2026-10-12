@@ -190,6 +190,10 @@ owner separately calls `_detached_data` to remove membership and nodes before va
 - Any exception of the archive hook is a reported failure. [10]
 - Generic task-document edits preserve complete retired rows. [11]
 
+## External grant display, separate authoring
+
+Task get/preview may display readable external grants; publication reads a batch-local census, but grants are not authored TaskDocument fields. Branch review uses explicit canonical leaf opt-in and current grant with exact series binding. Enclosed leaf start/attach keeps its enclosure; granted role preparation does not create one.
+
 ## Evidence
 
 ### Repo-Internal References

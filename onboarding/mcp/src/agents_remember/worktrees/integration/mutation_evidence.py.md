@@ -56,6 +56,11 @@ controls durable publication and generation transitions.
 ### Todos
 
 No new implementation or live-state operation is authorized by this documentation pass.
+
+## Contract-owned code mutation checkout
+
+_contract_repositories keeps the leaf code leg at its owned code_worktree. A series names no single code checkout, so its code leg resolves the checkout holding the work branch at the call; shared branch tips are repository-global, but intent/proof must bind that actual checkout. Memory retains its contract-owned root. Existing exact output/ref/tree evidence and recovery remain unchanged.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -84,3 +89,5 @@ No additional configured cross-repository evidence.
 - Cache-excluded snapshots retain actual object/ref identity. [13]
 - The disposable snapshot copies the index with its time. [14]
 - The snapshot model declares the separate content comparison tree. [15]
+
+- _contract_repositories keeps the leaf code leg at its owned code_worktree. [16]

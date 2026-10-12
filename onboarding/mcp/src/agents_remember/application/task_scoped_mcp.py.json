@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+        "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
         "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-        "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
+        "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
+        "content": "sha256:672d97378f2ae2f617e944947a1691c5a53bca645eba4829449adb300304c8c4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KPSJJ9",
+      "invariant": "INV-PH30YW",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-workspace-readers",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "This module owns call-local canonical task/contract admission and root derivation for enclosed and grant-backed direct readers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
+        "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
         "locator": {
           "kind": "symbol",
           "name": "_admit_task_scope"
@@ -44,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
             "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
             "locator": {
               "kind": "symbol",
@@ -101,6 +118,23 @@
             "path": "mcp/tests/test_reader_task_context_protocol.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two canonical leaf reader branches preserve product-derived roots and call-local configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
+            "content": "sha256:672d97378f2ae2f617e944947a1691c5a53bca645eba4829449adb300304c8c4",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

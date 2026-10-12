@@ -33,6 +33,10 @@ judgment-file transport without changing the publication expectation set.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Direct grant and publication surface
+
+The closeout/direct-landing registrar adds the launch-bound architect direct_execution_grant function; the task registrar retains its document/reopen/finalizer/coherence/queue groups. Direct landing selects exact leaf/grant, either existing-code verification or previewed exact-pair creation with code_commit_message/memory_commit_message and same-generation recovery. Ordinary closeout/integration retains its separate no-test/review execution contract.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

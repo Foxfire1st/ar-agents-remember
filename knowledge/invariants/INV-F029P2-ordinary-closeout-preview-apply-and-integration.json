@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Grant machinery must not change the existing enclosed leaf and master publication answers."
+  },
+  "applicability": "Enclosed leaf and master closeout preview, apply and integration operation-response parity.",
+  "conditions": [
+    "Compare source-bound baseline, candidate pristine and unrelated-grant worlds after the explicit volatility/root scrub."
+  ],
+  "exclusions": [
+    "Raw timestamps, root paths and other scrubbed values are not claimed byte-identical.",
+    "A direct granted leaf is outside this preservation comparison."
+  ],
+  "id": "INV-F029P2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_no_grant_closeout_parity.py::NoGrantCloseoutParityTest::test_before_after_implementation_parity (baseline git-archive 228fd5ca guarded pre-grant vs pristine vs unrelated-grant, six exact responses scrub-equal); worker journal R4 section; R5 verdict 88c054160ffdffef415a01cdf0f09161bb59aa68944469379856e72944c46755"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CODE-F14",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Ordinary closeout preview, apply and integration responses are byte-identical with and without the grant machinery, including against the pre-change baseline tree.",
+  "status": "proposed",
+  "supersedes": []
+}

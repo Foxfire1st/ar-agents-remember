@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
-        "content": "sha256:39b03ab8f9fe4fd8075ed0a60963d5f610a8373c3c3207440e34d935ff7155de",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
+        "content": "sha256:dbae1fcf9130f4389e160ebd86230af53c4b9520b247bef47232c1d12d73769e",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:e16b33af163ce3d8ea2b59b2e1c12273675780444629fba0199d0b0541a29802",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -164,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
         "locator": {
           "kind": "symbol",
@@ -182,7 +182,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
         "locator": {
           "kind": "symbol",
@@ -200,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
         "locator": {
           "kind": "symbol",
@@ -218,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:788f7387fb34f8d84bd0b1772e1f0490c89644795c199dfffa337bd6d84ce4f3",
         "locator": {
           "kind": "symbol",
@@ -236,7 +236,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
         "locator": {
           "kind": "symbol",
@@ -254,7 +254,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:4db92bb6277ae2bbf7288903a7351835ee366648856b722649ca901233ad400f",
         "locator": {
           "kind": "symbol",
@@ -272,7 +272,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
         "locator": {
           "kind": "symbol",
@@ -285,12 +285,12 @@
         "handoffEntry": "L37-judged-tree-commit",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Makes the index exactly the judged tree with read-tree and reads nothing from the working tree, so nothing written since the tree was read can enter the commit.",
+      "rationale": "Retargets only differing index entries with cached diff-index/update-index, reads no working file and restores flags while retaining unchanged stat data. write-tree remains the judged tree; later working writes stay uncommitted, not committed through read-tree.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -308,7 +308,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
         "locator": {
           "kind": "symbol",
@@ -326,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
         "locator": {
           "kind": "symbol",
@@ -344,7 +344,7 @@
     },
     {
       "anchor": {
-        "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+        "blob": "03c2cccfbfbb4070e2dc8131dce34584d53e1c40",
         "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
         "locator": {
           "kind": "symbol",
@@ -533,6 +533,23 @@
             "locator": {
               "kind": "symbol",
               "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "752ef338635db3f3ae342f7ebdd0e13533f1513e",
+            "content": "sha256:2e2f3ff1d76a10d294df8586d6af9e663e0ea8c7da047ab067f4811adade8f95",
+            "locator": {
+              "end": 1168,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -118,6 +118,10 @@ byte-identical).
 
 - The block is drawn only when the field is set. [2]
 
+## External annotation input
+
+render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. No grant argument gives the former rendering, and a master ignores the annotation. Determinism is over the document plus supplied graph/grant inputs, not the document alone. Authored JSON stays primary and there is no TaskDocument grant field.
+
 ## Evidence
 
 ### Docs References
@@ -154,3 +158,5 @@ The renderer now surfaces the canonical `task-intent/v1` identity in the Route R
 and renders typed approved-packet refs / acceptance obligations in their sections
 (`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Rendering remains deterministic
 and one-way; markdown never becomes authority.
+
+- render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. [10]

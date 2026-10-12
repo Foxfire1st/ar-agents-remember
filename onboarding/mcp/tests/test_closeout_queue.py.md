@@ -54,6 +54,10 @@ a test that deliberately omits it is testing the refusal, not the happy path.
 
 No file-local implementation change is requested by this reconciliation.
 
+## Synthetic historical grant fixture
+
+QueueFixture.grant_direct_execution(candidate) seeds a synthetic historical architect grant for an already-started fixture leaf. It replaces the retired enable_direct_execution switch helper. This low-level fixture seed is not an authorized live architect mutation, fresh grant or acceptance; actual lifecycle consumers own their assertions.
+
 ## Evidence
 
 ### Docs References

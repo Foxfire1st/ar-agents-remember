@@ -581,6 +581,10 @@ delta layer strips VOLATILE_AGE_FIELDS from the stable forms it diffs, and a ref
 the serving tests forces every new `*Seconds` projection field to declare itself volatile or
 content — an unclassified addition fails loudly instead of silently re-degrading the SSE stream.
 
+## Display-only grant annotation
+
+Task and series-child projection nodes may show typed external directGrant giver/time evidence. The schema neither reads nor writes grants and is not routing authority; authored TaskDocument remains unchanged.
+
 ## Evidence
 
 ### Repo-Internal References

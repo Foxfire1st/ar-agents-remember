@@ -177,6 +177,10 @@ contract rows dropped to one copy each, the `knowledge-generation-cases` pair re
 the branch copy whose evidence node file is present, and rows whose owner and evidence
 files are both gone removed without file restores.
 
+## Current fixture consumer maintenance
+
+The grant, dashboard, direct-leaf integration/role-start and no-grant parity modules declare their real fixture/evidence consumers. The Node lockfile declaration includes its dashboard consumer. Catalog membership establishes declared lifecycle/fixture ownership, not that those tests or a live host were executed here. Retained numeric history is dated, not a current total.
+
 ## Evidence
 
 - The schema version and the large-fixture threshold at the top of the file. [1]

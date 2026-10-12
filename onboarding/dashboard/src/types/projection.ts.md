@@ -63,6 +63,10 @@ rather than hand-maintaining parallel declarations.
 
 None.
 
+## Optional direct grant display
+
+Generated TaskDocNode and SeriesChild shapes carry optional directGrant evidence with giver/time data, mirroring the Python observer schema. This is display evidence only; task authoring and grant mutation remain distinct owners. Regenerate from the schema rather than hand-maintain these types.
+
 ## Evidence
 
 ### Docs References

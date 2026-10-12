@@ -177,6 +177,10 @@ validation failures, and invalid resolvable parent master docs.
   raw sections. It validates the raw container and all members first, appends only missing
   scaffolds, and leaves semantic register validation to the existing model/validator owners.
 
+## External grant display and branch review
+
+get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. Branch review needs explicit canonical task_name/slug selection, a live grant and no open direct sibling. Enclosed leaf start/attach continues to bind an enclosure; grant-backed role preparation uses the master series contract without creating one. Strict authoring, publication/CAS, retirement and step ownership remain unchanged.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -307,3 +311,5 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 `mcp/registration/tasks.py` no longer advertises `'light'`, and this refusal now names the
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+
+- get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. [30]

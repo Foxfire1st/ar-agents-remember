@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Shared master edits must not interleave two active direct leaves; the admission and dirty-integration owners jointly protect attribution."
+  },
+  "applicability": "Product direct-leaf work preparation and ordinary integration into the shared master checkouts.",
+  "conditions": [
+    "Canonical readable grants identify non-Completed leaves of that master."
+  ],
+  "exclusions": [
+    "Ordinary ungranted enclosed leaves retain their separate workflow.",
+    "Arbitrary shell writes and OS confinement are not covered."
+  ],
+  "id": "INV-HM7Z8C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R94@v1, D63/D74 and canonical Architect amendments"
+      ],
+      "path": "knowledge-handoff-wave2.json"
+    },
+    "handoffEntry": "L94-CUR-shared-checkout",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One granted non-Completed direct leaf owns work in a shared master checkout at a time: another direct leaf is refused with that leaf name, and ordinary dirty-checkout integration preserves refusal while naming it.",
+  "status": "proposed",
+  "supersedes": []
+}

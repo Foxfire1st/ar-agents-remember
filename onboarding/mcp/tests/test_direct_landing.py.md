@@ -11,7 +11,7 @@ identify or claim a future commit for these working changes.
 ## Purpose
 
 Exercises branch-addressed direct landing with real temporary code and memory repositories,
-including one content commit, interrupted-receipt recovery, and independence from the ledger cache.
+including existing-code memory pairing, prospective code creation, interrupted-generation recovery and ledger-cache independence.
 
 ## Code Commentary
 
@@ -35,7 +35,7 @@ new commit or invented attribution for the new code state.
 
 ### Conventions
 
-The file retains one collected integration case with helper assertions over disposable repositories.
+The current source contains multiple direct landing cases over disposable repositories, including verify-existing, exact-pair create, same-generation public recovery and ambiguous-cut refusal. A historical single-case account does not describe the expanded source population.
 Its wrapper enters the production coordinator with a supplied contract; it does not prove the full
 public scheduling fence or a live deployment. Source inspection of this card is not an execution
 receipt or certification claim.
@@ -44,12 +44,16 @@ receipt or certification claim.
 
 - Cache independence must not weaken actual code/ref/content contradiction checks.
 - Recovery must reuse the real committed object and respect the lifecycle transition owner.
-- No ledger-only commit, new code commit, or fabricated code-to-memory mapping is expected.
+- No ledger-only commit or fabricated code-to-memory mapping is expected. Verify-existing creates no code commit; create publishes one admitted code output and recovery reuses it, never a second commit.
 - Fixture repositories establish local behavior, not authorization to bypass production admission.
 
 ### Todos
 
 No new file-local follow-up is established by this documentation pass.
+
+## Verify-existing and create-code cases
+
+The retained memory-only interrupted-receipt scenario is verify-existing mode, not the whole direct tool. Create cases additionally assert canonical grant/leaf binding, non-mutating preview, exact code/memory pair, pre-code census state preservation, tree/source refusal, generation-isolated retry/public recovery and sibling proof. Test source and historical passed receipts have distinct epochs; this card claims neither a new run nor full-suite/host acceptance.
 
 ## Evidence
 

@@ -561,6 +561,10 @@ must not recreate that coupling.
 | `dev/` | File cards governed by this overview; dev scenario authority starts at [cockpitScenarios.ts](dev/cockpitScenarios.ts.md). |
 | root ambient types | [vite-env.d.ts](vite-env.d.ts.md) declares the dashboard build fingerprint consumed by the data layer. |
 
+## Task-local grant presentation
+
+The task reader joins optional external directGrant display and developer Give/Revoke control through the dedicated adapter. The client cannot self-grant by editing TaskDocument or settings, and projection evidence never authorizes execution.
+
 ## Evidence
 
 ### Docs References

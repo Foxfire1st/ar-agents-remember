@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_direct_leaf_integration_refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pins the integration cleanliness refusal's direct-leaf annotation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28695a9249b65590d7beb19feb6a8a30c01c87d8",
+            "content": "sha256:4eeaeef95c6b15874a4dc1fb18930dd91325da11f82b12d16138c3ae9642fd66",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/application/worktree_tools.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54a67aeb685ff2ce7ce340139c34e2734f7cedc1",
+        "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_closeout_apply_tool"
+        }
+      },
+      "id": "RLZ-268YEV",
+      "invariant": "INV-F029P2",
+      "origin": {
+        "handoffEntry": "L94-CODE-F14",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The public closeout-apply entry whose exact responses the parity proof compares across the baseline, pristine and unrelated-grant worlds, pinning grant-inertness at the leaf and series levels.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54a67aeb685ff2ce7ce340139c34e2734f7cedc1",
+        "content": "sha256:21def3d74b6c05eae7aa4024ad6730b8c2ed3a0b8d18d934f418cb60f93feccf",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_integrate_tool"
+        }
+      },
+      "id": "RLZ-F3YR21",
+      "invariant": "INV-F029P2",
+      "origin": {
+        "handoffEntry": "L94-CODE-F14",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The public integrate entry whose exact responses complete the leaf-then-series chain the parity proof compares, so integration cannot smuggle a grant dependence.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects.",

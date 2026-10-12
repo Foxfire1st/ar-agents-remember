@@ -66,6 +66,10 @@ Recorded-meaning regression uses compose_review over converted trees, exact owne
 
 - Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
 
+## Direct grant and preservation evidence
+
+Grant/dashboard, direct-leaf role/integration refusal, direct landing and no-grant closeout parity cases exercise their named fixture scopes. Low-level synthetic grants and consumer/lane catalogs are preparation/declarations, not live architect, host or fresh acceptance evidence. Enclosed/master response-preservation uses the explicit source-bound scrubbed comparison, not raw byte equality.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

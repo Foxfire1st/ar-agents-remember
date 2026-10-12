@@ -23,10 +23,7 @@ the shared closeout evidence owner. It preserves monotonic output proof and reco
 commit boundary was crossed. `finish` publishes completion; `require_input` records a recoverable
 interruption or a developer-decision surface.
 
-`direct_landing_record` constructs an accepted generation from the typed request candidate and
-initial mutation evidence. The existing code commit is recorded immediately. Admission is by the
-request's own contract, commit/tree, and messages; the record has no closeout-door publication or
-ledger byte intent.
+direct_landing_record persists the accepted typed request and initial mutation evidence. Verify mode records its existing code output immediately; create mode records accepted exact pair/input/policy and initial mutation evidence after provisional object creation but before branch publication, then proves that one output. Full pre-code verdict results are not record fields. Admission remains by canonical leaf, grant, series roots and messages; there is no closeout-door or ledger-byte intent.
 
 `reconcile_direct_landing` reconciles launched Git commands, derives proven output cells, and asks
 the pure classifier whether an omitted memory receipt can be recovered. Only the actual
@@ -78,3 +75,5 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- The accepted create record stores input/policy and initial mutation evidence before branch publication, after provisional object creation; no full pre-code verdict fields. [5]

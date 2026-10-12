@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_direct_leaf_role_start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pins grant-backed direct workspace preparation and scoped-reader admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fd3df440114863eee8f65e305dfe836bd105ee6",
+            "content": "sha256:33ea31286b4771e8855c0ef18dfc9a7cd91aa8d1ea761890d2d9f3a8b4129fdc",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

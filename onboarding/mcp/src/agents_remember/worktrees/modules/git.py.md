@@ -52,10 +52,7 @@ Changed-path helpers retain their distinct semantics: existing-file worklists om
 `changed_files_with_counts` reports additions/deletions, rename targets, counts, and binary-file
 unknown counts for the serving change-set view.
 
-`stage_tree(repo, tree)` makes the index exactly `tree` with `git read-tree` and reads nothing from the working
-tree. The converted closeout stages its memory commit this way, from the tree its gate judged, so a file written to
-the working tree after the tree was read is not committed and stays an uncommitted change (INV-49E649). The index
-then keeps no stat data, so Git's next comparison with the working tree reads every file once.
+`stage_tree(repo, tree)` retargets only differing index entries using cached diff-index and update-index, reading no working files. Unchanged entries retain stat data and flags; replaced entries have assume-unchanged/skip-worktree flags restored, and absent-tree intent-to-add entries remain. The resulting write-tree is exactly the judged tree; later working writes remain uncommitted (INV-49E649). It does not run read-tree or discard every entry's stat data.
 
 ### Conventions
 
@@ -74,6 +71,10 @@ verified-index committing remain deliberately separate APIs.
 ### Todos
 
 No new implementation or live-state operation is authorized by this documentation pass.
+
+## Branch-holding checkout
+
+checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. Series direct-code mutation binds intent and proof to this actual checkout while the contract anchors the repository. This reader neither commits code nor grants permission.
 
 ## Evidence
 
@@ -112,3 +113,5 @@ No additional configured external or sibling-repository evidence is claimed.
 No additional configured cross-repository evidence.
 - One Git command runs against a private index file; a failure keeps its name. [14]
 - Staging writes a private index file when asked; otherwise the worktree's own index. [15]
+
+- checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. [24]

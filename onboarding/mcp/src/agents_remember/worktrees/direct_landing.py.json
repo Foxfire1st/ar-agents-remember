@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
         "content": "sha256:0e5264293702419b6720f6d41418015c54d6daea214577d4820df6a1bd9ef966",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
         "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
         "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-        "content": "sha256:e112c153df124119c6af9c2af37abbcf5dbd5378e3e796234a479ea4f257f1f4",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
+        "content": "sha256:a3283de749cb1a03b7546976ec5eecf7c08f1a4387bed56459a864ddc166bb27",
         "locator": {
           "kind": "symbol",
           "name": "direct_landing"
@@ -75,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-        "content": "sha256:89818e4f876c27b560b51a9e0c3b7bed024a63bd5782465d72377af844b8caeb",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
+        "content": "sha256:26a4ff632d99d88891018ab65beba952ead015260c64a0b28c65dbdcc4ba64f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "DIRECT_CREATE_PRECODE_CENSUS"
+        }
+      },
+      "id": "RLZ-J90W01",
+      "invariant": "INV-NQKEQS",
+      "origin": {
+        "handoffEntry": "L94-CODE-F01",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The durable census names each ordinary enclosure-closeout pre-code check with its direct disposition (same, ruled-out with the admitted stand-in, or direct-only), so every applicable check is shown on the direct create route.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
+        "content": "sha256:f4cfe814999642cfa8119a06ee4badf6104e3989421341f8b00436ece890dff9",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingRequest"
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
         "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-        "content": "sha256:1fa08c18de287310d98cea90b25a7e7e068fc1423cbd3b55d3edaab5face30bf",
+        "blob": "9839ce45b822079538e21d026314231a390ede55",
+        "content": "sha256:99844e8600b6361d2825639d9792f596ebc4428074127e4296da39948792cc2a",
         "locator": {
           "kind": "symbol",
           "name": "_direct_landing_preview"
@@ -190,6 +208,23 @@
             "locator": {
               "kind": "symbol",
               "name": "_direct_gate_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
+            "content": "sha256:fc3a682a687556e6c2d59fd0b30c669eddebea98bc666f202abdd383ab1f3f61",
+            "locator": {
+              "end": 1694,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -365,12 +400,12 @@
       ]
     },
     "7": {
-      "note": "Policy, normalized request, exact code proof, and the preview, which writes no memory content and since MIK-R09 refuses exactly as the apply on converted memory.",
+      "note": "Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current.",
       "targets": [
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:89818e4f876c27b560b51a9e0c3b7bed024a63bd5782465d72377af844b8caeb",
+            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
+            "content": "sha256:482e76ca2e7f8b2ee5ad6a3e1c0d745b3e3eb21175e4e85fdc9533819f4a0c5e",
             "locator": {
               "kind": "symbol",
               "name": "DirectLandingRequest"
@@ -380,18 +415,18 @@
         },
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:36f9c5bef4fc7e75cba32750b3f7d4bb85ab5d1557faf92da7fc9d841088c209",
+            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
+            "content": "sha256:7e58b388e55ae95e0fa170eac2f71d65584a89589091fde4b49590a27a60c99d",
             "locator": {
               "kind": "symbol",
-              "name": "require_direct_landing_enabled"
+              "name": "require_direct_grant"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
             "content": "sha256:acb0aa61b8e185ad27ae6f3bd40f5bfed3da7996b8ee3c2f0b9e941068777cc1",
             "locator": {
               "kind": "symbol",
@@ -402,8 +437,8 @@
         },
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:1fa08c18de287310d98cea90b25a7e7e068fc1423cbd3b55d3edaab5face30bf",
+            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
+            "content": "sha256:6064306f286379066fc9b5fdb2d0eb5a452c9452195a4244145f7459a9d45477",
             "locator": {
               "kind": "symbol",
               "name": "_direct_landing_preview"

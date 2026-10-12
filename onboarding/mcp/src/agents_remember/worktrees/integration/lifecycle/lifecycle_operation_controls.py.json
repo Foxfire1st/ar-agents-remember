@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
+            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
             "content": "sha256:e1d4225c6b92512836fd7295854262168512eb379ea59ef399509fc9bd5520ab",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
+            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
             "content": "sha256:48491fc955a32e5c770972ce73838a0bb4afe434bd83bfe75f9374fcec75c0fa",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
+            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
             "content": "sha256:8f3776e30cd01a7e1671fdf78dde3e5df4be3a768fb0eb492282350ccfaf439e",
             "locator": {
               "kind": "symbol",
@@ -71,6 +71,23 @@
             "locator": {
               "kind": "symbol",
               "name": "control_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A mechanically recoverable interrupted direct-create generation is requeued through its advertised public recovery owner and completed under that same accepted input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "content": "sha256:7de41a274cf181014284d75e171589d951c4c062f0dfeb4b97af6da10d82106f",
+            "locator": {
+              "end": 1029,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

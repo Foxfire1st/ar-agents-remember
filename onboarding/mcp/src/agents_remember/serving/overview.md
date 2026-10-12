@@ -554,7 +554,13 @@ observer's own reading and no readiness gate, cursor, queue or task-authoring au
 it, and the read routes never rewrite the record. One limit is still recorded rather than implied: the
 delivered ordering witness does not constrain prime-versus-migration/compaction — that edge rests on the production straight-line order.
 
-### Historical Slice-04 Through HFX Serving Account
+#
+
+## Developer grant mutation and plan reads
+
+The developer POST grant control uses the same pre-start/store owner as the architect function. Task summaries/body/series join readable external annotation; missing/broken display evidence is tolerated, while mutation/execution gates refuse. Display is not cached permission.
+
+## Historical Slice-04 Through HFX Serving Account
 
 The following migration account predates the current protocol-owned hosted and conversation paths above. Its pane/log delivery and transport-only framing are history, not current authority.
 

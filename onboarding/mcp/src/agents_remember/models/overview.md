@@ -46,6 +46,10 @@ The recorded-meaning review models separate eligible steps, readable none and un
 
 - The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
 
+## Grant and direct-create records
+
+DirectExecutionGrant is external task-local authority; observer directGrant is display-only. Direct response adds candidateTree/candidatePaths/codeCommitMessage facts, and lifecycle direct input carries exact canonical leaf plus prospective codeBefore. No task-document flag or anticipated commit hash is introduced.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

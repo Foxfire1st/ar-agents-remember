@@ -64,6 +64,10 @@ this route.
 | `lifecycle_tools.py` | [lifecycle_tools.py.md](lifecycle_tools.py.md) | covered |
 | `terminal_rail_failure.py` | [terminal_rail_failure.py.md](terminal_rail_failure.py.md) | covered |
 
+## Granted direct publication
+
+The direct-landing boundary selects a canonical granted leaf and preserves the durable generation recovery owner. Verify-existing and exact-pair create are explicit modes, not fallback closeout; typed refusal retains nextAction and interrupted pair evidence.
+
 ## Evidence
 
 ### Docs And Boundary References

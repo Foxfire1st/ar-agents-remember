@@ -25,6 +25,10 @@ behavior; this facade does not confer authority or replace registration/roster p
 
 - Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success. [17]
 
+## Grant payload adapter
+
+The pure payload facade now exports direct_execution_grant_payload. It only shapes the response; role authorization, store mutation and agent-facing registration remain their distinct owners.
+
 ## Historical superseded account (non-operative)
 
 Prior descriptions/evidence remain below for provenance. They are not current public
@@ -138,3 +142,5 @@ second action implementation.
 
 **Superseded.** The `worktree_status_wait_payload` builder and its tool were removed; this facade
 re-exports no wait payload today. Recorded so the paragraph above is not read as current.
+
+- The pure payload facade now exports direct_execution_grant_payload. [18]

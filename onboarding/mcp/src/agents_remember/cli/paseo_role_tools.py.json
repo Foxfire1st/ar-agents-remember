@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:666f5bdfbaafc35247966c94cecc0c6f709c29cc484a8b1630a6ceca53c54d55",
         "locator": {
           "end": 378,
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
-        "content": "sha256:ad40121ea7b1878b4bc174b81d9228a1fea52e358e83954ce111c8eb26fae0db",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+        "content": "sha256:6c5c68d5495dd330e64d6d7733991d45a1e1d58368117f17d0316117d1f8469f",
         "locator": {
           "kind": "symbol",
           "name": "_resume"
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -166,11 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
-        "content": "sha256:9ea52cfb37eeb2aae5eaf9ec68667906533418b48e968c924dc98b32df5c906f",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+        "content": "sha256:544351a5f4e03a5fdefccc5a2861c3a514970f282dc97e76b3c8154cc254a4f1",
         "locator": {
-          "kind": "symbol",
-          "name": "_CANDIDATE_LIMIT"
+          "end": 117,
+          "kind": "line_range",
+          "start": 117
         }
       },
       "id": "RLZ-HJ854G",
@@ -184,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
           "kind": "symbol",
@@ -202,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -220,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -238,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -256,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
           "kind": "symbol",
@@ -274,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
         "locator": {
           "kind": "symbol",
@@ -292,7 +293,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
         "locator": {
           "kind": "symbol",
@@ -310,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -328,7 +329,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -346,7 +347,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -364,7 +365,7 @@
     },
     {
       "anchor": {
-        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -414,7 +415,7 @@
       ]
     },
     "11": {
-      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.",
+      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.\n\nLeaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
       "targets": [
         {
           "anchor": {
@@ -423,6 +424,18 @@
             "locator": {
               "kind": "symbol",
               "name": "send_role_message"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "feff525eba230274dda6d9cb35d5ff4456765a17",
+            "content": "sha256:97a9b6737a312ac425625ab7c2b3edc1fe22b2bfb390de683d6cf84faee5a1d8",
+            "locator": {
+              "end": 1647,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

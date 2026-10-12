@@ -6,10 +6,12 @@
     ],
     "justification": "Call-local canonical admission prevents one reader operation contaminating another with wrong code or memory roots."
   },
-  "applicability": "context_packet/read_ar_files optional per-call task_context.",
-  "conditions": [],
+  "applicability": "Per-call task-scoped context_packet/read_ar_files admission.",
+  "conditions": [
+    "The product resolves and admits the canonical task and contract pair."
+  ],
   "exclusions": [
-    "Binding does not reject another valid admitted leaf context; launch instructions and reader enforcement remain distinct.",
+    "Binding does not prohibit another valid admitted leaf context.",
     "Absent task_context uses configured repository roots."
   ],
   "id": "INV-K6Q2R4",
@@ -24,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Reads stay task-scoped the way ONT does it: `context_packet` and `read_ar_files` take a per-call task context that the server admits against the canonical task, a caller cannot pass roots, and the admission code is unchanged by this leaf; the binding is not a second scope: a leaf agent that passes another leaf's valid context is admitted, and a read without a task context returns the repository checkout's file.",
+  "statement": "context_packet and read_ar_files admit per-call canonical task scope without caller-selected roots: an enclosed leaf uses its exact canonical enclosure; a granted direct leaf uses its canonical leaf and current readable grant with the exact master series contract. A launch binding is not a second read scope, and absent task_context keeps configured repository roots.",
   "status": "proposed",
   "supersedes": []
 }

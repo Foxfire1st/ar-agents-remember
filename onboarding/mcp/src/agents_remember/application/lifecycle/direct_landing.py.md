@@ -12,7 +12,7 @@ Publishes the direct-landing application tool and its recovery guidance over the
 
 ### Logic
 
-It validates feature/config authority, invokes the direct landing owner, reads canonical operation projections, and returns exact resume, retry, cancel, or cleanup guidance for unreadable and terminal generations. Since 260831-CCR (commit `99dc249b`), `_direct_error_payload` (line 119) also forwards the typed `nextAction` from a `DirectLandingError` into the refusal payload when present (`task_intent_recovery`, line 129), so a direct-landing refusal caused by missing or stale canonical task intent advertises exactly `direct_landing.update-provenance`/retire-and-republish rather than a generic recovery hint.
+It validates configured series authority and the current canonical-leaf grant, invokes verify-existing or exact-pair create mode, and reads canonical journal projections for recovery guidance. Typed nextAction/detail is preserved on refusals; the adapter does not authorize from settings, hide an accepted cut or retry with a different generation. Historical task-intent recovery is retained where applicable, not a substitute for direct grant/generation authority.
 
 ### Conventions
 
@@ -60,3 +60,5 @@ exact unavailable/stale reason and route the record through its canonical republ
 operation. `DirectLandingError.next_action` (owned by
 `worktrees/integration/direct_landing/direct_landing_errors.py`) is the typed carrier, and the
 error payload here surfaces it to the caller. Part of the landed L25 candidate `99dc249b`.
+
+- The application boundary preserves current grant admission and journal-owned direct recovery. [5]

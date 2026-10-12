@@ -51,11 +51,7 @@ directing callers to `providerSetupSeconds` (indexing and seed are now always
 uncapped; only `providerSetupSeconds` is consumed by the runtime, `toolSeconds`
 is a documented reserved cap). `parse_benchmarks_enabled` validates the optional
 `benchmarksEnabled` flag (must be a boolean) into the `benchmarks_enabled`
-field. 260815-DAG-L16 adds `parse_direct_execution_enabled` (must be a boolean;
-fail-loud `ConfigError` otherwise) into the new `McpRuntimeConfig.direct_execution_enabled`
-field — the policy gate for sanctioned direct execution (branch-addressed series-contract
-bindings and the direct landing operation); the default is `False` (fail-closed) and the
-`_checkout_runtime_config` synthetic record pins it `False`. The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800`
+field. The retired `directExecutionEnabled` key is ignored for every supplied value, including non-booleans; it creates no configuration field or parser. A trusted settings load that includes it issues one logger.warning naming the key/file and the developer dashboard or architect grant route. Direct permission comes from the task grant read at the call, not settings or a harness restart. The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800`
 and `DEFAULT_DOCKER_CONTROL_SECONDS = 120`. All failures raise `ConfigError`,
 now a member of the typed `AgentsRememberError` family (itself a `ValueError`
 subclass), so the server fails loudly at startup on unsafe settings.
@@ -198,11 +194,18 @@ McpRuntimeConfig includes optional typed paseo_runtime while config_from_mapping
 - `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. [7]
 - `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. [8]
 - `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. [9]
+- Runtime install takes dependency inputs through lifecycle_settings_from_config and retains separate watcher outcome reporting; these are the actual install owners. [14]
+
+<details>
+<summary>Historical retired provider/benchmark consumers — not current owners</summary>
+
 - `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. [10]
 - The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. [11]
 - Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. [12]
 - Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. [13]
-- Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. [14]
+
+The provider_tools.py and benchmark_tools.py owners named by these retained historical references are absent from the current candidate; those citations preserve the older declared blobs only, not live call surfaces. reload_provider_authority and worktree setup remain distinct surviving owners.
+</details>
 
 | Retirement settings declare the two default-on cleanup toggles. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
 | Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564; mcp/src/agents_remember/application/worktree_tools.py:400-413 |
@@ -228,3 +231,5 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 - The host settings read the config exposes. [19]
 - The shared authority reader. [20]
+
+- The retired settings key is ignored and warned; current grants are not a runtime-config field. [21]

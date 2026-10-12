@@ -33,8 +33,8 @@ document model, `task_doc`'s write-time validation and `write_task_doc` all stay
 ## Code Commentary
 
 - `read_task_documents`
-- `read_task_document_body` (since 260921-ICR-L42: resolves and reads only the requested file, then
-  projects it with the join table from `_graph_master_docs`; it no longer calls
+- `read_task_document_body` (since 260921-ICR-L42: resolves the requested canonical file and graph-named master inputs without task-corpus enumeration, then
+  joins optional external grant census evidence before projecting the body; it no longer calls
   `_iter_task_document_payloads`)
 - `_graph_master_docs` (since 260921-ICR-L42; the body read's master join table. It returns `{}` for a
   document without an `executionGraph`. For a sprint it probes only the graph-named
@@ -93,6 +93,10 @@ text alters the body revision and open readers refetch.
   `_master_docs_by_ref` exactly the canonical-enumeration subset for the named refs, in the same
   order, so duplicate-key last-wins resolves as it did before. Changing that order or subset changes
   which master a sprint shows.
+
+## External grant annotation and request cost
+
+Summaries, full bodies and series children join readable external grant evidence by actual canonical leaf id/path, never a guessed slug. Missing/broken grants do not break display; gate reads fail closed. A body request still avoids canonical task-corpus enumeration and reads only graph-named masters, but its explicit task-addressed grant census adds grant-store I/O with a retained legacy unaddressed fallback. This is not a constant-I/O or zero-directory-read promise. Grant display does not become authored task JSON, bodyRevision identity or cached permission.
 
 ## Evidence
 
@@ -236,3 +240,5 @@ corpus the isolated HTTP route median fell from 0.591 s to 0.019 s for a leaf an
 - The eager review-catalogue cost belongs to L47, and `notes/list` belongs to L55. The installed-build
   before/after, with concurrent master+leaf reads and projector CPU, belongs to L50 (review finding
   L42-R1-F1). None of these is claimed here.
+
+- Task summaries/body/series join optional external grants while canonical task-corpus reads remain bounded. [20]

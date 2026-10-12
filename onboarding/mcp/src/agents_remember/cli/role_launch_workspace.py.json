@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-MXEMAQ",
+      "invariant": "INV-HM7Z8C",
+      "origin": {
+        "handoffEntry": "L94-CUR-shared-checkout",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Direct role preparation refuses the named open sibling before returning the shared master roots.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
-        "content": "sha256:172faea7564e760eb75384b7f4b09534e6d23f3b3ac4bb289ed4ad20bfc0aff4",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -129,7 +147,25 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
+        "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-YA9KV0",
+      "invariant": "INV-PH30YW",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-workspace-readers",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The live grant selects existing master series checkouts instead of creating a leaf enclosure.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -147,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "blob": "4450f6dd38b171916d86a8af858b4da0d30493f4",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -170,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
             "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
             "locator": {
               "kind": "symbol",
@@ -186,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -202,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -234,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
             "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
             "locator": {
               "kind": "symbol",
@@ -250,11 +286,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
             "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
             "locator": {
               "kind": "symbol",
               "name": "_start_leaf_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3a08a9d9503d34ee2845f00e0fb45d8873617ea",
+            "content": "sha256:ccef60b6ffa4b0b26bd7c5e8eb65d4bc51ae7ce23355dab9813aabf371f6eaa1",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

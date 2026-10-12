@@ -1,14 +1,13 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "The on-demand full-body read of one task document (read_task_document_body, served by the dashboard's /api/task-document route) under one coordination root's tasks/ tree.",
+  "applicability": "Task-document body projection with optional external direct-grant annotation.",
   "conditions": [
-    "The requested path resolves to a file inside tasks/ whose payload carries the task-document schema.",
-    "Only the sprint execution-graph view consumes master documents, and it looks them up solely by the refs its graph nodes carry."
+    "Canonical task reads remain limited to the requested document and graph-named masters.",
+    "Grant records use the per-task addressed census."
   ],
   "exclusions": [
-    "The always-on summary and series projections (read_task_documents, read_series_documents) and the closeout-queue reader, which still enumerate the canonical corpus.",
-    "Lifecycle binding from the supplied enclosure list, which is not a task-corpus read.",
-    "Browser-side or other concurrent request costs (the eager review catalogue, notes/list)."
+    "Legacy unaddressed grant fallback may inspect other retained grant records; it is outside the former zero-directory-I/O promise.",
+    "Concurrent browser requests and always-on corpus projections have separate costs."
   ],
   "id": "INV-4RERAJCC",
   "origin": {
@@ -16,9 +15,9 @@
     "legacyId": "6000fdad-5fec-40c2-a5d8-254cec86312c",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Reading one task-document body touches only the requested document and the master documents its sprint execution graph names; a document without an execution graph reads no master and lists no directory, so the cost does not grow with unrelated tasks.",
+  "statement": "A task-document body read avoids canonical task-corpus enumeration: it opens the requested document and only graph-named master documents, and separately reads the task-addressed direct-grant census for its external plan annotation. Retained legacy unaddressed grant files use the explicitly supported fallback, not a constant-I/O guarantee.",
   "status": "proposed",
   "supersedes": []
 }

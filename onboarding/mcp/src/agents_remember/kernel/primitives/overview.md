@@ -106,6 +106,10 @@ The profile loader and executor remain downstream owners.
 - The `lifecycle-operation` mode belongs only to the detached task worker. It admits live
   operation authority but does not populate the MCP/dashboard daemon writer role.
 
+## Retired direct settings switch
+
+directExecutionEnabled is ignored for every value and warned when trusted settings contain it; it creates no runtime field. Current direct-leaf grant authority belongs to the external addressed store and product mutation owners, not primitives settings or harness restarts. Other configured authority/provider/host semantics are unchanged.
+
 ## Evidence
 
 ### Repo-Internal References

@@ -59,6 +59,10 @@ The package centralizes related model definitions without introducing a package 
 
 None.
 
+## Prospective direct generation input
+
+DirectLandingOperationInput retains canonical leafTaskDocumentRef, optional codeBefore and codeCommitMessage to distinguish create from verify-existing. The journal owns accepted input/policy snapshots and code/memory mutation/output proof, not a full pre-code check verdict; raw output/lifecycle state is not interchangeable with top-level response state.
+
 ## Evidence
 
 ### Repo-Internal References

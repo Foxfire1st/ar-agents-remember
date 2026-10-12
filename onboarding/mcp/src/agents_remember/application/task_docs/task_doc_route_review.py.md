@@ -27,11 +27,7 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 
 ### Logic
 
-`TaskDocCall(dry_run, branch_addressed)` are call-level knobs that are not part of the edit;
-`DEFAULT_TASK_DOC_CALL` is the ordinary call (real mutation, worktree-contract binding).
-`_enforce_branch_addressed_policy` refuses a `branch_addressed` call the policy does not sanction:
-the flag is defined only for `record_route_review` and requires `config.direct_execution_enabled`
-(policy-gated, L16-R6).
+`TaskDocCall(dry_run, branch_addressed)` are call-level knobs, not a task edit. Ordinary record_route_review uses the exact leaf enclosure. Branch-addressed review opts in for the exact canonical task_name/slug subTask, requires its current readable external grant, and uses the exact task-root series contract. Missing/unreadable authority names that leaf and the grant givers, never a settings switch. Review evidence still binds the selected document intent and the exact contract mode; create/replace cannot author it. A grant does not waive atomic-child review policy.
 
 `_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
 
@@ -54,7 +50,7 @@ dialect.
 - `branch_addressed` is exact per contract kind: a leaf contract with `branch_addressed=true`
   refuses ("requires the task-root series contract") and a series contract without it refuses
   ("requires the leaf worktree contract... use branch_addressed=true"); no silent cross-mode.
-- Policy gate (`direct_execution_enabled`) and per-call opt-in are both enforced.
+- Live canonical-leaf grant and per-call branch opt-in are both enforced; an open direct sibling refuses.
 - Route-review evidence can only be stamped through this machinery; `create`/`replace` cannot
   author or change it.
 - A recorded review always binds the current canonical task intent of the exact selected leaf
@@ -93,3 +89,5 @@ to normative task intent: the recorders now pass the exact `ResolvedTaskDocument
 `build_route_review` stamps the current `task-intent/v1` digest, and a review whose intent is
 missing/stale refuses. The application seam itself performs no review and owns no intent
 semantics. Part of the landed L25 candidate `99dc249b`.
+
+- Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]

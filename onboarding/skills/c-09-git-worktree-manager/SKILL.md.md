@@ -99,6 +99,10 @@ None. Exact source claims and vocabulary are reconciled to the canonical skill.
 
 Current contract: closeout and integration are Git transactions over the authorized code, memory-content, and ledger legs, with preview, conflict, and ref safeguards. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Targeted checks, certification, full quality, full tests, full memory quality, and independent review are contextual evidence or explicit operations; they are not automatic c-09 prerequisites.
 
+## Granted direct workspace
+
+A granted canonical leaf works in its master series checkouts without leaf worktree_start or an enclosure. Product role preparation keeps report/scratch artifacts in the separate group and refuses missing authority/roots or another active direct sibling. Ordinary ungranted enclosure start/attach, source-edge sync and transaction recovery retain their owners; directness is not a shell permission or OS sandbox.
+
 ## Evidence
 
 ### Docs References

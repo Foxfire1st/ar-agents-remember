@@ -40,6 +40,10 @@ commit evidence. Bounds follow the strict-response model convention (summary/det
 
 None recorded.
 
+## Direct-create response evidence
+
+The strict response adds optional candidateTree, candidatePaths and codeCommitMessage for code-create preview/output evidence. These are facts from the operation, not gates executed by this model. The existing memory facts dictionary and code/memory outputs remain distinct, and top-level operation state cannot be overwritten by nested lifecycle state.
+
 ## Evidence
 
 ### Docs References
@@ -88,3 +92,5 @@ belong inside the lifecycle projection; they are evidence about how the operatio
 not a fourth direct-landing outcome. The separate `doorGenerationId` recovery field this section
 once carried was removed by the closeout-door cut (commit `fad9808e`); a direct landing no longer
 carries or reports a door generation.
+
+- The strict response adds optional candidateTree, candidatePaths and codeCommitMessage for code-create preview/output evidence. [10]

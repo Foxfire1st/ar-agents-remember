@@ -12,6 +12,10 @@ The executable guard for the removal of the `internal` and `disabled` memory mod
 
 Three properties are pinned, each naming the failure it prevents. Refused by name: `internal` keeps `memory-mode-unsupported` while `disabled` is refused with `memory-opt-out-refused`, which names the true reason (converted knowledge where it exists, removal elsewhere) and the known action — answering `disabled` with the `internal` text would blame a memory root that was never the problem. Reported, not migrated: existing state recording a removed mode is named by artifact and left byte-identical, except a `disabled` contract stays readable where status, attach and guarded abandon need it. The supported set is untouched: `external` still resolves, writes and reads through the application layer and the CLI. The expected set is written literally (`EXPECTED_MODES = ("external",)`), never imported, so a vocabulary change must be made twice. The 44 function definitions (59 collected node IDs: 42 plain, 13 corrected-surface rows, 4 lookalike rows) cover vocabulary narrowers (unknown tokens stay ordinary invalid-argument errors), entry-point refusals, existing-state reporting, the still-readable `disabled` contract, operator reporting, flag narrowers distinguishing typos from removals, and the instruction-corpus plus onboarding-root-shape guards.
 
+## Task-local direct fixture
+
+The configuration helper emits no direct_execution setting. Direct cases seed the exact canonical leaf grant as isolated fixture data before invoking the route. This low-level seed is not authorized architect proof; the retained assertions concern memory-mode removal outcomes.
+
 ## Evidence
 
 - Supported set is external alone; both removals named [20]

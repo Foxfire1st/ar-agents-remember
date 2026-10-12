@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+        "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
         "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:47a6be4de4f5791a84043f62cd700a9161f6d397cfa29514657fe093fbe2734e",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
             "locator": {
               "kind": "symbol",
@@ -118,12 +118,29 @@
         }
       ]
     },
+    "16": {
+      "note": "_contract_repositories keeps the leaf code leg at its owned code_worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:f2f934afb2cc276d244482140eb54e3cc71a0bfb385a1d234c33108cf83a8b4c",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "`begin_git_mutation` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
             "locator": {
               "kind": "symbol",
@@ -139,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:33f63b4466fd7ac6a9166e8bd10ecda64d6130c6d3d1eafaaa7dbea6b075c6fe",
             "locator": {
               "kind": "symbol",
@@ -155,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
             "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
             "locator": {
               "kind": "symbol",

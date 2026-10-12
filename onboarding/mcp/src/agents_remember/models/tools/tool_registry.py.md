@@ -17,6 +17,10 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Grant response registration
+
+The strict registry additionally maps direct_execution_grant to DirectExecutionGrantResponse. It shapes the public product answer and does not admit the caller, read the store or mutate a task. Existing role/retirement and knowledge model rows retain their independent contracts.
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

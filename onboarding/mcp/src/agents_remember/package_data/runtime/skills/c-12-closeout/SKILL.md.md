@@ -34,6 +34,10 @@ operations and preserve abandoned-row, correlation and unfinished-successor safe
 
 - Current instruction contract and retained-read replacement, not historical provider/tool examples. [18]
 
+## Granted direct verify and create
+
+Bind the canonical leaf reference and current readable grant. With code_commit, direct_landing verifies existing code; without it, create preview/apply require code_commit_message and memory_commit_message, and apply needs the previewed code candidate_tree. Direct create judges the exact code/memory pair with its mandatory census before the one code commit, then pairs memory in the accepted generation. A recoverable cut resumes that same generation; real ambiguity keeps its developer-decision path. Ordinary closeout consumes existing curation evidence and does not become a new test/review campaign. Git publication remains the owning Manager transaction, never the Curator.
+
 ## Historical superseded body (non-operative)
 
 The following text is the prior onboarding account, retained for provenance.
@@ -199,10 +203,6 @@ to explicit prepare/publish rather than a compatibility path.
 
 ## Direct-Execution Boundary
 
-Direct landing is the explicit policy-gated delivery path for a leaf intentionally implemented
-without its own worktree enclosure. It is not a substitute for ordinary master/series closeout or
-master-to-parent integration. Those lifecycle operations remain worktree/series operations and do
-not require `directExecutionEnabled`; the existence of a root series contract alone does not select
-the direct route.
+Direct landing is the explicitly selected, current-grant-bound route for the exact canonical leaf without its own enclosure. A root series contract alone is not direct authority. Ordinary master/series closeout and master-to-parent integration keep their separate admission and do not acquire a grant prerequisite.
 
 - The current closeout handoff uses Git base/candidate review and produces no separate comparison record. [17]
