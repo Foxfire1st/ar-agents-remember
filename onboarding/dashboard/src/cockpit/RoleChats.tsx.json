@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -21,26 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
-        "locator": {
-          "kind": "symbol",
-          "name": "openExecutionReport"
-        }
-      },
-      "id": "RLZ-6P22KG",
-      "invariant": "INV-C7AT8R",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 3",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "Turns a report that cannot be opened into the same one line instead of a silent failure or raw runtime text.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -57,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -75,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -93,80 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
-        "locator": {
-          "kind": "symbol",
-          "name": "refreshResult"
-        }
-      },
-      "id": "RLZ-DAE56R",
-      "invariant": "INV-DH5NRM",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 4",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "Result is the one action: it re-reads the selected execution and then opens the report, so the report path is no longer a printed line of its own.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:125cf9e3004c8df5bfb6e6af352ee6cb01b2fd50ffb8c08211d481184cfe83bf",
-        "locator": {
-          "kind": "symbol",
-          "name": "dispatch"
-        }
-      },
-      "id": "RLZ-GMD7W4",
-      "invariant": "INV-C7AT8R",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 3",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "Turns a refused dispatch into the sticky one-line message naming the HTTP refusal, beside the receipt the launcher keeps for that scope.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
-        "locator": {
-          "kind": "symbol",
-          "name": "openExecutionReport"
-        }
-      },
-      "id": "RLZ-N2R22B",
-      "invariant": "INV-DH5NRM",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 4",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "Fetches the recorded report through the selection-addressed call and hands it to the shared reader; a report that is not written or cannot be read lands in rule 3's line.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:9efe1a22068647d8cc9c4db6fa9076ff5720c3efadb37ad3fecccbec069f5a72",
-        "locator": {
-          "kind": "symbol",
-          "name": "refreshOptions"
-        }
-      },
-      "id": "RLZ-N8EDE3",
-      "invariant": "INV-C7AT8R",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 3",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "A successful explicit options retry clears the held report error, so the line ends with the condition it named.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -183,26 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:d7de425802b0d7d1d3d543882ce93da62fba1641d55bf19c966c38646dd2e642",
-        "locator": {
-          "kind": "symbol",
-          "name": "fetchExecutionResult"
-        }
-      },
-      "id": "RLZ-Y3GC40",
-      "invariant": "INV-C7AT8R",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 3",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "Keeps the last scoped failure receipt so the line survives the automatic rereads and is cleared only by an explicit successful action, not by a background read.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+        "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -216,34 +108,16 @@
       },
       "rationale": "The chat pane stays mounted under the report takeover, so closing the reader returns to the same frame element with its content.",
       "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-        "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
-        "locator": {
-          "kind": "symbol",
-          "name": "refreshResult"
-        }
-      },
-      "id": "RLZ-YZHZKV",
-      "invariant": "INV-EFDE52",
-      "origin": {
-        "handoffEntry": "MIK-R75@v1 current rule 5",
-        "leaf": "260928-MIK-L75"
-      },
-      "rationale": "The same handler keeps its base behavior — re-read the selected execution, refresh capability data and steer the mounted frame — and only then opens the shared reader.",
-      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Current source owner or exact assertion described above.",
+      "note": "The pane composes canonical scopes, controls, options and the persistent view.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
             "locator": {
               "kind": "symbol",
               "name": "RoleChatsPane"
@@ -254,32 +128,34 @@
       ]
     },
     "2": {
-      "note": "Current source owner or exact assertion described above.",
+      "note": "Selected Result/report reads retain UUID and live-target guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:d7de425802b0d7d1d3d543882ce93da62fba1641d55bf19c966c38646dd2e642",
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
             "locator": {
               "kind": "symbol",
-              "name": "fetchExecutionResult"
-            }
+              "name": "refreshRoleResult"
+            },
+            "path": "dashboard/src/cockpit/roleChatControls.ts"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Current source owner or exact assertion described above.",
+      "note": "Start/Revive dispatch keeps exact request scope and retained retry identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:125cf9e3004c8df5bfb6e6af352ee6cb01b2fd50ffb8c08211d481184cfe83bf",
+            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
             "locator": {
               "kind": "symbol",
-              "name": "dispatch"
-            }
+              "name": "dispatchRoleAction"
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
           },
           "kind": "code"
         }
@@ -304,17 +180,17 @@
       ]
     },
     "5": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "Options restoration selects the saved request rather than a newer sibling.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
+            "blob": "d0611d0924e7d61a66a9ca305f6d78157b849c52",
+            "content": "sha256:ec3548cc25f160af7a079d546f4f98eb9375f6504fa37f616544994b9251721f",
             "locator": {
-              "end": 628,
-              "kind": "line_range",
-              "start": 1
-            }
+              "kind": "symbol",
+              "name": "adoptSavedExecution"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
           },
           "kind": "code"
         }

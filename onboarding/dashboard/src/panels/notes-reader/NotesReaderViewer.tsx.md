@@ -47,9 +47,7 @@ The rail header, open-path label, and failure copy are kind-aware (`notes` vs
 `path` and rail `onSelectNote` are lifted to `CockpitShell` (like the File Viewer's persisted state) so a
 selection survives back/forward.
 
-- Fetches the rail one folder at a time with `listFolder(repo, master, path, offset)` on
-  `(repo, master)` change (the `let live`
-  cancellation idiom; an unreachable API leaves an empty rail, never a crash).
+- `NotesTree` wires the shared ExplorerTree to `useNotesFolderCache`, which owns stable folder paging, fill-to-note, vanish recovery and refresh invalidation. The repo/master-keyed tree lifetime owns the cache; content reads remain in the viewer.
 - Fetches the open note with `readNote(repo, master, path)` on `(repo, master, path)` change — `null` while
   loading, `failed` on a read error. Changing `path` (a rail click or a fresh entry) re-fetches → the
   "switch the pane in place" behavior.
@@ -57,8 +55,7 @@ selection survives back/forward.
   folders on the way to it and marks the note, loading beyond the first part as needed
   (L126-CODE-03); a folder answered in parts shows a row loading the next part; a vanished
   folder shows empty with the server's reason while the rest stays usable (L126-CODE-04).
-  The adapter holds at most 32 folders with LRU eviction that never touches the open note
-  chain (`MAX_CACHED_FOLDERS`, L126-CODE-11).
+  The extracted cache targets 32 folders with LRU eviction that protects the inserted directory and the open note chain. If no unprotected victim exists, it stops above the target; this is not an unconditional ceiling.
 - **Content pane** reuses `DualPane` via `dualPaneProps(note)`: a **markdown** note takes DualPane's
   partnerless-markdown path (`code=null`, `sidecar={state:"markdown"}`) — the exact treatment the File
   Viewer gives a partnerless route overview; a **text** note becomes a synthetic `FileContent`
@@ -121,13 +118,13 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - The folder, resolve and read endpoints behind the client. [6]
 
 
-- The folder-fed tree adapter with fill, vanish recovery and the folder cap. [8]
+- The extracted folder cache owns paging, fill, vanish recovery and the protected LRU target. [8]
 
 
-- The whole-log pane renders newest-first with product records muted. [9]
+- The whole-log pane keeps newest-first decisions with product records muted. [9]
 
 
-- Old reader addresses open the same note through the new tree. [10]
+- The notes-target reader retains the same note and keyed tree lifetime. [10]
 
 
 ## Current L5I Maintenance

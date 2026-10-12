@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "note": "The module owns the regression assertions and fixture boundaries described above.\n\nAnchor: `dashboard/src/panels/detail-panel/skeleton-order.test.tsx`",
       "targets": [
         {
           "anchor": {
-            "blob": "eb35667be29b799df362995160248b6f2e780f10",
-            "content": "sha256:b246b2beed3e74fec1817d9fa975bb51c66fabc9ccc733396d25fbc146f7b61e",
+            "blob": "3e8ffc54392134a1e82009e46c5bc1f86d24515d",
+            "content": "sha256:d525a5924c082c083b3de86a733cf8b138cbc4f4a8849d008ed221ae90622ae7",
             "locator": {
               "kind": "file"
             }

@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/cockpit/roleChatControls.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+        "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
+        "locator": {
+          "kind": "symbol",
+          "name": "refreshRoleResult"
+        }
+      },
+      "id": "RLZ-DAE56R",
+      "invariant": "INV-DH5NRM",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted explicit Result action rereads the selected exact request and passes its receipt to the recorded-report opener in the existing reader, retaining selection/busy guards.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+        "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
+        "locator": {
+          "kind": "symbol",
+          "name": "refreshRoleResult"
+        }
+      },
+      "id": "RLZ-YZHZKV",
+      "invariant": "INV-EFDE52",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 5",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted Result coordinator rereads current execution through the shared transport and opens its report without replacing the persistent chat-frame owner.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "useRoleChatControls is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:03d6e404863e2554d1977f185419a47feb9f7a9c7251e7d44c95af016fb54d59",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleChatControls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "useRoleChatRunState is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:63dddee13a61d4ea975d53693f4edee287ca9bf77ca569e1537c0d953456ba28",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleChatRunState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "useRoleChatRunActions is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:63ac47dda7175ad3a8253dc32b048169d14e93754e83097e5654afe4424a4502",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleChatRunActions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "refreshRoleResult is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshRoleResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

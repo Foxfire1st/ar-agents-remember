@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/cockpit/roleChatDispatch.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+        "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "dispatchRoleAction"
+        }
+      },
+      "id": "RLZ-GMD7W4",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted dispatch transport preserves refused and unresolved start/revive outcomes in the one error channel; foreign accepted identities stop polling and explicit accepted actions clear the error.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "dispatchRoleAction is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatchRoleAction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "applyDispatchReceipt is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "content": "sha256:7d94913fccf171b590eb80b35af3f3c001bd9825dd6e76480856330974a9682a",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyDispatchReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "failDispatchOffline is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "content": "sha256:41eebc34005625b0acf4e0760db68637c3e83cbe93ae34c12f3ab7b39c6f5f03",
+            "locator": {
+              "kind": "symbol",
+              "name": "failDispatchOffline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

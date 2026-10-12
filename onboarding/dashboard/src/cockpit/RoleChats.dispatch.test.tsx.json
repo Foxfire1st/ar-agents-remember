@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The test file asserts the cases and limitations described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57e2b78d6f99337cef4f43b14620a7676cfa233c",
+            "content": "sha256:12b732b2286d2757896877dd23add6b118922dc3abb2354f7248187db09d8c6a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

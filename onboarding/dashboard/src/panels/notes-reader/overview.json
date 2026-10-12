@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
             "content": "sha256:594588f676c4d2debe3970e4c23069527741e528fdcf9ac4f6c9965912371242",
             "locator": {
-              "end": 145,
+              "end": 146,
               "kind": "line_range",
-              "start": 128
+              "start": 129
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
             "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
             "locator": {
-              "end": 448,
+              "end": 258,
               "kind": "line_range",
-              "start": 448
+              "start": 258
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

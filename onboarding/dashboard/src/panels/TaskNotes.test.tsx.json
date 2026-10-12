@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f24cb9de0278780d85baec9a9a5d35a5e902875",
+            "blob": "0682fa30d79060425e481b7a5575e8e08228a88a",
             "content": "sha256:134a933e56a511a5e566e303585f98a625b7fea05bcf74f76897c8b126d07123",
             "locator": {
               "kind": "symbol",
@@ -53,16 +53,14 @@
       ]
     },
     "4": {
-      "note": "The moved note-content suite covering the reader this surface opens.\n\nAnchor: \"NotesReaderViewer content pane (reuses the File Viewer DualPane)\"",
+      "note": "The reader suite covers the content pane this entry surface opens.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0e15f5f1207a2f563283d3881d0f01594fdff08",
-            "content": "sha256:031f676133811db46a08cbe6b24890dd7dd96daac8295a672506d888d67e4c57",
+            "blob": "861ec7f76d95dc94c99a88516ca770fdebfc62db",
+            "content": "sha256:4e8e7a89a12034292efdaa7a76708ac5ba45920096fa22002f6c5912f7ec0ec0",
             "locator": {
-              "end": 403,
-              "kind": "line_range",
-              "start": 403
+              "kind": "file"
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
@@ -75,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f24cb9de0278780d85baec9a9a5d35a5e902875",
+            "blob": "0682fa30d79060425e481b7a5575e8e08228a88a",
             "content": "sha256:ec26ac1cd2b746532197dfed2fd84b2dfbec607b94f58af69433697b7cfa8d47",
             "locator": {
-              "end": 241,
+              "end": 242,
               "kind": "line_range",
-              "start": 189
+              "start": 190
             }
           },
           "kind": "test"

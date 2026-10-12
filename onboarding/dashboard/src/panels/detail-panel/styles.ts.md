@@ -37,11 +37,18 @@ The `sizing` flex rule preserves the panel's fill behavior.
 
 None recorded.
 
-## Retained direct-grant action recipe
+## Retired direct-grant action recipe
 
-`grantButton` is the landed L94 inline action recipe, retained byte-for-byte through the page port. The control stays beside, never nested within, the drill-in link; pending requests use its disabled styling. Fixed page appearance still belongs to pageStyles.ts. The preserved double-quoted block carries the disclosed Prettier debt; this card claims source preservation, not a new layout capture or formatter pass.
+The earlier L94 page port retained `grantButton` and row-side text controls. D230 deliberately replaces that presentation: the old recipe and row hand-through are absent from current source, and the selected planning task uses the switch recipes below. That prior preservation claim remains historical in Git and the superseded L127 decision; it is not a current recipe or a current formatter/layout qualification.
+
+## Direct execution look
+
+The selected task uses directLine, directSwitch, directSwitchOff/directSwitchOn, directKnob, directGiven and directNote. Alignment gives the track its left/right position; the old grantButton recipe is gone. These styles present served UI state and do not decide permission or grant admission. Existing detail/lifecycle/change-set recipes keep their owners.
 
 ## Evidence
+
+- The direct-execution line has one track, positional variants, knob and giver/notice text styles. [5]
+
 
 ### Docs References
 
@@ -61,4 +68,4 @@ No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
 
-- The landed inline grant action recipe retains its pending-disabled treatment. [4]
+- The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe. [4]

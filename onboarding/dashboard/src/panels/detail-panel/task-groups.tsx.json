@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+        "content": "sha256:71de536c39397dd3789c578358c46b82e0f3d34de25cc494734560b9ed0dd72e",
+        "locator": {
+          "kind": "symbol",
+          "name": "GroupViewBody"
+        }
+      },
+      "id": "RLZ-0Q2WJ2",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles grouped rows without any grant hand-through.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
         "content": "sha256:3a76eff7e606222874ff9e11f60d9e83ce1a40a217b4450ec5ecf45670cf2e22",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
         "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
         "locator": {
           "kind": "symbol",
@@ -36,6 +54,42 @@
       },
       "rationale": "Draws the scope of a row of the sprint document through the Markdown grammar.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+        "content": "sha256:5a2a68d432af3d32b485d8b269ffdac3a1f9b4dd5662ffb6cf9b7873a7e2967c",
+        "locator": {
+          "kind": "symbol",
+          "name": "MasterNowBlock"
+        }
+      },
+      "id": "RLZ-G8WYZY",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles now-rows without any grant hand-through; rows show links and steps only.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+        "content": "sha256:41dd8d53d78ca2a43e6a684beddc2ad275564334a16c123caafa9750610066eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "MasterTasksBlock"
+        }
+      },
+      "id": "RLZ-WKA99C",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles task rows without any grant hand-through; rows show links, requirements and history only.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -44,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
             "content": "sha256:aba38f42661a875610cbed5400f820a24b1ddfe100be1eae71e4172339a646d1",
             "locator": {
               "kind": "symbol",
@@ -60,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
             "content": "sha256:804d93a098cfc83451d08690a5a1f125bd2eec7b14fd76e5f3303b21350c91b0",
             "locator": {
               "kind": "symbol",
@@ -92,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
             "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
             "locator": {
               "kind": "symbol",
@@ -104,23 +158,12 @@
       ]
     },
     "5": {
-      "note": "The reader supplies an acyclic leaf-row addition; master Now retains its dedicated step-count element.\n\nAnchor: `LeafExtra` `MasterNowRow`",
+      "note": "Master Now retains its dedicated step count and no grant addition.",
       "targets": [
         {
           "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
-            "content": "sha256:3b006595eaa5da0d884db33d12e04a2809c0042e3ed94c8c9b7604e13303220c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LeafExtra"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
-            "content": "sha256:86a56d831270d27b6a8ca2a0f8610ef24a53ecad4dad69bb7c76520a56135856",
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+            "content": "sha256:b9ba042f4ff89c80636bc99795e62081ec385b871cb94b34700e6929bc7fa7bf",
             "locator": {
               "kind": "symbol",
               "name": "MasterNowRow"

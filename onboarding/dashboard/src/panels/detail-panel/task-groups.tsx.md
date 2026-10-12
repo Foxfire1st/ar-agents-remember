@@ -14,9 +14,9 @@ Row targets resolve an exact projected commanded-master reference first, a linke
 
 Master Now reads the task document's steps and required whole-round review aggregates. Sprint Now resolves each commanded master across all projected documents and reads that master's live task totals. Unknown row states remain waiting. The sprint raw-row view deliberately exposes both authored row status and master-document status, rather than silently resolving the recorded truth gap. Index introductions alone keep the block meaningful; no duplicate structured index is synthesized.
 
-## Landed leaf-grant row adapter
+## Grant-free index rows
 
-The optional `LeafExtra` handler is supplied by the reader rather than imported back from it. MasterNowRow, TaskWaitingRow and the leaf branch of GroupRow render that addition in their last cell; sprint/master branches do not gain leaf controls. The reader's adapter supplies the giver badge and preserved developer control only for a resolved authored leaf. MasterNowRow retains a dedicated inner `now-steps-N` element, so adding controls does not change the step-count text domain. Badges now stand beside the drill-in link rather than within it; this is an admitted placement difference, not layout equivalence or a browser authorization grant.
+Master Now, waiting-task and completed/abandoned group rows carry navigation, steps, requirements and history only. Neither the LeafExtra hand-through nor a giver badge/control remains. Sprint/master rows likewise display no direct-execution control or mark; the sole interactive grant surface belongs to a planning subTask's own page. The dedicated now-steps-N element remains the step-count text domain.
 
 ## Boundaries
 
@@ -28,7 +28,7 @@ Navigation callbacks and qualified document resolution stay with the reader. Gro
 - Rows lacking a projected master remain in status groups and the all-row view. [2]
 - The raw sprint view keeps row and master truth visibly separate. [4]
 
-- The reader supplies an acyclic leaf-row addition; master Now retains its dedicated step-count element. [5]
+- Master Now retains its dedicated step count and no grant addition. [5]
 
 
 - The gone group keeps discarded-before-start history reachable without live tasks. [3]

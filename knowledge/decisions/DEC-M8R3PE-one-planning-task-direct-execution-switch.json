@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "It repeats direct-execution actions on master rows, including completed tasks, contrary to the revised developer direction."
+  },
+  "alternatives": [
+    {
+      "option": "One labelled track-and-knob switch on the planning subTask own page; no master/sprint row control or mark.",
+      "reason": "The developer says a single toggle inside the task is sufficient and rejects the repeated master-row controls.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the preserved master-row text control/badge and selected-task text button through LeafExtra.",
+      "reason": "It repeats direct-execution actions on master rows, including completed tasks, contrary to the revised developer direction.",
+      "reconsider_when": "Only a new developer-approved direct-execution presentation that explicitly changes the task-only scope.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Pending preserves the served switch position; refusal/unreachable preserves actual grant and exposes server words.",
+    "Other granted task states show bare giver words; grantless states have no grant line.",
+    "The external grant store, canonical route, permission owner and backend start-evidence gate are unchanged."
+  ],
+  "context": "The landed grant control and its L127 preservation decision placed text controls and giver marks on master rows. The developer rejects that presentation and requires one switch inside the selected task; the amended packet scopes it to planning subTasks.",
+  "decider": "developer D230, canonical direction and approved MIK-R150@v1",
+  "id": "DEC-M8R3PE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D230; requirements/MIK-R150-v1-the-dashboard-passes-its-own-lint-again.md @ sha256:4393fe33b331372f904708446438a9f181882612ab0c3ad13640d471d4ef56e9"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "curator-decision-D230",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-T49E67"
+  ]
+}

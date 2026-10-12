@@ -791,8 +791,9 @@ every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeo
 
 ## Hot Path Summary
 
-Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form, with one objective-first
-head, omitted empty blocks, bounded previews and full own views. `detail-panel/taskReader.tsx` owns
+Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form: one complete
+head followed by the objective as its first block, before Now or Steps, with omitted empty blocks,
+bounded previews and full own views. `detail-panel/taskReader.tsx` owns
 form order and identity-keyed reader state; docHead/taskBlocks/skeletons/docViews/task-groups own their
 head, tables, shared blocks/views and grouped indexes. Task references/reports have one placed heading,
 Notes stays one root-count line, and current summary facts remain authoritative through body hydration.
@@ -968,7 +969,7 @@ Chats inspector is supplementary, default closed, and toggleable.
 
 ## Task reader grant control
 
-taskReader renders leaf/child grant badges and giver evidence, and posts developer control mutations only through the grant adapter. Client affordance/status is not the complete backend start-evidence gate.
+taskReader renders one Direct execution switch only on a planning subTask's own page, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
 ## Evidence
 

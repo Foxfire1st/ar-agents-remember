@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Pins mounted grant controls on both master rows and directly selected leaf plans",
+      "note": "The mounted suite asserts switch state, row absence, canonical route and refusal/pending behavior.\n\nAnchor: `dashboard/src/panels/detail-panel/directGrantControl.test.tsx`",
       "targets": [
         {
           "anchor": {
-            "blob": "3561fb88c5a554c651d34c29026a1b9b393d0667",
-            "content": "sha256:4d0e328f53a03494f78aa3155f45c1f02d750a55918f640037993add3cc6a7c1",
+            "blob": "2c8bb11688199e43565ae637f7a967807d92d240",
+            "content": "sha256:92f7db6a7d8e03f4f86560e1a2008d864027b8df7504a7c56b441b9f7310f924",
             "locator": {
-              "end": 227,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

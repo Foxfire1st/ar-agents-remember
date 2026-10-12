@@ -21,7 +21,7 @@ the compact `TaskNotes` line + resolved references + recorded reports remain the
 
 ## Route Model
 
-- `NotesReaderViewer.tsx` — the screen. LEFT RAIL = the shared `ExplorerTree` fed one folder at a
+- `NotesReaderViewer.tsx` — the screen and artifact-kind dispatch. `useNotesFolderCache.ts` owns the retained folder store, stable paging callbacks, fill/vanish recovery and LRU protection; NotesTree wires it to the shared ExplorerTree. LEFT RAIL = the shared `ExplorerTree` fed one folder at a
   time from `/api/notes/folder`, filling to the open note, emptying a vanished folder with the
   server's reason, and targeting 32 cached folders with LRU eviction. The inserted directory and
   the open note’s ancestor folders are protected: if no unprotected victim exists, eviction stops
@@ -44,8 +44,7 @@ invalidating the notes-specific assertions.
 
 - Read-only over the notes folder server contract (one folder per request in stable order and
   parts, single-request resolve, unchanged read path; confinement and binary/oversize all stay
-  server-side); no store mutation — the screen owns its own folder/content fetch
-  via `data/notes.ts`.
+  server-side); no store mutation — the extracted cache owns folder reads and the screen keeps content reads via `data/notes.ts`.
 - **No second bespoke reader** — the content pane IS the File Viewer's `DualPane`; only the one-folder tree rail
   (the ChangeSetViewer column idiom) and the takeover chrome are local. Panda CSS owns looks; no CSS
   animation (GSAP/Motion only — master invariant).

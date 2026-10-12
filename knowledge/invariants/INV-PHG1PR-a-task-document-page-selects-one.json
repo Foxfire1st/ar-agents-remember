@@ -8,7 +8,7 @@
   },
   "applicability": "Fixed dashboard sprint/master/task document pages.",
   "conditions": [
-    "The objective-first developer amendment governs the head.",
+    "D237 places the objective once as the first block after the complete head and before Now or Steps on each form.",
     "Only available/nonempty blocks appear; older field absence is compatible."
   ],
   "exclusions": [
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A task-document page selects one fixed sprint/master/task skeleton by the model-derived form, preserves the ruled objective-first order and omits blocks with no content rather than drawing an alternative section-order page.",
   "status": "proposed",

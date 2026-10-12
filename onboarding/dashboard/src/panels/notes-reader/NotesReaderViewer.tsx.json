@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
         "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
-        "content": "sha256:429ae93b8db07ee6b37c85237690ac590c9690fa55e8d1b94497373bcd849b0b",
+        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+        "content": "sha256:016ca306847ee42c005234e3ce8edab2b4d2d087da80acf92c20b936452d31c8",
         "locator": {
           "kind": "symbol",
           "name": "NotesTree"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
         "content": "sha256:74ea34aa3ba59fb78acb97e8224a41a84d724ce2d48515df021e374affbbee95",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
         "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
         "locator": {
           "kind": "symbol",
@@ -91,11 +91,11 @@
       ]
     },
     "10": {
-      "note": "Old reader addresses open the same note through the new tree.",
+      "note": "The notes-target reader retains the same note and keyed tree lifetime.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
             "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
             "locator": {
               "kind": "symbol",
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
             "content": "sha256:bfeaf57796ee542d46cf39a6a14592f32b01475c2f57d3970685d8a2cfcd7c70",
             "locator": {
               "end": 71,
@@ -163,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
             "content": "sha256:3bea27808b67f7f2b14f06944df6213fd5be26b2a5702573b0708157a21edd33",
             "locator": {
-              "end": 224,
+              "end": 535,
               "kind": "line_range",
-              "start": 224
+              "start": 535
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },
@@ -210,27 +210,28 @@
       ]
     },
     "8": {
-      "note": "The folder-fed tree adapter with fill, vanish recovery and the folder cap.",
+      "note": "The extracted folder cache owns paging, fill, vanish recovery and the protected LRU target.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
-            "content": "sha256:429ae93b8db07ee6b37c85237690ac590c9690fa55e8d1b94497373bcd849b0b",
+            "blob": "c8dc7ac203076e8432baff9849c2b047c62f3cc3",
+            "content": "sha256:834ee443b8385f5b234a51fdf20227cd61341e9d93226e6b0de0f5f393010216",
             "locator": {
               "kind": "symbol",
-              "name": "NotesTree"
-            }
+              "name": "useNotesFolderCache"
+            },
+            "path": "dashboard/src/panels/notes-reader/useNotesFolderCache.ts"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The whole-log pane renders newest-first with product records muted.",
+      "note": "The whole-log pane keeps newest-first decisions with product records muted.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
             "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
             "locator": {
               "kind": "symbol",

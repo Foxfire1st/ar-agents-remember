@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The test file asserts the cases and limitations described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15dd6d8276cca949ef34bec5728ac1f70e660473",
+            "content": "sha256:b338616ba6de48ba9c27e1edb6c83c3292ec66aa86e61c22844d6cb552692e68",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

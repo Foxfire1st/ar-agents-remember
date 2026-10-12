@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/detail-panel/styles.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
+        "content": "sha256:ede743eb1404b73d5b1c55162a6fff8c24be84f0dec4232a6c9d9c394acb3c5a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-09G1VF",
+      "invariant": "INV-XPCFCB",
+      "origin": {
+        "handoffEntry": "L150-R10",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The track, knob, line, words and note styles live here in dashboard tokens; the old grantButton style is gone.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The three disclosure classes.",
@@ -139,15 +157,32 @@
       ]
     },
     "4": {
-      "note": "The landed inline grant action recipe retains its pending-disabled treatment.",
+      "note": "The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe.",
       "targets": [
         {
           "anchor": {
-            "blob": "d4feecf411b06a3ce8d89a8be0fc0ca4faf88a85",
-            "content": "sha256:3de348a9b6e4f41f9a17d35b15e3970b5bb8fbc9d97a1ed883d4ba657d35e56c",
+            "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
+            "content": "sha256:2a5ed9933a2369048d5c190801d4d25318bc35e0b2403857395839cc14ebf59e",
             "locator": {
               "kind": "symbol",
-              "name": "grantButton"
+              "name": "directSwitch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The direct-execution line has one track, positional variants, knob and giver/notice text styles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
+            "content": "sha256:227bb5cdd33a765cd1dde7e169a160ff814adabab31f0afe661bdc1d7b41ffe7",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 63
             }
           },
           "kind": "code"

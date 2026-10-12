@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "17": {
-      "note": "The component under test.",
+      "note": "The current viewer integrates the extracted folder cache while retaining content kinds.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
             "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
             "locator": {
               "kind": "symbol",
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
             "locator": {
               "kind": "symbol",
@@ -136,14 +136,15 @@
       ]
     },
     "9": {
-      "note": "The takeover the cases drive.\n\nAnchor: `NotesReaderViewer`",
+      "note": "The viewer routes takeover content through the shared pane without a second reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
-            "content": "sha256:5edb8ff05be04a325125144a53dc34bceb44417dd936e8c8beb4df23471fe6d3",
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+            "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "NotesReaderViewer"
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

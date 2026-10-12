@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "resolveLaunchReadiness is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93d2b412210f4bc1e940caa813b6399f5237910d",
+            "content": "sha256:83087251ec33aa1a0615f73d8e1e48bec7a74d36dbcdcb2992938410b4b69e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveLaunchReadiness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "startAllowed is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93d2b412210f4bc1e940caa813b6399f5237910d",
+            "content": "sha256:52cc94fcb358aeaf1bbef412313954442891c30ecc80a4c3e5f2c89be6bc52c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "startAllowed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

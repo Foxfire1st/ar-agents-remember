@@ -10,7 +10,7 @@ Pin the form-shared head, table grammar, whole-round counts and navigable Markdo
 
 ## Code Commentary
 
-Assertions cover objective-first identity/facts/notes, the primary requirement link without repeated text, step and work-in-progress cells, and whole-round review counts when the preview omits the last finding. Report requests use a task-root-relative document reference; register links, hidden cells, nested skip reasons and reference labels keep actual navigation. These seeded component checks are not pixel-colour or first-screen browser measurements.
+Assertions cover identity/facts/header notes followed by one objective outside the complete head, the primary requirement link without repeated text, step and work-in-progress cells, and whole-round review counts when the preview omits the last finding. Report requests use a task-root-relative document reference; register links, hidden cells, nested skip reasons and reference labels keep actual navigation. These seeded component checks are not pixel-colour or first-screen browser measurements.
 
 ## Boundaries
 

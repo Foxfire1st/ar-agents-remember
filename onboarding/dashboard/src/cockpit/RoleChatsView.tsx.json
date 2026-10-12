@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/cockpit/RoleChatsView.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "RoleChatsView is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6191daac657e2abab15f9c6c8f202104c6d5d53f",
+            "content": "sha256:c92f4c9d0a2a9ff30072702e53d2bbc988cec1efef1f78f8bfec48e82406e0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

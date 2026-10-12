@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Own shared bounded document blocks, own-view scroll state and the relocated decision preview; the form readers compose their fixed order elsewhere.
+Own shared bounded document blocks, own-view scroll state and the relocated decision preview; re-export DocHead and ObjectiveLead from their owning module while the form readers compose their order elsewhere.
 
 ## Code Commentary
 

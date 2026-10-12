@@ -35,6 +35,7 @@ not-found` in the serving status idiom.
   joined-key collision: `[]` and `[""]` share a key, so the new empty-text row appears without a second
   resolution request. The earlier different-content-to-empty-text case does send a request; it is not
   the same transition.
+- **content liveness** — equal-content in-flight and settled rerenders reuse the current epoch; StrictMode replay restores a live observer, and a delayed old-content answer cannot replace current content. These are selected mounted cases, not a global exactly-once claim.
 - **recorded reports** — the task's recorded starts render newest-first capped at twenty
   with the explorer link; an unreadable record keeps the Notes link.
 
@@ -49,7 +50,7 @@ asserted payload).
 ### Conventions
 
 Fetch is stubbed per test (never a live server); assertions target testids
-(`note-open-<n>`, `note-ref-<n>`) and the `onOpenNotes` callback payload, never
+(`notes-root-<master>`, `note-ref-<n>`) and the `onOpenNotes` callback payload, never
 implementation internals — the `note-view`/`note-close` testids left with the inline
 reader.
 
@@ -72,6 +73,6 @@ A stubbed-fetch component suite; nothing crosses repositories.
 - The component under test. [1]
 - The folder entry type shaped by the suite's stub payload. [2]
 - The component suite's `stubNotesApi` returns the directly evidenced folder payload. [3]
-- The moved note-content suite covering the reader this surface opens. [4]
+- The reader suite covers the content pane this entry surface opens. [4]
 
 - Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. \[5] [5]

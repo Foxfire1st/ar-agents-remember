@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-        "content": "sha256:a236a9c44c8cc669018409ff80d94d7993b7aea741e91be64e0e4eb9627ad142",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "useDirectGrant"
+        }
+      },
+      "id": "RLZ-08QD2C",
+      "invariant": "INV-JNYJAG",
+      "origin": {
+        "handoffEntry": "L150-R11",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Owns the give/revoke request, pending lock, served adoption and late-reply ignore; carried unchanged from the sealed L94 logic.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:09b11c5fdd27f27353fab155f48d03bab6985b755e9acfc0d67edf7596de915e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectExecutionSwitch"
+        }
+      },
+      "id": "RLZ-13GQSZ",
+      "invariant": "INV-XPCFCB",
+      "origin": {
+        "handoffEntry": "L150-R10",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The single switch line; owns label, track-and-knob control, served words and server notice, and no second control.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:0642d50a5e7087af2ed9352804e45e7affdb528096f490e56011897b57f00a49",
         "locator": {
           "kind": "symbol",
           "name": "MasterViewBody"
@@ -21,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
         "locator": {
           "kind": "symbol",
@@ -39,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-        "content": "sha256:0b7cc0e464272b00c46f4dc596a25d451e4bd73822052d26d80d096df2ba45e5",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:b144b27f78f15e30a54d930b72464b0182d8d57a8feef01e808a214c0e8a9f0e",
         "locator": {
           "kind": "symbol",
           "name": "TaskReaderPage"
@@ -57,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:6f86a46734ed1ee086caffff3fed8e72cc4896dbea53914f2efd7a101f100b58",
         "locator": {
           "kind": "symbol",
@@ -75,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:2bd524db0bebdba85ca53bb4b8f6c7f4c1e5c9237bd9251a733193e7f683ba8c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:144e2cf21263143010633b0c1560c1798a73aad91932d45cf3a102f6f1bd7b7e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
         "locator": {
           "kind": "symbol",
@@ -147,7 +183,25 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDirectGrant"
+        }
+      },
+      "id": "RLZ-F5RFVV",
+      "invariant": "INV-8JGKW8",
+      "origin": {
+        "handoffEntry": "L150-R12",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Routes subTask-plus-planning to the switch, other granted states to words, and the rest to nothing; masters never reach it.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
         "locator": {
           "kind": "symbol",
@@ -165,7 +219,25 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:b2cbfa30b47b310d2ca5bad90a32d28abf69a916ae96969b11069b584c11fb4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectExecutionWords"
+        }
+      },
+      "id": "RLZ-R84WB0",
+      "invariant": "INV-8JGKW8",
+      "origin": {
+        "handoffEntry": "L150-R12",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The bare-words line for states where the grant cannot be changed.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
         "locator": {
           "kind": "symbol",
@@ -183,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-        "content": "sha256:b28c2ac52b3b78bc707a258d29bdb31a1ac93a83735e4e052aa0f3cf0581ee67",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:ded4da04e5c9ff3f119ac089ee3e8e9c0137a0ac5bbd9712a41be66114625ba3",
         "locator": {
           "kind": "symbol",
           "name": "OverviewTop"
@@ -201,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:8df664e2fe24761610c3c7dca8d0b22e89d0b3cc895f0cce8a67ff0132b0c97a",
         "locator": {
           "kind": "symbol",
@@ -219,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
         "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
         "locator": {
           "kind": "symbol",
@@ -237,8 +309,8 @@
     },
     {
       "anchor": {
-        "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-        "content": "sha256:91aac48b29d99c74636870bd6952532ff4843407c8bf7ab6763f671b55a1c8fe",
+        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "content": "sha256:bab9d24dbb09fd1f7e58d99d88700fe58d012d0e27b186b25650a9dfc69fcef9",
         "locator": {
           "kind": "symbol",
           "name": "MasterPageBody"
@@ -260,11 +332,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
             "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
             "locator": {
               "kind": "symbol",
               "name": "TaskContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Sprint and master composition draws the complete head, then one bounded objective, before body and Now.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:ded4da04e5c9ff3f119ac089ee3e8e9c0137a0ac5bbd9712a41be66114625ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewTop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Task composition draws the complete head, then the objective, before the task body and Steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b144b27f78f15e30a54d930b72464b0182d8d57a8feef01e808a214c0e8a9f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReaderPage"
             }
           },
           "kind": "code"
@@ -276,7 +380,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
             "content": "sha256:91a574b8a85a110788822e80737698d9174ee6a637ef1a59915db5cc1ab8df2e",
             "locator": {
               "kind": "symbol",
@@ -292,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
             "content": "sha256:26a5ae1d241cf92d32d9a1ea2245201b15395d984d1628742c36bdde17015ef1",
             "locator": {
               "kind": "symbol",
@@ -325,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
             "content": "sha256:9e5060df5ed7f24433425132325bf4cdf358d354da4db8e768c9c329966d26cd",
             "locator": {
               "kind": "symbol",
@@ -342,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
             "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
             "locator": {
               "kind": "symbol",
@@ -354,15 +458,15 @@
       ]
     },
     "7": {
-      "note": "The landed control retains its authored-leaf guard, pending state and typed refusal without browser authorization authority.",
+      "note": "The planning-task switch keeps served position while pending and exposes giver and server notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-            "content": "sha256:8288d72b4ad3ed83fa7665c841ecc1a2781e6204bd0fb21f94671c7ae3e26287",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:09b11c5fdd27f27353fab155f48d03bab6985b755e9acfc0d67edf7596de915e",
             "locator": {
               "kind": "symbol",
-              "name": "DirectGrantControl"
+              "name": "DirectExecutionSwitch"
             }
           },
           "kind": "code"
@@ -370,26 +474,31 @@
       ]
     },
     "8": {
-      "note": "Leaf-row and selected-leaf adapters place the preserved badge/control in the fixed page structure.\n\nAnchor: `leafRowGrant` `TaskDirectGrant`",
+      "note": "Only a planning subTask receives the switch; other granted states receive bare words.",
       "targets": [
         {
           "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-            "content": "sha256:93044e5625357201d6ccf7473e491dd93818b4e81e46e7655bfe377c14c552a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafRowGrant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
-            "content": "sha256:43aa31f3bd0ca6e274db2984d5b48a278d61067b530d27cf7b83a028634fc552",
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
             "locator": {
               "kind": "symbol",
               "name": "TaskDirectGrant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The grant hook synchronizes served content and rejects late replies after identity turnover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDirectGrant"
             }
           },
           "kind": "code"

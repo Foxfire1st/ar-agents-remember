@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The renderer and token stylesheet must agree on exactly one labelled track-and-knob line with served grant words; a text-only control or repeated line would reintroduce the rejected presentation."
+  },
+  "applicability": "The direct-execution line on a selected planning subTask own page.",
+  "conditions": [
+    "The selected planning subTask resolves its canonical document reference."
+  ],
+  "exclusions": [
+    "Other granted task states render bare giver words without a switch.",
+    "Grant storage, backend start-evidence admission and caller permission authority."
+  ],
+  "id": "INV-XPCFCB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "directGrantControl.test.tsx off-switch and on-switch cases; implementation-s7.md line texts"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "L150-R10",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The task page carries exactly one direct-execution line: the label Direct execution, a switch with track and knob, and given-by words when granted.",
+  "status": "proposed",
+  "supersedes": []
+}

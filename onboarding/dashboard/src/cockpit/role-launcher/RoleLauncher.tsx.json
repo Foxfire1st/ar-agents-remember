@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
         "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
         "locator": {
           "kind": "symbol",
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
-        "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+        "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+        "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -166,15 +166,15 @@
   ],
   "references": {
     "1": {
-      "note": "A bound row decides startability from the bound role, the live occupant and the canStart answer.",
+      "note": "The final Start guard joins backend startability, preparation and bound-seat occupancy.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
-            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:5c043292819f5ee221a1c2febb277fa9a80e8e9f7e3627652829136e40cf5a02",
             "locator": {
               "kind": "symbol",
-              "name": "boundCanStart"
+              "name": "startButtonDisabled"
             }
           },
           "kind": "code"
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
             "content": "sha256:e3e8710314ea65b6238f5c89c5c6bcdcef478aedc0b04716e092b75e60c3768b",
             "locator": {
               "kind": "symbol",
@@ -214,12 +214,12 @@
       ]
     },
     "4": {
-      "note": "The shared owner renders selectors, chips, progress-labelled actions and the existing failure line for both hosts.",
+      "note": "The shared composition wires field sections, repair effects and the action bar.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
-            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
             "locator": {
               "kind": "symbol",
               "name": "RoleLauncher"
@@ -230,43 +230,32 @@
       ]
     },
     "5": {
-      "note": "The current source preserves singleton/Projects gating and the selected Investigator exception.",
+      "note": "Readiness retains ordinary singleton gating and the request-scoped exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
-            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "blob": "93d2b412210f4bc1e940caa813b6399f5237910d",
+            "content": "sha256:83087251ec33aa1a0615f73d8e1e48bec7a74d36dbcdcb2992938410b4b69e4e",
             "locator": {
               "kind": "symbol",
-              "name": "RoleLauncher"
-            }
+              "name": "resolveLaunchReadiness"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Whole-control wrapping replaces unconditional fixed-height/wide-nowrap presentation.",
+      "note": "The visual grid keeps whole-control wrapping.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
             "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
             "locator": {
               "kind": "symbol",
               "name": "roleLauncherGrid"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
-            "content": "sha256:5d43d2c5be4fa761a4f2d7c9f401c9876ecd615c04f78723e824e94fd042e73c",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 14
             }
           },
           "kind": "code"
@@ -278,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
             "content": "sha256:7c92b67fc525f745f827a36d355664f07c534d0fc2dc95014268956909730ff1",
             "locator": {
               "kind": "symbol",

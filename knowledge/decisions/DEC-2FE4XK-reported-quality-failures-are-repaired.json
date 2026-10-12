@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The developer explicitly requires repair without exception and withdraws the bypass reading."
+  },
+  "alternatives": [
+    {
+      "option": "Repair what the tooling reports, including inherited failures, without bypassing the hook.",
+      "reason": "The checks exist to prevent bad landings; finding provenance does not make a failure acceptable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave inherited or allegedly out-of-scope gate failures, wait for other work, or bypass the hook after a hand run.",
+      "reason": "The developer explicitly requires repair without exception and withdraws the bypass reading.",
+      "reconsider_when": "Only a new explicit developer ruling replacing this no-exception boundary.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Inherited provenance is not a waiver for a reported gate failure in changed files.",
+    "Restructuring does not alter lint rules, add suppressions or move files into weaker patterns.",
+    "Measured suite results and separate owner dispositions remain evidence; no red output is relabelled green."
+  ],
+  "context": "Reported gate failures were being left as inherited debt, repair was delayed, and a hookless parked merge was considered after a hand run. The developer explicitly rejects provenance-based exceptions and gate bypass.",
+  "decider": "developer D229, canonical direction and approved MIK-R150@v1",
+  "id": "DEC-2FE4XK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D229; requirements/MIK-R150-v1-the-dashboard-passes-its-own-lint-again.md @ sha256:4393fe33b331372f904708446438a9f181882612ab0c3ad13640d471d4ef56e9"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "curator-decision-D229",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

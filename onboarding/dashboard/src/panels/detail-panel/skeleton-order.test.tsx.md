@@ -10,7 +10,7 @@ Pin fixed descendant block order and empty-block omission on all three document 
 
 ## Code Commentary
 
-Full task, master and sprint fixtures require their fixed ordered blocks with the objective inside the head; bare fixtures contain only the head. Intro-only index prose keeps the meaningful index block. Master Now uses actual step/review facts and sprint progress resolves commanded-master documents.
+Full task, master and sprint fixtures require fixed ordered blocks with one objective immediately after the complete head, before Steps or Now. Each form has a mounted DOM-order assertion for that boundary; bare fixtures omit an absent objective and contain only the head. Intro-only index prose keeps the meaningful index block. Master Now uses actual step/review facts and sprint progress resolves commanded-master documents.
 
 ## Boundaries
 

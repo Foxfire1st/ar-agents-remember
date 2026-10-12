@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Displaying an editable switch for a non-planning task would offer a control the server cannot honor; preserving bare giver words separately prevents that costly status/authorization confusion."
+  },
+  "applicability": "Status-scoped direct-execution presentation on the selected task own page.",
+  "conditions": [
+    "The projected document kind, status and served grant select switch, bare words or absence."
+  ],
+  "exclusions": [
+    "Master/sprint row presentation, which offers neither a control nor a grant mark.",
+    "External grant storage and native start admission."
+  ],
+  "id": "INV-8JGKW8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "directGrantControl.test.tsx non-planning and master cases; implementation-s7.md line texts"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "L150-R12",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The switch draws only for a planning subTask; any other granted state shows bare Direct given-by words and grantless states show nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

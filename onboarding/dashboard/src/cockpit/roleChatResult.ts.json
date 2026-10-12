@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/cockpit/roleChatResult.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+        "content": "sha256:d70f16cf0ab9ebe62c8e94f36a07b69f498940c7544d0c3964961ce47225fca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "openRoleExecutionReport"
+        }
+      },
+      "id": "RLZ-6P22KG",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted report opener checks the live exact request before and after the recorded-report read, opens the shared reader, and leaves an actionable sticky failure on an absent/unreadable report.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+        "content": "sha256:d70f16cf0ab9ebe62c8e94f36a07b69f498940c7544d0c3964961ce47225fca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "openRoleExecutionReport"
+        }
+      },
+      "id": "RLZ-N2R22B",
+      "invariant": "INV-DH5NRM",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted recorded-report opener opens the existing Notes Reader or gives a scoped actionable absence/error; it creates no second viewer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+        "content": "sha256:70b82d2926585a217e44d2cc9952dc3ba3544815f909edfe4edbfe61ad9d715f",
+        "locator": {
+          "kind": "symbol",
+          "name": "fetchRoleExecutionResult"
+        }
+      },
+      "id": "RLZ-Y3GC40",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted Result transport owns not-found, launch-in-progress, identity and connection outcomes under the current selected request and the single error channel.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "fetchRoleExecutionResult is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+            "content": "sha256:70b82d2926585a217e44d2cc9952dc3ba3544815f909edfe4edbfe61ad9d715f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRoleExecutionResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "openRoleExecutionReport is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+            "content": "sha256:d70f16cf0ab9ebe62c8e94f36a07b69f498940c7544d0c3964961ce47225fca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "openRoleExecutionReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

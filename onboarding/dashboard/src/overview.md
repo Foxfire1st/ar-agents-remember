@@ -137,7 +137,7 @@ renders taller than the viewport without its own scrollport has the same defect.
 
 ## Hot Path Summary
 
-The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
+The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate.
 
 The generated lifecycle schema/types and matching fixture carry only code and memory-content mutation phases. The contract test rejects retired ledger mutation vocabulary; consumer ledger display remains distinct from transaction authority.
 
@@ -567,7 +567,7 @@ must not recreate that coupling.
 
 ## Task-local grant presentation
 
-The task reader joins optional external directGrant display and developer Give/Revoke control through the dedicated adapter. The client cannot self-grant by editing TaskDocument or settings, and projection evidence never authorizes execution.
+The task reader presents one track-and-knob Direct execution switch only on a planning subTask's own page, through the existing external grant adapter. Other granted task states show bare giver words; masters and sprints show neither a row control nor a mark. The client cannot self-grant by editing TaskDocument or settings, and projection evidence never authorizes execution.
 
 ## Evidence
 

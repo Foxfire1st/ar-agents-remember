@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/cockpit/roleChatExecutionView.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "resolveRequestExecution is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
+            "content": "sha256:d4a498189b572064fcd25cc36f014dbad368adb39c5ab29e02db8dccd069ec0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRequestExecution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "resolveLauncherCatalog is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
+            "content": "sha256:d83624f35e0f7f818edef7f829fd9b6c7f347b91574cb9f8956b0a66eceb6747",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveLauncherCatalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-        "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+        "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
           "name": "FeatureControl"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-        "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
+        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+        "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
         "locator": {
           "kind": "symbol",
           "name": "RoleLaunchDefaults"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-        "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+        "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+        "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
           "name": "FeatureControl"
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "Feature controls share the launcher look; permission values stay settings-owned chips, while selectors retain complete selected labels and default provenance.",
+      "note": "Permission dispatch preserves settings-owned chips; FeatureOverrideSelect owns selectable labels and hover.",
       "targets": [
         {
           "anchor": {
-            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
             "locator": {
               "kind": "symbol",
               "name": "FeatureControl"
@@ -74,27 +74,15 @@
       ]
     },
     "2": {
-      "note": "Explicit feature values and identities remain in the override; an empty override is removed.",
+      "note": "The feature-value updater retains identities and removes only an empty override.",
       "targets": [
         {
           "anchor": {
-            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-            "content": "sha256:4a8a61908695dd7e21a1478307a377cfd208483ff704b8687ce339542aaeed0c",
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:beb1dc01ed8c6a7ddacdf6986b39bbe91aa47a708a081eaacf0ac025cbdda884",
             "locator": {
               "kind": "symbol",
-              "name": "RoleLaunchFeatures"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-            "content": "sha256:23a256a5602b21807e407cee37ba28d455bfd88831367149b68a91eb423b78c8",
-            "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 66
+              "name": "withFeatureValue"
             }
           },
           "kind": "code"
@@ -102,12 +90,12 @@
       ]
     },
     "3": {
-      "note": "Mode and optional instruction chips replace the defaults sentence and carry provenance in hover.",
+      "note": "The ready defaults composition draws the host mode and optional instruction chips.",
       "targets": [
         {
           "anchor": {
-            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
-            "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
             "locator": {
               "kind": "symbol",
               "name": "RoleLaunchDefaults"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
         "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
         "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
         "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
         "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
         "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
-        "content": "sha256:1ec5a815bf7fa2da75cef49002d09e9efbb173924c0087ef4ef70687d19cf10a",
+        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "content": "sha256:f7454094b7a01fb3368c54aa7400d3a07ed564c000b0c648e6c994c95e34f906",
         "locator": {
           "kind": "symbol",
           "name": "ObjectiveLead"
@@ -112,15 +112,14 @@
   ],
   "references": {
     "1": {
-      "note": "Every form shares identity, objective-first placement, independent fact strip and note head.",
+      "note": "Every form shares the complete identity, fact strip and note head; objective placement belongs to the skeleton composition.\n\nAnchor: `DocHead`",
       "targets": [
         {
           "anchor": {
-            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
-            "content": "sha256:4a88aa07d18b9d657eea6bc7946cbac1549267b79874ba9dcaf108938b255e7d",
+            "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+            "content": "sha256:5e21dd5e5b3319ac02798af3b7a2356bdfc04c6489f187f603514101758befc3",
             "locator": {
-              "kind": "symbol",
-              "name": "DocHead"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -132,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+            "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
             "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
             "locator": {
               "kind": "symbol",

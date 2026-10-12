@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The developer explicitly places it below the task header across all three forms."
+  },
+  "alternatives": [
+    {
+      "option": "Objective is the first bounded block after the complete head, before Now on sprint/master and Steps on task.",
+      "reason": "It preserves objective-first reading while keeping form/title/status/facts/header notes and series line together in the head, as the developer indicated.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep Objective between title and facts as the earlier recorded interpretation did.",
+      "reason": "The developer explicitly places it below the task header across all three forms.",
+      "reconsider_when": "Only a new developer-approved page order changing the objective/head boundary.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Objective bound, more link and same-document open state remain unchanged.",
+    "Objective is not duplicated and no other block is reordered.",
+    "All three form skeletons draw ObjectiveLead after the complete head; their form-specific body order is otherwise preserved."
+  ],
+  "context": "The prior objective-first decision recorded the architect interpretation “directly below the title and before facts”. The developer clarifies that Objective belongs below the complete head on all three forms, before Now or Steps; that earlier placement interpretation is withdrawn.",
+  "decider": "developer D237, canonical direction and approved MIK-R150@v1",
+  "id": "DEC-NW7G0Y",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-PHG1PR"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-M01WK7"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D237; requirements/MIK-R150-v1-the-dashboard-passes-its-own-lint-again.md @ sha256:4393fe33b331372f904708446438a9f181882612ab0c3ad13640d471d4ef56e9"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "curator-decision-D237",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-YDCC8V"
+  ]
+}

@@ -174,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 363,
+              "end": 368,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9b65d9877cdc2f9732fff8390cf9319481cd743",
+            "blob": "87432f256a1d00b2ed84946aff81eff25efa6d47",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1292,
+              "end": 1300,
               "kind": "line_range",
-              "start": 1291
+              "start": 1299
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -371,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:81e9e12c0c00606d352fdec65d8459fe7a8f3fffe284126ac6f40d3945762837",
             "locator": {
-              "end": 744,
+              "end": 791,
               "kind": "line_range",
-              "start": 738
+              "start": 785
             },
             "path": "dashboard/src/data/review.ts"
           },

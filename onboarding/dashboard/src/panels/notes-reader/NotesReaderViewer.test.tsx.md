@@ -31,8 +31,8 @@ takeover/content-pane behavior):
   to the note with the way folders open and the note marked.
 - **Fill/vanish/cache** — fill-to-note, vanish (twice), and LRU-plus-pin cache
   cases.
-- **Whole log** — whole-log cases from line 628 on; the newest finalizer record
-  stands FIRST in the whole log, muted (line 647 on).
+- **Whole log** — the whole-log cases assert newest-first recorded time with product records muted, independently of storage order.
+- **Folder callback stability** — an unrelated rerender does not refetch a retained folder; expanding another folder still performs the demanded load.
 - **Task-report read** — exact task-report read by recorded identity; existing
   role-report preservation kept.
 - **Transport** — folder (`/api/notes/folder`), read (`/api/notes/read`),
@@ -137,9 +137,9 @@ A frontend component test; nothing crosses repositories.
 ### Repo-Internal References
 
 - The cases mount the shell explicitly on Operations. [8]
-- The takeover the cases drive. [9]
+- The viewer routes takeover content through the shared pane without a second reader. [9]
 
-- The component under test. [17]
+- The current viewer integrates the extracted folder cache while retaining content kinds. [17]
 - The shell driven by the takeover-wiring test. [18]
 - `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. [19]
 - The seed task document is checked against the generated TaskDocNode. [20]
