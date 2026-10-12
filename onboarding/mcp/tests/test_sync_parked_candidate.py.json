@@ -1,13 +1,321 @@
 {
   "path": "mcp/tests/test_sync_parked_candidate.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+        }
+      },
+      "facet": "Refused cancellation preserves the prior journal phase and tree bytes.",
+      "id": "PRF-159F3M",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+        }
+      },
+      "facet": "A retry after one-side cancellation restoration keeps authority and finishes the paired return.",
+      "id": "PRF-1BC0JZ",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:755b4a53687117e45aaa5b19bcc2022df52be8e9a52a7129eefcc10c8a64f104",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_03a_missing_path_beyond_sample_fails_proof"
+        }
+      },
+      "facet": "A missing parked path beyond the bounded journal sample still fails the complete proof.",
+      "id": "PRF-26BB6X",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:0f793c55956056efbea16c03ea82387bd30e6e367c04d427909ebd4d80ae1941",
+        "locator": {
+          "kind": "symbol",
+          "name": "ResumedConvertedMemoryMergeTests.test_07a_untouched_resume_cancels_both_trees"
+        }
+      },
+      "facet": "The resumed untouched converted-memory witness cancels and returns its asserted memory state; the separate Reviewer paired companion supplies both-side/head/index execution evidence.",
+      "id": "PRF-2R150F",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:27cbf2aafd51683a2bf78ad560c1997773877b208a8cb94f9a27b1bfcf950267",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_already_held_edit_finishes_the_sync"
+        }
+      },
+      "facet": "An already-held blank-line edit beside unrelated landed changes finishes synced with restored bytes.",
+      "id": "PRF-3M8WCC",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:1f792785830124a732e645f0a94d0dbc8b02f4561b6b0ace0921f04dd641848c",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_02_restored_code_wip_returns_on_memory_stop_cancel"
+        }
+      },
+      "facet": "A memory stop does not lose code-side work already restored before cancellation.",
+      "id": "PRF-40GF9R",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:c5f0f478e8d2a0ed81768ac706c29fc9363675629d9e782e473416b6cc5066fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_05_ordinary_merge_output_cancels"
+        }
+      },
+      "facet": "Untouched ordinary staged merge output is attributable and cancels.",
+      "id": "PRF-77D446",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+        }
+      },
+      "facet": "Recorded cancelling progress retains the authority needed for the same action to resume.",
+      "id": "PRF-AFZBNW",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:cb93871841beb51a9aa02808dac44ce1bf78575dbe00789e77fccae4cd2741cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_06a_uncomputable_symlink_cancel_leads_back"
+        }
+      },
+      "facet": "A stash-owned uncomputable symlink can be returned by cancellation.",
+      "id": "PRF-AG20V7",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:c3cf99553bbf87a081177b6967d01eefaa4240a0e2daa937fb78d322180ebc16",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_cancel_after_a_failed_proof_restores_heads_and_parked_work"
+        }
+      },
+      "facet": "Cancellation after failed restoration returns the code worktree to its pre-sync HEAD and parked tree and retires the recorded stash; this proving unit does not assert the memory-side HEAD, index or tree.",
+      "id": "PRF-ASNHQJ",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:e15009e15951dfb2ca0546f02de78e361c51b7ed17cbc95d2b541b7dfbaa0a67",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoundTwoVariantTests.test_03b_failed_full_inventory_never_accepts_the_sample"
+        }
+      },
+      "facet": "An injected complete-inventory failure cannot pass on a valid-looking sample.",
+      "id": "PRF-ENFG5M",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+        }
+      },
+      "facet": "A later owner edit is named and cancellation leaves the journal and tree unchanged.",
+      "id": "PRF-GR9EZZ",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:c3ffdc3ddbc4c4a0e6efa19c8b9b842b44189c3ec64a53ab58719954b873b5ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_refuse_cancel"
+        }
+      },
+      "facet": "Later index-only content cannot be discarded despite matching worktree content.",
+      "id": "PRF-H3CHMZ",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+        }
+      },
+      "facet": "Removing a parked entry causes a named restoration-proof failure with its stash retained.",
+      "id": "PRF-MM2DYD",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:604723ca57804f0ac5525bf01938cb629d78f18efd0da92236c8ccbda9dbeeef",
+        "locator": {
+          "kind": "symbol",
+          "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_refuses_without_later_work_claim"
+        }
+      },
+      "facet": "An owner-write control after a converted-memory interruption receives a truthful unproved-path refusal with unchanged state.",
+      "id": "PRF-MWDSXT",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:bc22966de69ef598327fa1e5434384e6aac548e562153e51f6b06bc51c42f6b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoundTwoVariantTests.test_01b_crash_window_owner_bytes_are_never_blessed"
+        }
+      },
+      "facet": "Owner changes during an interrupted reapply are not adopted as transaction output.",
+      "id": "PRF-PTQC32",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+        }
+      },
+      "facet": "Failed restoration exposes the missing path, retained stash, cancel recovery and do-not-edit instruction.",
+      "id": "PRF-RHSGR7",
+      "invariant": "INV-04KNZY",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 2",
+        "leaf": "260928-MIK-L153"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+        "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ParkedCandidateTests.test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it"
+        }
+      },
+      "facet": "A genuine parked reapply conflict is retained, then cancelled without losing parked content.",
+      "id": "PRF-XYQWF9",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Code and memory WIP return, with cache excluded from the memory candidate.",
+      "note": "Code and memory WIP return, with cache excluded from the memory candidate.\n\nAnchor: `test_parked_candidate_is_carried_and_returned`, `test_parked_memory_candidate_is_carried_and_returned`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:0408898e83b63a79b466f84dc5554d6a9717f30c669756deddc240c9a9c81298",
             "locator": {
               "kind": "symbol",
@@ -18,7 +326,7 @@
         },
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:76c270e3360dc2879450c0a48b5e52fa2de98a1c8f1d884040a256db73ecc75f",
             "locator": {
               "kind": "symbol",
@@ -34,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
             "locator": {
               "kind": "symbol",
@@ -46,11 +354,11 @@
       ]
     },
     "3": {
-      "note": "Crash recovery and retained-source continuation return parked work.",
+      "note": "Crash recovery and retained-source continuation return parked work.\n\nAnchor: `test_resume_returns_the_candidate_a_crash_left_parked`, `test_resolving_a_retained_merge_returns_the_parked_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:a197d22d70c4a74f2fc14a879c6509e8c133b34923c3e6fbe43435472b895839",
             "locator": {
               "kind": "symbol",
@@ -61,7 +369,7 @@
         },
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:b6a37b97562af76d85475fcd33c7530b9801d2e5a2fa594aecb5d85b2d9057a8",
             "locator": {
               "kind": "symbol",
@@ -77,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
             "content": "sha256:2f2d91692a8e110087965aeb39f8f2f60778e6721e5ace8a0c9042845a15ebe5",
             "locator": {
               "kind": "symbol",
@@ -89,11 +397,11 @@
       ]
     },
     "5": {
-      "note": "Production parked-content boundary and exact restore proof.",
+      "note": "Production parked-content boundary and exact restore proof.\n\nAnchor: `park_worktree_wip`, `prove_parked_wip_restored`",
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
             "locator": {
               "kind": "symbol",
@@ -105,8 +413,8 @@
         },
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
-            "content": "sha256:a8d5c04f5077bf0a3a49869b23a27b0541df5d39eb33799b468ace30092d11e5",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:6d2beacdabb7c9d68f26cb758dfac5e86811f0592561eb025c05829e1b2c2cec",
             "locator": {
               "kind": "symbol",
               "name": "prove_parked_wip_restored"
@@ -114,6 +422,21 @@
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An identical-byte carried line is tested through the public sync tool with an exact current-block assertion.\n\nAnchor: `ResumedConvertedMemoryMergeTests.test_07c_identical_bytes_carried_line_measures_current`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:0df5be11264665a25947c2c45fb0d64598fd0b290f43895e4e6c90d015d072ef",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

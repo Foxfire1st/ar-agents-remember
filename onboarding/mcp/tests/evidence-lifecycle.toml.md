@@ -26,6 +26,14 @@ it, and which test modules or source files consume it. Every stable contract ide
 the file.
 
 `evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of six artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
+## Parked-candidate test support consumers
+
+`mcp/tests/test_sync_parked_candidate.py` is an exact consumer of three existing support artifacts: `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py` and `knowledge_conversion_test_support.py`. Its identical-byte review-rebinding case reaches that shared support through the existing real-tool fixture helpers. Only consumer membership is extended: no artifact/contract identity, owner, lifetime or replacement contract changes. Registration is reachability accounting, not test execution or acceptance.
+
+- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. [268]
+- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. [269]
+- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. [270]
+
 ## Current master-retirement readiness registration
 
 `mcp/tests/test_master_retirement_readiness.py` also consumes the existing `mcp/tests/lifecycle_enclosure_test_support.py` artifact. L149 adds that single consumer entry without adding or changing an artifact or contract identity. This declaration is reachability accounting, not an execution receipt.

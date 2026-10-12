@@ -12,11 +12,11 @@ Contract-addressed driver for resumable source synchronization.
 
 ### Logic
 
-Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash. [1] [2]
+Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash.
 
-Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Validator refusal leaves phase/staged merge intact and names repair. [4] [6] [9]
+Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Validator refusal leaves phase/staged merge intact and names repair.
 
-Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored. [5]
+Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored.
 
 
 `sync_contract_under_authority` validates input choices and reads the enclosure-root journal. It
@@ -69,6 +69,8 @@ or which task's `<task-id>-crossing-<n>.json` takes a record conflict's row (a m
 the side needs resolution and when it completes. For an ordinary sync it is empty, and the journal then
 omits the key (`sync_transaction_state`).
 
+Retained output is attributed at the mutation boundary. `_run_side` passes the same settled paired code and crossing owner into the merge and `recapture_resumed_merge`. A resumed converted-memory merge earns retained fingerprints only after reproducing both Git and its structural crossing; the mere presence of an active merge does not establish byte ownership. `_persist_fresh_validator_stop` records fresh same-call staged memory output without changing the validator refusal. It does not bless an owner-resolved or unproved crash-window tree.
+
 ### Conventions
 
 The driver owns phase routing and delegates Git mechanics, journal storage, pinned authority,
@@ -98,69 +100,58 @@ consumer artifact on the memory side, not a second source of sync truth.
 
 No new implementation or live-state operation is authorized by this documentation pass.
 
-
 ## Evidence
 
 ### Docs References
 
-No Domain Documentation source is configured for this repository. No external domain documents
-were available through the configured registry to consult; the current claims are grounded in the
-working source and package-local evidence below. The registry is discovery input, not a citation.
-
-No configured external domain-documentation evidence.
-
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets and exact ranges were checked against the L9 working source.
-Source declarations and test assertions are distinguished from execution and acceptance evidence.
-
-- The driver validates choices and routes retained or new transactions: continue or cancel only. [45]
-- The one continuation a hand-staged resolution ends in; no authored decision is stored. [46]
-
-
-
 - Current input and journal routing. [1]
-
-
-- Moving candidate park. [2]
-
-
-- Validator refusal retains repair state. [4]
-
-
-- Structural report journaling. [5]
-
-
-- Settled code pairing. [6]
-
-
-- Current continuation. [9]
-
 
 - Real content conflict continuation scenario. [18]
 
-
+- Moving candidate park. [2]
 
 - Dirty work admission and parking use complete typed side records. [33]
+
 - Currentness and continuation use Git facts and content-only conflicts. [34]
+
 - The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
+
 - The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path. [36]
+
 - The memory merge is paired with the code side's settled result commit, or with nothing before it settles. [37]
+
 - A resolved memory conflict that breaks validation is refused on `continue` and syncs after the repair. [38]
+
 - **The side the retained phase names is read in one place, so phase and side cannot disagree.** [39]
+
+- Validator refusal retains repair state. [4]
+
 - Pinned authority and parked-work restoration remain separate owners. [41]
+
 - Terminal finalization/cancellation and damaged-journal recovery are delegated. [42]
+
 - The cutover lock at sync admission: unconverted on every side and a locked repository. [43]
+
 - The lock is asked before the preflight of the participating sides. [44]
 
+- The driver validates choices and routes retained or new transactions: continue or cancel only. [45]
+
+- The one continuation a hand-staged resolution ends in; no authored decision is stored. [46]
+
+- The driver uses one paired-code/owner context for merge and resumed capture. [47]
+
+- Fresh validator-stop output is captured without blessing an owner window. [48]
+
+- Structural report journaling. [5]
+
+- Settled code pairing. [6]
+
+- Current continuation. [9]
 
 ### Cross-Repo References
 
-The code/memory or fixture-repository boundaries above are established by package-local source.
-No additional configured external or sibling-repository evidence is claimed.
-
-No additional configured cross-repository evidence.
-
-
-No cross-repository contract is established by this file.
+No additional configured cross-repository contract is asserted.

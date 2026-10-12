@@ -12,11 +12,11 @@ Exact Git mutations and proofs for resumable code and memory-content sync.
 
 ### Logic
 
-WIP is parked/restored under recorded ownership; only memory-side root memory.md is disposable cache. Code files with that name retain ordinary semantics. [1] [2]
+WIP is parked/restored under recorded ownership; only memory-side root memory.md is disposable cache. Code files with that name retain ordinary semantics.
 
 Before Git mutates a divergent memory merge, _knowledge_merge plans structural knowledge/onboarding merge for any converted side: all-converted trees merge directly, crossings convert legacy sides first, and only all-unconverted sides use plain Git. _apply_knowledge_merge installs clean/conflicted items and writes a report when the merge leaves something for the curator: conflicts, a converted side, or — since MIK-R66 — alignment diagnostics (renumbered references, kept evidence lines, skipped cards), even on a clean merge.
 
-Remaining real conflicts go to the agent. Staged continuation closes crossing history and validates the exact staged tree against both parents/paired code before the admitted ordinary merge commit. Refusal leaves the merge staged; no dataset stage or row-decision route remains. Rollback retains exact ownership and restores tracked cache before abort. [8] [12] [14]
+Remaining real conflicts go to the agent. Staged continuation closes crossing history and validates the exact staged tree against both parents/paired code before the admitted ordinary merge commit. Refusal leaves the merge staged; no dataset stage or row-decision route remains. Rollback retains exact ownership and restores tracked cache before abort.
 
 
 Ref reads distinguish invalid names, absent refs, and inspection errors. Pinned refs use expected-value creation/deletion, and worktree identity includes the recorded repository and branch. A completed side must be the admitted fast-forward or an exact two-parent merge in pre-sync/source order.
@@ -26,6 +26,10 @@ Dirty-path and WIP helpers take the typed side record. Only the memory domain ex
 **Since MIK-R22, the memory merge is validated before it is committed.** `start_side_merge` and `continue_side_merge` take an optional keyword `paired_code` (a `worktrees.knowledge_validation.PairedCode`: the code side's settled result commit) and thread it through `_existing_side_merge` and `_continue_memory_merge` to `_finish_staged_memory_merge`. After the cache ignore rule is staged, that function writes the staged index as a tree (`git write-tree`) and calls `memory_commit_refusal` with the tree, both parents (`preSyncHead`, `sourceCommit`) and `paired_code`, before `git commit --no-edit`. A refusal raises `SyncKnowledgeValidationError`, a subclass of `SyncGitProofError`, and the merge stays staged: nothing is committed, and `HEAD` and `MERGE_HEAD` are unchanged. Unconverted memory, where neither the candidate nor a parent holds `knowledge/layout.json`, gets `None` from the helper and commits exactly as before. Code-side merges and memory plans that are not a merge (fast-forward, skip, already-current) are not validated here.
 
 The cache is refreshed as a disposable view after applicable memory results. A narrow cache-only stash conflict recovery additionally requires a clean content prestate and the existing restored-WIP proof. Other Git failures remain errors. Rollback and temporary removal retain exact side/ref identity and refuse later substantive work.
+
+Restoration compares each substantive parked entry with the computed reapply onto the carried head, rather than dirty-path presence or whole-file equality. `stashed_parked_paths` enumerates tracked changes and the untracked third parent completely; a capped journal sample is diagnostic only and unreadable inventory cannot pass. Already-held edits beside unrelated landed changes therefore restore successfully. Non-computable content fails the restoration proof; exact stash-owned raw content can still establish cancellation ownership where supported.
+
+Cancellation ownership is separate from restoration proof. `assess_stash_tree` compares worktree and index content against live recorded holders; `assess_retained_tree` checks operation-created worktree-plus-full-index fingerprints. Unknown attribution is not later-work attribution. Resumed merges and crash reapplies earn fingerprints through exact scratch reproduction of dirty/untracked sets and per-path content/index state; converted-memory replay includes structural crossing, paired code and owner. Where that proof fails, cancellation refuses without adopting owner bytes. Only explicitly proven owned untracked paths may be removed during rollback.
 
 ### Conventions
 
@@ -51,58 +55,64 @@ All commands use the shared runner. `SyncGitProofError` exposes an unproven Git 
   does not restore the head raises `_abort_failure`, which names Git's own stderr. A line that
   untracks the cache could already cancel.
 
-
 ## Evidence
 
 ### Docs References
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
-
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
 ### Repo-Internal References
 
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
-
-
-
 - Pinned refs/checkouts. [1]
-
-
-- Exact WIP park/restore proof. [2]
-
-
-- Supported staged continuation. [8]
 
 - Exact staged validator before commit. [12]
 
-
 - Attributable rollback. [14]
-
 
 - Current public content-conflict scenario. [15]
 
 - The report gate keeps conflicts, conversions, and every nonzero alignment population. [16]
+
 - The merge installs the structural plan and persists the report through that gate. [17]
 
-
+- Exact WIP park/restore proof. [2]
 
 - Exact refs, worktree identity, and authority-safe cleanup. [30]
+
 - Typed dirty/WIP and restore proof exclude only the memory cache. [31]
+
 - Content-domain conflicts and narrowly scoped cache state handling. [32]
+
 - Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge, which first closes any master-line crossing history file the merge adds. [33]
+
 - The crossing helpers this module drives. [34]
+
 - The managed sync crosses an unconverted leaf into a converted line, and leaves overlapping edits to the curator. [35]
+
 - The staged memory tree is validated against both parents before the commit; a refusal raises and leaves the merge staged. [36]
+
 - The managed sync refuses a merge with duplicate IDs, keeps it staged, and syncs after the repair. [37]
+
 - Rollback and created-head proof retain exact operation ownership. [38]
+
 - The rollback restores the cache before the merge abort. [39]
+
 - A failed abort names Git's reason. [40]
+
 - Cancel after a memory conflict restores the branch and its tracked cache. [41]
 
+- The proof enumerates tracked and untracked parked paths with no sample acceptance. [42]
+
+- Reapply expectations compare parked, pre-sync and carried content. [43]
+
+- Interrupted converted-memory output is attributed only by exact merge-plus-crossing replay. [44]
+
+- Cancellation compares live stash holders with worktree and independent index content. [45]
+
+- Retained fingerprints distinguish provable operation output from later and unknown bytes. [46]
+
+- Supported staged continuation. [8]
 
 ### Cross-Repo References
 
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-
-No cross-repository contract is established by this file.
+No additional configured cross-repository contract is asserted.

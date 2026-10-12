@@ -3,12 +3,47 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
-        "content": "sha256:8372e777ec28dd482b47b6bd8351a3cfeaf105e17ddafaf0cedaca391d37a3e8",
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
         "locator": {
-          "end": 516,
-          "kind": "line_range",
-          "start": 465
+          "kind": "symbol",
+          "name": "assess_retained_tree"
+        }
+      },
+      "id": "RLZ-360CMM",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Ownership of retained output is established by captured worktree/index fingerprints, or, with no active merge and a live stash, by the existing parked-path worktree proof plus independent index ownership check; absent or unreadable authority remains unproved and later owner bytes are not blessed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:d20106ab6c61baf552493518cc93c8be40549309c9a3cd476fe40249cbf10dc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "parked_wip_failures"
+        }
+      },
+      "id": "RLZ-72V1QQ",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The per-path comparison of that population against the live worktree bytes; the only decider the restore paths call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_needs_crossing_report"
         }
       },
       "id": "RLZ-BM4C7Y",
@@ -19,15 +54,69 @@
       },
       "rationale": "The emission predicate is the gate that keeps evidence-only and skip-only diagnostics.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_stash_tree"
+        }
+      },
+      "id": "RLZ-RW20FG",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Ownership for carried or pre-sync heads: live-stash worktree comparison, independent index comparison, and parked-equality fallback for uncomputable entries.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_retained_digests"
+        }
+      },
+      "id": "RLZ-S4K3W3",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Captures worktree bytes plus full index stages at retention. Untracked bytes are included for a fresh same-call parked reapply or an exactly scratch-verified crash reapply; an unverified crash tree retains an empty reference map and earns no capture authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+        "locator": {
+          "kind": "symbol",
+          "name": "stashed_parked_paths"
+        }
+      },
+      "id": "RLZ-YGPCHM",
+      "invariant": "INV-70577K",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 1",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The proved population: the full stash-derived set (tracked plus untracked third-parent entries), iterated directly with no sample fallback; an unreadable inventory raises instead of passing.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Pinned refs/checkouts.",
+      "note": "Pinned refs/checkouts.\n\nAnchor: `create_pinned_ref`, `require_side_checkout`",
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:6b9626d58796145bd7249a358484606d3bc91ce5943d679da63783eb87ef11ba",
             "locator": {
               "kind": "symbol",
@@ -38,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:50793bd524b8366861a7d51098ec3b5e27accb5316b191a02fc027152176e2e4",
             "locator": {
               "kind": "symbol",
@@ -54,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -70,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -82,7 +171,7 @@
       ]
     },
     "15": {
-      "note": "Current public content-conflict scenario.\n\nAnchor: `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
+      "note": "Current public content-conflict scenario.",
       "targets": [
         {
           "anchor": {
@@ -104,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
               "kind": "symbol",
@@ -120,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
@@ -132,11 +221,11 @@
       ]
     },
     "2": {
-      "note": "Exact WIP park/restore proof.",
+      "note": "Exact WIP park/restore proof.\n\nAnchor: `park_worktree_wip`, `prove_parked_wip_restored`",
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
             "locator": {
               "kind": "symbol",
@@ -147,8 +236,8 @@
         },
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
-            "content": "sha256:a8d5c04f5077bf0a3a49869b23a27b0541df5d39eb33799b468ace30092d11e5",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:6d2beacdabb7c9d68f26cb758dfac5e86811f0592561eb025c05829e1b2c2cec",
             "locator": {
               "kind": "symbol",
               "name": "prove_parked_wip_restored"
@@ -163,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:84580a01bb3869b8ec141c3c2d55a44b42eecd9a55c9637f2c2e766d93762cbf",
             "locator": {
               "kind": "symbol",
@@ -179,8 +268,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
-            "content": "sha256:e40546cac2457fb2f2a305608082d7b4e66af5ca95a74c80a43eb6f71a61cb95",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:22758862274652ff2b2cd100830fa9da84254b2b41c80ac176bbafc84a736b9e",
             "locator": {
               "kind": "symbol",
               "name": "worktree_dirty_paths"
@@ -195,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
             "locator": {
               "kind": "symbol",
@@ -211,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:dcdca2ca3f138cc692e594ce192ef4f10bc043801c7c031008395522e8c4ba5c",
             "locator": {
               "kind": "symbol",
@@ -261,7 +350,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -277,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
             "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
             "locator": {
               "kind": "symbol",
@@ -294,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -310,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:30ee024b857f44ec240971a085e7e49adb1e8a90419914b735dff485d65fe1a4",
             "locator": {
               "kind": "symbol",
@@ -326,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:1198290d616fa0d6414dae46011c099e7e7c84ef584a23fba0f455f9dd780a76",
             "locator": {
               "kind": "symbol",
@@ -354,12 +443,92 @@
         }
       ]
     },
-    "8": {
-      "note": "Supported staged continuation.",
+    "42": {
+      "note": "The proof enumerates tracked and untracked parked paths with no sample acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Reapply expectations compare parked, pre-sync and carried content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:61d24dd7526a763231c8f71b9c862fd293aab3b6a42d6ece80117cf1f5ff4edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "expected_reapplied_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Interrupted converted-memory output is attributed only by exact merge-plus-crossing replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:458743a503cc2d4f00b3d264bdcba721eca0ecc1056b86021fd44502707366d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "recapture_resumed_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Cancellation compares live stash holders with worktree and independent index content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Retained fingerprints distinguish provable operation output from later and unknown bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Supported staged continuation.\n\nAnchor: `_continue_memory_merge`, `continue_side_merge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:50d5b06c31cb023b0dfded274d5fc9592ac6c8fd0576486aea7d7575bd4b9712",
             "locator": {
               "kind": "symbol",
@@ -370,7 +539,7 @@
         },
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",

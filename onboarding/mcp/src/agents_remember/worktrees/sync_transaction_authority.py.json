@@ -1,13 +1,86 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+        "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_cancelled_wip"
+        }
+      },
+      "id": "RLZ-0TVE2Z",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Returns every parked candidate after rollback from its kept stash, proof-first for the reset-then-reapply crash window.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+        "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_parked_wip"
+        }
+      },
+      "id": "RLZ-RFN5TT",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Raises the proof error without journaling on dirty-and-unproven trees and never retires the stash mid-flight, so the same tree yields the same failure on retry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+        "content": "sha256:e47cadf755d462cd525b383d9702a3f905592d6e3aa2e4070147ca2144468a8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retain_parked_conflict"
+        }
+      },
+      "id": "RLZ-SWEAYE",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The unchanged ordinary path for conflicted reapplies, now fingerprinting the operation-created state so a later cancel can tell it from owner edits.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+        "content": "sha256:462fd37a15ca7e74bf8a0fa127528fe25d2005f2cbb83db70351feb64e1d6a65",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unproven_restore_error"
+        }
+      },
+      "id": "RLZ-T7MCMT",
+      "invariant": "INV-04KNZY",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 2",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The single author of the failed-proof refusal text; every proof failure in restore_parked_wip raises exactly this.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Side planning and exact source-pair reads.",
+      "note": "Side planning and exact source-pair reads.\n\nAnchor: `side_record`, `source_pair`",
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
             "locator": {
               "kind": "symbol",
@@ -18,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:f04f4f5f1ed7dffe628fdddb0303806d65ca769204519c3d1ea953676b963613",
             "locator": {
               "kind": "symbol",
@@ -30,11 +103,11 @@
       ]
     },
     "2": {
-      "note": "Pinned ref authority and reconstruction require exact identities.",
+      "note": "Pinned ref authority and reconstruction require exact identities.\n\nAnchor: `pin_authority`, `require_pinned_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
             "locator": {
               "kind": "symbol",
@@ -45,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:b3c567649571e693bef6410ed9f5205920a7b410e190bd6fcbc2b334f38962a4",
             "locator": {
               "kind": "symbol",
@@ -57,11 +130,11 @@
       ]
     },
     "3": {
-      "note": "Contract identity and base-transition constraints.",
+      "note": "Contract identity and base-transition constraints.\n\nAnchor: `require_record_contract`, `require_contract_bases_unchanged`",
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
             "locator": {
               "kind": "symbol",
@@ -72,7 +145,7 @@
         },
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:938284b4dab9d820f24656f4527d44eda425dfc1db7b4f96f5bff0f87743a684",
             "locator": {
               "kind": "symbol",
@@ -84,12 +157,12 @@
       ]
     },
     "4": {
-      "note": "Parked-content restoration and settlement retain the exact stash until safe.",
+      "note": "Parked-content restoration and settlement retain the exact stash until safe.\n\nAnchor: `restore_parked_wip`, `settle_resolved_parked_wip`",
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
-            "content": "sha256:f26e89ac19219ea6afc7f2d6fb65c9ba7a34b240dc370f9738d6d1de724ef665",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
             "locator": {
               "kind": "symbol",
               "name": "restore_parked_wip"
@@ -99,11 +172,59 @@
         },
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
-            "content": "sha256:c62aa4ed91434babb525806a103cdea5c34e0c07cd67384c312c0e2f8059ac4d",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:5a11dae4f361d70040042c06be4ff0b16b8d269451a83ef7f743da9f7adf37b7",
             "locator": {
               "kind": "symbol",
               "name": "settle_resolved_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Restoration accepts only complete proven reapply and retains live stash authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Failed proof names bounded inline paths, retained stash, cancel action and no-edit instruction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:462fd37a15ca7e74bf8a0fa127528fe25d2005f2cbb83db70351feb64e1d6a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cancellation restores already-restored sides and supports pre-sync reapply retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_cancelled_wip"
             }
           },
           "kind": "code"

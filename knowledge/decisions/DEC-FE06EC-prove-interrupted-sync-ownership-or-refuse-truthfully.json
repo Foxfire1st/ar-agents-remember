@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Exact replay or an equivalent-strength proof was weighed against falsely assigning later ownership or blindly trusting a crash-window tree. This choice constrains every later recovery change that could discard uncommitted bytes."
+  },
+  "alternatives": [
+    {
+      "option": "Reproduce admitted output exactly, authorize cancel only on proven ownership, and name unknown ownership distinctly when proof fails.",
+      "reason": "Returns untouched operation output without sacrificing any owner byte and keeps the refusal true.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat every post-interruption dirty path as later work, or capture its current bytes as operation output without proof.",
+      "reason": "The former invents ownership and strands legitimate cancellation; the latter can discard the owner's only copy.",
+      "reconsider_when": "A different owner-bound construction establishes the same complete worktree/index/path-set ownership proof; unsafe assumptions remain inadmissible.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Replay must include structural crossing, paired code and owner; failed attribution remains non-mutating and directs resolve-and-continue, not a false later-work claim."
+  ],
+  "context": "An interrupted converted-memory merge leaves no retained fingerprint; blanket later-work attribution falsely strands unchanged operation output, while blind fingerprint capture can bless owner writes.",
+  "decider": "Architect ruling point 3 under unchanged MIK-R153 normative line and rules 3/4",
+  "id": "DEC-FE06EC",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-JZRBBJ"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect ruling point 3 weighs exact scratch reproduction or equivalent-strength proof against a misleading later-work refusal or unsafe cancellation; the ruling keeps rule 4 above forced cancel success."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "L153-unknown-attribution-ruling",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88e2ea4aae66af6f2f05d299e9bfb5c5e12b9b0a",
+            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
             "content": "sha256:c9f1ecaf392562179e757dc842d21100896249eed72192a67193cdeba61087e4",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88e2ea4aae66af6f2f05d299e9bfb5c5e12b9b0a",
+            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
             "content": "sha256:fb94d6ed9519cd5f68a252fb3889ec3af56b920ae57ea5d63118678f9db94f7c",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88e2ea4aae66af6f2f05d299e9bfb5c5e12b9b0a",
+            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
             "content": "sha256:d350012c0983f73963eb510723945adb8b42fa24c8ae784a7faa53c4b8b2c1e1",
             "locator": {
               "kind": "symbol",
@@ -76,6 +76,21 @@
             "locator": {
               "kind": "symbol",
               "name": "test_a_memory_disabled_leaf_records_no_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions.\n\nAnchor: `test_sync_records_not_measured_when_the_carry_fails`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
+            "content": "sha256:b44fcd49918a0fd1bd0e72c3c5a1cb24e89f96154030cea85e7a284d675edca8",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

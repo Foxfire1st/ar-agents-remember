@@ -191,9 +191,19 @@ preview for `dry_run`, and otherwise parks each dirty non-temporary, actually-mo
 `git stash push --include-untracked`; the stash identity, bounded path sample
 (`WIP_PATH_SAMPLE_LIMIT = 128`) and true path count are journaled in the same admission write. The
 candidate is restored on the completed path, on resume, and on cancel, and `finalize_sync` refuses
-while any side still parks its candidate. Kept refusals are a worktree whose index already has
-unmerged paths and an unprovable checkout; an unprovable restore keeps the stash and refuses with
-`sync-git-proof-failed`. See the child cards for the exact primitives.
+while any side still parks its candidate. Restoration proves the complete stash-derived reapply,
+not whole-file equality or the bounded journal sample: an edit the carried line already holds is
+restored even beside unrelated landed changes. A failed proof keeps the stash, names failed paths
+and cancellation recovery, and prohibits editing until the transaction is closed.
+
+Cancellation proves all-side ownership before record or tree mutation. Exact operation-created
+worktree and index state may be discarded because the kept stash still holds the parked candidate;
+already-restored sides are returned again after rollback. Later owner work refuses unchanged with
+save/cancel/restore guidance. Unknown crash-window ownership refuses as unproved, not falsely as
+later work, and directs resolve-and-continue. Interrupted converted-memory replay includes the
+same structural merge, paired code and owner before it can earn fingerprints. Stash authority
+survives restoration and is retired only after terminal publication. See the child cards for the
+exact proof and recovery boundaries.
 
 Supporting that, the closeout-family lineage guard self-heals a settleable stale break:
 `modules/closeout_lineage.heal_current_source_lineage` carries a `behind > 0` edge (a leaf that owns
@@ -201,6 +211,9 @@ its own commit is normal) through this same sync transaction, refuses a `dry_run
 escalates an unprovable projection to the human developer, and hands back a retained sync conflict
 with both worktrees and their resolution duties. `replay` is untouched and remains the
 memory-carryover vehicle.
+
+- Complete reapply proof accepts already-held edits without sample fallback. [79]
+- Cancellation proves ownership first and restores every parked side before terminal retirement. [80]
 
 ## Main Flows
 
@@ -983,7 +996,9 @@ the route reaches it only through the new `services.KnowledgeCrossingPort`, boun
 
 - [`sync_transaction.py`](sync_transaction.py.md) passes the owner (leaf, or the master line's task) and
   journals the report path. [`sync_transaction_state.py`](sync_transaction_state.py.md) omits an empty
-  `crossingReport`, so ordinary journals keep the installed runtime's shape (ruling N2).
+  `crossingReport` under the historical N2 omission rule. That rule did not promise the current
+  journal remains exactly pre-MIK-R24-shaped: `retainedTreeDigests` is now serialized with an
+  empty default for old-journal reads, without an executed old-runtime compatibility claim.
   [`sync_transaction_results.py`](sync_transaction_results.py.md) adds `resolution.crossing` and names the
   report.
 - [`services.py`](services.py.md) declares `KnowledgeCrossingPort`, `CrossingRequest`, `CrossingPlanView`,

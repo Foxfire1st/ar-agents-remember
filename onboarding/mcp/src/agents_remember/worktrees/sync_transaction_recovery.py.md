@@ -21,10 +21,7 @@ finally (since MIK-R08) returns the completed result through `with_recomputed_wo
 performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
 `memory.md` it carries is left to the projection that rebuilds it.
 `completed_sync_result` reconstructs success and distinguishes a current pair from moved-again or
-explicit memory-skipped outcomes. `cancel_sync` publishes cancelling, rolls back only participating
-operation-owned sides, returns every parked candidate, proves contract bases stayed original,
-publishes cancelled, then deletes
-authority.
+explicit memory-skipped outcomes. `cancel_sync` first proves all-side ownership, then publishes cancelling, rolls back operation-owned output, returns every parked candidate, proves original contract bases, publishes cancelled and retires its stashes and authority.
 
 **A completed sync recomputes the leaf's worklist (MIK-R08 rule 8, architect ruling 1).** The sync moved
 the base pair, so B and K_B moved with it. `with_recomputed_worklist(result, contract)` calls
@@ -44,6 +41,10 @@ and explicitly makes no heads-restored claim. With refs it reconstructs complete
 rollback, and cancels; partial authority restores only complete provable sides and returns bounded
 manual-repair evidence for what remains. Missing journals follow the same ref-proof path. Terminal
 cleanup is idempotent and republishes strict bytes after residue removal.
+
+Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Later work returns `sync-cancel-refused-later-work` with named paths and save/cancel/restore guidance. Unproved crash-window attribution returns `sync-cancel-unproven-after-interrupt`, names the unproved paths and directs resolve-and-continue without falsely claiming that the owner wrote them. Both refusal paths keep the prior record and all tree/index/head/stash state.
+
+After all sides are proven, cancellation publishes cancelling, discards only attributable output, rolls heads back and restores every parked candidate, including already-restored sides. Terminal cancelled publication precedes `_retire_restored_stashes` and authority deletion. Completed-sync finalization has the same terminal-before-retirement boundary; terminal residue cleanup retries only exact owned resources. An interrupted cancellation keeps its stash authority for the next same action.
 
 ### Conventions
 
@@ -66,15 +67,7 @@ ambient inference.
 
 ## Parked-Candidate Recovery Ownership
 
-`finalize_sync` calls `require_parked_wip_settled(record)` after the completed-branch proof: it
-refuses to finalize while any participating side still parks the candidate it carries, so a carry
-cannot terminate with the WIP stranded in the stash. `cancel_sync` gains the mirror duty. For a side
-in `restore-conflict` it first calls `discard_conflicted_wip_reapply` to clear the conflicted
-reapply (the candidate itself is still safe in its stash), then runs the existing pinned-ref
-rollback, then `restore_cancelled_wip` reapplies the candidate onto the restored pre-sync head and
-drops the stash. If that reapply cannot be proven, cancellation returns
-`sync-cancel-wip-restore-failed` as a manual repair with the stash kept and the pinned refs not
-deleted.
+`finalize_sync` refuses while parked work is unsettled. Cancel assesses both sides before touching either, then discards only operation-owned reapply output while its candidate remains in the kept stash. After rollback, every participating parked candidate is returned, including one already restored before the stop. A failed cancellation reapply reports `sync-cancel-wip-restore-failed` with stash and authority retained for recovery. No ordinary restore drops the stash before terminal publication.
 
 ### Todos
 
@@ -85,22 +78,30 @@ commit-derived verification remains closeout-owned.
 
 ### Docs References
 
-No Domain Documentation source is configured for this memory root.
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
 ### Repo-Internal References
 
 - The stable store archives raw or opaque journal evidence and projects quarantine. [1]
+
+- Only terminal transactions retire their exact restored stashes. [10]
+
 - Ref reconstruction and contract/base constraints come from the sync authority module. [2]
-- Exact merge attribution is proven in the Git module. [3]
+
 - Rollback proof is centralized in the Git module. [3]
 
 - Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
 
 - The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
+
 - The completed-branch proof addresses only operation-created heads and reads no ledger rows. [6]
 
 - A completed sync carries the journaled crossing summaries with their alignment counts. [7]
 
+- All-side ownership prechecks precede cancelling journal mutation. [8]
+
+- Later-work and unknown-attribution refusals are distinct and truthful. [9]
+
 ### Cross-Repo References
 
-No cross-repository source is configured for this memory root.
+No additional configured cross-repository contract is asserted.

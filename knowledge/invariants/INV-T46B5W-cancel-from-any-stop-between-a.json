@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
+  },
+  "applicability": "Cancellation of admitted sync stops with exactly attributable operation output and retained parked-work authority.",
+  "conditions": [
+    "All participating sides pass ownership and pinned-head prechecks before mutation.",
+    "Already-restored sides remain recoverable from kept stashes until terminal publication.",
+    "A retry after interrupted cancellation restores the same pre-sync pair and parked content."
+  ],
+  "exclusions": [
+    "Later owner work or unproved crash-window ownership refuses cancellation without mutation.",
+    "Malformed/missing authority retains its separate quarantine/manual-repair boundary.",
+    "Gitlink/submodule content without comparable byte ownership is not silently discarded."
+  ],
+  "id": "INV-T46B5W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Synced freeze 231622b2c7e272e7ca182ec28d3da61ca1749e0f + tracked diff d4c93e6a94ef056ca4d5eb77d4c05d73eac6062654729e2cb979d0cfd870141f (S2 documentary correction of the S list: stale symbol spellings and the rule-1 inventory rationale corrected, all other producer fields identical); ResumedConvertedMemoryMergeTests (2 tests) in test_sync_parked_candidate.py."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R153 rule 3",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cancel from any stop between a head's move and the parked work's settling restores the pre-sync heads and the parked work exactly as parked — including already-restored sides, ordinary retained merges, and stash-owned uncomputable entries — and drops only its own stash.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
+  },
+  "applicability": "Restoration of substantive tracked and untracked parked work onto an admitted carried code or memory head.",
+  "conditions": [
+    "Proof enumerates the complete live recorded stash, including its untracked third parent.",
+    "The expected reapply is computable and every expected entry matches the worktree; already-held edits are restored.",
+    "An unreadable inventory is a failed proof, never acceptance from a capped sample."
+  ],
+  "exclusions": [
+    "Non-computable entries fail restoration proof and retain cancellation authority.",
+    "Only memory-side root memory.md is disposable cache."
+  ],
+  "id": "INV-70577K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Synced freeze 231622b2c7e272e7ca182ec28d3da61ca1749e0f + tracked diff d4c93e6a94ef056ca4d5eb77d4c05d73eac6062654729e2cb979d0cfd870141f (S2 documentary correction of the S list: stale symbol spellings and the rule-1 inventory rationale corrected, all other producer fields identical); ResumedConvertedMemoryMergeTests (2 tests) in test_sync_parked_candidate.py."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R153 rule 1",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A sync's proof of restored parked work passes for an edit the carried line already holds and fails only when a parked byte is in neither the worktree nor the carried line, over every path the stash holds including entries beyond the journal sample.",
+  "status": "proposed",
+  "supersedes": []
+}

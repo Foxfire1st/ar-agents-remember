@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
+  },
+  "applicability": "Pre-mutation ownership assessment of sync cancellation on code and memory worktree/index state.",
+  "conditions": [
+    "Worktree bytes alone do not authorize discarding differing index stages.",
+    "A crash-window tree earns fingerprints only from exact scratch replay, including converted structural merge, paired code and owner.",
+    "Where ownership cannot be shown, the refusal names unproved paths truthfully and directs resolve-and-continue; it does not invent later-work attribution."
+  ],
+  "exclusions": [
+    "Only the memory-side derived cache is outside substantive work.",
+    "A manually resolved retained tree is owner state unless exact ownership is proved."
+  ],
+  "id": "INV-JZRBBJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Synced freeze 231622b2c7e272e7ca182ec28d3da61ca1749e0f + tracked diff d4c93e6a94ef056ca4d5eb77d4c05d73eac6062654729e2cb979d0cfd870141f (S2 documentary correction of the S list: stale symbol spellings and the rule-1 inventory rationale corrected, all other producer fields identical); ResumedConvertedMemoryMergeTests (2 tests) in test_sync_parked_candidate.py."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R153 rule 4",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cancel over a tree holding more than the reapplied parked work — same-path conflict edits, index-only bytes, staged markers, retargeted links — refuses before changing anything, names the later-work paths, and tells the owner to save them, cancel, then restore them.",
+  "status": "proposed",
+  "supersedes": []
+}

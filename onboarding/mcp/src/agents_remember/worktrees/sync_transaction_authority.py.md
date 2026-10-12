@@ -1,11 +1,5 @@
 # mcp/src/agents_remember/worktrees/sync_transaction_authority.py
 
-| Field | Value |
-| --- | --- |
-| verificationStatus | working-candidate |
-
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](overview.md)
@@ -22,7 +16,11 @@ Own the side plans, pinned refs, contract identity, base transitions, and parked
 
 Pinned refs are created, checked, reconstructed, and deleted by exact object identity. Journal-to-contract validation binds paths, task identity, kind, repositories, branches, and allowed base transitions. Finalization permits only the recorded old or admitted new bases; cancellation retains the original-base requirement.
 
-The shared parked-WIP helpers restore the candidate before dropping its exact stash. Genuine reapply conflicts retain the stash and resolution state. Settling a manually resolved reapply checks content conflicts, discards only memory-side cache changes, and leaves the real candidate uncommitted for its owning closeout.
+The shared parked-WIP helpers prove restoration and retain the exact stash until the transaction is terminal. Genuine reapply conflicts retain the stash and resolution state. Settling a manually resolved reapply checks content conflicts, discards only memory-side cache changes, and leaves the real candidate uncommitted for its owning closeout.
+
+A side can already hold the exact reapply after an interrupted restore or an edit the carried head already holds. `_skip_apply_proven` requires a live recorded stash and a complete successful proof before `_mark_restored` changes the journal; it does not reapply twice. Failed inventory remains failed even if the diagnostic sample is empty. `_unproven_restore_error` names at most ten failed paths inline, the remainder count, retained stash, cancel action and do-not-edit instruction; full named failures are logged and inventory incompleteness is disclosed.
+
+A genuine conflict retains its stash and resolution phase. Fresh same-call reapply output is fingerprinted, while crash-window output earns capture only after exact scratch verification; an empty map preserves uncertainty rather than blessing owner edits. Stashes survive restore and manual settlement until terminal transaction publication. `restore_cancelled_wip` includes already-restored sides and recognizes a completed pre-sync reapply on retry, so a crash after restoring one side cannot remove that side's only recoverable copy.
 
 ### Conventions
 
@@ -43,17 +41,24 @@ No new file-local follow-up is identified by this source reconciliation.
 
 ### Docs References
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
 ### Repo-Internal References
 
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
-
 - Side planning and exact source-pair reads. [1]
+
 - Pinned ref authority and reconstruction require exact identities. [2]
+
 - Contract identity and base-transition constraints. [3]
+
 - Parked-content restoration and settlement retain the exact stash until safe. [4]
+
+- Restoration accepts only complete proven reapply and retains live stash authority. [5]
+
+- Failed proof names bounded inline paths, retained stash, cancel action and no-edit instruction. [6]
+
+- Cancellation restores already-restored sides and supports pre-sync reapply retry. [7]
 
 ### Cross-Repo References
 
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+No additional configured cross-repository contract is asserted.

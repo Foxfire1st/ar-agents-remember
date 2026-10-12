@@ -3,12 +3,65 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
-        "content": "sha256:5c18c16620ec34c7d404d568453053b4f51579ee908ce8786bb2554821ef1ed4",
+        "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+        "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
         "locator": {
-          "end": 205,
-          "kind": "line_range",
-          "start": 136
+          "kind": "symbol",
+          "name": "_precheck_cancel_sides"
+        }
+      },
+      "id": "RLZ-8GMPRJ",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Proves cancellability for every side — stash liveness, retained fingerprints, pinned heads — before the record moves to cancelling, so a refusal writes nothing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+        "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retire_restored_stashes"
+        }
+      },
+      "id": "RLZ-AGZTNF",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Retires kept stashes only at terminal finalization, entry by entry, and only the entry the record names.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+        "content": "sha256:98591220a756c2b7782927f39a31103529311ae02bbfc7defcc386628892dae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "cancel_sync"
+        }
+      },
+      "id": "RLZ-C49S6G",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The cancel flow: verify first, then discard owned dirt, roll back heads, restore every parked candidate including already-restored sides, close the transaction.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+        "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
+        "locator": {
+          "kind": "symbol",
+          "name": "successful_crossings"
         }
       },
       "id": "RLZ-GP3TR9",
@@ -23,11 +76,11 @@
   ],
   "references": {
     "1": {
-      "note": "The stable store archives raw or opaque journal evidence and projects quarantine.",
+      "note": "The stable store archives raw or opaque journal evidence and projects quarantine.\n\nAnchor: `SyncOperationStore`, `_quarantined_sync_projection`",
       "targets": [
         {
           "anchor": {
-            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -39,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
             "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
             "locator": {
               "kind": "symbol",
@@ -51,12 +104,28 @@
         }
       ]
     },
-    "2": {
-      "note": "Ref reconstruction and contract/base constraints come from the sync authority module.",
+    "10": {
+      "note": "Only terminal transactions retire their exact restored stashes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_restored_stashes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ref reconstruction and contract/base constraints come from the sync authority module.\n\nAnchor: `side_record`, `require_record_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
             "locator": {
               "kind": "symbol",
@@ -68,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
             "locator": {
               "kind": "symbol",
@@ -85,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -98,12 +167,12 @@
       ]
     },
     "4": {
-      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.",
+      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.\n\nAnchor: `finalize_sync`, `cancel_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
-            "content": "sha256:389eac49e3c8952118585caff232b3b627fdbb12c5c4a66931173b9c27e56aac",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:777bc7bc2f7c00451f9793cef42271f3e4d684a8b65d5dce201efc8aaef6d920",
             "locator": {
               "kind": "symbol",
               "name": "finalize_sync"
@@ -113,8 +182,8 @@
         },
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
-            "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:98591220a756c2b7782927f39a31103529311ae02bbfc7defcc386628892dae0",
             "locator": {
               "kind": "symbol",
               "name": "cancel_sync"
@@ -125,11 +194,11 @@
       ]
     },
     "5": {
-      "note": "The completed result gains the recomputed worklist summary; every failure leaves it unchanged.",
+      "note": "The completed result gains the recomputed worklist summary; every failure leaves it unchanged.\n\nAnchor: `with_recomputed_worklist`, `recompute_knowledge_worklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
             "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
             "locator": {
               "kind": "symbol",
@@ -140,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
             "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
             "locator": {
               "kind": "symbol",
@@ -156,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -172,11 +241,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
             "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
             "locator": {
               "kind": "symbol",
               "name": "successful_crossings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "All-side ownership prechecks precede cancelling journal mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_precheck_cancel_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Later-work and unknown-attribution refusals are distinct and truthful.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:2d2f0f0d8d442b45039a72984bba4107fbaa7ef196356da8ebd0cc9534e6fded",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_cancel_for_later_work"
             }
           },
           "kind": "code"

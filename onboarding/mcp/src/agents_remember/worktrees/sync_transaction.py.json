@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "929da2b32893d67c1250150e62b82677f1556231",
+        "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+        "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_persist_fresh_validator_stop"
+        }
+      },
+      "id": "RLZ-Q68ZTZ",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Journals the staged merge output a validator refusal leaves behind without masking the refusal, so its cancel can verify ownership.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
         "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
         "locator": {
           "kind": "symbol",
@@ -22,11 +40,11 @@
   ],
   "references": {
     "1": {
-      "note": "Current input and journal routing.",
+      "note": "Current input and journal routing.\n\nAnchor: `sync_contract_under_authority`, `sync_input_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:3474f6117cc9dda982d19d77ab73e840fcdfb94704416d82a3db2c61815cc2ed",
             "locator": {
               "kind": "symbol",
@@ -49,7 +67,7 @@
       ]
     },
     "18": {
-      "note": "Real content conflict continuation scenario.\n\nAnchor: `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
+      "note": "Real content conflict continuation scenario.",
       "targets": [
         {
           "anchor": {
@@ -71,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:9a256efa5662efe9387d2df37e2e7f62046c1a898d666e4952a253e7dfb12a0f",
             "locator": {
               "kind": "symbol",
@@ -87,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:62aba0b180a8f1b6001cffa1b31603f3265ea4feb0fe7c169651b20c8e8d88af",
             "locator": {
               "kind": "symbol",
@@ -103,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
             "locator": {
               "kind": "symbol",
@@ -119,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
             "locator": {
               "kind": "symbol",
@@ -135,8 +153,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
-            "content": "sha256:f854b4466f60fc4ee27d89eda0f5b0db44d6c4fbf586a4418fc68a5910488803",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
             "locator": {
               "kind": "symbol",
@@ -167,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
             "content": "sha256:926929a9c6f4048837c859485bfb3575a1284c9a0147ad8e00cbb7a2902c4474",
             "locator": {
               "kind": "symbol",
@@ -184,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:66f1907419c78fceb9cc49ea83d87125315e740fd76bcf790c5fab51376e788a",
             "locator": {
               "kind": "symbol",
@@ -200,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
             "locator": {
               "kind": "symbol",
@@ -216,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
             "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
             "locator": {
               "kind": "symbol",
@@ -233,8 +251,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
-            "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:777bc7bc2f7c00451f9793cef42271f3e4d684a8b65d5dce201efc8aaef6d920",
             "locator": {
               "kind": "symbol",
               "name": "finalize_sync"
@@ -250,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
             "locator": {
               "kind": "symbol",
@@ -266,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:ada8cfd1332459e1aaebfca5cf8e6236b6160be56d5f371a63034cde921741e5",
             "locator": {
               "kind": "symbol",
@@ -278,16 +296,16 @@
       ]
     },
     "45": {
-      "note": "The driver validates choices and routes retained or new transactions: continue or cancel only.\n\nAnchor: lines 90-99",
+      "note": "The driver validates choices and routes retained or new transactions: continue or cancel only.",
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:acc855fe5d75e72a8ca098aa863a98c24a403411eb429660cf0e4172abdaf9f8",
             "locator": {
-              "end": 99,
+              "end": 102,
               "kind": "line_range",
-              "start": 90
+              "start": 93
             }
           },
           "kind": "code"
@@ -295,16 +313,48 @@
       ]
     },
     "46": {
-      "note": "The one continuation a hand-staged resolution ends in; no authored decision is stored.\n\nAnchor: lines 660-666",
+      "note": "The one continuation a hand-staged resolution ends in; no authored decision is stored.",
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:4caaaa389f18cf48a1a623f92f8eb4ba77a07ad24b324f34e93105d1a7a61d00",
             "locator": {
-              "end": 666,
+              "end": 707,
               "kind": "line_range",
-              "start": 660
+              "start": 701
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The driver uses one paired-code/owner context for merge and resumed capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Fresh validator-stop output is captured without blessing an owner window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_persist_fresh_validator_stop"
             }
           },
           "kind": "code"
@@ -316,8 +366,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
-            "content": "sha256:f854b4466f60fc4ee27d89eda0f5b0db44d6c4fbf586a4418fc68a5910488803",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -332,7 +382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
             "locator": {
               "kind": "symbol",
@@ -344,11 +394,11 @@
       ]
     },
     "9": {
-      "note": "Current continuation.",
+      "note": "Current continuation.\n\nAnchor: `_continue_resolution`, `_finish_retained_merge`",
       "targets": [
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:1aa70f6f5944ba4764b0db71e424337932290a52b4f5365d33771736b650de3e",
             "locator": {
               "kind": "symbol",
@@ -359,7 +409,7 @@
         },
         {
           "anchor": {
-            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
             "content": "sha256:a80333450aa234831dc2da47c2f60b196054b232b1439b05643750d03dfaf4b2",
             "locator": {
               "kind": "symbol",

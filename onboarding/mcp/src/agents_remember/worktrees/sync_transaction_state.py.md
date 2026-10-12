@@ -12,11 +12,11 @@ Strict enclosure-root durable state for one resumable sync generation.
 
 ### Logic
 
-Side records pin repositories/worktrees/branches, source/pre-sync/base facts, authority refs, phase progress, file conflicts, structural report and parked stash/path facts. Operation records bind generation and original bases; quarantine preserves damaged evidence without rollback authority. [4]
+Side records pin repositories/worktrees/branches, source/pre-sync/base facts, authority refs, phase progress, file conflicts, structural report and parked stash/path facts. Operation records bind generation and original bases; quarantine preserves damaged evidence without rollback authority.
 
-The narrow _drop_retired_knowledge_keys adapter removes old knowledgeConflict and knowledgeReconciliations on read because a sync already in flight at retirement must resume/cancel. No current row diagnosis/decision is stored; other extras remain forbidden. [7]
+The narrow _drop_retired_knowledge_keys adapter removes old knowledgeConflict and knowledgeReconciliations on read because a sync already in flight at retirement must resume/cancel. No current row diagnosis/decision is stored; other extras remain forbidden.
 
-The stable store rejects malformed/nonregular normal records and preserves evidence before explicit recovery. Projection distinguishes retained merge from parked reapply, and empty structural report is omitted. [5] [6]
+The stable store rejects malformed/nonregular normal records and preserves evidence before explicit recovery. Projection distinguishes retained merge from parked reapply, and empty structural report is omitted.
 
 
 `SyncOperationRecord` records one generation, canonical contract/task/kind, original bases, phase,
@@ -31,6 +31,8 @@ or quarantine records, writes atomically, preserves raw malformed bytes, and can
 opaque directory/symlink/other entries with bounded metadata. `observe_sync_operation` projects
 malformed, quarantined, identity-mismatched, conflict, cancelling, terminal, or resumable state with
 contract-addressed next/cancel arguments and without parsing task truth.
+
+`SyncSideRecord.retainedTreeDigests` maps paths to fingerprints of operation-created worktree bytes and full index stages. Each value contains fixed-width SHA-256 digests or explicit absent/unreadable sentinels; the model declares no dictionary-cardinality or total-journal-byte cap. Its empty default keeps older journals readable but supplies no positive attribution for a dirty crash-window tree. The field is recovery evidence, not owner intent or authority to overwrite unknown content. A restored parked side can still carry a live stash until terminal completion; wipState alone does not mean its stash was dropped.
 
 ### Conventions
 
@@ -58,50 +60,42 @@ explicit recovery.
 candidate on `SyncSideRecord`: `""` means nothing parked, `parked` means the candidate is in the
 recorded stash, `restore-conflict` means it could not be reapplied onto the carried result and still
 needs its resolver, and `restored` means it is back in the worktree. Because `SyncSideRecord` is
-frozen and `extra="forbid"`, these fields are part of the durable journal schema, so a record from
-another build is refused rather than misread.
+frozen and `extra="forbid"`, these fields are part of the durable journal schema, so unsupported extra fields are refused rather than silently misread; the retained-fingerprint field defaults empty for older journals.
 
 
 **MIK-R24 journals a crossing sync's report path, and only for a crossing sync.**
 `SyncSideRecord.crossingReport: str = ""` (at most 4,096 characters) holds the path of the crossing report
 that `worktrees/knowledge_crossing.write_crossing_report` wrote into the worktree group's `reports/`. The
 resolution payload names that report and summarises it. The wrap serializer `_omit_empty_crossing_report`
-drops the key when it is empty, so an ordinary sync's journal keeps exactly the shape the installed,
-pre-MIK-R24 runtime reads (architect ruling N2, 2026-09-29). Journals written by older builds still load,
-because the field defaults to `""`.
-
+drops the key when it is empty. Architect ruling N2 (2026-09-29) historically kept the
+crossingReport extension out of ordinary journals; that omission is not a present-tense promise
+of the exact pre-MIK-R24 schema. The current serializer does not omit `retainedTreeDigests`,
+which defaults to `{}` when an older journal lacks it. These defaults describe old-journal read
+tolerance; they do not establish executed forward compatibility with an older runtime.
 
 ## Evidence
 
 ### Docs References
 
-No Domain Documentation source is configured for this memory root.
-
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
 ### Repo-Internal References
 
+- The driver treats this store as the sole current generation and routes recovery from its strict outcomes. [11]
+
+- Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. [12]
+
+- Empty crossingReport is omitted under the historical N2 rule; current retainedTreeDigests remains serialized, and empty defaults admit old-journal reads without claiming old-runtime forward compatibility. [13]
+- retainedTreeDigests defaults empty; per-value worktree/index hashes have fixed-width digest or absent/unreadable representations, with no declared dictionary-cardinality or journal-byte cap. [14]
 
 - Current strict side/operation records. [4]
 
-
 - Optional report serialization. [5]
-
 
 - Retained phase/parked candidate projection. [6]
 
-
 - Specific old-key adapter and current file resolution. [7]
-
-
-
-- The driver treats this store as the sole current generation and routes recovery from its strict outcomes. [11]
-- Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. [12]
-- The crossing report path is journaled for a crossing sync only; an empty one is omitted, so ordinary journals stay readable by the installed runtime. [13]
-
 
 ### Cross-Repo References
 
-No cross-repository source is configured for this memory root.
-
-
-No cross-repository contract is established by this file.
+No additional configured cross-repository contract is asserted.

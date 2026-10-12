@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Complete restoration proof alone cannot prevent destructive cancellation, ownership assessment alone cannot recover an already-restored paired side, and truthful diagnosis alone cannot keep restoration authority. The six obligations jointly guarantee byte-preserving completion or a truthful non-mutating refusal."
+  },
+  "guarantee": "A managed sync restores the complete parked candidate even when the carried line already holds its edit; a stopped transaction returns the exact pre-sync heads and parked work only after every side proves ownership, keeps restoration authority until terminal publication, and never discards later or unproved owner bytes. Failed proof and refused cancellation name their actual paths and safe recovery without claiming an attribution they cannot establish.",
+  "id": "FAM-1SEJYW",
+  "members": [
+    "INV-70577K",
+    "INV-04KNZY",
+    "INV-T46B5W",
+    "INV-JZRBBJ",
+    "INV-YVP7RQ",
+    "INV-MS6H65"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "parked-work-family",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Parked work restoration and safe sync cancellation"
+}
