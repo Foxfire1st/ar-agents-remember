@@ -2,7 +2,9 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current incoming catalogs add explicit consumer registrations for held queues, native retirement, role_start_set, comparison changesets, shaped memory-tool rows, coherence file transport, takeover and uv-minimum bootstrap cases. The permanent shared tool_answer_l110_rows support has its own artifact/contract declaration; removed role-message file/wording/role-agent consumer rows are not restored by historical prose. Catalog ownership/membership are not execution proof.
+The current incoming catalogs add explicit consumer registrations for held queues, native retirement, role_start_set, comparison changesets, shaped memory-tool rows, coherence file transport, takeover and uv-minimum bootstrap cases. The permanent shared tool_answer_l110_rows support has its own artifact/contract declaration; the role-agent and role-message modules have source-supported consumer registrations on four existing artifacts. `test_paseo_role_agents.py` consumes the shared settings guard, Node lockfile fixture and Paseo runtime support; `test_role_message_files.py` consumes those three plus Paseo launch support; `test_role_message_wording.py` consumes the Node lockfile fixture. These additions change neither artifact nor contract identities, ownership, lifetimes or replacement contracts. Catalog ownership/membership are not execution proof.
+
+- The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. [267]
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 

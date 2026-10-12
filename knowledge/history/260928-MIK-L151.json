@@ -1,0 +1,87 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L151",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E4B46Y",
+      "items": [
+        "sha256:1470e845cd2122414a7785763ee232b678b91c0796cfa2320909efa5866174d4"
+      ],
+      "reason": "These added strings restore explicit unit-regression selection of the existing L117 role-agent/message test modules in canonical order. The lane loader and existing catalog merge/refusal guarantees are unchanged. Particular module membership is local source configuration, not a new enduring joint obligation; it is documented in the updated lane card.",
+      "subject": "hunk:sha256:1470e845cd2122414a7785763ee232b678b91c0796cfa2320909efa5866174d4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-6GVK07",
+          "revision": 1
+        },
+        {
+          "id": "INV-K0CS85",
+          "revision": 2
+        },
+        {
+          "id": "INV-RDQYV3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EGW51G",
+      "items": [],
+      "reason": "Examined all three members and the union/refusal/canonicalizer composition. This leaf changes only sorted lane and supported consumer strings, not .gitattributes, loaders, canonicalizer, validator, replacement tests or family realizations. The joint merge/refusal/repair guarantee and three narrow routes remain justified; no new membership is warranted merely because the catalogs share a directory.",
+      "revision": 1,
+      "subject": "FAM-DBX1PN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q4ZP8H",
+      "items": [
+        "sha256:728691b63fa283337c377c66e12c79899363e13df41725225438d6eeb300ea30"
+      ],
+      "reason": "Reviewed the current message/evidence transport account and source-authoritative population boundary. Registering three existing test modules and their supported consumers extends only file-local catalog membership; the route purpose, test owners, settings-isolation and execution/acceptance separation are preserved.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8c533b7555516c6884085fa26b9ad3a18badac8a",
+            "content": "sha256:ddbc11c3bb796aef8bfe7129aa18f49374d8854f205d9f6ca049290d110102b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "59a5660127f511aeeb7eb0cd6c974764889a181f",
+            "content": "sha256:1876970c9e3f98e550c1b906f6c68c183a77dad10c5c0876f623d66cfcca6094",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SP0HJV",
+      "items": [
+        "sha256:a1119ebf099a2a828c9cd74d3048b49f061db341023da0ad7c6bf450bae1b12f"
+      ],
+      "reason": "This already-retired record describes the historical DB-era union repair, not an active catalog population. Eight supported consumer additions on four retained artifacts leave that historical retirement and statement unchanged; re-anchor its retained whole-file realization without reviving it or claiming its old two-line census as current.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZJYXD5",
+      "items": [
+        "sha256:00d9235b1c672d014edfb0ea0449c6a8012ffe4d7235a6c088e845ce0553e1c2"
+      ],
+      "reason": "These added strings restore explicit unit-regression selection of the existing L117 role-agent/message test modules in canonical order. The lane loader and existing catalog merge/refusal guarantees are unchanged. Particular module membership is local source configuration, not a new enduring joint obligation; it is documented in the updated lane card.",
+      "subject": "hunk:sha256:00d9235b1c672d014edfb0ea0449c6a8012ffe4d7235a6c088e845ce0553e1c2"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

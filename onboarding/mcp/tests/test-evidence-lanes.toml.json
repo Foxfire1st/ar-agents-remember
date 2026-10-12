@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+        "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 405,
+          "end": 408,
           "kind": "line_range",
-          "start": 405
+          "start": 408
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+        "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 292,
+          "end": 295,
           "kind": "line_range",
-          "start": 292
+          "start": 295
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 23,
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
               "end": 204,
@@ -143,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 357,
+              "end": 360,
               "kind": "line_range",
-              "start": 357
+              "start": 360
             }
           },
           "kind": "test"
@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
             "content": "sha256:773d961a55b66d78a8b5f148e4213a686db9d6c93da204a12002bdded6aea8f2",
             "locator": {
-              "end": 359,
+              "end": 362,
               "kind": "line_range",
-              "start": 348
+              "start": 351
             }
           },
           "kind": "test"
@@ -202,14 +202,14 @@
       ]
     },
     "844": {
-      "note": "The current source declares the selected lane population; citation-document transaction is integration, not unit-regression.\n\nAnchor: lines 1-513",
+      "note": "The current source declares the selected lane population; citation-document transaction is integration, not unit-regression.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
-            "content": "sha256:118153883dd7afa84dec5ad957697685c8af4de41bbedbdfab9bfa6981764ec3",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
+            "content": "sha256:1524adadc76c34d973bd7f8ed713e462ec841e64d4131519ada28d4d963bb339",
             "locator": {
-              "end": 513,
+              "end": 517,
               "kind": "line_range",
               "start": 1
             }
@@ -223,10 +223,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74f4df86f2013e65ba4d43bf9ca2f8e3339d19ef",
-            "content": "sha256:bfcccccb13aa089b348e2d5cf7c4f18251862cf028427e185934b845477fab0a",
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
+            "content": "sha256:c372215cd621c00ce707c322b624640ee13a5cc4659d2d155c9f323929286cc9",
             "locator": {
-              "kind": "file"
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "846": {
+      "note": "The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
+            "content": "sha256:92ce09777615fb294c5e4872a2305ccb83a25057dbabc91371fa1688959c34b0",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
+            "content": "sha256:10a9b7676e19fc0e9eabc3dce72230dbbcdaf005331b172b44b6c27f77cf716d",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 293
             }
           },
           "kind": "test"

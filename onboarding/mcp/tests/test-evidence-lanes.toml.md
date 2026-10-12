@@ -2,11 +2,13 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. Earlier role-message file/wording/role-agent rows are absent from this candidate’s declared lane lists; source declarations, not prior prose, control those memberships. None of this establishes test execution.
+The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 
 - The current source declares the selected lane population; citation-document transaction is integration, not unit-regression. [844]
+
+- The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
 
 
 ## Governing Overview
