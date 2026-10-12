@@ -1,0 +1,202 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L161",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            },
+            "path": "mcp/tests/test_completed_direct_landing_disposition.py"
+          },
+          "before": {
+            "blob": "b22f4808ebbd73c3e11ca853697abeb39d008554",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            },
+            "path": "mcp/tests/test_completed_direct_landing_disposition.py"
+          },
+          "id": "PRF-J2EHTZ"
+        },
+        {
+          "after": {
+            "blob": "7702fea98db4cee6877a425254c5aa362230ea4d",
+            "content": "sha256:16721c027c0c55f130aa5db6e7ef06590c775dde9734f32d575332e748783602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_admitted"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": {
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:16721c027c0c55f130aa5db6e7ef06590c775dde9734f32d575332e748783602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_admitted"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "id": "PRF-J7918B"
+        },
+        {
+          "after": {
+            "blob": "7702fea98db4cee6877a425254c5aa362230ea4d",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": {
+            "blob": "c8b2e1772e908a680bbfc2ae655be67f78fed991",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "id": "PRF-Y7VF8B"
+        },
+        {
+          "after": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "id": "RLZ-324NWH"
+        },
+        {
+          "after": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "before": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "id": "RLZ-3F29H9"
+        },
+        {
+          "after": {
+            "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+            "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+            "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-QQ206R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RV0PQQ",
+      "items": [
+        "sha256:3ec84e2ce81ab5aea6505fa92a01c5efbdd97db66ff7a5046f003cf11d726de0"
+      ],
+      "reason": "Preserve the landed revision-3 bound-owner and admitted public-recovery contract. Withdraw only the obsolete refusal proof reintroduced by the parked carry-forward and absent from the admitted memory base: its former test symbol no longer exists. Keep the admitted and supplied-owner proofs and existing realizations; historical refusal provenance remains in prior task evidence, not as a current witness.",
+      "revision": 3,
+      "subject": "INV-6DFQ9P"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3BGCAT",
+          "revision": 1
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 1
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SVBWFY",
+      "items": [
+        "sha256:db3e55be2b311e728bb720dd7fbc7de5e42076140031df995d11ee77da561692"
+      ],
+      "reason": "Re-examined all nine members against the inherited revision-3 direct-identity/public-recovery member. Removing the superseded parked refusal witness and renewing current source anchors preserve the actual-pair landing guarantee, its members and its three routes; no new family meaning or runtime enforcement is authored.",
+      "revision": 1,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T0C1YC",
+      "items": [
+        "sha256:d1c8691a6833c498dbeee8fcc6a0dc485c8ae495659afa630ff72753b4b011ce"
+      ],
+      "reason": "The two refusal-oracle repairs preserve the existing direct-grant/preservation and explicit-owner regression scope. No test module, fixture, lane/catalog registration or route owner changes; the current overview already separates fixture/source assertions from live acceptance. The separately ruled public-recovery transition remains with its owner.",
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}
