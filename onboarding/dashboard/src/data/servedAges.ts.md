@@ -16,8 +16,8 @@ so staleness displays advance locally between real emissions ("server-anchored, 
 
 L23 adds `elapsedSeconds` to `VOLATILE_AGE_FIELDS`. Lifecycle-operation elapsed time can therefore advance without making an otherwise stable served enclosure look structurally changed.
 
-`VOLATILE_AGE_FIELDS` — the five now-relative keys (`staleSeconds`, `snapshotStaleSeconds`,
-`ageSeconds`, `waitSeconds`, `heartbeatAgeSeconds`), a byte-for-byte mirror of
+`VOLATILE_AGE_FIELDS` — the six now-relative keys (`staleSeconds`, `snapshotStaleSeconds`,
+`ageSeconds`, `waitSeconds`, `heartbeatAgeSeconds`, `elapsedSeconds`), a byte-for-byte mirror of
 `serving/delta.py`'s set; a lockstep test pins it (`servedAges.test.ts`).
 
 `stableEquals(a, b)` — recursive deep equality over parsed wire payloads that SKIPS the volatile

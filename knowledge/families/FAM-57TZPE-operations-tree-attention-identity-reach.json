@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "A compact overlay alone can hide a chosen or completed task; priority words alone can hide the inbox action, and correct identity alone cannot ensure keyboard reach. The combined owners preserve readable truth and actionable reach while the tree retains its space."
+  },
+  "guarantee": "The Operations task column exposes waiting attention over, not instead of, its tree; rows preserve their actual document/lifecycle truth and highest-priority word with every secondary fact recoverable; need order, completed folds, lifecycle reveal, arrow/typeahead navigation and independent inbox controls jointly keep each admitted target reachable without changing selection or dismissal identity.",
+  "id": "FAM-57TZPE",
+  "members": [
+    "INV-K9B8G8",
+    "INV-7GVWYD",
+    "INV-ZPRPXZ",
+    "INV-ME6CA1",
+    "INV-PH90HV",
+    "INV-JD110F",
+    "INV-TA1XAA",
+    "INV-G71Q09"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "operations-tree-attention-identity-reach",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "dashboard/src/panels"
+  ],
+  "schema": "ar-family/v1",
+  "status": "accepted",
+  "title": "Operations presents attention without losing task truth or reach"
+}

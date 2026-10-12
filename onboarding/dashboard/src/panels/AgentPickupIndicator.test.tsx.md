@@ -1,5 +1,15 @@
 # dashboard/src/panels/AgentPickupIndicator.test.tsx
 
+## Retired source — not a current contract
+
+The component-local suite was removed with the marker. The reachable inbox dismissal, pointer isolation and gate-dominant chat × semantics are now tested in the mounted lifecycle-list signal suite, not this retired file. See [signal suite](lifecycle-list/signals.test.tsx.md).
+
+The original explanation and numbered evidence below are retained as historical provenance only; they authorize no current import or renderer.
+
+<details>
+<summary>Historical removed-source account</summary>
+
+
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -24,3 +34,5 @@ The tests render `AgentPickupIndicator` in pending and overdue backend-projected
 
 - Component under test. [1]
 - Client helper mocked by the dismiss test. [2]
+
+</details>

@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component.\n\nAnchor: \"export const DOT_VARIANTS\"",
+      "note": "The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component.",
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "blob": "ddef0c7aeef2f5cdf7801233052007e107b0942f",
+            "content": "sha256:4f63f2788aad631331bd6bc90ba93465fecc9416fcfd9f7853ea1e8e1efc1975",
             "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 92
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -24,12 +22,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
             "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
             "locator": {
-              "end": 88,
+              "end": 60,
               "kind": "line_range",
-              "start": 88
+              "start": 60
             },
             "path": "dashboard/src/index.css"
           },
@@ -42,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
             "content": "sha256:c99157bfbb246757bd22b124d4473f0d0f828facb52f77c59fac18d4620cd07d",
             "locator": {
-              "end": 101,
+              "end": 73,
               "kind": "line_range",
-              "start": 94
+              "start": 66
             },
             "path": "dashboard/src/index.css"
           },
@@ -60,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
             "content": "sha256:9532920553cc70c97159cd9f44de6a0516ae51fc591be7664d830222ac044808",
             "locator": {
-              "end": 8,
+              "end": 9,
               "kind": "line_range",
-              "start": 8
+              "start": 9
             },
             "path": "dashboard/src/index.css"
           },
@@ -74,16 +72,16 @@
       ]
     },
     "5": {
-      "note": "`LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59.\n\nAnchor: \"export type State = \"",
+      "note": "LIFECYCLE_STATES composes the six lifecycle names from LIVE_STATES and TERMINAL_STATES; Dot.test.tsx pins vocabulary equality.",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "content": "sha256:f3250e2eaf18970a71c4dd84fd5bab7aa999d6f25fab248c3382d2dbf49e65f5",
             "locator": {
-              "end": 15,
+              "end": 13,
               "kind": "line_range",
-              "start": 15
+              "start": 9
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -92,16 +90,14 @@
       ]
     },
     "6": {
-      "note": "`LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the \"Task progress: …\" label beside the dot.\n\nAnchor: \"export const LifecycleList\"",
+      "note": "RowMark passes the reported lifecycle state selected by rowState to Dot and supplies the Task progress label; document/unreported/terminal cases use the task-page mark.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
             "locator": {
-              "end": 358,
-              "kind": "line_range",
-              "start": 358
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -114,11 +110,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:6c603b1b19d01b6fe32fda4bbc3064c40c3693bd4a08764799016c73f01b3d26",
             "locator": {
-              "kind": "symbol",
-              "name": "AttentionQueue"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },
@@ -127,16 +122,14 @@
       ]
     },
     "8": {
-      "note": "`Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together.\n\nAnchor: \"export type CockpitView\"",
+      "note": "The attention layer and lifecycle tree meet in the same task column; their glyphs distinguish a handoff from a queue warning even when both are amber.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:bfeaf57796ee542d46cf39a6a14592f32b01475c2f57d3970685d8a2cfcd7c70",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 71
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

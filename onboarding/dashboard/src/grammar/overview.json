@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
             "content": "sha256:b2cecb144a46f5dcf12a6169fceed7695e8294b090de76f3661cdd0249300147",
             "locator": {
               "end": 3,
@@ -24,11 +24,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
-            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
+            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
             "locator": {
-              "kind": "symbol",
-              "name": "viewTabMetrics"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/viewTabLook.ts"
           },
@@ -41,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
             "content": "sha256:e16b47be0657b66a2213fd936a17a7e8131a744184a51d01c57aacf6ac1d678b",
             "locator": {
               "end": 21,
@@ -124,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
             "locator": {
               "end": 15,
@@ -172,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
             "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
             "locator": {
-              "end": 88,
+              "end": 60,
               "kind": "line_range",
-              "start": 88
+              "start": 60
             },
             "path": "dashboard/src/index.css"
           },
@@ -186,16 +185,14 @@
       ]
     },
     "9": {
-      "note": "The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them.\n\nAnchor: `<AttentionQueue onSelect={onSelect}`; `<LifecycleList selectedId={selectedId}`",
+      "note": "The attention layer opens over the task tree in the same column; a handoff state and warning severity retain distinct glyphs despite shared amber.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:393c3fdf2b4f4364a45b11040680c5809ac65c4b38c3262364988ae69f7bdba5",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 685,
-              "kind": "line_range",
-              "start": 684
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

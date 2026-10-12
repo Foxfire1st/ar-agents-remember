@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/columnLook.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exported caret cell keeps a fixed one-character lane and muted column-scale glyph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f525db276f0227d17698dc2da037d57ee4031a5",
+            "content": "sha256:a64a1e31a0cc962d0105217e2f4e29fbafa2d6b623ef84946c4fa4f85ac68026",
+            "locator": {
+              "kind": "symbol",
+              "name": "caretCell"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

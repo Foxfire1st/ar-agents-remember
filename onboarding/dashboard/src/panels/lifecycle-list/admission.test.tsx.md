@@ -14,8 +14,7 @@ into the Operations list.
 
 ### Logic
 
-Seeds projections with mixed lifecycle/doc kinds and asserts the admitted rows and
-their labels per the admission rule.
+Seeds projections with mixed lifecycle/document kinds and asserts admitted identities, exact enclosure joins, physical-worktree visibility and one row per enclosure. The compact title/id split and full hover replace former inline metadata assertions; these presentation changes do not relax admission or typed document selection.
 
 ### Invariants And Boundaries
 

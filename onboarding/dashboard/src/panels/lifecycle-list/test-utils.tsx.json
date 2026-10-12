@@ -7,45 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21530e0cd5d33b7d95ae657573d9acab145e366f",
-            "content": "sha256:b23508357cf7cc801f3d9d2b856dc055b885a167b98f3162faad83867d72e63d",
+            "blob": "203140fa7dca531911f6f455371ad326a8112b92",
+            "content": "sha256:03903f5e30026e08c207df684ae9662402c53ad94eb58359e54b9ab8b5c98737",
             "locator": {
-              "kind": "symbol",
-              "name": "seed"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21530e0cd5d33b7d95ae657573d9acab145e366f",
-            "content": "sha256:6be78133b9410df099e69c8a5b8e075b8cf300a4140510f9e3fad92deeefc4d7",
-            "locator": {
-              "kind": "symbol",
-              "name": "collapsibleHierarchyProjection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21530e0cd5d33b7d95ae657573d9acab145e366f",
-            "content": "sha256:9f3036e9028f25fb710d99fed9526c3f3af5985f80542a8dbe3b9998cdb234f9",
-            "locator": {
-              "kind": "symbol",
-              "name": "installLifecycleListCleanup"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc6c170b824f513249441c78063a379aefc9bb28",
-            "content": "sha256:ad3845a82dc8c07890c954644d365a96085eb2d5f8134580042ee1286d5ecdf6",
-            "locator": {
-              "end": 241,
-              "kind": "line_range",
-              "start": 234
+              "kind": "file"
             }
           },
           "kind": "code"

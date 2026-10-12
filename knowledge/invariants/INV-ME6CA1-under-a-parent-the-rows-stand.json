@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The builder, comparator, held-fold selection and disclosure must jointly preserve a single reachable chosen document even under cycles."
+  },
+  "applicability": "The non-flat Operations task hierarchy under its admitted parents.",
+  "conditions": [
+    "Need ordering preserves each admitted row once.",
+    "Completed/abandoned folds open to preserve selected-document reach.",
+    "Held selected ancestors cannot be collapsed by the disclosure."
+  ],
+  "exclusions": [
+    "Widening admission or changing document hierarchy ownership.",
+    "Imposing hierarchical folds on the flat grouping."
+  ],
+  "id": "INV-ME6CA1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/lifecycle-list/treeRows.test.ts (6 tests, among them \"lists a row once when two completed parents name each other\"); dashboard/src/panels/lifecycle-list/hierarchy.test.tsx: \"keeps the tree open down to the chosen document\", \"orders the tasks of a master by need and keeps the completed behind one line\", \"opens the line of completed ones by itself while the chosen document is behind it\"."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Under a parent the rows stand by need (what asks, in work, waiting) and the completed ones stand behind one line that opens in place and is never the chosen row; the tree is always open down to the chosen document, so a parent that holds the chosen document does not close and a line that hides it opens by itself; a row is listed once, also when two parents name each other.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -147,39 +147,16 @@
       ]
     },
     "6": {
-      "note": "`LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names.",
+      "note": "`LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed at `types/projection.ts:13` from `LIVE_STATES` (`:9`) and `TERMINAL_STATES` (`:11`), whose declarations carry all six names.",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "content": "sha256:b5b850a2fb141b042706b4bc453b7c723afecf7a4754d48d92a36343eabde60d",
             "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_STATES"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:ac609c9000a57be0454d5aae606cc68bbfe372b0f20faab99ec8a7db9dac562e",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIVE_STATES"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:7b5d61f0f6a98202a5ae07bcfff41c5c6e4dd2931ef587c7be65679752ef3186",
-            "locator": {
-              "kind": "symbol",
-              "name": "TERMINAL_STATES"
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
             },
             "path": "dashboard/src/types/projection.ts"
           },

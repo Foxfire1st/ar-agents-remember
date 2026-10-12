@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Operations-signals suite.\n\nAnchor: \"describe(\\\"LifecycleList independent Operations signals\\\", () => {\"",
+      "note": "The Operations-signals suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ea0788d0c3b6e03a62d1cb46deff142186a0c9b",
-            "content": "sha256:c71b9a96ec0f6f643ca212a3e83e303b16456ba98b2f8527f8fa4c4c0534d178",
+            "blob": "115ef8ad945001a73ebf580dd0a10c44bdfe94cc",
+            "content": "sha256:b27e244d490269c387de5f8fe1ed56a09b9264d64fdb1da25e8ced8b2e2c8897",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 23
+              "kind": "file"
             }
           },
           "kind": "test"

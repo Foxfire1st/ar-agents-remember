@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Avoids dismissing a gate or choosing the row when the user intended only to dismiss its overdue inbox entry."
+  },
+  "applicability": "An overdue handover inbox dismissal inside an Operations row.",
+  "conditions": [
+    "Pointer-down and click isolation prevent the ListBox from selecting the row.",
+    "The inbox control remains reachable and explicitly names chat when a gate owns the word."
+  ],
+  "exclusions": [
+    "Sending gate dismissal from the inbox control.",
+    "Changing inbox/gate owner eligibility."
+  ],
+  "id": "INV-TA1XAA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/lifecycle-list/signals.test.tsx: \"offers the dismissal of an overdue hand-over beside the word, and it does not choose the row\" and \"keeps the dismissal of an overdue hand-over reachable while an open gate is the row's word\"; dashboard/src/panels/lifecycle-list/rowState.test.ts: \"says the most pressing fact as the one word\"; fault runs gate-keeps-dismissal, dismissal-named and pickup-press-reaches-row (notes/reports/worker/8c3d5f2a-6e74-4b90-c2f1-144000000a01/role-launch/evidence-L144-A2/103-fault-runs-final.log); sandbox tries pressOnDismiss and gateAndOverdueHandOver in notes/run3/operations-sidebar-proposal/comparison/probe.json; comparison page, section \"An open gate and an overdue hand-over on the same task\" (state stood in) and its difference \"An overdue hand-over on a task that also has an open gate\". Repair of the Reviewer's finding L144-R1-03."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 5 / a control inside a row",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A control inside a row keeps its press from the list, because the list chooses a row when a press starts and not at the click; the dismissal of an overdue hand-over therefore dismisses and does not choose the row. It is offered whenever the hand-over is overdue: as \"×\" beside \"check chat\" while the hand-over is the row's word, and as \"chat ×\" beside the gate's word while an open gate is the row's word, named so that it cannot be read as a dismissal of the gate; it sends the dismissal of the hand-over's inbox entry and nothing for the gate.",
+  "status": "accepted",
+  "supersedes": []
+}

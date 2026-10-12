@@ -1,0 +1,63 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The recorded choice explicitly rejects the former alternative and binds future Operations presentation/appearance work; silently reintroducing it would reverse the developer's decision."
+  },
+  "alternatives": [
+    {
+      "option": "Bell in the column head with a bounded overlay over the task tree",
+      "reason": "Exposes the same queue/actions without moving or shrinking task navigation.",
+      "status": "chosen"
+    },
+    {
+      "option": "An inline attention box above the task list",
+      "reason": "The developer rejected its squashing the task list.",
+      "reconsider_when": "A new approved design explicitly permits queue space outside the task-tree height, rather than silently restoring the old sibling block.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future attention presentation retains tree geometry and source-scoped actions; the drawing remains independent product code."
+  ],
+  "context": "The initial attention box takes task-list height; the developer explicitly requested a bell and approved the revised pages.",
+  "decider": "Developer — D222/D224/D225 and MIK-R144@v1 rules3a/3b",
+  "id": "DEC-RXDNEC",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionQueueImpl"
+        },
+        "path": "dashboard/src/panels/AttentionQueue.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-K9B8G8"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D222/D224/D225 and MIK-R144@v1 rules3a/3b",
+        "requirements/MIK-R144-v1-the-operations-sidebar-is-rebuilt-to-a-look-the-developer-approved.md",
+        "260928_maintained-invariant-knowledge/144_the-operations-sidebar-is-rebuilt-to-a-look-the-developer-approved.json"
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "attention-overlay-not-inline-evidence",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

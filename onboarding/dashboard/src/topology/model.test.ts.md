@@ -104,7 +104,9 @@ the state → status grammar it reads from.
 - The two vocabulary-driven `buildTopology` cases: every state drawn with its declared status, and `awaiting-developer` explicitly not `"ok"`. [3]
 - The grammar under test — `CONSTEL_STATUSES`, `CONSTEL_STATUS_BY_STATE`, `UNCLASSIFIED_STATUS`, `STATUS_BY_DECLARED_STATE`, `lifecycleStatus`. [4]
 - The topology builder folds each enclosure's lifecycle through `lifecycleStatus` and parents providers by worktree group, repo id, or workspace core. [5]
-- `LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names. [6]
+
+- `LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed at `types/projection.ts:13` from `LIVE_STATES` (`:9`) and `TERMINAL_STATES` (`:11`), whose declarations carry all six names. [6]
+
 - The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence. [7]
 
 ### Cross-Repo References

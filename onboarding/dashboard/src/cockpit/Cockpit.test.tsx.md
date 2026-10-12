@@ -85,24 +85,8 @@ dashboard store.
   `2 awaiting you` inside `[data-testid="task-metrics"]`; a `running` + `blocked` pair makes the same
   node contain no `"awaiting"` at all while still reading `1 running` and `1 blocked` — the segment is
   appended, it displaces nothing, and it never renders a reassurance zero.
-- "the left rail shows lifecycle states and attention severities at the same time" (**260731-EFA-L4**) —
-  three cases, and they render the **whole `CockpitShell`** rather than the two panels, because the
-  panels being siblings in one always-visible rail is exactly the claim under test (the justification
-  `grammar/Dot.tsx` previously used for `warn` and `awaiting-developer` sharing amber was true per LIST
-  and false per VIEW). A local `railProjection(attentionQueue)` seeds one `awaiting-developer` lifecycle
-  plus its `liveEnclosure` (the rail renders a leaf only while a worktree exists) and a `warn`
-  `actionable-drift` row. (1) `[data-testid="task-state"]` and `[data-testid="attn-severity"]` both
-  resolve a first child, and their `outerHTML` differ — both are amber, so telling them apart is the
-  glyph's job. (2) The severity is queried BY ROLE AND NAME — `getByRole("img", { name: "Severity: warn" })`
-  must be the `attn-severity` node — because the wrapper used to be a bare `<span aria-label>`, and ARIA
-  prohibits naming a `generic`: a `getAttribute("aria-label")` assertion would have passed while the
-  computed tree carried nothing. The state dot's label reaches the tree by a different route and is
-  asserted as such: React Aria gives the row `role="option"`, whose name-from-content absorbs the span,
-  so it is matched by `getByRole("option", { name: /Task progress: awaiting-developer; phase: build/ })`.
-  (3) An `axe.run` over a standalone `<AttentionQueue>` render must report zero violations, with
-  `color-contrast` and `region` disabled because jsdom has no layout engine; `aria-prohibited-attr` is
-  `serious` and is what would fail. Scoped to the panel, not the shell, because axe walks every node it
-  is given. (`axe-core` was already a `dashboard` devDependency; this is its first use in this suite.)
+- The left-column signal cases render CockpitShell with a bound awaiting-developer task and a warning entry. Opening the bell exposes the severity layer; the two amber marks differ by glyph. State option naming is checked before opening the modal, with Task progress: your turn; severity is then queried by role=img and name. Axe separately scans the closed bell and complete Popover/Dialog, disabling only jsdom geometry-dependent contrast/region rules. These are not current sibling-panel or standalone inline-queue assertions.
+- The three gallery-state attention cases mirror the edited browser protocol through the same test ids; a separate shell operation opens an entry, closes its layer, marks the carrying option and focuses/scrolls it once. Static assertions and historical unit receipts are not Playwright or real-backend persistence proof.
 
 **Fixtures are now built through the typed wire builders (260731-EFA-L4).** The local `taskDoc(over)`
 factory no longer returns an `as TaskDocNode` object literal — it delegates to
@@ -154,33 +138,63 @@ No relevant domain documentation was found for this file.
 ### Repo-Internal References
 
 
+
 - The suite mounts the shell and switches views through the mode bar. [13]
+
+
 
 - The layout matrix sources the retained pages only through their injected views. [14]
 
+
+
 - The view list the bar renders. [15]
+
+
 
 - The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [31]
 
 
+
+
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [28]
+
+
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [29]
+
 - The shared jsdom stubs the render relies on. [30]
+
 - The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence. [32]
+
+
 - The production source census establishes the sole current `<RoleChatsPane>` JSX mount. [33]
+
+
 - The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). [34]
+
+
 - `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. [35]
+
+
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [36]
+
+
 - The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. [37]
+
 - The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). [38]
 - `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. [39]
 
 
+
 - The toggle cases assert the same document-chat node across the River/Chat switch. [40]
+
+
 
 - Both rail asides stay mounted under full-bleed views. [41]
 
+
+
 - The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze. [42]
+
 
 ### Cross-Repo References
 

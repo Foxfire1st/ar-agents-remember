@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Avoids stealing modified browser chords or silently losing existing task navigation when adding parent arrows."
+  },
+  "applicability": "Keyboard interaction on the focused Operations list parent row.",
+  "conditions": [
+    "Only unmodified left/right arrows toggle parents.",
+    "Non-parent rows and completed-fold lines retain their existing keyboard behavior."
+  ],
+  "exclusions": [
+    "Intercepting browser-modified chords.",
+    "Changing up/down, Enter or typeahead reach."
+  ],
+  "id": "INV-PH90HV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx: \"opens and closes a parent row with the right and left arrow keys\"; sandbox tries in notes/run3/operations-sidebar-proposal/comparison/behave.json (arrowKeys, both widths) and captures/foldkey.json; comparison page, section \"The one addition\"."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "With a parent row in the keyboard's focus the right arrow opens it and the left arrow closes it; on a task row and on the line of completed ones the two keys do nothing; with Alt, Ctrl, Shift or Meta held they are left to the browser; up, down, Enter and typing reach the rows as before.",
+  "status": "accepted",
+  "supersedes": []
+}

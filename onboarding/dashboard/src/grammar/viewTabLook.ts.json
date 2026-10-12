@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+        "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
         "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
         "locator": {
           "kind": "symbol",
@@ -26,11 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
-            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
+            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
             "locator": {
-              "kind": "symbol",
-              "name": "viewTabMetrics"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -42,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
-            "content": "sha256:4fb5066153683885c79d89feeadbba7f2d0ea1180f43961ce483f7842fa71c68",
+            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
+            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
             "locator": {
               "kind": "file"
             }
@@ -57,23 +56,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
-            "content": "sha256:040c954b7656cdd59f49156cb9e44c4a7040b204a1465576928e7cb5c658f8ac",
+            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
+            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
             "locator": {
-              "kind": "symbol",
-              "name": "launcherSelect"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
-            "content": "sha256:82125123ba27b1ac88c92d7f23abfdef6fa6ab4629454adb7294f9cae850b5ce",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 84
+              "kind": "file"
             }
           },
           "kind": "code"

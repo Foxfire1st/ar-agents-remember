@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:ebdb381736927365a91e8048047c976911b24579448d9c6f494333e9a5045519",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             },
@@ -53,11 +53,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -70,11 +69,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:0006f532816355515ca7b8825f236bddaa6c76fc721f96234f8f71b2e07b3932",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
-              "kind": "symbol",
-              "name": "seed"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -104,8 +102,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }
@@ -115,16 +113,14 @@
       ]
     },
     "32": {
-      "note": "The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence.\n\nAnchor: `directly shows one persistent Role chats pane`",
+      "note": "The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:dcbca4b3c626c1009559e837cf8833f2e00bccc1211ecac30198cb4598a36e14",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
-              "end": 830,
-              "kind": "line_range",
-              "start": 802
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -132,16 +128,14 @@
       ]
     },
     "33": {
-      "note": "The production source census establishes the sole current `<RoleChatsPane>` JSX mount.\n\nAnchor: `RoleChatsPane`",
+      "note": "The production source census establishes the sole current `<RoleChatsPane>` JSX mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:605a3c8c62f810db79cee396a2e28df327b841366e5a9f81e5c3f15fef51af35",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 818,
-              "kind": "line_range",
-              "start": 813
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -154,11 +148,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:7e3ee178fab22c2723bf326d2b17a5fda3173a28fdac77ae925c9578ecb1865f",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
-              "kind": "symbol",
-              "name": "withStates"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -170,11 +163,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:e5d87286054a19ade1d7fb042fe56ff23faa4a7753171d51d1052315288c2c74",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
-              "kind": "symbol",
-              "name": "railProjection"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -186,24 +178,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:4da913dc14a3e98a8ce72d4b61b50e8d3f46ae16ba959d5ee98c19cc28ab152f",
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:6c603b1b19d01b6fe32fda4bbc3064c40c3693bd4a08764799016c73f01b3d26",
             "locator": {
-              "kind": "symbol",
-              "name": "severityMark"
-            },
-            "path": "dashboard/src/panels/AttentionQueue.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:47fca5a4af03bf9ddd1a3ce26f3dec1bcf673536070fccfcec2b803236cffcb0",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 233
+              "kind": "file"
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },
@@ -212,16 +190,14 @@
       ]
     },
     "37": {
-      "note": "The `Task progress: …; phase: …` label on `data-testid=\"task-state\"` that React Aria's `role=\"option\"` absorbs.\n\nAnchor: `task-state`",
+      "note": "The `Task progress: …; phase: …` label on `data-testid=\"task-state\"` that React Aria's `role=\"option\"` absorbs.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:960320c04d8528a3e8c0ddb0d3a3a159bd98b14750d929b2b72e44308f1646e6",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
             "locator": {
-              "end": 675,
-              "kind": "line_range",
-              "start": 673
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -251,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
             "locator": {
               "kind": "symbol",
@@ -268,8 +244,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }
@@ -283,8 +259,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }
@@ -294,12 +270,12 @@
       ]
     },
     "42": {
-      "note": "The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze.\n\nAnchor: describe(\"no scanline layer over the cockpit",
+      "note": "The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:5c19949fd3c01e3d9c8b346aea80a1861ccf0615ae66567d757a2058da81d925",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
               "kind": "file"
             }

@@ -1,14 +1,213 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
+        "locator": {
+          "kind": "symbol",
+          "name": "readChoice"
+        }
+      },
+      "id": "RLZ-3JDRTC",
+      "invariant": "INV-JD110F",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Reads the shell's selection in one place: the list's selected key, the row to mark when the two differ, and whether a reveal was asked for this lifecycle.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:6c1e238da4b6758643ff678394e86b83fed334e3ed7395aa8dc46a4362572d32",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleListRender"
+        }
+      },
+      "id": "RLZ-89SXF2",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Places the bell at the right end of the column's head, beside the grouping switch; the queue has no block of its own in the column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRevealChosen"
+        }
+      },
+      "id": "RLZ-AMQZFX",
+      "invariant": "INV-JD110F",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Brings the chosen row into view and focuses it once per request, and uses the request up when there is no row, so a row that appears later does not move the tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
+        "locator": {
+          "kind": "symbol",
+          "name": "typedText"
+        }
+      },
+      "id": "RLZ-B6TTTQ",
+      "invariant": "INV-G71Q09",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / typing",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Builds the text a row is typed by: the id as the row writes it and then the title for a task numbered in its master, the title alone for every other row.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:02d3714739beb8edee62ef0c1a4ad8f6ea34bf29bff661105ae6645174920a70",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowWord"
+        }
+      },
+      "id": "RLZ-EZXMEF",
+      "invariant": "INV-TA1XAA",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a control inside a row",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Draws the row's word and, where the word carries a dismissal, the control beside it: bare beside \"check chat\", named beside a gate.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:d35ebde20d7026521a43b2ba947725d6c4039736a6f01dd8d0737eca177cddd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "plainArrow"
+        }
+      },
+      "id": "RLZ-QCVCHH",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Returns the arrow only when no modifier key is held, so Alt and the left arrow stays the browser's \"back\".",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeKey"
+        }
+      },
+      "id": "RLZ-R8BMK6",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Handles the key on a row: it opens or closes a parent on the right or left arrow and leaves every other key to the list.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:aa5afb91f79f8cfe340b576408a591a80b99610fbac2653bbd088351b3c6706c",
+        "locator": {
+          "kind": "symbol",
+          "name": "PickupDismiss"
+        }
+      },
+      "id": "RLZ-SBJAE6",
+      "invariant": "INV-TA1XAA",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a control inside a row",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "The dismissal of an overdue hand-over on a row: it stops pointer-down, mouse-down and key-down before the list sees them and calls the unchanged dismissal of the operator inbox; beside a gate's word it reads \"chat ×\" and its name and hover say that the gate stays open.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:19666ef36f7d4344e9061f7b56540a9b52170430584337d1a3c956f93786b599",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskRow"
+        }
+      },
+      "id": "RLZ-WG0RE0",
+      "invariant": "INV-G71Q09",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / typing",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Gives the list item that text as its text value, which is what the list matches typing against.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:0d9e3559368d6d704459e972e889f1637b0c26b44b4c1458414df583dffe687a",
+        "locator": {
+          "kind": "symbol",
+          "name": "chosenRowKey"
+        }
+      },
+      "id": "RLZ-WWAC2A",
+      "invariant": "INV-JD110F",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Finds the row that carries the chosen lifecycle: the task document's row where one is bound, else the lifecycle's own row.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+        "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
+        "locator": {
+          "kind": "symbol",
+          "name": "heldFoldKeys"
+        }
+      },
+      "id": "RLZ-X1KK3E",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "heldFoldKeys collects only fold-item keys whose emitted held flag is true, so the renderer can retain the selected completed fold open. It collects no parent keys: treeItems computes parent holding and RowCaret passes the parent collapsed/held state to TaskGroupDisclosure.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "`operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document.",
+    "20": {
+      "note": "Admission is derived from documents and physical worktree enclosures with one row per enclosure, then augmented by exact session identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:5a746ae9e83118cef6fdf077213f22939958394f28d4e82657b82891781d19c2",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:8eafd66502a5ea6a0908a00fc3cbcdee1f2fe73da417c55f3e938ce287d9412e",
             "locator": {
               "kind": "symbol",
               "name": "operationRows"
@@ -18,320 +217,12 @@
         }
       ]
     },
-    "10": {
-      "note": "The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role=\"option\"` names it.\n\nAnchor: \"<ListBoxItem\"",
+    "21": {
+      "note": "Exact case-insensitive stem/id and taskRoot joins determine leaf admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:a1386bd576ce91eacaf853f066fd8ada761ef65513bdf3e0b61b53c8aac75345",
-            "locator": {
-              "end": 649,
-              "kind": "line_range",
-              "start": 648
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
-            "locator": {
-              "kind": "symbol",
-              "name": "orderedByCreation"
-            },
-            "path": "dashboard/src/data/taskHierarchy.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:70612c94f87937832879955d71f7cb2faddcdb2b797c5db714a84831ea8e9366",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 33
-            },
-            "path": "dashboard/src/data/taskHierarchy.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:91526ae7167461e1574ed05dd74af8ebef10b94a4a30d0d6b58b50fd18204e74",
-            "locator": {
-              "kind": "symbol",
-              "name": "isOrchestrationDoc"
-            },
-            "path": "dashboard/src/data/taskHierarchy.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:7afd4163b075219cea73c08fd8264cfe0806cf3bfd20ea056e40ce8823737761",
-            "locator": {
-              "kind": "symbol",
-              "name": "masterCommandNames"
-            },
-            "path": "dashboard/src/data/taskHierarchy.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "213518abed80e566e38ea691861377467f06ee0d",
-            "content": "sha256:d8e1f9610296784050a22d03ca3fcaa6a946e3511e00d8d9bfb5be153ebf3567",
-            "locator": {
-              "kind": "symbol",
-              "name": "orchestratorParentKey"
-            },
-            "path": "dashboard/src/data/taskHierarchy.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The V4 chevron insignia rendered on tier rows (size `row`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f899249cd471ec02db2dcb780f43829ecf1da624",
-            "content": "sha256:d54b8dd525bc7b35012979498e081a730bc39d887141f297bc814c05c239ca42",
-            "locator": {
-              "kind": "symbol",
-              "name": "RankBadge"
-            },
-            "path": "dashboard/src/grammar/RankBadge.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression.\n\nAnchor: \"renders the orchestration tier above its commanded masters with the V4 treatment (L14)\"; \"renders NO orchestration row or insignia in a flat run (D3 regression)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:ae24751802a2462ccfd04e2bb807e39e7adc01448a69ef6069c7801c402c7c52",
-            "locator": {
-              "end": 200,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:c5762aad5822cd8ad2b9536594d7cf28b72c31201c51250559ba64676ce11642",
-            "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 286
-            },
-            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness.\n\nAnchor: \"limits sidebar rows to root docs\"; \"keeps standalone root task documents visible without listing loose leaf docs\"; \"exposes the full long task title and row context on title hover\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:892ab092a299ce2ded321d5a6f2a825b271f87f05f616da0d954b1358342143e",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 19
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:000f8d35b8f7338d3a22669400588e5742199e387ffdc07737fef3ef445fded3",
-            "locator": {
-              "end": 572,
-              "kind": "line_range",
-              "start": 540
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:7fd9d68c9c928146aa1be35e549365e22ae3119757ee549fe28d0592efe9add5",
-            "locator": {
-              "end": 406,
-              "kind": "line_range",
-              "start": 344
-            },
-            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "`fmtWait` for server-computed stale/wait ages.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:62037153cf0b147b87950ac58603f70f56d3ea0b2daf892759e0fdf10a74a172",
-            "locator": {
-              "kind": "symbol",
-              "name": "fmtWait"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:7d65fda57b3ea27116cf835d80c62f19c05c18d14fdab64f88e039a6e61c3e55",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskDocSelectionKey"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:d7f7a06b097b77cccca102a258b60d8143a07558cac28991192305fcecdc6f40",
-            "locator": {
-              "kind": "symbol",
-              "name": "seriesSelectionKey"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:f3e6062b6cec88536e2c8ed18a53a06fb8b0c5d35108f106e4a98e1ad0544351",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycleSelectionKey"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:946d84d3e5db6a791ffa7bd49a9524899d3611ed09672419978503695448037c",
-            "locator": {
-              "kind": "symbol",
-              "name": "parseTaskSelection"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskLabel"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
-            "content": "sha256:d06692e6f0f3b9e031dd184f6ceffee2ef3bef4a16b971b443a233499df51516",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskDocumentLabel"
-            },
-            "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The shared `Panel` head/sticky band the pivot sits in.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
-            "content": "sha256:a496f7643da43edb989182547364cec0d2eb92106d175da69102a945a8b91a9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "Panel"
-            },
-            "path": "dashboard/src/grammar/Panel.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Task-row pickup spinner/check-chat notice.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "38f4348f9d417ec5f7744217df78ddbebc9143fd",
-            "content": "sha256:5390c3d38b730372c454a86a67bad7362107ae084087616b7f59e96388ead934",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentPickupIndicator"
-            },
-            "path": "dashboard/src/panels/AgentPickupIndicator.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
             "content": "sha256:be3cbe49e68cee9d1eb8ba5f714ccd806d9cedbb4221099eb756c5b3ec23de04",
             "locator": {
               "kind": "symbol",
@@ -342,383 +233,262 @@
         }
       ]
     },
-    "3": {
-      "note": "Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it.\n\nAnchor: \"hides a reopened leaf (cleanup=reopened\"; \"re-admits a reopened leaf once its worktrees physically exist again\"; \"hides an abandoned enclosure from the active operations rows\"; \"nests a doc-less orphan lifecycle under its master instead of floating top-level\"; \"renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row\"",
+    "22": {
+      "note": "BY REPO uses the bounded need-ordered tree; BY PHASE stays flat with its own phase ordering.",
       "targets": [
         {
           "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:82a39849b31478b85846da5074dc02fd71c311dc912d749a39cce5960e58a1e4",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 249
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:742e034c38c3dbabf4e19d6052348bd9ea3182090ca80da23b5adc8d1c4ccb13",
-            "locator": {
-              "end": 367,
-              "kind": "line_range",
-              "start": 308
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:980fb1fd0396f20839e272053cebc80def3ac96b451160527eae9a0d3e1804b8",
-            "locator": {
-              "end": 500,
-              "kind": "line_range",
-              "start": 463
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:7e7767be0123e13218965a1081a4939ef5cab10c9c8a3d4270a8affef4c6f6b6",
-            "locator": {
-              "end": 538,
-              "kind": "line_range",
-              "start": 502
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:fb2d495d2bd3fdf44f9b36430f55852598a327a85e190124aed071fd42b21c27",
-            "locator": {
-              "end": 461,
-              "kind": "line_range",
-              "start": 369
-            },
-            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "`groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:4f9696a96f7c1146d3d4f27c51d5a0f7b8f4c740974626f7b16d251b500adb13",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:d4724f8c139e60f57b42d8c14197f5ba2a603a0d46f98a672317793ea08d63b6",
             "locator": {
               "kind": "symbol",
               "name": "groupRows"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "The task row renders caret, named mark, id/title, priority word and figure within its hover-bearing line.",
+      "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:797cd7bdfbbf3af8c34fc9f9072aba171acde34c9f1dcea3fcac9a408d8ffc8f",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:19666ef36f7d4344e9061f7b56540a9b52170430584337d1a3c956f93786b599",
             "locator": {
               "kind": "symbol",
-              "name": "hierarchyRows"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:834c42faefba23b0b3da41dd68d025d818d8f6658d9c4a59f051b56275e86411",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 306
+              "name": "TaskRow"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`.\n\nAnchor: \"const sizing = css({ flex: \\\"1 1 0\\\", minWidth: \\\"0\\\", overflowX: \\\"hidden\\\" });\"; \"const listBox = css({\"; \"const section = css({\"; \"const row = cva({\"; \"const rowId = css({\"; \"const rowSec = css({\"; \"const rowGate = css({\"; \"const rowMeta = css({\"",
+    "24": {
+      "note": "Lifecycle selection and carrying-row marking are deliberately separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:976d7661ace050604a634ed01288b27de1bdaf055d2fcf24fc42e721c0206748",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
             "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 62
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:eace09d677cc500fc164d79a7138677de005fbf5827cc6f8badb8e61037bcece",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 88
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:3917e50cd8597cad842e841fe876fd8edfde103ddbc61def259cae07d3fa9c8c",
-            "locator": {
-              "end": 105,
-              "kind": "line_range",
-              "start": 99
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:ae674e75ecf2e78e3a8c2d39f9c6e1b3fdc21e6fd2668b8bd51d37cf4bfd0012",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 117
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:9839909cda5674f2526e6b8324a59bbd8bc6f343ba9b1363f275dcf102813c7b",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 181
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:b930eac16e53e71600efdbfc85f8f0404f3d8228ecf409b9e3fcd6c2410a3b6b",
-            "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 189
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:0a10a9dbb62fb84b831c4c403619f97d79ffe91ea8697eac82c9894a775170a3",
-            "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 199
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:924eaa542ad794393d69f5fb979440fab609f233fe10e8a3b36fdff8a5fb3ec9",
-            "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 215
+              "kind": "symbol",
+              "name": "readChoice"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "`rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context.",
+    "25": {
+      "note": "A bell request reveals its current carrying row once and consumes an absent-row request without later motion.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:9839909cda5674f2526e6b8324a59bbd8bc6f343ba9b1363f275dcf102813c7b",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
             "locator": {
               "kind": "symbol",
-              "name": "rowId"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:0ec85bd13b646bd79e5359ac593f85df6451aae9c5a9f5b397889ac9562262e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskTitle"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:58653a0ff262bc7bb8bfaa8446b73b65d51a90a8da17dd423ab118b18a6553ea",
-            "locator": {
-              "end": 766,
-              "kind": "line_range",
-              "start": 758
+              "name": "useRevealChosen"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "The two row builders, their call sites and the variant they compute. docRow delegates its variant to taskVariant, which selects lifecycle.state or statusVariant(doc.status); seriesRow selects lifecycle.state or statusVariant(series.status). statusVariant maps completed document status to completed and other statuses to running.",
+    "26": {
+      "note": "Unmodified horizontal arrows act on a parent without overriding held selection reach.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:33b8ef9f2a470333421a44a6acd19d16ec6825710e8b1430b752850d1d0bb848",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
             "locator": {
               "kind": "symbol",
-              "name": "docRow"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:20cfa89ef311703cd50148dc17d81ca143032eef9e3a8c97afb810b42d2c3bf7",
-            "locator": {
-              "kind": "symbol",
-              "name": "seriesRow"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:d3592f9ee6580f5a3ff59d3dc5523d0ca24fe85b9770ec161fa3ad4cb76f3fdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "statusVariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:cf74873b90de9963a920aa392ed819de139447efbe1b7cfb5afc4f3d3246de2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskVariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:532af96893a01f5238053a829bf7140b1c91334ab72d2a6cce0da3dbaff46b3e",
-            "locator": {
-              "end": 499,
-              "kind": "line_range",
-              "start": 489
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:6f080bbbcfb706c33d41906df831837e26c1d28d4a739393e13f645c21b88f06",
-            "locator": {
-              "end": 523,
-              "kind": "line_range",
-              "start": 515
+              "name": "treeKey"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "\"from agents_remember.models.task_document import DocStatus\" — `statusVariant`'s entire input vocabulary (imported from \"from agents_remember.models.task_document import DocStatus, StepStatus\").\n\nAnchor: \"from agents_remember.models.task_document import DocStatus\"",
+    "27": {
+      "note": "Typeahead preserves title-only matching and the displayed prefix for numbered rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
-            "content": "sha256:9f37622c422a4d718eb844c8b24deea23a0c95e9248873f74a408670def4a983",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
             "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 41
+              "kind": "symbol",
+              "name": "typedText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Overdue inbox dismissal names its target, blocks the row press and calls only the inbox helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:aa5afb91f79f8cfe340b576408a591a80b99610fbac2653bbd088351b3c6706c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PickupDismiss"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Pure row state/word/hover and pure tree flattening own the presentation derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:4d8790f814f12157c16127781fa9bcf09a6ed6322c9d772ad658c01fbba7c822",
+            "locator": {
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/tasks/document.py"
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
+            "content": "sha256:0dd8f0689c2d4497fef085255807b034f654610df83322b9b62f5b8c3eb08db6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "`Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`.",
+    "30": {
+      "note": "The behavioral suites preserve admission, hierarchy/phase, signal and bare-ask boundaries on the actual component.",
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:8c2edda1c2305b95f5517495c5620ad3444d736a6b014a5c4aa72335f3be9d3a",
+            "blob": "709e3fb44f874bf2ef5f1d54efe5c614604b7ffc",
+            "content": "sha256:1dd906daad8fc690a5b6bff307c0e63fd177ef4bd6c78b066df7e9ce625f807c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fd4d8cc5e19513b3087151871f77e7a97956cdea",
+            "content": "sha256:42c60dce9ee410be231b6c51a0860ac3d9bb957dde97309c2be718bb9797d75d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "115ef8ad945001a73ebf580dd0a10c44bdfe94cc",
+            "content": "sha256:b27e244d490269c387de5f8fe1ed56a09b9264d64fdb1da25e8ced8b2e2c8897",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7926171e4f4c0aba01f699caa8291d8adc76d75e",
+            "content": "sha256:da6134eaffc8e56f1f84a141bc6fc4b94b675366099f615022f30b6190e05b40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/gateHint.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Root/master lifecycle binding first uses the explicit document id, otherwise its distinct sibling-enclosure join.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:7cbfb93e6e8a6766fcd191e0cf28ac77b6863dfad12d24dd4fb062d6638df1f8",
             "locator": {
               "kind": "symbol",
-              "name": "Dot"
+              "name": "runtimeForDoc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Parent holding is derived by treeItems; heldFoldKeys only collects already-held fold keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
+            "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
             },
-            "path": "dashboard/src/grammar/Dot.tsx"
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:f21c21409320c8d8d9bb08014f00711f758a7bbf2eb2396daee3d8cfc7ecc901",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
             "locator": {
               "kind": "symbol",
-              "name": "DOT_GLYPHS"
+              "name": "heldFoldKeys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Applied-object arrival stamps advance only server-served ages and preserve missing values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:3dfb3ff03be854f5bc6ec2b47091a747f1e77acfcffab8aa0a2add32bc003026",
+            "locator": {
+              "kind": "symbol",
+              "name": "stampServed"
             },
-            "path": "dashboard/src/grammar/Dot.tsx"
+            "path": "dashboard/src/data/servedAges.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:023487c06052b5eb304abe6196955463f88887fe2a01d869f44a212d78066acb",
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 10
+              "kind": "symbol",
+              "name": "servedAgeSeconds"
             },
-            "path": "dashboard/src/grammar/Dot.tsx"
+            "path": "dashboard/src/data/servedAges.ts"
           },
           "kind": "code"
         }

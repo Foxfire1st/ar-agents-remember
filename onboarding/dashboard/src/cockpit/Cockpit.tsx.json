@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
         "locator": {
           "kind": "symbol",
@@ -129,12 +129,30 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "content": "sha256:0548775398b21f55d77c62b077eea7a89ef0c8cccded5362a6fd0d4f89577a0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeftRail"
+        }
+      },
+      "id": "RLZ-PPNW5M",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Renders the task list as the whole left rail and no queue block above it, which is what gives the tree the column's whole height.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
         "locator": {
-          "end": 740,
+          "end": 739,
           "kind": "line_range",
-          "start": 729
+          "start": 728
         }
       },
       "id": "RLZ-VF6VZ5",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
         "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
         "locator": {
           "kind": "symbol",
@@ -171,8 +189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -186,8 +204,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -201,8 +219,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -216,8 +234,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -231,8 +249,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -246,8 +264,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:67b69a8476895fb1533b42be3e18654afa986fbbd6462fed2780894fcfe5df68",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -289,16 +307,14 @@
       ]
     },
     "64": {
-      "note": "The provider around the shell, shown only for Operations with no takeover.\n\nAnchor: `IntentEntryRevalidation`",
+      "note": "The provider around the shell, shown only for Operations with no takeover.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:f29095a6b0e65991918d78538811f694e2d7cf4045c8a92d963b95d6ff19bd85",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 935,
-              "kind": "line_range",
-              "start": 903
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -310,11 +326,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:67c3b106e684a02d421281e64e67f5430bfa6f712e56f1edb6b45412eb0fdccc",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "bodyGrid"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -322,16 +337,14 @@
       ]
     },
     "66": {
-      "note": "Files, Engine Room, Topology, and Chats request the full-bleed layout.\n\nAnchor: `fullBleed`",
+      "note": "Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:146e733ec4294046cd9deced51210017286f0328f30d8a0e286e903dac76e087",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 455,
-              "kind": "line_range",
-              "start": 450
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -339,16 +352,14 @@
       ]
     },
     "67": {
-      "note": "Rail fade properties are selected by the animation permission.\n\nAnchor: `railEnter`",
+      "note": "Rail fade properties are selected by the animation permission.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:041333e586753988ecd046c93fdd43769ae2ab30c44e8c98c592f5294cd70d0d",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 457,
-              "kind": "line_range",
-              "start": 450
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -360,11 +371,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:8a8976027b22047c4030a7ac855a24105253185203e0163cfc631decc487d093",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "chatsLayer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -376,11 +386,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:7ab813a18528ed7b0291017e86822ecbd10c8156f14da45ac0088e4a3f8e8eeb",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "EffectsToggle"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -440,11 +449,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "Cockpit"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -452,16 +460,14 @@
       ]
     },
     "73": {
-      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.\n\nAnchor: `parseReaderHash`",
+      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:23ba3275b061f4cbf0f2fde4d10d2b79b5778515123efa1f56d588b6f2aeb510",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 392,
-              "kind": "line_range",
-              "start": 385
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -516,16 +522,14 @@
       ]
     },
     "77": {
-      "note": "The refcounted catalog poll driver started unconditionally here.\n\nAnchor: `startCatalogPollDriver`",
+      "note": "The refcounted catalog poll driver started unconditionally here.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:83d942e922042383c5a9f498adc4f9c472321ed48c102103243c2b18ef1cb262",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 888,
-              "kind": "line_range",
-              "start": 884
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -554,7 +558,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
             "locator": {
               "kind": "symbol",
@@ -571,7 +575,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:2d5c012b5da58f558f6b064bfb61d20c2f17885b0bf0f5c41396eee1d6caa4b4",
             "locator": {
               "kind": "symbol",
@@ -588,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
             "locator": {
               "kind": "symbol",
@@ -605,7 +609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
             "locator": {
               "kind": "symbol",
@@ -622,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
             "locator": {
               "kind": "symbol",
@@ -656,11 +660,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "AgentNotifierHeartbeatBadge"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -672,7 +675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
             "locator": {
               "kind": "symbol",
@@ -685,16 +688,14 @@
       ]
     },
     "87": {
-      "note": "The shell starts the screen wake lock once on mount and releases it while hidden.\n\nAnchor: `startScreenWakeLock`",
+      "note": "The shell starts the screen wake lock once on mount and releases it while hidden.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:08b8bd133a0e18ed1096568fc817b9ab856652a56f71ff512bb6015ffa2ca149",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 21
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -706,11 +707,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -718,16 +718,14 @@
       ]
     },
     "89": {
-      "note": "The reviewed UI contract owner `RoleChatsPane`.\n\nAnchor: `RoleChatsPane`",
+      "note": "The reviewed UI contract owner `RoleChatsPane`.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:f6179dfd4a7754a006d432553b55091449c4bb05a8eeda501fd31b3e488c87fa",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 813,
-              "kind": "line_range",
-              "start": 813
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -739,11 +737,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:eeeccc8f1fdaa58fb21299088471a3654662916f1e14c89d09f7d201d379eea2",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "kind": "symbol",
-              "name": "ViewLayer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -751,16 +748,14 @@
       ]
     },
     "91": {
-      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.\n\nAnchor: `directly shows one persistent Role chats pane without an old-chat selector`",
+      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9537e9a59d275ce0dab7102ba25200c85cd2fb",
-            "content": "sha256:c913cc52dedb36161f21c530f23496a7d67ba6e1e6ef4190bfe2fc9a2493ec89",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:1e115ab472bf80aa6417eb9ade629c8ac90165be320582224271f38ea826e93e",
             "locator": {
-              "end": 802,
-              "kind": "line_range",
-              "start": 802
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
           },
@@ -769,12 +764,12 @@
       ]
     },
     "92": {
-      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. [92]\n\nAnchor: `RightRail`",
+      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. \\[92]",
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
               "kind": "file"
             }
@@ -784,16 +779,14 @@
       ]
     },
     "93": {
-      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]",
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. \\[93]",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 740,
-              "kind": "line_range",
-              "start": 729
+              "kind": "file"
             }
           },
           "kind": "code"

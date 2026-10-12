@@ -25,7 +25,7 @@ retained pre-cleanup rows, typing pulls the viewport to the live bottom).
 
 ### Logic
 
-The suite is the 27-test primary Playwright acceptance surface. Its current focus assertions follow
+The suite is the primary Playwright acceptance surface. Static source inspection finds 25 literal test declarations and 28 registrations after the two width loops expand; this is not executed Playwright collection or a passing run. Its current focus assertions follow
 the base rail → stage → inspector DOM order: traversal from the stage-header toggle remains in the
 stage, while the inspector handle owns adjacency to inspector content. Landed transcripts are
 asserted through their exact hidden/visible `pty-layer-*` identity. After removal of the StatusLine,
@@ -33,6 +33,8 @@ the suite proves queued settings through the queued chip, effective state throug
 the recorded set ledger through the opened inspector rather than retaining dead selectors. The
 terminal-continuity test asserts the stable DOM contract instead of a parallel-load-sensitive scroll
 position.
+
+The attention cases explicitly open attention-bell before reading the queue layer. Empty reads nothing waiting/no item; Escape closes the modal before querying Detail. These three edited browser tests have same-gallery/test-id unit mirrors in Cockpit.test.tsx, not a Playwright execution claim.
 
 ### Conventions
 
@@ -61,7 +63,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The primary cockpit e2e suite (202 expectations at fix-round verify). [1]
+
+- The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count. [1]
+
 - The dev fixture gallery and scenarios the suite drives. [2]
 
 ### Cross-Repo References

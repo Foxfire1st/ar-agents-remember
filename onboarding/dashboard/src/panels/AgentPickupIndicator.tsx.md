@@ -1,5 +1,15 @@
 # dashboard/src/panels/AgentPickupIndicator.tsx
 
+## Retired source — not a current contract
+
+The standalone marker was removed, but its inbox action was not: LifecycleList PickupDismiss now carries the independently named chat dismissal beside the priority word, including when a gate dominates. Session delivery remains the shared feed. See [current row presentation](lifecycle-list/LifecycleList.tsx.md) and [signal suite](lifecycle-list/signals.test.tsx.md).
+
+The original explanation and numbered evidence below are retained as historical provenance only; they authorize no current import or renderer.
+
+<details>
+<summary>Historical removed-source account</summary>
+
+
 ## Purpose
 
 Task-row feedback for pending dashboard responses that have not yet been consumed by an agent.
@@ -22,3 +32,5 @@ agent pickup.
 - The component is driven by backend projection state, not local click memory.
 - Dismiss means developer-cleared warning, not agent pickup.
 - Inbox acknowledgment is independent from live hosted-chat `turnState`; an idle chat may sit beside a pending or overdue inbox row.
+
+</details>

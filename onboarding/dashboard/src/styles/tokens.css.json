@@ -3,29 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Panda token mirror declares the palette under `colors`, including `colors.well`.\n\nAnchor: `colors`; \"well: { value:\"",
+      "note": "The Panda token mirror declares the palette under `colors`, including `colors.well`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
-            "content": "sha256:fd60af842e1df0edc38eb7247fa66e7eb7b55bd78fa787000e2d12e660d96558",
+            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
+            "content": "sha256:3f71d06bd0e2c7798d6e9212e6854d2c97921df1d9601ba55da96b3b90d223bb",
             "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 30
-            },
-            "path": "dashboard/panda.config.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
-            "content": "sha256:4b66a6f77ea680381871c38ac27e1840a257a7f1722ebd897363c9c3144955c9",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 36
+              "kind": "file"
             },
             "path": "dashboard/panda.config.ts"
           },

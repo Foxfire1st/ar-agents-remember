@@ -19,7 +19,7 @@ Seeds rows with varied lifecycle states and asserts the per-row signal marks
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Signal meaning remains independent of task progress and detail selection. Current assertions locate one priority word and full row hover; inbox dismissal must still be reachable beside a gate, name its inbox target and not select the row. Qualified chat identity and lifecycle/document state remain distinct.
 
 ### Todos
 

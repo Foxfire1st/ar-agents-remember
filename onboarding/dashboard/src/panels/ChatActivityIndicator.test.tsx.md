@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Focused Vitest coverage for Operations chat activity identity, state mapping, aggregation, accessibility, and omission rules.
+Focused Vitest coverage for Operations chat activity identity, state mapping, aggregation and omission rules.
 
 ## Code Commentary
 
@@ -18,7 +18,7 @@ before lifecycle fallback, lifecycle-only fallback, and omission when no live bo
 
 ### Conventions
 
-The test uses a small local `session` builder and Testing Library cleanup; it tests the pure summary and the rendered `role="status"` without touching the session poller.
+The test uses a local session builder and pure Vitest summary assertions without the session poller. Removed JSX/Testing Library assertions no longer prove DOM accessibility, title or role=status; row presentation has separate tests.
 
 ### Invariants And Boundaries
 
@@ -45,7 +45,9 @@ No domain reference was available for this UI-local test contract.
 
 ### Repo-Internal References
 
+
 - Implementation under test. [1]
+
 
 ### Cross-Repo References
 

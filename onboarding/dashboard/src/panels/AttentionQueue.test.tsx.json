@@ -7,23 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:871fdb7c4fd59cb79a6f627c3b203226277f097c851ba7fdcbaa69f61d4fa7eb",
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:6c603b1b19d01b6fe32fda4bbc3064c40c3693bd4a08764799016c73f01b3d26",
             "locator": {
-              "kind": "symbol",
-              "name": "item"
-            },
-            "path": "dashboard/src/panels/AttentionQueue.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:6a65d648e32adea6ffa505c946fb5448f67645d4c0b426adc7543e00568cb366",
-            "locator": {
-              "kind": "symbol",
-              "name": "AttentionQueueImpl"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },
@@ -50,16 +37,14 @@
       ]
     },
     "3": {
-      "note": "The store `applySnapshot` path used by this fixture's projection seed.\n\nAnchor: `applySnapshot`",
+      "note": "The store `applySnapshot` path used by this fixture's projection seed.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ae479898e87326e7c7253a7a85873d56fa92492",
-            "content": "sha256:6b59f9c41e30a26599a4ffb1a904d440b91dc121f3396e65803fe1f93655163c",
+            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
+            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,16 +52,14 @@
       ]
     },
     "4": {
-      "note": "Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target.\n\nAnchor: \"dismisses actionable drift without a lifecycle target and hides it immediately\"",
+      "note": "Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ae479898e87326e7c7253a7a85873d56fa92492",
-            "content": "sha256:7cf5ac3c4b0e01968a5fadf3fe14d85de16c022e17b828ff4822ab9247433495",
+            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
+            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
             "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 133
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -84,16 +67,14 @@
       ]
     },
     "5": {
-      "note": "Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms.\n\nAnchor: \"Clear all dismisses dismissible listed items\"",
+      "note": "Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ae479898e87326e7c7253a7a85873d56fa92492",
-            "content": "sha256:42829d71fb909a20fc1a6bd3bc64ec4d123569c5a13d2f6906fca157376b769d",
+            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
+            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
             "locator": {
-              "end": 197,
-              "kind": "line_range",
-              "start": 151
+              "kind": "file"
             }
           },
           "kind": "test"

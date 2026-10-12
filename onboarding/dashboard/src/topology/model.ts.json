@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48.",
+      "note": "`LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. The tuple composes `LIVE_STATES` (`types/projection.ts:9`) and `TERMINAL_STATES` (`:11`) at `:13`, with `State` derived at `:15`.",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "content": "sha256:b5b850a2fb141b042706b4bc453b7c723afecf7a4754d48d92a36343eabde60d",
             "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_STATES"
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
             },
             "path": "dashboard/src/types/projection.ts"
           },

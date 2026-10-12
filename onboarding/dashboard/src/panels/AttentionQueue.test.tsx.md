@@ -16,14 +16,13 @@ signals and dismiss/clear hides rows optimistically while the POST is in flight.
 
 ### Logic
 
-The first test seeds the real Zustand store from the `engine-fleet` `GALLERY` projection with its
+The tests open the bell through renderOpen before querying entries. The first test seeds the real Zustand store from the `engine-fleet` `GALLERY` projection with its
 `analytics.attentionQueue` overridden to a single `blocked-start` `AttentionItem` and asserts the title
 and reason text. The second test adds a `TaskDocNode` with `lifecycleId: "LC19"` plus a lifecycle gate
-attention item, then asserts the row title becomes `Task 19: Gate interaction polish` while the original
-gate attention text remains in detail. The dismiss tests seed lifecycle rows, actionable drift, and a
+attention item, then asserts the cause retains the original gate text and the second-line `19 Gate interaction polish` button opens LC19 and closes the layer. The dismiss tests seed lifecycle rows, actionable drift, and a
 blocked-start alarm, click per-row/header controls, assert the actionable-drift row disappears
 immediately, and assert only dismissible lifecycle/gate/drift rows are posted while the blocked-start
-alarm has neither `Open` nor `Dismiss`/`Clear all`.
+alarm has neither lifecycle opener nor dismissal/Clear all. Additional cases assert empty/no count, count and urgency independent of server order, Dialog opening, Escape/outside-close without dismissal, retained alarms and empty state after the last dismissal.
 `afterEach` runs RTL `cleanup` and resets the dashboard store.
 
 ### Invariants And Boundaries
@@ -37,8 +36,15 @@ yet), so no "Open" or dismissal affordance is asserted.
 
 ### Repo-Internal References
 
+
 - The panel under test (generic severity-keyed rendering). [1]
+
 - The reducer source of the `blocked-start` item (§9). [2]
+
 - The store `applySnapshot` path used by this fixture's projection seed. [3]
+
+
 - Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. [4]
+
+
 - Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. [5]

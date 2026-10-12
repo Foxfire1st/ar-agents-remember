@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The primary cockpit e2e suite (202 expectations at fix-round verify).\n\nAnchor: \"import { expect, test } from \\\"@playwright/test\\\";\"; `import { expect, test } from `",
+      "note": "The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa50fd6184d1e48fc19b32e706a121c3a1acd31f",
-            "content": "sha256:f3b905a8d028e6dea809684c1493b9ec74d2d00ab9c8555562c4e42ca1ab256f",
+            "blob": "d68450d8f1377b5ae463e379f2e78a6d2404ab0f",
+            "content": "sha256:b689db0fbed9b2afb176ecd5479091788175d4eeb63269b5c994412a07e5a978",
             "locator": {
-              "end": 700,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

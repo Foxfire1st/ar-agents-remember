@@ -8,6 +8,8 @@ in-stage history browser is [conversation-library/](../conversation-library/over
 
 ## Purpose
 
+> **Retained hosted-session implementation and development history, not the current full-page Chats owner.** CockpitShell now mounts the native [RoleChatsPane](../../../cockpit/RoleChats.tsx.md) / Paseo frame. The session-cockpit, structured transcript and in-stage library contracts below describe the retained legacy composition only; they do not transfer chat navigation or visual ownership from the native host.
+
 `dashboard/src/panels/session-cockpit/conversation/` renders the reconstructable conversation projection through one harness-neutral grammar. Its governing session-cockpit route owns the composed Chats experience; `data/conversation` owns projection, runtime, paging and cursor state; the sibling `conversation-library/` owns history browsing. This route turns normalized evidence into a navigable feed of messages, plans, thinking, tools, diffs, historical interactions, results and unknown-vendor evidence. Harness identity and capability uncertainty remain visible without adopting vendor-specific skins or scraping a vendor TUI.
 
 The renderer does not author conversation authority. It reads reconstructed items and delegates acquisition and typed controls to their existing owners. InteractionBar owns the live interaction channel, SessionComposer owns submission and the controlled-seat Stop affordance, and QueuePreview owns queue presentation. Terminal diagnostics are explicitly separate from conversation history and never substitute silently for a failed structured projection.

@@ -17,8 +17,7 @@ cleanup.
 
 `lifecycle` / `enclosure` / `taskDoc` / `seriesNode` build typed nodes;
 `collapsibleHierarchyProjection` builds the grouping scenario;
-`installLifecycleListCleanup` registers the afterEach reset the split files rely on
-(a side-effect import).
+`installLifecycleListCleanup` is called explicitly by each mounted suite; its afterEach clears rendered DOM, stubbed globals, dashboard/session stores and localStorage. rowOf and rowHover resolve the actual option and its hover-bearing first child; standInForCssEscape is a test-only jsdom compatibility stand-in restored by cleanup.
 
 ### Conventions
 
@@ -26,8 +25,7 @@ Typed through the projection mirror; test-only.
 
 ### Invariants And Boundaries
 
-Never imported by production code; split test files must import it for the shared
-cleanup.
+Never imported by production code; mounted split suites must call installLifecycleListCleanup, not rely on an import-time side effect.
 
 ### Todos
 

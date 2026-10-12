@@ -28,8 +28,7 @@ than a dot that silently reads as some other state. The marks are `running ●`,
 `blocked ×`, `awaiting-developer ◆`, `completed ✓`, `abandoned ○`, `alarm ▲`, `warn △`, `info i`,
 with `UNKNOWN_DOT_GLYPH = "?"` for anything unrecognised. They are chosen for shape difference at
 rail size out of blocks a monospace face carries (Basic Latin, Latin-1 Supplement, Geometric Shapes,
-Dingbats). `Cockpit.tsx` renders the `awaiting-developer` and `warn` panels as siblings in one
-always-visible rail, so without the mark a handoff and a queue warning are the same dot at a glance.
+Dingbats). Cockpit nests the attention bell/layer in the task column; lifecycle state and attention severity meet there, so without the mark a handoff and a queue warning are the same dot at a glance.
 
 **The known-set is derived, not copied.** `export const DOT_VARIANTS = dot.variantMap.variant` reads
 the keys off the recipe; `KNOWN` is a `ReadonlySet<string>` built from it and `DotVariant` is
@@ -56,8 +55,7 @@ resting state the Calm toggle already forced. Motion cannot carry state here: `h
 nulls every animation from an unlayered `!important` rule in `index.css`, so a state whose only
 difference is that it moves has no difference at all for a large share of users.
 
-The component still takes a free `variant: string` (`LifecycleList` passes `lifecycle.state` through
-untouched), so an unrecognised variant does not throw — it renders the base tone and `?`.
+The component still takes a free `variant: string` (LifecycleList passes reported non-terminal lifecycle state through to the state mark; completed/abandoned use the task-page status dot), so an unrecognised variant does not throw — it renders the base tone and `?`.
 
 ### Conventions
 
@@ -104,14 +102,23 @@ No configured Domain Documentation source exists for this file.
 The dot is where a wire state becomes something visible, so the vocabulary it must cover is cited
 alongside the treatments it applies.
 
+
 - The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. [1]
+
 - The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1. [2]
 - The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. [3]
 - The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. [4]
-- `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. [5]
-- `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. [6]
+
+- LIFECYCLE_STATES composes the six lifecycle names from LIVE_STATES and TERMINAL_STATES; Dot.test.tsx pins vocabulary equality. [5]
+
+- RowMark passes the reported lifecycle state selected by rowState to Dot and supplies the Task progress label; document/unreported/terminal cases use the task-page mark. [6]
+
+
 - `AttentionQueue` passes the raw `q.severity`. [7]
-- `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. [8]
+
+
+- The attention layer and lifecycle tree meet in the same task column; their glyphs distinguish a handoff from a queue warning even when both are amber. [8]
+
 - The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. [9]
 
 ### Cross-Repo References

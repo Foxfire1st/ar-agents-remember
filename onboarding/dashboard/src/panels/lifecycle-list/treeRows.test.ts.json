@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tests protect ordering, fold scope, selected reach and cyclic parent handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee0bed86e2ca84c64b117522723bfce675dc2dc4",
+            "content": "sha256:208609b64b6668a12ff0c0e6a5b56c29b0a824c508cc6e672d4abc16a18b4d76",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

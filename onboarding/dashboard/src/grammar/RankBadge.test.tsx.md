@@ -1,5 +1,15 @@
 # dashboard/src/grammar/RankBadge.test.tsx
 
+## Retired source — not a current contract
+
+The rank-chevron primitive and its anatomy/size tests were removed together after the consumer census. This suite no longer proves a current renderer; hierarchy, marks and selection are covered by the current lifecycle-list suites. See [current hierarchy suite](../panels/lifecycle-list/hierarchy.test.tsx.md).
+
+The original explanation and numbered evidence below are retained as historical provenance only; they authorize no current import or renderer.
+
+<details>
+<summary>Historical removed-source account</summary>
+
+
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -33,3 +43,5 @@ to a class would fail here and must prove the pip still fills.
 ### Repo-Internal References
 
 - The orchestration-tier test renders the command pip and three chevrons, then asserts the filled pip and stroked chevrons. [1]
+
+</details>

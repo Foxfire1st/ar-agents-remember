@@ -63,7 +63,7 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
   `ViewLayer` that is hidden, never unmounted, so leaving and returning to Knowledge shows the same
   document at the same place; the File Viewer, Chats and the Operations detail panel use the same
   hidden-not-unmounted pattern.
-- **Rails and takeovers.** The left attention queue/lifecycle list and the right event river stay
+- **Rails and takeovers.** The left task list with its nested attention bell/layer and the right event river stay
   mounted and are hidden while full-bleed. Takeovers (change set, intent review, notes/requirements,
   a review target) render over the hidden railed body, and closing one returns to where it was
   opened. `IntentEntryRevalidation` wraps the tree and re-reads the Operations entry once per showing
@@ -109,8 +109,8 @@ shared honest-motion gate.
   shell. Any browser reload remains operator-owned outside that cue.
 - The shell pins to `100vh` with `overflow:hidden`, so rails and viewport scroll internally and the
   bars stay fixed. Full-bleed hides the rails, never the alarm summary.
-- The left rail is why `grammar/Dot.tsx` cannot lean on colour alone: the attention queue and the
-  lifecycle list are siblings with different grammars and must stay distinguishable by glyph.
+- The left rail is why `grammar/Dot.tsx` cannot lean on colour alone: the attention layer and the lifecycle
+  tree carry different grammars in the same column and must stay distinguishable by glyph.
 - A page outside the product bar is not built and fetches nothing at page load; its folder code and
   layout behavior stay tested through an injected initial view.
 - `EffectsToggle` is the only UI writer of `html[data-effects]`.
@@ -161,7 +161,7 @@ Task 29 wires the raw Event River readiness signal through this shell: `connectE
 the backend has emitted the retained backlog and the explicit ready marker.
 
 The body is the `bodyGrid` cva: the railed 3-column shell when `!fullBleed`, a single full-width column
-when `fullBleed`. The two `<aside>` rails (`rail--left` = attention queue + lifecycle list;
+when `fullBleed`. The two `<aside>` rails (`rail--left` = task list with its header attention bell/layer;
 `rail--right` = event river) remain mounted and are hidden while full-bleed, retaining rail state;
 their transitions use a `motion.aside` gated by `useShouldAnimate()` (instant under
 `data-effects=off` / reduced-motion, keeping snapshots stable). `ViewBody` switches the centre by
@@ -255,14 +255,7 @@ rails/viewport scroll internally and the bars stay fixed. The master-caution liv
 top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
 writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag
 `main.tsx` applies at boot); default is effects-on.
-**The left rail is why `grammar/Dot.tsx` cannot lean on colour alone (260731-EFA-L4).** `AttentionQueue`
-and `LifecycleList` are SIBLINGS inside the one always-visible `rail--left` aside, so a developer reads
-the severity grammar and the lifecycle-state grammar in a single glance. They are different facts about
-different objects — the reducer builds no attention row for an `awaiting-developer` lifecycle — so an
-amber dot in the queue says nothing about an amber dot in the list, and the two must stay distinguishable
-by glyph rather than by hue. `Cockpit.test.tsx` pins this by rendering the whole shell (not the two panels
-in isolation, because their being siblings in one view is the claim) and asserting the two dots' markup
-differs.
+**The left column keeps attention severity and lifecycle state distinct.** The bell opens the queue layer over the task tree; the old sibling-panel account no longer holds. A queue warning and a developer handoff can share amber while meaning different facts, and must retain distinct glyphs. The whole-shell test opens the bell to compare both marks; the reducer does not derive an attention row merely from awaiting-developer. Layer topology does not remove the state/severity naming lesson.
 `selectedId` is no longer assumed to be a raw lifecycle id. Any consumer that needs lifecycle context
 must derive it through the task-identity helper.
 `AgentNotifierHeartbeatBadge` (260707-HFX2-L2, renamed in 260713-TES-L1) renders `null` for a never-ticked heartbeat rather than a
@@ -291,28 +284,58 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
+
 - The product bar and its order are one list. [32]
+
+
 - The shell opens on Chats and renders the retained layers. [33]
+
+
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
+
+
 - Full-bleed is derived for the product and retained machine-map views. [35]
+
+
 - A page outside the bar mounts only through an injected view. [36]
+
+
 - The layer wrapper that hides without unmounting. [37]
+
 - The mode-bar primitive that renders the product entries. [38]
 - The Knowledge reader the retained layer mounts. [39]
 
+
 - The provider around the shell, shown only for Operations with no takeover. [64]
+
+
 - The body grid bleed variant switches between three railed columns and a single full-width column. [65]
+
+
 - Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
+
+
 - Rail fade properties are selected by the animation permission. [67]
+
+
 - The `chatsLayer` keep-alive class used by the Chats layer. [68]
+
+
 - `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. [69]
+
 - The boot-time effects flag it persists to. [70]
 - The honest-motion gate the rail transition + the toggle drive. [71]
+
 - The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers. [72]
+
+
 - A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
+
 - The reader's hash parser. [75]
 - The seat-event application + per-connection backlog gate this shell holds. [76]
+
 - The refcounted catalog poll driver started unconditionally here. [77]
+
 - Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId`. [78]
 - The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
 - Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. [80]
@@ -320,14 +343,26 @@ No relevant domain documentation was found for this file.
 - The count-field name is derived from the camel-cased state vocabulary. [82]
 - metricsFor builds the client rollup from lifecycles and spreads the derived state counts. [83]
 - The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS`. [84]
+
 - `AgentNotifierHeartbeatBadge` reads the store field this top-bar indicator renders. [85]
+
 - The `AgentNotifierHeartbeat` type this badge's props shape mirrors. [86]
+
 - The shell starts the screen wake lock once on mount and releases it while hidden. [87]
 
+
+
 - The reviewed UI contract owner `MainLayers`. [88]
+
+
 - The reviewed UI contract owner `RoleChatsPane`. [89]
+
+
 - The reviewed UI contract owner `ViewLayer`. [90]
+
+
 - The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. [91]
+
 
 ### Cross-Repo References
 
@@ -354,5 +389,8 @@ record and the server owns which comparison that record is.
 
 The Chat side of the right rail now mounts `DocumentChat` on the canonical viewed task plus the shared task series; the `RailChat` module, its `viewedLeafKey` plumbing and the leaf-chat context it consumed were removed (rule 8). `RightRail` receives `series` and `active={!fullBleed}` instead of engine/context values, so the retained rail keeps one frame while a full-bleed page hides it. Since MIK-R122 `RightRail` renders `DocumentChat` in an unkeyed stable keepalive wrapper and hides — never unmounts — the chat side, while the Event River still mounts only when shown, so one `DocumentChat` panel serves the whole dashboard lifetime after the first shown chat; the native iframe element itself is still replaced when the fallback loads, Retry refetches, or the host returns (generation rises, key follows). Where the selection names no effective agent the frame stays mounted behind the bound launcher; a matching Projects Architect remains an effective chat target and switches in the same frame (Owner no-document reading). The highlight composer no longer receives a direct leaf-chat target.
 
+
 - The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. \[92] [92]
+
+
 - The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. \[93] [93]

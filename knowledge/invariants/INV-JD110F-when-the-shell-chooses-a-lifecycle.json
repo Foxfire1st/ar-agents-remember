@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Avoids translating lifecycle identity into a task selection or repeatedly stealing focus after an unrelated render."
+  },
+  "applicability": "A shell lifecycle selection and the task-row carrying that lifecycle in Operations.",
+  "conditions": [
+    "The list selection keeps its lifecycle identity.",
+    "Focus and one-time reveal are keyed by the selection request.",
+    "An absent carrying row causes no deferred movement when it later appears."
+  ],
+  "exclusions": [
+    "Selecting the task document on behalf of the lifecycle request.",
+    "Persistent autofocus on every render."
+  ],
+  "id": "INV-JD110F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/Cockpit.test.tsx: \"opens an entry in this shell: its row is marked, brought into view and focused\"; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx: \"chooses and shows the task of an attention entry that the bell's layer opens\", \"moves nothing for an entry whose lifecycle has no row, also when a row comes later\"; sandbox try linkInLongTree in notes/run3/operations-sidebar-proposal/comparison/probe.json."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 5 / a chosen lifecycle",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the shell chooses a lifecycle, as an entry's link does, the list's own selection stays the lifecycle's key and the task row that carries the lifecycle is only marked, brought into view once for that request and given the keyboard's focus; a click on the marked row chooses the task's document; where no row carries the lifecycle nothing moves, also when a row comes later.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -1,17 +1,36 @@
 {
   "path": "dashboard/src/panels/TaskGroupDisclosure.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e18c409e57f75c10be2ba7a41c80499f47fda0fd",
+        "content": "sha256:78245f9de446df6d57e42080f9773859a21066cbac2a976e6cfd7ff27bbe6470",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskGroupDisclosure"
+        }
+      },
+      "id": "RLZ-XKHWVG",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "The caret of a parent row: for a parent that holds the chosen document it says so in its hover and does not close.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The parent list computes the descendant-bearing BY REPO condition before rendering the control.",
+      "note": "The parent list's RowCaret renders the disclosure only for non-flat rows with children, passing actual collapsed and held selected-descendant state.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:fe109b43ff515c573f356ba39443b5b2fc544f63e075d11b26f912f695ecbe73",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:699618ab8c4f010322526c3e6b84857b57c989dcfee011e261f3e4b2752d3160",
             "locator": {
               "kind": "symbol",
-              "name": "hasDescendants"
+              "name": "RowCaret"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -20,16 +39,14 @@
       ]
     },
     "2": {
-      "note": "The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row.\n\nAnchor: \"<TaskGroupDisclosure\"",
+      "note": "The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:67e4ec41b85fa697fb15823c90e1df702e16c47c10bb63431e2a59eefdb945e9",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
             "locator": {
-              "end": 665,
-              "kind": "line_range",
-              "start": 665
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -38,29 +55,14 @@
       ]
     },
     "3": {
-      "note": "Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation.\n\nAnchor: \"defaults hierarchy disclosures to expanded and renders controls only for parents\"; \"keeps sprint and master collapse independent without changing selection or BY PHASE\"",
+      "note": "Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation.",
       "targets": [
         {
           "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:61eec89871b3f24232b10b1e7e0ece1e81d7725f5d2ad8414bb8bee6077f6318",
+            "blob": "fd4d8cc5e19513b3087151871f77e7a97956cdea",
+            "content": "sha256:42c60dce9ee410be231b6c51a0860ac3d9bb957dde97309c2be718bb9797d75d",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 202
-            },
-            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:1f760c6a9aa04a2013141fd201396fd40499f2c52747a48c193c3f43749ade06",
-            "locator": {
-              "end": 261,
-              "kind": "line_range",
-              "start": 221
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
           },

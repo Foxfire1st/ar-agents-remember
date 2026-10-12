@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The gate-hint suite.\n\nAnchor: `describe`",
+      "note": "The gate-hint suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "547ae20ea4805f2495c5d2e351462ff84c725cef",
-            "content": "sha256:30f9d8361a717fb3700409c555faf2497a0ec608a440f9f6e8090277273fd396",
+            "blob": "7926171e4f4c0aba01f699caa8291d8adc76d75e",
+            "content": "sha256:da6134eaffc8e56f1f84a141bc6fc4b94b675366099f615022f30b6190e05b40",
             "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 17
+              "kind": "file"
             }
           },
           "kind": "test"

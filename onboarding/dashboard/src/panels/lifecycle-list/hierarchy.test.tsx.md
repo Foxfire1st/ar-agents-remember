@@ -15,8 +15,7 @@ hierarchy behavior of the Operations list. The current suite holds one `describe
 
 ### Logic
 
-Seeds the collapsible hierarchy projection and asserts group headers, phase
-ordering, and re-show behavior.
+Seeds actual component projections and asserts hierarchy/phase grouping, persisted parent-collapse keys, selection-held ancestor/fold reach, need ordering, in-place completed folds, unmodified parent arrow keys and modifier preservation. Typeahead covers displayed numbered rows and the standalone task title prefix, even when its id is displayed in a separate cell. Attention-origin lifecycle selection marks/focuses the carrier row once without changing the controlled selection key; an absent row never triggers a later delayed scroll.
 
 ### Invariants And Boundaries
 
@@ -88,7 +87,4 @@ re-worded or weakened.
 
 ## 260821-CLIVE Discarded Progress Proof
 
-The suite now proves that a planning master with one live leaf and one discarded-before-start entry
-renders `0/1 · 1 discarded`, explicitly not `1/1`. This preserves the distinction between audited
-removal and completed execution while leaving hierarchy, phase grouping, collapse behavior, and
-long-title coverage unchanged.
+A planning master with one live leaf and one discarded-before-start entry renders `0/1`, explicitly not `1/1`; the complete hover says `Tasks completed: 0 of 1, 1 discarded`. Abandoned rows remain outside the denominator, and a master with only abandoned work has no misleading `0/` figure. The approved compact-row presentation moves secondary counts to the hover without losing audited removal or claiming completed execution.

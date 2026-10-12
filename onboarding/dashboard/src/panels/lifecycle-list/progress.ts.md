@@ -6,13 +6,14 @@
 
 ## Purpose
 
-One row's progress figure. Abandoned sub-task rows (a retired master's row is one) will not run: they are neither done nor part of the total, and the figure names them beside it instead, so a master whose remaining rows are all Completed reads complete ("5/5, 1 abandoned"). The same rule as `tasks/document.py::series_done` / `series_total` / `series_abandoned` on the server.
+One row's numeric progress facts. Abandoned sub-task rows (including a retired master's row) are neither done nor part of the total. The line shows done/total; rowState preserves abandoned and discarded counts in the hover, so completed execution stays distinct from removal. The counting rule agrees with the server's series_done / series_total / series_abandoned projection.
 
 ## Code Commentary
 
-`RowProgress` carries `done`, `total` and an optional `abandoned` count. `taskStepProgress`, `subTaskProgress` and `seriesProgress` derive the figure, and `progressHint` renders it with the discarded count beside it.
+`RowProgress` carries `done`, `total` and an optional `abandoned` count. `taskStepProgress`, `subTaskProgress` and `seriesProgress` derive these facts only. Rendering is owned by rowState and LifecycleList; progressHint was removed when the compact row moved secondary counts into its hover.
 
 ## Evidence
 
-- Abandoned sub-task rows are neither done nor part of the total and are named beside the progress figure. [1]
+- Abandoned sub-task rows are neither done nor part of the total; rendering is outside this counter module. [1]
+
 - The dashboard progress rule matches the server's series_done, series_total and series_abandoned rule. [2]

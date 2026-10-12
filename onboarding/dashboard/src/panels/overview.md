@@ -26,6 +26,10 @@ Knowledge is a task-independent, read-only repository reader addressed by URL ha
 
 ## Construction And Ownership
 
+### Operations task column
+
+LifecycleList owns the full left-column task tree, its priority words, completed folds and selection/keyboard reach; its head mounts AttentionQueue as a bell. The bounded attention layer overlays the tree without consuming its height and retains source-scoped open/dismiss/Clear all and accessible severity. rowState separates document truth from actual lifecycle reports and keeps secondary facts in the hover. ChatActivityIndicator now supplies only the pure session summary; the independent overdue-inbox action is PickupDismiss in LifecycleList, not the removed marker component. TaskGroupDisclosure composes the shared caret cell and respects held selected descendants. These presentation changes do not widen live-worktree admission, author task state or replace the shared session feed.
+
 Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form: one complete
 head followed by the objective as its first block, before Now or Steps, with omitted empty blocks,
 bounded previews and full own views. `detail-panel/taskReader.tsx` owns
@@ -322,3 +326,7 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
 - Exact currentness mark words coexist with an open supplied-reason sibling. [165]
 - Non-authored field rows distinguish absent and recorded-empty values. [166]
+
+- The task list head owns the attention bell and the actual row renderer. [190]
+- The bounded Popover/Dialog retains source-scoped queue actions. [191]
+- Pure row/tree facts and chat summary retain separate state owners. [192]

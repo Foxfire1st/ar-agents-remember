@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
               "end": 389,
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
               "end": 414,
@@ -276,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
               "end": 587,
@@ -294,12 +294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
-              "end": 36,
+              "end": 35,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -435,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -481,12 +481,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 809,
+              "end": 808,
               "kind": "line_range",
-              "start": 808
+              "start": 807
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -693,12 +693,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 575,
+              "end": 720,
               "kind": "line_range",
-              "start": 575
+              "start": 720
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -783,7 +783,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:91c6a64109544a683017f301adcac6dcb2f765430675cea0294e067a6ee05db3",
             "locator": {
               "end": 86,
@@ -796,12 +796,12 @@
         },
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:c2284faeffbc421fc22f6e3773d3a766897b368765e3150a0c5cccb22cba19ee",
             "locator": {
-              "end": 818,
+              "end": 817,
               "kind": "line_range",
-              "start": 785
+              "start": 784
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -809,12 +809,12 @@
         },
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
             "locator": {
-              "end": 936,
+              "end": 935,
               "kind": "line_range",
-              "start": 883
+              "start": 882
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -827,7 +827,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
             "locator": {
               "end": 609,
@@ -1254,7 +1254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
             "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
             "locator": {
               "end": 609,
@@ -1293,12 +1293,12 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:d933bfee3f76b98c89e13b2d5a3d82cf52b4c75c5565fa62755742ef8b7d035e",
             "locator": {
-              "end": 621,
+              "end": 635,
               "kind": "line_range",
-              "start": 589
+              "start": 603
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -1340,6 +1340,47 @@
         }
       ]
     },
+    "64": {
+      "note": "Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:a53187d9b0475a8b77ae182519e2e396841a4b8982704f0584348a9f80082cc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryLink"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:1c602c6358d2aa366794dfcd11061192f9c8c4cad68d5a515a5ee6f99e919116",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileBadge"
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:d147d51fd4ff4ac54df790a90b35b27e72a7c85a4c22baa36767ab29076b9308",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventoryNonText"
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "State and authority architecture.\n\nAnchor: `# dashboard/src/data/ — Cockpit State And Authority Overview`",
       "targets": [
@@ -1359,11 +1400,19 @@
       ]
     },
     "9": {
-      "note": "Sole Chats route, deletion map, and future boundary.\n\nAnchor: `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview`",
+      "note": "The retained legacy SessionsView controller/body composition is not the current full-page Chats mount.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/session-cockpit/overview.md:1-595"
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:f8970f954343af4273bd981c86f115dc58eb4ad836bc893046dadac3e718c7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsViewImpl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

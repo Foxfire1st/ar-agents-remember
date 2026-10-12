@@ -26,13 +26,9 @@ this (Toad `main.tcss` + Claude Code / Codex TUIs) lives in the leaf visual-audi
 muted control text): it existed only as a Panda token (`panda.config.ts`) + a hardcoded literal in
 `index.css`, and the WebTUI mapping (`webtui.css` → `--foreground1: var(--muted)`) would have
 referenced an undefined var — the spike test's declared-token assertion caught it. Plus — 260703-L14
-— the six **rank-insignia tier vars** from the
-approved V4 sketch: `--gold` `oklch(0.87 0.15 95)` / `--gold-dim` / `--gold-ghost` (the orchestration
-tier: chevrons, hairline, row wash) and `--purple` `oklch(0.76 0.14 305)` / `--purple-dim` /
-`--purple-ghost` (management). These back `index.css`'s base layer (body/utilities) and a few Panda
+— the two surviving tier colours: gold for orchestration and purple for management. Four dim/ghost variants were removed with the unused rank-chevron/row-wash treatment; the tier colours remain. These back `index.css`'s base layer (body/utilities) and a few Panda
 `css()` text-shadows that reference `var(--glow-strength)`. `panda.config.ts` mirrors the same palette
-as **typed Panda tokens** (the source the component css/recipes resolve — the L14 components consume
-the Panda `gold*`/`purple*` tokens, not these vars).
+as **typed Panda tokens** (the source the component css/recipes resolve — component recipes consume typed Panda colours, not these vars).
 
 ### Invariants And Boundaries
 
@@ -51,7 +47,9 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
+
 - The Panda token mirror declares the palette under `colors`, including `colors.well`. [1]
+
 - The pty pane consumes the `well` token for its background. [2]
 - The session composer consumes the `well` token for its background. [3]
 - The structured conversation stage consumes the `well` token for its background. [4]

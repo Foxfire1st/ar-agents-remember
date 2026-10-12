@@ -1,0 +1,159 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/rowState.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:38ba50865a9c2b641091375444655f6b14930bd9d02f6d11d5b9c1feedaedda6",
+        "locator": {
+          "kind": "symbol",
+          "name": "askingWord"
+        }
+      },
+      "id": "RLZ-04VW2N",
+      "invariant": "INV-TA1XAA",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / a control inside a row",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Decides that the dismissal goes with the word: with \"check chat\" always, with a gate's word where the hand-over is overdue.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:135f4253cb19c40f3b3a54e1a4490bf9a781ae2512d14accd216b48ce0c61c61",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowHover"
+        }
+      },
+      "id": "RLZ-A2WBWC",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / one word",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Builds the lines of the row's hover, so every fact that lost its place on the row (lifecycle, phase, gate, hand-over, chat seats, abandoned and discarded counts) is still readable.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:af3bcd498858ea5d6b3a0f9242631fb696ea0443a6752e6b0dd6b5811eab05ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowWord"
+        }
+      },
+      "id": "RLZ-A8JVG7",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / one word",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "rowWord takes askingWord first; absent outside attention it uses the asking/blocked band-zero lifecycle word, then a working chat, then the task state with an eligible age. This is the composite priority owner; askingWord ends after the needs-input choice.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:38ba50865a9c2b641091375444655f6b14930bd9d02f6d11d5b9c1feedaedda6",
+        "locator": {
+          "kind": "symbol",
+          "name": "askingWord"
+        }
+      },
+      "id": "RLZ-ATHRPW",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / one word",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "askingWord owns only the first outside-attention choices: gate, overdue handover, unacknowledged handover, then chat needing input. A winning gate carries an overdue-inbox dismissal independently. rowWord, not this helper, chooses the later band-zero state, working-chat and final state-text arms.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:822d9936305c1f480eca335bd1a5e8cbc3f8aac17869a195b9ee89d478d372e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "lifecycleReported"
+        }
+      },
+      "id": "RLZ-JVVP8S",
+      "invariant": "INV-ZPRPXZ",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / who speaks",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Says whether a lifecycle ever reported (not inferred, or an event was seen); the server assumes a paused lifecycle for every task with a worktree, and this is what keeps that assumption off the row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+        "content": "sha256:af3c2bc651292e118f5abea6720008e29985a08a8ef08276e97a68acb173eb41",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowState"
+        }
+      },
+      "id": "RLZ-KKKE31",
+      "invariant": "INV-ZPRPXZ",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / who speaks",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Decides who speaks for a row: the lifecycle once it reported, else the document's status, else \"not begun\".",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "State and priority are derived without mutating lifecycle, document, inbox or chat state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:af3c2bc651292e118f5abea6720008e29985a08a8ef08276e97a68acb173eb41",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Outside attention is selected by askingWord; rowWord owns the remaining state and working-chat choices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:38ba50865a9c2b641091375444655f6b14930bd9d02f6d11d5b9c1feedaedda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "askingWord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:af3bcd498858ea5d6b3a0f9242631fb696ea0443a6752e6b0dd6b5811eab05ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowWord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,15 @@
 # dashboard/src/grammar/RankBadge.tsx
 
+## Retired source — not a current contract
+
+The approved Operations column removes rank chevrons from sprint/master rows, so this primitive and its unused token variants are gone. Tier identity and surviving gold/purple colours remain in the tree and task-page/session presentation. See [grammar overview](overview.md) and [current row presentation](../panels/lifecycle-list/LifecycleList.tsx.md).
+
+The original explanation and numbered evidence below are retained as historical provenance only; they authorize no current import or renderer.
+
+<details>
+<summary>Historical removed-source account</summary>
+
+
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -61,3 +71,5 @@ This card maps a repository-local agents-remember source. Import and task-bounda
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
+
+</details>

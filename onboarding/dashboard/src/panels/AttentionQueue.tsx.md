@@ -2,73 +2,36 @@
 
 ## Governing Overview
 
-[panels/ overview](overview.md)
+[Panels overview](overview.md)
 
 ## Purpose
 
-The home-screen attention queue (note 06): the **server-ranked** list of what needs the human,
-rendered through the dashboard's task-centric lens when a queued lifecycle has a bound task document.
-"Open" couples into the detail view (the queue↔detail coupling). The queue also exposes a server-write
-`Dismiss` / `Clear all` affordances for lifecycle-bound throwaway attention rows. Gate-open rows are
-consumed by server-side gate cancellation/deletion; actionable-drift rows are dismissible repo-level
-one-shots anchored by the drift snapshot timestamp. Other non-lifecycle alarms remain visible until
-their source condition clears.
+The server-ranked attention queue behind the bell in the Operations task-column head. The bell shows waiting count and the most pressing severity; opening it places the entries in a bounded scrollable Popover/Dialog over the tree without moving or shrinking that tree. Escape, an outside press or the bell closes the layer without dismissing its entries.
 
 ## Code Commentary
 
-### Logic
+The bell reuses columnTabButton and an independently drawn panel-local BellIcon, not proposal code. Empty means no count and an accessible nothing-waiting label. Entry order remains selectQueue's server order; the bell finds its urgent tone independently of that order. AttentionQueueImpl measures a 0.62 bound of its owning column when opening and supplies Popover maxHeight; the layer recipe owns internal scrolling. AttentionLayer owns the entries, source-scoped actions and focus retention, not that measurement. Controls wrap within a narrow rail. Its ten-second served-age clock runs while the layer is mounted/open, not on the closed bell.
 
-Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
+Waits start from server-served waitSeconds. [servedAges](../data/servedAges.ts.md) advances that value from the arrival stamp of the exact applied entry object, rather than deriving a fresh age from the render clock. An unanchored object uses its served value unchanged; a missing served value remains missing. Stable-equality identity reuse retains the original object and arrival anchor between real emissions.
 
-Reads `selectQueue` (the reducer's `analytics.attentionQueue`, already severity-sorted) plus
-`analytics.taskDocuments`. `taskForAttention` resolves a lifecycle-bound attention item to its
-non-master task document when possible, `titleForAttention` promotes that task (`Task <id>: <title>`)
-to the visible row title, and `detailForAttention` preserves the original attention title/detail as
-secondary context. Each item is a `motion.li` (Motion enter/leave + layout reflow) styled by an `item`
-Panda `cva` keyed on `severity` (alarm/warn/info border-left). A captured `lifecycleId` const drives
-the "Open" `ghost` button. `canDismiss` limits per-row `Dismiss` and header `Clear all` to rows with
-a lifecycle id, a gate-open `gateId`, or `kind === "actionable-drift"`; clicking either path first
-calls `dashboardStore.suppressAttention(...)` so the row leaves the UI immediately, then posts
-`postAttentionDismiss` with `itemId`, `kind`, nullable `lifecycleId`, and optional `gateId`. Failed
-POSTs call `releaseAttention(...)`. Empty → a `muted` "queue clear".
+Each plain li grid holds severity, cause, age and optional dismissal; a second line names the bound task by short id/title, otherwise repository/lane. The lifecycle opener targets the same lifecycle even without a task document, and closes the layer. A non-master matching task document is preferred. Entries without dismissal keep the empty control's padding so their age aligns. The complete cause/location/severity/lane/age remains in the row hover.
 
-### Conventions
+canDismiss admits lifecycle rows, gate-open rows with a gate id, and actionable-drift one-shots. dismissAttentionItem and clearAllAttention optimistically suppress only the admitted entries and call postAttentionDismiss with itemId, kind, nullable lifecycleId and optional gateId; non-dismissed responses release the failed entries. Duplicate sends are guarded locally. Actionable-drift suppression is scoped to the triggering signal: the reducer retains a dismissal while signalTs is not newer than dismissedAt, and a newer snapshot/signal may surface the entry again. A missing signalTs remains suppressed while that emitted condition persists. Eligibility for an optimistic one-shot is not permanent acknowledgment of later drift. Provider/down/setup/start alarms remain visible until their source clears. Gate dismissal is source-scoped cancellation/deletion, not generic acknowledgment of any alarm. Removing a focused entry first focuses the Dialog so the keyboard can still close or traverse the layer.
 
-Panda `css`/`cva`; the `Panel` chrome with a sizing `className` (`flex:0 1 auto; maxHeight:42%`). The
-severity also drives a `<Dot>`, which is `aria-hidden` and therefore cannot carry the severity itself.
-It is wrapped in a `severityMark` span that supplies the accessible name: `role="img"` plus
-`aria-label={`Severity: ${q.severity}`}` (and the matching `title`), `data-testid="attn-severity"`.
-The role is load-bearing — `aria-label` on a bare `<span>` names a `generic`, which ARIA prohibits
-(axe-core `aria-prohibited-attr`, `serious`) and which no screen reader announces, so before the
-wrapper carried a role the severity reached nobody. `LifecycleList`'s equivalent span needs no role
-only because it sits inside React Aria's `role="option"`, whose name-from-content absorbs the label.
-`severityMark` also takes the `flexShrink:0`, because the wrapper — not the `Dot` — is now the flex
-item in the row.
+Dot is decorative. Each severity wrapper must retain role=img and its Severity label: naming a bare generic span is prohibited and conveys nothing to a screen reader. The state wrapper inside the task ListBoxItem has a different naming owner (role=option); neither depends on hue alone. The old severity border, Motion row reflow, inline Panel sizing and separate Open-text buttons no longer describe this renderer.
 
-### Invariants And Boundaries
-
-The queue is computed server-side (never re-ranked here). Wait-times are formatted (`fmtWait`), never
-computed from the clock. Dismissal stays source-scoped: lifecycle rows require a lifecycle target,
-gate-open rows can be consumed by gate id, and actionable drift is the only targetless repo-level row
-this component can dismiss. Provider/down/setup/start alarms remain fact-backed and cannot be dismissed
-by this component. The severity must stay announced from a role that can hold a name: this panel's
-mark has no surrounding widget role to inherit from, so the `role="img"` on `severityMark` is the only
-thing putting the severity in the accessibility tree.
-
-### 2026-07-24 Curator Delta
-
-The kept-mounted attention rail is memoized and receives its visibility state. Its local age clock stops
-while the full-bleed shell hides the rail, then refreshes when visible again; store updates still render
-through the component's own subscription.
+The persistent bell is memoized with a stable callback; its own queue subscription still updates it. The former active-prop clock gate is historical: current layer lifetime gates age work, while LifecycleList separately controls hidden-rail collection work.
 
 ## Evidence
 
-### Repo-Internal References
+- Queue ownership, accessible bell and contained Popover/Dialog retain tree geometry and open the same lifecycle target. [8]
+- The open layer maps server order, retains focus through entry removal and admits only source-scoped bulk dismissals. [9]
+- Plain two-line entries retain accessible severity, full hover and exact lifecycle opening/dismissal. [10]
+- Source-scoped dismissal and failed-response restoration remain explicit helpers. [11]
+- The layer bound is a proportion of its owning column. [12]
+- Mounted tests preserve lifecycle/drift payloads, protected alarms, empty/count/tone behavior and layer close without dismissal. [13]
 
-- The server-side attention queue this reads. [1]
-- The `selectQueue` selector. [2]
-- `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. [3]
-- `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. [4]
-- `severityMark` — the CSS style applied to the severity wrapper. [5]
-- The `role="img"` / `aria-label` span rendered around the decorative `Dot`. [6]
-- `Dot` is `aria-hidden`, so its consumers own the announced name. [7]
+
+- Dismissal suppression compares the triggering signal with its dismissal and permits newer signals to reappear. [14]
+
+- Queue wait labels advance server-served values from applied-object arrival, without inventing missing ages. [15]

@@ -1,5 +1,7 @@
 # dashboard/src/panels/session-cockpit/conversation-library/ — In-Stage History Browser Overview
 
+> **Retained hosted-session implementation and development history, not the current full-page Chats owner.** CockpitShell now mounts the native [RoleChatsPane](../../../cockpit/RoleChats.tsx.md) / Paseo frame. The session-cockpit, structured transcript and in-stage library contracts below describe the retained legacy composition only; they do not transfer chat navigation or visual ownership from the native host.
+
 | Field                  | Value                                                               |
 | ---------------------- | ------------------------------------------------------------------- |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |

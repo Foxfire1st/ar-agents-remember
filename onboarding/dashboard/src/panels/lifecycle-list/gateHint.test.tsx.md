@@ -14,8 +14,7 @@ affordance.
 
 ### Logic
 
-Seeds a gated lifecycle row and asserts the hint renders without an unauthorized
-ask/respond affordance.
+Seeds a bound lifecycle carrying a bare ask and no durable gate. It proves both the row line and complete hover omit that question/gate affordance while the real lifecycle state remains visible, so absence is not a failed binding.
 
 ### Invariants And Boundaries
 

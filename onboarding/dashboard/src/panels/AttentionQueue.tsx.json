@@ -1,18 +1,149 @@
 {
   "path": "dashboard/src/panels/AttentionQueue.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "LAYER_BOUND"
+        }
+      },
+      "id": "RLZ-0014SR",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Holds the share of the column's inner height the layer may take (62 of 100), the number of the approved page \"Bell, layer open\".",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionQueueImpl"
+        }
+      },
+      "id": "RLZ-BE8ACJ",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "AttentionQueueImpl owns the bell count/most-pressing tone and controlled DialogTrigger. On opening it measures the owning section using LAYER_BOUND and passes that computed bound as Popover maxHeight; selection closes the layer before invoking the unchanged lifecycle callback.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "content": "sha256:f058fdc61aecbaeef4672242b2e4adc74de88dac61e431e94347e2b14ab16ce4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionLayer"
+        }
+      },
+      "id": "RLZ-HE8N5R",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "AttentionLayer renders the open layer content in server queue order, advances served-age labels while mounted, admits source-scoped Clear all and item dismissal, and retains Dialog focus before removal. It does not measure the column or set the Popover height: AttentionQueueImpl owns that bound, and the layer recipe owns scrolling.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The server-side attention queue this reads.\n\nAnchor: \"def build_attention_queue(\"",
+    "10": {
+      "note": "Plain two-line entries retain accessible severity, full hover and exact lifecycle opening/dismissal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:347f261bcd2aaa4caf11cf43b4888c2920fda913f66bd56a842d920dcce35f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Source-scoped dismissal and failed-response restoration remain explicit helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:f09d4f1b9bc435df5ad6bf1f5ddbb35404b8b8e618355e5fc0933f6c97149b5f",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The layer bound is a proportion of its owning column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAYER_BOUND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Mounted tests preserve lifecycle/drift payloads, protected alarms, empty/count/tone behavior and layer close without dismissal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
+            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Dismissal suppression compares the triggering signal with its dismissal and permits newer signals to reappear.",
       "targets": [
         {
           "anchor": {
             "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
-            "content": "sha256:a80a5c3aa2bb46cf4f093950d7ccdeaf16e5830545d9c5f6f05780f8d248ffe3",
+            "content": "sha256:88e5330bc582732ef35423428c34b5073d503c8aa7645a35ab2e16e25f94313f",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 41
+              "kind": "symbol",
+              "name": "_is_dismissed"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:16fb6d0ae1a6d7a3a2bb739cf7c27065cf84ef94e1ac0750631c3fb034b8f3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_signal_after"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
           },
@@ -20,123 +151,62 @@
         }
       ]
     },
-    "2": {
-      "note": "The `selectQueue` selector.",
+    "15": {
+      "note": "Queue wait labels advance server-served values from applied-object arrival, without inventing missing ages.",
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:3dfb3ff03be854f5bc6ec2b47091a747f1e77acfcffab8aa0a2add32bc003026",
             "locator": {
               "kind": "symbol",
-              "name": "selectQueue"
+              "name": "stampServed"
             },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "`canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:a17a6f9bb4a110dbbea515340c1f40cfa5082eef05fb39946e1ddf12f4e54405",
-            "locator": {
-              "kind": "symbol",
-              "name": "canDismiss"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs.\n\nAnchor: `dismissItem`, `clearAll`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:29cb176b7ff1aacaf5d6d7e20ce62721925f8df2587be2b94ce689844742971d",
-            "locator": {
-              "kind": "symbol",
-              "name": "dismissItem"
-            }
+            "path": "dashboard/src/data/servedAges.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:ad8341a28ede20afc9cb8058d0d78e99af3486ce241d7b29017cacface72d432",
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
             "locator": {
               "kind": "symbol",
-              "name": "clearAll"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`severityMark` — the CSS style applied to the severity wrapper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:4da913dc14a3e98a8ce72d4b61b50e8d3f46ae16ba959d5ee98c19cc28ab152f",
-            "locator": {
-              "kind": "symbol",
-              "name": "severityMark"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The `role=\"img\"` / `aria-label` span rendered around the decorative `Dot`.\n\nAnchor: \"import { AnimatePresence, motion } from \\\"motion/react\\\";\"; \"import { Dot } from \"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:c15f81e0727ca898863062fe4b95f83e3da570e1f8d01420a2b4be761fcd7696",
-            "locator": {
-              "end": 9,
-              "kind": "line_range",
-              "start": 9
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:e0ac59425cf560dcc21b9b62729ea2d5703ba66765aea5a6d1aa471b30ea1a42",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`Dot` is `aria-hidden`, so its consumers own the announced name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:8c2edda1c2305b95f5517495c5620ad3444d736a6b014a5c4aa72335f3be9d3a",
-            "locator": {
-              "kind": "symbol",
-              "name": "Dot"
+              "name": "servedAgeSeconds"
             },
-            "path": "dashboard/src/grammar/Dot.tsx"
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Queue ownership, accessible bell and contained Popover/Dialog retain tree geometry and open the same lifecycle target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueueImpl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The open layer maps server order, retains focus through entry removal and admits only source-scoped bulk dismissals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:f058fdc61aecbaeef4672242b2e4adc74de88dac61e431e94347e2b14ab16ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionLayer"
+            }
           },
           "kind": "code"
         }

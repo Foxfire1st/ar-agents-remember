@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The row-admission suite.\n\nAnchor: `describe`",
+      "note": "The row-admission suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
-            "content": "sha256:b54c534100c701851638e8d0914c3c999378586edfed77ae3dffe2b326d79c27",
+            "blob": "709e3fb44f874bf2ef5f1d54efe5c614604b7ffc",
+            "content": "sha256:1dd906daad8fc690a5b6bff307c0e63fd177ef4bd6c78b066df7e9ce625f807c",
             "locator": {
-              "end": 575,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             }
           },
           "kind": "test"

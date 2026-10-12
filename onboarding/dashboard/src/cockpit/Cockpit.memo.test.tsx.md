@@ -19,8 +19,7 @@ layers survives switches.
 - Because Engine Room left the product bar and is not built at load, `counts.engineRoom` is now `0`
   throughout; the sweep clicks the remaining product entries (Chats, File Viewer, Operations) and
   the keep-alive assertions use the File Viewer layer in place of the Engine Room layer.
-- The rail-visibility counts shrink accordingly (Chats hides the rails, Operations shows them again);
-  the memo gate itself is unchanged.
+- The visibility sweep gives the LifecycleList controller three renders but the nested attention bell only its original mount. The hidden rendered-collection gate and then the bell's stable-callback memo gate isolate it from the rail edges.
 - Since MIK-R122 the suite also pins the right-rail chat keep-alive: the River-hidden
   sidebar case keeps the same document-chat node across the EventRiver presence/absence
   toggle, and the memoized rail toggle still updates. Sidebar ARIA on the right rail is
@@ -54,10 +53,16 @@ No configured live documentation source was available for this pass.
 
 - The keep-alive case observes the File Viewer layer identity instead of the Engine Room. [13]
 
+
 - The hidden-not-unmounted wrapper whose identity survives a switch. [14]
+
+
 - The mounted layers the render counts observe. [15]
 
+
+
 - The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle. [16]
+
 
 ### Cross-Repo References
 

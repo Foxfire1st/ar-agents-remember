@@ -23,6 +23,8 @@ For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/req
 
 For change sets and Intent Review, start at `panels/detail-panel/changeSetBar.tsx`, `intentReviewEntry.tsx` and the existing change-set takeover. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets, and an always-present task-context Intent Review entry. Liveness selects live versus recorded review identity. The review entry's counts are changed-intent counts from the comparison summary, not changed-line counts or catalogue size.
 
+The current card inventory link opens the existing change-set page for all changed files; measured inventory count and unavailable/unmeasured state remain distinct, and non-text file badges use the supplied inventory rather than Engine Room fixtures.
+
 For projection contract changes, follow the producer schema and projection generator before the generated TypeScript/schema or manual snapshot. For lifecycle observation, the generated envelope carries version, identity, component bindings, worker/approval/recommended-action facts and optional meaningful revision/task intent. Those fields are server-owned observations, not browser-created authority or activity counters.
 
 ## Construction And Ownership
@@ -36,6 +38,8 @@ The task reader presents one track-and-knob Direct execution switch only on a pl
 Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment explicitly distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set takeover takes screen precedence. Change-set/review takeovers are conditionally mounted through their common target. Retention claims must therefore be scoped to the layer that actually owns them.
 
 The shell's main viewport deliberately hides overflow: panels own their scrollports. This is a composition obligation, not proof that every possible injected panel is scrollable. Rails likewise delegate scrolling to their panel children. Memoized layers, stable callbacks and identity-stable store slices express the intent to avoid reconciling entire retained surfaces on each navigation change; old timing measurements do not certify present performance.
+
+The task list fills the left rail; attention lives behind its header bell in a bounded overlay rather than a sibling height-consuming block. Compact grouping, bell and Clear all controls share viewTabLook authority. These presentation changes retain existing action and identity contracts.
 
 Operations' right rail selects Event River or the selected task's native document chat. The removed contextual RailChat path is not the current owner. HighlightComposer remains a shell-wide selection affordance; the inherited stable-empty-task-document intent avoids manufacturing a fresh external-store snapshot when no projection is available.
 
@@ -308,7 +312,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Shell navigation, persistent layers and shared drivers. [6]
 - State and authority architecture. [7]
 - Panel composition. [8]
-- Sole Chats route, deletion map, and future boundary. [9]
+- The retained legacy SessionsView controller/body composition is not the current full-page Chats mount. [9]
 - Dev scenario authority and end-to-end states. [10]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
 - State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
@@ -358,6 +362,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Engine Room's present body composes enclosure map, stack, boot and diagnostics [59]
 - Browser probe contract is intentionally import-free across TypeScript projects [60]
 - Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content. [61]
+- Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory. [64]
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
 - Shell navigation, persistent layers and shared drivers. [6]

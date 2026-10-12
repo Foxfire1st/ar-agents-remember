@@ -13,15 +13,14 @@ button for a group with visible descendants without turning disclosure activatio
 
 ### Logic
 
-`TaskGroupDisclosure` receives the row label, collapsed state, and a toggle callback. It renders a
+`TaskGroupDisclosure` receives the row label, collapsed state, optional held=false and a toggle callback. It renders a
 native `button` with `type="button"`, an accurate Expand/Collapse accessible name, and
 `aria-expanded={ !collapsed }`. Pointer-down, key-down, and click handlers stop propagation so the
-button remains an independent navigation control inside the React Aria `ListBoxItem`.
+button remains independent inside the ListBoxItem. A held ancestor names its selected-descendant reason and suppresses the toggle; aria-expanded still describes the supplied collapsed value rather than forcing it locally.
 
 ### Conventions
 
-Presentation uses the panels route's co-located Panda `css()` styling, a visible chevron, and the
-shared amber focus-visible treatment. The component owns no state and performs no persistence.
+Presentation composes the shared columnLook caret cell with local Panda hover/focus styling and the amber focus-visible treatment. The component owns no state and performs no persistence.
 
 ### Invariants And Boundaries
 
@@ -45,9 +44,15 @@ No configured domain-documentation source was available for this local UI primit
 
 ### Repo-Internal References
 
-- The parent list computes the descendant-bearing BY REPO condition before rendering the control. [1]
+
+- The parent list's RowCaret renders the disclosure only for non-flat rows with children, passing actual collapsed and held selected-descendant state. [1]
+
+
 - The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. [2]
+
+
 - Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. [3]
+
 
 ### Cross-Repo References
 

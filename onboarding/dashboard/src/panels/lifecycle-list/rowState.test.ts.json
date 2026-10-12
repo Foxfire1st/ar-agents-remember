@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/rowState.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The assertions exercise document/lifecycle truth, priority and retained hover information on synthetic row facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f6e84711d045aaf00f19479f922e49bd2868a1",
+            "content": "sha256:b2a4258ce86e6dedb49690d4f2942c66f7e9b620905dd545b07b2fcc7f974788",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

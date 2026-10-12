@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`CockpitShell` is the sole catalog driver/reconciler owner for the shared store.\n\nAnchor: \"Catalog ownership is shell-lifetime and view-independent.\"",
+      "note": "`CockpitShell` is the sole catalog driver/reconciler owner for the shared store.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:b43349d75530db9c11f3d120e7df74afb827bdd70b26785bef5dffdbbef0c32e",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
             "locator": {
-              "end": 876,
-              "kind": "line_range",
-              "start": 876
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -21,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "`LifecycleList` is this component's sole production consumer.",
+      "note": "`LifecycleList` is the pure summary's Operations consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:175dfed166e2671d5756266e16671d4d00e6c93b509c153bf553e4a324dcc614",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleList"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -68,29 +65,14 @@
       ]
     },
     "4": {
-      "note": "Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission.\n\nAnchor: \"maps an observed busy chat to working\"; \"omits activity without a live bound harness seat\"",
+      "note": "Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission.",
       "targets": [
         {
           "anchor": {
-            "blob": "7588eed4ea9f651c629e8840acfbc5fa2d093ac6",
-            "content": "sha256:7a6a76dff44fff8950a2a9f04e141eec63fef5f38cb4d588ac9f8b20123d9846",
+            "blob": "2b40ba7db951915bf2d4c1a8c58d19a65771fa9f",
+            "content": "sha256:d4d413d70f202b0184ad4d3d15d8d832b5bc4404b14e40407e0760cc0c66e0fd",
             "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "dashboard/src/panels/ChatActivityIndicator.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7588eed4ea9f651c629e8840acfbc5fa2d093ac6",
-            "content": "sha256:fe24e7c9cb3d67d9c080feec417182645ee702e6c0adbdc6d7d9afbb49e999ff",
-            "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 128
+              "kind": "file"
             },
             "path": "dashboard/src/panels/ChatActivityIndicator.test.tsx"
           },
