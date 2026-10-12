@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:070481150c47667d9011dcce349c59aa6698ce588ec93cb076074d6ae10cfd0e",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,12 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:0449a2531d0f60e523d7d8177638ebaaf11368e650e112c7fb2126e359ad0b94",
             "locator": {
-              "end": 176,
+              "end": 184,
               "kind": "line_range",
-              "start": 155
+              "start": 163
             }
           },
           "kind": "test"
@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:d0c30db2f705f24c90a0df61907ee97e71244aab976ba7d6c8d8c5537735f3fa",
             "locator": {
               "kind": "symbol",
@@ -46,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:3fded7ef3993df6ac6b4e1ad09de14c96049972a456743491b4973f59f82f32a",
             "locator": {
-              "end": 221,
+              "end": 229,
               "kind": "line_range",
-              "start": 178
+              "start": 186
             }
           },
           "kind": "test"
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:3ae9515ce952f711ae2b635c1ee6555a1aa7e4128da82d80f25851fdae199253",
             "locator": {
               "kind": "symbol",
@@ -74,12 +74,12 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:3f1754b73fde8ca513e487dde999b0d166e01ff3e980b49dda5d268eab54de29",
             "locator": {
-              "end": 266,
+              "end": 274,
               "kind": "line_range",
-              "start": 223
+              "start": 231
             }
           },
           "kind": "test"
@@ -87,27 +87,16 @@
       ]
     },
     "4": {
-      "note": "Oversized unreadable detail is bounded in both status and sync projections without changing source bytes.",
+      "note": "Oversized status and sync refusals keep bounded whole-result diagnostics in their logs and preserve malformed source bytes.\n\nAnchor: `RegisteredActivationAdmissionTests.test_registered_status_and_sync_bound_oversized_unreadable_detail`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:bcff311e8cad6923e9e47db4a2e7255552cd43909a3940e6a33a12741d740111",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
+            "content": "sha256:a7f37631b15f55fd41268a9cfade0dc05a1304188b07f3738465db98eea24190",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_status_and_sync_bound_oversized_unreadable_detail"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:001f579809a2f1ebffe7a52cda06b0abfc8f988309f73661d8858dface924c5a",
-            "locator": {
-              "end": 320,
+              "end": 332,
               "kind": "line_range",
-              "start": 268
+              "start": 277
             }
           },
           "kind": "test"
@@ -119,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:fcc76a59db328742aa740ca041dd7b6ca32046048ab9741bc1da6a3a2850c594",
             "locator": {
               "kind": "symbol",
@@ -130,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:d14a16cf53ec189f264336d28f8fa73e8d6f0807ff2eb215877d5cc1c346c626",
             "locator": {
-              "end": 369,
+              "end": 380,
               "kind": "line_range",
-              "start": 322
+              "start": 333
             }
           },
           "kind": "test"
@@ -147,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:566b1aa3c660afccce50071c5e429e01eef8e372ea6565af792e561adb4f93b6",
             "locator": {
               "kind": "symbol",
@@ -158,12 +147,12 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
             "content": "sha256:293afee9f6f3ef5a42c98e7db79b65209e289caeb70bf2eb0f4fb2853120ecc6",
             "locator": {
-              "end": 423,
+              "end": 434,
               "kind": "line_range",
-              "start": 371
+              "start": 382
             }
           },
           "kind": "test"
@@ -171,27 +160,16 @@
       ]
     },
     "7": {
-      "note": "Unreadable startup contracts retain the concrete parser reason in refusal and observed evidence, including bounded oversized parser detail and unchanged source bytes.",
+      "note": "Unreadable startup contracts retain concrete bounded parser reason and admission in the logged whole refusal; delivered overflow identity and retry guidance are checked separately.\n\nAnchor: `RegisteredActivationAdmissionTests.test_registered_start_unreadable_contract_keeps_parser_reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:d4f5bc5ef9d7950210522078c335622c26da99478142be34efbac7bb0b94e238",
+            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
+            "content": "sha256:10b423ab2e3661edd54866c23d8568afcdc6a74f2d84f997c0d434e873e8d05a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_start_unreadable_contract_keeps_parser_reason"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:fb263af547424102d816142a981453509edd7384b6fc5d70c0df8e7041a9c1ed",
-            "locator": {
-              "end": 497,
+              "end": 515,
               "kind": "line_range",
-              "start": 425
+              "start": 437
             }
           },
           "kind": "test"

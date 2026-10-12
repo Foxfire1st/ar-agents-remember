@@ -21,7 +21,12 @@ declared empty set is distinct from an absent declaration: only observed-empty e
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.
 
-`REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in one change set, and two more in
+The current declaration for `scripts/e2e_harness/run.py` includes cleanup readiness, knowledge-read
+boundary and real-tool review-block consumers as well as the retained lifecycle consumers. Exact
+source-derived agreement remains required; a canonical catalog alone cannot supply a missing
+selection edge.
+
+Historically, `REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in one change set, and two more in
 `260915-KS-L18`'s — the
 260913-LCA-L8 module and eleven sibling suites that the extracted shared fixtures now reach — so
 `mcp/tests/test_terminal_blocker_reasons.py`, `mcp/tests/test_checkpoint_landing_end_to_end.py`,
@@ -68,7 +73,9 @@ The source owners below establish these file-local behaviors; this read does not
 
 - Transitive importer closure [2]
 - Digest binds declarations and classification authority [3]
-- **The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.** [4]
+
+- The repository-owned exact consumer declaration and ambient-runner input identity. [4]
+
 
 - An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason. [5]
 - Observed and declared ownership, exact-empty distinction and refusals [6]

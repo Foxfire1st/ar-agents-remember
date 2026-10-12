@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,12 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:835ddb514dd318c90463438db0e335f2ecb64b63e8ea016f1638993a3e54163c",
             "locator": {
-              "end": 540,
+              "end": 544,
               "kind": "line_range",
-              "start": 520
+              "start": 524
             }
           },
           "kind": "code"
@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
             "locator": {
               "kind": "symbol",
@@ -46,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:65205ebf1c182e0116bf2dd3990560f7a0d725f24162e7d000348b069dfe450a",
             "locator": {
-              "end": 612,
+              "end": 616,
               "kind": "line_range",
-              "start": 591
+              "start": 595
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       ]
     },
     "4": {
-      "note": "**The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.**",
+      "note": "The repository-owned exact consumer declaration and ambient-runner input identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
-            "content": "sha256:876a387f9a0d6904fef7bd7fadd03506ddedbafbb89433f4a19cc847e45a27a8",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
+            "content": "sha256:d1a917bb90bb1f895c1b2b561baf8b69f66ea9a1ec4ce716133024dc92979942",
             "locator": {
               "kind": "symbol",
               "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
@@ -74,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
             "locator": {
               "kind": "symbol",
@@ -90,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:3ed8dc3975f0c700c971b6ee532a73f6e6dc032981279b674466fa9534d6ccb2",
             "locator": {
-              "end": 337,
+              "end": 341,
               "kind": "line_range",
-              "start": 334
+              "start": 338
             }
           },
           "kind": "code"
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:20fad3c44b7d355b4ca354acac3801d7580599e9c82c345e9678a0fa1431ab94",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,657 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L157",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-527BJW",
+      "items": [
+        "sha256:66c53f3b8a95764bff97504aac7d6a14af2ff4f44301d030f07128d97390a64a"
+      ],
+      "reason": "MIK-R157@v1 rule 3 brings the proof to MIK-R112 rule 5: removed switch_lifecycle cannot construct an ambient second-task preview. This deletion removes the obsolete helper and unused imports only; fresh-session preview and real-start refusal metadata retain their separately named witnesses. No new enduring invariant is introduced by dead-support removal.",
+      "subject": "hunk:sha256:66c53f3b8a95764bff97504aac7d6a14af2ff4f44301d030f07128d97390a64a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D11H5N",
+      "items": [
+        "sha256:dfacf1df01e7ea9388366247d6709813e7448944a204a71b125c98d60a444838"
+      ],
+      "reason": "MIK-R157@v1 rule 3 brings the proof to MIK-R112 rule 5: removed switch_lifecycle cannot construct an ambient second-task preview. This deletion removes the obsolete helper and unused imports only; fresh-session preview and real-start refusal metadata retain their separately named witnesses. No new enduring invariant is introduced by dead-support removal.",
+      "subject": "hunk:sha256:dfacf1df01e7ea9388366247d6709813e7448944a204a71b125c98d60a444838"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EE2GKF",
+      "items": [
+        "sha256:90d1ab2133cf4daf189e639fc4826bf55a8de1458431dae75e59e4a9246908b7"
+      ],
+      "reason": "MIK-R157@v1 rule 3 brings the proof to MIK-R112 rule 5: removed switch_lifecycle cannot construct an ambient second-task preview. This deletion removes the obsolete helper and unused imports only; fresh-session preview and real-start refusal metadata retain their separately named witnesses. No new enduring invariant is introduced by dead-support removal.",
+      "subject": "hunk:sha256:90d1ab2133cf4daf189e639fc4826bf55a8de1458431dae75e59e4a9246908b7"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 2
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FVXH8G",
+      "items": [
+        "sha256:4aeb1918d1a9d7e9433c0d1297671e1eb63677ff1ec57437eeb8e6aafb17315d"
+      ],
+      "reason": "Examined both exact-parent and truthful-memory-ref members. Fresh-session preview preserves durable apply and journal/ref truth; refusal metadata is separate from successful preview. No guarantee, membership or route change is justified.",
+      "revision": 1,
+      "subject": "FAM-SZ4B70"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "65a697f6e7585216a37a1cbfdf2c617d75e34a21",
+            "content": "sha256:bbd4b74c6d9b879e08e63c11dabdefd436365a834c1498086dbcb2c5ca86087e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_keeper_preview_and_hook_failure_preview"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "before": {
+            "blob": "5fdc0dff67c307f79563c8c49fcd5f57f3a38dad",
+            "content": "sha256:bbd4b74c6d9b879e08e63c11dabdefd436365a834c1498086dbcb2c5ca86087e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_keeper_preview_and_hook_failure_preview"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "id": "PRF-6HE02M"
+        },
+        {
+          "after": {
+            "blob": "65a697f6e7585216a37a1cbfdf2c617d75e34a21",
+            "content": "sha256:483b826456b999047bd99292a046f8271497978470d0ac6bfff926cff9827ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fifteen_master_preview_bounded_and_exact"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "before": {
+            "blob": "5fdc0dff67c307f79563c8c49fcd5f57f3a38dad",
+            "content": "sha256:da0db0a803ae535f98cb61934941b9019311f78f3b8e42c66a8a75e55f981062",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fifteen_master_preview_bounded_and_exact"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "id": "PRF-DRCF94"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G8HGTN",
+      "items": [
+        "sha256:b4edf1cbcb17f847ca6b1bfefbdbe0489fd9ebc4c9a653a1b1a72763f5704924"
+      ],
+      "reason": "Preserves retired status and historical origin; the live fifteen-master witness now reads the complete log and still asserts bounded exact preview. Currency renewal does not revive the superseded defect statement; INV-A704ST remains the governing current intent.",
+      "revision": 1,
+      "subject": "INV-VH9J71"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JJ00EG",
+      "items": [
+        "sha256:1b5282753a10035da084f3fe4d6c407df10f97078a297c833befee1c89842567"
+      ],
+      "reason": "MIK-R157@v1 rule 3 brings the proof to MIK-R112 rule 5: removed switch_lifecycle cannot construct an ambient second-task preview. This deletion removes the obsolete helper and unused imports only; fresh-session preview and real-start refusal metadata retain their separately named witnesses. No new enduring invariant is introduced by dead-support removal.",
+      "subject": "hunk:sha256:1b5282753a10035da084f3fe4d6c407df10f97078a297c833befee1c89842567"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_line"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_line"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-0CJK8E"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_file_beside_the_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_file_beside_the_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-2B15HE"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_directory_touch_without_entry"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_directory_touch_without_entry"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-98J11A"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_detail_folder"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_detail_folder"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-GAABYY"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_detail_file_no_line_names"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_detail_file_no_line_names"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-GRZNF5"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:137e5cb0ffae92ce39e71a2fcea84feb24c878932b9bcdf6b8d60a4b4137f262",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observer_event_mode_change_is_rejected"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:19c9b43d358848506314e4f00d175c7d1fdac08792d0bfd27c6a86af586cdcdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observer_event_mode_change_is_rejected"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-MST172"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-QACN4Z"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-WE5RQB"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_event"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_event"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-ZC9KP2"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreviewFixture"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreviewFixture"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "RLZ-CNGGMS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JS50XG",
+      "items": [
+        "sha256:df6920f5ec87ba690c554defa2719924417e6d6fa55cdfd097da67d3f063420b"
+      ],
+      "reason": "Preserves caller-owned record and metadata boundaries. The event-mode case obtains its lifecycle through a real start, observes a second-leaf lifecycle-switch-required refusal and real event-file change, accepts unchanged kind/mode, then proves changed mode fails. It no longer supplies the removed helper's separate full ambient byte-prefix/tool-identity witness. Other strict daily-log/river negative controls and guard meaning remain.",
+      "revision": 1,
+      "subject": "INV-GAKDNC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K38E16",
+      "items": [
+        "sha256:a2a9ba1447445824dfdcb657ad471c6066b77ea567734e2583162cd6944060cd"
+      ],
+      "reason": "Reviewed the complete governing overview and exact consumer-table additions: observed-versus-declared equality, incomplete ownership refusal and separation from catalog authority are unchanged. The changed table belongs to the file card; no new route or load-bearing entity exists.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-10GFBN",
+          "revision": 1
+        },
+        {
+          "id": "INV-A704ST",
+          "revision": 1
+        },
+        {
+          "id": "INV-G4ED1Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MWJ2CV",
+      "items": [
+        "sha256:be3db45528291156a6de87924dc8684892eec188734860ebaf76e028fd7aad1a"
+      ],
+      "reason": "Examined custody, legacy admission and bounded/exact preview members together. Only preview assertion access moves to the logged whole result; guarantee, membership and production routes remain justified and unchanged.",
+      "revision": 1,
+      "subject": "FAM-KVC8JB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2eb50e2d0b8bab46977808a19f0c1ffb923accc4",
+            "content": "sha256:347eec6e8f7ec21818f1846891a4a0870a49258c011e7f8bb9607e144fc67bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "before": {
+            "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+            "content": "sha256:d853f5752197f836d1dd4268f27ed9d65f1c780ccdaa8565780d5d6b328e770b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "id": "PRF-1F8SYK"
+        },
+        {
+          "after": {
+            "blob": "2eb50e2d0b8bab46977808a19f0c1ffb923accc4",
+            "content": "sha256:8db10404beead96c6db15b53dbeffbdf75d2b4234daff058ea67e6b00cefe3bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "before": {
+            "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+            "content": "sha256:1e5a2b2e8458c1dc9a5a50cf13f3447a0194f88e4996961a98e6873a541f8f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "id": "PRF-PSGZ18"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q23J86",
+      "items": [
+        "sha256:973c3907a39bc81fb0c1356d214dd3b4cf29e47452bd8ae54f65f9e198d53953"
+      ],
+      "reason": "Preserves provision-once, call-time configuration, idempotence, reload-without-stop, read-only dry-run and failure-composition intent. Full install/update facts use their own newly filed report with optional pointer cross-check; preview flags are unshaped component evidence, not a retained public-host object.",
+      "revision": 1,
+      "subject": "INV-GAZREV"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-03M6ZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-0PAKA9",
+          "revision": 2
+        },
+        {
+          "id": "INV-7HC1QH",
+          "revision": 1
+        },
+        {
+          "id": "INV-96C24X",
+          "revision": 1
+        },
+        {
+          "id": "INV-BGV9YT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CB36W0",
+          "revision": 1
+        },
+        {
+          "id": "INV-EQH5X6",
+          "revision": 1
+        },
+        {
+          "id": "INV-FM3V0M",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAZREV",
+          "revision": 1
+        },
+        {
+          "id": "INV-PB8GDK",
+          "revision": 1
+        },
+        {
+          "id": "INV-RW4566",
+          "revision": 1
+        },
+        {
+          "id": "INV-YXP2R0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QANPGC",
+      "items": [
+        "sha256:fd432fe09aab70a6f443d8def5f12dfaea6a55a739be700e6a94300e4437e255"
+      ],
+      "reason": "Examined all twelve host-lifecycle members and their source-context witnesses. Install proof access changes, not build-owned release/Node authority, start-only behavior, explicit provision transitions or no-stop boundaries; routes and joint guarantee remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-2W13PT"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:0d90764695b5032a1d7278a61ef654296e8a001ea22357e567d6e348fad7b2a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:ffdf381b8be83ad6fe8275e4a4c5798d996b6a3c8c749c916a29350feb2d47df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-31JXQC"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-5Z9PGW"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-63NF6V"
+        },
+        {
+          "after": {
+            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-AKPX5R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S6A07E",
+      "items": [
+        "sha256:2747a9b38798bc157417f1c7ce5e43b6c7b4e4f3aca8c667264f836ea471d985"
+      ],
+      "reason": "Preserves planned-parent and actual apply authority: source re-resolution and exact persisted-parent no-publication assertions remain. The removed ambient-switch helper no longer grants a second task in one session; persisted-parent preview uses a fresh session and checks its river records under the retired-tool rule.",
+      "revision": 2,
+      "subject": "INV-EX6T0F"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "65a697f6e7585216a37a1cbfdf2c617d75e34a21",
+            "content": "sha256:483b826456b999047bd99292a046f8271497978470d0ac6bfff926cff9827ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fifteen_master_preview_bounded_and_exact"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "before": {
+            "blob": "5fdc0dff67c307f79563c8c49fcd5f57f3a38dad",
+            "content": "sha256:da0db0a803ae535f98cb61934941b9019311f78f3b8e42c66a8a75e55f981062",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fifteen_master_preview_bounded_and_exact"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "id": "PRF-CMGQY5"
+        },
+        {
+          "after": {
+            "blob": "65a697f6e7585216a37a1cbfdf2c617d75e34a21",
+            "content": "sha256:bbd4b74c6d9b879e08e63c11dabdefd436365a834c1498086dbcb2c5ca86087e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_keeper_preview_and_hook_failure_preview"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "before": {
+            "blob": "5fdc0dff67c307f79563c8c49fcd5f57f3a38dad",
+            "content": "sha256:bbd4b74c6d9b879e08e63c11dabdefd436365a834c1498086dbcb2c5ca86087e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_keeper_preview_and_hook_failure_preview"
+            },
+            "path": "mcp/tests/test_sprint_archive_custody.py"
+          },
+          "id": "PRF-FRGG5M"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XQFTFK",
+      "items": [
+        "sha256:5c7a9c4364738bff522e18d38ede010ba99e800a7c9bf8bdb55f411138295590"
+      ],
+      "reason": "Preserves bounded and exact archive preview intent: the same fifteen-master identities, move order and cleanup/change/write bounds are now asserted in the call-context log rather than the overflow short answer. Carried keeper/hook-failure proof is unchanged; no archive production behavior changes.",
+      "revision": 1,
+      "subject": "INV-A704ST"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

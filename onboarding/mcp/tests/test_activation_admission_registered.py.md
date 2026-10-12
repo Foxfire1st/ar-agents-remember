@@ -25,8 +25,11 @@ bytes, that the sync refusal addresses **only the addressed contract's own state
 unreadable activation snapshots remain distinct corrective evidence, that oversized unreadable
 diagnostics retain a bounded parser-error prefix, and that persisted master edge mismatches retain
 expected/observed branch facts across both the initial and authoritative reread paths. The
-unreadable-contract case also proves that a malformed parser's 9099-character reason remains bounded in
-top-level and nested refusal detail while its source bytes remain unchanged. The fixture is disposable;
+unreadable-contract case derives the malformed parser reason's length from the 9000-character
+invalid kind and the actual contract path. Oversized refusals deliver a short overflow answer;
+the full bounded parser detail, contract path, next arguments and admission are checked in that
+call's `log`, while delivered refusal identity and retry guidance remain separately asserted.
+The malformed source bytes remain unchanged. The fixture is disposable;
 it does not prove a live control-plane run or acceptance.
 
 The refusal case is the contract-scoping forcing test. With contract A vacant and contract B live, the
@@ -42,8 +45,9 @@ same absence directly on the admission dict.
 
 This file is integration evidence because it crosses the registered MCP transport. Its assertions
 describe response shape and byte-preservation boundaries; collected counts and focused passes remain
-worker evidence rather than Gate 5 certification. Cases assert on the public JSON payload rather than
-importing projection helpers, so a payload key that regains a foreign-master concept is caught here.
+worker evidence rather than Gate 5 certification. Cases assert the delivered public outcome and the file-backed whole refusal rather than
+importing projection helpers. Oversized nested diagnostics need not appear in the delivered short
+answer; their exact contract ownership is checked in its logged result.
 
 ### Invariants And Boundaries
 
@@ -67,10 +71,14 @@ No external domain evidence applies.
 - Registered status projects activation without mutation. [1]
 - The sync refusal addresses only the addressed contract's own state: no `classification`/`blocking`/`sourcePair*` key, this contract's fingerprint and status action, and a foreign live master named nowhere. [2]
 - Vacant and unreadable snapshots remain distinct and unchanged. [3]
-- Oversized unreadable detail is bounded in both status and sync projections without changing source bytes. [4]
+
+- Oversized status and sync refusals keep bounded whole-result diagnostics in their logs and preserve malformed source bytes. [4]
+
 - Startup edge mismatch retains expected and observed branch evidence. [5]
 - Authoritative startup reread preserves edge evidence when the contract drifts after upstream refresh. [6]
-- Unreadable startup contracts retain the concrete parser reason in refusal and observed evidence, including bounded oversized parser detail and unchanged source bytes. [7]
+
+- Unreadable startup contracts retain concrete bounded parser reason and admission in the logged whole refusal; delivered overflow identity and retry guidance are checked separately. [7]
+
 - The shared admission explainer no longer emits `classification`/`blocking`, and keys the refusal to the observed contract fingerprint. [8]
 
 ### Cross-Repo References

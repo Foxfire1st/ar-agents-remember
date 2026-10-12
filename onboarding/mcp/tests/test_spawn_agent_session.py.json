@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "634b3bc7035008a1bc446eaea5314ed394563bb1",
+            "blob": "7d3da278d4940236494eff67364d1fc8e194c720",
             "content": "sha256:86fa946d6f98231125ce4f2a0922e1de5b4fa688d1f8ebb75baab868d9851b2a",
             "locator": {
               "kind": "symbol",
@@ -19,15 +19,16 @@
       ]
     },
     "2": {
-      "note": "Seat taken is surfaced never overridden",
+      "note": "Seat taken is surfaced never overridden\n\nAnchor: `SpawnAgentSessionTests.test_seat_taken_is_surfaced_never_overridden`",
       "targets": [
         {
           "anchor": {
-            "blob": "fbd7bccb9064da11c5e23817982e134f8ef95db7",
-            "content": "sha256:d8566dcdce2b4c020d535ca667d5a1b27027044e737309251f49f9d61af0518b",
+            "blob": "7d3da278d4940236494eff67364d1fc8e194c720",
+            "content": "sha256:ab0bf6c895375eee686586e6a650306f70b4215a3f4ae7bddb647b3083610768",
             "locator": {
-              "kind": "symbol",
-              "name": "test_seat_taken_is_surfaced_never_overridden"
+              "end": 374,
+              "kind": "line_range",
+              "start": 340
             }
           },
           "kind": "test"
@@ -39,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "634b3bc7035008a1bc446eaea5314ed394563bb1",
+            "blob": "7d3da278d4940236494eff67364d1fc8e194c720",
             "content": "sha256:711f1f3d37c2a74ec52a437ef610256e8f08f0f527fe52d163efe9d9078eca1d",
             "locator": {
               "kind": "symbol",

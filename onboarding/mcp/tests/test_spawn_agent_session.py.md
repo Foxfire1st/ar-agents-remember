@@ -18,6 +18,10 @@ still run. The retained behavior and its fixture limits, described above, govern
 
 ### Conventions
 
+Socket-bearing fixture worlds use unique directories under the explicitly admitted short root
+`/tmp/mik-run3/l157/t`; this avoids confusing the Unix-domain endpoint length limit with a
+seat/admission failure. It does not weaken the production socket guard or relocate live state.
+
 The table lists retained test definitions, not collected parametrized or subtest counts.
 Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
@@ -47,7 +51,9 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Spawns bound seat without brief or readiness claim [1]
+
 - Seat taken is surfaced never overridden [2]
+
 - Spawn refuses forged structural parent before host creation [3]
 
 ### Cross-Repo References

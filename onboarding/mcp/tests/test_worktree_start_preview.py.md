@@ -20,7 +20,13 @@ Only the modification time of an admitted record directory may move, and only wh
 
 The existing partial-bootstrap case drives one genuine journal before and after its original helper creates the exact memory ref. Preview reports `would-create` only in the first state, `existing` in the second, and actual apply recovers that same journal to durable source/parent/active authority. No manual parent/ref or replacement journal supplies the proof.
 
-Default/durable rejection, foreign/unreadable parent, invalid leaf/source/base/ref, changed current source after preview and organizational direct-super remain separate operations. A fresh session preserves startup/Git state while checking its call records; it is not universal zero-I/O. With an already-existing ambient lifecycle, the completion event goes to its lifecycle file instead of the workspace river. That one event append has a separate prefix/kind/tool proof and preserves the event file's kind and mode before admitting its mtime/content change; both observer byte trees are retained. Missing original discovery observer bytes remain missing, not reconstructed. These fixtures do not resume or accept the original L41 evidence.
+Default/durable rejection, foreign/unreadable parent, invalid leaf/source/base/ref, changed current source after preview and organizational direct-super remain separate operations. A fresh session preserves startup/Git state while checking its call records; it is not universal zero-I/O. A real start adopts the session's task lifecycle; a second leaf request in that session is
+refused as `lifecycle-switch-required`, not made admissible by the removed `switch_lifecycle`
+tool. The persisted-parent read-only preview therefore restarts the session and checks its
+workspace-river records. The separate observer metadata case uses a real start and the second
+request's refusal, verifies that its lifecycle event file changed, admits the unchanged kind/mode
+first, and then deliberately changes mode to prove the guard fails. It is not the removed
+helper's full ambient byte-prefix/tool-identity proof. Missing original discovery observer bytes remain missing, not reconstructed. These fixtures do not resume or accept the original L41 evidence.
 
 Distinct negative cases reject a stray file beside the line file, a rewritten earlier log line, an unnamed detail file, a rewritten earlier river event, stale-day line/detail paths, a directory touch without an admitted entry and a lifecycle event mode change. These are assertion contracts, not a claim that the suite ran or that logging retention and budget-loss behavior are globally append-only.
 
@@ -34,9 +40,15 @@ No Domain Documentation source is configured in system/sources.md. These are cur
 - Typed disabled-mode preview and actual requests preserve refusal identity and no parent publication while checking their daily line/detail and river records cumulatively. [9]
 - Partial-bootstrap preview and actual apply use the same journal. [10]
 - The observer exception preserves kind and mode before allowing an append. [11]
+
 - Negative cases reject writes and metadata changes beyond the checked record. [12]
+
 - Losing the handoff fails and preview cannot supply durable authority. [13]
 - Persisted artifact errors never select a synthetic valid parent. [14]
 - Same journal/ref states and real apply/recovery remain truthful. [15]
-- Ambient completion has its own append proof and kind/mode guard, beside checked daily log records. [16]
-- Actual apply re-resolves current source; persisted-parent preview preserves startup/Git state and checks its call records. [17]
+
+
+- After a real start adopts the lifecycle, the second-leaf refusal changes its event file; unchanged kind/mode passes and deliberately changed mode fails the guard. [16]
+
+
+- Actual apply re-resolves current source; fresh-session persisted-parent preview preserves startup/Git state and checks its call records. [17]

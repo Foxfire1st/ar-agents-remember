@@ -18,7 +18,11 @@ three-commit closeout. Initial tracked `memory.md` seeds remain deliberately in 
 repositories so consumers can exercise old history and migration; they do not define the current
 publication protocol.
 
-`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. Variant fixtures add committed ranges and explicit lineage state. File, overview and entity helpers create controlled onboarding inputs; their existence is not a coverage claim.
+`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. `write_current_task_lineage` also creates the external-memory repository and its matching
+super/work branches, using that repository's own base commit. The code edge alone cannot
+establish a current paired lineage for task-bound seat admission.
+
+Variant fixtures add committed ranges and explicit lineage state. File, overview and entity helpers create controlled onboarding inputs; their existence is not a coverage claim.
 
 Earlier cleanup removed the dead publication-facts and writer-mechanics helpers. LCA-L9 also
 removes their remaining unused closed-contract and closeout/integration argument conveniences;

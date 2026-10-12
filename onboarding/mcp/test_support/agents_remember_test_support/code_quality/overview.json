@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
             "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
             "locator": {
               "kind": "symbol",
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
             "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -185,12 +185,12 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
             "locator": {
-              "end": 588,
+              "end": 592,
               "kind": "line_range",
-              "start": 578
+              "start": 582
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -283,12 +283,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:d719d643c5363958e702bca7d9467773c0de1214568e25077ac36d9eef8c85ab",
             "locator": {
-              "end": 429,
+              "end": 433,
               "kind": "line_range",
-              "start": 383
+              "start": 387
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -296,12 +296,12 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "blob": "cc2915b899b8d552f5f5d52fc2bd1fce670cfcf1",
             "content": "sha256:42bcba63b917a3d69eb12515418928dc9f2283bd4a80265e2a52d07e168ba939",
             "locator": {
-              "end": 531,
+              "end": 535,
               "kind": "line_range",
-              "start": 505
+              "start": 509
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -529,12 +529,12 @@
         },
         {
           "anchor": {
-            "blob": "97d9c76a4a93ef976a7249a6c6fa078b080b4d6e",
+            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
             "content": "sha256:58a7a911d0407fee295161967a9796681d729150b57ea0ace94b29fc28059c49",
             "locator": {
-              "end": 484,
+              "end": 496,
               "kind": "line_range",
-              "start": 471
+              "start": 483
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -671,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",

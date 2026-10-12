@@ -31,6 +31,17 @@ Recorded-meaning regression uses compose_review over converted trees, exact owne
 
 ### Tool regression witnesses on current input surfaces
 
+Overflow-sensitive archive, activation and install witnesses retain the delivered outcome but
+read displaced facts from the exact full log or newly filed report. Long scalar pointers may be
+omitted by the guard; report association is checked rather than inferred from an earlier call.
+Direct dry-run install flags remain application/component evidence, not a retained public-host
+object. Retired capsule/catalog tools stay absent from the SDK roster; resource/extension reads
+and role-start compilation retain their distinct boundaries. A real start adopts one task
+lifecycle, so a second leaf start in that session refuses; fresh-session preview and adopted-
+lifecycle refusal metadata are separate witnesses. Paired lineage fixtures create the memory
+repository and both branch edges, and socket-bearing fixtures use their admitted short root
+without changing the endpoint guard. These are source contracts, not a fresh execution verdict.
+
 Surviving river and choke controls use `server_info` rather than the removed `ping`. Report fixtures seed canonical roots, the self-contained sweep obtains the guarded user-settings path and carries explicit grant/direct-leaf input, and overflow-sensitive tests assert displaced facts in the logged whole result. Packaging witnesses author fixture/XDG dimensions before production and compare emitted objects unchanged; log-path witnesses separate preservation within the length domain from exact length/digest shortening. These are assertion contracts, not a fresh whole-lane result or installed-host acceptance.
 
 ### Pytest composition and evidence catalogs
@@ -546,7 +557,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Finalization consumes original selected fifth-certificate inputs. [1700]
 - The sweep judges every tool and aspect on its own subTest with the pins exact in both directions. [1704]
 - A returned call is judged from the whole result and the delivered answer through one shared classifier. [1705]
+
 - Registered preview preserves startup/Git state while checking call records. [1706]
+
 - The shared comparator checks call-day paths, causal directory entries, log details and completed-call river records. [1707]
 - The four-case module protects shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 - The shared support guard refuses protected settings paths before returning a write path. [1709]
@@ -594,7 +607,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The new cutover module's docstring: what it covers. [1666]
 - Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
 - The two case budgets are declared in the repository-root configuration as 5000/1000. [2]
-- The install-contract module. [1701]
+
+- The install-contract module checks bounded answers and exact filed full results. [1701]
+
 - The no-stop module. [1702]
 - The node module. [1703]
 - Candidate isolation, three plugin registrations and ordinary/certifying composition are explicit. [1716]

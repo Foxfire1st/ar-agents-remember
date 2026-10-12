@@ -1,5 +1,16 @@
 # mcp/tests/test_capsule_launch_wiring.py
 
+## Governing Overview
+
+[MCP tests overview](overview.md)
+
+## Purpose
+
+Protects capsule delivery from production launch points to the recorded consumer boundary,
+with internal compilation rather than a restored public compiler tool. Socket-bearing fixture
+worlds use unique paths under the admitted short root `/tmp/mik-run3/l157/t`; the production
+Unix-domain path limit remains enforced. No provider turn or live process acceptance is implied.
+
 ## Current operative account — MIK-R112
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
