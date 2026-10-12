@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../overview.md)
 
 ## Purpose
 
@@ -10,12 +10,13 @@ The right rail's document chat: it composes the shared bound launcher and the sh
 
 ## Code Commentary
 
-`DocumentChatImpl` derives every visible value from `useDocumentChat` and renders three parts: a "Launch role" control only while an agent is shown, the shared `RoleChatsPane` launcher bound to the selection while no agent matches or the user opened it, and the shared `PaseoChatFrame` in document page mode. An unreadable host renders the shared `FrameUnavailable` notice with Retry instead of a start that cannot succeed. The frame element stays mounted and is only hidden while the selection is unresolved, so a ready frame survives a target switch; the hidden wrapper carries `aria-hidden` so the retained frame is removed from reach by construction at unit scope; native hidden-keyboard and screen-reader traversal are not demonstrated. Where no document is selected, a matching Projects Architect remains the effective chat target and switches in the same frame; only with no effective agent does the launcher take the frame's visual place. `memo` keeps the panel out of parent re-renders.
+`DocumentChatImpl` composes selection state, one bound launcher and one shared native frame in document page mode. The launcher appears only when the selection is known and has no effective agent, or the user opens it. A pending document lookup keeps the current native screen visible and passes a holding line into the frame so it takes no input. An unreadable lookup is an actionable one-line notice with Retry beside that retained screen, not a replacement unavailable view or a false empty selection.
 
+Only confirmed no-chat hides the mounted wrapper with display:none and aria-hidden; returning to an effective agent reuses the same frame. No document selected still permits the matching Projects Architect as its effective target. `memo` prevents parent rerenders from remounting the panel. Hidden-state component assertions do not claim native keyboard or screen-reader traversal.
 ## Evidence
 
 - The panel composes selection state, the bound launcher and the shared frame, exposing the launch control only when a target is shown. [1]
-- The view hides the mounted frame while the selection is unresolved and shows the shared unavailable notice with Retry. [2]
+- Unknown selections keep the native screen visible under a holding line; unreadable answers add one-line Retry without replacing it. [2]
 - The exported panel is memoized so a parent re-render does not remount it. [3]
 
 - The hidden frame wrapper stays mounted behind display:none and aria-hidden. [4]

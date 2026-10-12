@@ -1306,6 +1306,40 @@
         }
       ]
     },
+    "62": {
+      "note": "Unknown chat ownership does not hide the frame; only confirmed absence does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatPresentation"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKnownChats"
+            },
+            "path": "dashboard/src/cockpit/document-chat/knownChats.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "State and authority architecture.\n\nAnchor: `# dashboard/src/data/ — Cockpit State And Authority Overview`",
       "targets": [

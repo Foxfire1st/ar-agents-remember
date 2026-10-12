@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+        "blob": "a01d49d483cccfce6682797979d963fd217d1569",
         "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
-        "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+        "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+        "content": "sha256:bb13fc73ad8359e7de162a49cc04bc28d06df455dcc46e5fef6e9da55d087f98",
         "locator": {
           "kind": "symbol",
           "name": "documentChatBinding"
@@ -34,12 +34,12 @@
         "handoffEntry": "MIK-R95@v1 rule2",
         "leaf": "260928-MIK-L95"
       },
-      "rationale": "This pure binding decides which roles and which canonical selection one document admits, so the panel never asks for references it already knows.",
+      "rationale": "documentChatBinding delegates to precomputed tree topology and bindingInTree, preserving canonical admissible roles and no-role problem.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+        "blob": "a01d49d483cccfce6682797979d963fd217d1569",
         "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
         "locator": {
           "kind": "symbol",
@@ -58,14 +58,15 @@
   ],
   "references": {
     "1": {
-      "note": "The binding returns exactly the roles the selection admits, or none with the missing-relationship reason.\n\nAnchor: `documentChatBinding`",
+      "note": "Tree bindings group parents once and return canonical rows in tree order.",
       "targets": [
         {
           "anchor": {
-            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
-            "content": "sha256:cb27d148711382925dbee9d0587a34eb3710a6e7e8fc46fdcdc467283216a030",
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "content": "sha256:2e454b4881846874df62fbebfca97653d574c2f46174611d24234a1c417d7485",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "documentBindings"
             }
           },
           "kind": "code"
@@ -92,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
             "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
             "locator": {
               "kind": "symbol",
@@ -114,6 +115,22 @@
               "end": 85,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "content": "sha256:d1e0d3086bf1aae0a3f4126ac0fd3cca3620f53fb2dd69bf4ce7dce35f706cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindingInTree"
             }
           },
           "kind": "code"

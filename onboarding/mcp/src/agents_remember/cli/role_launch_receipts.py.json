@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:f0d882fa36fd738c83a36932b1de094cad0e96e69832602a77b24138a1c689c4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:529db8361a6f629c176375a1f16084d6d8aeb08075dd293033bcf9f2dbe22be9",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:529db8361a6f629c176375a1f16084d6d8aeb08075dd293033bcf9f2dbe22be9",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:529db8361a6f629c176375a1f16084d6d8aeb08075dd293033bcf9f2dbe22be9",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:14ac049261997e14479e0eba54f6bf3c32fee47373a6794adce519f3ae86531e",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:529db8361a6f629c176375a1f16084d6d8aeb08075dd293033bcf9f2dbe22be9",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:62448557802a49e8c1c7ddc07e9640f4c1ffcc068fdef626592c0178af968ec7",
         "locator": {
           "kind": "symbol",
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:529db8361a6f629c176375a1f16084d6d8aeb08075dd293033bcf9f2dbe22be9",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,25 @@
     },
     {
       "anchor": {
-        "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
+        "content": "sha256:2980ed72f696b5c2250df1bff2f2769ad6eaf90ff1f71e62571e5b8f13539d1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_receipt"
+        }
+      },
+      "id": "RLZ-VYFJX1",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The shared reader answers bytes that are not UTF-8, a number too long to convert and a nesting too deep as an unreadable record, not as a failure of the server.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -391,12 +409,27 @@
         }
       ]
     },
+    "15": {
+      "note": "`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5edddc69719bf8be457790a220c745b13ebcd884",
+            "content": "sha256:3d41be23452056538fb8cac10fe44a7e5f55411eb14b139e5b7aa7d678da74db",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of _create_receipt supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+            "blob": "1b00f007ead4015e4783eaaf0e23cd71394ee215",
             "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
             "locator": {
               "kind": "symbol",
@@ -459,12 +492,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1070,
+              "end": 914,
               "kind": "line_range",
-              "start": 1030
+              "start": 874
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

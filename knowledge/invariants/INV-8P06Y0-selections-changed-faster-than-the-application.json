@@ -7,8 +7,8 @@
   },
   "applicability": "Selection bursts arriving while the control channel is not ready, in same-turn and successive-turn patterns.",
   "conditions": [
-    "A trailing settle window is armed per unavailable display.",
-    "Ready report, Retry, host return, deadline or superseding display preempts the window."
+    "A trailing settle window is armed per unavailable display only when a load readiness report is not being awaited.",
+    "Ready report, Retry, host return or superseding display preempts that window; a load wait holds the latest target until ready/pong or ping silence."
   ],
   "exclusions": [
     "Ready channel, which switches by immediate message.",
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Selections changed faster than the application answers resolve to exactly the latest selection loading after the burst settles, with no intermediate selection ever starting a load.",
+  "statement": "Selections while unavailable and not awaiting a load re-arm one trailing quiet window; its expiry forwards only the latest selection. During a load readiness wait selections are held until ready or pong and then go by message, unless open-agent is explicitly unsupported; only silence after that load's ping permits another fallback load.",
   "status": "proposed",
   "supersedes": []
 }

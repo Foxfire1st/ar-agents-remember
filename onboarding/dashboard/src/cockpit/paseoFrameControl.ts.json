@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
         "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:4016e5d864b00574fc395d70ecad5ca07d8ca8ad2f214d8aa2ee7839dc1fb4f6",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
         "locator": {
           "kind": "symbol",
           "name": "load"
@@ -39,8 +39,44 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:8f180e88d61732ee0612d14b892690e730a29d94cc74051080436e0d752d7bf8",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.display"
+        }
+      },
+      "id": "RLZ-6KQQRY",
+      "invariant": "INV-EJ38J1",
+      "origin": {
+        "handoffEntry": "L140-R1-F01",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "A selection made while a load's ready report is awaited starts no settle window and no load; it is left for the report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:3429c69cabae1586257f3c9c98077fffabfd6eef2f26aaf46c82f0e5b88e41e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onOnChat"
+        }
+      },
+      "id": "RLZ-91J2K1",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Takes that answer for the open request only and publishes it to the pane.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:661368a3cf6ed4ce6c8e75505db313c219b6552b9d1da59a765e9fff99858ca6",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -57,8 +93,26 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.sync"
+        }
+      },
+      "id": "RLZ-ASR7MK",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "For automatic selected-target steering, sync starts a URL load only when control is unavailable, no loaded document is awaiting readiness, and the URL does not already name the wanted agent. This is not every URL-load owner: start directly loads the initial/returned-host document or the explicit Retry target while control is waiting; an explicitly non-open plugin retains its separate URL-only path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -75,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
         "locator": {
           "kind": "symbol",
           "name": "onMessage"
@@ -93,12 +147,12 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:ed4aae2488bbcfc94b8591ebd9536cb5eb1e07c01e0d4e6242118f603b3383a0",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:56f04fe8bdd8388ef84a5ba075d99ac4c2a5bf0cd8555e11f47a8d2fdfd7c38a",
         "locator": {
-          "end": 145,
+          "end": 183,
           "kind": "line_range",
-          "start": 99
+          "start": 149
         }
       },
       "id": "RLZ-AZSTHT",
@@ -107,12 +161,12 @@
         "handoffEntry": "MIK-R122@v1 recovery 3",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "display clears and re-arms the single trailing settle window while unavailable; its expiry forwards the latest selection, and the ready report, Retry, host return or deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. Each expiry may load its latest changed URL once; no per-episode cap is claimed.",
+      "rationale": "display re-arms trailing unavailable settle only outside a load wait; onSettle forwards latest and clearSettle cancels. A load wait holds latest for ready/pong or its own ping silence.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -130,8 +184,62 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.probe"
+        }
+      },
+      "id": "RLZ-DB2T67",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "After a request's deadline: one ping, and only its silence allows the one load.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:76fc68a456a1df0374ec97cc800e4fad06c45a6d77ce836f49ee6fa2f938c172",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onShown"
+        }
+      },
+      "id": "RLZ-DD4FK1",
+      "invariant": "INV-N3NNM1",
+      "origin": {
+        "handoffEntry": "architect, message of 2026-10-11 17:32",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Takes that answer like the answer shown: the request ends, nothing is waited for, the frame is in reach, and no problem text is set.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:53b6ec06563901ef163ca5daab429fe212b9d0d9872e0d3453439c0a10e5825c",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onReady"
+        }
+      },
+      "id": "RLZ-GG246Z",
+      "invariant": "INV-EJ38J1",
+      "origin": {
+        "handoffEntry": "L140-R1-F01",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The ready report, or a pong taken as it, ends the wait and sends the held selection by message.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -148,8 +256,8 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
         "locator": {
           "kind": "symbol",
           "name": "onMessage"
@@ -166,8 +274,26 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:97f773b29efb485f0421d55e642afdcf67ce6ac7f942886ded01cfd91f043ec4",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.awaitReady"
+        }
+      },
+      "id": "RLZ-NF7RKH",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "After every load: the deadline for the ready report, then one ping, and only that ping's silence makes the channel unavailable.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl"
@@ -184,11 +310,29 @@
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:382fc918f40015eb0349a32e18c88c7a63ccc3954699071e5444161fa58cc988",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
         "locator": {
           "kind": "symbol",
-          "name": "arm"
+          "name": "PaseoFrameControl"
+        }
+      },
+      "id": "RLZ-SXWYQF",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The controller sends the switch as one message while the channel is ready, and after a request's deadline asks by a ping instead of loading; a pong keeps the request waiting.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "locator": {
+          "kind": "symbol",
+          "name": "awaitReady"
         }
       },
       "id": "RLZ-TW9MMS",
@@ -197,13 +341,13 @@
         "handoffEntry": "MIK-R121-R2-P3",
         "leaf": "260928-MIK-L121"
       },
-      "rationale": "arm owns the request deadline; the named problem must cover the never-ready selection there, or a missing chat ends unnamed.",
+      "rationale": "awaitReady owns post-load timeout, ping, unanswered-ping problem naming and fallback; probe owns the pending agent request equivalent.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-        "content": "sha256:09184bf04e9bdc5991d0b6235cadf321286ea66115b21b16423c50fb478d139f",
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
           "name": "sync"
@@ -215,20 +359,39 @@
         "handoffEntry": "MIK-R122@v1 rule 4",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "sync is the single switch mechanism: message while ready, URL load only while unavailable; selection changes flow through it without touching the frame element.",
+      "rationale": "sync asks by message while ready, or loads a changed target while unavailable only when not waiting for a load ready report.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_CONTROL_TIMEOUT_MS"
+        }
+      },
+      "id": "RLZ-ZDH8FW",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one deadline of 10 s that the ready report, a request and a ping each have.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "A selection change while ready invokes sync and can post ar.open at once; while waiting it invokes sync but forwards nothing until the ready report or deadline; while unavailable it clears and re-arms one trailing settle window for the latest selection.\n\nAnchor: `display`",
+      "note": "A ready change switches immediately; a change during a load's readiness wait is held, while unavailable changes use the trailing settle window.",
       "targets": [
         {
           "anchor": {
-            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "display"
             }
           },
           "kind": "code"
@@ -236,14 +399,15 @@
       ]
     },
     "2": {
-      "note": "The settle window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window.\n\nAnchor: `onSettle`",
+      "note": "Readiness ends the load wait and sends the latest held target through the negotiated channel.",
       "targets": [
         {
           "anchor": {
-            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:53b6ec06563901ef163ca5daab429fe212b9d0d9872e0d3453439c0a10e5825c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "onReady"
             }
           },
           "kind": "code"
@@ -251,14 +415,15 @@
       ]
     },
     "3": {
-      "note": "The switch posts ar.open by message while ready and loads a changed latest URL when its settle window expires while unavailable.\n\nAnchor: `sync`",
+      "note": "URL loading is allowed only while unavailable and outside an outstanding load-readiness wait.",
       "targets": [
         {
           "anchor": {
-            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "sync"
             }
           },
           "kind": "code"
@@ -266,12 +431,12 @@
       ]
     },
     "4": {
-      "note": "A document load raises the generation by exactly one.",
+      "note": "A document load raises generation once and then awaits its own readiness.",
       "targets": [
         {
           "anchor": {
-            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
-            "content": "sha256:4016e5d864b00574fc395d70ecad5ca07d8ca8ad2f214d8aa2ee7839dc1fb4f6",
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
             "locator": {
               "kind": "symbol",
               "name": "load"
@@ -282,15 +447,63 @@
       ]
     },
     "5": {
-      "note": "Only the embedded application's messages from the exact origin and window are admitted.",
+      "note": "Only the configured frame origin and actual iframe window supply control messages.",
       "targets": [
         {
           "anchor": {
-            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
             "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
             "locator": {
               "kind": "symbol",
               "name": "receive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A missing readiness report asks a ping before control is unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "awaitReady"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A late request is probed, not automatically reloaded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "probe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Drawing and the application's own failed-load pane both settle only the pending agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:76fc68a456a1df0374ec97cc800e4fad06c45a6d77ce836f49ee6fa2f938c172",
+            "locator": {
+              "kind": "symbol",
+              "name": "onShown"
             }
           },
           "kind": "code"

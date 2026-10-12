@@ -1,33 +1,13 @@
 {
   "path": "dashboard/src/cockpit/paseoPluginClient.test.ts",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
-        "content": "sha256:ee3043d464cd7c79ebe0bfaa104da5f43c026a8cd18a88367ca3e8a7b843ed9a",
-        "locator": {
-          "end": 388,
-          "kind": "line_range",
-          "start": 388
-        }
-      },
-      "id": "RLZ-HT5WNG",
-      "invariant": "INV-0TCWT9",
-      "origin": {
-        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
-        "leaf": "260928-MIK-L123"
-      },
-      "rationale": "The compact-layout fixture comment pins the server release its signs were taken from.",
-      "role": "support"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "A page is replaced once and the resulting page consumes its reload flag without replacing itself again.",
       "targets": [
         {
           "anchor": {
-            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
             "content": "sha256:669444946535381ac75a0883ee4c6bb0e10edf248d0dff1579831c9344b5b841",
             "locator": {
               "end": 95,
@@ -44,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
             "content": "sha256:202a0d4776e44643a39edec34d8a742a47e28babc8b7fd72ef1017d35227ada0",
             "locator": {
               "end": 331,

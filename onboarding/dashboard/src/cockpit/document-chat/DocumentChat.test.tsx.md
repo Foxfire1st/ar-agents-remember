@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../overview.md)
 
 ## Purpose
 
@@ -14,7 +14,7 @@ The suite stubs only the network boundary and drives the real component, hook, m
 
 ## Evidence
 
-- An unreadable host shows the shared Retry notice and no start, then recovers to the launcher. [1]
+- An unreadable host uses the one-line Retry notice distinct from confirmed absence and permits no start until its fresh answer recovers. [1]
 
 
 

@@ -1,0 +1,2831 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L140",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0CXJVM",
+      "items": [
+        "sha256:daeabdec0eb1f33761d5d9d6652c79be6cc1ddbdc0b341ff772dd1b004adc14d"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded truthful wait/recovery wording and negotiated capability/reply obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:daeabdec0eb1f33761d5d9d6652c79be6cc1ddbdc0b341ff772dd1b004adc14d"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_UNAVAILABLE_QUIET_MS"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_UNAVAILABLE_QUIET_MS"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-133RJY"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:56f04fe8bdd8388ef84a5ba075d99ac4c2a5bf0cd8555e11f47a8d2fdfd7c38a",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:ed4aae2488bbcfc94b8591ebd9536cb5eb1e07c01e0d4e6242118f603b3383a0",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AZSTHT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0E6XMV",
+      "items": [
+        "sha256:58b92efc0dc24aa4d040e6afc5fe5b2539cf05a15609285cef31dfa8af67fbc3"
+      ],
+      "reason": "Trailing unavailable settle coalescing is retained, but not every not-ready burst now ends in a URL load; during a load readiness wait it is held, then goes by message. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-8P06Y0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-6G1VXD"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-9G4ASB"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-N3QWTS"
+        },
+        {
+          "after": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "before": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "id": "RLZ-PVXBE8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0H65R9",
+      "items": [
+        "sha256:5d7d72d2a5f0bcb9031ed7e23b35f7f2bbeb5bd975cb76bd2cd665eeccefedd6"
+      ],
+      "reason": "Dashboard hierarchy UI stays absent; selection and Parent error handling remain while bridge SDK hierarchy/target checks continue. New answer kinds are not resurrected hierarchy presentation. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-STRQX4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.sync"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ASR7MK"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.probe"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-DB2T67"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-NF7RKH"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_CONTROL_TIMEOUT_MS"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ZDH8FW"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1XHBQX",
+      "items": [],
+      "reason": "Rule3 meaning is preserved. The four existing candidate realization IDs are absent from the held memory base and present in this leaf, so their complete surviving cover set is extended; only the overbroad sync rationale is narrowed against current automatic steering, start/Retry/host-return and explicitly unsupported-open branches.",
+      "revision": 1,
+      "subject": "INV-ZJ2JX8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-20CRQZ",
+      "items": [
+        "sha256:e1fdcc59370ed21e106d1bdd8c222ba1a785f0bb9eec7229cad325a8e3c12e85"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the shared damage/projection and canonical record-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:e1fdcc59370ed21e106d1bdd8c222ba1a785f0bb9eec7229cad325a8e3c12e85"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3GDZTY",
+      "items": [
+        "sha256:1ed6d8edf562ac8b022b77e56a6811aea71efae50dfa7c76027a9b12b8bc519e"
+      ],
+      "reason": "The reusable provision_command extraction exposes command text through the existing CLI frame descriptor; it adds no serving owner, route, lifecycle actor, automatic provision or reload. Existing native API composition and frame delivery account remains correct.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-D6KWM4"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "isListedParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "isListedParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-GPRVR6"
+        },
+        {
+          "after": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-MDFGTP"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "isParentMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "isParentMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-WAVRV9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3SV5EZ",
+      "items": [
+        "sha256:37266b8d9047cd87bde32870c2445249e1d67b5f2c4036b69793f41d16a62b24"
+      ],
+      "reason": "Exact origin/window trust and origin-scoped clipboard delegation survive all new protocol kinds. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-1PVR72"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-45GF1T",
+      "items": [
+        "sha256:9b2038a2519a6a2a5fbbe8b322400386140d450ba10bef5195c461974c502a7e"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded ping-silence, load-wait, capability and latest-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:9b2038a2519a6a2a5fbbe8b322400386140d450ba10bef5195c461974c502a7e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-45PWS8",
+      "items": [
+        "sha256:be44ca80a0b3856c32ed4d782306d59b53380b07649b53cf562067e93504f013"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the corrected unknown-versus-known-empty and persistent-frame obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:be44ca80a0b3856c32ed4d782306d59b53380b07649b53cf562067e93504f013"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ZSF5Z",
+      "items": [
+        "sha256:a2eeda9e5df0ae2ba0ad83279b9ea45dd54c09fc92a10bdf1e3d4da7446ee19f"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:a2eeda9e5df0ae2ba0ad83279b9ea45dd54c09fc92a10bdf1e3d4da7446ee19f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6BX1N1",
+      "items": [
+        "sha256:89c1dc8d615fed2e294a190bcd2077a22966a5b2f5149782689122473e1c174e"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:89c1dc8d615fed2e294a190bcd2077a22966a5b2f5149782689122473e1c174e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DYWQ3",
+      "items": [
+        "sha256:117314285747ed7ebff18be7ea030c89f1dfeb0151854161fa7a03f558732c64"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:117314285747ed7ebff18be7ea030c89f1dfeb0151854161fa7a03f558732c64"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-84836R",
+      "items": [
+        "sha256:32d4c380319b4fa0e729431ea738381f2c03dfe5fd6b9d7ce37c29c736c5407b"
+      ],
+      "reason": "All nine actual members retain controls-only/reply-independent strip, admission/preparation/refusal truth, exact report identity and Investigator recovery/remount distinction. Added tree registration neither changes reports nor introduces execution prose.",
+      "revision": 4,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-1P5780"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-88QY74",
+      "items": [
+        "sha256:9d034e0aefc26eb3218457280754b374351dd960e64843ce60a46a254c188346"
+      ],
+      "reason": "Catalog replacement/update generation and lifetime teardown remain owned by unchanged hierarchy machinery; new negotiated reports respect the same live bridge. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-72Y8R3",
+          "revision": 1
+        },
+        {
+          "id": "INV-BTK24H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSCJ1Q",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-8JJT0R",
+      "items": [
+        "sha256:4c6f3b7277dd495072a404aa27e06177fb0ad243ccf6ad18fd284bc72649f958"
+      ],
+      "reason": "All three existing members remain necessary, but current guarantee falsely promises earlier screen retention and finite deadline settlement for responsive lateness. Distinguish on-chat/load-failed from shown and native progress from failed navigation.",
+      "revision": 2,
+      "subject": "FAM-JY9AN3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8JZHMR",
+      "items": [
+        "sha256:c6d0f66c1a259cb2651059e492c2ab602063dcc177d0b13bbe25b0f43b5acb75"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the shared damage/projection and canonical record-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:c6d0f66c1a259cb2651059e492c2ab602063dcc177d0b13bbe25b0f43b5acb75"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8K87T5",
+      "items": [
+        "sha256:f8acc38014cc6a0d740ce8f3a1ca13d92cd5bb9165a92004f55cae449c1073c5"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:f8acc38014cc6a0d740ce8f3a1ca13d92cd5bb9165a92004f55cae449c1073c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8WQR7W",
+      "items": [
+        "sha256:66f37578408565374d4c16712209da4c96a8ebe10b74390c6fbeda402342f559"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the negotiated native selected-screen/drawing/failure obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:66f37578408565374d4c16712209da4c96a8ebe10b74390c6fbeda402342f559"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8WSN00",
+      "items": [
+        "sha256:196b3d030970b64f98ec6edb49ceac9cb3d48a032c4f9dcaffd7c8bbcf3acb04",
+        "sha256:6504a0a7b1cdfd304a828b3c8b5cdf94c65d243abd9a0d45b095bbc264039a10",
+        "sha256:b362a5f6ef67f7c87f819343595c7b3c54b7b244443f74eeec8426c3e0d99645",
+        "sha256:d2d0cc877db9efec4c7cf74e449033b8e8d8e11065a764a1f908b30120c5158a",
+        "sha256:e407122b8ea9dd6039cbc4ac6b1b010babc708d21ca80e62134ee5db2052ed29",
+        "sha256:fbda5d9f9b0c293d02f006ec3c1e149682402a954261706a2d655bfd5fb54800"
+      ],
+      "reason": "The controlled browser-host fixture retains its selected-document/workspace/Retry evidence ownership. Its responsive-late-answer assertion now follows the corrected production obligation; the new source card documents that account but is outside ordinary dashboard/src onboarding coverage. No extra live-host or installation-acceptance obligation is created by the fixture edits.",
+      "subject": "onboarding:dashboard/e2e/document-chat-cross-workspace.spec.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AY5KZV"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-W98CK3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9JKTAV",
+      "items": [
+        "sha256:ffe79ac327fabe1dd81d0573feaec741184449d1338fbf3ec8f01819126ea057"
+      ],
+      "reason": "Current Parent visibility/relation/lifetime checks and selected-source error scoping are unchanged; new answer dispatch concerns non-Parent opens. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9QJRMX",
+      "items": [
+        "sha256:4fb190cd5eea217a1f3c224a6acb4037f7ec650820f8f1d12b7eaaf1c61baae3"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded ping-silence, load-wait, capability and latest-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:4fb190cd5eea217a1f3c224a6acb4037f7ec650820f8f1d12b7eaaf1c61baae3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9S1ZKF",
+      "items": [
+        "sha256:bb02d6288665249c5b668dd22a5c0808c185cb2165a9f52f5b18fa433c495974"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the known/fresh selected-document reconciliation obligation; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:bb02d6288665249c5b668dd22a5c0808c185cb2165a9f52f5b18fa433c495974"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A2SGKX",
+      "items": [
+        "sha256:9b2e0cef829cbb8c6fce593e91b1c3f7e2e9e001cfda54f9360eb344978ef3aa"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:9b2e0cef829cbb8c6fce593e91b1c3f7e2e9e001cfda54f9360eb344978ef3aa"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb412c94ecbafe02ca289a5af34d3f7b1c293182",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2221,
+              "kind": "line_range",
+              "start": 2221
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2221,
+              "kind": "line_range",
+              "start": 2221
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-B533QM"
+        },
+        {
+          "after": {
+            "blob": "8e40aeb5a30d6888a30ec24c4759243aad0fded2",
+            "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts"
+          },
+          "before": {
+            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "content": "sha256:ee3043d464cd7c79ebe0bfaa104da5f43c026a8cd18a88367ca3e8a7b843ed9a",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/cockpit/paseoPluginClient.test.ts"
+          },
+          "id": "RLZ-HT5WNG"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-YP5PVQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AJEW3V",
+      "items": [
+        "sha256:5091c5af84162b160d166623bb7818335bb6c61694b30d0cfac2db557a783b42"
+      ],
+      "reason": "Renew the existing complete version-provenance cover set after supported96c3e0ca/c20bab4d sync. Eleven landed overview-order catalog consumer additions move the same FakePaseo runtime-version declaration from2210 to2221; its recorded content is unchanged and remains0.11.1. No new package, host, browser or message qualification is claimed.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B9FNC2",
+      "items": [
+        "sha256:b54da016d4ffa8c406c0e2620b66cb76d564411ab001098155c72cfbe933a289"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:b54da016d4ffa8c406c0e2620b66cb76d564411ab001098155c72cfbe933a289"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BWK2CV",
+      "items": [
+        "sha256:b26ed3af7f1b1f5c54d2125deb390374edf49ae4dace6eb1df0b84e38cd6af9e"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:b26ed3af7f1b1f5c54d2125deb390374edf49ae4dace6eb1df0b84e38cd6af9e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKCYCH"
+        },
+        {
+          "after": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-Y4PJ59"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CN2TS1",
+      "items": [
+        "sha256:4acf1af1bd934daf9fc1cfbbb498b6fd7fdbe4b39a39ee52271630074f63c8f6"
+      ],
+      "reason": "Re-present the two existing removal witnesses on the synced working source. Current RoleLauncher still has no former dashboard navigation button; imported display/readiness and incoming launcher repair changes do not resurrect that control. Source-only preservation, not a fresh UI run.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CS6JA3",
+      "items": [
+        "sha256:f11643d13eab6c489f3703b5a88cf66119cc5c3c0c3166124c45215bb624335d"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the shared damage/projection and canonical record-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:f11643d13eab6c489f3703b5a88cf66119cc5c3c0c3166124c45215bb624335d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentChatVisible"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentChatVisible"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-4EXMTZ"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
+            "locator": {
+              "kind": "symbol",
+              "name": "confirmDisplay"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
+            "locator": {
+              "kind": "symbol",
+              "name": "displaySatisfied"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-5XXHCD"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "noContradictingSelection"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "noContradictingSelection"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-GFZT5P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CSE094",
+      "items": [
+        "sha256:6561ace63360586500e910c152ef322c05d85a1a6012c973a44c856048e95b78"
+      ],
+      "reason": "shown remains a fail-closed conjunction of exact host-workspace route, focused stored pane, no contradictory visible tab and mounted chat with no loading/not-found. New on-chat is deliberately weaker and load-failed distinct; neither is shown. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-72Y8R3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DHD88P",
+      "items": [
+        "sha256:f92ff1ebaf7fd2fa1ad161d02401b3e21417b0f4e765b9d70bad93508685ef18"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded truthful wait/recovery wording and negotiated capability/reply obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:f92ff1ebaf7fd2fa1ad161d02401b3e21417b0f4e765b9d70bad93508685ef18"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EN07GK",
+      "items": [
+        "sha256:758a08f93ef0cddd532efd30fa06635e44e0d9fe45589ca3981a6eb89a553dc7"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:758a08f93ef0cddd532efd30fa06635e44e0d9fe45589ca3981a6eb89a553dc7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F9TC23",
+      "items": [
+        "sha256:135f8869e89fd7c7cfc44d510984036bc1a8879033087f54cc6f8743f233c6b0"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded ping-silence, load-wait, capability and latest-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:135f8869e89fd7c7cfc44d510984036bc1a8879033087f54cc6f8743f233c6b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FAKWW2",
+      "items": [
+        "sha256:4026315ba3a5cc602dc3a291d15492c90d2b04826df814ec294367dba4406846"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:4026315ba3a5cc602dc3a291d15492c90d2b04826df814ec294367dba4406846"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G27AS6",
+      "items": [
+        "sha256:6001856df08e682e5749b9f26f30bd3f848e1c96006940991a8b1ac38e0c97b7"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the canonical tree binding obligation; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:6001856df08e682e5749b9f26f30bd3f848e1c96006940991a8b1ac38e0c97b7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-B88P86"
+        },
+        {
+          "after": {
+            "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
+            "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
+            "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-C3R4TK"
+        },
+        {
+          "after": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_override"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_override"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-D3P8S7"
+        },
+        {
+          "after": {
+            "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
+            "content": "sha256:dc7bbfcb96fa16f162281d53cf44d4d732f71709751bb9843d594094e8be9cc1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+            "content": "sha256:e7abeb29f29a924c1b9cd9ee80d1c6d3f0527e10c187cdbe294d6886bd94437b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-WSAM04"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G2VY14",
+      "items": [
+        "sha256:a524b0205bec8d188c66273ccf9509a9908229fb25ad58258a6797809a2156a4"
+      ],
+      "reason": "Re-present the complete surviving no-caller-mode cover set, preserving newer landed realization wording. The sole old-to-working role-route delta adds the document-chat tree registration import/call; shared override guards remain their existing owners. Current anchors do not claim new launch execution.",
+      "revision": 1,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G6KX35",
+      "items": [
+        "sha256:7edbd688a35bb51faa7aa985b5fc655721118bf53af471d95675e22f233bbdd7"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:7edbd688a35bb51faa7aa985b5fc655721118bf53af471d95675e22f233bbdd7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GB20V3",
+      "items": [
+        "sha256:5f0f4e35848663e529424ed4218175421ea2f86a01017efcfa9f46a443a93a7e"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:5f0f4e35848663e529424ed4218175421ea2f86a01017efcfa9f46a443a93a7e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b54fe675ca416a7739f907ee67d6cc5871dca9af",
+            "content": "sha256:55b92cac07137932b30b983a62013ed139d5be6293801728cc9c2a6600c79665",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "before": {
+            "blob": "b54fe675ca416a7739f907ee67d6cc5871dca9af",
+            "content": "sha256:55b92cac07137932b30b983a62013ed139d5be6293801728cc9c2a6600c79665",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "id": "RLZ-7HQW7Z"
+        },
+        {
+          "after": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+            "content": "sha256:39197ae574cefffe61d7daf9afbde1dc53ba156518a066e5c7bfe912cfc323fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        },
+        {
+          "after": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-CCXPRM"
+        },
+        {
+          "after": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-SR53ZZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GT4NB8",
+      "items": [
+        "sha256:67d98cfeff29cd22c51172ba24d533aabfd18387a097663483e22617705e1f0f"
+      ],
+      "reason": "Host catalog choice resolution and accepted create payload fields unchanged. Added agents-live is a separate read-only command. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-GZ1VVF",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "All ten actual members still jointly promise native-only navigation, remembered sidebar ownership, document-local collapse, live Parent and no obsolete dashboard UI. Changed discovery/cache implementation and added notices do not add chat navigation. \"unchanged bridge\" means preserved Parent guard, not whole-file byte identity.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H30TJV",
+      "items": [
+        "sha256:8204b94b2c734207f86504cf290299dd09b6ab6a203e19d67508980abbe56917"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded truthful wait/recovery wording and negotiated capability/reply obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:8204b94b2c734207f86504cf290299dd09b6ab6a203e19d67508980abbe56917"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H53RZD",
+      "items": [
+        "sha256:1f2ec85df15c7761b37ad58c93ad9d2d102ee1d82811f5e13485fd318fe76a33"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded ping-silence, load-wait, capability and latest-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:1f2ec85df15c7761b37ad58c93ad9d2d102ee1d82811f5e13485fd318fe76a33"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H60TT8",
+      "items": [
+        "sha256:7fd0bfa073e92f02802d0ec627dc3cb109496ead523e4eea2fbdffe4ba38215c"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the separately recorded native-screen/input/wait and older-plugin notice obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:7fd0bfa073e92f02802d0ec627dc3cb109496ead523e4eea2fbdffe4ba38215c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HC668J",
+      "items": [
+        "sha256:22bcb4816814f17ea9716b7d484fb6c902f42da01eeea0fda7634e3b86b1e780"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the separately recorded native-screen/input/wait and older-plugin notice obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:22bcb4816814f17ea9716b7d484fb6c902f42da01eeea0fda7634e3b86b1e780"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:661368a3cf6ed4ce6c8e75505db313c219b6552b9d1da59a765e9fff99858ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:8f180e88d61732ee0612d14b892690e730a29d94cc74051080436e0d752d7bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-PG0AHJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HD9YVS",
+      "items": [
+        "sha256:127918e35f49c02984b2314bdcd1d2d246a0d04d719b04444b942065383bd5f7"
+      ],
+      "reason": "Published plural visible selected set remains DOM candidates intersected with current SDK catalog; on-chat is separate request evidence, not a replacement selected set. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JFE83Q",
+      "items": [
+        "sha256:67461b1b8b643cab0d582a4233eaac41316def83f6ee4a1c07e972be84e5fd90"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the shared damage/projection and canonical record-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:67461b1b8b643cab0d582a4233eaac41316def83f6ee4a1c07e972be84e5fd90"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRE2V4",
+      "items": [
+        "sha256:8bcd9115c7d6746d78d9009adad0a9eceb6fee18c32cfa42d5ae5ecc2139e58f"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the unchanged client fixture ownership and negotiated ready-capability evidence; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:8bcd9115c7d6746d78d9009adad0a9eceb6fee18c32cfa42d5ae5ecc2139e58f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1KNC1",
+      "items": [
+        "sha256:e0eb44818af5453343a30f897fe50b22fbb56162a2f9d4ffba5246ce71c721c7"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the separately recorded native-screen/input/wait and older-plugin notice obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:e0eb44818af5453343a30f897fe50b22fbb56162a2f9d4ffba5246ce71c721c7"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4BT846",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VK3JP",
+          "revision": 1
+        },
+        {
+          "id": "INV-GD0F05",
+          "revision": 1
+        },
+        {
+          "id": "INV-T3JTQ2",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZB0WFP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K9EHQQ",
+      "items": [],
+      "reason": "The new joint guarantee is authored with all five members examined against receipt projection, listing and browser polling owners; it does not replace host navigation or task acceptance.",
+      "revision": 1,
+      "subject": "FAM-M36XBW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KP0W58",
+      "items": [
+        "sha256:ae1552ed238cefb6f4fb1e30abcb7b707dfd59463b8ea9947c0832a00d3bf4fa"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:ae1552ed238cefb6f4fb1e30abcb7b707dfd59463b8ea9947c0832a00d3bf4fa"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-KJHW38"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M03VFX",
+      "items": [
+        "sha256:c22b06bf4a33efcc86ac68df2de62ecbeeda20a5e33f5e5b7cda664aaae53ced"
+      ],
+      "reason": "Existing launcher execution steering and highlight transition remain; discovery/cache/wait protocol adds no dashboard chat navigation. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-QS9SRX"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-7BAFW6"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AVC402"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M53441",
+      "items": [
+        "sha256:776e699040c73cb9a9a8213ccb7a71a355b82cb27666bb39ee75b24531c70f93"
+      ],
+      "reason": "Persistent pane/frame identity unchanged, but 10-second timeout exception and unconditional interaction-state wording require qualification. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 3,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M9MSX1",
+      "items": [
+        "sha256:96b9341b5be37e4ccd73efd64f6cdeb2462fe5805ec803d5791fc8427d51812a"
+      ],
+      "reason": "This deletion removes relocated control-test/import or obsolete frame presentation glue; the retained owners and the separately recorded native-screen/input/wait and older-plugin notice obligations are already reconciled, and no surviving construct states a separate invariant.",
+      "subject": "hunk:sha256:96b9341b5be37e4ccd73efd64f6cdeb2462fe5805ec803d5791fc8427d51812a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N085GV",
+      "items": [
+        "sha256:e87d217c41d9e654a7bec9da0118e49d93e1eb57870f461ff43b8277a1f0411d"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the negotiated native selected-screen/drawing/failure obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:e87d217c41d9e654a7bec9da0118e49d93e1eb57870f461ff43b8277a1f0411d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb412c94ecbafe02ca289a5af34d3f7b1c293182",
+            "content": "sha256:8005a6b1e31e4da02ffec3dccfc784e3206cf8281a50bbfdb5ebab4476fbb803",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:cf634aa5d4c2f6548d70864e30416766ec5e9fbb8b759e515fe39928e83d4ca1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N2Y3HT",
+      "items": [
+        "sha256:1838b2777abe7317b766008faa26da6eec6e3a176d8602c21902fbc53fb76aed",
+        "sha256:5e9f26934bfe8da819c79c4a69eddaf1235bfd7b5eb4bbf645f39bc7361cce33"
+      ],
+      "reason": "Renew the existing whole-file witness only as retired historical union-merge repair custody after96c3e0ca/c20bab4d sync. The complete previous-to-working catalog delta adds eleven test_knowledge_overview_order.py consumer entries; L140 shared runtime/catalog support changes remain their prior admitted lines. Later live consumers do not resurrect an exact-two-consumer-lines standing obligation, and the invariant stays retired.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 1
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-N37RY1",
+      "items": [
+        "sha256:2b552c50444d335ea5cda6caed550002c76873d49c5144f75fb1063d595fdb85"
+      ],
+      "reason": "All eight actual members retain host-offering choices, authored bindings, permission layers/features, plain-text notes, replay identity and qualified task-server supply. agents-live changes none of those owners; inherited adapter facet correction does not change the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
+            "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "before": {
+            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+            "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "id": "RLZ-6TQESZ"
+        },
+        {
+          "after": {
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatPresentation"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatPresentation"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-VZXF7A"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NPY166",
+      "items": [
+        "sha256:125e8f4a884a7077ef1b57ff0282a9a6f50f80d5619f742f1a311ca28fa1c272"
+      ],
+      "reason": "The hidden loaded frame guarantee remains only after no chat is known; absence of a target while an answer is unknown no longer hides. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-GY49SV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NSQBZ9",
+      "items": [
+        "sha256:cc11a6596622b8fb4bea89700af849cdc5d23ade9d790df3802bfa094705d2b4"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded ping-silence, load-wait, capability and latest-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:cc11a6596622b8fb4bea89700af849cdc5d23ade9d790df3802bfa094705d2b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NYCF4W",
+      "items": [
+        "sha256:1069bb737558fcbec998228802274c38399a56f3ac7adf2e054c62ad7e3832f0"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded truthful wait/recovery wording and negotiated capability/reply obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:1069bb737558fcbec998228802274c38399a56f3ac7adf2e054c62ad7e3832f0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P3SS3F",
+      "items": [
+        "sha256:328024b4780fbcc97aadc70d0ab19693fe16a52415e225534913dd00ece42b30"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the unchanged client fixture ownership and negotiated ready-capability evidence; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:328024b4780fbcc97aadc70d0ab19693fe16a52415e225534913dd00ece42b30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PADHGZ",
+      "items": [
+        "sha256:55f1fb3c006dff0e4beb46d0a2fe40fa9bc7331358ea0632549221f499387c9a"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the explicit-completeness live-census obligation; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:55f1fb3c006dff0e4beb46d0a2fe40fa9bc7331358ea0632549221f499387c9a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q2NHMW",
+      "items": [
+        "sha256:3d440b60393b2819c0078ed46535222dda441487cdce63bd63dca5366e3f8333"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded truthful wait/recovery wording and negotiated capability/reply obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:3d440b60393b2819c0078ed46535222dda441487cdce63bd63dca5366e3f8333"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-8P06Y0",
+          "revision": 2
+        },
+        {
+          "id": "INV-GY49SV",
+          "revision": 2
+        },
+        {
+          "id": "INV-MN80QW",
+          "revision": 1
+        },
+        {
+          "id": "INV-VMREN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y7WR54",
+          "revision": 2
+        },
+        {
+          "id": "INV-YFAHQM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-QA38Z9",
+      "items": [
+        "sha256:f45852b8d6a971cc2087fb420a035a3588cb66e9c174f2df331c3904f8e39f7c"
+      ],
+      "reason": "One loaded rail chat survives river toggles; native draft/scroll retention is not an absolute across-agent promise. Known-no-chat hiding, unavailable coalescing and allowed-load clauses must follow corrected members.",
+      "revision": 2,
+      "subject": "FAM-0W20JV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QB8S7E",
+      "items": [
+        "sha256:f8fd3e6ae1cab71ac053b058ea3d3a40da8c8118b9ed26af998e00fbd3862766"
+      ],
+      "reason": "The only source governed directly here is the controlled e2e fixture, whose responsive-wait/Retry assertion changes no repository architecture, role/Git acceptance authority or product owner. Detailed frame semantics belong to dashboard/src and plugin route accounts, not a repository-root task log.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-6M98MR"
+        },
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-P0SXSZ"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-TWYV9Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QJWPW6",
+      "items": [
+        "sha256:01c64281df624047dd3b507e2fc9b34bc5ed68b68f14eec07212960f4e2f806a"
+      ],
+      "reason": "Document-local sidebar collapse and stored native-choice isolation unchanged. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-4S93MX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QP0K26",
+      "items": [
+        "sha256:9c8910cd403b706034812c87e298e82ad9f9d0f9f6974588d4b1092b5cdc0e4d"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:9c8910cd403b706034812c87e298e82ad9f9d0f9f6974588d4b1092b5cdc0e4d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R1DJTK",
+      "items": [
+        "sha256:30b86c705a6d14863d39c887698426617a239fa0d04d81a337b0fde9aebba311"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the separately recorded native-screen/input/wait and older-plugin notice obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:30b86c705a6d14863d39c887698426617a239fa0d04d81a337b0fde9aebba311"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R9NT06",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "All five actual members retain allowed non-leaf scope, eight-slot/full-set ownership, exact UUID consumption and primary coordinator isolation. Tree prefetch reads the same primary roles and does not join Investigator membership from a shared path.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SCS33Y",
+      "items": [
+        "sha256:734531c8e8e2e4337b8339e554316716739c32dda639fcf1408f6f3eba1efc69"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded truthful wait/recovery wording and negotiated capability/reply obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:734531c8e8e2e4337b8339e554316716739c32dda639fcf1408f6f3eba1efc69"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SX49GF",
+      "items": [
+        "sha256:cccc3cff28395f5e735dec39693c09e8cb429d02ebf1560b8ea778ad384bdaad"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded truthful wait/recovery wording and negotiated capability/reply obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:cccc3cff28395f5e735dec39693c09e8cb429d02ebf1560b8ea778ad384bdaad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T5RK49",
+      "items": [
+        "sha256:0381f032693c5083b63f1fb12c3093b7b6c6756787d4566e772b035497c3643d"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the corrected unknown-versus-known-empty and persistent-frame obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:0381f032693c5083b63f1fb12c3093b7b6c6756787d4566e772b035497c3643d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:f88c7a36b735c4ba831c31cc3755333df87fa1e41e10a3a734eea140ade2e3af",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_exact_started_projects_request_is_read_without_substituting_an_architect"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:f88c7a36b735c4ba831c31cc3755333df87fa1e41e10a3a734eea140ade2e3af",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_exact_started_projects_request_is_read_without_substituting_an_architect"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-4CGR8N"
+        },
+        {
+          "after": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_projects_uses_last_started_live_architect_and_pages_old_archived_records"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_projects_uses_last_started_live_architect_and_pages_old_archived_records"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-9T2853"
+        },
+        {
+          "after": {
+            "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+            "content": "sha256:9a8f6d172a165765f243c3a42d5dd25f8d33e03e111dff7dd20456c5cb1ed370",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_chats"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+          },
+          "before": {
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+            "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_chats"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+          },
+          "id": "RLZ-36C8KP"
+        },
+        {
+          "after": {
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatAgent"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatAgent"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-6FBZ98"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TDHFCH",
+      "items": [
+        "sha256:a58997c8252c850eb5a7b112af96ab8e68a3999a5f5aaad46390320a5fd5242b"
+      ],
+      "reason": "Last-started host-confirmed live recorded Projects Architect remains default; exact started request remains itself until gone or selection changes. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-A3AK6R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
+            "locator": {
+              "kind": "symbol",
+              "name": "openAgent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:6736f96eb1e1da16ab9ba899639e926ef2efc84411913ea49f00569ee459db9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "openAgent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-EX1831"
+        },
+        {
+          "after": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenTarget"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "before": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenTarget"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "id": "RLZ-RZWBEP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TE78TH",
+      "items": [
+        "sha256:a8fa3db3b7316c6677ee56c3752a455d30f5d972a22560b100204a0e9a9b8664"
+      ],
+      "reason": "Native navigation still takes agent alone and resolves workspace from native session; incoming workspace neither blocks nor invents hop. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 1,
+      "subject": "INV-BTK24H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:a32aabc2885e83d39aa6fb70d3ceef94e5348ce8fa817d3aab8fbdb46a22de17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_of_every_launchable_role_is_read_only"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:a32aabc2885e83d39aa6fb70d3ceef94e5348ce8fa817d3aab8fbdb46a22de17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_of_every_launchable_role_is_read_only"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-1THM3M"
+        },
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-A5F1FJ"
+        },
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-E87PQE"
+        },
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:0ad84a4204797bd64c5299e7f577fb9b29d3dea07b8060d1bdfc062acc346abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_damaged_receipts_have_a_receipt_specific_refusal"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:0ad84a4204797bd64c5299e7f577fb9b29d3dea07b8060d1bdfc062acc346abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_damaged_receipts_have_a_receipt_specific_refusal"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-MNQQGN"
+        },
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_refusals_are_named"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_refusals_are_named"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-MWJ1GP"
+        },
+        {
+          "after": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_signature_and_attempted_path_cannot_select_another_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_signature_and_attempted_path_cannot_select_another_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-RYPSQ8"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_access_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_access_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-2TDWMB"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-3TESNM"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_report_file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_report_file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-7EMVNE"
+        },
+        {
+          "after": {
+            "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
+            "content": "sha256:eb6b0792f5a3ab8ffcd5f88acc1b33a2f7b5e5af2866d9198a3a180c58aa08d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+            "content": "sha256:8f45fa15e8afda704f68961f25e28e57f5dcab29adaf517cbd865bcfa37498a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-D8B07W"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleReportRequest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleReportRequest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-PAYX3G"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_role_report"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_role_report"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-RGXF18"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TFBS5Q",
+      "items": [
+        "sha256:26876f6c4f622352e2ac9253203b6ba21d8a8d8ff64d99ac7bd1a13f4522151b"
+      ],
+      "reason": "Renew the complete twelve existing deterministic recorded-report witnesses after96c3e0ca/c20bab4d sync. The six test symbol bodies have unchanged recorded content; their carrier adds only the recorded() fixture fallback to canonical task-notes/workspace report roots. Existing role-report and role-route witnesses retain their recorded meanings. This source-only renewal does not claim a new report-test invocation.",
+      "revision": 1,
+      "subject": "INV-TA2JW5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TXG458",
+      "items": [
+        "sha256:dabfc2a493c9d26561804a648daada8b34c04bd18aaaa51da11c69e52d39c033"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded ping-silence, load-wait, capability and latest-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:dabfc2a493c9d26561804a648daada8b34c04bd18aaaa51da11c69e52d39c033"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:a0b752f1eb7712371d7530a440179fbf636ed00b86a46f91830f49bf04e21801",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-TEWFNK"
+        },
+        {
+          "after": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-6CV9KK"
+        },
+        {
+          "after": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-C3ZC91"
+        },
+        {
+          "after": {
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-G8BE9E"
+        },
+        {
+          "after": {
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "content": "sha256:bb13fc73ad8359e7de162a49cc04bc28d06df455dcc46e5fef6e9da55d087f98",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-S0YF0Z"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:97f773b29efb485f0421d55e642afdcf67ce6ac7f942886ded01cfd91f043ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SFPH0W"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W2T8CN",
+      "items": [
+        "sha256:ef1de5fb1f29d0502c2cd3f5b17db543bd7278e98d765efc07abfab83bba895b"
+      ],
+      "reason": "One shared native frame and canonical record steering remain. The condition that each target waits for a current per-agent host read is no longer the click path. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W413YF",
+      "items": [
+        "sha256:8ce71f397c6a4f30dc0f1abe213d668853740644aa0222ea9830f08ba67d2fe4"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the separately recorded native-screen/input/wait and older-plugin notice obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:8ce71f397c6a4f30dc0f1abe213d668853740644aa0222ea9830f08ba67d2fe4"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:09184bf04e9bdc5991d0b6235cadf321286ea66115b21b16423c50fb478d139f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-YV57VE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X9N7E9",
+      "items": [
+        "sha256:4ee096330e5d6233683f1390f1f4222a0f8c106fbb846530b5d8f70756466370"
+      ],
+      "reason": "Supported ready-channel message switching remains; unconditional unavailable exception omits new load-wait barrier and explicit unsupported capability branch. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-YFAHQM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XB44YQ",
+      "items": [
+        "sha256:604ce4979d54313671b4b7d515114cfcb7d4d731eb1eb2647eae897159a71cc3"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded truthful wait/recovery wording and negotiated capability/reply obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:604ce4979d54313671b4b7d515114cfcb7d4d731eb1eb2647eae897159a71cc3"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": {
+            "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-D21787"
+        },
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:382fc918f40015eb0349a32e18c88c7a63ccc3954699071e5444161fa58cc988",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-TW9MMS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XGYBNQ",
+      "items": [
+        "sha256:41778211f8f6b28cd47957188cd6e3c852527048c26e5ee8dcf95800ee758a32"
+      ],
+      "reason": "A single display/readiness deadline no longer names a failure and reloads. It probes responsiveness; responsive lateness stays a wait. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-KSCJ1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJ3TNQ",
+      "items": [
+        "sha256:b5f0cb4f1fa3cf76c7e8bbbfc87177113a6c146d888fec5721a188e6342de918"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the negotiated native selected-screen/drawing/failure obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:b5f0cb4f1fa3cf76c7e8bbbfc87177113a6c146d888fec5721a188e6342de918"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_public_start_admits_the_six_scopes_and_refuses_foreign_and_leaf_scopes"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_public_start_admits_the_six_scopes_and_refuses_foreign_and_leaf_scopes"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-7SCCMD"
+        },
+        {
+          "after": {
+            "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+            "content": "sha256:f7c968787e1b958cceed458df4784ac3c3704147164999904730fd82b8f1c875",
+            "locator": {
+              "kind": "symbol",
+              "name": "_records"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+          },
+          "before": {
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+            "content": "sha256:0a79d488641be6af4310773e466e2f64560d17118a0d1f0a8590d02eb9f2d983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_records"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+          },
+          "id": "RLZ-2EZ0DF"
+        },
+        {
+          "after": {
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-5WD4V8"
+        },
+        {
+          "after": {
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_role_launch_context"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "before": {
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_role_launch_context"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "id": "RLZ-RA6D0D"
+        },
+        {
+          "after": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAY_START"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAY_START"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-RHVKF4"
+        },
+        {
+          "after": {
+            "blob": "a01d49d483cccfce6682797979d963fd217d1569",
+            "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatAgent"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatAgent"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-XM7PZS"
+        },
+        {
+          "after": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_rule_violation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_rule_violation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-ZQGPJB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XR7K9H",
+      "items": [
+        "sha256:f4ea64acea946dfeb460ed5aac565d698fdf504c8b19b1bb2343c9b2b07b764e"
+      ],
+      "reason": "Re-present every surviving investigator-containment cover after landed tuple selection. The complete recorded-to-working MAY_START owner source is identical; changed inherited blob metadata does not alter role pairs or scopes. No start attempt or new permission is claimed.",
+      "revision": 1,
+      "subject": "INV-68QN0P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1X14Y",
+      "items": [
+        "sha256:7bcae985bbf4b293c850b7b5c4f5911afa46dd34f820f04898f2821ed15a7d82"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the unchanged client fixture ownership and negotiated ready-capability evidence; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:7bcae985bbf4b293c850b7b5c4f5911afa46dd34f820f04898f2821ed15a7d82"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R140",
+          "packet": "requirements/MIK-R140-v1-a-change-of-the-selection-never-unloads-the-chat-on-the-installation.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:4016e5d864b00574fc395d70ecad5ca07d8ca8ad2f214d8aa2ee7839dc1fb4f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-3FTZB5"
+        },
+        {
+          "after": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-93GQVS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YHKYB2",
+      "items": [
+        "sha256:33dd78a1d5113e463689987c990620b884e06e7e9e174c225f5233743f42d3e7"
+      ],
+      "reason": "Only load increments generation; allowed-load list must include explicitly unsupported open and distinguish silent ping recovery from mere late answer. Source/card reconciliation under MIK-R140@v1 and its ruled pane/discovery boundaries; no new runtime execution is credited.",
+      "revision": 2,
+      "subject": "INV-Y7WR54"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YRZBSX",
+      "items": [
+        "sha256:5b1c9aaedee2cf7652dee3d3914a762d47a55a75562ed7efaa011b9cbee834af"
+      ],
+      "reason": "This fragment supplies imports, type/protocol declarations or explanatory comments for the recorded ping-silence, load-wait, capability and latest-selection obligations; it does not introduce a distinct guarantee beyond those actual owners.",
+      "subject": "hunk:sha256:5b1c9aaedee2cf7652dee3d3914a762d47a55a75562ed7efaa011b9cbee834af"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YS1M5W",
+      "items": [
+        "sha256:6464517603a8ec007370e7947c3d2231c81a49c20f9665bb19d79e829615b19c"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded truthful wait/recovery wording and negotiated capability/reply obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:6464517603a8ec007370e7947c3d2231c81a49c20f9665bb19d79e829615b19c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z1R0T0",
+      "items": [
+        "sha256:d4eb31cddb41300fc4bd2f61f01ce0be131f66bc2df9dfc238593afb523c3915"
+      ],
+      "reason": "This deletion removes relocated control-test/import or obsolete frame presentation glue; the retained owners and the unchanged client fixture ownership and negotiated ready-capability evidence are already reconciled, and no surviving construct states a separate invariant.",
+      "subject": "hunk:sha256:d4eb31cddb41300fc4bd2f61f01ce0be131f66bc2df9dfc238593afb523c3915"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZD6TRN",
+      "items": [
+        "sha256:1de1233a5d6d918e6f4682b2a8b0869c9aff633009cc4f4664ded61c3c6ba4f2"
+      ],
+      "reason": "This local state, prop, rendering, parser or projection fragment implements the recorded ping-silence, load-wait, capability and latest-selection obligations; its meaning is reconciled in the source card and existing/new obligation records, rather than promoted to an independent invariant for each glue fragment.",
+      "subject": "hunk:sha256:1de1233a5d6d918e6f4682b2a8b0869c9aff633009cc4f4664ded61c3c6ba4f2"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

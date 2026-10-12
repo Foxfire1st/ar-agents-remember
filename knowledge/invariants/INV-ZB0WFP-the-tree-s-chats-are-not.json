@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Background polling would add avoidable live-agent census work while no pane consumes it."
+  },
+  "applicability": "Periodic tree-chat preload requests and their browser visibility lifetime.",
+  "conditions": [
+    "Both chat pane and tab are shown for polling.",
+    "Hiding cancels the pending request/timer; showing refreshes immediately only if the retained answer is 30 seconds old."
+  ],
+  "exclusions": [
+    "Fresh selected-document authority reads are distinct from the periodic tree preload."
+  ],
+  "id": "INV-ZB0WFP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/document-chat/knownChats.test.tsx › \"asks nothing while the browser's tab or the chat pane is hidden, and once when it is shown again\", \"gives up a request that is under way when the tab is hidden, and leaves no timer behind\""
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "L140-R1-F08",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The tree's chats are not asked for while the browser's tab or the chat pane is hidden; shown again, they are asked for at once only when the last answer is 30 s old, and nothing is left running.",
+  "status": "proposed",
+  "supersedes": []
+}

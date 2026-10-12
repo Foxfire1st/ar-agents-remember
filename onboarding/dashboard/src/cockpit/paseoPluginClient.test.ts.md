@@ -14,7 +14,7 @@ Cases bound reloads, retain first-visit deep links and exercise the one opening 
 
 ## Invariants And Boundaries
 
-The old initial-open sidebar claim is superseded. Plain-page/SDK fixtures do not establish live native framing or actor operations.
+The old initial-open sidebar claim is superseded. The control-channel/display-confirmation cases live in `paseoPluginBridge.test.ts`; this file keeps bootstrap, trust and appearance/write-provenance cases. Plain-page/SDK fixtures do not establish live native framing or actor operations.
 
 ## Evidence
 

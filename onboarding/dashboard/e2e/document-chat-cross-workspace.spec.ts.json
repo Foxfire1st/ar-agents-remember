@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/e2e/document-chat-cross-workspace.spec.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Responsive late display remains waiting without URL fallback; explicit Retry loads the selected worker page after fixture recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd49cb5ae045b99f3b9dfa00b6b0e9e0d2934947",
+            "content": "sha256:5906144a7d22b9fc042cc12761673457572070ad90a90190bf8c4cbcec7a29ab",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

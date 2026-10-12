@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
-        "content": "sha256:39197ae574cefffe61d7daf9afbde1dc53ba156518a066e5c7bfe912cfc323fd",
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
         "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -89,6 +89,24 @@
       },
       "rationale": "Disables reconnect and refuses a connected daemon identity different from the selected home.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "content": "sha256:b6baa17f873e054de1e17daa3038a235883d45284cf322049de8378983281834",
+        "locator": {
+          "kind": "symbol",
+          "name": "listLiveAgents"
+        }
+      },
+      "id": "RLZ-ZX4HN0",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Sets complete only on the host's own word that no agents follow; a page without a next page ends the read, not the listing.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -97,11 +115,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
               "kind": "symbol",
               "name": "closingText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

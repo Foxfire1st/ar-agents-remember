@@ -10,19 +10,22 @@ The component owns one native embedded chat document, with distinct frame/contro
 
 ## Code Commentary
 
-The descriptor is read on first activation and explicit Retry — never on an ordinary selection change. A stable controller consumes execution targets and trusted plugin messages. The iframe generation rises by exactly one per document load and is exposed as `data-generation` for tests; ready selection switches never touch it, while the fallback load, Retry and host return still replace the frame. The dashboard's own sidebar, its grouping memo and its catalog/problem notices are removed with rule 7; the host's own list is the navigation (MIK-R75 rules 7 to 9).
+The descriptor is fetched on first activation and explicit Retry, never for an ordinary selection change. One stable controller publishes the frame's load generation and current request state. A layout effect sends a known target change before paint; the iframe is keyed only by generation, so a message switch preserves its DOM identity.
+
+While the document's agent is unknown, `holding` keeps the current native screen visible but inert. Otherwise `frameWait` holds input until the application reports the selected agent as shown or on-chat, or the loaded URL already names it. With the current plugin, on-chat releases input while the waiting line remains until drawing or the native failed-load pane is reported. The line lies at the bottom edge, away from native header controls. An older plugin's earlier answer ends it at that plugin's boundary, which the capability notice names. A held focused frame is blurred and excludes pointer input as well as keyboard reach.
 
 ## Invariants And Boundaries
 
-Normal view switches preserve the frame; Retry and the existing unavailable-control URL path may replace a generation. The frame loads again only for the MIK-R121 fallback load, Retry, and host return. The host's list, not a dashboard rail, is the chat navigation on this page.
+Normal view and responsive selection switches preserve the frame. Recovery loading follows the controller's unanswered-ping boundary, explicit Retry and host return, with URL-only navigation retained for a plugin explicitly lacking open-agent. A slow host/drawing answer does not itself replace a generation. The pane shows the application's own screen, not a second frame or a frozen copy of the previous conversation. Native failure text and native Retry remain the application's, never fabricated dashboard content. The host's list remains the only chat navigation.
 
 ## Evidence
 
-The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
+These assertions name source ownership; no native installation proof or test rerun is claimed.
 
-- One stable controller consumes execution targets and trusted plugin messages. [1]
-- The descriptor is fetched on first activation and each explicit Retry. [2]
-- The mounted pane exposes the load count and keys the frame element by generation only. [3]
+- One stable controller dispatches selection changes before paint and consumes only its trusted frame messages. [1]
+- The descriptor is fetched on first activation and explicit Retry, not selection changes. [2]
+- Generation alone keys the iframe; held input is inert, pointer-disabled and blurred, with a bottom-edge waiting line. [3]
+- On-chat or shown confirms selected-screen input ownership; an unanswered request remains visibly waiting. [4]
 
 ## MIK-R95 Document Page Mode
 

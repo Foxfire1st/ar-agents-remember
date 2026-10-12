@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_frame.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
+        "content": "sha256:e608fd267e6d120572012a15bd329cc1a2af9eed9623f8f20aead12a86045f5b",
+        "locator": {
+          "kind": "symbol",
+          "name": "frame_descriptor"
+        }
+      },
+      "id": "RLZ-28HWKN",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The frame route's answer carries the provisioning command the notice shows.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of frame_descriptor supporting the stated file behavior.",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef43dffa6d887387319c919185896b00cb5d08a",
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
             "content": "sha256:0a5e86fd0af26e80df5a27df7b2121455e0c286967fb38a11fb4736cd4c7f898",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef43dffa6d887387319c919185896b00cb5d08a",
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
             "content": "sha256:20c4574cb94241fce609a3add0b5ae252c176dd06effcd03572900c4844f9ad3",
             "locator": {
               "kind": "symbol",
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef43dffa6d887387319c919185896b00cb5d08a",
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
             "content": "sha256:fe3798ef3c785f22f8f414efb05be264f4b7fa5200774ff9ffd218b5c78bc169",
             "locator": {
               "kind": "symbol",
@@ -71,11 +90,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef43dffa6d887387319c919185896b00cb5d08a",
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
             "content": "sha256:20c4574cb94241fce609a3add0b5ae252c176dd06effcd03572900c4844f9ad3",
             "locator": {
               "kind": "symbol",
               "name": "host_frame_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`frame_answer` derives and admits the asking dashboard origin; `frame_descriptor` selects its configured embed base and reads configured daemon identity plus the Projects workspace through `host_frame_facts`. An available descriptor also names `provisionCommand`, built from the active settings path, for the older-plugin notice. No selected-agent lookup, implicit provisioning or fallback loopback URL occurs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
+            "content": "sha256:89c8fb984ea1b42f7c92c2c1e3c089290af5890ad6bc50c6d518696c5cb863d8",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

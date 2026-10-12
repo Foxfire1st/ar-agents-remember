@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A responding application is alive even while it draws the selected chat. This turns slow host work into another document load and disables later message switches."
+  },
+  "alternatives": [
+    {
+      "option": "Probe readiness/request lateness and reload only after unanswered ping.",
+      "reason": "A responding application is alive even while it draws the selected chat.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reload at the first missing answer deadline.",
+      "reason": "This turns slow host work into another document load and disables later message switches.",
+      "reconsider_when": "If the application cannot answer responsiveness probes independently of the missing open answer.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Explicit Retry, host return and unsupported-open URL steering stay distinct."
+  ],
+  "context": "The earlier controller treated ten-second answer lateness as channel loss.",
+  "decider": "Architect 97e0320d on the developer requirements, accepted by the Manager in the L140 decision log",
+  "id": "DEC-48K49Z",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"loads the frame once when the application answers nothing at all, and switches by message again\", \"asks by a ping at the deadline and loads nothing: the application answers with its late ready report\" / \"… its pong\", \"counts the channel as unavailable only when that ping stays unanswered too, and then loads nothing more\"; dashboard/src/cockpit/PaseoChatFrame.test.tsx › \"keeps the frame, shows the banner after an unanswered ping, and shows executions by URL\""
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "MIK-R140@v1 rule 3",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

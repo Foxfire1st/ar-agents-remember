@@ -10,8 +10,12 @@ The explicit configured terminal transition when a live host cannot migrate in p
 
 ## Code Commentary
 
-`terminal_provision_remedy` builds the `agents-remember paseo provision --config <file>` command from the settings' command config path (a placeholder when none is known) and states that it runs outside the host and ends agent sessions, running turns and pending prompts.
+`provision_command` constructs `agents-remember paseo provision --config` with the shell-quoted active settings file, or the explicit active-file placeholder. `terminal_provision_remedy` wraps that same command with the outside-host restart/session-loss warning; `frame_descriptor` exposes the raw command for an older-plugin notice. Neither helper executes it.
 
 ## Evidence
 
 - The terminal remedy text. [1]
+
+## Current contract evidence
+
+- `provision_command` constructs `agents-remember paseo provision --config` with the shell-quoted active settings file, or the explicit active-file placeholder. `terminal_provision_remedy` wraps that same command with the outside-host restart/session-loss warning; `frame_descriptor` exposes the raw command for an older-plugin notice. Neither helper executes it. [2]

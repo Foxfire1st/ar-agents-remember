@@ -7,10 +7,11 @@
   },
   "applicability": "Document-load counting on the Operations chat frame.",
   "conditions": [
-    "Loads are counted by generation rises on the mounted pane."
+    "Actual document loads increment generation once; responsive late answers do not.",
+    "Retry, host return, unanswered-ping recovery and explicit lack of open-agent capability are distinct permitted reload paths."
   ],
   "exclusions": [
-    "Fallback load, Retry and host return, which each load once by construction.",
+    "The initial mount is a load, not a reload caused by selection.",
     "Chats page frame."
   ],
   "id": "INV-Y7WR54",
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The frame loads again only for the MIK-R121 fallback load, Retry, and host return, and tests can read the number of loads from the frame generation.",
+  "statement": "Document loads are counted by generation exactly once at load. They occur for initial mount, explicit Retry/host return, silent ready/open recovery only after unanswered ping, and URL steering when the plugin explicitly lacks open-agent. While a load waits for readiness selections are held; supported ready-channel/late-answer changes do not load.",
   "status": "proposed",
   "supersedes": []
 }

@@ -88,7 +88,7 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 ## Supported successor's operative seams
 
 - Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher. [11]
-- The resolved-recipient prologue constructs a filed identity from shared attachment/link/store primitives; unfinished-start holding returns before this function is called. [12]
+- After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity. [12]
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
 

@@ -17,6 +17,21 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "`provision_command` constructs `agents-remember paseo provision --config` with the shell-quoted active settings file, or the explicit active-file placeholder. `terminal_provision_remedy` wraps that same command with the outside-host restart/session-loss warning; `frame_descriptor` exposes the raw command for an older-plugin notice. Neither helper executes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b38e0ed5dfa469d3e1d51a887dfe4a7fbd654d41",
+            "content": "sha256:20d7c2d6f854245f0ae20ae394c76e25f22eed3d7a107eff79317df003598c42",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

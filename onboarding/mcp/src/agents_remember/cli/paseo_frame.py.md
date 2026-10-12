@@ -10,7 +10,7 @@ Determines which configured native frame URL a dashboard-origin browser may use.
 
 ## Code Commentary
 
-frame_descriptor derives dashboard origin and exact embed mapping, then obtains native frame facts for the selected server/agent. No fixed loopback default substitutes for a missing embed route; unavailable origin/runtime/native facts remain a named descriptor state. The browser builds URLs from this supplied base rather than secrets or inherited host variables.
+`frame_answer` derives and admits the asking dashboard origin; `frame_descriptor` selects its configured embed base and reads configured daemon identity plus the Projects workspace through `host_frame_facts`. An available descriptor also names `provisionCommand`, built from the active settings path, for the older-plugin notice. No selected-agent lookup, implicit provisioning or fallback loopback URL occurs.
 
 ## Evidence
 
@@ -23,7 +23,11 @@ frame_descriptor derives dashboard origin and exact embed mapping, then obtains 
 The frame route now takes `workspace_folder` from its extracted owner `role_launch_workspace` instead of the preparation module; the route behavior is unchanged.
 ## 260928-MIK-L96 The unreachable detail
 
-The frame's `unreachable` answer now distinguishes the host states: a host that is not installed names the install step, a configured host that is down names the one start, and the `unreachable` detail no longer tells a user to provision as a remedy for an unloaded client.
+An unreachable daemon keeps the install/start advice; a responsive host with an older plugin instead has the explicitly named provision command in the available descriptor. Naming that command does not execute it or permit reloading a healthy frame for a delayed selection answer.
 
 - The frame answer with its host-state detail. [4]
 - The host facts the frame reads. [5]
+
+## Current contract evidence
+
+- `frame_answer` derives and admits the asking dashboard origin; `frame_descriptor` selects its configured embed base and reads configured daemon identity plus the Projects workspace through `host_frame_facts`. An available descriptor also names `provisionCommand`, built from the active settings path, for the older-plugin notice. No selected-agent lookup, implicit provisioning or fallback loopback URL occurs. [6]

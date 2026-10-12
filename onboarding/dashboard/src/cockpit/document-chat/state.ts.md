@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../overview.md)
 
 ## Purpose
 
@@ -10,14 +10,15 @@ The document chat's state hook: it binds the selected document to the launcher's
 
 ## Code Commentary
 
-The scope is the serialized task document reference, so every piece of state is keyed to one document. `documentChatBinding` supplies the role set and default selection; a successful dispatch is retained as the exact returned request id and is dropped when the selection changes or the record read returns no agent. `displayedAgent` prefers the exact launched request's agent and otherwise takes the newest non-archived matching record; a late completion for another document cannot steer this panel (`launchedRequest` checks the live scope). `chatPresentation` decides when the panel shows the launcher (no target, or the user opened it), hides the unresolved frame, and offers the one control that opens the same bound launcher.
+The serialized task reference scopes the exact launched request and guards against stale-document completion. `documentBindings` derives the canonical tree once and `bindingInTree` selects its role set. Successful dispatch retains the exact request until scope changes or its own fresh answer is empty; Investigator launch still refreshes rather than replacing a Manager/Orchestrator primary chat.
 
+`useKnownChats` supplies preclick tree knowledge and `useSelectionAgents` prefers a fresh answer, otherwise the bounded prior answer. Exact just-started requests are not substituted by the tree cache. The presentation hides the retained frame only after the selection is known to have no effective chat (or admits no role), never merely because the server is still answering. Unknown selection keeps the native screen visible and held under the dashboard's waiting line; an unreadable answer is not promoted to no-chat.
 ## Evidence
 
 
 - A dispatch receipt is adopted only for the live scope with an exact agent and request id. [2]
 - The displayed agent is the launched request's agent or the newest live record, never a stale document's. [3]
-- The presentation flags hide an unresolved frame and keep one control for the bound launcher. [4]
+- Only a known agentless selection hides the retained frame; unknown agent knowledge keeps it shown and held. [4]
 
 ## Investigator scope and request identity
 

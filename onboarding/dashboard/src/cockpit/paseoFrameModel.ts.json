@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "content": "sha256:ad81a09d985914228bbf587779a52f9dc515cceda9dd4578bb3dfbc294173e8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "DASHBOARD_ABILITIES"
+        }
+      },
+      "id": "RLZ-8S90S7",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "What this dashboard tells a plug-in it can read; the plug-in sends the newer answers only to a dashboard that named them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
         "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
         "locator": {
           "kind": "symbol",
@@ -18,8 +36,143 @@
       },
       "rationale": "The timeout sentence lives with the other pane sentences; its fallback claim must match the loaded-identity guard or it asserts an action never taken.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+        "locator": {
+          "kind": "symbol",
+          "name": "pluginNoticeText"
+        }
+      },
+      "id": "RLZ-K8CWT3",
+      "invariant": "INV-QFDD1M",
+      "origin": {
+        "handoffEntry": "ruling 7193eaf8",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Adds the clause about the waiting line for a plug-in that says nothing about itself or lacks the answer on display.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "requestWaitText"
+        }
+      },
+      "id": "RLZ-QSCMG6",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one line the pane shows while an answer is waited for, and its wording once the answer is late.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+        "locator": {
+          "kind": "symbol",
+          "name": "pluginNoticeText"
+        }
+      },
+      "id": "RLZ-YX01CJ",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Builds the notice from the abilities the plug-in named, with the provisioning command the backend names.",
+      "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Only a non-rejected native hosted execution supplies the agent target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:669841be78c2a5ecf5421ab6ce6cb9b30eca4bfc4fbbbb7d7f97c6cd64be29a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseoAgentTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only source-tagged supported control message shapes are normalized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:8d2aec01684df053ee1abc0019cb6f73d88301a4337bf7f916e54d4f0c8199b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsePluginMessage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing capability declarations retain message opening; only an explicit lack of open-agent disables it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:8ea7bd9b358ffd8a9887c51af0f31003c7776625a43cd650f717aadf8daaa107",
+            "locator": {
+              "kind": "symbol",
+              "name": "pluginOpensAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A deficient plugin is named with the provision command and any early-drawing boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+            "locator": {
+              "kind": "symbol",
+              "name": "pluginNoticeText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Late requests remain waiting rather than being described as a dead channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "requestWaitText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Receipt integrity, explicit host-list completeness, bounded projection retention and visible-lifetime polling are separate obligations; none alone makes immediate cached steering both truthful and resource bounded."
+  },
+  "guarantee": "Canonical tree receipts and one explicitly complete-or-incomplete live-agent census supply preclick chat knowledge with fresh single-document correction. Per-document corruption, unreached agents and exceeded receipt limits remain unknown, not empty; receipt acquisition is path-deduplicated and request-local, and periodic preloading exists only while pane and tab are shown. Together these keep immediate steering truthful without unbounded receipt retention or unseen background census work.",
+  "id": "FAM-M36XBW",
+  "members": [
+    "INV-T3JTQ2",
+    "INV-4BT846",
+    "INV-5VK3JP",
+    "INV-GD0F05",
+    "INV-ZB0WFP"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "bounded-truthful-preclick-knowledge",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit/document-chat",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded preclick knowledge never invents missing document chats"
+}

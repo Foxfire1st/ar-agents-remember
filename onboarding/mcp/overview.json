@@ -3696,6 +3696,96 @@
         }
       ]
     },
+    "310": {
+      "note": "Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "content": "sha256:b2cc1c2e151e09d2f86c5fc3d18c1940532a4cb9b8edfdde15fa2d7db34a93fd",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:465653b6f37b69218e1c13a896dbe02d5ce69bcec9d126fabbb11b2daf737d02",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:b6baa17f873e054de1e17daa3038a235883d45284cf322049de8378983281834",
+            "locator": {
+              "end": 752,
+              "kind": "line_range",
+              "start": 733
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b38e0ed5dfa469d3e1d51a887dfe4a7fbd654d41",
+            "content": "sha256:d13f900212c7bac56b8347d31bd56f451baeb1b063638b104ea39e0e4bd2266f",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_remedy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+            "content": "sha256:59101bb7c6b33ee7f1b00bdd594a31430e49add45e200baf4d5c12b759f017a1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chat_tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+            "content": "sha256:e2349ee340b8a756cc30f03355fe63c063e033d3428bad6434c2ceababa65103",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
+            "content": "sha256:89c8fb984ea1b42f7c92c2c1e3c089290af5890ad6bc50c6d518696c5cb863d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_frame.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The lane row.",
       "targets": [

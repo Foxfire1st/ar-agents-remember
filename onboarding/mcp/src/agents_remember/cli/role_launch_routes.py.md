@@ -44,6 +44,8 @@ Dashboard leaf Revive uses the shared grant-aware scope verifier before native b
 
 The route registration adds the one-request progress read (`/api/role-launch/progress/{request_id}`) and the document-chat record read (`register_document_chat_route`), and the dispatch endpoint claims the progress notice at the beginning and reclaims it in its finally path. The dispatch answer carries the enclosure preparation (`created`/`found`/`not-applicable`).
 
+The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners.
+
 ## Investigator scope and request identity
 
 Investigator dispatch uses the existing selection admission lock; options expose per-request executions and omitted display rows for selected tasks. Result, retry and revive carry the exact saved UUID and canonical references through existing route owners. The one earlier spelling emits the shared notice; original receipt and report addresses remain readable without migration.
@@ -59,3 +61,7 @@ Investigator dispatch uses the existing selection admission lock; options expose
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]
+
+## Current contract evidence
+
+- The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]

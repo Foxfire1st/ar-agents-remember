@@ -109,6 +109,27 @@ Message transport coverage is split across settings validation, filesystem/colli
 
 The role-text case scans generated raw role files, then compiles two canonical role/operation capsules. It is not a live every-harness consumption witness. The module is selected once in `unit-regression` and consumes the two existing curator-coherence-support and Node-lockfile artifacts. Registration and these source-described assertions establish neither a new invocation nor a PASS.
 
+
+### Native selection and source-owner qualifications
+
+Message transport source coverage is split across settings-limit validation, filesystem/collision/rollback, body and attachment behavior, bounded replies, archived-successor/start-authority checks and source/compiled-return wording. The private turn-end decision cases are in `mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts`, outside this Python tests route, and use a controlled sender without a host. Catalog membership and controlled-runtime assertions do not establish live host callbacks, every-harness consumption or independent acceptance. Actual-parent-ID developer questions stay distinct from role/task ordinary returns.
+
+[`test_user_settings_guard.py`](test_user_settings_guard.py.md) contains refusal assertions on made-up accounts, including a real child that identifies the reviewed world source. Its bounded recursive static scan includes future nested non-test support modules, rejects raw/import-aliased resolver calls and supported literal-path rebuilds, and never executes its deliberately unsafe controls. This is the bounded MIK-R135 rule 4 support-settings scanner encoded in the module, not arbitrary Python dataflow analysis or another suite execution. Its `unit-regression` registration declares selection, not execution or independent acceptance.
+
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:164 (EXPECTED_LIFECYCLE_STATE_POPULATION)`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1073–1104 (test_the_state_dependent_raisers_lose_the_envelope_when_unprepared)`; its source-described four-state matrix asserts an empty raiser pin.
+- Source comparison: `mcp/tests/test-evidence-lanes.toml:4 ([files])`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Historical citation custody is distinct from active support: current operative claims, including the renewal below, require claim-matched current source extents; preserved keys or historical tuples alone do not establish currentness or proof truth.
+
+The reconsideration suite contains candidate-side supersession assertions: a successor suppresses its base item and appears in the skipped-link summary; the same changed target without a successor still raises; an unrelated supersedes target preserves the base item and raises no new candidate item. The successor case separately checks explicit-set versus default stored-predicate behavior. These are source-described assertions, not a new execution or acceptance. The source file has 1,223 lines, exceeding the 1,200-line rail recorded in `pyproject.toml`; no split or policy waiver is established by this source inspection. Lane ownership and certification policy are separate from these assertions.
+
+Recorded-meaning regression uses `compose_review` over converted trees, exact owner/attempt selection, outline and continuation assertions, portable L37 historical fixtures and retired/before-only UUID witnesses. Mounted `ReviewSurface` source cases over retained captures assert badges, step fields, keyboard explanations and missing-versus-empty state. Capture/provenance bytes and the F04 real-ingest attribution are retained evidence classes, not reconstructed invocations; registration or mounted display alone claims no new execution or installed acceptance.
+
+`paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.
+
 ## Invariants And Boundaries
 
 A new case must justify distinct protection; consolidate or replace overlapping tests and remove unused support before growing budgets. Private branch coverage, metric improvement and historical milestone names do not justify restoring deleted matrices. General policy forbids recursive repository pytest and repeated repository census to test the suite; preserve the specifically named bounded scanner and disposable synthetic-controller exceptions rather than generalizing them.
@@ -141,7 +162,155 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | --- | --- |
 | sourceRoute | `mcp/tests/` |
 
+### Native-source claim qualifications
+
+- The guard refuses a matched account or earliest-observed settings path before returning a write path; it creates nothing.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/_user_settings_guard.py:28-88`.
+
+- The made-up-account child asserts its reviewed source and empty fake home on refusal. Recursive population, syntactic scanner and deliberately unexecuted unsafe controls are source-described assertions.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_user_settings_guard.py:50-154`; `mcp/tests/test_user_settings_guard.py:157-365`; `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:359-359`.
+
+- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The configured collected-case budgets are 5000 unit/1000 integration; neither source assertion nor policy declaration is execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_reconsideration_surfacing.py:1180-1223`; `pyproject.toml:75-80`; `pyproject.toml:278-299`.
+
+- Recorded-meaning backend source assertions, mounted ReviewSurface capture-based assertions and retained capture/provenance records are distinct source/evidence classes; no new invocation or installed acceptance is inferred.
+
+Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.meaning.test.tsx:1-242`; `dashboard/src/panels/review/ReviewSurface.f04.test.tsx:1-80`; `dashboard/src/panels/review/l43.capture-provenance.json:1-104`; `dashboard/src/panels/review/l43r2.capture-provenance.json:1-1`; `dashboard/src/panels/review/l43r2.f04.capture-provenance.json:1-38`; `mcp/tests/test_review_meaning_effects.py (file)`.
+
+
+
+
+
+
+
+
+- The lifecycle catalog currently lists test_landing_report.py as an exact consumer of the existing curator-coherence support and Node lockfile artifacts; no new artifact/contract identity or execution is inferred.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:478-492`; `mcp/tests/evidence-lifecycle.toml:533-539`; `mcp/tests/evidence-lifecycle.toml:1140-1154`; `mcp/tests/evidence-lifecycle.toml:1389-1395`.
+
+
+
+- The outline uses RecordChanges for intent, guarantee and membership facts.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/application/review_outline.py:12-12`; `mcp/src/agents_remember/application/review_outline.py:55-122`; `mcp/src/agents_remember/application/review_record_changes.py:93-187`.
+
+- The change-kind projection delegates intent and membership to the same RecordChanges owner used by the outline.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/application/review_change_kinds.py:63-63`; `mcp/src/agents_remember/application/review_change_kinds.py:151-156`; `mcp/src/agents_remember/application/review_change_kinds.py:265-269`; `mcp/src/agents_remember/application/review_record_changes.py:145-187`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_review_change_kinds.py`, `mcp/tests/test_review_closeout_result_block_through_real_tool.py`, `mcp/tests/test_review_comparison_reclamation_real.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1517-1519`.
+
+- The worktree-closeout source case asserts invalid-card refusal, unchanged open history bytes and commitment of closed history with the same rows on a valid retry.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_knowledge_gate_routes.py:254-277`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_knowledge_closeout_gate.py`, `mcp/tests/test_knowledge_conversion.py`, `mcp/tests/test_knowledge_conversion_toolchain.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1331-1333`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_review_unexplained_lane.py`, `mcp/tests/test_review_verification_observation_model.py`, `mcp/tests/test_reviewer_worklist_process.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1539-1541`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_reconsideration_surfacing.py`, `mcp/tests/test_record_integrity.py`, `mcp/tests/test_record_landing.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1501-1503`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_knowledge_reader.py`, `mcp/tests/test_knowledge_reader_tree_coverage.py`, `mcp/tests/test_knowledge_reopen.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1363-1365`.
+
+- The lane manifest declares `mcp/tests/test_knowledge_decisions.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:132-132`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_family_route_conditions.py`, `mcp/tests/test_file_size_detector.py`, `mcp/tests/test_final_catalog_plan_attestation.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1290-1292`.
+
+- The lane manifest declares `mcp/tests/test_planned_knowledge_effects.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:240-240`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_planned_knowledge_effects.py` as an exact consumer; this is a cumulative consumer declaration, not execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1478-1478`.
+
+- The lane manifest declares `mcp/tests/test_onboarding_trace_gate.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:218-218`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_knowledge_currentness.py`, `mcp/tests/test_knowledge_cutover.py`, `mcp/tests/test_knowledge_database_retired.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1338-1340`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_knowledge_worklist.py`, `mcp/tests/test_knowledge_worklist_leaf.py`, `mcp/tests/test_knowledge_writer.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1389-1391`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_knowledge_file_canonical.py`, `mcp/tests/test_knowledge_file_formats.py`, `mcp/tests/test_knowledge_gate_routes.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1346-1348`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_read_anchor_memo.py`, `mcp/tests/test_read_ar_files.py`, `mcp/tests/test_reader_task_context_protocol.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1497-1499`.
+
+- The lane manifest declares `mcp/tests/test_knowledge_review_revision_selection.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:166-166`.
+
+- The three fresh-user harness artifacts declare test_fresh_user_harness.py as an exact-source consumer; source cases assert over-cap/branch fixture shape and blocked-step/report-argument contracts without proving fresh-user acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:2693-2712`; `mcp/tests/evidence-lifecycle.toml:2713-2731`; `mcp/tests/evidence-lifecycle.toml:2820-2837`; `mcp/tests/test_fresh_user_harness.py:118-186`; `mcp/tests/test_fresh_user_harness.py:192-231`.
+
+- The lane manifest declares `mcp/tests/test_citation_index_resilience.py` and `mcp/tests/test_fresh_user_harness.py` in `unit-regression`; their membership is selection only.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:35-35`; `mcp/tests/test-evidence-lanes.toml:96-96`.
+
+- The lifecycle catalog declares `scripts/e2e_harness/fresh_user_fixture.py`, `scripts/e2e_harness/fresh_user_scenario.py` and `scripts/e2e_harness/run_fresh_user.py` as permanent `shared-support` artifacts with exact-source consumer lists and their respective `node:` replacement contracts; registration alone is not acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:2693-2712`; `mcp/tests/evidence-lifecycle.toml:2713-2731`; `mcp/tests/evidence-lifecycle.toml:2820-2837`.
+
+- The lane manifest declares `mcp/tests/test_memory_backfill.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:194-194`.
+
+- The lane manifest declares `mcp/tests/test_memory_attribution_producers.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:193-193`.
+
+- The Node fixture lockfile artifact currently declares `mcp/tests/test_terminal_liveness_pane_authority.py`, `mcp/tests/test_terminal_liveness_registration_order.py`, `mcp/tests/test_terminal_observer_health.py` as exact consumers; these are lifecycle consumer entries, not lane rows or execution evidence.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:1140-1155`; `mcp/tests/evidence-lifecycle.toml:1619-1621`.
+
+- The lifecycle catalog registers `mcp/tests/read_scope_test_support.py` with `contract:knowledge-read-scope-cases` and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:29-33`; `mcp/tests/evidence-lifecycle.toml:2304-2349`.
+
+- The lane manifest declares `mcp/tests/test_knowledge_read_scope.py` in `unit-regression`; selection is not execution or acceptance.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:150-150`.
+
+- The lifecycle catalog registers `mcp/tests/diff_scope_test_support.py` with `contract:knowledge-diff-cases` and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a comparison invocation.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:14-18`; `mcp/tests/evidence-lifecycle.toml:600-637`.
+
+- The lifecycle catalog lists `mcp/tests/test_terminal_blocker_reasons.py` as an exact consumer of governed artifacts with their respective `node:` replacement contracts. The separate `synthetic-test-evidence-candidate` contract names its own support owner and dependency-census evidence node. These current declarations do not establish a nine-row addition or execution.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:54-58`; `mcp/tests/evidence-lifecycle.toml:278-292`; `mcp/tests/evidence-lifecycle.toml:345-345`; `mcp/tests/evidence-lifecycle.toml:414-428`; `mcp/tests/evidence-lifecycle.toml:439-439`; `mcp/tests/evidence-lifecycle.toml:478-492`; `mcp/tests/evidence-lifecycle.toml:580-580`; `mcp/tests/evidence-lifecycle.toml:1140-1154`; `mcp/tests/evidence-lifecycle.toml:1610-1610`; `mcp/tests/evidence-lifecycle.toml:1664-1678`; `mcp/tests/evidence-lifecycle.toml:1699-1699`; `mcp/tests/evidence-lifecycle.toml:1708-1722`; `mcp/tests/evidence-lifecycle.toml:1735-1735`; `mcp/tests/evidence-lifecycle.toml:1762-1776`; `mcp/tests/evidence-lifecycle.toml:1782-1782`; `mcp/tests/evidence-lifecycle.toml:1872-1886`; `mcp/tests/evidence-lifecycle.toml:1903-1903`; `mcp/tests/evidence-lifecycle.toml:1950-1964`; `mcp/tests/evidence-lifecycle.toml:2014-2014`; `mcp/tests/evidence-lifecycle.toml:2350-2364`; `mcp/tests/evidence-lifecycle.toml:2383-2383`; `mcp/tests/evidence-lifecycle.toml:2412-2426`; `mcp/tests/evidence-lifecycle.toml:2431-2431`; `mcp/tests/evidence-lifecycle.toml:2440-2454`; `mcp/tests/evidence-lifecycle.toml:2474-2474`.
+
+- The `_evidence_catalog_fixture.py` artifact declares its current exact consumer list under `contract:synthetic-test-evidence-candidate`; its owner, replacement contract and consumers are catalog declarations, not a four-registration change receipt or execution.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:54-58`; `mcp/tests/evidence-lifecycle.toml:126-147`.
+
 ## Evidence
+
 - The isolation of the pytest process and the two registered plugins. [3]
 - Integration files are not imported in a run that excludes integration. [5]
 - The collected cases are counted against the two budgets. [6]
@@ -385,10 +554,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The comparison selector proof over recorded trees [1711]
 - Shared outline/change facts keep one definition [1712]
 - Shared outline/change facts keep one definition [1713]
-
-
 - Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary. The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [1714]
-
 - The default options select the unit population and four workers. [1]
 - The lane row. [1414]
 - The packet's examples: ready once current rows answer every item; a new edit reopens two. [1415]
@@ -426,9 +592,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **The four consumer registrations the two governed-support consumers and the item-16 case obliged.** [1649]
 - **The mounted-route class, which measures the block through the call an agent actually makes. Since MIK-R24 an unconverted memory tree is read as `legacy-format` there, so its two cases assert that, with and without a database.** [1657]
 - The new cutover module's docstring: what it covers. [1666]
-
 - Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
-
 - The two case budgets are declared in the repository-root configuration as 5000/1000. [2]
 - The install-contract module. [1701]
 - The no-stop module. [1702]
@@ -449,7 +613,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Finalization binds five selected original certificates and the fifth memory inputs/reference. [1729]
 - The bounded timing scanner reads its named support roots and excludes waits.py. [1730]
 - The completion proof's ordinary-source/catalog ownership is explicitly checked. [1731]
-
 - Source controls cover cut measure, threshold, deletion proof and overviews. [1716]
 - Source cases retain committed leaf deltas and exclude files already present in an updated base. [1717]
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. [1718]
@@ -458,3 +621,12 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The source checks raw generated texts and two canonical compiled capsules; it is not every live harness execution. [1721]
 - The landing-report module is selected in unit-regression; registration is not execution. [1722]
 - The landing-report module consumes two existing governed artifacts; its consumer addition changes no artifact/contract identity. [1723]
+- Source controls cover cut measure, threshold, deletion proof and overviews.  Anchor: test_card_over_measure_reports_both_numbers through test_overview_cut_reported_without_source [1716]
+- Source cases retain committed leaf deltas and exclude files already present in an updated base.  Anchor: test_leaf_base_reports_committed_and_keeps_older_base_out and test_leaf_base_update_excludes_older_base_files [1717]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.  Anchor: rename, linked-worktree and removed-card controls [1718]
+- Fixture assertions keep landing reports non-refusing while preserving existing refusals; adjacent closeout services are mocked.  Anchor: clean operation/gate/adapter, closeout-phase and checklist parity cases [1719]
+- Source cases inventory live/dangling links at own size and bound counted multiset hash work.  Anchor: test_symlinks_reported_without_following_targets and test_line_delta_work_is_linear_in_card_size [1720]
+- The source checks raw generated texts and two canonical compiled capsules; it is not every live harness execution.  Anchor: test_role_texts_hold_landing_sentences_everywhere [1721]
+- The landing-report module is selected in unit-regression; registration is not execution.  Anchor: [files].unit-regression test_landing_report registration [1722]
+- `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof. [1732]
+- The comparison selector proof over recorded trees  Anchor: current inclusive source extent [1711]

@@ -419,7 +419,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
             "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
             "locator": {
               "kind": "symbol",
@@ -443,15 +443,40 @@
       ]
     },
     "12": {
-      "note": "Prologue constructs the filed identity from shared attachment/link/store primitives before any public delivery.",
+      "note": "After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
             "content": "sha256:3a7224adba3f381792787f4a9173805e50b9663c5d3c77f636a47809b3e16c2b",
             "locator": {
-              "kind": "symbol",
-              "name": "_file_message"
+              "end": 782,
+              "kind": "line_range",
+              "start": 729
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+            "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 785
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:6662b0ca591afd36d2f367235b45ee3f89346cde5a7aa661164e2e7b8e91b369",
+            "locator": {
+              "end": 1054,
+              "kind": "line_range",
+              "start": 1035
             }
           },
           "kind": "code"

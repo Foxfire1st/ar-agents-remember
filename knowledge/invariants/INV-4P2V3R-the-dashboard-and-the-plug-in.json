@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Treating an older but open-capable plugin as unavailable would reload every selection and hide its actual limitation."
+  },
+  "applicability": "Ability negotiation and notices on the embedded native plugin channel.",
+  "conditions": [
+    "Ready and pong describe plugin abilities; hello describes dashboard reply capabilities.",
+    "The provision command is settings-bound display text, not automatically executed."
+  ],
+  "exclusions": [
+    "A missing new reply capability is not proof that supported ar.open is absent."
+  ],
+  "id": "INV-4P2V3R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"is named with the provisioning command and still switches by message when it …\" (three rows), \"is named when it cannot show a chat on request, and each chat is then loaded by its address\"; mcp/tests/test_paseo_frame.py (provisionCommand)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "MIK-R140@v1 rule 4",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard and the plug-in tell each other what they can do; a plug-in that lacks something this dashboard uses is named as older in the frame's notice with the command that provisions the current one, and every plug-in that can show an agent on request still switches by message.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -9,10 +9,10 @@
   },
   "applicability": "The Operations right rail's Chat side for any selected task document, at every rail width.",
   "conditions": [
-    "The selected task's agents come from canonical launch records, each checked against the host's read-only agent state before it is shown.",
-    "A ready frame moves to another selection by the trusted control message and is not loaded again for that move.",
-    "The host's message box and tabs remain the only chat content; the panel adds no list of documents or agents of its own.",
-    "An unreadable host is shown as the shared unavailable notice with Retry, not as a start or an empty state."
+    "The selected document agents are canonical launch-record agents checked against read-only host evidence; known cached/tree answers steer immediately, and a fresh selected-document answer corrects them.",
+    "A ready open-capable frame moves by the trusted control message without reloading.",
+    "The host message box and tabs remain the only chat content, with no dashboard chat-navigation list.",
+    "Unknown discovery keeps the existing frame visible and inert under a named waiting line; unavailable reads remain explicit and cannot start an agent."
   ],
   "exclusions": [
     "The Chats page's own frame and navigation are MIK-R75's.",
@@ -30,9 +30,9 @@
     "leaf": "260928-MIK-L95",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The rail resolves its selected task from launch records and steers the shared native frame while ready without a reload.",
+  "statement": "The rail resolves document chats from canonical launch records checked against read-only host evidence, keeps bounded previously confirmed answers for immediate selection steering, and reconciles them with the fresh selected-document answer. Unknown answers retain the visible frame out of reach under a named wait; ready supported-channel moves do not reload it.",
   "status": "proposed",
   "supersedes": []
 }

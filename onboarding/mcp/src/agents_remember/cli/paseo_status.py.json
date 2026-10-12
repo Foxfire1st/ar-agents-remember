@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "content": "sha256:b2cc1c2e151e09d2f86c5fc3d18c1940532a4cb9b8edfdde15fa2d7db34a93fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_live_agents"
+        }
+      },
+      "id": "RLZ-162TXD",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one read of the host per request, with whether the listing ended.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
         "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
         "locator": {
-          "end": 176,
+          "end": 193,
           "kind": "line_range",
-          "start": 104
+          "start": 121
         }
       },
       "id": "RLZ-DAV61S",
@@ -22,7 +40,25 @@
     },
     {
       "anchor": {
-        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "content": "sha256:0272520db5d18fa886092a36d254cfd3ad672a62e710559a96de0485b95c8574",
+        "locator": {
+          "kind": "symbol",
+          "name": "LiveAgents"
+        }
+      },
+      "id": "RLZ-FHVRJZ",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Carries whether the listing ended to every reader of it.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
         "content": "sha256:90c7cc2782435d56e81d482cf7dbccd5efe77b81da445f48b7126510be9a181b",
         "locator": {
           "kind": "symbol",
@@ -40,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
         "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
         "locator": {
           "kind": "symbol",
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
         "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
         "locator": {
           "kind": "symbol",
@@ -76,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
         "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
         "locator": {
-          "end": 176,
+          "end": 193,
           "kind": "line_range",
-          "start": 104
+          "start": 121
         }
       },
       "id": "RLZ-Q7ENH5",
@@ -100,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
             "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
             "locator": {
               "kind": "symbol",
@@ -147,12 +183,27 @@
         }
       ]
     },
+    "12": {
+      "note": "`read_live_agents` makes one read-only `agents-live` bridge call and validates a string-ID list plus a boolean completeness flag. Bridge failures and malformed answers become unreachable readings with a reason; a valid incomplete listing keeps its known IDs and cannot classify an absent recorded agent as gone. The existing per-agent first-match status table and explicit resume path remain unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "content": "sha256:7c815434f84f89b1754beaca88bda991eb0d69783512541f03ab51fb430ca816",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of status_row supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
             "content": "sha256:ad9437ac9b34bee309093119ba6a63944674aecfc09a1e80bfaf240f0671dfde",
             "locator": {
               "kind": "symbol",
@@ -168,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
             "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
             "locator": {
               "kind": "symbol",
@@ -184,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
             "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
             "locator": {
               "kind": "symbol",
@@ -200,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
             "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
             "locator": {
               "end": 148,
@@ -236,12 +287,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
             "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
             "locator": {
-              "end": 838,
+              "end": 873,
               "kind": "line_range",
-              "start": 824
+              "start": 859
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -254,12 +305,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
-              "end": 570,
+              "end": 588,
               "kind": "line_range",
-              "start": 550
+              "start": 568
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -272,12 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
-              "end": 318,
+              "end": 336,
               "kind": "line_range",
-              "start": 302
+              "start": 320
             },
             "path": "mcp/tests/test_paseo_status.py"
           },

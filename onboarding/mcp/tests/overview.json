@@ -6050,6 +6050,109 @@
         }
       ]
     },
+    "1732": {
+      "note": "`paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f2772e4ab22e5d6b13ea28359059e1c9b01e900",
+            "content": "sha256:3fc44a9a4769d0b10674ce6539134be17fd386b325029a62881fe8cf0f68c0b6",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/tests/test_paseo_frame.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
+            "content": "sha256:d563c6f7f2573602a6b4d069c9f4b544654074f346f15688e05d8352fd800004",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
+            "content": "sha256:b9acc1c3322095c32577437f0d1fac4da8c959a89442ad90b99affbefc36fa31",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:db755af4fc26eb1cd2d28f9af895e3d09a596c5e7920f3d9c71fd81d3f24f8d1",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:f9d16639c28fa26211b876e2b64a4a08cbcec6b7384c00f3c801a062e7953378",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:e3c460a4a4754ee01a5d8930850b060acdc0ef4af4cabf5023372af98f740522",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cdc4225c5c583daab92013366a1dbeb174ea964f",
+            "content": "sha256:0225f520aeb3b497ff249d650d5e9e9f4faaa28eb9803cbe31cde146c0dbfe87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_status_bridge.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5f8fc624f3102d64627bf7227f2062fc5676f4f2",
+            "content": "sha256:6e13435845d1e33f4cd08c6fdf85b06d7b42723d83de6b0dfdb55cb622920c06",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/paseo_launch_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "18": {
       "note": "The task-scoped MCP reader cases.",
       "targets": [

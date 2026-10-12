@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The application progress remains visible and the notice does not claim an unavailable draw signal. The dashboard cannot observe drawing from that plugin answer."
+  },
+  "alternatives": [
+    {
+      "option": "End the waiting line at its answer and state the early end in the older-plugin notice.",
+      "reason": "The application progress remains visible and the notice does not claim an unavailable draw signal.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the dashboard line until drawing with that older plugin.",
+      "reason": "The dashboard cannot observe drawing from that plugin answer.",
+      "reconsider_when": "When the plugin is upgraded to report drawing, restore the current-plugin wait boundary.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Still switch by message where open-agent is supported; name the explicit provision command."
+  ],
+  "context": "The older plugin answers after opening the screen and has no draw confirmation.",
+  "decider": "Architect 97e0320d on the developer requirements, accepted by the Manager in the L140 decision log",
+  "id": "DEC-HWX25E",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"is named with the provisioning command and still switches by message when it says nothing about itself\"; the older plug-in under load: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/the-pane-before-and-after-attempt3/after-older-plug-in-under-load.png (walk A1 of Attempt3)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 7193eaf8",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

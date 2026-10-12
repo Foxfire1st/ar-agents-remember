@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A dashboard-made failure overlay would hide the application recovery owner or falsely continue an already failed drawing wait."
+  },
+  "applicability": "Native failed-agent-load presentation on a dashboard/plugin pair negotiating that report.",
+  "conditions": [
+    "The plugin first establishes exact selected-screen identity.",
+    "The native application displays its own failure pane and Retry."
+  ],
+  "exclusions": [
+    "Older plugins without this report retain their separately disclosed behavior."
+  ],
+  "id": "INV-N3NNM1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"ends the wait when the application shows that the host could not load the agent: the line goes and its own Retry is in reach\"; dashboard/src/cockpit/paseoPluginBridge.test.ts › \"tells such a dashboard that the host could not load the agent when the application shows that pane, and then waits for nothing\"; probe F-tip of Attempt3 (current plug-in): failure pane at 5.8 s, the dashboard's line gone at 5.9 s, the application's own Retry pressed; the architect's words are quoted in the report, part \"Built beyond the nine, on the architect's word\" (no ruling file)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "architect, message of 2026-10-11 17:32",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the application shows its own pane for a host that could not load the agent, the current plug-in reports it and the dashboard removes its waiting line and lets input through; the dashboard names no failure of its own.",
+  "status": "proposed",
+  "supersedes": []
+}

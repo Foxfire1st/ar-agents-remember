@@ -4,14 +4,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "An unreadable host shows the shared Retry notice and no start, then recovers to the launcher.\n\nAnchor: `keeps an unreadable host distinct from no agent and offers the shared Retry notice`",
+      "note": "An unreadable host uses the one-line Retry notice distinct from confirmed absence and permits no start until its fresh answer recovers.",
       "targets": [
         {
           "anchor": {
-            "blob": "42a2acf98c030c3c13bfb304852bafbce7222f06",
-            "content": "sha256:6dab667307febc47ec98f07339bcf47d3bc4810a81543bdf3854f94f0cc009d5",
+            "blob": "cc8654108d70b34aec941f321387bcf9d88fb8c1",
+            "content": "sha256:4ed2ca8f8ff47cf15ea3ea2d0a407448aa8cf8364e972307ece044883c25cfbf",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
               "start": 14
             }

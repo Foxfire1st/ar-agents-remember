@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_paseo_status_bridge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cdc4225c5c583daab92013366a1dbeb174ea964f",
+        "content": "sha256:b788374be304c66cc5ffd609fac416c5352f5fbd9df0f4a4acf5a48d4c5d1be1",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentStateScriptTests.test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone"
+        }
+      },
+      "facet": "The production Node listing script with a controlled daemon leaves both unreached recorded IDs unknown on a cursorless incomplete census; a completed census returns the live manager and known-empty archived orchestrator.",
+      "id": "PRF-ZF7HYP",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -9,6 +28,21 @@
           "anchor": {
             "blob": "b87fd276bf682a8cbd93622e997d2969aac5c092",
             "content": "sha256:369c00d78f7886bce8e475075e2e61105d4914289cd368cb7adad7cdc9a7d575",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real Node bridge script also runs against a scripted daemon client that enforces 200-entry listing pages. Cases pin complete pagination, archived-ID filtering, the ten-page bound and `hasMore` without a next cursor. A tree-reader composition proves missing IDs from an incomplete census stay `agents: null`, while a completed listing resolves the recorded live/archived agents. This is native-script/controlled-client evidence, not installed-host consumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc4225c5c583daab92013366a1dbeb174ea964f",
+            "content": "sha256:0225f520aeb3b497ff249d650d5e9e9f4faaa28eb9803cbe31cde146c0dbfe87",
             "locator": {
               "kind": "file"
             }

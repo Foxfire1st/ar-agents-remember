@@ -87,6 +87,63 @@ Fixture-honesty support discovers wire vocabulary from `src/types/` or the first
 
 Engine Room currently composes enclosures, their process map/stack, boot timeline and diagnostics. Named seed/clone/provider dev scenarios remain projected inputs and historical captions, some explicitly naming retired visuals. They do not restore provider gauges/arcs, seed/clone arrows, provider fallback presentation or tool exposure. A retained definition or fixture title is not proof of a mounted visualization.
 
+
+### Native selection and source-owner qualifications
+
+Chats mounts one persistent RoleChats/Paseo iframe; Operations retains its own one-frame document-chat surface. The host's list, not a dashboard list of chats, owns navigation. View/result reads retain the frame. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. An unknown lookup keeps the application's current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the retained frame behind its bound launcher.
+
+A slow host or native drawing answer remains waiting while the application answers pings. Recovery URL loads require application-ping silence, explicit Retry or a returned host; a plugin explicitly unable to open agents keeps its separate URL-only path. With the current plugin, input belongs to the selected native screen once on-chat is reported, the waiting line stays through drawing, and the application's own failed-load pane/Retry ends that wait without dashboard-invented failure prose. A less capable older plugin still switches and its notice names provisioning and any early-answer limitation. Draft/scroll preservation is only the host's native behavior, not an extra dashboard promise.
+
+The plugin's Parent action retains the live selected-source/relation checks. Canonical selection, exact launched-request identity, dynamic model/effort/tier validation and observed host values remain their existing owners; chat cache and display messages acquire no task acceptance or launch authority.
+
+The dashboard frontend is the operator-facing React cockpit. Product views are native Chats, Operations, Knowledge and File Viewer, with detail/notes/change-set/review takeovers. Retained internal/dev layouts project observer, provider, terminal-catalog and adapter/control evidence; their presence does not add a product-bar entry.
+
+- [data overview](data/overview.md) — catalog/session state, reliable submit and withdrawal,
+  lifecycle cleanup, controls, announcements, and authority boundaries.
+- [panels overview](panels/overview.md) — shared panel composition.
+- [retained session-cockpit overview](panels/session-cockpit/overview.md) — the internal/dev controlled-session surface, not the current native Chats product.
+- Existing focused child overviews under data, grammar, and panels own their routes. The bounded
+  `cockpit/` and `dev/` source slices remain governed here rather than gaining thin overview files.
+- [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats end-to-end suite
+  (260718-CHATS-L5F R7/FB5) is a **sibling** route to `dashboard/src/` (it lives at
+  `dashboard/e2e-chats/`, not under `src/`): it boots an isolated real dashboard daemon from the
+  worktree and drives the real installed harnesses through this cockpit. Governed by its own route
+  overview under the root; linked here for discoverability.
+
+Browser create entrances for the retained terminal/catalog surfaces converge on `data/terminalOpen.ts`, the client for
+`POST /api/terminal/{sessionId}`; native role starts instead have their own role-launch adapter and receipt authority. The opener validates exact request/response identity and accepts only the
+server row it returns; raw responses that claim harness/control state are contradictions. The
+session store commits and broadcasts only an accepted row, while callers display typed failures and
+withhold focus, readiness, submit, and contextual delivery. Request-shaped local rows are not an
+alternate success path.
+
+The terminal catalog and adapter/control routes remain authoritative for their retained terminal/session surfaces. Native role-chat identity and steering instead use role-launch receipts, the native host and the trusted frame protocol. Browser projection/cache is not a replacement conversation-history database.
+
+The current product Chats layer mounts `RoleChatsPane` in `MainLayers`, backed by the shared native `PaseoChatFrame`, and stays mounted while other dashboard views are shown. The host's own chat list and screen, not the retained controlled-session cockpit or `ConversationSurface`, own this product destination. Operations has its separate retained document-chat frame; neither route promises an additional dashboard conversation-history database.
+
+The earlier FEUI-L8 session-cockpit account describes the retained controlled-session implementation and its historical deletion of the older Chats/SessionList route. Its role/spawn rail, reliable composer, authoritative pop-back, interaction answers, lifecycle controls, evidence/capabilities/bus and status are not the renderer now mounted by product Chats. The source's retained controlled-session `ChatsStageBody` selects the structured `ConversationSurface`, the in-stage history library or legacy-raw PTY, with its default-off read-only terminal-diagnostics drawer and WorkingLine interrupt. These are that internal/dev surface's contracts, not a claim that the native role-chat iframe uses those controls.
+
+The product bar contains Chats, Operations, Knowledge and File Viewer. Detail/Notes Reader, Change-Set Viewer and review are focused takeovers with their own owners. Engine Room, Memory, Topology and Hangar have no product-bar entry; retained layouts can be exercised through injected initialView or dev/test composition. Their existing internal overviews are not an additional production destination.
+
+- Chats is the opening view and there is exactly one full-page Chats destination; Operations is a product destination (260928-MIK-L79).
+- The shell owns one catalog poll/reconciler for its lifetime. Views do not create competing feeds.
+### Retained controlled-session service constraints
+
+The following row/session/PTY/composer/inspector constraints belong to the retained controlled-session internal/dev services, not the native RoleChatsPane frame or its host-owned draft/scroll/render behavior.
+
+- Focus/inspection may name a landed row; only a live row owns action routing and reload preference.
+- Reliable submit and withdrawal preserve request/epoch identity and never blind-resend or locally
+  fake an authoritative result.
+- Session open is accepted-response-authoritative: failed requests cause no registry row, focus
+  movement, readiness transition, or dependent delivery.
+- PTYs stay mounted across focus and transient handoff gaps; ended rows never create a live socket.
+- Inspector visibility is optional presentation. Core Chats actions remain usable with it closed.
+- State words and evidence remain explicit; absent transport/capability/history facts are not
+  inferred.
+- The FEUI-L8 account used repository-local source/tests, reviewed task evidence and recovered history. No external domain-documentation witness is claimed here; this is not a statement of current registry configuration.
+
+The distinct EngineRoom dev scenario declarations preserve historical projected seed/clone fixture inputs; they are not a product-bar destination or mounted provider-visualization proof. Their source is included with the comparison-bound review presentation in the combined evidence group above.
+
 ## Invariants And Boundaries
 
 - Present navigation has four destinations and one full-page native Chats destination. Injected pages and historical structured Chats must retain their own scope.
@@ -128,6 +185,95 @@ Historical test policy records a 20,000 ms Testing Library condition guard, 120,
 
 Serving-build identity retains the inherited distinctions: definite advertised/executing fingerprint mismatch offers explicit reload; absence is unknown; a new serving boot can cause one chooser reread and explicit socket reattach rather than SSE-loss retry loops. Reattach preserves mounted xterm/durable tmux and transport close is not terminal exit. Optional Python digest/interpreter/package root are diagnostics, never update/candidate-selection authority. Those data-owner paths were not independently retraced in this bounded adjudication.
 
+
+### Retained source and evidence qualifications
+
+The live-leaf "committed" change-set read used to swallow its own refusal detail, so a **refused** read and an **unanswered** one rendered identically — the defect `260921-ICR-L16` routed to this route's owners and R12/R24 both landed without taking. `260921-ICR-L32` applies the R16 treatment here: `data/changeset.ts` no longer clears the counters and stops on a rejected counters read, it carries the refusal's own code and reason through to the caller, and `data/files.ts` follows the same shape for the reader. A read still in flight is a **third** state and is reported as one, so loading, refused-with-a-named-code-and-reason, and answered-with-counts are three distinguishable renderings rather than two. The rendering half lives on `panels/detail-panel/changeSetBar.tsx`; its source cases drive the click and assert the rendered reason. The route typecheck command is `tsc -b`; the earlier clean result is historical, not a new run on this pair.
+
+> **WITHDRAWN by `a9a1a41b`, recorded by the `260921-ICR-L34` curation.** The paragraph below describes
+> the landed-leaf admission and the collapse hook's second half — a change commit **`a9a1a41b`**
+> (*"Revert L33's operations-list change; clear the pre-existing ruff-format red"*) took back out. That
+> revert was a **direct emergency commit with no curator pass behind it**, so this route went on
+> describing a deleted module: At that withdrawal epoch, `panels/lifecycle-list/landedLeaves.ts` existed in **neither** recorded tree (and
+> its sidecar was deleted by this curation), the recorded `LifecycleList.tsx` was 1189 lines again with no landed pass
+> or default-collapse rule, `hierarchy.test.tsx` was 355 lines, and `useCollapsedTaskGroups.ts` had
+> returned to one collapse set with `toggleCollapsed(key)`. These sizes are historical observations, not current file-size measurements. The **second** half of this section — the
+> per-leaf breakdown in the change-set readers — is **not** affected by the revert and stands.
+
+**The review surface's raw colour literal is gone (B1), and the claim is stated in the form that is
+true.** `panels/review/FamilyTree.tsx` carried the only two raw literals — `oklch(0.82 0.16 75 / 0.08)`
+and `… / 0.16`, `--amber`'s channels copied by hand — and they are now one `AMBER_WASH(percent)` helper
+stating `color-mix(in oklab, var(--amber) N%, transparent)`. The interpolation space is the reason it
+matters: an `oklch` mix interpolates the **hue**, which is how the accepted page's own selected row first
+came out visibly teal. **What is false as worded, and must not be repeated:** *"zero `oklch` users remain
+in the review surface"* — the dashboard's own tokens are defined in `oklch` (`styles/tokens.css:8-23`) and
+`getComputedStyle` resolves `var(--token)`, so token-resolved `oklch` values are everywhere in the surface
+**by design**. **What the dated acceptance measured:** the raw amber-wash literal was gone, the wash computes as
+`oklab(0.82 0.041411 0.154548 / 0.08)` through `var(--amber)`, and hue **215** appears nowhere in the
+review sources. A reader scanning computed styles for the word `oklch` will otherwise conclude the fix
+failed.
+
+The subtle part is `STATUS_BY_DECLARED_STATE`, a `Partial<Record<string, ConstelStatus>>` **read
+view** over the same table. Indexing `Record<State, …>` directly types the miss away — `tsc` hands
+back `ConstelStatus`, never `undefined` — which would make `?? UNCLASSIFIED_STATUS` in
+`lifecycleStatus()` read as deletable dead code. The read view is what makes that fallback
+load-bearing: delete the `??` and `tsc -b` fails at that line. Remove the alias instead and the
+compiler goes quiet while an unclassified state's `undefined` flows onward.
+`noUncheckedIndexedAccess` would say the same thing project-wide; it is not on (the earlier diagnostic reported 601 errors
+across 81 files; those are not measurements of this pair).
+
+- `test/servedProjection.ts` — `resolveJsonModule` widens every literal in the payload (`"running"`
+  becomes `string`, `3` becomes `number`), so `snapshot.json` can never be *assigned* to a mirror
+  that types its vocabularies as literal unions. The old reflex was a double cast
+  (`snapshot as unknown as WorkspaceProjection`), which turned off assignability and
+  excess-property checking together.
+  `AsJsonModule<T>` applies exactly the import's widening to the mirror and nothing else, so
+  `asServedProjection()` is a full structural check of everything widening does not touch. Every
+  test reading `snapshot.json` must come through it; a second `as unknown as` elsewhere silently
+  re-opens the hole for that file.
+- `test/fixtures/overrides.ts` — `Overrides<O, T>` replaces `Partial<T>` in the builders because
+  `exactOptionalPropertyTypes` is **not set** on this project, so a `Partial<T>` slot admits an
+  explicit `undefined` and `lifecycle({ state: undefined })` compiles a required field into absence
+  with no cast for the guard to find. `Overrides` binds at the call site, in whichever tsconfig
+  project the caller sits in. Its limits are stated in its own header: the override must stay a
+  fresh literal, it reaches one level deep, and it binds only `fixtures/wire.ts` and
+  `fixtures/conversationWire.ts`. The earlier project-wide diagnostic reported 222 errors across
+  71 files and the flag was not adopted; no new diagnostic is claimed here.
+- `dev/fixtures.ts` now delegates every node builder to `test/fixtures/wire.ts` and derives `metrics`
+  through `metricsFor()`; the gallery keeps its own display defaults by passing them explicitly, and
+  no longer keeps a second copy of the required-field list. `dev/cockpitScenarios.ts`'s
+  `/api/harnesses` stub uses `satisfies HarnessInfo[]` precisely because `data/harnessCatalog.ts` is
+  one of the unmarked modules the guard cannot see. `dev/` remains fixtures, not a production
+  authority.
+
+The retained controlled-session implementation renders its structured conversation surface over adapter-normalized transcript/history projections. Its controlled runner line-log remains a default-off read-only terminal-diagnostics drawer, and its legacy raw-session branch hosts the vendor TUI. The harness-neutral Claude/Codex/Pi grammar, harness identity and capability reasons described here belong to that internal/dev implementation. Product Chats instead shows the native host through RoleChatsPane/PaseoChatFrame; this block does not appoint the structured surface as its visual roof.
+
+The following active-transcript, previous-conversation-library, harness-sub-agent and interaction-multiplexing clauses likewise describe those retained controlled-session services. They preserve their internal contracts and historical evidence; they supply no fresh installation, live native-frame or current product-routing acceptance.
+
+The retained controlled-session cockpit treats its focused conversation or terminal as a persistent surface: switch and hidden-view transitions preserve that surface's mounted identity, scroll/selection/geometry state and resume visible-only work. Current native Chats retains the iframe; its draft/scroll behavior belongs to the host and is not an additional dashboard promise. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
+
+The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. The earlier L7 report described a clean file-size result. The project wrapper defines the detector's TS/TSX scope; this paragraph supplies no fresh file-size or rule6/full-final acceptance.
+
+**Superseded 2026-09-20 (260915-KS-L45): the subject stopped being a prop, because as a prop it was
+never supplied.** The L22 increment gave `DocChangeSetBar` optional `selectorKind`/`selectorId` props
+and gated the entry on `live && selectorId`; no production caller supplied either, so the reviewer
+takeover described above was unreachable by navigation. The props are gone. The bar now reads its
+subject from `GET /api/review/intent/entries` through the `data/review.ts` client's
+`intentReviewEntries(repo, master, leaf)`, carrying the whole catalogue via a `useReviewCatalogue` hook (ICR-R09: every recorded subject with per-row presence and totals, not `entries?.[0]`).
+At that L45 epoch, a refusal, empty list or rejected promise left the subject undefined and no subject meant no button. The later ICR-L2 task-context entry below supersedes that subject-dependent admission: a live leaf can open the review without a supplied selector. This earlier account is historical, not the current button predicate.
+
+**Route meaning changed: the reviewer entry no longer depends on the server offering a subject.**
+`panels/detail-panel/changeSetBar.tsx` gates the button on liveness alone and sends an empty review
+target when the entry read answers with nothing or refuses, so the task-context target reaches the
+cockpit for every live leaf; `cockpit/Cockpit.tsx`'s takeover dispatch already forwarded an optional
+selector, and its review branch now records that fact in a comment. `panels/changeset/ChangeSetViewer.tsx`
+widened `ChangeSetTarget.review` to carry an optional selector, where the field's **presence** still marks
+a review target and an empty object is the task context. The client (`data/review.ts`) and the review
+panel (`panels/review/ReviewSurface.tsx`) carry the rest: the inventory's wire types, an optional
+comparison identity and the then-introduced inventory-state renderer. The current ReviewPanes/ReviewWorkspace composition below supersedes that renderer; this is an L2 history account, not a current three-state inventory caption.
+
+The current review surface delegates its displayed payload to `ReviewWorkspace` and keeps comparison-bound changed-file navigation distinct from technical details. The former all-three-inventory-states caption is not a statement of this later renderer.
+
 ## Retained Route And Coverage Metadata
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
@@ -136,7 +282,24 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/`                                 |
 
+### Native-source claim qualifications
+
+- One generation-keyed frame shows native progress with held input and a bottom waiting line, rather than remounting on selection.
+
+Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/cockpit/PaseoChatFrame.tsx (EmbeddedFrame)`.
+
+- [State and authority architecture](data/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
+- [Panel composition](panels/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
+- [Retained controlled-session cockpit account](panels/session-cockpit/overview.md) — its internal/historical route and deletion account does not define the current native Chats destination.
+
+- ReviewPanes delegates comparison-bound review presentation to ReviewWorkspace and keeps changed-file navigation bound to its shown payload; the distinct EngineRoom dev scenario group is declaration/history evidence, not mounted provider visualization.
+
+Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.tsx:328-392`; `dashboard/src/dev/scenarios.ts:43-119`.
+
 ## Evidence
+
+- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [42]
+- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [43]
 - The Knowledge destination in the registry. [1]
 - A reader URL opens the shell on the Knowledge view. [2]
 - The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone. [3]
@@ -177,7 +340,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Bounded source guard scans dashboard test and support files. [39]
 - This source owns the route’s Investigator selection or execution boundary. [40]
 - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [41] [42] [43]
-
 - Four product destinations; injected Engine Room is conditional; current Chats is retained RoleChatsPane [44]
 - Review uses the common takeover and forwards optional selector/recorded history [45]
 - Native execution results are scoped by document and request identity [46]
@@ -196,3 +358,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Engine Room's present body composes enclosure map, stack, boot and diagnostics [59]
 - Browser probe contract is intentionally import-free across TypeScript projects [60]
 - Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content. [61]
+- Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
+- Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
+- Shell navigation, persistent layers and shared drivers. [6]
+- Dev scenario authority and end-to-end states. [10]
+- Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
+- State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
+- Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
+- JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]

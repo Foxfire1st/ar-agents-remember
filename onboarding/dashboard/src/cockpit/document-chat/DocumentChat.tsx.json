@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+        "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
         "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
         "locator": {
-          "end": 33,
+          "end": 45,
           "kind": "line_range",
-          "start": 33
+          "start": 45
         }
       },
       "id": "RLZ-6TQESZ",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+        "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
         "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
         "locator": {
-          "end": 33,
+          "end": 45,
           "kind": "line_range",
-          "start": 33
+          "start": 45
         }
       },
       "id": "RLZ-DZNJEW",
@@ -58,12 +58,12 @@
       ]
     },
     "2": {
-      "note": "The view hides the mounted frame while the selection is unresolved and shows the shared unavailable notice with Retry.",
+      "note": "Unknown selections keep the native screen visible under a holding line; unreadable answers add one-line Retry without replacing it.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
-            "content": "sha256:37c8c4ffdd2aac706cd129cae2846e5d7a26beb0359eee205470094e31b4cf6e",
+            "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
+            "content": "sha256:6c3c2436b6265a2b1ecdbbac698ec949a6237c4dd984b00a7a4a5c07d0b96342",
             "locator": {
               "kind": "symbol",
               "name": "DocumentChatView"
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+            "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
             "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
             "locator": {
               "kind": "symbol",

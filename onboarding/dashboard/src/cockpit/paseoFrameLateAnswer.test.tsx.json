@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite contrasts responsive late answers with true ping silence and checks each loaded document's own readiness wait, input release, native failure and legacy capability notices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d822c873c78f1aadb4c169c54e297976bb3dc8",
+            "content": "sha256:a1f7308037a27d8b58c6911d745bc1da0509ebbcffc0e8d7ab43e4fea7712a9a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

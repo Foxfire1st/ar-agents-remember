@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:8a7e15e7cc437e5cad674cb9bbbc949a93d5794d4e176be94a159e5562abc012",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+        "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
         "content": "sha256:c22d39abcd0ca89b2038cc515eba85e3ac507957499dfca37e62e1f082595a4c",
         "locator": {
           "kind": "symbol",
@@ -113,6 +113,21 @@
           "anchor": {
             "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
             "content": "sha256:813a5f0b8478480e7e647cffb80ec951dd57e4318c3f785ccb0dae6e9204e59c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4ba75e62c2d243c0664979a6274b3e3d6bb5964",
+            "content": "sha256:be2e08d46d8b7e81e126406144f85ec288c5973f4f279b97f8048ca283b697aa",
             "locator": {
               "kind": "file"
             }

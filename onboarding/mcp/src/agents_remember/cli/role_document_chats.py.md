@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The document chat's one read: from the selection, it projects the matching launch records and asks the host whether each recorded agent still exists.
+The selected-document read is the correcting authority for a document’s launch-record chats. It checks each recorded native agent’s existence/archive state; the separate tree read preloads the same receipt-derived discovery before a selection click.
 
 ## Code Commentary
 
-`register_document_chat_route` mounts `/api/role-launch/document-chats`; `_records` selects the roles a selection admits (leaf → Worker/Reviewer/Curator, master → Manager, sprint → Orchestrator, nothing → taskless records), reads the exact receipt when a request id is given, and refuses a receipt that belongs to another document or request. `document_chats` walks records in bounded pages of three host reads, skips records that are not native agents, and asks the read-only host operation for existence and archive state; an unreachable host is returned as `unavailable` with its reason, never as an empty list. This launch-record source is the panel's single discovery source; it deliberately excludes native agents this product never started, and the host's whole hierarchy snapshot is not read by the dashboard.
+`/api/role-launch/document-chats` keeps exact-request admission, primary roles and bounded pages of three per-agent reads. Missing receipts and well-shaped records without hosted agent/workspace identity yield no chat; unreadable or malformed receipt/projection data refuses with HTTP 409, never an empty discovery result. The shared projection retains role, stored selection, creation time and execution kind/IDs. Tree discovery uses a separate read-only live-ID census, not the host’s whole hierarchy or unrecorded agents.
 
 ## Evidence
 
@@ -31,3 +31,7 @@ An exact task-bound Investigator request is read only when explicitly selected w
 
 - The route resolves the admitted context and serves the read endpoint. [1]
 - Record selection follows the admitted roles and refuses a foreign document or request receipt. [2]
+
+## Current contract evidence
+
+- The selected-document read is the correcting authority for a document’s launch-record chats. It checks each recorded native agent’s existence/archive state; the separate tree read preloads the same receipt-derived discovery before a selection click. [6]

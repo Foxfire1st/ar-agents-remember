@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_paseo_frame.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6f2772e4ab22e5d6b13ea28359059e1c9b01e900",
+        "content": "sha256:3fc44a9a4769d0b10674ce6539134be17fd386b325029a62881fe8cf0f68c0b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameTests.test_frame_base_url_comes_from_the_embed_list_for_the_asking_origin"
+        }
+      },
+      "facet": "The available descriptor exposes the active fixture settings file in provisionCommand while unlisted origins reach no runtime; this does not execute provisioning.",
+      "id": "PRF-NE15A2",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -9,6 +28,21 @@
           "anchor": {
             "blob": "d38bdbad3119bc1749114531d8439c95c0f7296b",
             "content": "sha256:54ac0e3ff204d411d2fdba4e6b2eba754904d8f53be02d340253e9347b8012b4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The origin/embed descriptor case now also pins `provisionCommand` to the active fixture settings file. The wired host-facts case includes that field in its expected answer but copies its value from the answer, so command construction is independently asserted by the origin case, not by that copy. These remain descriptor/protocol tests, not browser Retry, plugin upgrade or live provision execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f2772e4ab22e5d6b13ea28359059e1c9b01e900",
+            "content": "sha256:caab73360069ec94956f60db215db3c230ef4de3a68177c85a8ec132c5228060",
             "locator": {
               "kind": "file"
             }

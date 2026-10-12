@@ -12,9 +12,9 @@
     "The frame descriptor and frame generation remain unchanged."
   ],
   "exclusions": [
-    "Explicit Retry and the existing documented 10-second unavailable-control URL path may create a new frame generation.",
-    "The dashboard's removed sidebar and its launcher button are not navigation of this obligation (rules 7 to 10); the host's list and the frame's ready channel are.",
-    "Preserved DOM identity does not certify every native application state or unrelated session/PTY path."
+    "Explicit Retry, host return, unanswered ping after readiness/request deadline, and explicit absence of open-agent capability may create a new frame generation.",
+    "The dashboard removed sidebar and launcher button are not chat navigation; the host list and ready frame channel are.",
+    "DOM retention promises no stronger draft/scroll preservation than native application behavior and no guarantee for unrelated session/PTY paths."
   ],
   "id": "INV-D0QATN",
   "origin": {
@@ -33,9 +33,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Chats directly hosts one persistent Role chats pane whose mounted native frame and ready-channel agent-display steering keep their DOM identity and interaction state across dashboard view switches and result reads.",
+  "statement": "Chats keeps one persistent native frame across dashboard view/result changes and supported ready-channel execution steering. It adds no stronger draft/scroll guarantee than native application behavior. Retry, host return, silence after ready/open deadline plus unanswered ping, and explicit lack of open-agent capability are the qualified new-generation paths; a responsive late answer does not reload.",
   "status": "proposed",
   "supersedes": []
 }

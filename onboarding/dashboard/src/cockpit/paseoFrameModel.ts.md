@@ -10,7 +10,9 @@ The pure model validates configured frame descriptors, native execution targets 
 
 ## Code Commentary
 
-Available descriptors require an http(s) serving origin and server ID. Only paseo-agent host fields supply actor targets, and rejected receipts supply none. Web URLs encode identities. Source-tagged messages enforce the `selection` and complete source-scoped `navigation-error` kinds; the `hierarchy` parsing and its activity/catalog types went with the removed dashboard sidebar (MIK-R75 rule 9).
+Available descriptors require an http(s) serving origin and server ID. Only native paseo-agent host fields provide targets, and rejected receipts provide none. URLs encode agent/workspace identities. The descriptor carries the backend's provisioning command, with an explicit command-template notice when an older backend supplies none.
+
+Source-tagged messages keep ready/pong capability lists, navigated, on-chat, shown, load-failed, native selection and source-scoped Parent errors distinct. Capability absence means an older plugin, not inability to open agents: only an explicit list without open-agent requests URL navigation. The notice names missing abilities and provisioning, and warns when an older plugin ends the waiting line before drawing. Request wait text distinguishes host lookup, application drawing and the legacy undifferentiated chat wait; a late answer says it is slow, not gone.
 
 ## Invariants And Boundaries
 
@@ -18,10 +20,10 @@ Native web route spellings are version-sensitive. Parsing cannot establish chann
 
 ## Evidence
 
-The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
+These pure-model contracts do not establish channel trust, native runtime success or task acceptance.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `paseoAgentTarget` | `dashboard/src/cockpit/paseoFrameModel.ts:71-81` |
-| Current source owner or exact assertion described above. | `parsePluginMessage` | `dashboard/src/cockpit/paseoFrameModel.ts:164-183` |
-| Subscribed native metadata updates and attention clearing propagate provider, status, permission count, attention and availability through the hierarchy message. | `includes every SDK page, canonical labels and actual host membership, then applies live metadata changes` | `dashboard/src/cockpit/paseoHierarchy.test.ts:140-180` |
+- Only a non-rejected native hosted execution supplies the agent target. [1]
+- Only source-tagged supported control message shapes are normalized. [2]
+- Missing capability declarations retain message opening; only an explicit lack of open-agent disables it. [3]
+- A deficient plugin is named with the provision command and any early-drawing boundary. [4]
+- Late requests remain waiting rather than being described as a dead channel. [5]

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Claiming a draw-time wait without a draw signal falsely promises behavior the older plugin cannot report."
+  },
+  "applicability": "Waiting notice for the older plugin lacking displayed-conversation confirmation.",
+  "conditions": [
+    "The older plugin can open agents and replies when its agent screen is opened.",
+    "The application own progress mark remains visible until drawing."
+  ],
+  "exclusions": [
+    "The current drawing-capable plugin keeps the dashboard line until drawing or its native failure report."
+  ],
+  "id": "INV-QFDD1M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"is named with the provisioning command and still switches by message when it says nothing about itself\"; the older plug-in under load: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/the-pane-before-and-after-attempt3/after-older-plug-in-under-load.png (walk A1 of Attempt3)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 7193eaf8",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "With the plug-in of 2026-10-08 the dashboard's waiting line ends at that plug-in's answer, which comes when the agent's screen is opened and not when the conversation is drawn; the frame's notice says so.",
+  "status": "proposed",
+  "supersedes": []
+}

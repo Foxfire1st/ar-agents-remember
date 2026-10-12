@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Repeated large launch capsules across hundreds of selections can consume unbounded host memory before any answer is made."
+  },
+  "applicability": "Request-local receipt payload acquisition for bounded document-tree discovery.",
+  "conditions": [
+    "Accepted records fit 1 MiB each and the 16 MiB request budget.",
+    "One sentinel byte may be read to detect growth after sizing; it is not an accepted receipt.",
+    "Distinct paths are read once and only their chat projections survive through the request."
+  ],
+  "exclusions": [
+    "The correcting single-document read and taskless enumeration do not use these tree byte budgets."
+  ],
+  "id": "INV-5VK3JP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_document_chats.py › DocumentChatTreeTests::test_a_document_named_many_times_is_read_once (8 and 256 selections), ::test_a_request_reads_and_keeps_no_more_than_its_byte_limits_allow (4 and 16 records); red before the repair: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/after-evidence-attempt3/red/red-F03.txt"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "L140-R1-F03",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One request for the tree's chats reads each distinct launch record once, keeps of a record only the part an answer is made of, and reads at most 1 MiB of one record and 16 MiB in all; a record beyond a limit is not read and its document is answered as unknown.",
+  "status": "proposed",
+  "supersedes": []
+}

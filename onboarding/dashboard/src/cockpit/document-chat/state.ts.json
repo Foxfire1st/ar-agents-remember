@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-        "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
         "locator": {
           "kind": "symbol",
           "name": "useDocumentChat"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-        "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
         "locator": {
           "kind": "symbol",
           "name": "useDocumentChat"
@@ -34,13 +34,13 @@
         "handoffEntry": "MIK-R95@v1 rule2",
         "leaf": "260928-MIK-L95"
       },
-      "rationale": "This hook binds the canonical document scope to the selected live launch-record result, retains the exact successful request target and rejects completions for a different document. Its output drives the existing shared frame and bound launcher.",
+      "rationale": "useDocumentChat propagates canonical tree scope, exact launch identity and known/fresh host-checked chat answers into the shared target; Investigator callback preserves the primary coordinator.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-        "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
         "locator": {
           "kind": "symbol",
           "name": "chatPresentation"
@@ -52,7 +52,7 @@
         "handoffEntry": "MIK-R122@v1 rule 5",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "chatPresentation decides hideFrame versus launcher from availability and target presence, which is the no-agent condition.",
+      "rationale": "chatPresentation hides only a known no-target selection or unstartable selection; unknown discovery keeps existing frame visible with asking=true.",
       "role": "support"
     }
   ],
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
             "content": "sha256:244c926bcd9bd4de80970d6ea9988adc30b45b230335c10b2848425b4829f420",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
             "content": "sha256:de3f4b69421ae544cefb0f88a02ec82e5d5fc8599a3977b0143b00514bbe7fb0",
             "locator": {
               "kind": "symbol",
@@ -105,12 +105,12 @@
       ]
     },
     "4": {
-      "note": "The presentation flags hide an unresolved frame and keep one control for the bound launcher.",
+      "note": "Only a known agentless selection hides the retained frame; unknown agent knowledge keeps it shown and held.",
       "targets": [
         {
           "anchor": {
-            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-            "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
             "locator": {
               "kind": "symbol",
               "name": "chatPresentation"

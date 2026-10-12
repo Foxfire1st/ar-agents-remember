@@ -1,0 +1,162 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/knownChats.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+        "content": "sha256:9750cc3fecf063e466d39fa6e2cb10c413adfa1e634ee862ceb99d48bd01560b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnownChats"
+        }
+      },
+      "id": "RLZ-MM8MA7",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The bounded store of the answers (512 selections, the oldest leaves first).",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+        "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
+        "locator": {
+          "kind": "symbol",
+          "name": "useKnownChats"
+        }
+      },
+      "id": "RLZ-MV4B1X",
+      "invariant": "INV-ZB0WFP",
+      "origin": {
+        "handoffEntry": "L140-R1-F08",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Runs its request and its timer only while pane and tab are shown, gives up a request under way when they are hidden, and resumes from when the last answer came.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+        "content": "sha256:2efa400d2ce1eff96c844fe46f39f0faca6042cf6565f1bd12f5b49aa30a241c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTabShown"
+        }
+      },
+      "id": "RLZ-Q4FTYG",
+      "invariant": "INV-ZB0WFP",
+      "origin": {
+        "handoffEntry": "L140-R1-F08",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Reads the page's visibility and follows its changes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+        "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
+        "locator": {
+          "kind": "symbol",
+          "name": "useKnownChats"
+        }
+      },
+      "id": "RLZ-RCF2P0",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Asks for the tree's chats in one request when the chat is first shown, when the tree's documents change, and every 30 s while it is shown.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+        "content": "sha256:cd0a1a376c43d281c537ac35459f32c35deca59a7fddc6d904bb4e3faba969a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionAgents"
+        }
+      },
+      "id": "RLZ-YVRBNT",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Gives a selection its fresh answer, else what is already known of it, so a known selection switches with the click.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The bounded store drops oldest answers after renewal and overflow.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "content": "sha256:9750cc3fecf063e466d39fa6e2cb10c413adfa1e634ee862ceb99d48bd01560b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownChats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One bounded request preserves group order and prioritizes nearby selections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "content": "sha256:4acf282c020f21e59863caa21c966bc09f4db449cbea6925e02120ec820f4e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeSelections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Polling requires visible pane and tab; abort and cleanup prevent stale learning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKnownChats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fresh document truth supersedes stored knowledge; an exact launched request is not substituted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "content": "sha256:cd0a1a376c43d281c537ac35459f32c35deca59a7fddc6d904bb4e3faba969a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

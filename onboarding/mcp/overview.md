@@ -78,6 +78,30 @@ Role-message transport spans existing strict contracts and registration, dynamic
 
 The existing memory-quality answer now carries cut-card and added-file counts with bounded first rows, while the logged whole result and a full leaf checklist retain complete observations. These rows are report-only: they create no automated refusal, actionable repair count, new public tool or landing-time semantic judgment. The canonical and shipped Curator role sources require the handover to name the task change that made removed text untrue and put evidence/working files in the task record or scratch root, not memory. The Reviewer role source reads both reports and judges unsupported removals and requirement-unplaced additions in the independent memory lane. Source and assertion inspection here supplies no new compiled-harness, test or closeout acceptance.
 
+
+### Native selection and source-owner qualifications
+
+Role-message transport runs from `mcp/registration/role_agents.py` through `mcp/tools/role_agents.py` to `cli/paseo_role_tools.send_role_message`. The native facade owns recipient resolution, receipt/capacity checks and deliver-or-hold decisions; `cli/role_message_delivery.py` supplies shared message preparation, filing, long-reply and successor helpers, while `cli/role_message_files.py` owns task-scoped file storage. `role_message_limit` rereads settings on each call. Full `body` and attachment records are carried by message files rather than wake text; a long wait reply is filed whole when possible and cut in the answer, with an explicit warning if filing fails. Moving shared helpers does not transfer receipt, capacity or archive authority or admit a runtime source relocation. The private plugin's `index.server.ts` and `server/turn_ended.ts` add bounded mechanical parent wakes, not a semantic acceptance or task-state writer.
+
+Fresh converted leaf closeout validates its exact output in `worktrees/modules/closeout_external.py`. Its `require_gated_recovery`, leaf integration in `worktrees/modules/integration_gate.py`, and leaf recording in `worktrees/modules/record_landing.py` call `leaf_pair_refusal` again. Recovery uses the parent memory tip; integration uses the current source memory tip; recording requires the contract's recorded memory base and retains the closed-history check. Recording judges the recorded closeout code when the landed code contains it, otherwise the landed code itself. Master/checkpoint integration and master recording use the landing-gate port, with net staleness and newly closed history ownership in `application/knowledge_gate/landing.py`, plus the chain proof in `worktrees/series_closeout.py`. Final integration requires all non-abandoned canonical leaves landed; checkpoint and recorded landing prove the leaves already landed, up to the pair they publish or record.
+
+- Retrieval doctrine now uses onboarding/route indexes and harness-native search, not CGC/GrepAI. `providers/settings.lifecycle_settings_from_config` emits disabled, empty context-provider settings, and `providers/setup_common.provider_enabled` treats the two retired providers as never enabled. `install/provider_watchers.stop_provider_watchers_before_refresh` retains cleanup of old watchers; it reports a failed stop without aborting refresh, not a restored install/start/watch route.
+- Public native `role_start`, `role_start_set` and `role_message` enter through the role-agent registration/payload adapters and `cli/paseo_role_tools.py`. Only the owning Manager starts the three-seat leaf set through `role_start_set`: Worker opens immediately, Reviewer opens with its optional first message or is held, and Curator is held. `cli/role_launch_routes.dispatch_leaf_set` derives per-seat request identities and reconciles partial retries. `cli/role_launch_liveness.py` owns occupied-seat replacement, including the explicit launcher path; public `retire_child` instead reaches `cli/role_retire.retire_native_seat` and checks the original starter. Workspace-local held delivery lives in `cli/role_held_messages.py` and the serving lifespan actor, not the retired public hosted-seat messaging path. This does not remove the separate public `dispatch_agent` structural/ambient route. Permission decisions remain developer-owned: pending prompts are held rather than answered by message delivery. Execution receipts remain separate from task acceptance.
+
+The packaged worker brief delegates candidate setup to repository tool notes (`system/tools.md`): build the code worktree's own environment, run candidate checks in it, disclose a missing build command and record the interpreter actually used. This does not replace the landed tool server or memory CLI with the candidate, alter the shared runtime pin, or make a focused test a certification result. `scripts/bootstrap-mcp-venv.sh` resolves uv from PATH and accepts the minimum in `scripts/python-runtime-contract.env` or newer without installing uv. The certified container's `.dagger/src/agents_remember_quality/main.py` installs exactly that contract uv version.
+
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:32 (def lifecycle_settings_from_config)` — generated settings disable context providers and contain no provider blocks.
+- Source comparison: `mcp/src/agents_remember/install/provider_watchers.py:128 (def stop_provider_watchers_before_refresh)` — retained stop-only cleanup reports failure and lets runtime refresh continue.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12 (## Retrieval Substrates)` — harness-native retrieval, with the downstream route-index recipe.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them. The held public roster is `models/tools/public_roster.py`, wired by `mcp/registration/__init__.py`; retained provider diagnostics do not restore provider MCP tools, and native document-chat discovery is a serving route, not a new tool in that roster.
+
+Directness is an external canonical-leaf grant stored by `kernel/direct_execution_grants.py`, not a harness setting or task-document flag. `application/direct_execution_grants.py` admits the launch-bound architect and `serving/direct_execution_grants.py` owns the developer dashboard control. Give/revoke prove the leaf unstarted; reclaim only removes grants for abandoned, never-started leaves with determinably clean series checkouts, preserving Completed leaves and abandoned leaves that started. A granted leaf reuses existing master series checkouts through `cli/role_launch_workspace.py` without an enclosure, with separate role report/scratch folders. `application/task_scoped_mcp.py` admits readers against the canonical leaf and series contract; `cli/role_launch_preparation.py` recomputes that binding before revival. Explicit direct publication in `worktrees/direct_landing.py` verifies the existing series HEAD when `code_commit` is supplied, or creates from the exact previewed candidate tree behind the pair gates and a durable recovery generation when it is absent. Ordinary closeout and integration keep their own transaction boundaries and do not require that grant.
+
+The existing memory-quality answer carries cut-card and added-file counts with bounded first rows. `memory_quality/converted_check.py` attaches the report-only landing observations from `memory_quality/landing_report.py`, comparing against the admitted leaf base when available and otherwise the run's comparison base. An unreadable base is a named observation gap, not proof that no text was cut. `application/memory_quality/answer.py` projects the counts and first rows; the logged whole result retains the full lists, and the full leaf checklist receives complete report-only observations through `application/memory_quality/controller.py`. These rows create no automated refusal, actionable repair count, new public tool or landing-time semantic judgment. The canonical and shipped Curator role sources require the handover to name the task change that made removed text untrue and put evidence/working files in the task record or scratch root, not memory. The Reviewer role source reads both reports and judges unsupported removals and requirement-unplaced additions in the independent memory lane. Source and assertion inspection here supplies no new compiled-harness, test or closeout acceptance.
+
+Native document-chat discovery is a serving POST preload in `cli/role_document_chat_tree.py` (`/api/role-launch/document-chats/tree`), not a public MCP tool. It bounds selections and receipt bytes, reads each canonical launch receipt once per request, and calls `cli/paseo_status.read_live_agents` once; `cli/paseo_bridge.mjs` pages that live-ID census and explicitly reports whether it ended. `cli/role_document_chats.py` (`/api/role-launch/document-chats`) remains the correcting single-document authority. Unreadable, mismatched, oversized or census-incomplete selections are unknown (`agents: null`); host unavailability is explicitly marked, never authoritative empty chats. The frame descriptor in `cli/paseo_frame.py` names a `provisionCommand` built by `serving/paseo/paseo_remedy.py` from the active settings for an older-plugin notice, without executing it. Existing launch/replay/lifecycle/acceptance owners are unchanged.
+
 ## Invariants And Boundaries
 
 Planning truth stays upstream of scheduling. Task mutation publishes before disposable readiness projections are invalidated/recomputed. Canonical sprint Judgment and Priority Registers have a strict grammar on writer admission; status can expose absent/ok/malformed facts without upgrading malformed prose to authority. The retained graph-less atomic-sequential planning intent declares no invented dependencies; this intent is not proof that the task-authoring API currently admits an absent graph. Real authored predecessor edges gate execution. Activation is one replace-in-place record per canonical contract, not per shared protected pair: concurrent masters keep independent selections. Only the addressed reconciling contract waits for its exact sync. Foreign, absent, or unreadable authority is not reconstructed from task prose, queue rows, legacy files, or ambient Git. Git conflicts remain in operation-owned worktrees/journals until authorized continuation/cancellation. Queue and caches own no commit, certification, recovery, integration, or terminal truth.
@@ -137,7 +161,18 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/`                                     |
 
+### Native-source claim qualifications
+
+- Candidate setup remains repository-owned; host bootstrap accepts PATH uv at the shared contract minimum or newer, while the certified container keeps the exact contract pin.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md:47-50`; `scripts/bootstrap-mcp-venv.sh:28-84`; `scripts/python-runtime-contract.env:12-15`; `.dagger/src/agents_remember_quality/main.py:123-129`.
+
+- Report-only landing producers, bounded answer/full-result custody, and canonical plus shipped human-review role contracts.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/application/memory_quality/answer.py:202-239`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:107-110`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:147-148`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:105-111`; `mcp/src/agents_remember/memory_quality/converted_check.py:127-189`; `mcp/src/agents_remember/memory_quality/landing_report.py:353-401`; `mcp/src/agents_remember/memory_quality/landing_report.py:717-810`; `mcp/src/agents_remember/application/memory_quality/controller.py:618-632`; `mcp/src/agents_remember/application/memory_quality/controller.py:757-781`; `mcp/src/agents_remember/mcp/tools/memory.py:116-141`; `skills/l-01-agent-lifecycles/roles/curator.md:107-110`; `skills/l-01-agent-lifecycles/roles/curator.md:147-148`; `skills/l-01-agent-lifecycles/roles/reviewer.md:105-111`.
+
 ## Evidence
+
 - The facts and where they come from. [1]
 - Their vocabulary. [2]
 - The gate over a leaf's exact candidate. [3]
@@ -229,8 +264,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The template's informational section. [97]
 - The realization admission owner. [100]
 - The package-owned template copy stating the superseding target shape. [102]
-
-
 - **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** [105]
 - **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
 - Current curator records and explicit retired-channel unavailability [109]
@@ -283,11 +316,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
 - **The two ports passed into the shared collaborators.** [196]
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
-
-
 - Current contract-scoped file writing [199]
-
-
 - **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
 - **The response field the block travels on, carried by the strict response model rather than re-declared.** [209]
 - **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** [210]
@@ -345,10 +374,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The batch blob reader. [272]
 - The task reopening tool on the registration surface. [285]
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
-
-
 - The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [287]
-
 - The lane row. [18]
 - The lane row. [28]
 - The lane row. [32]
@@ -379,5 +405,5 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - Current declared collected-case budgets supersede historical totals [309]
-
 - bounded landing answer and human-review role contract [288]
+- Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution. [310]

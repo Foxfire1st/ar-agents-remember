@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../overview.md)
 
 ## Purpose
 
@@ -10,8 +10,9 @@ Pure selection and record-reading model for the document chat: which roles a sel
 
 ## Code Commentary
 
-`documentChatBinding` walks the document tree with the launcher's own option helpers: Projects admits Architect and Investigator; a sprint admits its Orchestrator and Investigator, a sprint-commanded master admits its Manager and Investigator, and a leaf of such a master admits Worker, Reviewer and Curator; every other selection admits none and names the missing relationship instead of offering a start. `documentChatAgent` matches the record labels to the exact document key, rejects archived records without a workspace, prefers an Architect only when it has no task reference, and takes the newest by creation time with the agent id as the stable tiebreak. `documentAgents` reads the declared record fields and rejects an answer that does not hold them.
+`documentBindings` groups commanding sprints, their masters and each master's leaves once, then emits the tree's canonical selections in order. The work grows with document count rather than a per-master rescan. `bindingInTree` resolves one reference or names the missing hierarchy relationship; Projects and explicit Investigator admission retain their existing owners.
 
+`documentChatAgent` matches canonical labels to the exact selected document, rejects archival/missing workspace, excludes Investigator and system-specialist from primary discovery, and chooses newest creation time with stable agent-ID tiebreak. `documentAgents` returns null for an unreadable answer, distinct from an empty confirmed array. The same bindings feed both batch preknowledge and fresh selected-document reads.
 ## Evidence
 
 
@@ -28,5 +29,6 @@ Projects, sprint, commanded master and leaf roles retain explicit selection admi
 
 ## Refreshed current evidence
 
-- The binding returns exactly the roles the selection admits, or none with the missing-relationship reason. [1]
+- Tree bindings group parents once and return canonical rows in tree order. [1]
+- An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set. [5]
 - The agent pick matches the document key, skips archived records and picks the newest stable record. [2]

@@ -12,6 +12,8 @@ Owns durable current-line launch receipts, immutable saved-call replay, report b
 
 Receipt creation is exclusive and complete before native launch; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
+`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch.
+
 ## Closing mark and archive settlement (MIK-R76)
 
 `_execute_prepared_launch` reads the leaf closing mark before replaying a saved call and re-checks it
@@ -61,3 +63,7 @@ Selected-task Investigator receipts are per request rather than singleton select
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
 - Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [12]
 - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]
+
+## Current contract evidence
+
+- `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]

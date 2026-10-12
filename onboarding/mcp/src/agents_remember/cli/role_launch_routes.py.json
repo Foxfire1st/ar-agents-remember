@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
         "content": "sha256:d9af9e898a751ea232f04ae4e57f9e7581dadb2287fd9bf2860bfaba66e59f77",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
         "content": "sha256:d9af9e898a751ea232f04ae4e57f9e7581dadb2287fd9bf2860bfaba66e59f77",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
         "content": "sha256:9871455b381edc6d2e8213343c5f30dd12222100de71684c9592add560a10449",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
-        "content": "sha256:8f45fa15e8afda704f68961f25e28e57f5dcab29adaf517cbd865bcfa37498a2",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
+        "content": "sha256:eb6b0792f5a3ab8ffcd5f88acc1b33a2f7b5e5af2866d9198a3a180c58aa08d1",
         "locator": {
           "kind": "symbol",
           "name": "register_role_launch_routes"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
-        "content": "sha256:e7abeb29f29a924c1b9cd9ee80d1c6d3f0527e10c187cdbe294d6886bd94437b",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
+        "content": "sha256:dc7bbfcb96fa16f162281d53cf44d4d732f71709751bb9843d594094e8be9cc1",
         "locator": {
           "kind": "file"
         }
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "09e391ae9c879e9447061c08efdba9f0e939b124",
+        "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
         "content": "sha256:d9af9e898a751ea232f04ae4e57f9e7581dadb2287fd9bf2860bfaba66e59f77",
         "locator": {
           "kind": "symbol",
@@ -213,6 +213,21 @@
         }
       ]
     },
+    "14": {
+      "note": "The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c33883608c0572e14ebb35dad631e4b702a8a9",
+            "content": "sha256:3e683c84b3662bade916842145c88b4c179377d051452d041b02cb41ba90a0c9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of _start_execution supporting the stated file behavior.",
       "targets": [
@@ -282,12 +297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f1ceea9f090409b5594f7294dca50374fee1404",
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1070,
+              "end": 914,
               "kind": "line_range",
-              "start": 1030
+              "start": 874
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

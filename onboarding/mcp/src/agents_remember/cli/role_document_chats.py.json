@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-        "content": "sha256:0a79d488641be6af4310773e466e2f64560d17118a0d1f0a8590d02eb9f2d983",
+        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "content": "sha256:f7c968787e1b958cceed458df4784ac3c3704147164999904730fd82b8f1c875",
         "locator": {
           "kind": "symbol",
           "name": "_records"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-        "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
+        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "content": "sha256:9a8f6d172a165765f243c3a42d5dd25f8d33e03e111dff7dd20456c5cb1ed370",
         "locator": {
           "kind": "symbol",
           "name": "document_chats"
@@ -36,6 +36,60 @@
       },
       "rationale": "This reader selects only canonical launch records for the requested scope and checks actual host existence/archive state before returning agent/workspace identities. It owns the choice of the newest eligible taskless Architect rather than inferring one from a host tab.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_chat_record"
+        }
+      },
+      "id": "RLZ-B5RAQN",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Names what is kept of a record, so that what is kept does not grow with the record's launch capsule.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "content": "sha256:a77458e9e828325f3fd044c17eea1c64be4e9babd2c4b3505f9654b7f6d99352",
+        "locator": {
+          "kind": "symbol",
+          "name": "_readable_chat_record"
+        }
+      },
+      "id": "RLZ-RG2GA1",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The read of one document refuses a damaged record with the 409 that asks to reconcile it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_chat_record"
+        }
+      },
+      "id": "RLZ-X564ZP",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one check both reads use: what is kept of a record, and which shapes count as damage and which only as a record without a hosted agent.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -112,6 +166,21 @@
               "end": 132,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The selected-document read is the correcting authority for a document’s launch-record chats. It checks each recorded native agent’s existence/archive state; the separate tree read preloads the same receipt-derived discovery before a selection click.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+            "content": "sha256:e2349ee340b8a756cc30f03355fe63c063e033d3428bad6434c2ceababa65103",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

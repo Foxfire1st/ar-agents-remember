@@ -34,6 +34,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

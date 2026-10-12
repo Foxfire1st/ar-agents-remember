@@ -7,12 +7,13 @@
   },
   "applicability": "Selection changes between master, tasks and roles while the control channel is ready, inside and across workspaces.",
   "conditions": [
-    "The loaded application answers ar.open for the target agent.",
-    "The target carries agent and workspace."
+    "The ready channel supports opening the target agent; agent/workspace identity remains canonical.",
+    "A load readiness wait holds the latest selection until ready/pong before switching by message."
   ],
   "exclusions": [
-    "Unavailable channel, which takes the fallback load path.",
-    "Selections with no effective agent, which take the hidden-frame path."
+    "An explicitly unsupported-open plugin uses URL steering with its notice.",
+    "Only application ping silence, Retry or host return permits recovery loading; deadline lateness alone does not.",
+    "Known-no-agent selections hide; unknown discovery retains the visible inert frame."
   ],
   "id": "INV-YFAHQM",
   "origin": {
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A change of the selected document switches the loaded application to the other agent's chat by ar.open message, inside and across workspaces, without loading the frame again.",
+  "statement": "With an open-capable ready channel, selected-document changes switch the same application by ar.open inside/across workspaces without reload; during a load ready wait latest selection is held then messaged. A timeout alone does not make the channel unavailable; unanswered ping permits fallback. An explicitly unsupported-open plugin steers each target by URL; known agentless selections hide, unknown selections remain visible and held.",
   "status": "proposed",
   "supersedes": []
 }

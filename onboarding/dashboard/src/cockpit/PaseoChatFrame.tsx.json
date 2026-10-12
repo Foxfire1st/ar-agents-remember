@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
         "content": "sha256:79f34ed58dd92c91af020d7039e307055979452894c760ead07b9b4c2a865403",
         "locator": {
-          "end": 208,
+          "end": 269,
           "kind": "line_range",
-          "start": 181
+          "start": 242
         }
       },
       "id": "RLZ-4H5EAG",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-        "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-        "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
         "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
         "locator": {
-          "end": 266,
+          "end": 337,
           "kind": "line_range",
-          "start": 266
+          "start": 337
         }
       },
       "id": "RLZ-93GQVS",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-        "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -95,8 +95,26 @@
     },
     {
       "anchor": {
-        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-        "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "locator": {
+          "kind": "symbol",
+          "name": "frameWait"
+        }
+      },
+      "id": "RLZ-NHP8GP",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Holds the frame out of reach until the application is on the selection's agent, and keeps the line while a request is open.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -110,16 +128,52 @@
       },
       "rationale": "The frame body no longer mounts or reserves space for a dashboard sidebar; the embedded frame is the whole body again.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-ZW8J2W",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Renders the hold (inert, no pointer) and the line at the bottom edge of the frame, off the application's header.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "locator": {
+          "kind": "symbol",
+          "name": "frameWait"
+        }
+      },
+      "id": "RLZ-ZWAT5M",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Decides from the controller's state whether the pane shows the waiting line and whether the frame takes input.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "One stable controller consumes execution targets and trusted plugin messages.",
+      "note": "One stable controller dispatches selection changes before paint and consumes only its trusted frame messages.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-            "content": "sha256:e63627eaabc551a450a0eac64dca2cbbf16c4f5a7f5bfea5b6661398b3bd5ced",
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:c7a4fc61095f067877f1ac5bed4772b8fd71b9f6819e2309ac3f81bea6e76879",
             "locator": {
               "kind": "symbol",
               "name": "useFrameController"
@@ -130,11 +184,11 @@
       ]
     },
     "2": {
-      "note": "The descriptor is fetched on first activation and each explicit Retry.",
+      "note": "The descriptor is fetched on first activation and explicit Retry, not selection changes.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
             "content": "sha256:b3a0c76585b428404e446e554d337f430aa650dec09450eb3f926f09719185a6",
             "locator": {
               "kind": "symbol",
@@ -146,15 +200,31 @@
       ]
     },
     "3": {
-      "note": "The mounted pane exposes the load count and keys the frame element by generation only.",
+      "note": "Generation alone keys the iframe; held input is inert, pointer-disabled and blurred, with a bottom-edge waiting line.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
             "locator": {
               "kind": "symbol",
               "name": "EmbeddedFrame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "On-chat or shown confirms selected-screen input ownership; an unanswered request remains visibly waiting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-20XGHX",
+      "invariant": "INV-N3NNM1",
+      "origin": {
+        "handoffEntry": "architect, message of 2026-10-11 17:32",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Its display check ends the wait with the answer load-failed when the application shows its failure pane on the asked agent's chat, for a dashboard that reads it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
         "locator": {
           "kind": "symbol",
@@ -39,11 +57,11 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
         "locator": {
           "kind": "symbol",
-          "name": "displaySatisfied"
+          "name": "confirmDisplay"
         }
       },
       "id": "RLZ-5XXHCD",
@@ -52,13 +70,31 @@
         "handoffEntry": "MIK-R121-R4-P1",
         "leaf": "260928-MIK-L121"
       },
-      "rationale": "displaySatisfied is the single gate between opening and reporting; the five-clause conjunction is what makes the confirmation display evidence.",
+      "rationale": "confirmDisplay requires onAgentChat identity plus chatDrawn before shown; negotiated on-chat and load-failed are distinct lesser/different completion signals.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-8EBCSC",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Its display check tells a dashboard that reads it once when the application is on the asked agent's chat, before the chat is drawn.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -70,17 +106,17 @@
         "handoffEntry": "MIK-R75@v1 current rule 9",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "The bridge keeps checking the Parent button's target against the posted snapshot; rule 7 changed no byte of it.",
+      "rationale": "The bridge retains current Parent source/relation/target guards while extending negotiated non-Parent open reports.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
         "locator": {
-          "end": 262,
+          "end": 287,
           "kind": "line_range",
-          "start": 261
+          "start": 286
         }
       },
       "id": "RLZ-B533QM",
@@ -94,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -112,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:6736f96eb1e1da16ab9ba899639e926ef2efc84411913ea49f00569ee459db9a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
         "locator": {
           "kind": "symbol",
           "name": "openAgent"
@@ -130,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
         "locator": {
           "kind": "symbol",
@@ -148,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -166,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -184,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -202,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
-        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -220,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",
@@ -238,12 +274,30 @@
     },
     {
       "anchor": {
-        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "content": "sha256:de8faea407e097a2f0bf9685e463e0a01ab2ca17e4044cf711c115347344d6e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLUGIN_ABILITIES"
+        }
+      },
+      "id": "RLZ-WSQKSY",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "What the plug-in names in its ready report and in every pong.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
         "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
         "locator": {
-          "end": 15,
+          "end": 22,
           "kind": "line_range",
-          "start": 15
+          "start": 22
         }
       },
       "id": "RLZ-YP5PVQ",
@@ -262,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
             "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
             "locator": {
               "kind": "symbol",
@@ -278,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
             "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
             "locator": {
               "kind": "symbol",
@@ -306,14 +360,15 @@
       ]
     },
     "4": {
-      "note": "The pinned display gate checks route, stored tab identity and visible chat before acknowledging; its dated native observations and qualification limits are separate from that executable predicate.\n\nAnchor: `installBridge`",
+      "note": "Exact selected-screen identity precedes capability-gated on-chat; native failure settles as load-failed, while visible chat settles as shown.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff4987d93eae4d0753859460c919930528520f63",
-            "content": "sha256:c4961898bd1bdffc1200002e95a0d6642bb7a5b37a952f9e45ae8dab3fceae6a",
+            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "confirmDisplay"
             }
           },
           "kind": "code"

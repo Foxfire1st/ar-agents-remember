@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:f88c7a36b735c4ba831c31cc3755333df87fa1e41e10a3a734eea140ade2e3af",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:5f44f84cb1f9bb19ce8b7d4dc694565cf13294485a5bb01fed53f2570bcc0709",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,41 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:76871f7093532bd088efb1f4f6b08975519e3fc13bd1e845407fbd19a9796cec",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatReadTests.test_a_damaged_record_refuses_the_read_of_its_document_and_never_fails_it"
+        }
+      },
+      "facet": "The single-document route returns 409 with unreadable/malformed reconcile advice for the enumerated receipt damages rather than no chat or server failure.",
+      "id": "PRF-82ES7J",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:33ffc66452f075974a31466d3f9d55ed964519d201a63e071709f60693fed842",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatTreeTests.test_every_listed_document_is_answered_from_one_read_of_the_hosts_agents"
+        }
+      },
+      "facet": "Tree rows preserve asked document order, use one agents-live call, match the selected-document answer, and reflect later archived/missing host agents.",
+      "id": "PRF-86TW8K",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:791210b1ce55c9ded50990a81fcaf958d1bd2f8dd51ea4d8b9fbc1e43075b4cb",
         "locator": {
           "kind": "symbol",
@@ -88,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
         "content": "sha256:f1fc9efa53d92ebbf5fa43f1df134b79d5941541b0983ac47fdc0c5e2dc0d7f6",
         "locator": {
           "kind": "symbol",
@@ -105,8 +139,42 @@
     },
     {
       "anchor": {
-        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
-        "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:f548d04cdd4f48c3c1090948b71eb980f5abf2c7bff2e6f62b8f3caf96e79c26",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatTreeTests.test_a_damaged_record_leaves_its_own_document_unknown_and_every_other_answered"
+        }
+      },
+      "facet": "The enumerated byte/shape/non-regular damages yield agents:null only for the owning document while the other document retains its manager and the request uses one agents-live call.",
+      "id": "PRF-HBYB24",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:250d07e4bd9e49aa1623cc4e86e259a388f6dbdb6eb3f4019f2eae91ee73ec9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatTreeTests.test_a_document_named_many_times_is_read_once"
+        }
+      },
+      "facet": "Repeated document selections at eight and the selection bound open their receipt path once, share one kept record and use one live census.",
+      "id": "PRF-N2AP9Q",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:a0b752f1eb7712371d7530a440179fbf636ed00b86a46f91830f49bf04e21801",
         "locator": {
           "kind": "symbol",
           "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
@@ -118,6 +186,23 @@
       "origin": {
         "handoffEntry": "MIK-R95@v1 rule2",
         "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "content": "sha256:656903cc89621449574c592ccaee6ad356a53e1f9c6f67afebd6418076c73cfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatTreeTests.test_a_request_reads_and_keeps_no_more_than_its_byte_limits_allow"
+        }
+      },
+      "facet": "Controlled record/request limits keep oversized/exhausted records unopened and unknown, preserve in-budget answers, and show retained projections do not grow with padded launch payloads; the case does not assert raced-growth sentinel byte consumption.",
+      "id": "PRF-XAX6KF",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
       }
     }
   ],
@@ -160,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
             "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
             "locator": {
               "kind": "symbol",
@@ -176,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
             "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
             "locator": {
               "kind": "symbol",
@@ -230,6 +315,21 @@
               "end": 153,
               "kind": "line_range",
               "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Focused route/reader tests cover correcting single-document discovery, pre-click tree discovery and first-start preparation on the shared stateful fake runtime; they do not contact a live host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:e3c460a4a4754ee01a5d8930850b060acdc0ef4af4cabf5023372af98f740522",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

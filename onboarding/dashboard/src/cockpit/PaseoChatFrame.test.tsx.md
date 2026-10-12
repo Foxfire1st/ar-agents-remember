@@ -10,7 +10,7 @@ The suite exercises the real dashboard frame component/controller/model and role
 
 ## Code Commentary
 
-Grouped-navigation cases are removed with the dashboard's own sidebar (MIK-R75 rule 7). The remaining cases reject exact-origin/window lookalikes and malformed selection values, match pending agent replies, scope Parent errors to a currently selected source and exercise unavailable control/Retry; the plugin-side pill cases cover an unknown front source (no pill) and a known wide selection (pill returns). Since MIK-R122 the fallback cases pin one agent-URL load with Retry reloading, the no-second-load case pins the settle behavior, and the workspace cases pin message moves without reload.
+Grouped-navigation cases are removed with the dashboard's own sidebar (MIK-R75 rule 7). The remaining cases reject exact-origin/window lookalikes and malformed selection values, match pending agent replies, scope Parent errors to a currently selected source and exercise unavailable control/Retry; the companion plugin-side `paseoHierarchy.test.ts` cases, not this local suite, cover an unknown front source (no pill) and a known wide selection (pill returns). The recovery cases now require the load/request deadline followed by an unanswered application ping before an agent-URL load; Retry remains explicit, and workspace moves retain generation. `paseoFrameLateAnswer.test.tsx` owns detailed late-ready, responsive late-open and post-recovery held-selection schedules. A deadline alone is not proof of a dead application.
 
 ## Invariants And Boundaries
 
@@ -20,6 +20,6 @@ These fixtures establish source/component behavior, not live native failure tran
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-- The fallback cases load the agent URL once and reload on Retry. [1]
+- The recovery fixtures require unanswered application ping before URL fallback and preserve explicit Retry. [1]
 - The no-second-load case pins the settle behavior. [2]
 - The workspace cases move by message without reload. [3]

@@ -1,0 +1,184 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_document_chat_tree.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:0b679fb6d6b696a657a6ea4d8345522f877475d775afcf6d8dfa9f912db515c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "REQUEST_BYTES_LIMIT"
+        }
+      },
+      "id": "RLZ-3T0VYK",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The bytes of all records one request reads, with its reason.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:ee2717e167b1e88737fa52013acef488de8abdaf8eefaac833f09185ea90a514",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_chat_tree"
+        }
+      },
+      "id": "RLZ-59GFF2",
+      "invariant": "INV-T3JTQ2",
+      "origin": {
+        "handoffEntry": "ruling 5dd9714f 2b",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Answers every listed selection from its launch records and one listing of the host's agents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:73469b0c244e17726ee3085840f08d05b1b6b9715f98185a77b562eb375cf6b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "RECORD_BYTES_LIMIT"
+        }
+      },
+      "id": "RLZ-6GMDGC",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The largest record this route reads, with its reason.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:cb2206c53b304dc29e2fe179d3748283be8e1a5f22d974b520ee0db0100b1b31",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_record"
+        }
+      },
+      "id": "RLZ-AZ93QS",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Measures the file before it reads, reads at most the limit and one byte, and answers anything larger as 'cannot be told'.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:291737eeb9063a940bebbb75bb4035ea455fabf05ceba42c214fe33d295867ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "_RequestReads"
+        }
+      },
+      "id": "RLZ-D8ZZ6P",
+      "invariant": "INV-5VK3JP",
+      "origin": {
+        "handoffEntry": "L140-R1-F03",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Holds the reads of one request: each path once, all within the request's bytes, nothing kept beyond the request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:e89d3319ab74711b1b8155ddd53fa965fdf5493f1c89dbda7eee32546ef6dcb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_agents"
+        }
+      },
+      "id": "RLZ-DWEPYX",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Answers a recorded agent that is absent from a listing that did not end as unknown.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:5879a2b0aa3057e0d70219780d1182d659dbe8d3bf12cfd3c45150a878f74bbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_selection_records"
+        }
+      },
+      "id": "RLZ-FFN07B",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "A record that cannot be told makes its selection unknown and no other.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+        "content": "sha256:df061a3a231bec06c6131b5b5f997de2053ef6f2a0eae165272a3805ea80ab4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_kept_part"
+        }
+      },
+      "id": "RLZ-PZ49AQ",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The tree's reader turns bytes that are no undamaged record into 'cannot be told' for that record alone.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Preclick discovery preserves unknown rather than claiming absence from incomplete host evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+            "content": "sha256:e89d3319ab74711b1b8155ddd53fa965fdf5493f1c89dbda7eee32546ef6dcb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Receipt reads are once per path and request-local with bounded bytes and retained projection only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
+            "content": "sha256:291737eeb9063a940bebbb75bb4035ea455fabf05ceba42c214fe33d295867ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RequestReads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

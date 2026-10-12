@@ -5,10 +5,11 @@
     ],
     "justification": "Realized in dashboard/src/cockpit/paseoFrameControl.ts, where arm posts the agent-naming problem for the unanswered target with one fallback load, and in dashboard/src/cockpit/paseoFrameModel.ts, where agentTimeoutText states whether the fallback loads the agent page or the frame already names it."
   },
-  "applicability": "Every selection whose display report or channel readiness never arrives within the control deadline, on document and Chats pages alike.",
+  "applicability": "A wanted but unsettled selection whose ready-after-load or request answer is overdue, on document and Chats pages.",
   "conditions": [
-    "A selection is wanted but unsettled: a pending request, else the unsettled wanted target.",
-    "The fallback sentence states whether the agent page loads or the frame already names it, from the loaded-identity comparison."
+    "A first deadline probes the application; only an unanswered ping deadline declares silence and permits fallback.",
+    "The fallback sentence reflects whether the loaded identity already names the selected agent.",
+    "A pong preserves/reestablishes readiness and a responsive late answer remains waiting."
   ],
   "exclusions": [
     "Unselected panes, which name nothing by construction."
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L121",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The deadline names the unanswered selection even when readiness never arrived (the pending request, else the unsettled wanted target, else silence), and the sentence states whether the fallback loads the agent page or the frame already names it.",
+  "statement": "Ready-after-load or agent-answer timeout sends ping. Only its unanswered deadline names the unsettled agent and states whether the URL fallback loaded its page or already named it. A pong preserves/reestablishes readiness; a slow answer remains a named waiting state with explicit Retry and no automatic load.",
   "status": "proposed",
   "supersedes": []
 }

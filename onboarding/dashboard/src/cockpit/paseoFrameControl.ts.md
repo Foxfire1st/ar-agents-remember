@@ -10,21 +10,30 @@ The controller steers one existing frame and owns its bounded native control-cha
 
 ## Code Commentary
 
-Wanted/seen, pending/settled and URL-loaded IDs distinguish launch intent, unanswered control and an already loaded route. Ready navigation posts ar.open without replacement; transient options absence does not resend a seen actor. Receive checks exact configured origin/current iframe window. Start/stop reset the selected-ID set for the next frame lifetime; the controller no longer holds a catalog. The message switch keeps `selection` and `navigation-error`; the `hierarchy`/`hierarchy-error` kinds and the deliberate chat-navigation click went with the dashboard sidebar (MIK-R75 rules 7 to 9), and Parent errors still require a currently selected source child. Since MIK-R122 a selection change while the channel is unavailable clears and re-arms one trailing settle window (`PASEO_UNAVAILABLE_QUIET_MS`); a change while ready invokes sync and can post `ar.open` at once, while a change while waiting invokes sync but forwards nothing until the ready report or deadline, with no timer elsewhere. The window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. Each expiry may load its latest changed URL once; two settled windows with different latest URLs bring each forward, so no per-episode one-load cap or total-burst bound is claimed.
+Wanted, pending, settled and URL-loaded identities distinguish the selected agent, its unanswered request, a completed answer and the frame's current route. `receive` admits only the configured origin and exact iframe window. Selection and source-scoped Parent errors retain their independent native selected-set authority.
+
+A ready selection sends `ar.open` immediately. Every document load awaits a ready report for ten seconds, then asks one ping; only ten more seconds without that ping's answer mark the channel unavailable. A pong during that wait is a ready report. Selections made while a load's report is awaited are held, not loaded again, and the latest goes out by message when readiness returns. A ready request past its own ten-second deadline is late, not a dead channel: answered pings keep it waiting without resending the open, and a newer selection still switches by message.
+
+When control really is unavailable and no load's ready report is pending, the existing trailing settle window coalesces unavailable selections and forwards the latest URL. That is a per-window bound, not a lifetime one-load cap. Explicit Retry and a returned host start the frame again. A plugin explicitly lacking `open-agent` uses agent URLs; one that merely names fewer abilities, or names none as the older plugin does, still switches by message.
 
 ## Invariants And Boundaries
 
-The existing 10-second unavailable path keeps the frame and may load the requested actor URL once; explicit Retry changes generation. A trailing settle window coalesces bursts first: each settled window forwards only its latest selection, and the deadline still names the latest unanswered target. Shown replies never establish selected rows. The dashboard draws no other chat navigation; no fallback is proposed.
+An initial load establishes the frame. Subsequent recovery loads require an unanswered application ping, explicit Retry, or host return; a plugin explicitly unable to open an agent retains the URL-only exception. Missing ready or a slow agent answer alone never justifies a recovery load. Each load increments generation exactly once.
+
+`navigated` distinguishes host lookup from application drawing; `on-chat` permits input to the selected agent's native screen before drawing completes. `shown` and the application's own `load-failed` pane both end the pending request. The latter leaves native failure text/Retry in reach without a dashboard-invented failure. Replies for another or superseded pending agent have no settlement consequence. Navigation acknowledgement never establishes native selected rows.
 
 ## Evidence
 
-The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
+These are source contracts, not a claim of test execution in this pass.
 
-- A selection change while ready invokes sync and can post ar.open at once; while waiting it invokes sync but forwards nothing until the ready report or deadline; while unavailable it clears and re-arms one trailing settle window for the latest selection. [1]
-- The settle window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. [2]
-- The switch posts ar.open by message while ready and loads a changed latest URL when its settle window expires while unavailable. [3]
-- A document load raises the generation by exactly one. [4]
-- Only the embedded application's messages from the exact origin and window are admitted. [5]
+- A ready change switches immediately; a change during a load's readiness wait is held, while unavailable changes use the trailing settle window. [1]
+- Readiness ends the load wait and sends the latest held target through the negotiated channel. [2]
+- URL loading is allowed only while unavailable and outside an outstanding load-readiness wait. [3]
+- A document load raises generation once and then awaits its own readiness. [4]
+- Only the configured frame origin and actual iframe window supply control messages. [5]
+- A missing readiness report asks a ping before control is unavailable. [6]
+- A late request is probed, not automatically reloaded. [7]
+- Drawing and the application's own failed-load pane both settle only the pending agent. [8]
 
 ## MIK-R95 Document Steering
 

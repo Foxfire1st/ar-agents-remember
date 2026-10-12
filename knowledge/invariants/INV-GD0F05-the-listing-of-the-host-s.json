@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Treating a bounded census as complete would label unreached agents gone and hide valid document chats."
+  },
+  "applicability": "Live-agent listing completeness consumed by tree discovery.",
+  "conditions": [
+    "Only hasMore false establishes completion; ten-page and missing-cursor stops do not."
+  ],
+  "exclusions": [
+    "A listed live agent can remain known even when the whole census is incomplete."
+  ],
+  "id": "INV-GD0F05",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_status_bridge.py › test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end, test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone (the real bridge script through read_live_agents and document_chat_tree); red before the repair: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/after-evidence-attempt3/red/red-F04.txt"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "L140-R1-F04",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The listing of the host's agents counts as complete only when the host said that it ended; an agent that a listing did not reach is unknown, not gone.",
+  "status": "proposed",
+  "supersedes": []
+}

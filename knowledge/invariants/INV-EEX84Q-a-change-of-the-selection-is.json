@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Treating a responsive late answer as unavailability would discard the native document and make every subsequent selection reload."
+  },
+  "applicability": "Selection steering in the document chat frame with a responsive open-capable plugin.",
+  "conditions": [
+    "The trusted ready control channel is negotiated and names the target agent.",
+    "After an answer deadline the application still responds to ping."
+  ],
+  "exclusions": [
+    "Initial mount, explicit Retry, returned host, ping silence, or plugin explicitly unable to open an agent."
+  ],
+  "id": "INV-EEX84Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"waits for a late answer without loading the frame, and the next change goes out by message\"; the table walks of Attempt3 (0 loads in every change on both hosts)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "MIK-R140@v1 rule 2",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A change of the selection is a switch by message, also when the host is slow: the frame's document is not loaded again, a late answer is waited for and shown as waiting, and the channel stays usable for the changes that follow.",
+  "status": "proposed",
+  "supersedes": []
+}

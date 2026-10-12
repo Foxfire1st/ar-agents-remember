@@ -4,14 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The fallback cases load the agent URL once and reload on Retry.",
+      "note": "The recovery fixtures require unanswered application ping before URL fallback and preserve explicit Retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
-            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "blob": "8ca45e4c6f4042166e7aa64e2533045f8d3fb919",
+            "content": "sha256:834e2ffeb08cbeec2775ef400bc47838eb444337056a81a7cdfa2f7b59332dca",
             "locator": {
-              "kind": "file"
+              "end": 562,
+              "kind": "line_range",
+              "start": 462
             }
           },
           "kind": "test"
