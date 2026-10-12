@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Stored view and order reset for each case\n\nAnchor: `treeViewStore`",
+      "note": "Stored view and order reset for each case",
       "targets": [
         {
           "anchor": {
-            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
-            "content": "sha256:baf2d4c2f0194da395428bb2d37a12f298b3a0c272b3790ffbf47649311eaf74",
+            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
+            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
             "locator": {
-              "end": 16,
+              "end": 127,
               "kind": "line_range",
-              "start": 12
+              "start": 1
             }
           },
           "kind": "test"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
+            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
             "content": "sha256:2845bb0267aa3ffe6510da6a56d9e232ac6b79a76c713d662284ecdcfbe17db9",
             "locator": {
               "kind": "symbol",
@@ -36,16 +36,16 @@
       ]
     },
     "3": {
-      "note": "First-change derivation from the captured outline\n\nAnchor: `firstOutlineChange`",
+      "note": "First-change derivation from the captured outline",
       "targets": [
         {
           "anchor": {
-            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
-            "content": "sha256:0cd28d0a300648feab0aac23e5328febba7bf2203314d8a0a1687644244e8e04",
+            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
+            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
             "locator": {
-              "end": 37,
+              "end": 127,
               "kind": "line_range",
-              "start": 29
+              "start": 1
             }
           },
           "kind": "test"
@@ -53,16 +53,16 @@
       ]
     },
     "4": {
-      "note": "Changed and All counts from the captured outline\n\nAnchor: `outlineCounts`",
+      "note": "Changed and All counts from the captured outline",
       "targets": [
         {
           "anchor": {
-            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
-            "content": "sha256:12e8f7ae4bda2fb17f4a38ed90a32f1da9ec2d463a68d206a7ae41e84d55ced9",
+            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
+            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
             "locator": {
-              "end": 47,
+              "end": 127,
               "kind": "line_range",
-              "start": 39
+              "start": 1
             }
           },
           "kind": "test"

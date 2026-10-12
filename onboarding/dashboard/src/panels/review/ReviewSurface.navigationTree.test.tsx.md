@@ -15,6 +15,8 @@ The first case derives initial selection and summary expectations through the tr
 ## Evidence
 
 - Stored view and order reset for each case [1]
+
 - Disclosure contract for every mounted view [2]
 - First-change derivation from the captured outline [3]
+
 - Changed and All counts from the captured outline [4]

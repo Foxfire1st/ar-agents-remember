@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The suite's statement, its bounds and its stubbed reads.",
+      "note": "Captured bodies with a labelled synthetic outline and condition-based order/selection waits.",
       "targets": [
         {
           "anchor": {
-            "blob": "f08c1dc1e1fbdf5c14e57bfacfce199129be3454",
-            "content": "sha256:0751fe732c2c6172f96f1a0dd8da62638308c3d578752566430bf7ebbe804639",
+            "blob": "6b9b5dc486fd347e9ffcbfbbd19704c664245e98",
+            "content": "sha256:9cec01459a8ab6964ca455b647a0c6231a7cd2b5e29ec76df86bdfbdf23f1346",
             "locator": {
-              "end": 60,
+              "end": 129,
               "kind": "line_range",
               "start": 1
             }
@@ -20,16 +20,16 @@
       ]
     },
     "4": {
-      "note": "The one case: the center's order in both orders with a wait after each click on the order control, the two moves, and the kept context, focus and workspace.",
+      "note": "The mounted case compares both orders at invariant granularity and pins actual changed words, context, focus and the unchanged workspace.",
       "targets": [
         {
           "anchor": {
-            "blob": "f08c1dc1e1fbdf5c14e57bfacfce199129be3454",
-            "content": "sha256:504ac750d6b37f4989b9d8a2b0f87a82edfa1980ecd974f41cfca0b2b38d5386",
+            "blob": "6b9b5dc486fd347e9ffcbfbbd19704c664245e98",
+            "content": "sha256:aea0e00ffd8e0457b206efe46d220761471b6d13c07389d5808149dffb05e465",
             "locator": {
-              "end": 139,
+              "end": 215,
               "kind": "line_range",
-              "start": 67
+              "start": 130
             }
           },
           "kind": "test"

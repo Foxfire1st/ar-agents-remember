@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-        "content": "sha256:da56b425e8d2aafceaa433acc3059f7a875271ed403f220a4b1341db4999d1e2",
+        "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+        "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "CardCurrentness"
+        }
+      },
+      "id": "RLZ-11J07S",
+      "invariant": "INV-T4D98B",
+      "origin": {
+        "handoffEntry": "MIK-L154 card currentness mark",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "CardCurrentness owns both the exact owner-state mark and its separately visible per-side reason, so keeping them together prevents one of the two obligations disappearing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+        "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
         "locator": {
           "kind": "symbol",
           "name": "CardCurrentness"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+        "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
         "content": "sha256:9c488c85bfdc894c5be594878df6304aa523c3f6da137c6acccd1d2c0604a950",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+        "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
         "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
         "locator": {
           "kind": "symbol",
@@ -62,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:1df4138a0099d91e13ad71a06e616614af275373cfcf5c828b22578c58e84719",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:c80cf8d393cd1a966dddece849ce12ca11d6738a08209670f1bee9717f4668f1",
             "locator": {
               "kind": "symbol",
               "name": "CardsProps"
@@ -74,26 +92,15 @@
       ]
     },
     "10": {
-      "note": "Entry details kept out of the reading path.",
+      "note": "One grouped identifiers disclosure carries the selected entries and their supplied side blobs and digests.",
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:df54bff62096e9aac21cdf6eabe7224f8d2c4f495265b3da917afb42a0d3d715",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:9c488c85bfdc894c5be594878df6304aa523c3f6da137c6acccd1d2c0604a950",
             "locator": {
               "kind": "symbol",
-              "name": "CardDetails"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:917819589fda15620e1c9db39a6cc50605eaf3fab41d22bf1a48024db1a364d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "sideFacts"
+              "name": "EntryIdentifiers"
             }
           },
           "kind": "code"
@@ -101,14 +108,16 @@
       ]
     },
     "11": {
-      "note": "Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered.\n\nAnchor: file",
+      "note": "Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered.",
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:6ea318a93346c861f094594348ca8cfaa4e551e6dc8ef221c2423da4103ba428",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:ce2f8c008a9e3c0a2560e98c0bf915642be765538f9618deeee91b24f5041c8a",
             "locator": {
-              "kind": "file"
+              "end": 639,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -120,8 +129,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
             "locator": {
               "kind": "symbol",
               "name": "CenterExpressions"
@@ -204,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:698a647b4adeaefd20ff7292d8ed050c81005d8c5d7b1677cf701d52dca7435c",
             "locator": {
               "kind": "symbol",
@@ -215,7 +224,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:06971865f56c00cf17e4ccee230ccb26f0aefa86ed3cee69860a047bb1c367bc",
             "locator": {
               "end": 155,
@@ -232,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:4ad483977ffa7147ebc1c1f57bd06a648433d23fe61e10c79e8a5758fb9fb5c3",
             "locator": {
               "kind": "symbol",
@@ -243,7 +252,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:d58b143aa40a7973d398504dfcaf5583b58d0749828477ba92f974cd7ed08c4a",
             "locator": {
               "end": 198,
@@ -260,23 +269,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:60a4a9d3e0c2ec692a5bcc1bf71ff6a55890770a024eb45f576c8ed3355c1c41",
             "locator": {
               "kind": "symbol",
               "name": "FocusedCard"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:84f4dae308f60b8fd03bc93601650d88379b6699412bee6d8521127f778ae151",
-            "locator": {
-              "end": 367,
-              "kind": "line_range",
-              "start": 349
             }
           },
           "kind": "code"
@@ -288,7 +285,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:a53187d9b0475a8b77ae182519e2e396841a4b8982704f0584348a9f80082cc1",
             "locator": {
               "kind": "symbol",
@@ -304,8 +301,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:fa21f246455f59e138d85312669de856e2c29e6e4f2becf4a03a19c876353610",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:698a647b4adeaefd20ff7292d8ed050c81005d8c5d7b1677cf701d52dca7435c",
             "locator": {
               "kind": "symbol",
               "name": "ExpressionCards"
@@ -320,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
             "locator": {
               "kind": "symbol",
@@ -328,15 +325,19 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "21": {
+      "note": "Exact entry/state/side text and a separate supplied-reason sibling outside disclosures.",
+      "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:222146fbd85e5e526a4a807488010e2391265dd1ce9a85a76dbcacd42fac68e8",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
             "locator": {
-              "end": 599,
-              "kind": "line_range",
-              "start": 581
+              "kind": "symbol",
+              "name": "CardCurrentness"
             }
           },
           "kind": "code"
@@ -348,22 +349,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:af3c50e0862a220b112c7a64e4bbf055d60c318a3ec9c8732378c2d91211a8a6",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:4ad483977ffa7147ebc1c1f57bd06a648433d23fe61e10c79e8a5758fb9fb5c3",
             "locator": {
               "kind": "symbol",
               "name": "ReadyCards"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ScopeLine"
             }
           },
           "kind": "code"
@@ -375,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:932b01d473be8eb0ba8728c7ce2d4d20493b5486ccff158548a36a5b62e626d6",
             "locator": {
               "kind": "symbol",
@@ -386,7 +376,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:622715ea4ed9ef3c85e0e1e41d1d6f81e3319f64a612fb1ff1d019522cb98be1",
             "locator": {
               "end": 185,
@@ -403,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:b693112743946824c9835e510dcf73e4a5835fac66be517b358180d61ea52804",
             "locator": {
               "kind": "symbol",
@@ -414,7 +404,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:73dca720d19c272d146f0c686f1bb011ef47131c6e15e95fee5e04d08b9c94ed",
             "locator": {
               "kind": "symbol",
@@ -425,7 +415,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:a27f4f90b504fe28479ac3ff5971dbc513d7a0b19c8ce6cff3837ad12f2c7611",
             "locator": {
               "kind": "symbol",
@@ -436,7 +426,7 @@
         },
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
             "content": "sha256:6a5ff5eccdc7e6e0820b935d480c47cf96402c18d831e90ffa9847fcfe0a6f74",
             "locator": {
               "kind": "symbol",
@@ -452,8 +442,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:0ff0d10c18209c58d29d8bb9078f7748efd870f251efa1592c4466cca964dfcc",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:60a4a9d3e0c2ec692a5bcc1bf71ff6a55890770a024eb45f576c8ed3355c1c41",
             "locator": {
               "kind": "symbol",
               "name": "FocusedCard"
@@ -468,19 +458,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
-            "content": "sha256:9c391e19b40fc23a4d959226b2202402c3e074276b552929342bc321b40f034c",
-            "locator": {
-              "kind": "symbol",
-              "name": "voiceHeading"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:6754d6292870d3feffd4d9a611355a6f85f5a48e9fd65f290df95b824b0e5e4b",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:50246a897668b1b1708317d10fe5e0553fcc3aeae9c5d66592031969d3c99ce1",
             "locator": {
               "kind": "symbol",
               "name": "Voice"
@@ -495,44 +474,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:6b8b4241ac880beddf505cf19f70400658d7acfd9427f21bbb7588d64e6d1d1f",
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:828a885565ed778f47e1fb244674416441b38cdc4fd89a48e0828bb76f17de68",
             "locator": {
               "kind": "symbol",
               "name": "Excerpt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:94abb5546613cfa48160480e97a2e8826ff072a0151a3a151def522c5f1dfbce",
-            "locator": {
-              "kind": "symbol",
-              "name": "UnchangedExcerpt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangedExcerpt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:e49f2fc66cec16c1ae37fd625fab27fcecb8ee20fbafe29e2af157f84155e564",
-            "locator": {
-              "kind": "symbol",
-              "name": "SeparateSides"
             }
           },
           "kind": "code"

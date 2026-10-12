@@ -10,9 +10,12 @@ Sealed worklist repairs on actual L37 replies through the mounted surface: famil
 
 ## Code Commentary
 
-Reply replacement layers synthetic leaf and card answers over the served captures without rewriting captures. Entry-identity checks assert one identifiers disclosure with per-side blobs and no card disclosures, with a twenty-disclosure ceiling. Stale-reason cases assert currentness marks outside details, wire-state cases assert distinct incomplete, absent and unbound readings in both views, and comparison-state cases assert held, refused and mismatched readings with their next actions.
+Reply replacement layers synthetic leaf and card answers over the served captures without rewriting captures. Entry-identity checks assert one identifiers disclosure with per-side blobs and no card disclosures, with a twenty-disclosure ceiling. Stale-reason cases locate marks by entry and side and check that they are outside details; they assert the supplied text on separately addressed reason siblings, not exact mark text, wire-state cases assert distinct incomplete, absent and unbound readings in both views, and comparison-state cases assert held, refused and mismatched readings with their next actions.
 
 ## Evidence
+
+- The F06 journey checks the supplied reason sibling by entry and side outside disclosures. [6]
+
 
 - Canonical family record for the joined journeys [1]
 - Reply replacement over served captures [2]

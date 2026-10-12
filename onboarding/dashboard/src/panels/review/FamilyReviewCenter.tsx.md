@@ -39,7 +39,7 @@ The selected family/member reading area joins MeaningBlock to its own canonical 
 
 - `FamilyCenter`: the family label with open comparison details, the guarantee comparison
   (`GuaranteeComparisonBlock`), `FamilyMemberContext` with distinct member revisions ordered by
-  `orderMemberRows`, the expressions, an open realization-resolution section, the family evidence
+  `orderedCenterMembers`, the expressions, an open realization-resolution section, the family evidence
   and the selected record's worklist items.
 - `MemberCenter`: the member label and `MemberFamilyLabel`, the family guarantee when present,
   `SelectedStatement` with `subjectRows` kept per side, the expressions, open independent facts and
@@ -50,6 +50,10 @@ The selected family/member reading area joins MeaningBlock to its own canonical 
 - `UnavailableMember`: the guarantee comparison, the member's statement, the sentence that this page
   did not supply the member's invariant identity, and the roster continuation. It shows no knowledge
   panel.
+
+### Member order
+
+The center retains distinct member revisions from both sides. Where the served outlined comparison covers the family, `displayedMemberRanks` takes invariant positions from the same `outlineGroups` call the sidebar uses, under the stored triage/authored preference. Both revisions of one invariant occupy its sidebar position. Members without a position remain last with stable relative order. Without an outlined group, `orderedCenterMembers` falls back to `orderMemberRows`; it does not invent an outline, reclassify change facts or discard semantic siblings. The tree is one row per invariant, while the center remains one row per revision.
 
 ### Guarantee comparison
 
@@ -78,22 +82,29 @@ Neither subject review nor that worklist embeds knowledge-file patches.
 
 ## Evidence
 
+- Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback. [33]
+
+
 - The guarantee comparison by kind. [12]
+
 - The unselected centre. [13]
 - The completeness of a family entry's member context. [14]
 - The family centre. [15]
+
 - The independent facts of a member. [16]
 - The member centre. [17]
 - The exported wrapper sets the word-diff scope. [18]
 - Planning marks only from a leaf-wide read of the same comparison. [20]
 
 - Cards for a tree comparison, the file view for a dataset review. [22]
+
 - The invariants one selection reads. [23]
 - The selected entry, member, rows and listed paths. [24]
 
 - Guarantee rendering for one side or a compared pair [26]
 - One expression row per collection with verdict and occurrences [27]
 - Member review centre with subject rows and states [28]
+
 - Card read assembly for the selected centre [31]
 
 - Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel. [19]

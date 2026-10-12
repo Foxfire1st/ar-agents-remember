@@ -3,11 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-        "content": "sha256:e97fb472b667cd471b06ec6173e89065078bdb21c4b9ed38a6f63c5b330f1786",
+        "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+        "content": "sha256:61bd22bc54b223cbcea84d6aaae59dadeea422e3dbf5260f056065298c111db1",
         "locator": {
-          "kind": "symbol",
-          "name": "nav"
+          "end": 111,
+          "kind": "line_range",
+          "start": 102
         }
       },
       "facet": "A follow and its return each call the navigation's `onSelect` once, with a subject and a family context and no options, so neither keeps the tree.",
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-            "content": "sha256:f6701f377661e687c1f1db5c6ddf5823df848151e48dfff6bf421e59bd16fff6",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
             "locator": {
               "kind": "symbol",
               "name": "workspaceMarkerMoves"
@@ -55,27 +56,33 @@
         }
       ]
     },
+    "12": {
+      "note": "The recorded return restores the worklist boolean after the subject before file, layout and full-file state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:4b007cefd05bc996d27d4332e6168bda0ae95d6260b94eb55183ffe3033aaab0",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "The recording stand-ins.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:7aa4d90c35df9edbb78243e2ba60bbac4d1e4cd101e96035f013a9ff8595b7f9",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:ae6985b84901fcb2f05899ea0873038ff9b3c000d0912a00dc44e8cb5c726c27",
             "locator": {
               "kind": "symbol",
               "name": "workspace"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:1a3a7a1d153fc29d51291c7aac449b5718d4469374cb796d49d63eae27c1883f",
-            "locator": {
-              "kind": "symbol",
-              "name": "navigation"
             }
           },
           "kind": "test"
@@ -87,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:5d3f4398309e1028951870e60b4be4171dac7599cff47058a653ca51ec8b2d92",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
             "locator": {
-              "end": 68,
+              "end": 112,
               "kind": "line_range",
-              "start": 43
+              "start": 1
             }
           },
           "kind": "test"
@@ -104,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:a4634e0f998e3510ec00203d4108a6fcc91fbcaeda1720d8c3dc6ba2907fc7f5",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
             "locator": {
-              "end": 94,
+              "end": 112,
               "kind": "line_range",
-              "start": 70
+              "start": 1
             }
           },
           "kind": "test"
@@ -121,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:b5ccd4686ca7936a5c603f4d77ee83ddfc072b3680e2ea480c26459ce5b6b878",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
             "locator": {
-              "end": 110,
+              "end": 112,
               "kind": "line_range",
-              "start": 96
+              "start": 1
             }
           },
           "kind": "test"

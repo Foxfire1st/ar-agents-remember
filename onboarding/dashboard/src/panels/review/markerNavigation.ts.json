@@ -36,6 +36,24 @@
       },
       "rationale": "Following an intent marker selects the invariant with a family context and no options, so it starts the tree afresh.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+        "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspaceMarkerMoves"
+        }
+      },
+      "id": "RLZ-SSDSFR",
+      "invariant": "INV-DFS1CC",
+      "origin": {
+        "handoffEntry": "MIK-L154 marker return worklist",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "The workspace marker capture and restore path owns the reader position, including its worklist state, before restoring the opened path and layout.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -90,12 +108,12 @@
       ]
     },
     "2": {
-      "note": "The recorded reading position.",
+      "note": "The captured position records a worklist boolean, not a lane destination, alongside subject, choice, path, layout and full-file state.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-            "content": "sha256:7fed9955af74dd10fa9da087087d64c60009f87ee1cee5972837362e2bc173be",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:692d5d47aabfe31a929e0b1dbd3913a15ee8140f4885dd2f4609c9361eb9125b",
             "locator": {
               "kind": "symbol",
               "name": "Position"
@@ -106,12 +124,12 @@
       ]
     },
     "3": {
-      "note": "Capture and open, as the scope's moves.",
+      "note": "Capture takes the current worklist boolean and returns the restore closure; open delegates to the marker target selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-            "content": "sha256:f6701f377661e687c1f1db5c6ddf5823df848151e48dfff6bf421e59bd16fff6",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
             "locator": {
               "kind": "symbol",
               "name": "workspaceMarkerMoves"
@@ -171,14 +189,14 @@
       ]
     },
     "7": {
-      "note": "The moves' cases.\n\nAnchor: \"selects the invariant's own review at its member row of the named family\"; \"restores the subject, then the lane, the opened file, the layout and the full-file choice\"",
+      "note": "The marker move cases follow the subject and restore setWorklist before path, layout and full-file choice. The return title retains the word lane, but its current assertion is the worklist setter.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
-            "content": "sha256:0ac9f39ccff578f95be9dc0a82375b1654716c0407d22036343d174fb2b2e86b",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:d77f6f2c96c36e3b2fe8730a32aefa8ddc161adfd2e58bc84d4bbbeba36d5ccf",
             "locator": {
-              "end": 94,
+              "end": 96,
               "kind": "line_range",
               "start": 43
             },
@@ -193,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
             "content": "sha256:b5ccd4686ca7936a5c603f4d77ee83ddfc072b3680e2ea480c26459ce5b6b878",
             "locator": {
-              "end": 110,
+              "end": 112,
               "kind": "line_range",
-              "start": 96
+              "start": 98
             },
             "path": "dashboard/src/panels/review/markerNavigation.test.ts"
           },

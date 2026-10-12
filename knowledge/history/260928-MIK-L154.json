@@ -1,0 +1,529 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L154",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0H9780",
+      "items": [
+        "sha256:e7068c6acc1ce6e9a6022115bba84b18d1058480d250ef965a7527567db0a8a0"
+      ],
+      "reason": "Only the two cockpit test sources change their waiting mechanics: three act flushes and two dispatch-request observations replace elapsed sleeps. No production cockpit, transport, role scope or route ownership changes. Full governing overview reviewed; its operative route/state account has no fixed-sleep contract and remains supported. No route impact; no new independent test result is inferred.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16H2KK",
+      "items": [
+        "sha256:909827d3c017fc354871c369cc115cbbf0b55a23b133c32cecdfc0aef596ca7e"
+      ],
+      "reason": "The import, type or prop wiring passes the existing outline and stored order to the center-order implementation; it adds no distinct invariant beyond the separately recorded shared-order guarantee.",
+      "subject": "hunk:sha256:909827d3c017fc354871c369cc115cbbf0b55a23b133c32cecdfc0aef596ca7e"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-9ZKYWQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-BMFR2T",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS5PFE",
+          "revision": 2
+        },
+        {
+          "id": "INV-CK3PTB",
+          "revision": 2
+        },
+        {
+          "id": "INV-MWCCQM",
+          "revision": 2
+        },
+        {
+          "id": "INV-NSG0D4",
+          "revision": 2
+        },
+        {
+          "id": "INV-QZC5AZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-T1ZHP5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-193SH7",
+      "items": [
+        "sha256:cfca8152fdccb9c91179218293a96e21b379b5d22c1488a0b8b9648a7e9a74e5"
+      ],
+      "reason": "The same-ID marker proof PRF-4B1CFZ now cites its actual outside-selection assertion callback. Family guarantee/routes and all eight member meanings/revisions remain unchanged from the synced base. Full native family enumeration contains83 rows/74 entries with all8 members current. Marker follow/return still calls outside-selection handlers, while retained walk, roster paging, status, reveal/focus and no-extra-read obligations keep their existing owners; no new runtime result is claimed.",
+      "revision": 2,
+      "subject": "FAM-68H10P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1QQ819",
+      "items": [
+        "sha256:3a365b478e13f285a5186742aee9ccdaeb26f248957e30a5ba01b17e93750a7a"
+      ],
+      "reason": "The React Fragment import only supports sibling state/reason rendering; it introduces no separate semantic obligation beyond CardCurrentness.",
+      "subject": "hunk:sha256:3a365b478e13f285a5186742aee9ccdaeb26f248957e30a5ba01b17e93750a7a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CardCurrentness"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "before": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:da56b425e8d2aafceaa433acc3059f7a875271ed403f220a4b1341db4999d1e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CardCurrentness"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "id": "RLZ-8XV20R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4NBQGT",
+      "items": [
+        "sha256:0d7448083ab9c839d83532db2dec864f8bbfb40b8090f393b61241a34cec7320"
+      ],
+      "reason": "The supplied currentness reason remains outside disclosures and keyed to its entry/side. Splitting it into a sibling span restores exact mark text without changing this existing reason-visibility promise.",
+      "revision": 1,
+      "subject": "INV-A9V761"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-89R7HE",
+      "items": [
+        "sha256:205490ba1ff4df6524c29ac879230cfd5551208a14db80116f4e7fe951fa8fe3",
+        "sha256:34c3e78f2e2b3e91e84c2bebe579fd39f812a6948ba6e8641d3f884df598673e"
+      ],
+      "reason": "Only the local timeout override is removed. The captured journey and assertions remain unchanged under the shared hang guard; current reference refresh preserves this existing card contract.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.lane.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9K7TE1",
+      "items": [
+        "sha256:177bc16f3380b935ebc740c157b87db551338b326b1db10c7dbd2360cc7be70e",
+        "sha256:770eb9ca026d44787c319b0f2ae0d318191f89b85c9efaec3d15485015dad50b"
+      ],
+      "reason": "Only the local timeout override is removed. The captured journey and assertions remain unchanged under the shared hang guard; current reference refresh preserves this existing card contract.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.f04.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9N9AMH",
+      "items": [
+        "sha256:f8a9159a31cec97656ab7a3f3b117311752e60b0c00c6ce95b02ffb65e0aa3ad"
+      ],
+      "reason": "The import, type or prop wiring passes the existing outline and stored order to the center-order implementation; it adds no distinct invariant beyond the separately recorded shared-order guarantee.",
+      "subject": "hunk:sha256:f8a9159a31cec97656ab7a3f3b117311752e60b0c00c6ce95b02ffb65e0aa3ad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A71C6W",
+      "items": [
+        "sha256:527d2dcc1773cf368544b24392d7680c25b611df52f681a002695f0dc6591cfa"
+      ],
+      "reason": "The row delegates to the separately recorded fieldValue rule without changing authored-field filtering or adding another obligation.",
+      "subject": "hunk:sha256:527d2dcc1773cf368544b24392d7680c25b611df52f681a002695f0dc6591cfa"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnselectedCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnselectedCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-QW4BVS"
+        },
+        {
+          "after": {
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:e1ce9a8a3f098e668996ff97e8cfa6d42a4e0b2b32620d231035d31265e43e46",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:87de9ad2eefc88f68c0d0eb3325a1f47f9963a55402f485a5f75ed4e8938da0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-SNB6VM"
+        },
+        {
+          "after": {
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:2a6e86d4b2952915b36c083e08763415e668937544ddbf9c369f370f0178607b",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnavailableMember"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:2a6e86d4b2952915b36c083e08763415e668937544ddbf9c369f370f0178607b",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnavailableMember"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-YVFVW1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BZKFR1",
+      "items": [
+        "sha256:c955833c0d5021c3585240e72a124ff3cea079b65e5126ea16534ac7a1766ec7"
+      ],
+      "reason": "The family-center order repair leaves owner-recorded effect eligibility, attempt ordering, missing-field states and the open MeaningBlock intact. No new label, net effect or history meaning is authored; the touched FamilyCenter and carried sibling renderers retain the same contract.",
+      "revision": 1,
+      "subject": "INV-76C676"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D0FT6W",
+      "items": [
+        "sha256:2583c3ddd7f936c25b7bc7fbf7322ada36249b3259bf52c746fa01c95ee70f56",
+        "sha256:c3d9008431b072349cf41cceaa4793f3469ddaa639a05a6f784205f443ee7ddb"
+      ],
+      "reason": "Only the local timeout override is removed. The captured journey and assertions remain unchanged under the shared hang guard; current reference refresh preserves this existing card contract.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.navigationTree.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
+            "content": "sha256:61bd22bc54b223cbcea84d6aaae59dadeea422e3dbf5260f056065298c111db1",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.test.ts"
+          },
+          "before": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:e97fb472b667cd471b06ec6173e89065078bdb21c4b9ed38a6f63c5b330f1786",
+            "locator": {
+              "kind": "symbol",
+              "name": "nav"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.test.ts"
+          },
+          "id": "PRF-4B1CFZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G8BY51",
+      "items": [],
+      "reason": "The existing outside-marker-selection proof keeps its identity, facet and invariant meaning. Its locator now names the assertion-bearing follow/return callback, including both moves and onSelect call-count/arity assertions, rather than the nav setup declaration. This repairs MEMORY-M1-F6 without a source test change or fabricated named callback.",
+      "revision": 2,
+      "subject": "INV-9ZKYWQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GDD33Y",
+      "items": [
+        "sha256:08a21dbe3685694d049169c18c1a8c5f48dfa71e4ceb32eb6683777303905a94",
+        "sha256:242dfcc34569a0b7d00d96cad9aa2ff0db8a57daa8578c22202f485680277ba5"
+      ],
+      "reason": "Only the local timeout override is removed. The captured journey and assertions remain unchanged under the shared hang guard; current reference refresh preserves this existing card contract.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.meaning.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GF3C50",
+      "items": [
+        "sha256:1b8834393abe7f3fb4c01d71a4a198532b5e77479866b241cc32336959a592b8",
+        "sha256:ef4aabb592da762d547cbde950ddbbe76c1fb4abad527d564548409c32982c4f"
+      ],
+      "reason": "The two fixed10ms sleeps become vi.waitFor observations that the dispatch request was recorded, before returning the deferred dispatch or reading its requestId. This adds an observed precondition rather than another acceptance guarantee; callback replacement/removal and positive-control assertions retain their meanings. The card already states stubbed writers/poll and no live-host/global-race proof; no content impact.",
+      "subject": "onboarding:dashboard/src/cockpit/roleChatDispatch.repair.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2K9NMR",
+          "revision": 1
+        },
+        {
+          "id": "INV-31006K",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GFK5N",
+          "revision": 1
+        },
+        {
+          "id": "INV-58S9SG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5RTVBT",
+          "revision": 1
+        },
+        {
+          "id": "INV-75Y48P",
+          "revision": 1
+        },
+        {
+          "id": "INV-79SPV4",
+          "revision": 1
+        },
+        {
+          "id": "INV-9HMJ13",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VPYCZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A9V761",
+          "revision": 1
+        },
+        {
+          "id": "INV-CC4HSS",
+          "revision": 1
+        },
+        {
+          "id": "INV-DYDMDD",
+          "revision": 1
+        },
+        {
+          "id": "INV-EF52CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HC2KB7",
+          "revision": 1
+        },
+        {
+          "id": "INV-J1DFZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-KBXRZC",
+          "revision": 1
+        },
+        {
+          "id": "INV-NGZMXY",
+          "revision": 1
+        },
+        {
+          "id": "INV-P4Z520",
+          "revision": 1
+        },
+        {
+          "id": "INV-S545PW",
+          "revision": 1
+        },
+        {
+          "id": "INV-STW97J",
+          "revision": 1
+        },
+        {
+          "id": "INV-TEDBFZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-VFT6GP",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPD8AJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-VQFVF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZZEZY",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z938DS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JV6PV2",
+      "items": [
+        "sha256:5049c8ab3849d8b0ea1ff7cab3d7f2e40c8d20ce9ea7b496c5ccfe39fb9df017"
+      ],
+      "reason": "Examined all twenty-six members against the recorded-comparison/open-main-page guarantee. Exact currentness mark text and a sibling reason preserve the existing visible-reason member and disclosure discipline. Comparison selectors, page filters/return, source content and worklist states are unchanged; guarantee, membership and six routes remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-AWDGE2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N4RMX7",
+      "items": [
+        "sha256:62304d62c5700e88019f45c5ab9b948085e90252c2b4650dd9c09749bb138836",
+        "sha256:67d1d64a9dc947530905a6311e86683099e3016ca06b0475bb62385eb94add86"
+      ],
+      "reason": "The settled-content rerender replaces a fixed50ms sleep with an act flush; the unchanged resolve-count and notes-root assertions still witness reuse of settled content. The request-key/content-liveness account and mocked-fetch boundary remain accurate; no content impact and no runtime pass inferred.",
+      "subject": "onboarding:dashboard/src/panels/TaskNotes.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P6WNP8",
+      "items": [
+        "sha256:70c4da6af7fb5642c2ea219d55ce5c1e6f18854429ada640a6468599ac165938",
+        "sha256:4460ab276423dee4185a44e21b62fa4aaac102f7aab3eb83d310747145b6e496"
+      ],
+      "reason": "The three fixed50ms sleeps are replaced by Testing Library act flushes after rerender, feature choice and delayed-options settlement. Existing scope-effect, Start-offered and retained-Result assertions are unchanged. The card describes those component cases and their mocked-host boundary, not a wall-clock wait policy; no content impact. This source inspection is not a fresh execution or global race proof.",
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PF9SJJ",
+      "items": [
+        "sha256:62df74b81f241fe084d087fddceb72751f14d577bb758c2f5113b23ec40fb7aa"
+      ],
+      "reason": "The import, type or prop wiring passes the existing outline and stored order to the center-order implementation; it adds no distinct invariant beyond the separately recorded shared-order guarantee.",
+      "subject": "hunk:sha256:62df74b81f241fe084d087fddceb72751f14d577bb758c2f5113b23ec40fb7aa"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TH4BJZ",
+      "items": [
+        "sha256:35017576d8f0efa3925b3f7d13c89447683becb787ea60b107cd121f6b0e2b58",
+        "sha256:28232a80c186da01e1fc27208ce62ad8d1d3005d02cb3e692804442a81dc31bf",
+        "sha256:ebcc7909a3f3643a9291f51ae3f642d9a6bd962a8cc5678c6f4f86de7710c8c2"
+      ],
+      "reason": "The retained-folder rerender replaces a fixed50ms sleep with an act flush, adding only the necessary act import. The no-extra-folder-read assertion and subsequent demanded-load assertions remain intact. Existing folder callback stability/cache and component-fixture boundaries remain accurate; no content impact, not live-host or whole-suite qualification.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TZE5ZR",
+      "items": [
+        "sha256:72bc14e469d8792c37fd8d0814cf3096c6800f16fb7614d65be9ab8b87915766"
+      ],
+      "reason": "Only the reader test await/import changes: act flushes the retained-folder rerender before the same read-count and demand assertions. The production viewer/cache/API, takeover and folder routing are unchanged. Existing route account remains supported; no route impact and no broad runtime proof is inferred.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-27SPEH",
+          "revision": 1
+        },
+        {
+          "id": "INV-76C676",
+          "revision": 1
+        },
+        {
+          "id": "INV-777108",
+          "revision": 1
+        },
+        {
+          "id": "INV-AY7A8V",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZVMX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-DEDX8T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MGXG8S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKFP2R",
+          "revision": 2
+        },
+        {
+          "id": "INV-QAR0F3",
+          "revision": 1
+        },
+        {
+          "id": "INV-S34RA5",
+          "revision": 1
+        },
+        {
+          "id": "INV-S44D2D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W09GQM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WR2WAJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2XTN1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WHJ7EE",
+      "items": [
+        "sha256:1837e29f3977653e047711360dee08b1f066fe667f1826d74dce26663d6c4c64"
+      ],
+      "reason": "Examined all fourteen members against the comparison-outline navigation guarantee. Center order is reconciled with the shared outline while row compactness, persisted views, traversal, kept walk, record-only effects and open main-page semantic content retain their existing ownership; guarantee, membership and four routes remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-A3YKR5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z21GFX",
+      "items": [
+        "sha256:148246315fef981d591dfdfb9d30d79cb7ab7ff1af584552e089064dbdad0014",
+        "sha256:35dc4738f681fd5fff9eecdd5039368d88ce36b7dfc58be831fe2283db0a54db"
+      ],
+      "reason": "Only the local timeout override is removed. The captured journey and assertions remain unchanged under the shared hang guard; current reference refresh preserves this existing card contract.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.sealedPageRepair.test.tsx"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

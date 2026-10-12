@@ -24,7 +24,8 @@ The central reading path's code and test expressions for a tree comparison: one 
   otherwise `ReadyCards` renders the cards.
 - **`ReadyCards`.** A counts line (`n locations · k changed · m unchanged`, plus `not comparable` when some are
   undetermined, with `data-changed-count` and `data-unchanged-count`), the `ScopeLine` when the roster is bounded,
-  an explicit "no realization or proof entry" line when there are none, then one `FocusedCard` per card.
+  an explicit "no realization or proof entry" line when there are none, then one selection-wide
+  `EntryIdentifiers` disclosure before the card iteration, followed by one `FocusedCard` per card.
   There is no `OpenedFile` rendering path outside those cards.
 - **One full file at a time, in the card that asked (review F1).** The open state is the card's key; a path opened
   by a card reads in that card. One click gives one `SourceContent` read in the
@@ -39,7 +40,8 @@ The central reading path's code and test expressions for a tree comparison: one 
   rationale directly above the excerpt), then the side lines (`Before · L…`, `After · L…`, or one "Before and after
   · … · the same text on both sides" line for an unchanged card whose ranges match), then the excerpt, the
   MIK-R03 not-current marks (`<entry> <state> on the <side> side`), and the actions: **Full file**,
-  **All changed files (n)** (opens the comparison change-set viewer) and the grouped identifiers disclosure.
+  **All changed files (n)** (opens the comparison change-set viewer). The grouped identifiers disclosure
+  belongs to `ReadyCards` once for the selection, not to any card's actions.
 - **A voice (`Voice`).** The heading names the invariant, the role (or "proof facet"), MIK-R11's planning mark
   when the workspace passed one (`touched invariant · planned`), and "added" or "retired in this leaf". The body is
   the authored rationale (or facet); a missing one is "No authored rationale is recorded for <ID>." (rule 2), never
@@ -81,7 +83,7 @@ The central reading path's code and test expressions for a tree comparison: one 
   loaded n of m** (`ScopeLine`, with `cardScope`).
 - The renderer writes no explanation of its own; every sentence about an entry is the entry's authored text or a
   fixed state label.
-- Identifier/blob/content provenance stays in a grouped disclosure; not-current reasons remain open in the reading path.
+- Identifier/blob/content provenance stays in a grouped disclosure; not-current reasons remain open in the reading path. `CardCurrentness` keeps the mark text exactly `<entry> <state> on the <side> side`. A supplied reason is a sibling `review-card-currentness-reason` span with the same entry and side, outside every disclosure; it never extends the mark text or changes the owner-supplied state.
 - **An excerpt that draws a changed line draws its hunk's intent mark** (MIK-L34; the candidate invariant recorded
   on `IntentMarkers.tsx.md`): nothing here decides a mark; the excerpt passes the sides it draws and places what
   `useExcerptMarking` returns.
@@ -91,6 +93,9 @@ The central reading path's code and test expressions for a tree comparison: one 
 No additional work is asserted by this card.
 
 ## Evidence
+
+- Exact entry/state/side text and a separate supplied-reason sibling outside disclosures. [21]
+
 
 ### Docs References
 
@@ -103,17 +108,26 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope. [1]
+
 - Loading, unavailable and not-a-tree-comparison states. [2]
+
 - The counts, the scope line and one full file keyed by the card (F1). [3]
+
 - A return to a marker followed from a card's full file reopens that card (MIK-L34). [4]
 - Side lines, one line for an unchanged same region, and the side-state texts. [5]
 - One card: header, voices, side lines, excerpt, marks, actions. [6]
+
 - A voice: the authored rationale or facet, or the named gap. [7]
+
 - Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34). [8]
+
 - The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active. [9]
-- Entry details kept out of the reading path. [10]
+- One grouped identifiers disclosure carries the selected entries and their supplied side blobs and digests. [10]
+
 - Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered. [11]
+
 - The one caller, which mounts cards only for a tree comparison. [12]
+
 - The card-state cases. [13]
 - The F1 case. [14]
 - The marker cases on real cards: the exact card reopened, and the excerpt marks with an unreadable memory side, other content and an unchanged file. [15]
@@ -124,5 +138,6 @@ No cross-repo boundary is crossed by this file.
 - Card collection assembly with grouping, order and counts [16]
 - Grouped ready cards with returning-card state [17]
 - One focused card with roles, voices and excerpts [18]
+
 - Link from a card to the full changed-file inventory [19]
 - In-card full file with markers through the shared pane [20]

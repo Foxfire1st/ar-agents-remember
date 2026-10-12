@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+        "blob": "925e08b5934b2a010386a90042979862fdc83e68",
+        "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
+        "locator": {
+          "kind": "symbol",
+          "name": "fieldValue"
+        }
+      },
+      "id": "RLZ-1HWMND",
+      "invariant": "INV-6P3WZF",
+      "origin": {
+        "handoffEntry": "MIK-L154 knowledge one-sided statements",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "fieldValue preserves the distinct meanings of an unrecorded field and a recorded empty value in visible record facts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "925e08b5934b2a010386a90042979862fdc83e68",
         "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
         "locator": {
           "kind": "symbol",
@@ -73,16 +91,15 @@
       ]
     },
     "12": {
-      "note": "The open record facts filter authored fields and display detection signals and combined unresolved references.\n\nAnchor: current inclusive source extent",
+      "note": "The open record facts filter authored fields and display detection signals and combined unresolved references.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
-            "content": "sha256:315fcb5d88a6d6d194475bbdeca1f599db68ae1e3071877da303a7736f3f18b5",
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
+            "content": "sha256:31c006619c66898f7583658c2f1b6f3653814008f4f5e644aea7d729451af8da",
             "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 27
+              "kind": "symbol",
+              "name": "RecordFacts"
             }
           },
           "kind": "code"
@@ -90,16 +107,15 @@
       ]
     },
     "13": {
-      "note": "Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback.\n\nAnchor: current inclusive source extent",
+      "note": "Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
             "content": "sha256:862842592f5d9d34e76e9258a4e1237e2d4af789453a683c1e9c48d1cf610b47",
             "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 70
+              "kind": "symbol",
+              "name": "ReviewMainFacts"
             }
           },
           "kind": "code"
@@ -107,16 +123,31 @@
       ]
     },
     "14": {
-      "note": "Compact provenance identities remain in the technical disclosure, with pending state and paging outside it.\n\nAnchor: current inclusive source extent",
+      "note": "Compact provenance identities remain in the technical disclosure, with pending state and paging outside it.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
             "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
             "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 121
+              "kind": "symbol",
+              "name": "ReviewTechnicalDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Undefined and recorded-empty field values have distinct explicit labels while other text passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
+            "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "fieldValue"
             }
           },
           "kind": "code"
@@ -182,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
             "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
             "locator": {
               "kind": "symbol",

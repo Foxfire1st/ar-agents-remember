@@ -59,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
             "content": "sha256:cc8f119cfe770909fc9c8ae05f28ff757d8082502aecde2e38fb18b1aa6a8ad4",
             "locator": {
               "kind": "symbol",
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
             "content": "sha256:4e6b085b8907f1dad4c41fe96756d5630383ad4f796a96b42e368910ebf062ac",
             "locator": {
               "end": 257,
@@ -200,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
             "content": "sha256:5ab7719aafb594b04b832b8e8dc74c4a7dad4eadf4548dc21bc3fc005fa58bd6",
             "locator": {
               "end": 466,
@@ -450,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
             "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
             "locator": {
               "kind": "symbol",
@@ -1302,8 +1302,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
-            "content": "sha256:60218697993751bc082c6fc766fd97de2ebff0f858dc25b050877af80c7b39f3",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:4dbe8d86dda530af3d5d2a346df4f267f844e02f7baaa91716a0366cc612710c",
             "locator": {
               "kind": "file"
             },
@@ -1324,6 +1324,57 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "164": {
+      "note": "Family-center order shares the outline ranking while retaining the semantic revision roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderedCenterMembers"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "165": {
+      "note": "Exact currentness mark words coexist with an open supplied-reason sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CardCurrentness"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "166": {
+      "note": "Non-authored field rows distinguish absent and recorded-empty values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
+            "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "fieldValue"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
           },
           "kind": "code"
         }
@@ -1480,7 +1531,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
             "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
             "locator": {
               "kind": "symbol",

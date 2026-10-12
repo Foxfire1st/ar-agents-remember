@@ -18,4 +18,5 @@ The F05 case holds the lane reply, asserting the pending attribution source and 
 - Admitted response wrapper for synthetic replies [2]
 - Tree-less family with unconverted outline for F08 [3]
 - Newer-comparison lane and trees held for F04 [4]
+
 - Synthetic linked binary and mode-only inventory for F10 [5]

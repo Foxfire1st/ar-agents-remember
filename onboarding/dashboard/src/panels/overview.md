@@ -4,6 +4,12 @@
 
 Dashboard panel compositions and their separately owned reading, navigation, source and evidence surfaces. Reviewer navigation is catalogue-outline driven; full guarantees/statements, selected-record knowledge and source/evidence reading stay in the main page, not in the rail. The current reviewer slice below supersedes older matrix/tree/worklist and knowledge-panel placement accounts preserved as history.
 
+Family-center member order follows the sidebar's served outline under the same stored order, while retaining per-revision content and a no-outline fallback. Currentness state marks keep their exact entry/state/side words with supplied reasons beside them outside disclosures. Selected one-sided statements and non-authored field rows retain the explicit absent/unreadable/recorded-empty distinctions in the main reading area; Technical details remains an identity/provenance owner.
+
+- Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
+- Exact currentness mark words coexist with an open supplied-reason sibling. [165]
+- Non-authored field rows distinguish absent and recorded-empty values. [166]
+
 ## Hot Path Summary
 
 Trace review reads through ReviewSurface and ReviewWorkspace, compact catalogue-outline navigation through FamilyTree, selected family/member content through FamilyReviewCenter, recorded owner judgments through MeaningEffects, and independent source/evidence/worklist owners without another candidate request.

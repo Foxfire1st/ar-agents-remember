@@ -6,14 +6,14 @@
 
 ## Purpose
 
-`j` in the mounted reviewer (requirement MIK-R33), over the served bodies of the store-authored comparison (`triage.family`, `triage.memberA`, `triage.memberH` and `triage.entries`; receipt `triage.capture-provenance.json`). `ReviewSurface` is the real component and only `fetch` is stubbed. 1 case.
+`j` in the mounted reviewer (requirement MIK-R33), over the served bodies of the store-authored comparison (`triage.family`, `triage.memberA`, `triage.memberH` and `triage.entries`; receipt `triage.capture-provenance.json`). `ReviewSurface` is the real component and only `fetch` is stubbed. The old entries capture is joined to a labelled synthetic outline over the captured family context: only index fields are synthesized, and semantic change facts remain the walked ones. All view makes the complete roster available for the order comparison. The tree and center are compared at invariant granularity, not by confusing invariant selectors with member revision IDs.
 
 ## Code Commentary
 
 ### The case
 
 - The reviewer opens on the family. The center's member list follows the tree's displayed order, in triage order and, after one click on the order control, in authored order; a second click returns to triage order.
-- The family's row is focused and `j` is pressed. The member review of the next change is read, as a click would read it; its row is marked `aria-current` and has focus; the workspace is the same DOM node; and the family's breakdown is still on screen.
+- The family's row is focused and `j` is pressed. The member review of the next change is read, as a click would read it; its row is marked `aria-current` and has focus; the workspace is the same DOM node; and the family context remains under the member review. The family breakdown is asserted before leaving the family review, where it now belongs. The selected A words are pinned through the word-diff DOM: shared stem and both removed/added fragments, not the revision label alone.
 - A second `j` selects the following change, again with the mark and focus on its row and the same workspace node.
 
 ### How the case stays stable on a loaded machine
@@ -43,8 +43,8 @@ No additional work is asserted by this card.
 
 ## Evidence
 
-- The suite's statement, its bounds and its stubbed reads. [3]
-- The one case: the center's order in both orders with a wait after each click on the order control, the two moves, and the kept context, focus and workspace. [4]
+- Captured bodies with a labelled synthetic outline and condition-based order/selection waits. [3]
+- The mounted case compares both orders at invariant granularity and pins actual changed words, context, focus and the unchanged workspace. [4]
 
 ### Docs References
 
@@ -53,11 +53,6 @@ No domain documentation source is configured; the requirement packet `MIK-R33@v1
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
-
-| Restored finding | Primary anchor | Tip range |
-| --- | --- | --- |
-| The suite's statement and its stubbed reads. | `beforeEach` | dashboard/src/panels/review/ReviewSurface.triage.test.tsx:1-60 |
-| The one case: the move, the kept context, focus and workspace, and the centre's order. | `moves the selection to the next change and keeps family context, focus and workspace` | dashboard/src/panels/review/ReviewSurface.triage.test.tsx:62-132 |
 
 ### Cross-Repo References
 

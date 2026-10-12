@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
             "content": "sha256:9d58c8f479deb5faf57064edc60b9f835f13e781893f62214d5cf73b970bf8d2",
             "locator": {
               "kind": "symbol",
@@ -36,16 +36,16 @@
       ]
     },
     "11": {
-      "note": "Held-lane rail keeping All usable\n\nAnchor: `rail`",
+      "note": "Held-lane rail keeping All usable",
       "targets": [
         {
           "anchor": {
-            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
-            "content": "sha256:44b1bb6c79b4128a725fc7110fe5748ffd2b4f62a09fbaa251d4b653ec008b41",
+            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
+            "content": "sha256:af957bc6f23e3996cdad346e9108fd75e4793b4b351d68e6f5a468efe1b92939",
             "locator": {
-              "end": 57,
+              "end": 82,
               "kind": "line_range",
-              "start": 41
+              "start": 1
             }
           },
           "kind": "test"
@@ -53,16 +53,16 @@
       ]
     },
     "12": {
-      "note": "Unanswered worklist reading in its own view\n\nAnchor: `rail`",
+      "note": "Unanswered worklist reading in its own view",
       "targets": [
         {
           "anchor": {
-            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
-            "content": "sha256:38437d1a1bc95ee1156bc6ad202d2c4e2708d83ed591c08ccd802a20a4040010",
+            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
+            "content": "sha256:af957bc6f23e3996cdad346e9108fd75e4793b4b351d68e6f5a468efe1b92939",
             "locator": {
-              "end": 83,
+              "end": 82,
               "kind": "line_range",
-              "start": 72
+              "start": 1
             }
           },
           "kind": "test"
@@ -193,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "blob": "ae19dd95ada9e1cdc002bb29c4ef20a32e7c700d",
             "content": "sha256:d987dbb9be8890dcabfba1d461847ddf283759e0937dc7fefd2bd4dce3cb6e7a",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A second independently sorted center diverges from the sidebar, so keyboard navigation and the shown semantic roster cease to agree."
+  },
+  "applicability": "A family review center and sidebar over the same served comparison outline and stored triage/authored order.",
+  "conditions": [
+    "The tree indexes invariant identities while the center retains distinct before/after member revisions.",
+    "An outlined group supplies display positions; unknown positions remain last in stable relative order.",
+    "Without a covering outlined group, the center retains the existing orderMemberRows fallback."
+  ],
+  "exclusions": [
+    "Inventing an outline, classifying change facts on the client, or deleting semantic siblings."
+  ],
+  "id": "INV-719D48",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.triage.test.tsx green incl. DIAGNOSTIC-mutation discriminator proof (s6-f1-proof-fail.log fails as required; s6-focused-final.log green)"
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "MIK-L154 center follows tree order",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The family center member list follows the sidebar tree's displayed order, and the selected changed statement's actual words are asserted through the word-diff DOM.",
+  "status": "proposed",
+  "supersedes": []
+}

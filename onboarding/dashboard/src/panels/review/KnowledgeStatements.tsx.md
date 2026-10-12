@@ -6,14 +6,11 @@
 
 ## Purpose
 
-The statement area of pane 1: the two recorded operands, and the state of each side. It is the one
-owner of the rule ICR-R06@v1 states — **a knowledge addition or removal renders the complete
-available statement alongside the explicit known-absent side** — and it exists because the surface
-that used to own that area got it wrong in a way no gate caught: `ReviewSurface`'s `KnowledgePane`
-drew the shipped diff only when *both* sides were `present`, and its `sideState` helper returned
-`null` for the side that *was* present, so an added or a removed statement rendered as two muted
-state lines and **no statement text at all**. The header comment states that history and the rule
-that replaces it, and `ReviewSurface` now delegates the whole area to this component.
+The declared-operand statement renderer and fallback for the selected-subject reading area. Within this component, a readable addition/removal retains the complete available statement beside its explicitly named absent side; an unreadable opposite is not manufactured into an empty operand.
+
+It is not the exclusive owner of that display obligation. In the converted-tree selected-revision path, `SubjectReview.SelectedStatement` calls `IntentStatementBody`; added and removed revisions use `IntentWordDiff.OneSidedStatement`, which directly draws labelled prose and the opposite side's named state. That path delegates here when its expected present operand is not present. The other/raw declared-operand calls and the four local branches below remain this component's responsibility.
+
+The module header records the historical defect in the former technical `KnowledgePane`: it drew the diff only for two present operands and omitted the present side's words in one-sided reads. That history explains these local branches, not exclusive ownership or current placement behind Technical details.
 
 The component is display-only in the same sense the rest of the surface is: it renders the two
 `ReviewSideContent` values the payload carried, holds no state, makes no request, and adds no
@@ -24,7 +21,7 @@ a second viewer.
 
 ### Logic
 
-The caller may supply the split or inline DiffMode; the default remains split for the technical statement pane. Both two-sided and one-sided diffs honor that layout. Operand presence/unavailability rules and full statement content are unchanged.
+The caller may supply the split or inline DiffMode; the component default remains split. Its placement is the selected-subject main reading area, not Technical details. Both two-sided and one-sided diffs honor that layout. Operand presence/unavailability rules and full statement content are unchanged.
 
 **Every branch is decided by a side's declared `state`, never by inspecting its text.** That is the
 module header's own rule and it is what makes the four cases below exhaustive without a fifth: the
@@ -54,9 +51,7 @@ the present operand in a shipped `FilePane`. A diff here would claim the opposit
 known-empty document — precisely the claim the server's `absent`/`unresolved` split exists to make
 unavailable, and precisely the empty-string operand the packet forbids.
 
-**Neither side `present` → both sides' own state lines and nothing else.** This is the task-context
-pane, where no subject was compared and neither side may read as an empty operand; no diff and no
-content pane are rendered.
+**Neither side `present` → both sides' own state lines and nothing else.** When a selected subject supplies no readable operand, neither side may read as an empty document; no diff or content pane is rendered. This component does not decide whether the surface mounts a knowledge pane for an unselected task-context view.
 
 **The text is never re-typed here.** A present side's `text` is what the server recorded, and a side
 that is not `present` carries no text at all (the model refuses one that does), so nothing in this
@@ -65,8 +60,7 @@ against the real `DiffPane`/`FilePane` DOM rather than against a prop.
 
 ### Conventions
 
-The component takes exactly two props, `before` and `after`, both `ReviewSideContent` from
-`../../data/review`; it declares no client and holds no state. Its helpers are plain module-level
+The component takes `before` and `after`, both `ReviewSideContent` from `../../data/review`, plus optional `mode`; it declares no client and holds no state. Its helpers are plain module-level
 functions with lower-case names (`unavailable`, `sideLine`, `bothPresent`, `oneSidedDiff`,
 `availableContent`) and the exported component is the one declaration in `PascalCase`, matching the
 route's idiom. `sideLine` is the single source of the `review-before-state` / `review-after-state`
@@ -87,9 +81,7 @@ idiom.
   change-set route and `FilePane` from the file-viewer route; this module declares neither.
 - **Display-only.** No request, no control, no state, no conclusion; the component renders records
   another owner stored.
-- **Boundary.** It owns the statement area's *rendering* contract only. What a side's state and text
-  are is `mcp/src/agents_remember/application/review_statement_sides.py`'s contract, and the payload
-  those values arrive in is the server's wire shape; this file re-derives neither.
+- **Boundary.** It owns its declared-operand/fallback rendering, not every selected-revision statement path. `IntentWordDiff` owns labelled addition/removal prose reached through `SubjectReview`. A side's state and text remain `mcp/src/agents_remember/application/review_statement_sides.py`'s contract and the payload remains the server's wire shape; this file re-derives neither.
 
 ### Todos
 
@@ -111,10 +103,7 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the component's own header comment
-and its four branches, the shipped renderers it reuses, the model types it consumes, the surface
-that now delegates to it, and the case module that drives the real `ReviewSurface` over the real
-client.
+The current account is grounded in the component's four branches, its shipped primitives and wire types, and both selected-statement caller paths. The header's technical-pane incident is historical; it does not establish exclusive current ownership. Mounted renderer cases drive the real surface and client.
 
 **Test-name anchors are quoted, not backticked.** A row that cites one case names it by the
 double-quoted string the case passes to `it`: a test name is several words, so a backticked span is not
@@ -130,13 +119,13 @@ identifier-shaped and the citation grammar refuses it as an anchor.
 - **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** [8]
 - The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. [9]
 - The pane whose two statement fields feed this component. [10]
-- The technical knowledge pane delegates its statement operands to KnowledgeStatements. [11]
+- SelectedStatement reaches labelled addition/removal prose in IntentWordDiff; KnowledgeStatements handles raw/fallback declared operands rather than every selected revision. [11]
 - The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. [12]
 - The content viewer the unreadable-opposite path reuses, and its own test id. [13]
 - **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.** [14]
 - **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts `FilePane` content with no `diff-pane` present.** [15]
 - The case that a both-present area names no side, and the case that each of the three non-present states is carried through as its own token. [16]
-- The case that no subject compared renders two named states and neither pane. [17]
+- A selected subject with two unresolved operands renders two named states and neither pane. [17]
 - **The server-side half of the same contract: the statement sides and the field rows these branches are a function of.** [18]
 - The owner of the data half of this contract. [19]
 

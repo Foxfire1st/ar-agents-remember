@@ -12,7 +12,7 @@ Render one admitted review payload's open main-page facts separately from compac
 
 ### Logic
 
-- `RecordFacts` excludes statement, applicability, conditions, exclusions, essential_conditions and joint_guarantee from its non-authored field-change list. It renders detection signals and combines knowledge/source/evidence/link unresolved references, with reason content explicitly marked in the open page.
+- `RecordFacts` excludes statement, applicability, conditions, exclusions, essential_conditions and joint_guarantee from its non-authored field-change list. `fieldValue` distinguishes undefined `(absent)` from a present empty string `(recorded empty)`; neither is printed as a blank. Other recorded text is passed through unchanged. These field rows are main-page facts, not content moved back into Technical details. It renders detection signals and combines knowledge/source/evidence/link unresolved references, with reason content explicitly marked in the open page.
 - `ReviewMainFacts({ payload, laneRead, onAllChanges })` consumes the optional lane read for attribution count wording, otherwise displays the payload's landed counts. It prints non-current staleness, the assessment submission state/reason and next action. Its optional All changes button invokes the supplied callback; it does not fetch or own comparison selection. There is no SourceExplorer pointer or LaneAttributionLists renderer here.
 - `ReviewTechnicalDetails({ payload, unanswered, paging })` renders a pending/unavailable paragraph outside the disclosure when payload is null, then the supplied paging node and always-mounted provenance `<details>`. With a payload it prints comparison/policy, retained revision groups, source expansion reference/command, evidence/observation/assessment IDs and the dispositions accepted by the existing authority. Those dispositions are not publication approval.
 - The TechnicalDetails type still permits an optional laneRead compatibility prop, but this export does not destructure or use it; current lane attribution is in ReviewMainFacts. No old KnowledgePane, SourcePane, EvidencePane, SubmissionBlock or KnowledgeStatements delegation survives in this module.
@@ -23,22 +23,17 @@ The parent owns admitted payload/subject binding. A pending or unavailable subje
 
 ## Evidence
 
+- Undefined and recorded-empty field values have distinct explicit labels while other text passes through. [15]
+
 ### Repo-Internal References
 
 
 
 - The open record facts filter authored fields and display detection signals and combined unresolved references. [12]
 
-
-
-
 - Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback. [13]
 
-
-
-
 - Compact provenance identities remain in the technical disclosure, with pending state and paging outside it. [14]
-
 
 ## Historical pre-R86 account — preserved, superseded, not current assertions
 

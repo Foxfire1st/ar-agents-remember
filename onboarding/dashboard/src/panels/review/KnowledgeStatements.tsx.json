@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/panels/review/KnowledgeStatements.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+        "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeStatements"
+        }
+      },
+      "id": "RLZ-WC4GB0",
+      "invariant": "INV-6P3WZF",
+      "origin": {
+        "handoffEntry": "MIK-L154 knowledge one-sided statements",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "KnowledgeStatements chooses the content/diff path by the two declared side states, preserving available words and named absence without manufacturing an unreadable operand.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The header's own record of the defect and the rule: the pane drew the diff only when both sides were present while the side line returned null for the present side, and the four branches that replace it are decided by declared state.**\n\nAnchor: \"neither side `present`\"",
@@ -36,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:d33a72d2445e01f094245c83ba9e0d499538e184f9b5758cd549081cbc7cf999",
             "locator": {
               "end": 131,
@@ -49,7 +68,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:c914d5c6dbcb6a6b42cb9614a45346f2b87c88501b159b2abb5d9f764b8e9f39",
             "locator": {
               "end": 125,
@@ -76,17 +95,44 @@
       ]
     },
     "11": {
-      "note": "The technical knowledge pane delegates its statement operands to KnowledgeStatements.",
+      "note": "SelectedStatement reaches labelled addition/removal prose in IntentWordDiff; KnowledgeStatements handles raw/fallback declared operands rather than every selected revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
-            "content": "sha256:ffdf01a96b75a577dd0a4006ab295850c28fe3a47147332ad17c10a3d07a844c",
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:137b9574989befb3185490f71dd6f2ebc7d39d29c1a81f14db72d80f5ce7ba5c",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgePane"
+              "end": 330,
+              "kind": "line_range",
+              "start": 255
             },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "content": "sha256:cbf9a937a9f9c2510ba6c6e3992cf81526d69f31a6ddca66c4167bd1ce79327c",
+            "locator": {
+              "end": 845,
+              "kind": "line_range",
+              "start": 833
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553269791356dd9c19a93d3c0b2ce537092be34e",
+            "content": "sha256:dbed028f02956b852d2d74ff50f821297df6edc7855c75c969e2a5580784ec67",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 443
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
           "kind": "code"
         }
@@ -246,16 +292,16 @@
       ]
     },
     "17": {
-      "note": "The case that no subject compared renders two named states and neither pane.\n\nAnchor: \"draws no diff and both named states when no subject was compared\"",
+      "note": "A selected subject with two unresolved operands renders two named states and neither pane.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
-            "content": "sha256:4fbfa2a76c5ea6eebaddc2e94271ce37326cf47072e49bcad829e4df998b26bc",
+            "blob": "5575f5d9cde75f6c69c4d2ddd17fd19b9b337e5b",
+            "content": "sha256:ffb19a21e401d1be6424943d293cc7aaddfe6ceaf4fe22b27f286c96ce9e71ff",
             "locator": {
-              "end": 290,
+              "end": 305,
               "kind": "line_range",
-              "start": 277
+              "start": 291
             },
             "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
           },
@@ -451,7 +497,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:dfe9f255a9428d0c5cd6076a77be5615934cd566078199b7fccd09c1a005b982",
             "locator": {
               "kind": "symbol",
@@ -463,7 +509,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:b1bc8405dc81f3431e8033b19c5a5dd84c585575f20fdef18600302baec244ed",
             "locator": {
               "end": 63,
@@ -489,7 +535,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:c5c94188c49107edc94da6428519691ca83b2877ccb12923aa748f3d14b199ea",
             "locator": {
               "end": 36,
@@ -502,7 +548,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:b2f9ebe1a4df834c2c450bb582204968c8ba1604405928f82ff734397530661d",
             "locator": {
               "end": 128,
@@ -528,7 +574,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:d390041404bd0c1eea6bdc71a052478a88759925edae3fb96415bb4f1dbef89e",
             "locator": {
               "end": 37,

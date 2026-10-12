@@ -8,33 +8,22 @@
 
 The **renderer half** of ICR-R06@v1. Nine cases drive the real `ReviewSurface` over the real
 intent-review client with only `fetch` stubbed, so the payload below travels the same route a
-browser's does: JSON in, `getJson` decode, component tree, `KnowledgeStatements`, and the shipped
-`DiffPane`/`FilePane` CodeMirror primitives — which do render in jsdom because
+browser's does: JSON in, `getJson` decode and the mounted component tree's actual selected-statement
+caller or declared-operand fallback, with shipped diff/viewer primitives — which do render in jsdom because
 `dashboard/src/test/setup.ts` supplies the `matchMedia`, `ResizeObserver` and
 `Range.getClientRects` answers jsdom omits. Nothing here renders a hand-rolled stand-in for the
 statement area, and no assertion reads a prop the test itself passed: every case asserts what the
 rendered DOM contains.
 
-The **production-composition half** of the same requirement lives in
-`mcp/tests/test_knowledge_review_one_sided_statements.py`, which drives the real `compose_review`
-over two real snapshots. The two halves assert the **same** statements, the same absent/unresolved
-details and the same `acceptance_ref`/`provenance` field rows, so a change to either half's contract
-fails in one of the two.
+The production-composition suite in `mcp/tests/test_knowledge_review_one_sided_statements.py` independently reads real snapshots through `compose_review`. The three authored statement strings match across the two source files, and both suites protect related declared-state/text obligations. Their complete fixtures and field assertions are not identical: this renderer suite uses its own acceptance reference, recorded-empty lifecycle and unequal structured provenance values. The Python field case instead checks a `text-knowledge:` acceptance reference and a proposed-to-accepted lifecycle, with no differing provenance row. Matching titles, comments or three strings are not a cross-half fixture-equivalence guarantee.
 
 ## Code Commentary
 
 ### Logic
 
-The mounted helper awaits the technical-details region and scopes its one-sided statement assertions to that region. This keeps the existing statement-pane contract separate from the central selected-subject rendering covered by SubjectReview.test.tsx; the operand and unavailable-state assertions remain unchanged.
+The mounted helper awaits `review-center-column` and scopes its assertions to the selected subject's main reading area. The statement pane is no longer under Technical details. The no-operand case selects a subject whose two operands are unresolved; it does not claim that the surface mounts a knowledge pane when no subject is selected. The absent/recorded-empty distinction is checked through non-authored field rows, because authored statement/conditions values are intentionally excluded from that list.
 
-**The values are the server's measured output, not invented fixtures.** `ADDED_STATEMENT`,
-`REMOVED_STATEMENT`, `SHARED_STATEMENT`, `SHARED_ACCEPTANCE_REF`, `ABSENT_BEFORE`, `ABSENT_AFTER` and
-`UNRESOLVED_AFTER` are declared "the authored words and identities the server-side cases measure,
-verbatim", and `STRUCTURED_BEFORE`/`STRUCTURED_AFTER` are the pane's own
-`<recorded as a structured value, rendered as compact JSON: …>` projections of the two authorship
-envelopes. `BINARY_AFTER` is the documented exception: `binary` is a state the review vocabulary
-declares and **no shipped statement-side builder emits**, so the constant is labelled a declared-state
-fixture whose detail is the case's own words rather than the server's.
+**Fixture provenance is per value, not inherited from the module comment.** `ADDED_STATEMENT`, `REMOVED_STATEMENT` and `SHARED_STATEMENT` have the same literal texts as the Python suite's constants. That static source comparison does not make every overlay a measured server reply. `SHARED_ACCEPTANCE_REF` is the renderer fixture `requirement:KS-R08@v1`; the absent side, recorded-empty lifecycle and two unequal structured provenance projections are authored here for the mounted field-row case. `ABSENT_BEFORE`, `ABSENT_AFTER` and `UNRESOLVED_AFTER` supply this suite's detail text; the Python cases assert their own returned states/text and selected detail substrings, not all these full fixture operands. Its structured-value case checks equality under key reordering rather than two differing provenance envelopes. `BINARY_AFTER` is explicitly a declared-state renderer fixture, not a shipped statement-builder output.
 
 **The defect the cases catch is stated in the file, and it is the reason each case asserts DOM text
 rather than a shape.** The pane used to draw its diff only when *both* statements were `present`,
@@ -50,30 +39,12 @@ runs, and the surface reaches the statement area exactly as production does.
 
 **The nine cases, and what each one pins.**
 
-- **An addition** (`:194-212`): the before state line carries `data-side-state="absent"` and the
-  before snapshot's own no-record detail, the after line carries `present`, and the diff pane's
-  `textContent` — read through `waitFor`, because CodeMirror renders asynchronously — contains the
-  full after statement. The statement is asserted in the **rendered DOM**, not in the payload the test
-  sent.
-- **A removal** (`:214-228`): the mirror image, with the before statement in the diff pane and the
-  after line `absent`.
-- **Both present** (`:230-241`): the shared statement is in the diff pane and **neither**
-  `review-before-state` nor `review-after-state` exists, so a two-sided area names no side.
-- **An unreadable opposite** (`:243-259`): the after line is `unresolved` with its own reason, the
-  `review-no-diff-claimed` line states that no diff is drawn, the readable operand stays visible in
-  `file-pane`, and `diff-pane` is **absent** — the assertion that an empty-string operand was not
-  manufactured.
-- **Three declared states as their own tokens** (`:261-274`, a three-row `it.each` over `absent`,
-  `unresolved` and `binary`): each renders as its own `data-side-state`, the opposite side stays
-  `absent`, and no diff is drawn — so no one of the three collapses into another.
-- **Neither present** (`:276-289`): the task-context pane renders both `unresolved` state lines and
-  neither `diff-pane` nor `file-pane`.
-- **Field rows** (`:291-336`): four rows in one render assert
-  `acceptance_ref: (absent) → requirement:KS-R08@v1`, `lifecycle: proposed → accepted`,
-  `provenance: <structured before> → <structured after>` with the two projections asserted **unequal**
-  (a shared note would have made a changed field read as one unchanged value), and
-  `essential_conditions: … → (recorded empty)` — the absent value, the changed text value, the changed
-  structured value and the present-but-empty value, none of them printed as a blank.
+- Addition and removal: the named absent side carries its own detail and the complete available operand appears in the shipped diff DOM.
+- Both present: both recorded operands remain available to the diff and neither named side-state line appears.
+- Unreadable opposite: the available text remains in the content pane with the opposite side's own reason; no diff or manufactured empty operand appears.
+- Declared absent, unresolved and binary states retain their distinct tokens, including the labelled binary vocabulary fixture.
+- Neither present: a selected subject with two unresolved operands has both named state lines and neither a diff nor a content pane.
+- Field rows: `acceptance_ref` is named absent before; the recorded-empty `lifecycle` value is explicit after; the two compact structured provenance values remain distinct. Authored condition text is not reintroduced into the non-authored rows.
 
 **The fixture builders are deliberately minimal and typed.** `present`/`absent`/`unresolved`/`binary`
 build one `ReviewSideContent` each; `knowledge(over)` and `payload(over)` build a complete
@@ -95,13 +66,10 @@ against a private vocabulary of its own.
   the surface, the statement area, the diff or the viewer.
 - **DOM assertions only.** No case asserts a prop it passed, and no case asserts an intermediate
   value; the statement text is read back out of the rendered DOM.
-- **The two halves share one set of values.** The statements and details asserted here are the ones
-  the Python composition test measures; changing one side's string is what makes the other half fail.
+- **Related obligations, independently authored fixtures.** The three matching statement literals support a source comparison, not a single fixture source or automatic cross-half failure. Each suite has its own states, detail/field values and assertions; acceptance/provenance/recorded-empty overlays here are not claimed as the Python composition's measured output.
 - **A declared-state fixture is labelled as such.** `binary` is exercised because the renderer must
   treat unsupported content distinctly from a known absence, not because a producer exists.
-- **Boundary.** This is the statement area's renderer contract. The wire values are the server's, the
-  element bodies are `KnowledgeStatements.tsx`'s, and neither diff nor viewer is re-implemented by the
-  suite.
+- **Boundary.** This is the mounted renderer contract over test-authored wire fixtures. The actual selected-subject callers and declared-operand fallback draw the bodies; neither diff nor viewer is re-implemented. The suite does not certify production-composition fixture equivalence.
 
 ### Todos
 
@@ -120,30 +88,35 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the suite's own header comment and
-case bodies, the component it drives, the surface and client it deliberately does not stub, the jsdom
-setup that lets the shipped CodeMirror primitives render, and the server-side case module it mirrors.
+case bodies, the actual renderer callers, the surface/client and jsdom setup, plus the independently authored production-composition suite. No shared fixture source or identical field/operand population is implied.
 
-**Citation repair, and why the test-name rows read as quoted literals.** Seven rows cite one case by
-its suite range, and each names that case by the double-quoted string the case itself passes to `it` —
-which is the only anchor form that both the citation grammar and the occurrence rule accept here: a
-test's own name is several words, so a backticked span is *not* identifier-shaped, and the citation
-grammar explicitly refuses such a span as an anchor and requires a double-quoted literal instead. The
-`file-pane` and `diff-pane` anchors in the unreadable-opposite row stay backticked because those are
-single identifiers. The suite itself is unchanged by that repair; only this card was wrong.
+**Current citation form.** References 7–11 use whole-file source ranges, while 12 and 13 bind the no-readable-operand and field-row assertion ranges. They no longer carry the former quoted case-name anchors. Source ranges and their notes are evidence locators, not named typed proofs or a claim of backend/renderer fixture identity.
 
-- **The suite's own scope statement: the real component and the real client with only `fetch` stubbed, the values' provenance from the server-side cases, and the defect these cases catch.** [1]
+- The mounted suite uses the real surface/client with fetch stubbed; its authored overlays and the module comment do not establish identical backend-measured field fixtures. [1]
+
 - The real surface the cases mount, and the real client it calls — neither is stubbed. [2]
-- **The measured server strings, the pane's two structured projections, and the declared-state `binary` fixture with its own labelling comment.** [3]
+
+- Three statement literals match the Python source constants; the acceptance and unequal structured provenance values are renderer-authored fixtures, as is the labelled binary vocabulary case. [3]
+
 - The four typed side builders and the two payload builders the cases spread overrides into. [4]
+
 - **The transport stub and the mount helper: `fetch` and nothing else, so the payload travels the production route.** [5]
+
 - The teardown that keeps a stubbed global from leaking between cases. [6]
+
 - **The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.** [7]
+
 - The removal, symmetrically. [8]
+
 - **The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.** [9]
+
 - **The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.** [10]
+
 - The three declared states carried through as their own tokens and never collapsed into one another. [11]
-- The task-context case: two named states, no diff and no content pane. [12]
-- **The field-row case: absent, changed-text, changed-structured (asserted unequal) and recorded-empty in one render, none printed as a blank.** [13]
+
+- A selected subject with two unresolved operands has two named states, no diff and no content pane. [12]
+
+- Non-authored field rows distinguish absent acceptance reference, recorded-empty lifecycle and two unequal structured provenance values. [13]
 - The jsdom answers that let the shipped CodeMirror primitives render in these cases. [14]
 - The component under test and the rule it implements. [15]
 - The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. [16]
@@ -151,7 +124,7 @@ single identifiers. The suite itself is unchanged by that repair; only this card
 
 - The shipped renderers whose DOM these cases read back. [17]
 
-- **The server-side half these cases mirror: the same statements and details measured through the real composition.** [18]
+- The production-composition suite independently checks statement states/text, text-knowledge acceptance and proposed-to-accepted lifecycle without a differing provenance row; its separate structured-value assertion checks key-order equality. [18]
 
 ### Cross-Repo References
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:8e538e9a808770a14a0339096a5d06c53ab0be773d3f76e70dd8da08553b7876",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:8877fdd8c5629a1c607526c98f3a6aebecc1686fcb9cd7502c4c0beb62de4b27",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:ff8172a4b99ec2259eacc40b1dc5e29d6c7b5d11ed5cbd399533d6879d7be490",
             "locator": {
               "end": 40,
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:98c43e8fca844a1eff13e471c8916683b250f89cab89bbcb543f884754ad9275",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:655b25956bdf5a987d997abe70faafe573dc3a77f385cc70265ccc7e73e18a2f",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:5754db0b359a5e98538c367bd97e3e05cb906c3b98dd280c2aa1106034e11b18",
             "locator": {
               "end": 71,
@@ -95,11 +95,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107182a29dad7c7d199ec593ef62fc86bc52e070",
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
             "content": "sha256:185e5af759f0858cd60ac2f225c3b108d5c3e876f6dbd90e7a0bfe5634bf1eb6",
             "locator": {
               "kind": "symbol",
               "name": "wireWorklist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The F06 journey checks the supplied reason sibling by entry and side outside disclosures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
+            "content": "sha256:984e4664a658b88f09772322f3a4d72cf9bedca6d09eeb0da493a9cbdd7736ce",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "test"

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale setter interface can make return fail after the subject changes, losing the captured reading position."
+  },
+  "applicability": "Return from a followed intent marker in the existing review workspace.",
+  "conditions": [
+    "The captured subject is restored before the worklist boolean, opened path, layout and full-file choice.",
+    "The production workspace state exposes setWorklist; a recording test stand-in must match that interface."
+  ],
+  "exclusions": [
+    "Comparison-viewer Back/Escape, which is a separate return path.",
+    "A claim that this leaf repaired a user-facing marker-store failure; the delivered real-store witness found none."
+  ],
+  "id": "INV-DFS1CC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "markerNavigation.test.ts 5/5 green; temporary real-store probe (useWorkspaceState capture/restore) 1/1, then removed (s3-triage.log)"
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "MIK-L154 marker return worklist",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The marker return restores subject, worklist view, opened file, layout and full-file choice through the real workspace store.",
+  "status": "proposed",
+  "supersedes": []
+}

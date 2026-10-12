@@ -59,12 +59,15 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module's own statement: a tree position of the mounted workspace, selected the way the rail selects it. [1]
-- The recorded reading position. [2]
-- Capture and open, as the scope's moves. [3]
+- The captured position records a worklist boolean, not a lane destination, alongside subject, choice, path, layout and full-file state. [2]
+
+- Capture takes the current worklist boolean and returns the restore closure; open delegates to the marker target selection. [3]
+
 - Following: close the file, select the invariant with its member context. [4]
 - Return restores subject, worklist flag, opened path, layout and full file with selection focus cleared; no lane destination is captured. [5]
 - The workspace that passes them to its scope. [6]
-- The moves' cases. [7]
+- The marker move cases follow the subject and restore setWorklist before path, layout and full-file choice. The return title retains the word lane, but its current assertion is the worklist setter. [7]
+
 - A follow and its return select with two arguments only, so both start the walked tree afresh. [8]
 - The options a selection would have to pass to keep the tree. [9]
 
