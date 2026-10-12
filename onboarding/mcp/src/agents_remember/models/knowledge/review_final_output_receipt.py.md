@@ -19,7 +19,7 @@ FinalOutputReceipt binds the recorded code and knowledge trees and their compari
 - **A carried identity is never a recomputed one (v1 `LegacyFinalOutputReceipt` only).** `binding_digest` and `manifest_digest` are copied from
   the published record; a digest this vocabulary derived from a field set of its own would be a second
   identity to trust. v2 `FinalOutputReceipt` carries neither field — it carries `comparison` and `comparison_digest` instead.
-- **A typed absence is a value, not a gap.** `not-comparable`, `not-recorded`, `not-selected` and
+- **The v1 `LegacyFinalOutputReceipt` typed absence is a value, not a gap.** `not-comparable`, `not-recorded`, `not-selected` and
   `unusable` all mean something specific and are never left to be inferred from `None`.
 - **Boundary: this module is the vocabulary only.** It reads nothing, writes nothing and resolves nothing;
   a consumer that wants a receipt from the store calls the application owner. That boundary is why the
@@ -46,7 +46,7 @@ No configured domain documentation could be checked.
 
 ### Cross-Repo References
 
-No cross-repository behavior is implemented in this file. It declares a wire shape whose path fields
+No cross-repository behavior is implemented in this file. The historical v1 `LegacyFinalOutputReceipt` declares path fields
 (`task_root`, `contract_path`, `published_knowledge_path`) are recorded as the owner produced them; the
 relocation boundary that follows from a recorded absolute path is stated on
 `application/review_final_output_receipt.py` and is the same one ICR-R12/R13 own for the generation
@@ -55,12 +55,12 @@ record.
 No meaningful cross-repo references found.
 
 - The version and selection-rule literals, carried as fields so the answer travels with the record. [23]
-- **The two phases are separate records because each is a measurement taken at its own moment, and the published dataset can move between them.** [24]
-- **`not-comparable` is a channel with nothing on one side to compare, and it never makes the receipt `moved`.** [25]
-- The three states of the declared publication location, in the resolving route's own vocabulary. [26]
+- **In v1 `LegacyFinalOutputReceipt`, the two phases are separate measurements and the historical published dataset can move between them.** [24]
+- **The v1 dataset channel's `not-comparable` means one side cannot be compared; this historical state does not make that receipt `moved`.** [25]
+- The v1 legacy dataset publication-location states, in the resolving route's vocabulary. [26]
 - The code channel's comparison: delivered tree against reviewed candidate tree. [28]
-- **The knowledge channel: `not-comparable` whenever one side is not a dataset at all, and never `matches` when nothing was compared.** [29]
+- **The v1 legacy knowledge channel is `not-comparable` when one side is not a dataset and never claims a match without comparison.** [29]
 - The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state. [31]
 - **The one sentence the record publishes, derived from its own fields, one clause per verdict.** [33]
 - The shared shapes this vocabulary reuses rather than re-declaring. [34]
-- The identity the published channel carries when a dataset really was read. [35]
+- The historical v1 `SnapshotIdentity` the published dataset channel carried when its dataset was read. [35]

@@ -1544,7 +1544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70805dc7802dce07fa9e0b81d0a3eaab05abf1a2",
+            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
             "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
             "locator": {
               "kind": "symbol",
@@ -1556,7 +1556,7 @@
         },
         {
           "anchor": {
-            "blob": "70805dc7802dce07fa9e0b81d0a3eaab05abf1a2",
+            "blob": "a6631c944c60280f631bfe1d9e802391f5f55d23",
             "content": "sha256:9ace9375d2a6e6c42c4bae2fd355a2648977fce3a93d80eb3818f7fc775a7705",
             "locator": {
               "kind": "symbol",
@@ -1585,7 +1585,7 @@
         },
         {
           "anchor": {
-            "blob": "1bd78065571accddd20722fd3a76b2ab334e70a8",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
             "locator": {
               "kind": "symbol",
@@ -2319,12 +2319,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
             "content": "sha256:3d2f9e05a1937b981cb06170fb6bf772f132579fc2724a4c75e8bbce3c75dcba",
             "locator": {
-              "end": 353,
+              "end": 376,
               "kind": "line_range",
-              "start": 350
+              "start": 373
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

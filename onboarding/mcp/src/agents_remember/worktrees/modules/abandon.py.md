@@ -27,7 +27,7 @@ calls `remove_registered_worktree` with the `force` flag passed through;
 `_abandon_branches` calls `_abandon_branch` for the code work branch, memory
 work branch, and memory integration branch; `_abandon_directories` removes the
 worktree group dir (force-removes with `remove_tree` when `force=True`,
-otherwise `remove_empty_dir`). `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set.
+otherwise `remove_empty_dir`). `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set. Non-force leaf removal also removes reserved `logs/`, exposes its result under `directories.logs`, and includes removed/would-remove logs in the empty-group plan. Series removal removes its reserved `logs/` before returning but preserves exactly the `reports` and `lifecycle` response keys. Both pass `dry_run` through; preview leaves log bytes in place. Force leaf removal reclaims logs as part of the whole group.
 
 `_abandon_branch` checks for unmerged commits via `git log --oneline
 <base>..<branch>`. Without `force` it refuses to delete a branch that has

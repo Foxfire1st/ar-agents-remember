@@ -11,8 +11,9 @@ nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:157`) — the pr
 path cannot fail from outside, because they need real committed bytes, a real database file and a real
 publication to exist at all.
 
-941 lines. It held the path cases until fix round 2 pushed it past the 1 200-line limit, at which point the
-path cases moved to `mcp/tests/test_knowledge_read_paths.py` rather than the limit being waived.
+The historical path split moved cases to `mcp/tests/test_knowledge_read_paths.py` rather than
+waiving the 1,200-line rail. Its recorded 941-line size describes that earlier split, not a current
+source census or collected-case result.
 
 ## Code Commentary
 
@@ -71,6 +72,11 @@ selected scope — planning can read recorded knowledge with no leaf and no encl
   module reports the one such line it knows of through the ledger rather than presenting it as protection.
 - **Boundary.** This is a test module. It declares one lane, asserts behaviour and owns no production
   contract.
+
+The selection-reasons/manifest-identity case compares the complete selected result against a
+version with its reasons stripped and retains its positive controls. The repaired fixture passes
+`subject_revision_id`, not the removed `base_revision_id`; this pointer repair is not a new mutation
+verdict and does not reinstate the withdrawn A6 claim.
 
 ### Todos
 

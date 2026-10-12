@@ -15,7 +15,7 @@ preference, and the harness-definition table `orchestration.harnesses` (260703-L
 typed models. It is the single parser
 for the agentic family; the MCP authority file, memory-topology settings, and provider
 lifecycle settings are separate families with separate parsers. **260707-HFX2-L2 (R1/R5)** adds the
-`orchestration.supervisor` family — the deterministic sweep loop's own knobs (enabled, interval
+`orchestration.agentNotifier` family (the old `supervisor` spelling is a warned alias; supplying both keys refuses) — the deterministic sweep loop's own knobs (enabled, interval
 seconds, self-liveness staleness cutoff, inbox-redelivery rate limit, and since HFX2-L8 a
 conservative per-sweep redelivery budget). HFX2-L9 makes the supervisor cadence knobs explicitly
 production-safe: `redeliverRateLimitSeconds` and the new `signalCooldownSeconds` both refuse values
@@ -38,7 +38,7 @@ the parser never derives a model/effort paste command from them.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
+The current `orchestration.agentNotifier.escalationBudget` setting has default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 #
 
@@ -83,44 +83,25 @@ scalars AND arrays are REPLACED by the override, local over global) and the merg
 STRICT into `AgenticSettings` — cross-layer rules (harness-entry completeness, harness-id
 membership) bind on the merged block, with the merged source label in errors.
 
-The fail-loud rule is scoped to `orchestration.*`: every nesting level has a frozen
-known-key set (`KNOWN_ORCHESTRATION_FIELDS` = gateDelegation/loops/roles/rolesPerLevel/
-concurrency/spawn/harnesses/expectations/supervisor/**escalation** (260707-HFX2-L4, R1), plus per-family sets for
-gateDelegation kinds, loop defaults/complexity/levels, the eight l-01 role names, the role-knob
-fields harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields,
-concurrency caps, and the four expectation-row kinds) and `_refuse_unknown` raises
-`AgenticSettingsError` naming the unknown keys, the allowed set, and the offending file.
+The fail-loud rule is scoped to `orchestration.*`. The current outer allowlist is
+`gateDelegation`, `loops`, `roles`, `rolesPerLevel`, `concurrency`, `spawn`, `harnesses`,
+`expectations`, `agentNotifier`, `qualityGate`, `roleMessageLimit`, plus the temporary deprecated
+`supervisor` alias. `_refuse_unknown` names the offending keys, allowed set and source file.
 
-**260707-HFX2-L4 (R1, escalation ladder knobs)**: `orchestration.escalation` configures P-15 tier
-3's ladder — `EscalationSettings` (`sla_seconds` per `message_kind`, defaulting from
-`DEFAULT_ESCALATION_SLA_SECONDS`; `rung_seconds` keyed 1/2/3, defaulting from
-`DEFAULT_ESCALATION_RUNG_SECONDS`; `nudge_rate_limit_seconds` default 900; `respawn_after_rung`
-default 2). `_parse_escalation` is now a three-call assembly over one parser per sub-block
-(260731-EFA-L2): `_parse_escalation_sla_seconds(raw, *, source)`,
-`_parse_escalation_rung_seconds(raw, *, source)` and `_parse_respawn_after_rung(block, *, source)`,
-each returning the defaults when its key is absent. **Call order is the refusal order** — a
-settings file with more than one bad field is still reported against the first one, exactly as
-before the split; do not reorder those calls. The validation itself is unchanged:
-`slaSeconds` keys are checked against `KNOWN_ESCALATION_MESSAGE_KINDS`
-(a literal set duplicated by hand against `InboxMessageKind`, the same kernel<->controlplane
-cycle-avoidance reason `KNOWN_EXPECTATION_KINDS` already uses), `rungSeconds` keys against the
-closed `KNOWN_ESCALATION_RUNGS = (1, 2, 3)`, and `respawnAfterRung` against that same closed set (a
-respawn cannot trigger at a rung that doesn't exist); every value must be a positive number/int,
-and the whole block is checked against `KNOWN_ESCALATION_FIELDS` for unknown top-level keys. Absent
-block or absent key falls back to the documented default (`EscalationSettings()`'s field
-defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `serving/supervisor.py`'s
-`_agent_notifier_context()` reads per-use, mirroring how `SupervisorSettings`/`ExpectationSettings`
-are consumed elsewhere in this file.
+The escalation-ladder account previously recorded here is historical: the current allowlist and
+assembly contain no `orchestration.escalation`, `EscalationSettings` or `_parse_escalation` route.
+An authored `orchestration.escalation` key is refused as unknown; the old parser decomposition and
+rung/SLA defaults must not be used as a current configuration contract.
 
-**260707-HFX2-L2/R8/R9 (supervisor sweep knobs)**: `orchestration.supervisor` configures the
+**260707-HFX2-L2/R8/R9 (supervisor sweep knobs)**: `orchestration.agentNotifier` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
-`SupervisorSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
+`AgentNotifierSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
 `stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`,
 `signal_cooldown_seconds` default `DEFAULT_RATE_LIMIT_SECONDS` / 900, `redeliver_budget` default
-1, and `escalation_budget` default 250). `_parse_supervisor` validates boolean/positive fields and checks
-`redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_supervisor_floor_seconds`,
+1, and `escalation_budget` default 250). `_parse_agent_notifier` validates boolean/positive fields and checks
+`redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_agent_notifier_floor_seconds`,
 which refuses any value below `inbox_backoff.MIN_REDELIVERY_INTERVAL_SECONDS` (900). Absent block or
-absent key both fall back to the documented default (`SupervisorSettings()`'s field defaults).
+absent key both fall back to the documented default (`AgentNotifierSettings()`'s field defaults).
 `redeliver_rate_limit_seconds=None` is a deliberate inherit-not-duplicate choice: the sweep passes
 `None` straight through to `OperatorInboxStore.list_redeliverable`, which already owns its own
 default (`inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS`) — the same "`None` = uncapped/inherit"
@@ -181,13 +162,12 @@ flat default field-wise (harness inherited unless overridden, lists REPLACE) —
 dispatch chain repo-local level override > global level override > repo-local role default >
 global role default on top of the file merge. Role knobs now also carry `mode`, `featureValues` and `notes` with per-choice origins: `_attach_role_origins` binds each authored value to its file, key, provider and model without changing the merge, repository layers cannot author mode, notes or permission-bearing feature values (`_refuse_repository_role_authority` refuses them naming file and key), and an old-only or both-file state refuses through the location guard before any content read.
 
-HFX-L6 adds `architect` and L6R3 adds `curator` to the closed role vocabulary for both flat
-`orchestration.roles` and per-level `orchestration.rolesPerLevel`; unknown-role behavior remains
-fail-loud. **260707-HFX-L7** adds `system-specialist` — the ninth `KNOWN_ROLES` member — so the
-provider-degradation investigator can carry its own spawn knob overrides
-(`orchestration.roles.system-specialist` / `orchestration.rolesPerLevel.<level>.system-specialist`)
-the same way every other role does; the module-docstring comment naming the role count was
-corrected from "eight" to "nine" in the R2 fix round (closes reviewer F6).
+The current closed role vocabulary for flat `orchestration.roles` and per-level
+`orchestration.rolesPerLevel` is `architect`, `orchestrator`, `designer`, `strategist`, `manager`,
+`worker`, `curator`, `reviewer`, `investigator` and `bootstrap`. Unknown roles remain fail-loud.
+`system-specialist` is the warned compatibility spelling for `investigator`, not an additional
+canonical role. The earlier eight/nine-role descriptions are historical vocabulary observations,
+not the current allowlist or an instruction selecting a seat.
 
 **Harness definitions (L16 registry openness).** `_parse_harnesses` (decomposed into
 `_parse_harness_entry` → frozen `_HarnessEntry` shape record, `_resolved_launch` command/argv
@@ -267,4 +247,4 @@ The loader operates on coordinator/repo-local files only.
 
 ## 260712-TRH-L4 Final Candidate
 
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+Historical cross-module task observation: the old L4 turn described the spawned-unbriefed → harness-ready → briefed flow and catalog-writer serialization. Those are not this settings loader's operative responsibilities or current proof. This file assembles validated typed settings; dispatch evidence and catalog publication belong to their own modules.

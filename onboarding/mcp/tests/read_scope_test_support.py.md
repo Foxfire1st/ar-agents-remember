@@ -30,21 +30,13 @@ The topology, and why each part exists:
   not reach. That is the whole stopping rule in one graph.
 - **`H1` is `{I1, L1}`**, a **second** family that directly contains `I1`, which is what proves the
   path/invariant rule includes *every* directly containing family rather than only the first.
-- **`I1` also has two retained siblings**, `I0` (its predecessor) and `I2`, and **both successors display
-  the same `v2` label**, which makes "a display version selects nothing" measurable rather than rhetorical.
+- **The retry text record carries one revision.** The old same-identity predecessor/successor population is absent; this fixture does not prove selection or ordering among I0/I1/I2.
 - **`absent_anchor`** is a recorded claim whose path exists in no tree, and **`mismatch_anchor`** is a
   claim whose recorded blob identity is deliberately not the one the fixture repository holds at that
   path. Both are authored like any other claim: storage never resolves a source, so whether a path
   resolves is a fact about a snapshot and not a condition for recording it.
 
-**The retry identity's ordering is partly authored, and a consumer must not assume otherwise.** The three
-retry revision ids are allocated through `_ordered_revision_id` with deterministic prefixes (`9`, `3`, `6`)
-and the predecessor is given `PREDECESSOR_LABEL` (`v3`) instead of `BASE_LABEL` (`v1`); every other
-identity keeps random ids and `BASE_LABEL`. This is what makes the ordering case's label-versus-id
-comparison deterministic. Before the fix round the assertion was true for only ~2 of 3 fixture draws —
-because two successors share the `v2` label and a stable label sort can coincide with the id order — so the
-leaf's own unit module was intermittently red. **A case that expected the predecessor to display `v1`, or
-that relied on those three ids being random, must be re-read against this fixture.**
+**Seed identities are projected by the text-tree builder.** `_seed_identities` allocates fixture UUIDs and the row helpers return the tree's projected identities. `_build_invariants` authors each record's single revision. The removed `_ordered_revision_id`, `PREDECESSOR_LABEL` and shared-successor-label machinery is historical, not an operative ordering guarantee.
 
 Public surface: `build_read_scope_fixture(...)` returns a `ReadScopeFixture` carrying the identity maps,
 the paths, the labels, the recorded blob identities and the tree id; `make_read_authorship` builds the
@@ -100,7 +92,7 @@ No configured domain documentation could be checked.
 - **The fixture's declared topology and why this graph and not the shared branching one.** [17]
 - The graph constants: the labels, statements, conditions and the four direct family guarantees. [18]
 - The recorded paths, including the two the read is measured against (absent and mismatched). [19]
-- **The retry ordering identity the fix round introduced; the predecessor/successor revisions the old fixture authored beside one identity are gone (rule 3).** [20]
+- The current seed allocator supplies identities; removed predecessor/successor ordering helpers are not current fixture owners. [20]
 - The public builder and the value types a case reads. [21]
 - **The governed-artifact and contract rows that make this module part of the catalog.** [22]
 

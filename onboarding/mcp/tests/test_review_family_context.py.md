@@ -12,7 +12,7 @@ Pins exact family guarantees, memberships and bounded roster continuation in rev
 
 Recorded family revisions supply their own guarantees and memberships; a successor roster is not inherited. Shared members retain canonical revision identity across contexts, and repeated memberships do not inflate the distinct source population. A member change exposes its family context without declaring a guarantee change or an intent verdict.
 
-The suite distinguishes measured no-family, absent knowledge, no selected subject, one-sided families and ambiguous family lineage. Roster truncation preserves owner counts and its continuation; tokens bind their exact walk, final pages carry only their share, and a multi-page walk terminates without loss. The client route assertions exercise the production adapter.
+The suite distinguishes measured no-family, absent knowledge, no selected subject, one-sided families. The former ambiguous-lineage fixture is a removed historical case, not a measured population in this module. Roster truncation preserves owner counts and its continuation; tokens bind their exact walk, final pages carry only their share, and a multi-page walk terminates without loss. The client route assertions exercise the production adapter.
 
 Family/revision/membership inputs are inserted by test-only knowledge_rows_test_support. Those fixtures do not enforce the former canonical family authoring plane. Current guarantees and roster meanings are read from exact supplied rows by the surviving production readers.
 
@@ -36,7 +36,7 @@ table below maps each to the case that pins it and the operation the case drives
 | `test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context` | `:473` | missing knowledge is the review's own refusal, never an empty family context |
 | `test_a_task_context_review_states_that_it_selected_no_subject` | `:487` | the task-context review states that it selected no subject |
 | `test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence` | `:501` | a family only the candidate records is a one-sided context with a stated absence |
-| `test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision` | `:523` | an authored ambiguity names its candidates and chooses no revision |
+| *Removed historical case:* `test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision` | historical `:523` | the old multi-head fixture is absent from the current single-revision text population; no executable refusal witness is claimed |
 | `test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation` | `:593` | a truncated roster stays partial, carrying the owner's own counts and the cursor that reaches the rest |
 | `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` | `:631` | the published cursor continues exactly the walk that minted it |
 | `test_a_cursor_that_binds_no_walk_is_refused_beside_the_first_pages` | `:676` | a cursor that binds no composed walk is refused while every composed walk's first page stays published |
@@ -55,24 +55,23 @@ exercise the route rather than the value:
 | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | `:1060` | the shape that used to answer a server failure: a walk's FINAL page is `complete` and `state == "continued"`, carries `0 < carried < members_total`, publishes no cursor, and says "completes the read walk" rather than claiming the whole roster |
 | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | `:1095` | the multi-page boundary: every step is this route's own answer, every earlier page is incomplete with a cursor, and the pages **together** identify exactly `members_total` unique memberships — which is the claim the continuation control makes to a reader |
 
-**The scenario is built once and shared, and every population comes from the store's own authors.**
-`FamilyScenario` (`:116-124`) is the frozen handle the cases read; `scenario` (`:127-131`) is the
-module-scoped fixture and `build_family_scenario` (`:134-165`) builds the real enclosure over the shared
-endpoint fixture. The authored operations are the store's own: `_author_member_successor` (`:168-189`)
-and `_author_family_successor` (`:192-213`) author successor revisions, and `_author_membership`
-(`:216-231`) authors one membership row — so a roster no case asked for cannot appear, because the only
-way a membership exists is that a case recorded it through the owner.
+**The scenario is built once and shared through test-only text populations.** `FamilyScenario` is the
+frozen handle; `scenario` is the module-scoped fixture and `build_family_scenario` builds the enclosure
+over shared endpoint support. `rebuild_after_tree` and `extra_families` supply changed/one-sided
+populations. The removed member-successor and family-successor helpers are not current authoring
+owners. `_author_membership` and the extra-roster helper use test-only row construction, not the
+retired canonical production authoring or admission plane.
 
 **The request and read helpers keep every case on the shipped entry point.** `family_request`
 (`:237-255`) builds the review request for a given selector; `review` (`:258-264`) calls the production
 read; `entry_for` (`:267-272`) selects one family's context from the payload and
 `members_of` (`:275-278`) indexes a side's roster by member revision, so the assertions read the
-composed value rather than a re-implementation of it. `_author_sibling_family_revisions` (`:566-587`)
-builds the ambiguity fixture, `_complete` (`:625-628`) reads a roster page's completeness,
-`_author_added_family` (`:793-831`) builds the one-sided case, and `_review_of_unfamiliar_invariant`
-(`:834-872`) drives a review whose subject the fixture never authored. The reopen's two helpers keep the
+composed value rather than a re-implementation of it. `_complete` reads roster completeness and
+`_review_of_unfamiliar_invariant` drives a subject the fixture never authored. The old sibling-family
+and added-family author helpers are absent: one-sided populations come from the rebuilt text tree;
+the multi-head ambiguity case is retained only as a removal disclosure. The reopen's two helpers keep the
 walk on the same shipped entry point: `_author_extra_roster_rows` (`:952-998`) authors further memberships
-through the store's own `create_invariant` / `create_revision` / membership owners — each a new invariant
+through test-only invariant/revision/membership row construction — each a new invariant
 identity with one revision cited by one membership row — and `_walk_the_route` (`:1001-1042`) follows one
 side's walk exactly as the delivered control does, presenting `pageOf=family_members` with the cursor the
 previous page published and **no page bound**, with `raise_server_exceptions=False` so an unhandled
@@ -86,8 +85,8 @@ route, same absence of an injected payload — one page at a time.
 
 ### Conventions
 
-The module imports the shipped review read and its request/response values, the store owners it authors
-through, the fixture support modules the sibling review cases already use, and FastAPI's test client for
+The module imports the shipped review read and its request/response values, test-only row support
+and the fixture support modules the sibling review cases already use, and FastAPI's test client for
 the one route case; the shared fixture is the sibling cases' own rather than a rebuild. `pytestmark`
 (`:90`) selects the module's markers once. Module-level constants (`:95-113`) hold the authored labels,
 guarantees and statements the cases assert against, so a case's expected bytes are visible at the top of
@@ -96,7 +95,7 @@ the file rather than buried in an assertion.
 ### Invariants And Boundaries
 
 - **Nothing here builds a payload.** Every value asserted is composed by the production read over
-  datasets the store's own operations authored.
+  datasets built by the shared test-only text/row fixture support.
 - **A truncated roster is never asserted as a whole one**, and the owner's own counts are asserted
   beside the cursor rather than restated.
 - **The walk cases assert the completed page's own share, never a number the run happens to produce.**
@@ -104,11 +103,10 @@ the file rather than buried in an assertion.
   identify `members_total` unique memberships, the single-page sentence absent from a multi-page walk's final page — because
   how many pages a given roster needs is a property of that run's page budgeting, not of the semantics
   under test. A reader should not read any page count out of this card as a contract.
-- **The ambiguity case asserts a refusal to choose**, not a chosen revision: the candidates are
-  inspectable and no guarantee is presented as the family's own.
-- **The disclosed soft-rail crossing is a disclosure, not a rail breach.** 946 lines is under the 1,200
-  hard rail and adds no census offender; the split into the population and values modules is the
-  mitigation the leaf applied, and this card records the crossing rather than implying it was avoided.
+- **The former ambiguity case is not current coverage.** One text family does not retain two further
+  heads; the removed case name must not be advertised as an executed refusal witness.
+- **The old 946-line soft-rail disclosure is historical.** It records the original mitigation through
+  population/values-module splits, not a current line census or a newly verified hard-rail result.
 - **Boundary: L24 owns the rendered tree and L25 the assembled project journeys.** This module proves
   the composition and its transport, not a mounted UI.
 
@@ -133,9 +131,9 @@ No Domain Documentation source is configured for this slice.
 - RowStore writes text-tree fixture rows without the retired production admission plane. [48]
 
 Every claim on this card is checkable in the module's own cases and in the owners they drive. The three
-details a reader should carry: **every population is authored through the store's own operations over
-the shared endpoint fixture**, so no case injects a payload or reads a database the resolution did not
-choose; **the ambiguity case asserts that no revision was chosen** while the candidates stay inspectable;
+details a reader should carry: **test-only text/row construction supplies the shared endpoint
+populations**, while the production read composes the payload from the side the resolution selected;
+**the former multi-head ambiguity fixture is removed and supplies no current execution evidence**;
 and **the route case serves the real application**, which is what proves the context reaches the client
 over the shipped transport rather than being assembled in the browser.
 
@@ -150,9 +148,9 @@ recorded here.
 - The frozen scenario handle the cases read. [50]
 - The module-scoped scenario fixture. [51]
 - **The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.** [52]
-- The authored successor revision of a member invariant. [53]
-- The authored successor family revision. [54]
-- **One membership row authored through the membership owner, so a membership exists only because a case recorded it.** [55]
+The former member-successor author helper is removed; current changed populations are rebuilt as text trees.
+The former family-successor author helper is removed; its name is not current production-admission evidence.
+- **One membership row built by the test-only fixture helper, not the retired canonical authoring plane.** [55]
 - The review request built for a given selector. [56]
 - The production read the cases drive. [57]
 - The one family context selected out of the payload. [58]
@@ -166,8 +164,8 @@ recorded here.
 - Missing knowledge as the review's own refusal rather than an empty family context. [66]
 - The task-context review stating that it selected no subject. [67]
 - A family only the candidate records as a one-sided context with a stated absence. [68]
-- **An authored ambiguity naming its candidates and choosing no revision.** [69]
-- The sibling family revisions that build the ambiguity fixture. [70]
+The old authored-ambiguity refusal case is removed from this population; no current witness is claimed.
+The old sibling-family revision builder is removed with that ambiguity fixture.
 - **A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.** [71]
 - The roster page's completeness as the case reads it. [72]
 - **The published cursor continuing exactly the walk that minted it.** [73]
@@ -179,7 +177,7 @@ recorded here.
 - The review of a subject the fixture never authored. [79]
 - **The context reaching the client over the real review route, which is what makes this a transport proof.** [80]
 - The real application the route case serves. [81]
-- **Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.** [82]
+- **Further memberships built through test-only row construction, so a roster needs more than one page of the production read walk.** [82]
 - **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** [83]
 - **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** [84]
 - **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** [85]

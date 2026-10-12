@@ -92,8 +92,8 @@ never overwritten — then propagates with its name. A dry run validates and giv
 a refusal gives the file back and raises `BaselineValidationRefused` with the worktree index
 untouched. Only after validation passes does `_adopt_validated_converted_tree` publish: the commit
 object is built from the immutable validated tree (`commit-tree`), the branch ref moves to it only
-while it still points where validation saw it (expected-old `update-ref`), and the recorded tree is
-verified — so a hook or a concurrent index change cannot smuggle different bytes into the
+while it still points at the HEAD read on entry to `_publish_validated_tree` (expected-old
+`update-ref`), and the recorded tree is verified — so a hook or a concurrent index change cannot smuggle different bytes into the
 publication. The worktree's own index is then brought to the adopted state. Where the validator is
 not bound, the adoption refuses; it never commits unvalidated.
 
@@ -159,7 +159,7 @@ No additional configured cross-repository evidence is claimed.
 - First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
 - The whole owned interval runs on a private index copy; an exception restores owned bytes, then keeps its name. [15]
 - A dry run, a refusal or an exception leaves the index, the refs and every owned file as they were. [16]
-- Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
+- Publication records exactly the validated tree; expected-old ref publication compares against the HEAD read at publication entry, not an independently retained pre-validation HEAD. [17]
 - Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
 
 - Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. \[19] [19]

@@ -143,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
+            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
             "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
             "locator": {
               "kind": "symbol",
@@ -3144,7 +3144,7 @@
         },
         {
           "anchor": {
-            "blob": "560551a2058c73a9283f51e12e765737384373cb",
+            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
             "content": "sha256:3af1450a2461edec9852f158e36e1ee5bcb7bc8b28bc87377fa717436d877abd",
             "locator": {
               "kind": "symbol",
@@ -3962,12 +3962,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
             "locator": {
-              "end": 89,
+              "end": 101,
               "kind": "line_range",
-              "start": 84
+              "start": 96
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4112,12 +4112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:15831c158ad1e92f6f34cd93ecbe3810ff52be2bc4199aac54bcb568f24b877c",
             "locator": {
-              "end": 119,
+              "end": 131,
               "kind": "line_range",
-              "start": 114
+              "start": 126
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4164,12 +4164,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
             "locator": {
-              "end": 113,
+              "end": 125,
               "kind": "line_range",
-              "start": 108
+              "start": 120
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4216,12 +4216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:089d9a356d65210680825e8cacc93ca21948351ebcb197953ec848b3746427c1",
             "locator": {
-              "end": 101,
+              "end": 113,
               "kind": "line_range",
-              "start": 96
+              "start": 108
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4302,12 +4302,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:a9aeb39006838a84b0d0c86fcb2c9eee2f1e512d399f495311cc99061ee90c85",
             "locator": {
-              "end": 94,
+              "end": 106,
               "kind": "line_range",
-              "start": 83
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4389,12 +4389,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
+            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
             "content": "sha256:4882b931be12a8501fe1007eb16cc7765d08dc1d28120f616393848497663c9f",
             "locator": {
-              "end": 82,
+              "end": 94,
               "kind": "line_range",
-              "start": 77
+              "start": 89
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

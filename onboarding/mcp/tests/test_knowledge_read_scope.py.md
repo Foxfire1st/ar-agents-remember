@@ -22,9 +22,9 @@ limit.
 ## Code Commentary
 
 
-Path and exact revision seeds close over the appropriate directly containing families, siblings and recorded locations; an advertised family is reached only by selecting it. Identity seeds group retained revisions separately, while an exact revision excludes its siblings in history. Claim identities, repeated membership edges and distinct source locations are counted separately.
+Path and exact revision seeds close over the appropriate directly containing families, siblings and recorded locations; an advertised family is reached only by selecting it. Each current text identity retains one revision; the identity seed returns that recorded revision as its own group, and the exact seed selects precisely its named revision. Claim identities, repeated membership edges and distinct source locations are counted separately.
 
-The ordered page stream keeps one snapshot/manifest across continuation, names truncation and registration/selector absence, and refuses budgets or selection bounds that cannot hold the next result. Refused reads preserve every table and the logical digest; selection remains in the requested namespace.
+The ordered page stream keeps one snapshot/manifest across continuation, names truncation and registration/selector absence, and refuses budgets or selection bounds that cannot hold the next result. Refused reads preserve every table and the logical digest; each selected dataset file is read from its own recorded rows; the former multi-namespace fixture is not current coverage.
 
 The dataset is populated by read_scope_test_support and test-only knowledge_rows_test_support RowStore. Direct fixture inserts and production-shaped constructor names do not enforce the retired production write-admission rules. The current scope selection/page owners are the behavior under test.
 
@@ -40,8 +40,8 @@ locations; and a path seed and the exact invariant revision seed close over the 
 (`:510`) measures that a revision reached through two families appears **once** with both membership rows.
 
 **Revision grouping and the absent current-revision pointer** (`:391`–`:471`) — an identity seed returns
-every retained revision as its own group, and an exact revision seed does **not** select the identity's
-other retained revisions. Nothing in either node can be read as a version or an insertion ordering.
+the retained revision as its own group, and an exact revision seed selects only its named revision.
+The current text fixture records one revision per identity, not a sibling-history population. Nothing in either node can be read as a version or an insertion ordering.
 
 **Counts** (`:472`–`:543`) — claim identities and distinct source locations are counted **separately**
 (a node that would pass under a single collapsed counter fails here).
@@ -63,8 +63,7 @@ the review sealed:
 
 **Absence and the persisted-nothing property** (`:959`–`:1163`) — `registration_absent` for an
 unregistered path, `selector_absent` for an identity that names nothing, a refused read leaving every table
-and the logical digest unchanged, and one node measuring that the selection reads only the requested
-namespace.
+and the logical digest unchanged, and one node measuring file-selected topology and absent-path isolation.
 
 ### Conventions
 
@@ -116,10 +115,10 @@ No Domain Documentation source is configured for this slice.
 ### Repo-Internal References
 
 - `test_an_exact_family_revision_seed_stops_after_its_own_members` supplies the current fixture or assertion described above. [19]
-- `test_an_identity_seed_returns_every_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. [20]
+- `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. [20]
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [23]
+- The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
 - RowStore writes text-tree fixture rows without the retired production admission plane. [24]
 
 ### Docs References
@@ -143,7 +142,7 @@ No configured domain documentation could be checked.
 
 - The truncation, too-small-budget, execution-bound and absence nodes. [32]
 
-- The persisted-nothing and namespace-confinement nodes. [33]
+- The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. [33]
 
 - The lane row this module occupies. [34]
 - The support artifacts and contracts this module is a declared consumer of (entries at `:254`, `:1171`, `:1693`, `:1758` and `:2021`). [35]

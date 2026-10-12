@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+        "blob": "857f207816298c36a510306f9890d228877ad6f5",
         "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
-        "content": "sha256:0d887ee4303cafd713b36360b93c477d10326f2a109bc6124a1889ddb53f1d46",
+        "blob": "857f207816298c36a510306f9890d228877ad6f5",
+        "content": "sha256:ccd3e84f8514500c45a85b2ffb004da1b76737072252d749a7548586721597ba",
         "locator": {
           "kind": "symbol",
           "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+        "blob": "857f207816298c36a510306f9890d228877ad6f5",
         "content": "sha256:6768d7198b70269dd6fee20dd72888c5eaf84b3d3635d924deadc26c28796103",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+        "blob": "857f207816298c36a510306f9890d228877ad6f5",
         "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+        "blob": "857f207816298c36a510306f9890d228877ad6f5",
         "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
         "locator": {
           "kind": "symbol",

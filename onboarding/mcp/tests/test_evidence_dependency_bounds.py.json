@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
-        "content": "sha256:e246b511755166c835464d878e83cd00338238015576d75da7691959d9e1fd52",
+        "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
+        "content": "sha256:4406b47cbf4b3cbd32b40ca2ef048dfd49a9ca91d73de8e5fdb0d133f1dbb0c1",
         "locator": {
           "kind": "symbol",
           "name": "test_maximum_coherence_publication_validates_at_capacity"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+        "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
         "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
             "content": "sha256:1fcfc144f561a3d3174c8e4289e46e75e860540832977216f507b6f03e37bf00",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
             "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
             "locator": {
               "kind": "symbol",

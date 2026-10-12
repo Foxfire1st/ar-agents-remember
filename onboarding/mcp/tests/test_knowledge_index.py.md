@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** Every case builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, the capture and the Git-object reads are the production ones. Registered in the `unit-regression` lane; 24 collected cases (the index-flag case is parametrized over both flags; MIK-R04 added the root-route case).
+**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** Every case builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, the capture and the Git-object reads are the production ones. Registered in the `unit-regression` lane. Source includes the two-value index-flag parameterization, root-route, duplicate-history-row and sparse-checkout cases; this card does not claim a fresh collected-case count.
 
 ## Code Commentary
 

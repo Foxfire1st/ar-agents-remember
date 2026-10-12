@@ -26,6 +26,10 @@ it, and which test modules or source files consume it. Every stable contract ide
 the file.
 
 `evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of six artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
+## Current master-retirement readiness registration
+
+`mcp/tests/test_master_retirement_readiness.py` also consumes the existing `mcp/tests/lifecycle_enclosure_test_support.py` artifact. L149 adds that single consumer entry without adding or changing an artifact or contract identity. This declaration is reachability accounting, not an execution receipt.
+
 ## Current master-retirement registration
 
 The consumers of the `mcp/tests/curator_coherence_test_support.py` artifact include `test_abandoned_series_closeout.py`, `test_master_retirement.py` and `test_standalone_master_retirement.py`, and the consumer list of the `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact includes `test_master_retirement.py` and `test_standalone_master_retirement.py`. No governed contract or artifact is added.
@@ -349,7 +353,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 
 
-- **The three consumer entries on the diff-cases artifact's exact list, appended newest-last.** [220]
+- **The diff-cases artifact's exact consumer entries are maintained in canonical ascending order; earlier additions are historical registration observations, not a newest-last ordering rule.** [220]
 
 
 

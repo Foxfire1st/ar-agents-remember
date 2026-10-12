@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cecce25f4f833cf80af2aaeb92021c1eb70ab70d",
+            "blob": "8ab149b388e11912041dbd480da7855a7de32451",
             "content": "sha256:6b54f04430c4427a4a342127cc9eb7b3a9af7b6db979086c45e0827f3f382235",
             "locator": {
-              "end": 103,
+              "end": 111,
               "kind": "line_range",
-              "start": 90
+              "start": 98
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
             "locator": {
               "end": 19,
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,

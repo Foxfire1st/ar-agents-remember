@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c229a9d91c2fc3852799847e111e3264322cf1c5",
-        "content": "sha256:f51b99ef0e2a224705779c61267d1fff34ee62fa1b7cd5a4f58f5b8e13f622fd",
+        "blob": "7627071af907f3e816bab28a0af4c509b3cbfb9d",
+        "content": "sha256:76cfe45fc6360eaa632437fa976f26bac67de7de9985cec20ac4cc118adcc941",
         "locator": {
           "kind": "file"
         }
@@ -146,6 +146,23 @@
             "locator": {
               "kind": "symbol",
               "name": "context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7627071af907f3e816bab28a0af4c509b3cbfb9d",
+            "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 37
             }
           },
           "kind": "code"

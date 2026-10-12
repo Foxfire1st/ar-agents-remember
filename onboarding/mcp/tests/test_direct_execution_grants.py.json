@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "79b0fd3dc99e933b0947fe552439d5af39d52cdb",
-        "content": "sha256:094ae1683cf904c745192b0e3c49b5e21d53b58081c4fd80d4b4fc62c202f958",
+        "blob": "512f4557c1ebef43df7f407507c9ef92a3beace2",
+        "content": "sha256:c3d2a903ffa2e462f99b9d5f00cefbc2eebfa42ca2b3108397554ddd992085bb",
         "locator": {
           "kind": "symbol",
           "name": "DirectExecutionGrantTest.test_revoke_restores_grant_when_start_interleaves_before_removal"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "79b0fd3dc99e933b0947fe552439d5af39d52cdb",
-        "content": "sha256:f60d632db277252b99be81f9c28b5e9311ce14d3423ded4473b3b68d78f4d46e",
+        "blob": "512f4557c1ebef43df7f407507c9ef92a3beace2",
+        "content": "sha256:749282dbbdb0ff4ff5ce54d8a2e29c9fd1826fdfa67be3d88460f5ae7a42e6aa",
         "locator": {
           "kind": "symbol",
           "name": "DirectExecutionGrantTest.test_reclaim_preserves_started_abandoned_leaf"

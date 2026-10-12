@@ -36,9 +36,9 @@ reported `not-measured` on its own display rather than promoted to current.
 **Every state is built through one channel constructor.** `_Answer` carries the varying half (state,
 detail, count, unreadable identities, next action) and `_channel` attaches the owner from the single
 `_COLLECTION_OWNERS` declaration, so a channel's `owner` names **which authority to look at** rather
-than which code path happened to run. `_answered` is the owner-answered pair (`recorded` with a count,
-or `none_recorded` with a real zero); `_absent` and `_unavailable` are the non-answers, and only
-`_unavailable` takes unreadable identities. The two removal constructors state unavailability with
+than which code path happened to run. `_answered` selects the owner-answered pair: `_recorded` carries a measured count, while
+`_absent` carries `none_recorded` with a real zero. `_unavailable` is the count-free non-answer.
+Both `_recorded` and `_unavailable` may name unreadable identities. The two removal constructors state unavailability with
 its reason: `_removed_matrix_channel` for authored effects (the matrix left with the retired envelope
 tables, MIK-R74 rule 1) and `_retired_channel` for the three retired canonical classes (no writer or
 record format on a converted tree, MIK-R26).

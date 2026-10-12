@@ -34,28 +34,12 @@
         }
       ]
     },
-    "12": {
-      "note": "`test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason` supplies the current fixture or assertion described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:70c4487c085e859426fff8b923c478a5ec3f2ddd0c413245598fd23d36b68a40",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "13": {
       "note": "`test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "020c5f0900fbacb7da2003e4ad340aa7d0225e5f",
+            "blob": "a5b0196561842deea697712b502e18db20a9a70d",
             "content": "sha256:9b9bbb6d063d3891a682c5c434e92388fa9a733a2f32013b715355483bc9f022",
             "locator": {
               "kind": "symbol",
@@ -71,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020c5f0900fbacb7da2003e4ad340aa7d0225e5f",
+            "blob": "a5b0196561842deea697712b502e18db20a9a70d",
             "content": "sha256:94eedcf69cd83e5ad3444c1af91a4f65d306c3250901b7f1efb9df293f44dbb3",
             "locator": {
               "kind": "symbol",

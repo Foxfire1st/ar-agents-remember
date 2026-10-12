@@ -15,15 +15,12 @@ Provides the read-only StoreViewReader port over a selected index snapshot.
 
 The reader projects typed invariant/family/revision/member/realization values and provenance from the supplied connection and snapshot. `open_view_reader` opens that snapshot read-only and returns the handle and reader; the caller owns closing the handle. The former store_view_reader(OpenedKnowledgeStore) bridge is removed. This read port neither selects a substitute canonical store nor admits mutations.
 
-**Recorded rows out, and no decision taken.** The module's docstring states the division in one
-sentence — the reader "performs **no** selection, **no** ordering and **no** classification" — and
-names the consequence: `application/knowledge_views` owns what a view selects and how it orders it,
-and each of those decisions carries a provenance class there, so an ordering introduced in this file
-would be an unclassified one. The statements here therefore filter on exactly the values that address
-a row — the bound `repository_id` and, for one kind, the `kind` itself — and each returns rows in the
-store's own recorded order, which is what `rows` calls "recorded order" and what the view layer then
-re-orders on one admitted input through `order_candidates`, withholding what it cannot classify
-rather than falling back to a database order.
+**Recorded rows out; semantic selection and classification remain above this port.** The entity
+queries impose deterministic SQL identity order: invariants by invariant/revision IDs, families by
+family/revision IDs, memberships by family/member IDs and realizations by claim ID. That mechanical
+order is not insertion order and is not the view's authored ordering policy. The view layer owns
+subject selection, semantic ordering and provenance classification, withholding what it cannot
+classify rather than treating this query order as an authored consequence.
 
 **Read-only by handle, not by discipline.** `open_view_reader` opens the database through
 `open_read_only_database`, which constructs the APSW connection with `apsw.SQLITE_OPEN_READONLY` and
@@ -34,13 +31,11 @@ so this module cannot leak one and a caller cannot forget that it opened somethi
 `application/knowledge_views` closes it in a `finally` beside the call. `StoreViewReader` holds the
 already-open connection, the repository id and the snapshot, and no path at all.
 
-**The snapshot is resolved from the dataset, never asserted.** Both entry points compose
-`KnowledgeReadSnapshot` from facts they read rather than facts a caller supplies: the store's
-`repository_id`, the schema name the store was opened as (`identity.schema_name`), the logical digest
-returned by `dataset_identity(database_path)` — which opens the file read-only, selects the generation
-the dataset declares, validates the bound namespace and returns the identity those two facts scope —
-and the schema identity's own `fingerprint` as the context digest. `snapshot()` returns exactly that
-value, so a view cannot be handed a snapshot the reader did not read.
+**Snapshot composition belongs to `open_view_reader`.** That entry combines the dataset's logical
+digest with the supplied repository namespace, schema name and fingerprint into `KnowledgeReadSnapshot`.
+`StoreViewReader` itself accepts an already-open connection, repository ID and snapshot, stores them
+and returns the supplied snapshot unchanged. Direct construction is not a second dataset-identity
+measurement.
 
 **One statement per question, with the columns named.** The envelope tables are gone, so there is no generic envelope read: each question has its own statement naming its columns rather than selecting a star, so a column added later cannot silently change what a view reads. `REGISTERED_REALIZATIONS` and `REGISTERED_FAMILIES` are the
 two registered totals, each counted from its own table. Generation 1's own entities are read by their
@@ -55,7 +50,7 @@ keeps only what was recorded: the two ids travel in the payload under the names 
 (`family_revision_id`, `invariant_revision_id`), the row kind and schema are `family_member` and
 `family-member/v1`, and the `change_locus` a view puts on such a row is the *view's* decision — this
 module performs no selection and no classification, so it does not choose one here. The member row is
-cached under its own statement key like every other read, so two views over one reader cannot disagree
+cached under its own entity-statement key like the other three entity-row reads, so two views over one reader cannot disagree
 about a family's membership because a write landed between them.
 
 **Typed JSON is decoded through the shipped decoder, and nothing is defaulted.** `_sequence` turns a
@@ -73,7 +68,7 @@ exclusions through `_sequence`. The attachment builder is deleted with the facet
 is the one builder whose result carries **no** `change_locus`: which locus a membership row belongs to
 is the view's classification decision, and this module classifies nothing.
 
-**Every read is cached, counted and answered as a typed error rather than an empty result.**
+**The four entity-row reads are cached; counts and resolver calls are separate.**
 `StoreViewReader` keeps a per-key `_cache` for the reader's lifetime — keyed by the
 invariant, family, membership and realization statements — so two views built over one reader cannot disagree about
 a kind's rows merely because a write landed between them. `_count` reads the single count row and raises `ViewReaderError` when the statement
@@ -90,22 +85,21 @@ record-schema literals the entity builders write (`invariant-revision/v1`,
 `family-revision/v1`, `family-member/v1`, `realization-claim/v1`) are spelled once each in
 their own builder.
 
-- **This module selects nothing, orders nothing and classifies nothing.** Its statements filter on the
-  bound repository id and the addressed kind or endpoint only, and they return the store's recorded
-  order; every ordering a view displays is imposed one layer up with a provenance class, and every row
-  this module could not classify is withheld there rather than defaulted here.
+- **This port does not decide semantic selection or classification.** Its four entity queries return
+  deterministic SQL identity order; the view's semantic ordering is imposed above it with provenance.
+  Query order is neither insertion order nor an authored judgment.
 - **Read-only by handle.** The connection comes from `open_read_only_database`, which passes
   `apsw.SQLITE_OPEN_READONLY`, so no statement this module runs can write; a refused view leaves the
   dataset byte-identical as a property of the handle, and the caller owns closing it.
-- **The snapshot is resolved, never asserted.** Both entry points build `KnowledgeReadSnapshot` from
-  `dataset_identity(...).logical_digest`, the inspected schema identity and the store's own repository
-  id, and `snapshot()` returns that composition unchanged; no caller-supplied snapshot is accepted.
+- **Snapshot derivation and retention are distinct.** `open_view_reader` composes the dataset logical
+  digest with supplied namespace/schema identity; `StoreViewReader` retains the snapshot its constructor
+  received. `snapshot()` returns the retained value without an additional measurement.
 - **No path is held and no second connection is opened.** `StoreViewReader` is constructed from an
   already-open connection, the repository id and the snapshot, so it cannot re-open the database at
   another revision behind the caller's back.
-- **An unanswerable read is raised, not absorbed.** `ViewReaderError` covers
-  a stored payload that is not a JSON object, a count statement that returned no row and a
-  resolver that is not callable, because an empty result and an unreadable input are different facts.
+- **An unanswerable read is raised, not absorbed.** `ViewReaderError` covers a count statement with no
+  row, a non-callable resolver and a resolver result without a string state. The old envelope-object
+  error is not a current read path; empty content and unreadable input remain distinct.
 - **No author is invented.** `_provenance_author` returns `None` for a row with no recorded actor
   instead of a default, so "nobody recorded this" never renders as "someone did".
 - **No caller text reaches SQL.** Every statement is a fixed module-level constant with only bound parameters, so no substituted token in this file is ever caller text.
@@ -137,9 +131,9 @@ module refuses to decide; the tables it reads are the eight logical tables the s
 below cite the reader's statements, builders and entry points, the vocabulary it imports rather than
 re-declares, and the layer where selection, ordering and provenance classification actually happen.
 
-- The reader's own statement of its division of labour: recorded rows out, no selection, no ordering and no classification, because every such decision carries a provenance class one layer up. [21]
+- The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification. [21]
 - The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. [22]
-- The snapshot composed from the dataset's own identity rather than a caller's assertion. [23]
+- `open_view_reader` composes a snapshot from the dataset digest and supplied namespace/schema identity; direct reader construction retains its supplied snapshot. [23]
 - The per-question statements, each naming its columns rather than selecting by a star so a later column cannot change what a view sees. [24]
 - The two registered totals, each counted from its own table and returned as one counts value. [25]
 - Each entity read by its own statement: invariant revisions, family revisions, memberships and realization claims. [26]

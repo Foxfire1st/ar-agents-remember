@@ -36,10 +36,7 @@ collection inline as well as the file, including an empty list, refuses duplicat
 The file owner reads once under regular-file/byte bounds and validates the same models and collection
 limits; the exact file digest accompanies the result. Status projections leave full publication
 and validation material in detail, without changing generation integrity or CAS checks.
-`publish` validates caller-supplied expectations and exact judgments before entering the short task
-publication lock. Inside the lock it rereads the contract, rechecks predecessor, source identities,
-and evidence bytes, atomically installs a deterministic content-addressed record/report directory,
-optionally freezes the attempt pointer, rechecks again, and writes the stable authority last.
+`publish` validates caller-supplied expectations and exact judgments, then rereads the contract and rechecks predecessor, source identities and evidence bytes. It atomically installs a deterministic content-addressed record/report directory, optionally freezes the attempt pointer, rechecks currentness and generation integrity, and writes the stable authority last. This route takes no task publication lock or CAS mutex.
 Before closeout, `validate` delegates to the shared currentness validator. After completed closeout, status and validate with a retained authority instead return `closed-out`, its recorded code/memory commits and record digest, and compare nothing with the live tree: coherence is validated before closeout. Without an authority the ordinary `absent` path remains. This historical response is not current readiness or integration acceptance. Publication fingerprints contain all
 semantic input, so exact retries converge even after a crash left a generation but not the pointer.
 

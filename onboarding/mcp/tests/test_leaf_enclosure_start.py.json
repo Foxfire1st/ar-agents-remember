@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "afc5871432f8e5f14e32c69ba0c3d47c8d12f127",
-        "content": "sha256:763408475793189ff24d73cac94282b372a64e82c7f13d1e766ebf675e3d3b20",
+        "blob": "0726ce71aa14ed4730b058dce90b9c1bc35cd164",
+        "content": "sha256:008d1de8ee70e6764dc3fa288398174d95886173264d99e50ce02315094b1d5c",
         "locator": {
           "kind": "symbol",
           "name": "LeafEnclosureStartCommandTests.test_native_stale_recovery_survives_the_child_and_both_entry_points"

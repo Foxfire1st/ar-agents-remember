@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
         "content": "sha256:62441929118df8b1dc35a941ef405b3603961a62fb0a2bfe698576d044979e61",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
-        "content": "sha256:674e7bae40b01360b9e8e7a18221923174c539fe97f204f31be67a776357ebcd",
+        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
+        "content": "sha256:a5e51cf7d057de24ba99f87fb886ea1c3c53262e341276d8aa351aeb6b8b821b",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_create_precode_census_pins_each_row"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
         "content": "sha256:3146079df45e5db08e3ee183abe12217dbaefc0c0297eb6559647489c38c86aa",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
         "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b7fe3270197980f9cbf7e201361fd0b0dfb91a40",
+        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
         "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
         "locator": {
           "kind": "symbol",
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
+            "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
             "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
             "locator": {
               "kind": "symbol",

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
           "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
           "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
         "locator": {
           "kind": "symbol",
           "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
           "name": "test_a_code_only_refusal_carries_its_identity"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
           "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
@@ -139,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
         "locator": {
           "kind": "symbol",
           "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
           "name": "test_a_next_only_refusal_carries_its_next_action"
@@ -175,8 +175,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
         "locator": {
           "kind": "symbol",
           "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
@@ -193,8 +193,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
           "name": "test_a_code_only_refusal_carries_its_identity"
@@ -211,8 +211,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
@@ -229,8 +229,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
           "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
@@ -247,7 +247,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
         "locator": {
           "end": 26,
@@ -266,7 +266,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
         "locator": {
           "end": 30,
@@ -285,7 +285,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -303,7 +303,7 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -321,8 +321,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
           "name": "test_a_next_only_refusal_carries_its_next_action"
@@ -339,8 +339,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_an_answer_without_a_readable_whole_result_is_unvalidatable"
@@ -357,8 +357,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
@@ -375,8 +375,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
           "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
@@ -393,8 +393,8 @@
     },
     {
       "anchor": {
-        "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
           "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
@@ -464,12 +464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
             "content": "sha256:33130145055549ab94d277f921efd2ccfe6a699fa7b23e2bac7f40b086db8dcb",
             "locator": {
-              "end": 309,
+              "end": 313,
               "kind": "line_range",
-              "start": 295
+              "start": 299
             }
           },
           "kind": "test"

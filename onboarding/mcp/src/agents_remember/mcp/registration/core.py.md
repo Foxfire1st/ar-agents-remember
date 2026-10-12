@@ -42,6 +42,14 @@ Registers server identity and orientation/install tool signatures.
 
 ## Code Commentary
 
+- The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping. [9]
+
+
+The registered identity reader `server_info` retains explicit ToolAnnotations: `readOnlyHint=True`,
+`destructiveHint=False`, `idempotentHint=True`, `openWorldHint=False`. These describe the identity
+operation, not a promise that its admitted tool-call logging creates no bytes. Restoring them keeps
+the remaining identity reader discoverable as read-only without reinstating retired `ping`.
+
 ### Logic
 
 Seven `@server.tool()` declarations, each forwarding to its `mcp/tools/core.py` payload builder.

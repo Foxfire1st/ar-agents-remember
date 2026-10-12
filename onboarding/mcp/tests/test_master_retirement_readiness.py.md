@@ -12,6 +12,16 @@ Retirement readiness and the named remedies for its refusals. Readiness refuses 
 
 `_refusal` reads a refusal, `_carry_out` performs the named action and `_facts` reads the reported facts. The cases cover a leaf worktree directory that exists, a leaf branch with unlanded commits, the master's own branch and worktree as facts, an older-layout operation report as a fact, an unreadable contract, a live operation locator, and a real paired enclosure whose named tool is carried out before the retirement is repeated.
 
+Only the paired refused-retirement case separates its deliberate `/logs/ar-tools-` trace from the
+byte-tree comparison. It requires exactly one added four-cell **file** entry; same-name directory and
+symlink controls do not satisfy it. The remaining filtered snapshots must match. This test-local oracle
+is not permission to ignore arbitrary logging or other mutations.
+
+The populated-log abandon-preview case starts a real enclosure, removes both worktrees to arrange
+logs-only remains, then calls abandon in dry-run mode: logs and the group are planned for removal while
+`byte_tree(group)` is unchanged. Guard-lease effects outside that enclosure are outside this oracle;
+it is not a whole-world no-write claim or a fresh runtime result.
+
 ## Evidence
 
 - Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement. [1]

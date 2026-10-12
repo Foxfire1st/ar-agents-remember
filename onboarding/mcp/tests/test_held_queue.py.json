@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-        "content": "sha256:46fc42e5bd3076e9a427ec0b4401faebf9a3ef4c4f338ec2eaaa0136a5245a99",
+        "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+        "content": "sha256:fd4c6b5a1122589a15a6cbdc63cb13aebeb3ae6005e3e202c0c439b03c5a8af8",
         "locator": {
           "kind": "symbol",
           "name": "HeldQueueRecoveryTests.test_a_restart_with_a_stale_zero_counter_delivers_without_a_retry"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-        "content": "sha256:592947b2d4c0d1e6136b700d3c3ed0176caf271093c80b28b0a0798361a43f4e",
+        "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+        "content": "sha256:181e65b6ee43ce9d89d9002fc4a1244a6976d4168ca06d70dd5a68524ca7f5a9",
         "locator": {
           "kind": "symbol",
           "name": "HeldQueueRecoveryTests.test_a_split_recovery_keeps_the_part_id_on_a_deduping_host"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-        "content": "sha256:f49681f3cd597b803fa483992311cb78937a416cd34d75e2b4dc3cc336d9bd9a",
+        "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+        "content": "sha256:ba12b3c15f346d4335f0ca3aebc3e88bdf4238b989ca64821650dabc2f90b7fc",
         "locator": {
           "kind": "symbol",
           "name": "HeldQueueRecoveryTests.test_variable_lengths_split_into_the_minimum_two_deliveries"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-        "content": "sha256:f53a60d364083b77eebbd423f746b08198bb46f3370b3564b7766fd7deefc271",
+        "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+        "content": "sha256:b08e61e97f3fc0ed511e1f29bd20740d3e3901d98fc8366a3428971a9675e4b3",
         "locator": {
           "kind": "symbol",
           "name": "HeldQueueRecoveryTests.test_a_stop_after_store_deletion_still_records_its_terminal_end"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-        "content": "sha256:1d417539658d5f0ed1883bd373f91a0419f784d98df6d2c270c660f53c04ccea",
+        "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+        "content": "sha256:35250df9af8ecf96d5e57b8d8ae713e95ad522827937ba8892545f1497118d1e",
         "locator": {
           "kind": "symbol",
           "name": "HeldSweepBoundsTests.test_idle_fleet_reads_stay_bounded_at_two_sizes"

@@ -22,7 +22,8 @@ Assertions preserve per-member role/rationale and distinguish symbol/range resol
 file with `gamma` appended, so the blob changes but `alpha`'s lines do not). It authors seven claims on the
 before dataset — two symbol claims on different members in one file, a `line_range`, a `file`, a symbol the
 bytes do not define, a range past the blob's end (50-60 of six lines) and the double definition — then
-copies that dataset to an after dataset and re-attests `alpha` against the after blob. `roster_sources`
+independently builds the after text-backed dataset from the remaining stale claims plus the re-recorded
+`alpha` claim against the after blob. No baseline database-byte copy constructs this population. `roster_sources`
 opens one side with `open_family_side`, reads the fixture family with `read_family_roster`, closes the side
 and indexes every carried source by claim id.
 
@@ -80,7 +81,7 @@ No configured domain documentation could be checked.
 
 - The two texts, their attributed lines, the double definition and the past-end range the fixture writes. [22]
 - **The legacy source fields whose values must not change.** [23]
-- **The fixture: seven before claims, a copied after dataset and the re-attested after claim over two real commits.** [24]
+- **The fixture: seven before claims, an independently built matching after population and the re-recorded alpha claim over two real commits.** [24]
 - **One side's roster read through the production owners, indexed by claim.** [25]
 - Two members in one file, and the line-range and file-locator states. [26]
 - The unchanged attributed range on both sides of a changed file. [27]

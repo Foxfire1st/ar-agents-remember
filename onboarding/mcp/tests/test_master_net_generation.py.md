@@ -19,8 +19,9 @@ payloads are insufficient for production-composition claims".
 
 ### Logic
 
-Nine cases, one load-bearing property each (the module's own docstring lists seven; the
-route case and the F1 diff-failure case complete the nine):
+The original NET/generation cohort had nine cases, one property each (the original docstring listed
+seven; route and diff-failure cases completed that cohort). The addresses below describe that historical
+cohort, not a fresh collection result or current source-line census:
 
 - `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero` — the packet's
   conforming example and the falsifier for its non-conforming one: two leaves add then
@@ -51,6 +52,10 @@ route case and the F1 diff-failure case complete the nine):
   a diff that fails *after* endpoint validation (monkeypatched
   `changed_files_with_counts` raising) is refused with `kind == "unresolvable"`, never
   reported as an empty net. cit:([`test_a_diff_failure_after_validation_is_refused_never_reported_as_zero`], mcp/tests/test_master_net_generation.py:483-499)
+
+Additional address-preservation cases exercise quoted names, leading spaces and literal backslashes
+through inventory, closeout worklists, rename destinations and the changeset route. Their literal
+addresses must survive routing unchanged; this source account is not a new execution receipt.
 
 The shared world is `MasterFixture` with its `master_fixture(tmp_path)` builder — a
 master-shaped fixture (series contract + two leaf contracts + real code/memory repos) that

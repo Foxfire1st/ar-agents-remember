@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7f63515259405ee21542fdc391e7dd94504104c1",
-        "content": "sha256:17072231a64839c6fb4a3a2dc9080c731066bb5811bd5182a2f7fa53f268a69b",
+        "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
+        "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
         "locator": {
           "kind": "symbol",
           "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7f63515259405ee21542fdc391e7dd94504104c1",
+        "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
         "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f63515259405ee21542fdc391e7dd94504104c1",
+            "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
             "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
             "locator": {
               "end": 62,
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f63515259405ee21542fdc391e7dd94504104c1",
+            "blob": "8ca5ea9025c7b768c0dd23a792e662716a5ead8a",
             "content": "sha256:7bab40ff0cc245f871dff2f90ef71e8e3ef284de9738c217dcbec581641f07be",
             "locator": {
-              "end": 176,
+              "end": 178,
               "kind": "line_range",
-              "start": 160
+              "start": 162
             }
           },
           "kind": "test"

@@ -33,8 +33,10 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `knowledge_census.add_arguments`/`knowledge_census.run`,
 `knowledge_copies.add_arguments`/`knowledge_copies.run`,
 `paseo_runtime.add_arguments`/`paseo_runtime.run` and
-`tool_log_stats.add_arguments`/`tool_log_stats.run`. `main(argv=None)` parses and
-dispatches to `args.func(args)`, returning its int exit code.
+`tool_log_stats.add_arguments`/`tool_log_stats.run`. For public commands, `main(argv=None)`
+parses and dispatches to `args.func(args)`, returning its int exit code. Before that public parser,
+the internal `leaf_enclosure_start.COMMAND` child-process route delegates to its own entry point;
+it is not an additional advertised public subcommand.
 
 **The two knowledge subcommands are two different admissions, and the help text says which.**
 `knowledge-ingest` is described as "the knowledge write plane's production entry point" for a

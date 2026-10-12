@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
-        "content": "sha256:3d92bd5fc67e0e717180db0cf8b06efe023c2061ea3235415c7bc92c3b8b57ed",
+        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "content": "sha256:4ff8e477f7cf07b5c9cc0495a3d07f5d9234cbc015fab1c5073cbbfaf6421573",
         "locator": {
           "kind": "symbol",
           "name": "_abandon_directories"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -114,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
             "locator": {
-              "end": 189,
+              "end": 190,
               "kind": "line_range",
-              "start": 189
+              "start": 190
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -230,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
             "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
             "locator": {
               "kind": "symbol",
@@ -297,12 +297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9ce9e68830e30957a97bbaf68b8a5c4b9aa34bd",
+            "blob": "442ba26117e74abfd7a4e161b6ff0dede79cc12f",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 300,
+              "end": 356,
               "kind": "line_range",
-              "start": 300
+              "start": 356
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

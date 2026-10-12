@@ -48,20 +48,22 @@ display as the selected subject's judgments. `revision_selection` carries **the 
 classification was made against**, so pane 1 renders the selected statements from the same value the
 classification used instead of being handed a second spelling of "which revisions were selected" —
 two spellings is how a pane comes to render one selection beside another selection's records.
-`label_of` answers `None` for a record that is not displayed here, which is what keeps an unrelated
-record out of a pane; `displayed_rows` keeps a row whose references resolved to nothing (dropping it
-would report an unresolvable binding as an absence of records) and drops a row that resolved to
-another subject's identity, whether or not it was displayed as context.
+`label_of` answers `None` for a record that is not displayed here, keeping an unrelated
+record out of a pane. `context_of` and `summaries_of` expose the requested collections in the caller's
+order. `AppliedRecords` has no `displayed_rows` method; unresolved and foreign bindings are handled
+by the classification policy, not by a retained pane-row port.
 
 **`review_applicability` assembles the one entry the composition calls.** The composition passes what
 it already holds — the resolution the request was answered from, the request's own selector, the record
-inputs, the matrix rows and one `ComparisonFacts` value carrying the comparison's union items, R07's
+inputs and one `ComparisonFacts` value carrying the comparison's union items, R07's
 revision selection, R11's comparison identity and R08's recorded relationship union — and this function
 builds `ApplicabilitySources`, including the **lazily** read known-subject catalogue
 (`known_subjects=lambda: read_subject_catalogue(resolved)`), which is opened only when some record names
 a subject the selection does not reach. `apply_review_applicability` is the policy: the recorded
-population is read once, and the four supplied collections are classified against it by
-`_classify_assessments`, `_classify_signals`, `_classify_observations` and `_classify_rows`.
+population is read once, and the supplied collections are handled by
+`_classify_assessments`, `_classify_signals` and `_classify_observations`. There is no matrix-row
+input or `_classify_rows` owner; a separate `_MATRIX_OWNED` loop records the retired collections'
+zero-selection summaries.
 
 **The direct-versus-historical decision is a resolution of the record's own revision references, not a
 set intersection.** `_revision_binding` resolves each recorded revision reference against the
@@ -143,8 +145,9 @@ supplied record exactly once, which is what stops a filtering bug from becoming 
 `supplied` fact is stated per class rather than uniformly: for the three owner-read collections it is
 the population the pane's own collection was classified from (the same population the R14 channel
 counts), and for the two matrix-owned collections (`authored_effects`, `evidence_claims`) it is
-the rows no page returns — always zero, since the matrix left with the retired envelope tables — with the owner's complete count travelling on the channel —
-which the summary's `detail` says.
+the rows no page returns — always zero, since the matrix left with the retired envelope tables —
+with the owner's complete count travelling on the channel. The emitted summary detail retains a
+historical matrix-page suffix; this card does not claim that suffix was repaired.
 
 ### Conventions
 
@@ -207,7 +210,7 @@ No configured domain documentation could be checked.
 - **The port the panes consume: per-record labels, the labelled context rows, the six-way summaries and the selection the classification was made against.** [2]
 - **The one entry the composition calls, before either pane renders anything.** [3]
 - **The sources that one entry is assembled from, with the known-subject catalogue a reader rather than a value.** [4]
-- **The policy: the selection's recorded population is read once and the four supplied collections are classified against it.** [5]
+- **The policy reads the selected population once, classifies the three supplied collections and separately emits the retired matrix-owned zero-selection summaries.** [5]
 - **The task-context entry: no subject selected, so every record is the candidate's own input with its recorded subject beside it.** [6]
 - **The per-collection projection, and the context row one related identity earns: true subject, the recorded relationship that reached it, the record's kind as its label, author and role, and no judgment content.** [7]
 - **The direct/historical decision and the two unresolved shapes a revision binding can earn, with the sentences that state each basis.** [8]

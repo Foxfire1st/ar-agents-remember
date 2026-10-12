@@ -53,7 +53,7 @@ No configured Domain Documentation source applies to this repository-internal li
 The source file is the direct evidence for this file-specific ownership boundary.
 
 
-- The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam. [1]
+- The module defines `recover_direct_landing_under_authority`, `direct_recovery_refusal` and `reconcile_control_mutations` as its public seam. The recovery caller must already own landing authority. [1]
 
 
 - One translator reclassifies typed direct failures against current evidence while invariant runtime errors remain loud. [2]

@@ -12,7 +12,7 @@ Read behavior and schema integrity of derived knowledge index files.
 
 ### Logic
 
-Test-only rows supply the branching fixture. Production readers preserve divergent same-label revisions, reopen exact identities/digests and reject writable or absent-file opens. [1] [2] [13]
+Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject writable or absent-file opens. [1] [2] [13]
 
 Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables/triggers or another version refuse open and name conversion. Canonical insert/duplicate/lineage write rules and their old cases are removed. [6] [7] [8]
 
@@ -73,7 +73,7 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
-- The divergent-successor read, the node registered as the shared fixture's evidence node. [14]
+- The current separate-record revision read; the former divergent-successor population is not this text fixture's executable coverage. [14]
 - The database-level immutability proof against the stored revision rows. [15]
 - The seal covering more than the statement. [16]
 - The layer-direction case. [17]
