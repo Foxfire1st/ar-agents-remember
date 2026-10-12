@@ -30,8 +30,344 @@
         }
       ]
     },
+    "10": {
+      "note": "Four-zone routing, editable classification and the pure slash predicate.\n\nAnchor: Routing predicates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:6ba6ddbae629de5f7d5c943e4c4c04f5233d7a0830bcf867c69edb84e1f41575",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Default zone-scoped chords and forward F6 preference protection.\n\nAnchor: Default tables and preference policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32384b5c1290e4e59213ae0a1b6fa2333ef47ec6",
+            "content": "sha256:b31c80cbf7ce6955754f2af8f30991575456d5480fb8828a79ed785c5f113e83",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:035c42fbba1a6141d6bc7613206c1d2fbb655c813c042300a65e032b6b291769",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:7598e5a49c07549a4fc6d846b1df79c2f27a72ff574d67867499a6a54b3d65da",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Preference subscriptions, conversions and profile activation.\n\nAnchor: Browser/React boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:0345e0d1d9b8d7143df11d2fe0d52b39f8be1980bc65db58a253383883c61159",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Focus cycle and collapsed-region filtering.\n\nAnchor: Focus policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:00222702ac33f2bb07c063b36e8aff5ff5cd54688a70d3b2f4f76c3267dd9d8d",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/focus.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:f9df88a0df109aa6af2d5b61812b5ab1f682a7d91666df8c6b8659f180c41451",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Source assertions for routing, focus and preference contracts.\n\nAnchor: Test source only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2fd8038c92a752d5ae89cd4afe2f7bc8b20c169",
+            "content": "sha256:83e73b0e1296f5a43685aef133567f3e0da84fdd7dcf5ceefacaec0fae825967",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/zones.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "abc695820371c968f42f595b825c4e60323331ac",
+            "content": "sha256:16d3e9dd2ddafb48c3c75037622823d2d99f13d6d6fb24a0aba69a6b8cfa6ed0",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/focus.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5f79bffb47a1a3dbab7255a9e893cf8cd1c8bc67",
+            "content": "sha256:a7cc0f0e74d9af9669c2c77ad6177fafc31c01d561cfdd8e67e1241d4ba2dd50",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/preferences.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Effective review traversal wiring and its root marker.\n\nAnchor: Reviewer ownership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:70d75fd7c17e6e3bcf6a8e85bd2cb3f8151684b343d6c68db0e6c0cdb46b2a5a",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 613
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Installed terminal guard consumes the reserved matcher; selection-aware copy is separate.\n\nAnchor: Terminal ownership boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:70d2fe838b1be67a71151adbe498e31ecd5889817b23b18b67736f1e0118eb46",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:0a8eb1eaa882a3af2ef95756cd7df4688ceb582a08809937c2756b2bd4e03831",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:c8ed64b5b4482c90106e1b5ea719e77326810bee975212765b0083cc6b4ffa6d",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:9c3e5d2909d6b11d8abaeb2968b331c3d3410492c35ad5c2490ffd4bccae8270",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71037ea4285cba492420dd825397978dab4fcd9a",
+            "content": "sha256:9a7ca92a812b3362f6cbf46a1d2da514dad4e5a53563b755dfd92fc9f960847f",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/panels/terminalSession.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Composer marker, effective stop shortcut and interruptible stop-command registration.\n\nAnchor: Direct consumer wiring",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:98f738887026c674b0becf40e431c33ffa94dfe01f0c6ec7da07ac963415c755",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/sessionComposerParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:411e87bd942166890d9296bb78c67b299dcf7b702c4d992a0157e91291e22e60",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874f6bb9be6c9cedd4170b34a5f8b60fa593427a",
+            "content": "sha256:c4a2fe9bf90a92dfb7a1db238f8d8d115258c6d8f7702c23bafacc6fe60d0089",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Palette renders effective reviewer bindings, profiles, issues and PTY reservations.\n\nAnchor: Reference rendering",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:a4b00e1c851cbeb9722acdbae1c00a7f0eaaa2914bce581e573265558ac69155",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "dashboard/src/panels/session-cockpit/CommandPalette.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Default command registry contains no review traversal entries.\n\nAnchor: Default registry contents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:d62fb648fabd82ff59b3f052b5e5b1ba53a9f6e72556a9285cc05bec3afa50ed",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "The reviewer's own binding on its zone.\n\nAnchor: \"const owner = zoneForTarget(target);\"; \"if (routeKey(owner, event, target) !== 'handle') return;\"",
+      "note": "The reviewer's own binding on its zone.\n\nAnchor: Zone ownership and routing checks",
       "targets": [
         {
           "anchor": {
@@ -117,7 +453,7 @@
       ]
     },
     "7": {
-      "note": "The DOM that carries the `data-kbzone`/`data-region` markers.",
+      "note": "The cockpit wrapper delegates the DOM carrying the region markers to its body.\n\nAnchor: region marker rendering",
       "targets": [
         {
           "anchor": {
@@ -130,11 +466,50 @@
             "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:164dbe071b777ad120124a207eddb7deb0a60c2d1eb94bd1b20069e5d6e35fe5",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:cebe4a4a08e8866cd40015dbb23cf01f3f1b20e42f301a5388055c73c75a3e86",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:22a0cacab0a22b4a5d3c9e34f928badc082c1c54326beccc0427ee66903b0409",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The live CodeMirror surface that consumes profile and chord reconfiguration.",
+      "note": "The live CodeMirror surface consumes profile and chord reconfiguration through its hooks.\n\nAnchor: delegated editor policy",
       "targets": [
         {
           "anchor": {
@@ -145,6 +520,50 @@
               "name": "SessionComposer"
             },
             "path": "dashboard/src/panels/SessionComposer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
+            "content": "sha256:98e03dff92e8f1bbc58ac30fc25b75e66b814b8fa13f7ef2d98b66aea4093adf",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/sessionComposerHooks.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
+            "content": "sha256:f013ff2a326146513ac6572cb5be695de2f5c18e6878b7d037013714b5db7496",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "dashboard/src/panels/sessionComposerHooks.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reserved PTY chords, recorded collision audit and bound-only matching.\n\nAnchor: Reservation authority",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:5a29192205b0bb57311b37779807f93b45b50492827b637445911325e4a2fc20",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
           },
           "kind": "code"
         }

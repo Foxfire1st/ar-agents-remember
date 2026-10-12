@@ -13,73 +13,33 @@ the sibling live renderer is [conversation/](../conversation/overview.md).
 
 ## Purpose
 
-`session-cockpit/conversation-library/` is the **in-stage previous-conversation library** (design §4.4, §12.1). It renders each harness's normalized native history inside the same Chats stage,
-previews a selected conversation READ-ONLY in the same block grammar, and owns the **sole exact-open
-resume action**. Opening focuses a new live rail row ONLY on exact `opened` catalog proof; every other
-outcome leaves the operator's current draft, focus, and scroll intact (R4). It holds only a
-reconstructable projection of the library API — no durable browser index — and never marks a history row
-active.
-
-## Route Model
-
-- `ConversationLibrarySurface.tsx` — the in-stage browser shell: heading focus on open, responsive
-  columns, and the §4.4 return paths (Back button, Escape-in-stage → `onBack`, palette Back-to-current-chat)
-  all consuming the same focus-return token. **Layout idiom (F23/R5):** the `columns` flex container is
-  `nowrap` (NOT wrap) with `min-height:0` columns each handing overflow to its own interior scroller, and
-  `@container (max-width:56rem)` owns stacking with `container-type:inline-size` (F22). A wrapping flex
-  container would size each line to content, defeat the `overflow:hidden` height clip, and leave the sole
-  resume action and the paging affordance pointer-unreachable — the regression F23 fixed. **V10 threshold raise:** the stack breakpoint moved `640px → 56rem` — the 16rem list + 20rem preview
-  crush below ~56rem of surface (the list falls to a ~180px sliver, preview prose splits mid-word), so the
-  surface stacks to one column BEFORE that (the 900px window with the rail collapsed, and the ~1000px
-  sweep). Sibling `MarkdownBlock` prose wraps whole-word (`break-word`) with inline code `nowrap` (V10),
-  effective only under the app-root `word-break: normal` override (RV-1). The `nowrap`/container-query
-  idiom itself is unchanged. The surface also passes the page's `agentsNote` straight through to
-  the list (`agentsNote={list?.agentsNote}`) — a one-line pass-through; the list owns the render.
-- `ConversationLibraryList.tsx` — the native list: boundary-truncated title carrying the full value in
-  `title` (A5), humanized age (`humanizeAge`), a completeness badge, and `Load more` paging.
-  **Sub-agent nesting:** a row's `agents` render as indented child rows (2ch inline
-  indent, dashed border, `library-agent-row` testid) with an `agent` badge plus the `role` badge when
-  present; `agentChildRow` promotes a child to the parent row shape (its own server-minted key +
-  identity digest, the parent's read-path capabilities — the wire carries none per child — `agents: []`),
-  so children select/preview/open through the SAME flow. The page's `agentsNote` renders VERBATIM
-  (`library-agents-note`) whenever non-empty — agent unavailability is never silent. Covered by the new
-  `ConversationLibraryList.test.tsx` suite.
-- `ConversationHistoryPreview.tsx` — the read-only preview in the SAME block grammar, labeled
-  `history preview · not active`; its partial note prints the reason from the capability that is ACTUALLY
-  unsupported (F13), never a supported-state reason.
-- `OpenConversationAction.tsx` — the SOLE resume action: a caller-stable `requestId`; focus moves to a
-  new rail row ONLY on `phase="opened" && outcome="opened"` catalog proof; every other outcome
-  (`unsupported`/`stale-identity`/`timeout-unknown`/`launch-failed`/`identity-mismatch`/`request-conflict`)
-  is surfaced without focusing. `dispatching` (set from dispatch) blocks a double-open (the dispatch TOCTOU
-  window); poll exhaustion switches to an honest "outcome unknown — reconcile" re-drive under the SAME
-  requestId (F6). Its optional launch context forwards the focused canonical `TaskDocumentRef` and
-  seat role through the shared data contract, never a leaf or runtime-session address.
-
-## Invariants And Boundaries
-
-- **Read-only history; focus only on exact opened proof (R4).** The preview carries no composer or
-  controls; the library store never marks a row active; a successful open focuses the new session only
-  after the catalog reports `opened`, and every other outcome leaves draft/focus/scroll intact.
-- **One reconstructable projection, no durable index (R1).** The surface reads the
-  `data/conversation-library` store; reload rebuilds from the list/read APIs. It invents no second
-  history database.
-- **One exact-open authority.** `OpenConversationAction` is the sole resume path; a lost response
-  reconciles under the same `requestId` (invariant 27); a double-click cannot dispatch two opens.
-- **In-stage, never overlapping the diagnostics drawer.** While the library overlay is up, `ChatsStageBody`
-  does not render the diagnostics drawer, so the two surfaces can never overlay (F8); the live surface
-  stays mounted but inert behind the library.
-- **Height containment via single-line flex + container queries (R5).** See the layout idiom above —
-  wrapping flex is forbidden here; each column scrolls independently.
+`session-cockpit/conversation-library/` browses a harness's normalized previous-conversation history inside the Chats stage. Selecting a row reads a historical preview using the live renderer's block grammar; it does not activate that history. The browser provides the `Open as new chat` resume action for a selected top-level row. It delegates list, preview and open-operation state to the reconstructable library projection, which has no durable browser index.
 
 ## Hot Path Summary
 
-1. `ChatsStageBody` mounts `ConversationLibrarySurface` when the browse-history stage mode is on for a
-   controlled harness session; the surface reads the `data/conversation-library` store.
-2. `ConversationLibraryList` renders the native rows (truncated title + full value, humanized age,
-   completeness); selecting one previews it read-only in the same grammar (`ConversationHistoryPreview`).
-3. `OpenConversationAction` dispatches an exact open under a stable `requestId`; on `opened` catalog proof
-   it hands the new `arSessionId` up to focus a live rail row; any other outcome is surfaced in place.
-4. Back / Escape / palette-return restore focus through the shared focus-return token.
+1. `ChatsStageBody` enables the library for a controlled session when library mode is requested and a harness id is available; `LibraryAndDiagnostics` mounts the surface.
+2. The surface loads the harness list. Parent or child selection loads a read-only preview; only a selected top-level row supplies the open action.
+3. The open action dispatches under one request id. Status polling and reconciliation retain that id; transport failure or poll exhaustion permits a manual reconciliation.
+4. Only `phase="opened" && outcome="opened"`, together with a returned session id, reaches the cockpit focus callback. Other outcomes remain visible in the library.
+5. Back, eligible Escape and palette return close the library through the shared focus-return handler.
+
+## Route Model
+
+- `ConversationLibrarySurface.tsx` composes the list, preview and open action. On mount or harness/scope dependency changes it focuses its heading and loads the list. Back calls `onBack`; Escape does so unless its target is an input, textarea or contenteditable element. List and preview updates do not explicitly move DOM focus. The page's `agentsNote` passes through the list-view adapter to the list.
+- The surface establishes an inline-size container. Its columns use single-line flex, clipped overflow and `min-height:0`; a container query stacks them at widths up to `56rem`. The list and preview bases are `16rem` and `20rem`, and each delegates overflow to an interior scroller. This avoids the content-sized flex lines that wrapping would create inside the height clip. Shared Markdown prose uses `overflow-wrap: break-word`, inline code uses `white-space: nowrap`, and the application root overrides inherited `word-break` to `normal`.
+- `ConversationLibraryList.tsx` renders boundary-truncated titles with the full title in the `title` attribute, humanized activity ages, safe native-id suffixes, completeness badges and explicit `Load more` paging. Sub-agent conversations appear as child rows with a `2ch` indent, dashed border, an `agent` badge and an optional role badge. Selection promotes a child to the parent row shape using the child's own key and identity digest, the parent's capabilities and an empty `agents` array. Child selection uses the same preview loader as parent selection. However, the surface resolves the open-action row only in the top-level `list.rows`; a child selection therefore does not mount the open action. The list renders a non-empty `agentsNote` verbatim when it reaches its populated-list branch; its error, initial-loading and empty branches return before that note.
+- `ConversationHistoryPreview.tsx` labels loaded history `history preview · not active` and renders its items through `ConversationItemView`. It has no composer or live conversation action controls. Its partial note chooses the tool-completeness reason when that capability is unsupported, otherwise the completeness reason when unsupported, otherwise no note.
+- `OpenConversationAction.tsx` starts an open with a new request id, the row's opaque key and expected identity digest, and optional cwd and launch context. It reflects operation outcomes and rollback state. A transport error or exhausted poll budget offers reconciliation under the existing request id. Its callback runs only for the selected row when the store's exact-open gate is true and the operation contains an `arSessionId`.
+- The stage caller supplies launch context only when the focused session has a canonical `TaskDocumentRef`, forwarding that reference and its seat role through the shared contract. A successful open closes the library and passes the returned session id to the cockpit focus handler. Back, Escape and the palette's Back-to-current-chat command share the close handler, which restores the captured invoker if it remains connected and clears the return token.
+
+## Invariants And Boundaries
+
+- **Read-only history and a separate live projection.** Preview selection updates library selection/preview state, not live-session activation. The library store has no active-row field and persists no browser index. Reload reconstructs its list and preview from the serving APIs.
+- **Exact-open focus gate.** The library store sets `openedForFocus` only when both operation phase and outcome equal `opened`. The action additionally requires the selected conversation key and an `arSessionId` before invoking the parent callback. Unsupported, stale-identity, timeout-unknown, launch-failed, identity-mismatch and request-conflict outcomes are reflected without that callback. This path does not write the current composer draft or live scroll state.
+- **Stable reconciliation identity.** Dispatch marks the selected row busy before awaiting the first response, disabling its open button during dispatch and nonterminal polling. Transport errors retain the request id; exhausted polling stops and offers reconciliation under the same id. This is a guard for the displayed row, not a global prohibition on opening another row.
+- **One resume action in this browser.** The list selects history and the preview renders history; the open-action component owns resume dispatch. Child-row preview support does not currently imply child-row resume support.
+- **Exclusive stage presentation.** The stage keeps its live layers mounted but hides their wrapper with `display:none` while the library is shown. The conversation pool receives false visibility and scroll-geometry flags. The diagnostics drawer renders only when the library is not shown, so the two presentations do not overlap.
+- **Height containment.** Columns remain a single flex line until the container query changes their direction; zero minimum heights and interior scrollers contain list and preview overflow.
 
 ## Child Route Onboarding Map
 
@@ -97,23 +57,8 @@ this overview is their governing pillar.
 
 ## Evidence
 
-### Docs References
-
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route relies on its direct agents-remember source/tests and the reviewed
-task/worker/verdict evidence for any current behavioral claim.
-
-No configured Domain Documentation source exists for the in-stage history browser.
-
-### Cross-Repo References
-
-The browser composes repository-local components over this package's own library contract; no
-cross-repository implementation source governs it.
-
-No applicable cross-repository source was found.
-
-### Repo-Internal References
-
 - The reconstructable library projection this browser reads. [1]
-- The one-roof composition that mounts this browser in-stage. [2]
-- The live renderer whose block grammar the read-only preview reuses. [3]
+
+- The one-roof composition mounts this browser in-stage. [2]
+
+- The historical preview reuses the live renderer block grammar. [3]

@@ -9,123 +9,58 @@
 [data overview](../overview.md) — this child owns keyboard contracts while the data overview owns
 the surrounding cockpit state and authority boundaries.
 
-## 260928-MIK-L33 A Fourth Zone: The Intent Reviewer's Change Traversal
-
-MIK-R33 rule 7 (adopting ICR-R32) registers the reviewer's `j`/`k` through this route. [`zones.ts`](zones.ts.md) adds
-the `review` zone to `Zone` and to `zoneForTarget`; `routeKey` routes it by the chrome/composer rule, so the printable
-chords are inert in inputs, textareas, selects and contenteditable regions, and the `review` zone is never the PTY
-zone. [`chords.ts`](chords.ts.md) adds `REVIEW_CHORDS` (`J` → `review.nextChange`, `K` → `review.previousChange`,
-`review` zone only), and [`preferences.ts`](preferences.ts.md) puts it into `DEFAULT_BINDINGS`, so the two commands are
-known, rebindable through `cockpit.sessions.keymap.v1` and listed on the `?` page (`CommandPalette.tsx`'s "Intent
-reviewer" group). The binding itself is not `useKeyboardZones`'s: `panels/review/changeTraversal.ts` binds the
-effective chords with tinykeys on the reviewer's `data-kbzone="review"` root (`ReviewSurface.tsx`), checking the
-target's zone and `routeKey` per event. **Observations for the owner** (Todos on the cards): the two review commands
-have no `data/commands.ts` registry entry, which the chord card's invariant otherwise requires, and `zones.ts`'s header
-comment still says "Three zones:".
-
-- The reviewer's zone and chords. [1]
-- The reviewer's own binding on its zone. [2]
-
 ## Purpose
 
-`data/keymap/` is the **xterm-free keyboard-ownership contract** for the canonical Chats cockpit
-(260715-FEUI-L1 S4, design §5.2/§5.3). Everything here is data + pure functions so vitest covers
-the routing contract without a terminal, and so every consumer — the tinykeys binding
-(`panels/session-cockpit/useKeyboardZones.ts`), the `?` keyboard-reference palette page
-(`CommandPalette.tsx`), and the future L6 xterm `attachCustomKeyEventHandler` — reads ONE source
-and can never drift apart. FEUI-L8 adds a versioned effective-keymap preference layer consumed by
-those same surfaces and by CodeMirror. Four zones own keys: **chrome** (the shell — chords may be handled,
-printable bindings never fire in editable targets), **composer** (the editor owns its keys; only
-composer-declared chords are handled), **pty** (EVERY key passes to the hosted harness except
-exactly the bound reserved set; no bare-Esc sequence is ever claimed), and, since MIK-L33, **review** (the intent
-reviewer: its own `j`/`k` fire only while focus is inside it, under the chrome rule).
+`data/keymap/` is the xterm-free keyboard-ownership contract for the canonical Chats cockpit. Its chord tables, routing functions and focus model let consumers share keyboard policy without importing a terminal. The effective-keymap preference layer supplies the cockpit's tinykeys binding, keyboard-reference palette, CodeMirror composer and intent reviewer. The terminal consumes the same reserved-chord matcher.
 
-## Route Model
-
-- `reserved.ts` — `PTY_RESERVED`: the only chords the PTY zone ever intercepts (ctrl+; palette,
-  F6 exit-to-chrome, ctrl+alt+pageup/pagedown session prev/next) plus two reserved-but-UNBOUND
-  clipboard slots (selection-aware ctrl+c, ctrl+shift+c — flagged Firefox-non-preventable, L6).
-  Every chord carries a five-source `verifiedAgainst` record (codex/pi/claude/chrome/firefox) —
-  the durable R6 collision-audit evidence. `matchReservedChord` is the single PTY gate;
-  `BROWSER_FORBIDDEN` lists the chords no zone may ever bind.
-- `zones.ts` — `zoneForTarget` (nearest `data-kbzone` container; default chrome), `routeKey` (the
-  routing contract), `isEditableTarget`/`isPrintable` (the generic R7 printable suppression), and
-  `slashOpensPalette` (the pure `/`-at-line-start rule consumed by the live FEUI-L5 CodeMirror
-  composer).
-- `chords.ts` — the chrome/composer chord tables (`CHROME_CHORDS`, `COMPOSER_CHORDS`) with
-  per-chord zone lists. Chrome Alt+↑/↓ retains session cycling; composer Alt+Up owns FEUI-L5
-  authoritative pop-back. PTY receives both unchanged because only its explicit reserved set is
-  intercepted. 260718-CHATS-L4 adds the `conversation.stop` chord (default `Control+Shift+Period`,
-  chrome+composer zones, PTY-excluded — the R6 rebindable non-Escape stop, collision-audited as the
-  sole `Control+Shift` entry) and removes the stale `turn.stop` binding.
-- `focus.ts` — the F6 region cycle (rail → stage → inspector, collapsed panels drop out) + the
-  region/stage-header/PTY-host focus selectors. StatusLine was removed and is no longer an F6 stop.
-- `preferences.ts` — strict `cockpit.sessions.keymap.v1` persistence, same-tab external-store and
-  cross-tab storage subscription, user overrides, Emacs/Vim composer profile, CodeMirror chord
-  conversion, and the effective signature used for live reconfiguration. Browser-reserved,
-  printable-composer, collision, and F6-removal/rebind attempts fall back with visible issues.
-  260718-CHATS-L4 adds the pure `ariaKeyshortcuts(chord)` helper — it renders a validated tinykeys
-  chord as the WAI-ARIA `aria-keyshortcuts` token (`Control+Shift+Period` → `Control+Shift+.`), so the
-  interrupt control's advertised shortcut (`bindingFor(effective, "conversation.stop")`) follows a
-  rebind and stays truthful to assistive technology.
-- `zones.test.ts` / `focus.test.ts` — the contract suites (PTY passthrough invariants,
-  reserved-set hygiene, printable suppression, region cycle).
-- `preferences.test.ts` — effective-map parsing, validation, profile, immutable-F6, Meta/browser
-  safety, and same-/cross-tab update coverage.
-
-## Invariants And Boundaries
-
-- **`PTY_RESERVED` is the single source of interceptable chords** — the `?` page renders it, the
-  tinykeys layer binds it, and L6's xterm handler must consume `matchReservedChord`; never fork
-  the list.
-- **No bare-Esc claim over the PTY** — Codex binds Esc = interrupt and Claude Code owns
-  Esc Esc = /rewind (both source/bundle-confirmed); `zones.test.ts` pins it.
-- **The R6 rule: a collision replaces the CHORD, not the rule.** The original session-switch pair
-  Ctrl+Alt+[ / Ctrl+Alt+] was replaced by Ctrl+Alt+PageUp / Ctrl+Alt+PageDown because Pi binds
-  ctrl+alt+] (tui.editor.jumpBackward) and Ctrl+Alt+['s terminal encoding is ESC ESC (`\x1b\x1b`)
-  — Claude Code's rewind — on any interception miss. The replacement pair encodes as distinct CSI
-  sequences (`5;7~`/`6;7~`) no audited harness binds, so even a leaked event is inert.
-- Every bound chord must be verified fully clear across all five sources; collisions may exist
-  only on unbound reserved slots (tested).
-- **Alt+Up ownership is zone-specific** — composer dispatches `composer.popBack`, chrome dispatches
-  session navigation, and PTY passes the native key through. No global handler may collapse them.
-- **F6 is immutable** — user preferences and Vim mode may not remove or rebind the focus escape.
-  Vim owns Escape for insert/normal transitions; F6 remains active from every composer mode.
-- The core routing modules remain pure/DOM-light. `preferences.ts` is the intentional browser/React
-  boundary for localStorage and external-store subscription; no module in this route imports xterm.
+Four zones own keys: **chrome** is the surrounding shell; **composer** scopes editor commands; **pty** handles only the bound reserved set through this routing contract; **review** scopes the intent reviewer's change traversal. Printable bindings are suppressed on editable targets in the non-PTY zones. The shared-source design is the standing contract; the implementation discrepancies described below must remain visible.
 
 ## Hot Path Summary
 
-The keyboard zone contract: `preferences.ts` first resolves defaults, validated overrides, and the
-composer profile into one effective map; `zoneForTarget` resolves chrome/composer/pty from `data-kbzone`
-markers, `routeKey` handles a PTY key only when `matchReservedChord` matches the bound reserved
-set (everything else — including Esc — passes to the harness) and suppresses printable bindings in
-editable targets; `PTY_RESERVED` carries the five-source collision-verification records (the
-Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` are the zone-scoped
-tables (including the composer/chrome Alt+Up split), and `nextRegion` drives the F6 cycle with
-collapsed panels dropping out.
+`resolveKeymap` combines defaults, validated user overrides and the composer profile into one effective map. `zoneForTarget` resolves chrome/composer/pty/review from the nearest `data-kbzone` marker, defaulting to chrome. Consumers check a binding's zone list before calling `routeKey`: PTY events are handled only when `matchReservedChord` matches a bound reservation; other zones pass printable events through on editable targets. The cockpit installs capture-phase tinykeys handlers while active, the reviewer installs its traversal handlers on its own root, and CodeMirror reconfigures its profile and command compartments. The terminal's xterm guard rejects bound reserved chords through the same matcher. `nextRegion` drives the F6 cycle over the available rail, stage and inspector regions.
+
+## Construction
+
+- [`reserved.ts`](reserved.ts.md) defines `PTY_RESERVED`: bound Ctrl+; for the palette, F6 for exit to chrome, and Ctrl+Alt+PageUp/PageDown for session navigation. Selection-aware Ctrl+C and Ctrl+Shift+C remain unbound reservation slots in this table. Each reservation carries a five-source codex/pi/claude/chrome/firefox collision record. `matchReservedChord` skips unbound entries and requires matching modifiers and a matching key or physical code. `BROWSER_FORBIDDEN` supplies the browser-owned chord denylist.
+- [`zones.ts`](zones.ts.md) defines zone resolution, printable/editable classification and routing. Textareas, selects, contenteditable targets and writable inputs suppress printable bindings; read-only inputs do not. `slashOpensPalette` expresses the pure line-start caret rule. The cockpit textarea handler uses it; the live CodeMirror handler independently checks the selected document line's start and composition state.
+- [`chords.ts`](chords.ts.md) defines `CHROME_CHORDS`, `COMPOSER_CHORDS` and `REVIEW_CHORDS`. Chrome Alt+Up/Down cycles sessions; composer Alt+Up dispatches `composer.popBack`; the PTY routing gate passes those native keys through. The default composer submit chord is Enter, with Shift+Enter installed by the composer for a newline. `conversation.stop` defaults to Control+Shift+Period in chrome and composer, excluding PTY. The reviewer defaults to J for `review.nextChange` and K for `review.previousChange`, both review-only.
+- [`focus.ts`](focus.ts.md) defines the rail → stage → inspector cycle and the region, stage-header and PTY-host selectors. The controller filters collapsed rail/inspector regions before calling `nextRegion`; StatusLine is not a cycle region.
+- [`preferences.ts`](preferences.ts.md) persists version 1 preferences under `cockpit.sessions.keymap.v1`, combines all three chord tables into defaults, validates overrides, exposes Emacs/Vim composer profiles and produces a signature for consumers. Invalid shapes, malformed or browser-forbidden chords, printable composer overrides, overlapping identical candidate chords and attempts to change the forward F6 command produce issues and restore defaults. The keyboard-reference page displays issues. Public writes notify same-tab subscribers; storage events notify cross-tab subscribers. Helpers convert chords to CodeMirror notation and ARIA shortcut tokens. The interrupt control derives its advertised shortcut from the effective stop binding.
+- The active cockpit binding uses `useKeyboardZones`; the palette renders the effective zone groups and the reserved PTY table. `SessionsView` delegates to its controller and body, which own the live wiring and region markers. `SessionComposer` delegates editor construction and reconfiguration to `sessionComposerHooks.ts`, with the composer marker rendered by `sessionComposerParts.tsx`.
+- The reviewer binds effective traversal chords with tinykeys on the nearest review root, checks the target's zone and `routeKey`, then moves through changes. `ReviewSurface` carries `data-kbzone="review"`. Its traversal implementation acts directly rather than through the cockpit command registry.
+- The PTY surface supplies `reservedChordFilter` to `Terminal`; the filter returns false for a bound reserved match. `terminalSession.ts` invokes that filter from xterm's installed custom key-event handler. It also handles selection-aware copy separately, so the routing gate's passthrough result is not a guarantee that every such key becomes terminal input.
+- `zones.test.ts` contains routing, PTY passthrough, reserved-set hygiene and printable-suppression assertions; `focus.test.ts` covers the region cycle; `preferences.test.ts` covers preference validation, profile selection, forward F6 protection, Meta/browser safety and same-/cross-tab notification. These are descriptions of test source, not test-execution results.
+
+## Invariants And Boundaries
+
+- **One PTY reservation authority:** the palette renders `PTY_RESERVED`, the cockpit binds its bound entries, and the installed terminal guard consumes `matchReservedChord`. Consumers must not fork the reserved list.
+- **No bare-Escape claim by the PTY routing gate:** Escape and modified Escape pass through. The collision comments record Codex's Escape interrupt and Claude Code's Escape Escape rewind; the tests assert local passthrough behavior.
+- **A collision replaces the chord, not the rule.** The recorded audit replaced Ctrl+Alt+[/] with Ctrl+Alt+PageUp/PageDown because Pi used Ctrl+Alt+] and Ctrl+Alt+['s recorded terminal encoding was Escape Escape. The source records the replacement's distinct CSI encodings and no audited harness binding. These are recorded audit findings, not a fresh verification of current vendor/browser behavior.
+- The standing intent is that every bound chord is fully clear across all five audit sources, with collisions only on unbound reserved slots. The current records and tests establish that census for PTY reservations, not every effective chrome, composer or review override; that implementation coverage limit does not withdraw the wider intent. Ctrl+Shift+C's unbound slot records the Firefox collision.
+- **Alt+Up ownership stays zone-specific:** composer pop-back, chrome session navigation and PTY passthrough must remain distinct.
+- **Forward F6 remains the fixed focus escape:** preferences protect `focus.nextRegion`, and Vim suppresses the composer stage-header Escape binding while leaving F6 active. The implementation does not make `focus.prevRegion` equally immutable: a valid nonprintable override can replace Shift+F6.
+- The core routing and focus modules remain pure/DOM-light. `preferences.ts` is the intentional React/browser boundary for localStorage and external-store subscriptions; no module in this directory imports xterm. Thus the original intent of terminal-independent routing is preserved, but the whole directory is not exclusively pure functions and data.
+- The shared-source intent still has visible discrepancies: the live CodeMirror slash handler reproduces the line-start predicate instead of calling `slashOpensPalette`; review commands have no entry in `registerDefaultCommands`, although the original card records a standing expectation that dispatched chord commands have registry entries; and `zones.ts` still introduces its four-zone list with the comment “Three zones:”. The reviewer has its own direct binding, so registry absence must not be described as proof that traversal is unavailable.
+- References to FEUI-L6 in reservation comments describe original ownership and intent. The installed terminal guard and separate selection-copy behavior are present in source; those comments do not establish a current leaf lifecycle status.
 
 ## Evidence
 
-### Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation entries are configured. Keyboard
-claims were therefore verified against the repository's collision records, source, and tests.
-
-No configured Domain Documentation source exists for the effective keymap.
-
-### Cross-Repo References
-
-The keymap is repository-local. Vendor/browser collision evidence is recorded in `reserved.ts`, but
-no cross-repository implementation source is imported or treated as governing code.
-
-No applicable cross-repository source governs this route.
-
-### Repo-Internal References
-
+- The reviewer's zone and chords. [1]
+- The reviewer's own binding on its zone. [2]
 - The effective-keymap preference and validation boundary. [3]
 - The thin React binding that installs the effective tables via tinykeys. [4]
 - The `?` reference/profile page that renders the same effective map. [5]
 - The command ids the chord tables dispatch into. [6]
-- The DOM that carries the `data-kbzone`/`data-region` markers. [7]
-- The live CodeMirror surface that consumes profile and chord reconfiguration. [8]
+- The cockpit wrapper delegates the DOM carrying the region markers to its body. [7]
+- The live CodeMirror surface consumes profile and chord reconfiguration through its hooks. [8]
+- Reserved PTY chords, recorded collision audit and bound-only matching. [9]
+- Four-zone routing, editable classification and the pure slash predicate. [10]
+- Default zone-scoped chords and forward F6 preference protection. [11]
+- Preference subscriptions, conversions and profile activation. [12]
+- Focus cycle and collapsed-region filtering. [13]
+- Source assertions for routing, focus and preference contracts. [14]
+- Effective review traversal wiring and its root marker. [15]
+- Installed terminal guard consumes the reserved matcher; selection-aware copy is separate. [16]
+- Composer marker, effective stop shortcut and interruptible stop-command registration. [17]
+- Palette renders effective reviewer bindings, profiles, issues and PTY reservations. [18]
+- Default command registry contains no review traversal entries. [19]

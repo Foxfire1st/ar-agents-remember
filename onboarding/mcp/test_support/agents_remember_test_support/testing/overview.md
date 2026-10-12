@@ -10,151 +10,85 @@
 
 ## What This Area Is
 
-Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and
-certifying startup are distinct. `pytest_bootstrap.py` is the reusable bootstrap: a seeded
-collection order, an isolated cache directory for the pytest process, and the check that a test
-restores owned module-level state. Per-test restored rows, module-boundary reset rows and
-constant-for-tests rows have distinct treatments in a closed register; resetting touches only
-already-loaded product owners. It carries no certifying or external-service capability.
-`certifying_bootstrap.py` admits a Dagger quality process first and only then resolves the
-candidate test process.
+Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; resetting touches only already-loaded product owners. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
 
-The route also owns the curation-doctrine registry `curation_doctrine.py`: the retired curation
-sentences and the field-name facts a canonical instruction source must state, checked against the
-shipped skill corpus. Shared test helpers are not execution or knowledge-verdict owners, and
-canonical instruction and mirror consistency belongs to its synchronization owner
-(`scripts/sync-skills.py`); test qualification, completed curation, semantic acceptance and Git
-publication each keep their own authority.
+The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill copies and their harness mirrors belong to the synchronization owner, `scripts/sync-skills.py`.
 
 ## Hot Path Summary
 
-- **Process setup.** `hermetic_bootstrap.py` sets up the candidate and the environment of a pytest
-  process. `global_state.py` snapshots and restores owned module-level state. `random_order.py`
-  shuffles collected items with a seed. `dagger_admission.py` mints the testing-layer capability
-  for a nonce-attested Dagger quality process.
-- **Source facts.** `dependency_facts.py` derives import, pytest-plugin and test-consumer facts
-  from source; it holds no declarations. Its disposable per-file store keys actual source and parser
-  identities, while each build reconstructs current population and relations. `consumer_inventory.py` is the bounded inventory of the
-  Python-test evidence consumers.
-- **The two test catalogs.** `lane_manifest.py` loads the lane of every test file and
-  `evidence_lanes.py` is the pytest plugin that checks it at collection and routes categories and
-  cadence. `evidence_lifecycle.py` validates the catalog of governed test artifacts and is the
-  command-line entry for both catalogs. `evidence_governance.py` decides which files are governed.
-  `catalog_canonical.py` defines the canonical form of both catalogs, the findings both loaders
-  report for a catalog that is not in it, and the rewrite behind `evidence_lifecycle --write`.
-- **Candidate-bound evidence.** `candidate_snapshot.py` gives the exact Git identity of a working
-  candidate for non-certifying evidence routes, and `evidence_provenance.py` records candidate and
-  machine provenance for non-accepting Dagger evidence.
-- **Selection and reporting.** `retry_selection.py` collects the canonical population and executes
-  only the dependency-owned retry files. `causal_dependency.py` and `causal_failures.py` derive
-  exact-node dependencies and suppress or report dependent failures. `cadence_runner.py` is the
-  non-accepting Dagger route for scheduled, provider-bump and migration evidence.
-  `pytest_phase_reporter.py` records node outcomes and phase timings.
-- **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits
-  under one shared hang guard. A condition supplies readiness; neither the guard nor poll interval
-  proves a producer had an opportunity.
-- **Instruction corpus.** `curation_doctrine.py` holds the registry of retired curation sentences
-  and the statements every canonical instruction source must make; a test reads them to check the
-  shipped corpus.
+- **Process setup.** `hermetic_bootstrap.py` sets up the candidate and pytest environment. `global_state.py` snapshots, restores and resets registered module-level state. `random_order.py` shuffles collected items when supplied a seed. `dagger_admission.py` mints the testing-layer capability after matching the Dagger environment nonce to the attestation file.
+- **Source facts.** `dependency_facts.py` derives import, pytest-plugin and consumer facts from source; it holds no ownership declarations. Its disposable per-file store keys source bytes and parser identities, while each build reconstructs current population and relations. `consumer_inventory.py` holds the bounded inventory of Python-test evidence consumers.
+- **The two test catalogs.** `lane_manifest.py` loads test-file lane membership. `evidence_lanes.py` checks it at collection and exposes category markers; its registry also maps cadence triggers to marker expressions. `evidence_lifecycle.py` validates governed test artifacts and provides the command-line entry for both catalogs. `evidence_governance.py` decides which files are governed. `catalog_canonical.py` supplies canonical-form findings and the rewrite behind `evidence_lifecycle --write`.
+- **Candidate-bound evidence.** `candidate_snapshot.py` gives the Git identity of a working candidate for non-certifying evidence routes. `evidence_provenance.py` records candidate and machine provenance for non-accepting Dagger evidence.
+- **Selection and reporting.** `retry_selection.py` collects the canonical population and executes only explicitly supplied retry files that were collected. `causal_dependency.py` derives exact-node source dependencies; `causal_failures.py` skips nodes identified by a causal preflight report and classifies observed failures. `cadence_runner.py` supplies non-accepting Dagger evidence for scheduled, provider-bump and migration triggers. `pytest_phase_reporter.py` records node outcomes and phase timings.
+- **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits under one shared hang guard. The condition supplies readiness; neither the guard nor the poll interval proves a producer had an opportunity.
+- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests.
 
-## Operating Model
+## Construction And Operating Model
 
-Use the ordinary bootstrap for local pytest. Certifying entry goes through
-`prepare_certifying_pytest_bootstrap`, which requires Dagger admission before any candidate setup.
-Running either route does not by itself supply acceptance. The lane, lifecycle and dependency
-validators describe the current source and the configured evidence.
+Ordinary local pytest uses the reusable bootstrap. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
-## Local Invariants And Traps
+Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
 
-- Ordinary pytest setup has no certifying or external-service authority. Dagger admission is
-  mandatory at the certifying composition boundary.
-- Restored mutable rows are repaired after each test before a leak fails its owner. Reset rows
-  are cleared before and after modules, after owned workers or resources finish; constant rows
-  preserve import-time and deferred registrations. Seeded ordering uses its own random generator
-  and does not touch the process-global one.
-- The dependency facts are derived from source only. Lifecycle metadata can describe ownership but
-  cannot make itself complete. Store corruption cannot replace source truth or hide a source error.
-- Lane membership and catalog coverage are exact: a missing, stale or conflicting declaration is a
-  finding.
-- Both test catalogs must be in canonical form. A list that is out of order, a duplicate line, a
-  list not written one path per line and a row that is out of order are findings of the loaders,
-  and each such finding names the `--write` command. The command orders, removes duplicates,
-  derives consumer lists and removes the lines of files that no longer exist; it never adds or
-  removes a row and never assigns a lane.
-- Retry selection executes only dependency-owned files of the collected population.
-- Causal suppression needs exact, source-derived node dependencies.
+The instruction helpers retain retired sentences separately from affirmative wording requirements. `curation_doctrine.py` normalizes readings and confines retired-sentence matches to the sources that carried them, across canonical and generated skill surfaces. It also checks loop-gate field wording and compact curation-policy statements. `retired_leaf_handover_wording.py` supplies source/sentence pairs; `leaf_instruction_wording.py` supplies affirmative clause alternatives and normalized checks used by the wording tests. These are wording checks, not semantic acceptance or knowledge verdicts.
 
-## The Two Test Catalogs: The Consumer Oracle, Canonical Form And The Rewrite
+### The Two Test Catalogs
 
-This route owns the code that reads and writes the two test catalogs:
-`mcp/tests/evidence-lifecycle.toml` (the governed test artifacts and their consumers) and
-`mcp/tests/test-evidence-lanes.toml` (the lane of every test file).
+This route reads and rewrites `mcp/tests/evidence-lifecycle.toml`, the governed test-artifact and consumer catalog, and `mcp/tests/test-evidence-lanes.toml`, the test-file lane catalog.
 
 | Check | Where it lives | The question it answers | Its repair |
 | --- | --- | --- | --- |
-| the consumer oracle | `load_evidence_inventory` in `evidence_lifecycle.py` | does the lifecycle catalog agree with the source tree: each declared consumer list equals the consumers the source shows, every governed file has a row and every row a file | the `--write` command derives the lists; a row is added or retired by hand |
-| the lane population | `load_lane_manifest` in `lane_manifest.py` | does every current test file have exactly one lane, and is every listed path a current test file | the lane line is added by hand; the `--write` command removes the line of a file that no longer exists |
-| canonical form | `catalog_canonical.py`, called by both loaders | are rows and lists in the one fixed order, without duplicates, one path per line | the `--write` command |
+| Consumer oracle | `load_evidence_inventory` in `evidence_lifecycle.py` | Do declared consumers equal source-derived consumers, does every governed file have a row, and does every row identify governed evidence? | `--write` derives consumer lists; adding or retiring a row requires a decision and manual editing. |
+| Lane population | `load_lane_manifest` in `lane_manifest.py` | Does every current test file have exactly one lane, and is every listed path a current test file? | Add the lane line manually; `--write` removes lines whose files no longer exist. |
+| Canonical form | `catalog_canonical.py`, called by both loaders | Are contract rows ordered by ID, artifact rows by path, and path lists ordered without duplicates and written one path per line? | Run `--write`. |
 
-No test pins a byte digest or a row count of either catalog. What the source tree can prove is
-computed each time the loaders run.
+The repository-catalog test calls both loaders rather than pinning catalog bytes or a row count. The loaders compute the source facts needed for population and consumer checks when they run.
 
-`python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .` validates both
-catalogs: it loads the lifecycle catalog and then the lane manifest, on one source graph that it
-derives once. With `--write` it rewrites both to canonical form: it orders the rows and lists,
-removes duplicate lines, sets the `consumers` list of an `exact` or `exact-source` row to the
-derived set, and removes each lane line and consumer line whose file does not exist. A row for
-which the source tree shows no consumer keeps its list as written, and the command says so. The
-command adds and removes no row, never assigns a lane, and writes nothing when it refuses: for a
-catalog that cannot be parsed, for incomplete or ambiguous dependency facts, and for a table
-header or a list in a form its line rewrite does not read.
+`python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .` validates the lifecycle catalog and then the lane manifest, sharing one cached source graph. With `--write`, it instead computes canonical text for both catalogs before writing either. It orders rows and lists, removes duplicate list lines, replaces the consumers of `exact` and `exact-source` rows when source analysis yields a nonempty set, and removes lane lines whose files no longer exist. For consumer lists without a derived replacement, it removes missing-file lines only when at least one listed consumer still exists. If the source tree yields no consumer, it reports that fact and retains the declared list subject to that missing-file cleanup; a list consisting entirely of missing consumers survives for an explicit retirement decision.
 
-Git merges both catalogs by union (`.gitattributes`), so two changes that add lines to the same list
-do not conflict. A union merge can leave a line twice, leave a list out of order, bring back a line
-that one side deleted, or interleave two rows that two changes added at the same place. The loaders
-refuse a duplicate, an unordered list and the line of a file that no longer exists, and name the
-command. A file that no longer parses is refused by both loaders, by the command and by the pytest
-start-up in `mcp/tests/conftest.py`, each with the sentence that two rows may have been interleaved
-and that the file is restored from the landed commit. The lane loader runs at every test
-collection. The lifecycle loader runs in the validator command (Git hook gate, quality plan), in
-the selection graph and in `test_the_repository_catalogs_are_in_canonical_form`, which a default
-unit run includes.
+The rewrite adds and removes no row and never assigns a lane. It refuses before writing either catalog when parsing fails, dependency facts are incomplete or ambiguous, or a table header or list cannot be read by its line rewrite. Computing both outputs first protects against those refusals; the two subsequent file writes are sequential.
 
-A change that adds a test file adds one lane line and runs the command. The cases for all of this
-are in `mcp/tests/test_evidence_catalog_canonical_form.py`; the case that the oracle alone refuses a
-canonical but incomplete catalog is in `mcp/tests/test_evidence_catalog_gate_boundaries.py`.
+Git merges both catalogs by union. Such a merge can duplicate or reorder list lines, restore a deleted line, or interleave added rows. The loaders refuse canonical-form defects and stale membership. For a TOML parse error, the shared reader explains that rows may have been interleaved and tells the reader to restore the landed file and add the leaf's row again. Both loaders use that reader; pytest startup reads the lane manifest through it before collection.
+
+The lane loader runs during test collection. The lifecycle loader runs through the validator command, the Git hook's deterministic fast tier (also called by its targeted tier), the quality plan, the dependency selection graph, and `test_the_repository_catalogs_are_in_canonical_form`, whose file is declared in the unit lane. A change adding a test file adds its lane line and runs the canonical rewrite. Catalog rewrite and refusal cases live in `mcp/tests/test_evidence_catalog_canonical_form.py`; `mcp/tests/test_evidence_catalog_gate_boundaries.py` checks a canonical catalog whose declared consumers no longer describe the source tree.
+
+## Local Invariants And Boundaries
+
+- Ordinary pytest setup has no certifying or external-service authority. Dagger admission is mandatory at the certifying composition boundary; neither admission nor running the bootstrap alone establishes acceptance.
+- Restored mutable rows are repaired after each test before a detected leak fails the test. Reset rows are cleared at module boundaries, with registered cleanup routines finishing owned workers or resources where required. Constant-for-tests rows retain import-time and deferred registrations. Seeded ordering uses its own random generator and leaves the process-global generator untouched.
+- Dependency ownership is derived from source rather than lifecycle declarations. Lifecycle metadata describes governed artifacts and their ownership obligations; it does not establish completed curation, semantic acceptance or publication status.
+- The disposable facts store is intended not to replace source truth or hide a source error. The current reader rejects malformed or unusable entries, but a well-shaped cached entry is reused without comparison to newly parsed source. That limits the existing corruption guarantee: a well-shaped incorrect entry under the matching key is not detected by these predicates.
+- Lane membership and catalog coverage are exact: missing, stale or conflicting declarations produce findings. Lifecycle consumer lists must equal the derived consumer set.
+- Both catalogs must have canonical row and list order, without duplicate list lines and with one path per line. Canonical-form findings identify the rewrite command. Rewriting does not decide row retirement or lane assignment.
+- Retry selection validates explicit candidate-relative Python paths against executable items or successful module collection, including zero-body modules. It does not derive ownership itself; the dependency owner supplies the retry paths.
+- Causal dependency derivation uses exact source-level node relationships. Runtime suppression consumes the exact nodes in its causal preflight report, rather than suppressing a whole module by filename.
+- Condition readiness is separate from the shared hang guard.
 
 ## File-Level Onboarding Map
 
 The generated route index lists the source files of this route and their cards.
 
-## 260928-MIK-L99 — a leaf's agents hand over to each other
-
-The testing support area gained two guard data and helper modules: `retired_leaf_handover_wording.py` holds the verbatim retired leaf-handover sentences with their carriers and probes, and `leaf_instruction_wording.py` holds the affirmative clause tables and normalized readers the wording tests use. The area remains test-evidence infrastructure, holds no AR seat and authors no knowledge.
-
 ## Evidence
 
 - The ordinary bootstrap carries no certifying or external-service capability. [1]
 - Certifying setup admits Dagger before it resolves the candidate. [2]
-- Retry execution keeps only the dependency-owned files of the collected population. [3]
+- Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller. [3]
 - The rewrite computes both new catalogs before it writes either. [6]
 - The command validates both catalogs on one cached source graph, or rewrites them with `--write`. [7]
 - The union merge attribute for both catalogs. [8]
-- A leaked change of owned module-level state fails the test. [9]
+- A leaked change of owned module-level state fails the test after restoration. [9]
 - Seeded ordering uses its own random generator. [10]
-
 - The curation-doctrine registry and the statements a canonical instruction source must make. [13]
-
 - Canonical skill copies and their harness mirrors are the synchronization owner's. [14]
-
-- The lifecycle loader starts with the canonical-form findings and then validates the catalog against the source tree. [15]
-- The lane loader reports a lane list that is not canonical and compares the declared files with the test modules. [16]
-
-- The registry of retired curation sentences and required statements. [17]
-
-- The refusal that both loaders and the start of a test run give for a file that does not parse. [18]
-
-
+- The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
+- The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
+- The registry of retired curation sentences. [17]
+- The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
 - The register assigns distinct reset, restored and constant treatments. [19]
 - Condition readiness is separate from the shared hang guard. [20]
 - Content identities reuse per-file facts without freezing current graph membership. [21]
+- The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists. [22]
+- Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
+- Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives. [24]
+
+- The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]

@@ -1,0 +1,181 @@
+{
+  "path": "examples/mcp",
+  "references": {
+    "1": {
+      "note": "The public JSON example contains the repository/profile reference, empty per-provider objects and the named default illustrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02488160059666d9bd7383472baa03db8c36105b",
+            "content": "sha256:a1f35f5c78ff9ac45290256da4932d53d10a169096b9964d7184adc4210590c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "examples/mcp/settings.example.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The guideline example separates source responsibilities and uses Application entry point terminology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c855617489e56a0ce2d5a2fc98b759482726e7b",
+            "content": "sha256:64b6e661a14f8edac763916c031e4ac69b1bcbb5db3fd76056f7db8a6faf0608",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "examples/mcp/coding-guidelines.example.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "External memory roots derive from the coordination root and reject the removed repository-local layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:0e8d453a3698e5f68d42d6918fea42f7de97de86fbc146fcb3f5db192d57301b",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_memory_root"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Supported provider entries derive runtime/log roots and reject unsupported per-provider fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:39b798ec82ae2bd9d0c954203c804502fb01e13f739eb7ab302a9a9d4d882ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_providers"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retirement parsing preserves the two legacy aliases with current-key precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:9c938db5b67784d917c8e44f6c00e607f4703bd404bc9bc264f172c0bbfe17b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_retirement_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Gate delegation's standard settings home outranks the warning-bearing authority fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:554b754d7d2ee15263ee44ffac071a628a785d7c1780d59fd7b8afad170df3e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_orchestration_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:ee1844899d24faed094c3a064dca97204f56ebea822848911950282a961a9e4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_timeout_caps"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_provider_degradation_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Completion cleanup is report-gated for the finite leaf-role set and has a separate landed/archive branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:1963fc600eb3bd5a682b5786379b5e665870cc5e6daee11dd2831076a3690254",
+            "locator": {
+              "kind": "symbol",
+              "name": "auto_complete_seats"
+            },
+            "path": "mcp/src/agents_remember/application/completion_cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:867738cfef655a100fffa429d07cc529fdaebbe4e8dd7183726f9831ad83cd00",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_reported_leaf_seats"
+            },
+            "path": "mcp/src/agents_remember/application/completion_cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:667a63bcdd7d0f7d9edb2e420bdcdecdbad2166927843de207c056ab99181ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completion_candidates"
+            },
+            "path": "mcp/src/agents_remember/application/completion_cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

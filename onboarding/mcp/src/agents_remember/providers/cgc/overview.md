@@ -10,108 +10,51 @@
 
 ## Purpose
 
-`cgc/` is the provider-owned home for CodeGraphContext setup, seeding,
-context layout, patching, and lifecycle operations. Since L12 every CGC compose
-service ships an explicit memory cap (falkordb 2g, batch runner 1g, per-repo
-watchers 512m) so a runaway container OOM-recycles itself under unless-stopped
-instead of exhausting the host — the 2026-07-03 swap-exhaustion incident defense. The package replaces the
-former top-level `cgc_*` modules and mixed `context_modules/cgc` plus
-`lifecycle_modules/cgc` routes.
+`cgc/` contains the provider-owned CodeGraphContext implementation: isolated settings, graph seeding, runtime layout, materialization, patching, backend management, installation, status, and process operations. CGC-specific implementation is grouped here, with shared provider helpers outside the package.
 
 ## Hot Path Summary
 
-Use `setup.py` for enabled-provider wiring and isolated worktree settings,
-`seed.py` plus `bundle.py` for CGC index export/rewrite/import seeding, and
-`context/` for runtime layout, materialization, cleanup, and patch helpers.
-Use `lifecycle/` for backend, install/status, and process/watch commands.
-Seeding treats a HEAD difference as a state to CATCH UP from, not a teardown
-(260707-HFX-L2): a relatable divergence seeds anyway and records the changed
-files for `provider_setup`'s post-watcher catch-up stage (the event-driven
-watchers re-index just the touched delta; above the delta bound the clone
-serves stale and surfaced), only UNRELATABLE heads refuse (a copied graph
-must describe the same repository), and a from-zero reindex is explicit only
-— `cgc refresh` or the opt-in refresh fallback; seed export/load is capped by
-the configurable
-`providerSetupSeconds`, while actual indexing is never duration-capped.
-Seed argv after `--` executes inside the Linux runner container and is
-rendered via `to_container_path` (`providers/context_common.py`) — host-form
-`C:/` paths made every Windows seed fail into the silent reindex fallback
-(GitHub #58).
+`setup.py` constructs isolated worktree settings and contains install and seed preparation entry points. `seed.py` exports a source graph, delegates path rewriting to `bundle.py`, and imports the rewritten graph into the target runtime. `context/` exposes layout, materialization, cleanup, and patch helpers; `lifecycle/` exposes backend, compose, runner, installation, process, query, and refresh implementations.
 
-## Route Model
+These are retained implementation routes. Ordinary enabled-provider setup currently skips CGC: `providers/setup_common.py::provider_enabled` returns `False` for `codegraphcontext-code`, regardless of its settings block. The CGC install and preparation entry points consult that gate before doing their work. This boundary does not establish that every direct lifecycle caller is disabled; `lifecycle_service.py` still contains direct CGC action dispatch.
 
-- `bundle.py`, `seed.py`, and `setup.py` own package/setup-time CGC behavior,
-  including worktree graph seeding from an existing provider index. A
-  benchmark-scoped target is refused before any seed work (`_seed_skip`),
-  mirroring the GrepAI guard (hermetic; task 260619).
-- `context/` owns CGC runtime layout and upstream patch behavior.
-- `lifecycle/` owns CGC backend, installation, status, and process lifecycle.
+## How It Is Built
+
+### Source And Target Seeding
+
+`_CgcSeedEnd` is a frozen value holding `coordination_root`, `repo_id`, `repo_root`, and `runtime_root`. `_validated_seed_context(args, source, target)` receives the two ends separately, so their direction is explicit.
+
+Resolution precedes validation. `_seed_precondition_skip` checks refusal conditions before reading source settings, including the benchmark-scope guard that prevents seeding from a live workspace stack. `_seed_locations` resolves both repository roots and both runtime roots; a failed lookup returns its skip payload instead of sending a partially resolved pair to validation.
+
+The bundle pipeline starts the source backend, exports the source graph, rewrites source-root paths to target-root paths, and imports the rewritten bundle. Seed arguments intended for the Linux runner container use `to_container_path` from `providers/context_common.py`. It converts host paths to POSIX form and strips a Windows drive prefix. For an isolated worktree, the target bundle runtime root is resolved from the isolated settings when those settings can supply it, keeping the bundle under the runtime mounted by that runner.
+
+### Lifecycle Commands And Shared Helpers
+
+Setup and seed operations describe lifecycle requests with `LifecycleCommand(provider, action, extra_args, native_args)` from `providers/setup_common.py`. The helper places provider-level `extra_args` before the action and action-specific `native_args` after it.
+
+`setup.py` imports instance identity and naming helpers directly from `kernel/primitives/identity.py`. Provider-agnostic context and lifecycle helpers remain outside `cgc/`; the current package does not directly import all three primitive modules named by the former route-impact note.
+
+### Divergence And Catch-Up
+
+In the retained seed implementation, differing readable HEADs are compared through `seed_commit_divergence`. A computable diff is recorded for the post-watcher catch-up stage rather than causing a full rebuild. A diff that cannot be computed produces the foreign-graph refusal. The commit comparison is bypassed when commit mismatch is explicitly allowed or either HEAD is unavailable; other seed preconditions and same-coordination-root restrictions can also refuse a seed.
+
+`providers/provider_setup.py` retains the catch-up stages. `_seed_touch_plan` separates files that can be touched from residual staleness: deleted paths, rename-source paths, and paths missing from the checkout. Above the configurable delta bound, the result reports a served stale index; the default bound is 200 changed entries. Within the bound, catch-up waits for the watcher's readiness marker before touching files. Failure to reach readiness reports stale state without delivering the touches. `_stale_index_skip` records an undelivered delta; `_deliver_seed_touches` reports `caughtUp` only when there are no residuals after the touch pass.
 
 ## Invariants And Boundaries
 
-- CGC-specific behavior belongs under this package, not in GrepAI modules or
-  shared lifecycle helpers.
-- Shared helpers should stay provider-agnostic and live under
-  `providers/context/` or `providers/lifecycle/`.
-- The public setup facade remains `providers.provider_setup`; the provider
-  implementation lives here.
+- CGC-specific behavior belongs in this package; shared provider helpers belong in the shared context or lifecycle routes. `providers.provider_setup` remains the setup facade, with CGC implementation delegated here.
+- Ordinary setup's CGC enablement gate must be distinguished from the retained seed and direct lifecycle implementations. Their presence alone is not a promise that normal setup installs, seeds, or starts CGC.
+- The retained seed policy favors a graph copy plus a bounded delta over an automatic full rebuild. Successful seeding skips refresh; unsuccessful seeding invokes `refresh-all` only when `cgc_refresh_fallback` is explicitly enabled. Otherwise it reports that the fallback is disabled.
+- A touch pass cannot remove phantom graph entries left by deletions or rename sources. Those residuals remain explicitly stale until refresh; they must not be reported as `caughtUp`. That field records the touch-delivery result, not independently observed completion of watcher indexing.
+- Seed HEAD and divergence reads use `kernel/git_command.py::run_git`, which removes the eight ambient repository selectors: `GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, and `GIT_PREFIX`. The divergence read supplies a 60-second timeout, below the runner's 300-second general local bound.
+- Seed export and import pass `args.timeout` through the lifecycle request to the bounded runner operation. The retained forced-index refresh implementation instead passes `UNLIMITED_TIMEOUT`, which the command runner translates to no subprocess duration limit. These implementation details do not establish a current `providerSetupSeconds` settings authority or a working provider CLI entry point.
+- Compose assets impose memory limits of 2g on FalkorDB, 1g on the batch runner, and 512m on each rendered watcher. FalkorDB and watchers have `restart: unless-stopped`; the batch runner does not inherit that restart promise. These limits bound container memory rather than guaranteeing that the host cannot exhaust resources.
 
 ## Evidence
 
-### Repo-Internal References
-
 - CGC setup orchestration lives in the provider-owned setup module. [1]
 
-## 260731-EFA-L2 — The Seed Reads As Source → Target
-
-The behaviour recorded above — catch-up rather than teardown, unrelatable heads only refusing,
-explicit-only from-zero reindex — is unchanged. What changed is that `seed.py` now says it.
-
-**`_CgcSeedEnd` (frozen: `coordination_root`, `repo_id`, `repo_root`, `runtime_root`) names one end
-of a seed.** Source and target are symmetric, and the seed previously carried them as four
-interleaved pairs whose *argument order* was the only thing keeping the two ends apart — a
-transposition would have seeded the wrong direction silently. `_validated_seed_context(args, source,
-target)` now takes the two ends by name.
-
-Resolution is staged so a half-resolved pair cannot reach validation:
-`_seed_precondition_skip` answers "is there any reason to refuse before we read the source settings
-at all?" (returns the skip payload or `None`), then `_seed_locations` resolves the repo root and
-runtime root for both ends and returns either all four or the *first* side's skip payload — every
-one of the four lookups reports failure the same way, so the first payload wins.
-
-`setup.py` invokes lifecycle through `LifecycleCommand(provider=, action=, extra_args=,
-native_args=)` from `providers/setup_common.py` rather than positional provider/action strings; the
-type records that the provider CLI splits its arguments either side of the action (`extra_args`
-precede it, `native_args` are the action's own).
-
-The post-watcher catch-up in `provider_setup.py` is now three named stages rather than one
-straight-line function — `_seed_touch_plan` splits the divergence into paths a touch can re-index
-and *residual staleness it cannot* (deletions, the vanished half of a rename, paths absent from the
-checkout have no file left to touch and stay in the graph as phantoms until an explicit refresh),
-`_stale_index_skip` records a delta this run did not deliver, and `_deliver_seed_touches` claims
-`caughtUp` **only with zero residuals**. That last rule is the one not to break.
-
-## 260731-EFA-L3 — The Seed's Git Reads Name This Repository
-
-Every freshness verdict above rests on two git reads, and both used to build their own
-`subprocess.run` invocation inside `seed.py`. They now go through the package's single runner,
-`run_git` in `kernel/git_command.py`, which strips the eight `GIT_DIR`-family repository selectors
-(`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
-`GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`) from the child
-environment. That matters here specifically because of what the verdict is used for:
-
-- `git_head_or_none` — with `GIT_DIR` exported it would have returned *another* repository's HEAD,
-  and the seed would then have been declared fresh against a commit this repo never had.
-- `seed_commit_divergence` — the catch-up `git diff --name-status source target` that decides which
-  paths the post-watcher stage touches. It passes an explicit
-  `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60`, deliberately tighter than the runner's general
-  `GIT_LOCAL_TIMEOUT_SECONDS = 300`: this runs during provider setup, and a repo whose diff has not
-  answered in a minute was never going to be caught up by a per-file touch pass anyway.
-
-No seeding rule changed — catch-up rather than teardown, UNRELATABLE-only refusal, explicit-only
-from-zero reindex, and `caughtUp` conditioned on zero residuals all still hold exactly as written
-above. What changed is that the repository those rules are evaluated against is now guaranteed.
-
-## 260731-EFA-L9 Route Impact — Caller Re-Points
-
-CGC provider modules now import the shared kernel primitives directly — `kernel/primitives/runtime_config.py` (runtime config), `kernel/primitives/identity.py` (instance naming), and `kernel/primitives/provider_degradation_settings.py` — instead of the former `mcp`/`providers` homes. Seed/setup behavior is unchanged.
+- Ordinary enabled-provider setup excludes CGC even with retained settings; direct lifecycle implementation is a separate route. [2]
+- Seed resolution separates source and target ends, preserves precondition refusals, and records computable commit divergence for catch-up. [3]
+- Catch-up waits for watcher readiness, retains untouchable residuals as stale, and calls the touch-delivery result caughtUp only without residuals. [4]
+- Container memory caps and restart policies distinguish the backend and watchers from the batch runner. [5]

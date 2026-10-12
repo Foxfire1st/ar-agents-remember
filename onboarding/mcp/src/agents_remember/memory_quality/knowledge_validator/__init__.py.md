@@ -19,6 +19,7 @@
 - The module map names `rules_reconsideration` (MIK-R14's guard `R14.1-linked-alternative-order`: an alternative a `reconsider_on` link addresses keeps its index, so a reorder never silently retargets the link). Nothing is re-exported for it; `validator.py` imports it for its registration.
 - The module map names `rules_history` (MIK-R09's rule on history rows that are not frozen: their subjects name records and their covered entries' `after` anchors are the tree's; leaf 260928-MIK-L09). Nothing is re-exported for it; `validator.py` imports it for its registration of `R09-history-rows` and the report-only `R09-history-rows-merged`.
 - The docstring states the scope boundary: the validator judges no meaning (Doc13). Whether a statement is true or a realization really enforces its invariant is the curator's and the reviewer's; whether an anchor's content still matches the code is currentness (MIK-R03), not validity.
+- The module map names `rules_overviews`: R80's fixed purpose-first heading, prohibition of leaf/date-named sections, and terminal citation region. Importing the re-exported validator registers those checks through its `rules_overviews` import. No second registry or rule-skipping facade is introduced; see [the overview-rule card](rules_overviews.py.md) for the exact parser and leaf-publication/conversion-context boundary.
 
 ### Conventions
 
@@ -29,7 +30,7 @@
 
 - One validator, one rule registry: every caller (the sync's memory merge, the standalone command, later the writer and MIK-R09's routes) runs the same registered rules.
 - There is no API that skips a rule.
-- **Nothing in the installed runtime reaches a converted tree before MIK-R37.** The live memory repository has no `knowledge/layout.json`, so every route that calls the validator returns before it runs.
+- Applicability is a property of the supplied trees: commit validation runs when the candidate or any comparison base has the layout marker. An unconverted pair returns without validation; this is not a claim that current live memory has no marker.
 
 ### Todos
 
@@ -41,7 +42,7 @@ The module docstring names MIK-R48's rule beside the history-row rule: at a
 leaf's publication a new or edited changed family row records its effect and own
 revision. Registration itself is unchanged; one module still owns the registry.
 
-- The registry docstring names the family-judgment publication rule. [7]
+- The validator package's module map names the family-judgment publication rule. [7]
 
 ## Evidence
 
@@ -63,11 +64,16 @@ The re-exported API and the module map.
 - Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. [2]
 - The route adapter the composition binds. [3]
 - The module map names MIK-R09's history-row rule, and importing the validator registers it. [4]
+
 - The module map names MIK-R14's link guard, and importing the validator registers it. [5]
 - The module map names MIK-R13's decision rules, and importing the validator registers them. [6]
+
+- The public module map documents overview order; the exported validator registers its checks through the common registry. [8]
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [9]

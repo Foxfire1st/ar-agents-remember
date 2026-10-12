@@ -1,206 +1,106 @@
-# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview
-
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
+# Structured Conversation Renderer Overview
 
 ## Governing Overview
-
 [session-cockpit overview](../overview.md) — this child owns the harness-neutral structured conversation
 renderer while the session-cockpit overview owns the one-roof Chats composition. The projection it renders
 is the reconstructable [data/conversation](../../../data/conversation/overview.md) store; the sibling
 in-stage history browser is [conversation-library/](../conversation-library/overview.md).
 
-## 260731-EFA-L8 Change
-
-`ConversationTimeline.tsx` moved to `conversation-timeline/` with the machinery
-split into `measurements.ts`, `timelinePremeasure.ts`, `timelineController.ts`,
-`timelineControls.ts`, `timelineFeed.tsx`, `timelineScroll.ts`, `timelineFollow.ts`,
-`timelineRestore.ts`, `timelineRefs.ts`, `unknownRun.tsx`, and `styles.ts`; the
-former `renderer.test.tsx` split into seven behavior suites plus two shared
-fixture modules. The timeline ARIA/scroll contracts (server-ordinal posinset,
-honest setsize, trusted-input-cancellable restore) are unchanged.
-
 ## Purpose
 
-`session-cockpit/conversation/` is the **one harness-neutral grammar** that renders a live structured
-conversation (design §12.1, §14). It projects the reconstructable
-`data/conversation` store into a single navigable `role="feed"` timeline of ruled blocks — streaming
-Markdown, full-inline thinking, stable-ID plans/tools/diffs/interactions/results, required image labels,
-and ambient telemetry — with visible harness identity and honest capability reasons, and **no
-vendor-clone skins** (R3). It owns the exact-turn interrupt wiring (`useConversationControls`, surfaced
-in `WorkingLine`) and the fail-loud reconnect surface. It renders only what the projection reconstructed;
-it never writes conversation authority and never scrapes a vendor TUI.
+`dashboard/src/panels/session-cockpit/conversation/` renders the reconstructable conversation projection through one harness-neutral grammar. Its governing session-cockpit route owns the composed Chats experience; `data/conversation` owns projection, runtime, paging and cursor state; the sibling `conversation-library/` owns history browsing. This route turns normalized evidence into a navigable feed of messages, plans, thinking, tools, diffs, historical interactions, results and unknown-vendor evidence. Harness identity and capability uncertainty remain visible without adopting vendor-specific skins or scraping a vendor TUI.
 
-## Route Model
-
-- `ConversationSurface.tsx` — the page/stream shell: reconnect states, revision-keyed announcers that
-  are SILENT on replay/hydration (`lastAppliedDelivery === "live"` strict, so fresh hydration/re-page
-  never announces — F21), the global thinking toggle, the history-completeness note printing the
-  actually-unsupported capability's reason (F13), and the ambient telemetry toolbar. It
-  also owns the sub-agent FOCUS model (R7, reworked): `storedAgentFocus` → `deriveAgents` →
-  `effectiveAgentFocus` (never applied blindly — a rehydrated projection without that agent honestly
-  falls back to the parent), the uniform ArrowDown hijack from anywhere on the surface (feed article
-  AND scroll viewport) moving DOM focus INTO the agents line as the primary path (the Claude Code
-  sub-agent navigation model; the line owns Enter/menu, ArrowUp from the line returns focus to the
-  timeline), ArrowLeft/ArrowRight cycling parent → agent 1 → … → agent N → parent as an additional
-  path and Escape returning to the parent (editable/interactive targets
-  own their keys), polite visibility-gated `viewing <label>` announcements, and
-  `filterItemsForFocus` feeding the timeline (`totalItems`
-  only when unfocused; a focused empty lane shows `no evidence from <label> yet`, never the welcome).
-  The validated effective focus also drives selected-child history hydration after click, page
-  load, or remount; stale focus sends no request. A typed local failure renders its detail and
-  retry beside the agents area without changing the parent reconnect/stream state.
-- `AgentsArea.tsx` — ONE compact sub-agents line above the timeline, always (R7, reworked): never one
-  row per agent — the line carries the tone-colored count chip (`N agents · M running`, the status
-  word never color-only, §14.2) plus, in an agent view, the `viewing <label>` note and the
-  `← back to parent conversation` affordance (the surface's old focus bar is gone). The roster lives
-  in a listbox menu opened from the line (click/Enter/Space/ArrowDown): one option per
-  roster-evidenced agent (label, word-carrying status chip, terminal final-message preview),
-  aria-activedescendant arrow navigation with wrap + scroll-into-view on every active change,
-  Enter/click select (re-selecting the viewed agent just closes), Esc/backdrop/Tab dismiss, and
-  honest recompute of a stale active id or an emptying roster. Projection-only with no optimistic
-  rows and no polling; an empty roster is a static `0 agents` span. No transitions — a
-  keyboard-driven open/focus change must not animate.
-- `ConversationTimeline.tsx` — the single virtualized `role="feed"` (`aria-label="Conversation"`).
-  `aria-posinset` is the server `globalOrdinal` (never the array index); `aria-setsize` is emitted only
-  when the total is honestly known, else `total unknown` copy (R5). A focus-pinning range extractor pins
-  BOTH the focused row and the default-tab (last) row so a tabbable article always exists even scrolled
-  up (F18). Bottom-follow + a non-animated N-new button; anchor-preserving `Load older` explicit paging.
-  Feed-scoped `onKeyDown` widget navigation (`[`/`]`/Home/End) with the completed exclusion list
-  (`button,a,[contenteditable],.cm-editor`, input/textarea/select, active selection) and Home/End exempt
-  inside labeled overflow regions (`[role="group"]`, `pre`) — the ARIA feed pattern, NOT document
-  handlers (F14 accepted deviation). The exported `OPERATOR_SCROLL_KEYS` trusted-input set deliberately
-  OMITS ArrowDown (the surface hijacks it into the agents line; PageDown/`]`/wheel stay scroll paths).
-  It consumes `collapse.ts` to fold unknown-vendor runs.
-- `ConversationItemView.tsx` — the pure kind dispatcher + stable accessible-name helper routing each
-  `ConversationItem` to its component.
-- Item/block components (one harness-neutral grammar): `MessageItem` (operator/assistant/user/system;
-  required-alt images as a labeled reference with NO `<img>` fetch — F11; assistant clamp slicing to the
-  logical line threshold so `+N lines` is exactly what is hidden — F12), `ThinkingItem` (full-inline dim,
-  never clamped, obeys the hide-thinking toggle), `ToolItem` (stable-ID verb phrase + phase accent,
-  in-place recompose, output clamp, diff routing), `DiffBlock` (per-file diff, full-to-threshold clamp
-  with exact hidden count, labeled scroll region), `InteractionItem` (historical prompt + answer,
-  NON-live — InteractionBar owns the live gate channel; a bound agent ref badges WHO is asking in a
-  cyan uppercase badge), `TurnResultItem`
-  (result/error/interrupt/notice/unknown-vendor as labeled evidence), `MarkdownBlock` (streaming-safe
-  memoized react-markdown; code in its own labeled scroll region).
-- `primitives.tsx` — `ClampButton` (a real `<button aria-expanded aria-controls>`; exact `+N` only when
-  known from source lines), `SourceBadge` (only when origin changes interpretation), `CapabilityReason`
-  (the exact server reason).
-- `AmbientTelemetry.tsx` — the evidence-bound telemetry toolbar consuming the previously-orphaned
-  `fetchConversationTelemetry` (F3): absent-not-zero chips (A2), quiet italic `stale` freshness (A4), an
-  evidence tooltip; it drives `format.ts` `freshnessTone`/`joinChips`/`humanizeAge` (F19).
-- `collapse.ts` — the pure grouping helper: runs of ≥3 identical-summary unknown-vendor items collapse
-  to one de-emphasized expandable row; identity is never mutated; the first member's ordinal is the
-  posinset (F10).
-- `ConversationReconnect.tsx` — the fail-loud reconnect/gap/projection-failed banner with retry +
-  show-diagnostics, rendering `${copy} — ${reason}` from the typed `ConversationRouteError` (F15); never a
-  silent PTY fallback.
-- `TerminalDiagnosticsDrawer.tsx` — the DEFAULT-OFF, inert-when-closed drawer (`inert` + `aria-hidden` +
-  zero children/no PTY mounted when closed — R2/R7/§14.1); framed inset vendor-chrome (A7); hosts the
-  controlled runner PTY READ-ONLY through `PtySurface`'s `readOnly` prop (§12.6).
-- `useConversationControls.ts` — the exact-turn interrupt hook (§9.5), documented in the Renderer Rulings
-  Register below.
-
-## FB7 terminal-surface identity
-
-The renderer's grammar was unchanged; its STYLING became a terminal well instead of a generic web panel
-(spec home: the leaf visual-audit `## FB7`, derived from Toad `main.tcss` + the Claude Code / Codex TUIs).
-Cross-file: `ConversationTimeline` viewport = `background: well` (the `#070b0f` token) + grid border + a
-centered `100ch` content column with the page bg as gutter (FB7.1); item rhythm is line-grid blank lines,
-no per-article hairline (FB7.3); item chrome is gutter grammar — `ToolItem` `●` phase dot + lowercase
-phase word + left-rule output wash, `TurnResultItem` `· turn complete` flow line, `ThinkingItem` `✻
-thinking`, `primitives` `ClampButton` de-boxed lowercase underline, the collapsed unknown-vendor run one
-dim mono line with the honest `same summary` copy (FB7.4/R12). `MarkdownBlock` prose uses `break-word` +
-inline-code `nowrap` (V10) — effective only under the app-root `word-break: normal` override (RV-1,
-`index.css`). `ConversationSurface` renders the history/live capability as a short CUE (state word visible,
-full reason in the hover `title` — R11), not the old always-visible reason paragraph. The composed litmus
-(a settled turn over the well, indistinguishable in grammar from an adjacent vendor TUI) passed on live
-content; item-level styling is not mountable in the bench (mock returns `structured surface unavailable`),
-so it holds by unit tests + the reviewer's live R13 pass.
-
-## Invariants And Boundaries
-
-- **One grammar, no vendor skins (R3).** Every item/block renders through this shared grammar; unknown
-  vendor events are preserved as labeled evidence, never dropped and never re-skinned as vendor chrome.
-- **One honest `role="feed"` (R5).** Exactly one feed; `aria-posinset` is the server ordinal; `aria-setsize`
-  is omitted with `total unknown` copy when the total is not honestly known; announcers are dedicated
-  polite/assertive regions OUTSIDE the feed and stay silent on replay/hydration.
-- **Inert closed trees.** The diagnostics drawer and any hidden stage are `inert`+`aria-hidden` and mount
-  no PTY when closed; a projector failure renders the fail-loud banner, never a silent PTY fallback.
-- **Honest overflow and clamps.** Clamp buttons are real `<button aria-expanded>` with an exact `+N`
-  only when computed from source lines; code/diff live in labeled scroll regions; Home/End scroll those
-  regions rather than navigating the feed.
-- **Honest tooltips and keymap-derived aria (F24/F25).** The interrupt control never surfaces the
-  known-stale L1 capability reason; its `aria-keyshortcuts` is derived from the effective keymap, so a
-  rebind stays truthful to assistive technology.
-- **The renderer never authors conversation authority.** It reads the projection; interrupt dispatch
-  goes through the typed control client; the live interaction/queue/submit authorities are consumed, not
-  duplicated (InteractionBar/QueuePreview/SessionComposer stay their own owners).
-- **Selected-child history is local and retryable.** The surface triggers hydration only from the
-  validated effective focus and renders only the store's child-scoped outcome; it never turns a
-  child route failure into parent `projection-failed`.
+The renderer does not author conversation authority. It reads reconstructed items and delegates acquisition and typed controls to their existing owners. InteractionBar owns the live interaction channel, SessionComposer owns submission and the controlled-seat Stop affordance, and QueuePreview owns queue presentation. Terminal diagnostics are explicitly separate from conversation history and never substitute silently for a failed structured projection.
 
 ## Hot Path Summary
 
-1. `ChatsStageBody` mounts `ConversationSurface` for a controlled seat; the surface reads the
-   `data/conversation` projection through `useActiveConversation`.
-2. `ConversationTimeline` virtualizes `orderedItems`, stamps server-ordinal ARIA, folds unknown-vendor
-   runs (`collapse.ts`), and pins tabbable rows; each item routes through `ConversationItemView` to its
-   grammar component.
-3. `AmbientTelemetry` renders evidence-bound metrics absent-not-zero; `ConversationReconnect` surfaces
-   any typed fault fail-loud.
-4. `useConversationControls` resolves the working turn id from item evidence and gates the interrupt,
-   which `WorkingLine` renders and the `conversation.stop` chord/palette dispatches.
-5. `ConversationSurface` hydrates the effective selected child once per runtime and renders a local
-   retry state when that acquisition fails; the parent feed remains mounted and live.
+1. The Chats stage's retained conversation pool mounts a session-keyed `ConversationSurface`. The surface reads the projection and route error, reconstructs ordered items from `orderedItemIds`, reads scroll memory, and derives a roster and validated effective agent focus.
+2. A missing projection produces connecting or typed projection-failure copy. An existing projection supplies toolbar capability cues, ambient telemetry, reconnect state, the compact agents line, a selected-child error strip and the timeline. An empty live parent lane displays the welcome inside the mounted well; an empty selected-child lane says `no evidence from <label> yet` instead.
+3. `conversation-timeline/ConversationTimeline.tsx` delegates grouping, virtualizer setup and effects to its local modules. `timelineFeed.tsx` renders the feed and virtual articles with server ordinals, conditional known totals and roving focus. `ConversationItemView` dispatches normalized kinds to shared components.
+4. A visible, validated selected-child focus invokes store-owned history hydration. Concurrent requests for that child share a promise; successful acquisition is remembered in a bounded runtime cache. Failures remain child-scoped and retryable rather than replacing the parent projection or stream state.
+5. `useConversationInterrupt` resolves turn identity and combines working-state, capability and refusal evidence. The controlled-seat composer consumes that control beside Send. `ConversationWorkingLine` is a separate live status cue; chord and palette dispatch remain composition concerns outside the item renderer.
 
-## Renderer Rulings Register (durable renderer rulings a follow-on renderer change must carry)
+## Construction And Ownership
 
-- **Interrupt gating is attempt-and-reflect on the L3 routes' evidence, never the stale L1 page view.** No GET exposes the true control capability and the active page's
-  `capabilities.controls` is the KNOWN-STALE L1 `unverified` view, so `useConversationControls` enables
-  the stop on a working+resolvable turn unless the capability is a hard `unavailable`, and reflects the
-  server's typed refusal reactively (a refusal disables that turn until the turn changes — F5). A clean
-  proactive gate awaits a control-capabilities GET or an L1-view refresh.
-- **Hosted-codex status carries no `turn.turnId` during working turns (R1).** `resolveWorkingTurnId`
-  correlates the id from projector item evidence (status turn id → newest streaming/pending item
-  `turnId` → null with the honest reason `turn identity unavailable on this wire`); pi supplies the AR
-  operation id per ruling 3. A status fix populating `turn.turnId` on this topology invalidates the
-  correlation path.
-- **The known-stale L1 `unverified` reason must NEVER surface as control copy (F24 / R4).** An
-  enabled stop carries no reason (WorkingLine shows an honest action tooltip); the not-working/catalog-lag
-  placeholder falls back to the honest earlier `STOP_TURN_DISABLED_REASON` constant. That constant's stale
-  "no cancel-turn route exists yet" wording predates the L3 control routes and should be RETIRED with the
-  catalog-lag turn-state reconciliation (R4) — the catalog seat turn-state lags the projection in both directions,
-  so the chord/palette can be live while the button is absent.
-- **`aria-keyshortcuts` is derived from the effective keymap, never hardcoded (F25).** `ariaKeyshortcuts(
-  bindingFor(effectiveKeymap, "conversation.stop"))` keeps the AT advertisement truthful across a rebind
-  through the `cockpit.sessions.keymap.v1` seam.
-- **Wrapping flex containers defeat height containment (R5 / F23).** A `flex-wrap:wrap` container sizes
-  each line to content, so an interior `overflow:auto` never engages and in-stage affordances become
-  pointer-unreachable. The reliable idiom is single-line (`nowrap`) flex + `min-height:0` columns +
-  per-column interior scrollers + `@container` stacking. (This bites the sibling `conversation-library/`
-  surface; recorded here because it is the renderer-wide layout lesson.)
-- **Virtualization DOM-boundedness at 10k items and the E1/E2 environmental faults — DELIVERED
-  (previously an open ruling).** The 10k tool-heavy DOM/interaction baseline + axe tripwire now
-  lives in `renderer.test.tsx` (mounted rows bounded `< 80` AND `< total/100`; recorded 10 rows /
-  ~42–55 ms; the ms is a jsdom tripwire, a real-layout supersede is a second-half item). E1
-  (hosted-interactions vendor-correlation 500) is quarantined per row in `terminal_liveness.py` — the
-  orphan `vendorCorrelationId` is the NORMAL steady state of cockpit-driven hosted chats — and E2 (L1
-  unknown-input provenance 500) is closed by the store's input-authority pin. NEW L5 finding **F1**:
-  on the hosted codex `+ Chat` topology the live and `thread/read` channels use disjoint id namespaces,
-  so every settled turn was projected TWICE — a resolved live twin beside an authority-downgraded
-  `unknown-input`/`native-history` twin in THIS feed; the projector's live-settled-natives filter now
-  suppresses the native twin (proven once-only on the real codex wire). F3 (completion-correlation
-  contract) and the substrate IPC flake register are master-exit carries.
+`ConversationSurface.tsx` owns projection selection, surface keyboard routing, validated agent focus, visibility-sensitive announcements and scroll-memory callbacks. `conversationSurfaceParts.tsx` owns the toolbar, missing-projection shell, selected-child error banner, timeline composition and history-capability selection; `conversationSurfaceStyles.ts` owns shared styling. The history cue prioritizes unsupported tool completeness before overall completeness. Capability cues show the state word and disclose the server reason through `title`, rather than printing an always-visible reason paragraph.
 
-## Child Route Onboarding Map
+The agent roster comes from item evidence through `deriveAgents`. Persisted focus is recomputed against that roster; an absent agent resolves to the parent lane. Only effective non-parent focus on a visible surface triggers hydration, including after remount or bridge-epoch changes. The store owns runtime availability, successful-history caching, request singleflight, resource refusal and outcome state. Its child limit is 64 for the relevant bounded collections; successful cache eviction permits reacquisition, so this is not an unlimited exactly-once guarantee.
 
-No deeper child route exists below `conversation/`; each source has a one-to-one file card and this
-overview is their governing pillar.
+`AgentsArea.tsx` renders one compact line rather than one row per agent. It shows a word-carrying count/running chip, the viewed agent label and a return-to-parent button when applicable. An empty roster is a static `0 agents` span. Click, Enter, Space or ArrowDown activates the line's menu. The listbox uses `aria-activedescendant`, wrapping arrow navigation and nearest scrolling of the active option; options carry evidenced labels, status words and available final-message previews. Enter/click selects, reselection closes without another focus write, Escape/backdrop dismiss and return focus, and Tab dismisses while leaving normal browser navigation intact. Stale active IDs recompute to the first roster option; an emptied roster closes the menu. These menu styles introduce no transitions.
 
-## File Onboarding Map
+Surface ArrowDown moves focus into the agents line when a roster exists; ArrowLeft/ArrowRight cycle parent and agents, and Escape returns to the parent. Inputs, textareas, selects, editable elements, buttons, links, code blocks, role-group regions and CodeMirror targets retain their relevant keys. ArrowUp on the closed agents line returns to the timeline's tabbable article. Operator-triggered viewing announcements are polite and suppressed while hidden.
+
+`conversation-timeline/` is now a real child source route. Its component is the public timeline shell, `timelineController.ts` composes data and effects, `timelineFeed.tsx` owns feed markup, `timelineControls.ts` owns virtualizer/focus/navigation/latest controls, `timelineRefs.ts` owns shared intent and restore references, `timelineScroll.ts` owns scroll events and input subscriptions, `timelineFollow.ts` owns growth following and anchors, `timelineRestore.ts` owns restore arming/application/driving, `timelinePremeasure.ts` owns geometry-cache warming and invalidation, `measurements.ts` owns constants and disposable storage, and `unknownRun.tsx` owns grouped unknown evidence and keyboard exclusions. `styles.ts` supplies the terminal well and row grammar. The earlier flat timeline and renderer-suite paths are historical routes, not the current ownership layout.
+
+Virtualization keys display rows by stable identity, estimates heights at 80 pixels, uses overscan 8, and adds both the focused row and last row to the extracted range. Moderate cold histories of at most 200 display rows also warm a sliding batch of 12 rows in 24 ms timer-separated slices. Each batch replaces the preceding extra range rather than accumulating a fully mounted transcript. Width invalidation remeasures mounted rows and can restart bounded warming; the width-settle constant is 160 ms. SessionStorage geometry is disposable, keyed by session identity, checked against window/viewport width and current row-key coverage. Denied, corrupt or quota-limited storage costs measurement work rather than conversation availability. This existing cache exception concerns UI geometry only, not an alternative source of conversation truth.
+
+`ConversationItemView.tsx` supplies ordinal-bearing accessible names and kind dispatch: messages and plans use `MessageItem`, thinking uses `ThinkingItem`, tool calls/results use `ToolItem`, interactions use `InteractionItem`, and result/error/notice/telemetry/unknown kinds use `TurnResultItem`. It memoizes by item-object equality; the projection owns stable identity and updates.
+
+`MessageItem.tsx` renders Markdown/text/code and labeled image/file/resource references. Image-reference blocks display supplied alt text, MIME type and filename/type-fallback provenance where applicable; that branch creates no image fetch. The historical F11 explanation was the lack of an asset-read seam, which this bounded renderer inspection does not re-establish across the backend. Completed assistant text is clampable above 40 logical Markdown/text source lines and is sliced to that threshold while collapsed; streaming messages remain unclamped. The count describes that combined source text, not wrapped pixels or every possible block type.
+
+`ThinkingItem.tsx` renders thinking/Markdown/text inline, dim and italic, without a Show more clamp. The global preference replaces the visible body with a `thinking hidden` marker without deleting stored content. Content visibility and an intrinsic-size hint limit layout cost. Live grouped thinking uses the shared calm pulse; the application effects-off CSS freezes animation.
+
+`ToolItem.tsx` renders a verb phrase from tool-input summary, a phase-colored gutter dot and the lowercase phase word. Outputs above 12 source lines are sliced behind a disclosure; reads do not automatically expand. Diff blocks route to `DiffBlock.tsx`, whose per-file threshold is 24 logical lines. Unified content is preferred; old/new-only content becomes labeled minus/plus lines without fabricated hunk headers. Tool output and diff wrappers explicitly use labeled role-group overflow regions. Both also retain CSS height caps while collapsed, so their logical hidden-line counts do not independently prove exact pixel visibility.
+
+`MarkdownBlock.tsx` memoizes the string passed to react-markdown with GFM support, allowing incremental incomplete Markdown to render without a separate typewriter remount path. Prose uses break-word and inline code uses nowrap; the app-root word-break normal override supplies the inherited wrapping context. Fenced code has overflow styles, but the current Markdown component does not itself attach the labeled role-group region described by the inherited card. Its outer wrapper has `tabIndex=-1`; rendered-browser accessibility is not established by this inspection.
+
+`InteractionItem.tsx` presents historical prompt text, choices and phase, with a cyan uppercase badge derived from a bound agent reference. It is non-live and has no answer controls. Native or PTY text must not be treated as an interaction answer. `TurnResultItem.tsx` places results, errors, interruptions, notices, telemetry and unknown-vendor evidence in the feed rather than toast spam; state is carried by words as well as color, and unknown blocks retain their safe summary and evidence reference.
+
+`primitives.tsx` centralizes real disclosure buttons with `aria-expanded` and `aria-controls`, logical newline counting, source badges and capability cues. Exact `+N` appears only when a positive logical count is supplied. Source badges distinguish agent-bus/durable-inbox, harness replay, native history, unknown input and terminal-controlled origin while ordinary operator/harness content remains unbadged.
+
+`collapse.ts` only constructs display rows. Consecutive unknown-vendor items with the same computed summary collapse at three or more members; the first member supplies the grouped ordinal and identity. Expansion exposes each member's ordinal and evidence identity. Visible copy says `same summary`, preserving the distinction between shared summaries and duplicate events; the feed's accessible group label still uses `identical unknown vendor events`.
+
+The same grouping helper coalesces empty thinking in pending/streaming/waiting phases by turn ID plus agent ID, with explicit no-turn/root placeholders. Repeated empty items keep one stable live row. Substantive in-progress thinking updates that row's item and ordinal while leaving its display key stable; it does not close it. Non-live thinking or a turn-result with the matching grouping identity removes the live row, after which the final item is rendered normally. Row-object references avoid stale array indices when another identity finalizes. Coalescing does not mutate source conversation identity or discard unrelated unknown evidence.
+
+`AmbientTelemetry.tsx` fetches through the typed telemetry client when active and an epoch exists, refreshing on session, epoch and status revision rather than per token. Cleanup aborts the request; hidden retained chats keep their last chips without starting another request. Missing/non-finite metrics are omitted, while an evidenced zero is a real value. Usage, context and cost compose quiet chips. The primary available metric supplies freshness tone and the origin/observed/runtime tooltip; this is not a claim that every displayed metric shares that primary evidence.
+
+`ConversationReconnect.tsx` names connecting, reconnecting, gap, identity-change and failure states. Existing messages remain visible during transient reconnect; typed nonempty detail is appended when supplied. Projection/stream failures offer retry and diagnostics; identity change offers diagnostics and refocus copy. Live/idle have no banner. `TerminalDiagnosticsDrawer.tsx` is controlled by its parent: when closed its section is inert, aria-hidden and contains no mounted PTY children; when open its framed inset hosts `PtySurface readOnly`. Parent state owns the default-off policy. Closing diagnostics is not a conversation, draft, queue, interaction or native-process control.
+
+## Invariants And Boundaries
+
+The enduring design intent is one shared grammar and one active navigable conversation feed, server evidence rather than vendor imitation, honest uncertainty, preserved unknown evidence, and separate conversation/input/diagnostics authorities. Retained chats can keep their feed DOM mounted while inactive. The parent pool supplies aria-hidden/visibility-hidden wrappers and passes false for announcement/acquisition visibility and scroll-geometry activity. The drawer explicitly supplies inert; this route must not generalize that local fact into a claim that every hidden ancestor has the same DOM attribute.
+
+Feed articles use server `globalOrdinal`, never local array index, for `aria-posinset`. Grouped unknown runs use the first member's ordinal; live thinking uses its grouped row ordinal, which substantive updates can advance. `aria-setsize` is emitted only when the caller supplies a numeric total. Selected-child lanes deliberately omit the parent total. Unknown-total wording occurs on the older-paging button when older history exists; it is not an unconditional standalone note. Feed busy covers connecting and gap. Article live regions are off, and the surface uses the separate announcer service.
+
+Turn/process announcers key state plus revision, require a previously known state, visible surface and strict `lastAppliedDelivery === live`, thereby suppressing those announcements on fresh hydration and replay. Reconnect/gap announcements instead key the stream phase and visibility; that effect does not apply the delivery predicate. The inherited blanket replay-silence claim therefore remains design intent rather than the literal predicate of every announcement path.
+
+Feed keyboard navigation is widget-scoped, not document-global: brackets move rows and Home/End navigate endpoints. Editable/interactive targets are excluded; labeled group/pre overflow regions and active text selection specifically retain Home/End. Active selection is not a blanket exclusion for brackets. ArrowDown is intentionally absent from the timeline input-key set because the surface uses it for agent navigation; PageUp/PageDown, ArrowUp, Space and brackets remain listed scroll-intent keys.
+
+Scroll behavior separates following from reader intent. A 120-pixel bottom band, a 500 ms interaction window, sticky away-from-bottom override and durable in-band hold prevent ordinary content/measurement echoes from simply resetting a deliberate read position. Growth following is gated by active geometry, a nonzero box, near-bottom intent, no armed restore and no displaced interaction/hold. The latest control clears pending restore, sticky override, in-band hold and update count, then requests the last row and pins the available pixel end. Its single floating button sits outside the scroll container and says latest or `N new`; updates include row arrivals and eligible measured last-row growth, not an authoritative count of messages or tokens. The current latest style includes a 120 ms press-transform transition, so the inherited non-animation statement cannot be applied to all button styling.
+
+Scroll memory is reported only for active, nonzero geometry after echo checks. One echo check rejects an armed offset the current extent cannot contain; another rejects a collapsed DOM extent relative to virtualizer size. Fresh mounts arm current-end restoration; reveal can re-arm remembered state. Non-bottom restoration waits until the extent contains the saved pixel offset and then establishes a sticky hold. Bottom restoration repeatedly pins the current end and clears following overrides. The animation-frame driver has a 2,500 ms budget and consumes bottom restoration after 10 stable-height frames; at budget expiry it clears the pending arm. Saved memory remains separate. These predicates are bounded recovery machinery, not a guarantee that arbitrary missing geometry will eventually restore.
+
+The inherited policy says genuine trusted input must defeat restoration. Present `useTrustedInput` attaches capture listeners for wheel, touchstart, pointerdown and listed keydown events, marks an interaction window and clears pending restoration. It does not test `event.isTrusted` in that helper. This finding is confined to the examined handler and wiring; it is not a whole-call-path claim that all trust guards are absent. Prepend and measurement anchors are distinct: paging records a first-mounted-row identity/offset, while measurement compensation records the row containing the viewport top. Current prepend handling scrolls the saved row to start; the recorded pixel offset is not consumed by that helper. Measurement compensation is separately gated against following, restore, prepend/reveal and hidden/boxless phases, validates identity and drops a far-outdated anchor before applying a measured delta. Exact prepend pixel-offset preservation remains inherited intent, not established by that local implementation.
+
+Interrupt capability policy is attempt-and-reflect: a working, resolvable turn is offered unless controls.interrupt is hard unavailable or a typed refusal belongs to that turn. Merely unverified capability copy is deliberately suppressed. Identity prefers status.turn.turnId; only while working, absent canonical identity falls back to the newest pending/streaming item carrying a turn ID, then the newest item carrying any turn ID, then null. Null produces `turn identity unavailable on this wire`. The historical hosted-Codex omission and pi AR-operation-ID rationale explain this correlation, but are not fresh wire observations.
+
+Request IDs are stable per turn within the hook. First dispatch requests interrupt; subsequent dispatch for that stored ID reconciles. The callback requires session, bridge epoch and turn identity. Pending removes the actionable callback. Typed refusal disables that exact turn until identity changes; acknowledgement and terminal settlement are distinct revision-keyed announcements, and acknowledgement is not announced as interruption. Effective keymap binding supplies advertised shortcuts, with the existing default chord used when no binding is found. The composer can display the retained stale `STOP_TURN_DISABLED_REASON` when no current reason/action is available, including pending without an actionable callback. Its no-cancel-route wording remains the historical R4 retirement concern; source inspection is not permission to repair it.
+
+The inherited layout lesson remains applicable design intent: wrapping flex lines can defeat height containment, so the recorded reliable pattern is single-line flex, min-height zero columns, interior scrollers and container-driven stacking. Its original incident belongs to the sibling history browser and is not a claim that every local flex wrapper must be nowrap.
+
+## Historical And Verification Limits
+
+This proposal is a source-only account at the supplied checkout head. No tests, browser checks, product tools, synchronization, publication or execution acceptance were performed. Original reference identities and route/status/coverage metadata remain parent-owned. The inherited assertion that no configured Domain Documentation or applicable cross-repository implementation source existed is preserved as historical source configuration, not a fresh settings audit.
+
+The FB7 terminal-well intent came from Toad main.tcss and Claude Code/Codex TUI observation: a dark inset well, grid border, line-grid breathing room, gutter phase words/dots, left-rule output wash, lowercase turn boundaries, inline thinking and de-boxed disclosure text. Present styles confirm that grammar and a full-width feed with 2ch viewport padding. They do not reproduce the card's old local description of a centered 100ch column and page-background gutter. The #070b0f token value and external TUI comparison were not independently reverified. Preserve the named FB7/R13 limit: the historical bench mock returned `structured surface unavailable`, item styling was not mountable there, and the composed live-content litmus relied on the reviewer's live R13 pass and then-recorded unit evidence. Those witnesses were not re-examined here.
+
+Preserve the historical R5/F18 virtualization acceptance boundary: the old 10k tool-heavy DOM/interaction and axe tripwire was reported as fewer than 80 mounted rows and fewer than total/100, with 10 rows and roughly 42–55 ms recorded in jsdom. That timing was explicitly a jsdom tripwire, with real-layout superseding work carried into the second half. The current split source structure does not renew that result; `renderer.test.tsx` is an earlier suite location.
+
+Preserve E1, E2 and L5 F1 as named historical backend findings, not fresh renderer acceptance. E1 was the hosted-interactions vendor-correlation 500 reportedly quarantined per row in terminal_liveness.py, with orphan vendorCorrelationId considered normal for cockpit-driven hosted chats. E2 was the L1 unknown-input provenance 500 reportedly closed by the store's input-authority pin. L5 F1 was the hosted-Codex + Chat disjoint live/thread-read ID namespaces yielding a live twin and authority-downgraded unknown-input/native-history twin; the projector's live-settled-natives filter was reported to suppress the native twin, once-only on the real wire. Their original backend and real-wire witnesses were not adjudicated in this bounded renderer pass. F3 completion-correlation and the substrate IPC flake register remain named master-exit carries without a newly established resolution.
+
+The L4 fixture lesson is enduring: capability-sensitive renderer tests need the full required wire shape rather than empty-tree or single-leaf casts. The current conversationCapabilities builder defaults all four groups and 23 leaves; capabilitiesWithInterrupt changes the interrupt leaf. conversationPage defaults totalItems from its items, placing callers in the known-total branch unless overridden. conversationItem defaults turnId to t1; the focus suite explicitly overrides the optional field with undefined. The three compile-time branded token mints remain pageCursor, eventCursor and libraryConversationKey, with counted reasoned registry entries rather than unrestricted casts. These are source observations of fixture construction, not proof that arbitrary overrides or every backend response are valid: the shared Overrides type addresses fresh top-level required-field literals, while its documented widened-variable and nested capability-override limits remain.
+
+The L7/R15/R17 live-thinking acceptance history named liveThinking.test.tsx and collapse.test.ts, at most one live indicator, no diff-update unknown rows and preserved unknown evidence. Present grouping is described above; those historical acceptance pins were not executed. The L8 split preserved intended ordinal/known-total/restore behavior but moved both source and suites into conversation-timeline, so the overview no longer treats this directory as having no child route.
+
+Preserve the TES/L23 timer-ownership rationale: scroll-memory suites and intent-lock use helper-owned fake timers, unmount under controlled timers, discard Virtualizer debounce callbacks, then restore real timers. The earlier 1,551-passing suite still failed nondeterministically during jsdom teardown; that count is historical and not current acceptance. The DAG repair added async ConversationSurface teardown; current code cleans up, clears fake timers before real restoration when applicable, or waits 200 ms for the real-timer debounce while jsdom exists. These are test-environment ownership contracts, not production timeline changes or a newly certified full gate.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                                       |
+| ---------------------- | ----------------------------------------------------------- |
+| sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 
 | Responsibility | File onboarding |
 | --- | --- |
@@ -217,100 +117,27 @@ overview is their governing pillar.
 | Renderer + a11y suite | [renderer.test.tsx](renderer.test.tsx.md) |
 
 ## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): The reconstructable projection this renderer reads. [1]
+- Retained reference account (no fresh execution or acceptance inferred): The sibling in-stage history browser. [2]
+- Retained reference account (no fresh execution or acceptance inferred): The one-roof composition that mounts this renderer. [3]
+- Retained reference account (no fresh execution or acceptance inferred): The interrupt chord/aria-derivation the hook consumes. [4]
+- Retained reference account (no fresh execution or acceptance inferred): The control routes whose evidence gates interrupt + the renderer-facing rulings. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The registry that records those three mints as the only permitted casts, each with its reason. [7]
 
-### Docs References
-
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route relies on its direct agents-remember source/tests and the reviewed
-task/worker/verdict evidence for any current behavioral claim.
-
-No configured Domain Documentation source exists for the structured renderer.
-
-### Cross-Repo References
-
-The renderer composes repository-local components over this package's own conversation contracts; no
-cross-repository implementation source governs it.
-
-No applicable cross-repository source was found.
-
-### Repo-Internal References
-
-- The reconstructable projection this renderer reads. [1]
-- The sibling in-stage history browser. [2]
-- The one-roof composition that mounts this renderer. [3]
-- The interrupt chord/aria-derivation the hook consumes. [4]
-- The control routes whose evidence gates interrupt + the renderer-facing rulings. [5]
-- The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. [6]
-- The registry that records those three mints as the only permitted casts, each with its reason. [7]
-
-## Empty-Well Honesty And Scroll-Restoration Route State
-
-The renderer keeps its timeline well mounted even while empty, uses process-state evidence for the
-welcome state, and owns a robust scroll-memory contract for a Cockpit `display:none` view switch.
-Restores wait for valid geometry, ignore collapse echoes, follow the current end only when the reader
-left at bottom, and yield to trusted user input. A live SSE stream supplies a compact working cue;
-the exact-turn Stop control intentionally remains beside Send in the composer.
-
-## Selected-Child History Renderer State
-
-A valid persisted effective focus hydrates after page load/remount without requiring a click; a
-stale focus falls back to parent and performs no I/O. The focused-child error strip shows the
-server/client detail and retry action. Runtime/store singleflight keeps the effect exactly once,
-and retry affects only the selected child.
-
-## 260731-EFA-L4 Fixture Contract For This Renderer
-
-No renderer component changed. The two changed sources are suites, and both were seeding a capability
-tree the server cannot produce — which matters here more than in most routes, because the Renderer
-Rulings Register's interrupt gate is an argument ABOUT capability evidence.
-
-- **`ConversationCapabilities` is a required field with a full tree.** The mirror declares four groups
-  (`live` · `history` · `controls` · `telemetry`) and twenty-three capability leaves, and the server
-  fills every one. `ConversationAgentFocus.test.tsx` was seeding `capabilities: {} as ConversationCapabilities`
-  — an empty tree — and `useConversationControls.test.tsx` a local
-  `{ controls: { interrupt } } as unknown as ConversationCapabilities` — one leaf and three absent
-  groups. Both now build through `test/fixtures/conversationWire.ts` (`conversationPage()` and
-  `capabilitiesWithInterrupt(state)`), so the tree under assertion is one the L1 view can actually send.
-- **The interrupt gate is unmoved by that.** `useConversationControls` reads exactly
-  `projection?.capabilities?.controls.interrupt` and nothing else, so filling the other twenty-two
-  leaves changes no decision. What it removes is a stub that carried only the field under test — the
-  shape that lets a gate look proven when it has never seen a real tree.
-- **Pages built by the builder carry `page.totalItems`,** derived from the item array rather than
-  omitted. That is the field the timeline's honest-`aria-setsize` rule (R5) turns on, so a renderer test
-  seeding a page through `conversationPage()` is now in the "total honestly known" branch by default and
-  must say so explicitly if it wants the `total unknown` copy.
-- **`conversationItem()` defaults `turnId: "t1"`.** `ConversationAgentFocus.test.tsx` passes
-  `turnId: undefined` on purpose to keep its items turn-less; `ConversationItem.turnId` is optional in
-  the mirror and `exactOptionalPropertyTypes` is off, so the explicit `undefined` is admitted. Reuse the
-  builder here knowing the default, not the previous hand-written shape.
-- **The opaque tokens have exactly three mints.** `ActivePageCursor`, `ActiveEventCursor` and
-  `LibraryConversationKey` are `string & { __brand }` — compile-time only, no structure to get wrong —
-  so the inline `"evt-0" as ActiveEventCursor` casts collapse into `pageCursor()` / `eventCursor()` /
-  `libraryConversationKey()`, each registered as a sanctioned cast site in `wireFixtureGuard.test.ts`
-  with its reason. Registration is what makes them the only three rather than the first three: the
-  registry counts occurrences, so a fourth cast in a listed file fails.
-
-## 260731-EFA-L7 — Live-Thinking Coalescing
-
-The conversation timeline now coalesces repeated empty/in-progress reasoning into ONE stable live `thinking` row per active turn identity: `collapse.ts`'s `groupDisplayRows` delegates to extracted helpers (`liveKeyFor`, `handleLiveOpen`, `handleLiveUpdate`, `handleLiveFinalize`, `unknownRunFor`) with row-object references and `rows.indexOf` finalize (no index bookkeeping); `ThinkingItem` gained the animated live indicator (shared `pulseSlow`, frozen by effects=off); `timelineController.ts` and `timelineFeed.tsx` carry the wiring in the split conversation-timeline. The interleaved R15/R17 acceptance pins live in `conversation-timeline/liveThinking.test.tsx` and `collapse.test.ts` (at most one live indicator, zero diff-update unknown rows, unknown evidence preserved).
-
-## 260713-TES Master Gate — Hermetic Scroll-Memory Timers
-
-The two split scroll-memory suites share timer ownership through
-`conversation-timeline/scrollMemory.test-utils.tsx`: every case starts with fake timers, React
-renders are unmounted while those timers are still controlled, pending TanStack Virtualizer
-scroll-debounce callbacks are discarded, and only then does the suite restore real timers. The
-explicit fake-timer cases in `scrollMemory1.test.tsx` and `scrollMemory2.test.tsx` perform the same
-ordering in their `finally` blocks. This is a test-environment contract, not a production timeline
-change: it prevents a delayed Virtualizer `onChange` from reaching React after jsdom has destroyed
-`window`, which previously made an otherwise 1,551-passing suite fail nondeterministically at
-process teardown.
-
-L23 extends that same helper-owned teardown contract to `intentLock.test.tsx`. Its ten intent-lock
-assertions no longer restore real timers per test; the shared fixture keeps timer ownership through
-RTL cleanup and clears the Virtualizer debounce before jsdom teardown. The `msg` builder stays local
-because streamed-row content is still suite-specific.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`ConversationSurface.test.tsx` gained an async `afterEach` that flushes the timeline virtualizer's scroll debounce before jsdom teardown.
+- Surface focus is roster-validated; visible effective child focus drives acquisition [8]
+- Turn/process and stream-phase announcements use different gates [9]
+- Empty live lanes and selected-child total omission are explicit [10]
+- Feed ordinal, conditional total, roving focus and grouped rendering [11]
+- Focus/last-row pinning and active scroll-element attachment [12]
+- Active selection exempts Home/End specifically [13]
+- Restore waits for usable geometry and bounded driver expiry clears its arm [14]
+- Named input listeners clear restore without a local isTrusted predicate [15]
+- Prepend helper aligns the saved row to start; measurement anchor is separate [16]
+- Live thinking updates and finalization differ from empty-row opening [17]
+- Child history success cache is bounded and concurrent requests singleflight [18]
+- Correlation includes newest any-turn fallback; interrupt is attempt-and-reflect [19]
+- Controlled-seat Stop belongs in the composer footer [20]
+- Closed diagnostics have no PTY children and are inert/aria-hidden [21]
+- Markdown overflow styling does not itself attach the inherited labeled region [22]
+- Local well is padded/full-width; latest press styling includes a transition [23]

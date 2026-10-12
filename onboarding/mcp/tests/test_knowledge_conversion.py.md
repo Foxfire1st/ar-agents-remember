@@ -49,8 +49,7 @@ which lives here, beside its only consumer, rather than in the product (review R
 
 ### Invariants And Boundaries
 
-- **The golden digest pins conversion-format version 1.** If it changes, the change must ship as a new
-  version, never as a new digest for `1` (the comment beside the constant).
+- **The golden digest pins conversion-format version 1 for the exact fixture inputs.** The comment beside the constant forbids changing the conversion's output behavior under version `1`; product conversion changes require a new format version. The current overview-order change instead changes the input fixture cards to include their purpose sections, and updates `VERSION_1_FIXTURE_DIGEST` for those new inputs while leaving the conversion implementation unchanged. The test still hashes every converted path and byte, so the new literal is not permission to re-pin changed product behavior.
 
 ### Todos
 

@@ -1168,12 +1168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
             "content": "sha256:f850b42ccedb338c984cb723a72cb364e5449977ef7ef318709cb1aec36c455c",
             "locator": {
-              "end": 96,
+              "end": 100,
               "kind": "line_range",
-              "start": 96
+              "start": 100
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1855,7 +1855,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9188f407ffb8d88c926f7074eac67ce300f53e9",
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
             "content": "sha256:2aaa68c15362418f38f59c074d6d5106eceac19b8031e3d49e99499ab582cc1a",
             "locator": {
               "end": 5,
@@ -2127,7 +2127,7 @@
       ]
     },
     "311": {
-      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.\n\nAnchor: check_landing_report",
+      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.\n\nAnchor: check_landing_report\n\nRetrieval now uses harness-native semantics/relationships; paired reads carry scoped published intent and bounded continuations.\n\nAnchor: Retrieval substrates and published-intent carrier",
       "targets": [
         {
           "anchor": {
@@ -2141,11 +2141,37 @@
             "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
+            "content": "sha256:1b1b287d394bd2fdcead3117fd12705300525b6a571d96b71eed1742e810af4a",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
+            "content": "sha256:180bf8999be42c254d2989d8abfff65a8bbdd0060d5f5cf09e3feb468c334aff",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "312": {
-      "note": "New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes.\n\nAnchor: KNOWLEDGE_TOPS and added_file_rows",
+      "note": "New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes.\n\nAnchor: KNOWLEDGE_TOPS and added_file_rows\n\nOnly external is supported; disabled stays readable for named recovery/status purposes without being writable.\n\nAnchor: Supported and readable mode vocabularies",
       "targets": [
         {
           "anchor": {
@@ -2172,11 +2198,37 @@
             "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:0262b7a8e171578a427d7903c05673417aac96b5652b72b22aea192a31d0c923",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:5ffc39f80700c07d88eaa5907cade575783d02aaacbe03a35c677733e946c889",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "313": {
-      "note": "Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result.\n\nAnchor: carry_landing_answer and quality_result_answer",
+      "note": "Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result.\n\nAnchor: carry_landing_answer and quality_result_answer\n\nPublic tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model.\n\nAnchor: `PUBLIC_TOOLS`, `_validated_live_names`",
       "targets": [
         {
           "anchor": {
@@ -2203,20 +2255,44 @@
             "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
+            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:e890eb21d9330ac951c4afefb1384b9c93ff8328954130f96cb4d052778b9702",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_live_names"
+            },
+            "path": "mcp/src/agents_remember/mcp/public_surface.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "314": {
-      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated.\n\nAnchor: Process step7 and final working-folder/report paragraph",
+      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated.\n\nAnchor: Process step7 and final working-folder/report paragraph\n\nRetired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop.\n\nAnchor: provider_enabled and install watcher phase",
       "targets": [
         {
           "anchor": {
-            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
             "content": "sha256:b2d2b85db8c7fd89807992475fa635ff3835cd305ee5a0043974e53c3939a45d",
             "locator": {
-              "end": 110,
+              "end": 114,
               "kind": "line_range",
-              "start": 107
+              "start": 111
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2224,39 +2300,91 @@
         },
         {
           "anchor": {
-            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
             "content": "sha256:6a4364374bb1c56589a98126bc07037848f43cc2c50069010d893b8100a581f4",
             "locator": {
-              "end": 247,
+              "end": 251,
               "kind": "line_range",
-              "start": 247
+              "start": 251
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 789
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }
       ]
     },
     "315": {
-      "note": "For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding.\n\nAnchor: Outputs: every reported cut",
+      "note": "For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding.\n\nAnchor: Outputs: every reported cut\n\nTask-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree.\n\nAnchor: Reader scope admission",
       "targets": [
         {
           "anchor": {
-            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
             "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
             "locator": {
-              "end": 148,
+              "end": 152,
               "kind": "line_range",
-              "start": 141
+              "start": 145
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
+            "content": "sha256:17df578b5e73e52a6b79bf11643479b083b18956c05b1c857e4cf610a76d9d19",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:225b8d94e06aecbcb6a133a56d2700c9ed2849f0541847bc53b52245cc02d041",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
           "kind": "code"
         }
       ]
     },
     "316": {
-      "note": "Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.\n\nAnchor: Process step8: independent MEMORY verdict",
+      "note": "Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.\n\nAnchor: Process step8: independent MEMORY verdict\n\nConverted onboarding counts substantive content/history, keeps unreadable candidates open and names nearest-route subjects.\n\nAnchor: Trace rules and counted-sidecar predicate",
       "targets": [
         {
           "anchor": {
@@ -2268,6 +2396,125 @@
               "start": 105
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0450dc86004641904798bcc76f3f25843ff4983a6b73a531095d5e4ce5c02d1d",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:982d4166b22791d39e6db0b0ce9c2f42c4cf411bcff87c51489b2165a7058e6e",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:862386b598382609540be6b3c933bbd9a0f8ca0aab5e8dcf6f6beedbbaa7e6b9",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "317": {
+      "note": "The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal.\n\nAnchor: Gate contract",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560551a2058c73a9283f51e12e765737384373cb",
+            "content": "sha256:9b35a41dd27583757fba71a1d65a4d5173c5fb7d6d04d373b6a131b930bbc282",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "318": {
+      "note": "Graph-less atomic execution declares no dependencies or serialization; graph presence selects dependency-aware scheduling.\n\nAnchor: resolve_scheduling_mode",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:9e9aba826fa0daed5207a81cd78a7641b44da2a3105dfa65191c96a6c46cbe77",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:ee472822624d10e36f6c9abcf78265ad22ff32c8583c58164bee5575b6fe4a01",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "319": {
+      "note": "Whole-sprint archive is an additional explicit authority with terminal/readiness predicates, recorded moves and cleanup retry.\n\nAnchor: archive_sprint contract and Completed predicate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+            "content": "sha256:692b566b5b49f47d0ad0b5c587e8e5564ba025cfbdbfea45ab94f833470cb0dc",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+            "content": "sha256:8bb23a6948e3bf5b5ce2e6a73ddbf4b7b3915be8eae746c867835550aa879c22",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 478
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
           },
           "kind": "code"
         }
@@ -2297,6 +2544,176 @@
               "name": "build_report"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "320": {
+      "note": "Proofs describe demonstrations, never execution success; absent proof is informational.\n\nAnchor: Proof consumers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:990302472973ace2755137240969f919484d2dcc23885354902e5dca05866b90",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_proofs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "321": {
+      "note": "Gate-less admission preserves existing approval; applied approval recovers only its bound operation.\n\nAnchor: evaluate_gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:53468824f44ce71aa3d699c4e75967102bd7347ef39b212d5ee6c71f9c6b109d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "322": {
+      "note": "Context freshness is opt-in, and this packet disables provider discovery.\n\nAnchor: Packet composition and freshness predicate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d0afc7aacaf6d39dce059af736004038b70818",
+            "content": "sha256:156876c96ff91d546a6689a6b1a6ba24ffb8e15d2cfddb59113d48cd8a63d07e",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "323": {
+      "note": "Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary.\n\nAnchor: Git environment and runner contract",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "324": {
+      "note": "Report retention is write-time, five files/seven days; this writer alone does not establish whole-read-path enforcement.\n\nAnchor: write_tool_report and prune_tool_reports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+            "content": "sha256:188a5e73c3d88b5e06c8c1e13f31fda70533d29b8c271931952620aef38c6288",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "325": {
+      "note": "Candidate environment bootstrap is frozen, explicit replacement restores on failure, and successful replacement removes the backup.\n\nAnchor: Bootstrap transaction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:c18c3746cb29d75effff6103ce79f62a92a3917c5a86653d5b90b972ee69df0c",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "326": {
+      "note": "Final memory certification requires an exact ordered four-gate prefix and exact admitted candidate.\n\nAnchor: Gate-five prefix admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:1b31592f9d0344813944807f97dc4a197cd18807ab18376fbe8dde40f52f843a",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "327": {
+      "note": "Source charters distinguish strict dependency order from future package construction and the named sequencing deviation.\n\nAnchor: Layer contract and serving sequence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "content": "sha256:da8fd4e12cb9fe2618bf026fdca96d4741d7b425aaec55764d5aa79e3aa7d12e",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "content": "sha256:58caa5aa5b60c38c8ae1e708afd3a41fad2c446fa438960f4a12d33caf24127f",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "content": "sha256:e7afba7c85bb8777c5bafcf45b322141e8f7fac753e182d9ac3ebd8b947a9dea",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "layers.toml"
           },
           "kind": "code"
         }
@@ -2700,7 +3117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9188f407ffb8d88c926f7074eac67ce300f53e9",
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
             "content": "sha256:50d560d22966ea1ea8c1d76d872ec7d244bed31e7297f75a33f1302e97fd987f",
             "locator": {
               "end": 6,
@@ -3031,7 +3448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -3044,7 +3461,7 @@
         },
         {
           "anchor": {
-            "blob": "510b0b7e0055e6e3c72e3c4e7b05ad85fe831259",
+            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
               "end": 99,

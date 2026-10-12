@@ -36,12 +36,12 @@
       ]
     },
     "12": {
-      "note": "JSON sibling first, then the Markdown blocks, with every probe and read recorded.",
+      "note": "JSON candidate first, then the Markdown blocks, using recorded readers and probes.",
       "targets": [
         {
           "anchor": {
-            "blob": "86702aa0d4bd6b3a45a377ca08d3802ecbe0ddc6",
-            "content": "sha256:d31874c74805bc1d66b8665beecce86e564558de60825ab7357194f2806a0e60",
+            "blob": "5e4ce825f323526337234f4b1ed2d42ece6e3bf9",
+            "content": "sha256:c7ced00e2f88651401c0f3a38fc3add0dbc0b25152dd8057562b12ffbd7c29f5",
             "locator": {
               "kind": "symbol",
               "name": "parse_coordination_settings"
@@ -138,7 +138,7 @@
       ]
     },
     "18": {
-      "note": "The contract candidate is resolved and probed through the recorder.",
+      "note": "An explicit contract candidate is resolved through the recorder; candidate absence is recorded.",
       "targets": [
         {
           "anchor": {
@@ -193,8 +193,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "content": "sha256:33f286de1c38e8dd5a9d1e6ed094213f4377eada0ffc6e92a261d04832c41724",
             "locator": {
               "kind": "symbol",
               "name": "_settings_selection"
@@ -295,8 +295,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3898819544cfb496d93c82138ac0c14cbf890049",
-            "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
+            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "content": "sha256:1b38709e260da682648a0697eda088bafc5eb24ca08407c5db5e9e6cfb4b44d3",
             "locator": {
               "kind": "symbol",
               "name": "build_coordination_context"
@@ -312,8 +312,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
-            "content": "sha256:d767a2cde9054e6be196a3909e1435db4e9190a4beb83ba19209fa7c61aecff4",
+            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "content": "sha256:6b7be52d4a4bacf6568b1c8675b88557018425e9148742c66c98c85eddfebd4a",
             "locator": {
               "kind": "symbol",
               "name": "_memory_mode"

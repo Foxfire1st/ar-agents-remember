@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
             "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
             "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
             "locator": {
               "kind": "symbol",
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
+            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:db858789ca3aa914c98fd790427e71d30c620e9082de56a1b6a5e6bcaf43ec48",
             "locator": {
-              "end": 700,
+              "end": 701,
               "kind": "line_range",
-              "start": 698
+              "start": 699
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
-              "end": 167,
+              "end": 168,
               "kind": "line_range",
-              "start": 167
+              "start": 168
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -197,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -209,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
             "locator": {
               "kind": "symbol",
@@ -226,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
-              "end": 703,
+              "end": 704,
               "kind": "line_range",
-              "start": 701
+              "start": 702
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -261,12 +261,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
             "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
             "locator": {
-              "end": 168,
+              "end": 169,
               "kind": "line_range",
-              "start": 168
+              "start": 169
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -274,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
             "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
             "locator": {
-              "end": 275,
+              "end": 284,
               "kind": "line_range",
-              "start": 271
+              "start": 280
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -416,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
             "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
             "locator": {
               "kind": "symbol",
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
             "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
             "locator": {
               "kind": "symbol",
@@ -518,12 +518,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
             "locator": {
-              "end": 515,
+              "end": 516,
               "kind": "line_range",
-              "start": 507
+              "start": 508
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -582,18 +582,362 @@
         }
       ]
     },
+    "35": {
+      "note": "Task reads record consumed bytes; the source-pair reader parses retained bytes separately\n\nAnchor: `read_task_doc`, `read_task_doc_with_source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "content": "sha256:2c45f3991a0ba8b02b804b6bf561147de05165b9e09d50d58fb455dece5670f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc_with_source"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Prepared writes use atomic replacements and restoration; publication only locally requires review intent identity\n\nAnchor: `write_task_doc_batch`, `_require_publishable_task_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "content": "sha256:4f2b736aaa735f1bf37ecbd2b0a9c4a5c870fcd538adf3138433e5771f4f4f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc_batch"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Strict lookup retains claimant/nonplain identities or all observations for no claimant",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+            "content": "sha256:2107be22699c9b2bb5d0e5aef9f744fb1aa50150636360ee5c4ee484ccb5d2de",
+            "locator": {
+              "kind": "symbol",
+              "name": "strict_leaf_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Completed master terminality requires no blockers; abandonment is independent\n\nAnchor: `master_is_terminal`, `completion_blockers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_is_terminal"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:1e2a7be39dd1965472736acb225f483f2e0483f3ebf024c4e9c99e0615b4b1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "completion_blockers"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "All-done progress cannot substitute for terminal leaf document status",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:7b3f9a3a00f0613b5a8135a6f371a364a0eb73b8a1cb69d892d9b3d123ef0d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_master_status"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "Mutation classification consumes the accepted/candidate field delta.",
       "targets": [
         {
           "anchor": {
-            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
               "name": "classify_task_document_mutation"
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Kind separation, retained sprint identity, and leaf-only expected effects are explicit\n\nAnchor: `TaskDocument` validators",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
+            "content": "sha256:f2facc296a553bfaa1e09dc8003c91147ba938a9850f85f2b3241256e2209a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocument"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Registration can replace a mismatched enclosure, while missing derived links are separately filled",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:ac187f17699856e16148daef0e2c23405896254239757086dc1c67c12bdb2ed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_leaf_doc_enclosure_registration"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Canonical placement guards derived write targets",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:e6584c09e9aecd5d9370b777f4eb632869ba4e102abfa86cf5efcc55a812a286",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_document_in_place"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Maintenance scope is lifecycle; declarations are normative; invalidation classes are limited\n\nAnchor: field taxonomy and mutation classification",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
+            "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
+            "content": "sha256:4e221b9825465e9776e222307a9ac7f67e96535d6bdfcf78f6b795d2aefb8831",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Exact requirements remain mandatory beside packets; resolution and confinement precede packet bytes\n\nAnchor: `_requirements`, `_approved_packet_ref`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Partial review content addressing refuses and record canonical digest is checked",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
+            "content": "sha256:0850c563045af2e3c101f1451eccd0b4e69ca7a5df887bd92a22d4d5e8fcfc67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_route_review_coherence"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Current preflight checks model fields rather than distribution versions\n\nAnchor: topology and retirement preflight",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
+            "content": "sha256:45fd69326faadad7a25213bca6e5d55072ae33f2b536a94e22a682bc45fda254",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Source comparison precedes ordered publication/invalidation/rebuild with reported projection failures\n\nAnchor: publication owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "content": "sha256:0215690d3822c887adf5b93ab430bbd3991405ad216b390e0c5007bcf1eb37d4",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Shared reopen reset owns typed cleanup and frozen-landing removal\n\nAnchor: `_reopened_contract`, `_clear_frozen_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopened_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_frozen_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Exact membership applies scoped unreadability and alias ambiguity refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commanded_masters_exact"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },
           "kind": "code"
         }
@@ -611,6 +955,75 @@
               "name": "task_doc_tool"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Immutable graph admission compares canonical bytes and refuses over-budget population",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:c25d094a146db1574e4ac3f3929c37359e23ca8ce712c26278120c5c9e6c24cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_graph_binding"
+            },
+            "path": "mcp/src/agents_remember/tasks/semantic_topology_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Retirement census explicitly preserves different caller refusal policies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Notes/dispositions independently make step checkbox lines visible",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Title joins use qualified leaf keys and a separate direct JSON reader\n\nAnchor: title join owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:289ba4f9fe20af4a696d5f9f4452d6bfcb1d078b9d817a4125230033d500d6a4",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
           },
           "kind": "code"
         }
@@ -655,7 +1068,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
             "locator": {
               "kind": "symbol",
@@ -672,7 +1085,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "05b62416f0146aa362a6a2de1571c45918e8f1ea",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
               "kind": "symbol",

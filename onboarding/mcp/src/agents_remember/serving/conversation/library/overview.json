@@ -31,6 +31,392 @@
         }
       ]
     },
+    "10": {
+      "note": "List canonicalizes requested scope; key resolution checks signed caller/harness/digest; read checks its feature before delegating.\n\nAnchor: `list`; `read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4003bc0dd2d03e1d4a0a349bf60fc40cbc4224dd",
+            "content": "sha256:0321b4e91c615cb9e594bc7d1a5f4d546c9b2290f61e3fdd1f3c6e9fc88d9f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_key"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Requested cwd must resolve to a directory inside workspace root; query digest binds harness/scope/sort and page limits are bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:140d72aebba2bf33269c0c0a64abb85a28479889c6d20a35675b6ddff9ec932d",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_library_scope"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:ff3b1efa838a680f732334d0a32638f1631202603b1a1f5a1fc55a8703560200",
+            "locator": {
+              "kind": "symbol",
+              "name": "query_digest"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:d96f4c48361e5ecbc1a042cb153dfa80c6c65adc6004466fbb07f071f6181a40",
+            "locator": {
+              "kind": "symbol",
+              "name": "clamp_limit"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Authorities are memoized per runtime and caller-bound ports/services are constructed separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a756b8d4210aa2dbefba1ce6f35f6bf4ea8337",
+            "content": "sha256:335708901e5100aa10ff7f71af6bb2d6dd248a4147081d31ea979279c15fe4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryShared"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a756b8d4210aa2dbefba1ce6f35f6bf4ea8337",
+            "content": "sha256:2c65a38bd6b16776cfb517b26c3ba9da5c51c6c041c644084390afe88643a988",
+            "locator": {
+              "kind": "symbol",
+              "name": "library_shared"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a756b8d4210aa2dbefba1ce6f35f6bf4ea8337",
+            "content": "sha256:5a1d8242281b38c8e66ff4096c364d5c0c36ea4b009f4cddedd7e5e4eb739cf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_open_service"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Cursor purposes are signed in their binding; external prefixes are checked separately from the canonical payload MAC.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:ef439e197af2985dc9d17eb631f1bb6ba545400b4c2fac1222855dbdae998079",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cursor_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:23170b87efdfa7007fff2bae12fca6f455091f1bd9884fe653a0499d3352af37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_cursor"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:ef5c06bea4d6c9e8adecb4d6ba97ff71135a486e2cbf23c2737f9189ac1a7235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_encode"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:16021e120a02c9114dcc23d53c6e2e3d0dd935874bc734f2000c169e4c81f6ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Gate success comes from connect/list or helper list; normalized cache entries use executable fingerprints, and successful products advertise broader features.\n\nAnchor: `_gated`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:7757043cb739baf1826be83a2ab7ac08c9b787c594cd5e922ec8015c4363de53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_codex_gate"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:302b30f2ada339193344c07aa8ce07436d8e5b17bcf0d24fce5914ddc972e209",
+            "locator": {
+              "kind": "symbol",
+              "name": "_helper_gate"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:217e9229954636ee1de6d83ea59c51097ced0d161f93863b7cbffd40a2936e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_codex_supported"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Helper operation success is checked after correlated handshake; timeout and byte rejection are explicit, with byte checking after collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:794363d0b99a49cd35bf88f0715410f1a4e6037948ac9664d86c0072e25bc9d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "call"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:e95934426e99e8c8805b681537ace346217b726ab050833edb6089ddad7ec21a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exchange"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:68637f0fd8e9311509f6f3c70b70ff6c453a30b0b20ff157e868a7667db9240a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expect_handshake"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:819e5384e7fc4738cd6e68c082e6a661d24a179c8eb1158c0b46bbc23ec7f192",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_common"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Open idempotence is retained-state fingerprinting over canonical scope and launch context; terminal records can be evicted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:a81a4c8ce54bcbf0d4ffb7afb851b2fcf4d92600996e5e59e4fed244e87fb7cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenOperationLedger"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:eaf8b8ca38abd8ab5ee96d690ccd23db82f22f35985ed33bd6378c18e8c40019",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Resume preparation, explicit legacy launch, launched marker, bounded proof, and ownership-aware retirement remain separate predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:fa38ded3124d8485beb51ad3498a92286e3c1d574f306a9811fa99730a9bacea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:adfb396d4457929944fe1ba85d220cbeafd5ab0b46c3b440a377f11af3c3721a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:5ae7e3fcdf5d876cd96ad5655e3cfbc7ccd43ad780586a8544a1d9321be0a8b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settle_observation"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:83ee04d9463ab5f756b8e3f96c3e8d09ae526053e8443fc28aad0db68dee1290",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Initialize accepts a parsed diagnostic product and exact client suffix, with required home/platform fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:b4401fa48501825e6ebace6acf0357f9e2bc9aa23c733b7385e718e4e873270f",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_initialize_response"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Native resolver is a third Codex seam; agent enumeration is bounded/noted and Codex local resume target resolution does not distinguish source kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:c2ab521c57fbd42a74bc0107f3f2499769aff9e5d22ae717c40d8fdc85f2764d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AppServerSeams"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:2de55f0294e68828e8748e3ab729e52003b5f89781eaf880a2108d7c1dba9ddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_resume_target"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:ccf2060b011ac12d93fc71026680a55f1e24668f060e18f1ec9831687d098941",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_page"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The refresh plan that makes a capsule-carrying reopen a fresh thread.",
       "targets": [
@@ -60,6 +446,325 @@
         }
       ]
     },
+    "20": {
+      "note": "Codex generation signatures use sampled IDs/notes or count/update fields rather than the complete store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:9521bdd253ef2683ba34968f38cfd29e22e08216a76dfce71be0b7e1046c421d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_list_generation"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:e3bd30f1f0b56df7b25d527c556ed46d989b865174cef885a929c1ad0970a4f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_generation"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Claude rejects composite-agent resume and distinguishes missing enumeration proof from known empty enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:8a9ddf5f6df5dc61c3bc41727efbf043ba42b6793f5de88561423847541d17bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_resume_target"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:47675a0c493ac8e5a34f732bfa27884487299461a3b01679eaa390ddfb242693",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rows"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:10b28ff0ec0d9c3edb3a61eb0e065b99a4dd6083ca80b0cd5bc93555d024f735",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_row"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:a2ade18d0f32da857628210db92e12a8dc8d1d61d0d85556ca91f70f9e707248",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Claude helper lists exact scope without worktrees, allows absent metadata with honest fallback, and reads main versus agent history separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:cb81c6255aff2e679a3722d97369d65822c1a15945501d5dcb64cc104e142c85",
+            "locator": {
+              "kind": "symbol",
+              "name": "listClaudeSessions"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:61019258cd73fb4e539975e608050c55dec92ea6a7fc5a239f1ce5c4f6cfc3e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "readAgentRow"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:658066049e8178994cf4b8cf91aff941dc3b6fbe1086ac8e6f4addb71c40d179",
+            "locator": {
+              "kind": "symbol",
+              "name": "readClaudeSession"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Pi history and total count come from the current branch; target resolution locates the native session file within scoped listing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:94bca837f5701e899cb1a12ede8458c47d8c17b49f35d2ee068b0b23b904cf55",
+            "locator": {
+              "kind": "symbol",
+              "name": "readPiSession"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:6cb272e23e99b3a414eebbd06a994cc2fb1371b718f454c4413e2a86f64f8ca7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolvePiResumeTarget"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:d922f7f3aaf9542115a234eb3adc5db772ec840a73b93562c01e880fbea7f6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "findSessionFile"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Unknown-revision resumed Codex threads become fresh when capsule delivery is present, and request construction drops threadId.\n\nAnchor: thread request construction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:54380cc146483b56181ae1bb4640bbda8dc4eb60468a3a329c66703d730a5a99",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_refresh_plan"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:7509447d6e76423d7b0aec9b93559b6dbccdb8913cde9e93355b1c596eb0b30f",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 539
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Readiness rejects catalog replacement and requires ready control plus acceptable submission state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:d1267c9a0457b2407ec6f89742ee20bdfd17f545782a56006e3165afc76c7494",
+            "locator": {
+              "kind": "symbol",
+              "name": "_readiness_from_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:0dd9194257754230f22c0a23a1a3c129a975f10753657be86bef2110b4bd72de",
+            "locator": {
+              "kind": "symbol",
+              "name": "hosted_session_identity"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Overlapping open statuses declare operation/refusal unions; operation models constrain phase/outcome and complete identity products.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:27de5e99eac8d10864f4ffa3ffedf3cc7da4312bb1994033d0e9e7b6a0a7d586",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPEN_OUTCOME_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58f4c4c2c4dc2dc110fd8653002345b2eccdff7f",
+            "content": "sha256:8376064a252d6b1ec27cc251ec9e91d6251bc0a828129fd8ee45c467e5c40b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenConversationOperation"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/opening.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:bbad13463e99c28047a731e2919b98084e705272ffae5bd67c77e8266cda0d82",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Normalization retains native-only provenance, visible text capping, native ordinals, and explicit unknown-vendor evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:1e4882cbacfff287f0ce8d8fd8c703b2eec761d1f740d3f8da733e44730b9446",
+            "locator": {
+              "kind": "symbol",
+              "name": "capped_text"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:7bfa03434e1efda4ffa6d85b32d0d475db760c73bce8dec50f7d75d9058c9684",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_provenance"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f3f03063371419b682e2de9ba453143ee06b82a",
+            "content": "sha256:03eaf91083eaa88f41f47dd51068add1d19b693a5c6119dd3e93a205eb6029d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_items_from_thread"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex_normalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f3f03063371419b682e2de9ba453143ee06b82a",
+            "content": "sha256:1a5e213563600a94b7c527310cb07cf8192ff3163f167feaa1dc6f84a61ff952",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex_normalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The identity proof the reopen exists for, which the exclusion protects.",
       "targets": [
@@ -82,7 +787,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
+            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
             "content": "sha256:4fb5039022189714018f9a64b35f23a23dd00d88ddda0f23486bbfd8d804237d",
             "locator": {
               "kind": "symbol",
@@ -94,7 +799,7 @@
         },
         {
           "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
+            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
             "content": "sha256:ea60cb40eb13c58721fd67eaab4dcc1537ceeca0a55004f8761512b34f86408f",
             "locator": {
               "kind": "symbol",
@@ -106,12 +811,12 @@
         },
         {
           "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
+            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
             "content": "sha256:440aaca49b82807bd51fc947932153f7cd6145050a956cf500dd2766de438284",
             "locator": {
-              "end": 814,
+              "end": 811,
               "kind": "line_range",
-              "start": 803
+              "start": 800
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
@@ -119,12 +824,12 @@
         },
         {
           "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
+            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
             "content": "sha256:fcfcfacb10b959a660d969a2bb975d5161a79d695e3b577422b37d7a7bb5af4e",
             "locator": {
-              "end": 801,
+              "end": 798,
               "kind": "line_range",
-              "start": 761
+              "start": 758
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
@@ -258,6 +963,35 @@
               "name": "handlePi"
             },
             "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Five routes resolve runtime/caller, declare response shapes, serialize JSONResponse, and use a total outcome map plus ordered typed refusal mapping.\n\nAnchor: `api_library_*`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:8c5c85873b5fd879516cc256e359ea56a755dce972f1a7d9e11a150e52d7ce15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_call"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:18cb343b586853131405510b23bb2fb86bf9859fd5692731af56fc43852dc535",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ERROR_STATUS_TABLE"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
           },
           "kind": "code"
         }

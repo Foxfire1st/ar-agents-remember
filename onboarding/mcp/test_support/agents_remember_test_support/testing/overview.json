@@ -2,7 +2,7 @@
   "path": "mcp/test_support/agents_remember_test_support/testing",
   "references": {
     "1": {
-      "note": "The ordinary bootstrap carries no certifying or external-service capability.",
+      "note": "The ordinary bootstrap carries no certifying or external-service capability.\n\nAnchor: pytest_bootstrap.py module contract",
       "targets": [
         {
           "anchor": {
@@ -37,12 +37,12 @@
       ]
     },
     "13": {
-      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.",
+      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.\n\nAnchor: curation_doctrine.py",
       "targets": [
         {
           "anchor": {
-            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
-            "content": "sha256:6897c85efb5eabcb6bae2f751fb4645f8096541b68669e70b00916cc00e48430",
+            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
+            "content": "sha256:ffe2c82fae8262e8bb35c0d90ff7b6304a03c8e0831808d31bdeb3698b1c5ed4",
             "locator": {
               "kind": "file"
             },
@@ -53,7 +53,7 @@
       ]
     },
     "14": {
-      "note": "Canonical skill copies and their harness mirrors are the synchronization owner's.",
+      "note": "Canonical skill copies and their harness mirrors are the synchronization owner's.\n\nAnchor: scripts/sync-skills.py source declaration",
       "targets": [
         {
           "anchor": {
@@ -71,7 +71,7 @@
       ]
     },
     "15": {
-      "note": "The lifecycle loader starts with the canonical-form findings and then validates the catalog against the source tree.",
+      "note": "The lifecycle loader starts with canonical-form findings and then validates against the source tree.",
       "targets": [
         {
           "anchor": {
@@ -88,7 +88,7 @@
       ]
     },
     "16": {
-      "note": "The lane loader reports a lane list that is not canonical and compares the declared files with the test modules.",
+      "note": "The lane loader reports noncanonical lane lists and compares declared files with test modules.",
       "targets": [
         {
           "anchor": {
@@ -105,12 +105,12 @@
       ]
     },
     "17": {
-      "note": "The registry of retired curation sentences and required statements.",
+      "note": "The registry of retired curation sentences.",
       "targets": [
         {
           "anchor": {
-            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
-            "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
+            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
+            "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
             "locator": {
               "kind": "symbol",
               "name": "RETIRED_CURATION_STATEMENTS"
@@ -122,7 +122,7 @@
       ]
     },
     "18": {
-      "note": "The refusal that both loaders and the start of a test run give for a file that does not parse.",
+      "note": "The shared parse refusal explains possible row interleaving and restoration of the landed file.",
       "targets": [
         {
           "anchor": {
@@ -206,8 +206,116 @@
         }
       ]
     },
+    "22": {
+      "note": "The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:462acacf2301ac8bf2ced44806a3417ee059af318b6e301e1a3f321b60a676a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_gone_consumers"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:01b637eb68f84f7ff0c37b9ddafd42ef86cf0eda7316e7daf3c9a3f2c1156e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stored_file_facts"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.\n\nAnchor: handover and instruction wording helpers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c414ec947cb6de52209c2c35f5570b04a118391",
+            "content": "sha256:0a06015e219e83cddce7af013650c0a03327d1e6d5ced54c0b0e6cfb746ccd03",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f1f34fc0112cdf2edbdac3aa4eb8b918fad0325",
+            "content": "sha256:fb7fcc772848743403a58b32f17116d3b714aaa358e7f0aa67501afbab152ac6",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c129f21c7486cf378a2a50d8bc53c753eb1a2a6d",
+            "content": "sha256:d1d14736bff0740fd3df7da15dddd64048c8879e9d2af3f873a72ddb7eb4b9c9",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_leaf_retirement_wording.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:d8d2d36ffff46631e2af79007d82177e086ea879656904d2bcfd1dc6afcb32e1",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
-      "note": "Retry execution keeps only the dependency-owned files of the collected population.",
+      "note": "Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller.",
       "targets": [
         {
           "anchor": {
@@ -258,7 +366,7 @@
       ]
     },
     "8": {
-      "note": "The union merge attribute for both catalogs.",
+      "note": "The union merge attribute for both catalogs.\n\nAnchor: .gitattributes catalog attributes",
       "targets": [
         {
           "anchor": {
@@ -276,7 +384,7 @@
       ]
     },
     "9": {
-      "note": "A leaked change of owned module-level state fails the test.",
+      "note": "A leaked change of owned module-level state fails the test after restoration.",
       "targets": [
         {
           "anchor": {

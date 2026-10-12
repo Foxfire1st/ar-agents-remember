@@ -1,559 +1,182 @@
 # mcp/src/agents_remember/controlplane
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| sourceRoute            | `mcp/src/agents_remember/controlplane`         |
-
 ## Governing Overview
-
 [MCP overview](../../../overview.md)
 
 ## Purpose
 
-`controlplane/` owns control-plane records: the gate control plane (task 6), the
-operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), the
-task-23/24 interaction-retention policy, task-28 lifecycle-scoped attention
-acknowledgements, and — since 260707-HFX2-L1 — the durable expectation-row
-substrate (R2), inbox redelivery backoff math (R3), and hierarchical signal
-routing derivation (R4) the L2 agent-notifier sweep drives from. **260707-HFX2-L4** adds the P-15
-tier-3 escalation ladder ON TOP of that L1 substrate: `escalation_ladder.py` (the pure rung walker —
-`rung_due`/`next_step`/`seat_is_suspect`) and `orphan_policy.py` (a detection-only hook for a dead
-manager's live workers). **260707-HFX2-L13 round 2** makes leaf-signal address-time routing
-manager-first (live direct manager, then exact leaf/master scope, else role-only manager), while a
-separate historical provenance walk remains reserved for later ladder skip-level traversal. Later
-rungs require the configured dwell plus a hard five-minute floor anchored by both `escalatedAt` and
- `rungTransitionAt`; rows also preserve `leafKey`/`subjectAgentId` for chain-aware agent-notifier checks.
-The L2 agent-notifier sweep (`serving/agent_notifier.py`, governed by the
-`serving/` overview) is the sole caller of all of this — no ladder logic lives outside this route,
-and no delivery/store-write happens inside it. Gates are attributed decision points on a lifecycle — the kind vocabulary
-includes the delegable `master-handover-approval` seam gate (the manager raises it with the
-reviewer verdict attached; the orchestrator decides per the gate delegation policy, and
-`requireReviewerVerdictAtSeams` binds delegated seam decisions to that evidence); the inbox
-is the pull-based return channel for chats the dashboard does not host and the
-durable substrate for agent-to-agent messages that may also be pushed into
-hosted sessions; nudge rows record rate-limited manager nudges. Attention
-acknowledgement rows hide one current queue occurrence. Lifecycle-bound acknowledgements disappear with their
-lifecycle; Task 29 S7 keeps only targetless actionable-drift acknowledgements current
-across that prune boundary because their source item is repository/branch-scoped rather
-than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
+`controlplane/` owns persisted gate decisions, operator/agent inbox snapshots, owner-visible expectation deadlines, current attention acknowledgements, orchestration nudge records and artifact helpers, signal cooldown records, structural seat-routing predicates, and disposable sprint closeout projections. It supplies records, persistence seams, and policy decisions that application, serving, observer, and worktree owners compose. It does not own hosted transport, catalog mutation, task-document truth, Git mutation, or delivery certification.
+
+The gate substrate records attributed lifecycle decision points. Its pure enforcement policy distinguishes a policy-valid approval from an open, rejected, revision-requested, cancelled, expired, or already-spent gate. The inbox is both the pull return channel for sessions the dashboard does not host and the durable relay substrate for messages offered to hosted adapters. Delivery evidence, terminality, and optional model-consume attribution are separate facts. Durable task documents, contracts, attributed commits and canonical operation history carry lasting work history; the computed memory ledger is a disposable consumer cache, not that truth; ordinary interaction rows and projections are disposable, subject to the authority and execution-evidence exceptions below.
+
+The serving-owned agent notifier drives mechanical fact relay, redelivery, rebinding, expiry, confirmed-gone reconciliation, and store reclamation. The former timed escalation ladder and orphan detector are absent from the current route inventory. Their historical policy must not be presented as active construction: the inherited TES-L5 judgment-demolition ruling retired timed rung traversal and notifier expectation judgment. Expectation rows remain owner-visible deadlines whose expected products are judged by their owners.
 
 ## Hot Path Summary
 
-Start at `durable_store.py` for guarded JSONL writes, record validation and advisory ownership; `records.py`/`store.py` own gates and `operator_inbox_records.py`/`operator_inbox_store.py` own inbox rows. Lock admission authorizes the checkout target before entering `kernel.file_lock`; atomic replacement uses `kernel.atomic_write`. A host registry uses its own policy over the shared kernel lock, so coordinator isolation remains intact. Signal routing and expectation rows feed the serving-owned notifier; retention never changes authority-read strictness.
+Begin with `durable_store.py` for the JSONL contract, schema validation, advisory writer ownership, checkout-target admission, appends, and held-lock replacement. Its access seam authorizes the target before delegating mechanical exclusion to `kernel.file_lock`; rewrites delegate publication to `kernel.atomic_write`.
 
-## Durable Store And Routing Operating Context
+For gates, read `records.py`, `store.py`, `gate_policy.py`, `enforcement.py`, and `gate_decisions.py`. Application gate operations live in `application/gate_tools.py`. `lifecycle_gate` opens an attributed record, expires older open records on the lifecycle, writes its verdict deadline, and normally blocks the ambient lifecycle while waiting for a decision or gate-specific inbox response. Raise-and-continue requires an actively delegated seam kind and a nonblank enclosure address; validation precedes expiry and append. Cross-lifecycle deciders can resolve a gate by id. Policy evaluation is pure; spending an approval uses the store's lock-held `claim_approval` seam, while the consuming operation owns the guarded mutation.
 
-L23 extends the validated store seam for batched operator-inbox transitions used by notifier
-expiry. Batch preparation resolves canonical task/owner addresses first and fails closed when a
-row is missing, mismatched, or structurally unaddressable; it never guesses a replacement runtime
-identity. The same durable-store containment and model-validation rules apply to these rewrites.
+For messages, read `operator_inbox_records.py`, `operator_inbox_store.py`, and `operator_inbox_transitions.py`. Structural mailbox, owner, subject, author, message, and delivery-attempt objects keep related inputs together. The store owns the file and its lock; transition helpers describe the next snapshot and persist through the store. Terminal transitions use the latest fold under the held lock. Ordinary non-landing delivery evidence can append from a supplied snapshot; the fold prevents a physically later pending snapshot from reversing a terminal state.
 
-**260731-EFA-L21 — target containment precedes filesystem effects.** The shared durable-store lock,
-append, and rewrite primitives ask the kernel checkout policy to authorize the target before
-creating a parent directory, lock file, temporary file, or durable row. In undeclared linked
-worktree mode permits the deterministic `provider-runtime/dev-ar-coordination` subtree for coordinator rows and enclosure `reports/` for operational artifacts; trusted MCP/dashboard/lifecycle-operation and explicit test execution follow their declared policy.
+`signal_routing.py` derives document-and-role owners from task containment and `seats.py` selects the singular current occupant. Exact runtime ids are delivery correlations, not the structural ownership namespace. `dispatch-brief` is exact-pinned and excluded from generic row-owner rebinding. Redelivery math now lives in `kernel/primitives/inbox_backoff.py`, rather than a controlplane-local module.
 
-TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind
-chains inside the row's exact repository+sprint identity, while `seats.py` names command roles
-without constraining the notifier's structurally discovered subordinate roles.
+For sprint closeout scheduling, `closeout_queue_records.py` and `closeout_queue_store.py` persist invalid-empty or valid-built projection state and an off-side build. Canonical task/door publication is owned elsewhere: publish truth, invalidate affected projections, build from current canonical sources, then publish only an exact-current replacement. Projection failure is a bounded effect on the refresh and does not undo accepted canonical truth.
 
-**260731-EFA-L5 — the durable-store contract. Read this before changing how any store in this route
-touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`,
-`operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`,
-`agent_notifier_signals.py`) were written independently against the same shape, and their safety
-properties ended up distributed almost at random: one of six took a lock, three of six used a
-pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in
-this tree**, so every base-commit rate below is checkable only as "the source says so": the harness
-can be re-pointed at a `git archive` of `e52edaf5` (`mcp/tests/_store_durability.py`), but no run
-output is stored and no test asserts a rate. Two figures are carried at several independent sites
-and are quoted here on that authority: attention-dismissals lost **31.45 percent** of appended
-records (`durable_store.py`, `agent_notifier_signals.py`, `test_durable_store_contract.py`,
-`test_observer_projection.py`) and gate **11.50 percent** (`durable_store.py`, `store.py`,
-`test_interaction_retention.py`). The historical `durable_store.py` module docstring reported the rest at that one
-site — and those retained historical claims are not present in the shortened current contract docstring:
-supervisor-signals 10.50 percent, expectation-rows 10.20 percent, orchestration-nudges 9.20 percent,
-operator-inbox 0.00 percent (the one that already held a lock), 127 of 2000
-`AttentionDismissalStore.dismiss` calls raising, and ten runs per store. That historical docstring was also the
-only recorded authority for records disappearing whole rather than torn — the property that would explain why
-no reader-side validation could have caught this while the caller was told the write succeeded.
+## Construction And Ownership
 
-**Against the current tree the checkable claim is narrower than "all six stores, all scenarios",**
-and it lives in `mcp/tests/test_controlplane_store_durability.py::MultiProcessDurabilityTests`.
-`lost == 0` is asserted in all three scenarios, but over six stores in `forced_lost_update` and
-`stress` and over **five** in `forced_unlink`: attention-dismissals is excluded there by
-construction, because it has no `append` at all (its `dismiss` is a whole-file read-modify-write),
-which is exactly why it measured worst. `torn_lines == 0`, `append_error_count == 0` and
-`reclaim_error_count == 0` are asserted in the **`stress` scenario only**, over all six stores. The
-one base-commit figure a reader can check is not a rate: `HarnessSensitivityTests` asserts, against a
-`git archive` of `e52edaf5`, that each of the five unlocked stores loses its single record in
-`forced_lost_update` while operator-inbox loses none.
+### Shared JSONL persistence
 
-All six implement the declared `ar-durable-store/1.0` contract in `durable_store.py`. Guarded log access and single/batched append remain there; mechanical exclusion has one owner in `kernel.file_lock` and temporary-file publication has one owner in `kernel.atomic_write`. The earlier count of raw file operations describes the original consolidation, not the current owner map.
+The six JSONL stores are gates, expectation rows, operator inbox, attention dismissals, orchestration nudges, and agent-notifier cooldown signals. They share `ar-durable-store/1.0`: validated records, append snapshots where applicable, unconditional per-log exclusion for append and rewrite, fsynced appends, and atomic replacement that writes an empty file instead of unlinking an empty log. Attention dismissals are a compact current set, not a plain append log. The closeout projection is an additional JSON artifact with its own ownership declaration; it is not a seventh instance of the six-log history contract.
 
-**The lock is the mechanism; ownership is advisory.** Every append and every rewrite of every one
-of the six logs takes that log's lock, in every process, whether or not that process declared
-anything. There is no flag that turns it off and no store exempt from it; the `serialized` opt-out
-an earlier draft carried was deleted. Ownership is expressed two ways, neither of them a durability
-guarantee: `StoreOwnership.check_declared_writer` raises but only inside a process that called
-`declare_process_role` (MCP, dashboard and the detached lifecycle-operation writer), and
-`is_compaction_owner` is a question that never raises. Where ownership does real work it does it
-structurally, by moving code rather than by checking at runtime. `require_lock_held` is the one
-check that raises unconditionally, from inside `rewrite_lines`, so no store can rewrite a log it
-has not locked however the call was reached — it can afford to, because it asks about the calling
-thread's own lock rather than about a process-wide declaration.
+`DurableRecord` supplies the `schemaVersion` major/minor rule. A version must have numeric major and minor components and major exactly 1; unknown minors are accepted, unknown majors and malformed versions are rejected. The ordinary model default forbids undeclared fields. Inbox compatibility deliberately preserves only the named additive `adapterDeliveryState` and `adapterDeliveryDetail` extensions; unrelated extensions are refused. Record vocabulary `schema` and durable-store `schemaVersion` answer different questions. Explicit JSONL migration validates the entire transformed log under its existing lock before replacement; it is a migration seam, not a second permissive reader.
 
-**Single-writer is a deployment fact, not a structural one.** An earlier draft left the two
-single-writer stores (attention-dismissals, supervisor-signals) unlocked on the strength of being
-single-writer, and the sources put 31.45 percent loss on attention-dismissals doing exactly
-that. `AttentionDismissalStore.dismiss` is a whole-file read-modify-write reached from the
-dashboard HTTP dismiss route through the serving route, so two concurrent dismisses lose each other
-with no compactor involved and no second writer required. The store that looked safest was the
-worst.
+The gate writer declaration admits MCP, dashboard, and lifecycle-operation processes; gate compaction is assigned to MCP. Expectations admit MCP/dashboard writers and assign compaction to dashboard. Attention dismissals and signal cooldown records name dashboard as writer and compactor. Nudges admit MCP/dashboard writers and name dashboard as compactor. Operator inbox deliberately has no singular compaction owner: MCP removes rows associated with cancelled gates, while the dashboard resolves and compacts relay rows in one held-lock transaction. Moving either destructive operation would mean moving the decision it implements.
 
-**Compaction owners.** Gate is the MCP process's, moved off the dashboard's 30-second projection
-tick onto `mcp/tools/gates.py`. Expectation rows, attention dismissals, orchestration nudges and
-agent-notifier signals are the dashboard's. Operator inbox has **none** — the leaf's declared
-exception, because both processes must physically remove rows (MCP deletes a cancelled gate's rows,
-the dashboard resolves and compacts under one held lock) and neither move travels without the
-decision it implements.
+Ownership checks are advisory execution-role checks, not the durability mechanism. A declared disallowed writer is refused where `check_declared_writer` is invoked; an undeclared CLI/script/test writer has no declared role to check. `is_compaction_owner` is a non-raising selector that accepts undeclared processes and ownerless stores. Public append paths and some other write paths call the writer check; this must not be expanded into a claim that every write method independently checks ownership. All store writes still depend on the shared exclusion contract. Gate reclamation's owner guard is in `gate_decisions._reclaim_gate_log`, so a shared decision service called inside the dashboard does not perform MCP-owned reclaim.
 
-**`rewrite_lines` never unlinks.** An empty kept set is an empty file. Previously a `_replace` that
-found the kept set empty called `unlink`, so a concurrent appender holding an `"a"`-mode handle
-wrote into an unlinked inode.
+Gate, expectation, and inbox enforcement reads validate strictly; malformed authority rows must fail loudly rather than disappear from a decision fold. Gate and expectation projection readers tolerate invalid rows and do not use those skipped rows to rewrite authority logs. Attention, nudge, and cooldown readers tolerate malformed rows for availability; rewrites driven by those readers may permanently omit malformed rows. That tradeoff is valid only while their data carries no mutation authority. Making a tolerant log decide or suppress a mutation requires changing its authority read/rewrite path to strict validation.
 
-**Two read policies, deliberately, and not an inconsistency.** Enforcement fails loudly on a torn
-line — silently skipping a malformed record could drop an `applied` marker and re-open the replay
-window a human approval exists to close — while projection degrades rather than crashing. Three
-stores read strictly because their rows change a decision (gate, expectation rows, operator inbox);
-three read tolerantly because their rows only render or rate-limit (attention dismissals,
-orchestration nudges, agent-notifier signals). Gate and expectation rows additionally carry a
-projection-only tolerant reader beside the strict one — `read` plus `read_for_projection` — used by
-`observer/snapshots.py` and by nothing that decides. **Every rewrite of an authority-bearing log
-reads strictly**, which is what makes two policies safe rather than merely different: each of the
-three strict stores drives its rewrites from its strict read, so a compaction can never erase a
-record it could not parse. The three tolerant stores drive their rewrites from their tolerant read
-and therefore do drop an unparseable row on compaction, which is safe only because none of them
-carries authority.
+### Gate records and enforcement
 
-**`schemaVersion` needs no version branch in any reader.** `DurableRecord` validates it on the way
-in, so an unknown major raises `ValidationError` and strict readers surface it while tolerant
-readers skip it. Verified on all six record types: minor `1.99` accepted, major `2.0` rejected.
-`worktrees/worktree_contract.py` imports the same constant and predicate, so the tree has one
-version policy.
+`records.py` owns gate snapshots, evidence references, frozen `GateAnchor`/`GateRequest`/`GateVerdict` inputs, and create, decide, expire, apply, and reopen builders. Wire kind/state vocabulary is owned by `models/structural/gates.py`. `closeout-approval` is the commit/closeout gate; the inherited gate spine does not introduce a separate commit-approval kind.
 
-**A per-log process-wide `RLock`** (`kernel.file_lock.thread_mutex_for`) is taken before the flock, always in that
-order. Stated carefully: `flock` **does** already serialise threads within one process on POSIX,
-because the lock lives on the open file description and `exclusive_access` opens a fresh one per
-non-reentrant acquisition. The mutex is therefore **not** fixing a reproducible loss. What it
-closes is that the thread-level exclusion rested on where the handle came from rather than on
-anything declared — cache one lockfile handle across threads, the obvious "stop opening two files
-per append" optimisation, and every thread would share one description and `flock` would silently
-stop excluding them. That regression was simulated and does lose records without the mutex.
+`GateStore` stores lifecycle gates beside lifecycle events at `lifecycles/<id>/gates.jsonl`, and lifecycle-less gates at `workspace/gates.jsonl`, all beneath `observer_root`. Its current fold is last snapshot per gate id. `find` searches across workspace and lifecycle logs; `all_current` supplies the cross-lifecycle fold. The historical handover contract requires this distinction: a manager raises `master-handover-approval` on its lifecycle, with the master enclosure address, while an orchestrator consumes it from another lifecycle. Consumers must match the appropriate task/enclosure identity rather than assume the raiser's lifecycle is the consumer's.
 
-**The enforcement caught a real bug before it shipped.** `serving/app.py` calls
-`gate_decide_payload` directly, so an MCP-side reclaim ran inside the dashboard and raised
-`CompactionOwnerError` past `suppress(OSError, ValueError)` — every dashboard gate decision would
-have crashed. Fixed with an `is_compaction_owner()` guard in `_reclaim_gate_log`.
+Kernel primitive gate policy owns rule construction, default human-only behavior, legal delegation, and pinned kinds. `controlplane/gate_policy.py` owns attribution/evidence checks over actual gate records. Human approval is binding. Non-human approval requires orchestration attribution, a deciding identity distinct from the gate-owning lifecycle, a valid deciding role, and explicit delegation of that kind. Delegation is limited to plan, closeout, and master-handover approval; integration, push, and cleanup remain human-pinned. A configured reviewer-verdict requirement must be satisfied by attached reviewer evidence. Actor, channel, and role remain separate fields; model/CLI self-approval is not a policy-valid human approval.
 
-**One accepted behavioural consequence.** Gate reclamation now follows owner activity rather than a
-wall clock: a gate raised and expired by the dashboard is reclaimed on the next MCP decision on that
-lifecycle, rather than within 30 seconds. Space-only, never correctness — the projection is
-keep-filtered in memory every tick regardless of what is still on disk.
+`evaluate_gate` selects the latest matching kind. No matching gate returns permitted-gateless, meaning the existing approval channel still governs; it does not manufacture an approval. An approved gate must satisfy policy. An applied gate normally refuses another mutation, with one exact exception: the supplied operation key matches its internal `appliedOperation`, allowing recovery of that same operation. The internal fingerprint is not an agent-supplied or agent-projected approval token.
 
-260713-PHA-L6 keeps operator inbox rolling compatibility deliberately narrow: legacy readers may
-preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while unrelated extensions
-remain forbidden. These delivery-evidence fields do not alter explicit consume or provider
-degradation state semantics.
+`claim_approval` holds the gate log lock across fold, policy evaluation, and approved-to-applied append. Gateless and refused outcomes write no claim; matching recovery of an already-applied gate appends nothing. Record durability, marker retention, and atomic spending are distinct responsibilities. The mutation itself belongs to the consuming worktree/application operation, not the pure resolver.
 
-260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback
- retention: only pending agent-notifier nudge/escalation rows with a subject id qualify, catalog
-`terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux
-snapshot. `OperatorInboxStore.reconcile_and_compact` resolves and compacts under one lock and
-reuses the folded current before redelivery; consumed/durable/protected rows and indeterminate
-evidence remain visible.
+Gate decisions share `gate_decisions.py`: validate the decision, resolve the target, check delegated attribution before append, delete a cancelled gate and its gate-linked inbox rows, meet any verdict expectation, then reclaim only in the owning process. Lifecycle-scoped opening expires previous open snapshots rather than treating their history as the new gate. This is the opening operation's intended single-current-gate behavior, not a claim of a global transactional uniqueness mechanism across all callers.
 
-260707-HFX2-L20 makes inbox state monotonic across concurrent consume and hosted delivery. The
-append-only log retains the terminal consume snapshot; a shared fold used by live reads and
-compaction ignores physically later pending snapshots once an id is consumed or ladder-resolved.
-Explicit dismissal remains physical deletion, and time-based compaction remains audit cleanup.
+Hosted adapter decision failure has a qualified recovery path. `reopen_gate` clears current decision attribution while keeping prior snapshots. Serving stamps `packet.adapterDecisionFailure` with the prior decision, error, attempt count, and delivery certainty. A proven-unsent failure retains the decision for bounded retries; the third failure reopens it as not-sent. A failure that may already have sent reopens immediately as unknown, avoiding an automatic duplicate response. The old unconditional-reopen description is therefore too broad.
 
-260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows,
- renewal, agent-notifier cooldown records, and routing. Current manager/architect/worker discovery and
-chain credit use binding identity; only the escalation ladder's historical parent hop reads
- `spawnRole`. Same-text agent-notifier conditions on one leaf coalesce only within the same role, so
-parallel seats remain independently observable and addressable.
+### Inbox, terminality, and retention
 
-260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference.
-Leaf-chain progress credits an unbound worker/reviewer/curator only when the current manager spawned
-it and its catalog row explicitly names `replacementForLeaf == leafKey`; parallel-leaf activity
-under the same manager remains isolated.
+`OperatorInboxEntry` v2 carries structural destination/owner/subject references, private agent/lifecycle/session correlations, sender and recipient roles, message and artifact identity, originating ask and response, delivery evidence, retry stamps, consume attribution, and terminal stamps. A builder accepts a task-document reference, lifecycle id, agent id, or recipient role as a mailbox key. Store mailbox listing takes its own supported key parameters and matches every supplied key; `include_terminal` exposes retained terminal markers.
 
-260707-HFX2-L13 makes leaf completion and liveness routing current-manager-first, records durable
-leaf/subject provenance, separates address-time routing from historical skip-level walking, and
-enforces a redundant five-minute later-rung floor. Chain progress currently credits exact-leaf seats,
-the current manager, and same-worktree unbound reviewer/curator seats; unbound-worker active-phase
-credit remains the accepted HFX2-L14 S7 follow-up.
+Active terminal states are landed, superseded, unresolved, and expired; consumed and ladder-resolved remain readable legacy states. `state_signal_landed` checks the formal landed state. `record_delivery` requires both the caller's turn-boundary landing fact and an accepted adapter state before attempting a landed write, and rechecks latest pending state under the store lock. Queued adapter acceptance and delivered status alone are not landing. Correlation and the boundary fact are supplied by the delivery owner; this local transition is not independent verification of a vendor receipt. Landing clears `nextAttemptAt` and terminal rows are excluded from pending redelivery.
 
-A gate is publicly opened for agent workflow through `lifecycle_gate` (blocking by default; raise-and-continue exists for policy-delegated seam kinds, with `GateStore.find` giving deciders cross-lifecycle resolution by gate id), which
-creates the `GateRecord`, blocks the ambient lifecycle with the ask, and
-keeps the public tool call waiting until the gate is decided or a gate-specific inbox response exists.
-Decisions (`gate_decide`) and listing
-(`gate_list`) remain public control-plane tools; lower-level create/wait builders
-are compatibility internals in `mcp/tools/gates.py`. The builders append
-`GateRecord` snapshots to `GateStore`. Lifecycle-scoped gate creation expires any
-previous open gate before opening the new one, so each lifecycle has one current
-actionable gate. L4 adds policy-governed delegated approvals: default policy is
-all-human; non-human orchestration decisions are valid only for explicitly
-delegated gate kinds, never for human-pinned integration/push/cleanup gates, and
-never by the owning lifecycle itself. Gate records can attach reviewer-verdict
-evidence refs, and policies may require that evidence before a delegated decision
-binds. Task 23/24 adds the retention boundary: cancel,
-non-enforcement wait pickup, dismiss, clear, and the 24-hour TTL physically delete throwaway
-interaction rows. Start at `records.py` for the
-entity, then `store.py` for the append-only log (co-located with the observer
-event log under `observer_root`). `gate_policy.py` owns the validated
-delegation schema and attribution checks. `enforcement.py`'s `evaluate_gate` is
-the pure kind-generic policy resolver; `evaluate_closeout_gate` remains the
-closeout wrapper `worktree_closeout_apply` obeys.
+Consume is optional attribution. The builder stamps consumed time/actor/channel once without changing state or acknowledging execution. The store's consume method operates only on a currently pending row and returns unchanged for non-pending or already-marked rows. It neither deletes the row nor creates a terminal state. Explicit supersession is a separate terminal command, not inferred from artifact presence. The fold rejects later pending snapshots after any observed terminal state, while later terminal snapshots remain last-wins; the fold alone does not impose first-terminal-wins among different terminal states. Lock-held transition helpers supply the stronger latest-state predicate for those operations.
 
-Operator/agent messages are queued with `OperatorInboxEntry` snapshots and
-stored through `OperatorInboxStore`. The inbox log lives under
-`observer_root/workspace/operator-inbox.jsonl`; entries carry `lifecycleId`
-and/or `agentId` and/or `recipientRole`, preserve sender/recipient role metadata,
-message kind, optional artifact path, originating ask, response, and hosted
-delivery state while pending, and are deleted when the agent consumes them, the
-developer dismisses the stale pickup warning, or TTL compaction removes them.
-L3 adds `orchestration_nudges.py` for rate-limited manager nudges and
-`orchestration_artifacts.py` for turn-report, master-handover, and escalation
-packet helpers. Since 260703-L12 both role vocabularies carry the `strategist`
-seat, and HFX-L6 extends the orchestration artifact role vocabulary with
-`architect` and `curator` so turn reports, handover packets, and escalation packets can name the
-split developer-facing/default seat and the curator closeout seat. `AgentRole` remains the inbox
-addressing vocabulary; `OrchestrationRole` owns escalation packet roles and the ladder rung
-`strategist -> orchestrator`. **260707-HFX-L7** adds the `system-specialist` investigate-first
-provider-degradation seat to both vocabularies: `AgentRole` gains `system-specialist` so the
-degradation detector (`providers/degradation.py`, governed by the `mcp/` package overview) can
-address it on the inbox, `InboxMessageKind` gains `degradation-alert` for the detector's
-role-addressed state-change alerts (posted to `orchestrator` and every active `manager`), and
-`OrchestrationRole`/`_ROLE_ESCALATION` in `orchestration_artifacts.py` gain
-`system-specialist -> orchestrator` so the seat's escalations/blockers route correctly.
-**260707-HFX-L12** closes a master-exit BLOCK finding: `AgentRole` gains `architect` and `curator`,
-and `InboxMessageKind` gains `decision-item`/`decision-ruling`, so the HFX-L6-landed decision-item
-relay doctrine (orchestrator posts `decision-item` to `architect`; architect posts
-`decision-ruling` back) is now representable and round-trippable through the inbox, not just
-documented in `architect.md`/`orchestrator.md`/`SKILL.md`. Gate policy and inbox storage behavior
-are unchanged — a pure Literal extension.
+`transition_many` folds once under the inbox lock, processes transitions in order, validates every updated model, and performs one batched append. Repeated ids see earlier updates in the same batch. Missing ids raise before the batch append. Serving expiry preparation resolves structural routes before submitting this batch and contains malformed/ambiguous address errors per finding. It does not guess a replacement runtime identity.
 
-**260707-HFX2-L1** makes the operator inbox the signal substrate the L2 agent-notifier sweep drives:
-R1 extends `OperatorInboxEntry` with ack/backoff fields (`attemptCount`/`lastAttemptAt`/
-`nextAttemptAt`/`escalatedAt`) so delivered is not acknowledgement. HFX3 supersedes L1's
-immortal-pending retention: pending rows expire after 48 hours, the folded inbox is capped at 500
-current ids, and the durable artifact—not the row—is the record. R2 adds `expectation_rows.py`
-(`ExpectationRowStore`/`write_expectation_row`): every dispatch surface (spawn, gate open, signal
-post) atomically writes a durable what-must-happen-by-when row (kinds `briefed-by` /
-`verdict-by` / `ack-by`; `turn-report-by` is retained only as a legacy record Literal since
-260713-TES-L2 — no new rows are written and the settings surface no longer lists it),
-configurable per-kind SLA via
-`orchestration.expectations` in `kernel/agentic_settings.py`. R3 adds `inbox_backoff.py`: pure
-backoff-ladder math + a per-target rate-limit gate mirroring `OrchestrationNudgeStore`'s pattern,
-consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
-`signal_routing.py::derive_signal_owner`: the routed owner address (worker -> its manager, manager
--> its orchestrator, decision-item -> architect) derived from task-document containment and role,
-stamped with structural owner plus private occupant correlation at post time.
-Neither this leaf's redelivery driver nor its ladder escalation exist here — L2 (a sibling leaf)
-drives the actual sweep; this route only builds the durable substrate + surfacing it reads.
+The shared wait/pickup constants are five minutes with a five-second gate-wait poll; ordinary gate interaction TTL is 24 hours. Cancelled and expired gate ids are immediately prunable. Applied markers for worktree intent, closeout, push, integration, cleanup, and master handover are retained without a per-record TTL because they prove an approval was spent. Applied markers for other interaction kinds remain prunable. The outer lifecycle-directory retention owner may remove the entire directory; protected live-series lifecycles are exempt from inactivity pruning. This authority exception qualifies the general description of gates as disposable interaction rows.
 
-**260713-TES-L2 — the state-signal substrate and landed terminality.** `InboxMessageKind` gains
-`state-signal` (N12), and `operator_inbox_records.state_signal_landed` makes correlated adapter
-acceptance at a turn boundary terminal ON THE RELAY PATH while the row state stays `pending`
-(the formal `landed` state rides the L4 schema migration); `acceptance=queued` is not a landing.
-`record_delivery` clears `nextAttemptAt` for landed rows, `inbox_backoff.is_due` excludes them,
-and `inbox_reclamation._eligible` excludes them — no redelivery, ladder, or reclamation may
-re-touch a landed relay row. The worker→manager artifact/SLA interpretation
-(`turn-report-by`/`turn-report-stale`) is retired (N8/R6): `briefed-by` rows remain dashboard
-provenance but no longer drive notifier findings.
+Inbox terminal-marker retention is 48 hours from terminal time, or the corresponding legacy consume/creation fallback; legacy ladder-resolved rows are immediately prunable. Pending TTL is a sweep-owned surfaced expiry boundary: compaction itself keeps pending rows, so elapsed age alone is not a silent purge. The nominal folded-current cap is 500, preferring pending rows over terminal markers and newer creation times over older ones. Pending rows can be evicted when the unprotected pending population exceeds available capacity; the inherited policy accepts counted/surfaced cap eviction.
 
-**Current master-scoped ownership.** Real task-document containment supplies leaf→master→sprint
-scope. `derive_signal_owner` resolves one role-appropriate parent seat and then its singular current
-catalog occupant; spawn ancestry is audit provenance only. Compound-idle and non-reaction flows use
-the same task-owned scope and fail closed when the qualified owner is absent or ambiguous.
+Task-bound turn reports from worker, reviewer, and curator are protected by compaction until their exact inbox ids appear in registered task execution evidence. Missing registration leaves protection in force. Protected ids survive both retention and cap selection, so more than 500 protected rows can remain. This is a deliberate evidence-preservation exception to the nominal health cap. `compact` and `reconcile_and_compact` implement this protection; explicit `delete` and `delete_by_gate` are separate physical-removal seams. The compaction predicate must not be promoted into an unexamined whole-call-path claim about every deletion operation.
 
-**260713-TES-L4 — the N13/N16 inbox-schema migration, scoped custody, and terminal
-truth.** `OperatorInboxState` gains the formal terminal vocabulary `landed`/`superseded`/
-`unresolved`/`expired` (legacy `consumed`/`ladder-resolved` retained for parse compatibility);
-the success terminal is `landed` — correlated adapter acceptance at a turn boundary — and
-`state_signal_landed` folds to `state == "landed"`. `operator_inbox_records` adds
-`terminalAt`/`terminalReason`/`supersededBy`; `consume_operator_inbox_entry` is an
-attribution-only marker that never changes state. `operator_inbox_transitions` owns the
-terminal/rebind transitions (`mark_landed`/`mark_superseded`/`mark_unresolved`/`mark_expired`,
-`rebind_entry`, `ExpiryOptions`), all built on `OperatorInboxStore.transition` — a lock-held
-read+append against the LATEST fold so a stale sweep snapshot can never overwrite a concurrent
-terminal write (F1). `list_for_mailbox(..., include_terminal=True)` gives N11 terminal
-inspectability. `interaction_retention` re-means the 48h window as terminal-marker retention
-and the pending TTL as a sweep-owned resolution boundary; the 500-row cap drops
-terminal-oldest-first with counted/surfaced drops (D4). `signal_routing.derive_architect_owner`
-is repository+sprint-scoped (R13, exact-leaf preference, role-only mailbox fallback — never
-global first-match) and `derive_row_owner` is the N14 sweep-time derivation (dispatch-brief
-exact-pinned, worker→manager / manager→orchestrator re-resolution, scoped-orchestrator
-replacement). The escalation ladder is dormant as policy (N3) — the sweep no longer drives it —
-with `next_step` passing the row's `leafKey` through for scoped architect custody; L5 deletes
-the machinery.
-**260707-HFX2-L4** lands that ladder escalation: `escalation_ladder.py::rung_due`/`next_step` climb
-an unacked row rung 1 (renudge) -> rung 2 (skip-level, via new `signal_routing.
-derive_skip_level_owner` -- a SEPARATE two-hop walk from L1's one-hop `derive_signal_owner`, walking
-PAST any dead intermediate the new `is_seat_dead` helper detects) -> rung 3 (architect custody /
-architect attention, terminal); `seat_is_suspect` marks a seat past the respawn threshold as suspect only on an actually
-observed dead/stalled catalog signal, never from silence alone. `orphan_policy.py::
-find_orphaned_workers` is a pure, detection-only hook for a respawned/dead manager's still-running
-workers -- no auto re-parent action exists yet. `OperatorInboxEntry` gains `rung: int = 0` and
-`OperatorInboxStore` gains `advance_rung` (stamps the next rung AND re-anchors `escalatedAt` in one
-snapshot, distinct from L2's rung-agnostic `mark_escalated`). All of this is pure/derivation-only in
-this route; the actual predicate evaluation, delivery, and durable-row mutation happen in
-`serving/agent_notifier.py`, this route's sole caller.
-**260707-HFX2-L8** closes the dead-seat storm gap on that substrate: `OperatorInboxEntry` gains the
-durable terminal `state="ladder-resolved"` plus `ladderResolvedAt`/`ladderResolvedReason`; `inbox_backoff.py`
-excludes ladder-resolved rows via an explicit predicate; `OperatorInboxStore` mutations accept an
-optional in-sweep `current()` snapshot and add idempotent `mark_ladder_resolved`; and
-`interaction_retention.py`/`compact()` prune ladder-resolved terminal rows. Mid-climb rows and
-live-seat rows remain pending/redeliverable only within the HFX3 48-hour TTL and 500-row health cap.
-**260707-HFX2-L9** adds the redelivery-cadence floor and agent-notifier signal cooldown substrate:
-`inbox_backoff.py` now owns the 900-second `MIN_REDELIVERY_INTERVAL_SECONDS` and refuses sub-floor
-values, `OperatorInboxStore.record_delivery` threads that floor into stored `nextAttemptAt`
-scheduling, and new `agent_notifier_signals.py` stores pane/seat-liveness signal cooldown records keyed
-by owner/leaf/finding kind/detail. Known deferral: `agent_notifier_signals.py` is currently an unbounded
-append-only log with no compactor and performs full-file reads through `in_cooldown`; HFX2-L11 tracks
- that CS-6-class scaling gap before the agent-notifier is re-enabled.
+Confirmed-gone reconciliation remains a separate narrow serving predicate. It considers only pending notifier-authored nudge/escalation rows with an exact subject id. Catalog terminated status is direct proof; a subject missing from the catalog requires one successful exact-name tmux snapshot, with `ar-<subject>` absent. Indeterminate command evidence preserves rows. Ordinary messages, durable reports, and terminal rows are outside that selection. The store still writes legacy ladder-resolved for the selected subset, clears its schedule, and resolves/compacts under one lock; this residual transition does not restore the removed timed ladder.
 
-Attention dismissals use `AttentionDismissalStore` under
-`observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
-set rather than history. Dismissing a lifecycle-bound attention row upserts one acknowledgement; each
-projection tick prunes acknowledgements whose lifecycle is no longer live. Gate-open attention rows are
-consumed by cancelling/deleting the gate source itself. Targetless actionable-drift dismissals are the
-only repository-scoped exception: they stay as current acknowledgements until superseded by a newer drift
-signal, while targetless provider-down dismissals are not accepted.
+### Structural routing, deadlines, cooldowns, and artifacts
 
-## Layout
+Task containment supplies leaf, master, and sprint scope; catalog spawn ancestry is audit provenance rather than address resolution. `SeatRow` and `SeatDirectory` are read-only structural protocols owned by this lower domain layer, allowing the serving catalog to satisfy the needed shape without controlplane importing the HTTP application's catalog owner. Catalog mutation remains outside this route.
 
-| Module        | Owns                                                                          |
-| ------------- | ----------------------------------------------------------------------------- |
-| `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals, `GateEvidenceRef`, and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
-| `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows under the log's lock. The strict `read` backs enforcement; the tolerant `read_for_projection` backs `projected_current`, which replaced `compact_current` and rewrites nothing. |
-| `operator_inbox_records.py` | `OperatorInboxEntry` v2 plus structural address/owner/subject value objects, private delivery correlations, formal terminal vocabulary, and attribution-only consume. |
-| `operator_inbox_store.py` | (260713-TES-L4) `OperatorInboxStore`: workspace inbox log, pending/terminal mailbox filters (`list_for_mailbox`, N11), delivery-state snapshots, the lock-held latest-fold `transition` primitive, attribution-only idempotent consume, public delete/dismiss paths, and retention compaction. |
-| `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame, with HFX-L6 architect/curator role literals in the artifact vocabulary. |
-| `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
-| `gate_policy.py` | `GatePolicy` / `GatePolicyRule`, built-in policy names, human-pinned/delegable kind validation, and delegated-decision attribution/evidence checks. |
-| `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
-| `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
-| `interaction_retention.py` | (260713-TES-L4, N13/§9) Shared 5-minute pickup/wait, 24-hour consumed-row audit TTL, 48h terminal-marker retention, sweep-owned pending-TTL resolution boundary, and 500-current-row hard health cap (terminal-oldest-first, counted drops); ladder-resolved rows drop immediately. |
-| `expectation_rows.py` | Durable what-must-happen-by-when rows with task-document/role subjects and private occupant correlation; dispatch/gate seams write them atomically, never as in-memory timers. |
-| `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
-| `agent_notifier_signals.py` | Persisted cooldown records keyed by structural owner plus private current-occupant correlation, finding kind, and detail. |
-| `signal_routing.py` | One-hop owner routing from task containment and role; decision items resolve the sprint architect, ordinary rows rebind to current occupants, and ambiguity fails closed. Spawn ancestry is excluded from resolution. |
-| `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction; DORMANT since 260713-TES-L4, N3) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, scoped architect terminal custody via leaf-key pass-through (R13), and dead/stalled-seat respawn-candidate detection. The sweep no longer drives it; L5 deletes the module. |
-| `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
-| `durable_store.py` | `ar-durable-store/1.0`: record/schema validation, the six store ownership declarations, process-role view, target-guarded access, durable appends and held-lock atomic rewrite. Kernel owners provide shared file exclusion and atomic temp publication. |
-| `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store), plus the durable-store contract surface: constants, error types, `DurableRecord`, `StoreOwnership` and the process-role pair. The locking and rewrite primitives and the per-store ownership constants are deliberately not re-exported. |
+`current_seat_occupant` filters running claimants at the canonical document-and-role address and independently validates incumbent and staged-heir cardinality. One incumbent wins over one heir until it leaves. Multiple incumbents or multiple heirs fail closed even when the other class contains a usable occupant. Role spelling is canonicalized; `system-specialist` is the supported earlier spelling of investigator.
 
-The structural `gate_*` MCP tools live in `mcp/tools/gates.py`; internal exact correlations are
-isolated from the public document-and-role responses in `models/structural/gates.py`. Ordinary
-agent messaging enters through the structural application and durable operator-inbox substrate;
-operator-facing inbox administration remains a separate internal surface.
+Routing translates occupancy ambiguity to `StructuralRoutingError`. A vacant but well-formed seat can still produce a structural role/document owner without private occupant ids; missing occupancy is not equivalent to an arbitrary role-only global fallback. Worker/curator route to the parent master manager; managers to their parent orchestrator; decision-item routes to the architect of the containing sprint. Reviewer ownership is altitude-aware: a stamped structural parent must match the permitted plane, legacy leaf reviewers have the deterministic parent-manager route, and higher-altitude reviewers without the required parent stamp are refused. Orchestrator/strategist/designer structural messages route to the document's architect; investigator routes to orchestrator. Missing required parents and containment cycles are refused. Serving contains routing failures per finding so unrelated relay work can continue. Decision-item posting with a catalog but no resolved sprint occupant returns a pre-write sprint-owner-required refusal.
+
+`derive_row_owner` re-resolves ordinary pending ownership from the durable subject or stamped owner seat. It deliberately returns no generic replacement owner for dispatch-brief. `task_chain_has_progress` excludes the subject agent, requires running/landed rows, checks exact task or replacement-for-task membership, includes the manager's applicable document, and reads working state or progress timestamps after the supplied time. It does not use the historical same-cwd or spawned-by-manager progress-credit rule.
+
+Expectation rows are durable deadline/provenance records, not restart-sensitive timers. Active dispatch seams write briefed-by from the exact durable dispatch-brief id and timestamp, and verdict-by at gate opening. Ordinary inbox posts and seat spawn/readiness do not start those assignment clocks. Ack-by and turn-report-by are retained only in the parse vocabulary; the relay does not judge their deadlines or inferred artifact completion. Same-call dispatch construction is not a cross-log transaction guarantee. Expectation compaction folds by id, always keeps pending rows, and retains recent met/missed rows for the default one-hour window; invalid or incomparable terminal timestamps are kept conservatively.
+
+Kernel redelivery math has a 900-second minimum, rejects configured sub-floor intervals, and clamps the backoff schedule through its six-hour ceiling. It requires pending state, an eligible delivery state, a due schedule, and an elapsed attempt floor. Delivered-but-not-landed rows can still retry. Schedule and attempt stamps survive restart.
+
+Signal cooldown records identify the whole target/finding/detail key, including structural task/role and private current-occupant correlations. The legacy `supervisor-signals.jsonl` artifact and ownership label remain, while the record vocabulary is v2. The current cooldown store has a held-lock retention compactor and accepts a supplied snapshot; serving reads/compacts once per sweep and reuses it. The historical unbounded-no-compactor warning is superseded. Reuse avoids repeated disk parsing, but `last_sent` still scans the supplied list, so this is not an indexed constant-time lookup claim. Invalid or timezone-incomparable timestamps survive compaction; absent reliable elapsed evidence does not establish a fresh cooldown.
+
+Orchestration nudges persist target/subject/reason rate-limit attempts. Their store provides a lock-held predicate compactor; a raw replacement helper requires an already-held lock. Artifact helpers construct strict turn-report, master-handover, and escalation packets. Their role vocabulary includes architect, curator, strategist, designer, investigator, and legacy system-specialist. Escalation packet construction canonicalizes system-specialist to investigator and uses the investigator-to-orchestrator mapping. Packet escalation is distinct from the deleted timed inbox rung ladder. Inbox kinds include degradation-alert, decision-item/decision-ruling, dispatch-brief, and state-signal, alongside ordinary messages and handover/report kinds. Provider-degradation detection and hosted protocol readiness/liveness remain external owners.
+
+### Disposable closeout projection
+
+The sprint artifact is `artifacts/closeout-candidates.json`; adjacent `.closeout-candidates.build` is non-authoritative build scratch. Paths are resolved within the referenced task repository and escape is refused. `PROJECTION_OWNERSHIP` admits MCP/lifecycle-operation writers. Publication uses the shared per-artifact lock and atomic whole-file replacement; this remaining projection lock is not the deleted task-publication or repository-integration authority plane.
+
+A build contains exact sprint identity, source fingerprint, source classification, complete membership, and build time; terminal classification requires empty membership. Effective reads accept valid-built only when readable current source fingerprint, classification, and membership match exactly. Otherwise they produce invalid-empty with bounded diagnostics. Reads do not create publication lock files. Missing prior state reads as revision-zero invalid-empty, and invalidation persists that empty state rather than inventing a not-created authority condition. Malformed state is explicitly diagnosed/recovered at the projection boundary.
+
+Invalidation removes membership before replacement construction. `publish_build` rejects the wrong sprint, creates the off-side artifact, then checks current source inside projection publication exclusion. Unreadable or changed source is not published; an already-current build is a no-op; successful replacement increments revision and clears scratch. Scratch is not a replayable WAL, receipt ledger, or recoverable semantic owner. The store does not own claims, commits, certification, integration, blockers as canonical truth, lifecycle transitions, task freezes, or retained request receipts.
 
 ## Invariants And Boundaries
 
-- **Records + a pure policy, not the mutation.** Creating/deciding a gate writes
-  durable history (`records.py`/`store.py`); `gate_policy.py` validates which
-  roles can decide which gate kinds; `enforcement.py` decides whether an
-  approved gate permits the guarded operation — but the *mutation* (refusing the
-  closeout, marking the gate `applied`) lives in the worktree tool
-  (`worktrees/modules/closeout.py`), which imports the I/O-free policy.
-- **Interaction records are disposable.** Gate/inbox rows remain modeled records while pending, and
-  lifecycle-bound attention acknowledgement rows remain only while their lifecycle is live; targetless
-  actionable-drift acknowledgement rows are current repo/branch records, not history. Response, cancel,
-  dismiss, clear, lifecycle prune, and TTL cleanup physically delete them; inbox consume instead keeps
-  a terminal audit snapshot until TTL cleanup. Durable task docs, contracts,
-  commits, and ledgers carry lifecycle history.
-- **Single current lifecycle gate.** A lifecycle may have only one open durable gate; creating a new
-  lifecycle-scoped gate appends an `expired` snapshot for older open gates rather than deleting them.
-- **Honest attribution → enforceable.** `decidedBy` (actor/session/lifecycle),
-  `decidedVia` (chat/dashboard/cli/orchestration), and `decidingRole` are
-  separate. MCP self-decisions stay model/cli and non-binding; delegated
-  orchestration decisions name a distinct deciding lifecycle/session and must
-  satisfy the configured `GatePolicy` before they are appended or consumed.
-- Gates co-locate under `observer_root`, mirroring the event substrate; no new
-  storage root.
-- **Cross-lifecycle seam fold.** A seam gate lives on its raiser's lifecycle (the
-  manager raises `master-handover-approval` with `enclosure=<master task name>`),
-  while its consumer — the orchestrator's master → super integrate — anchors a
-  different lifecycle. Identity-addressed consumers therefore read
-  `GateStore.all_current()` (the whole-workspace last-wins fold) and match by
-  `enclosure`, never by the consuming contract's lifecycle id.
-- Inbox entries require `lifecycleId`, `agentId`, or `recipientRole`; an
-  unaddressed response has no external mailbox or hosted-session target.
-- **Every append and every rewrite of every one of the six JSONL logs holds that log's lock**
-  (260731-EFA-L5). No store is exempt, no process is exempt, and there is no flag that turns it
-  off. Skip it anywhere and the lost-update window returns silently, with the caller told the
-  record was written.
-- **The lock is held across the read AND the rewrite, never around the rewrite alone.** A record
-  list chosen by a read outside the lock is already stale, and rewriting from it is the same lost
-  update under a different name. Each store splits its reclaim into a public method that takes
-  `exclusive_access` and a `_locked` / `_unlocked` half that does the work;
-  `require_lock_held` raises from inside `rewrite_lines` for anything that gets it wrong.
-- **Ownership is advisory and is never what durability rests on.** `check_declared_writer` is
-  silent in every CLI invocation, script and test; `is_compaction_owner` never raises at all. Do
-  not read either as a guarantee, and do not remove a lock because an owner is named.
-- **Rewrites never unlink.** An empty kept set is written as an empty file, so a concurrent
-  appender cannot write into an inode with no remaining links.
-- **Store writes compose through `durable_store.py`.** Keep checkout authorization before lock side effects, use the shared `kernel.file_lock` mechanics, and publish replacements through `kernel.atomic_write`; duplicating those owners would split the protection contract.
-- **The read-policy split is a decision, not an inconsistency**, and every rewrite of an
-  authority-bearing log reads strictly. Pointing a strict store's rewrite at a tolerant reader
-  turns a torn line into a silently deleted record.
-- **No reader branches on `schemaVersion`.** `DurableRecord` rejects an unknown major at parse
-  time; that single rule is what gives both read policies their behaviour.
+- Hold each JSONL log's lock across read/filter/rewrite, not only the final replacement. `require_lock_held` checks the calling thread before rewrite; it does not independently prove where the caller obtained its selected records. Store methods must preserve the complete transaction shape.
+- Acquire the per-resource process mutex before flock. Same-thread acquisition is reentrant; other threads/processes acquire their own exclusion. The filesystem capability probe refuses a lock implementation that permits the second conflicting acquisition. Supported shared writers require local POSIX exclusion, not a decorative lock.
+- Do not hold one store's mutex/RLock/flock while acquiring another store's lock. Gather external evidence before entry or perform external effects after exit. The notifier gathers catalog and execution-registration inputs before its inbox reconciliation lock. This is declared ordering doctrine, not a general runtime cross-store lock-order detector.
+- Admit checkout targets before durable-store lock or append side effects. Undeclared linked-checkout execution is restricted to deterministic enclosure-local provider-runtime/dev-ar-coordination and reports roots; undeclared primary-checkout execution is refused. Declared daemon/lifecycle-operation/test modes and installed-package execution follow their own admission path. This boundary governs supported application paths, not arbitrary shell/Python filesystem access. A host registry's use of the shared kernel lock does not inherit durable-store target policy automatically.
+- Keep kernel lock mechanics and atomic temporary publication as single owners. Appends flush/fsync; replacements publish a private fsynced temporary file and fsync the directory where supported. Empty rewrites preserve the destination inode namespace by replacing with an empty file, never unlinking the log.
+- Keep strict authority reads and strict rewrite inputs. Tolerant rendering must not become tolerant enforcement. Ownership declarations select/check writers and reclaimers where called; they never substitute for exclusion.
+- Keep gate attribution honest and spending atomic. Preserve spent authority markers, the exact-operation recovery exception, and the distinction between permitted-gateless and a durable approval. Reviewer evidence and human-pinned gates remain policy boundaries.
+- Keep mailbox ownership structural and runtime occupant ids private correlations. Resolve only within task scope, fail closed on ambiguity, and keep dispatch-brief exact-pinned. Role aliases do not create another ownership namespace.
+- Keep delivery, landing, and consume attribution separate. Protect task execution proof before compaction; qualify bounds by protected-row exceptions. Retention does not turn interaction rows into durable task history.
+- Publish canonical task/door truth before disposable projection refresh. A source-current check or projection publication lock does not supply a repository-wide mutex for canonical task or Git mutation. The inherited de-entanglement decision accepts possible lost writes by concurrent editors of the same task document; that acceptance does not erase existing source-identity validation at individual publication seams.
+
+## Historical And Verification Limits
+
+This is a source-only adjudication of the specified checkout and complete supplied card prose. No tests, product entrypoint imports, delivery operations, or execution verdicts were performed. Existing status, coverage, route metadata, original reference identities, and excluded tables remain parent-owned. Historical verification and pre-commit delivery statements are not fresh acceptance evidence.
+
+The EFA-L5 consolidation history reported one of six stores locked, three using pid-scoped temporary names, and none fsyncing. The inherited card explicitly says no base-commit rate-measurement artifact is committed. Preserve the figures as historical source-reported claims: attention dismissal 31.45% loss, gate 11.50%, supervisor signals 10.50%, expectations 10.20%, nudges 9.20%, inbox 0.00%, 127 exceptions in 2,000 dismiss calls, and ten runs per store. The shortened current durable-store docstring does not retain all those figures or the original disappearing-whole-record witness. No archived base or measurement output was examined here.
+
+The inherited durability-test scope is also historical: MultiProcessDurabilityTests reportedly asserted zero lost records over six stores for forced-lost-update and stress, but five for forced-unlink because attention dismissal has no append; torn-line, append-error, and reclaim-error zero assertions were stress-only. HarnessSensitivityTests reportedly compared an archive of e52edaf5, losing one forced-window record in each unlocked store and none in inbox. These old test descriptions and zero-loss delivery claims were not revalidated and are not an all-scenarios certification of the present checkout.
+
+Historical ladder intent remains named without resurrecting implementation: HFX2-L4 introduced renudge, skip-level traversal past observed dead intermediates, architect terminal custody, suspicion only from observed dead/stalled evidence rather than silence, and detection-only orphan-worker reporting with no automatic reparenting. HFX2-L13 separated manager-first address-time routing from historical spawn-provenance skip-level traversal, preserved leaf/subject identity, and imposed configured dwell plus a five-minute floor anchored by both escalation and rung-transition stamps. HFX2-L14 S7 named an unbound active-worker gap; L15's historical replacementForLeaf/spawned-by-current-manager rule followed it. L17 kept same-text findings independent by seat role. TES-L4 made the ladder dormant and TES-L5 removed its modules/transitions and skip-level derivation. Those old witnesses were not examined, so their historical correctness, exact floor behavior, and resolution of the old S7 acceptance are not newly established. Current document/replacement-reference progress predicates are described separately above.
+
+HFX2-L9's unbounded cooldown log/full-file-per-finding deferral was named CS-6 and tracked through L11; current compaction and supplied-snapshot construction supersede that active warning. The historical cached-lock-handle simulation motivated the process mutex: flock with fresh open descriptions already excluded threads, while a shared handle could undermine that assumption. No simulation was run here. EFA-L16 source commentary records production ABBA deadlocks on 2026-08-05 and explains the cross-store ordering rule; it is incident rationale, not a reproduced incident.
+
+The accepted gate-reclamation timing change remains relevant: physical cleanup follows MCP owner activity rather than a dashboard wall clock, while projection keep-filtering can hide expired rows without rewriting them. A further named boundary remains in interaction-retention source: lifecycle-directory rmtree can remove a held lockfile, allowing later lock acquisition on a different inode. The commentary says the window concerns dormant unprotected lifecycles with no known hitting caller; this review confirms the directory-removal primitive, not incident absence or whole-path safety. Protected live-series lifecycles extend the outer retention bound to series retirement.
+
+DAG-L3's 128 request receipts, pending transaction, lane/claim/blocker ownership, and crash recovery of semantic queue publication describe an earlier queue authority design, not the current disposable projection. DAG-L4/L15's queue-to-repository integration-authority lock and create=False preview behavior refer to removed modules. CLIVE records the de-entanglement cut as commit 1a0919c1, including task_publication_lock and lifecycle_operation_lease deletion and accepted concurrent same-document lost writes. That commit was not inspected; the present route inventory and publication helpers support the narrower current ownership map. Projection locks remain for projection persistence, and the named historical commit must not be treated as proof that every current call path is lock-free.
+
+PHA-L5's hosted-protocol doctrine remains inherited context: exact adapter snapshots and correlated receipts own readiness/liveness/delivery truth; gates own interactions; legacy/custom sessions were explicit unsupported states; pane/log observations were diagnostic. Its claim of additive synchronized dashboard/package projections was not re-established across products here. CHATS-L5I's failure-evidence intent survives in the qualified bounded-retry/reopen construction above. Incremental route-index refresh and pre-commit verification notes are historical workflow context, not present product behavior or publication authorization.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                          |
+| ---------------------- | ---------------------------------------------- |
+| sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 
 ## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): Gates mirror the observer event substrate (envelope + append-only JSONL store). [1]
+- Retained reference account (no fresh execution or acceptance inferred): Gate policy validation and delegated decision checks. [2]
+- Retained reference account (no fresh execution or acceptance inferred): The `gate_*` payload builders that drive this substrate. [3]
+- Retained reference account (no fresh execution or acceptance inferred): Gate response models, including the structural public boundary and internal exact correlations. [4]
+- Retained reference account (no fresh execution or acceptance inferred): The inbox record/store pair provides the external-chat pull return channel. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. [7]
+- Retained reference account (no fresh execution or acceptance inferred): Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
+- Retained reference account (no fresh execution or acceptance inferred): Shared kernel exclusion is independent of caller authorization. [9]
+- Retained reference account (no fresh execution or acceptance inferred): Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. [10]
+- Retained reference account (no fresh execution or acceptance inferred): Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. [11]
+- Retained reference account (no fresh execution or acceptance inferred): The projection tick reads folded gates and pending expectation rows without rewriting them. [12]
+- Retained reference account (no fresh execution or acceptance inferred): The serving relay composes fact predicates and dispatches fact actions over this route's stores. [13]
 
-### Repo-Internal References
-
-- Gates mirror the observer event substrate (envelope + append-only JSONL store). [1]
-- Gate policy validation and delegated decision checks. [2]
-- The `gate_*` payload builders that drive this substrate. [3]
-- Gate response models, including the structural public boundary and internal exact correlations. [4]
-- The inbox record/store pair provides the external-chat pull return channel. [5]
-- The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. [6]
-- The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. [7]
-- Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
-- Shared kernel exclusion is independent of caller authorization. [9]
-- Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. [10]
-- Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. [11]
-- The projection tick reads folded gates and pending expectation rows without rewriting them. [12]
-- The serving relay composes fact predicates and dispatches fact actions over this route's stores. [13]
-
-## 260712-TRH-L4 Route Impact
-
-Controlplane expectations now start at the durable exact-session dispatch-brief entry, using its timestamp and id; pending rows remain pinned and never enter generic readdressing or respawn escalation.
-
-
-### 260713-PHA-L5 Route Contract Review
-
-The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
-readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
-gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
-only. Dashboard and packaged projections remain additive and synchronized.
-
-## 260718-CHATS-L5I Current Route Impact
-
-Gate records now have an explicit reopen transition for an adapter decision that failed to deliver. The transition makes the gate answerable again and carries failure evidence, so an operator's decision is never silently consumed or left represented as an approval.
-
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
-
-## 260731-EFA-L2 Record Builder Parameter Objects
-
-Every record builder in this route is now signed on frozen parameter objects rather than long
-keyword lists, and the groupings are the route's own vocabulary:
-
-- gates — `GateAnchor` (what a gate is raised against), `GateRequest` (what the decider is handed),
-  `GateVerdict` (the verb + who + through which channel + in which role). The verdict is one object
-  because the closeout policy never reads its parts apart.
-- inbox — `InboxAddress` / `InboxOwner` / `InboxRouting` (where a row goes and who owns it),
-  `InboxSubject` / `InboxMessage` (what it says and about what), `InboxPoster` (who put it there),
-  plus `DeliveryAttempt` / `AdapterReceipt` / `InboxRenewal` on the store. Passing
-  `InboxRenewal.readdress_to` *is* the readdress — the old `readdress: bool` beside loose `owner_*`
-  values is gone.
-- expectations — `ExpectationSubject` / `Expectation`.
-- agent-notifier signals — `AgentNotifierSignalTarget` / `AgentNotifierSignalKey`; the cooldown key is
-  compared whole, so `last_sent` and `in_cooldown` cannot diverge on which fields identify a signal.
-
-No record schema, wire field or refusal changed.
-
-## 260731-EFA-L16 Route Impact — one order across stores
-
-`exclusive_access`'s docstring now declares the cross-store order beside the intra-store one: no
-thread may hold one store's lock (mutex, RLock, or flock) while acquiring another store's lock;
-evidence a transaction needs from a second store is gathered before entry, or the side effect
-runs after exit — never nested. The two nestings this forbids (the liveness sweep's catalog
-batch across the synchronizer's inbox/gate locks; the agent-notifier's inbox transaction across a
-catalog read) deadlocked ABBA in production on 2026-08-05. The operator-inbox store's lock-held
-fold → resolve → compact transaction is untouched — L5's declared exception stands; what moved
-is the evidence gathering around it (the agent-notifier's catalog read now precedes the lock), and
-the liveness sweep's synchronizer side effect now follows its batch commit.
-
-### 260713-TES-L5 Route Impact — Judgment Demolition
-
-The control plane is reduced to the fact-relay surface: `escalation_ladder.py` and
-`orphan_policy.py` are deleted, the ladder transitions (`mark_escalated`/`advance_rung`/
-`mark_ladder_resolved`/`RungAdvance`) are gone, `derive_skip_level_owner` is gone, and
-`expectation_rows.py` is an owner-visible deadline surface the relay never evaluates.
-`operator_inbox_records` keeps the legacy rung fields and `ladder-resolved` state as
-parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
-(reviewer F4).
-
-## 260815-DAG-L3 Sprint Candidate Artifact
-
-The control plane now includes a bounded canonical `artifacts/closeout-candidates.json` per sprint
-and one adjacent pending transaction. `CloseoutQueueStore` uses the common durable-store lock,
-explicitly admits MCP and lifecycle-operation writers, retains at most 128 request receipts, and
-recovers an exact one-revision publication after a crash. The same store lock serializes task-fact
-publication, candidate lane ownership, atomic blockers, and sprint completion/reopen; the WAL is
-publication scratch and the JSON artifact remains the survival record.
-
-## 260815-DAG-L4 L4 Serialization Boundary
-
-Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards. That lock module (`controlplane/integration_authority_lock.py`) was deleted with the whole lock plane by the de-entanglement cut (commit `1a0919c1`); there is no queue-to-repository lock order any more.
-
-## 260815-DAG-L15 Route Impact
-
-`integration_authority_lock` gained the keyword-only `create` flag: the three dry-run paths (graph authoring + sprint attach/detach) lock with `create=False` so a preview never writes the lock file (playthrough F2); apply paths keep `create=True` and re-lock before any mutation.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`closeout_queue_store.py` / `closeout_queue_records.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*` locations.
-
-## 260821-CLIVE Final Task-Publication And Projection Boundary
-
-Task and door truth was published under `task_publication_lock.py`, a short repository-scoped CAS
-mutex. **That lock was deleted with the whole lock plane by the de-entanglement cut** (commit
-`1a0919c1`, "delete the lock plane"), together with `controlplane/integration_authority_lock.py` and
-`worktrees/integration/lifecycle/lifecycle_operation_lease.py`. The developer ruling is that these are
-throwaway task documents rather than bank records; the accepted cost is that two concurrent writers
-of the same task document may lose one write. No lock is taken to prove a claim. The canonical
-mutation is still never blocked by the state of a closeout projection. The transaction shape is
-unchanged:
-
-```text
-task or door change
-  -> publish canonical bytes
-  -> invalidate each affected projection to durable invalid-empty
-  -> build a complete candidate off-side from current task + waiting-door truth
-  -> publish valid-built only if the source identity is still exact-current
-```
-
-`closeout_queue_records.py` and `closeout_queue_store.py` therefore own only disposable projection
-builds and invalid-empty/valid-built persistence. They do not own claims, commits, certification,
-integration, blockers, receipts, lifecycle state, or task freezes. A failed refresh is an explicit
-bounded effect and cannot undo the accepted canonical mutation.
-
-Task-execution retention follows the same ownership rule. `operator_inbox_store.py` and
-`interaction_retention.py` protect task-bound worker/reviewer/curator reports until exact first
-evidence is registered in task truth. Missing registration fails closed for deletion; no heuristic
-reader or compatibility path may erase the only proof that execution started.
-
-## 260824-PDLS Final Queue-Store Reconciliation
-
-The closeout queue store persists only disposable valid-built or invalid-empty projection state.
-It does not retain lifecycle, claim, commit, certification, or stale-row transition evidence; an
-absent prior file is normalized by publishing invalid-empty state rather than reporting a separate
-`not-created` authority condition.
-
-## 260821-ARSPAWN-L2 Canonical Occupancy
-
-`seats.current_seat_occupant` is the single pure selector for a canonical document-and-role seat.
-It checks incumbent and staged-heir cardinality independently, so duplicate heirs still fail
-closed even while one valid incumbent is present. One incumbent wins until it leaves; only then
-does the one staged heir become current. Routing, delivery, catalog, and observer consumers use
-this selector instead of re-deriving generation choice.
-
-`signal_routing.py` translates malformed or ambiguous occupancy into
-`StructuralRoutingError`. Notifier evaluation contains that error per finding so one corrupt
-address cannot abort unrelated rows.
+- JSONL admission precedes shared locking; appends fsync and replacement requires a held lock [14]
+- Ownership is advisory; inbox has no single compaction owner; schema accepts only major 1 [15]
+- Mutex/flock exclusion is reentrant and capability-probed [16]
+- Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable [17]
+- Undeclared checkout targets are restricted; primary checkout is refused [18]
+- Approval spending folds/evaluates/applies under one log lock [19]
+- Applied gate permits only matching exact-operation recovery [20]
+- Default human policy and explicit delegation/pinned kinds are kernel-owned [21]
+- Delegation rejects owning-lifecycle decisions and missing required reviewer evidence [22]
+- Gate reclaim is owner-selected at the shared decision service [23]
+- Raise-and-continue requires delegated seam and enclosure before mutation [24]
+- Consume stamps attribution without changing state; fold resists pending rollback [25]
+- Landing needs accepted adapter state plus supplied boundary fact and latest pending fold [26]
+- Batch transitions validate before one append; compaction protects unregistered task reports [27]
+- Protected ids can exceed the nominal cap; pending compaction awaits surfaced expiry; spent gate kinds survive TTL [28]
+- Exact structural occupancy checks incumbent and heir independently [29]
+- Routing is task-scoped, reviewer-altitude-aware, and dispatch-brief excludes generic rebind [30]
+- Current chain-progress credit uses task and replacement references [31]
+- Active deadlines are briefed-by/verdict-by; retired kinds are parse-only [32]
+- Cooldown has retention compaction and compares the complete key by list scan [33]
+- Redelivery refuses sub-900-second cadence and excludes non-pending rows [34]
+- Confirmed-gone reclamation uses narrow pending alert eligibility and positive exact-session evidence [35]
+- Catalog evidence precedes inbox lock; cooldown and expectation reclamation supply sweep snapshots [36]
+- Adapter failure preserves bounded proven-unsent retries and reopens unknown delivery with evidence [37]
+- Projection requires exact source identity and owns scratch rather than semantic WAL [38]
+- Canonical publication precedes projection invalidation/rebuild and returns refresh failures as effects [39]
+- Legacy specialist role canonicalizes to investigator before packet routing [40]
+- Lifecycle pruning removes whole unprotected dormant directories [41]
+- Serving contains structural route failures per action and prepares expiry batches before store transition [42]

@@ -31,7 +31,7 @@
       ]
     },
     "2": {
-      "note": "Resume fences termination and preserves the accepted generation and mutation histories.",
+      "note": "Resume preserves the accepted generation and mutation histories, requires exit when termination evidence is present, and delegates closeout phase selection to the recovery projection.",
       "targets": [
         {
           "anchor": {
@@ -44,11 +44,35 @@
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:3caf704ecd9d7d01c6578d92f43c151d4e6523373c7326cf851e1b616beec585",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_recovery_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:cc2252b72df6bec6dc405f4f895bb7bc3cf0e3bc955ccf353c7b1e839c795c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_generation_retained"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Integration generation authority follows the actual publication pair.",
+      "note": "Integration generation authority follows the actual publication pair: the closed-out code commit and external memory-content commit, without selecting a ledger commit.",
       "targets": [
         {
           "anchor": {

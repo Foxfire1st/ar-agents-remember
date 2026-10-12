@@ -52,6 +52,8 @@ The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent
 
 The converted-onboarding bootstrap test is a consumer of the two existing artifacts its imports reach. No new artifact or contract is introduced by that registration, and it remains accounting rather than execution evidence.
 
+The overview-order test module is a consumer of eleven existing artifact rows, alongside the existing validator cases. These additions preserve the rows' incoming fields and existing consumers; no artifact or contract is created for the test module itself. The separate lane catalog assigns its unit-regression membership. These declarations describe source reachability and selection, not a test invocation or acceptance.
+
 ### Structure
 
 The old coherence-record fixture is an exact retained external-recorded artifact, owned and consumed by `test_evidence_dependency_bounds.py`; its permanence protects old-record compatibility under the derived dependency bound. The landing/gate suites register their actual shared support consumers, never a new execution claim.

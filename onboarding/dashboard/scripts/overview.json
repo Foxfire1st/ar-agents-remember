@@ -2,7 +2,7 @@
   "path": "dashboard/scripts",
   "references": {
     "1": {
-      "note": "The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality.",
+      "note": "The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality; its throwing wrapper accepts only an optional diagnostic subject. The pinned Dagger graph supplies the matching attempt token and attestation file.",
       "targets": [
         {
           "anchor": {
@@ -27,11 +27,23 @@
             "path": "dashboard/scripts/require-dagger-test-environment.mjs"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_candidate_attempt"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The declaration mirrors the validator's runtime exports and optional diagnostic subject.",
+      "note": "The declaration mirrors the validator's runtime exports and optional diagnostic subject.\n\nAnchor: exported attestation constants",
       "targets": [
         {
           "anchor": {
@@ -60,7 +72,7 @@
       ]
     },
     "3": {
-      "note": "The changed-line scorer is importable for diagnostic callers.",
+      "note": "The changed-line scorer is importable for diagnostic callers. It counts changed lines within recorded statement ranges, excludes the specified test/dev/types paths, normalizes dashboard keys, and ignores files without coverage entries. Its direct CLI guards admission first, resolves the base in the Python environment-candidate order, uses a 256 MiB Git buffer, reads coverage, and reports uncovered lines without a percentage floor.\n\nAnchor: direct-invocation condition",
       "targets": [
         {
           "anchor": {
@@ -73,11 +85,84 @@
             "path": "dashboard/scripts/check-diff-coverage.mjs"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:0227974000e1aff9e885c86a05263aecdd735df1f54f2c3a91dacc8e9020128b",
+            "locator": {
+              "kind": "symbol",
+              "name": "executableStatementLines"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:42135e5f222e4528924938a23936b77b7b0cd251963dc083b96abd1104103548",
+            "locator": {
+              "kind": "symbol",
+              "name": "coveredStatementLines"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:4b32d703087866562863ddad91d669e9c436679d00b97f1211fd6c4b2de17fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:ce2237c9d5fd3ee1c8ffe16151abfae0948fc69667c0239fc102a39c8dc7bf65",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_sources"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:dfa5cc8974878c6b02ee30710884b3fc2b723e8e98f2b616302ad25a0da0d826",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_base"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:71bb282f238bb7c186fed0e235239bbb8123473b0b97efda899af4f378dd2285",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The executable-statement contract suite proves both CLI refusal and pure accounting.\n\nAnchor: \"describe(\\\"check-diff-coverage executable-statement semantics\\\", () => {\"",
+      "note": "The executable-statement contract suite proves both CLI refusal and pure accounting, including multi-line statement ranges, absent coverage entries, exclusions, and dashboard key normalization.\n\nAnchor: `describe(\"check-diff-coverage executable-statement semantics\", () => {`",
       "targets": [
         {
           "anchor": {
@@ -95,7 +180,7 @@
       ]
     },
     "5": {
-      "note": "Vitest collects the route’s script tests.\n\nAnchor: \"scripts/**/*.test.mjs\"",
+      "note": "Vitest collects the route's script tests. Current package commands wire the bundle checker into build and the suite-result writer after successful coverage. The checker enforces the default or configured raw-byte budget; the writer records command-chain provenance, its coverage path, optional rounded totals, and its report destination.\n\nAnchor: script-test include; build and coverage commands; bundle budget and traversal; suite-result construction and write",
       "targets": [
         {
           "anchor": {
@@ -107,6 +192,45 @@
               "start": 53
             },
             "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbab49242bdd8b7a6a463576c69ac229ec7255b",
+            "content": "sha256:b28b6476b26c9a1a016564342fd67645316ed9b772aec8d398d3c688bbf6b269",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1e0dc9c57dbc7213141a02d8518c6dbff5b0e12",
+            "content": "sha256:ed8f8bb975c36b40b5fe2105692ddfac1ff1d2049bdf6db3989a04afea44b9c8",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/scripts/check-bundle-size.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "798ea8871b9971fcc8ca0738b73d4f4958774084",
+            "content": "sha256:49d3162f69d5aad1c6b21ba134d78f2cd96e9caa2dd3588dac094a7638ee3556",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/scripts/write-suite-result.mjs"
           },
           "kind": "code"
         }

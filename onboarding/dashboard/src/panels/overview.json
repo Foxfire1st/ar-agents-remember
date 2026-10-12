@@ -808,7 +808,7 @@
       ]
     },
     "140": {
-      "note": "The stops in displayed order, the stop at a partial family's control, and the end messages.",
+      "note": "Traversal selects displayed tree nodes with real-change primary facts and reports its ends; partial-roster continuation buttons are not traversal stops.",
       "targets": [
         {
           "anchor": {
@@ -831,6 +831,30 @@
               "name": "outcomeMessage"
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemsOf"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RosterNext"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
           "kind": "code"
         }
@@ -1330,7 +1354,7 @@
       ]
     },
     "164": {
-      "note": "Family-center order shares the outline ranking while retaining the semantic revision roster.",
+      "note": "Family-center order shares the outline ranking while retaining the semantic revision roster.\n\nFour product destinations, Chats default and retained Operations/File/Knowledge composition",
       "targets": [
         {
           "anchor": {
@@ -1343,11 +1367,50 @@
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:5719561bf51b9c35e56f72220b5b28aed3899326509ea0810c804fb10888efad",
+            "locator": {
+              "end": 809,
+              "kind": "line_range",
+              "start": 790
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:d37d60ee993dee59642ee68fb8566e29ee605e4594ae0f1e0ff2f92ef971d7af",
+            "locator": {
+              "end": 892,
+              "kind": "line_range",
+              "start": 883
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "165": {
-      "note": "Exact currentness mark words coexist with an open supplied-reason sibling.",
+      "note": "Exact currentness mark words coexist with an open supplied-reason sibling.\n\nArtifact reader includes task reports and whole decision logs",
       "targets": [
         {
           "anchor": {
@@ -1360,11 +1423,24 @@
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:4d11b60e1e6de76747f98193a4ee65f90bc79d5b23c2020c9e201a292217a258",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
         }
       ]
     },
     "166": {
-      "note": "Non-authored field rows distinguish absent and recorded-empty values.",
+      "note": "Non-authored field rows distinguish absent and recorded-empty values.\n\nDecision preview excludes product records and limits authored entries to five",
       "targets": [
         {
           "anchor": {
@@ -1375,6 +1451,86 @@
               "name": "fieldValue"
             },
             "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
+            "content": "sha256:b4d7543a1207a21358cb9a2604220378555f0213d1164c70b95bb75565cb261a",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "167": {
+      "note": "Superseded successful whole-task reads have a guarded unshown-cache exception",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:94c16cc8e221e64565f7f9b9653340afd5b3d8752843e146651423ef48059eba",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:a085d065425a3941080a74e286d699a6d6bb043d25237f272b366e00bddaa355",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "168": {
+      "note": "Workspace can use the admitted frame while records receive only shown answers; comparison navigation retains the reviewer underneath",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:9ab9f74edf97c7df68650669072f65c479c69f10bef99e4e255be1e3e82d8df7",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "169": {
+      "note": "Review root owns its vertical scrollport and keyboard zone",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:7a9ad6f652bfff7d042059713e2870665cab7e3ea15cb1bdb2f4e009662ad39a",
+            "locator": {
+              "end": 869,
+              "kind": "line_range",
+              "start": 849
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -1421,6 +1577,238 @@
         }
       ]
     },
+    "170": {
+      "note": "Continuation admission checks identity and cursor; sparse claims preserve earlier content",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:e8b8c247691b3e3096aa5718b3897f75e275e9dcbb4ae7f1e5126e98d471044e",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "171": {
+      "note": "Walked families preserve prior reads but reset across incompatible comparison/selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:8e0eb77e5ff706a2ab8400c42073d736d7412988d68dd3155b09968ba37e630f",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "172": {
+      "note": "Semantic triage counts returned facts, states unknown totals and keeps scoped weight at least unknown",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:14babc1b2db12ef2eec508687d1484632ca3117675b6962ca910e1e65f483966",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "173": {
+      "note": "Traversal selects shown real changes, excludes unknown/unchanged rows and has no continuation stop",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:e9a7f246cbe7d8894e4bfc21c5b19bd039c2e72be4a890f427ee82a706811426",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:cd7e177a7fb3506b7a7321cf524d7f7f394bcea08de63d60093d2cfbcf6da2f0",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "174": {
+      "note": "Classification cache shares successful acquisition but releases non-ready attempts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:bb363c45b81f4853f805e6feb89da48e7dcc7cec6b957a10f4e1226133c6daa3",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "175": {
+      "note": "Excerpt marker loading intentionally renders no note",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:aaf9ed46ccc4a329c23dad8a59f83be296f7d0740cb6b9aded7e441835cd694a",
+            "locator": {
+              "end": 563,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "176": {
+      "note": "Marker follow/return restores subject, family, worklist and pane state through ordinary navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:24ed4c5e03e45cdf789745a727e89daed71c191a340d9cbcf888a0bc066a1ff6",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "177": {
+      "note": "Word-diff whitespace predicate and strict rewrite threshold",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:1b9ef630aae7b4d64389e1ae3e061af59db1d3c2deba7fc8dc8522d088bdea2e",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "178": {
+      "note": "Family expression keys use recorded identity; observed readings stay per side",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:1639af08d4f93a99911f40f3ba937f58cca658fa277b883fbd3732cd1cbbc9c6",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:941e5fb405543016d838cc81851fc5516351fb83625c4f5e177df5e5bcb0ce44",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "179": {
+      "note": "Planning marks require matching comparison; subject worklist rendering joins canonical identity and states unavailable reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "locator": {
+              "end": 1019,
+              "kind": "line_range",
+              "start": 1015
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
+            "content": "sha256:3867541953ac02a2d88aeb4ae05d5865d4c742246241170684b418471facba1e",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/review/SubjectWorklistIdentity.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "content": "sha256:a64d218634c7e8ed8710f5ed39ea372d0e4e7e9de440422639941960b74cf26d",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "18": {
       "note": "The rail's labels compare bytes on a tree comparison; with MIK-L33's change facts the badges state a text change and the labels do not repeat it.",
       "targets": [
@@ -1445,6 +1833,237 @@
               "name": "memberSideTag"
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "180": {
+      "note": "Statement state decides diff/content branches",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "181": {
+      "note": "Network-only retry and intent-only source alternative remain explicit",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "182": {
+      "note": "The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:2a76976b11ff89568e439d47aaa17b994079b63859d4903a0c217d78827135fd",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "183": {
+      "note": "Current intent entry uses liveness to choose recorded target rather than hide entry",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "184": {
+      "note": "Master change-set read includes leaves and carries published generation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "content": "sha256:bd066287094f26a8b6debc87e666710148e3caea0a823fb5e5680318f0a315e6",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "content": "sha256:27eca251139a989327cfb8d6404c0eeca8e1e11087ce592e55827e3def5db13e",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "185": {
+      "note": "Collapse hook has one stored key set and toggle API",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84947fcc60779543954199ce7869abc2cc6eabe4",
+            "content": "sha256:0da47a931af4d167fa12d46645cbb7d534fce20120f031a19625c1ae9c094b4c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "186": {
+      "note": "Knowledge reads bind to address; reader shares records and responsive citation navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:5a5e0e903072994f510b114c542da97ffafb8c2e6d05b94737fc43189d883a1d",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:d36d8d7e23873bec770345a588bcf9514b192f509a2763bddb4f559068bb6775",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:6ca6b4911b0746e998f9fd54cc5a69ce200b8f2031fc9a6e601105f332eba506",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 324
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "187": {
+      "note": "Shared composer branches between interaction answers and ordinary draft submission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
+            "content": "sha256:3032a0a45b100ff27bf93560178cae5371a0f064ea731b914efd4464b479e61e",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/panels/sessionComposerHooks.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "188": {
+      "note": "FlowTab is static design composition, not a runtime store consumer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
+            "content": "sha256:b937ee666d39d29d06275a244a84a8ea91a3dcb2f1a5be409c9d171aba879c18",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "189": {
+      "note": "Session rails materialize document-keyed sprint/role/master groups and keep unattached sessions separate; FlowTab is not their live-data owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
+            "content": "sha256:12afc3ab01743e8f39005715ff1c90852321c898b43e0f8d7157e6b8dc5b49fa",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6898fc6e495a1b8986c1757cb25ba16d391d86",
+            "content": "sha256:61ea4a38800b7d42c89fadcb60711787b38050b985bc859c9190dcd051f16757",
+            "locator": {
+              "end": 951,
+              "kind": "line_range",
+              "start": 832
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
           },
           "kind": "code"
         }
@@ -2178,7 +2797,7 @@
       ]
     },
     "59": {
-      "note": "**The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.**",
+      "note": "The intent entry always opens task-context review; liveness selects the live or recorded target, while summary state labels rather than gates the button.",
       "targets": [
         {
           "anchor": {
@@ -2190,6 +2809,19 @@
               "start": 2
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
           "kind": "code"
         }
@@ -2213,12 +2845,12 @@
       ]
     },
     "60": {
-      "note": "**The hook that asks the server for the leaf's reviewable subjects and keeps the first.**",
+      "note": "The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue.",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
+            "content": "sha256:e7c544b6a2b7d51c734c050e7f3fe41e86c0c16c6b46f6e79ee65286a8ccca99",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -2226,11 +2858,24 @@
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "61": {
-      "note": "**The one liveness predicate both gated entries read.**",
+      "note": "The shared leaf-liveness predicate chooses live versus recorded entry context; it is not a catalogue-subject admission gate.",
       "targets": [
         {
           "anchor": {
@@ -2243,11 +2888,24 @@
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "62": {
-      "note": "The client the hook calls, whose `ReviewEntry` has no path field on purpose.",
+      "note": "The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate.",
       "targets": [
         {
           "anchor": {
@@ -2270,6 +2928,19 @@
               "name": "ReviewEntry"
             },
             "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
           "kind": "code"
         }

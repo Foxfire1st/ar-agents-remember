@@ -139,6 +139,153 @@
         }
       ]
     },
+    "15": {
+      "note": "Configured authority returns checked roots while preserving task/repository separation and optional candidate checks.\n\nAnchor: configured task identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e49c5e5ef8960a083a730b80307802abfbbd0a5",
+            "content": "sha256:d43ae0cd2343c8aaa8a0f8b013ec1944c4591d7d4033478a0e3933c3ba40b740",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_configured_contract_repositories"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e49c5e5ef8960a083a730b80307802abfbbd0a5",
+            "content": "sha256:f8e6a6a0041391f5ee84c600f86abee7f96c0c5298ecd0ca43b07a4c73fc72f9",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Preview parent admission requires explicit dry run, an absent nonsymlink path and the same series identity proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+            "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Public integration evaluates handover and converted knowledge before ancestry preview/apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:a35f89a29d054efc9ba5d977c97349a9696067889c960a525802c7db8c456728",
+            "locator": {
+              "kind": "symbol",
+              "name": "_handover_or_apply_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Landing admits two outputs and performs ordered CAS, retaining partial code landing on memory race.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "content": "sha256:1f9d9c2cc7b1d5dcaf46f62a5e3083fc69886f9fe7935064467e8af535d84ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratedCommits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
+            "content": "sha256:5a6cedc45ba08d5522b39500a5837e87c92f1c7250b8f818ec9b958f682c0b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_integrated_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Checkpoint publication requires the captured candidate and revalidates it against live capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
+            "content": "sha256:3ff9bea0e28f74c006cebecdeb7b3209b9ca2c462d8b8109f8d33b995f304eba",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_series_checkpoint_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
+            "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Completed organizational proof binds original selected references through the operation owner.",
       "targets": [
@@ -151,6 +298,289 @@
               "name": "select_completed_integration"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Strict schema-3 operation state has its own authority lock and immutable accepted envelope.\n\nAnchor: transition validation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "content": "sha256:82ff7e673bb34679a2ed8b66d08f501c5271e61f293563aba4f60145bd5db99d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "content": "sha256:b787e066c5180d72e5b10ce195a66f59db55d0718744c026d942591453857184",
+            "locator": {
+              "end": 651,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Lifecycle defaults retain detached launch; direct landing explicitly refuses that launcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:ea67298c66c527f3b17dd24acbff9ef4cc888f75f70c436d860d23118aa2838b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_execution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:078cb53c91a747a1c64a7ba26deaadc3b247dc91b4c79855576643001feb4e26",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_detached_worker"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Default services install prepared continuation and producer; finalization requires original Gate-5 evidence.\n\nAnchor: service factory; continuation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "content": "sha256:06ed7e3f37949686437aa69f5638ce29494b59ded4bff66968a6675671ed814c",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
+            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Memory cache exclusion occurs in isolated tree capture; direct publication stages the exact judged tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "decbf9b0b924d778470caac191a0f9ea2562dd41",
+            "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "decbf9b0b924d778470caac191a0f9ea2562dd41",
+            "content": "sha256:f7c4e76501577a46388c5789fa1d7718ce4cab2bae5ea433c1e64620fa8d0493",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Index copy obtains bytes and timestamp from one open file and restores the timestamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_git_index"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Bounded terminal reading owns canonical filenames, worker-exit proof and unowned-artifact refusal.\n\nAnchor: canonical evidence reader",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:fb99b73861004a43b72a8746d956864a89b0a457fd2c9a54fd2257c8ee8f9c79",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects.\n\nAnchor: integration wrapper",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "content": "sha256:5c666937acc20101aa93a1c7218fd85e9ec69b47641ee6d9b49abf18935c45df",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "content": "sha256:65e738b5ed383cf8eeb296109738eccc6c2a462b9755f6b451f4c19e42cacd14",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Sync explicitly permits conflict resolution between calls without a lock held across the call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_contract_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings.\n\nAnchor: reopen/source-head owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:0c11fcff6195044f5e7a0daa9b55ddc584f959f77a33b19da0485d00d159931b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:8d8aeb3179e79211e4b33c0577c4ca2a7c9df4101a8b4f86fedd2c4705247991",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
           "kind": "code"
         }
@@ -268,12 +698,12 @@
         },
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
             "content": "sha256:bb8ca008b295162e540ceb5fe199d463faee8d2a2133161358f6c02b224c4a9f",
             "locator": {
-              "end": 118,
+              "end": 120,
               "kind": "line_range",
-              "start": 118
+              "start": 120
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -281,12 +711,12 @@
         },
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
             "content": "sha256:2b7a3f458448b900d425419a9822adcfb019ab2e8c15b95e9b5713525f9ab1e0",
             "locator": {
-              "end": 165,
+              "end": 167,
               "kind": "line_range",
-              "start": 163
+              "start": 165
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },

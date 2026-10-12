@@ -6,7 +6,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "content": "sha256:a57ad661be626d167f0cda87aabcb671f1a1bef3b19fa3c4e7d6910e002c7349",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
             "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
             "locator": {
               "kind": "symbol",
@@ -19,7 +31,7 @@
       ]
     },
     "2": {
-      "note": "Watcher aggregation imports CGC all-root start/status/stop behavior from this package.",
+      "note": "Watcher aggregation imports CGC all-root start/status/stop behavior from this package; status combines shared backend status with per-root provider results.",
       "targets": [
         {
           "anchor": {
@@ -28,6 +40,30 @@
             "locator": {
               "kind": "symbol",
               "name": "watcher_cgc_result"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:7616540fb6d8f3b68aab4478d08817e89ac53631f8db2e42f697e6ad02985f9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "watcher_cgc_status_results"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:7341627cfe5f1122a216c4f71a3fc945e1c066587c16633bce3eeb82af5442f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "watcher_cgc_backend_status"
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
           },

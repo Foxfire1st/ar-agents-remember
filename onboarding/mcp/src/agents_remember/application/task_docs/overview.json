@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/application/task_docs",
   "references": {
     "1": {
-      "note": "Task-first transactional publication and independent projection refresh.",
+      "note": "Task-first publication and projection refresh, with shared preview and source preflight; atomic-lock intent has the disclosed discrepancy.",
       "targets": [
         {
           "anchor": {
@@ -30,8 +30,8 @@
         },
         {
           "anchor": {
-            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
-            "content": "sha256:1499691d3198481842de351bbadbd56e0cdf6962f0873bf242452ffbec7c9d9a",
+            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
+            "content": "sha256:0215690d3822c887adf5b93ab430bbd3991405ad216b390e0c5007bcf1eb37d4",
             "locator": {
               "kind": "symbol",
               "name": "publish_task_doc_transaction_and_refresh"
@@ -67,7 +67,7 @@
       ]
     },
     "10": {
-      "note": "Any exception of the archive hook is a reported failure.",
+      "note": "Caught archive-hook exceptions are reported failures.",
       "targets": [
         {
           "anchor": {
@@ -95,6 +95,69 @@
               "name": "require_retirement_proofs_unchanged"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_retirement_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_fact_mutation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The no-contract leaf guard tests whether task.json exists; its valid-master and first-binding descriptions are stated intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
+            "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_bindable_leaf_authoring"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Commanded-master completion requires abandonment or Completed without completion blockers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_commanded_masters_completed"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_is_terminal"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
           },
           "kind": "code"
         }
@@ -171,7 +234,7 @@
       ]
     },
     "4": {
-      "note": "The extracted step plane owns one exact addressing rule and the four step operations.",
+      "note": "The step plane owns exact addressing, mutations, and the focused read projection.",
       "targets": [
         {
           "anchor": {
@@ -211,8 +274,8 @@
         },
         {
           "anchor": {
-            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
-            "content": "sha256:3b23579656b0b6cfe3c8433e55a50aa939a4316c3fc16a4c2e7d3174cef300df",
+            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
+            "content": "sha256:0110412065db6535f1263f0e86b274b7f15308da44b8d61e422f3a493c09e2fb",
             "locator": {
               "kind": "symbol",
               "name": "remove_step"
@@ -236,7 +299,7 @@
       ]
     },
     "5": {
-      "note": "The settable flat fields, now including the declaration.\n\nAnchor: \"expectedKnowledgeEffects\"",
+      "note": "The settable flat fields include the knowledge-effect declaration.",
       "targets": [
         {
           "anchor": {
@@ -270,7 +333,7 @@
       ]
     },
     "7": {
-      "note": "None",
+      "note": "Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence.",
       "targets": [
         {
           "anchor": {
@@ -287,7 +350,7 @@
       ]
     },
     "8": {
-      "note": "The sprint route builds the candidate, publishes the sprint edit with the folder move, and restores both on a failure before archival.",
+      "note": "The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure.",
       "targets": [
         {
           "anchor": {
@@ -340,7 +403,7 @@
       ]
     },
     "9": {
-      "note": "The lone-master route (a master no sprint commands) writes its proof into the master's folder and moves the folder.",
+      "note": "The lone-master route writes its proof into the master's folder and moves that folder.",
       "targets": [
         {
           "anchor": {

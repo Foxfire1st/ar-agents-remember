@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/providers/context",
   "references": {
     "1": {
-      "note": "Public context exports are collected by the package facade.\n\nAnchor: \"starred submodules\"",
+      "note": "Public context exports are collected by the package facade.",
       "targets": [
         {
           "anchor": {
@@ -16,24 +16,159 @@
             "path": "mcp/src/agents_remember/providers/context/__init__.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ec2e0d4994c995c673515adb4e0b9e14be500",
+            "content": "sha256:5843454432f914355af02b75c9e8525b5ff8027ac73699cc2b57ad2ac8218036",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/providers/context/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26572d51bd5dcfb53f39dba99287153997b29f2c",
+            "content": "sha256:a0ea7803a60029f2e91bf17f51a051119d29d0a7557f8d698a6c325e8098f6d5",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "CGC context behavior is grouped under the CGC provider package.\n\nAnchor: `## Layout Construction Is Now Four Named Things`",
+      "note": "CGC context behavior is grouped under the CGC provider package.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:28-50"
+          "anchor": {
+            "blob": "b74830f5b22053b57586fe711ec1ab42c5a95ee9",
+            "content": "sha256:0b755b11eccf5e81e685b7693f9e4812afa3de192cfefbe9d2b5c42f1f295ae6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:316fb900ef10080e4e3a43692a36a0720c2ce5c69e9c2dc57df0fa7515479b0e",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:78e85fa782788e322a45de4c7f256a5424abee60bc59481a81e05fdf41e5cecf",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d6ccd171274ae0e9a4f78ea67b9a2b68b0b641a",
+            "content": "sha256:fe0a398cac5296d4b194e84eced3a01bd859275efcecaab5af5f96490ff26bb2",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/patches.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "GrepAI context behavior is grouped under the GrepAI provider package.\n\nAnchor: `## Layout Construction Is Now Three Named Things`",
+      "note": "GrepAI context behavior is grouped under the GrepAI provider package.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:21-44"
+          "anchor": {
+            "blob": "4781afd9482e7d8470ee5cb6f0b37638121f0706",
+            "content": "sha256:4a8e403b063bb85ba06a007eae4ac2386c323e4daa801be9a1df7ba258897746",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:3791d1927085906c0b3dc411d542ccb4549d2c9c3a54c9bf49c16a96c8b9f790",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:fc9d5da877639599884f143f62a1b0c3150c93883e33be94832be35696cbab6f",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:47649d350ad0153e6cbea04794c5a718a6cfd4869143dd6e65e51723d1a8549a",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32ed3f9fdcfa71c8cca5abbbe18feb5a5beb1ef2",
+            "content": "sha256:ee52467c14900818eee82c788b92a8dec1fff4155381d30cb6a3eb7a29744a44",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "providers/docker/grepai/Dockerfile"
+          },
+          "kind": "code"
         }
       ]
     }

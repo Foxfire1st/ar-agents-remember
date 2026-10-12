@@ -1370,6 +1370,132 @@
         }
       ]
     },
+    "64": {
+      "note": "Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner.\n\nAnchor: `closeout_result`, `_publish_closeout_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:98fa383b62c19d6ef178e589f5847970d21801a8296fbd8ba421f1a92dc882e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_closeout_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_commit_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Exact converted output receives validator plus mandatory gate, and recovered output is judged again.\n\nAnchor: `_refuse_ungated_memory`, `require_gated_recovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:a35f89a29d054efc9ba5d977c97349a9696067889c960a525802c7db8c456728",
+            "locator": {
+              "kind": "symbol",
+              "name": "_handover_or_apply_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "Each unnecessary-row finding names its subject.\n\nAnchor: \"\\\"subject\\\": subject,\"",
       "targets": [
@@ -1387,6 +1513,260 @@
         }
       ]
     },
+    "70": {
+      "note": "Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate.\n\nAnchor: `_knowledge_gate_block`, `_leaf_landing_lock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:a94715293d68c9774f5fe64a9deed77f880545129eba51dfe873e0cd867fe0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Protected publication rereads contract/source identity and delegates exact pair ref movement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "content": "sha256:f3d4cd655c8a1a332af3690694d1b34c9601496f1f826c25f9542c8c45a737c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_integration_edge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Record landing probes conversion first and freezes parents only for recorded closed-out output.\n\nAnchor: `_knowledge_gate_refusal`, `_landing_request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:ea23d3e0a5458ab3d0bff86cb483f8f2300f1f2cee57d9e8aa84e982372d230b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan.\n\nAnchor: `carryover_done`, `_post_integration_phase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "carryover_done"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Future-code identity uses system-temporary capture and complete equality.\n\nAnchor: `capture_future_code_candidate`, `_candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "content": "sha256:3dea30754ac75987d811f0e250d82c8bd4ace783fef0ab6e71ec71dff3cb0821",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads.\n\nAnchor: `worktree_candidate_tree`, `_tree_from_index_copy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08655e091afbefb7cd059fc17a5ffb9fd9991d36",
+            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08655e091afbefb7cd059fc17a5ffb9fd9991d36",
+            "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "Converted trace comparison excludes mechanical anchor fields and joins every leaf history attempt.\n\nAnchor: `counted_sidecar_change`, `_history_rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:a36e379a47737a0458b58225611aeec52d9a56f84c6dd8881ffdbb9da124aaea",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_sidecar_change"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_rows"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "Finalization resolves targets before cleanup and reports cleanup/task-publication failures separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "content": "sha256:5c666937acc20101aa93a1c7218fd85e9ec69b47641ee6d9b49abf18935c45df",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Master folders are retained through the archive owner's series skip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+            "content": "sha256:7517f2a6261f0327121a03a42772f6e7b882622d22681f379f9fd21bd5e489ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_completed_root_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "Admitted terminal transactions reread archive authority and attempt leaf-agent archival before outputs.\n\nAnchor: `_cleanup_with_guard`, `_abandon_with_guard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c61d5d1b9b4836c3bb1f90ad30cae8de9adefe55",
+            "content": "sha256:b3452d2695138051b724fff10c9e170eb5dab487f426e54a0cae25344f35493a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_with_guard"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a317d7e35d03f98d28edc93201671b5b93a91a8c",
+            "content": "sha256:ecb9aa5f8defae1b6b1ad0098ff1996fe38ae0ea94a0357fd038c028f779f601",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_with_guard"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_abandon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "The archive result gains the hook's report; unbound or failed is reported, never raised.",
       "targets": [
@@ -1399,6 +1779,82 @@
               "name": "_with_review_artifact_cleanup"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "Abandon authority includes carried memory resources even under the removed mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
+            "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_mutation_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "Bootstrap apply preflight and journal/contract publication use the same per-master exclusion owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "content": "sha256:97610670b1b5964828417fa7a47fdc0116dc09500c70d46991909ee6db504649",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_master_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1.\n\nAnchor: `requires_strict_code_quality`, `PublishedQualityManifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
+            "locator": {
+              "kind": "symbol",
+              "name": "requires_strict_code_quality"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:266fb0430d40e5a44f428ebcb965ccac22eacc94fdc8fb3df09feefce8fa3f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedQualityManifest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:0fe9fae6a88aa066334c10412c7f93d1b45e8b4647d9d5d174494a0cfc06d945",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py"
           },
           "kind": "code"
         }

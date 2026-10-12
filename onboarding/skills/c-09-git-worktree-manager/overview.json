@@ -2,12 +2,51 @@
   "path": "skills/c-09-git-worktree-manager",
   "references": {
     "1": {
-      "note": "The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine.\n\nAnchor: `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup`",
+      "note": "The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:403098fe8eac8bcce4a4dd4b255f9863440e03a8d13d8fbde4823df1155f6782",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:82d0fd9f8f537fdac3fe8427bc641eefa44a343d32eab17bec79404a7f06122e",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:a89f1ac48423c7f64c809ac21a5886c89d9c219fc2a7a9847e0057d7115b4385",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:ad6c56140962c6b42eb1db8c0e31fda23a363643deda6896947561882613e3d9",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:d7089ece7ae684192d52cbb1204134c77d81b7855709738aa94d47589f3c99fe",
             "locator": {
               "end": 303,
               "kind": "line_range",
@@ -19,8 +58,8 @@
         },
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:93a0073ab8bf01fcfdf36a4975b04f7be940d81bcaf414b9653aa4d32c6181b2",
             "locator": {
               "end": 518,
               "kind": "line_range",
@@ -32,13 +71,118 @@
         }
       ]
     },
-    "2": {
-      "note": "Ordinary series integration and leaf direct landing remain distinct policy routes.\n\nAnchor: \"An ordinary master/series integration has no leaf closeout door of its own\"; `directExecutionEnabled`",
+    "10": {
+      "note": "Raw quality readiness and combined coherence readiness have three distinct paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "content": "sha256:71e854b27947ae09f238b49aaf06c92f277f82bc45864dfb9810b1b92f14cfd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_coherence_readiness"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Publication routes have different commit-hook behavior; ref hooks remain possible.\n\nAnchor: Publication hook policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
+            "content": "sha256:dab2d57a588cf2b7f38d010060f29ffa7c1fc6ec8e1e89b541b71aab3d884f47",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Governing-overview validation separately walks the onboarding root; it does not establish complete mirror maintenance coverage.\n\nAnchor: Overview-resolution check",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "content": "sha256:3739c8eb8b8c920c2fa64b55b8bb414ebef6df5721223fd03aa969a0a5e69d6a",
+            "locator": {
+              "end": 647,
+              "kind": "line_range",
+              "start": 621
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ordinary series integration and leaf direct landing remain distinct policy routes, with standing-series and raised-gate approval boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
             "content": "sha256:332ff661c33ba89aaa1fe379ab5d78267416ad499f14645aa514cf2f4a18b190",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 392
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 393
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:0a2c532f1844c058d2f36b382a89f71b4faafaac0b04ab2eec8e04bf547a151f",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:738dbeff5bc1ed0640c6fe98fd105a1d8be1ca9ab4f917d6ce715d68cc0d080d",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:7048976298d0134230d7648bf6677ffd7618c0c9f647accd97ca8f083a74b32f",
             "locator": {
               "end": 394,
               "kind": "line_range",
@@ -50,8 +194,8 @@
         },
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
-            "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:04ce0070251d7cd80907b513bcba3590c22ae5bfc92fba053210c546a0cc18b2",
             "locator": {
               "end": 398,
               "kind": "line_range",
@@ -63,8 +207,8 @@
         },
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
-            "content": "sha256:0a2c532f1844c058d2f36b382a89f71b4faafaac0b04ab2eec8e04bf547a151f",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:f0e198b639ac008cd0ffa02f0658249bde5b7ecf82583e564079121036e2f851",
             "locator": {
               "end": 401,
               "kind": "line_range",
@@ -77,8 +221,21 @@
       ]
     },
     "3": {
-      "note": "The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters.\n\nAnchor: \"nothing serializes the masters\"",
+      "note": "The graph-less default describes concurrency, but queue admission refuses a missing execution graph.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
+            "content": "sha256:732a0794d30209ff338503e75c51bbaeb3e5cbb4a57b0145bf9803372a2d7658",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
@@ -95,15 +252,28 @@
       ]
     },
     "4": {
-      "note": "Public sync composes the selection and transaction owners without exposing private ids.",
+      "note": "Public sync composes selection and transaction owners without caller-supplied private ids; preview skips fetching and mutation.\n\nAnchor: live delegation",
       "targets": [
         {
           "anchor": {
-            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
-            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
+            "content": "sha256:d9a2ce0b4b9480cb22600c5c2a1a190f2b3c29e74fe8f5c249ef90872d77e99c",
             "locator": {
               "kind": "symbol",
               "name": "sync_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
+            "content": "sha256:57676232d84c5756ef9f3933b3b10a5a58c9774b5d96c625282968c17fe10d8f",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 74
             },
             "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
           },
@@ -112,7 +282,7 @@
       ]
     },
     "5": {
-      "note": "Stable operation recovery is stored below the enclosure root.",
+      "note": "Stable sync recovery is below the enclosure root; the current store includes a legacy-path reader contrary to the no-fallback doctrine.\n\nAnchor: canonical and legacy paths",
       "targets": [
         {
           "anchor": {
@@ -125,11 +295,24 @@
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "content": "sha256:9a8f8900cb82962850fec565a7552ef5a11538ead796c7e8e2c95bc073eb2915",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Real memory ancestry is the landing proof.",
+      "note": "Real memory ancestry is the landing proof.\n\nAnchor: pre-move caller",
       "targets": [
         {
           "anchor": {
@@ -142,16 +325,68 @@
             "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:0b18c91e721983b7644cd14d8133e602b55f72eaff39a3eb6f34cfe5ff6415a8",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The finalizer paragraph's two new clauses.\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "note": "Finalization derives the immediate parent row while preserving identity assertions and standalone behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 520
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "content": "sha256:daeb8b274807f0646d343ba9162bd8d34419dfa5b67acfd7586e06863cbe7935",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:fb1a49c58ea78db371cdb211f7b14837b96069d91c3d0ccb64a110c51a063198",
             "locator": {
               "end": 531,
               "kind": "line_range",
@@ -164,18 +399,49 @@
       ]
     },
     "8": {
-      "note": "The preview asks the mandatory gate on converted memory.",
+      "note": "Closeout preview asks the mandatory gate on converted memory.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
-            "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:0008ee3dbb4d86240f9537a4ee9e91a2c572ce00e8f4cf956eded8e08bfaa3eb",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:9bdc0eb88e9edc71f26cf369cbcb2f41cd5e9e3fb605ac05c0fa40f608018444",
             "locator": {
               "end": 358,
               "kind": "line_range",
               "start": 348
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Complete contract-scoped curation and coherence publication are prerequisites carried to closeout and integration.\n\nAnchor: Complete curation and coherence instructions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef0d8f0ffdc4b4f6ab2e24e0e0d0011072e2938f",
+            "content": "sha256:a149c55918628eb75da9347e4ce6877e911f670f15611c0c3e13c15ad3e5bddc",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "skills/c-02-memory-quality-control/SKILL.md"
           },
           "kind": "code"
         }

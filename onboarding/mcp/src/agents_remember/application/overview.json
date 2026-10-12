@@ -8100,7 +8100,7 @@
       ]
     },
     "455": {
-      "note": "independent leaf-base composition and bounded answer",
+      "note": "independent leaf-base composition and bounded answer\n\nScoped reader roots derive from the canonical leaf and current enclosure admission.",
       "targets": [
         {
           "anchor": {
@@ -8166,6 +8166,122 @@
             "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_task_scope"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:ffdd5cba81058e609463807d63dafe9cac09c732e71cc47c6d35aa0ad0d24595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_leaf_contract"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "456": {
+      "note": "Investigator refuses a leaf and validates the canonical hierarchy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_role_launch_context"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "457": {
+      "note": "Exclusion records do not establish bridge-host suppression.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+            "content": "sha256:5d8bc0c8c127bc4d30c819ddbb57ce0dfeef0cc459fbd4ad3207f4fce7e2c38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_server_exclusion"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "458": {
+      "note": "Write admission now records repository-bootstrap only; the database enclosure adapter retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:547e039d511fdb71efdb12d3a866d33fbfc5d12a564c477b327ca7f0a66301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionKind"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "459": {
+      "note": "Legacy onboarding returns a named legacy knowledge block; converted references use sidecars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:525e943813ad7f452188b51dae51b429d6795e8e1f8dc3d64c19c856da113ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_format"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_parts"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -8222,6 +8338,214 @@
         }
       ]
     },
+    "460": {
+      "note": "Eve compiler refusal raises before carrier creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "461": {
+      "note": "Projection scope includes explicit role and launcher rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:09b0210ac5fd385abd7c94fcc2cfc945cbbfcf6ae99d8c66066558b4f4fc0de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_READ_ALTITUDES"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:981029d0494e43916def8e4a6ccca73fa422e83c47687c0c862b69e1d4bec40b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEAT_KIND_CHANNELS"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "462": {
+      "note": "Writer validates before finish and appends raised questions before knowledge files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "content": "sha256:9167964a51c55a52013fae20c85aed606e89f9ff71dc4037a6689b27c7b38b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "463": {
+      "note": "Each gate kind has its own predicate and changed records require governing rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_row_open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:9eabc7b28754450ccb58a0e9c349d79ac8606330ba909ec6f0cf444a57fa5de8",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "464": {
+      "note": "Every retained revision is a head; multiple heads remain ambiguous.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_heads"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:6d47342c5267bc7de0026c9aafc715db774e0e69ad61b4a006244033c9996de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_combine"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "465": {
+      "note": "Retired collections report unavailable; assessment currentness is measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
+            "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "466": {
+      "note": "Claim-only page revisions participate in exact roster membership projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e671178c83020db94dbc2339e22ecd6dffa2f37a",
+            "content": "sha256:00d35239308e5bbeb6f510d74c1f5d7a317ef62f2dd86223de568a60c4147ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_members"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "467": {
+      "note": "Family sources carry resolver ranges and refuse missing stored rationale/role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:5aef1ee14d041c35b1cc2167cd3d9c4e743b2b412fc584bb0b0f85ac80a558cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "468": {
+      "note": "Relationship pairing stays within recorded relationships without successor traversal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "content": "sha256:aec603aba535df52494cf8a07345d717a0a7446e1b81df6ff1372ed2d6823399",
+            "locator": {
+              "kind": "symbol",
+              "name": "_movements"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "469": {
+      "note": "Unchanged context requires a measured inventory and comparison-bound realization/proof linkage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:4eb030fcea337081e1853ac597d734edb290684e66a48c24527dc71bbf449c50",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "47": {
       "note": "The production owner loads curator assessments and measures their dependency currentness. Five collection channel keys remain as vocabulary, but detection signals, verification observations and evidence claims are retired/unavailable and authored effects are unavailable because the matrix was removed; this is not five loaded collections.",
       "targets": [
@@ -8258,6 +8582,309 @@
               "name": "_removed_matrix_channel"
             },
             "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "470": {
+      "note": "Current receipt publication binds delivered code and memory trees; no memory tree writes no receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7afa065a332f8a820d948bb876f4a51dc8cb52e",
+            "content": "sha256:c34d07e1ad254805e9bcd0a5908de819422a5ea282c88380b4b964db227215b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_final_output_receipt"
+            },
+            "path": "mcp/src/agents_remember/application/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "471": {
+      "note": "Receipt selection uses retained tree records and explicitly labels historical-only limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7afa065a332f8a820d948bb876f4a51dc8cb52e",
+            "content": "sha256:1a8b0df3c0e4e39a752ac3f6ab9fbe5f24376bc19a9b4cdf5ccfb4901169f1f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "472": {
+      "note": "Code release records first, but snapshot discard removes before its deletion record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:e2ae36feaa72ce9bef2a09a830d33a8383a408956b19b727ec9acb042e16b876",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:abefcc998795365c2c016ead8e9f08ef6cd274bf92933763295c8e66190e5a6f",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "473": {
+      "note": "Outer archive receipt admission precedes deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:03e9bafa87983eac480e5a714b5f08a08c0fec47e012bda34b4169644b3b6c58",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "474": {
+      "note": "Default worktree services bind validator, crossing, worklist, gate and cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
+            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "475": {
+      "note": "Runtime installation attempts leftover watcher stop and reports unused enabled keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "content": "sha256:26c8545bfaf8c6e2f2cf621f33eb8c21300db7e4b2e3568df0f3300734082389",
+            "locator": {
+              "end": 809,
+              "kind": "line_range",
+              "start": 789
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "476": {
+      "note": "Child computation limits are two active, eight outstanding, 60-second request and 65-second child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:bb38938879adc20eb80af2bc13efac5867307f2e3fd8ca1620a810afa0a9a9fa",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "477": {
+      "note": "Knowledge threshold remains 8,000 tokens; count belongs to the log under MIK-R108.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
+            "content": "sha256:453549d0a67b8a3b153732b7ad0105a4384a2f049c857e9fee590e7a8e9189ee",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "478": {
+      "note": "Complete response validation and logging remain separate from caller-sized status projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "479": {
+      "note": "Quality owns a bounded status projection beside its full checklist and readiness controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "content": "sha256:4adcf5a6efa014ec6037fbb165dbc3de5dfd08e3f428404a3aee7234d521a4ea",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "content": "sha256:ad94b61145628f97b362b95667d27fadf055c3a23b9246e7949920b6ea06065e",
+            "locator": {
+              "end": 632,
+              "kind": "line_range",
+              "start": 618
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "480": {
+      "note": "Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+            "content": "sha256:988e25a1557a4f042170e1ab84c85029bb43ee6439525503ef9d8ccb9719ab9f",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d789e1164bc63217342fb658e3c51ba9f074a30",
+            "content": "sha256:853733543314f6d28a8ebdaf5289fa227b18f89eb240c7fde7a75753304b7964",
+            "locator": {
+              "end": 885,
+              "kind": "line_range",
+              "start": 727
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+            "content": "sha256:dbadc38790da980e77dbdf1e5514b45ca03dd21f73253d539c6fbba07f844821",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:4be98efc0a7146898b9a93d1906ec9f556f89076912a29aa8679d11a1a1aa1f8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "481": {
+      "note": "Index-only outline enumeration and leaf worklist/currentness replace source-explorer and leaf memory-diff composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "content": "sha256:d840897cb0c6e7c8ca353468e3c15753b9ce08a39a5d8e9ba6e6e7a93266ac22",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:a4127bb783c9cf993b0220e092dda733441910d50ff72c241edde2bf8b0026b7",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/application/review_outline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
+            "content": "sha256:0c52fd40d3d5697b74f5a9ab1bcfb6287b965ce78c772437a4791d095d64e456",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
           "kind": "code"
         }

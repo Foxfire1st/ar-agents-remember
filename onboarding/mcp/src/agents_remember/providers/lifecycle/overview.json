@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
-            "content": "sha256:a4c3cb15b6baf711eddd9967df575a9777d9f64941a3c48622b073af1d9aa9ff",
+            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "content": "sha256:a57ad661be626d167f0cda87aabcb671f1a1bef3b19fa3c4e7d6910e002c7349",
             "locator": {
               "kind": "symbol",
               "name": "_EXPORT_MODULES"
@@ -18,39 +18,417 @@
         }
       ]
     },
-    "2": {
-      "note": "Package execution delegates to the lifecycle CLI.\n\nAnchor: `main`",
+    "10": {
+      "note": "Recursive response reduction distinguishes successful nodes from failure detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3618b611ab30969c657b8ecc528d3cf909c9bd6",
-            "content": "sha256:daacb0b59c3b8d19608e0d89187cdbbf687b557bfb6f9a9679ed34bb70f72148",
+            "blob": "60e9a92cbc9f64dd16af807a0fa842d113b5a9c6",
+            "content": "sha256:f60966c62f421c849b16c1d06ccd4048cd47d38a3bdf4a72ebaee84fe8b5f90c",
             "locator": {
-              "end": 8,
+              "end": 101,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/log_capture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Settings readers reject a missing explicit path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89958ab3d74e160f7c6bba3084ab68c09de6673",
+            "content": "sha256:421bc95248a38e63bcaf02b3904c9b008be237ee4b24bf09268ee234a364546e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_lifecycle_settings_path"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/provider_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Command execution has no environment override; its environment inherits process variables and sets UTF-8 controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "content": "sha256:1ee0f375a32c28ed4f1b39edaba6294521dd82bfd9b903cc7d4c826719b53a0a",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db36d9a91f2fd8a599c33befdaf138081e456afe",
+            "content": "sha256:9886eed1edb70f95dc6d339cf9ba9939d1a2631df9bf041e86d574f481180c18",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/runtime_environment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Shared port, namespace, rendering, and JSON-state responsibilities remain in named helper modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acce02fc4be84ce7cab82235a3f902a6acad1769",
+            "content": "sha256:218a428b8ccde8548175d16162d3adab00333b4ea661a42d35d11699a23986c1",
+            "locator": {
+              "end": 52,
               "kind": "line_range",
               "start": 1
             },
-            "path": "mcp/src/agents_remember/providers/lifecycle/__main__.py"
+            "path": "mcp/src/agents_remember/providers/lifecycle/host_ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46d785a42fdf7e9a82640d6dd94104b2b8a39dbb",
+            "content": "sha256:099d9edee13033eebc9691de0e692349c8485383eed52484ad72fafe3bad415c",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/process_status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e49b9bd0f826edec83a6649258716809d3405a9",
+            "content": "sha256:bc8cef504d1ecb2b7e5ae246520ecfd308fb8a6ac7c22e2f8da9c71b50b3636a",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/result_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a775ed5924cb73dff5e1d7cda9b7cc81626874f",
+            "content": "sha256:642add5abe858cb3a2cc9deeb85ef6725777b91cc118680164338b8b66d8b44c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/state_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Retained GrepAI Docker status combines backend, embedder, and watcher results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:3051be47fbd1cad70eba9d9b274ad5a8b145850a96729ee70d671e53d20fa445",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_docker_status"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A retained setup caller still requests package execution and lifecycle.main.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9fedec650ef6711e3ad80e7a88a9eb186eb9500f99ceec3537dbe8464b474f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The former package-execution entrypoint is absent; the current facade export tuple contains no CLI module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "content": "sha256:a57ad661be626d167f0cda87aabcb671f1a1bef3b19fa3c4e7d6910e002c7349",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "CGC lifecycle implementation is grouped under the CGC provider package.\n\nAnchor: `## Purpose`",
+      "note": "CGC lifecycle implementation is grouped under the CGC provider package.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22"
+          "anchor": {
+            "blob": "a90c2a0fe99768bd5cbd6a910e113452d8d8b6a8",
+            "content": "sha256:4e73e173a3b7cc280cd6d648b70d7dc3d5268b55a98cba42ba8ea0a01ac93d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "GrepAI lifecycle implementation is grouped under the GrepAI provider package.\n\nAnchor: `## Purpose`",
+      "note": "GrepAI lifecycle implementation is grouped under the GrepAI provider package.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22"
+          "anchor": {
+            "blob": "1b42b4e40bef082465ee9ebba788429c6ad408e2",
+            "content": "sha256:2220bb5058fb820aeeecb989660c8d8073cccda280f41a2a790229044a75bad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Watcher aggregation uses explicit settings, enabled-provider dispatch, combined results, and durable-namespace checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:b8c9f9f5cdd4a134a6fb2a5fad802107a7cc55154c5362267b23b009aa028da3",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Typed lifecycle services dispatch directly through the facade with settings-owned arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "978c60923752096678e5d6df2cbbfa3b9c607a0a",
+            "content": "sha256:169b4a63f8aa37cd78ebf8312f37950814c6e9aaa4688823a2014b61b53a6ff5",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Compose plans use symbolic Docker; execution discovers Docker; host-user rendering requires callable UID/GID functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:271a1d7f88a3bcb0f5983652cf3ba2b14bb8be2a73e89a24baeddf1467ecd821",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:c0799055e5f7f7a71cb06baf1f1e92ca6100c3074fa54d5530770119943b76ba",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:28bb6ec6bfe34dc3b23234618d34c17b42136ee4f514eef63e6486d7c5444fad",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90c13afd1b7a276455d2ddb55ae5fa54e31cba9d",
+            "content": "sha256:4b0400e165192153c06371d58c1e2c82f90b6c5ce7f34f01f7b3f4c5b42c51d4",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/compose.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:bd048e66aa7507c9b69eed15427465d04300afa120f289d3667af7ee08aaae4f",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Frozen backend reconciliation is shared by CGC and GrepAI and carried into start results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:0d8ad8494daac2551d16f8fe89558ae864a399357800e0785aabee192fbefb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackendStartReconciliation"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:dff1a7e01c3adb03df3f1ab8a7318c1c047387df7000df33afd9d77812072dcd",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:8e40550643e004ed424513c4e259222114e9c24e6593a137a3506c26c9df656f",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Docker summaries expose container facts; current-state projection determines provider readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:cd8ccefff1c2125416aeb6957d49d51a4e8c753939332d864f0741cdb3847c6c",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:3a6205d7ec168bab1ad5fc6bfdd1a5fe5e299c69b530fb92ceda2d764a5c8fea",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:7365df11871efa6774ec9ae3c5f0721253cef0eac3ef96615b280be4b1956e31",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:8febfbd8de120b48bf6ff66e1532de370a42c5fd71bcc00de1ad20144575ed97",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
         }
       ]
     }

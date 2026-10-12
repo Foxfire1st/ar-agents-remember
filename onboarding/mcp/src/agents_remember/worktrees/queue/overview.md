@@ -10,148 +10,84 @@
 
 ## Purpose
 
-Builds, invalidates, publishes, and serves the disposable sprint closeout scheduling projection.
-Canonical task documents and closeout doors are its inputs; the root operation journal owns every
-claimed lifecycle after admission.
+Builds, invalidates, publishes, and serves the disposable sprint closeout scheduling projection. Canonical task documents and closeout doors are its inputs; the root operation journal owns a claimed lifecycle after admission. The directory also houses closeout preview, Git-output recovery, and staged-quality helpers. Their location does not give scheduling projection state lifecycle, commit, or certification authority.
 
 ## Hot Path Summary
 
-`closeout_preview.py` describes only code and memory-content writes plus informational cache refresh. `closeout_recovery.py` proves the same two outputs from Git and journal evidence; it never reconstructs ledger commit authority.
+Canonical changes classified as affecting semantic topology or completion readiness invalidate affected sprint projections to invalid-empty. Rebuild derives a fresh projection from current task topology, canonical waiting doors, candidate evidence, planning registers, and per-contract activation. Publication rechecks the exact current source identity before publishing valid-built. The queue exposes status, rebuild, and the first-ready admission fence; member and graph helpers compute readiness and deterministic order.
 
-Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
-computed off-side from current task topology, canonical waiting doors, and per-contract activation;
-publication occurs only after an exact-current source recheck. `closeout_queue.py` exposes status,
-rebuild, and the short first-ready claim-admission fence. Projection member and graph helpers own
-only deterministic readiness and order.
+Closeout preview describes code and memory-content writes plus informational cache refresh. Recovery proves accepted outputs from exact Git refs and journal commit identities without reconstructing ledger commit authority.
 
-## Conventions
+## Construction
 
-- Projection errors and source problems are bounded and typed. A capacity refusal is `invalid`, not
-  `unreadable`: the source was read and is past its bound, and the codes that say so are declared
-  once with that classification in `closeout_queue_errors.py` so a raiser and the projection's
-  classifier cannot drift apart.
-- The projection is evictable; canonical task, door, register, and journal sources are not copied
-  into permanent queue authority.
+### Canonical source census and publication
 
-## Invariants And Boundaries
+`closeout_projection.py` captures the canonical task, enclosure, door, and series census. Only waiting door generations enter membership. `closeout_projection_members.py` derives blockers, waiting reasons, and graph order; the census sorts members by classification, priority, order, and task identity. `closeout_projection_publication.py` owns invalidation, preview, off-side rebuild, and publication through the projection store. Previous projection rows are never rebuild inputs.
 
-- Only waiting door generations may be projection members.
-- Task authoring never waits on or seeks permission from projection state.
-- Claim, certification, commit, blocker, integration, and lifecycle evidence never live here.
-- Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
-- Activation is read-only input: each live series is read from its own contract-keyed record, and
-  only a reconciling record makes that series wait. Vacant and active are never waits, another
-  master's state is never this contract's reason to wait, and the queue cannot select, release, or
-  repair that authority.
-
-## Evidence
-
-### Closeout Recovery Uses Git Output Evidence
-
-`closeout_recovery.py` remains in this package location but owns journal recovery, not queue authority. Recovery reads exact current code/memory refs, compares them with accepted journal commits, proves substantive cleanliness and source ancestry, and reuses already-created outputs. A missing, unreadable, malformed or changed `memory.md` is irrelevant to those Git proofs. Refresh of the consumer cache is best effort after the actual output is proven.
-
-### MCAR-L02 Structured Curator Evidence
-
-The queue evidence adapter no longer parses a stable Markdown filename. It delegates curator
-evidence to the closeout integration route's sole structured currentness validator, then converts
-that exact evidence list into door/projection facts. Generated reports are evidence bytes only;
-historical files cannot compete with the stable manifest.
-
-### Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-- Recovery proves the accepted code and memory outputs without a cache lookup. [1]
-
-## IAS Per-Contract Activation Projection
-
-Multiple live atomic-series contracts for one protected source pair are normal, and each contract
-owns its own activation record keyed by `contract_fingerprint` (the digest of its resolved contract
-path). The closeout projection is a read-only observer of those records: it derives only
-`atomic-series-reconciling` as a waiting reason, treats vacant and active as normal rather than
-waits, and never treats another master's state as this contract's reason to wait. A snapshot that is
-not this exact contract, or is otherwise malformed, becomes a typed projection source problem with an
-explicit selecting repair; rebuild does not infer a winner from prior queue rows, task ordering, a
-contract census, or ambient Git. The projection never owns an activation transition — it cannot
-publish, release, or archive a record.
-
-This does not subordinate task authoring to selection. Task mutation publishes canonical truth; classified semantic/readiness changes
-invalidate affected projections to empty, and causes a rebuild from that new truth. Selection
-and sync lifecycle remain separate worktree authorities, so invalidation cannot destroy retained
-conflicts, commit evidence, or an in-flight operation.
-
-## 260821-CLIVE Final Disposable Projection Route
-
-This route is a current scheduling projection, not a lifecycle subsystem. The canonical transaction
-is intentionally simple:
+The transaction is:
 
 ```text
 task or door mutation
   -> invalidate affected sprint projections to invalid-empty
-  -> rebuild from current task topology + canonical waiting doors
-  -> recheck the exact source fingerprint under the short task CAS
-  -> publish valid-built, or remain invalid-empty
+  -> rebuild from current canonical sources
+  -> recheck exact source identity under the projection store lock
+  -> publish valid-built, or retain invalid-empty
 ```
 
-`closeout_projection.py` captures the bounded canonical census;
-`closeout_projection_members.py` recomputes readiness and deterministic priority/graph order; and
-`closeout_projection_publication.py` owns invalidation, preview, off-side rebuild, and exact-current
-publication. `closeout_queue.py` exposes status/rebuild and the short first-ready claim admission
-check. `closeout_queue_graph.py` owns the queue adapter around the task domain's one bounded,
-deep-immutable semantic graph index, while
-`closeout_queue_evidence.py` retains canonical grade/admission source parsing.
+Task publication validates its canonical sources, publishes task truth, and then invalidates and rebuilds affected projections. A projection failure is returned as a typed effect rather than permission to reject already-published task truth. Door publication similarly proves the canonical door write before refreshing its projection. Effective reads also treat a stored projection as invalid-empty when its current source fingerprint, classification, or members differ.
 
-`closeout_projection_source_facts.py` makes currentness inputs explicit: one source plane contains
-task address plus only fields classified as completion readiness, and a second contains the
-`semantic-topology/v2` fingerprint. The member source census additionally binds canonical
-`taskIntent`; missing or changed door intent becomes a typed blocker. `closeout_projection_snapshot.py` freezes one exact readable,
-classified census before publication. Whole task documents, private v1 topology tables, and old
-projection rows are not source inputs.
+`closeout_queue.py` exposes status and rebuild. Its first-ready fence is called by lifecycle claim admission while the task/door CAS mutex is held. The claim route transfers the waiting generation into root-journal authority; the projection itself performs no claim transition.
 
-Prior projection rows are never rebuild input. Only waiting door generations may be members.
-Projection state cannot claim, certify, consume, block, release, abort, carry commits, or own
-integration/lifecycle evidence. Task authoring is never subordinate to projection state. The five
-deleted mutable-queue modules have no tombstones: still-current evidence moved to door source and
-evidence owners; claim/cancel/supersede moved to the root operation journal; protected-ref exclusion
-moved to atomic landing authority; and mutable blocker, `QueueBinding`, certification, consumption,
-and action-driven initial-state contracts were retired rather than preserved as compatibility code.
+### Readiness, topology, and evidence
 
-## 260824-PDLS Final Projection Boundary
+`closeout_projection_source_facts.py` separates task address and fields classified as completion readiness from the task-domain `semantic-topology/v2` fingerprint. Member source facts additionally bind canonical task intent and candidate evidence. Missing or changed door intent becomes a blocker. Whole task documents and private v1 topology tables are not serialized as these source planes. `closeout_projection_snapshot.py` freezes one readable, classified census before constructing a publication build.
 
-Queue construction, membership, evidence parsing, and publication now operate only on current task
-truth and waiting door generations. Invalidation publishes invalid-empty state, rebuild derives a
-fresh valid-built projection, and no queue row owns retry, claim, commit, certification, terminal,
-or compatibility evidence.
+`closeout_queue_graph.py` adapts the task domain's bounded, deep-immutable semantic graph index. Graph construction validates the authored graph, binds the sole immutable graph into the sprint context, and reuses its indexes for candidates. Topology adapters preserve typed refusal status and detail instead of defining a second topology identity algorithm. This queue graph route requires an executionGraph and refuses its absence with task-execution-topology-migration-required. Its refusal text preserves the wider atomic-sequential concurrency intent; that text does not admit a graph-less candidate to this queue.
 
-## 260831-CCR-L01 Semantic Source Planes
+Dependency resolution is master-granular. The graph's resolved-master set uses the task-domain terminal predicate: an abandoned master resolves immediately; a Completed master resolves only when it has no completion blockers. A resolved predecessor stops blocking successors. Abandonment does not require unfinished child rows to become completed, because that master will never produce their work. The source census uses the same predicate to classify a terminal sprint and publish empty membership.
 
-Member readiness now receives one already-computed task-domain topology fingerprint. Queue adapters
-translate typed topology refusals without changing status/detail and never maintain a parallel
-identity algorithm. Graph-backed rebuild resolves and compares the authored graph once, substitutes
-the sole immutable bound graph into the sprint context, and reuses its indexes for every candidate.
-Graphless atomic-sequential mode remains explicit and valid.
+`closeout_queue_evidence.py` parses canonical scheduling grades and planning registers. Its curator adapter delegates to the closeout integration route's single structured currentness validator and returns that validator's exact evidence list. Door evidence converts that list into candidate provenance consumed by the projection. Generated reports are evidence bytes; the stable structured authority identifies the current immutable generation, so historical files do not independently compete for current authority.
 
-## Current Landed Composition
+### Per-contract activation
 
-The transitional `closeout_staged_quality.py` helper separates `prepare_staged_code` from fresh gate execution. Its returned tree and hook outcome feed certification admission after strict hooks settle; this helper location does not give scheduling projection state any certification or mutation authority.
+Each live atomic-series contract is observed through its own activation record, keyed by the digest of its resolved contract path. The projection derives `atomic-series-reconciling` only from that contract's reconciling observation. Vacant and active are not activation waits, and another master's state is never this contract's reason to wait.
 
-## CCR-R12@v5 Current Queue Boundary
+A malformed or mismatched activation snapshot becomes a typed source problem with an explicit selecting repair. Rebuild observes activation; it does not infer a winner from previous queue rows, task ordering, a contract census, or ambient Git. Selection, source sync, release, and archival remain activation and worktree authorities.
 
-Queue/projection helpers describe and recover transaction state; they do not own normal quality or
-certification acceptance. Closeout preview presents candidate/source checks, code commit, raw memory
-metadata/entity/index refresh, one attributed memory-content commit when content changed, cache refresh, and finalization. Recovery proves
-already-created outputs and uses the staged-index commit helper without repository hooks. Integration
-publication moves the prepared pair under ref safety and creates no merge commit. Strict code or
-memory checks, selected certification, curator coherence, independent review, and full suites are
-explicit developer actions rather than automatic queue steps.
+### Preview, output recovery, and quality helpers
 
-## Resolved Masters Stop Blocking Their Successors
+`closeout_preview.py` describes the ordinary closeout sequence: candidate/source checks, code commit, onboarding and entity metadata refresh, route overview metadata and index refresh, memory-content commit, derived cache refresh, and contract finalization. Series closeout instead reads exact named code and memory refs and records already-created commits. Ordinary external-memory closeout creates one attributed memory-content commit when content changed and otherwise records the existing output.
 
-Queue scheduling and projection now resolve masters on *terminal state* rather than completion.
-`closeout_queue_graph.py::graph_context` and `incomplete_predecessor_map` build their blocking set
-with `tasks/readiness.py::master_is_terminal`, so a predecessor master that was `abandoned` resolves
-exactly like a `Completed` one and stops blocking its successors. The reason is stated in the source
-and is a scheduling invariant, not a courtesy: an abandoned master is never going to produce the work
-its dependents wait on, so leaving them blocked forever would make abandonment worse than doing
-nothing. `closeout_projection.py::capture_projection_source` uses the same judgement to classify a
-sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
+`closeout_recovery.py` owns Git-output recovery rather than queue authority. It compares exact code and memory refs with accepted journal commit identities, checks leaf worktree cleanliness with the memory cache excluded, and proves memory-source ancestry. Series recovery reads named work-branch refs rather than requiring leaf worktree cleanliness. Missing, unreadable, malformed, or changed `memory.md` does not decide these Git proofs. Cache refresh follows the proven memory output and reports availability separately.
+
+The ordinary commit helper publishes an accepted tree through the shared tree-publication primitive, which runs no Git commit hook. Integration publication separately checks source refs, ancestry, checkout state, and landing authority, then moves the prepared code and memory refs by compare-and-swap without creating a merge commit.
+
+`closeout_staged_quality.py` separates staged preparation from fresh gate execution. Preparation checks that the checkout is a linked, conflict-free worktree, stages the candidate, and settles any configured pre-commit hook. The certification admission helper consumes the returned tree and hook outcome. None of these helpers assigns certification or mutation authority to scheduling projection state.
+
+## Invariants And Boundaries
+
+- The projection is evictable. Canonical task, door, register, and journal sources remain outside permanent queue authority.
+- Only waiting door generations may be members. Projection rows never own retry, claim, cancellation, supersession, certification, consumption, commit, blocker, terminal, or integration evidence.
+- Task authoring never waits on or seeks permission from projection state. Classified canonical changes drive invalidation and rebuild; projection invalidation cannot destroy retained lifecycle conflicts, commit evidence, or an in-flight operation.
+- Activation is read-only input. The queue cannot select, publish, release, archive, or repair an activation record.
+- Projection source problems and readiness reasons are bounded and typed. Capacity refusals are classified as invalid rather than unreadable because their sources were read but exceeded a bound. Their codes and shared classification are declared together in `closeout_queue_errors.py`.
+- Mutable blocker, QueueBinding, certification, consumption, and action-driven initial-state contracts are not operative scheduling-projection contracts. Door sources, root-journal claim ownership, and protected-ref landing authority are separate boundaries rather than queue compatibility mechanisms.
+
+### Quality-action intent and current enforcement
+
+The standing intent recorded here is that strict code and memory quality checks, selected certification, curator coherence, independent review, and full suites are explicit developer actions rather than automatic queue steps. The scheduling projection does not execute or accept those checks; it reads their canonical evidence.
+
+That intent must not be read as a promise that ordinary closeout has no automatic enforcement. For converted leaf memory, the current closeout route automatically checks the mandatory invariant gate before claiming approval, validates and gates the exact memory output before publication, and applies those checks to recovered memory output as well. These checks belong to the closeout transaction, not projection state. The staged-quality and certification-admission helpers also remain present; their existence alone does not establish that normal queue actions invoke them.
+
+### Lifecycle metadata boundary
+
+Historical labels such as final, landed, and resolved describe earlier curation framing, not a current task lifecycle status or acceptance promise. No current lifecycle status is asserted by this overview; establishing one requires canonical lifecycle authority outside this assigned card.
+
+## Evidence
+
+- Recovery proves the accepted code and memory outputs without a cache lookup. [1]
+- Canonical census, readiness, source planes, and immutable snapshots construct fresh membership. [2]
+- Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority. [3]
+- Graph resolution uses the task terminal predicate; activation and capacity classifications retain their own deciding owners. [4]
+- Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]
+- Preview, recovery, staged preparation, ordinary memory enforcement, and integration publication are separate from scheduling authority. [6]

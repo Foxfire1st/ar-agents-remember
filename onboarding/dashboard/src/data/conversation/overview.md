@@ -13,179 +13,48 @@ library projection (the two stores are deliberately disjoint — R1).
 
 ## Purpose
 
-`data/conversation/` is the **reconstructable browser projection of one live structured conversation**
-(design §6, §9, §11). It rebuilds the active transcript PURELY from the landed
-server/native authority — the native-hydrated page, the resumable SSE event stream, and the control
-routes — and holds it as an in-memory zustand projection only. There is **no durable browser
-authority**: no IndexedDB/localStorage/SQLite conversation index and no optimistic durable item. A
-reload, a page turn, an LRU eviction, or a recovery all reconstruct from the server; the only persisted
-bit in the whole subsystem is the boolean hide-thinking preference. The reducer is a pure,
-side-effect-free core the store, the stream, and the tests all share, so the authority-sensitive rules
-(cursor order, dedupe, gap tolerance, revision-fault reset) have exactly one implementation.
+`data/conversation/` provides the reconstructable browser projection of a live structured conversation. The transcript comes from server/native page and event authority; control routes return evidence about requested operations. The browser holds the active projection in memory, with no durable conversation index or optimistic durable item authority. Reload, eviction, and recovery reacquire server evidence; older paging adds server history without moving the live resume cursor. The boolean hide-thinking preference is persisted separately and does not delete transcript content.
 
-## Route Model
-
-- `types.ts` — the browser mirror of the landed SC1 normalized wire grammar (`serving/conversation/
-  models.py`), exact camelCase from the server's `to_camel` WireModel. CONSUMED types only — nothing
-  here validates a schema; the server is the sole authority and the reducer defends only against
-  faults it can actually observe. Carries `ActiveConversationRef` (identity matched by
-  `arSessionId`+`bridgeEpoch` FIELDS, never by digest — precision note 4), `ConversationItem`,
-  the `ConversationContentBlock` union, `ConversationStatus` (the canonical turn/process/freshness
-  state whose `turn.turnId` is null on the hosted-codex wire), `ConversationCapabilities`
-  (whose `controls.interrupt` is the KNOWN-STALE L1 view), the page + event envelope + mutation ops,
-  telemetry (`MetricEvidence` — absent metrics omitted, never zero), `InterruptOperation`, and
-  `ConversationRouteError`, plus the additive harness sub-agent identity
-  (`ConversationAgentStatus`/`ConversationAgentRef`, optional `ConversationItem.agent` — absent =
-  the parent conversation; identity fields evidence-bound, never fabricated).
-- `agents.ts` — the sub-agent roster derivation + timeline focus model (R7), pure
-  functions over projection evidence ONLY. The roster itself stays server-derived: the backend
-  projectors mint ONE roster item per sub-agent on the parent timeline (codex
-  `codex-agent-<threadId>`, claude `claude-agent-<taskId>`; notice/system, `agent` set) and this
-  module only READS it — `isAgentRosterItem` (the ruled shape), `agentLabel` (evidence-bound
-  precedence, `agent <short-id>` last resort), terminal-only final-message previews, `deriveAgents`
-  (first-evidence order, upsert-replaces), `cycleAgentFocus`/`effectiveAgentFocus` (stale id →
-  parent), and `filterItemsForFocus` (parent keeps roster rows; an agent lane keeps its own items,
-  roster row included). No optimistic rows, no polling.
-- `reducer.ts` — the authority-sensitive PURE reducer: cursor-ordered apply, `eventId`+`cursor` dedupe
-  (bounded 4096, copy-on-write), block-delta revision gating, `previousCursor` gap tolerance,
-  gap→re-page, same-revision-divergence→reset (§6.4), older-page anchor-preserving prepend, replace-page
-  rehydrate. It NEVER authors an item — the only paths that add a user item are projector events, so
-  there is no optimistic user echo (R2/§12.5/R7).
-- `client.ts` — the active-page/telemetry reads, selected-child history POST, and interrupt
-  request/status/reconcile over the landed routes. Typed outcomes are discriminated by payload
-  shape and never guessed into success; selected-child non-2xx/invalid/network/timeout errors stay
-  child-local, while a failed page read threads the server's typed `ConversationRouteError` to the
-  parent banner (F15).
-- `stream.ts` — the resumable SSE controller. It manually re-opens a FRESH `EventSource` from the
-  latest cursor (`after=` query only) precisely to avoid the landed `cursor-conflict` preflight that
-  fires when a native `Last-Event-ID` header disagrees with `after=`.
-- `store.ts` — the `activeConversationStore` (vanilla zustand) + connect/recovery/older-page/LRU
-  orchestration. Per-session runtime lives outside the store to avoid re-render churn and is never
-  conversation authority. A bounded LRU (6) may evict an unfocused session's projection; it simply
-  rehydrates on refocus. The store also carries `agentFocusBySession` + `setAgentFocus` — the
-  operator's timeline focus, keyed OUTSIDE `bySession` so an LRU eviction keeps the operator's
-  place; the surface revalidates the stored id via `agents.effectiveAgentFocus` rather than
-  re-applying it blindly. It also owns selected-child history orchestration: same-child
-  singleflight, visible loading/ready/failed state, successful-id LRU, retry, and explicit 64-entry
-  in-flight/retained bounds that never call the parent `failStream`.
-- `format.ts` — the shared presentation conventions (A1/A4/A5/A8): em-dash = genuinely absent,
-  interpunct = separator, `joinChips` drops empties (no dash-chains), humanized durations, quiet
-  long-stale tone, boundary truncation with a full-value affordance. Its reach was widened
-  beyond the conversation surfaces: `humanizeDuration` is now the SINGLE duration authority for the
-  whole cockpit chrome (supervisor badge, rail-footer heartbeat/cutoff, uptime — `StatusLine` also imports
-  `joinChips` for its collapse-or-explain segments), and a NEW `shortId(id, tail)` collapses a long
-  ULID/UUID to `…SUFFIX` (R6) with the full value the caller's `title` (rail task badges, focus-handoff
-  banner).
-- `thinkingPreference.ts` — the global persisted hide-thinking preference (`cockpit.chats.hide-thinking.v1`,
-  the only durable UI bit — non-destructive, instant).
-
-## 2026-07-24 Warm Projection And Liveness Refinement
-
-Focus changes keep up to `LRU_LIMIT=6` active projections warm; only LRU eviction and session termination
-disconnect their runtime. The UI's scroll geometry is deliberately outside the reducer/store protocol
-state: per-session view memory restores only after stable rendering and cannot alter replay authority.
-HTTP page, telemetry, and interrupt calls are abort-bounded. The stream retries faster before first open,
-uses a visible-tab one-shot watchdog for sleep or half-open channels, and turns a replacement instance
-that never opens into an honest failure rather than perpetual connecting.
-
-## 2026-07-26 Sub-Agent Roster And Timeline Focus
-
-Harness sub-agents now appear on the parent timeline as ONE backend-minted roster item each (codex
-`codex-agent-<threadId>`, claude `claude-agent-<taskId>`; kind `notice`, role `system`, `agent`
-set — every upsert bound to concrete collab/join evidence, never optimistic). The projection itself
-stays server-derived: the NEW `agents.ts` only READS that roster to derive the agents-area rows
-(`deriveAgents`), the evidence-bound labels (`agentLabel`, `agent <short-id>` last resort), and the
-parent↔agent timeline focus model (`cycleAgentFocus`/`effectiveAgentFocus`/`filterItemsForFocus`).
-The store's `agentFocusBySession` holds the raw focus id OUTSIDE the evictable `bySession`
-projection, so an LRU eviction keeps the operator's place with the keep-warm runtime and a stale id
-honestly recomputes to the parent on rehydrate.
-
-## 2026-07-27 Selected-Child History Hydration
-
-Roster discovery remains metadata/live-event first. Once `effectiveAgentFocus` validates one child,
-the browser posts only that id for native backfill. A valid persisted focus hydrates on mount;
-a stale stored id sends no request. Same-child callers singleflight, failures remain visible and
-retryable per child, and the parent stream phase is unchanged. The 64-entry in-flight and retained
-maps are necessary explicit bounds because the exported hydration function can be called by
-multiple mounted consumers and abandoned requests/state must not grow without limit.
-
-## Invariants And Boundaries
-
-- **Reconstructable, never durable (R1).** This route holds only a server-derived projection. Reload,
-  re-page, LRU eviction, and recovery all rebuild from native authority; grep the route for
-  IndexedDB/localStorage/SQLite and you find only the hide-thinking boolean.
-- **The reducer never authors an item.** No optimistic user echo exists — the only writers of a user
-  item are the projector's `append/upsert/replace-page` mutations (proven by `reducer.test.ts`).
-- **Recovery is deterministic, not a guess.** A cursor gap, a missed intermediate delta, or a
-  `previousCursor` naming an unreceived retained cursor all conservatively RE-PAGE (never corrupt or
-  silently drop); a same-revision-different-payload divergence RESETS. A re-page/reset always re-hydrates
-  native authority and resumes ONLY from the fresh page's atomically-captured `eventCursor` (§6.8).
-- **Identity is field-matched, never digest-matched.** Digests are domain-scoped across the L1/L2/L3
-  services, so `sameIdentity` compares `arSessionId`+`bridgeEpoch` (precision note 4).
-- **Manual SSE resume only.** Native EventSource auto-reconnect is deliberately not used (the
-  `after=`-vs-`Last-Event-ID` cursor-conflict trap); a reconnect is a fresh instance with no lastEventId.
-- **Transport is not interpretation.** `stream.ts` delivers ordered envelopes and reports
-  connect/disconnect; all projection interpretation lives in the reducer.
-- **The agent roster is server-derived; the focus is browser-only.** Roster rows are minted by
-  the backend projectors from bound evidence — the browser never authors, polls, or fabricates one
-  (an unresolved identity is `agent <short-id>`). Conversely the operator's focus
-  (`agentFocusBySession`) is pure UI state that survives LRU eviction OUTSIDE the projection and is
-  always revalidated against the live roster (`effectiveAgentFocus`), never re-applied blindly.
-- **Child history failure is not parent stream failure.** Hydration state is keyed by session and
-  child; non-2xx, invalid payload, network, timeout, server unavailability, and local capacity are
-  shown on that child and can be retried without `failStream`.
-
-## Follow-On Register (durable rulings a future conversation surface must carry)
-
-- **Retention-gap re-page tolerance is the contract, not defensive gold-plating.** A
-  healthy consumer whose live `previousCursor` names a retained gap must conservatively re-page; a
-  missed intermediate block delta must re-page rather than guess; `replace-page`/native-rehydrate
-  bypass the gap check because they establish a new baseline. These are tested and load-bearing — do
-  not "optimize" them into a silent apply.
-- **Interrupt capability gating is attempt-and-reflect — the honest wire maximum.** No
-  route in the landed seventeen exposes a proactive `ControlCapabilities` read; the active page's
-  `capabilities.controls` is the register's named STALE L1 view (`unverified` for all three harnesses).
-  So the renderer gates on a working+resolvable turn and reflects the server's typed refusal reactively,
-  and it must gate on the L3 routes' own evidence — never enable/disable purely from the stale L1 view.
-  A clean proactive gate awaits a control-capabilities GET or an L1-view refresh; hiding a landed
-  feature on the stale view is the failure to avoid.
-- **Hosted-codex `ConversationStatus.turn` carries no `turnId` during working turns.** The
-  turn id must be correlated from projector item evidence (`resolveWorkingTurnId`) until a substrate
-  fix populates status; a status fix that carries `turn.turnId` on this topology invalidates the
-  correlation path.
-- **The E1/E2 backend faults block a full production E2E pass.** E1 (hosted-interactions vendor-correlation
-  500) and E2 (L1 unknown-input provenance validator 500) reproduce under ordinary hosted-codex
-  chatting; the surface handled both fail-loud (no silent PTY
-  fallback), but a production E2E cannot pass over this substrate until they are dispositioned.
-- **Virtualization at 10k items is architecturally bounded but unmeasured here.** The
-  reducer/store scale is O(1) amortized on in-order append; the measured DOM/interaction baseline is
-  a future hardening artifact (the unit env has no layout).
+The reducer centralizes identity, deduplication, predecessor continuity, and revision handling. Its standing intent is a pure, side-effect-free projection core. The implementation preserves prior projection structures through copying, but reset diagnostics read the current clock, so identical inputs do not guarantee an identical fault timestamp.
 
 ## Hot Path Summary
 
-1. `store.connectConversation` reads the bridge epoch, calls `client.fetchConversationPage` for the
-   native-hydrated page, and `reducer.applyInitialPage` establishes the baseline + resume cursor.
-2. `stream.openConversationStream` opens the resumable SSE from that cursor; each envelope flows through
-   `reducer.applyEvent` (cursor-ordered, deduped, revision-gated).
-3. A reducer `recovery` signal (`gap`/`reset`) stops the stream, re-pages native authority, and resumes
-   from the fresh cursor; a typed page failure sets `errorBySession` and marks `projection-failed`.
-   The INITIAL hydrate (`hydrateAndStream`) no longer fails loud on the first
-   page fetch: a TRANSIENT boot failure (`httpStatus === 0` or `>= 500`) retries quietly on the
-   `connecting` phase across a bounded window (8 × 400ms) before escalating to `projection-failed`,
-   while a hard 4xx (409 epoch-rolled, 404) still fails loud immediately — closing the codex launch
-   "cried-wolf" red strip (audit V13) without ever masking a real failure. The epoch-resolve/repage
-   path in `ChatsStageBody` is NOT hardened by this fix (pre-existing, recorded follow-on).
-4. The renderer reads `orderedItems`/`status`/`capabilities`/`stream` through `useActiveConversation`;
-   the interrupt hook reads the same projection for turn id + capability evidence.
-5. A validated effective child focus calls `hydrateAgentConversation`; the store singleflights the
-   POST, applies the local outcome, and leaves page/SSE ownership untouched.
+1. The stage resolves submission authority and supplies its bridge epoch to `connectConversation`. The store fetches a native-hydrated page; `applyInitialPage` establishes the projection and its resume cursor.
+2. Only the focused conversation owns a physical SSE stream. `openConversationStream` creates a fresh EventSource using the latest cursor; decoded envelopes reach the store, which invokes `applyEvent`.
+3. Gap/reset recovery stops the stream, fetches a fresh page, and resumes from that page's cursor. Initial hydration and recovery page reads share transient boot retry handling: a 30-second retry window with exponential delays starting at 250 ms and capped at 1000 ms. Initial hard failures surface immediately; recovery failures use the bounded recovery escalation. The retry window is checked after requests finish and is not an exact end-to-end deadline.
+4. Warm refocus retains projection/runtime state and resumes from the retained cursor without another page fetch. LRU eviction forces subsequent reconstruction. The stage's cold epoch resolution also retries transient failures within its own 30-second window.
+5. The surface reads the projection through `useActiveConversation`, derives roster/focus state, and requests history only for a validated effective child focus. Child acquisition singleflights independently of parent page/SSE ownership. The interrupt hook reads the same projection and prefers canonical turn identity before correlating item evidence when needed.
 
-## Child Route Onboarding Map
+## Construction
 
-No deeper child route exists below `data/conversation/`; each source has a one-to-one file card and
-this overview is their governing pillar.
+### Wire, projection, and transport
 
-## File Onboarding Map
+- `types.ts` mirrors the repository's conversation wire models under `mcp/src/agents_remember/models/conversations/`. The server's WireModel supplies camelCase aliases; the browser interfaces are consumed types, not runtime schema validators. They include conversation identity, content blocks/items, status, capabilities, page/event mutations, telemetry evidence, interrupt operations, route errors, and optional sub-agent identity. An absent item agent denotes the parent conversation. Optional telemetry fields represent absence rather than fabricated zero values.
+- `reducer.ts` materializes server pages and mutations. Identity matching uses `arSessionId` and `bridgeEpoch`, not digest equality. Deduplication combines `eventId` and cursor and retains at most 4096 keys through copy-on-write structures. Live predecessor discontinuity and missing delta prerequisites request re-page; same-revision divergent item/status payloads request reset. Older pages retain newer item revisions and the live resume cursor. Replacement pages establish a new baseline. The reducer consumes supplied items rather than inventing an optimistic user echo.
+- `client.ts` owns active-page and telemetry GETs, selected-child history POSTs, and interrupt request/status/reconcile POSTs. Requests carry a 15-second abort timeout. Page HTTP errors retain typed route evidence; transport/JSON failures return an unsuccessful page result. Successful page/telemetry payloads are type casts, while child-history outcomes and interrupt/error responses receive limited payload-shape discrimination. This is not complete browser schema validation.
+- `stream.ts` owns transport reopening and liveness, not projection mutation decisions. Each reopen creates a fresh EventSource with `after=` from the current resume cursor, avoiding native auto-reconnect's combination of an old query cursor and a newer Last-Event-ID header. It ignores JSON parse failures, forwards decoded envelopes, retries faster before the first successful open, and uses the shared liveness watchdog plus an open deadline to recover or escalate stalled instances.
+
+### Retained sessions and selected-child history
+
+`store.ts` owns the vanilla zustand projection and per-session acquisition runtimes. The runtime map is outside reactive projection state. An LRU limit of six bounds retained conversation seats, including cold hydrates reserved before their first page succeeds. Focus switching stops the previous physical stream and aborts its pending page request while preserving retained runtime/projection state. Refocus resumes a usable retained projection; eviction disconnects and removes it. Explicit reconnect, disconnect, and reset also dispose transport state, so disposal is not limited to eviction and session termination.
+
+The operator's `agentFocusBySession` is outside evictable `bySession`, allowing focus to survive projection eviction. This focus is retained in memory, not persisted across browser reload. The surface recomputes `effectiveAgentFocus` against the current roster; an unknown stored id resolves to the parent. A visible surface hydrates an effective child focus on mount or focus/epoch change, and a stale id produces no child request.
+
+Selected-child history has session/child-local loading, ready, and failed states. Same-child requests singleflight. Successful child ids use a 64-entry recency cache; in-flight requests and retained child states also have explicit 64-entry bounds. Non-2xx, invalid payload, network/timeout, unavailable/not-eligible outcomes, and local-capacity refusal remain visible child failures with retry rather than invoking parent `failStream`.
+
+Scroll geometry is separate view memory, not replay authority. The store exposes per-session scroll recording/reading and clears that memory on disconnect/reset. The existing surface/timeline references retain the scroll-restoration contract; this review does not independently establish all layout timing guarantees.
+
+### Agent and presentation derivation
+
+`agents.ts` derives roster rows and timeline focus from projection evidence. Backend roster identities are `codex-agent-<threadId>` and `claude-agent-<taskId>`, with notice/system shape and an agent reference. The browser recognizes those rows rather than creating or polling for them. Labels prefer nickname, role, then the last agent-path segment, finally `agent <first-eight-id-characters>`. Derivation preserves first-evidence order and replaces an existing agent's view with later evidence. It acquires final-message/summary previews only from terminal rows, but may retain a previously acquired preview when a later row has no new preview. The parent lane includes parent items and roster rows; a child lane includes that child's items, including its roster row.
+
+`format.ts` supplies absent-value and separator glyphs, empty-chip filtering, humanized durations/ages, quiet stale tones, boundary truncation, harness labels, and suffix-based `shortId`. Callers are responsible for exposing full truncated values. These helpers serve conversation and surrounding cockpit presentation; a claim that every cockpit duration has one exclusive formatter is not established by this bounded review.
+
+`thinkingPreference.ts` uses the localStorage key `cockpit.chats.hide-thinking.v1` for the global hide-thinking boolean. A storage failure leaves the in-memory toggle usable. The preference changes rendering rather than normalized transcript authority.
+
+### Onboarding map
+
+No deeper child route is listed in the assigned route index. This overview governs the file cards below.
 
 | Responsibility | File onboarding |
 | --- | --- |
@@ -199,24 +68,24 @@ this overview is their governing pillar.
 | Presentation conventions | [format.ts](format.ts.md) · [format.test.ts](format.test.ts.md) |
 | Hide-thinking preference | [thinkingPreference.ts](thinkingPreference.ts.md) |
 
+## Invariants And Boundaries
+
+- **Reconstructable authority (R1).** Conversation content is server-derived. Browser projection, focus, child-acquisition bookkeeping, and scroll memory do not become durable transcript authority. The hide-thinking boolean is a separate UI preference.
+- **No optimistic user echo (R2).** Pages and append/upsert/replace-page mutations supply the items; the reducer does not author a user item.
+- **Conservative recovery.** An explicit gap, a discontinuous live predecessor, or missing/intermediate block-delta prerequisites must re-page rather than guess. Same-revision divergent item/status payloads reset. Replacement pages bypass predecessor checking because they establish a new baseline; native-rehydrate delivery is not treated as a contiguous live stream. Recovery resumes from fresh page evidence.
+- **Field identity.** Events from another session/epoch do not merge into the projection. Opaque server cursors are resume tokens; their string representation is not a browser ordering authority.
+- **Fresh transport resume.** Reconnection replaces EventSource rather than relying on its native reconnect behavior. Projection interpretation remains in reducer/store even though transport parses JSON and drops parse failures.
+- **Evidence-derived roster, browser-only focus.** The browser derives agent rows from backend roster evidence and revalidates retained focus. Selected-child history failure remains local to that child.
+- **Interrupt intent and observed implementation.** The standing attempt-and-reflect ruling requires usable turn evidence and honest typed refusal handling rather than treating an unverified capability as conclusive denial. The hook prefers canonical `status.turn.turnId`; when that is missing during a working turn it correlates the newest active item carrying a turn id, then the newest item carrying one. Historical claims that every hosted-codex working status lacks a turn id, or that all harness capability views remain stale, are not current promises. The present hook makes the control available only for a working, resolvable turn with neither a hard-unavailable capability nor a refusal for that same turn; a merely unverified capability is not that hard-unavailable predicate. The callback is withheld while pending. This does not establish backend capability freshness.
+- **Performance must be measured.** The standing 10k-item virtualization concern remains. Append handling copies the item map and ordered-id array, so the former O(1)-amortized reducer/store claim is not supported by the implementation. No DOM/interaction measurement or test execution is asserted here.
+
+## Historical Reports And Uncertainties
+
+The former follow-on register reported E1 hosted-interactions vendor-correlation 500s and E2 unknown-input provenance-validation 500s during hosted-codex chatting, with fail-loud surface behavior and no silent PTY substitution. Their current reproduction and disposition were not established from the assigned source owners, so that report cannot establish a present production E2E blocker or a passed production E2E run. The source still contains consequential unknown-input provenance validation; its presence alone does not prove the reported failure still occurs.
+
+The old statements about a stale L1 capability view and hosted-codex missing turn identity remain historical concerns requiring current backend evidence. The frontend still supports canonical identity followed by working-turn correlation. No lifecycle authority was supplied or examined for the reported faults, measurements, or prior review acceptance. Their current lifecycle status is explicitly unknown and lies outside this overview's operative promises.
+
 ## Evidence
-
-### Docs References
-
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route's statements were verified from its direct agents-remember source/tests and the
-reviewed worker report and final-PASS review verdict.
-
-No configured Domain Documentation source exists for this route.
-
-### Cross-Repo References
-
-The route mirrors this repository's own landed conversation wire contract and talks only to this
-package's serving endpoints; no cross-repository implementation source governs it.
-
-No applicable cross-repository source was found.
-
-### Repo-Internal References
 
 - The active serving API exposes page, selected-child history, and event routes. [1]
 - The dashboard client fetches the active page. [2]
@@ -231,3 +100,6 @@ No applicable cross-repository source was found.
 - The dashboard client exposes status and reconcile wrappers. [11]
 - The active conversation surface owns projection/focus behavior and renders the reconnect, agent, and timeline body. [12]
 - The chats stage body mounts the active conversation surface. [13]
+
+- Reset diagnostics read the clock; the retry window is tested after each page request rather than being an exact deadline. [14]
+- Roster rows can retain an earlier terminal preview; interrupt controls use working/identity/unavailable/refusal predicates and withhold pending callbacks. [15]

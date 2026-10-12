@@ -8,34 +8,97 @@
 
 ## What This Area Is
 
-This route is the per-harness active projector slice: the pure frame
-grammars that map each harness's native frames — live evidence frames and native-history page
-frames — into normalized conversation mapping outputs for the engine in the sibling `active/`
-route. Mappers are schema-strict and vendor-honest: every item type with exact field evidence
-maps to a typed item, and every other shape becomes `unknown-vendor` evidence with its native
-id/turn parent preserved and its raw payload kept server-side.
+This route maps harness-native frames into normalized conversation outputs for the sibling active engine. Codex and Pi provide native-history frames and live evidence; Claude provides stream-json evidence and exact submission echoes; eve provides its durable session stream. The engine-facing protocol binds these channels to the registered projectors.
 
-The slice is deliberately pure. Mappers hold no IO, no clock, no engine state; the engine
-assigns ordinals, revisions, provenance resolution, envelopes, and unknown-vendor evidence
-handles. One protocol (`HarnessProjector`) plus channel flags is the only engine-facing
-surface, so the engine never special-cases a harness.
+The standing design is schema-strict, vendor-honest mapping: recognize evidenced shapes, preserve unsupported shapes as unknown-vendor evidence, and leave source acquisition, canonical ordinals and revisions, provenance resolution, envelopes, and evidence handles to the engine. The existing purity promise is not fully realized: Claude keeps a bounded, module-level sub-agent binding registry. Construction and boundaries below describe that state explicitly rather than certifying the entire slice as stateless.
 
 ## Hot Path Summary
 
-Start with `__init__.py` for the `HarnessProjector` protocol, channel flags, and registry.
-`common.py` holds the strict parsing primitives, the four mapper output types, and the honest
-provenance builders. `codex.py` maps thread items and notifications (items/blocks/tools/
-deltas/turn results, plus the collab/sub-agent roster rows), `claude.py`
-maps stream-json frames (text/thinking/tools/results, the exact submission echo, and the
-`task_*` sub-agent lifecycle correlated by `parent_tool_use_id`), and
-`pi.py` maps durable entries and live RPC events (messages/tools/
-notices/outcomes anchored on native entry identity). `eve.py` maps the durable session stream —
-one item revised by its completion, turn boundaries separated from session boundaries, and the
-park as a notice rather than a settlement. Every mapper takes
-the optional `parent_thread_id` demux context; only codex consumes it — claude's sub-agent
-identity arrives in-band, and pi and eve have no sub-agent threads.
+Start with `__init__.py` for the protocol, channel bindings, and registry, then `common.py` for parsing primitives, output types, and provenance builders. `codex.py` routes items, notifications, and deltas; `_codex_collab.py` owns its collaboration, roster, agent-thread, and settlement mapping. `claude.py` maps assistant/tool/result frames, submission echoes, and correlated sub-agent lifecycle evidence. `pi.py` maps durable entries and live tool events. `eve.py` maps durable stream envelopes, revises streamed text by channel identity, and separates turn settlements from session parking.
 
-## What Belongs Here
+Every live mapper accepts optional parent-thread demux context. Only Codex consumes that argument; Claude reads sidechain identity in-band, and Pi and eve leave it unused.
+
+## Construction And Mapping Flow
+
+### Protocol And Shared Values
+
+The protocol exposes native-frame, live-evidence, and transcript-echo mapping methods. Its bindings declare a harness identity and three boolean channel/continuation flags. Codex uses native pages without eager continuation; Pi uses native pages with eager continuation; Claude uses transcript echoes without native pages; eve uses neither auxiliary channel. Unsupported channels raise `NotImplementedError`.
+
+The shared outputs are four frozen dataclasses: mapped items, block deltas, terminal outcomes, and unknown-vendor descriptions. Required-object, required-list, and required-text parsers raise `UnmappableShape` when their checks fail. The engine catches that exception at its ingestion boundary and constructs preserved malformed evidence rather than terminating projection for that parsing failure.
+
+Items carry placeholder ordinal and revision values; the store assigns canonical values. Tool invocations and later results use the same item identity and converge through block union. Candidate blocks replace matching block IDs while existing sibling blocks survive; late streaming tool upserts do not regress terminal phases. Codex full-item re-maps use the same convergence path.
+
+User-input attribution remains evidence-based. Codex user messages carry request correlation when `clientId` exists; Claude echoes carry their request ID and replay correlation UUID; Pi user messages and eve delivered operator records carry producer-less unknown-input provenance. Claude sidechain user frames are a distinct case: they map as harness-lane records of the sub-agent input. The engine resolves pending request provenance from the submission-provenance batch.
+
+### Codex Items And Notifications
+
+Native frames preserve the item's own ID and the native turn parent. The item router tries prose, tool, and collaboration routers in order. It maps user and agent messages, plans, reasoning, command execution, file changes, and MCP tool calls; an unclaimed item type becomes unknown-vendor evidence.
+
+The notification cascade routes by carried native method first, then by params shape. Known silent methods include startup status, remote-control status, warnings, rate limits, token usage, thread settings, and `turn/diff/updated`. `thread/started` is not in this silent set: its dedicated handler suppresses missing, unproven, and parent-thread identities and registers a proven non-parent thread. The silent-method check occurs before item-shape routing, so the implementation does not promise that an item-bearing payload overrides a silent method. Unknown methods with recognized item or item-scoped params may still reach those shape branches; the final unknown-notification branch names the carried method.
+
+Full item notifications establish placement and phase before mapping their body. Item-scoped notifications map deltas or file-change updates; other item-scoped shapes mint nothing there. Summary and content indices identify delta blocks; bare deltas leave block selection to the engine.
+
+The facade imports collaboration helpers from `_codex_collab.py`. `ItemPlacement` carries frame-wide origin, live/history placement, turn, time, and evidence reference; `_LiveItemContext` adds item identity and phase. `_CollabCall` carries validated tool, receiver IDs, and agent-state fields. Its shape constructor is the intended validation boundary; a receiver field of the wrong container type returns no validated call and keeps unknown-vendor preservation reachable.
+
+Collaboration items emit the tool call and roster upserts keyed by `codex-agent-<threadId>`. Non-parent lifecycle notifications update that roster; idle or undocumented thread-status types emit no transition. Agent turn completion emits an agent-bound turn-result and roster terminal status, never a parent-scoped mapped terminal outcome. Malformed collaboration shapes are preserved instead of acquiring invented agent semantics.
+
+Persisted spawn/start activity must not by itself establish current liveness. The source implements this downgrade for native-history `subAgentActivity` registered/running states, and the engine can overlay current adapter-registry authority. The broader standing claim also covers persisted collaboration spawn/start activity, but `_collab_roster_upserts` still promotes an unknown spawn receiver to registered without a live/history guard. That discrepancy remains explicit.
+
+The engine, rather than the mapper, suppresses native-history twins using recorded live turn IDs and user request IDs. The earlier account of live UUID/message IDs versus positional `item-N` IDs describes an observed topology, not a current universal parser rule: native acquisition requires the returned item IDs and does not manufacture positional identities.
+
+### Claude Frames, Echoes, And Sub-Agents
+
+Assistant frames map text and thinking blocks and split stable-ID tool-use items from their parent message. Tool-result carriers upsert the same tool IDs. Replayed user frames raise `UnmappableShape` because exact submission echoes own those parent user items. An echo uses its replay correlation UUID as item identity, original submission text as content, and request ID as correlation. The engine places echoes and evidence through its turn-order zipper.
+
+Command-lifecycle frames require a command UUID and a state of queued, started, or completed; valid frames mint no timeline item. An undocumented state fails parsing and becomes visible malformed evidence at ingestion. Rate-limit frames require an object-valued rate-limit payload and then mint no timeline item.
+
+Claude maps task-started, task-progress, task-notification, and background-task reconciliation system frames. It correlates task IDs and tool-use join keys in a registry bounded to 128 session buckets and 64 bindings per bucket, evicting oldest entries when limits are reached. Frames without a session ID share the empty-string bucket. This is retained mapper state, not an engine-owned stateless calculation.
+
+The lifecycle path reads the previous binding, resolves identity, validates usage, decides status, records the replacement binding, and emits items. `_TaskIdentity` distinguishes the description displayed on the roster from the description retained in the binding: a progress label can be transient, while a sparse later notification keeps the previously evidenced task description and type. Absent evidence stays absent. Malformed task lifecycle shapes become unknown-vendor outputs locally; unrelated system subtypes currently mint nothing.
+
+Edit, MultiEdit, Write, and NotebookEdit inputs delegate to focused mutation-diff parsers. Invalid or unsupported input shapes contribute no synthetic diff while the tool-input block keeps the raw input. MultiEdit diff IDs retain the original edit positions. Write and NotebookEdit expose the supplied new content without fabricating an unseen old file state.
+
+Result classification first consumes the adapter-attributed terminal stamp when present. A cancelled stamp becomes interrupted; unstamped results use native success and cancellation-reason predicates, with other results classified failed. The adapter-correlation design distinguishes an accepted interrupt from an ordinary error, but the mapper itself also accepts native cancellation reasons on unstamped evidence; the original absolute requirement for accepted-interrupt correlation therefore needs this qualification. Result frames emit both a turn-result item and terminal evidence.
+
+### Pi Durable Entries And Live Events
+
+Durable message entries map by role; compaction and model/thinking changes map notices. Other entry types remain unknown-vendor evidence. Assistant tool-call parts and tool-result messages converge on their native tool-call identity. User messages stay unknown-input because this mapper receives no native request correlation.
+
+Live tool-start, update, and end events upsert tool items by `toolCallId`. Message-end, message-update, and agent-end events mint nothing in this mapper; completed message identity comes from durable entries. Completed assistant stop reasons emit completed terminal evidence, while aborted and error reasons additionally emit turn-result items. The live fallback still maps unrecognized event types, including `turn_start` and `turn_end`, to unknown-vendor descriptions; this source observation does not establish an installed runtime version or fixture execution.
+
+### Eve Durable Stream
+
+Eve reads the event type from the diverted envelope's own `type` field and payload from `data`, rather than using the out-of-band native-method field. Named control events for session/turn/step framing, action-input streaming, compaction, and context clearing mint nothing. Unclassified event names become preserved unknown-vendor evidence.
+
+Appended message or reasoning frames emit an empty channel item plus a block delta. Completion revises that same turn/channel item to authoritative text; intentional null completion stays empty. Tool requests and results converge by native call ID. Input requests, resolutions, authorization challenges and completions, and failed steps have dedicated mappings.
+
+A turn boundary is not a session boundary. Turn completion, cancellation, and failure pass through `_settled`, emitting a turn-result item and terminal outcome; cancellation becomes interrupted. Session waiting produces one stable session-scoped parked notice with no turn ID and no terminal outcome, so it cannot overwrite a cancelled turn with a completed park. The adapter does report that park as completed, which makes this mapper distinction necessary.
+
+The former claim that `_settled` is the only terminal-outcome constructor and is reached only by turn events is not the current implementation. Session completion directly emits a mapped terminal outcome, and session failure also calls `_settled`. The standing separation between turn and session boundaries remains; the prose does not certify the additional session outcomes as satisfying a turn-only settlement promise. Eve exposes no native-history page or transcript-echo channel; durable replay belongs to the adapter's stream route.
+
+## Invariants And Boundaries
+
+The standing purity rule says mapping owns no IO, clock, or engine state, and does not assign canonical ordinals, revisions, or envelopes. Preserve that intent while recognizing the Claude binding registry as an actual exception to stateless mapping. Source inspection alone does not prove byte-identical rehydration across registry histories.
+
+Unknown-vendor handling must not guess semantics or publish raw payloads as unknown-vendor item bodies. Public unknown-vendor items contain summaries and opaque evidence references. Native-page parsing failures preserve transport item and parent identity; live parsing failures use engine-generated identity and may have no turn parent. Recognized silent events and several recognized non-content branches deliberately mint nothing, so the blanket promise that every other shape is preserved is too broad.
+
+Native identity anchors items where available. Block IDs may use array positions, and unknown live events or eve delivered messages may use evidence sequence coordinates. The intended ban on manufactured content-hash or timestamp identity is distinct from an inaccurate ban on all indices or sequence-based identity.
+
+Parent user-input records do not acquire an assumed producer. Missing provenance remains unknown-input; the engine owns subsequent exact source resolution. Claude replayed parent user frames belong to the echo channel. Pi does not invent provisional text-message identity from id-less live message frames.
+
+Canonical ordinals, revisions, retention, envelopes, cursors, and gap mechanics belong to the active engine and store. Wire contracts live under `models/conversations/`; evidence acquisition belongs to the harness adapters and bridge; dormant native list/read normalization belongs to `conversation/library/`; projection readers live under `serving/projections/`.
+
+## How To Use This Area
+
+Read this overview and the relevant file card before changing grammar. The standing verification intent requires mapper and engine coverage for parsing and tool convergence and requires production-seam fixture evidence before capability promotion. This card does not assert that the former suites still exist, that any tests were executed, or that inspected code is qualified CODE evidence.
+
+The capability owner still declares Codex reasoning/tools/diffs and Pi thinking/tool execution unverified, and declares Claude's surface unverified for a never-probed contract reason rather than a version-comparison reason. Those declarations are source facts, not independent confirmation of fixture qualification. No lifecycle authority was supplied for the retained pre-commit metadata or historical verification notes below.
+
+## Retained Non-Operative Metadata
+
+The following tables and historical status statements are preserved metadata. Their status cells and historical observations do not establish current coverage, acceptance, execution, or lifecycle state.
+
+### What Belongs Here
 
 | Path | Role |
 | --- | --- |
@@ -46,7 +109,7 @@ identity arrives in-band, and pi and eve have no sub-agent threads.
 | `pi.py` | Pi durable entries → items/tools/notices/outcomes; live tool upserts. |
 | `eve.py` | eve durable session stream → items/blocks/deltas/turn outcomes; the park is a notice. |
 
-## What Does Not Belong Here
+### What Does Not Belong Here
 
 | Nearby Thing | Belongs Instead In |
 | --- | --- |
@@ -55,80 +118,9 @@ identity arrives in-band, and pi and eve have no sub-agent threads.
 | Native evidence emission and the IPC seam | `serving/harness_control_*.py` and the native adapters. |
 | Dormant native list/read normalization | `mcp/src/agents_remember/serving/conversation/library/`. |
 
-## Structures Found Here
+The retained contract-path row is historical; the operative contract location is `models/conversations/`, as stated above.
 
-- A `HarnessProjector` protocol with four channel flags (`uses_native_pages`,
-  `uses_transcript_echo`, `eager_native_continuation`, `harness_id`) the engine reads to choose
-  hydration, zipper, and continuation behavior.
-- Parse-by-schema primitives (`required_object`/`required_list`/`required_text`) whose
-  `UnmappableShape` failure becomes preserved unknown-vendor evidence at the engine — malformed
-  known shapes never kill the stream and never guess semantics.
-- Four frozen mapper output types: `MappedItem`, `MappedBlockDelta`, `MappedTurnOutcome`,
-  `MappedUnknownVendor`.
-- Stable native identity per harness: codex item ids (turn parent on `nativeParentId`), claude
-  message uuids / `tool_use` ids / replay correlation uuids, pi durable entry ids and native
-  `toolCallId`s. No content hashes, timestamps, or array indices anywhere.
-- Split tool items (invocation first, result later) keyed by one stable id, converged by the
-  store's block union; codex full-item re-maps are identical under union.
-- Honest user-input provenance: `unknown-input` with request correlation where the harness
-  carries one (codex `clientId`, claude echo request id), always unknown-input for pi (no native
-  correlation exists); the engine's provenance batch resolves exact sources exactly once.
-- Sub-agent mapping: codex `collabAgentToolCall`/`subAgentActivity` items
-  and the agent-lifecycle notification methods upsert a shared `codex-agent-<threadId>` roster —
-  never optimistic (the parent thread can never roster itself, `idle`/unknown statuses mint
-  nothing, and an agent `turn/completed` mints an agent-bound turn-result but NEVER a
-  parent-scoped `MappedTurnOutcome`); claude correlates `task_*` frames by `parent_tool_use_id`
-  through a bounded binding registry, and off-shape collab/task frames degrade to preserved
-  unknown-vendor evidence, never a stream kill. `thread/started` left the codex silent set:
-  parent boot/resume silence now comes from `_map_thread_started`'s guards, not the drop table.
-
-## Operating Model
-
-1. The engine feeds a native-history page frame or a live evidence frame to the harness mapper
-   with an opaque evidence ref.
-2. The mapper parses the frame against its documented schema with exact required keys and emits
-   mapping outputs; unrecognized shapes return `MappedUnknownVendor` with a safe summary.
-3. Turn settlements emit `MappedTurnOutcome`, which the engine feeds to the canonical status
-   service as exact terminal evidence.
-4. Channels a harness does not have raise `NotImplementedError` through the bound protocol
-   (claude native pages fail closed stream/replay-only; codex/pi have no echo channel).
-
-## Main Flows
-
-### Native history mapping (codex, pi)
-
-1. Codex `thread/read` items map by type (user/agent message, plan, reasoning, command
-   execution, file change, MCP tool call); turn results mint `turn-result` items plus outcomes.
-2. Pi durable entries map by type (messages by role, compaction/model/thinking notices);
-   assistant `toolCall` parts and `toolResult` messages converge on the native `toolCallId`.
-
-### Live frame mapping
-
-1. Codex notifications discriminate on the CARRIED native method first (the
-   adapter carries `EvidenceFrame.native_method`), then params-key shape. `_SILENT_NOTIFICATION_METHODS`
-   drops the known codex 0.144.5 startup/lifecycle/status/telemetry burst BY METHOD
-   (`mcpServer/startupStatus/updated`, `thread/started`, `remoteControl/status/changed`, `warning`,
-   `configWarning`) → zero unknown-vendor rows on a stock open; a truly-unknown method still becomes
-   unknown-vendor WITH the method NAMED. Bare deltas resolve their target block through the item kind
-   at the engine.
-2. Claude assistant frames split text/thinking and mint stable-ID tool items; `tool_result`
-   carriers upsert the same item; result frames classify terminal outcomes. The mapper learns
-   the two installed-2.1.216 frame contracts first-class: `command_lifecycle` is strictly validated
-   against the captured 3-state contract (`command_uuid` + `state ∈ {queued,started,completed}`) and
-   mints NO timeline item (native history renders the command; the 3-state specimen is preserved as
-   prior art for the later slash-command consumers), a drifted state raising `UnmappableShape` → a VISIBLE malformed
-   row; `rate_limit_event` is shape-validated then dropped as telemetry (like codex rateLimits).
-3. Pi `tool_execution_*` events upsert live tool items by `toolCallId`; `message_end`/
-   `message_update` mint nothing — completed messages mint from durable entries.
-
-### Claude submission echo
-
-1. User submissions arrive through the adapter's exact submission echo (original text, exact
-   request id, replay uuid), mapped to user items keyed by the replay uuid.
-2. Replayed user frames on the evidence channel are refused here so no item is ever double-
-   minted; the engine zips echoes and frames by strict turn order.
-
-## Load-Bearing Files
+### Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -139,64 +131,7 @@ identity arrives in-band, and pi and eve have no sub-agent threads.
 | `pi.py` | pi grammar | Entry-anchored identity, live tool upserts, honest unknown-input users. | covered |
 | `eve.py` | eve grammar | Durable-stream mapping; one settlement per turn and the park is never one. | covered |
 
-## Local Invariants And Traps
-
-- A mapper never assigns ordinals/revisions/envelopes and never performs IO — purity is what
-  makes rehydration byte-identical.
-- Unknown shapes are preserved with native coordinates, never dropped and never guessed; raw
-  payloads never reach public items.
-- User-role items never gain a default producer; absent provenance records stay unknown-input.
-- Claude replayed user frames must raise `UnmappableShape` here — the echo channel owns them.
-- Pi live text is completion-anchored: no provisional identity is ever minted from an id-less
-  `message_end` frame.
-- Turn-result items mint only where a native settlement exists (codex/claude always; pi only
-  for failed/aborted turns).
-- Codex notification identity: the native notification METHOD is preserved end-to-end as
-  typed `EvidenceFrame.native_method` and is the primary discriminator — the known lifecycle/status/
-  telemetry burst is classified/dropped by method (never shape-guessed), and a truly-unknown method
-  is NAMED in the unknown-vendor summary rather than one anonymous "unrecognized params" box. The
-  drop-set is method-specific and item-less, so an item-bearing frame still reaches the shape branches.
-- Claude frame contracts: `command_lifecycle` and `rate_limit_event` are recognized-first-
-  class against their captured contracts (not tolerated strangers); `command_lifecycle` mints no
-  timeline row and a drifted state surfaces VISIBLY as a malformed row, never a silent tolerance and
-  never a stream kill.
-- Codex's live notification channel and its `thread/read` native pages emit DISJOINT id namespaces
-  for the SAME settled turn (live UUID/`msg_*` item ids vs positional `item-N`). The mapper faithfully
-  emits both and correlates NO channels (purity), so the native-history twin can only arise on this
-  codex hosted topology; the ENGINE, not the mapper, suppresses the twin of an already-live turn
-  (review finding F1, in `active/projector.py`, keyed on the shared `turnId`/`clientId`). Pi shares one namespace
-  across channels and claude has no native pages, so neither can produce the twin.
-
-## Evidence
-
-### Repo-Internal References
-
-The engine route drives these mappers and owns everything stateful; the strict contract
-validates every emitted product; the evidence substrate defines the frame products; the runtime
-fixtures record which shapes are gate-observed. The mapper suite pins every grammar.
-
-- The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence. [1]
-- The store converges the split tool items these mappers emit. [2]
-- The evidence/native frame products the mappers parse. [3]
-Historical evidence (retired with the d3610903 suite reduction): The runtime fixtures recorded the observed (never enabling) shapes per harness. These removed artifacts provide no current execution or capability-enablement proof.
-
-
-### Cross-Repo References
-
-No cross-repository implementation participates in this route. All three harnesses are local
-subprocesses reached through this repository's own adapters.
-
-No relevant cross-repo evidence found.
-
-### Docs References
-
-The resolved `Domain Documentation` registry has no entries. Each mapper names its schema
-authority (the codex app-server v2 generated protocol, the locked claude stream-json fixtures,
-the locked Pi RPC documentation); those are repository-owned and cited in the file sidecars.
-
-No configured domain documentation was available for this projector gate.
-
-## File-Level Onboarding Map
+### File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -207,19 +142,11 @@ No configured domain documentation was available for this projector gate.
 | `pi.py` | [`pi.py.md`](pi.py.md) | covered | Pi entry/event grammar. |
 | `eve.py` | [`eve.py.md`](eve.py.md) | covered | eve durable-stream grammar; the park is a notice. |
 
-## Child Overviews
+### Historical Verification Notes
 
-None. The six modules form one coherent mapper slice; per-harness detail lives in the file
-sidecars, not in nested overviews.
+Historical evidence (retired with the d3610903 suite reduction): The runtime fixtures recorded the observed (never enabling) shapes per harness. These removed artifacts provide no current execution or capability-enablement proof.
 
-## How To Use This Area
-
-Read this overview and the exact file sidecar first. Any grammar change requires the mapper
-suite plus the engine suite (tool convergence pins), and belongs behind the fixture gate:
-shapes without installed-runtime fixture evidence stay `unverified` in capabilities even when
-they map correctly.
-
-## Needs Verification
+Existing verification metadata remains pre-commit.
 
 - Codex reasoning/diffs/MCP shapes and pi thinking/tool-execution shapes stay capability-`unverified`
   until installed-runtime fixtures observe them through the production seam. Claude's surface is now
@@ -230,105 +157,23 @@ they map correctly.
   `pi:turn_start`/`pi:turn_end` unknown-vendor rows the pi mapper has never learned — the same
   fixture-drift class as the learned codex/claude frame contracts, on pi, to be taught in a follow-on.
 
-## Claude Interaction-Shape And Mutation-Diff Route Impact
+The earlier facade and engine-suite references describe historical verification, including retired suites; they do not certify present execution. The old line-count comparison and unchanged-behavior assertions describe refactor history rather than guarantees of the present source. No current lifecycle disposition is inferred from these notes.
 
-Claude projection now recognizes the native structured-interaction and interrupt frame shapes needed by the active/control contracts. Accepted interrupt correlation is required before an abort-style terminal result is classified as interrupted; other error evidence stays failed or unknown rather than being rewritten. Its stable mutation-diff facade now delegates Edit, MultiEdit, Write, and NotebookEdit to focused parsers over observed `tool_use.input`; malformed vendor shapes preserve raw input without inventing diffs, and MultiEdit identifiers retain original edit positions. Existing verification metadata remains pre-commit.
+### Child Overviews
 
-## Sub-Agent Mapping Route Impact
+None are identified by the assigned overview. Per-harness detail belongs in file cards; `_codex_collab.py` is an additional current source owner alongside the six modules listed in the retained tables.
 
-The mappers learned sub-agent frames: codex maps collab/roster items and agent-lifecycle
-notification methods into a shared per-thread roster (never optimistic — the parent can never
-roster itself, and an agent settlement never becomes a parent-scoped turn outcome), claude
-correlates `task_*` lifecycle frames by `parent_tool_use_id` through a bounded binding
-registry, and every mapper accepts the optional `parent_thread_id` demux context (only codex
-consumes it; claude identity is in-band, pi has no sub-agent threads). `thread/started` left
-the codex silent set — parent boot/resume silence is now guard-derived, not table-derived.
-Mappers stay pure; malformed agent frames degrade to preserved unknown-vendor evidence, never
-a stream kill.
+## Evidence
 
-## 260727-CHATS-IM-L2 Route Impact
-
-Codex native-history mapping no longer treats persisted sub-agent spawn/start activity as proof of
-current liveness. Those rows hydrate as `unknown` until adapter registry authority overlays
-current status. Pure mapping, item identity, and unknown-vendor preservation remain unchanged.
-
-## 260731-EFA-L2 — The Routers Are Flat, And "Well-Typed" Is A Value You Hold
-
-This is the route where the complexity limits bit hardest: a frame router is naturally a long
-`if type == …` chain, and both mappers had grown one. Neither was listed in a baseline — they were
-split. **Purity, schema-strictness and the vendor-honest fallback are unchanged**, and no frame maps
-differently than it did.
-
-**Codex (`codex.py`).** The single notification router became a cascade of narrow routers —
-`_map_codex_notification` → `_map_notification_params` → `_map_notification_item` /
-`_map_item_scoped_notification` / `_map_block_delta` — and the item router split by *kind* into
-`_map_thread_item`, `_map_prose_item`, `_map_tool_item` and `_map_collab_item`, each with per-type
-leaves (`_user_message_item`, `_reasoning_item`, `_mcp_tool_call_item`, `_markdown_item`). Two
-values carry what used to be threaded through every branch:
-
-- **`ItemPlacement`** (`origin`, `live`, `turn_id`, `created_at`, `evidence_ref`) — where a mapped
-  frame's items sit in the conversation, **before any item body is read**. It is the same for every
-  item in the frame, which is why it arrives once instead of per item.
-- **`_LiveItemContext`** — the same facts plus `item_id` and `phase`, i.e. what each individual
-  item mapper needs about the frame besides the item body itself.
-
-**`_CollabCall`** is the one to understand before touching the sub-agent path. It holds a
-`collabAgentToolCall`'s three identity fields — which collab tool ran, which agent threads it
-addressed, and what the item said about their states — **already proven well-typed**. Its purpose
-is to keep the shape check in exactly one place: *a `_CollabCall` in hand means the item was the
-documented collab shape*. `_collab_receiver_ids` returns `None` to mean "present but not the
-documented list shape", which is how the honest-fallback path stays reachable. Do not construct a
-`_CollabCall` outside `_collab_call_shape`; doing so would let an unchecked payload past the only
-gate.
-
-**Claude (`claude.py`).** The `task_*` sub-agent lifecycle split into `_resolve_task_identity`,
-`_task_lifecycle_state`, `_task_usage_block`, `_task_lifecycle_blocks` and `_agent_identity_tag_item`,
-with two schema assertions named as their own guards (`_require_command_lifecycle`,
-`_require_rate_limit_event`) and `_require_task_usage` returning the usage mapping or `None`.
-
-**`_TaskIdentity` carries a distinction the code previously kept only in local variable names**, and
-it is the fact a future change is most likely to break: it holds `join_key`, `subagent_type`,
-`description` **and** `retained_description`, because *what the replacing binding record keeps is
-deliberately not always what the roster row displays*. Every field prefers the frame's own evidence
-and falls back to what earlier `task_*` evidence already proved — a `task_notification` carries
-neither `subagent_type` nor `description`, and its roster upsert **must not blank what `task_started`
-filled in**. Nothing is guessed; absent evidence stays absent.
-
-## 260731-EFA-L7 — Codex Projector Facade And R16
-
-`projectors/codex.py` (1,223 → 704) is now a facade over `_codex_collab.py` (collab/roster/agent-thread/turn-completed mapping), with exports historically pinned by the facade suite, since retired. The silent-notification set gained `turn/diff/updated` exactly (R16): it routes to the non-transcript state and mints zero unknown-vendor items, while genuinely unknown vendor methods still produce addressable unknown-vendor evidence; historically exercised by the projector engine suites, since retired.
-
-## 260731-EFA-L9 Route Impact — Contract Imports Moved
-
-The per-harness mapper grammars now import the wire contracts from `models/conversations/` after the L9 monolith split; the projection readers they depend on moved to `serving/projections/`. Mapping behavior is unchanged.
-
-## 260915-CAPS-L8 Route Impact — A Fourth Mapper, And The Rule It Exists For
-
-`eve.py` joins the slice and `_EveProjector` joins `PROJECTORS`, so every registered harness id now
-resolves a projector. It declares the **durable stream as its only evidence surface**
-(`uses_native_pages`, `uses_transcript_echo` and `eager_native_continuation` all false), so both other
-channels fail closed for a harness that has neither.
-
-The rule this mapper exists for is the one a future change is most likely to break: **a turn boundary
-is not a session boundary.** eve emits `turn.completed` and then `session.waiting` on the same stream,
-and the adapter reports that park with adapter kind `completed` and a `completed` terminal result,
-because AR's terminal vocabulary has no word for "parked". The park is genuinely not a settlement. A
-mapper that forwarded that result would settle the turn twice — and, because eve emits
-`session.waiting` after `turn.cancelled` as well, would display a **cancelled turn as completed**.
-So `_settled` is the only constructor of `MappedTurnOutcome`, reached only by `turn.completed` /
-`turn.cancelled` / `turn.failed`, and `session.waiting` maps to exactly one session-scoped `notice`
-item with `turn_id is None`. A cancelled turn settles as `interrupted`; only
-`session.completed`/`session.failed` retire the release.
-
-Two smaller rules belong beside it. **Streaming text is one item, revised**: an `*.appended` frame
-mints its channel item empty and delivers the text as a block delta, and the matching `*.completed`
-frame revises that same item — one assistant item and one thinking item per turn, never a delta pile
-beside a duplicate aggregate. And **recognized control state mints nothing**: session/turn/step
-framing, `action.input.appended` and compaction/context-clearing are consumed *by name* through
-`SILENT_CONTROL_EVENTS`, so the most frequent frames in the stream do not become "unknown vendor"
-rows that hide the genuinely unknown ones — an unclassified event still lands as preserved
-`unknown-vendor` evidence. The frame's event type is read from the diverted payload's own envelope
-`type` field, not from `EvidenceFrame.native_method`.
-
-Scope note: eve exposes **no native-history page**, so the mapper's `map_native_frame` fails closed
-rather than inventing one. Durable replay is the stream cursor's job, in the adapter's route.
+- The engine consumes mapper channel flags and converts parsing failures into unknown-vendor evidence. [1]
+- The store converges split tool items by scoped block union. [2]
+- Evidence/native frame products and submission-provenance products define the inputs used by this route. [3]
+- Protocol bindings expose four registered projectors, three boolean flags, and fail-closed unsupported channels. [4]
+- Shared mapping outputs, schema checks, and producer-less input provenance leave canonical projection work to the engine. [5]
+- Codex uses method-first notification routing and shape-based item routing; its silent-method branch precedes item branches. [6]
+- Codex collaboration validates shared identity fields, guards parent lifecycle notifications, keeps agent settlements parent-independent, and exposes the historical spawn-status discrepancy. [7]
+- Claude owns a bounded binding registry, correlated task mapping, strict silent-frame contracts, exact echoes, mutation-diff parsers, and stamped/native result classification. [8]
+- Pi uses durable entry identities and native tool-call IDs, delays live message mapping, and preserves unrecognized live events. [9]
+- Eve revises text by channel, maps tools/interactions, keeps parking outcome-free, and also emits session terminal outcomes. [10]
+- Native acquisition requires returned item identity; engine twin suppression uses live turn/request evidence rather than correlating channels in a mapper. [11]
+- Capability source declares conservative unverified states and a contract-based Claude reason; inspection does not qualify fixture evidence. [12]

@@ -31,6 +31,355 @@
         }
       ]
     },
+    "10": {
+      "note": "The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:e146e2871f698c7f60efbbede1cd1420f1a8129a2f7d672a412c931ebcbd35e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pytest_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:bfb1b1a33e7318fac9f2713268904642fff57d513d1144dbd9e93705d2ca1728",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Applicable teardown validates two fresh checkpoint reports; not-applicable teardown records zero starts and requires no summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:233488614c3706c839a726964993767f127b48fb20025aae4bbd926902994571",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_teardown"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:d76260b1aa775928d439d2b393e85381ea3c187e9b3f75c4bc4db468ee1eb1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_started_teardown"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4145e3bfb88c4eb2ff3232e8dfbe207d7e66dc7",
+            "content": "sha256:7601efd9ed5fde34679dcc7b446ec068af1f7c705a0688407bf9c5cd31123ff1",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_catalog_consumers"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "content": "sha256:963661a9edce3c8f7ab6f0e089a4319bc4333fc66e0a693191d80c3698ae2f34",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The relay census covers reviewed observation authority, route handlers and wire submissions, with declared limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
+            "content": "sha256:8bc313d459cf9138c6518f45a02f1b3f68b8aad701df843175e431d491477f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_relay"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
+            "content": "sha256:f3225044152774e787d9673bd1b96dadd5b11f240cc4220ff1b665598039b67c",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
+            "content": "sha256:7ef23861e4551039c388600222fc2a2fa35c62f3b78fe694a0ddef0a46f680a1",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36e0741040143fd772354f575e189fa9baeda7aa",
+            "content": "sha256:b13d58a1e9fbdc708ccf86f903cb543fce8ceb4b5bc0297860c28ca7201f9a4c",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "mcp/tests/test_completion_relay_single_owner.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "content": "sha256:271d2d23357019e973438aeec81355449cae42d8c0e5c0f6ac4c79380fdf8a5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_statement"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "content": "sha256:4283e2bb761c34415d2c87bf643c62017dc2090c29c30cb06d18000c9f4b60bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "retired_statement_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_curation_policy_statements"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "content": "sha256:011882189a9bddb8d264807ae7bd704883b74273f8db6d73331f196839f827a3",
+            "locator": {
+              "end": 627,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "content": "sha256:8a1ec3a16709d860bee5ff85a7629913bfac5f3932ac24c1d429ebf2bf530e81",
+            "locator": {
+              "end": 782,
+              "kind": "line_range",
+              "start": 766
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Observer-health output preserves required nulls and bounded counter refinements in the dashboard contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:a2102606958f6917b63ecf4e51e9528fb6454f6ec65dabc7c6a0d32dd91975b3",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:a3107ed429865c0eaf25642269d97994ba2a0304ccb6f9a3d1a0b424439f89cc",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_observer_health.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:817ff95ebc72def85465e6f6d47b2bb0a2a0dae7242ec8c8f2211b7d5c50315d",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "content": "sha256:0f32e088d04addeb10f51efa2a18fe84430eb08a1bf3afc9bf2c6dff1a3d4b31",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "content": "sha256:61675ef8d759e1e5e956a285a61215789cf95098ba051424fac96f78796ccaff",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
+            "content": "sha256:82837766f8f62f680815b6cbe3a591ef1da097a48609dd85007fb3346047c7bb",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/python-test-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Case budgets are root declarations rather than overview-owned constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:3c08158a7017954bf06b4dd4ccdd5aefe17180ddc853fed7bbef05ff63e9ea7b",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Dagger owns the retained build and retry cache bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "content": "sha256:a6fdf020a130643ded458b7c7f1476a3750e8faedfe9301d241584f1451ac500",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "content": "sha256:0a43c8d5259c19788d88e03b08769ef39af3456bb44248728aab0fcd8e3e7dc0",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Canonical POSIX-string sorting retains duplicate path entries.",
       "targets": [
@@ -61,6 +410,214 @@
               "start": 278
             },
             "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Development dependencies and checkout import paths are distinct from installed product-package discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "content": "sha256:4958289f3e1dd0f91c7c27901a608eeaf04665588a5566fceb8e2374c8869770",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:7cf14af466c8dd63a6871322dca207c6861aed9732bbf169a9a85172dac6f1bc",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "content": "sha256:f72234ce3e65ff630303d30de11de6a1110c3dc749f07bd3f6c165160128aef9",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ddfbc85fc5f45313589051580d96912e39b3a7e",
+            "content": "sha256:a500dbafd07c3152de1eb1ca29dc220699d6b225160005b1113116953b6ba2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_certifying_pytest_bootstrap"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca7bccf1b647de37410f0f7bc147e1ffc5ba672f",
+            "content": "sha256:e18b41904ad1a73d27c3096530a68621734053c8e8c3ecc23f007d6438a7ca4f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "185c93e4054759978ad66881f4a7a01cfb1b69ac",
+            "content": "sha256:befe9d75f767e71243104c90c933e8506fca59bae48a6d85e2b48ee0eb73e535",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/pytest_certifying_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Root configuration classifies product and verification packages; full static scope covers tracked Python while behavioral metrics use product roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:f61cf8f9a051b605a4575cddd0ff12ed2045d6f2c788d24ed4784e861ffd2bde",
+            "locator": {
+              "kind": "symbol",
+              "name": "configured_package_authority"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_scope"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:c98a6cb375caa7f3c6ba6d5d0148b8f14656dcb1658db5bc1a924556b9823195",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d9312d8d6faed241258dc6c14a5d840ead76b0",
+            "content": "sha256:712ed6c40f27e9b7ad71dce5ef44eccfc1686ddbf642e5c72d75f58ad81d0998",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_result"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:18504cc1db56a7410235adcd6cdfaef198755b4a0d66847c9712221a621d33d6",
+            "locator": {
+              "end": 785,
+              "kind": "line_range",
+              "start": 781
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Exact-candidate cache reuse checks selection identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:f56a6361c0a3ade130f469394b4770a2fb3fc9ba6fcdd1ab7ff2dfd6c85b8af5",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:7dcd84bec869f8693513e96d5c17d40848bb9b2fedb0e88049a832eee8b11b9b",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
           "kind": "code"
         }

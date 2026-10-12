@@ -10,62 +10,27 @@
 
 ## Purpose
 
-This focused route owns atomic-series implementation selection per canonical series contract. Every
-series contract owns exactly one fingerprint-addressed activation record tracking its own
-`reconciling -> active` transition, so two atomic masters that share one protected code/external-memory
-source pair never share this state and never pause each other. It separates durable work existence
-from current exposure, binds that contract's selection to reconciliation-before-admission, and owns
-exact cancellation/terminal vacancy without placing lifecycle or commit evidence in the selector.
+This route owns contract-scoped activation for durable atomic-master work. It separates the existence of a canonical series contract from that contract's implementation selection: each contract has its own fingerprint-addressed snapshot of selection and release. Masters sharing a protected code/external-memory source pair do not share activation state. The selecting transaction reconciles sources before publishing `active`; the selector does not establish process liveness or supply lifecycle or commit evidence.
 
 ## Hot Path Summary
 
-`atomic_series_activation.py` derives the per-contract fingerprint from the canonical contract path,
-strictly observes one fingerprint-addressed record, refuses a record that is not this exact contract,
-archives corrupt authority, and publishes replace-in-place `reconciling|active` state for that
-contract alone. `atomic_series_activation_transaction.py` connects selection to the root-level
-resumable sync transaction: select reconciling, reconcile exact sources, then expose active for the
-addressed contract. A selection left mid-flight is reported as that state and never as the pass's own
-success, with the stuck contract, its publication time, its revision and both exits named in the
-summary. `atomic_series_admission.py` projects requested identity, `contractFingerprint`,
-activation facts, contract-scoped retry preconditions, and read-only status actions without mutation
-or any foreign-blocker concept. `atomic_series_activation_release.py` owns exact durable vacancy for
-one contract, and the terminal bridge ensures cleanup releases that contract's own selection while
-preserving every other contract's record.
+`atomic_series_activation.py` derives the fingerprint from the resolved canonical contract path, strictly observes the addressed snapshot, and publishes replace-in-place `reconciling|active` state. Missing snapshots are observed as vacant. Mismatched or malformed authority is unreadable; selecting repair preserves its evidence before replacement. A selected contract that is terminal is observed as vacant even before its stored record is durably released.
 
-CCR-R25 adds a pure public explanation layer to the selector. Status exposes the observed
-per-contract activation fact, while admission responses retain exact requested identity, the contract
-fingerprint, vacant/unreadable activation evidence, retry precondition, and a contract-bound read-only
-status action. The projection never treats logical selection as a live process, never names another
-master as a blocker, and never mutates activation bytes; selection, release, and synchronization
-remain the existing transaction owners.
+`atomic_series_activation_transaction.py` connects selection to the resumable sync transaction: publish `reconciling`, reconcile the addressed sources, check the contract's bases against the current source pair, then publish `active`. Incomplete reconciliation retains the selection and reports the stuck master and contract, publication time, revision, and the complete/cancel exits. A successful sync pass that still requires reconciliation is not implementation admission.
 
-## Operating Model
+`atomic_series_admission.py` provides the pure public explanation layer. It projects requested identity, the observed contract fingerprint and activation facts when available, retry preconditions, and a contract-bound read-only status action when its address is available. It explains vacant or unreadable observations without mutating activation bytes or treating another master as a blocker. Status exposes the observed activation fact without creating or repairing the snapshot.
 
-1. A manager/worker dispatch or atomic start/attach selects the canonical series contract.
-2. Selection records `reconciling` for that contract only; other atomic masters keep their own records
-   and their own tasks, processes, worktrees, contracts, branches, and journals untouched.
-3. The root sync transaction reconciles the exact current source pair and retains conflicts for
-   contract-addressed continue/cancel.
-4. Only an exact-current pair advances that contract to `active`; moved-again, incomplete, failed, or
-   skipped memory remains reconciling, and a pass that itself succeeded beside a mid-flight record is
-   reported as `atomic-series-reconciling` with the stuck contract, its publication time, its
-   revision, and both exits named in the summary.
-5. Explicit cancellation or exact terminal cleanup publishes durable `vacant` for that contract; no
-   other contract's record is read or cleared.
+`atomic_series_activation_release.py` publishes durable vacancy only for an exact recorded selection. `atomic_series_activation_terminal.py` bridges successful, non-dry-run terminal series operations to exact release; unreadable or unproven selection evidence is preserved rather than repaired by cleanup.
 
-## Invariants And Boundaries
+## How It Is Built
 
-- Task authoring never reads or waits on this route.
-- Activation state is per contract: multiple live series are normal, sharing one protected source pair
-  never couples two masters, and one selection never pauses or replaces another.
-- Queue projection observes the selector but owns no transition or recovery.
-- A reconciling record left by an incomplete source reconciliation is reported with the contract, its
-  revision, and both exits; a successful pass beside it is never reported as that call's success.
-- Contract presence, queue order, and old-path scanning never elect a master.
-- Malformed regular bytes are archived; nonregular entries are quarantined without following them.
-- The old flat `worktrees/atomic_series_activation*.py` paths have no compatibility forwarders.
+1. Atomic-master bootstrap, used by manager dispatch and first-leaf start, enters the selecting reconciliation transaction. Attaching an ordinary leaf with a parent series also activates that parent. Direct series attach observes activation and checks terminal cleanup, branch existence, and lineage; it does not itself select or reconcile the series.
+2. A new selecting sync publishes `reconciling` at this contract's address. Continue requires its exact reconciling owner; cancellation also permits replay against its exact last-released vacant record. These checks do not inspect another contract's selection.
+3. The resumable sync transaction owns source reconciliation and retained conflicts for contract-addressed continue/cancel. Activation records do not replace its journal or authority.
+4. Only a successful `synced` or `already-current` result whose contract bases match the current participating source tips advances selection to `active`. Failed, moved-again, or incomplete reconciliation retains `reconciling`. A successful pass whose external-memory base remains incomplete is reported as `atomic-series-source-pair-incomplete`; `_reconciling_result` changes a remaining `synced` or `already-current` state to `atomic-series-reconciling` and converts a zero return code to 2. The summary identifies the stuck contract, publication time, revision, and both exits.
+5. Explicit sync cancellation publishes durable `vacant` for the exact selected or last-released owner. Pause uses the same exact release authority and can report an independently observed missing snapshot as already vacant without writing one. Terminal release writes vacancy when readable evidence proves the exact owner; absent, unreadable, or unproven evidence is preserved. No release reads or clears another contract's record.
 
-## File-Level Onboarding Map
+### File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -76,9 +41,29 @@ remain the existing transaction owners.
 | `activation/atomic_series_activation_terminal.py` | [`atomic_series_activation_terminal.py.md`](atomic_series_activation_terminal.py.md) | covered | Terminal exact-release bridge |
 | `activation/atomic_series_activation_transaction.py` | [`atomic_series_activation_transaction.py.md`](atomic_series_activation_transaction.py.md) | covered | Reconciliation-before-exposure transaction |
 
-## Evidence
+## Invariants And Boundaries
 
-### Repo-Internal References
+- Task-document mutation does not read activation state. Durable task truth and current selection remain separate authorities.
+- Activation state is per contract. Sharing a protected source pair does not couple two masters' selection records, and selecting one does not pause or replace another. Genuine wave dependencies belong to the sprint execution graph.
+- Queue projection observes the selector and derives this contract's reconciling wait; it owns no selection, release, or repair transition.
+- A mid-flight reconciliation response names the addressed contract, publication time, revision, and complete/cancel exits. A successful individual pass does not grant implementation admission while that selection remains reconciling.
+- Contract presence, queue order, and old-path scanning do not elect a master through this selector.
+- Selecting repair archives malformed regular bytes. Nonregular entries are moved into an opaque archive without reading through them; ordinary observation, status, admission projection, and terminal cleanup do not perform that repair.
+- Explicit release refuses missing or unreadable selection authority. Terminal release preserves such evidence, and reports a release failure when an exception prevents durable vacancy.
+- The old flat `worktrees/atomic_series_activation*.py` paths have no compatibility forwarders.
+
+### Memory Refresh Validation
+
+`worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes the sidecar refresh checks and governing route-overview body/history checks with separately supplied evidence. The memory-quality controller calls it for the unconverted onboarding layout; converted layouts take the onboarding trace gate instead. This validation is outside the activation selector's transition authority.
+
+## Lifecycle Metadata
+
+The following pre-existing verification note is retained as metadata, outside the operative promises above. Its closeout, candidate-reconciliation, and index-refresh assertions lack lifecycle authority in the assigned source evidence; they are not a statement of this proposal's verification or acceptance status.
+
+- Commit-derived verification metadata awaits governed closeout; route membership and claims are
+  reconciled to the frozen candidate, and generated indexes are refreshed in this curator pass.
+
+## Evidence
 
 - The package marker names selection and source reconciliation as this route's authority. [1]
 - The selector keys one record per canonical contract, strictly observes it, publishes, quarantines, and projects only this contract's reconciling wait. [2]
@@ -88,11 +73,8 @@ remain the existing transaction owners.
 - Release publishes durable vacancy for this contract alone and refuses a missing exact selection. [6]
 - Public admission explains this contract's activation and retry evidence without selector mutation or any other master's state, bounding its public diagnostic detail. [7]
 
-## Needs Verification
 
-- Commit-derived verification metadata awaits governed closeout; route membership and claims are
-  reconciled to the frozen candidate, and generated indexes are refreshed in this curator pass.
-
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+- Selecting sync checks exact participating source bases before active exposure; incomplete memory retains its own refusal state. [8]
+- Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites. [9]
+- Terminal release preserves unreadable or unproven evidence and releases only the recorded exact owner. [10]
+- Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate. [11]

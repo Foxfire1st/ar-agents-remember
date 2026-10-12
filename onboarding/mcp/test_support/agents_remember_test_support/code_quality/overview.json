@@ -2,12 +2,12 @@
   "path": "mcp/test_support/agents_remember_test_support/code_quality",
   "references": {
     "1": {
-      "note": "Development commands, budgets, diagnostic metrics and isolation.\n\nAnchor: `# Python test policy and commands`",
+      "note": "Development commands, diagnostic metrics and isolation; the current policy document states 5,000/1,000 budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "6321de43731f72b2d339bd70b4d96eab67a7217b",
-            "content": "sha256:a85123f9aa59b6340adbb9b5d50e1b882ce06b6073b4e7076fb3814d9b2ba330",
+            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
+            "content": "sha256:1029d4dfd37571ed8f360d3d28e1fd4db037f934901867c0c9303763798d6549",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -20,16 +20,15 @@
       ]
     },
     "10": {
-      "note": "Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational \"without proof\" list.",
+      "note": "Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "content": "sha256:1112e7a5628a65ec3d1817c89eebef70dfb87d0abc685ab8bdbc3e1fd8c61817",
             "locator": {
-              "end": 492,
-              "kind": "line_range",
-              "start": 425
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -37,12 +36,23 @@
         },
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
             "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 592
+              "kind": "symbol",
+              "name": "_answered_quality_response"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -56,11 +66,10 @@
         {
           "anchor": {
             "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
-            "content": "sha256:3ce49a20f19472550af8664ba24c6ef8fae1490721a9b3c86878794e3064af7b",
+            "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
-              "end": 1025,
-              "kind": "line_range",
-              "start": 990
+              "kind": "symbol",
+              "name": "_attach_final_full_catalog"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -86,8 +95,173 @@
         }
       ]
     },
+    "13": {
+      "note": "Exact profile scope and suite execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:69af34017e036f71806aa871181ed78f092a1bb81047ab87db60c4b902bd3cbc",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Plan composition and typed command steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:1704f22493373002fa8d4e04e82689e5f352cccabe15ef43096c3eabd4bf3555",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Teardown proof from source applicability and exact result bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:2be5546aef0f74415275fdd9010b327d57dd4d936f33b281dab7c2c8bcb7b817",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Both catalog versions use the shared parser; retain the original deciding range.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4145e3bfb88c4eb2ff3232e8dfbe207d7e66dc7",
+            "content": "sha256:a1eef91e7e78de8276a5dccf3981ed51258f0f9c45705c72e02ce4faf3c9328c",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Catalog narrowing preserves removed consumers; parser errors remain named refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4145e3bfb88c4eb2ff3232e8dfbe207d7e66dc7",
+            "content": "sha256:5db21017679e10feef589354af3c3dec6f24a5225b91cdfa7897631c4731c40c",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 578
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Projection generation validates schema vocabulary and exact supplemental definitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:6bd406b0f45d499854d3d2dc25abf8262e6ad140e44ead99228a630b8257ada1",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:1d40fc985363eda8db8df6e94ff60adbb8380e4ca3f2f9b8fdbc7e003b1b7a7b",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:7393dc273f170b87eca4842c62a9f2f7fde41b310b5aed6985623cdea90ebac1",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 568
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Profile selection declares full mode explicitly and retains incomplete targeted inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d9312d8d6faed241258dc6c14a5d840ead76b0",
+            "content": "sha256:712ed6c40f27e9b7ad71dce5ef44eccfc1686ddbf642e5c72d75f58ad81d0998",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
+      "note": "Certifying publication and accepting consumers.",
       "targets": [
         {
           "anchor": {
@@ -104,17 +278,404 @@
         }
       ]
     },
+    "20": {
+      "note": "Repository declarations override catalog consumers and must match observed import/literal consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "content": "sha256:d719d643c5363958e702bca7d9467773c0de1214568e25077ac36d9eef8c85ab",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 383
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
+            "content": "sha256:42bcba63b917a3d69eb12515418928dc9f2283bd4a80265e2a52d07e168ba939",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Literal edges use deciding path/read predicates; standalone prose strings are excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:5eee940da88aaa61ca244cd273cab077f1716a52b41c227bafe9172e88ac70b3",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:fd2d150276e07da67bf5c05780208bd3ab39f9edffca1bf5d60dbacc699c4df0",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:6214e416b0823066662a0b89fe7d48c73f60a196b9400ff56ce5d2866a7716fa",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 542
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Canonical form and source-derived consumer completeness are separate catalog checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:edba11eb7c1a02cf08a0da79e1b9e03c77e34e583655c9be20e30aef6f045e0e",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Record comparisons state both populations; completion requires document status and completed steps; optional comparisons require inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0f0153648bbafbbff14c27cda8737ab12ce52b8b290769c3684c3da6bbffb5cf",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:1463b8360e77379f811e8bb3f039fedb2033d7a23503372f85e393d0abe6d63a",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 441
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:b65e076f64af2fd78c346f4bdddb6ff86de8eb21f737fbedbac49403ce2bc52e",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:2e25431d4a0cd8791d8b182f61b09d70ca16bd0486aba94567125429479a560e",
+            "locator": {
+              "end": 939,
+              "kind": "line_range",
+              "start": 872
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:ab81dfec9f556109d20004b277fb188ad0d1a33d2b5fa0024163bab2a7d9ff08",
+            "locator": {
+              "end": 1033,
+              "kind": "line_range",
+              "start": 958
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Instrument admissibility and byte-exact producer reproduction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:77d1c10e63fc0629e705ce45193ac052e4b56ba77df69e7fae60e57106304e79",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:12e76c6e57730a53b81664c9f241e071d7cd79ad3d8a7a1f25d6e9b9fb21edd8",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:bc3ecf06c79622da1abdc1828e57466b40d1fbfbfb77d3842600979e06cebbe7",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Helper test imports, source figures, historical Git pin and conditional record availability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:86c785b4eea752a55fe41885c850466e584eb39379b7658b9916e74fd8c6cc47",
+            "locator": {
+              "end": 1140,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:89bd910f54ed4e17237bfcfe4486b75024de4f133583dca85a328775783bbe07",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97d9c76a4a93ef976a7249a6c6fa078b080b4d6e",
+            "content": "sha256:58a7a911d0407fee295161967a9796681d729150b57ea0ace94b29fc28059c49",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Retry artifacts retain admitted identity, digest checks and passing-delta merge ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:3638afd8f62b8dce655f41b5fe36be87fcbe7581e461324dce71966a222c0dec",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:9546668d48f1caf82fe06b1711e79c52ae3ce2a8ed93431186afad0bd8adf0c3",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:cbcf813a538e20b0ee499c1b0f73aae8b28ce4a74f12489ac7c522447086f9ea",
+            "locator": {
+              "end": 557,
+              "kind": "line_range",
+              "start": 504
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "449554e3be13ac278df4e36c0735bdc32f285bd4",
+            "content": "sha256:5ff653b89d1015c0fb27509537c24b3d60ee6700ec75695b0832d48d78f759a9",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Child environments remove outer invocation controls through the executing caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:18fadf46a8cb488aa4798fd917fb4210c90fcd81ecdb1564d89a2302699a0774",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:b267cca601ca16b08c836faf69e98d4ed2aa7c02d7fc2e9a506eb8d9aeef4538",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Missing causal authority fails preflight without suppressing the selected population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c158d108f3cae60e00d483e150eb03860a716cf",
+            "content": "sha256:4e5a4ccf00cb5d7bc833eceb31353b52e59da75bf701fbc39c5b5ea34a76f073",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/causal_continuation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Root configuration declares the current 5,000/1,000 budgets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
-      "note": "Final memory adapter requires the selected four-code-terminal prefix.\n\nAnchor: \"class PreparedMemoryCertificationAdapter:\"",
+      "note": "Final memory adapter requires the selected four-code-terminal prefix and compares published producer bytes.",
       "targets": [
         {
           "anchor": {
             "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
-            "content": "sha256:723971a0a9919c33ec895bb9893af3c5aa251d4fd92655e795a6c708358f3fa2",
+            "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
-              "end": 808,
-              "kind": "line_range",
-              "start": 744
+              "kind": "symbol",
+              "name": "PreparedMemoryCertificationAdapter"
             },
             "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },
@@ -123,7 +684,7 @@
       ]
     },
     "6": {
-      "note": "Finalization consumes original selected fifth-certificate inputs.",
+      "note": "Finalization consumes original selected fifth-certificate inputs. Continuation imports and memory observation retain the existing range co-target.",
       "targets": [
         {
           "anchor": {

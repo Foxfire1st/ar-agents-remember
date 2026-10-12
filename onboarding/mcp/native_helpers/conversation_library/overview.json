@@ -2,7 +2,7 @@
   "path": "mcp/native_helpers/conversation_library",
   "references": {
     "1": {
-      "note": "The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives.\n\nAnchor: \"export const PROTOCOL_VERSION\"",
+      "note": "The helper protocol declares exact helper pins, the 1 MiB bound, operation field validation, fixed handler-error copy, and shared serve/probe/sign/page primitives; handshake versions are informational and blank lines are skipped.",
       "targets": [
         {
           "anchor": {
@@ -16,11 +16,24 @@
             "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:1d74fef13be9f413a50f5c75c4808ded484278fa18b7b539bf27c6a40b79b1d1",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus.\n\nAnchor: \"the exact locked helper versions are protocol constants\"",
+      "note": "The helper suite contains exact pin assertions, informational-version handshake cases, malformed/wrong-version and cross-operation request cases, and a hostile secret/path corpus; it does not contain a request-byte-bound case.\n\nAnchor: `the exact locked helper versions are protocol constants`",
       "targets": [
         {
           "anchor": {
@@ -34,11 +47,24 @@
             "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:d5f9044417e1e04eea9afc94e7fbe6d35b99ce15f0d5cad3fd5dcbf2f3de77a1",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "The Python host and Claude/Pi ports drive these entries on the production seam.\n\nAnchor: \"class ConversationLibraryHelperHost\"",
+      "note": "The Python host runs handshake and operation through the repository helper entry, and the Claude/Pi ports consume that seam and mint private resume targets.",
       "targets": [
         {
           "anchor": {
@@ -50,6 +76,143 @@
               "start": 91
             },
             "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:73c399d4f903c5ab5c3c4e89b49a205c8a3c4116130f9369655df8b7c97a37d7",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:0df1c3a36cd4dbc6120b1bc79a76ade75d47f5497bf7d1a7c12b63858f8c6b67",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
+            "content": "sha256:7e311c9f6fca81446f4d8d67d22f91d548a52d5c04b2522630a39a4ec88cbe6e",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Package identity, engine, scripts, direct pins, lock root, and strict compiler configuration are declared locally.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279753d178eb10cbc4d3a55fd3b69f2240df7e31",
+            "content": "sha256:37720fbf49980669123039b2ddcd2ebee3d6ed02bbf4c686d3247932c4181344",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/native_helpers/conversation_library/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f2c9a17ecf7fcbc59b0593da8ad8b7ba7902d82",
+            "content": "sha256:b9ce7c6a6126fe825fe8173767dbc313434671144a05770aa1e755dba0ea5996",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/native_helpers/conversation_library/package-lock.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efd1d32439510b15098fbe28ef2c7d6b6945f3ca",
+            "content": "sha256:ad187ec8e49fda0c6b6a032e2970a2a094d84c0f4008fc38946331233b22d806",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/native_helpers/conversation_library/tsconfig.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Claude implements list, sub-agent directory candidates, metadata handling, transcript parsing, ordinal reads, and native session-info resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:62512293921b7bf591f501f511b553074e21ac175713d3fcfafd7edece452fd0",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Pi implements scope listing, session-id lookup, branch reads, typed missing/empty failures, record mapping, and file/header resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:76e0c7bc98b43d08e5e69dc214e996839bd4731be87a08e281c33f24e5f0b0d8",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The helper capability gate calls list after preflight and selects support on successful execution rather than version equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:90c6c2db607de17dd35deeba455becbe1c6bff9bf8d3d58853a89bb53f1a0e6a",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
           },
           "kind": "code"
         }

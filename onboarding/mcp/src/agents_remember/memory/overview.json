@@ -450,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 369,
+              "end": 371,
               "kind": "line_range",
-              "start": 369
+              "start": 371
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -468,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d68379df8d103579c63217019f84307ef244b41c",
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
             "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
             "locator": {
               "end": 25,
@@ -895,6 +895,417 @@
         }
       ]
     },
+    "146": {
+      "note": "Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval.\n\nAnchor: Package ownership charter",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efc073000dc65803fb024200db57f962af308567",
+            "content": "sha256:1bbea6ae1cf9d478fa6a3543348677d5c62f0785375ebf40359d20c0f3dfc7d9",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "147": {
+      "note": "Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation.\n\nAnchor: `_converted_tree_refusal`, `_prepare_stage_validate`, `_publish_validated_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "content": "sha256:d3e116a96e6d7929b31fe3c88ea4d9b85e6c85ded5dd86bb71b855d1ca40c500",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_tree_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_stage_validate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "content": "sha256:16574456357e2ebd9f54cb1c9f92f87d55f506ae015b435dc8ea01fa24abebc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_validated_tree"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "148": {
+      "note": "Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two.\n\nAnchor: `_converted_base_payload`, `_converted_adopt_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "content": "sha256:eb2963d90eda099691facce8ee9412d683057ae44ae0123d49dd5788efed4b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_base_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "149": {
+      "note": "Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_legacy_format_target"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "150": {
+      "note": "Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion.\n\nAnchor: `directory_snapshot`, `_capture`, `_clear_index_flags`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4704ae2a186d2b6381f58a2cf3af63ecdd54cfdc",
+            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4704ae2a186d2b6381f58a2cf3af63ecdd54cfdc",
+            "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4704ae2a186d2b6381f58a2cf3af63ecdd54cfdc",
+            "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_index_flags"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "151": {
+      "note": "Parser completeness is distinct from validator integrity and history files are retained by path.\n\nAnchor: Build charter, `ParsedTree`, `_parse_knowledge_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:6641ed1aa7ae6ceaded818186410fec4a228bd97743b0ecaa5f122bd3d2db579",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_knowledge_file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:a1eb9c5a1437d966c6e34ca359b106e674ec24809253dfff719653964bbabf01",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "152": {
+      "note": "History lookup returns every matching path-bearing row and proof absence is informational.\n\nAnchor: `history_row`, `invariants_without_proof`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
+            "content": "sha256:a85e6eaa7c8b474a58179a87ebe3f4d365c18c9173121d58ddf112b156392c15",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
+            "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "153": {
+      "note": "The cache refuses a Git-worktree location and evicts by age/size around temporary-file publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:9993be682c3ec3bee41ec6e5d539a6e237a1192441f2303b640aa25d4a2558c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "154": {
+      "note": "Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables.\n\nAnchor: Projection ownership rules",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:d226cb22e493cf2444da027d4976fc8347f1d13eadcd11cfda37f1f81fc4136c",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "155": {
+      "note": "One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3.\n\nAnchor: Effective schema constants, `generation_of_database`, `INDEX_FORMAT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
+            "content": "sha256:5c6e8a09e11cbf4efa9a50fa99c65e54e027de8c855d4daa7c6dd314d2f466c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "156": {
+      "note": "Read handles and identity enumeration retain their separate boundaries.\n\nAnchor: `open_read_only_database`, `list_invariants`, `list_families`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "157": {
+      "note": "Selection freezes directly containing families before expansion; paging preserves total and cumulative counts.\n\nAnchor: Selection policy, `_page_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:6660bfeaa8127fea648109a3d2171d91c5408ff5912044ff0b1164285cb4c14d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_counts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:4dceabfd8944036288aeca1846240829d46008e3812b6bc33a09c3affb73c3a7",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "158": {
+      "note": "Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range.\n\nAnchor: Observation limits, `_observed_line_range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "159": {
+      "note": "Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence.\n\nAnchor: `partition_attribution`, `licenses_absence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:b3e1bf008fc491cc6ad79df0f47f7105c276a5706bfe16ebbfb60ae8b78ff7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "licenses_absence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "16": {
       "note": "The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals.\n\nAnchor: \"What is never remembered is whether the repository still *holds* the tree\"",
       "targets": [
@@ -908,6 +1319,208 @@
               "start": 17
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "160": {
+      "note": "Path/entry equality is conditional on supplied entries, while unrepresentable changes require partial state.\n\nAnchor: `TreePaths.__post_init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:4154a5b4572da33d272e7b79af2e1ae505aefebd76a6e860ce22603770073d2d",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "161": {
+      "note": "Requirement approval records exact manifest reads and distinguishes approved, not approved and unknown.\n\nAnchor: `_manifest`, `requirement_approval`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "162": {
+      "note": "Packet owner confinement and recorded locator observations support gate memo invalidation before byte rechecks.\n\nAnchor: `_approved_packet_ref`, `changed_observations`, recorded gate evaluation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_observations"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:1a736938bb143fe885b1b77068c514d9095b68204e5ccec11ad7f5261084b698",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "content": "sha256:d4387f176962b40e3cb6e1fe5d8de862e52bfdb35cd9373e00d9af9faf7a7878",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "163": {
+      "note": "Converted card authoring prepares all cards, reports refusals, then writes passing Markdown and sidecar files consecutively.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_card_references"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "164": {
+      "note": "Legacy export preserves recorded anchor identity; crossing keeps authored conflicts explicit and separates mechanical edits.\n\nAnchor: Export contract, merge item rules",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:8a26529117edd277b5706515cb8e3213f2dfc22d992b79511bf12b64f5fb56c0",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/legacy_db.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:edbfad6aae72ef24617310539aeb9fecd626838ed3bc0f67cd3b91e8cc8a55c5",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "165": {
+      "note": "Census validation precedes per-file atomic writes; baseline-last creation has an explicit interrupted-creation state.\n\nAnchor: `CensusWriter._commit`, `create`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:3a5ab3cf5ba3b6bb9f40ffd53852788c2243e45a01af2177eecc0f858bd4b672",
+            "locator": {
+              "kind": "symbol",
+              "name": "create"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "166": {
+      "note": "Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions.\n\nAnchor: Review record ownership boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
+            "content": "sha256:c9be157ccbc8404de705b65ce4fc01801cc6e4c4344a882f7d9efacfc371e0d1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "167": {
+      "note": "Durable task reports have one shared root, distinct from the single-file publication route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
           },
           "kind": "code"
         }

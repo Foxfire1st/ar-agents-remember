@@ -1,440 +1,27 @@
 # dashboard/src/data/ — Cockpit State And Authority Overview
 
-## Recorded reviewer judgments
-
-The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. Subject answers and catalogue outline rows carry these facts through their existing routes; a browser-missing current field is a failure, not a default. Transport, paging and store owners remain independent.
-
-- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
-
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| sourceRoute            | `dashboard/src/data/`                            |
-
 ## Governing Overview
-
 [dashboard/src overview](../overview.md)
-
-## 260928-MIK-L33 The Family Mirror Carries The Change Facts Of A Tree Comparison
-
-[`reviewFamily.ts`](reviewFamily.ts.md) mirrors MIK-R33's change facts
-(`models/knowledge/review_change_kinds.py`): `ReviewChangeKind`, `ReviewChangeFact`, `ReviewChangeMark`,
-`ReviewMemberChange` (one member occurrence by the roster's `member_id`, with its three facts, `proof`, `text_differs`,
-`range_unresolved`, the server-derived `primary` and `marks`, and `evidence`, `unknown_reasons` and
-`membership_reasons` kept apart) and `ReviewFamilyChanges` (the guarantee's fact, the optional `members_total`, the
-returned occurrences), carried on `ReviewFamilyContextEntry.change_kinds` for a tree comparison only. The
-transport casts the body as before; an omitted field stays `undefined`, and a rendering (`panels/review/changeTriage.ts`)
-never recomputes a fact. The five new types are imported from `reviewFamily.ts` directly, not re-exported through
-`review.ts`. The keymap child route gains the reviewer's zone and chords (its overview's MIK-L33 section).
-
-- The mirrored change types and the entry's optional facts. [1]
-
-## 260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers
-
-[`reviewLane.ts`](reviewLane.ts.md) exports `readFileClassification(repo, master, leaf, comparison, path)`,
-a promise-based `file=<path>` read of the tree-view route. It resolves to `ready` or `unavailable`;
-a thrown transport error becomes `unavailable` with the owner's problem, never a rejected promise.
-The per-hunk marker scope keeps one answer per changed path per surface, so reopening the same file
-asks nothing. `useReviewFileClassification` is no longer an exported hook. A dataset review names no
-comparison and its marker scope asks nothing.
-
-
-- One file's classification as a single read; a transport failure is `unavailable`. [2]
-
-- The scope that keeps it per surface, only for a tree comparison. [3]
-
-## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
-
-[`reviewLane.ts`](reviewLane.ts.md) carries the server's one classification of a tree comparison's
-changed paths as served snake_case types. `useReviewLane` asks `lane=files` for Unexplained changes,
-Unknown attribution and measured path buckets. The surface supplies that one answer to main/technical
-attribution facts and captures it for comparison-page filters and per-file badges; no source explorer
-labels remain. `readFileClassification` separately asks `file=<path>` for one changed path's hunks,
-classes, links and reasons through the marker scope. The lane hook keeps each answer bound to its
-URL; a superseded answer never draws, and a missing requested value is unavailable, not an empty
-lane. A dataset review names no comparison, so the lane hook and marker scope ask nothing.
-
-[`reviewIntentSummary.ts`](reviewIntentSummary.ts.md) now carries `attribution`, the lane's file-level count
-(`ReviewLaneSummary`), from the same summary response, on the counted/partial state and on the refused state alike
-(ruling Q6); the entry therefore never asks for it more eagerly than for the intent counts (MIK-R32 rule 9).
-
-
-- The adapter's own statement: the server classifies once and this file only carries the answer. [4]
-
-
-- The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison. [5]
-
-- The summary carries the lane's count on both answered states. [6]
-
-## 260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address
-
-One new adapter, [`knowledgeReader.ts`](knowledgeReader.ts.md) (carded, governed here), serves the dashboard's
-Knowledge area (MIK-R29, `panels/knowledge-reader/`): the answer types of every reader view (the selection block with
-`codeTree`, `codeSource`, `codeNote` and `pinnedCommit`; the bounded directory's `children` and `subtree`; subtree pages
-with their continuation; truth views with `outgoingState` and a timeline whose sources carry their own states; the
-selector's `commitsState`), the reads of `/api/knowledge/reader/<view>`, and the reader's address. **The address is
-the URL hash** (`#knowledge?repo&commit&path|id|census|view…`), because production serves only `/`: `parseReaderHash`
-reads it (any other hash is `null`) and `readerHash` writes it with commit and path or ID always spelled out, so every
-link is a navigation and a view can be shared (rule 5). `readerGet` returns every typed answer whatever its HTTP
-status, including a 400 `invalid-request`, and throws only on a transport failure or a body with no state (a 503
-from a process without the reader), so a refusal is shown as what it is and never as an empty view. The keys are the
-backend's camelCase document keys; the adapter issues GETs only. Since 260928-MIK-L79 `TreeChild` also carries
-the optional `hasKnowledge`, `hasOverview` and `coverage` fields the Knowledge tree renders. A failed memory
-enumeration omits the two presence fields (an unknown presence is not `false`) and gives each directory an
-explicit `coverage.unavailable` with its detail, never a counted zero.
-
-- The shareable hash, read and written. [7]
-- A typed answer returned whatever its status; only transport failures throw. [8]
-- The selection block every answer carries. [9]
-
-Since `260928-MIK-L37` the adapter's `IncomingLink` carries `sourceSubject`: the record a `history_row` source is
-about, which the truth view links to, because a row has no page of its own (MIK-R29 rule 5).
-
-- An incoming link may carry the record its history-row source is about. [59]
-
-## The Tree View Adapter
-
-[`reviewTrees.ts`](reviewTrees.ts.md) is the client of `GET /api/review/trees`, the reviewer's tree view of a leaf whose
-memory is converted.
-
-- **What the answer carries.** The four Git trees and their pinning refs, each knowledge side's state (`available`,
-  `unavailable-history`, `legacy-unavailable`) and index state, the code sides of a reopened comparison, the Git diff of
-  the memory trees grouped by record and by source path, the currentness of each side, the worklist view with its items
-  and history rows as named types, and, when invariants are named, their realization and proof entries located on both
-  code sides (`ReviewTreeEntry`, `ReviewTreeEntrySide`). Every key is snake_case.
-- **The request.** `reviewTrees` addresses a comparison by number, by `history=recorded` or not at all (the live one),
-  and names invariants for their entries. It never sends a path or a tree ID. It passes an optional abort signal to the
-  transport.
-- **Read states.** `reviewTreesRead` keeps `trees`, `not-converted` and a refusal apart and reports any other body as
-  unreadable in the shared review vocabulary. `loading` is set only by the hooks.
-- **Dataset reviews make no tree read.** `treeComparisonNumber` reads the comparison number from the payload's
-  limitation token `review:trees:<n>`. The workspace enables `useReviewTrees` only when the payload names one and pins
-  the read to that number; `useReviewTreeEntries` returns `null` without one.
-- **A superseded read is aborted.** Each run of a hook's effect has its own `AbortController`, aborted when the task
-  context or the address changes and when the component unmounts. The abort cancels the request in flight, which the
-  server sees as a disconnect, so it stops computing a view nobody shows. `useReviewTrees` also drops an answer whose
-  sequence number is not the latest.
-- **A transient refusal is retried.** `reviewTreesRetryingBusy` asks again while the answer is a refusal with the code
-  `reviewer_busy` or `inputs_changing` (`TRANSIENT_CODES`), waiting the delays of `BUSY_DELAYS_MS` (1500, 2000, 3000,
-  4000, 5000, 6000 and 8000 milliseconds) between the reads, at most `BUSY_RETRIES` (7) times. The hook keeps
-  returning `loading` during the retries and shows `unavailable` only with the last answer. An abort ends the wait and
-  starts no further request.
-- **Tests.** [`reviewTrees.test.ts`](reviewTrees.test.ts.md) runs over the real captured body
-  ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) and asserts that it holds no camelCase key.
-  [`reviewTrees.supersede.test.ts`](reviewTrees.supersede.test.ts.md) proves the abort of a superseded read and the
-  bounded retry.
-
-- The module comment: what the adapter carries and the three answers it keeps apart. [60]
-- The answer of the route. [61]
-
-- One entry on both code sides. [62]
-
-
-- The request, addressed by number, recorded or invariants, with the optional signal. [63]
-
-
-- The transient codes and the retry delays. [64]
-
-
-- The bounded retry of a transient refusal. [65]
-
-
-- One answer as a read state. [66]
-
-
-- The comparison a payload names; without it no tree read is made. [67]
-
-
-- The entries hook aborts a superseded read and returns null without a comparison. [68]
-
-
-- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
-
-- The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
-- A superseded request is aborted and only the newer answer is shown. [71]
-- Loading stays shown during the retries. [72]
-- Unavailable is shown only after the bounded number of retries. [73]
-
-- No camelCase key in the real body. [74]
-
-
-## 260921-ICR-L44 The Family Mirror Carries Each Source's Locator, Ranges And State
-
-`reviewFamily.ts` mirrors the server's member-source reference with three new declarations —
-`ReviewSourceLocator` (the server's `file` / `line_range` / `symbol` locator kinds),
-`ReviewSourceLineRange` and `ReviewSourceLocatorState` — and `ReviewFamilyMemberSource` now carries an
-optional `locator` (travelling with the address), required `resolved_ranges` and `locator_state`, and
-required `role`/`rationale`. `review.ts` re-exports the three new types with the rest of the family
-vocabulary. The review transport casts bodies to these types without a runtime decoder, so the mirror is
-the whole client-side contract; no rendering reads the new fields yet.
-
-- The three locator declarations. [15]
-- The member source carrying them. [16]
-
-## Recorded reviewer catalogue
-
-useReviewCatalogue.ts owns the reviewer's catalogue read (since `260921-ICR-L47` the task entry no longer reads it; it reads the changed-intent summary through reviewIntentSummary.ts instead). The read is keyed on the comparison's identity, preserves complete recorded subjects, counts and distinct failure states, and suppresses rows from another comparison while the current one is pending. intentEntryRevalidation.tsx holds the entry's re-validation generation (re-show, return from the reviewer, reviewer refresh), with no event system.
-
-- `useReviewCatalogue` owns the behavior described above. [17]
-- The entry's summary read and its re-validation generation. [18]
-
-## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
-
-The live-leaf "committed" change-set read used to swallow its own refusal detail, so a refused read rendered
-byte-identically to an unanswered one — the defect `260921-ICR-L16` routed here and R12/R24 both landed
-without taking. `260921-ICR-L32` applies the R16 treatment to this client: the rejection handler in
-`data/changeset.ts` no longer clears the counters and stops, it carries the refusal's own code and reason
-through to the caller, and `files.ts` follows the same shape for the reader. A read that is still in flight
-is a **third** state and is reported as one (`data-review-state="loading"` with its own sentence), so
-"loading", "refused with a named code and reason", and "answered with counts" are three distinguishable
-renderings rather than two. The owning route's cases assert the rendered code, the rendered reason, and that
-the control still opens what it names.
-
-## 260921-ICR-L25 The Change-Set Client Carries The Leaf View's Own Recordedness
-
-`data/changeset.ts`'s `TaskChangeset` gained the leaf view's `state`/`stateDetail`, and they are what
-keep an **unrecorded** range apart from a **measured empty** one (register B6). A `committed` read of a
-live leaf has no landed commit to read yet; the serving route answers that state in the body rather
-than refusing it with a `404`, because a `404` for a state the change-set bar probes on **every** live
-leaf is a browser console error on the page whose accepted criterion is zero. The client's part is
-deliberately thin and that is the point: both fields are **optional** (so the enclosure-scoped
-`taskChangeset` and the master read are untouched), and `stateDetail` is the server's own sentence
-carried to the caller **verbatim** rather than summarised here — one vocabulary, not two. The rendering
-consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` shows
-`unrecorded` as its own state and **withholds the `+0 −0` total**, since a zero of nothing is not a
-measurement.
-
-## Current Structural Identity Contract
-
-`taskIdentity.ts` derives canonical references from projected real task documents. `sessions.ts`
-stores document+role binding separately from runtime correlation, and `railModel.ts` constructs the
-default Chats hierarchy from task containment. `terminal.ts` posts structural assignment; leaf keys
-remain display/context helpers and never serve as hosted-seat addresses.
 
 ## Purpose
 
-### 260731-EFA-L23 Route Delta
+This route owns browser projections and the authority boundaries consumed by the dashboard. It normalizes terminal catalogue rows, retains session and per-seat cockpit state, reconciles server facts, coordinates launch, set, submit and lifecycle operations, and supplies derivations for task navigation, rail placement, commands, attention and visual state. Components render these facts; the enduring architectural intent is that they do not invent a second catalogue, delivery ledger, lifecycle authority or durable conversation database.
 
-L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows.
+Read clients also belong here even when they retain no global state. Review, change-set, requirement and Knowledge adapters carry the server's question, identity, answer and refusal vocabulary to their consumers. Their TypeScript mirrors are not general runtime schema decoders: transport acceptance and each caller's admitted answer states must be distinguished from complete payload validation.
 
-This route owns the browser-side state and authority boundaries consumed by the dashboard UI. It
-normalizes terminal catalog rows, keeps session and per-seat cockpit state, reconciles the daemon's
-catalog, drives launch/set/submit lifecycles, and exposes pure derivations for rail, task, command,
-and state-grammar surfaces. Components may project these facts, but must not invent a second
-catalog, delivery ledger, or lifecycle authority.
+This overview governs the data plane beneath dashboard/src. The keymap, active-conversation and conversation-library directories have their own child overviews. Chats UI composition belongs to session-cockpit; review and Knowledge rendering belongs to their panel routes. The inherited placement decision keeps dev cockpit scenarios under the root overview because they are bounded fixture/transport seams rather than another product architecture. Legacy sessionGroups ownership was retired in favor of rail derivation and canonical Chats rendering; that historical placement decision does not establish the current details of every consumer.
 
-This overview is the strategic owner for the data plane so the root and panels
-overviews can remain compact. It also records the retirement of the legacy `sessionGroups` model:
-role/spawn hierarchy and attention are now derived by `railModel.ts`, while product-facing grouping
-and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
+## Hot Path Summary
 
-## Runtime Identity And Recovery
+1. terminalOpen.ts sends the identity-addressed POST to /api/terminal/<sessionId>. It classifies network, HTTP, protocol and server outcomes, checks the acknowledged session and kind, rejects contradictory harness/control claims for raw terminals, and requires an accepted row's label and running status.
+2. sessions.ts materializes createSession only after that opener returns an accepted server row, then broadcasts the catalogue change. Catalogue hydration reconciles browser rows with server evidence. Inspection focus and the live action target are separate concerns.
+3. The dashboard and per-seat stores supply rail, stage, inspector, composer, status and attention projections. taskIdentity.ts derives repository-qualified references from real projected task documents; railModel.ts places seats through those references and task containment rather than treating leaf display keys as hosted-seat addresses.
+4. Submit, adapter answer, set, task assignment, terminate, cleanup and withdrawal use their dedicated server authority routes. Ambiguous delivery retains identity and operator text rather than authorizing a blind resend or a local-only withdrawal.
+5. Review entry counts come from reviewIntentSummary.ts. Opening the reviewer loads its subject catalogue and review payload. A payload's review:trees:<n> limitation identifies the tree comparison for supplementary tree and lane reads; consumers that have no comparison disable those reads.
+6. Knowledge navigation is addressed by #knowledge hashes. Reader calls carry the selected repository, memory selection and subject; typed refusal states remain answers rather than becoming empty views.
+7. Catalogue invalidations and development scenario generation changes control ownership of asynchronous results. A retired request or scenario must not overwrite the successor surface.
 
-- `buildIdentity.ts` owns the executing bundle fingerprint and a pure tri-state comparison with the
-  server's optional shipped-dashboard identity; it never reloads the page itself.
-- `harnessCatalog.ts` validates the narrow pre-session `id`/`name`/`detected` envelope and preserves
-  network, HTTP, protocol, valid-empty, and ready distinctions. Request timeout, cancellation, and
-  Retry belong to the dialog-local hook rather than a global store or poller.
-- `terminal.ts` separates WebSocket transport loss from durable terminal exit. Only an explicit
-  server exit ends the session; a boot-owned reattach consumes each identity once, rejects stale
-  callbacks, and replays resize before buffered input without a timer loop.
-
-## Authoritative Session Open
-
-- `terminalOpen.ts` is the sole browser authority for `POST /api/terminal`. It preserves the exact
-  requested identity, validates HTTP and protocol outcomes, and returns a normalized accepted
-  server row or one typed failure. A raw request must return neither harness nor control state;
-  contradictory server evidence fails closed.
-- `terminal.ts` is now the transport/facade layer over that opener. `launchFlow.ts` delegates to the
-  same authority, so the raw button, harness chooser, and contextual launch callers share one
-  response grammar instead of reconstructing acceptance locally.
-- `sessions.ts` materializes and broadcasts a session only from the accepted server row. Network,
-  HTTP, protocol, identity, and server-declared failures leave the registry unchanged; a request is
-  never enough to create a ghost row.
-- The `/dev/bench` injector in `dev/cockpitScenarios.ts` supplies request-matched raw and harness
-  responses through the real client boundary. It does not weaken production validation or grant a
-  second open authority.
-
-## Route Model
-
-### Catalog And Session Identity
-
-- `sessions.ts` owns `OpenSession`, the catalog-backed registry, live-action `activeId`, connection
-  registries, leaf/lifecycle attachment patches, and cross-tab catalog-change notifications. One
-  field is deliberately NOT catalog-sourced: `liveTurnWorking?` carries the
-  focused seat's own conversation-projection live-turn signal, merged at the view layer only
-  (`SessionsView`) — the registry itself never writes it, so the accepted-server-row materialization
-  rule above is unweakened. `stateGrammar.ts`'s `seatVisualState` prefers it over the sweep-lagged
-  catalog `turnState` (a streaming turn must never read settled `turn-ended`) but only AFTER the
-  terminal/fault/blocked-on-human/wait guards, so it can never fake liveness over a real end state.
-  The pending-interaction twin rule (review finding N1):
-  `OpenSession.controlPendingInteractions?` is the ADDITIVE plural (multiplexed harness sub-agent
-  pendings) beside the parent-thread singular slot, and every attention surface —
-  `stateGrammar.ts`'s blocked-on-human guard, `announcer.ts`'s focused-seat suppression,
-  `railModel.ts`'s question triage — derives from `sessions.ts`'s `sessionHasPendingInteraction`
-  (singular slot OR non-empty plural), never the singular slot alone, or a seat blocked SOLELY on a
-  sub-agent approval goes dark.
-- `catalogPoll.ts` is the single catalog read/reconcile boundary. `CockpitShell` owns both its
-  refcounted interval and eager/cross-tab reconciler for the shell lifetime. Remote terminate is
-  removed locally and excluded from the confirming read so a stale echo cannot resurrect it.
-- Cockpit inspection focus is deliberately separate from `activeId`: landed rows remain
-  inspectable, but only a running row can own the action/reload route through `preferLiveSession`.
-- `sessionCockpitStore.ts` owns ephemeral per-seat UI evidence, drafts, queue state, focus, poll
-  health, and layout intent. The inspector's product default is closed; responsive geometry is a
-  separate concern and must not rewrite deliberate operator intent.
-
-### Reliable Submit And Authoritative Withdrawal
-
-- `submitClient.ts` is the whole-message submission boundary. It retains exact request ids and
-  drafts across route errors, distinguishes accepted/queued/rejected/unsupported truth, reconciles
-  ambiguous outcomes, and politely announces focused-seat receipts.
-- `submissionLifecycleClient.ts` polls authoritative submission state and owns withdrawal. Pop-back
-  is not a local queue edit: the client resolves the last queued request, calls the bridge with the
-  expected epoch, applies only an authoritative withdrawn result, and retains recovery/endgame
-  evidence when convergence is uncertain.
-- Queue, submit history, withdrawal recovery, composer draft, and rail/stage notices are projections
-  of the same per-seat store. A failed or ambiguous operation must not move the active route or
-  discard the operator's draft.
-
-### Lifecycle Cleanup And Honest Residuals
-
-- `sessionLifecycle.ts` keeps detailed terminate outcomes, focus-independent stop residuals, and
-  landed-cleanup outcomes. A successful terminate may still carry an informational control-stop
-  residual; it is not reclassified as failure.
-- When landed cleanup returns no authoritative result, the exact `{id,label}` target snapshot is
-  retained in `cleanupFailure` and remains visible/retryable outside the collapsible rail. Partial
-  success keeps both closed and skipped rows/reasons.
-- Exited and retired rows are catalog evidence rather than live PTYs. Landed rows remain read-only
-  inspectable until authoritative cleanup removes them.
-
-### Structured Conversation Projection
-
-- [data/conversation](conversation/overview.md) owns the **reconstructable active-conversation
-  projection**: a pure authority reducer (cursor-ordered apply, eventId+cursor dedupe, block-delta
-  revision gating, gap→re-page tolerance, same-revision→reset, replace-page rehydrate — never an
-  optimistic durable item) plus a thin store orchestrating page/stream/recovery/LRU. It holds only a
-  browser projection rebuilt from the landed L1 page/stream contract and the L3 control routes.
-- [data/conversation-library](conversation-library/overview.md) owns the **reconstructable
-  previous-conversation library projection**: list/preview and the exact-open flow whose focus fires
-  only on `opened` catalog proof, with the caller-stable requestId reconciled under one id.
-- Both are separate, reconstructable stores (R1): reload/pages/events rebuild them from server/native
-  authority; there is no IndexedDB/localStorage/SQLite conversation index and no durable browser item
-  authority (the only persisted UI bit is the hide-thinking boolean). The renderer consuming them is
-  the [session-cockpit/conversation](../panels/session-cockpit/conversation/overview.md) grammar.
-
-### Controls, Keymaps, And Accessibility
-
-- `capabilityCatalog.ts`, `setClient.ts`, and the set/launch helpers separate pre-session envelope
-  truth from exact-session control truth and preserve pending/clamped/refused evidence.
-- [data/keymap overview](keymap/overview.md) owns effective keyboard bindings, browser-reserved
-  rejection, the immutable F6 focus escape, and Emacs/Vim composer profiles.
-- `announcer.ts` is the shared polite/assertive store. Urgent transitions from one hydration are
-  committed as one batch so synchronous seats cannot overwrite one another before assistive
-  technology observes them.
-
-### Dev-Bench Authority Boundary
-
-The `/dev/bench` cockpit scenarios replace transport only. Scenario switches revoke unresolved
-catalog, capability, snapshot, submission-poll, withdrawal, and connection ownership by generation
-before seeding the successor fixture. These reset exports are dev-only authority seams; production
-code must not use them as ordinary recovery APIs.
-
-The shared `dashboardStore.reset()` is the one full dashboard-projection reset used by
-`ScenarioPlayer`. Its single Zustand transaction increments `gen` once and restores every
-scenario-owned projection to its clean initial value, including `closeoutQueues`. This is dev/test
-scenario infrastructure: production does not call `reset()`, and production snapshot/delta queue
-ingestion, ordering/filtering, scheduling, and lifecycle authority remain unchanged.
-
-### 2026-07-24 Resilient Boot And Steady-State Work
-
-- `fetchWithTimeout.ts` aborts a hung browser socket. `inflight.ts` owns only per-key single-flight
-  lifetime: concurrent boot readers share result or rejection, then the identity-guarded slot clears
-  on settle. Repository, harness, terminal, and capability catalogs use the pair.
-- `sessions.ts` preserves state and row identity for a byte-identical catalog beat, while the
-  authoritative poll still replaces any row whose content differs from a local pre-apply.
-- `streamLiveness.ts` gives state and conversation EventSource channels a visible-tab watchdog: sleep
-  is positive evidence, ordinary silence earns at most one quiet cycle, and never-open replacements fail
-  honestly instead of retaining a live cue.
-- A queued receipt is acceptance evidence rather than pre-dispatch proof. The lifecycle authority alone
-  enables withdrawal; dispatching/unknown records wait for a terminal word under the bounded window.
-- Every representable pending adapter interaction uses the direct exact-session route with
-  bridge-epoch evidence. Structured questions send an all-or-nothing answers map; permission,
-  arbitrary-choice, and composer modes send one response string. Lifecycle gates do not transport
-  adapter answers.
-
-### 260731-EFA-L4 Typed Sub-Task Rows And Mirror-Checked Fixtures
-
-- `taskHierarchy.ts` — `ParentTaskMatch.ref` is a **`SeriesSubTaskNode`**, no longer the collapsed
-  `TaskSubTaskRefNode`. Those are two distinct server models (`projection.py::TaskSubTaskRefNode`
-  and `::SeriesSubTaskNode`, both `extra="forbid"`) that the browser mirror used to fold into one
-  interface, and the fold was not free: it invented a `createdAt` on master rows the server never
-  stamps, and lent `linkedLifecycleId` — the cross-series jump — to series rows that never carry
-  one. `findParentTaskMatch` reads `series.subTasks`, so its match is a SERIES row by construction;
-  the narrowed field just says so. `types/projection.ts` now declares both models plus a
-  `SubTaskRow` union for the renderer that shows either.
-- `orderedByCreation` is now **exported** and is this route's single creation-order sort.
-  `panels/DetailPanel.tsx` carried a byte-identical second copy (its own `function
-  orderedByCreation`) and now imports this one instead. The rule is **all-or-nothing**: rows are
-  reordered only when EVERY row carries a `createdAt`, so a partially-stamped list keeps its
-  authored order rather than sorting the stamped rows to the front. A row type that declares no
-  `createdAt` at all — a master's `TaskSubTaskRefNode` — therefore passes through untouched by
-  construction. It is an order-preserving safety net, not the thing that establishes the order:
-  `observer/snapshots.py::_series_subtask_nodes` already applies the same all-or-nothing rule
-  server-side before the rows are served.
-- The route's test suites no longer author their own wire nodes. **Six** of the route's seven
-  changed suites — `interactionAnswer`, `railModel`, `seatEvents`, `setClient`, `store`, and
-  `taskIdentity` — now import the shared builders from `test/fixtures/wire.ts`, which removed the
-  casts that let a fixture assert past the mirror (`as unknown as LifecycleProjection`,
-  `as TaskDocNode`, `as ObserverEvent`, `as never`). The seventh, `taskHierarchy.test.ts`, builds no
-  wire node at all — its only change is the same `TaskSubTaskRefNode` → `SeriesSubTaskNode`
-  narrowing as its source. The cost of the casts is measured rather than hypothetical: a test
-  asserted `refusedPolarity === "amber"` against a fixture that set the field itself on an
-  `extra="forbid"` model, and three tests built a master `TaskDocNode` carrying `createdAt`, which
-  no server model declares. Both compiled, because an assertion turns off excess-property checking.
-- `store.test.ts` is the one suite in the route where the conversion changed what is proven, not
-  just how the fixture is written. It consumed the snapshot as
-  `snapshot as unknown as WorkspaceProjection` — a double cast that turned off assignability, so
-  the fixture could drop a field the store reads and nothing here would notice. It now goes through
-  `test/servedProjection.ts::asServedProjection`, whose parameter type is the check. Its
-  hard-coded `expect(state.metrics?.lifecycleCount).toBe(2)` also became
-  `FIXTURE_LIFECYCLES = projection.lifecycles.length`: the snapshot grew from two lifecycles to six
-  once `contract.test.ts` began requiring every member of every closed vocabulary to be exercised,
-  and six states need six lifecycles.
-
-## Invariants And Boundaries
-
-- **Fixtures are checked against a generated producer contract.** Every wire node a dashboard test
-  builds comes from `test/fixtures/wire.ts` and is type-checked against `types/projection.ts`, which
-  is generated and stale-checked from the Pydantic projection schema. `test/contract.test.ts` measures
-  the separate hand-maintained sample against that mirror
-  `fixtures/snapshot.json` in three directions, and `test/wireFixtureGuard.ts` sweeps the tree for
-  the one-token opt-outs plain `tsc` cannot see (a cast, a `@ts-expect-error`, a literal that lost
-  freshness through a variable, `Object.assign`, `JSON.parse`). `wire.ts` and `snapshot.json` remain
-  hand-maintained fixture/sample artifacts, while the producer-to-TypeScript link is generated. The
-  tests therefore hold fixtures and sample coverage to the generated contract; the generator and
-  stale check hold the contract to the producer schema. Check it with `npm run typecheck`
-  (`tsc -b`) — a bare `tsc --noEmit` proves nothing in this repo, because the root tsconfig is
-  solution-style and compiles no files while still exiting 0.
-- The terminal catalog and bridge responses are authoritative; browser state is a projection and
-  cache, never a replacement history database.
-- Session creation is response-authoritative: only a validated accepted server row may enter the
-  browser registry, receive focus, or become a delivery target. Failed requests create no row.
-- One shell-level catalog driver/reconciler serves every route and tab. View remounts must not create
-  a second timer or listener.
-- `focusedSessionId` may name a landed/ended row for inspection; `activeId` must name a live row for
-  actions. Catalog hydration must not steal deliberate landed focus.
-- Reliable submit and withdrawal preserve request identity. Never resend blindly after an ambiguous
-  boundary and never implement pop-back as a local-only deletion.
-- Operator text, agent-bus messages, lifecycle control, and adapter interaction answers remain
-  distinct authority channels. The structured conversation UI consumes
-  adapter-normalized history/resume from the landed L1/L2/L3 server contracts; it never scrapes or
-  duplicates vendor TUIs, and it holds only a reconstructable projection — no durable browser
-  conversation index and no optimistic durable item authority.
-- Controlled sessions default to the structured `ConversationSurface`. The runner line-log survives
-  only as the default-off read-only terminal-diagnostics drawer and the legacy-raw body. UA-1
-  history/index/resume is now served by the `conversation/` and `conversation-library/` projections
-  documented above.
-
-## Task-Body Currentness And Report Addressing
+## Construction And Ownership
 
 `useTaskDocumentBody` hydrates longer/full body content by path and body revision without replacing
 current summary identity, status, progress or review aggregates. A matching body revision can restore
@@ -444,34 +31,121 @@ not a second transport owner. `taskReports.ts` still lists recorded starts in on
 the relocated page passes each reader target the path inside the task root rather than its physical
 projected file path. None of these display changes grants canonical task or report write authority.
 
-## Hot Path Summary
+The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. Subject answers and catalogue outline rows carry these facts through their existing routes; a browser-missing current field is a failure, not a default. Transport, paging and store owners remain independent.
 
-TES-L6 adds sprint-qualified command-seat projection here: terminal rows carry stored
-repository+sprint provenance, `railModel.ts` groups architect/orchestrator/manager by that pair,
-and unbound historical rows remain in a migration-only bucket. For concurrent-sprint grouping or
-ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focused tests.
+### Sessions, catalogue and transport
 
-1. `terminalOpen.ts` validates the sole open request and yields an accepted server row or a typed
-   failure without mutating browser state.
-2. `sessions.ts` commits only the accepted row; catalog reconciliation then keeps terminal truth
-   current while data-layer stores derive focus, lifecycle, control, and delivery
-   evidence without replacing daemon truth.
-3. The canonical Chats cockpit projects those stores into rail, stage, inspector, composer, and
-   status surfaces.
-4. Submit, answer, set, attach, terminate, cleanup, and withdrawal operations cross their dedicated
-   authority routes before local state commits.
-5. Cross-tab invalidations trigger one confirming catalog read; generation guards discard results
-   owned by a retired dev scenario.
+sessions.ts owns OpenSession, the registry, activeId, attachment patches, connection registries and cross-tab catalogue notifications. createSession generates the requested identity and label, delegates opening to terminalOpen.ts, and leaves the registry unchanged on a failed result. terminal.ts supplies terminal transport and structural assignment; launchFlow.ts participates in the shared open flow. The inherited sole-open-authority intent belongs to terminalOpen.ts, not to locally reconstructed acceptance in each launch caller.
 
-## Child Route Onboarding Map
+The opener's concrete identity checks cover session id, terminal kind and the requested harness. Raw terminal responses may carry neither a non-null harness nor a non-null controlState. Other accepted row fields are normalized from the server response; the phrase 'exact requested identity' must not be expanded into an assertion that every optional request field is compared byte-for-byte.
 
-| Child route | Governing overview | Responsibility |
-| --- | --- | --- |
-| `dashboard/src/data/keymap/` | [keymap overview](keymap/overview.md) | Static/effective keyboard bindings, focus zones, browser safety, and composer profiles. |
-| `dashboard/src/data/conversation/` | [conversation overview](conversation/overview.md) | Reconstructable active-conversation projection: pure reducer, resumable stream, store/LRU, formats. |
-| `dashboard/src/data/conversation-library/` | [conversation-library overview](conversation-library/overview.md) | Reconstructable previous-conversation library projection and the exact-open resume flow. |
+catalogPoll.ts owns catalogue reading and reconciliation, including refcounted polling and eager/cross-tab reconciliation. The inherited shell-lifetime policy calls for one driver and reconciler rather than timers introduced by view remounts. preferLiveSession restricts the action route to a running row, while focusedSessionId may retain a landed or ended row for inspection. Successful remote termination is removed locally and excluded from its confirming read so a stale catalogue echo does not resurrect it. Equal catalogue content preserves existing row/state identity; changed authoritative content must replace a differing local pre-apply.
 
-## File Onboarding Map
+Terminal WebSocket loss is separate from durable terminal exit. terminal.ts recognizes an explicit server exit control frame; losing a socket alone does not mean the session ended. Reattachment consumes a serving boot identity once, guards superseded socket callbacks and replays resize before buffered input. This recovery is boot-owned rather than a periodic reconnect loop.
+
+buildIdentity.ts owns the executing bundle fingerprint and comparison with the optional server dashboard build identity; the pure comparison does not reload the page. harnessCatalog.ts validates the narrow pre-session id/name/detected envelope and distinguishes ready, valid-empty, network, HTTP and protocol outcomes. Signal-less boot reads share an in-flight request and have a 10-second request bound. Caller-signalled reads retain separate ownership; dialog cancellation and retry are caller concerns. fetchWithTimeout.ts bounds hung requests and inflight.ts owns per-key sharing only until settlement, with identity-safe slot removal rather than a persistent result cache.
+
+### Cockpit state, attention and lifecycle
+
+sessionCockpitStore.ts owns ephemeral per-seat UI evidence, drafts, queues, focus, poll health and layout intent. The inherited inspector default is closed; responsive geometry must not overwrite deliberate operator intent. Exited, retired and landed rows are catalogue evidence rather than live PTYs, and remain inspectable until authoritative cleanup removes them.
+
+liveTurnWorking is a fresher conversation-projection signal merged for the focused view, not a catalogue field written into the registry. stateGrammar.ts considers landed, terminated, exited, failed-control, human-blocked and waiting guards before using that signal. It therefore cannot override an actual end, fault or wait with apparent liveness. sessionHasPendingInteraction combines the singular parent-thread slot with the non-empty plural sub-agent slots. Attention, announcements and rail question triage must preserve that combined meaning so a seat blocked solely on a sub-agent approval remains visible.
+
+announcer.ts supplies shared polite/assertive announcements. The inherited accessibility intent batches urgent transitions from one hydration, preventing synchronous seat changes from replacing one another before observation, and suppresses redundant focused-seat prompts using pending-interaction evidence.
+
+sessionLifecycle.ts retains terminate outcomes, focus-independent stop residuals and landed-cleanup outcomes. A successful termination can retain an informational control-stop residual without becoming a failure. Cleanup without an authoritative answer retains the exact id/label target snapshot in cleanupFailure for visible retry; partial success preserves both closed rows and skipped rows with their reasons.
+
+### Submission, withdrawal and controls
+
+submitClient.ts is the whole-message submission driver over the shared per-seat store. It carries immutable request identity and text, distinguishes accepted, queued, rejected and unsupported outcomes, reconciles uncertain results and announces focused-seat receipts. A browser fetch rejection is ambiguous: automatic resend is authorized only by explicit pre-dispatch evidence, using the same request id and immutable text, not by guessing from HTTP status or error wording.
+
+submissionLifecycleClient.ts owns authoritative submission lookup, polling, epoch handling and lifecycle observation. submissionWithdrawal.ts owns withdrawal targeting and orchestration over that transport and evidence. Withdrawal resolves the queued request and sends its expected bridge epoch; it is not a local queue deletion. Only authoritative withdrawn evidence allows the corresponding local projection. Recovery preserves newer drafts and withdrawn text rather than silently overwriting either. A queued receipt proves acceptance, not that dispatch has not begun; authoritative lifecycle facts determine withdrawability. Dispatching or unknown outcomes wait for a terminal result under the bounded reconciliation policy, retaining endgame/recovery evidence when convergence is uncertain.
+
+Queue rows, submit history, withdrawal recovery, composer drafts and notices are projections of the same per-seat state. Failure or ambiguity must not discard the operator's draft or move the active route. Operator text, agent-bus messages, lifecycle controls and adapter answers remain separate authority channels.
+
+capabilityCatalog.ts, sessionCapabilities.ts, setClient.ts and launch/set helpers separate pre-session discovery from exact-session control truth and preserve pending, clamped and refused evidence. The inherited adapter-answer rule uses direct exact-session routes with bridge-epoch evidence: structured questions send an all-or-nothing answers map, while permission, arbitrary-choice and composer modes send a response string. Lifecycle gates do not transport adapter answers. The keymap child owns effective bindings, browser-reserved rejection, the immutable F6 focus escape and Emacs/Vim composer profiles.
+
+### Task identity, hierarchy and artifacts
+
+taskIdentity.ts derives a canonical repository/path reference only from a projected task document with a repository and a recognized tasks/<repository>/ path ending in .json. sessions.ts stores task-document and role binding separately from runtime lifecycle correlation. railModel.ts uses document references, task containment and role eligibility to place sprint, master and leaf seats; reviewers additionally require the corresponding parent match. Missing, unresolved or ineligible bindings are detached rather than fabricated into a task hierarchy. Landed rows have completed placements. Diagnostic spawn ancestry remains a separate model.
+
+The older TES-L6 repository+sprint provenance account is historical. Present rail placement is document-based: sprint orchestration documents, master documents and their leaf containment are the deciding owners. Historical unbound rows remain relevant migration context, but the current unattached collections must not be described as exclusively historical migration buckets.
+
+taskHierarchy.ts keeps SeriesSubTaskNode separate from TaskSubTaskRefNode. ParentTaskMatch.ref is a series row because it is read from series.subTasks. orderedByCreation sorts only when every row has a truthy createdAt; otherwise it returns authored order. Rows whose model has no creation timestamp are not made sortable by borrowing another model's fields. The inherited server-first ordering policy makes this browser helper a preservation boundary rather than a new ordering authority.
+
+requirements.ts lists and reads requirement documents using repo/master/document context, and resolves reserved requirements/ addresses against the registered listing. Its low-level readRequirement also accepts and forwards a path argument; this client alone does not prove arbitrary-path rejection. Registered-document admission is a server/consumer contract that must be checked at those owners before asserting complete enforcement. Requirement rendering must retain the backing document identity rather than grant authority to arbitrary Markdown links.
+
+taskArtifacts.ts discriminates notes, requirements, task-report and decisions targets. Notes may address a folder or note; requirements retain document plus path; reports retain role/request and task identity; decisions retain their supplied projected content and identity. The shared reader target is broader than the historical two-way notes/requirements union.
+
+### Reconstructable conversations
+
+conversation/ owns the active-conversation projection: its pure reducer applies cursor-ordered events, deduplicates eventId/cursor evidence, gates block deltas by revision, requests re-page on retained gaps, resets on conflicting payloads at the same revision and rehydrates from replacement pages. It creates no optimistic durable item. The store coordinates page, stream, recovery and bounded retention/LRU over server/native authority.
+
+conversation-library/ owns paged historical lists, previews and exact-open tracking. It does not mark a conversation active itself. Focus is permitted only by opened operation/catalogue proof, with a caller-stable requestId used for reconciliation. The inherited R1 boundary is reconstructability: reload and server pages/events rebuild these projections, with no durable browser conversation index. The hide-thinking preference is the inherited persisted UI exception. Controlled sessions use the structured conversation surface; runner line logs belong to the default-off read-only diagnostics drawer and legacy raw body, rather than becoming a duplicate vendor TUI history authority.
+
+conversation/agents.ts recognizes roster items by backend identity prefixes plus notice/system/agent predicates. Other agent-tagged notices, including selected-child history state, remain timeline items and do not mint duplicate seats. Terminal agent statuses alone authorize final-message previews.
+
+streamLiveness.ts supplies a visible-tab watchdog for state/conversation EventSource channels. Timer suspension is positive sleep/freeze evidence; ordinary silence spends at most one quiet resubscribe per episode of observed life. Hidden tabs are exempt from judgment, and handshake traffic must not re-arm the silence backstop into a repeating loop. Failed replacement subscriptions follow the ordinary error path instead of preserving a false live cue.
+
+### Review and change-set readers
+
+review.ts is the public read-only Intent Reviewer client. It mutates no dashboard store and carries omitted fields as omitted rather than fabricating attribution or an identity. intentReview asks canonical task context and optionally a recorded invariant/family subject; without a selector it asks the task's source inventory. The browser does not choose the comparison dataset by a filesystem path. intentReviewEntries asks task context alone and supplies recorded selector identities with before-only, after-only or both presence and labelled catalogue totals. Its refusal is a normal typed outcome; it does not remove reachability of an admitted task-context review.
+
+reviewTransport.ts is the shared review decoder used by intent, entries, source-content, trees, lanes and intent-summary reads. It makes one GET, reads JSON regardless of HTTP status and accepts a body with a string state. This is shallow transport recognition, not proof that the complete body satisfies its TypeScript type. Callers admit their own states and required fields. A typed refusal retains code, reason, offending input and next action. The closed failure tokens are not-initialized, unavailable-history, validation, authority, not-found, domain-refused, network and unreadable; unknown non-empty codes remain domain-refused with their code unchanged. reviewer_busy and inputs_changing map to unavailable-history. Loading and known-empty are not failures. Intent-only refusal classification may support a separately requested source inventory, never an automatic substitute chosen by this client. files.ts retains the non-2xx throwing semantics of its separate getJson.
+
+Review source inventory preserves exact textual paths, non-UTF-8 path bytes, changed status, mode change, content classification, partialness, generation trees and reasons. Measured-empty, unavailable and partial are distinct meanings. Source expansion echoes the inventory's before/after code tree IDs and exact path; it does not resolve a replacement generation. It carries present, absent, binary, symlink, submodule or unavailable sides; optional text is the mirrored server contract, not a runtime type guarantee. currentness separates current, superseded and unmeasured. path_bound names requested_generation or leaf_change_set; admission distinguishes changed entries from attributed_unchanged realization context. Unchanged context never becomes an inventory changed-file count.
+
+Review pagination echoes opaque server cursors without constructing or parsing them. The present collection union is knowledge | family_members; only knowledge is cursor-less walkable. family_members continues a specific family's roster cursor. records was retired with the review matrix and is no longer an offered page, although its refusal codes can still be decoded. carriedPage normalizes omitted and null page values; requested-page refusal remains separate from an empty page. continuationOf offers a next action only when a cursor and positive remainder exist. Page totals retain selection versus walk basis, scope and server counts; reset wording uses the refusal code so a foreign cursor is not called a moved comparison.
+
+history admits only recorded and is omitted for live reads. previousBindingDigest names the identity being replaced, never the identity to substitute for the current candidate. reviewQuery declares its wire spelling once. Its empty-string normalization specifically covers that refresh digest; selectors, history and continuation have their own presence checks, not a universal empty-string filter.
+
+reviewFamily.ts carries revision selection, authored guarantees, bounded roster pages, member occurrence identities and source references. Locator kind, resolved ranges, locator state, role and rationale travel as supplied facts; unresolved locators never gain guessed ranges. review.ts re-exports the locator vocabulary. Tree-only change_kinds carries intent/implementation/membership facts, proof, text_differs, range_unresolved, server-derived primary/marks and separate evidence, unknown and membership reasons. The five change types are imported directly from reviewFamily.ts rather than through review.ts. Renderers may order and count these facts, not recompute their classification. Absence of family_context is distinct from a measured no_family_recorded result; applicability labels likewise remain optional, with absence meaning no supplied label. Displayed treatments are direct, historical, candidate and unresolved; labelled context preserves the true other subject without importing its judgment into this review.
+
+reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, memory diff grouped by record/source, currentness, worklist/history linkage and realization/proof entries on both code sides. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. Hooks abort superseded reads; the leaf-wide hook also uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
+
+reviewLane.ts carries server classification of measured paths and hunks without recomputation. File buckets are attributed, unexplained or attribution_unknown; hunk linkage is range intersection, not coverage. Unknown knowledge/range reasons stay explicit. The two destinations open comparison-bound change-set pages filtered by the held lane answer, separating unexplained changes from unknown attribution while retaining distinct file and hunk facts. Missing requested values are unavailable rather than an empty lane. Hooks retain answers with their URLs and suppress superseded results. readFileClassification supplies the same per-file answer as a promise, converting thrown errors into unavailable; intentMarkerScope.ts retains answers per surface/path and makes no request without a tree comparison.
+
+reviewIntentSummary.ts is the entry's summary read, not a catalogue-size or line-total derivation. Counted, partial and unavailable remain distinct, with unavailable carrying refusal rather than zero counts. Tree attribution counts travel in the same answer on counted/partial and refused states, never through a more eager entry read. Task-local facts and revalidation generation govern refresh; unrelated workspace publications do not constitute a new task answer. intentEntryRevalidation.tsx uses local context state for re-show and reviewer refresh, with a no-provider generation-zero/no-op behavior.
+
+useReviewCatalogue.ts keys answers by task/record and generation and rejects superseded responses. A generation reread quarantines prior entries and outline; catalogueForComparison also suppresses incompatible semantic fields synchronously. The observed generation includes code trees and known knowledge snapshots. Its current request calls intentReviewEntries with repo/master/leaf only: history and generation affect the hook key, not the wire request. Missing entries/totals in an entries body are defaulted or derived locally, so the implementation is more permissive than an unqualified claim that complete recorded counts are always preserved.
+
+changeset.ts carries task/leaf recordedness and verbatim stateDetail, preserving unrecorded versus measured empty. comparisonChangeset and comparisonFileDiff additionally address a recorded review comparison by number, without substituting a live or committed leaf range. Master net reads carry optional generation pins, published generation identity, currentness and integrated scope; master file expansion threads the same pins rather than re-resolving a newer tip. Its own decoder reads refusal bodies regardless of status, accepts non-null JSON on success, and throws ReviewTransportError carrying named failure facts otherwise. This is not full runtime validation of a successful change-set. The inherited rendering rule withholds +0 −0 for unrecorded ranges and distinguishes loading, refusal and answered counts; fresh rendered verification was not performed here.
+
+### Projection stability, fixtures and development boundaries
+
+servedAges.ts mirrors the server volatile-age set, including elapsedSeconds. Stable equality ignores those keys while retaining structural content and arrival anchors; display ages advance from served evidence rather than creating structural changes from render clocks.
+
+The inherited fixture policy links generated types/projection.ts to the producer schema and requires wire builders, the manual snapshot sample, contract coverage and fixture opt-out guards to respect that mirror. wire.ts and snapshot.json remain hand-maintained artifacts; generation does not make their coverage automatic. The historical all-vocabulary sample and servedProjection parameter checks address fixtures that previously used casts to conceal invalid/missing fields. These are policy and historical protection claims, not executed acceptance here.
+
+Development scenarios replace transport rather than weaken production acceptance. The inherited generation policy revokes unresolved catalogue, capability, snapshot, submission, withdrawal and connection ownership before successor fixtures are seeded. dashboardStore.reset() performs one transaction, increments gen once and clears scenario-owned projections including closeoutQueues. ScenarioPlayer calls that seam. Such reset exports are development authority seams, not ordinary production recovery APIs.
+
+selectors.ts retains engineState/groupEngines definitions. driftSegments consumes projected reporting counts, orders recognized classifications and appends unanticipated classifications; it does not establish exposure of a drift_check tool. Retained provider-shaped data or selectors do not restore the removed EngineRoom provider consumer or its visuals.
+
+## Invariants And Boundaries
+
+Server catalogue, bridge, task and knowledge contracts remain the authorities; browser stores and read clients are projections. Accepted session creation, live-action selection, recorded task binding, request identity, expected epoch and exact generation must remain attached to the operation they authorize. Inspection, display helpers and local caches must not acquire mutation authority.
+
+Missing, unreadable, unrecorded, unavailable, partial, unknown, refused, not-compared and measured-empty are different facts. Optional fields must retain their actual contract meaning; TypeScript declarations and source comments alone do not enforce every semantic predicate at runtime. Review transport recognizes a state-bearing body shallowly, change-set transport recognizes successful JSON shallowly, and requirement path admission needs its server/consumer owner. No whole-call-path guard absence is inferred from a local adapter lacking validation.
+
+Conversation pages/events are reconstructable evidence, not durable optimistic browser history. Ambiguous submission must preserve drafts and reconcile identity; withdrawal must obtain authoritative evidence. Pending plural interactions, ended/fault/wait state precedence, cleanup residuals, cursor ownership and unavailable historical trees must not be collapsed into convenient defaults.
+
+## Historical And Verification Limits
+
+This proposal read all 59,089 characters of the input card and confirmed its supplied SHA256. The examined checkout HEAD is 8d2e754789e30f0d3be10fdd33f83cf6fe367141. It is source adjudication only: no tests, mounted captures, delivery runs or publication were performed.
+
+The card's ICR-L3 direct-fetch exception is superseded by the shared review transport. Its early ICR-L22 entry-refusal/no-button account is superseded by reachable task-context review and summary-owned entry counts. ICR-L13's R12/R24 swallowed-refusal debt is historical; the present change-set decoder carries refusal reasons. TES-L6 sprint provenance remains historical context alongside the present document-based rail. ICR-L10's two-collection account predates retirement of records; only knowledge and family_members remain. ICR-L44's 'no rendering reads the new fields yet' is a dated limit, not a present renderer verdict.
+
+Named historical witnesses not re-established here include the 2026-09-30 Q1/Q2/Q6/F1 rulings, ICR/MIK requirement and task/reviewer records, the recovered same-repository history pack, the earlier six-suite/seven-suite fixture conversion, the snapshot growth from two to six lifecycles, historical module line counts and browser-console-zero criterion. The parent preserves their original references. Their historical test and delivery language is not fresh acceptance, and inaccessible old witnesses remain named rather than silently promoted to current proof.
+
+The parent read the memory-root system/sources.md: it says 'No entries configured yet.' No configured Domain Documentation source supplies a competing account here. The inherited no-applicable-cross-repository-source statement likewise remains historical provenance, not a fresh repository-wide dependency audit. Retained selector definitions and provider-shaped fixtures prove neither restored provider visuals nor exposed tools. Client aborts prove request cancellation intent, not server computation shutdown without server witnesses.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| sourceRoute            | `dashboard/src/data/`                            |
 
 | Responsibility | File onboarding |
 | --- | --- |
@@ -494,26 +168,19 @@ ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focu
 directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserves typed refusal. The adapter shapes transport only; product grant and ordinary-start authority remain server-owned.
 
 ## Evidence
-
-### Docs References
-
-The curator checked the memory repository's `system/sources.md`; it contains “No entries configured
-yet,” so no Domain Documentation source was available for this route. The current statements were
-verified from same-repository source/tests, the task/worker/reviewer records, and the recovered
-same-repository history pack.
-
-No relevant domain documentation was found for the data route.
-
-### Cross-Repo References
-
-The data route's imports and authority calls resolve inside agents-remember; no cross-repository
-implementation source governs this slice. Adapter behavior is consumed through this repository's
-own server contracts, so no external code path is cited as authority.
-
-No applicable cross-repository source was found for these browser state/authority modules.
-
-### Repo-Internal References
-
+- The mirrored change types and the entry's optional facts. [1]
+- One file's classification as a single read; a transport failure is `unavailable`. [2]
+- The scope that keeps it per surface, only for a tree comparison. [3]
+- The adapter's own statement: the server classifies once and this file only carries the answer. [4]
+- The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison. [5]
+- The summary carries the lane's count on both answered states. [6]
+- The shareable hash, read and written. [7]
+- A typed answer returned whatever its status; only transport failures throw. [8]
+- The selection block every answer carries. [9]
+- The three locator declarations. [15]
+- The member source carrying them. [16]
+- `useReviewCatalogue` owns the behavior described above. [17]
+- The entry's summary read and its re-validation generation. [18]
 - Catalog/session ownership and cross-tab reconciliation. [19]
 - Per-seat UI and evidence state. [20]
 - Reliable submission and authoritative withdrawal. [21]
@@ -521,206 +188,51 @@ No applicable cross-repository source was found for these browser state/authorit
 - Structural task hierarchy and diagnostic spawn ancestry are built as separate models. [23]
 - The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. [24]
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
-
 - Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
-
-
 - The server series builder sorts only fully stamped rows before projection. [27]
-
-
 - The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
-
-
-## Current Requirement Artifact Boundary
-
-`requirements.ts` reads registered requirement documents using a canonical task selector plus document identity; it does not expose arbitrary-path reads. `taskArtifacts.ts` owns the shared target union so notes and requirement documents carry distinct selectors through the same reader surface. Structured requirement rendering retains the backing document identity rather than treating an arbitrary Markdown link as registered authority.
-
-## Placement Decision
-
-New overview routes for `dev/` and the cockpit-scenario files were considered. Their code is a
-bounded test/fixture authority seam and remains governed by the root overview; creating another
-overview would fragment the product architecture. The high-churn state/authority modules instead
-receive this `data/` overview, while `keymap/` remains its own child and `session-cockpit/` remains
-the UI composition owner. Detailed legacy grouping knowledge was preserved here and in the
-session-cockpit overview before the six obsolete sidecars were removed.
-
-## 260727-CHATS-IM-L2 Route Impact
-
-Conversation roster derivation now accepts only backend-minted roster identities. Other
-agent-tagged notices, including selected-child history state, remain conversation items and cannot
-create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
-
-## 260831-CCR-L23 Task-Local Requirements Client
-
-L23 added the task-local requirement-packet client to this route: `data/requirements.ts`
-(typed `listRequirements`/`readRequirement` over `/api/requirements/{list,read}` plus the
-reserved `requirements/` address/reference resolvers) and the shared
-`data/taskArtifacts.ts` discriminated reader target (`TaskArtifactReaderTarget`: notes vs
-requirements with the task-document selector). Consumers: the requirement-link provider, the
-notes-reader viewer, TaskNotes references, and detail-panel task prose.
-
-## 260915-KS-L22 The Read-Only Intent-Review Client
-
-This route gained one client module, `data/review.ts`, and the property that makes it belong here at
-all is a restraint: it reads and it stores nothing. It is the same-origin client for
-`GET /api/review/intent` and it mirrors `data/changeset.ts` in shape — a `base` argument defaulting
-to same-origin, requests built through the shared `qs` helper and errors thrown as the shared
-`FilesApiError` from `getJson`. Where its sibling differs is what it does with the answer: the
-module's own header states that the surface exposes no submission control, so no function in it writes
-anything.
-
-**It now exports two calls, one per reviewer route, and the second one is what a task view needs
-first.** `intentReview(repo, master, leaf, selectorKind, selectorId)` renders one comparison;
-`intentReviewEntries(repo, master, leaf)` asks which subjects that comparison can be opened on, taking
-the **task context and nothing else** because a selector is precisely what it is being asked for. The
-entry call's own comment records how a caller must read its answer: a refused read is "a normal outcome
-(no live candidate, no dataset yet): it yields no entry and the caller renders no button, which is the
-existing `live && selectorId` semantics and stays correct". That is why the task view can now offer
-the reviewer at all — the reviewed subject it needs is a **recorded identity inside the candidate the
-server resolved**, and this client is the only legitimate source of it. Its `ReviewEntry` interface has
-no path field on purpose, and its `ReviewEntryListResult` is a typed envelope whose refused form
-carries a `refusal` and no entries rather than throwing, so "cannot answer" and "no subject here" stay
-different facts at the client boundary too.
-
-It mutates no store. This route's data modules are where browser projection state is normalized,
-reconciled and retained; `review.ts` sits deliberately outside that pattern — it exports no store, no
-slice, no reducer and no subscription, so a review never enters the cockpit's dashboard store and can
-never be read back as browser state. Every value it returns is the server's typed result mapped
-field-for-field: a field the server omits is optional here rather than defaulted, which is what keeps
-an unresolved reference unresolved on the client instead of rendering as an empty string or a
-fabricated attribution.
-
-The comparison request it builds names canonical task context and one recorded subject only — `repo`,
-`master`, `leaf`, `selectorKind`, `selectorId` — and never a filesystem path, so the browser cannot
-choose which dataset is reviewed. Its selector union is closed at the two kinds the transport admits
-(`invariant` and `family`), so the client cannot ask for a subject the server would refuse by having
-some other kind mapped onto one. The entry request names **no subject at all**, which is the other half
-of the same rule: it asks the server to select one. The file's own card carries the type-by-type
-detail.
-
-
 - The route's read-only client and its comparison call. [29]
-
-
 - **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
-
-
 - **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
-
 - **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
-
 - The endpoint the comparison call reaches, with no path among its parameters. [33]
-
 - The closed selector union, the two kinds the server admits. [34]
-
 - The no-store-mutation boundary, stated in the module header. [35]
-
-
 - The typed result the client returns unchanged. [36]
-
-
 - The field-for-field mirror of the server's review payload. [37]
-
-
-## 260921-ICR-L2 The Review Client Mirrors The Inventory And Asks For The Task's Own Review
-
-**Route meaning changed: `data/review.ts` can now express a review that compared nothing.** The client
-gained the inventory's three interfaces — `ReviewChangedFile` (the raw path, its status, its content kind
-and the reason an unknown is unknown), `ReviewUnrepresentablePath` (the exact bytes of a name the surface
-cannot carry as text) and `ReviewSourceInventory` (state, entries, count, detail, partial flag, command,
-both tree ids and the byte-form remainder) — and `ReviewSourcePane.inventory` is now required and first.
-`ComparisonIdentity` gained `knowledge_compared` with its three knowledge-half digests optional,
-`ReviewKnowledgePane` gained `selection_state`/`selection_detail`, `ReviewStaleness.state` gained
-`not_compared`, and `ReviewPayload.comparison` became optional. `intentReview` now sends **no selector
-parameters at all** when there is none, which is the task-context request. The module's own rule — a
-field the server omits is absent here rather than defaulted — now covers an entire absent identity, and
-no fallback value was introduced for it.
-
-
 - **The inventory's wire types, including the byte form of a name this surface cannot print.** [38]
-
-
 - **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
-
-
 - The payload whose comparison may be absent, and the pane that says which question was answered. [40]
-
 - **The request that omits the selector when there is none — the task-context entry.** [41]
-
 - Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. [42]
-
-
-## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
-
-**Route meaning extended, narrowly: the review client can now open one listed entry, and it does so
-through the one function that deliberately steps outside this route's error idiom.** `data/review.ts`
-grew 320 → **414 lines** and gained four interfaces and a third request:
-
-- `ReviewSourceSideState` — the closed six-member literal a side's `state` may be (`present`, `absent`,
-  `binary`, `symlink`, `submodule`, `unavailable`) — and `ReviewSourceSide`, which carries that state
-  with an optional `text`. The optionality is the route's own missing-side rule applied to content:
-  `text` is present only for the two textual states, so a missing or unrenderable side can never arrive
-  as an empty document and the renderer can never manufacture one.
-- `ReviewSourceExpansion` — both sides, both generation ids, the three-member `currentness` with its
-  detail, `path_bound` (`requested_generation` / `leaf_change_set`) with its detail, `admission`
-  (`changed` / `attributed_unchanged`, since 260921-ICR-L43) with its detail, and the
-  `reference`/`command`; `status` is `ReviewFileStatus | "unchanged"` because an attributed unchanged
-  path is expansion-only context and never an inventory entry — and `ReviewSourceContentResult`, the envelope whose `state` is `"content"`
-  with an `expansion` or `"refused"` with a `refusal`.
-- `reviewSourceContent(repo, master, leaf, path, beforeCodeTreeId, afterCodeTreeId, base = "")`, which
-  is the only function in this client that does **not** go through `getJson`. On this route a typed
-  refusal is a *normal* answer — a path outside the measured change set, a baseline that is not this
-  leaf's recorded one — and the transport carries it as the typed refusal in the body **with** a
-  400/404 status, which `getJson`'s throw-on-non-OK behaviour would turn into a transport error. So the
-  function `fetch`es the URL directly, decodes the body whatever the status was, returns it as the typed
-  result when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body
-  that is not this route's answer at all (an unwired process, a proxy error).
-
-**The generation is an input, and that is the property the whole expansion rests on.**
-`beforeCodeTreeId`/`afterCodeTreeId` are the ids the inventory published to this client, and the
-function sends them back — in that camelCase spelling, which is the spelling the route binds — so the
-content a reader opens is the content of the generation they were looking at, never re-resolved from
-whatever the leaf holds by the time the request lands. The client resolves no path and no tree of its
-own, and its own comment states that boundary. `intentReview` and `intentReviewEntries` are unchanged by
-this leaf: the comparison request still names a task context and one recorded subject, and the entry
-request still names the task context alone.
-
-The consumer is the `panels/` route's Source pane, which mounts the new renderer beneath an openable
-inventory row; the file's own card carries the type-by-type detail.
-
-
 - **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** [43]
-
 - **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [44]
 - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
 - **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** [46]
-
 - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
-
 - Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. [48]
-
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
-
-
-## The Review Reads' Transport Owner
-
-[`reviewTransport.ts`](reviewTransport.ts.md) is the one transport decode of the review reads. The review routes answer
-with their typed result and map a refusal onto a non-2xx status, so a refusal arrives as a non-2xx response whose body
-is still the route's typed answer.
-
-- `getReviewJson(url, signal?)` makes one GET and reads the body whatever the status. A body that carries the route's
-  `state` is the answer (a payload, a subject list or a typed refusal); anything else is a named failure. A caller
-  whose answer may be superseded passes an abort signal, and aborting it cancels the request itself.
-- The clients of the review routes call it: [`review.ts`](review.ts.md), which stays the review client's public entry
-  and re-exports the transport surface, `reviewTrees.ts`, `reviewLane.ts` and `reviewIntentSummary.ts`.
-- The failure vocabulary is closed: `not-initialized`, `unavailable-history`, `validation`, `authority`, `not-found`,
-  `domain-refused`, `network` and `unreadable`. `unreadable` names an HTTP response the route did not produce and
-  `network` names no HTTP response at all. `loading` and `known-empty` are not failures and are not members.
-- `TOKEN_BY_CODE` maps the routes' status strings and refusal codes to a token, and `reviewFailureToken` carries a
-  code the table does not know as `domain-refused` with the code unchanged. `reviewer_busy` and `inputs_changing`,
-  the two transient refusals of the leaf-wide tree view, are `unavailable-history`.
-- The shared `getJson` of `files.ts` keeps throwing on a non-2xx status for the routes that use it.
-
+- **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
+- **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
+- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
+- **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
+- **The optional family context whose absence says the body did not come from this route.** [58]
+- An incoming link may carry the record its history-row source is about. [59]
+- The module comment: what the adapter carries and the three answers it keeps apart. [60]
+- The answer of the route. [61]
+- One entry on both code sides. [62]
+- The request, addressed by number, recorded or invariants, with the optional signal. [63]
+- The transient codes and the retry delays. [64]
+- The bounded retry of a transient refusal. [65]
+- One answer as a read state. [66]
+- The comparison a payload names; without it no tree read is made. [67]
+- The entries hook aborts a superseded read and returns null without a comparison. [68]
+- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
+- The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
+- A superseded request is aborted and only the newer answer is shown. [71]
+- Loading stays shown during the retries. [72]
+- Unavailable is shown only after the bounded number of retries. [73]
+- No camelCase key in the real body. [74]
 - The module comment: one decode per read, nothing selected or substituted, and getJson unchanged. [75]
 - The tokens a reader can be shown. [76]
 - The codes and their tokens, with the two transient codes of the leaf-wide view. [77]
@@ -729,136 +241,32 @@ is still the route's typed answer.
 - The review client imports and re-exports the transport surface. [80]
 - A 404 typed refusal resolves through the review client with the refusal intact. [81]
 - The same body is dropped by getJson: the shared client's semantics are unchanged. [82]
+- selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [83] [84]
 
-## 260921-ICR-L13 The Master Client Is Generation-Bound
+- Review reads share shallow state-bearing-body transport recognition across HTTP statuses. [86]
+- Present paging excludes records and allows only knowledge without a cursor. [87]
+- Entry catalogue refusal does not remove task-context review reachability. [88]
+- Refresh empty-string normalization is specific, rather than universal query normalization. [89]
+- Catalogue history/generation keying does not transmit those values; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined. [90]
+- Change-set refusal reasons are carried by the current decoder. [91]
+- Requirement reads forward context and a path; registered address resolution is listing-based. [92]
+- Artifact reader targets also include task reports and decisions. [93]
+- Session creation commits only an accepted opener result. [94]
+- Open request is identity-addressed and validates acknowledged id/kind and raw-terminal claims. [95]
+- Rail placement uses real task document references and role/parent predicates. [96]
+- Plural pending interactions count; end/fault/block/wait precede live-turn evidence. [97]
+- Reader transport uses a 120-second bound and accepts a string-state body across statuses. [98]
+- Reader hash writer omits empty subject keys while preserving explicit repository/commit. [99]
+- Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based. [100]
+- Entry intent counts and attribution share one response with distinct counted/partial/unavailable states. [101]
+- Family change facts and source locator meanings are mirrored rather than recomputed. [102]
+- Tree retry is bounded and superseded hooks abort and guard their results. [103]
+- Creation ordering preserves partially stamped input. [104]
+- Volatile-age equality includes elapsedSeconds. [105]
+- Full scenario reset increments generation once and clears closeout queues. [106]
+- Drift display consumes reporting counts while provider selector definitions remain. [107]
+- Active conversation reducer preserves cursor/revision recovery intent without optimistic items. [108]
+- Agent roster requires backend identity plus notice/system/agent predicates. [109]
+- Historical conversation focus requires opened authority evidence. [110]
 
-This route's change-set client is now generation-bound for master nets. `data/changeset.ts`
-grew 120 → **155 lines**: `MasterNetPins` (four optional wire params) freezes a request to the
-listed generation with unset pins omitted, `MasterNetGeneration` (four commits + digest) is
-what the list response publishes beside `currentness` and `scope: "integrated"`, leaf rows
-carry optional `state`, and `masterChangeset`/`masterFileDiff` thread the pins. The leaf and
-task helpers are unchanged. The swallowed-refusal-debt sentence above still holds — this leaf
-changes what a successful master read carries, not what a failed one reports — and stays
-**routed to R12/R24**. `data/changeset.ts`'s card carries the body update and citation
-re-derivation.
-
-
-- **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
-
-
-## 260921-ICR-L10 The Review Client Carries A Page, And One Normaliser Owns The Two Spellings Of "No Page"
-
-`260921-ICR-L10` (`ICR-R10@v1`, complete bounded pagination) gives this route's review client the page
-contract it was missing. `data/review.ts` gained `ReviewPagedCollection` (the two bounded collections,
-named rather than inferred **because their cursors are different documents**), the `ReviewCollectionPage`
-interface with the server's own counts, its opaque `continuation`, the active `scope` and the
-`total_basis` field that says whether `total` counts the whole selection or the selection this walk still
-covers, and a separate `page_refusal` on the payload for a requested page the owner could not serve.
-
-The request gained `pageOf`, `continuation` and `pageSize`, and the client gained four small pure
-functions rather than any page logic in components: `continuationOf` (what a control may offer),
-`pageBounds` (one sentence per collection, worded from the basis), `carriedPage` and `RESET_GLOSS`.
-
-**`carriedPage` is the fix a later reader must not undo.** The route serializes with
-`exclude_none=True`, so a refused page **omits** the `page` key instead of sending `page: null`; a
-consumer comparing `payload.page !== null` therefore never fires for a real response. One normaliser
-collapses `undefined` and `null` into one value and every consumer reads through it, so the spelling of
-"no page" is not a per-component decision. The reset gloss is worded from the refusal's own code, so a
-cursor that is merely foreign is never called a moved comparison.
-
-The client never constructs or parses a cursor: it echoes the server's own token back, which is what
-keeps the two owners' walks distinct on the wire.
-
-## 260921-ICR-L26 The Review Client Mirrors The Applicability Vocabulary
-
-`260921-ICR-L26` (`ICR-R26@v1` — subject and comparison isolation on the server) reaches this route as a
-**mirror, not a behaviour**: `dashboard/src/data/review.ts` (565 → 618 lines) gains the three interfaces
-of the attribution half — `ReviewDisplayedApplicability` (the treatment one displayed record earned,
-with its true subject and the exact references it was decided from), `ReviewContextRecord` (the labelled
-context row: true subject, the recorded relationship that reached it, author/role and references, and no
-judgment content) and `ReviewApplicabilitySummary` (one collection's six-way count) — plus an optional
-`applicability` field on the five display types that carry a supplied record, and optional `context` and
-`applicability` collections on both panes.
-
-**Both new pane fields are optional, and the mirror keeps that.** A payload published before these
-labels existed carries none of them and this client renders it unchanged: absent means "this body states
-no label", never "this record is unrelated" and never "nothing was filtered". `state` is the closed
-four-member union of **displayed** treatments; `context` and `unrelated` are deliberately not members, so
-a name that looks like one of these unions cannot drift from the model's own vocabulary.
-
-## 260921-ICR-L12 The Client Mirrors The One Record The Server Admits
-
-`260921-ICR-L12` (`ICR-R12@v1`) adds one type and one optional argument to this route's review
-client: `ReviewHistory = "recorded"` and `intentReview(..., history?: ReviewHistory)`. The type carries
-the **one** value the server admits, so the client mirror cannot drift from the request model's own
-literal and a caller cannot ask for a comparison the leaf does not hold.
-
-**The live query string is unchanged.** `intentReview` appends `params.history` only when the argument
-is defined, so every existing caller builds byte-identically the URL it built before — a property the
-mounted case for the live read pins by asserting the parameter's absence rather than trusting the
-branch. The record is part of the question the surface asks, which is why it is a parameter of the read
-rather than a field applied to the result it returns.
-
-## 260921-ICR-L17 The Review Client Names The Refresh Parameter Once
-
-`260921-ICR-L17` (`ICR-R17@v1`) changes one module on this route, `data/review.ts`, in three ways:
-
-- **a ninth `intentReview` argument** — `previousBindingDigest`, the comparison the reader was already
-  looking at, carried only by a read that replaces a display. It is the *previous* identity and never a
-  substitute for the current one, and the read still renders the resolved candidate's own comparison.
-- **`reviewQuery`** — the query string assembled in one function, so adding a parameter cannot quietly
-  raise the client's branch count and the two spellings of "absent" (`undefined`, and the empty string a
-  form sends) are collapsed once.
-- **`PREVIOUS_BINDING_QUERY`** — the one declaration of the wire name the server admits
-  (`serving/review.py`, alias `previousBindingDigest`). It is declared once because a second spelling at
-  a call site is how a refresh silently stops carrying the identity it is measured against.
-
-Nothing else on this route changed: no other client, no transport rule and no store shape.
-
-## 260921-ICR-L24 The Family Mirror Module And The Collection A Cursor-Less Request May Not Name
-
-**Route meaning extended: the review client's family half is now a mirror module of its own, and the
-page contract learned one collection a request may not name without a cursor.**
-`dashboard/src/data/reviewFamily.ts` is new and carries the typed per-family contract `ICR-R31@v1`
-publishes — the family context, the guarantee a family revision authored, the roster page and the member
-rows — and `data/review.ts` re-exports every name in it, so the review payload still has one public entry
-and no importer changed its path.
-
-Three facts a reader of this route has to carry away, because each one is a place the client could have
-said something the server did not:
-
-- **`ReviewPagedCollection` gained `family_members`, and the union stays the server's own.** The member is
-  listed because the SERVER accepts it; narrowing the client's union would misdescribe the wire, so the
-  type is a mirror rather than the set of things this client offers.
-- **`REVIEW_WALKABLE_COLLECTIONS` is the set a request may name with NO cursor, and `family_members` is
-  deliberately not in it.** It is not one walk but the set of per-family roster walks a response composed,
-  so a cursor-less request for it addresses no single page and the server refuses it. The family walk is
-  instead continued from the cursor each family's own roster page published — the exclusion states what
-  the server does with the request, not a restriction this client invented.
-- **`ReviewPayload.family_context` is optional, and its ABSENCE is its own fact.** The route composes a
-  family context on every answer it returns, so a body without the key did not come from this route (a
-  capture recorded before the field existed, a hand-written body). It is never a measured zero and never
-  rendered as `no_family_recorded`, which asserts that the recorded scope was read and held no family.
-
-- **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
-- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
-- **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
-
-- **The optional family context whose absence says the body did not come from this route.** [58]
-
-
-
-## Current enclosure-only composition
-
-selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projected counts; engineState/groupEngines remain defined even though EngineRoom no longer consumes them.
-
-### Maintenance boundaries
-
-No existing Markdown claim in this overview specifically promises drift_check. Preserve catalog/authority prose; if recording L112, say drift display consumes reporting facts, not an exposed drift_check tool, and separate retained selector definitions from the retired EngineRoom provider consumer. Do not delete this route or assert provider selectors were removed.
-
-Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
-Historical provider-shaped input data and retained compatibility definitions do not
-restore removed provider visuals or tool exposure.
-
-- selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [83]
-- selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [84]
+- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]

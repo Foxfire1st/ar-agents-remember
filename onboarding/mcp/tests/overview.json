@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "blob": "6d6756386651fac997300a59f2e880422f881cea",
             "content": "sha256:539fede000fd2d62aa31b95bfb43ab55974f5776e6a4b112bec5b8faab2747f6",
             "locator": {
               "kind": "symbol",
@@ -356,7 +356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "421123b05018871735bbc8b6ba4de270666951be",
+            "blob": "e747e3990121a914fcf221a26d82f617f1111e43",
             "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
             "locator": {
               "kind": "symbol",
@@ -529,7 +529,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "421123b05018871735bbc8b6ba4de270666951be",
+            "blob": "e747e3990121a914fcf221a26d82f617f1111e43",
             "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
             "locator": {
               "kind": "symbol",
@@ -686,7 +686,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f0c163806fc1b594e6297dcb681cfa0f6cb3ea",
+            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
             "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
             "locator": {
               "kind": "symbol",
@@ -810,7 +810,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
+            "blob": "1f98718a2c182635c65b113cc2273af6cb035e22",
             "content": "sha256:9d82da0e74d0e087687c68d0671b05d0ca0d7d88563edd8b80e752a8d609d12b",
             "locator": {
               "end": 5,
@@ -988,7 +988,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "a74a1039606a88619d1058dc6079625eb8a18647",
             "content": "sha256:a41bc4a4cd425f2a55491d0e8871e957f0ec5bfabe76a2f6e9383a412aa5a843",
             "locator": {
               "kind": "symbol",
@@ -1127,7 +1127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f0c163806fc1b594e6297dcb681cfa0f6cb3ea",
+            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
             "content": "sha256:037e6597c8624f1080c1a16534c7c34a6f993b4ca15c8802e72e11db08b07fcc",
             "locator": {
               "kind": "symbol",
@@ -2743,7 +2743,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "57e1ed667583a6785be6fac21796aa8a1314bc0d",
             "content": "sha256:640e521e7123fbf3089739578c64371817e4d60847bdb3d1014c4d53c514ab2d",
             "locator": {
               "end": 589,
@@ -2761,7 +2761,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "57e1ed667583a6785be6fac21796aa8a1314bc0d",
             "content": "sha256:be4390bc92c31a07b7b0fb4707a0441da6b53b3b635fc8bb7c50f35590af9f58",
             "locator": {
               "end": 665,
@@ -4363,12 +4363,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9abf0956980a6a4a0964943a8fea86680a6f39f",
+            "blob": "efbad56d1bc5ea903f0fab6d92a0f8c9b46ad9cb",
             "content": "sha256:398aa230496e0b7d2ef9d5bd90da04c6e29db1e5db5b0f495e600e34cf44a929",
             "locator": {
-              "end": 366,
+              "end": 369,
               "kind": "line_range",
-              "start": 366
+              "start": 369
             },
             "path": "mcp/tests/test_knowledge_bootstrap.py"
           },
@@ -5088,12 +5088,12 @@
       ]
     },
     "1701": {
-      "note": "The install-contract module. [27]\n\nAnchor: `test_paseo_install_contract.py`",
+      "note": "The install-contract module.",
       "targets": [
         {
           "anchor": {
-            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-            "content": "sha256:62ba8076eec97eac222618be800b8a0958068e7efd93bf7ddb854eed4f95a7ae",
+            "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+            "content": "sha256:a47df78ad43d820ecd101b13d0b412b5f680f2cddc0037f30000ef9acf1acf0f",
             "locator": {
               "kind": "file"
             },
@@ -5104,7 +5104,7 @@
       ]
     },
     "1702": {
-      "note": "The no-stop module. [28]\n\nAnchor: `test_paseo_install_no_stop.py`",
+      "note": "The no-stop module.",
       "targets": [
         {
           "anchor": {
@@ -5120,7 +5120,7 @@
       ]
     },
     "1703": {
-      "note": "The node module. [29]\n\nAnchor: `test_paseo_node.py`",
+      "note": "The node module.",
       "targets": [
         {
           "anchor": {
@@ -5377,7 +5377,7 @@
       ]
     },
     "1716": {
-      "note": "Source controls cover cut measure, threshold, deletion proof and overviews.\n\nAnchor: test_card_over_measure_reports_both_numbers through test_overview_cut_reported_without_source",
+      "note": "Source controls cover cut measure, threshold, deletion proof and overviews.\n\nAnchor: test_card_over_measure_reports_both_numbers through test_overview_cut_reported_without_source\n\nCandidate isolation, three plugin registrations and ordinary/certifying composition are explicit.",
       "targets": [
         {
           "anchor": {
@@ -5391,11 +5391,36 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_plugins"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:2d690e522ac437a40fd0718bf76921d83fbbea9b67ce3445eff386cc8d6c50d4",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "1717": {
-      "note": "Source cases retain committed leaf deltas and exclude files already present in an updated base.\n\nAnchor: test_leaf_base_reports_committed_and_keeps_older_base_out and test_leaf_base_update_excludes_older_base_files",
+      "note": "Source cases retain committed leaf deltas and exclude files already present in an updated base.\n\nAnchor: test_leaf_base_reports_committed_and_keeps_older_base_out and test_leaf_base_update_excludes_older_base_files\n\nSelected-case budgets and default worker/selection policy have one executable configuration owner.",
       "targets": [
         {
           "anchor": {
@@ -5409,11 +5434,50 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:e58c81e5f28cac4189d5f52213faa64ce18fb0e7422fd6cbcab05e94cd8e4b7d",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:36aadd685107ad708ec5be5cd157a571432a713e162191fbbd0dfdc1bda46cae",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "1718": {
-      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.\n\nAnchor: rename, linked-worktree and removed-card controls",
+      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.\n\nAnchor: rename, linked-worktree and removed-card controls\n\nThe design note's 1,000/150 figures differ from present executable budgets.",
       "targets": [
         {
           "anchor": {
@@ -5440,11 +5504,24 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
+            "content": "sha256:374e31541bb47ef8da09d5e30a1b09214f4b0d51ae13433b390363e30bb67eb1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "1719": {
-      "note": "Fixture assertions keep landing reports non-refusing while preserving existing refusals; adjacent closeout services are mocked.\n\nAnchor: clean operation/gate/adapter, closeout-phase and checklist parity cases",
+      "note": "Fixture assertions keep landing reports non-refusing while preserving existing refusals; adjacent closeout services are mocked.\n\nAnchor: clean operation/gate/adapter, closeout-phase and checklist parity cases\n\nLane selection proves explicit source membership and refuses incomplete/stale catalogs.",
       "targets": [
         {
           "anchor": {
@@ -5497,11 +5574,49 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:ff1a20376789692ffe308a7fea6feb2d14e28cd4bdf09c9bfb8e5e21e816c6f8",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+            "content": "sha256:6addeab65f244a3c6689fd0915df1e2a2ff2fda469848c6e0944552eb99a4ed7",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1720": {
-      "note": "Source cases inventory live/dangling links at own size and bound counted multiset hash work.\n\nAnchor: test_symlinks_reported_without_following_targets and test_line_delta_work_is_linear_in_card_size",
+      "note": "Source cases inventory live/dangling links at own size and bound counted multiset hash work.\n\nAnchor: test_symlinks_reported_without_following_targets and test_line_delta_work_is_linear_in_card_size\n\nArtifact discovery and exact consumer comparison have bounded source owners.",
       "targets": [
         {
           "anchor": {
@@ -5515,11 +5630,35 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
+            "content": "sha256:b95aa1102a23a8f4823b7dd407a2bd73d11ade6dd2bfe159c88a1b95cba410fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "governed_artifact_paths"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_governance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:71352f8e2f239049cb234e3c35014d8146e5149816e994c48b745d5023df6383",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_path_and_consumers"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1721": {
-      "note": "The source checks raw generated texts and two canonical compiled capsules; it is not every live harness execution.\n\nAnchor: test_role_texts_hold_landing_sentences_everywhere",
+      "note": "The source checks raw generated texts and two canonical compiled capsules; it is not every live harness execution.\n\nAnchor: test_role_texts_hold_landing_sentences_everywhere\n\nCanonical rewriting preserves retirement decisions and refuses ambiguous rows.",
       "targets": [
         {
           "anchor": {
@@ -5533,11 +5672,48 @@
             "path": "mcp/tests/test_landing_report.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:569cd3cbc855ea30d6c17c643deba84c577a46e8cfe6b8cac0b9586eaa745d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_lifecycle_text"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:462acacf2301ac8bf2ced44806a3417ee059af318b6e301e1a3f321b60a676a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_gone_consumers"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
         }
       ]
     },
     "1722": {
-      "note": "The landing-report module is selected in unit-regression; registration is not execution.\n\nAnchor: [files].unit-regression test_landing_report registration",
+      "note": "The landing-report module is selected in unit-regression; registration is not execution.\n\nAnchor: [files].unit-regression test_landing_report registration\n\nRecorded-result retrieval has a delivered-payload fallback; the classifier validates that substituted object.",
       "targets": [
         {
           "anchor": {
@@ -5564,11 +5740,35 @@
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:e4c6a24c1df136e92f540a0c0935479293ce6465cc1852e9e44afa744c57762f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_whole_result"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:1fce94dd9ea9b05303d0ecc585018e9f693698e93af637a911c7175e09948f5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "1723": {
-      "note": "The landing-report module consumes two existing governed artifacts; its consumer addition changes no artifact/contract identity.\n\nAnchor: Existing curator support and Node lockfile [[artifact]] rows with exact consumers",
+      "note": "The landing-report module consumes two existing governed artifacts; its consumer addition changes no artifact/contract identity.\n\nAnchor: Existing curator support and Node lockfile [[artifact]] rows with exact consumers\n\nFour worktree raisers differ from the empty ambient lifecycle-state raiser pin and retained finalize population.",
       "targets": [
         {
           "anchor": {
@@ -5621,6 +5821,232 @@
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:7f3c88f5bea68a696f3eb1e5c330ecbc4c2335c58efbef45b2e6baea92fec28a",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_DEPENDENT_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:64e72c5e53e146da7090b16a408fca013bf6b71bcbb577cc47326faacdfe4743",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_LIFECYCLE_STATE_POPULATION"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:9e16a6cddc574e9da2a3c546929e7c020f9816f42cfdad7221eacab5c814c715",
+            "locator": {
+              "end": 1104,
+              "kind": "line_range",
+              "start": 1073
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1724": {
+      "note": "Settings refusal compares account home or earliest observed home before returning a write path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28f8d301406f9c06a5068ba12f9e8f65395eecf",
+            "content": "sha256:7b048e270464dbeae383d75e7d1e76bf5361c0a5aa89db90ffbac83dbcbff9f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "user_settings_path_for_write"
+            },
+            "path": "mcp/tests/_user_settings_guard.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ddab1d15d8c1c148d6d0d646265d88862f3e12ea",
+            "content": "sha256:4f312f4a2f270eca6593f9fd8fde82630154c73b269d3378276070940811a224",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 391
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ddab1d15d8c1c148d6d0d646265d88862f3e12ea",
+            "content": "sha256:946508b8befef4ba6abb24f258846d3cd42e0ec92b9fdab6fd8d05ac100ea2a7",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1725": {
+      "note": "The approved support scanner derives nested support and checks supported syntactic bypasses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:e8a2f377a2506f11a5ac57b794351955b13dca866d13907078331b7d03d1ef6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_support_modules"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1726": {
+      "note": "Environment tests cover wording/accounting, requiring a built venv and explicitly limiting Node coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:5da16dd71e732458366d9a06537977ea758c4503a0c45b8b1fcf6752b3734d23",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/tests/test_worktree_own_environment.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1727": {
+      "note": "Failed-pass durable identity explicitly excludes and separately measures observer health.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:940a004ff540c62697ee46162989c112960aa1ca4739a109e1c4a3ada72aa8ed",
+            "locator": {
+              "end": 824,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1728": {
+      "note": "The retained production ref transaction checks protected heads, ancestry and exact landing output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
+            "content": "sha256:f034b63049e452cf4defba0f553dee3700feda47ceccddb7f3b70ad79afd4ec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
+            "content": "sha256:dfc1988fab980bcf03f25bf6282a738ef7240bc0ef52b55888b6f125139b3825",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1729": {
+      "note": "Finalization binds five selected original certificates and the fifth memory inputs/reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:6efc058b3f944172b0c07abf8367494c8502f19ef1311ca8fab599e9d5a87272",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1730": {
+      "note": "The bounded timing scanner reads its named support roots and excludes waits.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_waits_are_load_independent"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1731": {
+      "note": "The completion proof's ordinary-source/catalog ownership is explicitly checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+            "content": "sha256:f96bcc37da6476a4c26c7d23f0c75db5a1ac15fcedea08613213c570e96d0b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -5661,16 +6087,16 @@
       ]
     },
     "2": {
-      "note": "The two case budgets are declared in the repository-root configuration as5000/1000.",
+      "note": "The two case budgets are declared in the repository-root configuration as 5000/1000.",
       "targets": [
         {
           "anchor": {
             "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:7ca1f565fd182e830ad0aa7fce4036ac2f1d1e288723a65fa93aff404e4c216d",
+            "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
             "locator": {
-              "end": 299,
+              "end": 279,
               "kind": "line_range",
-              "start": 298
+              "start": 278
             },
             "path": "pyproject.toml"
           },

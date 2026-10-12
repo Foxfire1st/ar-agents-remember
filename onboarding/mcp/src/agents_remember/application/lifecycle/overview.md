@@ -10,48 +10,35 @@
 
 ## What This Area Is
 
-Public application adapters for admitting configured contracts, locating and controlling durable
-lifecycle operations, and exposing the direct-landing route. These modules translate configuration
-and caller context into typed worktree-domain requests; they do not own journal transition policy.
+Application adapters for admitting configured contracts, locating durable lifecycle operations, resolving caller authority, and exposing the direct-landing route. They translate configuration and caller context into worktree-domain requests and public refusals; journal transition policy belongs to the worktree lifecycle domain.
+
+The directory also retains an internal ambient-lifecycle block builder and a typed terminal rail-failure projector. Their presence does not establish a public tool registration or an active execution caller.
 
 ## Hot Path Summary
 
-Use `configured_contract_admission.py` for the one total mutation-admission boundary, `direct_landing.py` for the public direct route, and `terminal_rail_failure.py` for typed terminal-failure projection. Journal transition policy remains in the worktree lifecycle domain. The detached lifecycle worker (`lifecycle_operation_worker.py`), the public read-only wait adapter (`lifecycle_status_wait.py`), and the legacy-bridge and enclosure tool entry points (`legacy_operation_tool.py`, `lifecycle_enclosure_tools.py`) were all deleted with the door/operation plane; closeout and integration now run on the in-process synchronous route and the route owns no detached execution surface.
+Use `configured_contract_admission.py` for configured-contract admission and refusal projection, `direct_landing.py` for the public direct route, and `lifecycle_operation_location.py` for exact configured operation locations and retained-journal observations. `certification_refusal.py` renders complete typed certification findings; `lifecycle_control_authority.py` resolves caller identity and completed-disposition authority.
 
-## Complete Admission Refusals
+Public closeout and integration run synchronously through `application/worktree_tools.py` and the worktree module owners. The former detached-worker, public status-wait, legacy-bridge, and enclosure application entry-point files are absent. `terminal_rail_failure.py` retains its envelope-building functions, but no current production caller of `terminal_worker_failure_result` was found.
 
-[`certification_refusal.py`](certification_refusal.py.md) renders all typed admission findings, including nested byte evidence, for public adapters. Its zero-start refusal shape reports the admission boundary; the renderer itself does not observe processes or alter journal state.
+## How It Is Built
 
-CCR-R25 also promotes a typed `routeReview` finding through the shared route-review refusal
-projection, preserving the complete certification finding list while adding exact status and
-contract-bound next-step guidance when a contract is available. The lifecycle adapter remains a
-projection boundary; it does not record a review or mutate task state.
+The direct-landing boundary selects a canonical granted leaf and preserves the durable generation recovery owner. Verify-existing and exact-pair create are explicit modes, not fallback closeout; typed refusal retains nextAction and interrupted pair evidence.
 
-## Operating Model
+Configured admission confines the contract address to coordination authority, resolves its durable location, reads the contract, checks configured repositories, and verifies that the contract matches the location. Candidate-worktree identity is checked by default. Closeout explicitly delegates that check downstream; configured repository authority and contract-location matching remain at admission. Its publication owner checks ordinary worktree repository and branch identity and revalidates the admitted candidate before committing.
 
-Application tools admit configured contracts, resolve durable operation locations, invoke the
-worktree lifecycle owners, and project typed refusals. `terminal_rail_failure.py` still supplies the
-typed rail-failure envelope for otherwise-unclassified failures (retained organizational repair and
-ledger-recovery decisions take precedence). Configured-contract admission remains strict by default.
-Exact code-memory pair consumers may delegate only candidate-worktree identity to the canonical pair
-validator; repository, task, and enclosure authority remain at the application boundary.
+`direct_landing.py` checks the direct-execution policy, admits the configured contract, invokes the worktree direct-landing owner, and projects input, journal, and domain refusals. Direct landing is a distinct branch-addressed route, not an implicit fallback from closeout. Its domain owner requires a series contract, an intent note, and an exact code commit; it retains a synchronous durable generation and recovery controls for memory publication.
 
-The former `OperationRuntime`/detached-worker path is gone: `lifecycle_operation_worker.py` was
-deleted by commit `173bb01e` ("delete the detached lifecycle worker and drive every fixture on the
-synchronous path"), and the MCP tools now drive `worktree_closeout_apply` and `worktree_integrate`
-in-process. There is no worker lease, worker composition root, or detached terminal publication on
-this route.
+[`certification_refusal.py`](certification_refusal.py.md) renders every typed admission finding, including nested byte evidence. Its `gateStarts: 0` refusal field reports the admission boundary; the renderer itself neither observes processes nor changes journal state. A typed `routeReview` finding adds the shared route-review refusal projection while preserving the complete findings list. Exact contract-bound next-step arguments are added when a contract is available. This projection does not record a review or mutate task state.
 
-## Local Invariants And Traps
+`lifecycle_operation_location.py` binds a confined contract path to its configured task-owned location. If contract bytes become unreadable, it projects retained strict journals; when no retained operation exists, it preserves the proven initial-contract publication loss as a developer-decision refusal. `lifecycle_control_authority.py` resolves a hosted caller or an explicit declaration and derives completed-disposition ownership from live task topology.
 
-- Application adapters translate lower-level failure families once; public callers must not
-  reproduce the complete exception vocabulary.
-- A delegated candidate check must have one explicit downstream owner; it must not become an
-  unchecked permissive mode.
-- Durable journal and enclosure state outrank task projections or stale in-memory observations.
-- A direct operation is a distinct route, not an implicit fallback from queued closeout.
+`lifecycle_tools.py` retains the internal ambient-lifecycle block builder and its response adapter. Its source documents the removal of the six model-invoked lifecycle signal tools; the retained builder is not evidence that those tools are registered.
 
-## File-Level Onboarding Map
+The read-only wait implementation survives in the worktree observation domain. It validates a positive revision cursor, polls the addressed generation with a bounded deadline, and returns change, unchanged timeout, or typed journal/generation outcomes. No current production caller of `wait_for_lifecycle_change` was found; it is not a public status-wait surface.
+
+`terminal_rail_failure.py` constructs bounded typed envelopes from a validated published rail report or from the supplied error. It distinguishes `gate-result`, `terminal-rail-result-unavailable`, and `worker-execution-unclassified`, preserving candidate identity and bounded evidence rather than inventing a rail outcome. Its retained implementation does not establish an active detached-worker failure boundary.
+
+### File-Level Onboarding Map
 
 | Source File | Onboarding | Status |
 | --- | --- | --- |
@@ -64,38 +51,25 @@ this route.
 | `lifecycle_tools.py` | [lifecycle_tools.py.md](lifecycle_tools.py.md) | covered |
 | `terminal_rail_failure.py` | [terminal_rail_failure.py.md](terminal_rail_failure.py.md) | covered |
 
-## Granted direct publication
+The preserved table statuses are onboarding metadata, not operative lifecycle promises. No external Domain Documentation source is configured; the inspected boundaries are between repository-owned application and worktree owners.
 
-The direct-landing boundary selects a canonical granted leaf and preserves the durable generation recovery owner. Verify-existing and exact-pair create are explicit modes, not fallback closeout; typed refusal retains nextAction and interrupted pair evidence.
+
+## Invariants And Boundaries
+
+- Application adapters project lower-level failure families at their boundary; callers should consume those public projections rather than duplicate the exception vocabulary.
+- Delegating candidate identity does not waive configured repository or contract-location authority. The downstream publication owner must still validate the candidate it commits.
+- Retained strict journal and enclosure evidence governs unreadable-contract observations; a task projection is not replacement authority.
+- Direct landing remains distinct from ordinary closeout and integration. The synchronous ordinary route has no detached worker lease or worker composition root.
+- Closeout preserves approval, source-lineage, candidate, and publication checks. Integration preserves approval, contract authority, source ancestry, and ref safety. Neither synchronous call is itself an invocation of a full test suite or an independent review.
+- Absence of automatic full-suite execution does not mean absence of memory enforcement. Converted leaf closeout checks the mandatory invariant gate before claiming approval or committing code, and validates the exact memory output before its publication. Recovered converted memory output is checked too. Direct landing also retains converted-memory gate and validation checks.
+- `worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes independent sidecar and governing-route body/history checks. Curator memory preparation calls it on the unconverted-tree branch; converted trees use the onboarding-trace gate. Current closeout refreshes sidecar and route metadata through their refresh owners rather than calling this shared validator directly.
+
 
 ## Evidence
 
-### Docs And Boundary References
-
-No Domain Documentation or cross-repository source is configured for this route. Same-repository
-authority is documented by the linked source sidecars and the worktrees integration overview.
-
-## Read-Only Status Change Wait — public wait surface removed
-
-The task-addressed `worktree_status_wait` tool and its application adapter
-(`lifecycle_status_wait.py`) were deleted with the door/operation plane by commit `41b0812e`
-("delete the two detached operation-plane entry points and their stale tool surface"); the tool is
-no longer registered. The bounded read-only observer below survives and remains the only wait
-implementation on the route, but it is currently unreachable from the public tool surface.
-Direct landing remains a distinct route. Normal closeout/integration does not select or execute
-repository certification or quality profiles as an automatic prerequisite.
-
 - The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout. [1]
 
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-## CCR-R12@v5 Current Transaction Boundary
-
-The lifecycle application route starts and observes closeout/integration transactions with explicit
-approval, candidate/source identity, and ref safety. The transaction runs in-process through the
-public `worktree_closeout_apply` and `worktree_integrate` tools and does not invoke strict code
-quality, memory quality, selected certification, curator coherence, or independent review. Full
-suites are an explicit developer request. The detached worker and its lease, described in earlier
-revisions of this section, no longer exist.
+- Configured admission checks repository and contract-location authority while permitting only an explicit candidate-identity delegation. [2]
+- Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication. [3]
+- Typed admission findings are projected completely; rail-failure and status-wait construction remains retained capability rather than a registered detached execution route. [4]
+- Unreadable contract observations prefer retained strict journals and otherwise preserve proven initial publication loss as a developer-decision refusal. [5]

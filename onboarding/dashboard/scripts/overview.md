@@ -10,87 +10,44 @@
 
 ## Purpose
 
-The dashboard quality-rail scripts route owns
-`require-dagger-test-environment.mjs` (the canonical nonce/attestation validator), its
-type declaration, `check-diff-coverage.mjs` (the per-diff changed-lines coverage diagnostic
-mirroring the Python `diff_coverage.py` report), its contract test, and
-`check-bundle-size.mjs` (the 32 MiB bundle budget wired into `npm run build`). The route also owns `write-suite-result.mjs`, which writes the CCR dashboard-suite result
-after a successful coverage command. Vitest
-collects `scripts/**/*.test.mjs` from `dashboard/vitest.config.ts`. Direct targeted
-Vitest runs are supported diagnostic loops; the changed-lines CLI itself and all
-acceptance remain Dagger-only.
+`dashboard/scripts/` provides the dashboard's Dagger admission check, changed-production coverage diagnostic, build bundle budget, and dashboard-suite result writer. It contains `require-dagger-test-environment.mjs` and its type declaration and tests, `check-diff-coverage.mjs` and its contract test, `check-bundle-size.mjs`, and `write-suite-result.mjs`.
 
-## Code Commentary
+Direct targeted Vitest runs support diagnostic loops. The changed-lines CLI requires Dagger admission, and acceptance certification belongs to the pinned Dagger graph.
 
-### Logic
+## Hot Path Summary
 
-`check-diff-coverage.mjs` resolves the diff base in the Python resolver's candidate
-order (`AR_GATE_DIFF_BASE` → `GITHUB_BASE_REF` origin/<ref> then <ref> →
-`@{upstream}` → `origin/HEAD` → `main` → empty tree), diffs changed lines, and
-scores them against the v8 coverage JSON using executable-statement semantics
-(round-8 architect ruling OPTION 1): the denominator counts only changed lines v8
-records as executable statements; comments/blanks/continuations contribute nothing.
-The contract test pins that accounting plus the test/dev/types exclusions and
-`dashboard/` key normalization.
+The changed-lines CLI checks Dagger admission before any Git/coverage read. The build invokes the bundle-budget checker after compilation. The successful coverage command chain invokes the suite-result writer; that record is not acceptance authority by itself.
 
-`daggerTestEnvironmentError` validates one lowercase 32-hex token, reads the fixed
-in-container attestation path, and requires an exact byte-for-byte match.
-`requireDaggerTestEnvironment` turns that result into the route's fail-loud refusal and
-accepts only a subject label for the message. `check-diff-coverage.mjs` calls it as the
-first operation of direct `main()` while leaving exported pure scoring helpers open to
-diagnostic imports.
+## How It Is Built
 
-### Conventions
+The scripts use Node ESM. The admission validator and changed-line scorer export helpers that diagnostic tests can import; the scorer runs its Git and coverage operations only on direct CLI invocation. The bundle checker and suite-result writer execute at module top level.
 
-Scripts are standalone Node ESM with pure exported helpers and a `main()` runner;
-the diff pipe uses a 256 MiB buffer so series-fork diffs cannot ENOBUFS.
+`check-diff-coverage.mjs` tries diff-base candidates in the Python resolver's environment-candidate order: `AR_GATE_DIFF_BASE`, `GITHUB_BASE_REF` as `origin/<ref>` then `<ref>`, `@{upstream}`, `origin/HEAD`, and `main`. The first resolvable merge base wins; otherwise it uses Git's empty tree. Its Git subprocess buffer is 256 MiB to accommodate large series-fork diffs.
 
-### Invariants And Boundaries
+The scorer compares added or modified dashboard TypeScript lines with `coverage/coverage-final.json`. It normalizes `dashboard/` prefixes in changed-file keys and `/src/` paths in coverage keys, excludes test files and the `src/test/`, `src/dev/`, and `src/types/` routes, and counts only changed lines inside recorded statement ranges. A line is covered when it lies within a statement range with a positive execution count. Comments, blanks, or continuations outside those ranges contribute nothing; lines inside a multi-line statement range can count. Files without a coverage entry contribute no executable lines. The contract test covers CLI refusal, statement-range accounting, absent entries, exclusions, and key normalization.
 
-The admission, coverage-scoring, and bundle-budget scripts read and report facts without
-writing coverage, configuration, or Git state. `write-suite-result.mjs` is the explicit
-report writer: `test:coverage` invokes it only after Vitest exits successfully. It writes
-`dashboard-suite-result.json` beside `AR_QUALITY_PROGRESS_REPORT`, or in the current directory
-when that variable is absent. The script records `passed: true` from that command-chain
-assumption; direct execution does not independently prove a test passed. Missing or unreadable
-coverage leaves `totals` empty and does not suppress the suite-result file.
-No changed-coverage percentage floor is enforced. No code here
-writes a nonce, accepts a fake token, bypasses attestation, shadows configuration, or
-falls back to a host acceptance executor.
+`daggerTestEnvironmentError` checks a lowercase 32-hex token in `AR_DAGGER_TEST_ATTESTATION`, reads `/tmp/ar-quality/dagger-test-attestation`, and requires exact string equality. `requireDaggerTestEnvironment` throws the refusal message when validation fails; its sole argument is an optional subject label. The declaration mirrors the runtime exports. The changed-lines CLI calls this guard before reading Git or coverage.
 
-`write-suite-result.mjs` records the coverage path and rounds numeric `coverage.total`
-percentages when that optional object exists; ordinary per-file Istanbul coverage need
-not contain that summary object. The suite-result record is one artifact, not independent
-certification or proof that all required Gate-4 artifacts were produced.
+`dashboard/vitest.config.ts` collects `scripts/**/*.test.mjs`. The package's build command runs `check-bundle-size.mjs` after code generation, type checking, and Vite build. The checker recursively totals emitted `dist` file bytes, reports the largest asset, and fails when the total exceeds the default 32 MiB budget or the value supplied through `AR_DASHBOARD_BUNDLE_BUDGET_BYTES`.
 
-### Todos
+The package's `test:coverage` command runs `write-suite-result.mjs` only after Vitest exits successfully. The writer places `dashboard-suite-result.json` beside `AR_QUALITY_PROGRESS_REPORT`, or in the current directory when that variable is absent. It records the relative coverage path and, when an optional `coverage.total` object exists, rounds finite numeric percentages to three decimal places and records other percentage values as `null`. Ordinary per-file Istanbul coverage need not contain that summary object.
 
-None recorded.
+## Invariants And Boundaries
+
+Changed-production coverage is diagnostic: the scorer reports covered and uncovered executable changed lines without enforcing a percentage floor. Missing, unreadable, or syntactically invalid coverage JSON fails the CLI; removing percentage enforcement does not remove execution failures or Dagger admission.
+
+The admission validator, coverage scorer, and bundle checker read and report facts without writing coverage, configuration, or Git state. The suite-result script is the explicit report writer. It records `passed: true` from the successful command-chain assumption; direct execution does not independently establish that tests passed. Missing, unreadable, or syntactically invalid coverage leaves `totals` empty and does not suppress the result-file write.
+
+The runtime guard reads the nonce and attestation rather than creating them. The pinned Dagger graph supplies the attempt nonce and matching attestation file. These dashboard scripts provide no runtime attestation bypass or host acceptance executor. Injectable inputs to the diagnostic validator helper support isolated tests; they do not change the CLI guard's default environment and fixed-path read.
+
+The suite-result file is one report artifact, not independent certification or proof that every required acceptance artifact was produced. Bundle-budget enforcement and the writer's command-chain provenance remain separate from diagnostic coverage percentages.
+
+The memory layer's `system/sources.md` has no configured Domain Documentation entries. No applicable cross-repository implementation source was identified for this route.
 
 ## Evidence
 
-### Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation source is
-configured for this route.
-
-No relevant domain documentation was found.
-
-### Repo-Internal References
-
-- The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality. [1]
+- The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality; its throwing wrapper accepts only an optional diagnostic subject. The pinned Dagger graph supplies the matching attempt token and attestation file. [1]
 - The declaration mirrors the validator's runtime exports and optional diagnostic subject. [2]
-- The changed-line scorer is importable for diagnostic callers. [3]
-- The executable-statement contract suite proves both CLI refusal and pure accounting. [4]
-- Vitest collects the route’s script tests. [5]
-
-### Cross-Repo References
-
-No cross-repository implementation source governs this route.
-
-No applicable cross-repository source was found.
-
-
-## Integrated IAS Recovery Contract
-
-Changed-production coverage is diagnostic: `check-diff-coverage.mjs` reports executable changed lines and uncovered lines without a percentage floor. Its direct CLI retains genuine Dagger admission; malformed or missing coverage remains an execution failure. Bundle-size enforcement and suite-result command-chain provenance are unchanged.
+- The changed-line scorer is importable for diagnostic callers. It counts changed lines within recorded statement ranges, excludes the specified test/dev/types paths, normalizes dashboard keys, and ignores files without coverage entries. Its direct CLI guards admission first, resolves the base in the Python environment-candidate order, uses a 256 MiB Git buffer, reads coverage, and reports uncovered lines without a percentage floor. [3]
+- The executable-statement contract suite proves both CLI refusal and pure accounting, including multi-line statement ranges, absent coverage entries, exclusions, and dashboard key normalization. [4]
+- Vitest collects the route's script tests. Current package commands wire the bundle checker into build and the suite-result writer after successful coverage. The checker enforces the default or configured raw-byte budget; the writer records command-chain provenance, its coverage path, optional rounded totals, and its report destination. [5]

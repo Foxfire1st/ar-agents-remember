@@ -2,11 +2,11 @@
   "path": "mcp/src/agents_remember/models/structural",
   "references": {
     "1": {
-      "note": "Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence.",
+      "note": "Current dispatch caller resolution owns the structural boundary; source inspection is not execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "60b1526e615c4bb52f9043028bb41fecdbac545e",
+            "blob": "26b04e16dd6624bc8fe08f873e6409e4be766ad3",
             "content": "sha256:008f44c65414e7f4aae38d408695a61bcad2d0d82d8de6dfa574bd6f1d54867d",
             "locator": {
               "kind": "symbol",
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "60b1526e615c4bb52f9043028bb41fecdbac545e",
-            "content": "sha256:74c1cb1b204d16a82af351bfe8227819c1e53f6e2bae3caa764b7d733cefaeba",
+            "blob": "26b04e16dd6624bc8fe08f873e6409e4be766ad3",
+            "content": "sha256:8b2b3295209a9e653dee8d6e991664327eee175c2bc7266e52cb31b0f77c27ca",
             "locator": {
               "end": 443,
               "kind": "line_range",
@@ -32,7 +32,7 @@
       ]
     },
     "2": {
-      "note": "The route's activation vocabulary is contract-scoped: the record carries the contract fingerprint, the canonical contract path, the selected master, the writable selection state, a monotonic revision, and selection time.\n\nAnchor: \"class AtomicSeriesActivationRecord(BaseModel):\"",
+      "note": "The record carries the fingerprint, canonical path, selected master, record state, positive revision and selection time.",
       "targets": [
         {
           "anchor": {

@@ -8,119 +8,47 @@
 
 [dashboard/src/panels overview](../overview.md)
 
-## 260928-MIK-L34 A Code Pane Can Carry Marks On Its File Lines
+## Purpose
 
-`MIK-R34` adds one module and one optional prop to this route, for the reviewer's per-hunk intent markers, all inert
-for the File Viewer. [`markGutter.tsx`](markGutter.tsx.md) (new, carded, governed here, with its test
-[`markGutter.test.tsx`](markGutter.test.tsx.md), 15 cases) is a CodeMirror gutter whose markers are React content
-portalled into hosts the pane owns, placed on the pane's own file line numbers: `useMarkedPane(marks)` gives a pane
-the gutter per editor, the portals, `placement` (rebuild only when a mark moves) and `drawn`, which exposes the marks
-to assistive technology, expands a collapsed run of unchanged lines that holds a mark (ruling 2026-09-30T16:19:34 Q4),
-and reveals a returned-to mark with focus on it. The reveal's hold keeps the mark focused and in view while CodeMirror
-settles and ends at the reader's first pointer, key or wheel, at focus moved elsewhere, at teardown, or after 45
-frames (review R2-F1, R3-F1, R3-F2). Below 40rem the gutter is sized to each mark's compact text (review R1 F2).
-[`FilePane.tsx`](FilePane.tsx.md) gains `marks` (the `"all"` gutter first in its extensions, `drawn` after the build
-and at teardown, the portals after its host); `changeset/DiffPane.tsx` takes the same prop per editor. Which line a
-mark sits on is always the caller's decision. The File Viewer passes no marks and renders exactly as before.
+`file-viewer/` implements the **File Viewer** centre tab: a general-purpose, read-only browser for code and paired onboarding across repositories, mainline scopes and worktree enclosures. It consumes `GET /api/files/{repos,list,read,onboarding}`, registered by `serving/files.py`, and supplies reusable code-pane primitives also used by the Change-Set Viewer and Knowledge reader.
+
+The shell keeps this full-bleed view mounted and hides it across tab switches. Repository and scope selection, the open file and expanded trees therefore survive a switch.
+
+## Hot Path Summary
+
+First active showing → repository catalog → repository/scope selectors → shared code and onboarding explorers → code read and bidirectional pairing → read-only code plus onboarding markdown. Partnerless readable onboarding fills the pane; the effects-gated siege-tank backdrop fills it before selection. The mounted view retains its state across tab switches.
+
+## Route Model
+
+- [`FileViewer.tsx`](FileViewer.tsx.md) owns the page and its component state. React Aria `Select` controls choose the repository and mainline/enclosure scope from the repository catalog. Two trees browse code and onboarding; `DualPane` displays the selection. Opening a code file reads it and resolves its onboarding forward. Opening an existing file sidecar resolves its code partner and follows the same code-opening path. A partnerless onboarding document whose reverse result carries a readable body displays its own markdown full-pane; a result without that body displays an overview placeholder. Changing repository or scope clears the open code and onboarding. Split/single mode persists across file switches and reloads through `usePersistedFlag`.
+- [`FileTree.tsx`](FileTree.tsx.md) adapts the shared [`grammar/ExplorerTree.tsx`](../../grammar/ExplorerTree.tsx.md). It supplies the requested side of `/api/files/list`, path-based row identity, `onOpen`, and the code side's “has onboarding” marker. The shared tree owns asynchronous loading, keyboard navigation, selection and expansion; the Knowledge reader uses the same explorer.
+- [`DualPane.tsx`](DualPane.tsx.md) shows code alone in single mode or code on the left and onboarding on the right in split mode, with sizes persisted by `react-resizable-panels`. The onboarding side reuses `grammar/Markdown`. Before any file is opened, `EmptyStateBackdrop` fills the pane with an effects-gated siege-tank boomerang video (`/assets/sc2-siege-tank-boomerang.mp4`, opacity `0.18`). Markdown without a code partner fills the pane in either view mode. Binary code, missing onboarding and overview results without a body use placeholders within the pane layout.
+- [`FilePane.tsx`](FilePane.tsx.md) is the reusable read-only, non-editable CodeMirror 6 pane. It wraps lines, loads the language extension asynchronously and applies the shared podracer theme. Optional `firstLine` defaults to 1; optional `fit` uses a content-sized editor capped at `32rem`. Optional `highlightedLines` decorates the cited file-line range with `cm-citedLine` and scrolls its first line into view. The Knowledge reader passes this range when its locator resolves. The Change-Set Viewer uses `FilePane` for plain code and its own `changeset/DiffPane.tsx` for merge rendering with the same numbering, language and theme primitives.
+- [`lineNumbering.ts`](lineNumbering.ts.md) exports `numberedFrom(first)`: ordinary `lineNumbers()` for line 1, otherwise a gutter offset to the excerpt's file-line numbers. `FilePane` and `changeset/DiffPane.tsx` share it.
+- [`markGutter.tsx`](markGutter.tsx.md) supplies optional marks through `useMarkedPane(marks)`: React portals into owned hosts, a gutter per editor, a `placement` key and the `drawn` callback. The key includes each mark's id, side, line, label and compact text, so changes to those values can rebuild the pane. `FilePane` inserts the “all” gutter before its numbered gutter, calls `drawn` after construction and at teardown, and renders the portals beside its host. `DiffPane` supplies the gutter for each editor side. [`markGutter.test.tsx`](markGutter.test.tsx.md) contains cases for marked collapsed runs, focus across gutter redraws and the bounded reveal hold; this description does not report test execution.
+- [`codemirrorTheme.ts`](codemirrorTheme.ts.md) maps the podracer CSS variables onto editor chrome through `EditorView.theme` and syntax tokens through `HighlightStyle`.
+- [`langByExtension.ts`](langByExtension.ts.md) maps the API's language id to lazily imported JavaScript, TypeScript, JSX, TSX, Python, JSON, CSS, HTML or Markdown support. Other ids return no language extension and render as plain text; `DualPane` intercepts binary code with a placeholder.
+- [`usePersistedFlag.ts`](usePersistedFlag.ts.md) provides a `localStorage`-backed boolean state hook for view-mode persistence. Its numeric sibling, `usePersistedNumber`, persists the Cockpit rails' pixel widths.
+
+## Invariants And Boundaries
+
+The File Viewer reads through the existing files API and owns its component state rather than mutating the dashboard store. Its code editor sets both read-only and non-editable extensions. Panda CSS styles the view, and React Aria supplies selector behaviour. The empty-state video is gated by the effects setting and reduced-motion preference. The inherited GSAP/Motion-only, no-CSS-animation intent is not withdrawn here; the reused DualPane currently has a CSS background transition, a source discrepancy rather than proof that the policy was retired.
+
+The shell hides the mounted File Viewer on other tabs and hides the rails for this full-bleed view, as it does for Engine Room, Topology and Chats. The repository-catalog effect waits for the first active showing. A completed success or failure settles that attempt for the component lifetime, so later visibility changes do not reread the catalog. Concurrent catalog reads share an in-flight promise, including during development effect replay; the shared slot clears on settlement.
+
+Marks use the pane's own file-line numbering; the caller chooses each mark's line and side. An empty marks list supplies no marks gutter. Once editors are drawn, the marks gutter is exposed to assistive technology while the other gutter columns remain hidden, and an unchanged collapsed run containing a mark is expanded, including its counterpart in a side-by-side diff. A returned-to mark is scrolled into view and its button focused when drawn. The subsequent hold uses passive pointer, key and wheel listeners and ends on those reader actions, focus moved elsewhere, pane teardown or the 45-frame cap. At widths up to `40rem`, gutter sizing uses the marks' compact text, or their labels when compact text is absent.
+
+The File Viewer's own `DualPane` passes only content and language to `FilePane`; excerpt sizing, marks and citation highlighting are optional facilities for other callers.
+
+## Evidence
 
 - The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. [1]
 - The bounded, passive hold released by the reader's pointer, key or wheel. [2]
 - The code pane's optional marks. [3]
-
-## 260928-MIK-L31 The Code Pane Can Show An Excerpt With Its File's Line Numbers
-
-`MIK-R31` adds one module and two optional props to this route, for the reviewer's focused expression cards, all
-inert for the File Viewer. [`lineNumbering.ts`](lineNumbering.ts.md) (new, carded, governed here) exports
-`numberedFrom(first)`: the plain `lineNumbers()` for line 1, otherwise a gutter that prints the file's own line
-numbers for an excerpt starting at `first`. [`FilePane.tsx`](FilePane.tsx.md) gains `firstLine` (default 1) and
-`fit` (a content-sized host capped at `32rem`); `changeset/DiffPane.tsx` uses the same gutter per side. The File
-Viewer passes neither prop and renders exactly as before.
-
 - The excerpt gutter. [4]
 - The code pane's optional first line and content-sized host. [5]
-
-## Purpose
-
-`file-viewer/` is the **File Viewer** centre tab (operations-integration slice L2): a general-purpose,
-read-only browser for code + paired onboarding across repositories and worktree enclosures. It is the
-first consumer of the L1 read-only files API (`GET /api/files/{repos,list,read,onboarding}`, served by
-`serving/files.py`) and the home of the reusable dual-pane the Change-Set Viewer (L4) will reuse. It is a
-full-bleed view that is **kept mounted** across tab switches (the Chats pattern), so its repo/scope
-selection, open file, and expanded tree state survive a switch instead of resetting.
-
-## Route Model
-
-- `FileViewer.tsx` — the page. A repository selector + a mainline/enclosure scope selector (React Aria
-  `Select`, fed by `/api/files/repos`) drive two Headless Tree explorers — a **code** tree and an
-  **onboarding** tree — over the files API; the right side is the reusable `DualPane`. Pairing is
-  **bidirectional**: opening a code file derives its sidecar (forward `/api/files/onboarding`), opening a
-  sidecar opens its partner code file (reverse) or — for a partnerless overview/onboarding doc — renders
-  that doc's **own markdown full-pane** so the prose is readable (falling back to an overview placeholder
-  only when its body is unreadable). View-mode (split/single) persists across file switches via
-  `usePersistedFlag`.
-- `FileTree.tsx` — the File API adapter over the dashboard's shared `grammar/ExplorerTree` (since
-  260928-MIK-L79): it supplies only the `/api/files/list` loader for the requested side, the row identity
-  and `onOpen`, and the code side's "has onboarding" marker. Loading, keyboard nav, selection and
-  expansion are the shared tree's.
-- `DualPane.tsx` — single | split (code **left**, sidecar **right**) via `react-resizable-panels`
-  (persisted sizes). The markdown sidecar reuses `grammar/Markdown`. Before anything is opened it fills the
-  whole pane with a faint, effects-gated **siege-tank boomerang backdrop** (`EmptyStateBackdrop`,
-  `/assets/sc2-siege-tank-boomerang.mp4`, `opacity 0.18`) instead of per-side placeholders; a **partnerless
-  overview** (markdown, no code) renders its markdown **full-pane**. A missing partner / binary /
-  overview-without-body still renders a **stable-size** placeholder (no flip-flop).
-- `FilePane.tsx` — the reusable read-only CodeMirror 6 pane (read-only + non-editable, line numbers,
-  language lazily imported by extension, the podracer theme). L4 reuses it via `@codemirror/merge`. Since MIK-L31
-  it takes an optional `firstLine` and `fit` for an excerpt (the reviewer's cards). Since 260928-MIK-L79 it also
-  takes an optional `highlightedLines`, which marks the cited lines (`cm-citedLine`) and scrolls the first into
-  view - how the Knowledge reader opens a citation at its lines.
-- `lineNumbering.ts` — `numberedFrom(first)`, the gutter `FilePane` and `changeset/DiffPane` share, so an excerpt
-  keeps its file's line numbers (MIK-L31).
-- `codemirrorTheme.ts` — maps the podracer OKLCH tokens (`styles/tokens.css` vars) onto CodeMirror via
-  `EditorView.theme` + a `HighlightStyle`.
-- `langByExtension.ts` — lazily maps the L1 `language` id to a `@codemirror/lang-*` extension
-  (js/ts/jsx/tsx/python/json/css/html/markdown); unknown/binary → plain text.
-- `usePersistedFlag.ts` — a `localStorage`-backed boolean `useState` (the `calm-cockpit` pattern) for
-  view-mode persistence; also exports its numeric sibling `usePersistedNumber` (used by the Cockpit
-  resizable rails to persist their pixel widths).
-
-## Invariants And Boundaries
-
-- Read-only over the L1 files API; no new serving endpoints. No store mutation — the File Viewer owns its
-  own component state, fed by the `data/files.ts` client.
-- Panda CSS owns looks, React Aria owns behaviour (the selectors are React Aria `Select`); no CSS
-  animation (GSAP/Motion only — master invariant).
-- Kept mounted (hidden) across tab switches so state survives; full-bleed (drops the rails) like the
-  Engine Room / Topology / Chats views.
-
-## 260928-MIK-L79 The Shared Tree And A Citation Highlight
-
-**Route meaning extended (MIK-R79).** The File Viewer's own tree adapter `useFilesTree.ts` is deleted;
-[`FileTree.tsx`](FileTree.tsx.md) now adapts [`grammar/ExplorerTree.tsx`](../../grammar/ExplorerTree.tsx.md), so
-the File Viewer and the Knowledge reader draw one tree. [`FilePane.tsx`](FilePane.tsx.md) gains the optional
-`highlightedLines` range the Knowledge reader's cited-code view passes; the File Viewer itself passes neither
-and renders exactly as before.
-
-## Hot Path Summary
-
-The File Viewer tab: repo/scope selectors → two Headless Tree explorers (code + onboarding) over the L1
-files API → a read-only CodeMirror dual-pane with bidirectional code↔onboarding pairing — opened
-overview/onboarding docs render as markdown full-pane, and a faint siege-tank backdrop fills the pane until
-a file is selected; kept mounted so state survives a tab switch.
-
-## Evidence
-
-### Repo-Internal References
-
 - The L1 read-only files API this view consumes. [6]
 - The same-origin client wrapping that API. [7]
-- The shell that registers + keeps this view mounted. [8]
-
-
+- The shell registers and keeps the file view mounted. [8]
 
 - The markdown renderer the sidecar pane reuses. [9]
-
-## Current L5I Route State
-
-The mounted-hidden File Viewer does not fetch its repository catalog at dashboard boot. It waits for
-its first selected view, retains that settled result across later visibility changes, and shares an
-in-flight read during development effect replay.

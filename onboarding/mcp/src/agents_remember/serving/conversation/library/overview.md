@@ -1,181 +1,104 @@
 # Native Conversation Library Route Overview
 
+## Purpose
+
+This area implements the dormant native conversation library for Codex, Claude, and Pi: authorized catalog listing, historical reading, and reopening a selected native conversation through a tracked AR control session. Native stores remain the history authority. The library maintains no durable conversation index and does not own active vendor-event projection, browser or Toad state, or in-place process identity switching.
+
+Reopening exists to resume and prove one exact native identity. A launch request or deterministic session identifier is insufficient proof. The operation becomes `opened` only after readiness supplies the requested vendor identity and the service reads a bridge epoch through the runtime control-plane port. Unknown identity remains reconcilable; a proven mismatch triggers ownership-aware retirement.
+
+Authorization belongs to the server-resolved caller binding, not possession of a signed key or cursor. The inherited policy is narrow-only project access and capability-gated native operations. Present enforcement is distributed: list derives a filesystem-canonical scope; key resolution checks the signed authorization and harness and recomputes the identity digest from signed identity fields; ports validate paging scope and observed generation; read and a newly driven open check their respective capability features. This is narrower than saying every operation repeats every filesystem, generation, and capability check.
+
+## Hot Path Summary
+
+The five routes share `/api/harnesses/{harness_id}/conversations`: list, historical read, open, open-status, and open-reconcile. Each handler resolves runtime and authorization, narrows the harness to Codex/Claude/Pi, and builds a caller-bound service over shared app-runtime authorities. List and read default to 50 items and cap requests at 100.
+
+List derives the canonical scope, checks `capabilities.list`, and delegates to a harness port. The port validates an optional list cursor, obtains native catalog evidence, checks the cursor generation against its observed signature, and mints rows and continuation tokens.
+
+Read resolves the conversation key before checking `capabilities.read`. Key resolution validates token shape/signature, exact caller authorization, harness, and the identity digest derived from harness/vendor/signed project scope. It constructs a native reference from those fields; it does not itself inspect the live native store or compare the key's catalog generation against a freshly listed catalog. The port reads native history and validates an optional read cursor against scope and its read-generation signature. Pages contain chronological newest windows, 1-based ordinals within the observed native sequence, a total count for that sequence, and an older-page cursor when available.
+
+Open requires `expectedIdentityDigest`. It resolves the key, compares the expected digest, and, when cwd is supplied, canonicalizes that cwd against the runtime workspace and requires equality with the key's project scope. A fingerprint binds operation kind, caller authorization, harness, exact conversation key, digest, canonical project scope, and launch context. Under the ledger lock, a retained identical request returns its operation; a changed fingerprint conflicts. Raw cwd spelling is not fingerprinted: equivalent supplied paths can resolve to the same canonical scope.
+
+A newly admitted operation checks resume capability, asks the port for a server-private target, verifies its token and vendor identity, and validates supported launch material. Claude uses `--resume`; Pi uses `--session` with the resolved session file; Codex uses the tracked opener's `resume_thread_id` channel. The service records whether a live deterministic session lane already exists, calls the tracked opener, and sets `launched` only after the opener returns an opened catalog entry. Readiness is bounded, with a default proof wait of 45 seconds.
+
+Status and reconcile re-authorize the conversation key and require a retained operation matching the harness and exact key. They observe launched unresolved work without launching another operation. Reconcile additionally retries eligible retirement. `timeout-unknown` remains nonterminal and reconcilable. Pre-launch polls do not interpret an absent catalog row as failure.
+
+## Construction And Ownership
+
+`api.py` owns route declarations, request parsing, camel-case serialization, and the typed refusal-to-HTTP mapping. Request bodies forbid extra fields; optional launch context contains a canonical `TaskDocumentRef` and `seatRole`. All handlers construct `JSONResponse` objects. Their response-model declarations describe the OpenAPI surface; they do not themselves validate those already-constructed response bodies.
+
+`service.py` owns list/read orchestration and conversation-key authorization. `scope.py` owns list ordering (`last-activity-desc`), canonical project scope, query digest, and page-size bounds. Requested paths resolve through symlinks, must be existing directories within the resolved workspace root, and fail with a typed scope refusal on malformed paths or escape. This is a workspace containment predicate, not an additional repository-membership check.
+
+`factories.py` memoizes `LibraryShared` by exact runtime in a locked weak-key map. The shared bundle contains one random cursor signing key, gate registry, helper host, and open ledger. Ports and services are built for each caller. This avoids rebuilding signing/operation state per request or sharing an authority bundle across unrelated runtimes. `LibraryBinding(runtime, shared, authorization)` makes the per-app/per-caller split explicit; `OpenRequest` keeps the caller's idempotent request inputs together.
+
+`cursor.py` owns list/read cursors, conversation keys, resume targets, identity digests, and signature-derived catalog generations. Tokens contain canonical JSON protected by HMAC-SHA256 under a per-runtime-bundle key that is not persisted. Restarting with a new key invalidates outstanding tokens and requires native re-listing. List/read cursor payloads include signed purpose bindings. The external token prefix is checked separately and is not included in the MAC input; conversation keys and resume targets use key bindings without a signed purpose field. Keep the inherited server-private resume-target boundary explicit rather than treating prefix branding alone as cryptographic separation.
+
+`gates.py` discovers installed harnesses and caches one result per normalized harness and executable fingerprint. The fingerprint uses resolved executable path, size, and modification time. Unknown or absent harnesses return unavailable capabilities; typed production-probe failures return unverified capabilities with their reason. Codex proves connection, initialization, and `thread/list(limit=1)`; Claude/Pi prove helper preflight, correlated handshake, and a native helper `list(limit=1)`. Those successes select capability products advertising list/read/resume support. They are not separate read or resume probes on every call. Cached gates likewise do not constitute a fresh operation probe for every request.
+
+Observed runtime/helper versions are informational, following the named `260718-CHATS-L5F R4` contract-only decision. Locked version constants and version-bearing success text remain provenance or explanatory strings, not observed-versus-locked capability predicates. Codex and Claude advertise partial history/tool completeness; Pi advertises supported completeness. Pi's actual read implementation uses `SessionManager.getBranch()`, so its page is the current branch sequence, not demonstrated coverage of every append-only entry on every branch.
+
+`codex.py` opens short-lived direct app-server connections. Its default resolver uses the native-PATH seam; the probe also supplies a native-path environment. Native executable resolution rejects incompatible Windows interop paths on POSIX. Resolver `RuntimeError` within `_AppServer.__aenter__` and path-resolution failures become `LibraryStoreError`; this is not a claim that every surrounding environment-construction failure is converted at that same point. The connection sends the Agents Remember client name/version and requires the shared initialize validator's exact client suffix. The validator accepts a parsed server-product name as diagnostics, extracts its reported version, and requires codexHome/platform fields; it does not require `Codex Desktop` as the product name.
+
+`AppServerSeams` now includes environment, transport factory, and executable resolver. Its frozen default represents production behavior. `GateProbes` groups Codex probing, executable lookup, and environment access. The inherited intent is to substitute a coherent machine/process seam, avoiding mixed fake/live environments; the dataclasses are dependency bundles, not runtime enforcement that every member must be replaced together.
+
+`claude.py` and `pi.py` use `helper_host.py` and repository-owned Node helpers under `mcp/native_helpers/conversation_library/`. Each call performs spawn, handshake, one operation, and exit using `node --import tsx` from the helper package. No cache/global-module discovery is delegated to these ports. The host validates protocol, correlation, response shape, and required observed version fields; the operation result decides success. A version mismatch alone does not reject the surface. Missing runtime/helper prerequisites, malformed responses, timeout, process failure, and unsupported operations produce typed failures. Raw process stderr is withheld.
+
+The Claude helper lists scope-exact SDK sessions with `includeWorktrees: false`, sweeps their sub-agent directories, and carries enumeration evidence even for an empty catalog. Sub-agent identity is the composite `<sessionId>/<agentId>`; optional native metadata supplies description, type, model, `toolUseId`, and spawn depth. Missing metadata retains an honest `agent <short-id>` title rather than inventing a name or requiring a join key. Malformed metadata fails closed. Main history uses SDK messages; sub-agent history reads native JSONL. Both return ordinal windows over the sequence they actually obtained. Claude explicitly refuses resume-target resolution for composite sub-agent identities.
+
+Codex requests top-level kinds `cli`, `vscode`, `exec`, and `appServer`, plus a separate bounded page of `subAgent`, `subAgentReview`, `subAgentCompact`, `subAgentThreadSpawn`, and `subAgentOther`. It groups children by native `parentThreadId` without experimental parent-list filters. Native RPC refusal of agent enumeration becomes an exact `agents_note`; transport failure remains a store error. The agent fetch cap is 100, with a truncation note on continuation. Detected nested agents whose parents are agents are not shown and are named in the note. Claude instead shows detected depth>1 agents flat under the top-level session and explains that limitation. Missing Claude enumeration evidence produces an unavailable note, including on an empty catalog.
+
+`codex_normalize.py`, the Claude/Pi parsers, and `normalize_common.py` normalize native history into shared conversation models. Native provenance stays `native-only`, with producers named only where justified. Unknown vendor kinds/content remain explicit `unknown-vendor` evidence. Shared text capping uses 8192 characters plus a visible truncation marker. Codex flattens native turns/items; Claude uses native UUID/message records; Pi retains native entry identifiers and branch ordinals. This area does not infer missing vendor history or promote native evidence into AR-authored provenance.
+
+Wire grammar and operation products now live in `models/conversations/`, including history, cursors, identity, and opening. The canonical library port lives in `serving/ports.py`; runtime and authorization dependencies remain in the parent conversation area. The tracked opener, readiness, control-plane authority, and retirement modules retain lifecycle ownership. File sidecars and the parent overview provide the preserved route map; this proposal does not replace their coverage metadata.
+
+## Invariants And Boundaries
+
+A token is never authorization. Preserve the caller-binding, harness, scope, purpose, signature, and observed paging-generation predicates at their actual owners. List re-derives filesystem scope; read/key resolution uses the signed scope; an explicitly supplied open cwd must match that scope. The key's identity digest is an HMAC over identity fields, not a live-native-store freshness probe. Native presence/readability is subsequently established by the port operation.
+
+Generation means a digest of selected observable signature fields, not a durable counter, full-store index, or proof that every possible native edit is detected. Codex list generation samples the first 100 top-level IDs, continuation presence, fetched agent IDs, and enumeration note. Codex read generation includes vendor ID, item count, and updatedAt. Claude/Pi helpers similarly sign selected IDs, modification values, lengths, and tail identities. Paging resets when these signatures differ; edits outside those observables need not change the generation.
+
+The in-memory open ledger defaults to 256 records. Access updates LRU order; admission evicts terminal records and refuses when every retained record is live or unresolved. Idempotence is guaranteed by retained request state within this app lifetime, not an eternal durable one-launch receipt. Restart or terminal eviction removes the retained operation. `pending` and `timeout-unknown` are nonterminal; successful and failed terminal outcomes are eviction candidates.
+
+The deterministic `ar-open-<digest>` identifier is replay keying, never evidence of launch. `launched` authorizes proof observation and retirement. `absorbed_existing` protects a pre-existing live session from retirement regardless of proof outcome. A matching absorbed session may settle opened; a mismatching one fails `launch-failed` and remains untouched. Failed or mismatching record-owned launched sessions use the retirement authority. Retirement is idempotent after completion; an absent row does not falsely mark retirement complete, and published identity can carry `retire-pending` or `retire-failed` for reconcile. Pre-identity launch failure can keep wire rollback `not-needed` while server-side retirement is attempted, as required by the landed operation product.
+
+Readiness rereads catalog identity after observing the bridge, comparing session ID, tmux name, and creation time. Locally, the library settlement compares the observed vendor ID with the requested vendor ID and then reads the bridge epoch. It constructs the active reference with the requested harness and scope. Preserve the inherited exact session/harness/vendor/epoch intent, but this local construction is not itself an independent comparison of every requested identity component; downstream authority validation remains a separate boundary.
+
+A ready bridge without a published vendor identity proves neither match nor mismatch. The operation stays `timeout-unknown` and reconcilable without retirement. Failed control or terminated/unknown launched sessions take ownership-aware failure handling.
+
+The open route deliberately supplies `legacy_launch_capsule` with `LIBRARY_REOPEN_LEGACY_REASON`, preserving the named `260915-CAPS-L15` decision. A capsule delivered to a Codex thread this session did not open has unknown applied revision; the current refresh plan selects `FRESH_THREAD`, and request construction drops `threadId`. That would destroy the exact-reopen proof this route exists to obtain. This is a reasoned route-specific exception, not an unspecified missing capsule. The inherited owner of a future capsule-carrying reopen is the final-verification leaf with the harness delivery leaves that own thread lifecycle.
+
+The inherited policy that sub-agent histories have no native resume target is explicit in Claude's resolver. Codex's local resolver instead calls `thread/read(includeTurns=False)` and mints a `codex-thread-resume` target without a source-kind-specific refusal there. Preserve the cross-harness no-resume statement as inherited intent with this implementation difference; do not infer that every downstream Codex launch path permits or refuses sub-agent resume from this function alone.
+
+Routine typed refusals map subclass-before-base to 400/403/404/409/422/503; unexpected exceptions remain loud. Range-absurd Codex/Claude timestamps and selected malformed native shapes have typed store-error conversions, rather than a blanket guarantee for every possible exception. The open outcome map directly indexes all eight declared outcomes: opened→201; pending/timeout-unknown→202; unsupported→422; stale-identity/request-conflict/identity-mismatch→409; launch-failed→503. Keep that map total when changing the outcome model. The open response declarations union operation and refusal shapes on overlapping statuses so dict merging does not erase the refusal family. Null identity/cursor fields remain meaningful on the wire.
+
+Resume targets remain server-private and must not be placed on public wire models, logs, or diagnostics. The helper timeout is 30 seconds; its 64 MiB stdout limit is checked after `communicate()` has collected the response. This is a post-collection rejection, not a streaming memory bound. Retain the named O3 acceptance and O1 token-prefix hardening limit rather than silently strengthening the implementation claim.
+
+## Historical And Verification Limits
+
+This is a source-only adjudication at the stated code head. No tests, harnesses, helpers, app-server connections, or delivery gates were executed. Source predicates and capability reason strings are not fresh acceptance evidence.
+
+The inherited card records six focused suites, a foundation pin, installed-runtime production gates, and two real open E2Es. It also names artifacts retired in the `d3610903` suite reduction: the installed Codex 0.144.5 runtime fixture and native-history/list-read-resume evidence. Those removed witnesses are not present execution receipts and cannot establish current installation support or capability enablement. Preserve the named historical evidence and its retirement limit without claiming it still proves the route today.
+
+The `260731-EFA-L2` history explains the per-app/per-caller binding, grouped open request, coherent substitution seams, and removal of an obsolete `ToolPhase` Ruff suppression when the target matched Python 3.11. `260731-EFA-L4` explains response-shape declarations and deletion of the silent unmapped-outcome 500 fallback. Its named `test_serving_response_conformance.py::DeclaredSurfaceCoverageTests::test_the_open_status_map_is_total_over_the_declared_outcomes` and `ConversationSuccessConformanceTests` are inherited verification references, not results from this pass. The inherited harness-specific failure legs remain declared-and-undriven with recorded reasons; this proposal does not recreate unavailable reasons or upgrade those legs to exercised evidence.
+
+The `260731-EFA-L9` history moved wire contracts and the canonical port out of the former monolith; current imports determine their present locations. `260731-EFA-L23` made native executable resolution a Codex seam and server-product diagnostics non-authoritative, superseding the contradictory Desktop-only prose while retaining the exact client-suffix requirement.
+
+The Codex source-kind comments retain a named historical installed Codex 0.145.0 probe on 2026-07-26 and a vendor enum witness; Claude's slug comments retain SDK 0.3.207/live-directory provenance. Those old external/vendor/live witnesses were not independently examined here. Current request kinds, slug construction, and failure behavior are source-visible, but their installed-vendor compatibility remains a historical claim until separately verified.
+
+The CAPS-L15 whole-production-launch-site enumeration claim and named `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` remain inherited verification context. This pass confirms this route's explicit legacy reason and the current Codex fresh-thread mechanism, not an exhaustive audit of every production launch site.
+
+The inherited O1 limit is that the external token prefix is not MAC-covered; O3 is the helper response-size check after collection. F1/O5 distinguish session-ID presence from launch evidence; F1b refuses a false retirement tombstone on an absent row; F5 protects absorbed pre-existing sessions; F2/F3/F4 concern malformed paths, payload shapes, and timestamp ranges; O4 concerns precise routine-refusal mapping and settling an escaping open-drive fault. These named responsibilities remain visible without converting historical reviews into current execution verdicts.
+
+The inherited resolved-memory claims of no permitted neighboring repository and an empty Domain Documentation registry were not re-resolved in this source-only pass. No cross-repository implementation or external documentation is introduced as evidence here. The old partitioned-curation refresh note is pass context, not product behavior or an instruction authority. Existing status, coverage, route metadata, excluded tables, and reference identities remain under parent preservation.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-
-## What This Area Is
-
-### 260731-EFA-L23 Route Delta
-
-L23 makes Codex executable selection a native-PATH resolver seam and treats the initialize server product as diagnostic rather than authority. Exact Agents Remember client suffix and version agreement remain mandatory, and resolution failures surface as typed store errors.
-
-This route is the implemented dormant native conversation library.
-It exposes each normalized harness's (Codex, Claude, Pi) native conversation catalog and history
-through an authorized read-only library, and opens a selected native identity as a new
-idempotently tracked AR control session only after exact catalog proof. Every list/read/open
-call re-authorizes: the server-resolved caller binding is checked against the token-bound scope,
-the canonical project scope is re-derived narrow-only, the identity digest is recomputed from
-native identity, and the harness's live production-path gate must report the feature
-`supported` before any native store is touched.
-
-This is deliberately a read-and-open route. It keeps no durable conversation index, projects no
-active vendor events, never mutates a running process identity (`switch_session`), and never
-touches browser or Toad state. Codex reads are direct app-server connections; Claude and Pi
-reads run through the repository-owned locked helpers under
-`mcp/native_helpers/conversation_library/`. Each Codex connection accepts only the current
-`Codex Desktop/<version>` initialize product whose diagnostics end in the exact client name and
-version sent by the library; that primary Desktop version remains the thread/runtime identity.
-
-## Hot Path Summary
-
-Start with `api.py` for the five routes and the exact typed-error→HTTP mapping. `service.py`
-re-authorizes every list/read, `open_service.py` owns the idempotent exact open plus bounded
-operation ledger, `cursor.py` mints/verifies every signed token, `scope.py` derives the
-narrow-only canonical scope, `gates.py` runs the live capability gates, and `factories.py`
-holds the per-app shared bundle. `codex.py`/`claude.py`/`pi.py` are the three dormant resolver
-ports; `helper_host.py` runs the locked Node helpers; `errors.py` is the leaf-local typed
-family.
-
-## What Belongs Here
-
-| Path | Role |
-| --- | --- |
-| `api.py` | The five library routes (list/read/open/open-status/open-reconcile) plus the reviewer-O4 error-status ladder. |
-| `service.py` | Per-call list/read re-authorization and capability orchestration. |
-| `open_service.py` | One stable requestId + fingerprint open ledger, launch, exact catalog proof, honest retirement. |
-| `cursor.py` | The one mint/verify boundary for list/read cursors, conversation keys, and server-private resume targets. |
-| `scope.py` | Narrow-only canonical project scope, query digest, and bounded page sizes. |
-| `gates.py` | Live production-path capability gates cached per installed-executable fingerprint. |
-| `factories.py` | Per-app weak-key `LibraryShared` bundle and per-request caller-bound port/service builders. |
-| `helper_host.py` | Python host for the locked repository helpers: spawn, handshake, one operation, exit. |
-| `codex.py` | Direct Codex app-server list/read/resolve port plus the gate probe; also the probe-proven `subAgent*` source-kind agent listing grouped under each parent row with an honest `agents_note`. |
-| `codex_normalize.py` | Codex thread-item → normalized `ConversationItem` parser. |
-| `claude.py` | Locked-helper Claude list/read/resolve port; also the meta-bound `subagents/*.jsonl` sub-agent rows and reads. |
-| `pi.py` | Locked-helper Pi list/read/resolve port. |
-| `normalize_common.py` | Shared text-capping, provenance, required-field, and content-extraction primitives. |
-| `errors.py` | Leaf-local typed error family mapped by the routes. |
-
-## What Does Not Belong Here
-
-| Nearby Thing | Belongs Instead In |
-| --- | --- |
-| Strict wire grammar, cursor brands, and operation products | `mcp/src/agents_remember/serving/conversation/models.py` (the parent contract route). |
-| Runtime composition, authorization ruling, and request dependencies | `mcp/src/agents_remember/serving/conversation/` (consumed, never edited). |
-| Locked Claude/Pi helper implementations and protocol | `mcp/native_helpers/conversation_library/`. |
-| Tracked opener, retirement mechanics, and catalog/readiness authorities | Existing serving modules (`terminal_opener.py`, `retire.py`, `hosted_readiness.py`). |
-| Any durable conversation index, browser projection, or in-place identity mutation | Nowhere; these are explicitly forbidden. |
-
-## Structures Found Here
-
-- Five FastAPI routes on the prefix `/api/harnesses/{harness_id}/conversations`, with strict
-  extra-forbid request bodies and one camel-case serialization point.
-- A leaf-local typed error family subclassing the shared `agents_remember.errors` types, mapped
-  subclass-before-base to one precise HTTP status each (no raw 500 for routine refusals).
-- Purpose-branded, HMAC-SHA256-signed opaque tokens whose signing key is per-app and never
-  persisted; a restart invalidates outstanding tokens honestly.
-- A content-derived catalog generation (no server-side counter or index) that resets cursors
-  when the native store observably changes.
-- Live capability gates (contract-only): Codex proves `thread/list` over
-  a real app-server connection (the observed CLI version rides the evidence as informational metadata
-  only — never compared to a locked constant); Claude/Pi prove the helper handshake plus a real native
-  `list` call, where the OPERATION result is the gate and the handshake reports observed versions
-  informationally. Results are cached per installed-executable fingerprint, bounded by the three
-  normalized harnesses.
-- A bounded (256) in-memory open-operation ledger keyed by caller principal + requestId with
-  LRU terminal eviction and a hard refusal when full of live work.
-- An explicit `launched` authority plus an `absorbed_existing` spawn-ownership discriminator on
-  every open record, so pre-launch polls never settle and foreign pre-existing sessions are
-  never retired.
-- First-class sub-agent rows: codex lists the probe-proven `subAgent*`
-  source kinds (`subAgent`, `subAgentReview`, `subAgentCompact`, `subAgentThreadSpawn`,
-  `subAgentOther`) and groups agent rows under their parent row client-side; claude enumerates
-  meta-bound `subagents/*.jsonl` transcripts keyed by `toolUseId`. Missing enumeration proof
-  surfaces as an exact `agents_note` — never a silent absence — truncation and nested (depth>1)
-  agents are named in the note, and sub-agent identities fail closed (no native resume target,
-  no fabricated names: the honest `agent <short-id>` fallback).
-
-## Operating Model
-
-1. Each handler resolves the runtime and authorization through the same two request
-   dependencies, narrows the raw harness id, and builds caller-bound services from the per-app
-   shared bundle.
-2. List/read re-derive the canonical scope, re-check the live gate, verify cursor/key purpose,
-   signature, scope binding, and catalog generation, then delegate to the dormant port.
-3. Open resolves the conversation key, checks the expected identity digest and optional cwd
-   narrowing, accepts only the canonical task-document reference plus role as optional launch
-   context, and records one immutable fingerprint per (principal, requestId); identical
-   replays return the retained operation, changed fingerprints conflict without launching.
-4. The drive gates resume support, resolves and verifies the server-private resume target,
-   launches a NEW tracked session through the existing shared opener (argv `--resume`/
-   `--session` for Claude/Pi, `resume_thread_id` for Codex through the landed opener channel), and
-   waits bounded for exact catalog proof (session id + harness + vendor identity + bridge
-   epoch).
-5. Status/reconcile re-authorize and re-observe; timeout stays `timeout-unknown` and
-   reconcilable; failed or mismatched record-spawned sessions are retired idempotently with an
-   honest rollback state.
-
-## Main Flows
-
-### Authorized native list
-
-1. `canonical_library_scope` narrows the requested cwd inside the caller's workspace root;
-   traversal, symlink escape, and malformed paths fail closed as `LibraryScopeError`.
-2. The live gate must report `list` supported, else `LibraryCapabilityError` → 422 with the
-   exact contract-probe-failure reason (never a version-comparison reason).
-3. The port verifies the signed list cursor (purpose, scope, generation) and pages the native
-   store, minting rows whose conversation keys bind scope, vendor identity, identity digest,
-   and generation.
-
-### Authorized historical read
-
-1. `resolve_key` re-authorizes the opaque conversation key and recomputes the identity digest;
-   a changed native identity fails as `stale-identity`.
-2. The gate must report `read` supported; the port verifies the read cursor and returns a
-   newest-window page with stable 1-based global ordinals, an honest `totalItems`, and an
-   older-page cursor.
-
-### Idempotent exact open
-
-1. `open()` re-authorizes the key, compares the caller's expected digest, fingerprints the
-   immutable request, and dedupes under the ledger lock.
-2. `_prepare` resolves and verifies the resume target (kind `argv` or codex-only
-   `codex-thread-resume`, both validated); `_launch` records spawn ownership before calling the
-   tracked opener with the deterministic `ar-open-<digest>` session id.
-3. `_prove` waits bounded for readiness and settles: exact vendor identity → `opened` (201);
-   proven mismatch → `identity-mismatch` plus real retirement of the record-spawned session;
-   absorbed foreign sessions fail honest `launch-failed` and are never retired; otherwise
-   `timeout-unknown` (202), reconcilable by status/reconcile.
-
-## 260915-CAPS-L15 The Reopen Is The Declared Legacy Launch Point
-
-The route's exact open is the **one production launch point that deliberately does not carry a role
-capsule**, and `260915-CAPS-L15` made that a stated decision instead of an absent field.
-`open_service.py` declares `LIBRARY_REOPEN_LEGACY_REASON` and passes
-`legacy_launch_capsule(env.get("AR_SPAWN_ROLE"), LIBRARY_REOPEN_LEGACY_REASON)` on the launch request, so
-the instruction mode this route records is `legacy` **with its reason** on every run.
-
-**The reason is a measured behaviour trade, not styling.** This route exists to reopen one exact native
-conversation and to prove the identity it resumed (`_settle_observation` compares the vendor identity it
-observed with the one the record names). L5's refresh plan resolves *any* resume this session did not
-itself open to `FRESH_THREAD`, dropping `threadId` — so delivering a capsule here would convert the
-reopen into a fresh thread and destroy the identity proof the route exists for. Excluding the capsule
-keeps the route's own contract intact; the alternative is a different route, not more wiring.
-
-**What a reader must not conclude.** The exclusion is *this* route's; every other production launch point
-is wired, and `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` fails if
-any `TerminalLaunchRequest(` site has neither disposition or if the set of sites changes. Owner of any
-future capsule-carrying reopen: the final-verification leaf, with the harness delivery leaves that own
-the thread lifecycle.
-
-- The declared reason and the explicit legacy declaration on the launch. [1]
-- The refresh plan that makes a capsule-carrying reopen a fresh thread. [2]
-- The identity proof the reopen exists for, which the exclusion protects. [3]
-- The cases pinning the declaration and the whole-site enumeration. [4]
-
-## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -193,73 +116,6 @@ the thread lifecycle.
 | `pi.py` | pi port | Helper-backed list/read/resolve; reading never calls `switch_session` on any process. | covered |
 | `normalize_common.py` | shared primitives | One home so the three resolvers cannot drift apart. | covered |
 | `errors.py` | typed family | Leaf-local errors the route table maps exactly; parallel leaves stay collision-free. | covered |
-
-## Local Invariants And Traps
-
-- Possession of a cursor/key is never authorization: every call re-resolves the caller binding
-  and re-checks scope, purpose, and catalog generation.
-- Capability `supported` requires the live production-path CONTRACT probe to pass; a failed probe
-  demotes the whole harness history surface with the exact probe-failure reason. NO version-string
-  comparison gates or demotes any capability — the observed version is informational evidence.
-- The deterministic open session id is replay keying, never launch evidence; only `launched`
-  authorizes proof observation and retirement, and `absorbed_existing` sessions are never
-  retired whatever they prove.
-- `ready` without a published vendor identity can neither prove nor disprove an open; the
-  record stays reconcilable and the session is not retired.
-- Range-absurd but type-valid native timestamps and shape-skewed native payloads fail as typed
-  `LibraryStoreError` (503), never raw 500s (review F2/F3/F4 fixes).
-- Resume targets are server-private; they must never appear on any wire model, log, or
-  diagnostic (review O1 hardening note: the token purpose prefix is not MAC-covered).
-- The helper response byte bound is checked after `communicate()` returns (review O3); the
-  helper is repository-owned and locked, so the practical risk is accepted for this leaf.
-- Library cursors/keys are non-interchangeable with the active cursor family, and the
-  `library-list`/`library-read` purposes are non-interchangeable with each other.
-- **`_OPEN_STATUS_BY_OUTCOME` must stay TOTAL over `OpenConversationOperation.outcome`.** Since
-  260731-EFA-L4 `_open_call` indexes it directly (`_OPEN_STATUS_BY_OUTCOME[operation.outcome]`)
-  instead of the old `.get(operation.outcome, 500)`. A ninth outcome added without a status is now
-  a loud `KeyError` at the one place that can fix it; before, it answered **500 carrying a full
-  operation body** — a shape no `responses` table declares, on a status no test could ever drive,
-  silently. `test_serving_response_conformance.py::DeclaredSurfaceCoverageTests
-  ::test_the_open_status_map_is_total_over_the_declared_outcomes` asserts set equality between the
-  map's keys and the `Literal`'s eight members, which is what makes the direct index safe.
-
-## Evidence
-
-### Repo-Internal References
-
-The parent contract route supplies the wire grammar and the two-port split this slice
-implements; the composition supplies the runtime, authorization, and dependency seams; the
-tracked opener/readiness/retire authorities execute the open. Six new test suites plus the
-foundation pin prove the contract on doubled boundaries, and the installed-runtime suite proves
-the live gates and both real open E2Es.
-
-- The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. [5]
-- The L0 request dependencies are the only consumption seam the handlers use. [6]
-- The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. [7]
-- The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. [8]
-
-| The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
-| `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-4986 |
-| Historical evidence (retired with the d3610903 suite reduction): The installed Codex 0.144.5 runtime fixture recorded disabled capabilities and the native-history/list-read-resume production-gate evidence. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-
-### Cross-Repo References
-
-No cross-repository implementation participates in this route. The locked npm dependencies are
-third-party libraries resolved only from this repository's package/lock, and the resolved memory
-policy allows no neighboring repository.
-
-No relevant cross-repo evidence found.
-
-### Docs References
-
-The resolved `Domain Documentation` registry has no entries. This route therefore uses the
-repository-owned contract, production seams, fixtures, and tests as its direct evidence and does
-not fabricate an external citation.
-
-No configured domain documentation was available for this library gate.
-
-## File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -279,113 +135,32 @@ No configured domain documentation was available for this library gate.
 | `normalize_common.py` | [`normalize_common.py.md`](normalize_common.py.md) | covered | Shared normalization primitives. |
 | `errors.py` | [`errors.py.md`](errors.py.md) | covered | Leaf-local typed error family. |
 
-## Child Overviews
+## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): The declared reason and the explicit legacy declaration on the launch. [1]
+- Retained reference account (no fresh execution or acceptance inferred): The refresh plan that makes a capsule-carrying reopen a fresh thread. [2]
+- Retained reference account (no fresh execution or acceptance inferred): The identity proof the reopen exists for, which the exclusion protects. [3]
+- Retained reference account (no fresh execution or acceptance inferred): The cases pinning the declaration and the whole-site enumeration. [4]
+- Retained reference account (no fresh execution or acceptance inferred): The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The L0 request dependencies are the only consumption seam the handlers use. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. [7]
+- Retained reference account (no fresh execution or acceptance inferred): The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. [8]
 
-None. The fifteen modules form one coherent, bounded library slice; a deeper overview would
-fragment the same authority boundary.
-
-## How To Use This Area
-
-Read this overview and the exact file sidecar first. Route/mapping changes require the ASGI
-route suite; token/scope changes require the cursor suite; gate or port behavior changes require
-the doubled suites plus the installed-runtime suite on a machine with the harnesses installed.
-Never infer capability from fixture existence or a locked dependency: only the live gates decide.
-
-## Needs Verification
-
-- Claude library is enabled or `unverified` strictly by the live helper CONTRACT probe (a real
-  `list`/`read` through the locked SDK helper against the installed runtime), no longer by an
-  installed-vs-locked version comparison. An auto-updated claude that
-  answers the helper `list` now enables the surface; a failed probe fails closed with the exact
-  contract reason.
-
-## Sub-Agent Listing Route Impact
-
-The dormant library now surfaces sub-agent conversations: codex lists the probe-proven
-`subAgent*` source kinds and groups agent rows under each parent row client-side; claude
-enumerates meta-bound `subagents/*.jsonl` transcripts and reads them through the composite
-`<sessionId>/<agentId>` vendor-id grammar. Enumeration without proof surfaces as an exact
-`agents_note` — never a silent absence — and sub-agent resume-target resolution fails closed
-(sub-agent transcripts have no native resume target). The five routes, cursor/key authority,
-live gates, and the open/reconcile service are unchanged.
-
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
-
-## 260731-EFA-L2 — Per-App vs Per-Caller, And Probes That Cannot Be Half-Faked
-
-The read-and-open boundary, the re-authorization chain and the gate-before-store rule are all
-unchanged. Three values now carry rules this route previously enforced only by convention.
-
-**`LibraryBinding(runtime, shared, authorization)` (`open_service.py`) makes the scope split
-explicit.** The runtime and the shared library state are *per-app*; the authorization is
-*per-caller*. Every operation fingerprint, ledger key and minted session id is derived from that
-pairing — binding them once is what stops one caller's request from being keyed under another's
-identity. A function in this route that takes `runtime` and `shared` without an authorization is
-operating outside a caller's scope and should be suspected.
-
-**`OpenRequest(request_id, expected_identity_digest, cwd=, launch_context=)` is one idempotent open
-in the caller's own words.** The request id keys the ledger, the identity digest is the exact row
-the caller believes it is opening, and cwd/launch context narrow where and how. **Replaying the id
-with any of the others changed is a conflict, not a second open** — and that is only checkable
-because the four form one fingerprinted value. Splitting them back into separate parameters would
-silently re-permit the replay.
-
-**`AppServerSeams` (`codex.py`) and `GateProbes` (`gates.py`) are all-or-nothing substitution
-seams.** `AppServerSeams(env, transport_factory)`: the environment selects the binary and its
-credentials, the transport factory decides how the process is spoken to — a fake transport against
-the real environment (or the reverse) talks to a process nobody meant to start. `GateProbes(
-codex_probe, which, environment)`: a gate answers "can this harness serve a library here?" only by
-probing the machine, via the codex app-server probe, PATH lookup, and the process environment —
-**faking one while leaving the others live probes two different machines.** Each has a frozen
-module-level default (`DEFAULT_APP_SERVER_SEAMS`, `DEFAULT_GATE_PROBES`) standing for "the real
-machine". Tests substitute the whole seam or none of it.
-
-`ToolPhase` in `codex_normalize.py` dropped its `# noqa: UP040` — the Ruff target version now
-matches the package's declared 3.11 floor, so the directive had nothing to suppress.
-
-## 260731-EFA-L4 — The Five Routes Declare Their Shapes, And One Silent 500 Was Deleted
-
-The read-and-open boundary, the re-authorization chain, the gate-before-store rule, the cursor/key
-authority and the open ledger are all unchanged. Two things changed in `api.py`.
-
-**1. Every route declares what it answers with.**
-
-| Route | `response_model` | `responses` |
-| --- | --- | --- |
-| `GET ""` | `ConversationLibraryPage` | `LIBRARY_RESPONSES` |
-| `GET /{conversation_key}` | `HistoricalConversationPage` | `LIBRARY_RESPONSES` |
-| `POST /{conversation_key}/open` | `OpenConversationOperation` (`status_code=201`) | `{**LIBRARY_RESPONSES, **OPEN_OUTCOME_RESPONSES}` |
-| `POST /{conversation_key}/open-status` | `OpenConversationOperation` (`status_code=201`) | same |
-| `POST /{conversation_key}/open-reconcile` | `OpenConversationOperation` (`status_code=201`) | same |
-
-`LIBRARY_RESPONSES` is `_ERROR_STATUS_TABLE` + `_error_response` transcribed: every typed library
-error lands on one of 400/403/404/409/422/503, so one table is the complete refusal surface of all
-five routes. The open trio need a second table because **they answer with two families on the same
-statuses**: `_OPEN_STATUS_BY_OUTCOME` picks 201/202/409/422/503 from the operation's own `outcome`
-and the body there is the operation (a `pending` open is an ANSWER, not an error), while
-`_error_response` still maps typed library errors onto the same 409/422/503 with refusal bodies.
-Because `{**a, **b}` is a dict merge and not a union, `OPEN_OUTCOME_RESPONSES` unions the refusal
-member into each overlapping status itself — a bare operation-only entry would overwrite
-`LIBRARY_RESPONSES`' entry and declare, on nine (route, status) pairs, a model the route cannot
-produce.
-
-**2. `_open_call` lost its `.get(..., 500)` default — a real behaviour change.** It now indexes
-`_OPEN_STATUS_BY_OUTCOME[operation.outcome]` directly. Before, an outcome nobody had mapped was
-answered as **HTTP 500 carrying a full operation body**: a shape no `responses` table names, on a
-status no test could drive, with no signal anywhere. Now it raises at the one place that can fix it,
-and `test_serving_response_conformance.py::DeclaredSurfaceCoverageTests
-::test_the_open_status_map_is_total_over_the_declared_outcomes` asserts set equality between the
-map's eight keys and `OpenConversationOperation.outcome`'s `Literal` members, so a ninth outcome
-fails in CI before it can reach the index.
-
-**What enforces the declarations.** Not FastAPI: every handler here returns a `JSONResponse` it
-built, so the decorator contributes an OpenAPI schema and validates nothing at runtime.
-`test_serving_response_conformance.py` drives the real routes and validates the returned body
-against the model declared for the status that came back; the library/open success bodies are
-driven off a real bridge in `ConversationSuccessConformanceTests` (they need a conversation key this
-app's own authority will sign), while the harness-specific failure legs remain declared-and-undriven
-with a recorded reason.
-
-## 260731-EFA-L9 Route Impact — Contract Imports Moved
-
-The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
+- Five routes resolve runtime/caller, declare response shapes, serialize JSONResponse, and use a total outcome map plus ordered typed refusal mapping. [9]
+- List canonicalizes requested scope; key resolution checks signed caller/harness/digest; read checks its feature before delegating. [10]
+- Requested cwd must resolve to a directory inside workspace root; query digest binds harness/scope/sort and page limits are bounded. [11]
+- Authorities are memoized per runtime and caller-bound ports/services are constructed separately. [12]
+- Cursor purposes are signed in their binding; external prefixes are checked separately from the canonical payload MAC. [13]
+- Gate success comes from connect/list or helper list; normalized cache entries use executable fingerprints, and successful products advertise broader features. [14]
+- Helper operation success is checked after correlated handshake; timeout and byte rejection are explicit, with byte checking after collection. [15]
+- Open idempotence is retained-state fingerprinting over canonical scope and launch context; terminal records can be evicted. [16]
+- Resume preparation, explicit legacy launch, launched marker, bounded proof, and ownership-aware retirement remain separate predicates. [17]
+- Initialize accepts a parsed diagnostic product and exact client suffix, with required home/platform fields. [18]
+- Native resolver is a third Codex seam; agent enumeration is bounded/noted and Codex local resume target resolution does not distinguish source kinds. [19]
+- Codex generation signatures use sampled IDs/notes or count/update fields rather than the complete store. [20]
+- Claude rejects composite-agent resume and distinguishes missing enumeration proof from known empty enumeration. [21]
+- Claude helper lists exact scope without worktrees, allows absent metadata with honest fallback, and reads main versus agent history separately. [22]
+- Pi history and total count come from the current branch; target resolution locates the native session file within scoped listing. [23]
+- Unknown-revision resumed Codex threads become fresh when capsule delivery is present, and request construction drops threadId. [24]
+- Readiness rejects catalog replacement and requires ready control plus acceptable submission state. [25]
+- Overlapping open statuses declare operation/refusal unions; operation models constrain phase/outcome and complete identity products. [26]
+- Normalization retains native-only provenance, visible text capping, native ordinals, and explicit unknown-vendor evidence. [27]

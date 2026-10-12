@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/providers/grepai",
   "references": {
     "1": {
-      "note": "GrepAI setup delegates to provider lifecycle commands.\n\nAnchor: `install_enabled_provider`, `prepare_enabled_provider`, `refresh_enabled_provider`",
+      "note": "GrepAI setup retains lifecycle delegation for install and refresh and direct clone orchestration for prepare, but all three entry points are disabled by the shared retired-provider enablement gate.",
       "targets": [
         {
           "anchor": {
@@ -39,11 +39,95 @@
             "path": "mcp/src/agents_remember/providers/grepai/setup.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:afad0cb5bf28ae43515811e7cc22fa4f3790ca6e5c8c7c2ab08002972d59e378",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:cae0af8d2b4badc125d3877517c8cac6b5841cf8b1aa856614c26665e63ca963",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleCommand"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9fedec650ef6711e3ad80e7a88a9eb186eb9500f99ceec3537dbe8464b474f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:a4460d5824d184b6940b104334b94889a50683cb94cd92c82485b2ab36412f71",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_enabled_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:014b352f04cb7276e6a67b68c60a49fe5d0a1c2a458082faf8e9d01525f997b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:7286e8c8a79da75ec8e8321e5981f846dc16b50dc3dd2392d37d3e27e2715c34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_watchers_needed"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "GrepAI context behavior is grouped under the provider-owned context package.\n\nAnchor: `grepai_runtime_layout`, `ensure_grepai_runtime_layout`",
+      "note": "GrepAI context behavior is grouped under the provider-owned context package: typed layout inputs preserve workspace roots, workspace rendering describes projects, and root exclusions keep `.grepai/` artifacts out of Git. Isolation preserves other valid normalized roots while replacing or adding the active project.",
       "targets": [
         {
           "anchor": {
@@ -68,11 +152,119 @@
             "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:fdb53d68d8ad24655dcf9f1a8b2394ea1a491cb654eff637f4329835d5a80ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiWorkspace"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:67e8e1494c77c70e60de3c0fbb83b49d6cee2608f509cd12925bd1651a012403",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiInstance"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:ba8ef24717004be52fd72ac2c9e53a768fbfda8e626dbaba310edf61d6062d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiBackend"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:fc9d5da877639599884f143f62a1b0c3150c93883e33be94832be35696cbab6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_workspace_config_text"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:e7ba3cf69f4125e3a9245d7acba5f392d85cbb82bc0b95a33460514d96fb0845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_project_lines"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:9138e9af694d5bd34e740c9001272baeee40884a75f950cabcd38577ee3295c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_grepai_root_gitignore"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:5dbfe025cc41e1eea14f593260ecdeba9a8ebb1590fdfd0e21d3d71e4cd5f94f",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_grepai_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:53ef67fda3a31bc16e2adc633f7e5ed5cb95324fca2d96586f5c2d97266ac390",
+            "locator": {
+              "kind": "symbol",
+              "name": "_isolated_grepai_base_fields"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:67dc987c25ea4f380d677e0138567a4bdf6a1b0cc8810ed6e213e69b39d3efdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_isolated_grepai_roots"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package.\n\nAnchor: `grepai_docker_start`, `grepai_docker_refresh`, `grepai_install`",
+      "note": "GrepAI lifecycle behavior remains grouped under the provider-owned lifecycle package; retained Docker start/refresh/install implementations do not establish a public provisioning route. Default port vocabulary remains in source. Clone validation explicitly pairs source and target, skips benchmark targets, and applies a no-progress watchdog without a total-duration cap. Identity imports are direct in isolation and shared common helpers, not uniformly direct across GrepAI modules.\n\nAnchor: constants lines 12-17; lifecycle imports lines 12-44; isolation imports lines 10-14; common imports lines 11-15 and 14-20; clone backend-start requests lines 227-254; clone watchdog implementation lines 257-379; default container ports lines 270-283 and 339-360",
       "targets": [
         {
           "anchor": {
@@ -107,6 +299,255 @@
               "name": "grepai_install"
             },
             "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:3c3cdb1c4290baa5b7d6bbd48fd9809b4a7cec84da6ddb0b474cbfd9bf902d06",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_unsupported_install_result"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:f29bc217a0573cda7813943aeda5ca57a98aaa30e6e3078df1c20a16942f8754",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_run"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:3eb75ca42d5cc1afeb82389862b15c8a9d3a0df438e7ad5409d75e549079dacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_host_port"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:9ff5d209e8125e309bae6d27ddd760ae0e449acd573d3a701f86cd86980e6481",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_host_port"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:24a0887dc5c6dd9b6fe59a8dd761e6de1764d917f2eb2066a66d9e29921d25d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_clone_context"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:9550e9ea70f353a14a424cc459fedec1456007734d3c330c29d40f44cd1f9157",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CloneInputs"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:b1a6eaa353ece8693475eaf95822598206512168634957c495ce0f6b3ab98cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clone_inputs"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:053fd0e58ab6cde04569320a829b6c1a37c8c9d2c60b54c3f60d1d5ef1b176ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:422b33369036dc0de752ee7d8660b3562dc603d3a574a42652831d32a5c1ffe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GrepaiCloneEnd"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:6f370ec8aa77f93b9bb07ad4c58ac9456f55292e395fa5e0cde6d280226f898b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clone_context_from_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:8f1ea4b3700b171165f7868d9e15951f568bc8a390b8d78f856f03cc48350e03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clone_skip"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68300208f6f3a60f2826907138f9ce564a45a08b",
+            "content": "sha256:03403601f76f9ecb486ed7b1fec04daeab45a7a0c2f73ce585ba044d3342c5b7",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:49f03a7259d3c5792eea4427fd78554f5b200981676d7ac13b9fb6136660a848",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:094a752c256d2770975058021c6db88d40819060fc7d895c0d08bdae606e3222",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26572d51bd5dcfb53f39dba99287153997b29f2c",
+            "content": "sha256:a7f26f0c997c7c3c284090e039c9fb54f57b5e6491438b9da25a94ff5525db7f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:4b447a7419d477764a72d31074aea857d3a60355a454d51c19cc39293ebc72f5",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:dbc5e5139c8f61663ba6459de0d4b6a6e45fdd0692e760997ccf2ea1c2642037",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:b91f5b8a146d6d9d546fffc428f8e867a2a6c11762554985150470f02a739a73",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:415867895c594d482edc65d757ae8933cbab29dcfeda495679f92b1ac0bd5654",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:d6707dbf706604a352fd8a08f79e14f3d70c022ff7716cea407c9f292660cbb7",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
           },
           "kind": "code"
         }

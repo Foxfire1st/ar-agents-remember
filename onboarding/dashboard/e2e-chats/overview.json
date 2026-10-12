@@ -1,0 +1,284 @@
+{
+  "path": "dashboard/e2e-chats",
+  "references": {
+    "1": {
+      "note": "Suite selection, serial configuration, timeouts and admission before opt-in\n\nAnchor: dashboard/playwright.chats-e2e.config.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79a0616d5c25f4a9d99ea881ddfbd47cfa307e9e",
+            "content": "sha256:f68ef2ee719090641f21133953fa3ec480e90c4f75441c74d617028dfe8da810",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/playwright.chats-e2e.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Four Codex cases and historical version label\n\nAnchor: dashboard/e2e-chats/codex.chats.spec.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e39ceff56f84b04f1e5ad8e50d07162983adc73",
+            "content": "sha256:9b5f9afebe7c0c915a427d09e59daaa6b7508a6030a8842161fca3cf9cdc8ccf",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/codex.chats.spec.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Claude cases and conditional model-control actions\n\nAnchor: dashboard/e2e-chats/claude.chats.spec.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc05c18254066948d092dd78ce7fdd581f246b9d",
+            "content": "sha256:360f73ef6fb7d4831a758eb6e83d37fe68f48dc72386921940ddd8b8d717df05",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/claude.chats.spec.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Pi scenario and historical version label\n\nAnchor: dashboard/e2e-chats/pi.chats.spec.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "733d3cb4ec4efdeb571de82962e58e8b33a823ac",
+            "content": "sha256:7e79f0dc20ed7eaf5eae0b9d5c188780834a0379a592e0067e731a069bad0b6f",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/pi.chats.spec.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Composed harness scoping and first-harness browser heap predicate\n\nAnchor: dashboard/e2e-chats/composed.chats.spec.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea7ac41552e6d514ad46c8c16272725d19a9db0b",
+            "content": "sha256:b912f3260b55d86f874d633fcbd6ec4ca03b253715a5768c19bcc4621fb70e73",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/composed.chats.spec.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Pi live-frame mapper leaves unhandled event types as unknown-vendor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89b1defd5a850e84e78d90bb9e3589b0b39901ae",
+            "content": "sha256:dd5fb6a4e5aca2233906794572ff7db73605150c57654e12310f1d5cf2b0cf4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/pi.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89b1defd5a850e84e78d90bb9e3589b0b39901ae",
+            "content": "sha256:f54d8a8b36dd92cba3068ef8f4e189a7e572f12a1b2e8a0f37c744eafef2d758",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/pi.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Original suite intent, screenshot associations and host runbook\n\nAnchor: dashboard/e2e-chats/README.md",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfefe44893e7f52f397b2d2acd95b7d70f41950",
+            "content": "sha256:4678953f9069a2cf7bbba3a514e05b6e4e3290d797d745c6c518ea364124264e",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dagger admission requires a matching nonce and attestation file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:1de2dde639c181144bafc495e4c5c0e171c566a10e6eb82bd2c14d11940e7a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Test opt-in skip",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7ab29cc9c6d0f6aecd7246833a7870c60ca83aa",
+            "content": "sha256:8613bb1f03e47af5b069b6b9c5adbe8615fd4b9b8f95d88d1ebbc2e875641497",
+            "locator": {
+              "kind": "symbol",
+              "name": "gateChatsE2E"
+            },
+            "path": "dashboard/e2e-chats/support/gate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Scratch Codex home, inherited override, build/sync, scratch settings, free port, daemon logs, health wait and stop\n\nAnchor: dashboard/e2e-chats/support/daemon.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bcd0fa3f00efd6bc2144e00a850806c9b9bd",
+            "content": "sha256:d3d07348d212484ba8786a6c2ac3ab663844ad966ca1678e159579876eee2f5d",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/e2e-chats/support/daemon.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Runtime rejects settings inside coordination root",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:2886c735cedfc00428dde172090a249ab60c22d185afe0d14e2d663cd5ad3f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "config_from_mapping"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Setup opt-in, base URL, shared state file and same-process handle\n\nAnchor: dashboard/e2e-chats/support/global-setup.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d2e611b4b5cd91cc35704f672ddf9352c466df",
+            "content": "sha256:f676c695fd93bedecdf9dc05e65dfaa22090babfd271da3552caa8948b2c662e",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/support/global-setup.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Teardown uses the stop handle rather than the state file\n\nAnchor: dashboard/e2e-chats/support/global-teardown.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d9ba6e150cfffd4fa51f9925b6590c61de1bd",
+            "content": "sha256:9836b5cd41facb322a1a8810b9e223be5bffba8cd12b0573795b8755d905e25b",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/e2e-chats/support/global-teardown.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Launch selection and bounded projection recovery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b30324ea794e609749543cc7e69b1ed497eb952d",
+            "content": "sha256:3cf4dde8c827bd01757b45c3b40076829f8e3ad92ef5ae34761231f6642e77e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "openChat"
+            },
+            "path": "dashboard/e2e-chats/support/drive.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Actual assertion predicates, turn counting, interruption, End and heap sampling\n\nAnchor: dashboard/e2e-chats/support/drive.ts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b30324ea794e609749543cc7e69b1ed497eb952d",
+            "content": "sha256:ff6737c785a3cbec0f1e3e9b37303762744eb7159f51a9462af2bfd83bbf69c0",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/e2e-chats/support/drive.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -9,13 +9,6 @@ This account controls the named changed seams; contradictory earlier card wordin
 - Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [9]
 
 
-## Landing evidence and retained intent
-
-A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
-
-- Evidence and working files stay outside the memory worktree. [10]
-- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [11]
-
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
@@ -33,12 +26,6 @@ The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pas
 
 ## Current Contract
 
-The Curator’s stage ends with task knowledge written, checked and published by the installed build and a clean quality check. It corrects its own refused writer input through that same writer and repairs its own coherence defects rather than relabelling them.
-
-Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
-
-MEMORY passes keep a separate count under the same settings limit as CODE; beyond-limit approval is the Architect’s or developer’s, recorded by the Manager.
-
 Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Knowledge/onboarding outputs stay inside the selected memory root; evidence and working files stay in task/scratch custody. Another installation’s writer cannot substitute for the admitted source-bound command.
 
 Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action.
@@ -47,7 +34,7 @@ Citation authoring previews the finite card list in one call and repairs it in o
 
 Converted MIK memory uses the admitted entries/records/history file writer without dataset publication flags. Lift only governing decisions with real alternatives, examine exact family guarantees and memberships, retain unchanged sibling revisions explicitly when justified, declare external sources and read the result planes back. A large worklist is one full-intake list of distinct outstanding memory actions, counted once; the seat organises that work with whatever its harness offers, at any size, while every durable write, semantic judgment, the full memory-quality operation and the handoff stay with the seat.
 
-Every normal authoring pass runs complete contract-scoped MQC, resolves or exactly escalates curator-actionable findings, reruns the raw ready check and clears missing/stale coherence with prepare → publish → validate. It also records the comparison through the existing producer and carries the exact generation or refusal. Explicit report-only admission writes its report/upstream message and claims none of the normal pass complete.
+Every normal authoring pass runs complete contract-scoped MQC, resolves or exactly escalates curator-actionable findings, reruns the raw ready check and clears missing/stale coherence with prepare → publish → validate. The Reviewer compares the base and candidate code and memory Git trees; the Curator records no separate comparison. The Curator carries its actual quality/coherence generation or refusal. Explicit report-only admission writes its report/upstream message and claims none of the normal pass complete.
 
 ## Conventions
 
@@ -115,40 +102,35 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
+
+The overview contract reads from purpose: title, governing overview, then `## What This Repo Is`, `## What This Area Is` or `## Purpose`; construction follows, then invariants/boundaries, and all citation lines stand together at the end. An overview change belongs in its applicable body section, never a leaf- or date-named section. The instruction states validator refusals for misplaced purpose, dated/leaf sections and nonterminal citation lines; source instruction is not evidence that a validation invocation ran.
+
+The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, with the Manager asking the task Architect.
+
+Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, correct-input guard refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops.
+
+## Landing evidence and retained intent
+
+A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
+
 ## Evidence
 
-### Repo-Internal References
+### Source range navigation
 
 | Finding | Anchor | References |
 | --- | --- | --- |
-| Bound intake, source-bound capability gap and report-only scope. | lines 11-33 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-33 |
-| Converted cards/writer, authored rationale, family/sibling obligations, full MQC/coherence and comparison. | lines 89-188 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:89-188 |
 | Turn truth, permitted memory surface and prohibited source/task/Git writes. | lines 178-247 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:178-247 |
 
-### Docs References
-
-No configured Domain Documentation source applies to this repository-owned contract.
-
-The operative contract is defined by the repository sources cited below.
-
-### Repo-Internal References
-
-These references name the current owners and the behavior they establish.
-
+- The mirror carries the same effect contract as the canonical role. [1]
 - Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]
-- The curator’s prohibited writes and source-stamp boundary. [3]
 - Process step 3 requires an authored rationale on every hand-off target before ingest (generated copy). [4]
-- Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13). [5]
-- On converted memory the curator follows the converted-card workflow. [6]
 - On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
-
-### Cross-Repo References
-
-No sibling repository defines this file's contract.
-
-No meaningful cross-repository implementation dependency.
-
-## Current Contract Evidence
-
-
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [8]
+
+- The curator’s prohibited writes and source-stamp boundary.  Anchor: `enclosure_in_scope` [3]
+- Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).  Anchor: `MIK-R13` [5]
+- On converted memory the curator follows the converted-card workflow.  Anchor: `citation_fix` [6]
+- Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [10]
+
+- Evidence and working files stay outside the memory worktree. [10]
+- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [11]

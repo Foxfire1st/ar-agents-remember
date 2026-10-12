@@ -43,6 +43,282 @@
         }
       ]
     },
+    "100": {
+      "note": "Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:7a6edf9b56b9290a93fb635cd5be841cca0c286dcc93a8600383f3352fb37284",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Entry intent counts and attribution share one response with distinct counted/partial/unavailable states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:94efe0fd1739c69fe70c229f98dbcecfd5d0e46a2afdc9d687a2ac9690047e72",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Family change facts and source locator meanings are mirrored rather than recomputed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:e6a0545e61865480c8b99354a7eaf8de24b661527abe1181e8faf663aca79a62",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:aae510af6583f8533b03a8a96ddd0c155f1a072687398cc8168535f19ea0738c",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Tree retry is bounded and superseded hooks abort and guard their results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
+            "content": "sha256:dc1d5d993a8c4224ac81568564398c22cb8d76356593f850fcc13a2ca43997cc",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
+            "content": "sha256:a4f5fdb7032e410d21d177f20618f471832c1e58a8e6aa56a4ee3b630e392b3d",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
+            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Creation ordering preserves partially stamped input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:94d2629a2da6a37aa159f3dafba5f0cdc035bd9a56bafe0f8fad2a58998370ae",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "Volatile-age equality includes elapsedSeconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:cba418e64719cf24af612a5a571612d9de1f7857eae0760fa88646e3c802982c",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "Full scenario reset increments generation once and clears closeout queues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "content": "sha256:28b595c83a96c7b18d9bc02829adf4efa4312501045f8ca644461be681b58613",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 394
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "Drift display consumes reporting counts while provider selector definitions remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
+            "content": "sha256:6d40b3354909cba62bd6c781258033f7e38e635d57b469db2161433a26b6f8af",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "Active conversation reducer preserves cursor/revision recovery intent without optimistic items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:1bb459cd58481129b4b21bc9efc8de06d792a81123638452edd73494248336d8",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "Agent roster requires backend identity plus notice/system/agent predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:8c3d05d4651a77cc4c9dc3e99d33945989f06f8476b7155ca46fca119c64e711",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "Historical conversation focus requires opened authority evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:3df8db77d5d2c00ad27050d3725e1707de669be215f4556c95df08cb8c6b3235",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:bf0d3cb7b2b3471aa6bc03b74e053e403c7bc9ed6255f19ff021403da15af951",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "15": {
       "note": "The three locator declarations.",
       "targets": [
@@ -354,12 +630,12 @@
         },
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:4febe9305bdcf88985d693776ac3ca954a03c75b80f6c7702ee91ba410a1f6a1",
             "locator": {
-              "end": 832,
+              "end": 839,
               "kind": "line_range",
-              "start": 824
+              "start": 831
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -367,12 +643,12 @@
         },
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:8559661a3931118b1672c7cc3d4b2f32aa157c9bdd61f407feceda1947d80a2e",
             "locator": {
-              "end": 557,
+              "end": 562,
               "kind": "line_range",
-              "start": 557
+              "start": 562
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -380,12 +656,12 @@
         },
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
             "locator": {
-              "end": 865,
+              "end": 872,
               "kind": "line_range",
-              "start": 865
+              "start": 872
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -441,7 +717,7 @@
         },
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
             "locator": {
               "end": 1,
@@ -1717,6 +1993,91 @@
         }
       ]
     },
+    "86": {
+      "note": "Review reads share shallow state-bearing-body transport recognition across HTTP statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:8bc56e9418acbb3e0b959b4915225a3270cab3198a99e46846c2149e4e9911a9",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:2e85080d0afdf4756e5a5ec38c385a70d81dfef4fd10255d5cee102791c487cb",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 820
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Present paging excludes records and allows only knowledge without a cursor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:aa41a3bc886f40d6b6e027809b5283b42d9fdf16d291b0472d2fe1a6473f715d",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "Entry catalogue refusal does not remove task-context review reachability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:e872f6e3cba80fe4ec8d0113b68f3786b40102e29d5e9a5f1023ad5c0617f8c9",
+            "locator": {
+              "end": 808,
+              "kind": "line_range",
+              "start": 793
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Refresh empty-string normalization is specific, rather than universal query normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:0fd9b133872cdd857136be3e3c2930c47bf8c4fa8c691cc1ea5d6901170701ec",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 612
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The selection block every answer carries.",
       "targets": [
@@ -1727,6 +2088,264 @@
             "locator": {
               "kind": "symbol",
               "name": "ReaderSelection"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "Catalogue history/generation keying does not transmit those values; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
+            "content": "sha256:f6f082e2f96f4358d40dd4d2d9c9183edae98281ea4e2c59148ee4a40daf9625",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
+            "content": "sha256:80ecd36b18d0fe1b6da7434a1a89ba58e49ca0714a7b3b90841340576bbb3a43",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Change-set refusal reasons are carried by the current decoder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:8f234685209a5c5a50b4d4c36e0ab50995f96b8fe7769754659f1fb5bad6fa16",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "Requirement reads forward context and a path; registered address resolution is listing-based.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:6b85bed15f7badaf77eedfd46b60df85afdd2d21f2d0efd61ea37da902a29670",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "Artifact reader targets also include task reports and decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:f6240fd7fb2e9beff332d5ece55ba873a40ec088e7f6bd18ca8209b5eff2cb34",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "Session creation commits only an accepted opener result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:ceed10eb079c468ab06dcc0afcf8eda6462a0d34946b893df13e7047a4b9388f",
+            "locator": {
+              "end": 843,
+              "kind": "line_range",
+              "start": 820
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Open request is identity-addressed and validates acknowledged id/kind and raw-terminal claims.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:0d5bf2b8c99483061cea1f83bace3dba1508825b569efb2530bfc9dc2d31549c",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/data/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:d23a7bc4cfb508df0c8b2c143bd8d1a9a83aec049ee1d0e1f74d99f2c805251b",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "dashboard/src/data/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:82862272092f4ce74fefe225aec6590fb39d8367b14c36602a240dd05dc83752",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "dashboard/src/data/terminalOpen.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "Rail placement uses real task document references and role/parent predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
+            "content": "sha256:e4b615d4a9c3c0a305b0e7eef15fe9aa443aae284d8f01ce0b48c9d2bb3985a1",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
+            "content": "sha256:78956f1092b1bf3c418f5c182d3326c9ec7f4f3772bc85999cd8d8c353231814",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Plural pending interactions count; end/fault/block/wait precede live-turn evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:5691d3eefd3361376e26dda2a404f6a464461cd3edff035d95b7dbeb9f16b8fb",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 574
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:886c91807acb8576c71d4e6ed0581ac436cbbaaf110316718e4895803c5a6281",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "Reader transport uses a 120-second bound and accepts a string-state body across statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:85a81c40eeaf85406352c6b0411ec95907c7be98590ec7ab0832b419fc8cabdb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:751f7cd53a91de65b6ef2785c51e8bcc709b664c9236f4ae17de31587b3f4cc5",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 428
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Reader hash writer omits empty subject keys while preserving explicit repository/commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:7c135bcd48aeda9f4f62462d9b05b5ae5dacdc3cf39adb3af7f144071b9711db",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 390
             },
             "path": "dashboard/src/data/knowledgeReader.ts"
           },

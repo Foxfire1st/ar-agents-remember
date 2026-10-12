@@ -1,175 +1,98 @@
-# Structured Conversation Contract Route Overview
+# Structured Conversation Contract And Composition Overview
+
+## Purpose
+
+This route composes the production structured Chats surface over native conversation and control authorities. Its governing responsibility is to keep active conversation reads, dormant native history, human control operations, authorization, and declared HTTP responses coherent without making the composition layer a second native store or lifecycle authority.
+
+The normalized wire grammar now belongs to `mcp/src/agents_remember/models/conversations/`. This route consumes that grammar and retains the app-scoped runtime, request dependencies, authorization ruling, response declarations, and root router composition. The former local `models.py` and split model files were moved without a forwarding shim. `conversation/ports.py` re-exports the canonical `serving/ports.py` definitions: there are two conversation read protocols, alongside separate control-plane and terminal-catalog seams.
+
+Three implemented child routers own behavior. `active/` serves active pages, resumable events, and selected sub-agent history hydration. `library/` serves dormant native list/read and exact open/status/reconcile. `control/` serves exact-turn interrupt, source-aware queue and withdrawal recovery, typed attachment lifecycle and submit, read-only effective policy, and telemetry. Their route-local overviews govern those implementations; `projectors/overview.md` governs the harness-specific mapping grammar. The root composition itself neither projects vendor events nor reads native history, implements control actions, or renders the browser UI.
+
+## Hot Path Summary
+
+Start with `models/conversations/` for identities, purpose-branded cursors, normalized content and provenance, status, capabilities, operations, attachments, recovery, structured questions, and sub-agent participants. Read `serving/ports.py` for the active and dormant read protocols and their separate control dependencies.
+
+At application construction, `serving/app.py` creates a frozen `ConversationRuntime` from workspace/coordination scope, catalog, control-plane client, terminal host, effective harness registry, liveness clock/configuration, capability catalog, and local-operator authorization resolver. `register_harness_control_routes` passes that same bundle to `register_conversation_routes`; the latter installs the runtime and mounts the root router. Children retrieve it through `get_conversation_runtime` and resolve request authorization through `resolve_conversation_authorization`.
+
+For active reads, the service resolves the running catalog entry and actual bridge epoch, rejects an expected-epoch mismatch, reads the live snapshot, and builds the native identity and harness mapper before obtaining a session projector. Page and event cursors have distinct purposes and bind to caller and exact conversation identity. Events require a resume cursor; conflicting `after` and `Last-Event-ID` values are refused. Established-stream gaps are explicit mutations followed by closure, requiring a new page rather than silent reset. Selected-child history acquisition uses the same authorization and parent epoch seam; typed child failures are local outcomes inside HTTP 200, while parent authority/composition/epoch failures use the refusal ladder.
+
+For dormant history, the library resolves authorization and canonical project scope, applies its live capability gate, and uses distinct list/read cursors and conversation keys. Exact resume targets remain server-private; possessing a token is not an authorization grant. Open requests bind caller, requested identity digest, working directory and launch context into an idempotent request product. Open status and reconciliation preserve uncertainty and rollback rather than treating an attempted launch as proof of an exact opened conversation.
+
+For human control, request scope carries the service, caller, session and expected epoch together. Resolved scope uses the verified epoch for reference minting and decoding. Interrupt acknowledgement and settlement are separate products. Queue projections expose source/kind/phase/order and restricted identification data, not prompt bodies. Only queued cockpit rows carry a withdrawal reference, redacted preview and digest. Successful withdrawal may recover exact text and attachment references through a bounded lease; failed withdrawals and pending-recovery lists remain raw-free. Staging/rebind/submit, policy and telemetry stay inside their respective control owners.
+
+## Construction And Ownership
+
+`runtime.py` defines frozen `ConversationScope` and `ConversationRuntime`. The bundle binds existing authorities and adds no conversation store, index, opener, lifecycle authority or child service. Construction rejects `None` authority members. Installation rejects an already occupied runtime binding; retrieval rejects a missing binding or a value of the wrong runtime type. These are distinct checks, not a claim that every malformed binding is validated at every step.
+
+`authorization.py` owns the local single-user ruling. `LocalOperatorAuthorizationResolver.for_workspace` binds a server-resolved operator principal to the resolved workspace path. Request resolution accepts only literal loopback IP peers; absent, unresolved or non-loopback peers fail closed. `require` compares an external binding against that exact operator/workspace identity. The resolver is explicitly not a general authenticated identity system. Remote or multi-user requirements invalidate this ruling and require a separate authentication design. Browser principal/tenant claims have no input channel in the conversation request dependency, which consults the ASGI peer address. The principal implementation uses `os.getuid()` where available and `getpass.getuser()` otherwise; the latter is not grounds for an unconditional claim that environment-derived identity is impossible on every platform.
+
+`dependencies.py` owns the two narrow request seams. `router.py` composes active, library and control children and performs runtime installation before mounting. Children own service construction and behavior inside their seams rather than rebinding the shared composition.
+
+The present API modules declare 25 routes: three active, five library and seventeen control. Active contains page, events and selected-child history hydration. Library contains list, read, open, open-status and open-reconcile. Control contains interrupt request/status/reconcile; queue read and withdrawal request/status/reconcile; pending recovery list, recovery fetch and acknowledgement; attachment stage/rebind/status/reconcile; submit; policy; and telemetry. The active and control prefixes share the terminal namespace but own different endpoint paths; library owns the dormant-library namespace. None is an empty shell.
+
+`response_contract.py` owns the three route-assembled wrappers `StagedAttachments`, `ConversationSubmitted` and `AgentHistoryHydrated`, plus the withdrawal answer union and six shared response tables. Refusal tables describe child error mapping; outcome tables also describe operation-shaped answers on non-200 statuses. A pending open, an acknowledged-but-unsettled interrupt, and a failed withdrawal are operation outcomes rather than automatically refusal-shaped bodies. Because API declarations merge dictionaries, an outcome entry must retain the refusal members possible at that same status. Submit similarly declares its own body on 200/202/422, with typed refusal included where applicable.
+
+Keep this module distinct from app-level `serving/response_contract.py`. The source records the package/import-cycle reason for the split; after the model migration its imports use the independent `models/conversations/` package. That historical rationale does not establish that the former exact import cycle is still unavoidable today.
+
+Vendor transport, executable/process lifecycle and harness-specific probing belong to serving adapters. Durable inbox and queue authority belong to the control plane and its serving adapters. The locked Claude/Pi history helper belongs to `mcp/native_helpers/conversation_library/`. Browser rendering and composer state belong to `dashboard/src/`.
+
+Internal child bundles preserve facts that are correct only together: `ControlRequest` and verified `ControlScope`; `RefBinding` and `RefTarget`; evidence-strength-bearing `TurnTransition`; `ProjectedSession`; `LibraryBinding` and fingerprinted `OpenRequest`; and projector placement/collaboration/task identity values. These are internal call shapes, not public wire vocabulary. The active projector is now a package: its shared `SessionProjectionSpine` and `BridgeReaders` keep component identity, epoch, mapping, mutation stream and reader substitutions together. Native ingestion, echo ingestion, interaction projection, child history and rebuild coordination remain child-owned.
+
+Blocking resolution is offloaded at the active and control service choke points. Active offloads catalog resolution, epoch and snapshot reads; control's asynchronous `resolve_entry` and `verify_epoch` offload their blocking reads. This preserves the availability intent of the historical repair without claiming all possible blocking work throughout serving has been audited.
+
+## Invariants And Boundaries
+
+The canonical `WireModel` forbids extra fields, freezes model attributes, and uses camel-case aliases while allowing population by field name. Purpose-branded opaque values enforce their prefixes; signing, caller checks and persistence belong to the concrete token authorities. Active page/event tokens and library list/read/key/resume tokens are not interchangeable. The active authority checks signature, schema, purpose, caller, session, epoch and native identity; library tokens carry scoped bindings and generations and are rechecked by their owning services. Token possession alone must not replace request authorization.
+
+Native identity, unknown evidence and input provenance must remain distinguishable. Unknown-input items stay native-history evidence with `native-only` or `unknown` strength and no claimed producer. Terminal-controlled input has its own operator/controlled-terminal authority and may have exact or correlated provenance; it must not be relabeled as exact native input. Cockpit, durable inbox, interaction-response and control-authority items likewise retain their own lane/producer/strength products.
+
+Status separates process and turn state and carries freshness and evidence. Unknown-strength evidence cannot establish `ready`. Waiting requires a reason without an interaction id; needs-input requires an exact interaction id. Interrupted/failed and other turn states must carry compatible terminal-outcome products. Canonical status and transition ownership remain with the active status service, including the intent that weaker observations cannot displace stronger justified state.
+
+Capabilities are evidence products, not fixture-existence or version-equality claims. `supported` and `partial` require the runtime-fixture tier and a fixture identifier; other non-none tiers require evidence, and the none tier is unavailable only. Attachment support additionally requires actionable MIME/count/byte limits. These validators check the declared evidence product, not the historical capture itself or a fresh running harness.
+
+The inherited policy is contract-based verification rather than runtime/helper version comparison. Present active/control builders use harness-keyed declarations, and control builders discard the supplied snapshot rather than dynamically probing it. Active interrupt capability delegates to the control owner so it has no independent hardcoded verdict. Library capability gates do perform a production-path probe: successful Codex connect/list returns supported history products; successful locked Claude/Pi helper list does likewise, with failures returning unverified products. Version strings remain evidence metadata in these examined owners. This is bounded source evidence, not a whole-call-path assertion that no other version predicate exists anywhere.
+
+Harness vocabulary includes Codex, Claude, Pi and Eve. Active mapping/capability ownership includes Eve; the dormant library factories and gate normalization remain Codex/Claude/Pi. Active dispatch is keyed and does not let a new harness inherit Pi evidence by fall-through. Eve live text, thinking, tools and interactions are declared supported, completeness partial; its missing native history page is explicitly unavailable, while historical completeness remains unverified. Eve control declares supported interrupt and policy-read, unavailable attachments, and unavailable telemetry. The control owner's broader prose saying every control other than interrupt is unavailable is inconsistent with its explicit supported policy-read construction; the field construction decides this description.
+
+Claude live features and historical completeness in the active capability view retain never-probed reasons; active native-page read is unavailable because that surface is stream/replay-only. Claude interrupt is now declared supported from the named 2.1.217 interrupt probe and is shared into the active view. Claude attachment image support, policy and telemetry remain unverified; file/resource kinds are unavailable. Claude dormant-library support is conditional on its live helper gate and cannot be summarized as permanently unverified.
+
+Codex control telemetry declares supported cumulative token usage, unavailable context-window and cost metrics, and unverified rate-limit/compaction metrics. Pi telemetry retains unverified session/context/token/cost/compaction claims and unavailable rate-limit evidence. Active capability views are separate products and should not be silently equated with the control telemetry declaration. No declaration here is fresh acceptance of a runtime.
+
+Open operations validate phase/outcome, complete and matching spawned identity, catalog-generation association and rollback products. Unsupported and stale-identity no-launch outcomes carry no spawned identity. Opened requires identity, catalog proof and no rollback; identity-mismatch requires catalog generation and matching failure rollback. The inherited broader requirement that identity-bearing failures be catalog-proven remains intent: these local validators do not impose that exact predicate on every launch-failed product. That observation does not establish absence of proof in the open service or tracked opener.
+
+Interrupt acknowledgement does not establish settlement. Requested acknowledgement permits pending settlement only; rejected requires failed settlement; accepted and unknown allow the declared pending or terminal products. `settled_at` must agree with whether settlement is terminal.
+
+Queue privacy is structural: only source cockpit plus phase queued is withdrawable and carries cockpit identification. Terminal and durable rows remain body-free. Withdrawal recovery belongs only to successful withdrawal/recovery responses, not failures or pending projections. The successful product includes exact text, digest, submitted draft revision and attachment recovery references. Recovery-unacknowledged requires expiry; no-recovery products cannot carry expiry. Control stores are bounded; recovery and staged-asset leases are 900 seconds. Acknowledgement, invoked expiry sweeps and pressure reclamation end fetchable recovery according to their local predicates; the control owner distinguishes this from immediate erasure of every journal or stored-answer copy. Post-disposal replay must not restore fetchable content, as the inherited recovery intent requires. These leases and retained ledgers are not a permanent recovery guarantee.
+
+Structured per-question interactions preserve question text, header, options and multi-select alongside the existing flattened prompt/choices. Session-direct interaction response is owned by `harness_control_api.py`, outside the 25 conversation child routes. Its purpose is to answer a pending vendor interaction for seats without a lifecycle; the source states that expected epoch and exact interaction identity remain authority guards. This distinct response path does not turn conversation composition into lifecycle ownership.
+
+Six optional wire fields retain defaults of `None`: freshness `last_evidence_at`/`age_ms`, turn `turn_id`/`state_since`, event `previous_cursor`, and page-window `older_cursor`. Historical serializers omit none-valued fields, so nullable-but-required declarations could reject their own emitted body. Keep omission compatibility distinct from a claim that an entire present response conformance suite has passed.
+
+## Historical And Verification Limits
+
+The original card records contract-matrix, foundation-topology, composition, authorization and response-conformance suites as historical witnesses. Those claims are retained as historical evidence, not renewed execution verdicts. This proposal inspected source text and route declarations only; it ran no product code, tests, runtime probes or certification checks.
+
+260718-CHATS-L0 records the repair of authorities previously trapped in harness-control composition and the single immutable runtime/request seam. L2/L3 record the implemented native library/control ownership; L5F records the developer ruling that contract verification, rather than version drift, decides capability support. The prior seven-site grep claim is historical and was not repeated as exhaustive present evidence.
+
+The older Claude 2.1.216 fixture-capture follow-on and blanket unverified statement are historical limits, not the present interrupt verdict. Named present exceptions are the Claude 2.1.217 interrupt declaration and conditional library helper promotion; other Claude live/control/telemetry limits remain explicit. Codex cumulative token usage remains the supported control telemetry metric in the examined declarations. Captured fixture identifiers and source strings describing an installed probe do not establish a fresh installed-runtime result on this checkout.
+
+260727-CHATS-IM-L2 records active projector decomposition, selected-child acquisition behind authorization/epoch proof and typed child-local failure without claiming parent or sibling failure. It also records the intended import-compatible projector facade and adapter-owned probing; that history is not a new compatibility implementation request.
+
+260731-EFA-L2 records deletion of five lint suppressions under the then Python 3.11 floor and later migration to Python 3.13. Those runtime statements are historical: present package metadata requires Python >=3.14,<3.15, while Ruff still targets py313 and Pyright configuration states 3.14. Do not infer a runtime version from the Ruff target.
+
+260731-EFA-L4 records response declaration and omission/default repair, the former import-cycle rationale, and conformance failures involving dictionary overwrite of refusal models. The behavior rationale survives; its old emitted-byte equivalence and suite outcomes were not freshly established. L9 records relocation of wire grammar and canonical ports without a model forwarding shim. L16 records the blocking-resolution availability repair. L23 records native Codex executable resolution and product-agnostic initialize diagnostics; the present library request uses client name `agents_remember`, title `Agents Remember`, version `3.0.0`, and validates against the same requested name/version. The earlier Desktop host-first description is not the current request identity.
+
+The original card's browser-rendering gate, pre-commit verification metadata, aggregate-refresh instructions, no-cross-repository evidence and empty Domain Documentation registry describe the inherited curation context. They are not current source-derived delivery or registry receipts. Prior test counts, successful delivery claims and old witnesses not examined here remain historical only. Original reference identities/targets and route/status/coverage metadata are preserved by the parent curator; this proposal creates no new lifecycle status or publication receipt.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-
-## What This Area Is
-
-### 260731-EFA-L23 Route Delta
-
-L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority.
-
-This route is the production-owned semantic boundary for native-authoritative structured Chats.
-It defines one normalized wire grammar for current conversations, dormant native history,
-capability evidence, status, telemetry, control-operation state, attachments, and authoritative
-queued withdrawal recovery. It also fixes the two read ports and the three independently owned
-FastAPI child-router seams that later production leaves implement.
-
-It also owns the one-time runtime composition repair: an immutable
-app-scoped `ConversationRuntime` authority binds the existing server authorities (scope, terminal
-catalog/host, effective harness registry, liveness clock/config, capability evidence) plus an
-explicit server-resolved local-operator authorization resolver, installed exactly once on the app
-through the stable root registration. Child leaves consume it only through two narrow request
-dependencies; they never edit the shared composition again.
-
-The `active/` child is an implemented subsystem with its own route-local
-overview, and the per-harness mapper grammars live in a sibling `projectors/` route with its
-own overview: the authorized native-hydrated page and resumable SSE event routes, the signed
-page/event cursor authority, the per-app serving service and per-session projector engines, the
-idempotent projection store, the canonical status service both Chats and orchestration consume,
-and the fixture-gated capability evidence landed inside the active ownership seam without
-touching this contract, the composition, or the library/control shells. This overview stays the
-contract and composition governor; the implemented slices are governed by
-`active/overview.md` and `projectors/overview.md`.
-
-The `library/` child is an implemented subsystem with its own route-local
-overview: the authorized dormant native list/read routes, live capability gates, the signed
-cursor/key authority, and the idempotent exact open/status/reconcile service landed inside the
-library ownership seam without touching this contract, the composition, or the active/control
-shells. This overview stays the contract and composition governor; the library overview governs
-the implemented slice. Its Codex connection uses the current Desktop host-first initialize
-identity and reuses the exact requested client name/version for response validation; no runtime or
-model-facing identity token participates in that handshake.
-
-The `control/` child is an implemented subsystem with its own route-local
-overview: the authoritative human control surface — seventeen registered routes for exact-turn
-interrupt, the source-aware operation queue with cockpit-only withdrawal and bounded recovery, typed
-attachment stage/rebind/submit, read-only effective policy, and evidence-bound telemetry — landed
-inside the control ownership seam without touching this contract, the composition, or the
-active/library slices. It consumes the closed control-plane substrate (native interrupt write,
-paged never-bodies operation timeline, asset channel, pre-tombstone recovery payload) and the
-preserved evidence terminal identity read-only. This overview stays the contract and composition
-governor; the control overview governs the implemented slice. All three child routers (`active`,
-`library`, `control`) are now implemented subsystems; none is a behavior-empty shell.
-
-This is deliberately a contract and composition route. It does not project vendor events, read a
-native history store, implement control actions, persist a duplicate conversation database, or
-render a UI.
-
-## Hot Path Summary
-
-Start with `models/conversations/` for identity, cursor, status, capability, operation, attachment,
-withdrawal, and sub-agent participant grammar
-(`ConversationAgentRef`, per-item `agent`, library agent rows, `agents_note`); use `ports.py`
-to see the only two read boundaries. `runtime.py` defines the
-immutable app-scoped authority bundle, `authorization.py` the server-resolved local-operator
-ruling, and `dependencies.py` the two request seams children consume. `router.py` installs the
-runtime once and composes the `active`, `library`, and `control` child routers, mounted
-once through `harness_control_api.register_harness_control_routes`. The implemented active
-serving slice is governed by `active/overview.md`, the per-harness mapper grammars by
-`projectors/overview.md`, the implemented library slice by `library/overview.md`, and the
-implemented control slice by `control/overview.md`.
-
-## What Belongs Here
-
-| Path | Role |
-| --- | --- |
-| `models/` contracts | Moved by 260731-EFA-L9 to `models/conversations/`; this route consumes them through the canonical `serving/ports.py` surface. |
-| `response_contract.py` | The declared HTTP response contract for the 25 conversation routes: the three route-assembled shapes `models.py` never held, and the six shared `responses=` tables. |
-| `ports.py` | Re-exports the canonical read/control ports from `serving/ports.py`. |
-| `runtime.py` | The immutable app-scoped authority bundle, installed exactly once per app. |
-| `authorization.py` | Server-resolved local single-user operator ruling; loopback-only, fail closed. |
-| `dependencies.py` | The two narrow request dependencies child leaves consume. |
-| `router.py` | One root composition seam for three disjoint child routers plus the runtime install. |
-| `active/` | Implemented active conversation serving slice, governed by its own route-local overview. |
-| `projectors/` | Per-harness active mapper grammars, governed by their own route-local overview. |
-| `library/` | Implemented dormant native library slice, governed by its own route-local overview. |
-| `control/` | Implemented authoritative control and operation-projection slice, governed by its own route-local overview. |
-
-## What Does Not Belong Here
-
-| Nearby Thing | Belongs Instead In |
-| --- | --- |
-| Vendor protocol transport and native process lifecycle | Existing harness adapter modules under `mcp/src/agents_remember/serving/`. |
-| Durable agent-to-agent/operator inbox authority | `mcp/src/agents_remember/controlplane/` and its existing serving adapters. |
-| Browser conversation rendering and composer state | `dashboard/src/`. |
-| Locked Claude/Pi native dependency process | `mcp/native_helpers/conversation_library/`. |
-
-## Structures Found Here
-
-- Strict immutable camel-case Pydantic wire models with unknown fields forbidden.
-- Purpose-branded active-page, active-event, library-list, library-read, library-key, resume-target,
-  and operation-fingerprint values.
-- Stable native and active conversation identities, normalized content blocks, revisions, global
-  ordinals, provenance, status, page/event, capability, telemetry, attachment, queue, and recovery
-  DTOs.
-- First-class sub-agent participant grammar: `ConversationAgentRef`
-  (evidence-bound identity with the honest `agent <short-id>` fallback, never fabricated), an
-  additive per-item `agent`, and library agent rows (`ConversationLibraryAgentRow`) with the
-  capability-honest `agents_note` that must carry the exact native reason when sub-agent
-  conversations are unavailable.
-- `ActiveConversationPort` and `ConversationLibraryPort`; lifecycle/control authority is explicitly
-  not a third port.
-- Three child routers with separate prefixes and one root registration function, all implemented
-  inside their owned seams: `active` carries exactly its two routes, `library` its five
-  routes, and `control` its seventeen routes.
-- Frozen `ConversationScope`/`ConversationRuntime` composition types with fail-closed install and
-  retrieval (`ConversationCompositionError` on missing, duplicate, foreign, or missing-member
-  bindings); no module-level instance exists.
-- The `ConversationAuthorizationResolver` protocol and the production
-  `LocalOperatorAuthorizationResolver`: one OS-resolved local operator bound to the canonical
-  workspace, loopback-only at request time, cross-principal rejection via `require`.
-- Two request-level dependencies (`get_conversation_runtime`, `resolve_conversation_authorization`)
-  as the only child-facing consumption seam.
-
-## Operating Model
-
-1. Vendor-specific projectors or library resolvers observe native state and map it into the strict
-   types in `models.py` without promoting unknown evidence.
-2. Active readers use exact AR session plus bridge-epoch identity and active-only cursors.
-3. Dormant history readers use authorization/project scope, library-only cursors and keys, and a
-   server-private native resume target.
-4. Capability support is fixture/evidence-bound and demotes only on failed
-   or never-run **contract verification** against the running harness — never on a runtime/helper
-   version comparison. Version strings survive as informational metadata only; no version-string
-   comparison gates a capability anywhere in this route (grep-proven at the seven former gate sites).
-5. Control implementations publish revisioned operation products; contradictory phase/outcome,
-   identity/rollback, acknowledgement/settlement, or recovery states fail validation.
-6. The harness-control composition constructs the one `ConversationRuntime` from authorities it
-   already holds and the root router installs it once while mounting active, library, and control
-   ownership; later leaves add endpoints only inside their assigned child module and reach every
-   authority through the two request dependencies.
-7. Authorization is resolved on the server: the local operator identity comes from the OS and the
-   canonical workspace at composition, and each request must arrive from a loopback TCP peer;
-   browser-supplied principal/tenant claims have no input channel and non-loopback peers fail
-   closed.
-
-## Main Flows
-
-### Current conversation read and stream
-
-1. Identify the exact active native conversation through `ActiveConversationPort.identify`.
-2. Page using an `ActivePageCursor`; stream using an `ActiveEventCursor`.
-3. On an established-stream gap, emit the explicit gap mutation, require repage, and close rather
-   than silently resetting.
-
-### Dormant native history and exact resume
-
-1. List within an authorization-bound canonical project scope.
-2. Read history with a distinct library-read cursor and stable native identity.
-3. Resolve a server-private native resume target; it is not a public authorization grant.
-
-### Authoritative queued withdrawal recovery
-
-1. Only a queued cockpit operation may expose a withdrawal reference and redacted preview.
-2. Withdrawal races native dispatch through the owning authority in the later control service.
-3. Exact draft text and attachment recovery appear only on a successful withdrawn response;
-   pending-recovery projections remain raw-free.
-
-## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -182,70 +105,6 @@ implemented control slice by `control/overview.md`.
 | `active/api.py` | implemented routes | Owns the two active production routes (page + resumable events) and the O4 typed-error ladder inside its seam. | covered |
 | `library/api.py` | implemented routes | Owns the five native-library routes and the O4 error-status ladder inside its seam. | covered |
 | `control/api.py` | implemented routes | Owns the seventeen control routes (interrupt, queue/withdrawal recovery, attachments, policy, telemetry) and the O4 error ladder inside its seam. | covered |
-
-## Local Invariants And Traps
-
-- Active and library cursor families are non-interchangeable and must remain bound to purpose,
-  authorization, identity/scope, and generation.
-- Unknown input and terminal-controlled input never masquerade as exact native evidence.
-- `ready` cannot be derived from unknown evidence; waiting and terminal states retain matching
-  evidence products.
-- `supported`/`partial` capability claims require exact runtime-fixture evidence; fixture presence
-  alone never enables a capability.
-- Open/failure rollback products are bidirectional: no-launch outcomes carry no spawned identity,
-  while identity-bearing failures require catalog proof and the phase-matching rollback state.
-- Withdrawal raw recovery is a successful-response-only privacy boundary. Lists and failures stay
-  raw-free.
-- All three child API modules are implemented inside their own overview's governance: the `active`
-  child's two routes, the `library` child's five routes, and the `control` child's
-  seventeen routes. Add or change behavior only inside the assigned child module; this contract
-  route stays the grammar/composition governor and gains no endpoints of its own.
-- `models.py` is intentionally declaration-heavy. Add behavior in focused services rather than
-  turning the contract module into a projector or store.
-- Exactly one `ConversationRuntime` exists per app; it binds only existing authorities and adds no
-  store, index, lifecycle authority, opener, or behavior methods of its own.
-- The local-operator ruling is loopback-only and has no principal/tenant input channel; any remote
-  or multi-user requirement invalidates it and needs a separate authentication design, not a
-  fallback here. HTTP status mapping of the typed `AuthorityError` is owned by the child leaves
-  that add behavior routes.
-
-## Evidence
-
-### Repo-Internal References
-
-The contract is pinned by hostile product-matrix tests and by a topology suite that checks route,
-port, helper, fixture, and registration boundaries. The runtime composition repair is pinned by its own
-composition and authorization contract suites.
-
-- Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. [1]
-- Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. [2]
-- Exactly two read ports separate active exact-session reads from dormant native library reads. [3]
-- Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. [4]
-- The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. [5]
-- The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. [6]
-- The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. [7]
-- `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. [8]
-- The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. [9]
-
-
-| The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:130-130 |
-
-### Cross-Repo References
-
-No cross-repository implementation participates in this route. The resolved memory policy allows
-no neighboring repository, and the native helper is part of this repository.
-
-No relevant cross-repo evidence found.
-
-### Docs References
-
-The resolved `Domain Documentation` registry has no entries. This route therefore uses the
-repository-owned contract, fixtures, and tests as its direct evidence and does not fabricate an
-external citation.
-
-No configured domain documentation was available for this contract gate.
-
-## File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -301,164 +160,43 @@ No configured domain documentation was available for this contract gate.
 | `control/policy.py` | [`control/policy.py.md`](control/policy.py.md) | covered | Read-only effective-policy projection. |
 | `control/telemetry.py` | [`control/telemetry.py.md`](control/telemetry.py.md) | covered | Evidence-bound telemetry. |
 
-## Child Overviews
+## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. [1]
+- Retained reference account (no fresh execution or acceptance inferred): Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. [2]
+- Retained reference account (no fresh execution or acceptance inferred): Exactly two read ports separate active exact-session reads from dormant native library reads. [3]
+- Retained reference account (no fresh execution or acceptance inferred): Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. [4]
+- Retained reference account (no fresh execution or acceptance inferred): The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. [7]
+- Retained reference account (no fresh execution or acceptance inferred): `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. [8]
+- Retained reference account (no fresh execution or acceptance inferred): The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. [9]
 
-| Child Route | Overview | Why It Exists |
-| --- | --- | --- |
-| `active/` | [`active/overview.md`](active/overview.md) | The implemented active conversation serving: the two authorized routes, signed cursor authority, per-app service and projector engines, idempotent store, canonical status, capabilities, factory — a coherent implemented subsystem. |
-| `projectors/` | [`projectors/overview.md`](projectors/overview.md) | The per-harness active mapper grammars: protocol/registry, shared primitives, codex/claude/pi mappers — a coherent implemented subsystem. |
-| `library/` | [`library/overview.md`](library/overview.md) | The implemented dormant native library: authorized list/read, live gates, signed token authority, and idempotent exact open — a coherent implemented subsystem. |
-| `control/` | [`control/overview.md`](control/overview.md) | The implemented authoritative control surface: seventeen routes, the opaque signed reference authority, the per-app service with bounded ledgers, and the per-area owning modules over the closed control-plane and evidence substrate — a coherent implemented subsystem. |
-
-All three child directories are now implemented subsystems governed by their own route-local
-overviews; none remains a behavior-empty ownership shell.
-
-## How To Use This Area
-
-When changing this route, read this overview and the exact file sidecar first. Changes to public
-models require the hostile contract matrix; changes to route/port shape require the foundation
-topology suite. Do not infer production capability from fixture existence or an empty router;
-the implemented slices are documented by `active/overview.md`, `projectors/overview.md`,
-`library/overview.md`, and `control/overview.md`.
-
-## Needs Verification
-
-- Control settlement, attachments, telemetry, queue truth, and cockpit-only withdrawal recovery are
-  now implemented by the control slice; only browser rendering remains a
-  separately gated implementation. The active and library slices are implemented;
-  Claude library, active, and control/telemetry surfaces stay `unverified` because their
-  frame/history contract has never been probed through a captured production fixture — a
-  never-probed contract reason, not a version gate (all version gating has been removed).
-  Capturing a claude 2.1.216 runtime fixture and promoting those surfaces to `supported` is the
-  honest follow-on now that the gate is gone; only codex cumulative token usage is a landed
-  supported telemetry metric.
-
-## Per-Question Interactions Route Impact
-
-The conversation contract now includes structured per-question interactions and the session-direct response path for lifecycle-free seats, while exact-turn native interrupt remains an acknowledgement-then-settlement operation. Active and control capability views share the fixture-backed interrupt verdict; unsupported control features remain separately conservative. Fresh event/page handoff and recovery use server-minted cursors rather than retrying an invalid resume coordinate.
-
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
-
-## Sub-Agent Participant Grammar Route Impact
-
-The contract grammar now models harness sub-agents as first-class participants:
-`ConversationAgentRef` (evidence-bound identity, honest `agent <short-id>` fallback, never
-fabricated), an additive `agent` on `ConversationItem`, library agent rows
-(`ConversationLibraryAgentRow`) grouped under each parent row, and the capability-honest
-`agents_note` that must carry the exact native reason when sub-agent conversations are
-unavailable. The two-port split, runtime composition, authorization ruling, and child prefixes
-are unchanged; the multiplexing machinery itself lives in the `active/`, `projectors/`, and
-`library/` slices governed by their own overviews.
-
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
-
-## 260727-CHATS-IM-L2 Route Impact
-
-The active child keeps the same page/events/history public routes but decomposes its projector
-behind an import-compatible package. Selected-child acquisition remains behind the route's
-authorization and epoch proof, and typed child-local history failure leaves parent control and
-siblings live. Harness-specific source probing remains in the serving adapter layer.
-
-## 260731-EFA-L2 — The Contract Is Untouched; Its Children Grew Vocabulary
-
-**Nothing in this route's contract changed.** `models.py` — the normalized wire grammar, every
-`TypeAlias`, discriminated union, envelope and status/telemetry model — emits exactly what it did.
-Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives under the then
-current Python 3.11 floor. That sentence is historical: the later project-wide runtime migration
-made Python 3.13 the only supported minor and restored Ruff's `py313` target without changing this
-route's wire contract. The runtime composition authority, the two read ports and the three
-child-router seams are all as described above.
-
-What a reader must know is where the children's new vocabulary lives, because these are the values
-that now cross the seams this route fixes:
-
-| Child route | Value it introduced | The rule it makes structural |
-| --- | --- | --- |
-| `control/` | `ControlRequest` → `ControlScope` | The verified bridge epoch, not the caller's claimed one, is what refs are minted and decoded against. |
-| `control/` | `RefBinding` / `RefTarget` | Mint and decode share one binding value — caller, session, epoch — so the two sides are provably identical. |
-| `active/` | `TurnTransition` | A proposed turn state travels with the evidence strength that justifies it, so a weak observation cannot displace a strong one. |
-| `active/` | `ProjectedSession` | The five facts a projector must not mix — identity, authorization, controlled row, mapper, signing secret. |
-| `library/` | `LibraryBinding` / `OpenRequest` | Per-app authorities bound to one caller; and the joint fingerprint that makes a replayed request id with changed contents a *conflict*, not a second open. |
-| `projectors/` | `ItemPlacement` / `_CollabCall` / `_TaskIdentity` | Frame placement resolved once per frame; "well-typed" held as a value; displayed-vs-retained sub-agent identity kept distinct. |
-
-The pattern is the same in every case and is worth carrying into any new child: **facts that are
-only correct together stop being separate parameters.** This route's own job — being the semantic
-boundary — is unchanged by that, and none of these values belong in `models.py`: they are internal
-call shapes, not wire contracts.
-
-## 260731-EFA-L4 — The Contract Grew A Declaration Layer, And Four Models Learned To Validate Their Own Wire
-
-**The wire this route defines did not change. Six field declarations did, and the reason is exact.**
-
-`models.py`'s serializers dump with `exclude_none=True` — active and control both call
-`model_dump(mode="json", by_alias=True, exclude_none=True)`. A `None` is therefore DROPPED from the
-emitted body, not written as a null. Six fields across four models were nullable but **required**,
-so the model could not validate a body it had itself produced. That was invisible until the routes
-started declaring these models and the conformance suite fed real responses back through them.
-Each is now nullable **and** defaulted to `None`:
-
-| Model | Fields |
-| --- | --- |
-| `StatusFreshness` | `last_evidence_at`, `age_ms` |
-| `ConversationTurnStatus` | `turn_id`, `state_since` |
-| `ConversationEventEnvelope` | `previous_cursor` |
-| `ConversationPageWindow` | `older_cursor` |
-
-**The emitted bytes are unchanged** — the absent key already meant exactly this `None`. What changed
-is that the model now accepts its own output, which is the precondition for any of it being checked.
-A later leaf that makes one of these required again breaks nothing on the wire and everything in
-`test_serving_response_conformance.py`.
-
-### `response_contract.py` — a second contract module, and why the split is structural
-
-The new `serving/conversation/response_contract.py` exists because everything in it needs
-`conversation/models.py`, and importing that from the app-level `serving/response_contract.py` would
-pull in the `serving.conversation` package — whose `__init__` mounts the routers, which import the
-contract back. `serving/app.py` registers the files/change-set/notes routes before the conversation
-ones, so the app-level module must stay importable first. **The seam is the package boundary, not a
-convenience**; do not "tidy" the two modules into one.
-
-All 25 conversation routes already DUMPED a strict `WireModel`, so a model existed for nearly every
-body — but not one route *declared* it, and three bodies are assembled at the route and had no model
-at all. Those three are now declared here: `StagedAttachments` (the attachment operation plus its
-receipts), `ConversationSubmitted` (one body shape across 200/202/422), and `AgentHistoryHydrated`
-(a typed child failure carried inside a successful 200). `WithdrawQueueAnswer` names the
-withdrawn-or-failed union. Everything else reuses the models the handlers already dump.
-
-Six `responses=` tables live here, and they divide by who chooses the status:
-
-- `CONTROL_RESPONSES` / `CONVERSATION_RESPONSES` / `LIBRARY_RESPONSES` are the **refusal** surfaces,
-  transcribed from the one mapper each child owns (`control/api._map_typed_error`,
-  `library/api._ERROR_STATUS_TABLE` + `_error_response`). Because there is exactly one mapper per
-  child, one table per child is the COMPLETE refusal surface of that child's routes.
-- `INTERRUPT_OUTCOME_RESPONSES` / `WITHDRAW_OUTCOME_RESPONSES` / `OPEN_OUTCOME_RESPONSES` are
-  **outcome** tables: statuses the route picks from the operation's own outcome, where the body is
-  the operation and not a refusal. A `pending` open, an acknowledged-but-unsettled interrupt and a
-  failed withdrawal are all this route's own answers.
-
-**The trap that these tables encode, and that a future editor will re-hit:** the child APIs spread
-them with `{**SHARED, **OUTCOME}`, and that is a **dict merge, not a union**. A bare
-`{409: OpenConversationOperation}` entry *deletes* `LIBRARY_RESPONSES[409]` instead of joining it,
-declaring on nine (route, status) pairs a model the route cannot produce. Every outcome-table entry
-therefore unions in the refusal model the shared table declares for the same status. The
-conformance suite caught the un-unioned version on a real 422 from the interrupt route.
-
-The wire grammar, the two-port split, the `ConversationRuntime` composition, the local-operator
-authorization ruling and the three child prefixes are all unchanged.
-
-## 260731-EFA-L16 — Blocking Resolution Leaves The Event Loop (Children Carry The Detail)
-
-Both child routes now keep their blocking catalog reads off the uvicorn event loop: control's
-`resolve_entry` went async at the service choke point (`conversation/control` carries the call
-site sweep), and active's projector resolution offloads the same `resolve_running_entry` read
-(`conversation/active` carries it). The conversation wire contracts are untouched — this was an
-availability repair, not a vocabulary change.
-
-## 260731-EFA-L9 Route Impact — Contract Grammar Moved To Models
-
-The contract grammar left this route: `models.py` and the five `_models_*` split files are gone,
-moved verbatim into `models/conversations/` (with `serving/conversation/models.py` receiving no
-forwarding shim). `ports.py` is now a thin re-export of the canonical `serving/ports.py` port
-surface (the two read ports plus the control/terminal seams). This overview remains the contract
-and composition governor for the conversation route; the wire-model governance lives at
-`models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
+- App construction binds the shared authorities and local workspace resolver into one runtime. [10]
+- Harness registration passes that runtime to the conversation root. [11]
+- Root composes three children and installs before mounting. [12]
+- Missing members, duplicate installation, and missing/foreign retrieval have distinct checks. [13]
+- Local resolution checks literal loopback peers and exact operator/workspace bindings. [14]
+- Request authorization consults only the ASGI client host. [15]
+- Two canonical conversation read protocols coexist with separate control/catalog seams. [16]
+- Child-history hydration is the third active route; typed child outcomes use HTTP 200. [17]
+- SSE emits replay then live frames, closes on gap and detaches. [18]
+- Active cursor verification checks purpose, signature, caller and exact identity. [19]
+- Library cursor verification checks typed purpose and signed envelope. [20]
+- Wire base forbids extras and freezes attributes; opaque brands require a prefix. [21]
+- Supported/partial evidence products require runtime-fixture tier and fixture identity. [22]
+- Unknown input and terminal-controlled input have different provenance predicates. [23]
+- Waiting/terminal products and unknown-ready rejection are explicit model predicates. [24]
+- Library promotion follows successful Codex or helper probe, retaining failure uncertainty. [25]
+- Claude interrupt is supported while image and policy remain unverified. [26]
+- Eve has supported interrupt and policy, unavailable assets and telemetry. [27]
+- Active dispatch includes Eve and delegates its interrupt verdict. [28]
+- Codex library initialize uses and validates the same Agents Remember client identity. [29]
+- Open rollback validators distinguish opened, no-launch and identity-mismatch predicates. [30]
+- Queue withdrawal identity is restricted to queued cockpit rows. [31]
+- Successful withdrawal alone has a recovery body; pending projection has references/expiry. [32]
+- Interrupt acknowledgement/settlement and terminal timestamps form validated products. [33]
+- Outcome response tables explicitly retain same-status refusal members. [34]
+- Session-direct question response belongs to harness control for lifecycle-free seats. [35]
+- Blocking active resolution is offloaded before epoch comparison. [36]
+- Control catalog and epoch resolution are offloaded. [37]
+- Recovery and staged-asset leases are 900 seconds. [38]

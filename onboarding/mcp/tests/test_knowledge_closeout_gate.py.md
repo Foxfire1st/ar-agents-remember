@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R09@v2's evidence: the currentness rules, the packet's examples, the per-kind dispatch, and the gate at each
-route (18 collected cases, 1,199 lines).** The fixture is a converted leaf on real Git repositories: two invariants of
+route (18 statically specified cases across 17 test definitions, including one two-way parametrization; 1,200 physical source lines).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
@@ -28,7 +28,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
      boundary: editing `land` again after the rows makes `RLZ-A00001` stale, and the count returns to 2 (the invariant
      row and the family row).
   2. `test_a_sibling_whose_meaning_changed_after_the_family_row_reopens_the_family`: the second boundary, "INV-BBBBBB
-     (examined at 1, now 2)"; the partial cover reports "members without a current invariant row".
+     (examined at 1, now 2)" and the touched sibling item, followed by readiness after current complete invariant/family rows. It does not assert a separate partial-cover stage.
   3. `test_a_new_invariant_needs_no_row_and_admission_judges_it_new_against_the_parent_line`: no item for
      `INV-CCCCCC`, the family row must examine it, and a record committed on the leaf branch with a reference-only
      justification is refused `R27.2-new-record` (the L27 carry).
@@ -46,9 +46,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
   8. `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`: through the real
      `require_current_curator_coherence`; `ports(gate=False)` refuses with `GATE_UNBOUND`.
   9. `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`: an R22.3 refusal before
-     `begin_git_mutation` with original history bytes restored. After repair the test raises the sentinel
-     `reached the commit` at `begin_git_mutation`, proving reachability only: no memory commit or trailer
-     is created or read back by this witness.
+     `begin_git_mutation`, restoration of the open history bytes on refusal, then a controlled `RuntimeError("reached the commit")` at the mutation seam. The case checks history closure/restore and reaching that seam, not a successful product memory commit or committed trailer.
   10. `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`.
   11. `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`: not closed, closed, no commit named,
       a marker violation, and an earlier leaf commit judged new.
@@ -71,7 +69,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Conventions
 
 - Real Git repositories under `tmp_path`, with a pinned environment (`git` helper); no network.
-- The case budget: 18 collected cases; the file is at 1,199 lines, 1 under the 1,200-line limit.
+- Static source population: 17 test definitions expand to 18 specified cases through one two-way parametrization; the file has 1,200 physical lines. No pytest collection, run or limit enforcement was executed for this card.
 
 ### Invariants And Boundaries
 
@@ -102,23 +100,15 @@ No configured live documentation source was available for this pass.
 
 - The closeout validator and the closeout memory commit. [6]
 
-
 - Direct, record, master and checkpoint landing. [7]
-
 - The insertion-only symmetry, the unconverted leaf, the prepared path. [8]
-
 
 - The memo and the approval state. [9]
 
-
-
 - The lane row. [10]
 
-
 - The closeout test answers the items its code commit opens, because the memory commit is gated. [11]
-
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
-
 
 ### Cross-Repo References
 

@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification",
   "references": {
     "1": {
-      "note": "Admission freezes actual preparation and current owner input; selection binds the exact originals.",
+      "note": "Admission freezes actual preparation and current owner input; initial selection binds the exact originals.",
       "targets": [
         {
           "anchor": {
@@ -27,6 +27,200 @@
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Task, Git, mutation and generated-input observations supply distinct actual authority records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:b83ff74ab65d59bafddf59f126972e0245d227e0463aebe8e9dddbc14d1aebec",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Selected readback binds originals, predecessor history, recovery decisions and terminal publication evidence; terminal replacement preserves history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:7a30032efe7e06ef3a350eabff3f24b27661673c349baa7fd453d3368422566f",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:8a9f075cbb1e51b5b7474cc2ed99f6dc151808d55b65d596ae0671c6cb564c12",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:a54419d4f6ecd563a1459124714f4d437ed0cc2c9a65eed36eafb1cb82235f78",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 561
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current worker authority, canonical memory observation, suffix execution and publication protection are checked at their execution boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:ec8cfa0d5367eb717c9e34bf69472f51f22499b6299b9c3b331898348e9b64d6",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Retained output validates both original prestates and the physical commit before authority normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda28256623e66702f7034156debad3f05ac710b",
+            "content": "sha256:2ee93761f8ba84ff6a6352f08579771cae69a839545cddbfc47f40417ab3969d",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Converted-memory refusal and the subsequent unconverted-memory lock are distinct checks; unreadable probes are not permission to proceed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:15815da89f3c61cb606c47d7e57f501d1f293270e3646e79393da604ff70e0df",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "content": "sha256:9920ab0d79282308f39414cf00b0f11d568cb64c2d1bd549bed0fca76d6003b4",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Prepared-memory realization repeats both knowledge checks before metadata work and requires curator refresh if that work moves memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "content": "sha256:8646e3d7d231f49079042a0cd5d471f621c5ad47a11cf202b5529390b219c815",
+            "locator": {
+              "kind": "symbol",
+              "name": "_realize_prepared_memory"
+            },
+            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The installed continuation observes the production memory owner and requires the selected original fifth certificate for finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
+            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedCloseoutContinuation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Existing test sources assert converted-memory refusal and the lock at both entries; no execution result is claimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef30eb81ae161a4fdf18ff7796d7f45fad409652",
+            "content": "sha256:f6f6c6e830ac91ff0207bf50e10d33944b426322af67ebab1fc8e0d9ca658372",
+            "locator": {
+              "end": 1048,
+              "kind": "line_range",
+              "start": 1035
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:e0a49d516fe97d76e5e7688870b7387a61d82b8a84f526be4e9b3bcc75fac567",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -77,7 +271,7 @@
       ]
     },
     "4": {
-      "note": "Journal selection reopens the complete original graph before its live-owner CAS.",
+      "note": "Journal selection reopens the complete original graph before its live-owner compare-and-swap.",
       "targets": [
         {
           "anchor": {
@@ -106,7 +300,7 @@
       ]
     },
     "5": {
-      "note": "Execution first refuses the prepared path on converted memory (MIK-R09, gap 3) and, since L37, on locked unconverted memory, then admits only the selected suffix and current memory/finalization boundary.\n\nAnchor: \"def execute_selected_closeout(\"",
+      "note": "Execution checks the knowledge refusal and lock before publication recovery, then admits only the selected suffix and current memory/finalization boundary.",
       "targets": [
         {
           "anchor": {
@@ -145,8 +339,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
             "locator": {
               "kind": "symbol",
               "name": "build_default_worktree_services"
@@ -158,7 +352,7 @@
       ]
     },
     "8": {
-      "note": "The refusal before recovery.\n\nAnchor: \"unclosable = prepared_closeout_refusal(contract)\"",
+      "note": "The unclosable-history refusal precedes publication recovery.",
       "targets": [
         {
           "anchor": {
@@ -176,7 +370,7 @@
       ]
     },
     "9": {
-      "note": "The cutover lock on the prepared closeout, after the unclosable-history refusal.",
+      "note": "The prepared execution entry applies the cutover lock after the unclosable-history refusal.",
       "targets": [
         {
           "anchor": {

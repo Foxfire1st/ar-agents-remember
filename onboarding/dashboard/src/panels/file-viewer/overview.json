@@ -147,11 +147,11 @@
       ]
     },
     "8": {
-      "note": "The shell that registers + keeps this view mounted.",
+      "note": "The shell registers and keeps the file view mounted.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
             "locator": {
               "end": 341,
@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:50428516903eec63a3ed6a9996ef06fd70e1df5b7cd059c57070c5bc89aa409b",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:fc2f52eab54cccf3c64e9cab4a8eefa1623a34fc09e96a0a0705272b86893314",
             "locator": {
-              "end": 798,
+              "end": 807,
               "kind": "line_range",
-              "start": 794
+              "start": 802
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -177,7 +177,7 @@
         },
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
             "locator": {
               "end": 341,

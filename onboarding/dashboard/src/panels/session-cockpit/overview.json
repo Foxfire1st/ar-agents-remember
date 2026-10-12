@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
+            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
             "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
             "locator": {
               "kind": "symbol",
@@ -65,12 +65,208 @@
         }
       ]
     },
+    "12": {
+      "note": "The examined product Chats layer mounts RoleChatsPane, not the retained SessionsView composition.\n\nAnchor: Chats ViewLayer expression",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:d4a9812aca4fcb9ecc166eb5ee91cfffa2ac7146cc9dbc25f868ff0a154c037c",
+            "locator": {
+              "end": 818,
+              "kind": "line_range",
+              "start": 811
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "RoleChatsPane renders RoleLauncher and an unbound Paseo frame; default selection is architect.\n\nAnchor: Role pane composition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:48a0548865041408be63ccd3aba2129dce6c9798e8c8ec70bb7cf07548c6a178",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:14d818e5c319e897b01acb01e8b2ed04150ad516655ba6b2928c429b2a21153c",
+            "locator": {
+              "end": 625,
+              "kind": "line_range",
+              "start": 596
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Retained SessionsView delegates controller and body rather than owning all composition directly.\n\nAnchor: SessionsViewImpl",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:68d6d65d426d2e3c71fb21fd35c4a092e1c989d6981395598d68eeb51d987c19",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Cold epoch resolution refreshes authority, retries transient failures within a 30-second elapsed window, and can recover on a ready transition.\n\nAnchor: resolveEpoch / useEpochRecovery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:89ced18391f1d6259f940e71a22119c957fe21b4b6d786fc76d55a12784437a6",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:a174f56ff1fa3cde53877fcd3f07ff95a7d4da94324c282eb38ceeca3648ace6",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Controlled classification requires defined non-unsupported control state.\n\nAnchor: isControlledSession",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:e9d32d65043101a9baf18b53d72311a787b1565e4d31b74d4d99309a59f8fe38",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Conversation retention follows the shared LRU; lazy terminal sibling survives archetype switches.\n\nAnchor: useConversationKeepAlive / usePtyLayer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:656cc475f6685b3cd348c8ca2b44352541773e92fa67355de3d58ccaa51dd122",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Closed diagnostics are inert/aria-hidden and have no PtySurface child; pool wrappers use aria-hidden without their own inert attribute.\n\nAnchor: Drawer conditional / pool wrappers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1800351917ad55d654c89f5de3239ab0852cd2",
+            "content": "sha256:1feda8dcd44e8b1d5cf03c3eabdf00f6e2be7e6a521e48e51dade89346cd47bd",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:48a07233b43b702d459fe49e62a66a6deb6759ac830d14eea7105b3ad039afa9",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:7c7da15742ac2df495da38d55be8fe9d11b9426fea55a99f002b50f72c25938b",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Live-only body slots and composer-docked stop differ from the old universal WorkingLine placement.\n\nAnchor: WorkingLineSlot / ComposerSlot",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:55bd06aa39fb7fdcfa63860d35fa5a998ce4f7179503bc1e4530cffe759e810a",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Full-route composition and shell ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
@@ -79,6 +275,215 @@
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Interrupt enables working resolvable turns unless hard-unavailable or refused, rather than requiring supported capability.\n\nAnchor: interruptControlState",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:63c625ebfb0067deeb0263143ff324194cc02d02ad6b01caa78b49855956bdc9",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:f47f6df429fff4cb815551003964d5f26cae8ffbf8a9ec53a1ed1077a2d9b500",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Ambiguous hosted opens reconcile by observed id only while the dialog remains open.\n\nAnchor: useOutcomeWatch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:4b994875b7b50b599e32daeb4da94fcab611d5f00ddef6aaa0c6c4061a0e0af2",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:cecf3d44bb1a07a6cd050cc7e8178961fad1e6b6a8852bbd6984e8fc369f7fee",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Unattached rows include structural mismatches and duplicate master-role occupants; leaf occupants are session arrays.\n\nAnchor: attach/place predicates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
+            "content": "sha256:b75286235c7289060cd373e3970c3813af17f176cae0667e04d17ee4db7621e1",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Occupant row identity uses session ids, and current row/action layout does not wrap.\n\nAnchor: RailRow / row styles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6898fc6e495a1b8986c1757cb25ba16d391d86",
+            "content": "sha256:d1acf588493e5a4a9eafc1a5e9e32fbc081594ad4b3ae66628811cd381638bf2",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf6898fc6e495a1b8986c1757cb25ba16d391d86",
+            "content": "sha256:a9071ccdbc4a5d1bf3d2594491a5e13e89a35c0061db6b66c22583bfb9062687",
+            "locator": {
+              "end": 948,
+              "kind": "line_range",
+              "start": 934
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6034ddb96d83a6115e81d3f266638ea163571a1c",
+            "content": "sha256:dd709806e27879f0ae08efeeb221495c88c5198e7d81098abacf3ce87ced9b3b",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailStyles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6034ddb96d83a6115e81d3f266638ea163571a1c",
+            "content": "sha256:dfae4257b06ea4d5a43555dea0a60434650b8de2eba2e88c148805cfcbb896d4",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Fleet optimization counts actually rendered rows in the selected tree/hierarchy.\n\nAnchor: renderedRowCount",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:685d47ee49558e36641014f498045315b4b4016ded0e63bc00120a1e80ded8fe",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Agent focus is roster-validated and native history acquisition requires visible selected-agent focus.\n\nAnchor: useAgentFocus",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:8278b0610f2d5c0a8353ff08aa43fefaecb6cd99f04751f4261f1e0b2e0a331c",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Library focus uses exact openedForFocus evidence and operation session identity.\n\nAnchor: open-focus effect",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14c4e00bc0af8ce6ee2ff1eef4cb50145c113fac",
+            "content": "sha256:fd3a0051c2a7bd797b273a1f6eb91b92da5955ac5244131fc6a2dd27e34bc2e1",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Fixture vocabulary guard explicitly documents discovery and coverage limits.\n\nAnchor: WHAT THIS DOES NOT COVER",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:48ced1ee25af2463465fc49328fa8d419391823ae6287f95ef470402eb19ff1a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
         }
       ]
     },

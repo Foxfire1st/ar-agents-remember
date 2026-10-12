@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d1c1024413ff6c8de6344388fd48a114b24c28e",
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
             "content": "sha256:e036e0cb99863e6fba61f72bb065b3fdf79ec46ffe25c8744c38cf33c0a6fa64",
             "locator": {
-              "end": 98,
+              "end": 110,
               "kind": "line_range",
-              "start": 79
+              "start": 91
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d1c1024413ff6c8de6344388fd48a114b24c28e",
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
             "content": "sha256:44025590f2b83bafa525c3bdd92ed9c9266abeac1e1de577e755f1a947586192",
             "locator": {
-              "end": 171,
+              "end": 183,
               "kind": "line_range",
-              "start": 147
+              "start": 159
             }
           },
           "kind": "code"
@@ -110,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -127,13 +127,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d1c1024413ff6c8de6344388fd48a114b24c28e",
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
             "content": "sha256:13a3891b08283cb375d8372fa61599ca7c6c1866cd31fe38ac6a71f9fa427597",
             "locator": {
-              "end": 72,
+              "end": 84,
               "kind": "line_range",
-              "start": 70
+              "start": 82
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "content": "sha256:9e5c23153af599bae860871190314b3a053f9602f1d4a2ddbc4268717179a271",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
           },
           "kind": "code"
         }

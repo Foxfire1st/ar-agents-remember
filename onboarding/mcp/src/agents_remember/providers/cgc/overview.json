@@ -18,6 +18,161 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Ordinary enabled-provider setup excludes CGC even with retained settings; direct lifecycle implementation is a separate route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:0670e973f279db252da1db746bccd938f816b96d1ff638f33a1f6c88b67b7bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:26f2630a7217ea7031152a7d4bf67522161e12cd2329b587e36b55c8ab1fa39d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Seed resolution separates source and target ends, preserves precondition refusals, and records computable commit divergence for catch-up.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:860f3505f5bcade450aaa4754c96a538b19595374996294baedf04158022a8c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_seed_context"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:0d9d80ea0ee3d60caaf2b9425e63e8544616cefeb02921451ce40d823556a104",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_commit_mismatch"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:8733c94240cb4a2edb2dfe951bfcbe6822e4a13d4e0883166142c0c22147436f",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Catch-up waits for watcher readiness, retains untouchable residuals as stale, and calls the touch-delivery result caughtUp only without residuals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:d36e285bc9ad71e0881deaa7dfe55e9234b3d843c84b9182e93956be759ac1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_catchup_results"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:81226147102cd9fadab3e6205e3444011158f242bbce99a0edaafeaf2b926dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_touch_plan"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:08aa28cbef4b4ddfc0b10303e4be370cd842694f298cacdd8c27c5e40d6dcb50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_seed_touches"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Container memory caps and restart policies distinguish the backend and watchers from the batch runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52a7f69906ffe7ffaad6d2babed4b7479eab977",
+            "content": "sha256:03c240febc5d0a57daf9822e00d4bb2365485b27b06551f0fef6d9ac3f8d6523",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "providers/compose/codegraphcontext.compose.yaml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5b4c5e14521a875348325272bf9a64026fb8f51",
+            "content": "sha256:e86abdae3eda8034e8ca87fb031070f6f46826a04f7ae1b9a0adcf67e850da51",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "providers/compose/codegraphcontext.watcher.yaml.tmpl"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

@@ -6,13 +6,520 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
-            "content": "sha256:a4c3cb15b6baf711eddd9967df575a9777d9f64941a3c48622b073af1d9aa9ff",
+            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "content": "sha256:a57ad661be626d167f0cda87aabcb671f1a1bef3b19fa3c4e7d6910e002c7349",
             "locator": {
               "kind": "symbol",
               "name": "_EXPORT_MODULES"
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Watcher-start prerequisites remain distinct from post-start observations and prerequisite errors; stack results carry optional lifecycle outcomes.\n\nAnchor: GrepaiWatcherStart",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:f88894b616e9e81121add56c2e50ce39329a4c632d3ec76e1c3b3e87e67d9564",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:1515a86a3b02df8f1f89948e4ceffd80cb0d9af75ae71aaa174915e0036ec498",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "BackendStartReconciliation groups migration, optional forced removal, and a Compose-managed network result for GrepAI and CGC startup.\n\nAnchor: BackendStartReconciliation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:0d8ad8494daac2551d16f8fe89558ae864a399357800e0785aabee192fbefb31",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:7ac492e6b9e8a62a4c06f5f0edb1cad6a270b83afdeb7489d3f55c69c0a70a84",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 444
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:e887a781eadf4eb9092307f09cb6eab7fdb5c47a62fe8bd0fdd72067d20459e6",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:e2648e43d5375242ae78276ad9396932c85e030ed6bf4fbde70d98a41bf26117",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Main GrepAI lifecycle actions reject host runtime modes; managed backend startup requires Docker PostgreSQL; external embedder results do not launch host Ollama.\n\nAnchor: grepai_unsupported_settings_result",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:1469d3453cdcc5c601c356080c9bc31153ed3d677983c6183febf4a8ff10b28e",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 442
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:92f56b20d4d2203331f04c2a2b74f186c7113bfa7eff48f371f067e36ad67f2c",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:dd4b27990e8919e5514cc22cda7db320a59ec099273058059f4a126c5ec4b6c1",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Container paths, service names, and shared network connect workspace configuration to the Compose stack.\n\nAnchor: grepai_compose_render",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:cf4cf1529a9a5dfce17db0408f7de4cc9c5b71449617ab583e8ace5d5c27cdc5",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:9ae01499e6094adf7c7404866424232d8c9815d3328ad60eef0d16e58768cca6",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:f1db8b109d735a84c4abc65e8bfcbffa54d7a7d1072b3bdc526d4448d3c5fbc9",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Shared context helpers reside outside the aggregator package to avoid provider initialization cycles.\n\nAnchor: context helper imports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:283e25ba781644e0e5d56abe5723e165ee497457616824345d7b8ef640e6d535",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ec2e0d4994c995c673515adb4e0b9e14be500",
+            "content": "sha256:0d5e0d3fc872d1a92180f40c6603525ea5f9b263193bbb7d9cf208b01cf25434",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/providers/context/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The GrepAI lifecycle facade exposes configuration, Compose rendering, backend, embedder, runner, and actions.\n\nAnchor: _EXPORT_MODULES",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b42b4e40bef082465ee9ebba788429c6ad408e2",
+            "content": "sha256:583b8277c4f7d157ed5ef0f92787f40efcc656bd1813178c40355955cbedd159",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settings-backed native commands execute bounded GrepAI CLI commands through the Compose watcher service.\n\nAnchor: grepai_docker_run_command",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:db25689c0490b7abeb60fa5718bbb0098a3abde86b0fbdd39114f9c82b4f235c",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Watcher scan markers yield complete, in-progress, or unknown; the current-state adapter maps them with watcher and workspace guards.\n\nAnchor: grepai_watcher_initial_scan",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:f1b5a4d2b16c5ba9d4bdf370c3593da4c39d1e6d28a8c54d7b4a7e0e4fb25f55",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:0cf026a1c1e01bd1051e3356aa1498c98030ae7844ba39a46b1c941045d31e9c",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Container status reports normalized running state, health, and uptime.\n\nAnchor: docker_container_state_summary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:cd8ccefff1c2125416aeb6957d49d51a4e8c753939332d864f0741cdb3847c6c",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:816cb8e3f4dac6d9db61f0c59aa496393177dfa99022dfc56c00dfbe0ad1911d",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Dependency host ports reuse existing mappings and prefer 61432/61434 for new auto allocations; container ports are separate configurable defaults.\n\nAnchor: grepai_backend_host_port",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:0bdfb054ca8d0c514e055d5b882a2319eccc133301c7040599025e797fd36c2b",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:4d354ffee21e28259570cfc824d292026615152fcb652ad902fd2b5de6e7af7f",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68300208f6f3a60f2826907138f9ce564a45a08b",
+            "content": "sha256:1e0c4a0d67b2d4a2fea2b30509af8e419168b6b4fb2c4f71cd11fa544f96aecb",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "acce02fc4be84ce7cab82235a3f902a6acad1769",
+            "content": "sha256:9e7fa911b9256934386553c47629913e0e61f4dbd37af6d4c0f311a7dfb2e52e",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/host_ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:55ba53965be20d9a49f3527e8d0f62e5ca09f36dc0695c88a7312e8ff9bd39f7",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:997a5f25d9a635161246ff6cec891ccef1b7dfdf97c36a2973b9acbb2069e891",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Lifecycle configuration requires an explicit settings path and constructs the runtime layout.\n\nAnchor: grepai_layout_from_args",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:a74e110b851ac0b9b8178ceca090aa06f3c2c596b4a2548d39f1aa0d4e492514",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d89958ab3d74e160f7c6bba3084ab68c09de6673",
+            "content": "sha256:9f862c90b26b857db04299b892c75456451e9af10e9ec6d6dfa2d21703198347",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/provider_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d89958ab3d74e160f7c6bba3084ab68c09de6673",
+            "content": "sha256:26f44fa2a2758f1405d330f4847f5a4235c22eb8bfb2c1140b41703f0d3ba937",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/provider_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Frozen backend and embedder contexts carry resolved startup values.\n\nAnchor: GrepaiBackendContext",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:3cf1f21f8102fe4719dae851fae8865bfc86f7389faa60fa895318b256105f16",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:c4b4feefbffd8da1b92d1ba5336c5b665447e7688537be4f613ae7c182d770c1",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:a95af18ebdb24594cf52078217b87656a60173ed9e303cfaaff0e83a0c25dec0",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Frozen service-port and workspace records group their respective configuration values; Compose rendering retains configured-port expressions.\n\nAnchor: GrepaiServicePorts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:16bed40b4512b4347fbc2c8dbd329b2beb78ed12d07962afb3012cdb8a2b1d3b",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:7d102d5c005b92a709db6f4433d48950835d5e8fa1b6f075dea9b30b12b2e1ac",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py"
           },
           "kind": "code"
         }

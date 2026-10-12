@@ -117,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "blob": "ab7cbbc9ff35452db14688bb3cf213cff0c82c2a",
             "content": "sha256:32ce4e620e33b76d9db50a60e5027f0575a03c05bbc150cb2db2bb3a440f0ab4",
             "locator": {
-              "end": 122,
+              "end": 97,
               "kind": "line_range",
-              "start": 92
+              "start": 67
             },
             "path": "mcp/src/agents_remember/mcp/tools/gates.py"
           },
@@ -190,6 +190,114 @@
         }
       ]
     },
+    "14": {
+      "note": "JSONL admission precedes shared locking; appends fsync and replacement requires a held lock\n\nAnchor: exclusive_access; append_line; append_lines; rewrite_lines",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:5527f072aab67708675f0ceebcf6d5b098370df77ed0afc912b0a2b3bf21446d",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Ownership is advisory; inbox has no single compaction owner; schema accepts only major 1\n\nAnchor: StoreOwnership; ownership register; schema_version_supported",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d38c33c7f7b29636fa0587ca035be8f4fde5e6d0e3e07c9ffff113adc6ff330d",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Mutex/flock exclusion is reentrant and capability-probed\n\nAnchor: exclusive_file_lock; _verify_lock_capability",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "content": "sha256:64d324f434feb4b583e166d8181332797d4e6409390730f8a32d5c446f569bb7",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable\n\nAnchor: atomic_write_bytes; _fsync_directory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "content": "sha256:fb4f68f49932c356185671833a14fd2205a907d9c7f95b4d8472156c2a9287d3",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Undeclared checkout targets are restricted; primary checkout is refused\n\nAnchor: checkout_cli_location; require_durable_write_target",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:7ca65454323d50336f9ce3e780b2a9e9bf519a7ba8ab4db77edff2741c7a7745",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Approval spending folds/evaluates/applies under one log lock\n\nAnchor: claim_approval",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Gate policy validation and delegated decision checks.\n\nAnchor: \"class GatePolicy:\"",
       "targets": [
@@ -208,19 +316,457 @@
         }
       ]
     },
+    "20": {
+      "note": "Applied gate permits only matching exact-operation recovery\n\nAnchor: evaluate_gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:e414445ab0bacda5f51e7a532caeb3f5209888a68ae89ecd5fea945db1c8035e",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Default human policy and explicit delegation/pinned kinds are kernel-owned\n\nAnchor: GatePolicy; make_gate_policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:e91d65ec7549288d140fda9206e41131447a34cb1c1bc0aabc525a7ae4fcc09e",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Delegation rejects owning-lifecycle decisions and missing required reviewer evidence\n\nAnchor: delegated_decision_failure_reason",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b96e941c6e9a776260822ea07d54e1a57981bfd",
+            "content": "sha256:caf7a0f021609cdf7f1adf3343e7ec6f16a0d9888c8693a08ed422c732ba4a03",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Gate reclaim is owner-selected at the shared decision service\n\nAnchor: _reclaim_gate_log; record_gate_decision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:b8bccd1ae9df95fdeac1dd6282fef8e6db4af53cd39753846629ffba2d1248fd",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Raise-and-continue requires delegated seam and enclosure before mutation\n\nAnchor: _require_raise_and_continue_allowed; lifecycle_gate_tool",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:3506372835e7babb8667c6ce7b09389561fc715a9a5cd63097e16d3c87d0a642",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 324
+            },
+            "path": "mcp/src/agents_remember/application/gate_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Consume stamps attribution without changing state; fold resists pending rollback\n\nAnchor: consume_operator_inbox_entry; fold_operator_inbox_entries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65f3f7de5d39c0373fb7fcd8b4bcbf3860c6d1cb",
+            "content": "sha256:26b0d13f741679381ac3a1d8391f59443acae5bc404521af5a45b976be432e36",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65f3f7de5d39c0373fb7fcd8b4bcbf3860c6d1cb",
+            "content": "sha256:1ca15622c4d8e685d63ef75c402f972d8c589734b96ea4bb940a0942c47888bc",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Landing needs accepted adapter state plus supplied boundary fact and latest pending fold\n\nAnchor: record_delivery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:a9682f7853f4d911db3ef0bc2c7432a68d9efb75100e4d8df54ffd78545039fa",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_transitions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Batch transitions validate before one append; compaction protects unregistered task reports\n\nAnchor: transition_many; _unregistered_execution_report_ids; compact",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:3f70c19974a0251735f3e859a2fc0f541004e8a2df570972f9147a8ef127c0eb",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:72f12e35102cfffa5946e86e20ab677f0b375179c4ecaeca0e4d782f65500ec1",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:e865b277284788bffb4c45e169b40658365ad51bbe284cc61c485e649a47034e",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Protected ids can exceed the nominal cap; pending compaction awaits surfaced expiry; spent gate kinds survive TTL\n\nAnchor: inbox_keep_ids; _keep_gate; _keep_inbox_entry",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:fe799140d604fe3809dfb8069505a235c0ace20d9dcc929d5e492e7d34c26d5b",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:9e5d1269a052414b586b6aec37419f2d0b16e733021a063c379fc2e6d226fc66",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Exact structural occupancy checks incumbent and heir independently\n\nAnchor: current_seat_occupant",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b89de856f91a87d6729ad9b4de072c851c665396",
+            "content": "sha256:7f328cf6ac7a8ebdd5379100429a9d24353d572cf4998306b7c5ab23eaa31317",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/src/agents_remember/controlplane/seats.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The `gate_*` payload builders that drive this substrate.\n\nAnchor: \"def gate_create_payload\"",
       "targets": [
         {
           "anchor": {
-            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "blob": "ab7cbbc9ff35452db14688bb3cf213cff0c82c2a",
             "content": "sha256:aa6d56aa725a78f943a96de9d1355cf75633dcca19e76ad9de6bdb7d5afc20fd",
             "locator": {
-              "end": 44,
+              "end": 34,
               "kind": "line_range",
-              "start": 44
+              "start": 34
             },
             "path": "mcp/src/agents_remember/mcp/tools/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Routing is task-scoped, reviewer-altitude-aware, and dispatch-brief excludes generic rebind\n\nAnchor: owner derivation; derive_row_owner",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2499440ca341521de50e225086b1c5fc5c983653",
+            "content": "sha256:0e8df5ef7bb4d0923f15c563ea984344a02bd0d924eb479d988c6dac23f67cd9",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/controlplane/signal_routing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2499440ca341521de50e225086b1c5fc5c983653",
+            "content": "sha256:6beba331ed0cb0b24d583a1c65cd060887d3eeaf63506aa92427fe3b827e9697",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/controlplane/signal_routing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Current chain-progress credit uses task and replacement references\n\nAnchor: task_chain_has_progress",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2499440ca341521de50e225086b1c5fc5c983653",
+            "content": "sha256:f58c1c85eb2f053bfcc0519dfe6ac9ce69178004ab448b21bdb3c485c053d278",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/src/agents_remember/controlplane/signal_routing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Active deadlines are briefed-by/verdict-by; retired kinds are parse-only\n\nAnchor: expectation contract; compact",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:4ef2f6cd7a997a6448835f8e779db1890b373161bfb876eaff1f38bed06b7677",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:19760390f47b09ef734a90203886c255440fbe7aa19fe231ac08561bd665b29e",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Cooldown has retention compaction and compares the complete key by list scan\n\nAnchor: last_sent; compact",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19724595ba8611fb7389bed26521ca305c1a75da",
+            "content": "sha256:49f1ed3f3e35d3485dcb756326b1701b971b1f8811eff547cb05fd53925c32bc",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/controlplane/agent_notifier_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Redelivery refuses sub-900-second cadence and excludes non-pending rows\n\nAnchor: require_redelivery_floor_seconds; is_due; redeliverable",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:36e1dea00cd2d163db2d6bd8f621992aaa3754b31d9f99d61688765f223e1804",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Confirmed-gone reclamation uses narrow pending alert eligibility and positive exact-session evidence\n\nAnchor: _eligible; _confirmed_gone_subjects",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe7290a15fa78380735bdaea641204078ad7c6e",
+            "content": "sha256:352ce5c364480ed3febc826b26b0d8a9aaaa0ab51abd8c628428d8c2450d6edd",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Catalog evidence precedes inbox lock; cooldown and expectation reclamation supply sweep snapshots\n\nAnchor: sweep preparation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
+            "content": "sha256:630e069a8b6dc795a60c5ebe73b2b7998fd134f0567ffbb1f68041bafe60a7b3",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Adapter failure preserves bounded proven-unsent retries and reopens unknown delivery with evidence\n\nAnchor: _record_delivery_failure; _reopen_undelivered",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c731ab0a47a57da748ecf7f2af2d178f596cba0e",
+            "content": "sha256:36d17bec6e7106294967dcb7726929b527a72652c50e78815a3a61ddfed0a5f7",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_interactions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Projection requires exact source identity and owns scratch rather than semantic WAL\n\nAnchor: read_effective; invalidate; publish_build",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+            "content": "sha256:d4066911fd50214a492d2d792dbfe9f8557c47010d783d45841d6bde6ec7e877",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Canonical publication precedes projection invalidation/rebuild and returns refresh failures as effects\n\nAnchor: publish_task_fact_mutation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
           },
           "kind": "code"
         }
@@ -252,6 +798,73 @@
               "start": 121
             },
             "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Legacy specialist role canonicalizes to investigator before packet routing\n\nAnchor: canonical_role; escalation_packet",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "content": "sha256:218fce10682c6e6734b8d07b57c90b3e40c64b4d9a2472450843e7d310ec8512",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f29eea0ee469031778e394282e38d266224a7a",
+            "content": "sha256:4f0353301f23a453c57f223ad0b3fdb5e948f4f6e46c657880dc1a6513da0b67",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/controlplane/orchestration_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Lifecycle pruning removes whole unprotected dormant directories\n\nAnchor: prune_expired_lifecycle_event_logs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "content": "sha256:f6323bd0c8e0abea147de3872c0c44348c2600fb0b8f1703fb8a4a410b913370",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Serving contains structural route failures per action and prepares expiry batches before store transition\n\nAnchor: act_on_finding; act_on_findings",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:7ba7a51ff51d209482a2144f7dece35f81c96068735e01ea526d692b322e4bb2",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 736
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
           },
           "kind": "code"
         }
@@ -311,7 +924,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
+            "blob": "2d89a4489679a6fd1ba5754fc4c50fc27d0d5c6b",
             "content": "sha256:22d42a9364869463b895daa2d960aa31ad3c51114cc28a5cef042c139f97eef9",
             "locator": {
               "end": 171,

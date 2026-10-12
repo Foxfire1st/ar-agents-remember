@@ -2,12 +2,12 @@
   "path": "docs/design/engine-room",
   "references": {
     "1": {
-      "note": "The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype.",
+      "note": "The React engine-room renderer realizes the two-world canvas and lifecycle overlays, but its current official-line and worktree layers retain couplers rather than provider engines.\n\nAnchor: lines 42–88",
       "targets": [
         {
           "anchor": {
-            "blob": "b437f8e63677d88ed1359bfac8ec3911b4d7dcaa",
-            "content": "sha256:095080802562e76437c54c917e159da99b7945f7aac73f30e60e06cf38115984",
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
+            "content": "sha256:0979e5ce335b473ee2c5b90a78896656c2f95fd6c6bd944d087218033bb65053",
             "locator": {
               "kind": "symbol",
               "name": "EnclosureCanvas"
@@ -18,25 +18,48 @@
         },
         {
           "anchor": {
-            "blob": "b437f8e63677d88ed1359bfac8ec3911b4d7dcaa",
-            "content": "sha256:243bea42f968d14c71b7b241e26079506c2a4ec7bc137816f24979637dd7850c",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:72f2653ca4e8f55fb48cd6a9ff2d15035f61189318ea94cdb1953773945b1805",
             "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 42
+              "kind": "symbol",
+              "name": "OfficialLineLayer"
             },
-            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:05b9fd0d3958c50b0a2f30f8440890b810a1462f1ff2092ed2e19cee77d77e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OfficialCoupler"
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:f27b16740429a71245dd5b7f220fda5ecaf5966b1aa7fdcd604ada1d11043766",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeEngineLayer"
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The parent in-repo design-documentation route this folder is a child of.\n\nAnchor: \"Engine-Room Visual Language\"",
+      "note": "The Engine-Room Visual Language document declares its living-spec purpose, colour and motion doctrine, retirement boundary, specimen organization, timing/legibility rules and implementation mapping; the companion prototype preserves its scenarios with a retirement notice.\n\nAnchor: Title at line 6; living-spec header and doctrine; retired engine specimen; failure primitives and mode grid; timing and implementation mapping; prototype retirement notice and scenario selector; animation gate",
       "targets": [
         {
           "anchor": {
-            "blob": "e9b9066a8809973d910f841f05c918c1889f1882",
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
             "content": "sha256:167ed2d26455d58fa912bf6adbf014f24b2c7635d473cc57db1dac1c9b46c2f2",
             "locator": {
               "end": 6,
@@ -44,6 +67,136 @@
               "start": 6
             },
             "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
+            "content": "sha256:f51da2e2bf901412f15538591ee0c78d0b33362d483e126a5020c6207ecb6491",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
+            "content": "sha256:390328f891720e71dd7dfb5cde1f15c05259f174351e02b37a18d8dbbf94562a",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
+            "content": "sha256:fe077a3f38f75064b1c381c7f87b951e86d119791b53d1e4d892e9b069b39eca",
+            "locator": {
+              "end": 874,
+              "kind": "line_range",
+              "start": 666
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
+            "content": "sha256:ad858079fd5400510d05c4a811e66ba1f979485cc75126da2c18de6f08adee9a",
+            "locator": {
+              "end": 942,
+              "kind": "line_range",
+              "start": 885
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
+            "content": "sha256:9835a3c8c7cc366a5cb41ffbd06c9790d5926f883096303cbed03e09113f55e6",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
+            "content": "sha256:b9c09bee4e8b5decf105eabfa79e7149b91c15390da46bf4de6baa3c061f4a0c",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
+            "content": "sha256:63497e4587d06f38dc1fa92a16b0830911afc4232d411f8b60e6041c68c3ab75",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 486
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
+            "content": "sha256:6e6bb91f564568c0d51fa0bfd8c09b218d284eeafd8c408421c467eca7ff92d8",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 553
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:b1c3a6f5e22103c4de73eb5c562380ae98b7c6fe7ec97362f7a1ce7b059f4230",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:842358accbff290e61c8cc7040044fffb9f345d6a0b65d387bb5a212ed19a399",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
           },
           "kind": "code"
         }

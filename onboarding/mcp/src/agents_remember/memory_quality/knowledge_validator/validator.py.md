@@ -25,16 +25,17 @@
 
 - The module imports `rules_history` (MIK-R09, since leaf 260928-MIK-L09: `R09-history-rows` and the report-only `R09-history-rows-merged`), `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_decisions` (MIK-R13, since leaf 260928-MIK-L13), `rules_reconsideration` (MIK-R14, since leaf 260928-MIK-L14), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's three admission rules, MIK-R13's five decision content rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because the admission rules are registered here, the fixture tree's every validation now carries one report-only `R27.4-legacy-unassessed` count (its Doc14 family is an export).
 - With no bases every anchor is checked for path existence (a writer's or a curator's run).
+- `rules_overviews` is also imported for registration. Its registered refusing R80 checks use the same context but return outside leaf publication or during conversion: at publication they enforce fixed purpose heading first, no leaf/date-named sections, and a terminal contiguous citation region. The detailed syntax and standalone-conversion exemption belong to [the overview-rule card](rules_overviews.py.md); neither syntax validation nor a current anchor judges whether the prose is true.
 
 ### Invariants And Boundaries
 
 - `require_valid_commit` has no parameter that skips a rule.
 - `conversion=True` exists in the API only; it is deliberately not exposed on the CLI (ruling Q2), so the tool surface has no skip flag.
-- Before the cutover no production tree has the marker, so no production route changes behaviour.
+- Commit applicability is conditional on the candidate and comparison bases, not on an assumed deployment date: validation is skipped only when neither side is converted. A converted candidate or any converted base activates the registered rules.
 
 ### Todos
 
-L24/L37 must pass converted bases, or call `validate_tree(..., conversion=True)` for the standalone conversion (worker gap 4).
+Commit callers must supply the comparison bases. A standalone conversion uses the explicit API conversion context; ordinary calls must supply the paired code tree. This API boundary does not authorize a CLI skip flag or a production guard bypass.
 
 ## Evidence
 
@@ -70,8 +71,12 @@ The three entry points.
 - A commit that publishes a leaf, with the history files of the commit it sits on. [10]
 - The frozen trees reach the validation context. [11]
 
+- The overview-order module is imported for registration and participates in the same every-rule traversal. [12]
+
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [13]

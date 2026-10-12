@@ -1,706 +1,231 @@
-# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview
+# Memory Repository Lifecycle And File-Derived Knowledge
 
 ## Governing Overview
-
 [mcp/overview.md](../../../overview.md)
-
-## 260928-MIK-L37 The Cutover: Card Authoring, The Frozen Publication Sink, And History Files By Path
-
-`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
-memory tree that holds `knowledge/layout.json`.
-
-- **[`conversion/card_authoring.py`](conversion/card_authoring.py.md) (new).** The fixer on a converted tree
-  authors a card's citation table into `- <finding> [n]` lines and sidecar references with resolved anchors:
-  a new card's sidecar, a reference re-authored by its number, and, for one named card, the removal of references
-  its Markdown no longer cites. Every card is checked before anything is written, and a card whose citation table
-  touches another table with no blank line between them is refused by name.
-- **`knowledge/publication.py` (retired).** `publish_prepared_snapshot` refuses a destination
-  inside a converted memory tree as `database_frozen` (MIK-R37 rule 3), at the one install sink.
-- **[`carryover.py`](carryover.py.md).** `memory_carryover_apply` refuses a converted target, naming the file
-  writer, and takes the cutover lock for an unconverted one.
-- **[`knowledge_index/build.py`](knowledge_index/build.py.md).** The parsed tree holds each history file by path
-  and each owner's merged history, so a reopened leaf's closed file and later attempts are all indexed.
-- **[`knowledge_index/tree.py`](knowledge_index/tree.py.md) and [`knowledge_index/query.py`](knowledge_index/query.py.md).**
-  The working-tree capture copies the repository's index with its modification time, so a file rewritten in the
-  second the index was written changes the key (INV-656CYW); `KnowledgeIndex.history_row` answers one history row
-  by its ID.
-- [`conversion/crossing_sync.py`](conversion/crossing_sync.py.md): a docstring correction only.
-
-- The card authoring's entry. [114]
-- Carryover writes legacy-format memory only, and only while the repository is not locked. [116]
-- The index keeps each history file by path. [117]
-
-- Two tables with no blank line between them are refused when either holds citations. [118]
-- The capture copies the index with its time. [119]
-
-
-## Converted Adoption Validates The Staged Tree Before It Commits
-
-The first baseline of a converted tree is validated before it is made. The adoption stages the
-content on a private copy of the worktree index, asks the knowledge validator about that staged
-tree with no comparison bases and paired with the attributed code commit, and records exactly the
-validated tree: the commit object is built from the immutable tree, the branch ref moves to it only
-while it still points where validation saw it, and the recorded tree is verified. A refusal, a dry
-run, or any exception in the owned interval leaves the index, the refs and every owned file as they
-were — the prepared ignore line is given back only while its bytes are provably still ours, so a
-concurrent external edit is preserved, and the raised error keeps its name. The worktree's own
-index is written only after validation passes. Before first adoption the baseline payload additionally
-reports `blocked-legacy-cards` and the listed cards when the detector finds an old metadata-key
-first cell or Update History heading. Prose mentions do not count. `already-adopted` still takes
-precedence for attributed history. Other states remain `blocked-invalid`, `blocked-drift` and
-`unavailable`; `accept_drift` clears stale anchors only, never old-format-card or validator refusals.
-The format check belongs to adoption, not ordinary validation of an existing baseline. Where the
-validator is not bound, adoption refuses; it never commits unvalidated.
-
-- Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
-
-## Requirement Endpoints, Approval State And Their Recorded Reads
-
-[`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md) resolves a requirement endpoint of a
-knowledge record, `{task: {repository, path}, packet, id, version}`, and answers which version of a requirement its
-owning task approves.
-
-- **Resolution.** `resolve_requirement_endpoint` locates the owning task root
-  `<coordination root>/tasks/<repository>/<path>` and hands `{packet, id, version}` to
-  [`knowledge/requirement_owner.py`](knowledge/requirement_owner.py.md)'s `consume_owner_resolution`, whose answer
-  it carries back unchanged. The requirement owner is the resolver. The module's own answers are about the root only:
-  `requirement-task-plane-unavailable` without a coordination root, and `requirement-task-outside-tasks` for a
-  repository that is not one directory name. An endpoint that does not resolve is reported as `unresolved`; the
-  function does not raise for it. `task_root` is set whenever the root could be located.
-- **Approval.** `requirement_approval(task_root, stable_id)` reads the owning task's `requirements/manifest.json`
-  (format `approved-requirement-corpus`, the `packets` list only) and answers `approved` with the highest approved
-  version of the ID and its packet path, `not_approved` when the manifest approves no entry of the ID, or `unknown`
-  with the reason when there is no manifest it can read. Versions compare by the integer after `v`, and `newer_than`
-  is true only for a higher approved version, so a task without a readable manifest never counts as approving a newer
-  one. `latest_approved_requirement_version` returns the same lookup's latest version.
-- **Callers.** The knowledge writer (`application/knowledge_writer/requirement_links.py`) resolves endpoints. The
-  worklist's reconsideration step (`application/knowledge_worklist/reconsideration.py`) resolves an endpoint and asks
-  for the approval from the resolved `task_root`; an unresolved endpoint triggers nothing.
-- **Recorded reads.** The approval state and the packets live outside every Git tree. `_manifest` reads the
-  manifest's bytes once and records, through `kernel/recorded_reads.record_read`, the SHA-256 of exactly those bytes,
-  `absent` for a missing manifest, or `unreadable (<error type>)` for a failed read. The module does not record the
-  linked packet. The owner it hands the packet to (`_approved_packet_ref` in `tasks/task_intent.py`) records the
-  resolution of the task root and of the packet locator and the bytes it reads. Outside a recording block nothing is
-  recorded.
-- **The gate's kept verdict.** The mandatory gate evaluates inside a recording block and keeps its verdict with that
-  read set. Before it serves a kept verdict it repeats every recorded path resolution and existence probe, and hashes
-  the recorded files again only when those still give the recorded answers. A newly approved version, a manifest that
-  appears and a packet link that is retargeted, also to a file with identical bytes, therefore force a recomputation.
-
-- The endpoint's state, code, detail, task root and key. [134]
-- The task root, or none for a repository that is not one directory name. [135]
-- The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here. [136]
-- The approval answer and the comparison with a version. [137]
-- The manifest read records the bytes, an absent manifest or a failed read. [138]
-- The approval lookup with its three states. [139]
-- The latest approved version of one ID. [140]
-- The owner the packet question is handed to. [141]
-- The owner records the two resolutions and the packet's bytes. [142]
-- The reconsideration step resolves the endpoint and asks for the approval. [129]
-- A kept gate verdict is served only when no recorded observation changed. [130]
-- The manifest lookup returns the highest approved version. [131]
-- A requirement endpoint triggers only on a newer approved version. [132]
-- The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
-
-## A Missing Object Is Told From A Git Failure
-
-`CodeObjects.has_blob` ([`conversion/code_objects.py`](conversion/code_objects.py.md)) answers `False` for Git's
-documented not-found answer (`cat-file -e` exits 1) and for an object that is not a blob. Any other failure of Git
-raises `CodeObjectError` with Git's message, and a timeout raises `subprocess.TimeoutExpired`. A caller therefore reports an unreadable input and never an
-absent one; the worklist's code reader (`application/knowledge_worklist/code.py`) turns the failure into a
-`CodeReadError`.
-
-- A missing object against a Git failure. [2]
-
-## 260928-MIK-L29 Five Index Lookups For The Knowledge Reader
-
-**Route meaning extended (MIK-R29).** The path-based knowledge reader (`application/knowledge_reader/`) is served
-from the derived index of the selected tree, and [`knowledge_index/query.py`](knowledge_index/query.py.md) gains five
-additive lookups for it. Each is an ordinary `Answer[T]` carrying the index state, so a partial index is never read as
-a complete answer:
-
-- `entries_under(directory)`: every entry at or below a directory (the root route `.` holds all). A path prefix never
-  matches a sibling that merely shares its spelling (`dash` holds `dash/x`, not `dashboard/x`).
-- `entries_in_directory(directory)`: the entries of the files directly in a directory, for the reader's bounded
-  directory view (review F2).
-- `live_entry_paths_under(directory)`: the source path of each entry whose invariant is a live record, for the
-  counts the explorer, the directory summary and the subtree agree on.
-- `links_to_path(path)`: every relationship whose target is the anchor or route at the path.
-- `records_of_kind(kind)`: every record of one kind, built on `record_ids`.
-
-`_incoming` now delegates to a shared `_links` with the same SQL and order, so earlier callers are unaffected. The
-index schema, `INDEX_FORMAT`, the key and the cache are unchanged; building a commit's index writes only the
-coordination runtime's cache, which the architect confirmed is L23's design and not a repository write (ruling
-2026-09-30T09:42:58 Q2).
-
-- Entries at or under a directory, and of the files directly in it. [5]
-- Live entry paths, links to a path, and every record of a kind. [6]
-- The shared link query `_incoming` delegates to. [7]
-
-## 260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup
-
-**Route meaning extended (MIK-R25, a shared fix in L23's code; ruling 2026-09-29T22:22:37 Q6).** The reviewer reads
-each memory side of a converted leaf through the derived index of its tree, and its family roster reads revisions
-through the store's revision readers, which verify the logical payload seal on every decode. The index's projected
-revision rows carried `sha256(record)` instead, so every index was refused there.
-
-- [`knowledge_index/projection.py`](knowledge_index/projection.py.md): each projected `invariant_revision` and
-  `family_revision` row now carries `revision_payload_digest`/`family_revision_payload_digest` over exactly the
-  projected cells, so an index reads as a dataset for the revision readers too.
-- [`knowledge_index/schema.py`](knowledge_index/schema.py.md): `INDEX_FORMAT` is `ar-knowledge-index/v2`, so a v1
-  cache is treated as absent and rebuilt rather than reused. (MIK-R74 later bumped the format to v3 with (path, id) history-row keys.)
-- [`knowledge_index/query.py`](knowledge_index/query.py.md): `record_ids(kind)`, every record ID of one kind in the
-  tree, for the reviewer's per-side currentness.
-
-L23, L03 and L08 tests still pass (worker ruling round). No database copy is part of a review: the derived index is
-the permitted read path (Q1).
-
-- The store's own seal on each projected revision row. [8]
-- The format bump that rebuilds v1 caches. [9]
-- Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. [10]
-
-## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
-
-**Route impact (MIK-R01@v2), one additive keyword.** The family-complete leaf read of a converted tree
-(`application/knowledge_leaf/`) seeds on realization *and* proof entries at a path (ruling Q3 of 2026-09-29
-23:21:57), so a path with neither is `registration_absent` with wording that says so:
-[`knowledge/read_refusals.py`](knowledge/read_refusals.py.md)'s `registration_absent_refusal` takes
-`with_proofs: bool = False`, and the leaf read passes `True` (ruling N6 of 2026-09-30 00:08:39). The default
-wording, used by the recorded-scope read and the diff, is byte-for-byte unchanged. Nothing else on this route
-changed: the leaf read reaches the derived index only through `KnowledgeIndex`'s existing answers
-(`entries_at_path`, `invariant`, `family`, `record`, `text_id`), with no `INDEX_FORMAT` change.
-
-- The absence refusal, naming proof claims when the leaf read asks. [13]
-
-## 260921-ICR-L57 The Observation Row Codec Is Its Own Module, And `evidence_records` Still Answers For It
-
-`knowledge/evidence_records.py` had reached 1210 lines, over the 1200-line rail. `260921-ICR-L57` moved
-the one codec with no dependency on the others, the `verification_observation` row codec, verbatim into
-`knowledge/evidence_observation_rows.py`: `observation_cells`, `OBSERVATION_COLUMNS`, `observation_row`,
-`observation_row_digest`, `decode_observation_row` and the private column-group decoders.
-`evidence_records` imports all five public names and keeps them in its `__all__`, so `evidence.py`,
-`evidence_read.py` and the tests still reach the codec through `evidence_records`. No import site and
-no behaviour changed (1006 lines remain). For this route the rule is unchanged: `evidence_records` is
-the one public door to the supporting-record codecs; the new module is where one of them is defined.
-
-
-## 260921-ICR-L56 Anchor Observation Remembers Immutable Answers, Never Availability
-
-Anchor observation now keeps a bounded, process-lifetime memo so one review's owners and one comparison's
-subjects stop re-asking Git and re-parsing the same trees and blobs (ICR-R24@v3; first family/invariant
-visit about 1.3–1.6 s → about 0.3 s, with sha256-identical responses). The split across this route is
-deliberate: **`knowledge/read_anchor_memo.py` stores and bounds** (a weight-bounded LRU table, three
-tables keyed by repository root plus complete object ids, the one complete-id admission test) and knows
-nothing about anchors; **`knowledge/read_anchors.py` decides what may be remembered** — only content
-answers (tree entries including a definite absence, blob lines, per-grammar definitions), only after Git
-or the parser answered, only for complete ids. Whether a repository still *holds* a tree is never
-remembered: every resolver probes it afresh and remembered answers are served only behind that probe. The
-two uncovered residuals (a present tree whose blob was lost; resolver-less callers, i.e. curator ingest)
-are stated in the owner's docstring and card. No store, daemon, invalidation or caller signature was
-added.
-
-- The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. [16]
-- The memo module's tables and admission test. [17]
-
-## 260921-ICR-L44 The Anchor Resolver States The Region It Already Measured
-
-`knowledge/read_anchors.py` now reports, beside its unchanged `detail` sentence, the line ranges an exact
-recorded blob supports as structured values on `AnchorResolution.resolved_ranges`: every defining extent
-for a `symbol` locator, the recorded range for a `line_range` locator **only when the blob holds those
-lines**, and none for a `file` locator. A recorded range past the blob's end keeps `exact_recorded_blob`
-— the blob-identity fact attribution and diff accounting act on — carries no range, and says why in
-`detail`. The resolver still never re-anchors, searches or clips a recorded range and still publishes no
-bytes; it reads the exact blob's lines only to measure a symbol's extents or a range's bounds.
-
-- The bound-checked line-range observation. [18]
-- The symbol observation carrying every defining extent. [19]
-
-## Curator candidate source continuity
-
-Leaf curation captures the exact working source through curator_candidate_source. candidate_progression is the explicit operation that advances only a draft candidate code tree after matching the predecessor receipt and logical dataset under the existing lock. Normal candidate opening remains strict; knowledge, allocation state and the original before half do not move with this operation. Receipt-to-resolution conversion is shared by first-generation establishment and progression.
-
-## 260921-ICR-L4 The Partition Gets Its Own Module, The Observation Gets Its Own, And The Display Keeps The Seam
-
-This route gained **two modules** and the leaf they belong to (`260921-ICR-L4`, primary requirement
-ICR-R04@v1) corrects the attribution accounting: the measured change population is partitioned once
-into attributed, confirmed unregistered and undetermined, at the declared changed-path granularity.
-The per-file detail lives in the three sidecars; what belongs at this route's altitude is the split
-and the rule that keeps the two halves from disagreeing.
-
-- **The arithmetic is pure and the acquisition is elsewhere.** `memory/knowledge/diff_attribution.py`
-  owns `partition_attribution` (measured denominator, resolved-attribution, licensed absence, subject
-  link), `unavailable_attribution`, and the one licensing table with its one predicate
-  `licenses_absence` — read twice, by the partition for the confirmed-unregistered bucket and by the
-  acquisition owner for `subject_scope_complete`, so the two questions cannot disagree.
-- **The observation is shared, not owned by any reader.** `memory/knowledge/tree_observation.py`
-  owns `TreeSide`, `TreeChange`, `TreePaths` (with the two construction rules that keep paths and
-  entries one measurement and unrepresentable implying partial), the `TreeDifferenceProbe` seam and
-  `no_tree_difference_probe`.
-- **The display keeps the seam and states the deletion.** `memory/knowledge/diff_display.py`
-  (523 → 508 lines) re-exports every moved name so no importer changed, carries the partition onto
-  the expansion through one `SourceObservation`, and says in its own docstring that
-  `attributed_paths(comparison)` left and is deliberately not replaced — an unchanged mapped path is
-  context and never a change, and what replaces the name is `SourceAttribution.attributed_paths`.
-
-- **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
-- **The shared observation vocabulary and its two construction rules.** [21]
-- **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** [22]
-
-## Route Impact: The Durable Root Gets One Exported Definition (260921-ICR-L11)
-
-`memory/knowledge/durable_evidence.py` gained **one function and no behavior change**:
-`durable_reports_root(task_root)` returns `<task_root>/notes/reports`, the durable directory this module
-already fixed as `_TASK_RELATIVE_REPORTS`. It is exported because the destination is a **decision**
-rather than a convenience — the enclosure root and `<worktree_group>/` are both removed by cleanup, so a
-second module that spelled the path for itself would be a second place where "durable" could drift away
-from the one that is.
-
-The route-level fact worth carrying is the split the export creates: **the single-file publication stays
-the route for one artifact** (`publish_durable_evidence`, with its one-plain-file-name rule), while a
-producer whose evidence is a **directory** of related files roots that directory here. Its first consumer
-is the durable comparison generation, whose whole layout —
-`<task_root>/notes/reports/comparison-generations/<leaf>/<generation-id>` — derives from this function
-rather than restating the path.
-
-- **The exported root, and the shipped value it returns.** [23]
-- The single-file publication the export deliberately does not replace. [24]
-- **Its first consumer, which derives the whole generation layout from it.** [25]
-- The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
-- The per-file detail for the module that gained the export. [27]
-
-## Retired canonical review collections
-
-The former detection/evidence owners isolated individual damaged database rows. Those classes and readers are retired. Current review preserves curator assessments/evidence, marks canonical channels unavailable without counts, and never substitutes proof/worklist rows for them. [28] [31]
-
-## Historical retired account — 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
-
-This entire dated block records the former database-backed membership and run-input detection
-account. `knowledge/detection.py` is retired; its owner claims and present-tense behavior below are
-historical, non-operative descriptions. They do not replace the current text-tree authority or
-authorize restoring the retired detector. The original causal explanation and evidence identities
-remain for provenance.
-
-This route owns the knowledge store's reader port implementation and the detection record module, and
-this leaf changed both for the same reason: a question was being asked of a structure that could not
-answer it. In `memory/knowledge/view_source.py`, **`FAMILY_MEMBERS` — the statement that reads the
-dedicated `family_member` table — finally has its caller.** It is executed by
-`StoreViewReader.family_member_rows()`, the one port method written for it, and `_member_row` is its one
-row builder. The statement had been declared and referenced by nothing while the family view asked the
-**generic envelope reader** for the record kind `family_member`; that reader answers only for
-`knowledge_record`/`record_revision` kinds, membership is not duplicated into that envelope, and the
-named-kind read therefore returned no rows on a dataset that holds membership. A family view built on
-that empty answer reported a joint guarantee, no members, no implementation locations and
-`completeWithinDeclaredScope: true` — an empty answer indistinguishable from a real absence at the call
-site, which is exactly why the read is now a typed method on the port rather than a string a caller can
-spell wrong. `_member_row` keeps only what was recorded: the two revision ids travel in the payload under
-the names the view layer reads, and the row carries **no** `change_locus`, because which locus a
-membership row belongs to is the view's classification decision and this module classifies nothing.
-
-In `memory/knowledge/detection.py`, a recorded run's inputs are now an identity and a digest over it.
-`detection_input_identity` returns one canonical JSON value — namespace and assessed namespace,
-registered `governing_route_id`, the policy, extractor and condition-vocabulary versions, the declared
-input sets, and per side the exact logical digest, the optional code tree and repository root, the task
-reference and the selector digest and policy — and `detection_input_digest` hashes that value. Nothing is
-read from the clock, the filesystem, the dataset the run happens to sit in, or the caller, so two runs
-with different inputs get different digests and one run always gets the same one. The run's own `run_id`
-travels inside the identity, so two executions over identical inputs still carry two digests: **the digest
-stands for the execution, not only for the input pair.** That is a deliberate choice and it is recorded as
-an open question the review owns rather than presented as settled — a caller wanting "the digest of these
-inputs regardless of which run measured them" is asking a different question from the one this function
-answers. The module still decides nothing about *which* recorded run in a scope should be reported; it
-supplies the identity that lets the mounted tool let a caller name one exactly.
-
-## What This Area Is
-
-This route owns memory-repository lifecycle, text-tree parsing/indexing and retained read schema. Higher-ranked curator file writing authors records/entries/history. The canonical candidate, batch mutation, publication, portable import/export and changeset merge routes are retired. knowledge supplies read-only index connections/codecs, logical identity and one pinned schema; knowledge_index builds/queries the selected tree's derived view. conversion handles bounded legacy input and structural crossing; knowledge_census carries text-format census artifacts. [28] [65]
 
 ## Purpose
 
-Memory lifecycle and file-derived knowledge reads. The selected text tree is authority and its SQLite index is disposable.
+This area connects memory-repository lifecycle operations with knowledge read from a selected memory text tree. Knowledge files are authority; their SQLite index is a disposable representation for forward and reverse lookups and the retained logical readers. Deleting an index loses no authored knowledge. This area does not own task approval, task status or Git attribution policy.
+
+The route includes baseline adoption, bounded legacy carryover, conversion and structural boundary crossing, text census inventory/publication, index capture/build/cache/query, and retained knowledge schemas, codecs, reads, anchor observations and comparison accounting. Application-layer knowledge writing owns ordinary record, entry and history authoring. Retired canonical database mutation, batch, copied-candidate, publication, portable import/export and changeset-merge accounts must not be read as current write routes.
 
 ## Hot Path Summary
 
-Index build/cache/query read the selected converted text tree. Projection fills retained tables and store opens them read-only. The schema module declares exactly v9 and logical computes its row identity. File authoring belongs to application/knowledge_writer; sync structurally merges knowledge files, never SQLite changesets. [65]
+A selected Git tree is read through objects without checkout. A working directory is captured through a disposable Git index and object store, using the repository object store only as an alternate. Its key is the captured tree ID. JSON knowledge and onboarding documents supply indexed content; ordinary prose and other tracked content contribute to the tree key without becoming indexed documents. Generated route-index caches, hidden directories and census documents are excluded from indexed input.
 
-## Detailed Route Context
+The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
-## Historical canonical substrate — retired
+The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v3`, with history identity `(path, id)`.
 
-The earlier store used sealed rows, lock-guarded batches, generation dispatch, copied candidates, publication, portable roundtrips and changeset merging. MIK-R26 retired those mechanisms. Retained declarations/codecs now support one derived-index schema, never a canonical writer or a legacy database as current knowledge. Text authoring, indexing and structural merging carry current responsibilities. [65]
+Readers open existing index datasets through SQLite read-only handles. The store validates the one declared schema, reads identities/revisions, rechecks revision payload seals, and computes logical identity. Recorded-scope selection and paging remain separate operations. Application consumers supply exact selected datasets and source bindings; the index does not promote a record into an obligation or an approval.
+
+## Construction And Ownership
+
+### Lifecycle and first baseline
+
+`baseline.py` resolves lifecycle requests and consumes drift/ledger information. On converted memory, attributed history takes precedence as `already-adopted`; otherwise the payload distinguishes unavailable history, old-format cards, validator violations and actionable drift. Old-format-card detection belongs to first adoption, not ordinary validation of an existing baseline. Metadata-key first cells and Update History headings count; incidental prose mentions do not. `accept_drift` accepts stale anchors only, never legacy-card or validator refusals.
+
+Converted first adoption validates the selected immutable tree with no comparison bases and with the code commit being attributed. An unbound validator refuses. Where changes require staging, preparation and validation use a private index; prepublication refusal or an exception during that interval leaves the worktree index untouched. Prepared `.gitignore` bytes are restored only when current bytes are provably those owned by preparation; concurrent external edits are preserved. When restoration returns normally, the original exception is re-raised; the unlink, write or chmod performed during restoration can themselves raise and mask it. This is the implementation boundary, not an unconditional original-exception guarantee.
+
+Publication constructs a commit from the validated tree, uses a conditional branch update, and verifies the resulting commit tree. The implementation reads the parent HEAD inside `_publish_validated_tree`, after validation, and subsequently reads the branch name; it does not carry a ref/HEAD observation captured at validation into this helper. Thus exact tree publication is supported, while the inherited stronger claim that the branch must still point where validation saw it is not established by this local implementation. Publication and subsequent real-index preparation also lie outside `_prepare_stage_validate`'s restoration handler; the broad claim of rollback for every possible adoption exception exceeds that interval's source evidence.
+
+`carryover.py` remains a legacy-format recovery writer. It refuses a converted target and directs the caller to file-based knowledge ingestion. An unconverted target is also checked against the repository cutover lock, with a refusal directing it toward crossing sync when the repository has crossed. This is a refusal check, not acquisition of a lock for the duration of carryover. Carryover authority remains separately checked.
+
+### Index and retained logical representation
+
+`knowledge_index/tree.py` owns captured identity and matching bytes. Directory capture copies the real index with its timestamp, clears assume-unchanged and skip-worktree flags in the scratch copy for present paths, and preserves an absent skip-worktree path so sparse checkout does not become deletion. Its bytes then come from the committed blob. An ordinarily absent path is captured as deleted. Indexed bytes are checked against captured blob IDs; three unstable captures lead to refusal. These source predicates establish construction, not an execution verdict for any current worktree.
+
+`build.py` retains both each history file by path and the merged history of an owner, including reopened-leaf attempts. History rows in the index retain their file path. `history_row(id)` returns all matching rows, since separate closed files may reuse an ID; the caller disambiguates by path.
+
+`query.py` answers exact-path entries, invariant/family knowledge, incoming relationships, history by owner/subject/ID, proof entries, live invariants without proof, directory/subtree entries, direct-directory entries, live entry paths, path-target links and record enumeration. Directory prefixes respect boundaries: `dash` does not include `dashboard`. Live entry paths are returned once per entry, so repeated source paths can occur; this is an entry population, not distinct-file enumeration. Family governance checks the path, its ancestors and root route `.`. The root family route therefore covers root-level and deep paths. The list of live invariants without proof is information, not a gate: admission can use criteria other than a proving test.
+
+`projection.py` maps text identities to deterministic UUID5 identities in a fixed namespace and derives revision identity from `<ID>@<revision>`. One text record contributes one revision in the selected tree. Projected provenance carries origin and record file, with a fixed epoch placeholder that must not be interpreted as recording time. Revision seals use the store's own invariant/family payload digest over the projected cells. Retired invariant/family records are omitted from the logical live representation, along with affected membership/realization rows; their records, entries, links and history remain visible in `ix_*`. Missing referenced invariants similarly leave their relationship visible in the index while preventing projection into referentially constrained logical tables. Proofs, routes, links, history and facet records use direct index tables rather than invented logical tables.
+
+`knowledge/schema.py` owns one composed schema, its manifest, exact DDL, indexes, immutability triggers, required features and fingerprint pin. The surviving eight logical tables are repository, invariant, invariant revision, family, family revision, family member, source anchor and realization claim. The effective declaration remains `ar-knowledge-sqlite/v9`, `user_version = 9`; this is one current declaration, not a selectable generation registry. Other versions refuse with conversion guidance, rather than migration, repair or guessed interpretation. The index creates the logical tables it fills. Database triggers express immutability even for writes outside the usual operation. The pin checker rejects changed composition and explicitly directs callers not to repin the constant merely to accept a changed schema.
+
+`connection.py` opens read-only handles with a one-second busy timeout. Its schema inspection checks the declared version, required tables, column order and required trigger names; these checks should not be inflated into a claim that opening recomputes every aspect of installed DDL. `store.py`, `families.py`, `memberships.py`, `records.py` and `view_source.py` provide the retained read vocabulary. Store identity enumeration returns every invariant or family identity in the bound namespace, ordered by its identity column, without a policy filter or computed count. Families are peer subjects, not inferred from invariants. The view reader reads membership from its dedicated table; it supplies recorded facts while application views own selection and classification. SQL ordering in row queries should not be confused with ownership of presentation policy.
+
+`logical.py` canonicalizes declared tables, including empty tables, in manifest order, rows in primary-key order and columns in declared order, decoding typed JSON so equivalent JSON serialization does not change logical identity. It excludes physical database layout, database file location, journal/header state, mtimes, Git locations, ledger/cache state and rendered views. This exclusion does not mean authored path values or projected provenance fields disappear from the logical rows.
+
+### Recorded reads, anchor observation and comparison
+
+`knowledge/read.py` owns finite recorded-scope selection and whole-item paging. Directly containing families are frozen before membership expansion; families discovered through admitted members form an advertised, untraversed frontier rather than an invitation to recursive expansion. Identity selection does not choose a latest revision by insertion time or display version. Items have a declared stable order: invariant revisions, family revisions, memberships, realization claims, then advertised family links. Paging preserves the selection total on every page, reports cumulative emitted items separately, and leaves the current slice size in `len(page.items)`. A too-small budget cannot split an indivisible item or advance the position.
+
+The application seam binds the read-only selected snapshot, permits a task-free baseline, and treats a cursor as a binding rather than a newly chosen scope. `read_refusals.py` keeps absence, snapshot mismatch, incomplete selection and budget failures distinct. An absent identity, a path without registration and a path invalid as a selector are different facts. Inherited path-selector intent admits literal `*`, `?` and `[` while refusing leading `:`; this proposal does not independently re-establish the entire selector-validation path. Registration absence never means no obligation or no semantic impact. `with_proofs=True` changes the path refusal wording to realization-or-proof claims for family-complete leaf reading; ordinary recorded-scope wording remains the default.
+
+`read_anchors.py` observes recorded attribution against the requested tree, preserves its identity on every outcome, and never supplies content, reanchors ranges, searches for a replacement locator, or substitutes HEAD, a branch, a worktree or Markdown. No requested tree is a supported `not_requested` state. A resolver probes tree availability when constructed, not once per anchor. Exact symbols carry all defining extents; file locators carry no resolved range. An exact recorded blob with an out-of-bounds or unreadable line range remains `exact_recorded_blob` but has no resolved range and states why. Blob identity and usable locator extent are deliberately separate facts.
+
+`read_anchor_memo.py` owns bounded, thread-safe LRU storage; `read_anchors.py` owns admission of successful content answers. Keys include repository root and complete object IDs, and grammar identity for parsed definitions. Refs and abbreviations are not admitted. Definite path absence can be remembered as an immutable tree-content answer, but object-store availability is not such an answer. Two named residuals remain: a tree still present after a previously read blob becomes unavailable may receive remembered blob content, and resolver-less observation skips the tree probe. The inherited account identifies curator ingest as the production resolver-less caller and says it measures membership in the same run; that caller-specific assertion is retained as historical intent rather than freshly adjudicated here.
+
+`tree_observation.py` owns the shared source vocabulary and probe seam. `TreeChange` preserves the raw Git path, status, renderability, mode-change flag and reason for unknown content. Unavailable measurement differs from an empty measured change set. `TreePaths` checks agreement when entries are supplied, and requires partial state when unrepresentable paths are supplied; it does not require entries for every nonempty path-only value. Non-UTF-8 pathnames remain preserved separately and make the report partial. The display carries this limitation beside counts. The inherited production measurement uses delimiter-safe `git diff --raw -z --no-renames`, with acquisition owned by `application/review_source_inventory.py` rather than a second display-layer measurement.
+
+`diff_attribution.py` owns pure arithmetic over that one supplied measurement: attributed, confirmed unregistered and undetermined are disjoint path buckets. Unchanged registered paths are context, not changes; multiple resolved links count a changed path once. Unresolved registered mappings remain visible rather than becoming absence. Attribution requires recorded bytes at the recorded path. Confirmed absence requires every required side to license it: `inspected` and independently established `known_empty` do, `unavailable` does not, and no supplied sides do not. The same `licenses_absence` predicate serves partitioning and the acquisition owner's subject-scope decision. A known selected-subject link establishes selected attribution; exclusive-outside labeling additionally requires complete subject scope. Unmeasured source population has no denominator, not zero. Non-text-carriable paths remain outside the reported path denominator with an explicit partial-measurement limit.
+
+`diff_display.py` retains the shared seams through re-exports and carries one source observation with its partition. The former `attributed_paths(comparison)` was deliberately removed without replacement; `SourceAttribution.attributed_paths` is the measured partition's property, avoiding unchanged mapped context being counted as change.
+
+`requirement_endpoint.py` locates the owning task under the coordination task plane and delegates packet/version resolution to `requirement_owner.py`. No coordination root and an invalid repository directory name produce named unresolved endpoint states. When the task root can be located it remains attached to an unresolved owner answer. Packet confinement and packet identity belong to the delegated owner, not an assumed absence of checks in this root helper.
+
+Approval reads only `requirements/manifest.json` in approved-requirement-corpus format and its packets list. It reports the highest approved integer `v` version for the stable ID, no approved entry, or unknown with a reason for unreadable/missing/malformed input. `newer_than` requires comparable versions and a strictly higher approved version; unknown approval never supplies a newer-version trigger. Requirement links resolve endpoints; reconsideration first resolves, then checks approval at the resolved root, and unresolved endpoints trigger nothing.
+
+The manifest read records the digest of exactly its read bytes, absence or named read failure. Packet observation is delegated: `tasks/task_intent.py` records task-root and packet-locator resolution, confines the Markdown packet, reads its bytes once and verifies stable ID/version. Outside a recording context these observations do not accumulate. The mandatory gate evaluates inside a recorded-read block and keeps that read set with the verdict. Reuse rechecks locator/existence observations before byte identities, so a retargeted locator invalidates reuse even for identical target bytes. These mechanisms are source contracts, not a fresh test result.
+
+### Conversion, structural crossing and census
+
+`conversion/convert.py` builds a conversion from memory files, the legacy database, code objects and pinned conversion version `1`, with the paired code commit additionally supplying the declared fallback for cards missing an anchor commit. This fallback is a specific conversion rule, not authority to add other approximations. A tree already holding `knowledge/layout.json` is a no-op. Unsupported conversion versions refuse; whole converted-tree validation occurs before results are returned for writing. A refused conversion writes nothing.
+
+`cards.py` transforms legacy metadata/history and citation-table presentation into converted cards with one Evidence section and escaped marker-shaped text. `citations.py` resolves targets using the declared extractor/range/file rules and keeps unmatched anchor text in `Reference.note`; covered ranges add no redundant target. `code_objects.py` reads exact code-object identity rather than a worktree for conversion, enumerates abbreviated commit-prefix candidates, and distinguishes a missing blob from a Git failure: exit 1 or a non-blob returns false, other command failures raise `CodeObjectError`, and timeout propagates. A prefetched blob is answered from the local content cache, so this predicate should not be described as an unconditional fresh availability probe.
+
+`legacy_db.py` is a read-only export boundary rather than a retained canonical writer. It exports invariant/family heads with derived IDs, preserved legacy identity and origin, revision position in predecessor chains, empty family routes and legacy-unassessed admission. Realizations retain recorded blob/locator identity and compute content from that recorded blob, preserving visible staleness; derived-ID collisions refuse by name. `inputs.py` owns input acquisition and finished-file publication.
+
+`base.py` converts an unconverted before side at its own paired code commit and the after side's pinned version, so mechanical conversion is not attributed as semantic change. Conversion and crossing are separate routes. `crossing_sync.py` moves applicable leaf no-impact markers into `onboarding_trace.markers`, converts required sides and structurally merges. Every managed converted-memory merge uses this structural path, even when all sides already are converted; all-unconverted merge remains the ordinary non-crossing case. Version disagreement refuses. Commit validation remains the managed merge consumer's responsibility.
+
+`crossing.py` merges Markdown by lines, sidecar references by number, realizes/proves by entry ID, and records/other JSON by fields. Mechanical anchor fields are blob, content and line numbers. Authored-versus-mechanical decisions preserve the authored side whole; both-mechanical changes choose incoming; deletion defeats a merely mechanical modification. Differing authored edits remain curator conflicts. Reference alignment moves prose markers together with their reference mapping rather than requiring manual curator renumbering. Conflict markers are explicit validator-refused JSON, not silent acceptance of one side; record conflict resolution belongs to the writer and increments beyond the higher revision. Crossing does not re-resolve anchors: later reads report staleness.
+
+`card_authoring.py` is a distinct converted-card reference authoring route using the code working tree. Citation rows become evidence lines and resolved sidecar references; an existing trailing reference number reauthors that number, placeholders remain prose, and missing sidecars can be constructed. Removing unreferenced entries is limited to the explicitly named card. Invalid sidecars, conflicting reuse of a cited number, and adjacent merged tables involving citations produce named card refusals. Every card is prepared before the write phase, but passing cards are written even when others were refused. Markdown and sidecar are consecutive `write_text` calls; this is not a demonstrated atomic pair or batch transaction. Cards without citation tables are untouched except the named-card pruning case.
+
+`knowledge_census/inventory.py` mechanically inventories pinned code and memory commits through Git objects. It identifies sources/artifacts and nearest governing overview routes, excluding generated caches/hidden directories; it does not read source content or author semantic claims. Unreadable baseline commits/trees refuse without an inventory. `writer.py` checks census candidate files against the existing base before publication, refuses unconverted memory and uses per-file atomic writes. Initial creation writes inventory first and baseline last as its commit point; inventory-only interrupted creation is refused by validation and can be completed by retry. This is not an all-files transaction. Bounded census measurement/reporting belongs to memory-quality owners; the earlier migration-to-canonical-store writer is retired.
+
+`durable_evidence.py` defines `<task_root>/notes/reports` once because evidence must survive cleanup of enclosure/worktree-group directories. Single-artifact publication retains its one-plain-filename rule; directory-shaped comparison generations derive their root here instead of inventing a second durable location.
 
 ## Invariants And Boundaries
 
-- Text files are knowledge authority; the index cannot author an obligation.
-- Reads use read-only handles and validate one schema; another version refuses with conversion guidance.
-- Logical identity excludes physical layout, paths, timestamps and Git locations.
-- Scope/family relationships are authored, never inferred from directory proximity.
+Text authority, derived indexing, validator integrity and lifecycle publication are distinct responsibilities. The index cannot author an obligation, its complete state cannot certify the whole tree, and recorded proof absence cannot become a delivery gate. Authored scope/family relationships are not inferred from folder proximity, names or symbols. A recorded absence, an unavailable observation, an unsupported locator, stale bytes and an invalid selector are separate outcomes.
 
-- The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
+Logical identity is independent of database storage location and physical serialization, while recorded path/provenance values remain semantic inputs. One pinned schema and store-owned revision seals replace the retired generation-dispatch account. Read-only handles prevent dataset repair during reads; no fallback generation or working-tree substitution is authorized by these read contracts.
 
+Source measurement and attribution share one population and one absence predicate. Partial or unavailable observations retain their limits, and unmeasured counts are not fabricated as zeros. Snapshot/cursor mismatch cannot return a page assembled from mixed revisions. Exact recorded blob identity does not by itself establish a usable line-range locator.
+
+Converted adoption requires validation and refuses legacy-format cards independently of accepting drift. Legacy carryover does not write converted targets. Structural crossing resolves mechanical differences under declared rules while preserving authored conflicts for the curator. Prevalidation preparation, conditional ref publication, per-file atomic publication and multi-file rollback are different guarantees and must be described at their actual scope.
+
+Current review retains curator-owned assessments/evidence and their authority availability. Detection signals, verification observations, evidence claims and the removed authored-effects matrix remain unavailable without measured counts. Proof entries and worklist history retain their own answers; neither substitutes for a retired canonical supporting-record channel. No cross-repository authority contract is established by this overview merely because lifecycle helpers address external memory or readers refer to code objects.
+
+## Historical And Verification Limits
+
+The retired SQLite account remains provenance: insert-only sealed revisions; shared post-insert lineage checks evaluated before writes; family identity and revision graphs; recorded anchors with identity-plus-digest removal; exact membership pairs with both read directions and stale-caller removal; anchored realization transactions; shared endpoint checks; typed operation/table refusal context; schema fingerprinting; and lock-guarded mutation, copied candidates, publication, portable roundtrips and changeset merging. These responsibilities explain earlier intent but do not authorize reinstating their deleted writers.
+
+Named historical limits remain explicit. The former fifteen-trigger account disclosed a `family` identity immutability gap; its old witness and exact former enforcement are not re-established by the current eight-table schema inspection. The former detection input identity included namespace/route/policy/extractor/vocabulary versions, declared inputs, per-side digest/tree/root/task/selector binding and the run ID. Its digest deliberately identified an execution as well as inputs; the run-independent-input-digest question remained open, and the module did not select which run a scope should report. Detection and observation-row codec owners are retired; the old extraction/re-export account through `evidence_records` is historical, not a present public codec door.
+
+The former registered-scope account required exact declared datasets, exact changed-path anchors, side-specific membership and only the declared composition policy, independent of R07 retrieval/paging. It refused named unresolved inputs rather than silently constructing a partial scope, and inferred no membership from proximity. Its current owner is not re-established here; preserve it as inherited semantic intent rather than claim the retired module executes it.
+
+The KS-L23 repair account remains historical: old-side primary-key selection for changeset deletes/updates; post-replay precommit route-cycle refusal; detection identity separation for multiple coverage items; and corrections to envelope registry, generation-wrapper and citation-schema documentation. Its append-only selectable-generation policy belongs to that retired substrate. Its pyright lesson remains a reporting limit: broad and scoped invocations were not interchangeable evidence, and claimed repairs were described as real types rather than suppressions. Historical registry sizes, schema counts and uncommitted-worktree statements describe their old bases, not this checkout.
+
+The anchor-reuse incident remains a named historical warning: a receipt could name `other` while the stored realization referred to `resolve_budget`; the former repair used a shared stored-anchor read and refused mismatched supplied path/blob/locator before planning, while preserving matching reuse, allocation-per-creation, revision-keyed anchor identity and separate claim identity. The current former-owner reader/caller pair is not established by this proposal, so its preservation is historical intent, not a new acceptance claim.
+
+The inherited curator candidate-source/progression account is not resolved to a present owner here. It described exact working-source capture and progression of only draft candidate code after matching predecessor receipt and logical dataset under the existing lock, while preserving strict opening, knowledge/allocation state and the original before half. Keep that named continuity intent and its receipt-to-resolution sharing as unverified historical claims; do not infer a replacement operation or whole-call-path absence from this uncertainty.
+
+Earlier claims that the installed runtime never reached conversion/index/census before MIK-R37 describe pre-cutover timing, not present reachability. The old publication sink's `database_frozen` claim names a retired `knowledge/publication.py`; no present sink is established here from that old name. KS-L15's manifest repointing was a citation-only account, not a route behavior change. Superseded evidence-table formatting and numbered references are provenance managed separately by the parent.
+
+Historical test passes, counts, performance figures (including the anchor memo's approximately 1.3–1.6 seconds to 0.3 seconds), golden-digest claims and delivery statements are inherited observations, not fresh acceptance. This proposal examined all supplied card prose and bounded source witnesses at the named checkout. It ran no product code or tests and makes no execution, publication or certification verdict. Old witnesses not examined or no longer present remain explicitly historical/uncertain.
 
 ## Evidence
-
-### Repo-Internal References
-
-The declarations below establish the current behaviour; this inventory is not execution evidence.
-
-**The 260915-KS-L5 merge half**, cited in the current `Finding | Anchor | Source` shape. The older rows below remain in the superseded
-two-column shape and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside
-one leaf's curation pass.
-
-- The two operations and twelve codes the merge added to the shared vocabulary. [39]
-- **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
-- Whole-item paging over an already-selected scope. [42]
-- **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** [43]
-- The count model that refuses its own arithmetic contradiction at construction. [44]
-- **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** [45]
-- The read's refusal vocabulary, one factory per observable failure point. [46]
-- **The one decoder a read page and the logical digest share.** [47]
-- The read's path lookup, which is how a path seed selects. [48]
-- The edge lookup the directly containing family set is derived from. [49]
-- The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
-- **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
-
-- The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. [52]
-
-- The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
-
-**The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
-
-- Retained logical encoder, one pinned schema and read-only store.
-- The two portable operations and the one code they added to the shared vocabulary. [68]
-
-- The registry rows this leaf added: two integration lane rows. [121]
-
-- The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
-
-- The second registered support artifact those rows land in, by its own artifact id. [123]
-
-- The third registered support artifact those rows land in, by its own artifact id. [124]
-
-- The second registered support artifact those rows land in, by its own artifact id. [125]
-
-- The third registered support artifact those rows land in, by its own artifact id. [126]
-
-**The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
-
-The canonical table list, column order and required feature set the store is validated against.
-The declared DDL: ten STRICT tables with explicit NOT NULL keys, composite deferred FKs and the self-edge CHECK.
-The fifteen immutability triggers whose names the merge preflight compares — and, by their absence, the disclosed `family` identity gap recorded above.
-The structural manifest and the fingerprint over manifest plus DDL text.
-The verified pragma contract, the shared one-row reader and the create-versus-validate open.
-The one atomic insert-only revision operation with its ordered preconditions.
-The lineage rule stated once, including its post-insert scope and before-any-write evaluation.
-The shared lineage rule both graphs apply, and the family graph's application of it.
-The family owner: identity, sealed revisions, family lineage and the narrow ownership read.
-The anchor owner: authored locations stored as recorded, with explicit identity-plus-digest removal.
-The membership owner: one exact pair, both read directions, stale-caller removal.
-The realization owner: the anchored-claim transaction and both read directions over the same rows.
-The shared relation-endpoint check the two relation writes both use.
-The typed refusal vocabulary and the SQLite-error mapping, whose failure context now names the caller's operation and table.
-The row codecs, including the read-time seal re-derivation over the stored row and its stored edges.
-The composition seam that assigns provenance and is the only consumer of this storage package.
-The shared knowledge vocabulary written by this store, including the graph shapes.
-The kernel canonical encoder the seal and the schema fingerprint are computed through.
-The branching fixture — now carrying both the identity and the graph half — the storage and graph cases build from.
-The graph case support module, with its registered contract and exact consumer set.
-The focused suite, registered in the unit lane, that exercises this route's storage behaviour.
-The graph suites registered in the unit lane: family revision rules, relation writes, graph reads and the payload seals.
-The node that isolates the sealed predecessor field on each payload, added by the fix-verification round.
----
-The storage home is declared in the memory package charter as a wording addition only.
-The fixture's registered stable contract, its evidence node and its five declared consumers.
-
-- An unreadable baseline is refused. [143]
-- Every write is checked, then written atomically. [144]
-
-### Cross-Repo References
-
-No cross-repository authority is established by this route. The store writes one SQLite file inside the code
-worktree it was opened against, and the memory-repository lifecycle can address a sibling external-memory
-checkout, but neither establishes a boundary contract here.
-
-No meaningful cross-repo references found.
-
-- The second registered support artifact those rows land in, by its own artifact id. [127]
-
-- The third registered support artifact those rows land in, by its own artifact id. [128]
-
-## No Route Impact — 260915-KS-L15
-
-No source of this route in `mcp/src/agents_remember/memory/` changed in 260915-KS-L15, and its route
-model, entry points and check responsibilities are therefore unchanged. The route's reference rows
-below did need re-pointing, because this leaf inserted rows into two test manifests
-(`mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`) that four of those rows
-cite; each re-cited row was re-derived from the current manifest while re-reading it. That is a
-citation move, not a route change, and it is recorded as such rather than as new architecture.
-
-## 260915-KS-L16 Constructing The Registered Review Scope From Recorded Links And One Declared Policy
-
-`KS-R16@v1` §1 splits one act across two layers, and this route owns the half that *produces* the scope:
-`memory/knowledge/registered_scope.py` turns a `RegisteredScopeRequest` plus a sequence of
-`ScopeSnapshotSource` values into a `RegisteredScopeResult`, and reports nothing about what a detection run
-over that scope could not resolve — that is `KS-R14@v1`'s half of the split, and neither half is restated in
-the other's output. `CONSTRUCT_SCOPE_OPERATION` names the act for dispatch; `snapshot_source` is how a
-resolved dataset is presented to it.
-
-**The construction is deterministic in the strong sense, because every step is a declared lookup in a
-declared order and every result is sorted by recorded identity** rather than by whatever order rows came
-back in. Four ordered steps: the declared pair is resolved to two exact datasets, and a declaration whose
-snapshot the run cannot produce is refused **by name** rather than approximated from another file; each
-declared changed path is looked up by **exact equality** against the recorded anchor paths, and every hit
-contributes a `source -> invariant` edge carrying the side it was read from; the invariant revisions reached
-on one side contribute that side's own recorded `invariant -> family` memberships, each with its own side;
-and composition edges are followed **only** from the declared seeds and the reached family revisions,
-**only** when the declaration names a policy version, through `KS-R17@v1`'s own
-`follow_composition_scope` — not a second walk and not a re-reading of its rule.
-
-**Three absences are as load-bearing as the four steps.** The R07 retrieval read is never consulted: no
-selection, no page cursor and no advertised expansion enters here, and the module imports nothing from that
-read, so the two axes cannot be conflated by accident. Membership is never inferred from a name, a prefix, a
-folder or a symbol — every member arrives through a recorded row. And an unresolvable declared input is a
-refusal that **names it** (`ScopeConstructionRefusal`), never a partial scope: a scope that quietly held
-less than it declared would make every later "the run examined the scope" claim false. The refusal builders
-are the module's own and they reuse the **shipped** refusal codes rather than adding vocabulary, which is
-why this leaf extends no `KnowledgeRefusalCode` member.
-
-## Historical canonical operation — retired
-
-This earlier canonical operation is retired. Current knowledge is text, indexing is derived, and sync conflicts are structural file items; no database mutation or row-decision recovery remains. [65]
-
-## Historical canonical operation — retired
-
-This earlier canonical operation is retired. Current knowledge is text, indexing is derived, and sync conflicts are structural file items; no database mutation or row-decision recovery remains. [65]
-
-## 260928-MIK-L04 The Index Matches The Root Family Route
-
-**Route impact (MIK-R04@v2, review R3-1).** [`knowledge_index/query.py`](knowledge_index/query.py.md)'s
-`families_governing` matches a path against the path itself, its ancestor directories and now the root route
-`.`, so a family routed at `.` governs every path, exactly as the validator's `route_covers` reads it. The
-index schema, the key and the cache are unchanged.
-
-- The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list. [84]
-- A family routed at the root governs a root-level file and a deep file. [85]
-
-## Text knowledge census
-
-knowledge_census owns Git-reading and artifact-writing for the file-based census; memory_quality owns its bounded measurement/report. The earlier migration-to-canonical-store writer is retired. [65]
-
-## Historical retired account — 260915-KS-L23 The Substrate's Own Contradictions, And The Two Behaviour Fixes Under Them
-
-This entire dated block, including its ownership table, records the former SQLite substrate and
-its repairs. `knowledge/merge_changeset.py` and `knowledge/schema_generations.py` are retired; their
-canonical-owner clauses below are historical, not current source ownership. Preserve the incident
-and correction account as provenance, without restoring those modules or weakening the current
-text-tree/derived-index boundary.
-
-This route's knowledge substrate was already built by `L10`–`L22`; `KS-R23@v1` fixed **two behaviour
-defects inside it** and repaired **three docstrings that disagreed with their own registries**. All of
-it is uncommitted in the delivered code worktree (base `c5a74a85`), and each module's sidecar carries
-the detail.
-
-| Module | What changed | Why it matters |
-| --- | --- | --- |
-| `knowledge/merge_changeset.py` (`MaterializedChange.primary_key`) | the key is read from the side that carries it — the **old** side first, so a `DELETE` (old only), an `UPDATE` (both, and only the old holds the key) and an `INSERT` (no old side) all resolve | it read the **new** side, so every right-side `UPDATE` was refused with a spurious `changeset_postcondition_failed` whose `record_id` was `…<not-supplied>…`, and a side that edited an existing record in place could not be merged at all |
-| `knowledge/routes.py` (`require_acyclic_routes`) | runs on the connection the delta was applied on, after the rows are written and **before that application commits** | a replayed `route.parent_route_id` change is a real operation on a table inside the merge's attached set, so a candidate whose hierarchy reaches itself must be rolled back rather than published |
-| `knowledge/detection_walk.py` | the group key distinguishes the items the signal identity is supposed to name, rather than collapsing on a shared `record_id` | one realization claim can legitimately carry two coverage items, and the old key emitted **one** `signal_id` for both, so `build_detection_run` refused the whole run as not reproducible |
-| `knowledge/record_envelope.py` | the module docstring states the registry's real membership: **22 pairs across 8 groups**, with `evidence_claim` registered | it had said 4 groups / 12 kinds and deferred `EvidenceClaim` as "later" |
-| `knowledge/schema_generations.py` | the composition comment states the real shape: **eight** per-generation wrappers (generations 2–9), with generation 5's a hand-written 17-line composition | it had said "the four per-generation wrappers below … one line each" |
-| `models/knowledge/citation.py` | the docstring matches the delivered schema: generation 5 appends **one** table (`citation_binding`) and the route is a **column** | it had claimed a per-binding association table |
-
-**Two things a reader must not infer from this list.** The generated `citation_binding` table is not
-a second identity authority and the route column is not a hierarchy — the schema generations stay
-append-only, frozen and selectable, and generation selection comes from the dataset's own recorded
-version, never from the caller and never from the running build. And the pyright repairs recorded
-under this leaf are **real types, not suppressions**: no `# type: ignore`, no widened rule, no
-narrowed scope — a report that says "pyright: 0" must say which **form** it ran, because the gate's
-broad form (`pyright --project . --pythonpath <pinned python>`) and a scoped run disagree about the
-same commit.
-
-## 260915-KS-L45 Two Enumerating Reads On The Opened Store, For The Reviewer's Subject List
-
-**This route's impact is two read-only methods on `OpenedKnowledgeStore`, and they exist because a
-reader cannot list candidates it was not pointed at.** `list_invariants` returns every invariant
-identity the bound namespace records — `repository_id`, `invariant_id`, `display_label`,
-`label_provenance` — decoded through the same `records.decode_invariant_row` the other reads use and
-**ordered by the identity's own column**, so two runs over one snapshot agree without a tiebreak this
-reader chose. `list_families` is the same enumeration for the surface's other admitted subject kind,
-read the same way rather than derived from the invariant list, because a family identity is not a
-projection of an invariant and the two subject kinds are peers.
-
-Neither is a selection rule, and the card for `memory/knowledge/store.py` says so explicitly: both
-return **every** recorded identity, apply no filter and compute no count. The Intent Reviewer's entry
-list is what compares each returned identity and drops the ones the shipped comparison refuses, and
-that logic lives in `application/knowledge_review.py` — so a reader following the subject list back to
-its source arrives at an enumeration, not at a policy that was smuggled into the store.
-
-Why it belongs here rather than in the adapter: the identities are rows in this store's own tables, and
-reading them through the store's own operations is what keeps "the identities this list offers" and
-"the identities the namespace records" the same set rather than two readers' opinions of the same
-bytes. The methods take no arguments and mutate nothing; they are reads on the same opened connection
-every other read in this route uses.
-
-- **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** [88]
-- **The same enumeration for the surface's other admitted subject kind.** [89]
-- The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. [90]
-- The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). [91]
-
-## Historical canonical operation — retired
-
-This earlier canonical operation is retired. Current knowledge is text, indexing is derived, and sync conflicts are structural file items; no database mutation or row-decision recovery remains. [65]
-
-## Historical canonical operation — retired
-
-This earlier canonical operation is retired. Current knowledge is text, indexing is derived, and sync conflicts are structural file items; no database mutation or row-decision recovery remains. [65]
-
-## 260915-KS-L47 The Anchor Read Gets One Source Of Truth, And A Stored Anchor Binds What Is Stored
-
-`memory/knowledge/anchors.py` gained a small public `read_anchor(connection, repository_id, anchor_id)`,
-and `get_anchor` now delegates to it. The reason is not convenience: the curator intake holds a read-only
-connection and no `OpenedKnowledgeStore`, and re-deriving the column list and decoder there would have
-created a second source of truth for how an anchor row is read -- exactly the shape that lets a stored
-identity be answered two ways. `get_anchor`'s own behaviour is unchanged.
-
-The caller is the application layer's explicit-anchor-reuse repair: `knowledge_curator_ingest.py`'s
-`_require_stored_anchor` resolves a target-level `anchor_id` through this reader against the datasets
-`_Source.anchors` carries (candidate then baseline) and refuses a supplied path, blob or locator that
-disagrees with the stored row, before any plan exists. The measured defect was a run that reported
-`changed` and published a receipt naming symbol `other` while the stored realization cited the
-`resolve_budget` anchor; the repair makes the receipt, the stored claim and the public read agree by
-construction, and a matching reuse still succeeds without adding an anchor row. **No memory-layer
-behaviour outside this read changed**, and allocation-per-creation, revision-keyed anchor identity and
-the separate claim identities are untouched.
-
-## 260921-ICR-L2 The Expansion's Observation Is One Implementation, And A Changed Path Carries Its Status
-
-**Route meaning changed: this route's display vocabulary now describes a *status-bearing* change, and
-the observation behind it has one implementation.** `memory/knowledge/diff_display.py` gained
-`TreeChange` — the raw filename exactly as Git recorded it, Git's status, whether the content can be
-rendered, a mode-change flag and the reason an `unknown` is unknown — plus three fields on `TreePaths`:
-`entries` (the same measurement at full resolution, held in agreement with `paths` by a construction
-check), `partial` (the path set was measured while part of it could not be reported whole) and
-`unrepresentable` (the changed paths whose name is not valid UTF-8, kept in full, with
-`unrepresentable ⇒ partial` enforced at construction). `_expansion_detail` states a partial
-observation's limit beside its counts, so a smaller count is never read as the whole change set.
-
-**The advertised command changed with it.** `TREE_DIFF_COMMAND` is now
-`git diff --raw -z --no-renames {before_tree} {after_tree}` — the same delimiter-safe interface the
-measurement reads — because the line-oriented `--name-only` form quotes and escapes a pathname
-containing a tab or a newline, so a caller who ran the advertised command would hold a different string
-from the address the response lists and the address the same file is expanded by. The measurement itself
-moved to `application/review_source_inventory.py`, and `application/knowledge_diff.py`'s
-`git_tree_difference_probe` — the production `TreeDifferenceProbe` this route's expansion is reached
-through — is now a one-line delegation to it.
-
-- **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** [95]
-- **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** [96]
-- **The advertised command, now the delimiter-safe interface the measurement itself reads.** [97]
-- **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** [98]
-- **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** [99]
-
-- Source-path observation cases moved with meaning preserved. [100]
-
-
-## 260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`
-
-**Route meaning extended (MIK-R23@v1).** Knowledge is becoming text in Git (D18), each relationship written
-once from its owner's side (D19). The new package `knowledge_index/` answers the reverse directions no file
-records, from an SQLite file derived from one memory tree and nothing else. It has no route overview of its
-own: like its siblings `knowledge/` and `migration/`, it is governed by this overview.
-
-- [`tree.py`](knowledge_index/tree.py.md) reads a tree from a working directory or through Git objects and
-  computes its key: the tree id, or for a directory the tree id of its captured state (`git add --all` into
-  a disposable index whose object store has the real one only as an alternate, so computing a key writes
-  nothing into the repository).
-- [`build.py`](knowledge_index/build.py.md) parses the files through the MIK-R21/R07 models and writes the
-  `ix_*` rows declared in [`schema.py`](knowledge_index/schema.py.md); a file that fails its schema, sits at
-  a location its format forbids, or repeats an ID is named and marks the index `partial`.
-- [`projection.py`](knowledge_index/projection.py.md) also writes the index as a dataset of this route's
-  store schema (uuid5 identities, a constant namespace, retired records left out), so
-  `knowledge/read.py`, the views, the comparison and the scope construction run over it unchanged.
-- [`query.py`](knowledge_index/query.py.md) answers rule 3's lookups; every answer carries the index state.
-- **Historical:** `adapters.py` (retired) opens an index as a read-only `OpenedKnowledgeStore` for
-  `knowledge/registered_scope.py`.
-- [`cache.py`](knowledge_index/cache.py.md) keeps one file per key under the coordination runtime, refuses
-  any location inside a Git working tree, recomputes a working tree's key on every lookup, and evicts by age
-  and size.
-- [`__init__.py`](knowledge_index/__init__.py.md) is the package door.
-
-No knowledge writer writes the index, it is never merged, and deleting it loses nothing. Its callers are the
-application's dataset selection (`application/published_intent.py`) and the CLI; before MIK-R37 no
-production memory tree is converted, so the installed runtime never reaches it.
-
-- The package map. [101]
-
-- The captured-state key. [102]
-
-- The build, which names every failing file. [103]
-- Retired records are left out of the projection. [104]
-- The cache refuses a Git working tree. [105]
-
-
-## 260928-MIK-L24 Conversion And Boundary Crossing: A New Package, `conversion/`
-
-**Route meaning extended (MIK-R24@v1).** The new package `conversion/` turns a memory tree and its legacy
-`knowledge.sqlite` into the text knowledge format. It is deterministic, pinned to conversion-format version
-`1`, loses no citation information and authors no knowledge. It also carries the two ways a comparison or a
-sync crosses the boundary between an unconverted tree and a converted one. It has no route overview of its
-own: like its siblings `knowledge/`, `migration/`, `knowledge_census/` and `knowledge_index/`, it is governed
-by this overview.
-
-- [`convert.py`](conversion/convert.py.md) is the pure `convert_memory`: version pin, no-op on a converted
-  tree, whole-tree validation before anything is written, and the report.
-- [`cards.py`](conversion/cards.py.md) handles the Markdown: metadata and Update History removed, citation
-  tables become `- <finding> [n]`, one `## Evidence` section, and marker-shaped text escaped.
-- [`citations.py`](conversion/citations.py.md) turns a row into a reference. Symbols bind through the shipped
-  extractor, covered ranges add nothing, and any anchor text no target carries is kept in `note`.
-- [`code_objects.py`](conversion/code_objects.py.md) is the only door to the code objects. It reads by exact
-  identity, and an abbreviated commit is resolved against every prefix match.
-- [`legacy_db.py`](conversion/legacy_db.py.md) is the read-only legacy database reader and the export at
-  head revisions. Entries keep their recorded blobs, and derived-ID collisions refuse.
-- [`inputs.py`](conversion/inputs.py.md) reads a tree from a directory or Git, and writes a finished
-  conversion.
-- [`base.py`](conversion/base.py.md) is the converted base of rule 7, and `GitBaseConverter` for the
-  validator's commit route.
-- [`crossing.py`](conversion/crossing.py.md) and [`crossing_sync.py`](conversion/crossing_sync.py.md) are
-  rule 8's structural merge: markers first, conversion of every side, merge by key with mechanical fields
-  never conflicting, and conflicts marked for the curator.
-- [`crossing_port.py`](conversion/crossing_port.py.md) is the adapter the composition binds to the
-  worktree layer's crossing port.
-- [`__init__.py`](conversion/__init__.py.md) is the package map.
-
-**Architect rulings carried on the cards:** anchor text is kept in `Reference.note`; conversion and crossing
-are separate routes; crossing conflicts are marked and reported; the moved no-impact markers go in the
-`onboarding_trace` row's `markers` list; version 1 is pinned by a golden digest. The consumers of
-`comparison_sides` (MIK-R07, R30, R08, R25) wire it in their own leaves.
-
-Its callers are the `knowledge-convert` CLI, the validator's commit route and the managed sync's crossing
-branch (through `application/worktree_services.py`). Before MIK-R37 no production memory tree is converted,
-so the installed runtime never reaches it.
-
-- The package map. [106]
-- The pure conversion, its version pin and its validation. [107]
-- No anchor text lost: it is kept in the note. [108]
-- The read-only reader. [109]
-- Rule 7 for any comparison consumer. [110]
-- Rule 8's item rules and conflict markers. [111]
-- Rule 8's steps. [112]
-
-## 260928-MIK-L28 The Index Answers Proofs, And The Invariants Without One
-
-**Route meaning extended (MIK-R28@v1 rules 4 and 5).** [`knowledge_index/query.py`](knowledge_index/query.py.md)
-gains two lookups over the `ix_entry` proof rows the MIK-R23 build already writes: `proofs_of(invariant_ids)`
-and `invariants_without_proof()`, which lists the **live** invariants (a retired one is not listed) that no
-proof entry names. Both carry the index state like every other answer. Their consumer is
-`application/knowledge_proofs.py`, for `knowledge_read`'s `invariant` and `family` views and for the curator
-checklist's "without proof" section. That list is **information, not a gate (architect ruling,
-2026-09-29)**: the admission rule accepts criteria other than a proving test. The index is still derived,
-never written by a knowledge writer, and unreached by the installed runtime before MIK-R37.
-
-- The two proof lookups. [113]
-
-
-- Current record owner marks retired classes unavailable. [28]
-
-
-- Real authority availability and unmeasured count contract. [31]
+- Retained reference account (no fresh execution or acceptance inferred): A missing object against a Git failure. [2]
+- Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
+- Retained reference account (no fresh execution or acceptance inferred): Live entry paths, links to a path, and every record of a kind. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The shared link query `_incoming` delegates to. [7]
+- Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row. [8]
+- Retained reference account (no fresh execution or acceptance inferred): The format bump that rebuilds v1 caches. [9]
+- Retained reference account (no fresh execution or acceptance inferred): Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. [10]
+- Retained reference account (no fresh execution or acceptance inferred): The absence refusal, naming proof claims when the leaf read asks. [13]
+- Retained reference account (no fresh execution or acceptance inferred): The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. [16]
+- Retained reference account (no fresh execution or acceptance inferred): The memo module's tables and admission test. [17]
+- Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
+- Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
+- Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
+- Retained reference account (no fresh execution or acceptance inferred): **The shared observation vocabulary and its two construction rules.** [21]
+- Retained reference account (no fresh execution or acceptance inferred): **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** [22]
+- Retained reference account (no fresh execution or acceptance inferred): **The exported root, and the shipped value it returns.** [23]
+- Retained reference account (no fresh execution or acceptance inferred): The single-file publication the export deliberately does not replace. [24]
+- Retained reference account (no fresh execution or acceptance inferred): **Its first consumer, which derives the whole generation layout from it.** [25]
+- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
+- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export. [27]
+- Retained reference account (no fresh execution or acceptance inferred): Current record owner marks retired classes unavailable. [28]
+- Retained reference account (no fresh execution or acceptance inferred): Real authority availability and unmeasured count contract. [31]
+- Retained reference account (no fresh execution or acceptance inferred): The two operations and twelve codes the merge added to the shared vocabulary. [39]
+- Retained reference account (no fresh execution or acceptance inferred): **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
+- Retained reference account (no fresh execution or acceptance inferred): Whole-item paging over an already-selected scope. [42]
+- Retained reference account (no fresh execution or acceptance inferred): **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** [43]
+- Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
+- Retained reference account (no fresh execution or acceptance inferred): **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** [45]
+- Retained reference account (no fresh execution or acceptance inferred): The read's refusal vocabulary, one factory per observable failure point. [46]
+- Retained reference account (no fresh execution or acceptance inferred): **The one decoder a read page and the logical digest share.** [47]
+- Retained reference account (no fresh execution or acceptance inferred): The read's path lookup, which is how a path seed selects. [48]
+- Retained reference account (no fresh execution or acceptance inferred): The edge lookup the directly containing family set is derived from. [49]
+- Retained reference account (no fresh execution or acceptance inferred): The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
+- Retained reference account (no fresh execution or acceptance inferred): **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
+- Retained reference account (no fresh execution or acceptance inferred): The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. [52]
+- Retained reference account (no fresh execution or acceptance inferred): The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
+- Retained reference account (no fresh execution or acceptance inferred): The two portable operations and the one code they added to the shared vocabulary. [68]
+- Retained reference account (no fresh execution or acceptance inferred): The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list. [84]
+- Retained reference account (no fresh execution or acceptance inferred): A family routed at the root governs a root-level file and a deep file. [85]
+- Retained reference account (no fresh execution or acceptance inferred): **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** [88]
+- Retained reference account (no fresh execution or acceptance inferred): **The same enumeration for the surface's other admitted subject kind.** [89]
+- Retained reference account (no fresh execution or acceptance inferred): The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. [90]
+- Retained reference account (no fresh execution or acceptance inferred): The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). [91]
+- Retained reference account (no fresh execution or acceptance inferred): **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** [95]
+- Retained reference account (no fresh execution or acceptance inferred): **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** [96]
+- Retained reference account (no fresh execution or acceptance inferred): **The advertised command, now the delimiter-safe interface the measurement itself reads.** [97]
+- Retained reference account (no fresh execution or acceptance inferred): **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** [98]
+- Retained reference account (no fresh execution or acceptance inferred): **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** [99]
+- Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved. [100]
+- Retained reference account (no fresh execution or acceptance inferred): The package map. [101] [106]
+- Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
+- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
+- Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
+- Retained reference account (no fresh execution or acceptance inferred): The cache refuses a Git working tree. [105]
+- Retained reference account (no fresh execution or acceptance inferred): The pure conversion, its version pin and its validation. [107]
+- Retained reference account (no fresh execution or acceptance inferred): No anchor text lost: it is kept in the note. [108]
+- Retained reference account (no fresh execution or acceptance inferred): The read-only reader. [109]
+- Retained reference account (no fresh execution or acceptance inferred): Rule 7 for any comparison consumer. [110]
+- Retained reference account (no fresh execution or acceptance inferred): Rule 8's item rules and conflict markers. [111]
+- Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
+- Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
+- Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
+- Retained reference account (no fresh execution or acceptance inferred): Carryover writes legacy-format memory only, and only while the repository is not locked. [116]
+- Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
+- Retained reference account (no fresh execution or acceptance inferred): Two tables with no blank line between them are refused when either holds citations. [118]
+- Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
+- Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
+- Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows. [121]
+- Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
+- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [123] [125] [127]
+- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [124] [126] [128]
+- Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
+- Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed. [130]
+- Retained reference account (no fresh execution or acceptance inferred): The manifest lookup returns the highest approved version. [131]
+- Retained reference account (no fresh execution or acceptance inferred): A requirement endpoint triggers only on a newer approved version. [132]
+- Retained reference account (no fresh execution or acceptance inferred): The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
+- Retained reference account (no fresh execution or acceptance inferred): The endpoint's state, code, detail, task root and key. [134]
+- Retained reference account (no fresh execution or acceptance inferred): The task root, or none for a repository that is not one directory name. [135]
+- Retained reference account (no fresh execution or acceptance inferred): The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here. [136]
+- Retained reference account (no fresh execution or acceptance inferred): The approval answer and the comparison with a version. [137]
+- Retained reference account (no fresh execution or acceptance inferred): The manifest read records the bytes, an absent manifest or a failed read. [138]
+- Retained reference account (no fresh execution or acceptance inferred): The approval lookup with its three states. [139]
+- Retained reference account (no fresh execution or acceptance inferred): The latest approved version of one ID. [140]
+- Retained reference account (no fresh execution or acceptance inferred): The owner the packet question is handed to. [141]
+- Retained reference account (no fresh execution or acceptance inferred): The owner records the two resolutions and the packet's bytes. [142]
+- Retained reference account (no fresh execution or acceptance inferred): An unreadable baseline is refused. [143]
+- Retained reference account (no fresh execution or acceptance inferred): Every write is checked, then written atomically. [144]
+- Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
+
+- Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval. [146]
+- Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation. [147]
+- Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
+- Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock. [149]
+- Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
+- Parser completeness is distinct from validator integrity and history files are retained by path. [151]
+- History lookup returns every matching path-bearing row and proof absence is informational. [152]
+- The cache refuses a Git-worktree location and evicts by age/size around temporary-file publication. [153]
+- Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
+- One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3. [155]
+- Read handles and identity enumeration retain their separate boundaries. [156]
+- Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
+- Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range. [158]
+- Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]
+- Path/entry equality is conditional on supplied entries, while unrepresentable changes require partial state. [160]
+- Requirement approval records exact manifest reads and distinguishes approved, not approved and unknown. [161]
+- Packet owner confinement and recorded locator observations support gate memo invalidation before byte rechecks. [162]
+- Converted card authoring prepares all cards, reports refusals, then writes passing Markdown and sidecar files consecutively. [163]
+- Legacy export preserves recorded anchor identity; crossing keeps authored conflicts explicit and separates mechanical edits. [164]
+- Census validation precedes per-file atomic writes; baseline-last creation has an explicit interrupted-creation state. [165]
+- Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions. [166]
+- Durable task reports have one shared root, distinct from the single-file publication route. [167]

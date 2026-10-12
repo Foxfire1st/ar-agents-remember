@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R22 rules 1–9 at unit level, over converted fixture trees.** Each test changes one thing in the fixture tree and checks that exactly the owning rule answers, with its rendered file, field and rule (`_only`). Since leaf 260928-MIK-L27 its last section also proves MIK-R27's admission rules, which that packet adds to the registry (rule 9). Registered in the `unit-regression` lane; this account describes source assertions, not a fresh collection count.
+**MIK-R22 rules 1–9, MIK-R27 admission and MIK-R80 overview order at unit level, over converted fixture trees.** Each test changes one thing in the fixture tree and checks the owning rule's rendered file, field and rule (`_only`). The admission section exercises the rules MIK-R27 adds to the registry; the overview section exercises purpose-first, no leaf/date sections and terminal citation placement. Registered in the `unit-regression` lane. This card describes definitions and assertions, not a claim that a particular test run passed.
 
 ## Code Commentary
 
@@ -35,6 +35,10 @@ The admission registry pin includes refusing `R27.4-record-kept`; reports on old
   - the legacy count names live records by kind and drops assessed and retired (demoted) ones;
   - all four admission rules are registered: `R27.2-new-record` and `R27.4-record-kept` refuse;
     existing-record admission and legacy-count rules are report-only. None is writer-reported.
+
+### Overview order
+
+The overview cases explicitly pass `leaf_publication=True` to the shared `_validate` helper for their R80 assertions; its default remains unchanged for the other rule families. The overview cases retain positive controls for the conforming fixture, a root without a governing section, and fenced heading examples. Negatives require the actual offending heading or line for buried/paraphrased purpose, leaf/date sections and scattered markers. The combined fixture checks all three R80 rule IDs and calls `require_valid_commit(..., leaf_publication=True)`, requiring a named refusal. A standalone conversion retains its legacy prose without R80 findings; ordinary registration requires all three rules to be refusing and not writer-reported. The separate order module extends the ATX and trailing-region counterexamples.
 
 ### Conventions
 
@@ -75,9 +79,7 @@ Representative cases; the full list is in the module.
 - MIK-R27: an existing record whose test was deleted is only reported. [9]
 - MIK-R27: exported, retired and merge-parent records are never refused. [10]
 - MIK-R27: a forged legacy ID does not make a record exported. [11]
-
 - MIK-R27: the legacy count and the rules' registration flags. [12]
-
 - A later rule runs everywhere; report-only never refuses. [13]
 
 ### Cross-Repo References
@@ -85,3 +87,5 @@ Representative cases; the full list is in the module.
 No meaningful cross-repo references found: the cases run over in-memory trees.
 
 No cross-repo boundary is crossed by this file.
+
+- R80 integration assertions explicitly select leaf publication without changing the shared helper default. [14]

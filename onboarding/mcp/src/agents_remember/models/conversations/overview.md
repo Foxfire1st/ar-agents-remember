@@ -8,24 +8,21 @@
 
 ## What This Area Is
 
-The responsibility-owned conversation wire-model package created by 260731-EFA-L9 (R1/R2/R6).
-It owns the stable, strict, native-authoritative wire grammar shared by active conversation
-reads, dormant native history, operation/control projection, browser consumers, and
-orchestration, plus the shared evidence and control-wire contracts the harness control plane
-also consumes. It replaces `serving/conversation/models.py` and its five `_models_*` split files;
-the old paths receive no forwarding shim.
+This package owns the conversation wire grammar for active reads, dormant native history, operation/control projections and their consumers. It also owns the evidence and control-wire contracts shared with the harness control plane. These are type, validation and serialization authorities; conversation serving behavior and control execution belong to their services.
 
 ## Hot Path Summary
 
-Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`,
-opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts;
-`status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py`
-owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is
-retired. The later architecture and contract suites were also retired in the d3610903
-reduction; no current test enforcement is claimed here. The source owners listed below remain
-the type and serialization authorities. Do not recreate a task/date snapshot of implementation shape.
+Start with `__init__.py` for the curated `__all__` export surface and `primitives.py` for `WireModel` and opaque tokens. `evidence.py` and `control_wire.py` own shared harness-control contracts. `status.py` and `capabilities.py` validate status and capability evidence; `content.py` owns `ConversationItem` and the sub-agent grammar. Follow `history.py` for page/library products and `stream_events.py` for SSE mutations and envelopes.
 
-## What Belongs Here
+## Construction And Ownership
+
+The Pydantic products inherit an immutable, camel-case `WireModel` configuration that forbids unknown fields. Opaque tokens instead use purpose-branded root models. The shared evidence and control-wire products include frozen dataclasses and explicit serializers, so the package is not uniformly composed of Pydantic models.
+
+Within the Pydantic model graph, primitives support identity, identity and primitives support cursor bindings, and domain products build on these contracts. History and stream models compose content, status and cursor products. The shared control-wire module imports the evidence serialization-size helper; evidence is a separate shared-contract foundation. `__init__.py` gathers public names into a curated export surface.
+
+The canonical serving ports import the owning submodules and declare read/control interfaces using their products. The harness control client and its control-plane-only models also import shared contracts from this package. These imports keep shared wire declarations below their serving consumers; the ports do not implement control behavior.
+
+### What Belongs Here
 
 | Path | Role |
 | --- | --- |
@@ -41,35 +38,14 @@ the type and serialization authorities. Do not recreate a task/date snapshot of 
 | `telemetry.py` | Metric/evidence products and `operation_fingerprint`. |
 | `evidence.py`/`control_wire.py` | Shared harness-control wire contracts (R2). |
 
-## What Does Not Belong Here
+### Structures Found Here
 
-| Nearby Thing | Belongs Instead In |
-| --- | --- |
-| Serving behavior, projectors, stores, control services | `serving/conversation/` and `serving/projections/` |
-| Response envelopes/tool payload models | `models/` siblings (`base.py`, `tool_registry.py`, …) |
-| Control-plane-only records | `serving/harness_control_models.py` (until L11) |
-
-## Structures Found Here
-
-- Strict immutable camel-case Pydantic wire models with unknown fields forbidden.
-- Purpose-branded opaque token families (active page/event, library list/read/key, native
-  resume, operation fingerprint).
-- First-class sub-agent grammar (`ConversationAgentRef`, per-item `agent`, library agent rows,
-  `agents_note`).
+- Purpose-branded active page/event, library list/read/key, native resume and operation-fingerprint tokens.
+- Typed content blocks and first-class sub-agent products: `ConversationAgentRef`, per-item `agent`, library agent rows and `agents_note`.
+- Status, capability, operation and telemetry products with field constraints and coherence validators.
 - Shared evidence frames/pages/truncation and control-wire state/submission/provenance families.
 
-## Operating Model
-
-1. Modules import only from lower layers (primitives → identity → cursors → domains →
-   stream_events/history); the acyclic order is proven by `model_rebuild()` completeness.
-2. Public names are re-exported through `__init__.py`'s curated `__all__`; production callers
-   import from the owning submodule, not the package initializer.
-3. Shared evidence/control contracts are consumed by the control plane from `models` (legal:
-   `serving` is above `models`), removing the backwards `conversation → harness_control` edges.
-4. Stable architecture assertions prove resolved models and the absence of compatibility shims;
-   focused behavior/contract suites own schema and serialization semantics.
-
-## Load-Bearing Files
+### Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -80,40 +56,35 @@ the type and serialization authorities. Do not recreate a task/date snapshot of 
 | `status.py` | state authority | Waiting/terminal evidence cross-products. | covered |
 | `capabilities.py` | capability authority | Contract-only gating, no version demotion. | covered |
 
-## Local Invariants And Traps
+## Invariants And Boundaries
 
-- Cursor/token brands, authorization, identity/scope, generations, revisions, and ordinals are
-  authority boundaries, not decoration.
-- `ready` cannot be derived from unknown evidence; `supported`/`partial` require exact
-  runtime-fixture evidence (`enablesCapabilities=false` on fixture evidence itself).
-- A model must validate its own emitted body: `exclude_none=True`-reached fields must be nullable
-  AND defaulted; library-only nulls stay meaningful.
-- No forwarding shim at `serving/conversation/models.py` or `_models_*`; no production import of
-  `serving.harness_control_models`/`harness_control_client`/`terminal_catalog` from this route.
-- Do not import from the package `__init__` in production code (R7).
+Cursor/token brands, authorization, identity/scope, generations, revisions and ordinals carry distinct contracts. Token classes validate their purpose prefixes; bindings carry authorization and generation information. Token signing, persistence and authorization decisions are not implemented by the token declarations.
 
-## Evidence
+`ConversationStatus` rejects `ready` when evidence strength is `unknown`. Turn validators require waiting/interaction evidence and terminal outcomes to agree with the turn state. `FeatureCapability` requires runtime-fixture evidence with a fixture ID for `supported` or `partial`; it does not compare runtime/helper versions to demote a capability. Separately, `RuntimeFixtureEvidence` fixes `enablesCapabilities` to false. These predicates do not establish an exact fixture/version match between the two products.
 
-### Repo-Internal References
+Fields whose null value may be omitted by active/control serialization need defaults that permit the emitted body to be read again. The active page window, event predecessor and status fields encode this with nullable defaults. Library `next_cursor` and historical `older_cursor` remain required nullable fields, preserving their explicit null contract.
 
-- Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. [1]
-- Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. [2]
-- The canonical ports consume these models without owning behavior. [3]
+Operation validators own coherence within their wire products. Withdrawal projections constrain phase/outcome/recovery combinations and recovery expiry; they do not perform withdrawal execution. Submission queue rows expose withdrawal identity only for queued cockpit operations. Content validators preserve the declared input lane/producer/provenance authority.
 
-### Cross-Repo References
+Keep imports directed toward the owning model submodules rather than the package initializer. This route contains no imports of `serving.harness_control_models`, `harness_control_client` or `terminal_catalog`. Preserve that boundary and do not recreate forwarding shims at the former `serving/conversation/models.py` or `_models_*` paths.
 
-No cross-repository implementation participates.
+### What Does Not Belong Here
 
-No meaningful cross-repo references found.
+| Nearby Thing | Belongs Instead In |
+| --- | --- |
+| Serving behavior, projectors, stores, control services | `serving/conversation/` and `serving/projections/` |
+| Response envelopes/tool payload models | `models/` siblings (`base.py`, `tool_registry.py`, …) |
+| Control-plane-only records | `serving/harness_control_models.py` (until L11) |
 
-### Docs References
+## How To Use This Area
 
-No Domain Documentation source is configured; repository-owned behavior and architecture tests are
-the evidence.
+When changing a wire contract, read this overview and the owning module's sidecar. Keep model imports acyclic and directed toward their owners. Check the intended validation and serialization behavior without recreating an implementation-shape snapshot. This overview does not promise enforcement by the absent `test_conversation_model_architecture.py` suite or report test execution.
 
-No configured domain documentation was available.
+## Onboarding Metadata
 
-## File-Level Onboarding Map
+The coverage labels below and in the load-bearing-file table are preserved onboarding metadata, not operative validation or lifecycle promises. Current lifecycle or acceptance status is not established by the source owners examined here. The inherited "until L11" qualifier is retained metadata, not a current milestone promise.
+
+### File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -135,15 +106,11 @@ No configured domain documentation was available.
 | `evidence.py` | [`evidence.py.md`](evidence.py.md) | covered | Shared evidence wire. |
 | `control_wire.py` | [`control_wire.py.md`](control_wire.py.md) | covered | Shared control wire. |
 
-## Child Overviews
+### Child Overviews
 
 None.
 
-## How To Use This Area
+## Evidence
 
-When changing a wire contract under this route:
-
-1. Read this overview, then the owning module's sidecar.
-2. Keep the acyclic import order; never import upward or from the package `__init__`.
-3. Prove the intended behavior in the owning contract suite and keep stable architecture assertions
-   in `test_conversation_model_architecture.py`; do not regenerate an implementation snapshot.
+- Current withdrawal models own phase/outcome/recovery consistency. [1] [2]
+- The canonical ports consume these models without owning behavior. [3]

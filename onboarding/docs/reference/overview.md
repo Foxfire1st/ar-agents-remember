@@ -1,372 +1,112 @@
 # docs/reference
 
-## Message and evidence transport
+## Purpose
 
-The settings reference now separates the per-call roleMessageLimit wake-text bound from complete body/attachment/reply file payloads. The existing role_message contract declares its new fields without creating a new public message/search/dashboard tool. Parsed keys, current source and installed/live execution remain distinct evidence.
+This route explains Agents Remember's public contracts for settings, harness selection, runtime layout, memory preparation, task/worktree lifecycle, execution topology, and repository certification. These documents project behavior owned elsewhere; a reference-table row cannot register a tool, grant caller authority, establish acceptance, or redefine a skill. The reference index supplies the ordinary navigation entry; the certification-profile and execution-topology documents supply additional focused contracts.
 
+The enduring intent is explicit authority with inspectable evidence: resolve canonical task/workspace identity, distinguish launch choices from permission authority, keep task truth separate from disposable projections, preserve exact publication and recovery identities, and report what was actually measured. Documentation must retain refusals, bounded exceptions, unsupported transitions, and unresolved historical limits rather than silently converting them into defaults or successful delivery claims.
 
-## Current operative account — MIK-R112
+## Hot Path Summary
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+For a callable MCP operation, begin with the literal public roster and its family registration, then follow the application/service owner. `TOOL_REGISTRARS` fixes registration order; family signatures publish input schemas, and response models supply the wire shapes. The reference tables are navigation aids and contain residual rows that disagree with the roster. At this source head, `drift_check`, `skills_install`, provider/code-search tools, benchmark tools, structural messaging tools and retirement tools other than native `retire_child`, lifecycle-signal/gate tools, capsule/skill-catalog tools, and `knowledge_change`/`knowledge_project` are not advertised public tools. Retained internal helpers do not restore them. Drift preparation uses `context_packet` and `memory_quality_check`; role messaging uses `role_message`; skill discovery uses resources and the skills extension; benchmark cases use their runner CLI.
 
-- Source reference now records drift_check as pre-MIK-R112 history.
-- Settings reference retires skills_install and benchmark tool gates.
+For ordinary free-chat role-shaped work, the lifecycle doctrine describes an identity-free launcher that resolves a sprint, durably pins the canonical architect brief, and calls `dispatch_agent` once. An explicit developer-declared task-seat takeover is the bounded exception, targeting the named role at its canonical task altitude. Plane-hosted dispatch derives caller identity from the process and authorizes direct children; the request cannot select caller identity, and a plane refusal cannot retry as ambient. Durable dispatched/queued delivery is not an instruction to resend the initial brief.
 
-### Superseded inventory
+The public roster has 41 names, up from 39 at 8d2e7547 through the additions of native `retire_child` and `role_start_set`. Bound Paseo `role_start` remains advertised. Only the owning Manager may start the leaf's Worker, Reviewer and Curator together; Worker opens immediately, Reviewer opens with a supplied first message or stays held, and Curator stays held. Deterministic per-seat request IDs reconcile partial sets. An occupied leaf seat requires an explicit holder replacement; only its starter or the launcher may replace it, with explicit interruption authority for an active turn. It is distinct from structural dispatch: only an AR-launched role agent may call it, its role matrix and canonical selection constrain children, and caller-owned request IDs reconcile starts. `role_message` accepts agent identity or role plus required task references, refuses ambiguity, and may resume a closed session. A pending permission decision, unfinished start, or unavailable mid-turn handoff ordinarily holds the message in the recipient's workspace-local product store. At most twenty messages wait per recipient; overflow refuses without dropping messages, and senders may withdraw their own uncommitted messages. Delivery preserves order and opens a held seat with its stored handover. The serving lifespan owns the retry sweep; permission decisions remain developer-owned, and messaging does not cancel the running turn. A completed recipient turn is not requirement acceptance.
 
-- Pre-repair card claim: Card still presents drift_check as a currently callable contract-scoped memory tool. This is superseded archival wording, not a current prescription.
+For memory preparation, use the discriminated `memory_quality_check` request. Sync/start accept repository, optional contract, checks and detail scope. Poll accepts repository, run ID and optional contract path, preserving the candidate run's admitted scope; checks/detail fields remain execution-only. Repository-only diagnostics cannot become candidate acceptance. Full contract-scoped preparation replaces the combined curator checklist and digest-bound attestation; the registration also describes a complete structural census for contract-scoped executions. Raw quality readiness precedes the separate coherence prepare/publish/validate authority. Quality status projection belongs to `application/memory_quality/answer.py`; complete finding populations remain in the logged result. Coherence prepare writes the candidate set and answers with counts, digest and locations; publish retains exact identity expectations and accepts inline judgments/assessments or one judgments file, refusing duplicate transport of a list. These reports do not certify semantic decisions or fabricate final commit stamps.
 
-### Source and authority bounds
+Citation repair and route-index publication ordinarily write only an admitted leaf's memory worktree. Both have an explicit pre-baseline admission on the declared converted memory root: the repository is configured, the resolved root matches the declaration, the conversion marker exists, no attributed baseline exists, and no linked worktree depends on the root. Unreadable linked-worktree state refuses. Outside this exception, unscoped route-index refresh requires dry-run; a leaf writer refuses the official root. Citation fixing accepts either `document` or a finite nonempty `documents` list, bounded by the curator source-candidate limit; only fixing admits the list, and the leaf writer guard remains. Converted citation repair authors card references into sidecars and mechanically re-records moved anchors per named card, excluding refused cards from the second stage and continuing after a missing card. Unconverted repair uses a frozen source generation and accepted document batches. Pure moves may be repaired; renames, deletions and ambiguous anchors remain curator work.
 
-- Source comparison: `docs/reference/drift-c02.md:9-10`.
-- Source comparison: `docs/reference/mcp-tools.md:10-14,30-37,63-68`.
-- Source comparison: `docs/reference/settings-json.md:111-116,335-343`.
+For closeout and recovery, task documents and immutable closeout-door generations supply publication authority. The queue is a disposable schedulable projection; the enclosure-root journal owns accepted operation/evidence/recovery state. The stable contract locator selects either a strict live route through manifest/journal or a terminal route through the external archive/receipt and surviving contract truth. It never guesses a root from task scans, worktree names or reports.
 
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+For quality, distinguish local deterministic hooks, diagnostic metrics, and candidate-bound certification. The present pre-push targeted hook repeats non-test checks and records pushed-ref provenance; it does not run targeted Dagger acceptance or certify the pushed tree. Explicit repository profiles, admitted sandbox execution, exact certificates and lifecycle owners govern certification. Historical green runs, catalog observations and delivery notes do not supply fresh acceptance.
 
-## Task-local direct execution
+## Construction And Ownership
 
 Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
 
-## Historical original card — preserved, not the current operative account
+`mcp-tools.md` maps the public surface; `settings-json.md` describes settings authority and merge rules; `harnesses.md` describes native terminal adapters and explicit non-native mappings; `runtime-layout.md` describes packaged/runtime assets; `skills.md` catalogs canonical root `skills/**`; `worktrees-c09.md` explains lifecycle ownership; `drift-c02.md` explains memory preparation; and the resolver/path-rules references explain context and coverage selection. The overview retains route-level context for this slice's historically pathRules-excluded documentation. Exclusion is a resolved policy fact, not a universal property of every installation.
 
-<details>
-<summary>Retained original source accounts and producer history</summary>
+The server's ordered registrar tuple names the tool-family owners. The cycle-free literal roster lives in `models/tools/public_roster.py`; `PUBLIC_TOOL_RESPONSE_MODELS` owns response-model correspondence. Stale statements such as manual `skills_install()` or a single public spawn surface must be read against these present owners. Registration of `role_start` does not erase structural dispatch's separate caller matrix.
 
-## Paseo-native tool and independent-tier reference
+Native Paseo launches resolve agent/provider, model, effort, mode, features and notes with per-choice provenance. Explicit start selections precede matching host profiles and role settings for agent/model/effort and speed features; absent choices can reach host defaults. Profiles match the exact role name, first match wins, skipped matches are recorded, and an unavailable profile read is explicitly reported before role settings are used. Lower choices stay bound to their authored provider/model instead of being reinterpreted after an override. Effective unoffered values refuse. Modes and notes belong to the user settings/profile authority; start calls accept no mode. Speed choices include service tier and Claude fast mode, while permission-bearing and unknown features are prohibited in start calls. Service-tier aliases normalize before conflict comparison; fast mode is a distinct toggle. Saved retries preserve the original launch choices, and revival uses the stored host agent rather than recalculating a running mode.
 
-The tool reference describes bound role_start/role_message alongside retained converted MIK owners. Role launches resolve provider, model, effort, mode and feature choices against the host catalog with per-choice sources: service-tier and fast-mode speed features may come from settings or a start call, while permission-bearing and unknown features, like mode and notes, belong to user settings or the host profile. Unsupported effective values refuse before creation, exact saved calls replay unchanged, and role reports collect from isolated folders before removal. Current catalog availability is an observation rather than a permanent availability invariant.
+The settings reference distinguishes the selected mode from actual permission behavior. New Claude/Codex starts use the named least-working offered modes only when offered; Pi has no selectable mode, and unknown kinds or missing named modes omit the mode with a reason. Failed/incomplete catalogs refuse; an explicitly empty mode catalog is a different observation. Host preselection is not evidence of least privilege, and mode labels alone do not prove unattended operation. User notes append as a marked, sourced block; an exact first-nonblank-line `<overwrite>` marker replaces the baseline text, with empty replacement refused and binding/handover/start-message permissions retained. Text is not a file/link loader; no role skill setting is implied. Host-global appended prompts remain a separate authority.
 
-- Current imported source owns this scoped route boundary. [2]
-- Current imported source owns this scoped route boundary. [3]
-- Current imported source owns this scoped route boundary. [4]
+The terminal harness contract remains distinct. Claude, Codex and Pi obtain token-free installed/account catalogs and validate effort under the selected model; native adapters own launch and same-session control evidence. Claude correlated initialize command rows, live `system/init` session facts, and correlated `list_models` catalog/model-effort data are separate witnesses. Required malformed or contradictory structured fields refuse rather than falling back to panes/logs or guessed version ranges. Settings-defined non-native mappings remain an explicitly declared compatibility surface. Native selection conflicts, duplicate selectors, omitted required model/effort, unsupported caller spend overrides and unavailable harnesses retain their documented refusals. Catalog concurrency, readiness, three-state hosted dispatch and complete serving reload remain separate contracts.
+
+The knowledge catalogue addition preserves the setup responsibility: c-13 reaches the knowledge foundation through c-14 and reports its state instead of claiming readiness from onboarding alone. c-14 uses the existing curator and its writer, reads existing state, inventories bounded sources, authors the repository foundation, publishes through the admitted taskless bootstrap, reads it back and reports coverage/unresolved work. New-memory foundation follows baseline attribution; existing memory does not skip this assessment. Legacy-format or unusable state is reported through its own refusal/repair route, not worked around by inventing records or a development enclosure. The present c-13 provider stage retires providers and reports unused settings keys; older provider-indexing language in the catalogue is residual documentation.
+
+The closeout input model has code and memory commit legs only. Explicit enabled messages must be normalized and nonblank. Memory-content attribution is rendered where the code counterpart is known and becomes part of the hashed commit message; the shared renderer prevents writer/reader trailer drift. The ignored ledger is a computed consumer cache, not a third commit leg, recovery intent, admission authority or publication prerequisite. Unchanged-content reuse is valid without cache-only Git work.
+
+The settings reference now separates the per-call roleMessageLimit wake-text bound from complete body/attachment/reply file payloads. The existing role_message contract declares its new fields without creating a new public message/search/dashboard tool. Parsed keys, current source and installed/live execution remain distinct evidence.
+
+## Invariants And Boundaries
+
+Task mutations publish intrinsically valid task truth first, then invalidate/rebuild affected governing-sprint projections independently. Projection failure reports bounded effects and an exact next action; it does not roll back task truth, retain stale admitting candidates or erase claimed operations. Queue state owns no attempts, commits, recovery, certification or lifecycle transition. A closeout claim is a short exact task/door-generation CAS, not a durable task lock. Enabled message/input validation precedes the claim. Recovery follows the task-addressed accepted generation and advertised controls; ambiguous or proven output must reconcile that generation rather than restart from scratch, synthesize an initial door or guess a successor. The documented legacy schema-1 blank-message repair/adoption paths are explicit migrations, not tolerant normal readers or raw-Git escape routes.
+
+Terminal cleanup must prove the operation terminal, archive canonical manifest/journal/history outside the deletion target, read back exact archive bytes, and publish the receipt and terminal locator before removing the enclosure. Archive-ready is distinct from cleanup-completed. Before locator transition, retry remains on the live route; afterward, retry uses the exact archived cleanup/abandon disposition and typed arguments until surviving contract truth completes. Active or ambiguous evidence cannot be collected. Missing roots prove deliberate deletion only with the exact external proof. Reopen/sanctioned successor publication binds the exact archived predecessor under CAS and replaces only accepted predecessor tombstone bytes; identical accepted successor bytes converge, other bytes refuse. Discard-before-start is an audited task transaction and is unavailable after work begins.
+
+Lifecycle finalization is distinct from worktree cleanup. The exact contract-bound leaf and immediate parent row are resolved and checked. A leaf naming a parent uses that parent; one naming none uses its folder master when that master lists the leaf. A missing applicable folder master or a valid master with no matching row permits standalone handling; an unreadable/non-master parent or invalid/ambiguous row cannot be treated as an innocent absence. Assertions must match the resolved target. Completion does not invent a parent link or permit arbitrary row mutation.
+
+The documented graph-less `atomic-sequential` account describes the sprint's execution shape, not serialization; it does not by itself prove that creating such a task is admitted at the task-authoring boundary. In that account, independent masters have no graph dependencies to wait on, and canonical order is an equal-priority tie-break. Activation is per canonical series contract; another master's state is not this contract's waiting reason. Its own reconciliation may report `atomic-series-reconciling`; authored graph dependencies remain separate. Selecting operations reconcile exact code/memory bases before active publication, inspection does not select, and cancellation publishes vacant state. Malformed activation fails closed only for affected projection/admission and is archived/replaced by an exact selecting operation; task authoring does not read it. Missing execution nature under an authored graph refuses. Topology writes require the deployed serving process's model self-probe; a checkout CLI cannot prove another venv's compatibility. Snapshot rollback and accepted reclassification replace dual-reader/feature-switch guesses.
+
+Landing preserves same-target protected-ref serialization, current base-pair admission, irreversible-edge revalidation and atomic-blocker exclusion. These constrain the conflicting landing edge, not task authoring. Crashes around ref movement reconcile from accepted journal plus live Git before another operation moves the target.
+
+Raw-Git review measurement compares recorded candidate/base identities in their named repositories, performs no reconciliation, and retains the reviewed generation. An uncommitted candidate's tree pin does not manufacture a historical work-branch head. Measured replacement is stale and disables submission against that review; an uncompared boundary reports its reason as not-measured and does not infer movement. The published matrix supports unchanged and ordinary append; rebase, cherry-pick, revert and branch-switch reconciliation are unsupported. Ancestry alone cannot identify a pick or undo. Recovery uses a successor tree comparison or restores the unreadable checkout/generation as appropriate. Delivered-versus-reviewed and sync-movement blocks compare trees, do not block, and do not describe the history that produced an equal tree. Closeout/integration boundary statements do not replace their source-lineage checks.
+
+Implementation approval is separate from commit/integration/cleanup approval. Preview the applicable operation and retain its governing accepted-series or explicit human authority; approval is not a task freeze or a recovery fallback. Atomic child route review belongs to the accumulated canonical master at master-to-parent integration; standalone and organizational leaves retain leaf review. Complexity/loop knobs govern iterative posture and cannot disable or relocate the applicable route review, curator/closeout admission or master-exit seam. Review posture does not substitute for certifying evidence.
+
+Repository-profile authority is explicit: configured candidate-relative profile, exact selectors/plans/adapters/decoders and bounded artifact inventory govern Gates 1–4; Gate 5 remains memory-owned. Version-1 Dagger adapters cannot select arbitrary host executables. Missing declared runtime prerequisites fail with named affected gates/owners, without host or alternate-adapter execution. Profiles and candidate identities freeze into admission; immutable publication carries hashes and the exact decoder artifact. Human `reportPath` and machine `publishedResultPath` have distinct meanings, with no universal result-filename fallback. Recovery requires the same candidate/attestation/profile/plan/selection/adapter/decoder/artifact identities. Wrapper presence and repository-name discovery are not authority. The present quality owner requires a valid configured profile when code would commit; no-code-commit is an explicit non-applicable case.
+
+Local hooks check generated projections, skill/runtime/harness copies, lint, formatting, typing and other deterministic non-test rules. Pre-commit targets staged content, with a documented sequencer working-tree exception; pre-push repeats deterministic checks on current-checkout bytes with ref-update provenance. Neither hook's success is Dagger acceptance. Coverage and changed-line coverage are diagnostic with no mandatory floor. CRAP uses production functions and branch-informed coverage; threshold 20 prompts review, simplification, meaningful behavioral protection or justified acceptance rather than delivery refusal. Missing/malformed diagnostic inputs and tool execution errors remain failures. No metric baseline, ratchet or score-exception registry is authorized. Ruff complexity rules remain enforcing; Radon grades are reports, while its complexity implementation supplies CRAP's complexity term. Ordinary host pytest and targeted Vitest remain diagnostic; genuine admitted Dagger/lifecycle evidence retains certification authority. Historical cheap-first ordering and CI-fresh proof-reuse claims require their own exact candidate/provenance predicates, not a general permission to reuse any green run.
+
+The host reference describes a build-owned whole locked host tree and product Node, shared user-config authority read per call, exact configured listen binding, managed versioned locations and absolute Node invocation. Installation preserves user notes/tasks/worktrees/memory content and defers a running host's start-only transition rather than restarting it silently. Provision is the explicit transition mechanism; dry-run mutates nothing. Dashboard lifecycle leaves the detached host/session lifetime separate, and explicit host stop owns termination. Host PID-record operations validate liveness, supervisor command identity and configured home before signalling; stale records and unverifiable live processes receive distinct handling. The documented platform is Linux x86_64 with `/proc`; a retired version selector is ignored with a notice rather than becoming an alternate pin. Build/package versions are source contract facts, not fresh installed-host observations.
+
+## Historical And Verification Limits
+
+The inherited card preserves producer accounts for TES L1/L4/L5, EFA L2/L6/L17/L19/L23, ARG L1, CHATS L5I, R39, CLIVE, DAGQC, IAS, DAG L15, CCR/CCR-L42, ICR L23/L27, MIK L38/L96 and the MIK-R112 repair. Their dates, closures, test figures and delivery statements are historical custody, not current acceptance. This synthesis retains their enduring responsibilities and named limits without replaying milestone chronology. Original numbered reference identities/targets and route/status/coverage metadata remain parent-owned.
+
+TES N16's correlated turn-boundary `landed`, N11 terminal poll visibility, attribution-only consume and R11 explicit supersession were historical inbox contracts. Their operator-inbox tools are absent from the present public roster; internal retention does not re-advertise them. The inherited 5-attempt unresolved ceiling, 5-minute rebind expiry, retired timed ladder, load-shed `escalationBudget` intent, fail-loud removed escalation family and retained `ladder-resolved` parse/reclamation account remain named historical boundaries where their complete present owners were not adjudicated here. The current settings reference still documents the loud supervisor alias with both-keys refusal. ARG's exact-report completion retirement, deferred seats without reports, manager/orchestrator exclusion and optional landed/archive behavior remain historical terminal-seat policy. Present public `retire_child` instead resolves a native receipt-tracked leaf holder, requires its original starter, checks host state and explicit interruption authority, and records caller/reason after host archival. A host archival whose receipt update fails remains a named recording failure. Neither account establishes observed process retirement in this inspection.
+
+EFA L6's L31 audit recorded declined projection edits remaining staged and cached bytes lacking publication-time revalidation, with R10 pending at that frozen candidate. Present unconverted fixer source returns before staging declined projections and compares original document bytes and held snapshot before atomic publication; converted repair separately excludes refused cards from mechanical sidecar repair. These present predicates supersede an unconditional current defect claim, but do not prove the historical R10 landing or fresh execution acceptance. The transaction explicitly has no memory-file mutex: revalidation cannot exclude an uncooperative writer after the check, and snapshot equality is frozen-generation identity rather than a fresh live-source check.
+
+ACPUI's Claude Code 2.1.210/Fable live-switch account and the bounded R9 compatibility exception remain historical observations/limits. No old native-host captures were examined, so this proposal neither recreates that experiment nor generalizes its catalog availability, permission behavior or compatibility exception. Required protocol evidence and separate same-session mutation evidence retain their original intent.
+
+R39/EFA/CCR descriptions of Dagger-only acceptance, nonce/container attestation, targeted leaf and full master ownership, cheap-first ordering and proof reuse remain inherited policy constrained by present explicit profile/certificate authority. Some hook comments, setup prose and reference text describe different automatic-execution behavior; this inspection does not infer whole-call-path absence or guarantee automatic execution from one local body. The decisive present hook finding is narrower: pre-push's targeted body runs deterministic non-test checks. Likewise the old no-baselines statement is retained as quality-policy intent, not a repository-wide exhaustive absence verdict.
+
+This proposal is source-only at the supplied checkout head. The complete input card was read and its supplied SHA256 was confirmed. No tests, product operations, native-host probes, installation, publication, Git mutation or code/memory edits were performed. No fresh test, native-host, whole-build, landing or memory acceptance is established. Historical reference targets, excluded metadata tables and sidecars were not independently revalidated; stale-target custody must not be read as proof truth.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
 | Field | Value |
 | --- | --- |
 | sourceRoute | docs/reference |
 
-## 260928-MIK-L38 The Tool Reference Names The Folder Master
-
-`260928-MIK-L38` (MIK-R38) edits one row of `docs/reference/mcp-tools.md`, this route's MCP tool reference: the
-`lifecycle_finalize_task` row now says the finalizer reconciles the leaf's exact row when the leaf declares an
-existing immediate parent "(or names none and its folder's `task.json` master lists it)", and that "a sub-task naming
-none whose folder `task.json` is not a master is refused" (ruling 2026-09-30T12:33:07 Q3; review R1 note 5 at
-13:11:32; "sub-task", ruling 14:12:52). It describes the finalizer's shipped behaviour and defines none; the same
-clauses are in the registered tool description and the c-09 skill. As with the catalogue edit below, `docs/**` sits
-outside the onboarding `pathRules.include`, so this overview and the file's card record it.
-
-## 260921-ICR-L27 The Skill Catalogue Gains The Knowledge-Bootstrap Procedure
-
-`260921-ICR-L27` (`ICR-R27@v1`) edits `docs/reference/skills.md` — this route's skill catalogue — in two
-places, and both are statements about what the shipped skill tree contains rather than new product
-behaviour.
-
-**A row is added for the new procedure.** `c-14-knowledge-bootstrap` joins the catalogue with its own
-one-line description: build or resume a repository's knowledge foundation through the existing curator —
-read the current knowledge state, inventory bounded sources, author invariants and families through the
-curator's own writer, publish through the taskless bootstrap, read the result back, and report coverage
-and unresolved work.
-
-**The `c-13-install-and-onboard` row gains the knowledge half of setup.** Its description now lists the
-knowledge foundation among the stages a first run reaches, between onboarding bootstrap and provider
-indexing, so the catalogue no longer implies that a wired package plus an onboarding scaffold is the
-whole of setup. That is the same change the skill itself makes: `c-13` delegates the foundation to
-`c-14` and reports its state rather than reporting a repository ready without it.
-
-**Route boundary.** This is a documentation route: the catalogue describes skills whose canonical home is
-root `skills/**`, and nothing here defines skill behaviour. `docs/**` sits outside the memory layer's
-onboarding `pathRules.include`, so this overview is the route-level record of the change rather than a
-per-file card.
-
-## Purpose
-
-### 260731-EFA-L23 Route Delta
-
-L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and
-cancellation, and Dagger as the sole acceptance executor. Host/unit invocations are diagnostic;
-Python, Playwright, and changed-lines execution require the Dagger run nonce and container
-attestation; targeted Vitest is a supported non-certifying diagnostic loop.
-
-### 260713-TES-L1 Rename — Settings And Harness Reference
-
-`settings-json.md` now documents the `orchestration.agentNotifier` family (the deterministic
-agent-notifier sweep knobs) with the compatibility-window alias: the legacy
-`orchestration.supervisor` key is accepted loudly and both-keys is refused. `harnesses.md` prose
-was refreshed to agent-notifier wording; no harness contract changed.
-
-### 260713-TES-L4 — Inbox Landing, Supersession, And Reserved Ladder Reference
-
-`mcp-tools.md` now documents the N16 inbox contract (terminal `landed` only on correlated
-adapter acceptance at a turn boundary), `include_terminal` poll inspectability (N11), the
-attribution-only `operator_inbox_consume`, and the explicit `operator_inbox_supersede` tool
-(R11). `settings-json.md` marks `escalationBudget` reserved (N3): the timed escalation ladder is
-demolished as policy — rows resolve by the 5-attempt ceiling, the 5-minute rebind grace, or
-explicit supersession — and the knob no longer gates sweep behavior (removed with the L5
-demolition leaf).
-
-### 260713-TES-L5 — Ladder Demolished, Budget Re-Wired
-
-`settings-json.md` now documents `escalationBudget` as the per-sweep load-shed cap on
-owner-signal emissions (seat-liveness + dead-upstream), the twin of `redeliverBudget`; the
-`orchestration.escalation` settings family is removed (fail-loud unknown key), and the
-recovery/observability docs use the fact-relay terminal paths (landing, attempt ceiling
-`unresolved`, rebind grace `expired`) instead of ladder states. The legacy `ladder-resolved`
-literal remains parse-compat and is still written by the confirmed-gone reclamation fold.
-
-Reference contract for harnesses, MCP tools, and settings. ACPUI makes role settings the initial
-native-selection authority: Claude, Codex, and Pi discover token-free per-install/account catalogs,
-validate effort under the selected model, launch through adapter-owned native channels, and retain
-honest same-session mutation evidence. The harness manual now keeps Claude's three startup evidence
-sources distinct: correlated initialize supplies command rows, `system/init` supplies live session
-state, and a separate correlated `list_models` response supplies the dynamic catalog and model-local
-effort metadata. Settings-defined non-native harness mappings remain an explicit compatibility
-surface rather than the default path. The route also retains the three-state hosted dispatch,
-readiness, catalog-concurrency, and serving-cutover contracts.
-
-## Hot Path Summary
-
-The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
-
-`mcp-tools.md`, `skills.md` and `worktrees-c09.md` expose code/memory commit messages and output refs. They describe the ledger as a computed consumer cache, not a commit leg, recovery intent or publication prerequisite. Reuse of unchanged content is a valid result without cache-only Git work.
-
-## Detailed Route Context
-
-The current orchestration references describe free chat as the identity-free launcher that, for
-ordinary role-shaped work, compiles the canonical architect brief and calls `dispatch_agent` once
-on the sprint document. An explicit developer-declared task-seat takeover is the bounded exception:
-it targets the named role at that role's canonical task altitude rather than silently turning
-ordinary free chat into a non-architect seat. Plane-hosted architect/orchestrator/manager seats use
-the same public tool with injected seat identity and exact direct-child scope. Caller kind is
-process-derived, the request never supplies caller identity, and a plane refusal never falls back
-to ambient. Runtime identity and custody remain private control-plane evidence behind the canonical
-task-document-plus-role seat. Role-table `dispatch` and `tools` rows describe structural authority
-and capability; they are not settings keys and cannot override that caller matrix.
-
-For native launch and control questions, read `harnesses.md` for the dynamic catalog,
-model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the
-Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` /
-`rolesPerLevel` choice authority (provider/model/effort/mode/features/notes, user-home settings with repository overrides) on the native Paseo launch route. Exact harness versions and captured catalog rows are
-live/fixture evidence, not production pins; in particular, Claude Code 2.1.210 live-confirmed Fable
-switching supersedes the earlier launch-only assumption without creating a Fable-name policy.
-Structured hosted dispatch, complete serving reload, and the bounded R9 compatibility exception
-remain separate contracts.
-
-For task, closeout, and recovery questions, `mcp-tools.md` is the public tool-surface reference and
-`worktrees-c09.md` explains the operational sequence. Task documents and closeout doors are canonical
-publication authorities; closeout queue state is a disposable projection; the enclosure-external
-journal owns claimed operation/evidence/recovery state; and the stable locator plus external archive
-own terminal cleanup proof. Queue invalidation never blocks task authoring or erases a claimed
-operation.
-
-The quality boundary remains separate. `skills.md` records synchronized skill-copy checks at both
-pre-commit and pre-push. The hook tiers are not equivalent: pre-commit runs a fast staged-content
-tier without the wrapper, pre-push runs the change-set-scoped targeted Dagger tier, and the full
-Dagger graph runs once per master at the master integration gate. Current closeout authority requires the repository's explicit `certificationProfile`;
-wrapper presence and repository-name discovery no longer grant authority.
-
-## CCR Repository Profile And Result Reference
-
-`repository-certification-profile.md` is now the versioned authoring and admission reference
-for Gates 1–4: explicit configured path, exact profile and selector identities, sandbox adapter,
-decoder and bounded publication inventory. Gate 5 stays memory-owned. `settings-json.md`
-assigns execution selection to `repositories.<id>.certificationProfile`;
-`orchestration.qualityGate` now owns only optional resource policy, with no executor setting.
-The quality result's `reportPath` is the human summary. `publishedResultPath` identifies the
-exact immutable decoder artifact for fresh success and recovery, with `resultArtifact`
-carrying its relative identity; no universal result-filename fallback exists. This differs
-from the memory-quality request's separate sync/start/poll result contract below.
-
-## IAS Execution-Topology Reference Impact
-
-`execution-topology-migration.md` now describes graph-less scheduling through per-contract
-activation, not a requirement that every master integrate fully before another begins. The guide
-states the default's own scope: a missing `executionGraph` selects `atomic-sequential`, which
-describes the sprint's shape — every commanded master executes atomically — and serializes nothing,
-because a graph-less sprint declares no dependencies, so nothing serializes the masters. Canonical
-commanded-master order is only the stable equal-priority tie-break. The activation record is keyed
-by the canonical series contract, so two atomic masters that share one sprint's protected code and
-memory source branches hold independent records: activating one never pauses or replaces the
-other, and only a contract's own in-flight reconciliation is a waiting reason
-(`atomic-series-reconciling`) until its exact code/memory bases are current. A foreign master is
-never a reason to wait.
-
-The reference also makes the ownership boundary explicit: task authoring never reads activation or
-queue state; queue projection observes active/reconciling/vacant facts but owns no lifecycle
-transition; and malformed activation state fails closed only for affected runtime projection or
-admission before an exact selecting operation archives and replaces it. No contract-presence or
-tolerant-reader fallback is documented.
-
-## 260718-CHATS-L5I Commit-Gate Reference Impact
-
-The public reference route now exposes the same mandatory source-quality order
-as the implementation and runtime guidance. `worktree_closeout_apply` runs the
-admitted repository-profile gate before a source commit. The historical L1 wrapper-presence
-trigger has been superseded by explicit configured profile authority;
-`worktrees-c09.md` describes the applicable gate before code, onboarding and memory-content
-commit steps; and the skills reference names both pre-commit and pre-push sync
-checks. These are documentation projections of the existing gate authority, not
-independent bypasses or alternative check sequences.
-
-## 260731-EFA-L2 Reference Impact
-
-Two things a reader of this route must now hold.
-
-**The tool surface has a new authoritative source, and `mcp-tools.md` says so.** It no longer points
-at `mcp/server.py`; the `@server.tool()` registrations moved to
-`mcp/src/agents_remember/mcp/registration/`, one module per tool family, and `create_server` only
-walks `TOOL_REGISTRARS` — an ordered tuple that also fixes the order the server advertises tools in.
-Response shapes are still enforced by `models/` via `tool_registry.PUBLIC_TOOL_RESPONSE_MODELS`.
-When a tool is added or its schema changes, the family module under `registration/` is what to read,
-and its `@server.tool()` signature **is** the published schema — this route's job is to project that
-truth, not to restate a parameter list that can drift from it.
-
-**Three commit-gate facts these public documents predate.** As with the L1 note above, `docs/` is
-pathRules-excluded, so the durable record lives on the root overview and here:
-
-1. **There are no baselines, allowlists, grandfather lists or exemption files anywhere in the
-   gate.** Several were built during L2 and then deleted; the no-deferral rule forbids the category,
-   so a document that describes "the current offender list" would be describing something that does
-   not exist and cannot be created.
-2. **The binding coverage gate is per-diff at 100%** — every statement and every branch arc leaving
-   a changed line must be exercised, reported as named uncovered lines rather than a percentage.
-   There is no aggregate coverage pin.
-3. **CRAP consumes branch coverage at threshold 20.0** and refuses a coverage report that lacks
-   branch data rather than silently falling back to statement coverage.
-
-`worktrees-c09.md`'s quality-before-commit *sequence* is unaffected — the gate still runs before any
-closeout mutation, and still fails closed. What changed is what the gate can catch.
-
-## 260731-EFA-L6 Reference Impact
-
-`mcp-tools.md` now carries three additions this route must hold:
-
-1. **The memory tools are leaf-scoped by `contract_path`.** `drift_check`, `memory_quality_check`,
-   and `route_index_refresh` all take the same optional `contract_path` as the `worktree_*` verbs.
-   Supplied, they act on that leaf's memory worktree and measure it against the leaf's code
-   worktree; `route_index_refresh` **writes**, so running it unscoped from inside a leaf dirties
-   the official memory repo. The response carries `onboardingRoot`, so the acted-on tree is always
-   visible.
-2. **Citation repair is source-derived.** `agents-remember memory-citations --repo <id>
-   --contract <enclosure contract> [--fix]` regenerates every range that can be regenerated from
-   its anchor after a package move and prints a work order for the rest. `--contract` is required,
-   and the current fixer proposes uniquely resolvable range/move repairs and deterministic
-   projection work; ambiguous matches remain curator work. At this frozen candidate, L31
-   source audit found declined projection edits can remain staged and cached document bytes
-   lack publication-time revalidation. Treat its dry-run as a proposal, not proof that apply
-   safely refuses every declined row; the R10 repair is still pending.
-3. **Task-document and lifecycle rows were added.** `worktree_cleanup` is explicitly non-terminal
-   for task documents; `lifecycle_finalize_task` proves the landed edge and completes the exact
-   contract-bound leaf (with parent-row reconciliation); the new Task documents section names
-   `task_doc` and `task_reopen`.
-
-## 260731-EFA-L17 Reference Impact
-
-The public reference docs were corrected to the ladder: `mcp-tools.md` and
-`use-external-memory.md` describe the leaf `--targeted` closeout contract, `worktrees-c09.md`
-places the full wrapper at the master integration gate inside `worktree_integrate`, and
-`settings-json.md` documents optional `orchestration.qualityGate.memoryCapBytes`
-(absent/host-managed default, fail-loud family) — the schema source for an
-explicit constrained-environment full-gate cap.
-
-## 260805-ARG-L1 Reference Impact
-
-`settings-json.md` now documents the third retirement setting,
-`autoCloseCompletedSeats` (default `true`). The two existing edge gates still decide whether
-completion cleanup runs; this setting chooses its result for exact-leaf worker/reviewer/curator
-seats. Default mode requires the exact sender's durable `turn-report`, retires the process through
-normal session-retire semantics, and preserves transcript/report evidence. `false` restores the
-landed/archive path. Manager and orchestrator seats are excluded in either mode. The public quality
-description also reflects cheap-first subprocess ordering and CI-fresh local proof reuse policy.
-
-## 260731-EFA-L19 Reference Impact
-
-The public reference now presents structural agent control directly: agents dispatch and address
-children by canonical task document plus role, while launch/session, inbox-row, adapter, and gate
-correlations remain private control-plane state. `harnesses.md`, `mcp-tools.md`, and
-`settings-json.md` describe that division and the settings-derived role/altitude launch selection;
-the retired exact-session agent tools are not retained as a compatibility surface.
-
-`drift-c02.md` distinguishes the task-start temporary drift report from the curator's full
-contract-scoped combined checklist at `<worktree-enclosure>/reports/curator-memory-quality.md`.
-That enclosure-local operational artifact is atomically replaced, combines repairable onboarding
-and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
-
-## R39 Settings Reference Disposition
-
-The settings reference now names Dagger as the only accepted executor, places optional memory caps
-inside the container wrapper, and removes host systemd/RLIMIT semantics. It also records that leaf
-closeout and master integration are the only acceptance owners.
-
-## 260821-CLIVE Canonical Lifecycle Reference
-
-The public reference route now assigns each mutable fact one owner. Task mutation publishes first,
-then invalidates/rebuilds the affected disposable queue projections and reports bounded effects;
-projection failure cannot roll back task truth. A manager publishes an immutable closeout-door
-generation, and the lifecycle journal atomically claims that exact waiting generation. Commit,
-memory-content, review, cancellation, supersession, and recovery evidence live in the journal—not in
-queue rows.
-
-Closeout validates every enabled nonblank commit-message/input field before any claim. Retry and
-repair are task-addressed through advertised controls and exact retained evidence; normal recovery
-does not synthesize a missing initial door or guess a successor. Terminal cleanup/abandon publishes
-and reads back a bounded external archive, receipt, and stable locator before removing the enclosure;
-successor publication proves the exact archived predecessor. Discard-before-start is an audited
-task-document transaction and cannot be used once work has begun.
-
-The tool inventory documents `closeout_door`, status/rebuild-only `closeout_queue`, lifecycle
-operation control, direct landing, adopt, cleanup/abandon, legacy-incident repair, and
-discard-unstarted. These are routed authorities, not compatibility duplicates or raw-Git escape
-hatches.
-
-## 260821-DAGQC Memory-Quality Request Contract
-
-The current `mcp-tools.md` reference uses one `memory_quality_check.request` discriminated by
-`sync | start | poll`. Only sync/start carry contract path and execution/detail scope; poll carries
-repository plus run id. Full leaf sync/start may publish the combined checklist; fresh success uses
-`reportPath`, while `publishedResultPath` is recovery-only. Capacity refusal has no run id, and poll
-cannot smuggle start-only fields. These newer DAGQC facts are additive to the CLIVE lifecycle split.
-
-## 260815-DAG-L15 Route Impact
-
-`execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
-
-## CCR-L42 Review-Altitude Reference Update
-
-The settings reference now describes route review as applicable at its owning altitude. Atomic
-child leaves defer independent route review to the accumulated canonical master at
-master-to-parent integration; standalone and organizational leaves retain independent leaf
-review. Complexity and loop settings do not disable or move that atomic integration gate, and
-the route-review rule does not replace certifying evidence requirements.
-
 ## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs. [1]
+- Retained reference account (no fresh execution or acceptance inferred): Current imported source owns this scoped route boundary. [2] [3] [4]
+- Retained reference account (no fresh execution or acceptance inferred): The settings document's host section. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The runtime layout document. [6]
 
-### Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-- The normalized public input has only two commit legs. [1]
-
-## 260921-ICR-L23 The Raw-Git Identity Boundary Reference
-
-`docs/reference/worktrees-c09.md` gained **Raw Git Identity Boundary** — the reference statement of
-what the review surface measures when no managed transaction stands behind a moved identity, and
-the support matrix it publishes and reports against. The route now carries, in one place, the
-three properties a reader of the reference needs: the boundary measures the recorded work-branch
-head, the code-base commit and the memory work branch's base, and performs no reconciliation; a
-replaced identity marks the review `stale` and disables submission against it while leaving the
-reviewed generation inspectable; and a boundary that could not compare at all renders
-`not-measured` with its reason rather than a current review, without disabling submission.
-
-The matrix below that prose is the code's own table rather than a summary of it: six transition
-shapes with their measured signature, the boundary state each produces, whether this system
-reconciles it, and the recovery route where one exists. Four of the six are **unsupported** and
-say so instead of being implied by omission, which is the property the section exists to keep.
-
-## 260928-MIK-L96 The host reference texts
-
-The reference documents now state the build-owned host contract, the product Node, the shared host authority and the start/stop rules; the settings reference's Paseo section and the dashboard paragraph were updated with them.
-
-- The settings document's host section. [5]
-- The runtime layout document. [6]
-
-</details>
+- Literal public roster has 41 names, including native retire_child and role_start_set; other retired tools remain excluded despite residual reference rows. [7]
+- Ordered family registration owns the advertised tool definitions. [8]
+- Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings. [9]
+- Poll includes optional contract scope while extra execution-only fields are forbidden. [10]
+- Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]
+- Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree. [12]
+- Converted citation repair excludes refused cards from its mechanical second stage in both list and singleton paths. [13]
+- Unscoped route-index apply enters the pre-baseline guard; leaf apply enters the leaf writer guard. [14]
+- Declined projections return before staging; only accepted or published batches are accounted. [15]
+- Citation publication rechecks exact document bytes and frozen snapshot, with an explicit post-check writer limit. [16]
+- Current pre-push targeted body repeats deterministic non-test checks rather than invoking acceptance. [17]
+- Metric findings are diagnostic; missing or unusable report inputs remain failures. [18]
+- Normalized closeout input carries two commit legs and refuses blank enabled messages. [19]
+- Finalization resolves the named or exact folder parent rather than inventing a parent. [20]
+- Activation waiting is scoped to this contract's own reconciliation. [21]
+- Raw-Git support matrix keeps unsupported transitions and ancestry limits explicit. [22]
+- Source-quality profile requirement has an explicit no-code-commit exception. [23]
+- Setup delegates the foundation to the curator and retires provider indexing. [24]

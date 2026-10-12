@@ -1,262 +1,134 @@
 # dashboard/src/panels/changeset/ — Change-Set Viewer Overview
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| sourceRoute            | `dashboard/src/panels/changeset/`                |
-
 ## Governing Overview
 
 [dashboard/src/panels overview](../overview.md)
 
-## 260928-MIK-L34 The Diff Pane Can Carry Marks On Its File Lines
+## Purpose
 
-`MIK-R34` reaches this route through `DiffPane.tsx`'s optional `marks`, inert when absent.
-Through the shipped `useMarkedPane`, the editors install a marks gutter, call `drawn` when ready
-and at teardown, include placement in their effect dependencies and render mark portals. Split
-and inline builders retain their shared `DiffBuild`. `ChangeSetPane` passes no marks, so comparison
-viewer diffs remain unmarked; the current review marker callers are card Full file through
-`SourceContent` and card excerpts through `ExpressionCards`, not lane windows or an explorer.
+`changeset/` is the Change-Set Viewer: a task-scoped screen for inspecting changed code and onboarding files, with up to three columns for the changed-file lists, the selected file's diff, and its code↔sidecar partner. It consumes the read-only change-set API at `GET /api/changeset/{task,file-diff,master}` and reuses the File Viewer's read-only editor, theme, language extensions and persisted view flags, plus the shared Markdown renderer.
 
+The target selects an enclosure scope, a series master net, a leaf's committed or working range, or a numbered recorded review comparison. The cockpit opens the screen as a full-bleed takeover from change-set controls, hides its underlying body while the takeover is open, and restores that body when the reader goes back.
+
+This route also declares the target variant for Intent Review. A target carrying `review` is dispatched to the reviewer instead of mounting the Change-Set Viewer. The reviewer belongs to `panels/review/`; the task entry belongs to `panels/detail-panel/`.
+
+## Hot Path Summary
+
+A change-set control opens the cockpit takeover → the viewer reads the selected range and lists changed code/onboarding files with status and counters → selecting a row reads its before/after content into a read-only split or inline diff → the row's partner affordance can open a third column. Per-column toggles select collapsed diff, full-file diff, plain after-content or rendered Markdown. A master view also lists per-leaf counters and can retarget the same takeover to a leaf. Back closes the takeover and reveals the underlying cockpit view.
+
+## Construction
+
+### Targets, requests and generations
+
+`ChangeSetTarget` carries the repository and optional scope, master, leaf, mode, master-generation pins and comparison number. Request selection follows comparison → leaf → master → scope. Comparison reads use recorded code_base→code_candidate trees; memory uses converted_base when supplied, otherwise memory_base, through memory_candidate, restricted to knowledge/ and onboarding/. The answer uses the task change-set shape with mode comparison. A leaf is qualified by its master and defaults to committed mode in the viewer's requests. An enclosure scope reads base→worktree; a committed leaf reads its recorded base→landed endpoint; a working leaf reads worktree HEAD→worktree. A master reads the net between its declared base and selected integrated result, or the endpoints supplied by explicit pins.
+
+The list request for a master asks for `includeLeaves: true`; the master counters control does the same. The client still supports omitting the breakdown for a caller that requests only the net. `seriesLeaves` returns no breakdown unless this is a series view and the response has a `leaves` field.
+
+A master response publishes code and memory endpoint pairs, a deterministic digest and currentness. `boundSeriesGeneration` prefers the response's generation over the entry's pins and passes it into every master file expansion. `SeriesGenerationTag` displays the short digest, currentness and integrated scope when the response supplies a generation. The entry control carries the published endpoint pins into the viewer target. This binds file expansion to the listed endpoints after the integration branch advances; it does not establish that a response's generation is chronologically newer than the entry's.
+
+The header labels a working leaf as `working · <leaf> · uncommitted`, a committed leaf as `committed · <leaf>`, and a master as a series net. It renders the response's code and memory counters beside the back control.
+
+### File lists, attribution and read states
+
+`ChangeSetViewer` owns component state for the list, its initial read error, the active file and the two file-diff responses. The first column contains changed code and onboarding lists. Rows show path, Git status and insertion/deletion counts; the active row uses a 20% amber wash and hover uses 12%. Code files with a sidecar offer a partner action. An onboarding file can offer its code partner when stripping `onboarding/` and `.md` produces a file route; overview, entities and index routes are excluded from this mapping.
+
+The selected file occupies the second column through `ChangeSetPane`. A successfully read partner adds the third column. The workspace uses resizable panels. With a list response but no selected diff, zero files across both lists produce the named empty pane; otherwise it asks the reader to select a changed file. That prompt uses the siege-tank boomerang clip at opacity 0.18 when the shared backdrop's effects gate permits it.
+
+`LeafBreakdown` renders a `by leaf (N)` rail beneath the changed-file lists, with each leaf's state and both halves' file/insertion/deletion counts. Its button opens working mode only for a row whose state is `working`; other states select committed mode. The cockpit supplies the callback, so selecting a leaf retargets the same takeover. Without that callback the leaf buttons are disabled.
+
+The standing intent of the rail is to make the master net attributable by leaf. The implementation supplies per-leaf counters alongside the net, but computes those counters against each leaf's own base and current worktree or recorded commit. They are not a decomposition whose sum is guaranteed to equal the integrated net. A live leaf's breakdown counters are base→worktree, whereas clicking its working row opens HEAD→worktree. The source and the attribution intent therefore describe different ranges; this overview does not certify them as equivalent.
+
+The initial list read shows an explicit loading placeholder and preserves a rejection as a `ReviewFailure`. `ChangeSetRefusal` renders its code, optional HTTP status, detail, offending input and next action when supplied. The client decodes non-success response bodies and carries the route's refusal in `ReviewTransportError`, using the shared failure vocabulary rather than a separate viewer decoder.
+
+The counters control in `changeSetBar.tsx` distinguishes loading, unrecorded, measured-empty and failed/refused reads. It renders a brief failure state in the control and the owner's code and reason in a disclosure beside it. The existing rendering case inspects that disclosure and clicks the control to assert the target it opens; this describes the test source, not an executed test result.
+
+A working leaf refresh starts the list and active-file requests together, waits for both to settle, applies fulfilled results and schedules the next cycle after 2.5 seconds. It starts only after the first list response, clears its timer on teardown, and refreshes the active diff rather than the partner column. Rejected polls do not update the initial error state. Individual file-read rejections clear the corresponding diff instead of rendering the list refusal surface.
+
+The server explicitly returns an unrecorded state when a leaf's committed code endpoint has not been recorded. The counters control displays that state. The viewer's main-pane decision checks file-list lengths, without reading `state` or `stateDetail`; consequently an unrecorded response with empty lists reaches its measured-empty wording. The intended distinction between an unrecorded range and a measured empty range remains visible here as an implementation discrepancy.
+
+### Diff columns and shared editor construction
+
+`ChangeSetPane` maps its persisted flags to three source views: collapsed change-set diff; full-file diff with highlighting; and full-file with highlighting off, which uses `FilePane` on the after-content. Split⇄inline selects the diff layout. Each column supplies its own `keyPrefix`, so view flags persist independently across file switches and reloads. Markdown-language files also offer a rendered toggle that uses the shared `Markdown` component in a scrollable container; it renders after-content, or before-content when the after text is empty.
+
+`DiffPane` builds a read-only CodeMirror merge pane imperatively in an effect. `splitView` creates a `MergeView` with before and after editors; `inlineView` creates a single after editor with `unifiedMergeView`. Both use the shared theme and lazy language extension, read-only/non-editable state and line wrapping, with no revert or accept/reject controls. The asynchronous language resolution has a disposed guard, and teardown destroys the constructed view.
+
+The shared host styles draw changed text as dark muted green addition rectangles and red deletion rectangles rather than thin underlines. `firstLine` supplies each side's file-relative numbering through `numberedFrom`; absent values start at line 1. `fit` selects a content-sized host whose split merge view has a 32rem maximum height. The reviewer's `ChangedExcerpt` passes file line origins, `fit` and `collapse={false}`. LaneFileFocus and its lane windows are absent from current source. `ChangeSetPane` remains the comparison viewer's unmarked diff owner.
+
+The optional `marks` prop connects `DiffPane` to `useMarkedPane`. Each builder places its side's marks gutter first, and the shared hook supplies no gutter extension for an unmarked side. The builders call `drawn` once their editors exist; the hook expands collapsed runs holding marks. Teardown calls `drawn(null)`, placement participates in the effect dependencies, and the portals render after the host. Card Full file through `SourceContent` and expression-card excerpts pass marks; `ChangeSetPane` does not. Lane windows and SourceExplorer are retired owners.
+
+### Review entry and takeover dispatch
+
+The presence of `ChangeSetTarget.review` selects the review variant; `{}` is the task-context entry, and optional selector kind/id fields can name a recorded subject. The optional `historical` field addresses the leaf's recorded comparison. These are review dispatch fields, rather than additional change-set modes.
+
+`DocChangeSetBar` renders a series change-set control for a master. For a leaf it renders the committed control and `LeafEntries`: a working control when the leaf is live, plus `IntentReviewEntry` regardless of that liveness. The shared `leafIsLive` predicate compares the leaf's enclosure with active worktree groups. Its result gates working reads and selects which review record the entry addresses; it does not gate the review entry on a subject or a catalogue answer.
+
+`IntentReviewEntry` opens the repository/master/leaf task context with `review: {}` for a live leaf or `review: { historical: true }` otherwise. It uses its own comparison-summary read, rather than a `ChangeSetButton` or change-set line counters, and does not read the subject catalogue. The reviewer reads the catalogue through `useReviewNavigation` and `useReviewCatalogue`, whose request uses `intentReviewEntries`. The target carries identities rather than a filesystem path.
+
+The cockpit's takeover dispatch maps `historical` to the review surface's `history: 'recorded'` and forwards optional selectors. `ReviewSurface` carries that history into its navigation, read cycle and target key. Cockpit review targets initially mount this surface in place of `ChangeSetViewer`. The reviewer's All/Unexplained/Unknown changes destinations then mount `ChangeSetViewer` with a recorded comparison and held lane context, issuing comparison list and per-file diff requests. The reviewer remains mounted underneath, and Back removes the overlay and restores opener focus without a new review read. The viewer itself does not inspect the review field. The earlier live-admitted-candidate and no-subject/no-button admission wording remains distinct from this unconditional task-context entry. Opening a context is not reviewed-subject or acceptance authority; source inspection here does not certify the earlier gate wording as coherently realized.
+
+## Invariants And Boundaries
+
+- Change-set reads use the GET API and do not mutate the dashboard store; the viewer owns its display state. Persisted view flags do write their localStorage preferences.
+- The scope, master and leaf selectors retain distinct ranges. A master net and a committed leaf can be read without a live enclosure; working leaf reads require a live code worktree. Recorded committed endpoints are resolved from the contract, including its integrated endpoint when the closeout endpoint is absent, rather than substituting worktree HEAD.
+- Listed master pins are threaded into file reads. Currentness labels the listed range relative to the integrated tips; a superseded generation remains the requested generation.
+- Initial loading, list refusal and no-file selection have separate render paths. The standing distinction between unrecorded and measured-empty ranges is implemented in the counters control but is not enforced by the viewer's file-count-only empty-pane branch.
+- The master net is a single endpoint diff. Its adjacent leaf summaries and working-leaf navigation must not be described as equal measurements: the inspected implementation computes them over different ranges.
+- Panda CSS supplies this route's styles and React Aria `ToggleButton` supplies its view toggles. The standing no-CSS-animation / GSAP-or-Motion policy remains intent; the shared theme also states it, but this scoped source inspection does not establish its governing lifecycle authority.
+- The viewer is a cockpit takeover, not a mode-bar tab. Back clears the takeover; a mode switch or node open also clears it. Closing it reveals the underlying cockpit body, which is not necessarily an Operations view if another view opened the takeover.
+- Review dispatch belongs to the cockpit, review display and catalogue selection to `panels/review/`, and the task entry to `panels/detail-panel/`. The review dispatch field chooses no filesystem candidate path. Reviewer file destinations separately use the numbered recorded-comparison range; its filters and per-row badges consume held server lane facts rather than reclassifying hunks.
+
+## Non-Operative Metadata
+
+The preserved route metadata below is descriptive metadata, outside the operative promises above. Historical slice labels do not establish a current lifecycle status or executed qualification.
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| sourceRoute            | `dashboard/src/panels/changeset/`                |
+
+## Evidence
 - The optional marks and the marked pane. [1]
 - The two extracted view builders, each with its marks gutter. [2]
-
-## 260928-MIK-L31 The Diff Pane Can Show An Excerpt With Its File's Line Numbers
-
-`MIK-R31` reaches this route through one governed source. [`DiffPane.tsx`](DiffPane.tsx.md) gains two optional
-props for the reviewer's focused expression cards, both inert at their defaults: `firstLine` (each side's first line
-in its file, so the before and after editors number an excerpt from the file's own lines, through
-`file-viewer/lineNumbering.ts`'s `numberedFrom`) and `fit` (a content-sized host, the merge view capped at `32rem`,
-so the card rather than the pane scrolls). The change-set viewer passes neither and renders exactly as before. The
-card that uses them is `panels/review/ExpressionCards.tsx` (`ChangedExcerpt`: a changed range's real diff with
-`collapse={false}`).
-
 - The optional first lines and the content-sized host. [3]
 - The card that passes them. [4]
-
-## 260921-ICR-L32 The Change-Set Read's Refusal Now Reaches The Control That Asked
-
-One of this route's governed sources changed, and the change is about **what a caller can tell apart**. `panels/detail-panel/changeSetBar.tsx` (governed here because this route owns the change-set reading surface) now renders the refusal's own code and reason beside a state marker, with a read still in flight kept as its own state, while the transport half — `data/changeset.ts` carrying the refusal instead of clearing the counters — is recorded on the `dashboard/src/data` route. `ChangeSetViewer.tsx`, which this route is named for, is **byte-identical** on these bytes: the defect was in the live-leaf "committed" control's read, not in the viewer, and saying so is the point of a route record. The case that pins the rendering drives the click and asserts the rendered reason, so "the control is present" is not mistaken for "the control works" — the rule `D49` was recorded for.
-
-## 260921-ICR-L33 The Series View Shows What The Net Is Made Of
-
-`ICR-R33` reaches this route in three places, and the first is the one a reader would otherwise be
-misled by.
-
-**The series request now asks for the breakdown.** `ChangeSetViewer`'s `changesetListRequest` passes
-`includeLeaves: true` on the master branch (and `detail-panel/changeSetBar.tsx` does the same for its
-counters read), so `MasterChangeset.leaves` arrives carrying one row per leaf with its own `state` and
-its own counters. A payload that predates the breakdown — or a task/leaf payload, which has no `leaves`
-field at all — reads as no breakdown rather than an invented one (`seriesLeaves` keys on the field's
-presence).
-
-**The answer is rendered as attribution.** `LeafBreakdown` draws a `by leaf (N)` rail beneath the two
-changed-file lists (`changeset-leaves`, one `changeset-leaf-row` per leaf, each with a
-`changeset-leaf-counters` span). Each row is a button that hands the leaf id and the mode its own
-`state` implies to `onOpenLeaf`: `committed` for a landed leaf — the historical route that needs no live
-worktree — and `working` for a leaf still in flight, which is the range that exists for it. `Cockpit`
-supplies `onOpenLeaf` from its own `openChangeSet`, so the leaf opens in THIS takeover instead of a
-second screen.
-
-**What could not be shown is named.** `ChangeSetRefusal` renders the route's own refusal — code, HTTP
-status, reason, offending input and next action — under `data-review-state`/`data-review-code`, and
-`ChangeSetMainPane` names a change-set that measured empty in both halves instead of showing the
-pick-a-file backdrop. Both reuse the existing `ReviewFailure` vocabulary; no second decoder and no new
-route were added.
-
 - The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant. [5]
 - The rendered rail and its per-leaf counters, and the click that opens one leaf's own range. [6]
 - The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. [7]
 - The cockpit re-target that keeps the opened leaf inside this route's takeover. [8]
-
-## Purpose
-
-`changeset/` is the **Change-Set Viewer** (operations-integration slice L4): a task-scoped screen that
-shows what a task — or a series master (the NET diff between its declared endpoints, bound to the
-generation the list published) — changed, as an up-to-3-column diff. It is the
-frontend consumer of the L3 read-only change-set API (`GET /api/changeset/{task,file-diff,master}`,
-served by `serving/changeset.py`) and reuses the L2 File Viewer primitives (`FilePane`, `codemirrorTheme`,
-`langByExtension`, `usePersistedFlag`, `grammar/Markdown`). It is opened as a **takeover** from a
-`DetailPanel` change-set button: `CockpitShell` renders it full-bleed in place of the railed Operations
-body, and the screen's back link restores the rails.
-
-The viewer renders an explicit loading placeholder until its first change-set
-response and preserves request errors. Working leaf refreshes run the list and
-active-file requests together, then schedule the next cycle only after both
-settle; series requests carry the net's OWN per-leaf breakdown (`includeLeaves: true`, 260921-ICR-L33 /
-R33.2) and render it as a `by leaf (N)` rail, so the net total is attributable to the leaves it sums.
-(The pre-260921-ICR-L33 sentence here said the opposite — "series requests omit the unused per-leaf
-summary" — and was false at this candidate: it described the `includeLeaves: false` optimisation commit
-`a1521685` introduced, which R33.2 supersedes. The option itself is retained by `data/changeset.ts` and
-`serving/changeset.py` for any caller that genuinely renders only the net; no dashboard master reader
-is such a caller any more.)
-
-## Route Model
-
-- `ChangeSetViewer.tsx` — the screen. Column 1 splits into two rows — **changed code files** /
-  **changed onboarding files** (path + git status + `+ins/−del`, from `taskChangeset` or
-  `masterChangeset`); the active/hover row now wears the File-Viewer-tree **amber wash**
-  (`color-mix(in oklab, var(--amber) 20%/12%, transparent)`) so the selected file actually looks
-  selected (the old `background: bg` was invisible against the panel). Column 2 is the selected file's
-  diff (`ChangeSetPane`, always visible once a row is picked) — until then it shows a faint **siege-tank
-  empty-state backdrop** (`EmptyStateBackdrop`, `/assets/sc2-siege-tank-boomerang.mp4` at `opacity 0.18`)
-  behind the "Select a changed file" prompt; column 3 is the code↔sidecar partner, opened from a per-row
-  split affordance. A `scope`
-  (one active enclosure) drives the full per-file diff via `/api/changeset/file-diff`; a `master` drives
-  the **NET** series diff (`git diff <master-base> <selected-result>`, pinned to the listed generation
-  when the entry carries one) via the same endpoint's `master` param, so its
-  rows are equally inspectable (the per-leaf counter breakdown rides alongside, each row labelled
-  `committed`/`working`, and since 260921-ICR-L33 it is RENDERED: a `by leaf (N)` rail under the
-  changed-file lists, one row per leaf with both halves' file/insertion/deletion counts, whose click
-  opens that leaf's own range — `committed` for a landed leaf, `working` for one still in flight —
-  through `onOpenLeaf`, the hook the cockpit supplies so the reader stays in this takeover). The list response publishes the bound generation (four commits +
-  deterministic digest) with its currentness, rendered as a header caption, and every file
-  expansion carries it — so an opened entry stays bound after the branch advances. **L4a** adds the `leaf`
-  target (`+ mode`): a leaf's `committed` (landed) or `working` (uncommitted) change-set via the `leaf` +
-  `mode` selector on the same routes — equally per-file inspectable — with the header labelling the view
-  (`committed · <leaf>` / `working · <leaf> · uncommitted`). A counters header + a back link sit above the
-  `react-resizable-panels` columns.
-- `ChangeSetPane.tsx` — one diff column with a toolbar of persisted toggles (`usePersistedFlag`,
-  per-column `keyPrefix`): the task doc's three states map onto two flags — **change-set** (collapsed
-  diff) / **full-file + highlight** (uncollapsed diff) / **full-file + highlight-off** (the plain L2
-  `FilePane` on the after-content) — plus a split⇄inline flip for whichever diff shows. For **markdown**
-  files it also offers a **"rendered"** toggle (`changeset-rendered-toggle`) that swaps the raw diff for
-  a formatted `<Markdown>` view (in an `mdScroll` container), so a changed onboarding doc reads as nicely
-  here as in the file reader.
-- `DiffPane.tsx` — the one genuinely new CodeMirror primitive: a read-only `@codemirror/merge` pane.
-  `split` = `MergeView` (a=before, b=after, side by side); `inline` = `unifiedMergeView` over a single
-  `EditorView` (doc=after). It reuses `FilePane`'s exact read-only extension set (`lineNumbers` +
-  `EditorState.readOnly` + `EditorView.editable.of(false)` + `lineWrapping` + `codeTheme` + the lazy
-  `langExtension`) so tokens match across the plain and diff views; both are read-only (no revert/merge
-  controls). Built imperatively in an effect with a `disposed` guard against a late async language
-  resolve. Its `host` css also renders `.cm-changedText` as a full-height highlight **rectangle** (dark
-  muted green for additions, red for deletions) rather than `@codemirror/merge`'s default thin underline
-  (L4a) — dark fills, not the bright `--mint`/`--amber` tokens, so the light diff text stays legible.
-
-## Invariants And Boundaries
-
-- Read-only over the L3/L4a change-set API; no store mutation — the screen owns its own component state,
-  fed by the `data/changeset.ts` client. An enclosure `scope` diffs base→worktree; a `master` the NET
-  series range (`master_base → tip`); a `leaf` (`+ mode`) its `committed` (`base → code_commit`) or
-  `working` (`HEAD → worktree`) range — all equally per-file inspectable, and a `leaf`/`master` view needs
-  no live enclosure (it resolves off the contract), which is what lets the doc reader show it.
-- Panda CSS owns looks, React Aria owns behaviour (the toggles are React Aria `ToggleButton`); no CSS
-  animation (GSAP/Motion only — master invariant).
-- Opened as a Cockpit **takeover** (rails hidden, full-bleed), not a standing mode-bar tab; the back link
-  (or a mode-bar switch / a node `open()`) clears it and restores Operations. View-mode toggles persist
-  across file switches via `usePersistedFlag`.
-
-## Hot Path Summary
-
-The Change-Set Viewer: a DetailPanel change-set button opens a full-bleed takeover — column 1 changed
-code/onboarding rows (active row in an amber wash) over the L3 change-set API → column 2/3 a read-only
-CodeMirror `@codemirror/merge` diff (split/inline/full-file/highlight-off, persisted) reusing the L2
-FilePane, with a **rendered-markdown** toggle for `.md` files and a faint siege-tank empty-state backdrop
-until a file is picked; the back link restores the railed Operations view.
-
-## Evidence
-
-### Repo-Internal References
-
 - The L3 read-only change-set API this screen consumes. [9]
 - The same-origin client wrapping that API. [10]
 - The shell that hosts the takeover + restores the rails. [11]
 - The detail panel button + counters that open this screen. [12]
 - The reused read-only CodeMirror pane + theme + lang map. [13]
-
 - The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
 - The siege-tank empty-state backdrop shown until a file is picked. [15]
-
-- Comparison requests are built for the recorded trees [27]
-- One file's diff reads on the comparison's trees [28]
-- Lane filters apply over the held lane facts [29]
-## 260915-KS-L22 The Review Variant Beside The Change-Set Actions
-
-This route retains the review target variant as a cockpit dispatch field, not an extra
-change-set mode. Presence of `ChangeSetTarget.review` selects `ReviewSurface` at that entry;
-its optional selector names a recorded subject rather than a path. The reviewer's current
-All/Unexplained/Unknown changes destinations separately mount `ChangeSetViewer` with a recorded
-`comparison`, issuing comparison list and per-file diff requests. The original enclosure, master
-and leaf committed/working ranges retain their meanings; a review is no longer excluded from
-all change-set requests.
-
-`changeSetBar.tsx` renders the reviewer entry **beside** the working and committed actions and never
-in their place: a third `ChangeSetButton` labelled "Intent review" appears only when the bar's target
-is a live admitted curator candidate **and the bar holds a reviewed subject** (`live && subject`).
-That is the same liveness the working change-set action is gated on — now one extracted `leafIsLive`
-predicate, so the two entries cannot come to disagree about what "live" means — and they appear
-together.
-
-**Superseded 2026-09-20 (260915-KS-L45): the selector is no longer a prop, and the old prop gate was
-the reason the entry was unreachable.** The L22 increment gave `DocChangeSetBar` optional
-`selectorKind`/`selectorId` props and gated the entry on `live && selectorId`. No production caller ever
-supplied them: `taskReader.tsx` and the master header pass `kind`/`repo`/`master`/`leaf`/`onOpen` only,
-so the condition could not hold on any real navigation. The props are **gone**; a live leaf's subject
-is read from the server by `useReviewCatalogue`, which calls `intentReviewEntries(repo, master, leaf)`
-and keeps `result.entries?.[0]`. The gate is not weakened: a refusal, an empty entry list, a rejected
-promise and a non-live leaf all leave the subject `undefined`, so **no subject means no button** —
-which is the L22 semantics, now reached through a source that can actually produce a subject.
-
-What the entry carries is still an identity, not a path. Until `260921-ICR-L47` the target was
-`{ repo, master, leaf, review: { selectorKind, selectorId } }` with the subject taken from the server's
-catalogue. **Since L47 (`ICR-R24@v3`) the task entry carries no subject at all:** `IntentReviewEntry`
-opens `{ repo, master, leaf, review: {} }` (or `{ historical: true }` for a closed leaf), and the
-reviewer reads the catalogue and chooses the subject itself when it opens. The target type still admits
-`selectorKind`/`selectorId` for callers that name one. The browser never chooses the candidate dataset,
-because the resolution behind the route does that from the same task context. The screen that displays a
-review belongs to the `panels/review/` child route; this route owns the target variant and the entry
-that sets it, which is the boundary the two cards divide.
-
 - The target variant this route's type gained. [16]
-- The review field is a cockpit dispatch identity; an empty object opens the task-context review. Its current comparison-page actions can mount the change-set viewer and issue comparison requests. [17]
+- The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [17]
 - **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
 - **The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.** [19]
 - **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
 - **The one liveness predicate both gated entries share.** [21]
-
-## 260921-ICR-L13 The Series View Is Bound To Its Listed Generation
-
-This route's series view is now generation-bound. `ChangeSetTarget` gained an optional
-`generation?: MasterNetPins` — the exact recorded endpoints a listing published; empty /
-absent means the declared integrated result. The viewer threads it into the list request
-(a pinned list reopens the recorded net after the branch advances) and — via the list
-response's own `generation`, which is newer than the entry's — into every file expansion, so
-an opened entry stays bound after the branch advances. The header shows the bound generation
-as a caption: short digest + currentness + the one scope this view ever serves. The viewer
-implements no catalogue or drill-down; that is R24's obligation on top of what this view
-exposes (`leaves[].state`, pinned params, per-view `generation`). The entry button that opens
-the view (`ChangeSetButton`) carries the published generation into the target for master nets.
-
 - **The generation the open series view is bound to, and the caption that renders it.** [22]
 - **The entry button threading the published generation into the viewer target.** [23]
-
-## 260921-ICR-L2 The Review Target May Carry No Subject
-
-**Route meaning changed, narrowly: the change-set viewer's `ChangeSetTarget.review` field may now carry
-no selector.** Its type is `{selectorKind?: ReviewSelectorKind; selectorId?: string}` and the viewer's
-own behaviour is unchanged — it reads the field only to decide whether the target is a review at all, and
-the cockpit's takeover dispatch is what consumes the selector — but the field's contract is now stated
-where it is declared: its **presence** marks a review target, and an **empty object** is the task-context
-entry, the review opened from the task alone that lists the complete source inventory. That is the shape
-a task with no recorded invariant still has, and it is why the entry is no longer gated on a subject.
-
 - **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [24]
 - The entry that produces the empty target for a live leaf the server offers no subject for. [25]
 - The surface that receives it and asks for the task's own review. [26]
+- Comparison requests are built for the recorded trees [27]
+- One file's diff reads on the comparison's trees [28]
+- Lane filters apply over the held lane facts [29]
 
-## 260921-ICR-L12 The Change-Set Target Carries The Record It Is Read From
+- Persisted flags use component state and localStorage. [30]
+- Shared numbering, theme and language construction. [31]
+- No-mark gutters, collapsed-run expansion and marked-pane construction. [32]
+- Diff highlight styling, fitting and effect teardown. [33]
+- Card Full file and expression excerpts pass marks; the former lane-window owner is retired. [34]
+- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
+- Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]
+- Master generation digest, selection and currentness use declared or pinned endpoint pairs. [37]
+- The counters control distinguishes loading, unrecorded, empty and failure and discloses the reason. [38]
+- The existing refusal case checks the reason and clicks the control; no execution is asserted. [39]
+- Leaf entry construction gates working reads, not Intent Review. [40]
+- Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover. [41]
+- The reviewer catalogue remains task-bound; navigation threads recorded history and current generation. [42]
 
-`260921-ICR-L12` (`ICR-R12@v1`) adds one optional field to this route's `ChangeSetTarget.review`:
-`historical?: boolean`. Absent is the live candidate — what every ordinary entry asks for — and `true`
-is the leaf's own **recorded comparison**, the entry a closed leaf offers because its worktree is gone
-and the durable generation is the only comparison there is.
-
-**The field is part of the target's identity, not a decoration on it.** It travels from the change-set
-bar through the takeover to `ReviewSurface`, which passes it to the review client and keys its state on
-it, so the record the reader chose is the record the server is asked for. No filesystem path is added to
-any target in any branch: the browser names a record and the server owns which comparison that record
-is, exactly as it already owned which candidate the live read resolves.
-
-The committed and working change-set actions themselves are unchanged — this route's own resolution of
-a series or a leaf change-set reads nothing about records — and the change is additive for every
-existing caller.
-The change-set viewer opens on a review comparison: `comparison=<number>` names the leaf's recorded comparison (code `code_base.tree` to `code_candidate.tree`; memory limited to `knowledge/` and `onboarding/`), answered in the leaf view's shape with `mode: "comparison"`. `comparisonChangeset` builds the request; `diffRequestFor` reads one file's diff on the recorded trees; `filteredChangeSet` applies the All/Unexplained/Unknown-attribution filter with per-row badges. The header carries the back control, the comparison number and the two code trees; the opener's selection, scroll and focus are restored on return with no new request. At 40rem and narrower the lists stack above the diff.
+- Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks. [43]
+- Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [44]

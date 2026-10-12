@@ -15,6 +15,42 @@
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:c37182949e17b5f7a6e70a34bd4a7a9090ca2bf07715f6c84d52a3e2cf7ccba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_preparation_command"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:adce9ec17a008b47c2ac34906da9a2e3ca0fe29564469f672bb0c5c4956ba636",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_preparation_command"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:4dd7bb68e0fc5b30d9d5195f70ce9ddd08b7734aa5a2d97bf41a9dd67994ea23",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_prepared_output"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -28,6 +64,18 @@
             "locator": {
               "kind": "symbol",
               "name": "PreparedMemoryOutputs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:8b7d02094a03fcf486be16f9fa460ebfd9f51ac3c045df0cd7eee3b4345eb28a",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_outputs"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
           },
@@ -53,7 +101,7 @@
       ]
     },
     "4": {
-      "note": "Final publication proves and publishes the pair, then refreshes the cache.",
+      "note": "Final publication proves and publishes the pair, then refreshes the cache. Publication intent retains the original prestate; the cache helper reports availability internally, while the closed-result payload omits that status.",
       "targets": [
         {
           "anchor": {
@@ -76,6 +124,30 @@
               "name": "_publication_intent"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:e5b2f8c13b8bbf71e46b07a0b22d55e32b4875c6c4da3d88a414de5f06d0d882",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
           "kind": "code"
         }

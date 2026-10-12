@@ -10,12 +10,316 @@
         }
       ]
     },
+    "10": {
+      "note": "Empty live lanes and selected-child total omission are explicit\n\nAnchor: TimelineSection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:5a582b026dcb0658d8dab908d8f0b2e9aabf2c7e6b30e83dd03d82fb35cff3c7",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Feed ordinal, conditional total, roving focus and grouped rendering\n\nAnchor: FeedRow",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4b830eaa39f3271cc9ad094bdd09274411787",
+            "content": "sha256:2ad692c4dc9249467853c222474658f5d833840a2f836d6926203436d4e492d8",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Focus/last-row pinning and active scroll-element attachment\n\nAnchor: useTimelineVirtualizer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd36f8c02c406566e9a907d8eccdbb836262b241",
+            "content": "sha256:fe61df3d0658cdbac49d663a476631cb32a023a764879bcde65b76cc0843ec41",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Active selection exempts Home/End specifically\n\nAnchor: handleTimelineKeyDown",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd36f8c02c406566e9a907d8eccdbb836262b241",
+            "content": "sha256:d1bab436d6054ba2a2862a781c8ade5f67d9bffac5ec2193e1b95bff0fd2e8c0",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Restore waits for usable geometry and bounded driver expiry clears its arm\n\nAnchor: useRestoreApply / useRestoreDriver",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "692444c6a38550547985a0e88c276030ab298ec6",
+            "content": "sha256:099f07866f37d37fe415ccaec4fdbced7f3442c52f28d78af54945b22f8d30ef",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineRestore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Named input listeners clear restore without a local isTrusted predicate\n\nAnchor: useTrustedInput",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63791e5b2885d575b64d0dc1ae789c053af759dc",
+            "content": "sha256:876835bddc067143bcfd3cb4d0a269234e93ebc28199ef40cc939c7c519abb2e",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Prepend helper aligns the saved row to start; measurement anchor is separate\n\nAnchor: usePrependAnchor / useMeasureAnchor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab6d449ee288e2277ead91177ce3ab82146a105",
+            "content": "sha256:ae015ba4168e02a48aa1d27ff4ade6171d762a5fb8a63c52e5bc6c6483bdfb29",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFollow.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Live thinking updates and finalization differ from empty-row opening\n\nAnchor: handleLiveOpen / handleLiveUpdate / handleLiveFinalize",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51155620872f48959d83b080cd169f25ac56d27e",
+            "content": "sha256:84739e828659560ffa0ce6be74e65c2da9c6e143766d84dd7b735e41ddeeb38f",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/collapse.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Child history success cache is bounded and concurrent requests singleflight\n\nAnchor: markAgentHistoryHydrated / hydrateAgentConversation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:3c575bf86aee9a20d4ee759e34104954509fdb670eb805dee18a11be228cf4a6",
+            "locator": {
+              "end": 833,
+              "kind": "line_range",
+              "start": 725
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Correlation includes newest any-turn fallback; interrupt is attempt-and-reflect\n\nAnchor: correlatedTurnId / interruptControlState / useConversationInterrupt",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:be264b9d6f6aa5b43f942ac5d80bc4e9d3f894a6b5a244ee3c24bc1c887a98fb",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:63c625ebfb0067deeb0263143ff324194cc02d02ad6b01caa78b49855956bdc9",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:f47f6df429fff4cb815551003964d5f26cae8ffbf8a9ec53a1ed1077a2d9b500",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The sibling in-stage history browser.\n\nAnchor: `# dashboard/src/panels/session-cockpit/conversation-library/ — In-Stage History Browser Overview`",
       "targets": [
         {
           "kind": "unresolved",
           "text": "onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.md:1-173"
+        }
+      ]
+    },
+    "20": {
+      "note": "Controlled-seat Stop belongs in the composer footer\n\nAnchor: StopControl / ComposerFooter",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:1501b8cb979fe470db4da824645cb07e5b19da756c3def2bea9392dba04e8f3b",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "dashboard/src/panels/sessionComposerParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Closed diagnostics have no PTY children and are inert/aria-hidden\n\nAnchor: TerminalDiagnosticsDrawer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1800351917ad55d654c89f5de3239ab0852cd2",
+            "content": "sha256:1feda8dcd44e8b1d5cf03c3eabdf00f6e2be7e6a521e48e51dade89346cd47bd",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Markdown overflow styling does not itself attach the inherited labeled region\n\nAnchor: MarkdownBlockImpl / prose",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:cde8ae38d97033bd6d19583bc30cf689d5a3ee8fe21fa83561be3434692959ed",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:9a5efb8143326cd5ba973600a84f3f9983430c6784b9faec45833d2c7a9f24cc",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Local well is padded/full-width; latest press styling includes a transition\n\nAnchor: viewport / feedInner / latestChip",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:91d054e84f20ce85cdb4c1c8580b0cd12491d32149e97ee595d09679ce656750",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:10c8f0f9ac8d6da88df9ab9d0081a47fd9c84292b655a7f2636021472d822eac",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -113,6 +417,42 @@
             "path": "dashboard/src/test/wireFixtureGuard.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Surface focus is roster-validated; visible effective child focus drives acquisition\n\nAnchor: useAgentFocus",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:8278b0610f2d5c0a8353ff08aa43fefaecb6cd99f04751f4261f1e0b2e0a331c",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Turn/process and stream-phase announcements use different gates\n\nAnchor: useSurfaceAnnouncers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:dc5fea4bb6c5bdcfbb4707183362285d556643e3c3c7b6a82e22df2d5ef41b15",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

@@ -31,7 +31,7 @@
       ]
     },
     "10": {
-      "note": "The five-fact settings parse.",
+      "note": "The five-fact settings parse accepts an optional non-selecting version key.",
       "targets": [
         {
           "anchor": {
@@ -47,8 +47,360 @@
         }
       ]
     },
+    "11": {
+      "note": "Checkout modes, leaf-local roots and daemon-role narrowing define the execution boundary.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:a5bb0ca380ecd9fca443a85db794314cc3970aba56fb14b2a66ed822ee19e34e",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Gate policy is human-first and rejects non-human delegation of pinned kinds; gate vocabulary is kernel-owned.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/gate_policy.py`; `mcp/src/agents_remember/kernel/primitives/gate_vocab.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:d9d3b2373fafad9e4c38cd21eba75d9b537f8fa099f20ecfcefe90d740d6aa97",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ece7adf1ca7541bae7cac4eb8a6a45e695916b",
+            "content": "sha256:161f3a013f27909f6040efee9537fe68c158d8e69c9e5fb5bbaaa9d831648133",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_vocab.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Command capture, snapshot removal, observer paths and provider naming are shared primitive operations.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/command_capture.py`; `mcp/src/agents_remember/kernel/primitives/drift_snapshot.py`; `mcp/src/agents_remember/kernel/primitives/observer_paths.py`; `mcp/src/agents_remember/kernel/primitives/identity.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ddc8d8fd96f4582bc44c9cb2f7792804486b401",
+            "content": "sha256:cc0cc0ec3a47ee0f13d1af4b97b4a3f1a38ce83a805fe2c9835ac7c92131e46c",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/command_capture.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:228116ac9c4a7d4413ef06877ae9d19c265ce9e1414bfdbf2b5dec4f5b73a288",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "content": "sha256:996d3e4a610cb2b7e5f82bd701a6537597a4689d2856f7b30ab95ec2fe522e25",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:4926457f6553d0262a72b1e9261d2890c451e9b8c8ec2a3c31eca4732855be82",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Backoff, opt-in cap planning, degradation parsing, report retention/redaction and metadata-or-source version resolution have explicit primitive owners.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/kernel/primitives/memory_cap.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/kernel/primitives/tool_reports.py`; `mcp/src/agents_remember/kernel/primitives/version.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:49dc0ba9a4d786080bea1f5132912b9ce5a880ba2039cc3abace299ee96cf4d2",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "471b48f301d3bd2da84048566dd7b8840efc9b56",
+            "content": "sha256:1a615312493f81bf519f95e6142623ba9e7e5c2eebf8c3b1c36b30c0debb630e",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/memory_cap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:f83cf50f2ead77d7527b6ce79d9a48f72185c6adc140038550016b9838771b94",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+            "content": "sha256:c12d83e46b9e8a36f475aefdc2dda5d059ca7a1a9db7c82c418f442163967d90",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+            "content": "sha256:27d3ca453ff9336b9cbc0026b85ade58cc0aa2731dae0c68b2ae4d3b7fd9a64b",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py`; `mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py`; `mcp/src/agents_remember/kernel/primitives/user_settings_location.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eb1a2218939c31bb2b99c19dc3dab0718e15c3d",
+            "content": "sha256:5c128394ca96d491a6e888891f19a436262e2933cc3023aaa3db098841d83dd5",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80bad09d63104a1029e6f580b1122a747f58a7bf",
+            "content": "sha256:fe600cb7ef3c4954de35b149342bfa412aad97db5a5742c98823c7d5c6a27005",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dda14b3df58e377daa2411ff9b168ecb1ad261e1",
+            "content": "sha256:66ac6af76a4f5215d782d29dc6ed66a55100a9d176750240a3e4ac61131e7430",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/user_settings_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary.\n\nAnchor: `mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e49c5e5ef8960a083a730b80307802abfbbd0a5",
+            "content": "sha256:4cea152866dd96a913d11c7dc3a4ce41f4e9648f5922ea33a2f1b4c0278d7078",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections.\n\nAnchor: `mcp/src/agents_remember/cli/paseo_launch.py`; `mcp/src/agents_remember/cli/paseo_catalog.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+            "content": "sha256:f380724f1566b42dc0be413d4c2ac25206fecf44b211bd2f9825ab415d58f586",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:237e10da6dc048ce0f8cc4613114fedd919794ce0ed3817d34006c080d03e732",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 537
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:5a9e912f65d9995e4a1b2ecb9bf4929bb6b47d1fcff614de34becdddf96acf7d",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:09d603890c21c6d4207161e5c796fc05705fb1b5adc821f07e4c2ac87870c22b",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:20831103b08a25d8d9c4f269772d31f981789a8d7538ca38d4f6444eb7e5c00b",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 566
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Profile loading and certification execution remain downstream consumers of the configured profile reference.\n\nAnchor: `mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py`; `mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:91b3b34360b258575f58166d4dc41d06b5a1d9626679c09c30bfb9735402b2bb",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:1c40c9f959d801b9d8ea7b03bbb9d935ec32e1279d7d58defffbe1d0825f6eec",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "The layering rail enforces the total order this route anchors.",
+      "note": "The layering contract loader establishes package ranks; the checker enforces their order on imports between distinct packages.\n\nAnchor: `mcp/test_support/agents_remember_test_support/code_quality/layering.py`",
       "targets": [
         {
           "anchor": {
@@ -61,11 +413,37 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:ea8d0f1565d524f10c464d3d70e7de9d4ddf38430528956ceb125b376a64a0ed",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:fa0a0418aedc6bf3f21c1355afa1d21e2a827d3e6c9b9d45e565e62973dc82e6",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Structural gate models import the producer-owned gate vocabulary from kernel.\n\nAnchor: \"from agents_remember.kernel.primitives.gate_vocab import (\"",
+      "note": "Structural gate models import the producer-owned gate vocabulary from kernel.\n\nAnchor: `mcp/src/agents_remember/models/structural/gates.py`",
       "targets": [
         {
           "anchor": {
@@ -83,7 +461,7 @@
       ]
     },
     "4": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py`",
       "targets": [
         {
           "anchor": {
@@ -99,12 +477,12 @@
       ]
     },
     "5": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Runtime configuration owns repository/profile parsing and reads shared host authority per use.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/runtime_config.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-            "content": "sha256:dcfdb2039c30a8bd54045893b0bfc1ec6489d61661213a396c96de67bc3be209",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "content": "sha256:26e0895d292793e0f3fc3408e70a20faa286eb96f72b26aaab3cfc78e0c269a7",
             "locator": {
               "kind": "file"
             },
@@ -115,12 +493,12 @@
       ]
     },
     "6": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import.\n\nAnchor: `mcp/src/agents_remember/kernel/_agentic_settings_core.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "2295c698608e6e8910ee28c1db3c5296dcf4d6a4",
-            "content": "sha256:baf763499075984ec4f86d348a0dc21c7c961acd80b295c31b0a06ca98918cc9",
+            "blob": "308164ec1fe3322d0b4a5a269cb74d351d714d22",
+            "content": "sha256:0e26822b02b5e8a2a23218265fc65791b625ff4da1b3c3844bdbfefdcfe1b1f7",
             "locator": {
               "kind": "file"
             },
@@ -131,12 +509,12 @@
       ]
     },
     "7": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Role settings parsers shape-check independent fields; quality-gate caps remain optional.\n\nAnchor: `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
-            "content": "sha256:505e89ccfdb6663753c79ebd5efaeeb6555082593ea871b50aa5513f17cb4691",
+            "blob": "8ee8f140736591d96348a973307c3b7a7fda4e3b",
+            "content": "sha256:a79c87af99ec4830005708c329bdef0c312ee3cf96da1c78215622af10dd9f6a",
             "locator": {
               "kind": "file"
             },
@@ -147,7 +525,7 @@
       ]
     },
     "8": {
-      "note": "The shared authority reader.",
+      "note": "The shared authority reader reads the user's host block on each use.",
       "targets": [
         {
           "anchor": {
@@ -164,7 +542,7 @@
       ]
     },
     "9": {
-      "note": "The session environment filter.",
+      "note": "The session environment filter delegates to named-variable and prefix predicates.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/host_environment.py`",
       "targets": [
         {
           "anchor": {
@@ -173,6 +551,19 @@
             "locator": {
               "kind": "symbol",
               "name": "host_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39638c80596020e507e49021c3300935b8be9281",
+            "content": "sha256:9355dd879889d6edb099718cb3a080fd530372f73be27d14b0cd707857b23e71",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 13
             },
             "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py"
           },

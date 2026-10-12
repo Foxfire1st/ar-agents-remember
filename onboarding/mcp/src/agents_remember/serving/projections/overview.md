@@ -6,43 +6,73 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 
-## Honest final landing observation
-
-The landing refresher observes only open landing arcs and one eligible exact active-to-completed transition lacking a matching valid current final. Startup-completed/abandoned history stays remote-probe-free, and a missing/corrupt/failed final stays honestly missing rather than waiting for recurring repair. Existing valid finals/manual exact-current reads and open cadence/concurrency remain.
-
 ## What This Area Is
 
-### 260731-EFA-L23 Route Delta
-
-L23 makes the runtime enclosure reader attach the latest durable lifecycle-operation projection. The projection exposes task-addressed progress and report evidence while keeping worker/process resume identities private.
-
-The projection file-surface readers moved by 260731-EFA-L9 from `observer/` into the serving
-tree (layering cleanup: the serving projection tick owns these readers, and observer stays the
-write side of the observable-lifecycle substrate). The route reads provider state, enclosure
-contracts, drift snapshots, task documents, engine-room facts, and the landing/ledger surfaces,
-and drives the atomic projection write.
+This area reads producing subsystems' file surfaces and assembles inputs for the workspace projection. It covers providers, enclosure contracts, task documents, engine-process facts, drift snapshots, landing observations, ledger and analytical surfaces. The serving tick combines these inputs with lifecycle logs, reduces them through the observer APIs, and publishes projection files. Observer event mutation remains with its write-side owner; serving may consume the lower observer projection and reducer APIs.
 
 ## Hot Path Summary
 
-`snapshots.py` is the file-surface reader hub (`read_providers`, `read_enclosures`,
-engine-process facts); `projection_store.py::project_and_write` ties reading, reduction, and the
-atomic write together; `projection_inputs.py` retains bounded domain inputs; `landing_state.py`
-owns bounded background landing observation; `contract_snapshot.py` caches one immutable
-enclosure snapshot per task-domain refresh, retaining it on unaffected ticks. `paths.py` resolves the observer store roots (shared with the
-observer write side through `kernel/primitives/observer_paths.py`).
+`snapshots.py` supplies provider readers and re-exports the split readers. `projection_inputs.py` refreshes retained inputs by domain; `contract_snapshot.py` builds one immutable enclosure snapshot for each task refresh. `landing_state.py` observes eligible landing arcs in the background. `projection_store.py::project_and_write` connects input reading, reduction and publication. `paths.py` resolves serving's observer store paths locally; the kernel has equivalent path definitions, but this module is not currently a wrapper around them.
+
+## Construction And Data Flow
+
+The task-document reader computes whole counts before bounded preview selection (six header notes,
+five decisions and twenty-five review findings); the full-body mode retains complete strings/collections.
+Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
+status, step/sub-step note/outcome and review changes participate in body revision identity. These
+read-only projection/display additions preserve the bounded canonical enumeration and graph-only
+on-demand joins below; they create no task, acceptance or scheduling authority.
+
+Full body requests still avoid canonical task-corpus enumeration and read only graph-named masters. External direct-grant annotation adds an explicit task-addressed grant census and retained legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. Summary/series canonical enumeration and ordering remain unchanged.
+
+The serving projector passes its retained input state, provider refresher and landing reader into `project_and_write`. Refresh kinds distinguish full refreshes, named domain changes and heartbeats. Domain retention avoids re-reading every surface for unrelated changes; closeout queues are nevertheless read on every input pass.
+
+Task refresh constructs contracts, enclosures, task documents and series in local variables before assigning the four retained values. `_task_refresh_pending` is set before construction and cleared after assignment. If construction raises, the previous published task-domain values remain and the pending flag permits another attempt, including on a heartbeat. Contract construction reuses successful parses only while mtime, size and ctime match, removes entries outside the live enumeration, and publishes a read-only mapping.
+
+Runtime readers copy inbox entry, subject and owner task references and expectation task references as canonical `TaskDocumentRef` values. Enclosures include the lifecycle-operation projection returned by the durable operation reader. That reader prefers the newest active operation when any exist, otherwise the newest available record; it may instead return a journal-read decision or no safely projectable operation. Durable operation state remains the authority. Keeping worker and resume identities private remains standing intent; the complete downstream field exclusion was not established in this bounded review.
+
+Task JSON supplies the task-document and series surfaces. The always-on reader projects every valid canonical document without a task-document count window, while omitting full reader bodies. Its master join table indexes every valid master payload in that set. The on-demand body reader opens the requested document and builds a join table only for masters named by its execution graph; it does not enumerate the canonical document corpus or use the shared task payload cache.
+
+The canonical enumeration lists repository folders, task folders and their direct JSON entries. It excludes archive and enclosure paths and does not descend into notes. Graph-master lookup still lists repository and task directories before selecting the named task folders; its JSON reads follow the graph references rather than all documents. Equality with an earlier recursive glob is not a general promise: the current source explicitly describes excluding historical copies below notes.
+
+Task projection carries explicit execution nature, typed `SubTaskRef.masterRef`, seats, persisted execution graph, derived waves and a render-ready execution graph view. The serving seam resolves graph endpoints, titles and master facts for the primitives-only graph-view builder. Documents without a graph project no graph view. Reader-body and graph fields are constructed separately. Body revision includes subtask links, discarded rows, seats, execution nature and graph, so those edits invalidate a fetched body.
+
+Approved requirement packet references and acceptance-obligation questions become readable strings in reader bodies. The revision digest retains their full typed JSON values. Master task and series projections also expose discarded-unstarted rows and counts, including reason, timestamp and proof; discarded rows participate in body revision identity.
+
+The closeout reader strictly validates each sprint payload, captures its current projection source and reads the effective disposable queue. It projects service condition, source classification, fingerprint, problems, and member order and reasons. The source capture supports graph and graph-less modes. The effective store returns invalid-empty for unreadable or mismatched state. Strictly invalid sprint payloads are skipped before source capture, so the invalid-empty promise applies after that admission boundary. Task-history and closeout projection do not rewrite their source authorities.
+
+Landing observation has its own enclosure walk and concurrency limit. It observes open landing arcs and one eligible finishing attempt for an exact key already observed while open. Startup-completed and abandoned contracts do not enter remote observation merely to repair history. Completed contracts serve trusted current finals; missing, corrupt, stale or unsuccessful finals remain explicitly missing rather than entering recurring historical repair. After a successful atomic final-file replacement, the writer evicts the parsed-final cache entry for that exact path, even if mtime is unchanged. Failed writes retain the warning path.
+
+`projection_store.py` reads lifecycle logs and gathers analytical surfaces, passes inputs to the pure workspace reducer, and writes `latest-state.json` and `latest-metrics.json`. Each file is published through the atomic-write primitive separately; these two writes are not one transaction.
 
 ## What Belongs Here
 
 | Path | Role |
 | --- | --- |
-| `paths.py` | Observer store-root resolution (thin wrapper over kernel primitives). |
+| `paths.py` | Observer store-root resolution using local definitions equivalent to kernel primitives. |
 | `contract_snapshot.py` | One immutable member-enclosure snapshot per task-domain refresh. |
-| `snapshots.py` | File-surface readers (providers, enclosures, analytical surfaces). |
-| `snapshots_impl/` | Split reader implementations: analytics, runtime/enclosures, task docs, shared helpers. |
+| `snapshots.py` | File-surface readers and the public re-export surface. |
+| `snapshots_impl/` | Split reader implementations: analytics, runtime/enclosures, task docs, closeout queues and shared helpers. |
 | `drift_snapshots.py` | Projection-side drift-snapshot pruning policy. |
 | `landing_state.py` | Bounded background landing observation and publication. |
-| `projection_inputs.py` | Domain-invalidated bounded projection inputs. |
-| `projection_store.py` | Log/snapshot reading and atomic projection writes. |
+| `projection_inputs.py` | Domain-invalidated retained projection inputs. |
+| `projection_store.py` | Log/snapshot reading and per-file atomic projection writes. |
+
+## Structures Found Here
+
+- Reader hub and split implementations, using producing subsystems' parsers where provided and local JSON/projection parsing where required.
+- Immutable contract snapshots, live-set parse caching and bounded landing observation.
+- Retained input state with full, change and heartbeat refresh kinds.
+- Projection publication through `latest-state.json` and `latest-metrics.json`.
+
+## Local Invariants And Boundaries
+
+- Enclosure enumeration excludes notes and archives. Snapshot construction records foreign contracts in `skipped` and excludes them from the mapping and parse cache. Foreign membership is checked against the filesystem-resolved repository tasks folder determined by the enclosure's position. Landing observation applies the same exclusion independently and names it in a warning.
+- A projection reader must not erase a durable task document merely because its schema does not know a field. The task reader retries validation after removing exactly the addressed `extra_forbidden` paths, with a fixed pass bound. Genuine invalidity and unaddressable validation locations remain fail-closed. The closeout reader still has a separate strict-validation boundary. Gate projection uses the tolerant store read; the enforcement fold's strict read remains distinct.
+- A request-path reader should cost what it names rather than read every document in the corpus. The body reader opens the requested document and graph-named masters; the canonical background pass lists only the three task levels. This adds no task-document index or persistent store. The always-on readers retain their existing shared payload cache; the HTTP body reader does not mutate it.
+- Atomic publication prevents a partially written individual projection file from being exposed. It does not promise a jointly atomic state/metrics pair.
+- Observer event mutation belongs to the write-side owner. This route is not wholly free of durable housekeeping: input refresh prunes expired lifecycle logs and orphaned drift snapshots, inbox reading compacts its store, and projection publication prunes attention dismissals. These current calls must be distinguished from the standing ownership intent.
+- Kernel ownership of shared path conventions remains the stated intent. Serving's local path definitions currently duplicate those conventions; the overview does not endorse that discrepancy as intended architecture.
 
 ## What Does Not Belong Here
 
@@ -52,25 +82,7 @@ observer write side through `kernel/primitives/observer_paths.py`).
 | Wire contracts and control services | `models/conversations/`, `serving/conversation/` |
 | Drift-snapshot path primitives | `kernel/primitives/drift_snapshot.py` |
 
-## Structures Found Here
-
-- File-surface reader hub and split reader implementations.
-- Immutable contract-snapshot cache and bounded landing observation.
-- Projection input state with domain refresh kinds.
-- Atomic projection store with `latest-state.json`/`latest-metrics.json`.
-
-## Operating Model
-
-1. The serving projection tick enumerates which domain changed (`projection_inputs.py`).
-2. Readers (`snapshots.py`, `snapshots_impl/`) read the producing subsystems' own parsers and project
-   inbox entry/subject/owner and expectation task references as canonical `TaskDocumentRef` values;
-   they do not synthesize an agent-visible leaf-address field. The task-document reader likewise
-   copies explicit master nature and sprint graph, derives waves from that validated graph, and
-   includes those cells in body-revision identity so topology changes invalidate the projection.
-   The always-on readers enumerate the canonical task corpus through one bounded walk
-   (`snapshots_impl/_common.py::_iter_task_json`, three listed levels). The on-demand single-document
-   body read (`/api/task-document`) never enumerates it.
-3. `project_and_write` ties reading, pure reduction, and the atomic write together.
+The boundary table is retained as existing route metadata. In current source, drift path resolution imports kernel observer-path primitives, while this route also implements snapshot-file removal locally; the table alone does not establish exclusive implementation ownership.
 
 ## Load-Bearing Files
 
@@ -81,50 +93,15 @@ observer write side through `kernel/primitives/observer_paths.py`).
 | `contract_snapshot.py` | cache | Stat-identity parse reuse and one shared snapshot on task refresh. | covered |
 | `landing_state.py` | background observer | Bounded landing facts without blocking the tick. | covered |
 
-## Local Invariants And Traps
+## How To Use This Area
 
-- Readers reuse the producing subsystem's own parser rather than re-parsing.
-- Enclosure enumeration prunes notes and archives. Snapshot construction names parsed contracts
-  whose task artifact resolves outside the positional repository tasks folder in `skipped`, and
-  does not admit them to the immutable mapping or parse cache. Landing observation owns a separate
-  pass and names the same foreign exclusion in its warning; it does not share the snapshot cache.
-- **A projection reader must not delete durable truth over one unknown field.** These readers consume
-  documents written by other, independently versioned processes, so an unknown key is a version skew,
-  not corruption: the reader tolerates it (260913-LCA-L10, `snapshots_impl/_task_documents.py`), while
-  every genuine invalidity still withholds the document. The strict end of that split stays with
-  authoring and with the enforcement folds, exactly as `snapshots_impl/_runtime.py:121-123` states it.
-- Projection writes are atomic; readers never observe half-written state.
-- **A request-path reader must cost what it names, not what the corpus holds.** The projector's pass
-  and the HTTP body read run in one process and compete for one GIL, so a corpus-sized read on either
-  side slows the other (260921-ICR-L42: review R1 attributed almost all of the browser's 3.865 s leaf read to
-  three concurrent whole-corpus enumerations). The body read opens only the requested document and the masters its
-  sprint graph names. The always-on enumeration lists only `tasks/<repository>/<task>/` and returns
-  exactly the list the earlier recursive glob did. Neither adds an index, persistent cache or store.
-- Readers may consume observer projection/reducer APIs; observer event mutation remains
-  with its write-side owner. Layering permits serving to consume lower observer APIs.
+When changing a projection reader, read this overview and the owning reader's sidecar, preserve the input/refresh discipline in `projection_inputs.py`, and verify the change through the applicable projection, observer and structural checks. This is guidance for future work, not a report of checks executed for this proposal.
 
-## Grant census and bounded task reads
+## Metadata And Verification Limits
 
-Full body requests still avoid canonical task-corpus enumeration and read only graph-named masters. External direct-grant annotation adds an explicit task-addressed grant census and retained legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. Summary/series canonical enumeration and ordering remain unchanged.
+The coverage labels below are preserved onboarding metadata, not current lifecycle, acceptance or test-execution promises. This review establishes no task status or lifecycle acceptance authority.
 
-## Evidence
-
-### Repo-Internal References
-
-- The observer store-root conventions are kernel-owned. [1]
-- The projection tick consumes these readers. [2]
-
-### Cross-Repo References
-
-No cross-repository implementation participates.
-
-No meaningful cross-repo references found.
-
-### Docs References
-
-No Domain Documentation source is configured.
-
-No configured domain documentation was available.
+Historical route-move attribution, dashboard-edit attribution, the reported 3.865-second contention diagnosis, the 561-body/15-probe equivalence check, the former 250-document limit's measured irrelevance, and installed-build confirmation assignments cannot be established from these current source owners alone. They are historical claims awaiting parent adjudication, not executed evidence here. No cross-repository implementation was examined; the former blanket absence claim is not established by this bounded account.
 
 ## File-Level Onboarding Map
 
@@ -146,113 +123,20 @@ No configured domain documentation was available.
 
 None.
 
-## How To Use This Area
-
-When changing a projection reader:
-
-1. Read this overview and the owning reader's sidecar.
-2. Keep the domain input/refresh discipline in `projection_inputs.py`.
-3. Prove the change through the projection/observer suites and the structural-coverage suite.
-
-## L23 Final Candidate Route Disposition
-
-The projection route attaches the newest validated lifecycle operation to its owning enclosure and
-serves bounded phase, timing, command, report, and recovery guidance. Durable store state remains
-authority; projection never exposes worker or resume identity.
-
-## Summary Windows And Full-Body Identity
-
-The task-document reader computes whole counts before bounded preview selection (six header notes,
-five decisions and twenty-five review findings); the full-body mode retains complete strings/collections.
-Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
-status, step/sub-step note/outcome and review changes participate in body revision identity. These
-read-only projection/display additions preserve the bounded canonical enumeration and graph-only
-on-demand joins below; they create no task, acceptance or scheduling authority.
-
-## 260815-DAG-L14 Projection Route
-
-`snapshots_impl/_task_documents.py` passes `SubTaskRef.masterRef` through and projects
-`doc.seats` as `TaskSeatNode`; the body revision covers sprint structure.
+## Evidence
 
 
-## 260815-DAG-L12 Route Impact
-
-The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes every valid master payload in the projected set for the summary reader — no bound evicts a document, so all of them are indexed (260916-TDPU; it formerly indexed only the bounded payload window); the on-demand body read, since 260921-ICR-L42, builds the same table from only the masters its graph names — `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
-
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`snapshots_impl/_closeout_queue.py` and `_runtime.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*`.
-
-## 260821-CLIVE Closeout And Task-History Projection
-
-`snapshots_impl/_closeout_queue.py` captures the exact current projection source for every
-orchestrating sprint, including valid graph-less atomic-sequential sprints, then reads the effective
-disposable projection. It surfaces service condition, source classification/fingerprint/problems,
-and waiting-generation member order/reasons. Invalid, unreadable, missing, or stale bytes become
-invalid-empty rather than disappearing or serving stale candidates.
-
-`snapshots_impl/_task_documents.py` adds typed discarded-unstarted rows and counts to master task
-and series projections. The audited proof/reason/timestamp remain task history and participate in
-body revision identity. Neither projection mutates its source authority.
-
-## CCR Typed Requirement Projection
-
-The task reader now renders approved requirement packet references and acceptance-obligation
-questions as readable strings, while its body-revision digest retains the full typed JSON
-values. This preserves wire compatibility without losing semantic edit invalidation.
-
-## 2026-08-26 Atomic Task Refresh And Retry
-
-`ProjectionInputState._refresh_tasks` builds contracts, enclosures, task documents, and series into
-locals before publishing the new task-domain snapshot. It sets `_task_refresh_pending` before the
-read begins, preserves the previous snapshot if a reader raises, and clears the flag only after all
-four values publish together. A heartbeat therefore retries an interrupted task refresh without
-waiting for a second task mutation. This is part of the route's bounded-retention and atomic
-publication contract, not a cache optimization.
-
-## 260913-LCA-L10 Tolerant Read Edge (Route Impact)
-
-`snapshots_impl/_task_documents.py` stopped deleting a durable task document over a field this reader's
-schema does not know. All five read-edge call sites now route through one `_projected_document`, which
-validates strictly and then, only for pydantic's `extra_forbidden`, drops exactly the addressed keys and
-validates again; every other failure still withholds the document. The route-level consequence is the
-one this overview now carries as an invariant: the projection edge reads tolerantly because it renders,
-and the strict read remains with authoring and the enforcement folds.
-
-Why it mattered at route level: a completed leaf whose JSON carried a step-level `note` from a newer
-build vanished from `analytics.taskDocuments`, so the dashboard's sub-task index rendered that row as
-dead text while unstarted rows stayed live — a version skew that presented as a status filter. Nothing
-about the summary window caused it: `TASK_DOCUMENT_SUMMARY_LIMIT = 250` was measured irrelevant to that
-defect, and that change set touched no dashboard file. (That limit no longer exists — 260916-TDPU
-removed the task-document summary bound, so the route now projects every canonical document; see the
-2026-09-16 entry below. 260916-TDPU's only dashboard edits are comments recording this removal, in
-`detail-panel/model.ts` and `detail-panel/masterSeries.test.tsx`.)
-
-Two things stay out of scope deliberately, recorded on the reader's card rather than repaired here: a
-sixth same-class drop site at `snapshots_impl/_closeout_queue.py:33-36`, and the residual unprunable-loc
-gap (a loc pydantic augments, such as the legacy `ref`), which stays fail-closed.
-
-## 260921-ICR-L42 Bounded Task-Document Reads (Route Impact)
-
-The change spans two files of this route with one purpose. `snapshots_impl/_task_documents.py`'s body
-read stopped building its master join table from the whole corpus. It now reads the requested
-document and, for a sprint only, the masters its graph names (`_graph_master_docs`, through
-`_common._canonical_task_json_candidates`). `snapshots_impl/_common.py::_iter_task_json` stopped
-recursively globbing every JSON under `tasks/`. It now walks only the three canonical levels, for the
-same result. The route-level consequence is that both costs follow what is named, while the served
-projection is byte-identical. That was checked on 561 live canonical bodies and 15 probe paths,
-including every 404 case.
-
-The projector's own pass (`projection_inputs.py` → `read_closeout_queues`, and on task refresh
-`read_task_documents` and `read_series_documents`) uses the same enumeration, so it also becomes
-cheaper. Its cache discipline is unchanged. The body read no longer touches the shared
-`TaskDocumentPayloadCache`, so HTTP threads no longer mutate it alongside the projector thread. The
-installed-build confirmation (concurrent master+leaf reads, projector CPU) belongs to leaf L50. The
-notes-listing request belongs to leaf L55 and the eager review catalogue to leaf L47; both are separate
-costs this route change does not claim.
-
+- The observer store-root conventions are kernel-owned. [1]
+- The projection tick consumes these readers. [2]
 - The body read and its graph-only join table. [3]
 - The bounded canonical enumeration every always-on reader uses. [4]
 
-Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.
+- Serving locally defines equivalent observer paths rather than importing the kernel definitions. [5]
+- Task-domain publication preserves prior values on construction failure and retries pending refreshes. [6]
+- Contract parsing uses stat identity, rejects foreign contracts and prunes departed entries. [7]
+- Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values. [8]
+- Runtime readers project operation and canonical task references, with named tolerant boundaries and inbox compaction. [9]
+- Closeout projection has strict sprint admission and an invalid-empty effective-state boundary. [10]
+- Landing observation excludes historical repair and evicts the exact parsed-final entry after successful publication. [11]
+- Projection files publish separately; the route also invokes durable housekeeping. [12]
+- Direct serving callers pass retained tick state and request one task-document body. [13]

@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
@@ -496,6 +496,282 @@
         }
       ]
     },
+    "30": {
+      "note": "Persisted flags use component state and localStorage.\n\nAnchor: `usePersistedFlag`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+            "content": "sha256:82e9e8707937a310cc160ac563168b569ad86115ed1e1a16283cf1060f93e526",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Shared numbering, theme and language construction.\n\nAnchor: `numberedFrom`; `codeTheme`; `langExtension`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
+            "content": "sha256:bdd5801fe09fabb78bbcfb7f68c60416a3ade0fdbd5967076f073ee73ca3ff9b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/lineNumbering.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
+            "content": "sha256:a3db5485291873243d67f46a6e735dc629cf15f7ddd05bb302afdd3fc2e24345",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1478b3eb824544d49fc8276496f61aaf257f0641",
+            "content": "sha256:5ceb8478d9a1aa06279f1983d66df5a0d1c9d9920d913c97d706e4f90ce4729c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "No-mark gutters, collapsed-run expansion and marked-pane construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:32f1e6e339afb152fa32dd761d7928a65b1259af7f099127c78e4db5b00be8c3",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:b08ab20100f1748b8a2c15e6347e31c3f6f7015671c75c16ad1411957828d4bb",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Diff highlight styling, fitting and effect teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:738b6d5a1fd08fcacef9f3aa8a770722573f168d128564cc65a7be68eb3f0448",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:2b9eaaf15fdef8b0f3395cc87d3b9005d25b8dab869cd109325aadd5f1e90df1",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Card Full file and expression excerpts pass marks; the former lane-window owner is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:19df7cf1a8bdafc3171b6c320ad4a2b1bc714b3506787085a3aa2f400e95c8b3",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:72f42d03b971637de6e84c78fede7747d0c4d4147bf0602cc3330a5443bc47d3",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 494
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:c28ff3b0e7e02357c51cb76e0c9c20979d9a43bcfc434b5f5103e66c207bb5d8",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:2616f966a81149cdf8f38471c10a544a70e65f76433bc4a4f5ad5311c5b0c9ce",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:f1c88b971953926bf88b7c64cb48ee0d6978cb6c2b43e28f87a331103eb5d0da",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:168dd7a898bd1e847e3acb1b7e9b977104ba26f20d4128cda74e9db7299b7329",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 591
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Recorded leaf endpoints use closeout cells or their recorded integrated equivalents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:d3207e1d77ab72b1aec5d380d8573b0b31b8352e386de6d85612c79647761f21",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Master generation digest, selection and currentness use declared or pinned endpoint pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:9020d263795b293b354176d43084dc37a5dc4699b3d18f682431c773b1604b24",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The counters control distinguishes loading, unrecorded, empty and failure and discloses the reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b8e1fc0a245c08028b372dd146912592f7375ebee62528ff1bdaaffcf5a0a65d",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The existing refusal case checks the reason and clicks the control; no execution is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:c2ce512e7fcb78faa6be95eb5fe0fcebb5d19fdf8ea947902c8c72892aa28828",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "4": {
       "note": "The card that passes them.",
       "targets": [
@@ -508,6 +784,148 @@
               "name": "ChangedExcerpt"
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Leaf entry construction gates working reads, not Intent Review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:dc269d6fcfef9dc5a7fbdc2664891ad9f13178ca7bc1ff8e4a588cd7ff127c14",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:0c3449aa7ae8ed9ca2727691af99376c4cc88c6268425f7549c641786c214c3e",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 523
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:ea065f272b3b692965637c9f2ca0d88c16be7429343546823736e7af29b84873",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 571
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:3d98197b5dded885fffd269532adbf5dff975bfde321b905905a589b855540bd",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The reviewer catalogue remains task-bound; navigation threads recorded history and current generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:1c18878ba6ba29af469e97217f541c327d96875773b067320e6d3816047656b1",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:43c9ca493f23145d2acc138984b64cee5708bc1037045975f6e9b3d5f4846fb3",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 497
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:72a3ccd5a67e100b2469a0c91cd4d928075d8ccbc44c4a9cf9b0f2a9b096a6cd",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:49f0cb6417b8048bbfff12bc45c26a239d2ba952a3029a936487cb034131f467",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "content": "sha256:202d9a3870de8eff5e4d556e779d0a89b138aa8a6377c1ca234ff60e31787195",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
           },
           "kind": "code"
         }
@@ -607,7 +1025,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
               "end": 605,

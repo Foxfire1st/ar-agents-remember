@@ -1,0 +1,285 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/context",
+  "references": {
+    "1": {
+      "note": "Provider constants and preferred host ports\n\nAnchor: GREPAI_POSTGRES_DEFAULT_PORT; GREPAI_OLLAMA_DEFAULT_PORT",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68300208f6f3a60f2826907138f9ce564a45a08b",
+            "content": "sha256:517f22e576e490540ed3eb42321eea11d843509cedd82fe9883a95dfeb289689",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:3eb75ca42d5cc1afeb82389862b15c8a9d3a0df438e7ad5409d75e549079dacd",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:9ff5d209e8125e309bae6d27ddd760ae0e449acd573d3a701f86cd86980e6481",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Context facades re-export the focused modules\n\nAnchor: module imports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4781afd9482e7d8470ee5cb6f0b37638121f0706",
+            "content": "sha256:4a8e403b063bb85ba06a007eae4ac2386c323e4daa801be9a1df7ba258897746",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4781afd9482e7d8470ee5cb6f0b37638121f0706",
+            "content": "sha256:4a8e403b063bb85ba06a007eae4ac2386c323e4daa801be9a1df7ba258897746",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen workspace, instance, backend and returned layout shapes\n\nAnchor: GrepaiWorkspace; GrepaiInstance; GrepaiBackend; GrepaiRuntimeLayout",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:e6c35e857474953765f82451987ee7bef24b6c800cd6b79f4851f78348c5eea2",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:aa29e0519eee7a7a831ed6b727d7af6501a7b878467702821be3c0ab75f92c06",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Constructor placement defaults and workspace-name normalization\n\nAnchor: grepai_runtime_layout; provider_requirements_file; stable_provider_id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:c4afc87a64f4d24cd7343b296ad6ab7c72e9ff36cd9d2395b3542dcbdbdcd0e5",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26572d51bd5dcfb53f39dba99287153997b29f2c",
+            "content": "sha256:9eb009c1b35d19294c9b3c9d6f6c83c7233fe6157f55265e43dfc392d410c441",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:127138b9632cc7c590e9b65cb3572988a872b794ebb1b6fb6f2a856b2174634f",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Settings expansion, live roots and caller-supplied placement\n\nAnchor: grepai_runtime_layout_from_provider_settings; grepai_layout_from_args",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:19273b72d30f7f0c94c921a7fd908f5ecdfb35ca0256a22b764840378931e204",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:ec82668ce79d8e74945140b7646644dc9536e3e4a58f6684085ef4da0c34c412",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Workspace YAML rendering and writing\n\nAnchor: grepai_workspace_config_text; _grepai_project_lines; write_grepai_workspace_config",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:458047295374f6dbdac822f7e5495a51d021a4d59be27aacd8278f48da456af8",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Settings-root validation and duplicate-ID rejection\n\nAnchor: grepai_roots_from_provider_settings; _validate_grepai_root_path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:e166cf8bcb4287cd6ab6f33f2540691034f5a67a61281a70ee445ee491aa6eb2",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Directory and requirements creation is separate from layout construction\n\nAnchor: ensure_grepai_runtime_layout",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:ebccf9595c5adede2d773680ea36a14cb5a793656dda805baf07d6b6de62e5ff",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Live-root ignore maintenance, workspace preparation and bind mounts\n\nAnchor: ensure_grepai_root_gitignore; prepare_grepai_workspace; grepai_compose_render",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:9138e9af694d5bd34e740c9001272baeee40884a75f950cabcd38577ee3295c8",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:c540afa2e1a99eaf6124185d9b3351012a9fa63e73654a16f3d37a6174ef942b",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:473f53d142fd2249b7aed0ccfc42b48b5ea1e1cb869f41bd9a3cd81be64600ac",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

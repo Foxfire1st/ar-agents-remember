@@ -1,464 +1,104 @@
-# mcp/src/agents_remember/mcp/tools
+# MCP Tool Payload Adapters
 
-## Current operative account — MIK-R112
+## Governing Overview
+[overview.md](../../../../../overview.md)
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+## Purpose
 
-- capsule_serving.py, benchmark.py and providers.py were deleted.
-- structural_agent.py adapts structural dispatch and the restored native receipt-tracked retirement entry; removed parent/child messaging and rename remain absent. The native retire adapter forwards to original-starter checks, not the removed hosted-seat path. Internal gate/block helpers remain separate.
-- role_agents.py also forwards the Manager’s leaf-set operation through the same payload finalization owner; adding the operation does not broaden caller permissions or move task acceptance into the adapter.
+`mcp/tools/` is the domain-organized payload-adapter package between MCP registration and the application services that implement Agents Remember operations. Its facade preserves a shared import surface for builders and protocol constants; an exported builder is not necessarily an advertised tool. Most builders forward typed inputs to their responsibility-owning application entry point and return through `base._tool_payload`. The package is not globally pure: application calls can perform authorized mutations, the shared response boundary records calls, and the knowledge and enclosure-adoption modules also compose selection, validation or approval-sensitive results.
 
-Memory and knowledge-integrity adapters keep a full application result beside the caller-sized
-status projection. The common completion adapter guards the delivered mapping and logs the full
-material; local status projection does not change operation scope or manufacture a report for a
-read. Citation fix advertises finite multi-card selection; retained internal drift/migration
-projection helpers do not restore their removed public adapters.
+`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 41 names, adding `retire_child` and `role_start_set` to the old 39-name tuple; the historical 61–66-name inventories remain historical.
 
-### Superseded inventory
+## Hot Path Summary
 
-- Pre-repair card claim: Current Where Registration Lives Now still lists benchmark/provider/message_parent/message_child builders. This is superseded archival wording, not a current prescription.
+Registration constructs the request for the domain builder; the builder delegates behavior and passes the result to `_tool_payload`; `application/tool_response.py::complete_tool_response` validates and enriches the whole result through the model-owned finalizer, then shapes and records the answer actually delivered to an agent. Registration order is intentional. Flat declarations and builder-side parameter objects remain distinct; approved structured requests are exceptions to the flat-signature convention.
 
-### Source and authority bounds
+Response completion has two stages. `models/tools/tool_response.py::finalize_tool_response` validates against the name-indexed response registry, applies enrichment to declared model fields, and performs its single JSON dump and token-finalization pass. The application uses a supplied compact `answer` projection when present; otherwise it strips envelope fields and truncates lists from the finalized whole result. It then converts the selected answer's `nextStep` to `next`, attaches log information, and measures the delivered mapping against its bound. Whole-result validation, enrichment and logging remain separate from that supplied projection. Oversized answers use a short form. Late log errors trigger another guard, and a failed line append receives one retry; once shortened, the smaller overflow ceiling applies. The completed event records delivered-answer tokens. An active ambient lifecycle receives that event; other calls use the workspace tool-event stream. A log failure is surfaced without deliberately failing the operation.
 
-- Source comparison: `mcp/src/agents_remember/mcp/tools/structural_agent.py:1-33`.
-- Source comparison: `mcp/src/agents_remember/mcp/tools/__init__.py:11-84`.
-- Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/tools/capsule_serving.py (deleted file)`.
+Ambient enrichment preserves a producer-supplied recovery `nextStep` before consulting phase guidance. Guidance naming an artifact is withheld when the response has no address or any guidance spelling contradicts the response's address. Equality or the contract's immediate containing directory is accepted, not arbitrary ancestors. Guidance with no artifact address can remain. An `awaiting-developer` lifecycle resumes on the next call except the named `lifecycle_turn_end_notification` call; this retained internal behavior does not advertise that removed tool. The exception-contained notifier lookup sets both `agentNotifierBanner` and `supervisorBanner` before whole-result serialization.
 
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+`context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information and an optional actual agent binding; it does not return the public roster.
 
-## Grant response adapter
+## Construction And Ownership
 
 direct_execution_grant_payload shapes the strict result and the pure facade exports it. Payload/import/registry membership is not authority; caller and store checks stay at the application/kernel owners.
 
-## Historical original card — preserved, not the current operative account
+The present facade groups core/context/install, reader, memory, worktree, direct-landing, explicit enclosure-adoption, task-document/reopen, lifecycle-finalization, curator-coherence, closeout-queue and role-agent adapters. `structural_agent.py` contains `dispatch_agent` and native receipt-tracked `retire_child` adapters. Retirement delegates to `cli/role_retire.py::retire_native_seat`, which checks the original starter and turn-interruption permission; it does not restore the former hosted-seat retirement path. Exact-id terminal, readiness, inbox, nudge and split gate/block/wait adapters remain internal; facade exports and response-registry entries do not make them public. `benchmark.py`, `providers.py`, `capsule_serving.py` and `leaf_ref.py` are absent from this tools directory. The removed worktree-status-wait builder is not replaced by adapter polling.
 
-<details>
-<summary>Retained original source accounts and producer history</summary>
+`mcp/registration/` owns declarations and their order; `server.py` is described by that registration package as process wiring. Its present registrar tuple contains nine family registrars, including a historically named capsule/skill registrar that now registers resources and extension methods, not tools. The skill surface provides `skills/list`, `skills/get` and ordinary skill-file resources. `skill://index.json` is this server's separate convenience discovery resource. Optional directory reading is neither implemented nor declared. Serving skill text does not activate a skill, grant permission or turn server text into trusted local-file instructions. The former capsule and skill-catalog payload builders and their corpus-override seam are historical, not current MCP tool capabilities.
 
-## Native role payloads and scoped reader adapters
+Structural dispatch is addressed by canonical task document and role, with a complete brief. The registered contract distinguishes a proven plane-hosted caller from an ambient launcher without a hosted identity. Hosted callers require authorized direct-child scope; ambient launches have no parent seat but still validate role against document altitude. A present stale, invalid, mismatched, unbound or unauthorized plane identity must refuse rather than switch to ambient mode. Harness selection, runtime identities, readiness, initial brief pinning, delivery correlation and retries remain private control-plane concerns. The adapter itself delegates the request and an override-built runtime to the structural application owner.
 
-Native role payloads delegate starts/messages through the actual caller binding; core/read-file adapters preserve exact task context and converted knowledge contracts. Configured tier refuses on terminal spawning because that transport has no native feature channel. Paseo validates/transports the independent choice, and structured requested/observed/refusal provenance remains explicit.
+`role_start`, `role_start_set` and `role_message` are separate native-role adapters over the Paseo role functions. Single starts and messages carry the target role through a context variable around response completion and reset it in `finally`; an agent-id message can instead obtain the role from the resolved recipient receipt. The set adapter has no single target-role observation and delegates to `start_leaf_set`, whose owner restricts the operation to the owning Manager and checks each seat's existing start scope before preparation. The role caller owner requires the tool server's real agent binding and a configured bridge runtime. This supersedes the old codebase-wide claim that caller identity is always self-declared. The internal terminal retirement API still explicitly accepts an actor session id.
 
-- Current imported source owns this scoped route boundary. [37]
-- Current imported source owns this scoped route boundary. [38]
-- Current imported source owns this scoped route boundary. [39]
-- Current imported source owns this scoped route boundary. [40]
+`terminal.py` now forwards to `application/terminal_tools.py`; it does not own the old dispatch implementation described by the EFA/HFX layout. That application owner rejects retired caller-controlled spend fields and maintained spend environment overrides, and refuses the old context/submit brief contract before settings, catalog or spawn work. Settings remain ordinary terminal-spawn spend authority: role/level settings precede spawn preference and detected defaults, harnesses resolve through the effective registry, and configured service tier refuses because terminal spawning cannot apply the Paseo feature channel. Native settings selections use structured launch resolution and runner-side dynamic validation; configured non-native harnesses retain their explicit registry mappings. Normalized native choices are not reconstructed as free-form session commands. The historical live-launch-conflict and hosted protocol requirements remain important intent, but their complete serving paths were not adjudicated here.
+
+The internal retirement owner resolves both target and actor before returning `already-retired` for a terminated target; this idempotent return precedes policy checking and does not stamp retirement again. A live target is authorized using bound task/role topology, with policy failures returned as `retire-refused`; successful retirement records closure and a seat event and surfaces stranded inbox rows. Rename changes the display label and emits a rename event; it does not change role. The inherited authority account includes owner-never-self-retirement, same-master manager execution/reviewer scope, same-sprint architect plan-reviewer scope and portfolio-wide orchestrator scope; exact authorization remains the retirement-policy owner's responsibility.
+
+Worktree adapters forward start identity/bases/execution, attach/status task references, contract-addressed sync, pause, closeout, integration, landing, operation control, cleanup and abandon to their application owners. Sync carries `MemorySyncChoice` and one paired `SyncResolutionInput`, preserving action and authored reconciliation input together. Closeout apply forwards approval and typed corrective catalog dispositions unchanged. The adapter neither reconstructs a journal from a queue row nor interprets scheduling as authoring permission. Recovery, source-pair admission and publication decisions belong upstream. Pause, integration, checkpoint landing and landing-recording use distinct operation names and delegated entry points; their separation here is not proof about every downstream publication path. Direct landing has its own adapter and request owner.
+
+Explicit enclosure adoption is present and advertised. Its adapter confines the contract and expected worktree-group paths to coordination authority, computes a preview, and defaults to dry run. Apply requires approval and a nonempty publication-request id matching the freshly computed preview; a changed preview or interrupted publication returns structured recovery. It delegates adoption to the lifecycle-enclosure services rather than allowing readers to adopt implicitly. Its stated removal condition is an explicit inventory with no readable enclosure lacking an addressable locator and root manifest.
+
+Task-document and reopen builders forward to task-domain application services. The adapter accepts `operation` as a string; it is not the authoritative validator or inventory of task operations. Task authoring is independent of queue activation. Curator coherence delegates a typed request to its contract-owned application authority without adding aliases or publication policy. Closeout queue is a thin adapter over a disposable projection; scheduling and persistence semantics belong to its application owner. The three memory-quality adapters forward synchronous, start and poll DTOs to one controller and use the same response name; they do not reproduce wait, capacity or poll-error policy. Each retains the whole application result beside an answer projected by `application/memory_quality/answer.py`; the common boundary guards the delivered mapping and records the whole material where logging succeeds.
+
+The three knowledge operations are imported by their registration family directly rather than exported by the facade. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback, mounted projection destination or mounted knowledge authoring builder. Curator text authoring remains a command/file-writer responsibility. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
+
+Read admits only `source_context`, `invariant` and `family`. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
+
+Converted reads delegate to the shared pager. Continuations bind memory selection, policy/version, subject, ordering and code tree; mismatches refuse. Unheld seeds return `selector_absent` rather than an empty complete view. Path source-context reads and leaf continuations use the family-complete leaf path; family seeds have their own resolution. Nondefault ordering is refused for a fresh leaf read. Leaf selection preserves its shared manifest/selection machinery with published intent, while invariant responses name containing families. Tree/index state remains visible, partial indexes remain explicitly incomplete, and post-selection refusals include the memory tree and threshold. Page rendering measures fixed tree/index fields and prepared extras with the page. Proof entries identify recorded evidence, not successful tests or established invariant truth. Currentness is prepared for candidate records and cut to the answer; the documented currentness failure set becomes a failure document rather than a fresh read refusal. This is narrower than a promise to swallow every possible exception.
+
+`knowledge_diff` compares knowledge files across memory Git trees, or the working tree when no after revision is supplied, with optional record/path narrowing. It groups raw patches by record/source and does not infer semantic effects. It refuses a directory below the repository root with guidance naming the root, absent narrowing selections and unavailable/unconverted inputs. Its bounded answer names omitted content and carries the shared threshold.
+
+Integrity selects a memory/code root pair, optionally completing missing roots and the memory base from a leaf contract. Insufficient input, unreadable contracts, unconverted memory, nonexistent code roots and unreadable validation inputs return named refusals. It runs the knowledge validator over working files and supplied bases; without bases, the recorded contract is anchor path-existence checking. It adds the latest persisted leaf worklist when a contract is supplied rather than recomputing that worklist. Counts and the whole-result violation list include the full validation result, with refusing violations before report-only findings. The delivered status projection keeps at most 10 violation entries with the full list count and truncation flag when shortened; the common answer guard still applies. The whole result separately sets `violationsTruncated` against the 20-entry general list bound even though it retains every finding. The validator body itself writes nothing and opens no database; the common response boundary can still log the call.
+
+Citation repair delegates through the application authority and translates `ConfiguredContractAuthorityError` into a named refusal requiring developer decision. Its current builder retains the whole result and supplies a compact status answer: successes carry repair counts, while failures add slim actionable entries capped at 10 per selected list. Converted and unconverted results have different projected failure lists. The retained 50-entry `_bounded_citation_fix` helper is not called by this builder and does not describe its delivered answer. Finite multi-card selection belongs to the registered `documents` operand and application scope validation.
+
+Runtime installation forwards the run's `RuntimeInstallRequest`, including its experiment input and selection provenance. A dry run files no per-call report. Executed installs write the full result before compacting it. Carryover plans likewise file no per-call report; apply files the full result before returning decision-grouped and carried paths. The local compactor retains those path lists whole; shared response completion supplies list truncation and answer guarding rather than a separate 25-entry adapter cap. The report primitive uses `temp/tool-reports/<tool>/`, prunes on writes to five retained files and seven days, and applies its implemented password-pattern redaction; this is not evidence of universal secret detection. Shared answer logging is a separate mechanism from these bulk reports.
+
+## Invariants And Boundaries
+
+The advertised roster, ordered declarations and public response-model subset must agree; retained internal models are intentionally excluded from the public subset. A roster echoed by a payload could never establish that declarations match. The inherited live-server inventory lesson remains valid, but this proposal does not claim a fresh live comparison or retained test acceptance.
+
+All builders examined use the common response boundary. Whole-result enrichment belongs on declared model fields before serialization. Model validation and whole-result token finalization do not describe the entire final agent answer: application shaping, logging fields, guards and delivered-token observation follow. Status vocabulary belongs to model-owned wire aliases and should be typed at producers; flexible provider-owned detail is not permission for arbitrary package-owned fields. Request admission belongs to declarations and operation owners, with the explicit knowledge and adoption compositions described above. Keep behavior in its responsibility-owning domain rather than rebuilding a mega-facade or duplicating policy in adapters.
+
+Inherited read-boundary doctrine protects local branches, HEAD, working-tree files, index, task documents and requirement packets; Git reads use optional locks disabled. Its named allowances are runtime caches, recorded-comparison reports/captured objects and a review pin, closeout-preview worklists/quality reports/judged-tree objects, and one explicitly requested configured-upstream fetch. That fetch allowance covers objects, remote-tracking refs/reflogs, `FETCH_HEAD`, followed tags and Git housekeeping, not local branch/index/worktree changes. Unrecorded captures belong in scratch, directory creation is restricted to admitted files, and an operation unable to keep its boundary must refuse rather than choose another write destination. These are retained semantic requirements, not a whole-call-path verdict from these adapters. In particular, the current shared response owner also writes call logs, so the old list is not a complete observed account of all present response-side writes; no new allowance is adjudicated here.
+
+Gate-log reclamation is owned by `controlplane/gate_decisions.py`, reached through the application decision owner, rather than by this tools route or the former application-local helper. It asks the non-raising ownership predicate, then suppresses `OSError` and `ValidationError` around compaction only. Decision append, cancellation cleanup and expectation completion precede reclaim and are outside that suppression. Ownership selects the reclaiming process; lock ownership across selection/read and rewrite provides safety. Undeclared processes can satisfy the ownership predicate, so process declarations alone do not prove safety. Preserve the inherited intent that read loops and dashboard timers do not reclaim another owner's log and that reclaim failure does not undo a durable decision; quiet histories can occupy space until owner activity. This source comparison does not certify every store or timer path.
+
+## Historical And Verification Limits
+
+The original card records the module split at `01f503d`, Task-27/28 guidance and turn notification, HFX hosted delivery/spend/retire migrations, EFA argument-object and response-finalization work, L9/L23 package moves, DAG queue/quality work, CLIVE application ownership, LOCR inventory/pause/landing/roster changes, CAPS skill/capsule work and KS/MIK knowledge conversion and paging. These explain intent and prior failure modes; incremental inventories and old module locations do not define the present surface.
+
+Named historical limits remain: EFA-L4's former conformance fixture never produced the stale-heartbeat banner; the later fixture exercised injected fields, and the card says those tests were subsequently removed. EFA-L5's 11.50% gate-snapshot-loss figure is an inherited base-commit measurement, not a present loss rate or fresh regression result. LOCR-L29's self-referential `server_info` comparison, missing landing registry row and later live-order fixture are inherited repair history; the present `server_info` no longer echoes the roster. LOCR-L32's reported 16 layering violations and the old 61–66-name counts are historical figures, not new checks.
+
+TRH/PHA's exact adapter snapshots, correlated delivery receipts, durable inbox/gate interactions, readiness-before-keywords, delivered-plus-log-confirmed completion, explicit unsupported legacy/custom states and diagnostic-only pane/log signals remain inherited hosted-protocol intent. This inspection did not follow every native-host or serving path and supplies no execution receipt for them. Likewise, the card's independent Paseo model/effort/tier validation and requested/observed/refusal provenance were not fully re-established across the launch path; terminal tier refusal and actual role caller binding were confirmed locally. Live-identity conflict mapping, replay guarantees, complete spend-environment coverage and projection synchronization are not freshly accepted here.
+
+KS-L41/L44's caller-owned database/namespace pair, exact detection-run selection and scope isolation describe the retired database-facing route; MIK-L01/L02/L03/L08/L28 preserve family-complete selection, bounded walks, explicit currentness, persisted worklists and evidence-without-test-verdict intent, while their database branch and whole-view project builder are retired. CAPS-L4's corpus override was a test seam of removed payload builders, not a present capability. Original numbered references retain custody with the parent, including stale or inaccessible targets; historical witnesses were not recovered or executed here.
+
+This proposal is source-only at the stated checkout head. The complete supplied card was read in three bounded chunks and its byte hash matched the supplied input hash. No tests, product entrypoint imports, network calls, product tools, syncs, mutations or publication were performed. There is no fresh native-host, build, delivery, landing, memory-quality or acceptance verdict, and no inference of whole-call-path absence from an adapter's missing local guard.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 
-## Governing Overview
-
-[overview.md](../../../../../overview.md)
-
-## Knowledge selection and citations
-
-Read refuses unheld converted-tree seeds as selector_absent; project is no longer mounted. The memory-tree/index state stays visible and partial reads stay incomplete. The memory citation adapter retains its separate bounded transport result. [34] [35]
-
-[`memory.py`](memory.py.md) bounds a converted tree's `citation_fix` response: `bounded_citation_fix` caps every
-list at 50 entries, adds each list's full count and names the capped lists. An unconverted tree's result passes
-through unchanged.
-
-## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
-
-A converted tree's `knowledge_read` with `view: "source_context"` and `sourcePath`, and every `leaf`
-continuation, is now the family-complete leaf read (MIK-R01): `_read_result` still hands the read to
-`knowledge_paging.tree_read.read_tree_page`, which routes it to `_leaf_response`, so this route's seam is
-unchanged. It returns the same selection under the same `manifestDigest` as the `read_ar_files` block (rule 6),
-the `invariant` view names its families in `families` (rule 7), and every refusal after the selection names the
-memory tree (rule 9, ruling N3 of 2026-09-30 00:08:39). [`knowledge.py`](knowledge.py.md) changes in two
-places:
-
-- **A named `repositoryRoot` with no commit, or that is not a repository, is refused**
-  `selected_input_unavailable` naming the root (`_NoCodeTreeError`, the obligation carried from L02 of
-  2026-09-29 21:17:07); it used to raise a pydantic `ValidationError`. It applies to database and tree reads
-  alike (review R1 N7: intended).
-- **`knowledge_project` reads a converted tree's views whole** (`ProjectionOptions(whole_views=...)`, the L02
-  Q7 obligation accepted by the ruling of 2026-09-29 23:21:57); a database projection is unchanged.
-
+## Evidence
 - The named refusal of a root with no code tree. [1]
 - A converted tree's projection reads each view whole. [2]
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
-
-## 260928-MIK-L02 A Read Of A Converted Tree Is A Bounded Page
-
-`_read_result` in [`knowledge.py`](knowledge.py.md) hands a converted memory tree's read to
-`application/knowledge_paging/tree_read.read_tree_page` (MIK-R02), so every such response is a page cut to the
-shared token threshold, and its `continuation` is the shared token that also resumes a walk the
-published-intent block of `read_ar_files` began. `_tree_extras` prepares the proofs and the currentness once
-per page, so both count toward the threshold; `_ordering` applies the default only when `orderingInput` is
-absent; every converted-tree refusal states `threshold`. The database path is unchanged: no page, no
-threshold, and its `limit` still bounds the view (architect rulings of 2026-09-29: 19:56:40 Q4, Q5; 20:40:40
-F1, F3, F8).
-
 - The seam that pages a converted tree's read, and the per-page extras. [4]
 - Converted-tree refusals state the threshold. [5]
-
-## 260928-MIK-L03 A Read Of A Converted Tree Carries Its Currentness
-
-`_read_result` in [`knowledge.py`](knowledge.py.md) now adds `currentness` for a converted memory tree whose
-view was not refused (MIK-R03): each returned invariant's state at the code tree the caller named with
-`codeTreeId` (since MIK-R02, the continuation's tree on a resumed page), computed once per page through
-`knowledge_paging.currentness.WalkCurrentness`. Only `codeTreeId` is a request; a
-`repositoryRoot` alone gives `unverifiable`, and `HEAD` is never used (architect ruling 2,
-2026-09-29T18:42:37). The block is computed after the selection-failure boundary and degrades every failure
-to `unverifiableReason`, so it never refuses the read (ruling N2, 19:13:41). The payload is unchanged. A
-database read carries no `currentness`.
-
 - The read's currentness, at the walk's code tree, prepared once per page with the proofs. [6]
-
-## 260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist
-
-`knowledge_integrity_check_payload` in [`knowledge.py`](knowledge.py.md) now takes one
-`IntegrityCheckRequest` and an optional `contractPath` (MIK-R08 rule 7). A dataset (`databasePath` with
-`repositoryId`) is reported as before; a leaf alone gives a `reported` result without conditions; naming
-neither is refused with `selected_input_unavailable`. When a contract is named, the result gains
-`worklistState` and `worklist` from `application/knowledge_worklist/surface.leaf_worklist_fields`: the
-latest worklist the leaf's memory-quality run or completed sync persisted beside its series contract. The
-builder computes nothing and writes nothing. The dataset pair is optional for this tool only. No other
-builder on this route changed; MIK-R26 reshapes the tool later.
-
 - The request value and the routing, with the worklist fields. [7]
-
-## 260928-MIK-L28 A Read Of A Converted Tree Carries Its Proofs
-
-`knowledge_read_payload`'s `_read_result` in [`knowledge.py`](knowledge.py.md) adds an optional `proofs`
-field (MIK-R28 rule 4): for an `invariant` or `family` view of a converted memory tree, the proof entries of
-the invariant or of every family member, each `{id, invariant, path, anchor, facet, sidecar}`. It is read
-through `application/knowledge_proofs.tree_view_proofs`, which opens the tree's index only for those two
-views. **The additive optional field is accepted (architect ruling, 2026-09-29).** A database read and the
-other three views carry no `proofs`, so the installed runtime's output is unchanged. A proof never states
-that its test passed or that the invariant holds. `IndexMismatchError` joined `_SELECTION_FAILURES`, so an
-index opened for the wrong key is the ordinary dataset refusal. No other builder on this route changed.
-
 - A converted tree's page carries `proofs`, prepared once per page since MIK-R02. [8]
 - A key mismatch is a selection failure. [9]
-
-## Knowledge authoring command route
-
-Mounted change/refusal and project/render builders are removed. Curator authoring belongs to the command file writer; these builders read, diff and validate only. [10]
-
-## Historical mounted write refusal
-
-The earlier change payload only named command writers; MIK-R26 retired it. No current mounted payload writes. [10]
-
-## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
-
-This route owns the payload builders every mounted operation family delegates to, and this leaf changed
-two of the five knowledge builders. `knowledge_integrity_check_payload` now takes an exact-input selector
-and reports the run it actually read. `_ExactInputSelector` is the caller's `runId` and `inputDigest` as
-one frozen value with an `as_wire()` echo that distinguishes "the caller named none" (`None`) from a
-strategy of silence, and `_run_for_scope` applies it as a **binding** rather than a preference: a run
-whose recorded identity or `detection_input_digest` does not match is skipped and the search continues
-inside the requested scope, so a request naming inputs nothing was measured over reports no run instead
-of the first identity-sorted match. `_runs_in_scope` and `_run_identity` answer the other half of the same
-question by naming every run the scope holds — each with its own id, registered route and input digest —
-so a caller that received one match can see it was one of several and issue an exact request from the
-response it already has. `_report_facts` is the single composition all three non-success answers go
-through (no run recorded, nothing matched, a run that could not be read), which is what keeps
-`selectedRunId`, `inputDigest` and `inputIdentities` honestly empty exactly when nothing was selected
-while `exactInputSelector` still echoes what was asked for; `_condition_report` names the selected run
-beside the digest over its exact inputs and echoes the **run's own** `governing_route_id` as the scope
-rather than the caller's string. The scope still selects and never borrows another scope's run.
-
-`knowledge_read_payload` gained a `workspace_root` keyword and resolves the context's source-resolution
-pair through `_source_resolution` / `_current_code_tree`: a caller-named root is completed with that
-root's own current tree, the mount's workspace default is used only when the caller names no repository
-*and* a tree can be resolved from it, and a root Git cannot answer for (not a repository, no Git, a
-timeout, an answer that is not a tree id) yields neither half rather than a guess. A context carrying one
-half is refused by its own model, so this is the change that turns a minimal schema-conformant read from
-a raised validation error into a returned view. The other three builders are untouched, and the module's
-standing property is unchanged: nothing here decides anything, and every builder still returns the
-unresolved state wherever a decision would otherwise be required.
-
-## IAS Frozen Worktree Payload Boundary
-
-Worktree payload builders forward one typed contract-addressed sync intent through the application
-layer and preserve its structured recovery guidance. They do not interpret a queue row as operation
-state, synthesize legacy journal input, or hide a retained conflict behind a generic failure.
-Selecting start/attach flows preserve the same `reconciling` evidence until exact source-pair
-admission completes.
-
-Task-document payloads remain independent of queue and activation state. A successful mutation may
-cause downstream projection invalidation/rebuild, but no payload builder turns scheduling state into
-authoring permission.
-
-**The sync builder's resolution input is one paired value (260915-KS-L40).** `worktree_sync_payload`
-takes `resolution: SyncResolutionInput | None` in place of a bare `resolution_action`, so the action and the
-authored knowledge decision a `reconcile` call may carry travel together through this route and cannot
-disagree here; the registration layer pairs the two published arguments before calling it. The builder is
-otherwise unchanged: it still forwards typed arguments to `application.worktree_tools.worktree_sync_tool`
-and returns through `base._tool_payload`, and it owns no journal, selector or resolution policy.
-
-## 260915-CAPS-L9 `runtime_install_payload` Takes The Run's Request
-
-`runtime_install_payload(config, request)` now takes one `RuntimeInstallRequest` instead of four
-keyword flags. The builder is transport-thin and stays that way: the registered tool constructs the
-request, the builder forwards it, and the `write_tool_report` label follows `request.dry_run`. The
-change exists so `request.experiment` — the run's own selection input — reaches the application
-entry point by construction rather than by a keyword list that can drift, and so the install payload
-can report `selectionSource` for the mode it used.
-
-## Purpose
-
-`mcp/tools/` is the pure payload-builder registry for the Agents Remember MCP
-server. It was split out of the former single `mcp/tools.py` module (commit
-`01f503d`) into one submodule per tool domain, behind a facade `__init__.py`
-that preserves the public import surface (L11: `task_reopen_payload` lives in the
-task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` beside
-`task_doc`): every `*_payload` builder, the
-`PUBLIC_TOOLS`/`RESERVED_TOOLS`/`TRANSPORT` constants, and the `_tool_payload`
-re-export remain importable from `agents_remember.mcp.tools`.
-
-## Current Structural Boundary
-
-Agent-facing dispatch, parent/child messaging, retire, rename, and delegated gates enter through
-`structural_agent.py` and structural gate builders. Their requests and responses contain real task
-documents and roles, never runtime session/lifecycle/inbox/gate identifiers. `terminal.py` retains
-exact-id adapters only for internal operator/control-plane composition; it is not a compatibility
-public agent surface. The removed `leaf_ref.py` has no successor compatibility shim.
-
-L23 payload builders start/observe/cancel closeout and integration by task contract and operation
-kind while retaining operation fingerprints, candidate trees, and worker identities inside the
-service plane. Memory payloads also expose the guarded `citation_fix` preview/apply operation so
-range repairs use the validated MCP write boundary rather than direct store or file mutation.
-
-## Where Registration Lives Now (260731-EFA-L2)
-
-The `@server.tool()` declarations that used to sit in `mcp/server.py` moved to the new
-**`mcp/registration/`** package (twelve family modules + `TOOL_REGISTRARS`). This route is
-unchanged in responsibility — it is still the payload-builder registry — but its consumer changed:
-`registration/<family>.py` imports the `*_payload` builders from `agents_remember.mcp.tools`, and
-`server.py` is process wiring only.
-
-That split is also why the builders here **do** take parameter objects while most tool declarations
-retain flat signatures (approved discriminated request schemas are explicit exceptions). FastMCP derives each tool's published JSON schema from the Python signature, so a
-model-typed parameter on a declaration would republish the tool as a nested object; a payload
-builder has no such constraint. 260731-EFA-L2 armed `PLR0913` and moved these builders onto the
-concept objects their application entry points take:
-
-| Builder | Now takes |
-| --- | --- |
-| `worktree_start_payload` | `TaskIdentity`, `bases: TaskBases`, `execution: StartExecution` |
-| `worktree_attach_payload` / `worktree_status_payload` | `task: TaskRef` |
-| `worktree_closeout_preview_payload` / `..._apply_payload` | `CloseoutCommitMessages` (+ `CloseoutApproval` on apply) |
-| `lifecycle_finalize_task_payload` | `docs: FinalizeTaskDocs` |
-| `resolve_context_payload` | `task: TaskRef` |
-| `task_doc_payload` | `target: TaskDocTarget`, `edit: TaskDocEdit` |
-| `memory_baseline_adopt_payload` | `branches: MemoryBranches` |
-| `memory_carryover_plan_payload` / `..._apply_payload` | `selection: CarryoverSelection` (+ `messages: CarryoverCommitMessages`) |
-| `codex_benchmark_prepare_payload` / `..._run_payload` | `selection`, `preparation` (+ `run`) |
-| the eight `grepai_*`/`cgc_*` builders | `scope: ProviderQueryScope` (+ GrepAI query/repo-scope objects) |
-| `dispatch_agent_payload` / structural child/self builders | Structural request DTOs; ambient caller identity is injected by the plane |
-| Structural gate builders | Structural gate request DTOs; exact correlation stays internal |
-| `message_parent_payload` / `message_child_payload` | Whole-message structural requests whose current occupant is re-resolved |
-
-Behaviour, refusal vocabularies and response shapes are unchanged throughout; only the argument
-shape on the application-facing side moved.
-
-## Hot Path Summary
-
-The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
-
-`worktree.py` forwards closeout and direct-landing code/memory messages to the application without a ledger-message parameter. This MCP adapter neither writes a cache commit nor adds a ledger-currentness gate.
-
-## Detailed Route Context
-
-The worktree closeout payload forwards typed corrective catalog dispositions unchanged. Validation and recovery stay in the application/lifecycle owners, not this transport layer.
-
-Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids.
-
-ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request
-layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing
-model/effort refuses before tmux, and complete values travel through the same opener to runner-side
-dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized
-model/effort never joins `sessionCommands`. If the selected session id already names a live process
-with different launch identity, the opener returns `launch-conflict`; this builder maps it to
-`launch-selection-invalid` and stops before expectations, log binding, brief delivery, or respawn.
-Settings-defined non-native harnesses retain only their explicitly declared legacy mappings.
-
-The internal terminal builder accepts a runtime occupant plus canonical task document and role for
-operator assignment. Structural dispatch composes the same opener internally, then persists an
-exact-pinned first brief. Ordinary structural messages persist a document+role address and re-resolve
-the current occupant at post and delivery time; replacement therefore does not change the sender's
-address.
-
-### Historical Task-27 Through HFX Builder Account
-
-The following retained migration account describes the earlier adapter-owned implementation. Current ownership is stated below; former public terminal/inbox/nudge names here are not in the current advertised set.
-
-The `mcp/registration/` family modules import the advertised `*_payload` builders from
-`agents_remember.mcp.tools`; each builder forwards its arguments to its
-domain application entry point and validates the result through `base._tool_payload`. Since
-task 27 that choke point also attaches the engine-computed `nextStep` hint onto every
-active-lifecycle response, computed by
-`next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
-surfaces on every call: a `supervisorBanner` string when the serving daemon's
-supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
-.agent_notifier_staleness_banner`, exception-contained at the call site) — issue #15's
-"the watcher must be code AND watched" surfaced at the one place every MCP tool
-response already passes through. **260731-EFA-L4 reordered this choke point**: both
-attachments are now set on the *validated model* by `_attach_lifecycle_tail` BEFORE the
-single `model_dump`, and the ambient emission hook runs LAST, off the finished payload.
-The previous order — dump, count tokens, emit, then write the two keys into the dict —
-served bytes the advertised `tokens` did not include and recorded that same short count
-against the lifecycle. `operator_inbox_post_payload` is also the completion-wake edge:
-for `turn-report` and `master-handover`, 260707-HFX2-L13 resolves and addresses the current manager
-before creating the row/ack expectation and attempting hosted delivery, while ordinary peer messages
-retain explicit addressing. Task 28 makes `lifecycle_turn_end_notification` the active
-NOTIFY-AND-CONTINUE turn-end tool: `_tool_payload` auto-dismisses an
-`awaiting-developer` lifecycle on the next call (`resume_from_await`, name-guarded
-to skip the notification itself), and `next_step.py`'s active hints repoint onto
-it — the `lifecycle_gate`/inbox stack stays exported but PARKED (un-hinted). Start
-at `base.py` for the shared `_tool_payload` adapter and the re-exported `PUBLIC_TOOLS` tuple (whose
-one definition is `models/tools/public_roster.py`), then the
-domain submodule that owns the tool. Task 25 makes `lifecycle_gate_payload` the
-public agent-facing gate junction; split gate/block/wait builders remain exported
-for internal compatibility and tests but are not registered as public MCP tools. L9 adds the
-`terminal.py` submodule and public `attach_terminal_session_to_leaf` builder, an agent-facing wrapper over
-the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_session` builder to that same
-submodule — the agent-facing dispatch tool that composes the shared serving opener + a capture-verified
-context paste (260707-HFX-L3: `contextDelivered` only after the pane provably shows the paste; failures ship `deliveryCapture`) to create a role-configured, leaf-attached, context-primed hosted session. HFX2-L10 makes
-settings the spend authority for ordinary callers: legacy non-null `harness`/`model`/`effort`,
-direct `launch_args`/`prompt_keywords`/`session_commands`, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and
-maintained harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before
-leaf resolution, host spawn, catalog writes, expectation rows, or paste delivery. Since 260703-L16
-the builder is the full settings-rung knob resolution + application seam: `_resolve_harness_dispatch`
-folds `resolved_role_knobs(AR_SPAWN_ROLE, level)` (`rolesPerLevel` over flat `roles`; the `level`
-parameter leaf|master|portfolio with recorded provenance), then falls through to repo-local/global
-`orchestration.spawn.harness` and the first detected registry harness, resolves ids against the
-EFFECTIVE registry (`orchestration.harnesses`; unknown-everywhere ids refuse naming the
-`docs/reference/harnesses.md` manual), validates model/effort per-harness BEFORE spawning
-(`model-invalid`/`effort-invalid`/`level-invalid`; claude's session-vocabulary `ultracode` becomes
-the first post-launch `/effort` paste), and delivers the settings-owned free-form escape hatch
-(`launchArgs` verbatim argv, `sessionCommands` pasted+submitted before the brief,
-`promptKeywords` prepended to the brief) — never validated, recorded in spawn provenance and echoed
-on the payload.
-260707-HFX-L4 adds qualified leaf-ref validation at the terminal write boundary: attach/spawn accept
-canonical qualified ids, doc ids, and unambiguous legacy stems/slugs, persist canonical qualified
-`repo/master/doc-id` catalog keys, and return strict `leaf-ref-not-found` / `leaf-ref-ambiguous`
-refusals with the expected `<repo>/<master-folder>/<doc-id>` form before any mutation.
-L3 adds `orchestration.py` and public `orchestration_nudge_manager`, a rate-limited manager nudge helper
-that records an orchestration nudge event and enqueues a manager-addressed inbox message.
-**260707-HFX-L8** adds two public builders to `terminal.py` (issues #12/#4): `session_retire_payload`
-(actor+target lookup, an idempotent `already-retired` fast path on an already-terminated target BEFORE
-any authority check, `serving.retire_policy.check_retire_authority` enforcement — owner-never-self-
-retires, manager scoped to its own master's worker/reviewer seats, orchestrator portfolio-wide —
-`retire-refused` naming the exact clause on refusal, else `serving.retire.retire_entry` + a
-`seat_events.log_retire_event`) and `session_rename_payload` (identity text only, `catalog.set_label` +
-`seat_events.log_rename_event`, `spawn_role` never touched). `actor_session_id` is self-declared by the
-caller (mirrors `spawn_agent_session`'s `spawned_by_session` pattern) — there is no ambient "who is
-calling me" session-id resolution anywhere in this codebase.
-
-## Current Response And Adapter Ownership
-
-`base.py` **re-exports** the advertised tuple — its one definition moved to the zero-import `models`
-leaf `models/tools/public_roster.py` at 260831-LOCR-L32, and `base.py` imports it at L14 and declares
-it in `__all__` at L19, so the same **66**-name object stays importable from this package (62 at the
-move, 63 from 260831-LOCR-L37, 66 since 260915-CAPS-L4). `base.py` also
-forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
-
+- Three delegates serve read, Git diff and tree validation. [10]
 - The MCP adapter delegates completed-response ownership to the application. [11]
 - The application attaches bounded guidance and records the completed result after finalization. [12]
 - Wire validation and token finalization consume the enriched model in one serialization pass. [13]
-
-## Historical EFA/HFX Layout
-
-| Module          | Owns                                                                       |
-| --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point — plus the **re-export** of the exact ordered `PUBLIC_TOOLS` tuple, whose one definition moved to `models/tools/public_roster.py` at 260831-LOCR-L32 (L14 import, L19 `__all__`; the tuple held 62 names at the move, 63 from 260831-LOCR-L37, and **66** since 260915-CAPS-L4). Since 260731-EFA-L4 the choke point's order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
-| `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
-| `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `server_info` carries the shared boot-resolved serving-build payload; `compact_runtime_install_payload`. |
-| `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
-| `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools; `compact_diagnostics_payload`, `compact_watchers_payload`. |
-| `worktree.py`   | worktree start/attach/status/sync/closeout/integrate/checkpoint-landing/cleanup/abandon, including `parent_task`/`leaf_id` forwarding for leaf enclosure lookup. |
-| `benchmark.py`  | codex_benchmark_prepare, codex_benchmark_run.                              |
-| `lifecycle.py`  | lifecycle signal builders driving the observer ambient lifecycle; `lifecycle_block_payload` is retained for lower-level compatibility. Since task 27 `lifecycle_start_payload` also emits the one-time `frontHalfRundown` (`next_step.py`'s `FRONT_HALF_RUNDOWN`). Task 28 adds `lifecycle_turn_end_notification_payload(summary)` — the NOTIFY-AND-CONTINUE turn end: drives `await_developer` → `awaiting-developer` and returns immediately (no gate, no wait), the one builder the choke-point auto-dismiss skips by name. |
-| `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
-| `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/replace/set_status/set_step/add_step/remove_step/skip_step/read_steps/set_subtask/remove_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` application entry point. The builder is transport-thin and takes `operation` as a plain `str`, so this row's vocabulary mirrors the advertised set rather than anything the builder itself validates; the authoritative description lives in `mcp/registration/tasks.py`. |
-| `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. Since 260731-EFA-L5 this module also **owns gate-log reclamation**: `_reclaim_gate_log` runs `GateStore.compact` at the end of every terminal decision, guarded by `GATE_OWNERSHIP.is_compaction_owner()` so the dashboard (which reaches `gate_decide_payload` directly) skips it — it moved here off the dashboard projection tick's 30-second rewrite, which raced this process's appends. The gate substrate itself lives in `controlplane/` (task 6). |
-| `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
-| `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
-| `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
-| `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs, composes the shared `serving.terminal_opener.open_terminal_session` for live-identity validation, role-scoped leaf claim, native runner launch, and catalog upsert, then runs the capture-verified brief-delivery sequence. A live launch mismatch maps to `launch-selection-invalid` with no retry, expectation, or paste. Other strict response statuses remain `spawned`, `spend-override-unsupported`, `leaf-taken`, `harness-unknown`, `harness-not-detected`, `effort-invalid`, `model-invalid`, `level-invalid`, `leaf-ref-not-found`, `leaf-ref-ambiguous`, and `bad-kind`. 260731-EFA-L4 types the status seams against the wire aliases imported from `models.terminal` (`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`): `_spawn_refusal(status: SpawnAgentSessionStatus, ...)` and `_knob_refusal`'s `checks` tuple are annotated, so a refusal status this module invents is a pyright error at the producer rather than a `ValidationError` at `model_validate` — this payload is an untyped dict all the way to the MCP handler, which has no `except` for one. The retire/rename builders also collapse onto two constructors, `_retire_payload` and `_rename_payload`, so the shape rules have one site each: `_RETIRE_OK_STATUSES = frozenset({"retired", "already-retired"})` decides `ok` (previously written by hand at five call sites), retirement provenance rides a `closure=` argument and a policy clause rides `detail=` because nothing carries both, and `spawnedLabel` is emitted only when a row was actually renamed. |
-| `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
-
-Since 2.5.1 this route also owns the response token-budget layer: the verbose
-tools (`runtime_install`, `provider_watchers`, and
-since 2.5.2 the carryover apply) write their full result to
-`temp/tool-reports/<tool>/` via `mcp/tool_reports.py` (keep-last-5 / 7-day
-write-time prune, secret redaction) and return a compact outcome with an
-inline `reportPath` through the per-domain `compact_*_payload` helpers.
-`provider_diagnostics` answers with the compact diagnosis and no `reportPath`, and the carryover plan likewise files no per-call report. Rule 6 covers tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs: they change no local branch, HEAD, working-tree file, Git index, task document or requirement packet, and Git runs with `GIT_OPTIONAL_LOCKS=0`. The only admitted writes are (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. A read creates no directory except to hold one of those files. Unrecorded tree captures write objects to scratch, never into the repository. If a read cannot keep the boundary it refuses by name, never falling back to another write location.
-
-## Invariants And Boundaries
-
-- `PUBLIC_TOOLS` — defined at `models/tools/public_roster.py` and re-exported by `base.py` — must
-  match the declarations in `mcp/registration/`
-  and the public response-model subset in `models/tool_registry.py`.
-- **That match is checked against a live server, never against a payload that reports the tuple**
-  (260831-LOCR-L29). `server_info` (`core.py`) returns `list(PUBLIC_TOOLS)` itself, so a case built
-  on it compares the tuple to itself; `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` registers
-  every `TOOL_REGISTRARS` entry against a probe `FastMCP` and compares the live order instead. A tool
-  this route registers but the tuple omits is advertised and — because
-  `finalize_tool_response` indexes the response registry by name — unable to return a payload.
-- `TOOL_RESPONSE_MODELS` may include retained compatibility builders that are not
-  public MCP tools; do not infer public availability from facade exports alone.
-- Every public payload returned from any submodule must go through
-  `base._tool_payload`, which validates response shape only (request validation
-  stays in server signatures and application entry points).
-- **Anything the choke point adds to a response is a declared field of that response's
-  model, set before the dump — never a key written into the dumped dict** (260731-EFA-L4).
-  There is exactly ONE `model_dump` in the current model-owned finalizer reached through `_tool_payload`, and exactly one
-  `finalize_payload_tokens` pass over its result, so "everything the caller receives is
-  inside the count" holds by construction. A key added after the dump is served but
-  uncounted, and — on the strict envelopes, which are `extra="forbid"` — makes the emitted
-  object fail its own model. `TOOL_RESPONSE_MODELS` is typed `dict[str, type[ResponseEnvelope]]`
-  precisely so setting these fields on the validated response type-checks.
-- **`amb.emit_tool` follows finalization in `application/tool_response.py`**, so the `tokens` recorded against
-  the lifecycle is the count the caller was actually served. Moving it back before the tail
-  attachment re-introduces the short count in the event log even if the wire count is right.
-  One consequence worth knowing when reading a log: the auto-dismiss now precedes the
-  emission, so a turn-end dismissal appends `lifecycle.resumed` BEFORE the call's
-  `tool.completed`, where it previously followed it. `emit_tool` records only
-  `tool`/`tokens`/`ok`, so nothing in the event payload changed — only the order.
-- A status string a builder writes must come from the wire alias in `models/`, annotated at
-  the producing function, not spelled inline. These payloads are untyped dicts until
-  `_tool_payload`, and by then a wrong status is a `ValidationError` inside an
-  `@server.tool()` handler with no `except` for one.
-- Payload builders stay transport-thin; deterministic behavior belongs in
-  application entry points and package services. Import the domain application entry point that owns the
-  tool's behavior — do not reintroduce a mega-facade.
-- Submodules use `..` for `mcp`-package imports (`from .. import SERVER_NAME`,
-  `from ..config import McpRuntimeConfig`) since they sit one level below the
-  former `tools.py`.
-- The facade `__init__.py` re-exports `_tool_payload` with an explicit
-  `import _tool_payload as _tool_payload` so the conformance test's
-  `tools._tool_payload` access keeps working.
-- Compaction is wire-shape only and lives in this route, not in application entry points:
-  the full result is written to the tool report BEFORE any compaction mutates
-  it, decision/outcome facts stay inline, and
-  `test_tool_response_budgets.py` holds every compact builder under
-  `INLINE_BUDGET_CHARS` with deliberately fat inputs.
-- **A builder on this route may reclaim a durable log it owns, and only on a write path, and only
-  behind a non-raising ownership question** (260731-EFA-L5). `application/gate_tools.py::_reclaim_gate_log` is the
-  one instance: `if not GATE_OWNERSHIP.is_compaction_owner(): return`, then
-  `GateStore.compact` under `contextlib.suppress(OSError, ValueError)`, called at the end of
-  `gate_decide_payload`. Two constraints, each with a named failure. It must not move onto a read
-  path or a timer — a rewrite driven from the dashboard's projection tick is what cost 11.50% of
-  gate snapshots at the base commit. And the check must stay a **question**, because builders on
-  this route are not MCP-only: `serving/app.py` calls `gate_decide_payload` directly, so the
-  dashboard executes this code, and a `CompactionOwnerError` (a `RuntimeError`) would pass straight
-  through that suppress on every developer gate decision.
-- **A reclaim failure must never cost the caller the operation that was already durable.** The
-  suppress above wraps the reclaim only; the append, the delete and the expectation-row update
-  ahead of it are not inside it, and the next decision on that lifecycle retries the prune.
-
-## Evidence
-
-### Repo-Internal References
-
 - Public response model registry maps each tool name to a Pydantic model. [14]
 - The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. [15]
 - The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. [16]
@@ -469,280 +109,37 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 - The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). [21]
 - The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
 - The trusted terminal assignment response carries document-and-role binding plus private session correlation. [23]
-
-- - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [41]
-- - A partial index is never presented as complete. [42]
-- - A converted tree's citation-fix result is bounded for transport. [43]
-
-Current working-candidate evidence for this route:
-
 - The application request owner has only code and memory messages. [24]
 
-## 260712-TRH-L4 Route Impact
-
-The public tool route now exposes spawn-only creation, exact-session hosted_session_readiness, and an explicit dispatch-brief kind. Legacy context/submit refuses before side effects; promptKeywords apply once after readiness; completion requires delivered plus harness-log-confirmed proof.
-
-### 260713-PHA-L5 Route Contract Review
-
-The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
-readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
-gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
-only. Dashboard and packaged projections remain additive and synchronized.
-
-## Historical 260731-EFA-L4 — The Choke Point Emits Its Own Contract
-
-`_tool_payload` used to do this: validate, dump, count tokens, emit the observer event, then
-write `nextStep` and `supervisorBanner` into the dumped dict. Two things were wrong with the
-last step and both were silent.
-
-- **The advertised token count excluded them.** `finalize_payload_tokens` stamps `tokens` from
-  the dict it is handed; keys added afterwards are served but never counted. Because
-  `amb.emit_tool` also ran before them, the count recorded against the lifecycle was short by
-  the same amount, so the fuel gauge and the wire agreed with each other and both disagreed
-  with reality.
-- **`supervisorBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
-  makes a banner-carrying response fail its own `model_validate`; on a flexible one
-  `extra="allow"` silently accepted it, which is the wrong kind of tolerance — that setting is
-  for a PROVIDER's fields, not this package's.
-
-The fix has two halves. `models/base.py` declares `supervisorBanner` on both envelope bases and
-names their union `ResponseEnvelope`; `models/tool_registry.py` types both registries
-`dict[str, type[ResponseEnvelope]]` instead of `type[BaseModel]`. That retyping is what makes
-the reordering possible at all: against a bare `BaseModel`, `response.nextStep = ...` is not an
-attribute a checker knows, so writing into the dict afterwards was the only type-clean option
-available. `_tool_payload` now reads:
-
-    response = model.model_validate(payload)
-    amb = ambient()
-    if amb is not None:
-        _attach_lifecycle_tail(response, amb, tool_name)   # dismiss, nextStep, banner
-    finalized = finalize_payload_tokens(response.model_dump(mode="json", exclude_none=True))
-    if amb is not None:
-        amb.emit_tool(tool_name, finalized)                # last, off the served payload
-
-`next_step.py`'s `next_step_for` returns `NextStep | None` rather than a dumped dict, for the
-same reason: serialization belongs to the one `model_dump`.
-
-Historical coverage gap: the former response-conformance fixture used a workspace whose supervisor had never ticked, leaving the banner silent. Its subsequent stale-heartbeat fixture exercised both payload injections. Those tests have since been removed; this remains design history explaining why validation must consider the final injected payload, not a claim of retained coverage.
-
-## Historical 260731-EFA-L5 — Gate-Log Reclamation Before The Application Move
-
-One file on this route changed, `gates.py`, and the change is a **responsibility moving into this
-route** rather than a payload edit: gate-log compaction. It used to ride
-`observer/snapshots.read_gates` on a 30-second throttle — the dashboard's projection tick physically
-rewriting a log the dashboard owns nothing in, racing this process's appends. That is where 11.50%
-of appended gate snapshots were going at the base commit, and a lost snapshot there is not a missing
-row: the `applied` marker is what stops one human approval being consumed twice.
-
-`_reclaim_gate_log(store, lifecycle_id)` now runs at the end of `gate_decide_payload`, which is the
-moment a record *becomes* reclaimable. Three properties are worth carrying at route level, because
-each is a rule about how builders here may touch durable state:
-
-1. **Write paths only.** `gate_list_payload` and both wait loops stay pure reads. Moving the reclaim
-   here changes who prunes and when, never what a caller is shown.
-2. **The ownership check is a question, not a refusal.** `serving/app.py` calls
-   `gate_decide_payload` **directly**, so a builder on this route runs inside the dashboard process
-   too. `is_compaction_owner()` answers `False` there and returns. A version that raised would send
-   `CompactionOwnerError` — a `RuntimeError`, so invisible to `suppress(OSError, ValueError)` —
-   out of every developer gate decision made from the dashboard.
-3. **The observable consequence is space, never correctness.** Reclamation follows owner activity
-   instead of a wall clock, so a gate expired on a quiet lifecycle keeps its superseded rows on disk
-   until the next MCP decision there. `GateStore.projected_current` applies the identical
-   keep-filter in memory on every tick, so the dashboard renders exactly what it rendered before.
-
-The substrate this rides on is `ar-durable-store/1.0` in `controlplane/durable_store.py`, and it is
-that route's to describe. The one thing to carry here: what makes the rewrite safe is the log's
-unconditional `flock`, held across the read **and** the rewrite, in every process. Ownership decides
-only who runs the pass.
-
-## 260731-EFA-L9 Route Impact — Caller Re-Points
-
-The MCP tool callers were rewritten by the L9 caller wave to import the responsibility-owning homes (`models/conversations/`, `kernel/primitives/`, `serving/ports.py`, `models/terminal_catalog.py`). Tool behavior and payloads are unchanged.
-
-## L23 Package-Following Payload Imports
-
-Core payload builders import runtime installation and skill installation from
-`application.runtime`, while worktree payload builders import integration strategy from
-`models.lifecycles.operation`. These are package-ownership moves only: payload validation,
-task-document addressing, and transport-thin forwarding remain the route contract.
-
-## 260815-DAG-L3 Queue Payload Route
-
-`mcp/tools/closeout_queue.py` is the thin public payload builder for the registered
-`closeout_queue` tool. It delegates the strict request to the ambient-authorized application
-service and then uses the common `_tool_payload` envelope. Registration and response conformance
-cover the public schema; scheduling, persistence, and lifecycle logic do not live on this route.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`tools/{core,task_doc,worktree}.py` import paths updated to the moved `application/task_docs/*`.
-
-## 260821-CLIVE-L2 Current Architecture
-
-Tool payload composition preserves the closed application result vocabulary. The layer does not catch lower reader exceptions or reconstruct lifecycle facts; it serializes already projected public evidence and executable next actions.
-
-### Reconciled Source Evidence
-
-- Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. [25]
-
-## 260821-DAGQC-L2 Typed Memory-Quality Adapters
-
-The memory tool route now has three thin DTO-specific adapters over the single controller API.
-They validate public responses but do not interpret wait flags, rebuild scope, or reproduce
-capacity/poll failure translations.
-
-## MCAR-L02 Curator-Coherence Adapter
-
-`curator_coherence.py` is the sole thin adapter for the lifecycle-owned coherence API. It adds no
-filename aliases or policy: configured admission and publication remain upstream, while the shared
-tool-response boundary validates every success/refusal body.
-
-## Status-Change Wait Payload
-
-`worktree_status_wait_payload` was removed with the wait tool it served. The remaining worktree
-builders — for example `worktree_attach_payload` — keep the same shape: they forward the typed
-request to the application adapter and pass its result through the ordinary tool-response boundary
-without adding polling, retry, cancellation, cursor advancement or journal mutation of their own.
+- Lifecycle control uses the operation-control payload; explicit enclosure adoption retains its own typed payload builder delegating to the adoption service. [25]
 
 - The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. [26]
-
-## 260831-LOCR-L30 Checkpoint-Landing Tool
-
-This route's advertised surface grew by one name: `worktree_checkpoint_landing`, listed in
-`base.py`'s `PUBLIC_TOOLS` immediately after `worktree_integrate` (the tuple held 62 names at L30; it
-holds 63 since 260831-LOCR-L37) and
-built by `mcp/tools/worktree.py::worktree_checkpoint_landing_payload`, which forwards to
-`application/worktree_tools.py::worktree_checkpoint_landing_tool`. It is registered by
-`mcp/registration/closeout.py`'s `_register_integration_command_tools` and carries
-`models/worktree.py::WorktreeCheckpointLandingResponse` through
-`models/tools/tool_registry.py::TOOL_RESPONSE_MODELS` — all three places a public tool must appear.
-
-The three-part requirement is the L29 lesson applied by construction rather than by repair, and the
-two landing tools are why the inventory suite drives one `finalize_tool_response` call per name:
-their payloads differ only in the operation literal, so a set comparison would pass a registry swap.
-
-## 260831-LOCR-L37 Pause Payload
-
-This route gained one builder and one advertised name. `worktree_pause_payload` takes only
-`contract_path`, forwards it to `application/worktree_tools.py::worktree_pause_tool`, and wraps the
-result under the operation name `worktree_pause`; `worktree_pause` sits in `PUBLIC_TOOLS` immediately
-after `worktree_sync` (the tuple now holds 63 names) and carries `WorktreePauseResponse` through
-`TOOL_RESPONSE_MODELS`. All three places a public tool must appear were added together, which is the
-L29 lesson applied by construction rather than by repair.
-
-The builder owns no decision, and specifically not the one the split exists to protect: whether
-anything is **published**. That decision does not exist on this path at all — the route it forwards to
-cannot reach a publication module — and the publication this route also carries
-(`worktree_checkpoint_landing_payload`, in the same module) is a different builder for a different
-tool. Two names, two builders, two routes.
-
-## 260831-LOCR-L29 Public-Inventory Repair
-
-`base.py`'s `PUBLIC_TOOLS` gained `worktree_record_landing` immediately after `worktree_integrate`,
-and the tuple held 61 names at that leaf (62 since 260831-LOCR-L30 added the checkpoint landing
-route). `mcp/tools/worktree.py`'s
-`worktree_record_landing_payload` and its `mcp/registration/closeout.py` declaration both already
-existed, so the tool was registered and advertised while the census omitted it.
-
-The consequence is specific to the choke point this route owns: `finalize_tool_response` indexes
-`TOOL_RESPONSE_MODELS` by tool name, so the omission — together with the absent registry row in
-`models/tools/tool_registry.py` — made the advertised tool raise instead of returning a payload. The
-invariant below had no executor: `mcp/public_surface.py` compares a live `list_tools()` result to this
-tuple, but the only test doing so read `server_info`, which returns `list(PUBLIC_TOOLS)` from
-`core.py`, making the comparison self-referential. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests`
-now registers every `TOOL_REGISTRARS` entry against a probe `FastMCP` and compares the live order to
-this tuple.
-
-## 260831-LOCR-L32 The Advertised Tuple Moves To `models`; This Route Re-Exports It
-
-`PUBLIC_TOOLS` is no longer **defined** in `base.py`. Its one definition is now the zero-import `models`
-leaf `mcp/src/agents_remember/models/tools/public_roster.py` — the tuple's extent is `L22-L86` since
-260831-LOCR-L37 added `worktree_pause`, and was `L22-L85` at L32; `base.py` imports it at L14 and
-declares the re-export through `__all__` at L19, so `agents_remember.mcp.tools.PUBLIC_TOOLS` still
-resolves the identical object — same tuple, same order, 62 unique names at the move and 63 since
-260831-LOCR-L37 — and every builder,
-registration path, and conformance comparison in this route is unchanged. `base.py` shrank from 79
-lines to 24; `TRANSPORT` is now L16, `RESERVED_TOOLS` L17, and `_tool_payload` L22-L24.
-
-**Why the tuple had to leave this route.** The move is what makes the worktree surface's next-move
-vocabulary enforceable at the model boundary. `application/worktree_status.py::_project_terminal_contract_status`
-writes `nextAction` / `nextTool` / `nextArgs` into the `worktree_status` payload, and enforcing those
-values requires a `models` response model to read the roster. From `mcp` that read is not writable:
-`models → mcp` is a `layers.toml` violation (models = 2, mcp = 22; the `mcp` charter forbids any import
-from below), a function-local import trips `ruff PLC0415` with suppressions forbidden here, and
-module-level imports in either direction are circular. The layering checker stayed at its exact
-baseline of 16 violations with no `models → mcp` edge and no new cycle.
-
-**Do not move it back, and do not add a second copy here.** A re-export is the whole relationship; a
-local re-declaration would recreate the layering problem and could silently diverge from the tuple the
-model layer reads.
-
-The dated sections in this card that say `base.py`'s `PUBLIC_TOOLS` "gained" a name, or that the tuple
-"is the authority on the advertised name set", describe the tuple **at their own leaf**. They remain
-accurate history; the names, counts and registry rules they record still hold. Only the definition's
-location changed, and it is now `models/tools/public_roster.py`.
-
-## 260915-CAPS-L4 Capsule And Skill Payload Builders
-
-This route gained three builders in one new submodule, `capsule_serving.py`. They are transport-thin in
-the ordinary way — each re-shapes the declaration's flat arguments into the application request record,
-calls one application entry point, and returns the result through `_tool_payload` — but two of their
-properties are route-level facts:
-
-- **The corpus override is a test seam, not a capability.** `skill_catalog_list_payload` and
-  `skill_catalog_read_payload` accept optional `origin` / `root` keyword-only arguments, and the
-  application layer serves the shipped corpus when neither is supplied. The registered declarations in
-  `registration/capsule_serving.py` pass **no** override, so a live client cannot point the server at a
-  different tree; the seam exists so the leaf's test module can drive a synthetic corpus without
-  touching the shipped one. This is the route's flatness rule holding on the wire while the builder
-  side keeps the extra parameter — the same asymmetry the builders' parameter objects exist for.
-- **A refusal is already a value by the time it arrives here.** `RoleCapsuleResponse` carries the
-  refusal in the same envelope as a success (`ok` false plus a typed `refusalStatus`), so these
-  builders wrap a refusal exactly as they wrap a capsule. Nothing on this route translates an
-  application refusal into a transport error.
-
-The three names sit at the tail of `PUBLIC_TOOLS` and of `TOOL_RESPONSE_MODELS`, appended rather than
-inserted so no existing advertised position moved.
-
-One boundary this route must not blur: these three tools are **this server's own reads**. The
-extension's enumeration surface is the `skills/list` **protocol method**, implemented on the
-registration route (`registration/skills_extension.py`), not a tool — and the `skill://index.json`
-resource this server also publishes is its own convenience surface in the Agent Skills discovery shape,
-which is likewise not the extension's enumeration result.
-
 - The capsule builder re-shapes the flat declaration arguments into the application request record. [27]
 - The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default. [28]
 - The declarations that call these builders, which pass no corpus override to the wire surface. [29]
 - The capsule envelope carries its refusal in the same shape as a success. [30]
 - The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
 - This server's own index resource, kept deliberately distinct from that method. [32]
-
-## Three knowledge payload builders
-
-Read serves attributed knowledge through the converted tree index; diff serves raw knowledge-file Git patches without labels; integrity serves validator/worklist results. All use the response-model choke point. Database paths, caller namespaces, run selection and projection destinations are removed. [10] [34]
-
-## Integrity report scope
-
-Integrity names a converted memory/code root pair or leaf contract and carries the validator report and latest worklist. Canonical scope-selected detection runs and exact run selectors are retired. [10]
-
-## 260915-KS-L44 The Read Request States What Owns The Knowledge Selection
-
-**This route's impact is one docstring in `mcp/tools/knowledge.py`, and what it records is a finding rather than a new contract.** `ReadToolRequest` (`:106-135`) now states that `databasePath` and `repositoryId` **are** the knowledge selection and that the caller owns both: the runtime config's per-repository scope carries no knowledge-database or namespace field, a repository's coordination declaration (`context_packet`) and the memory layer's `system/settings.json` name roots, paths and policy but no knowledge database, namespace or `repositoryId`, no shipped helper or filename convention resolves a repository or a task to a knowledge SQLite path (`knowledge.db` appears only in test support), and the repository namespace is minted by ingestion (`create_repository`), so it is a fact about a store that already exists. The published schema keeps both **required** rather than optional-with-a-default, because a default here would be this surface inventing a selection; a cold planner that has not been told the pair cannot discover it from this server.
-
-**Nothing was widened.** Exposing a real discovery contract — a settings key, a `context_packet` field, a resolver — is a product decision and is deliberately **not** taken by this leaf. The mounted builders, the refusal vocabulary, the source-resolution pair, the detection-run selection and the projection path are all unchanged; the docstring is the only edit at this surface.
-
-## Converted memory root selection
-
-Read selects a converted memory root and its derived index. Legacy roots and database files refuse before opening them; no database fallback or project builder remains. [34] [35]
-
-
-
-- Three delegates serve read, Git diff and tree validation. [10]
-
-
 - Read carries tree/index state and partial-index completeness. [34]
-
-
 - Legacy paths and unheld current seeds refuse truthfully. [35]
+- Current imported source owns this scoped route boundary. [37] [38] [39] [40]
+- - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [41]
+- - A partial index is never presented as complete. [42]
+- - A converted tree's citation-fix result is bounded for transport. [43]
 
-</details>
+- Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade. [44]
+- One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names. [45]
+- Public registry excludes explicitly retained internal names and includes native retirement and set-start responses. [46]
+- Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
+- Guidance uses exact response address and enrichment precedes serialization [48]
+- Server info reports binding/build rather than roster; context reader is scoped [49]
+- Adoption is explicit, confined and preview-identity approved [50]
+- Hosted identity cannot silently switch to ambient dispatch. [51]
+- Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime. [52]
+- Knowledge selection and paging replace database-facing requests. [53]
+- Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
+- Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts. [55]
+- Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. [56]
+- Terminal implementation is application-owned and rejects unsupported tier/retired inputs [57]
+- Gate reclaim is control-plane-owned after durable decision work [58]
+- Skill registrar serves resources/extension methods without tools [59]

@@ -233,6 +233,55 @@
         }
       ]
     },
+    "18": {
+      "note": "Seventeen route declarations use the terminal-session prefix and explicit response contracts; handlers construct JSONResponse bodies.\n\nAnchor: router and handlers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:750b8acb7d5aeba41bd8914e797d23f9cdd127f4c56832b054b64ea5e0c7d499",
+            "locator": {
+              "end": 814,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Known typed refusals preserve epoch-subclass precedence and six shared statuses; outcome tables retain refusal unions.\n\nAnchor: _map_typed_error; outcome tables",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:5b9552b4dc3f6a834be14a7e42604b16bb99a30ea72366034093e6e73aced1f0",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:0d18faba69ce30662c959ffae9f984e2a45e20f6f0890178089566596381e4ca",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver.",
       "targets": [
@@ -263,6 +312,238 @@
         }
       ]
     },
+    "20": {
+      "note": "Server-side authorization derives from the request TCP peer, not browser identity claims.\n\nAnchor: resolve_conversation_authorization",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:a2ac274e7c29a5cfdc2bc1ac3610adba8136ca9028cf353bdff3cf07259cb891",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Verified scopes, channel limits, conditional lock eviction, explicit release, and blocking-read offload are separate predicates.\n\nAnchor: ControlRequest; ControlScope; ConversationControlService",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:9adc692b0448924cc87943939510fc26b86fe651a17e3b5178951055e53fc15c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:207f3a4a50630f29aec3b8450695f479111c2883237fc318ec809844acedd478",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Signed purpose brands contain identity and verify integrity before decoding and rebinding.\n\nAnchor: mint_ref; decode_ref; _check_payload",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:f3d76502e6dd0f8df05ef5e386c9129c6ddc360e1e7b080d79a6b210688494f8",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Interrupt replay/conflict and lost-ack handling remain separate from harness-specific settlement; Eve reaches the non-Claude/non-Codex branch.\n\nAnchor: interrupt; _drive_interrupt; _observe_settlement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:5f5987839d7906538713ce634740378f4456e688d0f325632cc517874ef497b3",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:00adc85b06b478f56f06ed3c9381b5724985d66c62bf6941808f165e5a4943aa",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Evidence clipping preserves exact bounded terminal scalars, including Claude correlation classification.\n\nAnchor: _preserved_evidence_identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:224a5159e027da6a06154e22c291e265b7bc468916172be32ca49045dca6f9e1",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Queue projects only live prompt states; revision-key eviction has no settled-state predicate; absent journal yields empty held-content preview.\n\nAnchor: operation_queue; _queue_row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:232544d1ccaf95bbebbca3a44adf35f32f5453ad0f540e21a94b7d96ed93c7dd",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/queue_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "DTO validation restricts cockpit identity and withdrawability to queued cockpit rows.\n\nAnchor: protect_queue_source_privacy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c42fab80701148e55eb502581ada2d0dcccc9c0a",
+            "content": "sha256:9560cb729615cf56efc6ae490b7079a7caf38906e7d5e87245aa739bed581a33",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/models/conversations/submissions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Withdrawal checks live exact identity/source/state; shared authority captures content once before the terminal transition.\n\nAnchor: _drive_withdrawal; withdraw",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:778bd3be4d8f06de5538ef092523733609367a4c6d0aeea6d952b04ff4e9269c",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:439bc0682ea4cee79eb2754be14fabceb74bab7bcd3df2faddb495c6fb801fd5",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 454
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Recovery chooses substrate text then journal; assembly does not compare their contents.\n\nAnchor: recovery_text; recovery_digest",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:b2643b06a4a693338b848b2e6ee8372fbe5650186bd7164eaf60712fc0fa2adb",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Ack/expiry clear recovery-record text and conditionally dispose assets; retained replay response is suppressed rather than erased.\n\nAnchor: acknowledge_recovery; sweep_recoveries; _replay_response",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:c68f43dc7f42c51f0b0aaa04921c08f46208f5f19cb998feffd4b6f615630630",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:8228049405d4c29446eb401672ffd9ca6ff59a8fb43986e9396f0b7d6092fe72",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 658
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The conversation models define `protect_queue_source_privacy`.",
       "targets": [
@@ -275,6 +556,358 @@
               "name": "protect_queue_source_privacy"
             },
             "path": "mcp/src/agents_remember/models/conversations/submissions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Stage/rebind/submit enforce local lifecycle and receipt predicates; terminal-only eviction is a substrate dependency.\n\nAnchor: stage; submit; _require_receipt_match; _timeline_transition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:851390f778788697282629ae2a43912ee9a283dcc2438f5bfd0e2e29e78fb942",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:5dccbe49c8725fcca541cac86ca933b9bc823cc7041135a351ae04cff2a8ff83",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:2b60c91ac460df66ff09260932eefe6cb98ac1388246ce81d3d55b1a822de8ff",
+            "locator": {
+              "end": 742,
+              "kind": "line_range",
+              "start": 509
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:b8d2be7095695622cb3ee540791c9a60e63102f9f77946566bcd6cbd85944a12",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Spool mechanics confine paths, set request-directory/file modes, verify bytes, and preserve accessible descriptions during exchange.\n\nAnchor: stage_one; exchange_bytes; confined_path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:a28e1a82df4af7bfe8eab11fb8bc4d37d1b6698ab6797a37a0c628c5df3f6ce8",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/asset_spool.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Claude and Eve interrupt declarations are supported; version snapshots do not select capability state.\n\nAnchor: per-harness declarations; capability dispatch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:f8b73eeb790e44bbeb5fc005d330eaa41da6ca6f89dde4fc2fea8109e8f92587",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Active-page interrupt delegates to the control authority.\n\nAnchor: controls.interrupt",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:2ca2c1306fd1f82f0f28c89e7876278fc78055829215fe763b541df41af4e64f",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:c370f1e124375ead47a5f349332e2e6949aa3ce28cc94a3bab6659c7a38c711d",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 407
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Policy has no Eve-specific mode branch despite supported Eve policy capability.\n\nAnchor: _harness_mode",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:b6de3bd22094c6c6f4b14aee39ce466e35731bcd1e459ff9a2af208e8dd56a6b",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:4d75d0be470bb56d1063a32c30c395e6b883363b60b617b826f2c428e1ca6c9e",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Codex metric emission selects tokenUsage mappings and retains absent counts; provenance comes from capability evidence.\n\nAnchor: conversation_telemetry; _codex_usage",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2995bf6f6c74f6f7a61f7d164957370face03555",
+            "content": "sha256:593d34d93cbf2086ae5ce8caed49f5557ce350ad72937559027cb7699f105dd7",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/telemetry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Adjacent question-answer validation requires exact keys; interaction delivery retries only proven-unsent failures before reopening.\n\nAnchor: _question_answers; _record_delivery_failure; _answer_interaction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:eca96fc80a10dd7bd31fc2936437c73edb899a183162104161ff02ba671b60e2",
+            "locator": {
+              "end": 625,
+              "kind": "line_range",
+              "start": 552
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c731ab0a47a57da748ecf7f2af2d178f596cba0e",
+            "content": "sha256:5908a36276568a23a6f3d4e75953b4cc90f413471571bf17ad9fad440f6838de",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_interactions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c731ab0a47a57da748ecf7f2af2d178f596cba0e",
+            "content": "sha256:2b27e320b37a5fe2142141e64a625d87b94823a42a2789007da40924c6c96ff2",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_interactions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:03d7f49c2ebaba3299d08e7a089d5bb640ecb67ee947c42c7d3ed2e872902111",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The repository’s built-in adapter defaults launch local Claude, Codex, Pi and Eve subprocesses; injected factories and configured-registry scope remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:e297a163f8f5b9b47497ba0e3c4bd6dc18fc63329c97b769977b9e451cf60ef4",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1f3055934bda9893d663a3282acbb8ca2465f5",
+            "content": "sha256:cb4c821067d224053de33d7685914c6d15ec78d2d7bc46074e39bcd082e84d6a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_transport.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:d5f16fbea18d2fe9d535c41dc08980d185fef7addbe8d76619e8a87dbdb4da2b",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c2c9c7cd6970c13d87df88985370acf600b3463",
+            "content": "sha256:cb0db2ed0a0b7e36758b895bc2456768a0dd18aea4ed262cf31782eb10001b78",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:c6ae583925546626b26c6b85896a22e999406e2090e186167d9ab41d8073786f",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7864939e3baebde9060994ffa10d8b26f6bb17f",
+            "content": "sha256:77f789f07798b8d0d1cc60a7ed9a7b21dc215461de1a3c99d5bb8d9e54e77deb",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_process.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:04941af33d3552786cf54ac380eb18a3f9cd74ffa10dce896a8646b67f39a9b7",
+            "locator": {
+              "end": 678,
+              "kind": "line_range",
+              "start": 675
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:ad217616870da4e9156d2d84b7714ec8368847d66577f7a0290c001a47a8af36",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
           },
           "kind": "code"
         }

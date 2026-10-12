@@ -99,6 +99,158 @@
         }
       ]
     },
+    "13": {
+      "note": "Pure lifecycle join, stable group identity, no provider model fallback\n\nAnchor: buildEngineRoomModel",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:372a8285476452b89d202aa03e1d42f8cadce44de35371482779d44d54bf6218",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Slice equality, memoized join, repository ledger selection, generation map key\n\nAnchor: EngineRoomImpl",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:077d5808972124166673c4916a3678f5200701eaaa2e49727a280fb9361280b7",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Memory/materialisation/fleeting and movement predicates\n\nAnchor: resolveEngines through resolveMemoryMovement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:095133070ad5e8d0007456e58e6eb5dc3a6e4b93aff55dbd77e9bdddb5e33bf2",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Terminal, recovery, and landing predicates\n\nAnchor: resolveGates through resolveLanding",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:4494bdf44f6d6fbe9d57e71da7f2a368641a67e501eebc48d16da32c66519721",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Provider geometry absent; integration paths straight; polarity state-derived\n\nAnchor: EDGE_GEOM, conduitPathD, refusedPolarityOf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:2b2820cb214df32a336ee7fcae8d5de9400d01fc6ea2f10aafa7cc40c458bc3a",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Replay metadata without bent geometry; observed-only landing progression\n\nAnchor: Conduit, landingFlowState",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:ad2f00ea6532819ab4ac5198fb8799178406b5706444e220ec19205f9067bc08",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6fc598c43361d6fa90cf96cbd72ed920980ec8a128aaa9c79c2a9009fd5c6dda",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Bounded ledger window and best-effort metadata\n\nAnchor: read_ledger, _ledger_window, enrichment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The served `EngineProcessNode` / `Analytics.engineProcesses` contract.",
       "targets": [
@@ -116,6 +268,238 @@
         }
       ]
     },
+    "20": {
+      "note": "Preview, matching row, missing metadata, downward popover\n\nAnchor: LedgerTable, LedgerPopover",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:92cdc0c0cb3c7a6e9ef9d218a637ffbfa028fb104a91cd72c74ff49d2bcd2951",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/engine-room/ledger.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:9a1f4316d0877192dbc833e2f0323878b56bbf69d162430856f91fa02d1c11c5",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/panels/engine-room/ledger.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Actual producer vocabulary and seed-state precedence\n\nAnchor: _start_process_node, _process_edges, _seed_edge_state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:2eb66d3a91dd50bcf65fe4138ef7527e430c5c6e26663304e96db2bd9a9003ba",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:60b324335bfaa5fe148538654b7a0c7a3c3d57f45816bfacec29a2c8d91f1f8c",
+            "locator": {
+              "end": 654,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Extra fields forbidden, kind/state string fields, optional lineage\n\nAnchor: projection models",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "content": "sha256:bab90421ecbc4d29e1531dc6bfdb63fdeb29501bb42094964614d6f639be991d",
+            "locator": {
+              "end": 1002,
+              "kind": "line_range",
+              "start": 919
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Timeline freshness differs from canvas; abandon/conflict dispositions\n\nAnchor: bootSteps, disposeFrontier, teardownSteps",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "content": "sha256:7fac60d94d8c55461ec1b3b5547f818242ceb82a11d3f6840da24cc8eef27114",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/engine-room/BootTimeline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Source-lineage diagnostic and responder admission\n\nAnchor: DiagnosticsPanel, DiagnosticActionRow",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:d3442e6ec15ac0a8224a0cb2fea1ce92ac3d81c8f62236f6bc90238a10335b4a",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:5a6b63c76bb156b98c500b4c8f52697e46f58d2c3e8c6a72e37d0c4569c999c0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Responder records decisions and uses inbox/adapter routing\n\nAnchor: notifyAgentResponse, recordGateDecision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:d8834778d6296838075e97f1722bd2e7b38e28f53fa148c0835b3695f6f966de",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Motion gate, scoped context pause and cleanup\n\nAnchor: shouldAnimate, useEngineTimeline",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:9bb7de66e1a174480fdf39d15aa8a38ad942301965db125e8ee779170998366c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:3548b0005b46d8a557674654ac9a3a4a312b9e9d3cff075b85f6109321e233ba",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Current sibling overlay contains surge and attention\n\nAnchor: EngineFxOverlay",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:c761a02e6796a7cbd74c4ff76dc5138578f78fd7d3cd496dab8387d923941bc4",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "EngineRoom conditionally mounted, contrary to inherited keep-alive account\n\nAnchor: cockpit main composition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:4fd079a0a7750da80249c1ea20769e65714a652b6e4bdbd862a01b45162c4e2c",
+            "locator": {
+              "end": 793,
+              "kind": "line_range",
+              "start": 786
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "T7B assertion source agrees with retirement and recovery policy\n\nAnchor: retired T7B cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "content": "sha256:218e11edef022b6290770389481f0df980bafadf9ed4136880325ede3acba06b",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "The honest-motion gate the GSAP/Motion read.",
       "targets": [
@@ -128,6 +512,50 @@
               "name": "useShouldAnimate"
             },
             "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "BranchTier mounts integration/source and worktree tiers plus a conditional middle landing tier, with branch labels from projected refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:47718d6637f76abc954c7d5dcbfb9708e21681526e7e15c8328d3419df6e54f0",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
+            "content": "sha256:97c5c52ddccfacf340c819ad90970cfb6866904b1b36e626a62251593e977768",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
+            "content": "sha256:daf2ff19d8889ea99f9c36af2cdf9b8fd94d80e9be49204697efed0a92aafd44",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
           "kind": "code"
         }

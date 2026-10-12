@@ -181,13 +181,191 @@
         }
       ]
     },
+    "13": {
+      "note": "Strict operation decoding explicitly represents missing legacy task intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:e5ddb7ae8d23d5f39b8ab15e81e953d7b3706f0d8cdced8a2423d19bfaf763de",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 421
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Publication inputs, refusal text, record coverage and evidence custody have deciding predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:f6b89ae37afc29aee06dbe090755c389f224c0f1bd6503d7f035bfc67e4fc865",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:cfd3b1c6a0cb93b8836679c0ac623ef502826d800bdbeba4f2a1c23e2cd2378c",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:12832d0bbc110489864ac934fb181df8635b25611d617b7aa6cb078d07565a88",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 538
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Prepare consumes the shared publication input statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:10f0b08d9ba2b82692df2251f88521a6ab8d0e74ee36710f8fa3c15eff948017",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Preparation output-command requirements are conditional on retained command history; transitions preserve original observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:fd7bbbfabb5a8341d6583708d1c5c794d99ff7d125d6ec608e8fbe6c5353ae09",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:c8063c0b4c7348e181c9abf4ddea4ba101e14952dae9847d78c14583835ecf34",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Measured binding status separates failure, disagreement and incomplete coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:75b628a1a2c32d5ba341c2565dde5cda98ab23bda0287b0fdf6841abf49b434c",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Subject counts and status must describe the actual entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
+            "content": "sha256:fbfa2df47bcf6a46ff495a6abe11dd1827b98ab79e82215da0dc35538d4d574f",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Finalization forwards supplied agent archive reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "content": "sha256:adb6a73a5c29cea2c41da8b8e765ac71fe71e154b6e37b41eb3a5ff6d2720935",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "content": "sha256:d48fab6a38c37bf3502307e25fdbf6024b76617b0ce6536b417570e97a6184d6",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Finalization exposes edge proof and completion-seat result sets.",
       "targets": [
         {
           "anchor": {
-            "blob": "eefe9957926f7c5e703c6dff044bdfebba98d76e",
-            "content": "sha256:3e11bc3ad41eaee18d73bded639a20efbae22405a74292f6646941a25856bd73",
+            "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
+            "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
             "locator": {
               "kind": "symbol",
               "name": "LifecycleFinalizeTaskResponse"
@@ -198,8 +376,96 @@
         }
       ]
     },
+    "20": {
+      "note": "The exact assessment dependency policy and record-to-assessment edge are separately constructed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:4430a0e56c52f80fd4f6a480ff1ef406b2dabab6a3d486cd4e849b072d44996f",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:98fa2ceda382ed37ea7c449a7591864bc69662f1f601da0ffcd508e7d10cfb0e",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
+            "content": "sha256:aa29c81b988277fc56e839d40c65d2ea0a116c55ca31a2b05be96ce3f90d0e2d",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The snapshot and memory-preparation consumers distinguish filtered content from actual Git trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:e5ffc56fe135d87fab907ef8dc562bd58ceed11795b57db4c5ad92763cf200f8",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97cd60f42499bfabcd82b0e2a42808e6a68cc4ef",
+            "content": "sha256:5056ba9d50adc6c4f75780a847167ec24c1585a99a800c85ece40cccbd7d6899",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:8b7d02094a03fcf486be16f9fa460ebfd9f51ac3c045df0cd7eee3b4345eb28a",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
-      "note": "Asynchronous operation records keep private identity out of the public projection.\n\nAnchor: \"class LifecycleOperationRecord(BaseModel):\"; \"class LifecycleOperationProjection(StrictResponseModel):\"",
+      "note": "Asynchronous operation records keep private execution identity out of the declared public projection fields.",
       "targets": [
         {
           "anchor": {
@@ -226,11 +492,37 @@
             "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:f23cfa5b590d3f4fb88efb376e983988a392e1e07296e149c2377ad71777eeb3",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Recovery records have two output commits.",
+      "note": "Recovery records have code and memory-content output-commit fields.",
       "targets": [
         {
           "anchor": {

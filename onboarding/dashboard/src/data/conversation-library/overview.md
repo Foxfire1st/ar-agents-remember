@@ -14,64 +14,79 @@ the active store never lists dormant history.
 
 ## Purpose
 
-`data/conversation-library/` is the **reconstructable browser projection of the native
-previous-conversation library** (design §4.4, §9.4, §11.2). It holds paged list-query
-state, read-only preview pages, the selected preview identity, and the caller-stable open-operation
-phase/revision — all rebuilt from the landed library routes. It has **no durable browser index**:
-reload reconstructs from server authority. Its single most load-bearing rule is the **exact-open focus
-gate**: opening a dormant conversation focuses a NEW live rail row ONLY on catalog-proven
-`phase="opened" && outcome="opened"`; every other outcome leaves the current chat/draft/focus/scroll
-intact (R4).
+`data/conversation-library/` holds the reconstructable browser projection of the native
+previous-conversation library: paged list-query state, read-only historical preview pages,
+the selected preview identity, and the caller-stable open operation with its phase and revision.
+The store has no persistence adapter or durable browser index; a new browser instance rebuilds its
+list from the server. Library history remains separate from the active-conversation projection
+and the surrounding dashboard state.
 
-## Route Model
-
-- `types.ts` — the browser mirror of the landed native-library wire grammar (`library/api.py`,
-  `models.py`). Library responses KEEP null keys (not `exclude_none`), so `nextCursor`/`olderCursor`/
-  `safeNativeIdSuffix`/`lastActivityAt` arrive as explicit `null` (treated identically to absent). A
-  `ConversationLibraryRow` is read-only dormant history and is NEVER a live AR session. Carries the
-  `OpenConversationOperation` with its `OpenPhase`/`OpenOutcome` unions and the branded list/read/key
-  cursors. **Sub-agent grouping:** a row may carry `agents` —
-  `ConversationLibraryAgentRow` children grouped under it (own server-minted `conversationKey`,
-  optional `agentPath`/`nickname`/`role`/`model`/`joinKey`, NO capabilities block of their own), and
-  the page carries `agentsNote` — capability honesty: the exact native reason sub-agent conversations
-  are (partially) unavailable, when they are, never silently absent.
-- `client.ts` — list/read (or-null reads) + open/open-status/open-reconcile (typed `OpenResult`
-  evidence; a refusal is discriminated by the `phase`+`outcome` payload shape, never guessed into
-  success). The open `requestId` is caller-stable and reused across status/reconcile — a lost response
-  is reconciled under the SAME id, never a fresh one (§9.4, invariant 27). Optional launch context
-  carries the canonical `TaskDocumentRef` plus seat role; it does not expose or reconstruct a leaf or
-  runtime-session address.
-- `store.ts` — the `conversationLibraryStore` + list/preview/open orchestration. `openedForFocus` is the
-  sole focus gate (set only on `opened`/`opened`); there is no active-marking field. The open flow is
-  hardened per fix-round F6: `dispatching` from dispatch blocks a double-open (F6c); the requestId is
-  retained across a transport failure (F6b); a spent poll budget stops and offers a manual reconcile
-  under the same id (F6a). `LibraryListView` carries the page's `agentsNote`:
-  `loadLibraryList` preserves the previous note through loading/error and takes the freshest page's
-  note on success (it describes the query's current agent availability).
-
-## Invariants And Boundaries
-
-- **Reconstructable, no durable index (R1).** The store holds only server-derived rows/previews; reload
-  reconstructs.
-- **A library row is never active (R4).** The store surfaces `arSessionId` for focus ONLY when the open
-  operation is `phase="opened" && outcome="opened"`; it has no field that marks a row live. Only exact
-  catalog evidence in the LIVE session store can make a session active.
-- **Every non-opened outcome preserves the current state.** `unsupported`/`stale-identity`/
-  `timeout-unknown`/`launch-failed`/`identity-mismatch`/`request-conflict` are surfaced without focusing,
-  and the current draft/focus/scroll survive.
-- **One id across the whole open lifecycle.** `beginOpen`/`reconcileOpen`/the poll loop all carry the
-  caller-stable requestId; `applyOpen` keeps the id on failure so the next attempt reconciles, never
-  re-opens under a new id (invariant 27). `dispatching` closes the TOCTOU double-open window.
-- **Preview is read-only history.** A stale preview (selection moved on) is dropped, never mis-applied.
+Opening history requests a controlled session for that exact conversation. The browser permits the
+opened-session callback only when the returned operation has both `phase="opened"` and
+`outcome="opened"`, and supplies an `arSessionId`. The server establishes the opened result after
+observing matching native identity and reading submission authority from the catalog entry.
+Other results are reported without invoking that callback.
 
 ## Hot Path Summary
 
-1. `loadLibraryList` pages the native list for a harness/scope (append on cursor); `loadLibraryPreview`
-   reads one conversation's read-only historical page and drops the result if the selection moved on.
-2. `beginOpen` POSTs one exact-open under a caller-stable requestId with `dispatching` set from dispatch;
-   while pending/timeout-unknown it re-drives open-status/open-reconcile under the same id until terminal.
-3. On terminal `opened`/`opened`, `openedForFocus` flips true and the caller (OpenConversationAction →
-   ChatsStageBody) focuses the new live row; every other outcome leaves the current state intact.
+1. `ConversationLibrarySurface` reads the library store and starts list loading for its harness and
+   scope. Load-more supplies the list cursor. Selecting a row loads its historical preview; a response
+   for a superseded selection is discarded.
+2. `beginOpen` sends the conversation key, expected identity digest and caller-supplied request ID.
+   For pending or timeout-unknown results, subsequent status/reconcile requests reuse the ID until
+   terminal, transport failure, supersession or poll-budget exhaustion. Manual reconciliation also
+   uses that ID.
+3. `applyOpen` sets `openedForFocus` only for the exact opened phase/outcome pair.
+   `OpenConversationAction` additionally requires the matching conversation key and an `arSessionId`
+   before calling `onOpened`. `ConversationLibrarySurface` forwards that callback;
+   `LibraryAndDiagnostics`, rendered by `ChatsStageBody`, closes the library and forwards the session
+   ID through `onSessionOpened`. Other operation outcomes do not trigger this handoff.
+
+## Construction
+
+- `types.ts` mirrors the library wire models. It defines branded list/read cursors and conversation
+  keys, dormant-history rows, historical pages, and the open phase/outcome unions. Optional nullable
+  identity-display fields accompany each row. A parent row may group `ConversationLibraryAgentRow`
+  children with their own conversation key and identity digest, optional agent path, nickname, role,
+  model and join key, and no separate capabilities block. The page may carry `agentsNote`, describing
+  unavailable or partially available agent history.
+- `client.ts` requests harness-scoped list and historical-read routes, returning `null` on failed
+  reads. The open, status and reconcile routes return typed operation-or-error results. A body with
+  both `phase` and `outcome` is treated as an operation even on a refusal HTTP status; success is not
+  inferred from HTTP status alone. Optional launch context carries a canonical task document reference
+  and seat role rather than a leaf or runtime-session address. Library serialization retains null
+  fields rather than using `exclude_none`.
+- `store.ts` owns the independent `conversationLibraryStore` and its loaders. List loading appends
+  when a cursor is supplied and the previous list has the same harness; otherwise it replaces rows.
+  Loading and failure retain the previous `agentsNote`; success adopts the latest page's note.
+  Preview loading selects a key and drops the response if that key is no longer selected.
+- Open orchestration records `dispatching` before sending the initial request and retains the supplied
+  request ID on transport failure. Pending and timeout-unknown operations are polled under that same
+  ID. Polling has a finite budget; exhaustion exposes a manual reconcile state. The UI disables the
+  tracked row's action while dispatching or polling and reuses its ID after transport failure or
+  exhaustion. This is a UI guard for that row, not a store-level exclusion of all concurrent opens.
+
+## Invariants And Boundaries
+
+- **Reconstructable history.** This store holds server-returned library rows and previews plus browser
+  query, selection and open-tracking state. It does not persist a browser index or mark history rows
+  active. The active-conversation and dashboard projections have separate state owners.
+- **Exact-open handoff.** `openedForFocus` depends on both opened discriminants. The store can retain
+  operation identity data for other outcomes; the presence of `arSessionId` alone is not permission
+  to focus a session.
+- **Non-opened outcomes do not select another chat.** Unsupported, stale-identity, timeout-unknown,
+  launch-failed, identity-mismatch and request-conflict results remain status evidence. The library
+  orchestration does not write the current chat's draft, focus or scroll state, and its action invokes
+  the opened-session callback only through the exact-open gate. Opening the library itself focuses
+  its heading; this boundary does not promise unchanged DOM focus throughout library interaction.
+- **One ID for an unresolved open.** Initial dispatch, automatic status/reconcile and manual recovery
+  carry the same request ID. A transport error preserves it so the UI can reconcile. A later fresh
+  open after a terminal result may receive a new ID.
+- **Read-only preview.** Preview requests read historical pages and do not mutate the active
+  conversation. A response is applied only while its conversation key remains selected.
+- **Agent availability remains visible in state.** The list view carries `agentsNote` through loading
+  and failure and replaces it with the latest successful page's note. Agent rows carry their own
+  identity fields without inventing a child capabilities block.
 
 ## Child Route Onboarding Map
 
@@ -88,23 +103,6 @@ and this overview is their governing pillar.
 
 ## Evidence
 
-### Docs References
-
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
-configured. This route's statements were verified from its direct agents-remember source/tests and the
-reviewed worker report and final-PASS review verdict.
-
-No configured Domain Documentation source exists for this route.
-
-### Cross-Repo References
-
-The route mirrors this repository's own landed library wire contract and talks only to this package's
-serving endpoints; no cross-repository implementation source governs it.
-
-No applicable cross-repository source was found.
-
-### Repo-Internal References
-
 - The browser client and native serving route expose library listing for a harness with optional query fields. [1]
 - The browser client and native serving route read a historical conversation page. [2]
 - The browser client and native serving route open a conversation. [3]
@@ -112,4 +110,4 @@ No applicable cross-repository source was found.
 - The browser client and native serving route reconcile an open request. [5]
 - The in-stage browser view reads this library state and starts list loading. [6]
 - The sibling active-conversation state is a separate projection. [7]
-- The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. [8]
+- The parent data boundary keeps dashboardStore/DashboardState separate from conversationLibraryStore. [8]

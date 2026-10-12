@@ -239,7 +239,7 @@
       ]
     },
     "15": {
-      "note": "The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text.",
+      "note": "Sync recovery reads its canonical enclosure-root reports journal first, with the old lifecycle location only a legacy fallback; operation observations do not derive transaction state from task prose.",
       "targets": [
         {
           "anchor": {
@@ -260,6 +260,30 @@
             "locator": {
               "kind": "symbol",
               "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_operation_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "content": "sha256:0722fd8efa8195977a4cc573e86e739deb63a7b2638366489ba687b04635512e",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_sync_operation_path"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -449,7 +473,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e2e1ce552a42396bc678ff06e8f4a50ef9a92ac",
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
             "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
             "locator": {
               "kind": "symbol",
@@ -496,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
+            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -663,7 +687,7 @@
         },
         {
           "anchor": {
-            "blob": "2e2e1ce552a42396bc678ff06e8f4a50ef9a92ac",
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
             "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
             "locator": {
               "kind": "symbol",
@@ -738,7 +762,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e2e1ce552a42396bc678ff06e8f4a50ef9a92ac",
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
             "content": "sha256:4c5d2339a33ef7a8f76813c08e82d633a62d5f7103f1f1e678d9d3438bcbc112",
             "locator": {
               "kind": "symbol",
@@ -917,7 +941,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
+            "blob": "46c172e8011d51f4ca08ead6d4d85e9e2a82c905",
             "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
             "locator": {
               "kind": "symbol",
@@ -1638,7 +1662,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e2e1ce552a42396bc678ff06e8f4a50ef9a92ac",
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
             "content": "sha256:6d5715eb1e130695cd587653b7ce684c1e13e0ef342229b15e9286ed2d860094",
             "locator": {
               "kind": "symbol",
@@ -1685,7 +1709,7 @@
       ]
     },
     "79": {
-      "note": "Completed direct ownership is the shared doorless record predicate.\n\nComplete reapply proof accepts already-held edits without sample fallback.",
+      "note": "Completed direct ownership is the shared doorless record predicate.\n\nAttribution alone supplies source rows; invalid code objects are separately excluded\n\nAnchor: read_ledger_source\n\nCompleted direct ownership is the shared doorless record predicate.\n\nComplete reapply proof accepts already-held edits without sample fallback.",
       "targets": [
         {
           "anchor": {
@@ -1708,6 +1732,19 @@
               "name": "parked_wip_failures"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
           },
           "kind": "code"
         }
@@ -1755,7 +1792,7 @@
       ]
     },
     "80": {
-      "note": "Public direct recover completes the accepted generation and settles the retained receipt.\n\nCancellation proves ownership first and restores every parked side before terminal retirement.",
+      "note": "Public direct recover completes the accepted generation and settles the retained receipt.\n\nConverted validation requires paired code and bound validator; leaf publication uses its publication model\n\nAnchor: memory_commit_refusal\n\nPublic direct recover completes the accepted generation and settles the retained receipt.\n\nCancellation proves ownership first and restores every parked side before terminal retirement.",
       "targets": [
         {
           "anchor": {
@@ -1780,21 +1817,204 @@
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5891a6a7401ef37c894e00b76e81c0d767668d36",
+            "content": "sha256:266112f38d4fc0f657ca1e53046b5369394d04150813d8df6b2cb20f4bee0524",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "81": {
-      "note": "An exact direct replay retains its generation; a changed request can replace retired terminal evidence.",
+      "note": "An exact direct replay retains its generation; a changed request can replace retired terminal evidence.\n\nRepository lock probes local marker blobs/working-tree files, with explicit absent/non-repository handling\n\nAnchor: converted_memory_location / cutover_lock_refusal",
       "targets": [
         {
           "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
+            "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
             "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "kind": "symbol",
               "name": "_create_direct_landing"
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "content": "sha256:2425cb7ce42f16864bbad22f2b51b34bc64c4667d3538ccc51193696107fda2e",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "Sync lock skips absent, already-current and skip sides; moving candidates alone park\n\nAnchor: _cutover_locked / _side_parks_wip",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:5068a80020683ad7ae7804a408c0c741862f67548acb4fede4dbdeb1a016d824",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "Report selection does not include aligned-card count alone\n\nAnchor: _needs_crossing_report",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
+            "locator": {
+              "end": 1180,
+              "kind": "line_range",
+              "start": 1165
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "Memory merge validates exact staged tree before commit and proves pinned parents\n\nAnchor: _finish_staged_memory_merge",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "end": 1279,
+              "kind": "line_range",
+              "start": 1251
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "Completion publishes journal before cleanup; worklist failures omit summary\n\nAnchor: finalize_sync / recompute_knowledge_worklist",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "content": "sha256:61cc818d3f5ff94918448ed813b255a2a018f46ced407f62086bdb3b0bdb1064",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "Malformed explicitly selected copy contracts raise; indeterminate failures depend on own refresh\n\nAnchor: refresh_task_document_copies / _RefreshWork.finish",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:132e7240268aa5f3f65ac6d95c4d19c1bc9a1e0d2fb4a04409027b893f109951",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Checkpoint captures its own refs and rechecks them at publication\n\nAnchor: capture_series_checkpoint_refs / publish_series_checkpoint_under_authority",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
+            "content": "sha256:24b3a17fad4bbcc5fffbcc5328cb9072ba423220282887f9f65fec19f3fca882",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83af517bb06034cc0b746e444a06b3a7a281804d",
+            "content": "sha256:d9a7b9863ac518d6e6de0365d91ecaaa703e93a790f129b4dad54c294a6c2555",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "Abandoned rows omit required enclosures but existing contracts still parse and completed landings refuse\n\nAnchor: exact_atomic_leaf_contracts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:0c062bcc31684874c616a517341608c857c5546e4bcb330098b7b205114394d7",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Chain enumerates additions and bounds ancestry admission to positions inside the step\n\nAnchor: _require_admitted_step / _positions_inside_the_step",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:c2e880dcc020d922f5541f2c262e5151a6f8d755485c2061adb76b9e388b1d12",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 578
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
           },
           "kind": "code"
         }
@@ -1824,6 +2044,153 @@
               "name": "AtomicSeriesActivationArchiveEvidence"
             },
             "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "Completed closeout alone freezes history; latest attempt is closed with reversible exact-byte restoration\n\nAnchor: closed_out_memory / close_owner_history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:f34dddcf2c0bfd9dbd645d76c6620259b068349ed5e705f357f3fafcf7dce929",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Prepared converted closeout still refuses history closing; landing combines validation and gate\n\nAnchor: prepared_closeout_refusal / landing_gate_refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:2744ba801da674b7fa126e6c2977893c2086316ccfa054b69e94b2b8f924be31",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "Pause checks removed memory mode, exact series identity and observed vacancy\n\nAnchor: pause_result / _already_stopped_result",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "content": "sha256:914a153be2720a5d6722fcdb5eea8bed13b6bb64b5db51c8327f79c3e1de180d",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "Series reopen preserves landing on reconstruction and tolerates missing/unreadable task document as a report fact\n\nAnchor: _series_ref_recut / _plan_series_document_reset",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0c7ac4a2e79d714a660304cb301e2cf9dfe651",
+            "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 464
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability\n\nAnchor: _survey_operations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:99c4b020ac0714e5abd0ec68ade6c104c4b2b9391ee6a4f263cadd8618aecd0a",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission\n\nAnchor: archive_terminal_agents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
+            "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_agents.py"
           },
           "kind": "code"
         }

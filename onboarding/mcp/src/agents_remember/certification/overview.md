@@ -1,99 +1,93 @@
 # Certification Contract Overview
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `mcp/src/agents_remember/certification` |
-
 ## Governing Overview
-
 [MCP overview](../../../overview.md)
 
-## What This Area Is
+## Purpose
 
-The repository-neutral contract foundation for five ordered closeout gates:
+This area supplies the repository-neutral contracts for five ordered closeout gates: pre-test code quality; the ordinary test suite; post-test code quality consuming declared suite artifacts; clean-room integration and end-to-end testing; and memory-domain onboarding, citation, and coherence quality. It owns canonical registry and profile vocabulary, bounded admission, deterministic plans, content identities, typed terminal results, certificates, and lifecycle boundary records. These contracts describe what an executor or lifecycle owner must supply; compiling them does not prove execution or acceptance.
 
-1. pre-test code quality;
-2. the large static test suite;
-3. post-test code quality that consumes suite output;
-4. clean-room integration and end-to-end tests;
-5. onboarding and citation quality.
+Gate meaning is fixed. Concrete Gate 1–4 inventories, adapters, commands, runtime inputs, publication policies, ownership, and applicability belong to repository-profile data. The concrete Agents Remember profile remains outside this package at `mcp/certification-profile-v1.json`. Gate 5 remains memory-domain authority: this package consumes its rail declarations and exact inputs rather than owning memory checker execution.
 
-It owns immutable registry, repository-profile, plan, certificate, and terminal-result semantics.
-`repository_profiles/` resolves and validates repository-owned data; the concrete Agents Remember
-profile lives at `mcp/certification-profile-v1.json`. `certification_lane.py` derives the R11 registry
-from that admitted R22 plan plus caller-supplied memory rails. Execution and lifecycle publication
-remain owned by the worktree and application layers.
-
-[frozen_run/](frozen_run/overview.md) retains complete original admission and candidate-authority
-records before execution. [repository_profiles/source_selection/](repository_profiles/source_selection/overview.md)
-fixes explicitly declared rail applicability from exact Git tree deltas. These contracts do not
-replace the dependency-closure selector or certify that any gate executed.
-
-The repository layer contract declares this package at rank 3, after root errors, feature-free
-kernel primitives, and served wire models, and before the stateful control plane. The placement is
-an ownership rule rather than an inference from the current import graph: later control-plane,
-worktree, and application consumers may depend on these generic contracts, while certification
-cannot reach upward into their lifecycle or repository-specific behavior.
+`layers.toml` declares certification at rank 3, after root errors, feature-free kernel primitives, and served wire models, and before control-plane, worktree, and application consumers. This is an allowed-dependency and responsibility contract, not a report that the current graph passed a checker. Concrete profiles, executors, lifecycle terminalization, and memory gates remain with their owners. The adjacent control-plane package owns durable interaction records and their policy. The architecture declares strict downward imports with no baseline or exceptions; its historical checker claims are not fresh verification here.
 
 ## Hot Path Summary
 
-`lifecycle_models.py` types lifecycle certification over the surviving code and memory-content commit legs. Candidate, selected result and authority remain exact; the computed ledger contributes no third preparation output or acceptance identity.
+Start with `certification_lane.py` for the R22 repository-plan to R11 registry/plan bridge, `certificate_admission.py` for exact authority alignment, and `results.py` plus `certificate_authority.py` for complete terminal catalogs and green certificate issuance. The bridge preserves applicable repository rails' adapter, runtime, evidence, artifact, applicability, and ownership contracts. An explicitly not-applicable repository gate instead contributes a bounded applicability declaration carrying its reason and plan identity; it makes no rail-execution or suite-artifact claim. Missing Gate-5 rails or rails outside Gate-5 memory-domain authority refuse admission.
 
-Start with `certification_lane.py` for the R22-plan plus Gate-5-rails bridge, `certificate_admission.py` for exact authority alignment, and `results.py` / `certificate_authority.py` for terminal manifests and green certificates. `repository_profiles/`, `telemetry/`, `diagnostics/`, `final_codex/`, and `replay/` preserve separate profile, observation, execution-contract, and measurement vocabularies; a library API is not proof of a production caller.
+The production quality owner freezes a complete `FrozenCertificationRun` before execution. It retains the canonical repository profile, repository plan, generic registry and certification plan, original admission, and provenance. Recovery reopens the supplied frozen object by its exact stored reference rather than discovering authority from summary journals. Generic admission and gate-certificate semantic identities exclude creation provenance; the complete frozen-run digest includes it.
 
-## Local Invariants And Traps
+`worktrees/modules/quality/gate.py` resolves that authority, invokes the clean quality executor, and processes a published terminal generation before its nonzero-return refusal. `certification_run.py` reads the exact decoder artifact and passes its catalog to `certification_records.py`. That seam requires the exact candidate, profile digest, repository-plan digest, and selection. Complete supplied green, red, interrupted, and not-applicable observations have distinct handling; unsupported or insufficient observations remain typed refusals. Certificates require validated green results, while non-green results and interrupted publication do not acquire certificates.
 
-- Gate meaning is fixed, while the concrete Gate 1-4 rails, adapters, commands, ownership, and
-  applicability are repository-profile data. Gate 5 remains memory-domain authority.
-- Registry admission is bounded before expensive allocation and validation is exhaustive within
-  that boundary. Reachability uses one prospective pre-allocation refusal followed by measured
-  traversal reservations; it does not repeat a dominated exact-storage refusal. There is no
-  truncation, safe-full selection, compatibility path, or fallback.
-- Exact duplicate declarations may collapse, but conflicting variants remain visible.
-- Plans bind the canonical registry digest, profile, exact candidate identity, all selected gates,
-  complete rail catalogs, and deterministic execution waves.
-- Gate 3 consumes declared Gate 2 artifacts; dependency and artifact flow cannot point backward.
-- Terminal publication preserves every planned rail, typed status, ownership, evidence reference,
-  artifact, and blocker. A generic wrapper exception is not equivalent evidence.
-- Report-only or diagnostic data cannot elevate a failing enforcing/certifying result.
-- This foundation intentionally contains no Agents Remember rail inventory or test command.
-- `layers.toml` is the single package-architecture authority: `certification` is rank 3, imports
-  only lower layers, and owns no baseline, exception, concrete executor, profile, lifecycle
-  terminalization, or memory gate.
+Publication verifies every nested result evidence and artifact binding against the accepted immutable report generation. Selected certificates and terminal results retain their original object references and physical publication; selected certificate generations are protected until journal replacement or cleanup. Selected code readback requires the complete Gate 1–4 prefix, original stored objects, publication authority, nested evidence verification, and certificate-chain validation. The strict success path additionally requires certifying lifecycle evidence and an unchanged staged candidate. A missing publication or an exception before publication is not a complete terminal catalog.
 
-## Operating Model
+`lifecycle_admission.py` and `lifecycle_recovery.py` supply contracts consumed by `worktrees/integration/closeout/certification/admission.py`, `selection.py`, and `recovery.py`. The closeout owner observes real candidate authorities, compiles admission and recovery, and derives input changes from retained owner objects. The application composition supplies prepared memory certification and the finalization continuation. Library functions and default bindings establish construction seams, not proof that a particular operation completed.
 
-A repository contributes explicit profiles and rail declarations to the generic registry. The
-contract layer canonicalizes and validates those declarations, compiles an immutable plan for one
-candidate, and later validates executor observations against that exact plan. Generic confined profile loading belongs to `repository_profiles/authority.py`; concrete profile
-data, orchestration, process execution, and lifecycle projection remain with their respective
-owners and must consume these contracts rather than duplicate them.
+## Construction And Ownership
 
-## Evidence
+`canonical.py`, `limits.py`, `validation.py`, and `planning.py` form the generic registry-to-plan pipeline. Canonicalization collapses exact semantic duplicates while retaining conflicting declarations for validation. Admission bounds work before expensive normalization, digest allocation, or semantic finding materialization. Within the admitted boundary, validation gathers independently discoverable findings and planning binds the canonical registry digest, selected profile, exact candidate, complete gate rail catalogs, and deterministic execution waves.
 
-### Repository Architecture Evidence
+`repository_profiles/authority.py` resolves exactly one explicit canonical repository-relative profile file, rejects traversal, symlink components, escape, and wrong repository identity, then parses, canonicalizes, and validates it. There is no profile-discovery substitute for missing authority. `repository_profiles/planning.py` binds repository selections and semantic inputs. Environment reconstruction, generated candidate inputs, rail execution/runtime, selectors, executor adapters, result decoders, and publication policies retain their declared consuming gates and content identities. Semantic inputs are deterministically ordered and duplicate input identities refuse compilation.
 
-The root architecture contract is onboarding-excluded as a one-to-one source under current path
-rules, so this route overview and the governing repository overview carry its durable ownership
-meaning without inventing a parallel `layers.toml` sidecar.
+`repository_profiles/source_selection/` owns explicitly declared source-path applicability over an exact candidate source observation. Its compiler selects declared changed paths; full mode makes such a rail applicable, while other modes use whether the declared path selection is nonempty. The decision binds its declaration, source observation, mode, selected paths, and applicability reason/identity. This contract does not replace dependency-closure test selection or prove gate execution.
 
-- `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
-- The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
-- The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
+`frozen_run/` retains the original admission and candidate-authority records before execution. Its complete run model recompiles admission alignment, requires the exact original admission, and verifies its whole-record digest. Summary admission and gate journals serve presentation and retention; supplied immutable owner references select recovery authority.
 
-### Docs And Boundary References
+Memory rail composition crosses an explicit worktree service port. `certification_records.py` refuses an unbound `certification_memory_rails` port. The default application adapter delegates to `memory_quality/gate_five_rails.py`, which derives one enforcing, applicable, memory-domain rail per complete final-catalog item with deterministic identities, configuration, and ordering. The records seam does not contain the former repository-name restriction. Neither the generic bridge nor the worktree records owner absorbs the memory checker registry.
 
-No Domain Documentation source or cross-repository implementation is configured for this memory
-root. The accepted behavior is repository-owned and the package remains independent of any one
-repository's commands.
+`telemetry/` owns a separate observation vocabulary and durable stream. Its closed execution kinds, event matrix, certificate dispositions/refusal codes, terminal classes, and immutable event schema constrain event identity and cardinality. Adapters project owner-produced R11/R20/R21/R22 objects without inventing authority. The store publishes content-addressed, digest-chained revisions with CAS checks, separate closeout-generation and diagnostic-run envelopes, operation-scoped capacity, and a named reclamation owner. Projection preserves boundary and Gate 1–5 observations with a content digest. Stream validation reports missing, duplicate, out-of-order, cross-identity, cardinality-invalid, and result-inconsistent observations; it neither reruns rails nor derives a rail pass from telemetry alone. Diagnostic events cannot acquire gate, certificate, delivery, approval, or finalization authority.
 
-### Repo-Internal References
+`diagnostics/` represents the optional non-certifying real-Codex replication of the canonical scenario catalog. Result types fix `acceptanceEligible=false` and `certifying=false`, bind exact candidate/plan/environment/runtime authority and diagnostic nonce, and keep scenario, infrastructure, parser, aborted, and hard-failure outcomes distinct. Pass/fail results carry diagnostic-altitude manifests; immutable attempt/result chains retain their digests. Planning requires a diagnostic profile with the complete earlier-gate prefix and the canonical certifying scenario rail contracts, refusing a second scenario catalog. The readiness projection permits not-requested-optional only for an absent lane, preserves requested history, selects the newest terminal result, and blocks on a failing or plan-stale terminal result. Historical passes cannot erase newer failure, and diagnostic passes never satisfy final certification. The worktree diagnostic executor owns trusted R12 admission and the Gate 1–3 green barrier; it delegates runner/store ownership rather than privately provisioning or retiring shared resources.
 
-The following current source owns the changed behavior; no external domain source is configured for this slice.
+`final_codex/` represents the certifying Gate-4 two-fresh, independent, no-retry proof. Its closed types fix acceptance eligibility and certification true, retry count zero, exact candidate/plan/runtime binding, fresh per-repetition identities, typed failures, teardown records, and self-verified digests. One passing repetition cannot compensate for a failed, aborted, stale, retried, or authority-mismatched repetition. Planning requires the exact canonical R11 certifying plan and complete Gate 1–4 prefix; the predecessor barrier requires exact green certifying Gate 1–3 manifests for that candidate and plan. Projection distinguishes not-started, running, two-fresh-pass, red, and stale. Certificate compilation binds both repetition results, teardown, shared runtime authority, and ordered Gate 1–3 certificate identities. Diagnostic evidence has no certifying result shape here. Actual control belongs to the worktree final-Codex executor and trusted R12 authority.
 
-- Preparation selection is limited to code and memory-content outputs. [4]
+Diagnostic and final-Codex stores keep stable candidate manifests, immutable ordered results, digest verification, and typed CAS refusals. Final-Codex refuses another live attempt and a terminal successor with the same plan identity; changed plan identity is a distinct admission, not a retry slot. Partial publication cannot become two-fresh-pass. Namespace separation remains required intent. The local stores enforce equal/ancestor/descendant overlap refusal against the `forbiddenRoots` supplied in their policies; those lists default empty, so these constructors alone do not establish that all forbidden production roots were supplied.
 
-## File-Level Onboarding Map
+`replay/` owns the measured replay protocol, not a performance acceptance claim. Freeze identity binds source revision, candidate sequence, R22 profile, R11 plan, configuration, runtime/toolchain/executor/image, machine class, instrumentation, and measurement schema; observation metadata is excluded from pair identity. The incident population retains frozen-original generations 1–8, post-analysis-tail generations 9–13, and append-only dated supplements 14+. The denominator helper includes original and tail strata and excludes supplements. Span reduction computes reproducible per-category union-wall measurements; measurement folds R16 exports into gate facts; seventeen mandatory scenario projections and the digest-bound baseline/treatment comparison consume measured evidence. Outcomes include green, red, refused, and not-applicable vocabulary. Numeric reduction thresholds are intentionally absent: protocol availability is neither a completed replay nor an approved numeric cost-reduction claim.
+
+The route facade exposes the contract subpackages. That public surface does not establish a production caller for every API.
+
+## Invariants And Boundaries
+
+Registry work is refused when its admission budget cannot be satisfied; it is not truncated or silently replaced with safe-full selection. Reachability performs a prospective storage refusal before allocating its digest/query structures, then measured traversal reservations. It does not repeat the dominated exact-storage refusal. Exact duplicates may collapse; conflicting variants remain visible. The bounded registry pipeline supplies no compatibility or fallback selection path.
+
+Plans and results remain exact to their admitted registry, profile, candidate, and gate contracts. Dependencies and artifact consumption cannot depend on later gates. Applicable Gate 3 certification must bind at least one exact artifact from the green Gate-2 certificate, with all consumed artifacts coming from Gate 2. Explicit not-applicability is an applicability disposition rather than a test pass or suite artifact; the applicable-Gate-3 condition matters.
+
+Terminal result compilation requires every planned rail exactly once and validates identity, applicability, evidence, artifacts, ownership/posture contracts, and blocker semantics. A failed direct same-gate prerequisite requires a blocked dependent result with exactly those blockers; an independent rail cannot be silently marked blocked. Enforcing fail/blocked results make the gate red. Report-only or diagnostic observations cannot promote a failing enforcing result into certifying success. Generic wrapper exceptions are not substitutes for typed terminal catalogs and their evidence.
+
+Green certificate issuance requires aligned admitted authority, exact current predecessors or explicitly retained predecessor authority, certifying profile and altitude, and complete green results. Gate 5 requires exact memory semantic inputs; Gates 1–4 forbid those inputs. Physical evidence verification and publication retention belong to the quality/lifecycle owners that consume these contracts.
+
+Lifecycle admission retains exact candidate and authority observations with zero gate starts. Recovery binds admitted certificate identities, classified input changes, and reuse decisions. Finalization requires a currentness reread of candidate, certificate authority, operation/door/approval authority, commit intent, and journal state, and authorizes only the exact unfinished durable leg with zero certification starts. It does not own Git publication or lifecycle terminalization.
+
+Inherited preparation intent limits commit outputs to code and memory content; the computed ledger contributes no additional preparation output or acceptance identity. Present `FinalizationLeg` and `_FINALIZATION_LEGS` name code commit, external-memory commit, and contract finalization. However, `FinalizationJournalState.legs` still requires exactly four entries while its order validator requires the three-entry tuple. Preserve this source inconsistency alongside the intended removal of the ledger leg; do not describe the finalization journal as an established usable three-leg contract.
+
+Environment validation preserves the original Gate-1 producer artifact, exact manifest publication bound, later consuming-gate reconstruction-proof publication with a 4096-byte bound, and selected-producer requirements. The extracted `_validate_environment_artifacts` and `_compile_adapter_inputs` helpers do not themselves introduce a new profile authority or acceptance route.
+
+Onboarding validation remains outside certification ownership. `worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes the sidecar and governing route body/history validators and aggregates their errors. Current curator control uses that helper on its legacy refresh path, while converted memory uses onboarding history traces. Prepared closeout likewise selects history-trace validation when available; its alternative branch calls the sidecar and route validators separately. Preserve the CCR-L42 intent that both applicable refresh surfaces be validated without claiming both current callers unconditionally invoke the shared helper.
+
+## Historical And Verification Limits
+
+This proposal read all 16,503 characters of the supplied card and records the earlier source adjudication at `8d2e754789e30f0d3be10fdd33f83cf6fe367141`; this source-only requalification uses `23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41` plus the observed working tree. It establishes source predicates and ownership, not test results, executed gates, delivery, integration, acceptance, or performance. No tests or product entry points were executed.
+
+The inherited named histories remain provenance for intent: CCR-L16 / CCR-R16@v3 durable telemetry; CCR-L13 / CCR-R13@v2 optional diagnostic E2E, associated with `4ba18bb23ba90e201bb37341d61c0efc64161fcf`; CCR-L17 / CCR-R17 measured replay, associated with `e84c004c37a4bad082e1a7f1bdc4bd062282a185`; and CCR-L14 / CCR-R14@v3 final real-Codex certification, associated with `54ff803a05209e06f732f2de1f90e2a71a069e08`. Those historical revisions and original execution witnesses were not examined in this present-checkout-only review. Their milestone or delivery claims are not renewed acceptance.
+
+The inherited L30 evidence-retention discussion identifies an earlier limitation: ordinary failed runs raised before the record seam and did not establish a complete R11 population for every terminal outcome. Present source changes that ordering for outcomes with a published manifest, recording before nonzero refusal. Retain the earlier limitation as historical; the new call order still does not prove exhaustive publication for exceptions, absent manifests, unreadable decoders, or incomplete evidence. The original repair's execution witnesses were not examined.
+
+The inherited R05 warning remains: typed finalization and leg-authorization functions, default application bindings, and visible admission/recovery callers do not independently prove a completed operation. The three-versus-four journal shape discrepancy is an additional present source limit, not a repaired invariant or runtime verdict.
+
+The Integrated IAS Recovery Contract records helper extraction while retaining exact producer, reconstruction, ordering, and duplicate-refusal responsibilities. CCR-L42 records refresh validation parity intent, but present converted-memory and prepared-closeout branches differ from the inherited shared-helper composition claim. Neither historical label constitutes current successful validation evidence.
+
+Namespace-isolation intent remains explicit for diagnostic and final-Codex stores. This review established the configured-forbidden-root predicate, not the completeness of every production policy or whole-call-path protection. No absence claim is inferred from a single local function.
+
+The inherited statement that no external Domain Documentation source or cross-repository implementation is configured for this memory slice was not revalidated against settings in this bounded review. Repository-owned witnesses decide the present corrections. Existing reference identities, route/status/coverage metadata, and excluded tables remain under parent Curator preservation.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field | Value |
+| --- | --- |
+| sourceRoute | `mcp/src/agents_remember/certification` |
 
 | Source File | Onboarding | Status |
 | --- | --- | --- |
@@ -118,108 +112,28 @@ The following current source owns the changed behavior; no external domain sourc
 | `readiness_models.py` | [readiness_models.py.md](readiness_models.py.md) | covered |
 | `readiness_transitions.py` | [readiness_transitions.py.md](readiness_transitions.py.md) | covered |
 
-## 260831-CCR-L16 - Durable Gate And Rail Telemetry
+## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
+- Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
+- Retained reference account (no fresh execution or acceptance inferred): The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
+- Retained reference account (no fresh execution or acceptance inferred): Preparation selection is limited to code and memory-content outputs. [4]
+- Retained reference account (no fresh execution or acceptance inferred): The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The production seam resolves the exact profile, binds memory rails and persists admission. [6]
+- Retained reference account (no fresh execution or acceptance inferred): The ordinary quality gate runs the admitted candidate through its certification executor. [7]
+- Retained reference account (no fresh execution or acceptance inferred): The quality gate freezes certification records before execution. [8]
+- Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates. [9]
+- Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
 
-The `telemetry/` contract introduced by CCR-R16@v3 provides the
-`telemetry/` subpackage to this route: one execution-coherent, content-addressed durable stream for
-closeout generations and diagnostic runs. `telemetry/models.py` fixes the closed event vocabulary
-(execution kinds, certificate dispositions and refusal codes, terminal result classes, the
-exhaustive `EVENT_MATRIX`) and the immutable `TelemetryEvent` schema whose validators enforce the
-matrix ID cardinality and the exact gate/rail identity rules; `telemetry/adapters.py` compiles one
-event per owner-produced R11/R20/R21/R22 object without inventing authority;
-`telemetry/store.py` CAS-publishes digest-chained journal entries into separate closeout and
-diagnostic envelopes under an operation-scoped capacity policy; `telemetry/projection.py` folds the
-durable events into a lossless boundary and Gate 1-5 projection with a content digest; and
-`telemetry/validation.py` exhaustively validates one ordered stream without raising and without
-deriving a rail pass from telemetry alone. The route facade (`__init__.py`) re-exports the full
-telemetry surface.
-
-## 260831-CCR-L13 — Optional Non-Certifying Diagnostic E2E Lane
-
-CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`, leaf 260831-CCR-L13) adds the
-`diagnostics/` subpackage to this route: the closed, immutable vocabulary and durable store for one
-optional real-Codex replication of the canonical ARSPAWN scenario that may run only after the exact
-candidate's R12 Gates 1-3 are green and stays explicitly non-certifying. `diagnostics/models.py`
-fixes the structural separation (`acceptanceEligible`/`certifying` false literals, diagnostic-altitude
-manifest carriage, typed scenario/infrastructure/parser failures, immutable gapless attempt/result
-chains, and content-verified digests); `diagnostics/planning.py` projects the exact canonical scenario
-rail at diagnostic altitude and refuses any second scenario implementation; `diagnostics/projection.py`
-owns the optional-lane readiness projection (not-requested-optional, running, newest-terminal blocking,
-plan-currentness staling, and the stable R14 non-satisfaction rule); and `diagnostics/store.py` keeps
-one stable digest-chained manifest per candidate in an isolated namespace that can never overlap the
-certifying quality-report manifest. The route facade (`__init__.py`) re-exports the full diagnostic
-surface; actual run control that binds the trusted R12 host authority lives in
-`worktrees.modules.quality.diagnostic_executor`.
-
-## 260831-CCR-L17 - Measured Replay And Reduction Targeting
-
-CCR-R17 (commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185`, leaf 260831-CCR-L17) adds the
-`replay/` subpackage to this route: the correctness replay protocol records for measured replay of a
-frozen incident baseline through the five-gate treatment. `replay/freeze.py` fixes replay freeze
-identity (source, candidate, R22 profile, R11 plan, configuration, runtime/toolchain/executor/image,
-machine class, instrumentation, measurement schema) and the append-only three-view incident
-population (frozen original generations 1-8, post-analysis tail 9-13, dated supplements 14+ that
-never enter the denominator); `replay/spans.py` reduces R16 telemetry spans to a closed
-per-category union-wall reduction with reproducible arithmetic; `replay/measure.py` folds an R16
-closeout event export into per-gate measured facts; `replay/models.py` fixes the closed
-measured-run vocabulary (strata, span reductions, gate facts, the seventeen acceptance-scenario
-expectations, evidence envelope); `replay/scenarios.py` projects the seventeen mandatory
-acceptance scenarios to machine-readable green/red/not-applicable outcomes; and `replay/compare.py`
-binds one digest-verified baseline-vs-treatment comparison report. Numeric reduction thresholds are
-intentionally absent from the entire subpackage: the protocol approves measured replay and cost
-reduction measurement, not a numeric performance claim.
-
-## 260831-CCR-L14 - Final Real-Codex Gate-4 Certification Lane
-
-CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`, leaf 260831-CCR-L14) adds the
-`final_codex/` subpackage to this route: the closed, immutable vocabulary and durable store for the
-certifying two-fresh-no-retry Gate-4 proof of the exact candidate's canonical scenario rails.
-`final_codex/models.py` fixes the structural two-fresh semantics (acceptanceEligible/certifying=true
-literals, retryCount zero, disabled retry with no successor slot, one-pass-never-compensates, typed
-scenario/infrastructure/parser failures, immutable attempt/run/repetition records with self-verified
-digests, and no shape for CCR-R13 diagnostic evidence); `final_codex/planning.py` compiles the
-immutable plan record only from the exact canonical R11 registry compilation for a certifying profile
-planning the complete Gate-1..4 prefix and enforces the exact Gate-1..3 must-not-run barriers;
-`final_codex/projection.py` owns the lane readiness projection (not-started, running,
-two-fresh-pass, red, stale); `final_codex/store.py` keeps one stable digest-chained CAS run
-manifest per candidate in an isolated namespace that can never overlap a forbidden certifying or
-diagnostic quality-report root; and `final_codex/certificate.py` compiles the one bound Gate-4
-certificate from the exact two-fresh run, the ordered Gate-1..3 certificate identities, and the
-shared frozen runtime authority. The route facade (`__init__.py`) re-exports the full final-codex
-surface; actual run control that binds the trusted R12 host authority lives in
-`worktrees.modules.quality.final_codex_executor`.
-
-## Current Production Composition
-
-`compile_certification_lane` projects each admitted R22 `CompiledRail` back into an R11
-`RailDefinition` without changing adapter, runtime, evidence, artifact, applicability, or authority
-fields. It combines those Gate 1-4 rails with memory-domain Gate-5 rails, canonicalizes one registry,
-compiles one exact candidate plan, and freezes the R21 admission. Unsupported repository-gate
-applicability or missing/wrong-authority memory rails refuse before this admission exists.
-
-The production caller is `worktrees/modules/quality/certification_records.py`, reached before
-Gate 1 and after a green result through `quality/gate.py`. That caller currently registers memory
-rails only for `agents-remember`; the generic bridge itself has no repository-specific inventory.
-The record seam now requires the exact admitted candidate/profile/full plan/selection and physically reopens every nested evidence/artifact against the complete immutable report snapshot before publication. Selected certificate rows retain that snapshot and pin the actual generation; canonical store loads retain original semantic objects and provenance. Returned certification refusals propagate through the green caller. This repairs L30 evidence retention, while ordinary failed runs still raise before the record seam and therefore do not establish a complete R11 result population for every terminal outcome.
-
-`lifecycle_admission.py` and `lifecycle_recovery.py` supply the typed contracts consumed by
-closeout `certification/admission.py`, `selection.py` and `recovery.py`. Admission and recovery
-are now production-composed; the application installs the prepared memory/finalization continuation.
-Library availability or default binding alone is not execution or acceptance evidence.
-The focused closeout and preparation routes describe selected certificate readback and physical publication.
-
-- The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. [5]
-- The production seam resolves the exact profile, binds memory rails and persists admission. [6]
-- The ordinary quality gate runs the admitted candidate through its certification executor. [7]
-- The quality gate freezes certification records before execution. [8]
-- Persist complete actual terminal catalogs, including red and interrupted gates. [9]
-- Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
-
-
-## Integrated IAS Recovery Contract
-
-Repository-profile validation now factors environment producer/reconstruction artifact checks into `_validate_environment_artifacts`; semantic planning factors adapter inputs into `_compile_adapter_inputs`. The original exact Gate-1 producer, later publication bounds, deterministic semantic-input ordering and duplicate-identity refusal remain. These helper extractions do not change profile authority or create a new acceptance path.
-
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+- Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report. [11]
+- Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved. [12]
+- R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment. [13]
+- Original authority and provenance are retained and digest-verified together. [14]
+- Memory rails are obtained through a required port; default application composition derives them from the memory catalog. [15]
+- A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
+- Complete supplied red/interrupted results retain publication; only eligible green results issue certificates. [17]
+- Every nested evidence/artifact binding is checked against the accepted publication; selected certificate generations are protected. [18]
+- Finalization declares three ordered legs but the journal field requires four entries. [19]
+- Store overlap refusal uses caller-supplied forbidden roots, whose policy defaults are empty. [20]
+- Curator legacy refresh uses the shared helper; converted memory uses traces, and prepared closeout's alternative branch calls the component validators. [21]
+- Applicable Gate 3 requires exact Gate-2 artifacts; diagnostic altitude cannot issue a green certificate. [22]
+- Replay denominator includes original and tail generations, excluding dated supplements. [23]

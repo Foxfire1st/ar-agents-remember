@@ -311,12 +311,12 @@
       ]
     },
     "8": {
-      "note": "The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`.",
+      "note": "The parent data boundary keeps dashboardStore/DashboardState separate from conversationLibraryStore.",
       "targets": [
         {
           "anchor": {
-            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
-            "content": "sha256:c087e6029b510723c7c167853a10129555923959dd4fe068fe1869ad7e92fc94",
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "content": "sha256:cb198c994734abb21e5756de6df6f09db08f99aad48cd6cc25283895e217cf47",
             "locator": {
               "kind": "symbol",
               "name": "DashboardState"
@@ -327,8 +327,8 @@
         },
         {
           "anchor": {
-            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
-            "content": "sha256:61e469df69fbfd06c3ecb14bff70dc3abfb84964d505e9177532450126e2a7b7",
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "content": "sha256:c275fcd45a4fd49a92f0a7dde0ef42846e549e77c1fc933f814041b2d17159a2",
             "locator": {
               "kind": "symbol",
               "name": "dashboardStore"
@@ -359,19 +359,6 @@
               "start": 77
             },
             "path": "dashboard/src/data/conversation-library/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
-            "content": "sha256:ae79eb955cac722bf25bff3070d89c42cd500c958bca7b6b5d70877df007c1b6",
-            "locator": {
-              "end": 347,
-              "kind": "line_range",
-              "start": 225
-            },
-            "path": "dashboard/src/data/store.ts"
           },
           "kind": "code"
         }

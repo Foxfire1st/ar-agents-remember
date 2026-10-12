@@ -613,16 +613,16 @@
       ]
     },
     "38": {
-      "note": "The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand.\n\nAnchor: \"Never write the knowledge dataset yourself.\"; \"ordinary knowledge authoring route\"",
+      "note": "The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand.  Anchor: \"Never write the knowledge dataset yourself.\"; \"ordinary knowledge authoring route\"",
       "targets": [
         {
           "anchor": {
-            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
+            "blob": "0b36ff0c0bc8c2bf873f7e8fda4ed2616a9a7e61",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
-              "end": 175,
+              "end": 182,
               "kind": "line_range",
-              "start": 175
+              "start": 182
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -630,12 +630,10 @@
         },
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
-            "content": "sha256:209878d33f20182cded30d0a613eef1a9a227bad71f9d716c149d9147d3d84c1",
+            "blob": "0b36ff0c0bc8c2bf873f7e8fda4ed2616a9a7e61",
+            "content": "sha256:860d22237e4a091f5d8526256e22d9737723e01eae2afacef17c428f038ea9f6",
             "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 252
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -921,16 +919,16 @@
       ]
     },
     "5": {
-      "note": "The curator role's pointer in step 3.\n\nAnchor: \"Lift the decisions that keep governing code.\"",
+      "note": "The curator role's pointer in step 3.  Anchor: \"Lift the decisions that keep governing code.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
+            "blob": "0b36ff0c0bc8c2bf873f7e8fda4ed2616a9a7e61",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 96,
+              "end": 103,
               "kind": "line_range",
-              "start": 93
+              "start": 100
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1113,6 +1111,24 @@
         }
       ]
     },
+    "59": {
+      "note": "Native doctrine selects seven roles, role plus operation, bound task tools and no injected shared core.  Anchor: Router selection and host boundaries [59]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:bebc22574e253e13635a5c5a3329d602d6e55a1b27247ea74b78ecac9d71852b",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The admission section of the hand-off template.\n\nAnchor: `## The admission rule (MIK-R27)`",
       "targets": [
@@ -1122,6 +1138,262 @@
             "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
             "locator": {
               "end": 665,
+              "kind": "line_range",
+              "start": 613
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Role compiler scope distinguishes ambient launcher core from dispatched role composition. [60]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:2238eadc30dbf830c62f657bdac6983e656b0cb2ae986d0d38836cde1595a2cd",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Launcher wire vocabulary retains system-specialist as an alias of Investigator.  Anchor: `LauncherRole`, `RoleSelection.canonical_role_id` [61]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b54fe675ca416a7739f907ee67d6cc5871dca9af",
+            "content": "sha256:0af2c0c1a1fad68c9f0f1637a5dfcd30bca1454f2b8303d3a1aeb60762bedcac",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b54fe675ca416a7739f907ee67d6cc5871dca9af",
+            "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "The generator owns the package and eight harness target paths.  Anchor: `CANONICAL_SKILLS`, `TARGETS` [62]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "Manager prepares sibling leaf seats with role_start_set; direct leaf loop and Manager transaction responsibility remain explicit, held messages are not resent, and refused delegation has no direct-coordination fallback.  Anchor: Operation — Coordination [63]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
+            "content": "sha256:e6c2add5f82ab4bff3021f5f8faa022cb5292380415827eb65ada2f6d22bc8cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "Report-only admission does not perform or complete the normal authoring pass.  Anchor: Bound Paseo intake and capabilities [64]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b36ff0c0bc8c2bf873f7e8fda4ed2616a9a7e61",
+            "content": "sha256:4f248489b1276f536dcc4e4fd38ec78b4111d1488804588bb1b5e51af41a4219",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "Current curation writes files, has no publication flags and records no separate task comparison.  Anchor: Admitted writer; scope before ingest [65]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:90df17518ab7c250b48aadca39028bc142994a7a4ba14ba53c1c497fd0bdf9b5",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:3be3b9f6d50900c58a2675b06c114a2db55bfed481ed8cb33f9cf5d7e0e01927",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:dc541f5c38729df02a5441cb252e9c843cb1da801c763e9c4ce15ffb68f324a9",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "CLI exposes contract/list/authorization, file-write commit, JSON, crossing and config arguments. [66]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:c8616f04528800757c08b7cd9099409a6fcc63c00345e90af86e0a6a475b1731",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "File writer parses the handoff for every operation and target parsing invokes rationale refusal.  Anchor: `write_knowledge`, `_targets` [67]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "content": "sha256:9167964a51c55a52013fae20c85aed606e89f9ff71dc4037a6689b27c7b38b06",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Families use records and external documents use card references; database entry keys and manifest are retired.  Anchor: Curator-authored keys [68]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+            "content": "sha256:9284abc99cafd014ac4634aaecd621628996e9f5ade31a79d05a24523ed73af1",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "History preserves governing changed rows and replacement covers; admission and decision rules remain explicit.  Anchor: History; admission; decisions [69]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+            "content": "sha256:61048e6e7c5c9e16d23772f85d699e39d5d4644784d8d2b097885669299ff080",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+            "content": "sha256:417b559939c90a72bb4e9ba762978066b91c8e75d93f3cd87269b1a01000fc5a",
+            "locator": {
+              "end": 719,
               "kind": "line_range",
               "start": 613
             },
@@ -1144,6 +1416,120 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. [70]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
+            "locator": {
+              "end": 1174,
+              "kind": "line_range",
+              "start": 1140
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Older task-binding admission includes taskless Curator and skips structural altitude validation for members of its set.  Anchor: `TASKLESS_SEAT_ROLES`, `_validate_binding` [71]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:d9ce9202f436025dd818a43f4c48ae94cad900de7483f87a3602e4c41505970a",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Foundation admission refuses a resolved enclosure. [72]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
+            "content": "sha256:1281f6633f9bb20611f062582f5468d29f4241988c7bee9a3d13bfcf5133f8f2",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "D107 grants one bounded further inspection of already-raised repaired items; memory passes remain separately governed.  Anchor: Review exception and boundaries [73]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+            "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Normal curation remains full scoped quality, with coherence validated before closeout and no later-tree recertification implied.  Anchor: Quality loop and authority gates [74]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:26a36d764d17ca13bc148f258ae5202c05b753f34ec70340523944c7a0f96858",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:2433d0a3b0961186268a63fc8aa662ea795a46d06ba9c614cc7489dfbafcf06e",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }

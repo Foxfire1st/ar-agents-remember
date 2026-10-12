@@ -1,34 +1,22 @@
 # Locked Native Conversation Library Helper Overview
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `mcp/native_helpers/conversation_library/` |
-| onboardingRoute | `mcp/native_helpers/conversation_library/overview.md` |
-| parentOverview | [`mcp/overview.md`](../../overview.md) |
+## Governing Overview
+
+[`mcp/overview.md`](../../overview.md)
 
 ## What This Area Is
 
-This route is the repository-owned, exactly locked process boundary for Claude and Pi native
-conversation-library access. It supplies the strict JSON-lines protocol, exact dependency/lock
-ownership, request framing/schema validation, version handshake, raw-error privacy boundary, and
-— the two locked helper entries that execute handshake, list, read, and
-resolve-resume-target over the pinned SDK/`SessionManager` APIs on one correlated
-request/response loop. The helper also exposes the Claude sub-agent surface: per-session
-`subagents/` enumeration folded into the list response (with the `agentsEnumerated` marker) and
-`agentId`-routed agent transcript reads over the native on-disk layout the SDK does not expose.
+This route supplies the repository-owned, dependency-pinned process boundary for Claude and Pi native conversation-library access. A shared JSON-lines protocol validates requests, correlates responses, reports runtime/helper versions, contains raw handler errors, and supplies signing and paging primitives. Two helper entries execute handshake, list, read, and resolve-resume-target through the declared Claude SDK and Pi `SessionManager` dependencies.
+
+The Claude entry also enumerates each session's native `subagents/` directory, carries agent children in list rows, marks enumeration with `agentsEnumerated`, and routes optional `agentId` reads to native agent transcripts.
 
 ## Hot Path Summary
 
-Read `src/protocol.ts` for the `ar-conversation-library-helper/v1` request/handshake boundary,
-the correlated serve loop, version probing, store signing, and paging primitives;
-`src/claude.ts` and `src/pi.ts` are the locked per-harness operation entries — the Claude entry
-also owns the sub-agent surface (`subagents/` enumeration, the `agentsEnumerated` marker, and
-`agentId`-routed transcript reads with the SDK-replicated project-slug rule);
-`src/protocol.test.ts` holds the exact-key, exact-version, byte-bound, and fixed-error privacy
-proofs. `package.json` and `package-lock.json` are the only allowed runtime dependency
-resolution source.
+Read `src/protocol.ts` for the `ar-conversation-library-helper/v1` request/handshake boundary, correlated serve loop, version probing, signing, and paging. Read `src/claude.ts` and `src/pi.ts` for the per-harness operations; the Claude entry also owns project-directory candidates, sub-agent enumeration, and agent transcript parsing. `src/protocol.test.ts` contains version-reporting, request-shape, and fixed-error privacy cases. Their presence is not evidence that they were executed. `package.json` and `package-lock.json` define the repository's dependency resolution intent.
 
-## What Belongs Here
+## Construction
+
+The helper is a private ESM package declaring Node 20 or newer. Its exact direct runtime pins are `@anthropic-ai/claude-agent-sdk@0.3.207` and `@earendil-works/pi-coding-agent@0.80.7`; the lockfile records transitive resolution. TypeScript checking uses strict, no-emit compilation with exact optional-property and unchecked-index safety enabled.
 
 | Path | Role |
 | --- | --- |
@@ -40,7 +28,43 @@ resolution source.
 | `src/pi.ts` | Locked Pi SessionManager 0.80.7 list/read/resolve entry. |
 | `src/protocol.test.ts` | Helper handshake, shape, and privacy regressions. |
 
-## What Does Not Belong Here
+The Python host starts one short-lived helper process per operation, using `node --import tsx` with this package as its working directory. It sends a handshake and the operation in the same process, then checks response framing and correlation. Missing prerequisites, timeout, malformed responses, and process failure produce errors rather than an invented result.
+
+The parser admits handshake, list, read, and resolve-resume-target requests. It bounds each request at 1 MiB, requires an object and the protocol version, validates operation-specific fields, rejects keys outside the operation's allow-list, and reconstructs the typed request. Text fields must be non-empty; page limits must be positive safe integers. `agentId` is optional on read and is rejected on other operations.
+
+Each entry probes its CLI with `--version`, takes the first semver token, and observes the declared dependency's version through the ESM resolver. A successfully parsed handshake reports observed runtime/helper versions and returns `ready`; expected versions are informational, not comparison predicates. Probing or dependency observation can still fail before that result is constructed. The Python capability gate performs a live helper list call after preflight; successful list execution, rather than version equality or dependency presence alone, selects its supported result.
+
+The serve loop ignores blank lines. Each nonblank line receives one response: parse failures return `invalid-request` with request id `unknown`, admitted requests retain their request id, and handler failures map to the four typed error names. Untagged failures receive fixed raw-detail-withheld copy. Tagged failures retain the error name but also receive fixed copy here, because the helper's error constructor sets `helperError` without setting the `detail` property inspected by the response mapper.
+
+### Native list, read, and resume resolution
+
+Claude lists sessions with the requested project directory and `includeWorktrees: false`; Pi lists through `SessionManager.list` with the requested scope. Both sort by recency, offset-page the observed rows, and return SHA-256 signatures derived from their observable identity/modification data.
+
+Claude enumerates sub-agents before paging. Its list signature includes agent ids and transcript modification times; each row carries `agents`, and the response carries `agentsEnumerated: true`, including for an empty catalog. Project directories use `CLAUDE_CONFIG_DIR` or the user's `.claude` directory. The local slug function replaces non-alphanumerics with `-`; long slugs take the first 200 characters and append a base36 absolute Java-style hash of the original scope. A distinct realpath adds another project-directory candidate. The source describes this rule as SDK-replicated; this inspection verifies the local algorithm, not equivalence to installed SDK internals.
+
+Enumeration uses the first candidate whose `subagents/` directory can be read. It recognizes `agent-<id>.jsonl`, records transcript modification time, and reads optional `agent-<id>.meta.json` fields. Unreadable metadata leaves the agent-id row intact. Invalid JSON or a null/non-object metadata value raises `helper-failed`; invalid optional fields are omitted. Directory-read failures advance to another candidate and can ultimately yield an empty agent list.
+
+Ordinary Claude reads call `getSessionMessages`; agent reads open the native transcript under the candidate project directories. Agent transcript parsing skips blank lines and rejects invalid JSON, null/non-object records, or missing string `type`/`uuid` fields. Tagged parse failures propagate; file-read failures try another candidate. Absent or empty agent transcripts and absent, unreadable, or empty ordinary Claude conversations return `stale-identity`.
+
+Pi finds the requested session id in a fresh scope list, opens the resulting session file, and reads `getBranch()`. A missing id or empty branch returns `stale-identity`; other SDK/open failures pass through the generic handler failure boundary. Neither entry calls append, branch-switch, or mutation APIs. This establishes the helper's read-only API usage, without independently proving dependency internals.
+
+Both reads window the full native sequence by 1-based ordinal, return the full sequence's item count, and sign identity/count/tail information. Claude maps message or transcript records; Pi maps branch entries by native entry type.
+
+Claude resume resolution looks up session information in the requested directory. Pi re-lists the scope, finds the session file, opens it, and returns its file and header-derived working directory. The Python ports reject a returned conversation id different from the requested id and mint server-private resume targets: Claude uses `--resume`, Pi uses `--session`. Claude sub-agent transcripts have no native resume target. The standing resume contract requires identity re-proof. The request schema requires `expectedIdentityDigest`, but these TypeScript handlers do not compare it; native existence lookup and Python id comparison must not be described as a helper digest re-proof.
+
+## Invariants And Boundaries
+
+Repository package and lock data remain the standing dependency authority. Cache, OpenSrc, global-module, `NODE_PATH`, and `npx` fallback discovery are forbidden by this overview's intent. The host selects the repository entry and package working directory, and the observer uses standard ESM resolution; those facts alone do not prove that ambient resolution is impossible in every installation.
+
+Locked dependency presence must not promote a capability. The Python gate decides support through its live contract probe; later operations can still fail. Observed versions remain informational evidence.
+
+The caller's authorized scope must not be widened to another checkout's history. Claude explicitly excludes worktrees from SDK listing. Sub-agent access uses the supplied scope's plain and realpath-derived project directories.
+
+Unknown request fields and fields belonging to another operation cannot cross the parsed helper seam. Optional `agentId` preserves ordinary read callers' request shape; the Claude handler consumes it, while the Pi handler does not route agent transcripts.
+
+The standing privacy intent is that raw process error detail never crosses the public boundary. Raw handler exception text and unsuccessful-process stderr are not public authority. The shared handler mapper supplies fixed copy for the errors constructed by these entries. This does not imply that every Python spawn error hides operating-system detail: the host's spawn-error message includes the caught `OSError` text.
+
+Sub-agent identity remains evidence-bound. Unreadable metadata permits an agent-id-only row; malformed metadata fails closed. `agentsEnumerated` distinguishes an enumerating helper from one that supplies no enumeration marker over an empty catalog. It does not prove that every candidate directory was readable.
 
 | Nearby Thing | Belongs Instead In |
 | --- | --- |
@@ -49,79 +73,25 @@ resolution source.
 | Python-side port normalization, gates, and open orchestration | `mcp/src/agents_remember/serving/conversation/library/`. |
 | npm cache, OpenSrc, global module, `NODE_PATH`, or `npx` resolution | Nowhere; these are explicitly forbidden. |
 
-## Structures Found Here
+No neighboring workspace repository is read or updated by the inspected helper entries. Third-party dependency behavior is not established by package names alone.
 
-- A private ESM package requiring Node 20 or newer.
-- Exact `@anthropic-ai/claude-agent-sdk@0.3.207` and
-  `@earendil-works/pi-coding-agent@0.80.7` direct pins plus deterministic transitive lock data.
-- Discriminated handshake/list/read/resolve-resume-target request shapes.
-- Exact-key validation per operation, 1 MiB request bound, non-empty fields, positive safe page
-  limits, and a fixed allow-listed public helper-failure detail.
-- One correlated JSON-lines serve loop per helper entry: every input line gets exactly one
-  response, parse failures answer `invalid-request`, and handler failures map onto the four
-  typed errors with allow-listed detail.
-- Runtime version probing (`--version`, first semver token) and own-dependency version
-  observation through the standard ESM resolver from inside this package only.
-- Deterministic SHA-256 native-store signatures, offset list paging, and ordinal newest-window
-  read paging shared by both entries.
-- The Claude sub-agent surface: a `subagents/agent-<id>.jsonl` + `.meta.json` on-disk
-  authority under `<configDir>/projects/<slug>/<sessionId>/` with the SDK-replicated slug rule
-  (non-alphanumerics to `-`; over-200-char slugs truncate with a base36 Java-hash suffix of the
-  original path; symlinked scopes resolve through a realpath candidate), per-row `agents`
-  children folded into the list signature, the response-level `agentsEnumerated` marker, and an
-  additive optional `agentId` on the `read` operation routing to the agent transcript.
-- Strict no-emit compilation with exact optional-property and unchecked-index safety enabled.
+## Maintenance Guidance
 
-## Operating Model
+Read this overview, the package/lock cards, and the protocol card before changing helper selection or framing. The package declares `npm run typecheck` and `npm test`. The standing guidance also calls for Python foundation verification of topology and forbidden resolution strings, and installed-runtime verification on machines with the harnesses. Those are maintenance intentions, not execution or acceptance evidence from this inspection.
 
-1. The Python host starts this repository-owned helper using installed dependencies from this
-   package only, one short-lived process per operation.
-2. A handshake carries protocol, harness, expected runtime, and expected helper versions.
-3. Readiness is ready-by-contract: the handshake returns `ready` once the
-   wire protocol version matches and reports observed runtime/helper versions as informational
-   evidence; the live list/read/resolve operation is the real gate.
-4. Each request is byte-bounded, parsed as one JSON object, checked against the protocol version,
-   and reconstructed from the exact allowed key set for its operation.
-5. Raw process error detail never crosses the public boundary; callers receive fixed safe copy
-   or allow-listed operation detail.
-6. The entries execute list (scope-exact, sorted, offset-paged, signed), read (read-only native
-   open, ordinal-windowed, honestly totaled), and resolve (identity re-proof plus launch
-   material for the Python port's server-private resume target).
+There is no child overview in the assigned route. The helper entries and shared protocol form one bounded package; keep that construction together rather than fragmenting the protocol boundary into a redundant `src/` overview. This describes architectural intent, not an accepted whole-corpus coherence result.
 
-## Main Flows
+## Non-Operative Metadata
 
-### Exact handshake
+The following route, coverage, and historical verification metadata is preserved. It does not establish current lifecycle state, executed checks, installed capability, or acceptance. No lifecycle authority was supplied within the assigned evidence scope.
 
-1. Select the repository pin for Claude or Pi.
-2. Match the wire protocol version; report requested/observed runtime/helper versions as
-   informational evidence (ready-by-contract — no version comparison
-   refuses).
-3. Return `ready`; the subsequent list/read/resolve operation against the installed runtime is
-   the real gate and fails closed with the exact contract reason when it cannot serve.
+| Field | Value |
+| --- | --- |
+| sourceRoute | `mcp/native_helpers/conversation_library/` |
+| onboardingRoute | `mcp/native_helpers/conversation_library/overview.md` |
+| parentOverview | [`mcp/overview.md`](../../overview.md) |
 
-### Request admission
-
-1. Reject inputs over 1 MiB or non-object/wrong-version payloads.
-2. Validate the operation discriminator and harness.
-3. Require the exact operation-specific key set and field types.
-4. Return a reconstructed typed request so unknown/inapplicable fields cannot cross the helper seam.
-
-### Native list and read
-
-1. List the native sessions inside the exact canonical scope (Claude excludes worktrees), sort by
-   recency, offset-page, and sign the observed store. The Claude list additionally sweeps each
-   session's `subagents/` directory: page rows carry their `agents` children, the signature
-   covers agent ids/mtimes, and the response carries the `agentsEnumerated` marker so an empty
-   catalog stays distinguishable from a pre-enumeration helper.
-2. Read one conversation read-only, window by stable 1-based ordinal, map records to typed
-   payloads, and return an honest total with a SHA-256 signature. A read carrying `agentId`
-   opens the Claude `agent-<agentId>.jsonl` transcript under the candidate project dirs instead
-   of the SDK session messages.
-3. Native absence or unreadability answers typed `stale-identity`, never a synthetic empty page;
-   malformed native sub-agent content (meta or transcript JSON) fails closed as typed
-   `helper-failed`, never skipped.
-
-## Load-Bearing Files
+### Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -133,48 +103,7 @@ resolution source.
 | `src/protocol.test.ts` | regression proof | Exercises exact versions, operation key sets, and hostile secret/path error examples. | covered |
 | `tsconfig.json` | static contract | Makes strict no-emit checking part of the package gate. | covered |
 
-## Local Invariants And Traps
-
-- Repository package and lock data are the only dependency authority; never search cache, OpenSrc,
-  global modules, `NODE_PATH`, or run `npx` as a fallback.
-- Locked dependency presence is not proof that native history works and must not promote a
-  capability — the Python-side live gates decide support.
-- Exact-key validation rejects both unknown fields and known fields belonging to another operation.
-- Raw helper stderr/detail is not a public authority. Fixed allow-listed copy prevents newly shaped
-  secrets or local paths from bypassing a regex vocabulary.
-- Reads are read-only: no entry is appended, branched, switched, or mutated by this package.
-- Claude scope-exact listing excludes worktrees; a caller's authorized scope is never widened to
-  another checkout's history.
-- Sub-agent identity is evidence-bound: missing/invalid `.meta.json` degrades
-  to the honest agent-id fallback, malformed native meta/transcript JSON fails closed as typed
-  `helper-failed`, and only the `agentsEnumerated` response marker distinguishes "no agents" from
-  "helper predates enumeration" over an empty catalog.
-- `agentId` is the one sanctioned additive optional request key (read only): invisible to pre-existing
-  callers, never a required-key change.
-
-## Evidence
-
-### Repo-Internal References
-
-- The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. [1]
-- The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. [2]
-- The Python host and Claude/Pi ports drive these entries on the production seam. [3]
-
-### Cross-Repo References
-
-The installed npm dependencies are third-party libraries, but no neighboring workspace repository
-is read or updated by this route.
-
-No relevant cross-repo implementation evidence found.
-
-### Docs References
-
-The resolved Domain Documentation registry has no entries. Exact package/lock contents and local
-tests are used as direct evidence; no external behavior is claimed from package names alone.
-
-No configured domain documentation was available for this helper gate.
-
-## File-Level Onboarding Map
+### File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -186,26 +115,18 @@ No configured domain documentation was available for this helper gate.
 | `src/pi.ts` | [`src/pi.ts.md`](src/pi.ts.md) | covered | Locked Pi SessionManager operation entry. |
 | `src/protocol.test.ts` | [`src/protocol.test.ts.md`](src/protocol.test.ts.md) | covered | Exact helper regression matrix. |
 
-## Child Overviews
+Historical verification statement, preserved without renewing its claim:
 
-None. The seven-file helper is one coherent, bounded package; a separate `src/` overview would
-fragment the same protocol boundary.
-
-## How To Use This Area
-
-Read this overview, the exact package/lock cards, and the protocol card before changing helper
-selection or framing. Run both `npm run typecheck` and `npm test`; also run the Python foundation
-suite because it guards repository topology and forbidden resolution strings, and the
-installed-runtime suite on machines with the harnesses to prove the production seam.
-
-## Needs Verification
-
-- Installed Claude library capability is decided by the live helper CONTRACT probe, not a version
-  comparison: `buildHandshake` is always `ready`
-  once the wire protocol version matches and reports the observed runtime/helper versions as
-  informational evidence — it never handshakes `incompatible` on a version drift. The real gate is
-  whether the subsequent `list`/`read` operation succeeds against the installed runtime; a failing
-  operation fails closed with the exact contract reason, and an auto-updated claude that answers
-  `list` enables the surface.
 - Installed Pi 0.80.7 list/read/resolve passed through the production helper seam (the
   installed-runtime gate).
+
+## Evidence
+
+- The helper suite contains exact pin assertions, informational-version handshake cases, malformed/wrong-version and cross-operation request cases, and a hostile secret/path corpus; it does not contain a request-byte-bound case. [2]
+- Package identity, engine, scripts, direct pins, lock root, and strict compiler configuration are declared locally. [4]
+- Claude implements list, sub-agent directory candidates, metadata handling, transcript parsing, ordinal reads, and native session-info resolution. [5]
+- Pi implements scope listing, session-id lookup, branch reads, typed missing/empty failures, record mapping, and file/header resolution. [6]
+- The helper capability gate calls list after preflight and selects support on successful execution rather than version equality. [7]
+
+- The helper protocol declares exact helper pins, the 1 MiB bound, operation field validation, fixed handler-error copy, and shared serve/probe/sign/page primitives; handshake versions are informational and blank lines are skipped. [1]
+- The Python host runs handshake and operation through the repository helper entry, and the Claude/Pi ports consume that seam and mint private resume targets. [3]

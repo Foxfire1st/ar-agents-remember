@@ -1,137 +1,114 @@
 # Structured Conversation Control Route Overview
 
+## Purpose
+
+This package owns the exact-session human control and operation-projection surface for structured conversations. Its seventeen route declarations expose exact-turn interrupt and reconciliation, a source-aware live prompt queue, cockpit-only withdrawal and recovery, typed attachment staging/rebind/submission, read-only effective policy, and evidence-bound telemetry. The browser consumes these projections; rendering, composer state, and presentation of accessible descriptions belong to the dashboard.
+
+Control operates over the installed ConversationRuntime and its canonical ControlPlanePort. It consumes the shared submission authority's native writes, operation timeline, asset transport, and pre-tombstone withdrawal payload rather than creating another native queue, process identity, or dispatch authority. Its local ledgers retain bounded replay answers, semantic revisions, cockpit-held content, and recovery state. Active page/stream serving and dormant library list/read/open remain neighboring responsibilities; control is not another conversation-history read port.
+
+The enduring intent is exact identity, truthful uncertainty, source privacy, and bounded ephemeral recovery. Native acknowledgement does not prove terminal settlement; a lost response must not silently become a new operation; an unobserved metric must not become zero; a capability declaration must not become a claim of fresh runtime acceptance. The original L3 designation and later reviewer rulings describe the inherited design intent, not a new delivery receipt.
+
+## Hot Path Summary
+
+Start with api.py for route declarations, request assembly, typed refusals, and outcome-specific statuses. Each handler obtains the runtime and server-side authorization binding through the parent request functions. The authorization resolver uses the TCP peer rather than browser principal/tenant claims. Route operations resolve the running session and verify the expected bridge epoch against the live authority before working in that epoch's channel.
+
+service.py owns the per-runtime service, random control secret, channel stores, session locks, injectable clock, identity construction, timeline pagination, and spool-root convention. Catalog resolution, epoch lookup, live snapshot reads, and timeline reads are offloaded through asyncio.to_thread so their blocking work does not occupy the event loop. ControlRequest groups service, caller binding, session, and claimed epoch; resolved(epoch) produces ControlScope containing the verified epoch. These values express the intended boundary, but adoption is not universal: queue, policy, telemetry, and submit entry points still accept separate arguments, and some operations unpack ControlRequest directly.
+
+refs.py mints and verifies four purpose brands: ar-oqr1. operation, ar-wdr1. withdrawal, ar-wrr1. recovery, and ar-war1. recovery asset. RefBinding groups caller, session, and epoch; RefTarget groups operation identity and optional withdrawal/asset identity. HMAC-SHA256 integrity is checked before JSON decoding, then schema, purpose, principal, tenant, session, and epoch are compared. Tokens contain identity fields, not prompt content; signatures establish integrity, while request authorization and binding checks establish authority.
+
+operations.py owns interrupt replay and settlement. queue_projection.py owns live prompt rows, with previews.py supplying redacted identification copy and content digests. withdrawals.py owns withdrawal/recovery lifecycle; recovery_assembly.py chooses available content and constructs recovery references. attachments.py owns staged operation lifecycle and submit assembly; asset_spool.py owns filesystem mechanics. capabilities.py declares per-harness control and telemetry evidence. policy.py and telemetry.py project read-only facts.
+
+## Construction And Ownership
+
+The API prefix is /api/terminal/{ar_session_id}. The seventeen routes comprise three interrupt routes; queue, withdraw, withdraw-status, withdraw-reconcile, pending recovery discovery, recovery fetch, and recovery acknowledgement; attachment stage, rebind, status, and reconcile; submit; policy; and telemetry. All declare response_model and a responses table, but handlers return constructed JSONResponse objects. Those declarations do not themselves validate the emitted response at runtime.
+
+The shared response contracts live in serving/conversation/response_contract.py. StagedAttachments wraps an operation and receipts; ConversationSubmitted describes the same submit body across its outcome statuses; WithdrawQueueAnswer is the withdrawn/failed answer union. The conversation contract module is separate from the app-level response contract to avoid the documented router/model import cycle. Canonical wire types now live in models/conversations/, including control_wire.py, evidence.py, submissions.py, interrupts.py, attachments.py, and withdrawals.py; the canonical port lives in serving/ports.py. PolicyPart and ConversationPolicyProjection remain local to control/policy.py.
+
+_map_typed_error handles epoch mismatch before the broader bridge error family and maps the known typed refusal families to 400 malformed reference, 403 authorization, 404 unknown identity, 409 epoch/conflict, 422 refusal as posed, or 503 composition/control unavailable. Unexpected exceptions are re-raised. The intended O4 boundary is precise mapping of routine typed refusals, not a guarantee that arbitrary failures cannot produce 500.
+
+Outcome bodies must remain distinct from refusal envelopes. Interrupt returns its operation on 200, 202 pending, 422 rejected acknowledgement, or 503 failed settlement. Withdrawal returns its answer on 200 withdrawn, 202 delivery unknown, 404 not found, or 409 dispatch/epoch/request conflict. Submit returns ConversationSubmitted on 200, 202 unknown, or 422 rejected/unsupported. Where outcome tables overwrite shared statuses through dictionary expansion, their models union the outcome and applicable refusal models; otherwise the declaration would erase a body the handler can emit.
+
+One service is cached per ConversationRuntime in a weak-key dictionary. It creates a random 32-byte secret and does not persist it. References therefore cease to validate when that authority is replaced. Channels are keyed by session and epoch and capped at 64 with oldest-channel eviction, refreshed on access. Declared channel limits are 64 interrupts, 64 withdrawals, 32 recoveries, 32 attachment operations, 256 journal entries, 256 submit answers, and 256 queue revision keys. These limits have different reclamation policies and do not imply unlimited replay or recovery retention. Interrupt eviction prefers nonpending records but can remove the oldest pending record under pressure; withdrawal eviction prefers records without an active recovery but can remove the oldest other record. Recovery pressure expires and removes the oldest lease rather than undoing a completed withdrawal. Attachment admission evicts accepted/failed/expired operations and refuses when the store contains only live operations. Submit/journal bookkeeping evicts oldest entries.
+
+Session locking protects interrupt admission/reconciliation and withdrawal admission/reconciliation above the substrate replay cache. It is not applied uniformly to every mutating handler: stage, rebind, submit, and recovery acknowledgement do not acquire this service lock in their local bodies. This observation does not establish absence of lower-layer serialization or guards along their complete call paths. The lock map targets 128 entries by evicting unlocked locks; if every retained lock is held, eviction stops and a new lock can exceed that target. release_session synchronously removes a session's lock and all epoch channels. The inherited session-end wiring limit remains relevant: a bounded production-source search found its control definition but no caller, and this proposal does not certify terminate/retire integration.
+
+The built-in native harness factory dispatches Claude, Codex, Pi and Eve through repository-owned adapters. Their production defaults launch local subprocesses: Claude stream-json, Codex app-server stdio, Pi RPC, and Eve’s local Node runtime before HTTP health checking. Injected transport/runtime factories remain possible; this describes built-in/default adapter architecture, not every configured registry entry or a newly executed launch.
+
+## Invariants And Boundaries
+
+### Exact identity and interrupt truth
+
+Every wire re-resolves authorization and checks the live epoch. A control reference's possession does not authorize its use. Purpose brands are non-interchangeable, minting and decoding use the same binding shape, and withdrawal checks that its operation and withdrawal references name the same operation before consulting the live queue. This is an identity boundary, not encrypted content storage.
+
+Interrupt fingerprints include caller authorization, session, verified epoch, turn id, and request id. Retained identical requests replay the stored answer; a reused id with different fingerprint is a typed conflict. Admission rechecks under the session lock. A client error proven unsent becomes control-unavailable; a possibly sent write records unknown acknowledgement. Reconciliation reuses the original target through the substrate's replay semantics, and pending settlement is observed independently of acknowledgement. InterruptTicket keeps turn, request, fingerprint, and evidence floor attached to one attempt. The API also records developer interrupt provenance on the seat when acknowledgement is not rejected; that provenance is not terminal settlement evidence.
+
+Codex uses the native turn id and correlates completed evidence by exact turn.id and a terminal turn.status. Interrupted, completed, and failed map respectively to interrupted, already-settled, and failed. Pi and Claude use the active AR operation id as the caller's turnId because their control contract does not provide the same native turn identity. The native write receives expected_operation_id for non-Codex harnesses.
+
+Claude observes the first completed result frame after the recorded evidence floor, relying on the documented single-active-turn ordering. An adapter-attributed arTerminalOutcome stamp has precedence: cancelled means interrupted, completed means already-settled, and failed stays failed. For unstamped older/foreign evidence, native success/is_error and terminal_reason classify the result; an error-shaped result without accepted-interrupt correlation remains failed. Pi requires the corresponding prompt timeline row to leave queued/dispatching/unknown and reads the latest message_end message.stopReason after the evidence floor; aborted means interrupted, error means failed, and another nonempty reason means already-settled.
+
+The evidence clip preserves bounded identity/status scalars at their original paths: type, subtype, terminal_reason, arTerminalOutcome, message.stopReason, and turn.id/status. Absent, non-string, or overlength scalars are omitted rather than invented or truncated. Interrupt settlement must consume this preserved evidence identity rather than depend on complete transcript bodies. The inherited 64 KiB IPC-cap escalation remains a historical reason for this seam, not a freshly reproduced measurement.
+
+Eve now has a supported interrupt capability declaration with pinned fixture provenance. However, this control ledger's settlement dispatcher selects Codex, Claude, or the Pi observer for every other harness. Thus Eve falls through to the Pi-shaped observer here; this package does not establish how its advertised native turn.cancelled evidence becomes a completed control-ledger settlement. Keep that named discrepancy visible rather than inventing an Eve-specific observer or claiming a fresh successful path.
+
+### Queue privacy and withdrawal
+
+The queue pages the complete retained operation timeline, then projects prompt rows only in queued, dispatching, or unknown state. Completeness means the retained live prompt projection, not all historical operations or setter rows. Kind/source/phase/order come from the substrate. Only queued cockpit rows receive cockpit withdrawal identity, a redacted preview, and a held-content digest. The OperationQueueItem validator requires withdrawable and cockpit identity presence to agree exactly with source=cockpit and phase=queued; terminal/durable prompt bodies are not fields on this projection.
+
+The accepted setter exclusion remains: set-model/set-effort have no submission source in this contract and cannot be represented without inventing one. Their kind vocabulary remains in the DTO, while the production projection skips them; future SC1 admission was the recorded historical option, not functionality added here.
+
+Preview content comes only from this service's submit journal. An otherwise withdrawable row absent from that journal reports an empty preview, false truncation, and digest-of-empty. This means the daemon holds no preview content, not that the original prompt or user's draft was empty. previews.py removes selected control characters, collapses whitespace, applies secret redaction, and cuts identification copy at 96 grapheme-ish clusters. Its stdlib clustering is an approximation, not a complete Unicode segmentation contract. Digest construction hashes exact text alone or canonical text plus sorted asset identity when assets are present; previews are never recovery authority.
+
+Queue-row revisions change with phase/source/withdrawability, and the projection revision changes with the assembled row key. The 256-key revision map performs oldest-key eviction without checking settlement. An evicted row starts at revision 1 if seen again. The historical claim that this eviction can only touch settled operations and is invisible to live rows is stronger than the implemented predicate.
+
+Withdrawal verifies both references and the exact retained kind/id/sequence, requires a cockpit source and queued state locally, then asks the shared submission authority to linearize the queued-to-dispatching race. That authority checks epoch and source under its lock, returns not-withdrawable after dispatch begins, and captures text/assets before marking the record withdrawn. Its already-withdrawn replay contains no recovery body. WithdrawalTicket keeps verified epoch, operation identity, caller operation ref, fingerprint, and withdraw request id together across successful, failed, and unknown records.
+
+Lost withdrawal responses remain unknown and reconcile under the same withdrawRequestId. Successful initial responses may carry recovery content. Discovery exposes opaque identities and expiry, while status/reconcile expose operation projections without recovery bodies. Fetch verifies the recovery reference against caller/session/epoch and requires an unacknowledged record with retained text. recovery_assembly chooses substrate text first, then journal text if available; without either it supplies an empty response representation rather than fabricating content. It constructs the digest from selected text and available substrate asset identities, or from the journal/empty marker when text is absent. These assembly functions do not implement the previously claimed comparison of substrate payload against journal content.
+
+Recovery and staging use 900-second leases. Recovery expiry is processed by invoked sweeps, not demonstrated here as a background timer. Recovery pressure can end retention earlier. Acknowledgement clears RecoveryRecord.text and advances recovery/withdrawal revisions; keep-current-draft also deletes recoverable asset bytes. Expiry clears that recovery text and deletes recoverable bytes. Replayed withdrawal answers suppress recovery text/assets once the withdrawal state is acknowledged or expired. These are fetchability and lifecycle predicates, not proof that all raw-content copies have been erased: the stored withdrawal response contains its assembled recovery, and the cockpit journal retains its own bounded text entry. replace-current-draft acknowledgement does not itself delete recoverable bytes. Preserve bounded recovery as intent without describing universal immediate disposal.
+
+### Attachments and submission
+
+Staging is ephemeral transport, not conversation persistence. The API reads each upload up to MAX_SUBMIT_ASSET_BYTES+1, validates positional metadata, and requires a declared image/file/resource kind; stage requires 1..4 uploads and a safe request component. stage_one refuses a kind whose declared capability is not supported and checks MIME, nonempty bounded bytes, required description where applicable, and nonempty name. Supported image declarations use the shared MIME/count/byte limits; file/resource staging remains unavailable. Codex and Pi images are declared supported; Claude image staging remains unverified; Eve attachment kinds are unavailable.
+
+Spool paths are constructed beneath the session endpoint's assets directory and resolved for containment. Request components reject empty values, over-255-byte values, slash, NUL, and dot segments. The implementation sets the request directory to 0700 and files to 0600; it does not establish that every ancestor directory receives those permissions. Each asset gets a generated identity and a digest. Rebind verifies recoverable bytes against digest and size, then atomically moves them to a fresh staged identity and preserves name, MIME, description, and provenance. A supplied description is retained; otherwise the explicit filename/MIME description is the truthful accessibility fallback.
+
+Stage fingerprints bind caller/session/epoch/request/content. Submit requires nonempty composed text, accepts only disposition next, and uses source cockpit through the shared FIFO submission port. Asset blocks must name an existing unconsumed asset and match its receipt's kind, name, MIME, digest, alt, and alt provenance before dispatch. Retained submit fingerprints reject changed content and replay identical answers. Accepted/queued/unknown outcomes consume selected assets; rejected/unsupported do not. Unknown remains represented as unknown rather than triggering a replacement upload. SubmittedContent keeps body, receipt, composed text, and selected assets attached to one submission, and nonterminal admission records the bounded cockpit journal.
+
+Attachment reconciliation advances from the retained timeline. A queued row can become dispatching; rejection/unsupported becomes failed; an absent or delivered row can mark a previously queued/dispatching operation accepted and delete its bytes, relying on the substrate's terminal-only eviction contract. A withdrawn row is left to recovery lifecycle, and unknown is not treated as delivered. Withdrawal marks retained assets recoverable under the recovery lease and resets their one-use consumption for exchange. Rebind records the exchange and replays it only for the same target request; a different target conflicts. Staged expiry deletes bytes during attachment sweeps. Recoverable deletion is owned by the withdrawal/recovery paths. Local attachment status resolves authorization at the API boundary but does not compare a stored caller fingerprint again; this does not negate the parent single-operator authorization contract.
+
+### Capability, policy, and telemetry honesty
+
+The inherited 2026-07-21/L5F R4 ruling remains: contract evidence is the gate, never observed runtime/helper version equality. Current control and telemetry dispatch select per-harness declaration factories and explicitly discard the snapshot for capability selection. Fixture ids, captured versions, and observed times are provenance constants, not live probes performed on every request. The implementation does not dynamically rerun contract verification here. Interrupt and asset staging enforce their relevant supported capability; other routes project evidence or enforce their own identity/lifecycle rules rather than all consulting one universal capability gate.
+
+Interrupt is declared supported for Codex, Claude, Pi, and Eve. Claude's earlier never-probed control statement now applies to its unverified image/policy and telemetry declarations, not interrupt. Steer and follow-up remain unavailable as ordinary submit actions. Renderer controls must use the owning capability evidence rather than infer support from fixture existence. The active page now delegates interrupt to control.interrupt_capability_for, so the historical warning that L1 always hides interrupt is obsolete. Other active-page attachment/policy/telemetry declarations can retain conservative states; Eve also delegates telemetry and declares policy evidence. Identity digests remain service-domain values: consumers should correlate identity fields rather than assume digest equality across active/library/control authorities.
+
+Policy is GET-only here. It separates the AR local single-operator/canonical-scope posture from harness-mode evidence, with origin, observation, freshness, and capability reason. Claude can expose permissionMode while remaining policy-read unverified; Codex has no public adapter-private approval/sandbox value; Pi's policy capability is unavailable. Eve policy_read is declared supported, but _harness_mode has no Eve-specific branch and currently emits the generic Pi-origin label with no value. That is a named projection mismatch, not evidence of an Eve permission mode. Reading capability evidence does not authorize a policy mutation.
+
+Codex cumulative token usage is the only metric emitted by this implementation. Its supported/partial capability plus evidence is necessary, and the latest retained frame containing a tokenUsage mapping supplies input/output/cached counts from total. The reader does not independently test a native notification type before selecting that mapping. Missing frame/total data produces absence; missing or noninteger counts stay absent, including booleans. Metric evidence carries unit, conversation scope, origin label, observation, exact precision, captured runtime/helper/fixture provenance, and freshness (15 seconds or less is fresh; malformed time is unknown). Other Codex context/cost/rate-limit/compaction fields and all Claude/Pi fields remain unavailable or unverified according to their declarations; Eve declares every metric unavailable.
+
+## Historical And Verification Limits
+
+This proposal is based on source inspection at the stated checkout and full reading of the supplied card. It supplies no test result, installed-runtime probe, route execution, delivery certification, or acceptance receipt. Historical fixture descriptions in capability constants are observed source declarations, not independently refreshed observations.
+
+Retain the named L3/L2E/L0E/L3E design limits: native identity and replay authority belong to the substrate; acknowledgement is not settlement; terminal evidence is bounded; Pi/Claude turnId denotes the AR operation; setter rows remain excluded pending a different SC1 admission; journal-absent preview is empty held content; recovery is ephemeral and daemon-scoped; unknown outcomes require reconciliation rather than replacement ids; and control references lose validity when their secret-owning authority changes. The historical landed-pop-back preservation claim is inherited intent, not a new proof from this control inspection.
+
+The L3 fix-round-2 transcript/64 KiB IPC escalation, L5F reviewer ACCEPTED setter and empty-held-preview rulings, L5F R5 accepted-bounding/session-end-hook limitation, L4 renderer capability and digest rulings, and L16 2026-08-05 ABBA/catalog-lock incident remain named historical context. Their original reviewer decisions, incident measurements, sidecar wiring notes, and installed delivery witnesses were not independently adjudicated here. Current code confirms the asynchronous offload and local predicates, while the strict lock-cap, settled-only queue eviction, universal serialization, journal-cross-check, and complete content-disposal claims require the narrower descriptions above.
+
+The EFA-L4 route-conformance suite is recorded as retired. Its inherited reach was 404 on all seventeen routes, 403 on one, and reachable success bodies with a live bridge. Most typed bridge-failure legs at 400/409/422/503 were declared but undriven because the fixture did not model stale epochs or mid-write socket death. The historical real-422 conformance finding explains the outcome/refusal unions. Those figures and declarations do not establish a current pass, and no test population was examined or executed for this proposal. The card's operations, queue, attachment, real-socket, foundation-route, and on-disk spool verification expectations remain historical review guidance rather than completed checks.
+
+The L5I normalized question-pages/exact-answers-map intent belongs to adjacent interaction machinery. Claude protocol parsing retains header, exact question text, options/descriptions, and multi-select; answer validation requires a JSON string-to-string map with exactly the expected question texts. hosted_interactions carries pages into gates and sends decisions through the shared interaction client. Invalid decisions reopen immediately with visible failure evidence. Delivery proven unsent can retain the decision for bounded retries (three attempts); possible delivery reopens with unknown delivery evidence rather than risking a second answer. The lifecycle-free harness-control response path checks epoch and serializes an answers map through the same client. These are not extra routes owned by control/api.py, and the card's blanket failed-decision-immediately-reopens wording needs this retry exception.
+
+The inherited registry statements—no cross-repository implementation evidence, no allowed neighboring repository, and no configured Domain Documentation—were not revalidated against memory settings because this adjudication was restricted to the checkout and supplied card. They remain inherited scope/configuration limits, not fresh registry findings. Original numbered references, coverage/status/route metadata, sidecars, and excluded tables remain parent-owned; this body proposes no replacement lifecycle status. No sync or publication was performed.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-
-## What This Area Is
-
-This route is the implemented authoritative human control surface landed by 260718-CHATS-L3: the
-exact-session control and operation-projection slice of structured Chats. It fills the previously
-behavior-empty `control/` shell with seventeen registered production routes — exact-turn interrupt,
-the source-aware operation queue with cockpit-only withdrawal and bounded recovery, typed attachment
-stage/rebind/submit, read-only effective policy, and evidence-bound telemetry — consumed by the
-browser cockpit without weakening the landed pop-back.
-
-Every wire re-authorizes: the two L0 request dependencies resolve the caller and the runtime,
-`expectedBridgeEpoch` is verified against the live submission authority per request, and every opaque
-control reference is HMAC-signature-checked and re-bound against the authorized identity before any
-lookup. The slice is disjoint from active/library: it invents no second queue, operation ledger, or
-process identity, and it is not a third conversation read port. It consumes the closed L2E
-control-plane substrate (the epoch-guarded native interrupt write, the paged never-bodies operation
-timeline, the asset channel, and the pre-tombstone withdrawal recovery payload) read-only, and it
-reads the L3E-preserved terminal-identity fields (`type`, pi `message.stopReason`, codex `turn.id`/
-`turn.status`) out of the bounded evidence window for settlement.
-
-## Hot Path Summary
-
-Start with `api.py` for the seventeen routes and the O4 typed-error mapping. `service.py` is the
-per-app authority (control secret, bounded per-(session, epoch) ledgers, per-session serialization
-locks, the shared session/epoch/identity/timeline/spool seams). `refs.py` is the opaque signed
-control-reference authority (four non-interchangeable purpose brands). Then the R-owning modules:
-`operations.py` (R1 interrupt ledger + settlement correlation), `queue_projection.py` (R2 never-bodies
-queue truth) with `previews.py` (preview/digest transforms), `withdrawals.py` (R3 cockpit-only
-withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4 typed lifecycle) with
-`asset_spool.py` (the filesystem boundary), `policy.py` (R5 read-only policy), and `telemetry.py`
-(R6 evidence-bound telemetry). `capabilities.py` is the control-domain gate every route consults.
-
-## What Belongs Here
-
-| Path | Role |
-| --- | --- |
-| `api.py` | The seventeen registered routes plus the O4 typed-error mapping and multipart staging. |
-| `service.py` | Per-app service: control secret, bounded per-(session, epoch) ledgers, per-session locks, shared seams. |
-| `refs.py` | The opaque signed control-reference authority (four purpose brands) and the typed `ControlRefError` family. |
-| `capabilities.py` | Control-domain exact-session capability gate; contract-only honesty (no observed-runtime/version demotion since L5F R4). |
-| `operations.py` | R1: the exact-turn interrupt ledger, idempotence, and settlement correlation. |
-| `queue_projection.py` | R2: the complete never-bodies source-aware prompt-queue projection. |
-| `previews.py` | The deterministic preview transform and authority-parity content digest. |
-| `withdrawals.py` | R3: cockpit-only atomic withdrawal + bounded authorization-bound recovery. |
-| `recovery_assembly.py` | R3: recovery content/digest/asset-ref assembly over the retention record. |
-| `attachments.py` | R4: the typed attachment stage/status/reconcile/rebind/submit lifecycle. |
-| `asset_spool.py` | R4: the confined staged-bytes filesystem boundary and staged asset types. |
-| `policy.py` | R5: the read-only effective-policy projection. |
-| `telemetry.py` | R6: evidence-bound telemetry (codex cumulative token usage). |
-| `__init__.py` | Package marker. |
-
-## What Does Not Belong Here
-
-| Nearby Thing | Belongs Instead In |
-| --- | --- |
-| Strict wire grammar, cursor brands, canonical vocabulary, queue/attachment/telemetry DTOs | `mcp/src/agents_remember/serving/conversation/models.py` (the parent contract route). |
-| Runtime composition, authorization ruling, request dependencies, child-router mounting | `mcp/src/agents_remember/serving/conversation/` (L0; consumed, never edited). |
-| Active conversation page/stream serving | `mcp/src/agents_remember/serving/conversation/active/` (the L1 leaf). |
-| Dormant native list/read/exact open | `mcp/src/agents_remember/serving/conversation/library/` (the L2 leaf). |
-| The native interrupt write, operation timeline, asset channel, evidence clip, and recovery payload | `serving/harness_*` (L2E/L0E/L3E substrate; consumed read-only). |
-| Browser rendering, composer state, alt-text presentation | `dashboard/src/` (the L4 renderer). |
-
-## Structures Found Here
-
-- Seventeen FastAPI routes on the L9 prefix `/api/terminal/{ar_session_id}` with every typed refusal
-  mapped subclass-before-base to one precise HTTP status (no raw 500 for routine refusals — the O4
-  idiom), and multipart attachment staging behind a bounded read.
-- Four purpose-branded HMAC-SHA256-signed control references (`ar-oqr1.` operation, `ar-wdr1.`
-  withdrawal, `ar-wrr1.` recovery, `ar-war1.` recovery-asset), non-interchangeable, carrying identity
-  only — never content; the app-scoped random secret is never persisted, and the per-wire binding
-  re-check is the real authorization mechanism.
-- A per-app service holding bounded per-(session, epoch) ledgers (64 interrupts / 64 withdrawals /
-  32 recoveries / 32 attachment-ops / 256 journal / 256 submits per channel; 64 channels/app) with
-  named eviction, per-session serialization locks above the L2E replay cache, and an injectable clock.
-- An interrupt ledger with fingerprint idempotence, monotonic semantic revisions, and settlement
-  correlation over the evidence/completion surface (codex `turn/completed`; pi operation-settle +
-  `stopReason` read from the L3E-preserved evidence identity).
-- A never-bodies queue projection (validator-enforced) exposing withdrawal refs/previews/digests only
-  on queued cockpit rows; a bounded 900 s authorization-bound recovery lease with opaque discovery,
-  authenticated fetch, ack-disposal, and expiry; a typed attachment lifecycle with one-use assets in
-  a confined 0700/0600 spool; a read-only policy projection with no mutation surface; and
-  evidence-bound telemetry with absent-not-zero missing data.
-
-## Operating Model
-
-1. Each handler invokes the two L0 dependencies, gets the per-app control service, and verifies the
-   expected bridge epoch against the live submission authority before any state work.
-2. Mutating routes serialize on the service's per-session lock (above the L2E replay cache) and admit
-   under a request fingerprint; identical replays return the stored answer with no second native
-   write, and a reused id with a different tuple is `request-conflict`.
-3. The R-owning module consumes the L2E substrate reads (interrupt write, operation timeline, asset
-   channel, recovery payload) — never reimplementing them — and records the semantic-revisioned
-   result in its bounded ledger.
-4. Every opaque reference is re-bound against the authorized identity on the wire; possession is never
-   authorization, and the source rule is the backstop behind the signature.
-5. Capability gating is fixture/evidence-bound and, since L5F R4, demotes only on a failed or
-   never-run contract verification — never on an observed runtime/helper version comparison (the
-   observed version is informational evidence only); a refused capability fails typed (422) before
-   any native call.
-
-## Main Flows
-
-### Exact-turn interrupt (R1)
-
-1. Authorization + epoch verification; capability gate refuses claude/unsupported before any native
-   call.
-2. The native write's answer is the acknowledgement (`accepted`/`unknown`/`rejected`); settlement
-   lands only when the exact turn's terminal evidence crosses (`interrupted`/`already-settled`/
-   `failed`). A lost ack records `unknown` and reconciles through the same id with one native write.
-
-### Source-aware queue truth and cockpit-only withdrawal recovery (R2/R3)
-
-1. The projection pages the L2E timeline to union completeness and projects every retained prompt row
-   with never-bodies truth; only queued cockpit rows carry a withdrawal ref/preview/digest.
-2. A successful withdrawal retains the exact body in a bounded, authorization-bound, 900 s recovery
-   lease; fresh tabs discover opaque pending-recovery identities and fetch exact text/assets only
-   while authenticated and unacknowledged; ack disposes the body; expiry deletes text and bytes.
-
-### Typed attachments (R4)
-
-1. Stage binds each asset to caller/session/epoch/request/kind with fixture-backed limits into the
-   confined spool; submit consumes one-use assets through the L2E asset channel; a tampered block
-   refuses pre-dispatch.
-2. Withdrawal marks assets recoverable under the same lease; rebind atomically exchanges one
-   authorized recovery asset for a fresh one-use staged asset; unknown is retained, never re-uploaded.
-
-## Load-Bearing Files
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
@@ -143,110 +120,6 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 | `attachments.py` | attachment authority | One-use exact-receipt assets, timeline-driven lifecycle, and recoverable-under-lease rebind. | covered |
 | `queue_projection.py` | queue authority | Never-bodies truth; withdrawability is validator-enforced, never fabricated. | covered |
 | `capabilities.py` | capability gate | Features enable only from fixture evidence; an un-probed contract stays `unverified` and the action stays off (contract-only gate, no version demotion since L5F R4). | covered |
-
-## Local Invariants And Traps
-
-- Possession of a control reference is never authorization: every wire re-resolves the caller and
-  re-binds every decoded ref field; the signature is verified before the payload is parsed.
-- Acknowledgement is never settlement (R1). An `accepted` interrupt settles only on the exact turn's
-  terminal evidence; the settlement correlation must read the L3E-preserved `type`/`message.stopReason`
-  from the evidence envelope (the transcript-read seam is defeated by the 64 KiB IPC cap — proven in
-  L3's fix-round-2 escalation).
-- Never-bodies queue projection is validator-enforced: terminal/durable prompt bodies cannot cross,
-  and only queued cockpit rows are withdrawable.
-- **Setter rows are excluded from the queue projection (reviewer ACCEPTED).** Set-model/set-effort
-  operations are authority-minted with `source=None` and cannot be withdrawn; the SC1
-  `OperationQueueItem` validator cannot represent them without inventing a source or lying about
-  withdrawability, so the projection covers the complete **prompt** queue and setters stay in the
-  contract grammar for a future SC1 admission (the recorded fallback).
-- **Empty-held preview semantics (reviewer ACCEPTED).** A cockpit row the submit journal does not hold
-  reports `redactedPreview: ""` and the digest-of-empty marker — the truthful "the daemon holds no
-  content", distinct from an empty draft, never fabricated; recovery at withdraw still carries the
-  body from the substrate payload.
-- Recovery is a bounded lease, not durable storage: acknowledgement disposes raw content, expiry
-  deletes text and bytes, and daemon restart invalidates every reference loudly (the app-scoped-secret
-  posture).
-- Staged assets are one-use, exact-receipt-matched, and confined (0700/0600, resolve-and-verify);
-  `unknown` is retained, never re-uploaded under a new id.
-- No PTY Esc / paste / native-queue substitution exists anywhere in the control modules (source-
-  scanned); policy is GET-only with no mutation surface.
-- 260718-CHATS-L5F R5 bounds the per-session control structures: `service._locks` is a bounded
-  `OrderedDict` (`MAX_SESSION_LOCKS_PER_APP=128`, evicting the oldest UNLOCKED lock so a held lock is
-  never dropped) with an explicit `release_session` (drops the lock + every epoch channel on session
-  end), and `queue_projection.queue_rows` is capped at `MAX_QUEUE_ROWS_PER_CHANNEL=256` with oldest-key
-  eviction (closing the old unbounded-`queue_rows` L3 Todo; eviction only ever touches settled
-  operations, invisible to live rows). Honest posture (reviewer F1 accepted-bounding): the sync
-  `release_session` is unit-tested but NOT wired into the terminate/retire endpoints this leaf — the
-  monotonic `_locks` leak is closed by bounding, not by an explicit session-end hook; the wiring locus
-  (expose the ConversationRuntime and call `release_session` after `catalog.mark_terminated`) is
-  recorded in the `service.py` sidecar.
-- Since 260718-CHATS-L5F R4 (developer ruling 2026-07-21) THE CONTRACT IS THE ONLY GATE: no
-  version-string comparison demotes any control/telemetry capability; the observed runtime/helper
-  version is informational evidence only.
-
-## L4-Facing Register (durable reviewer rulings the renderer must carry)
-
-- **Pi `turnId` names the exact AR operation id, not a native turn id (ruling 3).** Pi has no native
-  turn identity (L2E deviation 6), so for pi the caller supplies the active AR operation id (from the
-  dispatching queue row or item correlation), which the substrate guards pre-write; for codex `turnId`
-  names the native turn id.
-- **Control affordances must gate on the L3 routes' own capability evidence, not the stale L1 page
-  view (ruling 6).** `active/capabilities.py` still reports controls/telemetry as `unverified` ("the
-  L3 control leaf owns the gate") — true from L1's pre-L2E evidence but stale now; it is fail-closed
-  (disables, never enables). L4 must gate on the L3 routes' `control/capabilities.py` evidence, or a
-  later leaf refreshes the L1 view. Hiding a landed feature on the stale view is the failure to avoid.
-- **Identity digests are domain-scoped (precision note 4).** L1/L2/L3 services each hold their own app
-  secret, so L4 must match conversations by identity fields, never by digest equality across services.
-
-## Evidence
-
-### Repo-Internal References
-
-The parent contract route supplies the wire grammar and composition seams; the L2E/L0E/L3E substrate
-supplies the native writes, timeline, asset channel, evidence window, and recovery payload; the
-foundation and four+installed suites pin the slice.
-
-- `get_conversation_runtime` is the runtime dependency entry. [1]
-- The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. [2]
-- The conversation models define `protect_queue_source_privacy`. [3]
-- `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. [4]
-- `PolicyPart` is declared in the route-local `control/policy.py`. [5]
-- `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. [6]
-- `_map_typed_error` is the control API error-mapping entry. [7]
-- `CONTROL_RESPONSES` is the six-status shared refusal table for the control surface. [8]
-- `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. [9]
-- `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. [10]
-- The control client sends the epoch-guarded interrupt write. [11]
-- The control client validates paged operation-timeline reads before returning them. [12]
-- The control client validates the additive asset channel on prompt submission. [13]
-- `clip_evidence_payload` is the truncation-envelope entry. [14]
-- Pi settlement reads the preserved terminal identity through its stop-reason reader. [15]
-- `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. [16]
-- `capabilities_for` is the active capability-view entry. [17]
-
-
-| `QueueProjectionTests` covers queue projection behavior. | `QueueProjectionTests` | mcp/tests/test_conversation_control_queue.py:51-208 |
-
-| `ControlApiTests` covers the real-wire control routes. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378; mcp/tests/test_conversation_control_api.py:24-24 |
-
-
-### Cross-Repo References
-
-No cross-repository implementation participates in this route. All three harnesses are local
-subprocesses reached through this repository's own adapters, and the resolved memory policy allows no
-neighboring repository.
-
-No relevant cross-repo evidence found.
-
-### Docs References
-
-The resolved `Domain Documentation` registry has no entries. This route therefore uses the
-repository-owned contract, the L2E/L0E/L3E substrate, fixtures, and tests as its direct evidence and
-does not fabricate an external citation.
-
-No configured domain documentation was available for this control gate.
-
-## File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
@@ -265,133 +138,43 @@ No configured domain documentation was available for this control gate.
 | `policy.py` | [`policy.py.md`](policy.py.md) | covered | Read-only effective-policy projection (R5). |
 | `telemetry.py` | [`telemetry.py.md`](telemetry.py.md) | covered | Evidence-bound telemetry (R6). |
 
-## Child Overviews
+## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): `get_conversation_runtime` is the runtime dependency entry. [1]
+- Retained reference account (no fresh execution or acceptance inferred): The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. [2]
+- Retained reference account (no fresh execution or acceptance inferred): The conversation models define `protect_queue_source_privacy`. [3]
+- Retained reference account (no fresh execution or acceptance inferred): `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. [4]
+- Retained reference account (no fresh execution or acceptance inferred): `PolicyPart` is declared in the route-local `control/policy.py`. [5]
+- Retained reference account (no fresh execution or acceptance inferred): `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. [6]
+- Retained reference account (no fresh execution or acceptance inferred): `_map_typed_error` is the control API error-mapping entry. [7]
+- Retained reference account (no fresh execution or acceptance inferred): `CONTROL_RESPONSES` is the six-status shared refusal table for the control surface. [8]
+- Retained reference account (no fresh execution or acceptance inferred): `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. [9]
+- Retained reference account (no fresh execution or acceptance inferred): `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. [10]
+- Retained reference account (no fresh execution or acceptance inferred): The control client sends the epoch-guarded interrupt write. [11]
+- Retained reference account (no fresh execution or acceptance inferred): The control client validates paged operation-timeline reads before returning them. [12]
+- Retained reference account (no fresh execution or acceptance inferred): The control client validates the additive asset channel on prompt submission. [13]
+- Retained reference account (no fresh execution or acceptance inferred): `clip_evidence_payload` is the truncation-envelope entry. [14]
+- Retained reference account (no fresh execution or acceptance inferred): Pi settlement reads the preserved terminal identity through its stop-reason reader. [15]
+- Retained reference account (no fresh execution or acceptance inferred): `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. [16]
+- Retained reference account (no fresh execution or acceptance inferred): `capabilities_for` is the active capability-view entry. [17]
 
-None. The fourteen modules form one coherent control slice; there are no child routes.
+- Seventeen route declarations use the terminal-session prefix and explicit response contracts; handlers construct JSONResponse bodies. [18]
+- Known typed refusals preserve epoch-subclass precedence and six shared statuses; outcome tables retain refusal unions. [19]
+- Server-side authorization derives from the request TCP peer, not browser identity claims. [20]
+- Verified scopes, channel limits, conditional lock eviction, explicit release, and blocking-read offload are separate predicates. [21]
+- Signed purpose brands contain identity and verify integrity before decoding and rebinding. [22]
+- Interrupt replay/conflict and lost-ack handling remain separate from harness-specific settlement; Eve reaches the non-Claude/non-Codex branch. [23]
+- Evidence clipping preserves exact bounded terminal scalars, including Claude correlation classification. [24]
+- Queue projects only live prompt states; revision-key eviction has no settled-state predicate; absent journal yields empty held-content preview. [25]
+- DTO validation restricts cockpit identity and withdrawability to queued cockpit rows. [26]
+- Withdrawal checks live exact identity/source/state; shared authority captures content once before the terminal transition. [27]
+- Recovery chooses substrate text then journal; assembly does not compare their contents. [28]
+- Ack/expiry clear recovery-record text and conditionally dispose assets; retained replay response is suppressed rather than erased. [29]
+- Stage/rebind/submit enforce local lifecycle and receipt predicates; terminal-only eviction is a substrate dependency. [30]
+- Spool mechanics confine paths, set request-directory/file modes, verify bytes, and preserve accessible descriptions during exchange. [31]
+- Claude and Eve interrupt declarations are supported; version snapshots do not select capability state. [32]
+- Active-page interrupt delegates to the control authority. [33]
+- Policy has no Eve-specific mode branch despite supported Eve policy capability. [34]
+- Codex metric emission selects tokenUsage mappings and retains absent counts; provenance comes from capability evidence. [35]
+- Adjacent question-answer validation requires exact keys; interaction delivery retries only proven-unsent failures before reopening. [36]
 
-## How To Use This Area
-
-Read this overview and the exact file sidecar first. Route/error-mapping changes require the
-production-route suite over a real socket and the foundation route pin; interrupt-settlement changes
-require the operations suite (including the pi content-ful and oversized/clipped regressions); queue/
-withdrawal/recovery changes require the queue suite; attachment changes require the attachments suite
-plus on-disk spool proofs. Never mint a control reference that carries content, never fabricate a
-preview/digest for content the daemon does not hold, and never infer capability from fixture
-existence. The interrupt settlement must read the L3E-preserved evidence identity, not the clipped
-body.
-
-## Needs Verification
-
-- Claude's control/telemetry surface stays `unverified` with a NEVER-PROBED contract reason
-  ("control contract not yet probed through a captured production fixture … never a version gate"),
-  no longer a version-mismatch reason (L5F R4 removed the version gate); the wire carries the exact
-  contract reason.
-- Only codex cumulative token usage is a landed supported metric; cost/context/rateLimits/compaction
-  for codex and every claude/pi metric stay visibly unverified/unavailable until installed-runtime
-  fixtures observe them through the production seam.
-
-## 260718-CHATS-L5I Current Route Impact
-
-The control child now carries normalized question pages and an exact answers map through both gate-mediated and lifecycle-free response paths. Native Claude interrupt joins the existing exact-turn control ledger with an explicit acknowledgement/settlement split; a failed adapter decision reopens with visible failure evidence rather than masquerading as approval.
-
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
-
-## 260731-EFA-L2 — The Re-Authorization Rule Became A Type
-
-Everything asserted above about re-authorization still holds, and the route's boundaries are
-unchanged. What changed is that the rule is now carried by the type system instead of by four
-arguments repeated at every layer, and **the two most dangerous confusions in this route are now
-hard to express.**
-
-**`ControlRequest` → `ControlScope` (`service.py`).** `ControlRequest` is one authorized request's
-scope: `service`, `authorization`, `ar_session_id`, `expected_bridge_epoch`. Nothing in this package
-may act on a session without all four — the service owns the per-`(session, epoch)` channel, the
-authorization binding is what every operation fingerprint is computed against, and the session id
-plus the caller's *expected* epoch are what the epoch check verifies. `request.resolved(epoch)`
-narrows it to a `ControlScope` carrying **the epoch the service actually verified, not the one the
-caller believed.** Refs are minted and decoded against the verified epoch, so carrying the claimed
-epoch past the check would let a stale client mint refs for an epoch that no longer exists. The
-entry points take `ControlRequest`; everything downstream of the epoch check takes `ControlScope`.
-Do not add a function that takes a raw `expected_bridge_epoch` past that boundary.
-
-**`RefBinding` / `RefTarget` (`refs.py`).** A ref is only meaningful re-bound to all three of
-caller, session and exact bridge epoch — `RefBinding(authorization, ar_session_id, bridge_epoch)` —
-and `RefTarget(identity, withdraw_request_id=, asset_id=)` is what it points at. `mint_ref` and the
-decode path take **the same binding value**, rather than three parallel arguments each. Minting
-against one binding and verifying against another is exactly the confused-deputy the purpose brands
-exist to stop; passing one value makes the two sides provably identical. The four non-interchangeable
-purpose brands are unchanged.
-
-**One attempt, one record.** `WithdrawalTicket` (`withdrawals.py`) carries the five facts every
-record this module builds — settled, failed or unknown — is stamped with: the bound epoch, the
-operation identity, the caller's opaque operation ref, the idempotency fingerprint, and the withdraw
-request id. Its reason for existing is precise: it keeps a *failure* record from being stamped with
-a different operation's identity than the attempt it describes. `InterruptTicket` (`operations.py`)
-and `SubmittedContent` (`attachments.py`) play the same role for their operations, and
-`StageAttachmentsForm` (`api.py`) carries one multipart stage form.
-
-No route was added or removed; the seventeen routes, the typed-error mapping, the bounded ledgers,
-the never-bodies queue rule and the cockpit-only withdrawal restriction are all as described above.
-
-## 260731-EFA-L4 — Seventeen Declarations, And The Distinction Between An Outcome And A Refusal
-
-No route was added or removed; the ref authority, bounded ledgers, never-bodies queue rule,
-cockpit-only withdrawal restriction and capability gate are all unchanged. All seventeen routes now
-declare a `response_model` and a `responses` table.
-
-**One shared refusal table covers all seventeen, and that is a claim about the code, not a
-convenience.** `_map_typed_error` is the single place a typed error becomes a status here, and it
-maps the whole family onto exactly six: 400 (a malformed operation/recovery/asset ref), 403
-(authorization), 404 (unknown session or operation), 409 (stale epoch or a typed conflict), 422
-(rejected as posed), 503 (composition or bridge unavailable). `CONTROL_RESPONSES` is that mapper
-transcribed. If a later leaf adds a seventh status to `_map_typed_error` and not to the table, the
-declaration becomes a lie that nothing about the mapper itself will catch.
-
-**Where this route is unusual: three of its statuses are not refusals at all.** The interrupt trio,
-the withdrawal route and submit each choose their status from the operation they built, and the body
-on those statuses is the operation:
-
-| Route(s) | Status chosen by | Statuses carrying a NON-refusal body |
-| --- | --- | --- |
-| `interrupt` / `interrupt-status` / `interrupt-reconcile` | `operations.interrupt_http_status`, off the operation's own `acknowledgement`/`settlement` | 202, 422, 503 carry `InterruptOperation` |
-| `operation-queue/withdraw` | `withdrawals.withdraw_http_status`, off which answer it built | 202, 404, 409 carry `WithdrawQueueAnswer` (withdrawn **or** failed) |
-| `conversation/submit` | `acceptance` (`unknown` → 202, `rejected`/`unsupported` → 422) | 200, 202, 422 all carry the SAME `ConversationSubmitted` body |
-
-An acknowledged-but-unsettled interrupt on 202 and a failed withdrawal on 409 are this route's own
-answers, not error envelopes. Declaring them through the shared refusal table alone would have been
-wrong, **and the conformance suite caught exactly that on a real 422 from the interrupt route.**
-
-**The merge trap.** These outcome tables are spread as `{**CONTROL_RESPONSES, **OUTCOME}`, and
-`{**a, **b}` is a dict merge — a bare `{422: InterruptOperation}` would DELETE the shared refusal
-entry rather than join it, declaring a model the route cannot produce on a status it genuinely
-answers with a refusal (`_map_typed_error` reaches 422 through `CapabilityRefusedError` and
-`OperationRejectedError`). Every overlapping entry therefore unions both members. The same shape is
-required of any future outcome table here.
-
-Three bodies on this surface are assembled at the route and had no model at all before this leaf:
-`StagedAttachments` (stage and rebind) and `ConversationSubmitted` (submit). They are declared in
-`conversation/response_contract.py`, which is split from the app-level contract module for an
-import-cycle reason (see `../overview.md`).
-
-**What is and is not enforced.** Every handler here returns a `JSONResponse` it built itself, so
-FastAPI validates none of these declarations at runtime — undoing them would fail no request.
-The former route-conformance suite was retired; declarations alone do not establish a current
-validation pass. Its historical evidence recorded the following reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
-reachable success shape off a live bridge — while the typed-bridge-failure legs (400/409/422/503 on
-most routes) stay declared-and-undriven with a reason, because the bridge fixture models the harness
-edge rather than a stale epoch or a socket that dies mid-write.
-
-## 260731-EFA-L16 — Resolution Leaves The Loop
-
-`ConversationControlService.resolve_entry` is now async and offloads the lock-taking
-`resolve_running_entry` catalog read through `asyncio.to_thread` — the same idiom as
-`verify_epoch`/`live_snapshot`/`read_full_timeline` — because every caller here runs on the
-uvicorn event loop, where a catalog RLock wait parked the whole server in the 2026-08-05 ABBA
-incident. Every route module's call site gained the matching `await` (attachments, operations,
-policy, queue_projection, withdrawals, telemetry, and the inline `api.py` call); sync callers
-use `factories.resolve_running_entry` directly, off the loop. Wire shapes, epoch semantics, and
-error mappings are untouched.
-
-## 260731-EFA-L9 Route Impact — Contract Imports Moved
-
-The control child routes now import the shared wire contracts from `models/conversations/` (`control_wire.py`, `evidence.py`) and the canonical control port from `serving/ports.py` after the L9 monolith split. Control behavior is unchanged.
+- The repository’s built-in adapter defaults launch local Claude, Codex, Pi and Eve subprocesses; injected factories and configured-registry scope remain distinct. [37]

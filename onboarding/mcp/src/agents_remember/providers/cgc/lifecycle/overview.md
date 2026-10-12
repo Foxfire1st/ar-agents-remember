@@ -1,8 +1,8 @@
 # mcp/src/agents_remember/providers/cgc/lifecycle/ - CGC Lifecycle Modules Overview
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
+| Field | Value |
+| --- | --- |
+| sourceRoute | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
 
 ## Governing Overview
 
@@ -10,72 +10,41 @@
 
 ## Purpose
 
-`cgc/lifecycle/` contains the CodeGraphContext provider lifecycle
-implementation, organized behind a CGC package facade with prefix-free
-filenames.
+`cgc/lifecycle/` implements the CodeGraphContext provider lifecycle behind a CGC package facade, using prefix-free module filenames. It separates settings and runtime layout, the shared FalkorDB backend, runner images, watcher containers, index refresh, and native queries and visualization.
 
 ## Hot Path Summary
 
-`__init__.py` re-exports the CGC public lifecycle surface. `core.py` derives
-settings and runtime layout, `backend.py` manages the FalkorDB Docker backend,
-`runner.py` builds the Docker runner image and command lines,
-`installation.py` owns install/status/patch/doctor behavior including watcher
-container state, last-refresh, and indexing-state reporting,
-`process_control.py` owns watcher process start/stop,
-`refresh.py` owns index refresh, and `query.py` owns bounded native run plus
-visualizer commands.
+`__init__.py` lazily resolves exports from the lifecycle modules through the package facade. `core.py` resolves settings and layouts; `compose.py` renders the shared backend, runner, and repository watcher services; `backend.py` manages FalkorDB; and `runner.py` builds and inspects runner images and inspects watcher containers. `installation.py` implements installation, layout initialization, status, and doctor checks. `process_control.py` starts and stops watcher containers, `refresh.py` refreshes indexes, and `query.py` runs bounded native commands and the visualizer.
 
-## Route Model
+The parent lifecycle facade resolves CGC exports through this package. Watcher aggregation routes start, stop, and shutdown actions to all-root handlers and combines shared backend status with per-root provider status. The typed CGC lifecycle service dispatches `run`, `visualize`, and `refresh-all` from its settings-owned service configuration.
 
-- `core.py` is configuration and layout only. Since L13 its settings-backed layout requires an EXPLICIT `--from-settings` path — `cgc_settings_from_file` dropped the coordination-root fallback argument (the old implicit fallback was fail-open: empty config on a missing file).
-- `backend.py` owns the managed FalkorDB container, backend state, and shared
-  CGC Docker network attachment.
-- `runner.py` owns the CGC Docker runner image, patch script, networked mounts,
-  host-user container execution, env, and Docker command construction.
-- `installation.py` owns Docker runner install, status, no-op patch reporting,
-  and doctor checks.
-- `process_control.py` owns long-running Docker watcher container start/stop.
-- `refresh.py` owns Dockerized CGC index refresh.
-- `query.py` owns Dockerized bounded commands and visualizer lifecycle.
+## How It Is Built
+
+Settings-backed layouts read an explicit settings path through `cgc_settings_from_file`; there is no implicit coordination-root settings lookup. The provider entry supplies configured repository roots, and root selection validates their shape and resolves repository identity. The separate manual layout branch constructs `CgcRepo(...)` with the coordination root, repository ID, and code repository root; see the [context route](../context/overview.md). These internal argument shapes and retained settings vocabulary do not establish a public provisioning command.
+
+`core.py` also applies configured layout and backend state and invokes runtime-artifact cleanup. It is therefore more than configuration and layout calculation alone.
+
+`compose.py` owns service rendering, network selection, mounts, environment, ownership labels, and host-user execution blocks. Repository mounts are read-only; runtime mounts hold provider artifacts. Runner and watcher environments address FalkorDB by its backend container name. `runner.py` builds the runner through Compose, records its image lock, exposes the packaged patch script, and reports image and watcher state. Patching is represented as part of the Docker image rather than a separate lifecycle patch operation.
+
+`installation.py` owns runner installation and doctor checks. Provider status reports watcher container state, runner-image availability, source artifacts, process namespace, `lastRefresh`, and indexing state. Shared backend status separately reports container state, network attachment, ports, data-mount agreement, and readiness.
+
+`backend.py` represents a resolved invocation with frozen `CgcBackendContext`, carrying `settings_path`, `provider_settings`, `layouts`, and `backend`. Both `cgc_primary_backend_context(args)` and `cgc_backend_start_context(args)` return this value. Its `layout` property returns `layouts[0]`: FalkorDB is shared across configured repository layouts, and backend commands act through the first selected layout.
+
+`CgcBackendPort` identifies a published port through the keys used in recorded state, resolved backend settings, and container inspection. `FALKORDB_PORT` and `BROWSER_PORT` are its two instances. `cgc_backend_endpoint(state, backend, inspect_data, port)` accepts this value, while `CgcHostPorts` carries the two published host ports together. An additional published port belongs in a new `CgcBackendPort` constant rather than another parallel group of endpoint keywords.
+
+`process_control.py` owns watcher start and stop independently of backend lifecycle. Refresh uses a Docker runner to force indexing and records its result in `lastRefresh`; all-root refresh first starts watchers, then refreshes repository layouts. Native runs use an ephemeral Compose runner and check backend readiness independently of watcher availability. Visualization has its own command construction and status checks.
 
 ## Invariants And Boundaries
 
-- Keep `__init__.py` as the package export facade.
-- Do not put GrepAI behavior in this package.
-- Long-running CGC process actions must keep durable namespace checks.
-- Backend Docker lifecycle stays separate from process start/stop logic.
-- Managed CGC commands must run through Docker, not through a host Python venv
-  or host `cgc` executable.
-- CGC runner and watcher containers must reach FalkorDB over the shared Docker
-  network, not through host loopback.
-- Status surfaces should include backend and watcher container state so MCP
-  current-state packets can report what is running now.
+- Keep `__init__.py` as the CGC package export facade and keep GrepAI behavior outside this package.
+- Settings-backed lifecycle resolution requires an explicit settings path and a valid `codegraphcontext-code` provider entry. Missing input must not silently become empty configuration.
+- Managed backend startup requires the `falkordb-remote` backend type and `docker` mode. Backend lifecycle remains separate from watcher start and stop.
+- Managed CGC execution uses Docker Compose rather than a host Python environment or host `cgc` executable. Runner and watcher containers reach FalkorDB through the shared Docker network and backend container name, rather than host loopback.
+- Live watcher start and stop, including all-root actions, and live visualization retain durable process-namespace checks.
+- Settings-backed native runs and visualization require a repository ID. Native runs reject `visualize`; the visualizer is a separate long-running operation.
+- Preserve backend and watcher container state in status reporting so callers can describe the running provider. A bounded native run needs backend readiness and does not require a running watcher.
 
 ## Evidence
 
-### Repo-Internal References
-
 - The parent lifecycle facade imports the CGC package facade. [1]
-- Watcher aggregation imports CGC all-root start/status/stop behavior from this package. [2]
-
-## 260731-EFA-L2 — The Backend Invocation Is A Value
-
-`backend.py` no longer passes the resolved invocation around as a five-tuple. `CgcBackendContext`
-(frozen) carries `settings_path`, `provider_settings`, `layouts` and `backend`, and exposes
-`layout` as a property returning `layouts[0]`. Both resolvers — `cgc_primary_backend_context` and
-`cgc_backend_start_context` — take only `args: argparse.Namespace` and return that one value.
-
-The `layouts` / `layout` relationship is a CGC-specific fact worth knowing before you touch this
-package: **the FalkorDB backend is shared across every configured repo layout, and the first layout
-is the primary the backend commands act through.** That was previously encoded only in the tuple's
-element order.
-
-`CgcBackendPort` names a published port by the *keys that carry it*, because a port is spread
-across three dictionaries — recorded backend state, resolved backend settings, and container
-inspect data — under a different key in each. `FALKORDB_PORT` and `BROWSER_PORT` are the two
-instances, and `cgc_backend_endpoint(state, backend, inspect_data, port)` takes one instead of four
-parallel `*_key` keywords. `CgcHostPorts` carries the two published host ports as a pair. A third
-published port is a new `CgcBackendPort` constant, not a new keyword group.
-
-`core.py` builds its layout through `CgcRepo(...)` (see the [context route](../context/overview.md))
-— the explicit `--from-settings` requirement recorded below is untouched.
+- Watcher aggregation imports CGC all-root start/status/stop behavior from this package; status combines shared backend status with per-root provider results. [2]

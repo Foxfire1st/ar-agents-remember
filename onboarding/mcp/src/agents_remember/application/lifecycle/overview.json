@@ -18,6 +18,135 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Configured admission checks repository and contract-location authority while permitting only an explicit candidate-identity delegation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:2cd629788561282f91ce2fb714dbb84d0af712c551874c021fb27516590b00ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_configured_contract"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:f8447215999dd158928128be4742436eb717baba5518b9d7653d2ef0eb530fa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_read_contract"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54a67aeb685ff2ce7ce340139c34e2734f7cedc1",
+            "content": "sha256:3402442a80b2b51e2a295d23bf0c2d10ffbd917d6b9148bb77e38aac11f311a1",
+            "locator": {
+              "end": 1057,
+              "kind": "line_range",
+              "start": 1015
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:98fa383b62c19d6ef178e589f5847970d21801a8296fbd8ba421f1a92dc882e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Typed admission findings are projected completely; rail-failure and status-wait construction remains retained capability rather than a registered detached execution route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:f071f2df71447409d705565b552d9dab5ec2bd293c28b03dee73872fa34f17d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "certification_admission_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/certification_refusal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:09aad643d05563e620208cef073ee9418222b16a5f282a5dded5da640e803403",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_worker_failure_result"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unreadable contract observations prefer retained strict journals and otherwise preserve proven initial publication loss as a developer-decision refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4d67f84bd23a4361eb79de28d45cb09c22aaf1c",
+            "content": "sha256:ebe65138228550c44640e9d00045d1b09378ba225f6823710c23e30afc2cd880",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_contract_read_failure"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

@@ -2,7 +2,7 @@
   "path": "dev-skills",
   "references": {
     "1": {
-      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets, so `dev-skills/` is never distributed.",
+      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets, so `dev-skills/` is outside this distribution flow. Checking compares the canonical tree with target contents, so an independently copied dev-skill inside a checked target can be reported as extra; this does not inspect the `dev-skills/` source tree.",
       "targets": [
         {
           "anchor": {
@@ -47,6 +47,18 @@
             "locator": {
               "kind": "symbol",
               "name": "sync_target"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
             },
             "path": "scripts/sync-skills.py"
           },

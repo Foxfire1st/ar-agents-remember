@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The MIK-R30@v1 gate cases on converted-format fixtures (15 cases).** The `leaf` fixture is a real code
+**The MIK-R30@v1 gate cases on converted-format fixtures (16 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
 repository and a real converted memory repository (`main` is the official line, its commit carries the
 `Code-Commit` trailer naming the leaf's base) plus a leaf series contract: the inputs the curator's
 memory-quality run and the closeout validator hand the gate. The file runs in the unit lane
@@ -41,7 +41,7 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
   `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
   are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
   written; `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
-  pins ruling Q2 and the `(kind, subject)` order; `test_an_unconverted_leaf_keeps_todays_gate_unchanged`
+  pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_keeps_todays_gate_unchanged`
   asserts that the sides and the worklist are `None` and today's gate runs.
 - **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
   `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also

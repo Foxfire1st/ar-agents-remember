@@ -1,29 +1,5 @@
 # mcp/src/agents_remember/providers/lifecycle/ - Provider Lifecycle Facade Overview
 
-## Current operative account — MIK-R112
-
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- Both cli.py and __main__.py are deleted.
-- Facade’s current lazy export tuple no longer includes CLI.
-
-### Superseded inventory
-
-- Pre-repair card claim: Card tells readers to start with cli.py for parser/action dispatch. This is superseded archival wording, not a current prescription.
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/providers/lifecycle/__main__.py:absent (git diff HEAD: deleted file)`.
-- Source comparison: `mcp/src/agents_remember/providers/lifecycle/cli.py:absent (git diff HEAD: deleted file)`.
-- Source comparison: `mcp/src/agents_remember/providers/lifecycle/__init__.py:9 (_EXPORT_MODULES =)`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
@@ -34,94 +10,58 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Purpose
 
-### 260731-EFA-L23 Route Delta
-
-L23 separates compose planning from executable discovery: dry-run plans render the symbolic `docker` command, while real provider execution still resolves the native executable at the execution boundary.
-
-`lifecycle/` contains the public provider-lifecycle package facade, CLI
-entrypoints, watcher aggregation, and shared lifecycle helper modules.
-Provider-specific lifecycle implementations now live under
-`providers/cgc/lifecycle/` and `providers/grepai/lifecycle/`.
+`lifecycle/` supplies the shared Python facade, watcher aggregation, and provider-agnostic helpers for optional context-provider lifecycles. Provider-specific implementations live under `providers/cgc/lifecycle/` and `providers/grepai/lifecycle/`. The facade lazily resolves exports from those packages and the shared modules. It no longer exports a CLI module; `cli.py` and `__main__.py` are absent from this source checkout.
 
 ## Hot Path Summary
 
-Start with `cli.py` for parser/action dispatch, `watchers.py` for aggregate
-provider start/status/stop orchestration, and the named shared modules for
-provider-agnostic lifecycle primitives: `command_runner.py`,
-`docker_runtime.py`, `host_ports.py`, `log_capture.py`, `process_status.py`,
-`provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and
-`state_files.py`. CGC behavior lives under `../cgc/lifecycle/`; GrepAI
-behavior lives under `../grepai/lifecycle/`. Docker helpers now expose
-normalized container state, health, and uptime summaries used by provider
-current-state reporting. `log_capture.py` trims tool response payloads
-recursively so verbose provider command output does not exceed client size limits.
-Compose rendering only emits a host `user:` block when `os.getuid` and
-`os.getgid` exist and are callable, which keeps non-POSIX hosts from receiving
-an invalid UID/GID override.
+Start with `__init__.py` for lazy export resolution and `watchers.py` for enabled-provider start/status/stop/shutdown aggregation. `providers/lifecycle_service.py` calls the facade directly with settings-owned arguments. Shared responsibilities are split among `command_runner.py`, `compose_runtime.py`, `docker_runtime.py`, `host_ports.py`, `log_capture.py`, `process_status.py`, `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and `state_files.py`.
 
-## Route Model
+CGC's package groups settings/layout, Compose rendering, FalkorDB backend, runner, installation/status, process control, query, and refresh functions. GrepAI's package groups settings/workspace, Compose rendering, PostgreSQL backend, Ollama embedder, runner, and high-level actions. These retained Python implementations do not establish an executable package entrypoint.
 
-- Shared lifecycle primitives live in named modules by responsibility.
-- CLI construction and top-level provider/action dispatch live in `cli.py`.
-- `watchers.py` composes enabled GrepAI and CGC lifecycle results.
-- `../cgc/lifecycle/` owns CodeGraphContext settings/layout, backend container,
-  install/patch/status, and process actions.
-- `../grepai/lifecycle/` owns Docker GrepAI settings, PostgreSQL, Ollama, runner
-  image/container, bounded run, install, status, and refresh actions.
+## How It Is Built
+
+The facade searches its ordered module tuple on attribute access and caches a matching attribute in its globals. Watcher aggregation reads provider enablement from an explicit settings file, invokes enabled GrepAI and CGC handlers, and combines their results, partial-success indication, process-namespace information, and recovery actions. CGC status aggregation includes shared backend status and per-repository results.
+
+Compose planning renders the symbolic `docker` command without requiring executable discovery. Real Compose execution resolves Docker through `docker_command` and then runs the command. Watcher Compose rendering emits a host `user:` block only when both `os.getuid` and `os.getgid` are callable.
+
+`BackendStartReconciliation` is a frozen shared value containing network information and optional migration and forced-removal results. CGC and GrepAI backend-start functions construct it after migration and mismatched-container reconciliation. Their completed start responses carry its network information and reconciliation command results; dry-run responses carry planned Compose commands and migration information. This shared shape belongs here because both provider backends use it.
+
+Docker helpers normalize container state, running state, start time, uptime, and health. Provider-specific modules determine their lifecycle results; `providers/current_state.py` projects and aggregates provider readiness from those results.
+
+`log_capture.py` recursively reduces response detail. `_shrink_logs` empties captured output on successful nodes and keeps a bounded failure tail otherwise, retaining existing log keys. `_drop_verbose_plumbing` always removes the duplicate `json` mirror, removes command/Compose/migration detail on success, and retains failure detail with command-token redaction.
 
 ## Invariants And Boundaries
 
-- `providers.lifecycle` is the only public facade; implementation belongs here.
-- Settings-driven lifecycle commands require an EXPLICIT `--from-settings` path
-  (server-generated at runtime). The implicit fallback to
-  `<coordination_root>/system/settings.json` was DELETED with 260703-L13 (GQ3):
-  that file is the global agentic settings home, and `provider_settings.py`'s
-  `require_lifecycle_settings_path` refuses a missing path instead of
-  empty-defaulting on absent coordinator state.
-- GrepAI is Docker-or-bust: no host GrepAI binary and no host Ollama fallback.
-- Shared helpers should stay provider-agnostic; provider-specific branching
-  belongs in CGC or GrepAI modules.
-- Shared Docker helpers can normalize container facts, but provider readiness
-  and current-state aggregation belong in provider-specific modules and
-  `providers/current_state.py`.
-- Lifecycle service callers should dispatch to implementation functions through
-  the `providers.lifecycle` facade, not through CLI subprocess capture.
+The shared facade is the entry used by the typed lifecycle service. Provider-specific lifecycle behavior belongs in the CGC and GrepAI packages; shared helpers cover subprocess execution, Compose, Docker inspection, ports, process namespaces, settings, rendering, environment construction, and JSON state files.
+
+Settings readers require an explicit settings path. `require_lifecycle_settings_path` rejects `None` rather than selecting `<coordination_root>/system/settings.json`. Service callers supply that path through their normalized configuration. The retained error text names `--from-settings`; it does not establish an available CLI.
+
+`run_command` accepts no environment override and obtains its environment from `runtime_environment.subprocess_env(None)`. Do not restore the removed environment-override knob; extra variables belong in runtime_environment.py. That helper copies the inherited process environment and sets `PYTHONUTF8` and `PYTHONIOENCODING`. This is environment construction with UTF-8 settings, not credential or environment sanitization.
+
+The retained GrepAI lifecycle is organized around its Docker backend, embedder, runner, and Compose actions. Its Docker status combines backend, embedder, and watcher results. The shared facade does not add a host-binary or host-Ollama execution route.
+
+Watcher start, stop, and shutdown-all require the durable-process-namespace check when they are not dry runs. Disabled providers are omitted from watcher results; combined success is computed from the included results.
+
+## Source And Authority Bounds
+
+This account describes retained source behavior. It supplies no test execution, native-host result, whole-build acceptance, landing acceptance, or memory acceptance. Lifecycle/status metadata and historical repair labels are outside its operative promises; no lifecycle authority establishing a current operational status was supplied for this review.
+
+There is a retained caller inconsistency: `providers/setup_common.py` still describes package execution and calls `lifecycle.main`, although this package has no `__main__.py`, no `cli.py`, and no CLI module in its export tuple. That caller does not restore the deleted route or prove successful execution.
 
 ## Evidence
 
-### Repo-Internal References
-
-Watcher aggregation is owned by the current lifecycle entry point. Current source: `watchers_run` (mcp/src/agents_remember/providers/lifecycle/watchers.py:186-205).
-
-
 - Public lifecycle exports are collected by the package facade. [1]
-- Package execution delegates to the lifecycle CLI. [2]
+- The former package-execution entrypoint is absent; the current facade export tuple contains no CLI module. [2]
 - CGC lifecycle implementation is grouped under the CGC provider package. [3]
 - GrepAI lifecycle implementation is grouped under the GrepAI provider package. [4]
-
-
-## 260731-EFA-L2 — One More Shared Primitive, One Fewer Unused Knob
-
-`compose_runtime.py` now owns `BackendStartReconciliation` (frozen: `network`, optional
-`migration`, optional `forced_remove`). Both managed backends reconcile the host before they bring
-a container up — adopt the compose-owned network, migrate what an unmanaged project left behind,
-force-remove a container whose data mount no longer matches the layout — and all three land
-together in the start result's `network`/`commands` payload. It lives here, not in either provider
-package, precisely because both providers do it: a third managed backend inherits the shape rather
-than re-deriving it. Both `cgc/lifecycle/backend.py` and `grepai/lifecycle/backend.py` import it
-from here.
-
-`command_runner.run_command` **no longer accepts an `env` override**. Provider commands have always
-run under the sanitized `subprocess_env(...)`, and no caller in the tree ever supplied its own — the
-parameter was a way to escape that sanitization that nothing used. Removing it makes the sanitized
-environment the only environment. Do not restore the knob: a provider command that needs an extra
-variable belongs in `runtime_environment.py`, where the sanitizer can see it.
-
-`log_capture.py`'s recursive trim is unchanged in behaviour but is now two named halves —
-`_shrink_logs` (empty captured output on success, cap it to the failure tail otherwise, keys always
-present so the response keeps its shape) and `_drop_verbose_plumbing` (drop the always-redundant
-mirror, then either drop the debug-only keys outright on success or keep them redacted on failure,
-because that detail is what makes a failure debuggable). The success/failure asymmetry is the point
-of the module and is now readable at the call site.
-
-</details>
+- Watcher aggregation uses explicit settings, enabled-provider dispatch, combined results, and durable-namespace checks. [5]
+- Typed lifecycle services dispatch directly through the facade with settings-owned arguments. [6]
+- Compose plans use symbolic Docker; execution discovers Docker; host-user rendering requires callable UID/GID functions. [7]
+- Frozen backend reconciliation is shared by CGC and GrepAI and carried into start results. [8]
+- Docker summaries expose container facts; current-state projection determines provider readiness. [9]
+- Recursive response reduction distinguishes successful nodes from failure detail. [10]
+- Settings readers reject a missing explicit path. [11]
+- Command execution has no environment override; its environment inherits process variables and sets UTF-8 controls. [12]
+- Shared port, namespace, rendering, and JSON-state responsibilities remain in named helper modules. [13]
+- Retained GrepAI Docker status combines backend, embedder, and watcher results. [14]
+- A retained setup caller still requests package execution and lifecycle.main. [15]

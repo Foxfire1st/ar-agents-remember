@@ -333,6 +333,68 @@
         }
       ]
     },
+    "14": {
+      "note": "Reset diagnostics read the clock; the retry window is tested after each page request rather than being an exact deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:95eb13cea558299693c7f694456b06870fa0a72181fa5c194b72269a6838b87f",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:9736295adff91a489bb13a7ddef194123f4b15019676eaf25cd0fadaddca87e3",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Roster rows can retain an earlier terminal preview; interrupt controls use working/identity/unavailable/refusal predicates and withhold pending callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:7e694d240ea310fe2eed26990c2a3d96d8f01785de41a4565aa089608d9b9bab",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:e7dd63a16321c79f6ba1539cc5fc2b97b7a777ba63e10018fa1f6b199ef7b7de",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The dashboard client fetches the active page.\n\nAnchor: \"if (query.before)\"; \"return { ok: true\"; \"return { ok: false\"",
       "targets": [

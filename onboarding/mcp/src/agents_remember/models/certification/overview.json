@@ -31,7 +31,7 @@
       ]
     },
     "2": {
-      "note": "Corrective shape requires actual digest movement and canonical entries.",
+      "note": "Corrective shape requires distinct declared before/after digests and canonical entries; actual input movement is checked separately by lifecycle admission.",
       "targets": [
         {
           "anchor": {
@@ -54,6 +54,18 @@
               "name": "RedCatalogDisposition"
             },
             "path": "mcp/src/agents_remember/models/certification/corrective.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:730f2c3b32e282ea325a60bed31edf7968634cfc71522038cc2f4a1b247f3861",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_relevant_change"
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_admission.py"
           },
           "kind": "code"
         }

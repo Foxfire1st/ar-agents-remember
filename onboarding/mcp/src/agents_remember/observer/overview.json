@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -286,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6fa39a171f5944c5f21864e0a81e97c3911a51c",
+            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
             "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
             "locator": {
               "end": 209,
@@ -384,6 +384,128 @@
         }
       ]
     },
+    "25": {
+      "note": "Workspace admission is locked and byte-bounded; file and cursor publication are separate writes.\n\nAnchor: `_compact_under_lock`, `admit_workspace_river_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_under_lock"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_workspace_river_row"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Heartbeats use an atomic sidecar; ordinary lifecycle appends and tolerant reads remain separate.\n\nAnchor: `EventStore.append`, `read`, `read_log`; `EventStore.read`; `EventStore.read_log`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+            "content": "sha256:613fd1501d79b0d6b15be616bdc48eceb92f222df970f211e1629ab0a188260a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+            "content": "sha256:c644418cbf19d594055229ae6272fafdba6864a4130d403c425a4fa1dacbe07f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_log"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Contract enumeration is shared on task refresh and retained across other domain refreshes.\n\nAnchor: `ProjectionInputState._refresh_tasks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:3212a965ac8903f7db2ad3500254c7bbc93d7515b5b1ef2235a9ceb421a7642c",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Document count is intentionally uncapped; canonical enumeration avoids deeper historical copies.\n\nAnchor: `_iter_task_json` policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_task_json"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root.\n\nAnchor: `read_task_documents`, `read_task_document_body`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
+            "content": "sha256:b01e62f51ed909fab1c0782d1b8ce778659717bdbb0a37951fde8442407e6a2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_documents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
+            "content": "sha256:1b66d5110479a2097cf2f897e8b7cf4c57ee1f1bdbb4eec9599769b525e40a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "`StrictResponseModel` is the shared response-model base.",
       "targets": [
@@ -409,6 +531,232 @@
               "start": 10
             },
             "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Gate reads are nonrewriting, but pickup reads explicitly compact the inbox.\n\nAnchor: `read_gates`, `read_agent_pickups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:1162dee7d7aa306f62a8a2ff37e3492822a161111f3651d26f9bb0503dcba12b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_gates"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:add4af3288c46e5f09ffcf61c4fa88ebb8dcd3fc8ead157f3b3cdd1cd92bf726",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_pickups"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Lifecycle aliases are model-owned and observer checks their partition.\n\nAnchor: vocabulary declarations and `check_state_partition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:9fafccce8ac12a7f4e83b7c0a974e8024d0dcdc4db5309181432c8f0f6ce66bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_state_partition"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:1f0f3927f5399e6e748b325f8b20a01c9c654f01b1be4686c3e015242493a9ab",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Terminal projection also comes from corrections, inference, and abandoned anchors.\n\nAnchor: `_index_corrections`, `_project_inferred`, anchor terminalization",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
+            "content": "sha256:29076ddb8c014df43d275ba948daf78a81d89d03d27b6fc451a977b9a5c35d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_corrections"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
+            "content": "sha256:343deac34115dcc1ab4238e0e1fc75473be2edfb94879d7fc14479de78b967e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_inferred"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
+            "content": "sha256:691ecf3fee4b911f0a605f72a06bf94cf94eabddd9d7e22d96ffe917266e4a69",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Missing logs do not demote admitted enclosures; all-archived groups without readable mtimes receive no grace extension.\n\nAnchor: admission and series retirement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:8909638852c322a8c148ed31783fa252bc207c88b1dc7ff37719df61604b8718",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Public operations now include candidate/plan digests and approval observations bound to a coherent revision.\n\nAnchor: `LifecycleOperationProjection` and identity models",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:7766d411e6629c0424ab0fc99aed70f3be9f436dce05a1e98d55bd4365ddd23c",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Graph titles are master-qualified and resolved/abandoned/landed are distinct display predicates.\n\nAnchor: graph protocol, frontier and title lookup",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:55a6e185ab3481a0318b3151f7b3be39395f136fa533ca22ee621e56509f7261",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Completed historical landing lacks automatic repair probes; freeze requires observed rows.\n\nAnchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "415619660e455af26af116e1bcc86102575be608",
+            "content": "sha256:090ed7c9dd23f1f2c08bf1c0847565b0c7a0cd6aa93e363a53ee0547a8183eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_needs_live_probe"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "415619660e455af26af116e1bcc86102575be608",
+            "content": "sha256:67058c7cb85cbadda9b499e5b1de44bf8e6593f2c1d4799ffe64dc8989424a82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_maybe_freeze"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Host tool events contain selected facts, omit long strings, and count failed publication.\n\nAnchor: `build_tool_event`, `ToolEventWriter.record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "content": "sha256:4df9c65351acc712ebc4c0aba6e6bb6025088057261411aee8d6912b05c0d911",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_tool_event"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
           },
           "kind": "code"
         }

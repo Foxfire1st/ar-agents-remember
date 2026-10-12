@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_overviews.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "At leaf publication, the first level-two section after governing navigation uses one of the fixed purpose headings or refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:bc569ab4bb8d09ea49d60b68a56a531d5e664b4b460edc86e95b8b8876dc90ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_purpose_first"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual ATX headings outside fenced code are parsed at every level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:03f668e97572277fffe81ef5d5a4efb8f05696eb495e3fca59a30b380835bcfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "overview_headings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "At leaf publication, every non-title heading is checked for leaf/date names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:1cbec452df41a6b9c70625a72c2f6a8d3baca99a8972d09b60d40c2325443f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_no_leaf_sections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The trailing region has a mechanical whitelist with no prose-aboutness exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:064b91c92d7989bf6742199a7b488256402afc7768a2e01b63c846947985d69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_region_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "At leaf publication, the shared live-marker grammar drives placement findings and exact line reporting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:81d9cb16d5d3a3469f7f011414a94e759014cb30ee857ba3c608a93f60a9a3be",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_citations_at_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Conversion and non-publication callers do not activate the three R80 order checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:bc569ab4bb8d09ea49d60b68a56a531d5e664b4b460edc86e95b8b8876dc90ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_purpose_first"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:1cbec452df41a6b9c70625a72c2f6a8d3baca99a8972d09b60d40c2325443f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_no_leaf_sections"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e3860fed52b7587de85e52671aaab2d6765ce8c",
+            "content": "sha256:81d9cb16d5d3a3469f7f011414a94e759014cb30ee857ba3c608a93f60a9a3be",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_citations_at_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

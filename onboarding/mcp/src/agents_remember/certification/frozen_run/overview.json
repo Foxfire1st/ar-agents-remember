@@ -88,6 +88,52 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "Current candidate observation retains generated declarations, derivation snapshots and the admitted memory-tree binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:2bdea6fbf0870fe0b1e0c1bacdb6478ea0e7d42a19ad43964b363ac8cedafbab",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_certification_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Memory refresh composition checks sidecars and route overviews; converted trees use the trace gate instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_memory_refresh_attestations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_refresh_gate"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

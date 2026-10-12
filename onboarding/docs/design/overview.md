@@ -1,212 +1,97 @@
 # docs/design/ — Design Documentation Overview
 
-## Current operative account — MIK-R112
-
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- Design now removes model-facing signals while retaining session-driven states/gates.
-
-### Superseded inventory
-
-- Pre-repair card claim: Route Model still names lifecycle_gate as the public junction. This is superseded archival wording, not a current prescription.
-
-### Source and authority bounds
-
-- Source comparison: `docs/design/observable-lifecycle.md:1-5,73-94`.
-- Source comparison: `docs/design/observable-lifecycle.md:275-312`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| sourceRoute            | `docs/design/`                              |
-
 ## Governing Overview
 
 [agents-remember onboarding overview](../../overview.md)
 
 ## Purpose
 
-`docs/design/` holds the design documentation that is kept in the code repository: the design of
-the observable lifecycle, the Python test and evidence design, the dashboard's review and scenario
-documents, and the engine-room design reference. The documents are references beside the code;
-they are not shipped application code.
+`docs/design/` holds the repository's design references for the observable lifecycle, Python testing and evidence authority, dashboard review and scenarios, and the engine-room visual language. These documents describe intent and contracts beside the implementation. They do not establish implementation behavior or execution acceptance by themselves.
 
-## Child Routes
+## Hot Path Summary
 
-- `engine-room/`: the engine-room design reference, a visual-language document and a scenario
-  prototype for the dashboard's engine-room renderer. See
-  [engine-room/ overview](engine-room/overview.md).
+Start with the document for the question: `observable-lifecycle.md` for lifecycle architecture, `python-pytest-bootstrap.md` for development test policy and commands, `python-evidence-system.md` for evidence construction and maintenance, and `python-test-evidence.md` for accepting authority and consumers. The dashboard documents separate review doctrine, intended workflows, recorded candidate evidence, and serving-contract gaps. The [engine-room overview](engine-room/overview.md) covers the visual-language reference and scenario prototype.
 
-## Route Model
+The lifecycle design separates code and memory-content Git outputs from the computed ledger cache. The inspected closeout owner produces or reuses the memory commit before refreshing that cache. Source inspection here supplies no new CODE qualification, test result, native-host verification, whole-build result, landing acceptance, or memory acceptance.
 
-- `observable-lifecycle.md`: the design of the observable lifecycle. Its sections cover the
-  lifecycle entity, the event substrate, gates and the return channel (with `lifecycle_gate` as
-  the public gate junction), the read packet, placement and packaging, the scope line, the
-  preserved design principles and what is left to the implementation phases.
-- `harness-matrix.md`: which harness capabilities the observable lifecycle relies on (ambient
-  stdio scoping, background-completion wake, sleep or loop) and what is verified for each harness.
-- `python-evidence-system.md`: the Python test evidence system: evidence altitudes, the executable
-  evidence categories, the durable evidence lifecycle, fixture authority, quality obligations by
-  surface, dependency-owned selection, the dependency-aware retry proof, causal failure
-  localization, the supported commands and the maintenance rules.
-  Its section on the durable evidence lifecycle states how the two test catalogs
-  (`mcp/tests/evidence-lifecycle.toml` and `mcp/tests/test-evidence-lanes.toml`) are kept: one
-  canonical form (contract rows ordered by `id`, artifact rows by `path`, every list ascending
-  without duplicates, one path per line), a union merge by Git declared in `.gitattributes`,
-  loaders that refuse a catalog that is not canonical, and the command
-  `python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write`.
-  The document describes the command: it makes no decision, orders rows and lists, removes
-  duplicate lines, sets each `exact` and `exact-source` consumer list to the set derived from the
-  source tree, keeps and names the list of a row for which the source tree shows no consumer,
-  removes the lines of files that no longer exist, removes no row, refuses what it cannot read,
-  and is the validator without `--write`.
-  The document states that no byte or count of a catalog is pinned: the loader checks what the
-  source tree can prove, and the other descriptive fields of a row are checked only against the
-  loader's rules for their values. The document states no size of the inventory.
-- `python-pytest-bootstrap.md`: the Python test policy and commands: when a test case is
-  justified, the commands for unit, integration and combined runs, the need for a Git checkout,
-  diagnostic metrics and isolation.
-- `python-test-evidence.md`: the Python test evidence authority: one accepting authority (a passed,
-  immutable, candidate-bound publication of the pinned Dagger quality graph), the consumer
-  inventory, and the contract of non-accepting investigation routes. Its consumer inventory names
-  `worktrees.route_review_scope.require_current_route_review` as the owner of the route review.
-- `dashboard/review-doctrine.md`: the acceptance bars and the visual grammar that the dashboard
-  experience review applies.
-- `dashboard/scenario-catalog.md`: the user workflows the cockpit dashboard must support and the
-  views that serve each.
-- `dashboard/session-cockpit-closeout-evidence.md`: the evidence index of the session cockpit
-  series: coverage matrix, accessibility evidence, performance and fetch evidence, scenario matrix
-  and invariant audit.
-- `dashboard/session-cockpit-upstream-register.md`: the serving contracts the frontend renders as
-  gaps instead of fabricating them, and the outcome of the Chats cutover.
+## Construction
+
+### Lifecycle architecture
+
+`observable-lifecycle.md` describes the lifecycle entity and state machine, event substrate and retention, gates and their return channel, read packet, packaging, scope, preserved design principles, and deferred implementation questions. Its MIK-R112 amendment removes model-facing signal tools while retaining session-driven transitions and the states and gates of the design. The former overview's public `lifecycle_gate` junction is therefore superseded. This amendment does not establish that every retained design mechanism is currently implemented.
+
+The design also retains the operator-inbox recovery runbook: save live work, use normal daemon controls, quarantine the inbox log, preserve live-seat rows, and let normal sweep paths resolve retired or absent targets. It identifies `ladder-resolved` as legacy vocabulary after retirement of the timed escalation ladder.
+
+`harness-matrix.md` describes ambient stdio scoping, background-completion wake, and sleep or loop capabilities. Its verification entries are recorded document metadata, not fresh host qualification from this inspection.
+
+### Python verification references
+
+`python-evidence-system.md` describes evidence altitudes and executable categories, durable evidence lifecycle, fixture authority, quality obligations by surface, dependency-owned selection, retry proof, causal failure localization, supported routes, and maintenance rules.
+
+Its durable-evidence section specifies a canonical form for `mcp/tests/evidence-lifecycle.toml` and `mcp/tests/test-evidence-lanes.toml`: contract rows ordered by `id`, artifact rows by `path`, lists ascending without duplicates, and one path per line. It describes Git union merging and loaders that reject noncanonical input. The documented writer is `python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write`; without `--write`, the command validates both catalogs.
+
+The document says the writer orders rows and lists, removes duplicate lines, derives `exact` and `exact-source` consumers from source, retains and names lists for rows with no derived consumer, removes references to missing files, removes no row, and refuses unreadable or unpreservable input without writing either catalog. It pins no catalog bytes, counts, or inventory size: source-derived relationships and permitted field values are the stated checks.
+
+The selection contract requires typed incomplete ownership to stop before Gate 2, removes deleted tests from the population, and keeps irrelevant inputs explicit. The immutable selector result binds candidate, configuration, scope, and dependency reasons. Retry binds its digest and, when proof cannot be reused, refreshes the already admitted population. These are the document's standing contracts; this overview does not certify every corresponding implementation predicate.
+
+`python-pytest-bootstrap.md` gives the behavior-based admission policy for tests, ordinary isolated host pytest commands, Git-checkout prerequisite, diagnostic metrics, and isolation rules. Host pytest has no certification authority. Coverage is diagnostic; production CRAP20 prompts review rather than blocking delivery. The current document and root `pyproject.toml:298-299` both declare 5,000 unit cases and 1,000 integration cases. D226 raises only the unit ceiling from 4,000; integration and the enforcing guard remain unchanged. The earlier 1,000/150-versus-4,000/1,000 source discrepancy is a prior-pair observation, not the current reading.
+
+`python-test-evidence.md` states that Python acceptance requires a passed, immutable, candidate-bound publication of the pinned Dagger quality graph. Non-accepting investigation artifacts cannot satisfy accepting consumers. It names `worktrees.route_review_scope.require_current_route_review` as the route-review owner and separates independent route-review authority from test evidence. The inspected owner defers atomic children and atomic master closeout review until the accumulated master integration review; contracts outside that atomic scope call the existing independent review owner.
+
+The authority document records retirement of Candidate A's host diagnostic command, analyzer, manifest, bootstrap, runner, and measurement machinery. Ordinary isolated development pytest does not restore those surfaces. The three retained Python references carry the evidence-system, development-policy, and acceptance-authority accounts formerly described by the narrower notes.
+
+### Dashboard references and child route
+
+- `dashboard/review-doctrine.md` describes dashboard acceptance bars, observability parity, visual grammar, motion, settled-beat sampling, freshness honesty, and review posture.
+- `dashboard/scenario-catalog.md` describes intended workflows and the views meant to serve them. Its carried gaps and historical status entries are design and review material, not current implementation qualification supplied by this overview.
+- `dashboard/session-cockpit-closeout-evidence.md` indexes the recorded FEUI-L8 candidate's coverage, accessibility, performance and fetch evidence, scenario matrix, and invariant pre-audit. Its measurement command is described as internal to a nonce-attested Dagger environment with host execution refused. The recorded measurements and pre-audit do not constitute a new run or independent acceptance here.
+- `dashboard/session-cockpit-upstream-register.md` separates serving-contract asks from the Chats cutover decision and records boundaries against fabricating absent frontend authority. Its recorded cutover outcome is not fresh implementation acceptance from this inspection.
+- `engine-room/` contains `engine-room-visual-language.html` and `podstage.html`, the visual-language reference and choreography prototype. See the [engine-room overview](engine-room/overview.md) and the [dashboard engine-room renderer overview](../../dashboard/src/panels/engine-room/overview.md) for the linked design and implementation routes.
 
 ## Invariants And Boundaries
 
-- The route lies outside the memory's onboarding path rules (`docs/**` is excluded), so the
-  onboarding gate raises no item for a card of its own for a changed document. This overview is
-  where a change of a document is described.
-- The engine-room documents are design references for the dashboard's renderers, not code the
-  dashboard ships.
-- A design document describes intent and contract. What the code does is established from the
-  code and its cards.
+Design intent and actual source behavior remain separate accounts. A retained design statement is not promoted into an implementation guarantee by its presence here. Where they disagree, the discrepancy remains visible for the owning authority to decide.
+
+The resolved memory settings exclude `docs/**` from onboarding path rules. This overview provides an area-level description of the design documents; it does not turn those excluded documents into required file-card coverage.
+
+The ledger is described as an ignored consumer cache computed from memory commit trailers. Its bytes and rows are neither durable approval evidence nor transaction authority. The inspected closeout sequence commits or reuses memory content before refreshing the cache and gates converted memory against its exact output tree before publication or recovered acceptance.
+
+Lifecycle implementation and status authority are not established by the design document's status label. The direct-owner 7≠8 discrepancy and sync-operation legacy fallback versus c09 doctrine remain awaiting Architect disposition; this overview neither resolves them nor declares source and standing intent coherent.
+
+## Non-operative Metadata
+
+The following excluded metadata is preserved verbatim. It does not grant operative promises or current acceptance.
+
+| Field                  | Value                                       |
+| ---------------------- | ------------------------------------------- |
+| sourceRoute            | `docs/design/`                              |
 
 ## Evidence
+
+
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [27]
 
 - The scenario catalog of the cockpit dashboard. [1]
 - The upstream register and the Chats decision brief. [2]
 - The closeout evidence index of the session cockpit series. [3]
-- The design document's statement of the catalogs' canonical form, their union merge, the write command, and that no byte or count is pinned. [10]
 - The observable lifecycle design states its scope. [6]
 - The harness capability matrix. [7]
 - The test commands and the need for a Git checkout. [8]
 - The one accepting authority for Python test evidence. [9]
-## Hot Path Summary
-
-`observable-lifecycle.md` describes code/memory-content Git transaction phases and a separate computed ledger cache. A cache refresh is not a third transaction phase or a closeout/integration acceptance condition.
-
-In-repo design documentation for the dashboard and Python verification architecture. Child route `engine-room/` is the engine-room design
-reference — a living spec paired with the prototype/scenario player the React engine room was built from.
-The `dashboard/` folder now carries the FEUI-L8 scenario matrix and reproducible accessibility/performance
-evidence, the closeout evidence pack, and the upstream-register boundary for contracts the frontend must not
-fabricate. Top-level notes include `observable-lifecycle.md`, `harness-matrix.md`, and the three Python
-evidence documents listed below.
-## R39 Design Evidence Disposition
-
-The cockpit performance/evidence design document now labels its test-capable measurement command as
-an internal nonce-attested Dagger invocation and explicitly refuses host execution. This is an
-evidence-location clarification; the dashboard architecture is unchanged.
-### Repo-Internal References
-
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [27]
-
-The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room.
-The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs.
-- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.
-- The explicit upstream gaps and one-Chats cutover ruling.
-- The bounded series closeout evidence pack.
-
-- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. [20]
-- The explicit upstream gaps and one-Chats cutover ruling. [21]
-- The bounded series closeout evidence pack. [22]
-
-- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. [23]
-- The explicit upstream gaps and one-Chats cutover ruling. [24]
+- The design document's statement of the catalogs' canonical form, their union merge, the write command, and that no byte or count is pinned. [10]
+- FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence entry point. [20]
+- The upstream gaps and recorded one-Chats cutover ruling entry point. [21]
+- The bounded series closeout evidence pack entry point. [22]
+- FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence reference. [23]
+- The upstream gaps and recorded one-Chats cutover ruling reference. [24]
 - The bounded series closeout evidence pack. [25]
-
-Current working-candidate evidence for this route:
-
-- The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first). [26]
-
-## CCR Selection And Evidence Contract
-
-`python-evidence-system.md` now requires typed incomplete selection to stop before Gate 2.
-Unresolved ownership never silently expands to safe-full; deleted tests leave the population,
-and irrelevant inputs remain explicit. The immutable selector result binds candidate,
-configuration, scope and dependency reasons. Retry binds that selector digest and may refresh
-only the already admitted population when its cached proof is unusable.
-## 260824-PDLS Evidence-Authority Design
-
-The Python test-evidence design now separates diagnostic execution from certifying evidence,
-defines the package-root bootstrap boundary, and records Dagger as the sole acceptance authority.
-The document also captures fixture ownership, proof lifetime, dependency-derived selection, and
-the rule that diagnostic success cannot satisfy a lifecycle gate.
-
-The final consolidation removes the two narrower direct-cohort/direct-diagnostics notes. Their
-still-valid content is carried by `python-evidence-system.md`, `python-pytest-bootstrap.md`, and
-`python-test-evidence.md`; deletion prevents an obsolete diagnostic-first contract from competing
-with the accepted authority model.
-## Integrated IAS Recovery Contract
-
-`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and the repository declares `unit_case_budget = 5000` / `integration_case_budget = 1000` (`pyproject.toml:298-299`). It **superseded** the 2,000 / 300 figures this paragraph carried (themselves raised 1000 → 1500 → 2000 (unit) and 150 → 250 → 300 (integration) by `260915-CAPS-L8`, `260831-LOCR-L37` and the 2026-09-17 ruling); 4346e697/TSIP-L13 raised them to 4,000 / 1,000. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
-## CCR-L42 Review-Authority Route Update
-
-`python-test-evidence.md` now names `worktrees.route_review_scope.require_current_route_review` as
-the route-review owner. Review runs at the owning altitude: atomic child leaves defer to the
-accumulated canonical master review at master-to-parent integration, while standalone and
-organizational leaves retain their applicable independent route review. The evidence and
-certification model remains unchanged; this update records where the route review is owned.
-### Cross-Repo References
-
-The FEUI-L8 design evidence and Chats ruling are repository-local. No cross-repository implementation was
-needed to establish the route model.
-
-No applicable cross-repository source was found.
-### Docs References
-
-The active memory repository's `system/sources.md` has no configured Domain Documentation entries. This
-overview was refreshed from the same-repository design documents, reviewed FEUI-L8 implementation/tests,
-and the accepted worker/reviewer evidence.
-
-No configured external Domain Documentation source governs this route.
-## 260918-TSIP-L4 — The Bootstrap Note States Its Git Prerequisite, And Its Budget Figure Is Corrected
-
-`docs/design/python-pytest-bootstrap.md` gained a three-line prerequisite (**`:22-24`**, file
-**50 → 53 lines**): *"Every command needs a Git checkout: the evidence-lane hook enumerates the
-test population through `git ls-files`, so an exported (`git archive`/tarball) tree must run
-`git init` and `git add -A` first or collection fails instead of running."*
-
-The requirement is new and it is real: `260918-TSIP-L4` registered
-`agents_remember_test_support.testing.evidence_lanes` in `mcp/tests/conftest.py`, whose
-`pytest_collection_modifyitems` calls `load_lane_manifest`; the loader enumerates the population
-through `git ls-files`, so an exported tree now fails collection with
-`ScopeError … fatal: not a git repository` rather than running. **This route is where an operator
-reads test policy** (`AGENTS.md` routes a seat here for "the current test policy and commands"),
-which is why the statement went here and not only into the comment at the registration site.
-
-**The budget figure in this overview's body was wrong and is corrected in the paragraph above:**
-the repository declares `unit_case_budget = 5000` and `integration_case_budget = 1000`
-(`pyproject.toml:298-299`), with the unit ceiling now raised under D226 and integration unchanged. The preceding raise by 4346e697/TSIP-L13 superseded the 2,000 unit / 300 integration figures. The superseded values are recorded
-rather than deleted, and this is a `T45` find — no check reads a number in prose.
-## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language
-
-`observable-lifecycle.md` (this route's design authority) refreshed its recovery runbook:
-`ladder-resolved` is legacy parse-compat (the timed escalation ladder is retired) and
-retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.
-
-</details>
+- The implementation produces or reuses memory content before refreshing its cache. [26]
+- The amended lifecycle design retains session-driven transitions and describes recovery and cache boundaries. [28]
+- The Python evidence design describes selection, retry, and maintenance contracts. [29]
+- The bootstrap note and root configuration now state 5,000/1,000; host development runs and diagnostic metrics remain documented. [30]
+- The authority document records Candidate A retirement and the review consumer; the current review owner defers atomic scope. [31]
+- The cockpit index describes its historical candidate and internal measurement boundary. [32]
+- The dashboard review doctrine defines review bars and visual grammar. [33]
+- Engine-room references identify the visual-language library and choreography prototype. [34]
+- The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]

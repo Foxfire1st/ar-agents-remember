@@ -19,6 +19,64 @@
         }
       ]
     },
+    "10": {
+      "note": "Terminal release preserves unreadable or unproven evidence and releases only the recorded exact owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:ff74f77ea5223a1fe74d6bec0d45e609faa4f42da61e5f03e0d7c9930954572f",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_terminal_atomic_series_selection_if_exact"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_memory_refresh_attestations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_refresh_gate"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The selector keys one record per canonical contract, strictly observes it, publishes, quarantines, and projects only this contract's reconciling wait.\n\nAnchor: \"def contract_fingerprint(\"",
       "targets": [
@@ -178,6 +236,66 @@
               "name": "atomic_series_admission_projection"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selecting sync checks exact participating source bases before active exposure; incomplete memory retains its own refusal state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_selected_atomic_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f7e7fe93b41877df96b48f1a6ed4750b7358683",
+            "content": "sha256:b7810881381f0cfa86e0f258b7a597ed823ccc92ef9aba6f09969b9b35453087",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_attach_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_attach.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "content": "sha256:2f7bedbf8da84aed881745a47e035a93465630d8dd697e9e30ae41d999b4302b",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:72e074c19ea4ce19ddf7446974417bd4f16cc4e2d8b4dee0cdb64657ca9b68a0",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
           "kind": "code"
         }

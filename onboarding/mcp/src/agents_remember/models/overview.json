@@ -3850,6 +3850,180 @@
         }
       ]
     },
+    "294": {
+      "note": "Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
+            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "295": {
+      "note": "Full and public registries separate retained internal builders from public responses, including native retirement and set start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc22fb278e01285021dd85c135b22af4beb75da4",
+            "content": "sha256:8e83dbc63e773b9de93381ac53e394a364b2dd07d0fc48752ee419f40a1b78fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "296": {
+      "note": "Whole-result validation/enrichment precedes serialization and token finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "297": {
+      "note": "Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "298": {
+      "note": "L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_EXCEPTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "content": "sha256:8e0d566b39391b77cf2a11ba0a6e3f2d9150a04e8a6ba436ce1f79ecca012aa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERIM_TOOL_LEAF"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "content": "sha256:de5ac759b3fba0735e2487b4b8c4c58641cb946e6fd03b14fc87e7f74612bbc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "L112_FINAL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_for"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "299": {
+      "note": "Provider diagnostics remains a schema default despite public removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:0c2a961b4cfbd1bdbd16e6072c2e8dd5861fa1f032ec63a8c156d137355e0f4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextDiagnosticsHint"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The surface version that stays `/1`, with the reasoning recorded beside the constant.",
       "targets": [
@@ -3879,6 +4053,258 @@
               "name": "FileRead"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "300": {
+      "note": "Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:51c9aa56f66c003feff793d1e490e6cceb0483dfb8e1e41556dcc7a9aed1d148",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "301": {
+      "note": "Refusal declarations live in a focused module and are re-exported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:ab44340be711b4cfc5f1209e3260bb96b3015e9e40435d757688b38ebb615490",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
+            "content": "sha256:96edbd3a92d1749edcb369a3a049a094950690fa4184b3da1cd5dae7f007ec2b",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "302": {
+      "note": "Activation record state includes vacant; selection and observed vocabularies differ.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
+            "content": "sha256:0dd2cb89c398a2d8d75fd99f57a0b66ae3ff0b0e448e5a33a326be99219655b3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "303": {
+      "note": "Text schema dispatch is distinct from legacy writer exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:b19066baadb97c7ba006e8a8b85fcabbce1a2963f78e7c0833c873ef7ede1bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:78d89ba17192f51af2d2efb3e48efaa2744e16a64a761e0b1c2f767da139d473",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_document"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
+            "content": "sha256:730b61c793acd190a29669be3fef6791fef06b05a356b5a105a601fec2610d75",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "304": {
+      "note": "Shared worklist predicates preserve different covered/uncovered answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:34f497eef3153dc8d02978bf9783e12b4919c4387896f082df4e323d586a7fa8",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:9fa6455b0c5bf8c8b2cf2e3faaa1b3c87b3e6762ea480f86d0ea4d0b91a81683",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/unexplained.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "305": {
+      "note": "Measurement coverage and measured disagreement determine assessment binding status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:75b628a1a2c32d5ba341c2565dde5cda98ab23bda0287b0fdf6841abf49b434c",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_binding_status"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "306": {
+      "note": "Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5de8298aaada42a31d56d468f14fdefdc203984a",
+            "content": "sha256:3d59bf0fdb6e3f04d75721629efe403c7222c3a5151245986b16b07ddcca65dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeSide"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "307": {
+      "note": "V2 receipt admits only measured bound/moved states; helper also represents unmeasured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28af7054d13320531c1f10ba385735948e1da3ab",
+            "content": "sha256:a29c51a8ee79c7e14b5051445fb56dc0c485d42478f17297f117e1d2910c782b",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "308": {
+      "note": "Sync currency requires both exact matches and preserves missing memory as unmeasured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:8f4ececdc91d257dffa3eed5e112fb164673cc8bbb65a056eed93c1e0e3cd5ed",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "309": {
+      "note": "Capsule skill references and semantic digest exclude diagnostic output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:f090abced6f7f2bef834801ec39753f018896a3abb787827284b91eb24971270",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:24e597bc39f27710d9a95b8b39c255ff485a17e23e1bce53e77e51cc39ba55cc",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
           "kind": "code"
         }

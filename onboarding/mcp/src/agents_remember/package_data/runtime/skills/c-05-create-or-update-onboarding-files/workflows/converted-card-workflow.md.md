@@ -62,8 +62,10 @@ The workflow states, in order:
 
 - None recorded.
 
-## Evidence
 
+The overview contract reads from purpose: title, governing overview, then `## What This Repo Is`, `## What This Area Is` or `## Purpose`; construction follows, then invariants/boundaries, and all citation lines stand together at the end. An overview change belongs in its applicable body section, never a leaf- or date-named section. The instruction states validator refusals for misplaced purpose, dated/leaf sections and nonterminal citation lines; source instruction is not evidence that a validation invocation ran.
+
+## Evidence
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -91,3 +93,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the workflow is repository-local instruction text.
 
 No cross-repo boundary is crossed by this file.
+
+- Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [9]

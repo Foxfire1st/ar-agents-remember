@@ -778,6 +778,153 @@
         }
       ]
     },
+    "44": {
+      "note": "Four product destinations; injected Engine Room is conditional; current Chats is retained RoleChatsPane\n\nAnchor: VIEWS; MainViewLayers; CockpitShell",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:91c6a64109544a683017f301adcac6dcb2f765430675cea0294e067a6ee05db3",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:c2284faeffbc421fc22f6e3773d3a766897b368765e3150a0c5cccb22cba19ee",
+            "locator": {
+              "end": 818,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
+            "locator": {
+              "end": 936,
+              "kind": "line_range",
+              "start": 883
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Review uses the common takeover and forwards optional selector/recorded history\n\nAnchor: ChangeSetTakeover",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 573
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Native execution results are scoped by document and request identity\n\nAnchor: isCurrentExecutionTarget; selectedRequestExecution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:bcd9b2ece357c94ae7f1bbc20ae10256199c0fdce44d7d333ed359a9ef4b6ba0",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Frame descriptor activation and explicit retry are separate from retained frame identity\n\nAnchor: useFrameController; useFrameDescriptor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:0c0be0a2179c98564825d4d3ad1976c1f0d4520fe423cacc944fb15d86d01186",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Every leaf's review entry selects live or recorded identity independently of summary availability\n\nAnchor: IntentReviewEntry",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Intent and attribution counts have separate partial/unavailable treatment\n\nAnchor: IntentCounts; attributionText; IntentDetails",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:c38ab296fb553ba25b829153e309bc21da142b530d311af53b0e11448e4c1015",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:1b3cb07a22b970b77f6a18032c14bb84ce7d7be70739ca461609866c2e366c44",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Both master readers now ask for the per-leaf breakdown.\n\nAnchor: `includeLeaves`",
       "targets": [
@@ -796,6 +943,264 @@
         }
       ]
     },
+    "50": {
+      "note": "Review transport reads route-state bodies irrespective of HTTP status\n\nAnchor: getReviewJson",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:0fcf0bc31e22898ab21ab09f61a0c35bc2a303c3791ffffddfca318bc0b4d50f",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Question keys and exact sequence-bound refresh prevent superseded answers writing displayed state\n\nAnchor: targetKeyOf; startRead",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:91d5ee40eade26b77b153477df953b9d603edc8798a61cf5b487939eb35e14ec",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Current operations projection uses physical live-worktree admission and a bare count header\n\nAnchor: operationRows; appendLifecycleRows; TaskPivotBar",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "content": "sha256:cb7acd1dff1cfef7da490a1000aa96b958c555567c87b1097f3bb82c037a1313",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 410
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "content": "sha256:6405589abab9f9e98efa10215d42a7f0a99fccc35c72b7eae5656fa8a74d255b",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 538
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Collapse state has one persisted collapsed set\n\nAnchor: useCollapsedTaskGroups",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84947fcc60779543954199ce7869abc2cc6eabe4",
+            "content": "sha256:0da47a931af4d167fa12d46645cbb7d534fce20120f031a19625c1ae9c094b4c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Hosted terminal open is session-addressed and accepted response precedes store mutation\n\nAnchor: openTerminalSession; createSession",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:c9290d8ae0db045ef36b687f271b34336dcb5bc0c9f0c92f2124ab3f2926737a",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "dashboard/src/data/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:ceed10eb079c468ab06dcc0afcf8eda6462a0d34946b893df13e7047a4b9388f",
+            "locator": {
+              "end": 843,
+              "kind": "line_range",
+              "start": 820
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs\n\nAnchor: _state_partition; _vocabulary_block; stale_generated_files",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:e5812badcd58e830abed9d82f1362cda405cac5459b89e800b4a4bac73bddff0",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 451
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:70a30a4be0351dd0d5b082d0bb6c37d14c28e2fdb3e54354d9951caa84e3c0b2",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 604
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Wire discovery and fixture scope retain named blind spots\n\nAnchor: declaresItselfAMirror; isFixtureSurface; guard header",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:48ced1ee25af2463465fc49328fa8d419391823ae6287f95ef470402eb19ff1a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:42b27b147952f0d989f1389b7d9239ff2843ab150d7578e69cb886ac6d36d5d4",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "Required-field override protection has explicit fresh-literal/depth/module limits\n\nAnchor: Overrides",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6bfd1efefa047efcb6efea9a3000c78f6a1d0203fe9a917650c12d04112a76b5",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "Unknown lifecycle state warns; inferred healthy state degrades\n\nAnchor: lifecycleStatus",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:2fc77bee99c86d525336ac23406de3fda389c6a97d2296c09b454dc7541092f8",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Engine Room's present body composes enclosure map, stack, boot and diagnostics\n\nAnchor: EngineRoomImpl",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "Shell navigation, persistent layers and shared drivers.",
       "targets": [
@@ -808,6 +1213,94 @@
               "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Browser probe contract is intentionally import-free across TypeScript projects\n\nAnchor: benchProbes module contract; solution references",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e7f12a004a9c74928b2e045b77929bc74a1f1e6",
+            "content": "sha256:feeb7a60d162c7bbd05f250ad5adcee9079c4e7aaff40ae4871e50535e89533b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/dev/benchProbes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da5d2822a340c1b0eba095c24ac846e9267d3272",
+            "content": "sha256:6ac819956399698bcfb02a7bc2312eddc29295202c1794f5f0b0839e52507ef9",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/tsconfig.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 573
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:02a7877a8a5657b33ff4d76c39b8036e07f0196520193e347b68ccd5d0c89ac6",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 580
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:d933bfee3f76b98c89e13b2d5a3d82cf52b4c75c5565fa62755742ef8b7d035e",
+            "locator": {
+              "end": 621,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
           "kind": "code"
         }

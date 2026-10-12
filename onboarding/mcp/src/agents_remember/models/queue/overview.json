@@ -29,6 +29,41 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Neutral projection state refuses contradictory membership, source identity or terminal state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:2a04fffd7ee6dc0263d69b1cd8a30878deae63dd24f8df3b3af4472833fe1463",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueState"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard renders store-projected queue classifications and problems, optionally scoped to a sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:a8a77e92e71b6bf175f82f6137fe20c4a2716ab2824b1e18db3437f58777a2d9",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/panels/CloseoutQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

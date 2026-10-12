@@ -8,21 +8,21 @@
 
 [Parent overview](../overview.md)
 
-## What This Area Is
+## Purpose
 
-The common value layer for certification and lifecycle owners. It centralizes wire validation while leaving registry compilation, certificate storage, semantic admission and journal mutation with their domain owners.
+This directory supplies the common value layer for certification and lifecycle owners. It centralizes wire validation while leaving registry compilation, certificate storage, semantic admission and journal mutation with their domain owners. Its initializer is a documentation-only namespace and performs no registration.
 
 ## Hot Path Summary
 
-Start with `base.py` for frozen models and rail identity, `corrective.py` for exact prior-red repair shapes, and `references.py` for semantic-address versus exact-byte binding. The initializer performs no registration.
+Start with `base.py` for frozen models and rail identity, `corrective.py` for direct-repair and repaired-root declarations, and `references.py` for semantic-address versus exact-byte binding.
 
-## Local Invariants And Traps
+## How It Is Built
 
-- Shared wire constraints do not prove observed currentness or grant execution authority.
-- Corrective declarations require comparison with actual before/after inputs and prior failed/blocked results.
-- Stored references retain original provenance through a separate byte digest; they are not a latest-object lookup.
+`FrozenContractModel` forbids extra fields and freezes model instances. The base module also defines gate IDs, nonblank and unpadded semantic text, and rail identities with constrained identifiers and semantic versions. A rail's key combines its identifier and version.
 
-## File-Level Onboarding Map
+`CorrectiveInputChange` names an exact semantic input and requires distinct before and after digests. `RedCatalogDisposition` binds a declaration to a failed or blocked rail result and its corrective owner. A direct repair requires changed inputs and forbids a repaired root; a repaired-root declaration requires a root and forbids changed inputs. Changed inputs must be unique by input kind and identifier and canonically ordered.
+
+`CertificateObjectReference` carries a closed object kind and schema version, a semantic digest selecting the object's address, and a separate SHA-256 digest and size binding its complete canonical stored representation, including original creation evidence.
 
 | Source File | Onboarding | Role |
 | --- | --- | --- |
@@ -31,14 +31,16 @@ Start with `base.py` for frozen models and rail identity, `corrective.py` for ex
 | `corrective.py` | [corrective.py.md](corrective.py.md) | Canonical direct/root repair dispositions |
 | `references.py` | [references.py.md](references.py.md) | Exact stored object references |
 
+## Invariants And Boundaries
+
+Shared wire constraints do not prove observed currentness or grant execution authority. Distinct declared digests establish a valid change shape; lifecycle admission must still compare them with actual prior and successor inputs and bind the disposition to the exact prior failed or blocked result. A repaired-root declaration also requires admission checks against the actual blocking relationship and direct repair.
+
+Stored references retain original provenance through their separate byte digest and size. They select an exact semantic address rather than the latest object. Store location and lifecycle selection remain the caller's responsibility; a reference confers no journal or execution authority.
+
+These source-owned models and transitions introduce no cross-repository protocol. The configured Domain Documentation registry has no entries.
+
 ## Evidence
 
-### Repo-Internal References
-
 - The shared identity and base carry only closed wire constraints. [1]
-- Corrective shape requires actual digest movement and canonical entries. [2]
+- Corrective shape requires distinct declared before/after digests and canonical entries; actual input movement is checked separately by lifecycle admission. [2]
 - Exact original bytes are bound separately from semantic address. [3]
-
-### Docs And Cross-Repo References
-
-The configured Domain Documentation registry has no entries. These source-owned models and transitions introduce no cross-repository protocol.

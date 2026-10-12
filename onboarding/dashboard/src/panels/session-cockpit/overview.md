@@ -1,290 +1,100 @@
-# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview
+# dashboard/src/panels/session-cockpit/ — Session Cockpit Composition And Inherited Chats Intent
+
+## Governing Overview
+[panels overview](../overview.md)
+
+## Purpose
+
+This source family retains the rail/stage/inspector session cockpit and its structured conversation and history-library surfaces. Its purpose is to present shared session, conversation, delivery, lifecycle, and interaction evidence without becoming a second catalog, delivery ledger, or durable browser conversation database.
+
+The present shell wiring must be distinguished from that inherited purpose: `dashboard/src/cockpit/Cockpit.tsx` mounts `RoleChatsPane` in its persistent Chats layer. `RoleChatsPane` composes the role launcher and, for an unbound selection, `PaseoChatFrame`. Chats remains the shell's default opening view, but the retained `sessions-view/SessionsView.tsx` is not the component selected by that examined shell layer. Its comment still calls it the canonical Chats cockpit; that comment does not override the composition expression.
+
+The inherited FEUI-L8 consolidation retired the former `panels/Chats.tsx`, `SessionList.tsx`, and `data/sessionGroups.ts` product responsibilities into shell reconciliation, the session cockpit, `ChatContextBar`, and `railModel`. Preserve that duty-transfer intent and its historical attribution without claiming that the current shell still mounts `SessionsView`. The internal `data-view="sessions"` marker remains on the retained cockpit body. The former `RailChat.tsx` retirement under MIK-R95 rule 8 is historical; the current shell has its own role-chat composition.
+
+Within the retained cockpit, controlled sessions default to a harness-neutral structured transcript. The previous-conversation library is a separate in-stage capability. A controlled PTY is a read-only diagnostic rather than the transcript renderer; an uncontrolled seat uses the legacy terminal body, labeled `legacy terminal · structured conversation unavailable`. The controlling predicate is a defined `controlState` other than `unsupported`, so undefined control state also takes the uncontrolled branch. Stage harness recognition includes Claude, Codex, Pi, and Eve.
+
+## Hot Path Summary
+
+1. Distinguish the product shell path from this retained composition: the shell's Chats layer selects `RoleChatsPane`; `SessionsView` delegates its own state/effects to `sessionsViewController` and rendering to `sessionsViewBody`.
+2. In the retained cockpit, raw creation crosses `createSession`; `ChatContextBar` reports typed failures locally and emits only the accepted session id. Hosted creation crosses `openHostedSession` and the same underlying terminal opener. A valid open acknowledges exact caller-minted session, kind, harness identity, label, and running state before accepted-session handling.
+3. Hosted settlement hydrates the shared catalog under captured catalog authority before focusing. An ambiguous outcome is watched by caller-minted id while the chooser remains open. Explicit dismissal ends that watch, so a later catalog row cannot steal focus through it. Ambiguity is not a proven server refusal or proof that no server session exists.
+4. The controller separates focused inspection from live action/reload ownership, derives the task-document rail and attention rollup, and selects working evidence. Fresh live conversation status is preferred where available; catalog evidence remains a separate, potentially lagging source.
+5. `ChatsStageBody` resolves submission authority, connects the structured projection, and switches presentation among conversation, library, and legacy terminal. Warm conversation projections are reused; cold or explicit-retry resolution refreshes authority. Per-session phases and generation checks prevent another session's resolve from painting the focused session.
+6. Composer submission/withdrawal, adapter interaction answers, model/effort changes, lifecycle operations, cleanup, agent bus, and exact-turn interrupt retain their own authority routes. Palette, inspector, and live regions expose those results rather than inventing another operational truth.
+
+## Construction And Ownership
+
+`SessionsView` is now located under `sessions-view/`. It is a memoized wrapper around the controller and body. The body composes resizable rail, stage, and inspector panels; launch/palette overlays; cleanup notices; set-outcome notices; and mounted live regions. The inspector begins closed absent deliberate persisted opt-in. Responsive collapse is tracked separately from operator intent, and title-row controls reopen the rail or toggle the inspector. The inspector is supplementary evidence, not a prerequisite for core operation.
+
+`ChatContextBar` owns raw launch feedback and the accepted-id callback. Hosted chooser state belongs to `LaunchFlow`, with one dialog-local catalog owner in `useHarnessCatalogRead`. Opening starts an abortable read; closing, superseding, or timeout revokes it. The timeout is five seconds. Ready, valid empty, timeout, and typed failures remain distinct; retry is explicit. A first non-null or changed serving boot identity supersedes discovery once. SSE connectivity loss is not itself this hook's discovery trigger. Preserve the inherited short/narrow-screen usability and visible `＋ Chat` entrance requirements as presentation intent, not a newly measured acceptance result.
+
+Hosted launch selection uses an advertised complete model/effort pair or explicit vendor defaults with both knobs omitted. Model changes re-gate effort against that model's advertised launch-settable menu; native ordering and provider-qualified keys remain intact. Launch evidence distinguishes retained selection from readiness. Server-first leaf attach/move, old-row local lifecycle routing, and cross-tab catalog invalidation remain inherited duties of the context/actions layer.
+
+`SessionRail` renders task-derived sprint/master/leaf grouping, completed folders, attention, termination confirmation, and landed cleanup; a separately selectable spawn-edge tree is provenance inspection. Current grouping admits only resolvable, altitude-valid document/role combinations and checks reviewer parent context. Masters not listed by a sprint can remain top-level masters. The unattached population includes missing/unresolved documents, invalid role/altitude placement, reviewer-context mismatches, and duplicate master-role occupants; it is not expressly legacy-only. Planned retirement rows are excluded, whereas bare termination remains crash evidence and landed sessions remain inspectable completion evidence.
+
+Preserve the inherited goal of stable structural seat addresses across replacement, but do not describe it as established by these implementations: leaf and sprint seat populations are arrays of sessions, and rendered occupant rows use runtime session ids as keys and selectors. Master manager/reviewer slots select one occupant; additional occupants become unattached. Live labels remain single-line and ellipsized with full tooltip text. Runtime identity is therefore used for rendered row identity as well as focus/actions.
+
+Rail optimization begins beyond 50 rows actually rendered in the selected hierarchy/tree mode, including the appropriate completed population. It applies browser `contentVisibility` containment rather than proving a measured fleet baseline. Inspector list virtualization begins beyond 100 rows and retains list cardinality. Historical dev scenarios cover fleet, failure, launch, submit, interaction, ended, PTY-drop, and stale-catalog situations; they are not a fresh execution receipt.
+
+`ChatsStageBody` owns stage archetype selection, epoch acquisition, conversation DOM retention, and the persistent legacy PTY sibling. Cold resolution calls `readSubmissionAuthority(..., {refresh:true})`, avoiding a remembered cached epoch. Transport failures, unexpected throws, and typed failures with null HTTP status or status at least 500 retry with exponential delays starting at 250 ms and capped at one second, within a 30-second elapsed retry window. Other typed failures fail immediately. Successful authority read connects the projection and patches the session's `controlState` to `ready`; subsequent catalog hydration can confirm or replace it. Failure remains visible with explicit retry, and a later catalog transition to ready can re-drive resolution once per observed transition. The window bounds retry admission, not necessarily total wall time including an individual outstanding request.
+
+Warm refocus touches the retained projection instead of re-reading authority. Focus changes release the prior conversation stream slot while preserving warm projection/cursor/DOM state. The conversation DOM pool follows the data layer's six-entry LRU limit; nonfocused entries that are no longer warm are pruned, along with their epoch-phase records. Scroll memory separates hidden retained geometry from whole-view geometry loss and restores intentional position.
+
+The legacy PTY layer mounts lazily on first terminal focus, remains a sibling of the conversation pool, and remembers its last genuinely visible box to avoid hidden harness chrome resizing xterm. `PtySurface` keeps visited running/landed panes mounted while inspectable, prunes terminal tombstones, and makes landed panes read-only. A transient missing focus must not dispose unrelated visited terminals. Ended terminal presentation does not create an inspectable terminal/socket. The shared `Terminal` asks its current connection for a boot-owned reattach without an xterm remount. Preserve the inherited requirements that stale callbacks cannot demote a replacement connection and transport close cannot fabricate durable terminal exit; the examined component seam alone is not a whole-transport proof.
+
+`TerminalDiagnosticsDrawer` keeps its closed section inert and aria-hidden, but conditionally mounts its read-only `PtySurface` only while open. Closing therefore removes that diagnostic PTY subtree. This differs from the persistent legacy-terminal sibling and should not be described as universal diagnostic xterm continuity. Hidden conversation/PTY pool wrappers use visibility styling and aria-hidden; they do not themselves apply `inert`. Preserve hidden-surface noninteraction as intent without claiming that every wrapper carries the attribute or inferring whole-call-path accessibility failure.
+
+The conversation child route owns the harness-neutral feed grammar: server-ordinal articles, stable item identities, inline thinking, tool/diff/interaction/result presentation, evidence-bound telemetry, and labeled unknown vendor evidence. Required image labels are intended to render without image fetching; absent telemetry must not become reassuring zeroes. Live thinking coalesces into a stable active-turn row with completion cleanup. Native sub-agent history hydration is driven by visible, effective selected-agent focus. Roster identities derive from item evidence; remembered agent focus survives projection eviction but is validated against the rehydrated roster. ArrowLeft/ArrowRight cycle parent/agent lanes and Escape returns to parent; editable and interactive targets retain key ownership. Operator-driven visible focus changes receive polite announcements.
+
+The library child route owns indexing, preview, and exact-open resume. Sub-agent conversations use the same selection/preview/open flow through their server-issued conversation keys, and `agentsNote` reports partial/unavailable agent history verbatim. New-row focus requires `openedForFocus` and an operation session id; unsuccessful or uncertain outcomes must preserve the current chat's draft, focus, and scroll rather than simulate an open.
+
+`SessionComposer` owns reliable submission and authoritative withdrawal/pop-back, with `QueuePreview` inside the composer. Ambiguous delivery retains exact draft/request identity. Raw terminal-kind seats receive no dashboard composer in the current body. `InteractionBar` remains separate and is mounted only for a focused live row: parent singular pending interaction first, additive plural entries next, de-duplicated by interaction id. Entries without usable ids remain visible as unanswerable evidence. Agent labels come from adapter-bound payload evidence and are not fabricated. Answers use the exact session's direct interaction route even without a lifecycle. Structured questions collect all required answers together; scalar choices/free text use their appropriate response shape. Store-backed answering/error/answered states remain distinct, sibling bars do not inherit another interaction's status, and poll-bounded acknowledgement does not mean the agent has already proceeded.
+
+Exact-turn interrupt belongs to `useConversationControls` and the `conversation.stop` command. The hook resolves turn identity from canonical status or item evidence, uses stable request identity for reconciliation, and distinguishes acknowledgement from settlement. It enables a working, resolvable turn unless capability is hard-unavailable or the current turn has a typed refusal; pending prevents another dispatch. It does not require capability state `supported`. Controlled-seat stop presentation now docks beside Send in `SessionComposer`; only terminal-kind seats receive the line-hosted interrupt in `WorkingLine`. The working slot prefers `ConversationWorkingLine` for a live harness conversation and otherwise uses catalog/cockpit cues.
+
+`CommandPalette` and keyboard zones consume effective bindings. The `?` reference includes `Intent reviewer — while focus is inside it`, filtered from bindings whose zones include review, so rebinding appears in the reference. Preserve reviewer-local chord ownership, focus trapping/restoration, and immutable F6 region escape, including Vim composer mode. Mounted polite/assertive live-region roots, hydration batching, and keyed repeat announcements remain the inherited accessibility contract.
+
+`SeatInspector` retains Evidence, Capabilities, and Bus panels behind hidden tabs; bus age-clock activity depends on visibility and the selected tab. `LandedCleanupNotice` sits outside the collapsed rail. Unavailable cleanup results retain exact intended targets and retry; partial results retain skipped reasons. Successful termination/retirement control-stop residuals are informational rather than false termination failures. Current stage composition removes stacked stop notices while retaining lifecycle details for inspection. Failed launch copy remains verbatim with retire/corrected-launch actions rather than silent automatic launch retry.
+
+## Invariants And Boundaries
+
+The inherited one-roof intent is one full-page Chats destination, one browser terminal-open authority, adapter-owned harness differences, reconstructable transcript/history projections, and no second durable browser catalog or delivery ledger. The current shell's persistent RoleChats layer and this retained SessionsView composition must not be conflated.
+
+No rejected open may fabricate a local accepted row, readiness, focus, or dependent delivery. An ambiguous POST may later acquire authoritative catalog evidence; that does not weaken refusal handling or permit success reconstructed from request fields. Operator text, reliable submission/withdrawal, interaction answers, lifecycle gates, agent bus, and control commands must not silently cross channels or fall back to shared paste.
+
+Focused inspection and live action/reload preference remain separate. Current body predicates withhold working/composer/interaction slots from nonrunning focused rows. Landed PTYs remain read-only until cleanup. Do not generalize that body predicate into proof of every structured control's call-path guard.
+
+The no-durable-conversation-database boundary concerns conversation data. Hide-thinking is the persisted conversation presentation preference; agent focus and scroll memory are retained UI state, and the wider cockpit also persists layout/inspector intent, keymap, and active-session preference. Thus hide-thinking is not the cockpit's only persisted UI bit.
+
+Preserve the FB7 terminal grammar intent: shared `well` color `#070b0f`, gutter glyphs `●`/`✻`/`·`, lowercase phase words, left-rule washes, and line-grid rhythm instead of boxed uppercase phase chips and per-article hairlines. Preserve collapse-or-explain chrome, nonalarming zeroes, humanized durations through `format.humanizeDuration`, and short identity display through `format.shortId` with full-value disclosure. StatusLine and rail-bus footer retirement move actions to the title and working feedback toward the conversation/composer.
+
+RV-2's inherited whole-action-group wrapping requirement differs from current source: both `rowShell` and `rowActionGroup` set `flexWrap: nowrap`. Titles still absorb available width and ellipsize. Do not reassert the historical width acceptance as current measured behavior. RV-1 retains its load-bearing word-break warning: the WebTUI base cascade historically defeated component overflow-wrap patches; `index.css` contains the unlayered root `word-break: normal` remedy and raw identifiers may explicitly break. Computed browser values, not source inspection alone, decide whether the cascade works in a rendered build.
+
+## Historical And Verification Limits
+
+All prose in the input card was examined. This proposal is source adjudication at the named checkout, not test execution, visual acceptance, runtime verification, delivery certification, or a new lifecycle status. Original numbered reference identities, targets, maps, and excluded metadata remain parent-owned.
+
+FEUI-L8 duty transfer, FEUI-L9R chooser/terminal continuity, FEUI-MX-FIX-2 accepted-row focus, CHATS-L4 one-roof realization, L5I keep-warm state, CHATS-IM-L2 selected-agent acquisition, and CHATS-L5P `PASS-WITH-NOTES` are inherited historical claims. Their old reviewer/task/history-pack witnesses were not re-established here. Preserve their responsibilities and exceptions; do not turn their chronology or delivery labels into fresh acceptance.
+
+Named historical limits remain explicit: review R1 F9 reported that the session palette's key-reference page was inaccessible during reviewer takeover and left that condition as ruled; present shell replacement means the old observation cannot automatically establish today's reviewer path. L3.5 described stale L1 interrupt capability evidence and attempt-and-reflect rather than a clean proactive capability GET/refresh gate. Current interrupt predicates still permit non-hard-unavailable evidence, but this browser hook is not proof that no server capability route exists. The L5-Facing Register's measured virtualization/scale baseline and environmental faults E1/E2 remain named historical hardening limits; their old witnesses were not examined or discharged.
+
+EFA-L4's inherited fixture rule is that cockpit suites should use `test/fixtures/wire.ts` and `conversationWire.ts` builders rather than authoring or casting wire nodes. Its seven-suite migration removed impossible required-capability and partial-analytics payloads, restored the four capability groups (`live`, `history`, `controls`, `telemetry`), populated analytics defaults described then as thirteen keys, and derived page `totalItems`. Those counts describe the old migration, not present schema completeness or passing cases.
+
+The historical LaunchFlow proof narrowed: removing undeclared `control: starting` fields made surviving `not.toContain("adapter starting")` assertions unable to prove suppression of that stale field. The inherited replacement was a typed `HarnessInfo[]` literal plus explicit row-key checks, not restored rendering coverage. Current `HarnessInfo` still lacks the mirror-discovery header. The guard documents first-line `TypeScript mirror of` or `Browser mirror of` discovery plus `src/types/`, and names unmarked `harnessCatalog.ts`, `submissionLifecycleClient.ts`, `changeset.ts`, `files.ts`, and `notes.ts` as a blind spot. Its source also explicitly documents expression-kind gaps, generic helpers, predicates/assertion functions, and value-level gaps; a nominally discovered vocabulary is not comprehensive payload validity.
+
+Keep the inherited three-link verification limit: hand-maintained fixture builders versus TypeScript mirrors, mirrors versus hand-maintained `snapshot.json`, and the unestablished `snapshot.json` ↔ `observer/projection.py` link. Historical contract checks measured mirror ⊇ served, served ⊇ mirror, and fixture ⊇ mirror plus runtime string vocabularies; they were not merely one-way subset checks. Neither a repository-wide absence of generators nor automatic Python-to-snapshot synchronization was established by this bounded source review. The old claim that the third link was held by nothing remains a named historical limit, not a newly proven universal absence.
+
+EFA-L23 and DAG teardown claims concern shared fake-timer/scroll-geometry support and flushing the virtualizer's 150 ms debounce before jsdom teardown; they do not change product behavior or establish today's passing suite. Historical live-thinking acceptance pins and source-size rails likewise remain historical evidence.
+
+The input's statements that no Domain Documentation source or cross-repository governing implementation was configured were not revalidated against memory settings. Toad/T3 and Claude/Codex TUI references remain historical visual-design derivations, not imported implementation authorities. No external documentation, product tools, tests, network calls, sync, or publication occurred in this adjudication.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
-
-## Governing Overview
-
-[panels overview](../overview.md)
-
-## 260928-MIK-L33 The `?` Page Lists The Intent Reviewer's Chords
-
-MIK-R33 rule 7 lists the reviewer's `j`/`k` in the keymap owner's `?` reference: [`CommandPalette.tsx`](CommandPalette.tsx.md)'s
-keys page gains a group headed "Intent reviewer — while focus is inside it", read from the effective bindings whose
-zones include `review` (so a rebinding shows). [`sessions-view/shell.test.tsx`](sessions-view/shell.test.tsx.md)'s
-`?` case asserts the group and its two commands, and that `j` pressed in the sessions view is not handled. The page
-lives in this view's palette, which is not reachable while the reviewer takeover is open (pre-existing; review R1 F9,
-left as ruled).
-
-- The reviewer's group on the keys page. [1]
-
-## Current Structural Rail Contract
-
-`SessionRail` renders the task-projected sprint/master/leaf tree and one role row per structural
-seat. `sessionRailParts` uses runtime ids only for focus/actions against the current occupant, while
-`sessionRailStyles` keeps live titles on one ellipsized line. Replacement preserves the row address;
-the separate spawn tree remains diagnostic-only.
-
-## Purpose
-
-This route is the one full-page **Chats** destination. FEUI-L8 retires the former `Chats.tsx` /
-`SessionList.tsx` product path and promotes the already-built session cockpit under the Chats label;
-the internal `SessionsView` filename and `[data-view="sessions"]` marker remain stable implementation
-identities. `CockpitShell` keeps this route mounted and exposes no second
-Sessions destination.
-
-The route composes a role/spawn rail, persistent stage, default-closed toggleable inspector,
-CodeMirror reliable composer, command/key reference palette, source-selected working cues, interaction and lifecycle
-notices, and — since 260718-CHATS-L4 — the **structured conversation surface** that is now the
-controlled-session stage default. It projects the shared data plane documented by the
-[data overview](../../data/overview.md); it does not own a second session catalog or delivery ledger.
-
-Since 260718-CHATS-L4 the controlled-session stage body is `ChatsStageBody.tsx`, which defaults to
-the structured `ConversationSurface` (the reconstructable
-[data/conversation](../../data/conversation/overview.md) projection rendered by the harness-neutral
-grammar in [conversation/](conversation/overview.md)) and hosts the previous-conversation
-[conversation-library/](conversation-library/overview.md) browser in-stage. The runner-line-log
-`PtySurface` is no longer the controlled-session body: it survives only as the default-off,
-read-only **terminal-diagnostics drawer** and as the primary body of a legacy-raw (`unsupported`)
-session. Any earlier claim that this route mounts an unconditional PTY body for controlled sessions
-is superseded.
-
-## FEUI-L9R Chooser And Continuity Contract
-
-`LaunchFlow` and `useHarnessCatalogRead` form one dialog-local catalog owner. Each open performs one
-abortable read; timeout, network/HTTP/protocol error, valid empty, and ready stay distinct; Retry is
-explicit; and a changed or first-observed serving boot causes one superseding reread. SSE loss does
-not trigger discovery. The fixed viewport dialog remains usable on short/narrow screens, while an
-empty narrow cockpit keeps the sole `＋ Chat` entrance visible and accessible.
-
-Existing PTY panes keep their mounted xterm and scrollback across a serving restart. The shared
-Terminal component asks the current connection for one boot-owned reattach; stale socket callbacks
-cannot demote the replacement, and a transport close never fabricates durable terminal exit.
-
-## FEUI-MX-FIX-2 Accepted-Row Focus Contract
-
-`ChatContextBar.tsx` owns the raw-chat create gesture and renders typed open failures in place. It
-passes only a validated accepted session id upward. `SessionsView.tsx` no longer contains a parallel
-raw opener: its callback focuses the accepted row produced by the shared session store. The chooser
-path reaches the same `terminalOpen.ts` authority through `LaunchFlow`, so raw and harness creates
-share one parser and one zero-ghost invariant.
-
-## 260718-CHATS-L4 Structured Conversation Roof
-
-`ChatsStageBody.tsx` is the thin controlled-session stage body: it selects between the default
-structured `ConversationSurface`, the in-stage `ConversationLibrarySurface` history browser, and the
-legacy-raw PTY, and it owns the default-off `TerminalDiagnosticsDrawer`. It copies no panel's state —
-the composer, InteractionBar, QueuePreview, and HeaderStrip remain their own authorities,
-rendered by `SessionsView` around this body, and QueuePreview stays inside `SessionComposer` between
-interaction and composer. It resolves the bridge epoch by REUSING `readSubmissionAuthority` (no second
-submission authority) with one bounded auto-retry before the fail-loud projection-failed banner.
-
-The renderer is a harness-neutral grammar (`conversation/`): a virtualized `role="feed"` timeline with
-server-ordinal articles, full-inline thinking, stable-ID tools/diffs/interactions/results, required
-image labels rendered without an `<img>` fetch, ambient evidence-bound telemetry (absent-not-zero),
-and unknown-vendor events preserved as labeled evidence — no vendor-clone skins. The exact-turn
-**interrupt** is wired into `WorkingLine` (its §4.1 home) through `useConversationControls`, gated on
-real turn+capability evidence and registered as the `conversation.stop` chord/palette command.
-History open focuses a new rail row only on exact `opened` catalog proof; every other outcome leaves
-the current draft/focus/scroll intact.
-
-## Sub-Agent Lanes And Multiplexed Pending Interactions
-
-The structured surface now renders harness sub-agents as first-class lanes. `ConversationSurface`
-derives the roster from the per-item agent refs, hosts an `AgentsArea`, and cycles parent → agent
-lanes on ArrowLeft/ArrowRight with Escape returning to the parent (editable/interactive targets own
-their keys). The stored focus lives outside the projection, survives LRU eviction, and is
-re-validated against the rehydrated roster rather than applied blindly; the focus switch is
-announced politely and only for the operator's own action on a visible surface.
-
-`ConversationLibraryList` renders a row's sub-agent conversations as indented child rows that
-select, preview, and open through the exact same flow as a top-level row — the child's
-`conversationKey` is minted server-side — and renders the page's `agentsNote` verbatim when the
-server reports (partial) agent-history unavailability.
-
-`InteractionBar` is multiplexed: one bar per pending interaction — the parent's singular slot
-first, then the sub-agent entries from the additive plural catalog slot, de-duplicated by
-interactionId — each badged with the adapter-bound agent label (absent on the parent, never
-fabricated) and answered through the same exact-session route, so parent, sub-agent, and
-lifecycle-free approvals share one adapter-owned channel. Rail rows and the palette's question triage preview name
-who asks, and a seat blocked solely on a sub-agent approval still reads awaiting-input.
-
-## Route Model
-
-### One Product Roof
-
-- `SessionsView.tsx` is the composition seam for the canonical Chats route. The inspector starts
-  closed, is explicitly toggleable, and remembers deliberate opt-in separately from temporary
-  narrow-width collapse. Chats is the shell's opening destination (260928-MIK-L79).
-- `ChatContextBar.tsx` carries the useful duties moved from the retired Chats page: launch hosted
-  Chat/raw Terminal, show task/leaf context, explicitly local lifecycle routing for old rows, and
-  server-first leaf attach/move with cross-tab invalidation.
-- `ChatContextBar.tsx` reports create failures locally and emits only accepted session ids;
-  `SessionsView.tsx` focuses that accepted row and never reconstructs success from request fields.
-- `SessionRail.tsx` replaces the legacy `SessionList`/`sessionGroups` forest. It renders the
-  `railModel` role/spawn hierarchy, master/leaf groupings, completed folders, attention rollups,
-  bounded fleet optimization, termination confirmation, and landed cleanup.
-- The former `RailChat.tsx` was removed by MIK-R95 rule 8; the document rail's native chat is not a competing destination.
-
-### Stage And PTY Continuity
-
-- Controlled seats default to the structured `ConversationSurface`, NOT a PTY body (260718-CHATS-L4).
-  `PtySurface.tsx` still owns keep-alive panes, but for a controlled seat it now appears only inside
-  the default-off read-only `TerminalDiagnosticsDrawer` (its new `readOnly` prop disables input);
-  legacy-raw (`unsupported`) seats keep the interactive `PtySurface` as their primary body, honestly
-  labeled `legacy terminal · structured conversation unavailable`. A visited inspectable terminal
-  still stays mounted across focus switches, preserving the exact xterm node, socket, and scrollback.
-- Landed panes remain read-only inspectable. Exited/retired rows render `EndedSessionState.tsx` and
-  create no terminal/socket.
-- The structured surface — not the line-log — is now the requested one-roof conversation UI. It
-  consumes the landed L1/L2/L3 adapter-normalized page/library/control contracts (history index and
-  exact-open resume included); the read-only PTY drawer is a diagnostic, not the message renderer.
-
-### Reliable Composition And Interaction
-
-- `SessionComposer.tsx` uses the shared reliable-submit client; exact drafts/request ids survive
-  ambiguous outcomes. Alt+Up performs authoritative withdrawal/pop-back, never a local queue delete.
-- `InteractionBar.tsx` routes pending adapter questions through the exact owning session's
-  interaction-response endpoint, distinct from lifecycle gates and ordinary chat submission.
-  Operator text, agent-bus replies, control commands, and interaction answers remain separate
-  authority paths.
-- `CommandPalette.tsx` and `useKeyboardZones.ts` consume the effective map from
-  [data/keymap](../../data/keymap/overview.md). The palette traps focus while open and restores the
-  correct invoker; F6 is the immutable region escape, including under Vim composer mode.
-- `CockpitLiveRegions.tsx` keeps polite/assertive roots mounted. Same-hydration urgent seat changes
-  are batched, and repeated identical announcements replace a keyed node so assistive technology sees
-  a real mutation.
-
-### Lifecycle, Evidence, And Scale
-
-- `LandedCleanupNotice.tsx` sits outside the collapsible rail so unavailable authority results retain
-  exact targets and retry; partial outcomes retain skipped reasons.
-- `EvidencePane`, `CapabilitiesPane`, and `BusPane` stay mounted behind the inspector tabs; the
-  inspector is optional presentation, not required to keep their per-entry state honest.
-- Rail browser optimization begins only beyond 50 actually rendered rows; inspector lists virtualize
-  beyond 100 while retaining accessible list cardinality. The L8 dev scenario set exercises the real
-  stores and routes for fleet, failure, launch, submit, interaction, ended, PTY-drop, and stale-catalog
-  states.
-
-## Preserved Legacy Duty Map
-
-| Retired source | Preserved/replacement owner |
-| --- | --- |
-| `panels/Chats.tsx` | `Cockpit.tsx` owns one persistent Chats layer and shell catalog reconciliation; `SessionsView.tsx` owns the full route; `ChatContextBar.tsx` owns launch/routing/leaf duties. |
-| `panels/Chats.test.tsx` | `Cockpit.test.tsx`, `SessionsView.test.tsx`, `ChatContextBar.test.tsx`, and `catalogPoll.test.ts` pin route uniqueness, duty transfer, focus, attach, and reconciliation. |
-| `panels/SessionList.tsx` | `SessionRail.tsx` consumes `railModel.ts` and renders hierarchy, grouping, attention, completion, lifecycle controls, and fleet thresholds. |
-| `panels/SessionList.test.tsx` | `SessionRail.test.tsx` and `railModel.test.ts` pin the replacement tree/role/grouping contract. |
-| `data/sessionGroups.ts` | `railModel.ts` derives role/spawn/master/leaf membership; `SessionRail.tsx` renders it. |
-| `data/sessionGroups.test.ts` | `railModel.test.ts` and `SessionRail.test.tsx` cover the relocated behavior. |
-
-This is a true source retirement, not a loss of product duties. Historical sidecar knowledge was
-folded into this map, the data overview, and the current replacement file cards before obsolete
-one-to-one sidecars were deleted.
-
-## One-Roof Conversation Contract (realized in 260718-CHATS-L4)
-
-The one shared visual message roof across Claude, Codex, and Pi is now landed. The two distinct
-capabilities are both served: the **active conversation transcript** by the reconstructable
-[data/conversation](../../data/conversation/overview.md) projection + the `conversation/` grammar, and
-the **previous-conversation library/index** by [data/conversation-library](../../data/conversation-library/overview.md) +
-the `conversation-library/` browser. Both consume adapter-normalized history/index/resume from the
-landed L1/L2/L3 server contracts and hold only a projection/cache — no durable browser conversation
-database (R1). Visible harness identity and capability reasons are surfaced honestly; harness-specific
-behavior stays in the adapters.
-
-UA-1 is no longer absent: controlled sessions render the structured surface by default. The PTY
-survives only as the read-only terminal-diagnostics drawer and the legacy-raw body. Two forward
-constraints remain: interrupt capability gating is attempt-and-reflect on the L3 routes' evidence
-until a control-capabilities GET or an L1-view refresh lands (a clean proactive gate), and the
-measured virtualization/scale baseline plus the E1/E2 environmental faults are L5 hardening
-(see the L5-Facing Register in the `conversation/` overviews).
-
-## 260718-CHATS-L5P Cockpit chrome conventions (visual polish, PASS-WITH-NOTES)
-
-A dashboard-only polish pass (zero backend edits) closing the developer's visual-findings file + the FB7
-terminal-identity directive against the COMPOSED app. Durable cross-file conventions the next
-session-cockpit leaf MUST carry (spec home for the TUI grammar: the leaf visual-audit `## FB7`, derived
-from Toad `main.tcss` + the Claude Code / Codex TUIs — a reference derivation, not first principles):
-
-- **Terminal well + gutter grammar (FB7).** The structured stage is a TUI, not a web panel: the
-  `ConversationTimeline` viewport + `SessionComposer` editor frame use the `well` token (`#070b0f`, the
-  xterm pty inset — `styles/tokens.css`/`panda.config.ts`; pty-pane parity is the acceptance test), the
-  item chrome is `●`/`✻`/`·` gutter glyphs + lowercase phase words + left-rule washes (NOT boxed
-  uppercase chips), and item rhythm is line-grid blank lines (no per-article hairline). See the
-  `conversation/` overview + item cards.
-- **Responsive rail-row grammar (RV-2).** `SessionRail` rows are a `flex-wrap:wrap` LABEL-group +
-  ACTION-group layout: the action group (End / armed confirm·cancel) wraps WHOLE to a second line and
-  stays single-line + reachable at every rail width (1440/1100/900/min-rail, e2e-pinned); the title
-  absorbs (`min-width:0` end-to-end) and elides first, the chip elides next and is DROPPED while armed.
-  Destructive End carries demoted (muted) weight until hover/focus/selection.
-- **Collapse-or-explain chrome.** Header/top-bar values disappear with their labels rather than
-  forming em-dash chains; reassurance zeros do not wear alarm glyphs. The former StatusLine footer
-  is retired entirely, so it no longer owns a reserved ctx/cost slot or reopen controls.
-- **Humanized durations + short ids.** `data/conversation/format.humanizeDuration` is the SINGLE duration
-  authority (supervisor age, rail-footer heartbeat/cutoff, uptime — no raw `9512.1m`/`570724.69163s`);
-  the new `format.shortId` renders long ULIDs/UUIDs as `…SUFFIX` with the full value in a tooltip (rail
-  task badges, focus-handoff banner).
-- **The @webtui/css `word-break: break-all` cascade trap (RV-1, LOAD-BEARING).** `@webtui/css`'s base
-  (postcss-rewritten onto `[data-view="sessions"]`) sets `word-break: break-all`, which defeats EVERY
-  component-level `overflow-wrap` patch in render. The remedy is one unlayered `word-break: normal` root
-  override in `index.css`; raw-id spans keep explicit `break-all`. The test is computed-value
-  verification, not source inference. Any future mid-word-break fix in this route depends on that
-  override — see `index.css` card.
-
-## Invariants And Boundaries
-
-- Exactly one full-page Chats destination; no second Sessions tab or legacy Chats layer.
-- Exactly one browser open authority; rejected raw or harness creates produce no registry row,
-  focus change, readiness transition, or dependent delivery.
-- This Chats route is the opening destination (260928-MIK-L79); the inspector is closed by default and always
-  toggleable/reopenable. Responsive collapse cannot erase deliberate operator intent.
-- Cockpit focus and the live action route are separate: a landed row may remain focused while a live
-  row owns launch/gate/composer actions and reload preference.
-- Controlled seats default to the structured surface; the PTY is NOT the controlled-session body. The
-  keep-alive PTY owner still exists (read-only diagnostics drawer + legacy-raw body) and a one-render
-  focus gap must not dispose unrelated visited terminals.
-- The structured surface holds only a reconstructable projection: no IndexedDB/localStorage/SQLite
-  conversation index and no optimistic durable item authority; the only persisted UI bit is the
-  hide-thinking boolean. Diagnostics and hidden stages are `inert`+`aria-hidden` and mount no PTY
-  when closed.
-- Ended rows do not receive live controls, composer, interaction bar, or a socket. Landed rows remain
-  read-only until authoritative cleanup.
-- Reliable submit/withdrawal, interaction answer, agent bus, and control commands never fall back to
-  shared paste or silently cross authority channels.
-- The inspector must not become required for core Chats operation; it is supplementary evidence and
-  debugging/coordination detail.
-
-## Hot Path Summary
-
-For sprint-seat rendering, follow `SessionRail.tsx` into `sessionRailParts.tsx`, then back to
-`data/railModel.ts` for authoritative grouping. The cockpit renders each repository+sprint command
-group independently; it never infers ownership from labels, and the unbound section is explicitly
-legacy-only.
-
-1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and
-   the context bar's focus callback.
-2. Shell reconciliation hydrates catalog rows and the persistent Chats layer.
-3. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail
-   model/attention rollup for rail and palette.
-4. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state
-   overview when no terminal exists.
-5. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority
-   routes and project results back into shared stores.
-6. Palette/keymap, status, inspector, and live regions expose the same evidence without inventing a
-   second operational truth.
-
-## Child Route Onboarding Map
-
-| Child route | Governing overview | Responsibility |
-| --- | --- | --- |
-| `session-cockpit/conversation/` | [structured conversation renderer](conversation/overview.md) | The harness-neutral grammar: feed timeline, item/block components, telemetry, interrupt hook, reconnect. |
-| `session-cockpit/conversation-library/` | [in-stage history browser](conversation-library/overview.md) | The previous-conversation library surface, list, read-only preview, and the sole exact-open resume action. |
-
-The other `session-cockpit/` sources (including `ChatsStageBody.tsx`) have one-to-one file cards and
-this overview is their governing pillar.
-
-## File Onboarding Map
 
 | Responsibility | File onboarding |
 | --- | --- |
@@ -299,118 +109,31 @@ this overview is their governing pillar.
 | Launch chooser and request ownership | [LaunchFlow.tsx](LaunchFlow.tsx.md) · [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts.md) |
 
 ## Evidence
+- Retained reference account (no fresh execution or acceptance inferred): The reviewer's group on the keys page. [1]
+- Retained reference account (no fresh execution or acceptance inferred): Full-route composition and shell ownership. [2]
+- Retained reference account (no fresh execution or acceptance inferred): Legacy duty bar. [3]
+- Retained reference account (no fresh execution or acceptance inferred): Structural role rail and data derivation. [4]
+- Retained reference account (no fresh execution or acceptance inferred): PTY/ended continuity. [5]
+- Retained reference account (no fresh execution or acceptance inferred): Cleanup authority notice. [6]
+- Retained reference account (no fresh execution or acceptance inferred): Effective keyboard contract. [7]
+- Retained reference account (no fresh execution or acceptance inferred): Dev end-to-end scenario authority. [8]
+- Retained reference account (no fresh execution or acceptance inferred): The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). [9]
+- Retained reference account (no fresh execution or acceptance inferred): The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. [10]
+- Retained reference account (no fresh execution or acceptance inferred): The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). [11]
 
-### Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation source is configured. Product and
-interaction claims were verified from same-repository source/tests, the final reviewer PASS, the L8
-task evidence, and the recovered same-repository history pack.
-
-No relevant domain documentation was found for the canonical Chats route.
-
-### Cross-Repo References
-
-The route composes repository-local data and server clients. Toad/T3 were historical design
-references, not imported governing implementations, so no cross-repository source is cited here.
-
-No applicable cross-repository implementation source governs FEUI-L8.
-
-### Repo-Internal References
-
-- Full-route composition and shell ownership. [2]
-- Legacy duty bar. [3]
-- Structural role rail and data derivation. [4]
-- PTY/ended continuity. [5]
-- Cleanup authority notice. [6]
-- Effective keyboard contract. [7]
-- Dev end-to-end scenario authority. [8]
-- The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). [9]
-- The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. [10]
-- The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). [11]
-
-## Current L5I Route State
-
-The stage now keeps controlled conversation surfaces mounted per warm projection and preserves their
-scroll geometry across both focus and cockpit-view switches. It separates `visibility:hidden` pool
-entries from `display:none` view geometry, remembers/recovers intentional position, and bounds
-retention with the conversation LRU. The once-standing StatusLine and rail-bus footer are retired:
-stage actions live by the title, working feedback sits beside the conversation/composer, and detailed
-evidence remains in the inspector. Structured decision pages, queue steering, and the direct
-interaction route maintain distinct authority channels.
-
-## 260727-CHATS-IM-L2 Route Impact
-
-Within the existing conversation child route, focus now triggers bounded native hydration only for
-the effective selected agent, and exact roster identities survive incremental updates and reload.
-The cockpit's rail, stage, composer, diagnostics, and layout ownership remain unchanged.
-
-## 260731-EFA-L4 Fixture Contract For This Route
-
-No cockpit component changed. All seven changed sources are SUITES, and the durable rule they now
-carry is: **a session-cockpit test may not author its own wire node.** Projection nodes come from
-`test/fixtures/wire.ts`, conversation and library nodes from `test/fixtures/conversationWire.ts`, and
-the `as unknown as <WireType>` casts these seven carried are gone. A cast skips excess-property
-checking, so a cast fixture can state a payload the server would reject; a builder call cannot.
-
-Three of the removed casts were stating exactly that, and correcting them changed the shape under
-assertion — not the assertions:
-
-- `ChatsStageBody.test.tsx` seeded `capabilities: undefined as unknown as ConversationCapabilities`,
-  which claims a REQUIRED field is absent; `QueuePreview.test.tsx` and `SessionsView.test.tsx` built
-  or omitted the tree by hand. All three now carry the full four-group tree
-  (`live`/`history`/`controls`/`telemetry`) from `conversationCapabilities()`, which is what the server
-  fills.
-- `SessionRail.test.tsx` seeded `{ taskDocuments, agentPickups } as unknown as Analytics` — an
-  `Analytics` carrying two of its thirteen keys. `analytics()` spreads `EMPTY_ANALYTICS`, so every list
-  key is present and empty, which is the shape the reducer always sends (they are list defaults
-  server-side).
-- Pages built through `conversationPage()` now carry `page.totalItems`, derived from the item array
-  rather than omitted.
-
-**`LaunchFlow.test.tsx` is the one file whose PROOF moved, and it moved down.** Its `HARNESSES` stub
-carried `control: "starting"` on all three rows — a field `serving/response_contract.py::DetectedHarness`
-does not declare, `data/harnessCatalog.ts::HarnessInfo` does not mirror, and no dashboard code reads,
-on a `WireResponse` whose `model_config` is `extra="forbid"`. All three keys are gone. The consequence
-must be stated plainly, because it is a guarantee this route no longer has: the suite's surviving
-`not.toContain("adapter starting")` assertions have nothing planting the field, so they can no longer
-fail, and any claim that this suite proves a stale legacy `control` field is not rendered is
-**superseded**. The replacement is narrower and honest — `const HARNESSES: { harnesses: HarnessInfo[] }`
-turns an extra field on a fresh literal into a `tsc -b` error, and a new describe asserts
-`Object.keys(row).sort()` equals `["detected","id","name"]` per row for the cases an annotation cannot
-see (a spread row, a key written after the fact).
-
-**Why the chooser needs that local belt.** `wireFixtureGuard.ts` discovers wire vocabulary from a
-first-line `// TypeScript mirror of` marker (plus everything under `src/types/`). `data/harnessCatalog.ts`
-carries no such marker, so `HarnessInfo` is not wire vocabulary to the guard and the chooser's catalog
-fixtures are covered only by the annotation and the key assertion above. The guard's own note names the
-live instances of this blind spot: `harnessCatalog.ts`, `submissionLifecycleClient.ts`, `changeset.ts`,
-`files.ts`, `notes.ts`. Adding a marker line to one of those brings it under the guard; until then a
-cockpit fixture for those clients is guarded per-file, not by the repo-wide rule.
-
-The honest limit of all of it: `wire.ts` and `dashboard/src/fixtures/snapshot.json` are
-**hand-maintained** — no generator exists anywhere in this repository, and no in-repo mechanism keeps
-the two sides in step. These suites hold two of the chain's **three** links: `tsc -b` binds
-`test/fixtures/wire.ts` to `types/projection.ts` (annotated bases, `Overrides<O, Node>` at every call
-site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `test/contract.test.ts`
-**measures the mirror against `snapshot.json`** in three TYPE-level directions (`mirror ⊇ served`,
-`served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the string unions
-`resolveJsonModule` widens to `string` — not a one-way `⊆`. **The third link is held by nothing:
-`snapshot.json` ↔ `observer/projection.py` is maintained by hand.**
-
-## 260731-EFA-L7 — Session-Cockpit Live Thinking
-
-The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
-
-## 260731-EFA-L23 — Hermetic Intent-Lock Test Teardown
-
-The conversation timeline's intent-lock suite now consumes the existing shared scroll-memory
-geometry fixture instead of maintaining a second timer/geometry harness. That fixture keeps fake
-timers active through React Testing Library cleanup, clears the Virtualizer's pending 150 ms
-debounce, and only then restores real time. This is a test-lifecycle boundary rather than a product
-behavior change: it prevents a deferred Virtualizer callback from escaping jsdom teardown after an
-otherwise-green dashboard run while preserving the same intent-lock, follow-on-growth, and
-latest-chip assertions.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-The session-cockpit forcing suites hardened teardown: async `afterEach` clears fake timers / flushes the 150 ms virtualizer scroll-observer debounce before jsdom teardown so orphaned callbacks cannot fire without a `window`.
+- The examined product Chats layer mounts RoleChatsPane, not the retained SessionsView composition. [12]
+- RoleChatsPane renders RoleLauncher and an unbound Paseo frame; default selection is architect. [13]
+- Retained SessionsView delegates controller and body rather than owning all composition directly. [14]
+- Cold epoch resolution refreshes authority, retries transient failures within a 30-second elapsed window, and can recover on a ready transition. [15]
+- Controlled classification requires defined non-unsupported control state. [16]
+- Conversation retention follows the shared LRU; lazy terminal sibling survives archetype switches. [17]
+- Closed diagnostics are inert/aria-hidden and have no PtySurface child; pool wrappers use aria-hidden without their own inert attribute. [18]
+- Live-only body slots and composer-docked stop differ from the old universal WorkingLine placement. [19]
+- Interrupt enables working resolvable turns unless hard-unavailable or refused, rather than requiring supported capability. [20]
+- Ambiguous hosted opens reconcile by observed id only while the dialog remains open. [21]
+- Unattached rows include structural mismatches and duplicate master-role occupants; leaf occupants are session arrays. [22]
+- Occupant row identity uses session ids, and current row/action layout does not wrap. [23]
+- Fleet optimization counts actually rendered rows in the selected tree/hierarchy. [24]
+- Agent focus is roster-validated and native history acquisition requires visible selected-agent focus. [25]
+- Library focus uses exact openedForFocus evidence and operation session identity. [26]
+- Fixture vocabulary guard explicitly documents discovery and coverage limits. [27]

@@ -2,7 +2,7 @@
   "path": "dashboard/src/grammar",
   "references": {
     "1": {
-      "note": "The Panda runtime these primitives import (`css`/`cva`/`cx`).\n\nAnchor: \"export default defineConfig\"",
+      "note": "The Panda runtime these primitives import (`css`/`cva`/`cx`).\n\nAnchor: `export default defineConfig`",
       "targets": [
         {
           "anchor": {
@@ -37,7 +37,7 @@
       ]
     },
     "2": {
-      "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: \"[data-hovered]\"",
+      "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: `[data-hovered]`",
       "targets": [
         {
           "anchor": {
@@ -72,7 +72,7 @@
       ]
     },
     "4": {
-      "note": "The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`).\n\nAnchor: \"export function EvidencePane\", \"export function FailedLaunchBanner\"",
+      "note": "The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`).\n\nAnchor: `export function EvidencePane`; `export function FailedLaunchBanner`",
       "targets": [
         {
           "anchor": {
@@ -120,7 +120,7 @@
       ]
     },
     "6": {
-      "note": "The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions.\n\nAnchor: \"export type State = \", \"const ALL_VARIANTS\"",
+      "note": "The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions.\n\nAnchor: `export type State`; `const ALL_VARIANTS`",
       "targets": [
         {
           "anchor": {
@@ -168,7 +168,7 @@
       ]
     },
     "8": {
-      "note": "The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects=\"off\"]` freeze the dot's motion rules depend on.\n\nAnchor: \"@keyframes pulse {\"",
+      "note": "The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects=\"off\"]` freeze the dot's motion rules depend on.\n\nAnchor: `@keyframes pulse {`",
       "targets": [
         {
           "anchor": {
@@ -186,11 +186,11 @@
       ]
     },
     "9": {
-      "note": "The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them.\n\nAnchor: \"<AttentionQueue onSelect={onSelect}\"; \"<LifecycleList selectedId={selectedId}\"",
+      "note": "The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them.\n\nAnchor: `<AttentionQueue onSelect={onSelect}`; `<LifecycleList selectedId={selectedId}`",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:393c3fdf2b4f4364a45b11040680c5809ac65c4b38c3262364988ae69f7bdba5",
             "locator": {
               "end": 685,

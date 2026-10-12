@@ -56,7 +56,7 @@
       ]
     },
     "20": {
-      "note": "FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "note": "FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence entry point.",
       "targets": [
         {
           "anchor": {
@@ -74,7 +74,7 @@
       ]
     },
     "21": {
-      "note": "The explicit upstream gaps and one-Chats cutover ruling.\n\nAnchor: `# Session cockpit upstream register and Chats decision brief`",
+      "note": "The upstream gaps and recorded one-Chats cutover ruling entry point.",
       "targets": [
         {
           "anchor": {
@@ -92,7 +92,7 @@
       ]
     },
     "22": {
-      "note": "The bounded series closeout evidence pack.\n\nAnchor: `# Session cockpit closeout evidence`",
+      "note": "The bounded series closeout evidence pack entry point.",
       "targets": [
         {
           "anchor": {
@@ -110,12 +110,12 @@
       ]
     },
     "23": {
-      "note": "FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "note": "FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence reference.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c43e96c6af35a6657dac43bcaaf8ea1ac60ac5d",
-            "content": "sha256:571957739a0ac4824a803d401da5b454fa0cd59d1edb511e3b3995d6a8b0c6a4",
+            "blob": "33499878da9455edf3e26f06902bb2c88d5c9b83",
+            "content": "sha256:a468e7ffe19418a72e5b3e5ac812a497c7d4bc3cea0b00440968eccde6917b4c",
             "locator": {
               "kind": "file"
             },
@@ -126,7 +126,7 @@
       ]
     },
     "24": {
-      "note": "The explicit upstream gaps and one-Chats cutover ruling.\n\nAnchor: `# Session cockpit upstream register and Chats decision brief`",
+      "note": "The upstream gaps and recorded one-Chats cutover ruling reference.",
       "targets": [
         {
           "anchor": {
@@ -142,7 +142,7 @@
       ]
     },
     "25": {
-      "note": "The bounded series closeout evidence pack.\n\nAnchor: `# Session cockpit closeout evidence`",
+      "note": "The bounded series closeout evidence pack.",
       "targets": [
         {
           "anchor": {
@@ -158,14 +158,14 @@
       ]
     },
     "26": {
-      "note": "The implementation produces/reuses memory content before refreshing its cache.\n\nAnchor: `closeout_external`",
+      "note": "The implementation produces or reuses memory content before refreshing its cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:55322f1f3eda1fd316b55287aa4511976e9f556e2dbb9b1bfd5966f27b817235",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:82136752d6f34ae6cae17df18aa32eeb792251410e1d33c2554d175965c5a556",
             "locator": {
-              "end": 112,
+              "end": 115,
               "kind": "line_range",
               "start": 92
             },
@@ -193,6 +193,81 @@
         }
       ]
     },
+    "28": {
+      "note": "The amended lifecycle design retains session-driven transitions and describes recovery and cache boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6236dfcba5897be14d98c49ac22cb5c9741e4eb",
+            "content": "sha256:08e9ccac76338c54bdbeb4df5f4904f9af59cbff1c4a2a0560792425d8396e7f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6236dfcba5897be14d98c49ac22cb5c9741e4eb",
+            "content": "sha256:9da299dd4bd36bef6edf8cc49bab7c5a152392d3a145e71b72e6f51cb17650a7",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6236dfcba5897be14d98c49ac22cb5c9741e4eb",
+            "content": "sha256:6c6789aeb30ae7e6f25c82d3c71282ee294cc6b15db750db337a48c7d01e9e0d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The Python evidence design describes selection, retry, and maintenance contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "content": "sha256:09319f2b23903be7e5ce0042a271eb01eff6b8b315518ee515e6ac846a9285fd",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "content": "sha256:7088c7e7b0a04c8e1a6c441b57e456af4c08d0488a1884c5b896829f7ae1d6f2",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The closeout evidence index of the session cockpit series.",
       "targets": [
@@ -211,13 +286,196 @@
         }
       ]
     },
+    "30": {
+      "note": "The bootstrap note and root configuration now state 5,000/1,000; host development runs and diagnostic metrics remain documented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
+            "content": "sha256:374e31541bb47ef8da09d5e30a1b09214f4b0d51ae13433b390363e30bb67eb1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
+            "content": "sha256:31af9ea52292f5f6afa3bde4d8da2b4f10d307e2a6817df631b6d38951bc281c",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The authority document records Candidate A retirement and the review consumer; the current review owner defers atomic scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
+            "content": "sha256:992e8a2e557fdcce83b4549f1bcf970e1888701b2aa80c1f6ac7e64ab6481219",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
+            "content": "sha256:5fb08aea2324bfcb6298a7d8136371cf0c497deb3f30b4282ed81cc2161906dc",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "docs/design/python-test-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The cockpit index describes its historical candidate and internal measurement boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01d8d34e8e7f7a1181906ecdab6487335ea132f4",
+            "content": "sha256:bac47aa76b051235e26e3bef41f351e24616546650d8f7a994ace2788c977b4d",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01d8d34e8e7f7a1181906ecdab6487335ea132f4",
+            "content": "sha256:fdab2ebcc97b195d8fb5d7afafac8934cf958d3cf2b44b16b86566e78398cd31",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The dashboard review doctrine defines review bars and visual grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b03f380ad4729710613edb19be006631824405d",
+            "content": "sha256:a3e155bd1d6e77c9ee05d322c42597623ffbc4a9641f9ea5b76519a9839bd222",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/review-doctrine.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Engine-room references identify the visual-language library and choreography prototype.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
+            "content": "sha256:924517f82d16440d89058f9e9a205960752f6ff3faba74cde0d79b4cfee45a19",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
+            "content": "sha256:2bbcad1eb022b098f60fb0b4efa0b6b6f8bcb66adfce4c3828bf894ccce98922",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The observable lifecycle design states its scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
-            "content": "sha256:5a2a5b48b1d00359ec4dc83cc134b9347ed22d763a4674ccee4c91f08c6e77c7",
+            "blob": "c6236dfcba5897be14d98c49ac22cb5c9741e4eb",
+            "content": "sha256:ea11db219a75116fa22fb537b56073c52e898b086d5df6df098ef9a6c27e1622",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -252,7 +510,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6321de43731f72b2d339bd70b4d96eab67a7217b",
+            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
             "content": "sha256:b09ffb5d4dc406d5da95535a47409d0b7b687f973669afecb344fa6d195387bf",
             "locator": {
               "end": 24,

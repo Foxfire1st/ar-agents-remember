@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/worktrees/integration/closeout",
   "references": {
     "1": {
-      "note": "The closeout validator's gate over the authority's exact candidate.\n\nAnchor: \"curator-coherence-knowledge-gate-refused\"",
+      "note": "The closeout validator's gate over the authority's exact candidate.",
       "targets": [
         {
           "anchor": {
@@ -13,6 +13,24 @@
               "name": "_require_knowledge_gate"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Both coherence assessment projections delegate supplied per-record measurements to the binding owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:c007186b63db88a848d5273978c43c4f60ee1fb4b4512905af899461eff35ad8",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
           },
           "kind": "code"
         }
@@ -30,6 +48,402 @@
               "name": "_declare_generation"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 535
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
+            "content": "sha256:d24efd06d2fa14698f93cd72ece2b34dbd0d412adc32a3f897c3d132e2564873",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 575
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities.\n\nAnchor: `_prepare`, `_write_candidate_set`, `_publish`, `_read_judgments_file`, `_exact_review_assessments`, `_published_evidence_bytes`, `_require_predecessor`, `_publish_generation`, `PUBLICATION_MEMBERS`, `publication_input_statement`, `CuratorCoherenceRequest`, `_read_judgments_bytes`, `_parse_judgments_payload`, `_validate_file_entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:1fd80c3a76055f1835f74cefeb20712474288da2da439c8eb87087593cc2fcca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_judgments_file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:421f477ff7368bb7bb4f0fb49df1bc279818f14e55fcc06d36e177f27bdc0bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_review_assessments"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:1c32af722c9926f2f8cdc23990be98cabcae8403d185f46ace6e39e5e7b6ad80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_published_evidence_bytes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:dc472f59702c79e32b43b7e12a39438759cf7aba3c37bc239a7e7abe489b7e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_predecessor"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MEMBERS"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "182dfb26b30fb5d4dbdadc32d846044b51366829",
+            "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:67b9a0e15940babb1423f361efe886d54e5cac4e699f7323638811aba21846dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_judgments_bytes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:3c7f22f0aa40b532696214f95e32ec5efc7df911f85b5f2c96a75b638e41182d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_judgments_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:065dff6bed0e70f6aa452c179cbf2c4109b71cddf0e080fdcd5d41b21eb5c1ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_file_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:14bda1f40647061fe043fe5487e586cb90ea324e419f110ea449ef47513b27d0",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:df0e03ef66b1da9148ea7063847a2e3c40e3c518f0417c5e7b1c4acc5ca32a14",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Preparation selection requires original certificates and retains command starts, outcomes and selected outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:b3def53255b2297f52b52886c7df85a677a17d5cf71cb0a2d39b734086a65357",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared legacy refresh validation composes both surfaces; the curator caller supplies separate no-impact identities and selects traces when available.\n\nAnchor: `validate_memory_refresh_attestations`, `_onboarding_refresh_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_memory_refresh_attestations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_refresh_gate"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current knowledge-gate routing includes converted-memory refusal and an unconverted-memory cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:8ae8026cfa870399e3e093ea40b265a326277e6465071707435f7d0705f5fde1",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "content": "sha256:2edcbebf3c119000d9068ada61b8d2d6ea0626ba57ca3367106804f3e77d2c9d",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 349
+            },
+            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Exact accepted and recovered pair identities and source-branch reintegration predicates have shared owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b618b6d5c9460fee517673b509a51bbdd196bc",
+            "content": "sha256:88c82704203b63e8894a7be1f77982ccb853512cf9b36e3563716c8cac93d465",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:0c11fcff6195044f5e7a0daa9b55ddc584f959f77a33b19da0485d00d159931b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py"
           },
           "kind": "code"
         }

@@ -336,7 +336,7 @@
       ]
     },
     "25": {
-      "note": "Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service.",
+      "note": "Lifecycle control uses the operation-control payload; explicit enclosure adoption retains its own typed payload builder delegating to the adoption service.",
       "targets": [
         {
           "anchor": {
@@ -347,6 +347,18 @@
               "name": "worktree_operation_control_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc0aca79e27208d773ffb486a3f8048838ad4236",
+            "content": "sha256:33f9bf50a7e0525ffa22a616f92143af058da1e535c60fb520035006af4f03e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_enclosure_adopt_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/enclosure_adoption.py"
           },
           "kind": "code"
         }
@@ -716,6 +728,184 @@
         }
       ]
     },
+    "44": {
+      "note": "Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade.\n\nAnchor: Facade imports; `dispatch_agent_payload`, `retire_child_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d145648dc790acd5b97035e97a09b5f1d98a24d",
+            "content": "sha256:55f5ba971a49d36fcd6b52b94c4ad8c8e4d3279be607cc34303c5a334dffbd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d145648dc790acd5b97035e97a09b5f1d98a24d",
+            "content": "sha256:8ee57a7eac8fcf3f1aba3b6a9472cc783f57ab9d650484d3bfbf9f72bc612dad",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_child_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
+            "content": "sha256:2800a408d2f8b2e2f1717ad56b4f6b8543a0fe6cbefd38665080d2a64fdafa5c",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
+            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Public registry excludes explicitly retained internal names and includes native retirement and set-start responses.\n\nAnchor: `INTERNAL_COMPAT_TOOL_NAMES`, `TOOL_RESPONSE_MODELS`, `PUBLIC_TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc22fb278e01285021dd85c135b22af4beb75da4",
+            "content": "sha256:8e83dbc63e773b9de93381ac53e394a364b2dd07d0fc48752ee419f40a1b78fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Whole-result validation precedes supplied/default answer selection, logging and final guards.\n\nAnchor: `_write_delivered_line`, `complete_tool_response`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Guidance uses exact response address and enrichment precedes serialization\n\nAnchor: Address predicate and tail; model finalizer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:2aa3ab894ac53a515e506623fe8573513234ea61a25d2b7ad878be38ac5e8b91",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Server info reports binding/build rather than roster; context reader is scoped\n\nAnchor: Core builders",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dce580de49e602d4f1b47a8dd07cb870286c9853",
+            "content": "sha256:9ab6c1d68085dc42ce63a6ed90ff4da83e657164d1b06defb1920e18184c76c2",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Converted-tree refusals state the threshold.",
       "targets": [
@@ -728,6 +918,400 @@
               "name": "knowledge_read_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Adoption is explicit, confined and preview-identity approved\n\nAnchor: Adoption request and apply boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0aca79e27208d773ffb486a3f8048838ad4236",
+            "content": "sha256:63737e82cee5c3313d16d97911197c675cf2f4006524f05b7361df1caf841921",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/enclosure_adoption.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Hosted identity cannot silently switch to ambient dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f468d14f085cacdc952af613f102ed68d58ffc5a",
+            "content": "sha256:23ea81197aac68aedc17b34d1695a96196360c484b8549646f78e0c73797b994",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/sessions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime.\n\nAnchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_start_set_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+            "content": "sha256:81b9567abe147f942979af153da9ee71939a0699aa897b10cfb114cf47fdf181",
+            "locator": {
+              "kind": "symbol",
+              "name": "_caller"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Knowledge selection and paging replace database-facing requests.\n\nAnchor: `ReadToolRequest`, `_memory_tree_refusal`, `_select`, `_source_resolution`, `_read_result`, `_tree_extras`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadToolRequest"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:b614a2ec3a46b8674639962aba341db13f6543b462b341f13a67a9a2510c8574",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_tree_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:c69c4c443026e7115eb3a084a69691ac1189a20234fc5324d0bcff5e018a7c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_resolution"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:d48b89aab4dcf6061bc789423693927e5d6ec5e7f06c7c89d735d9d03492f728",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Fresh and resumed walks retain explicit tree binding and incomplete-index facts\n\nAnchor: Pager and leaf/refusal renderers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:7dc57570f15e8ce5b83b967cf1e66c1c84d066c07db6f33d3c9993c0d7450f8a",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:09927914ec538829061d7badb305090f9df7cc2196fae310042ba086bd108571",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 607
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts.\n\nAnchor: `IntegrityCheckRequest`, `knowledge_integrity_check_payload`, `_integrity_answer`, `_validator_inputs`, `_validation_block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:6a752c679b21430b2a1536b8cbe54bc168013aafdbcc17e029889be3a6a756fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrityCheckRequest"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:0db9e2433f3b9b4f873c4de9cb281a6131d173726c3c66ed79e4dedf58072b44",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrity_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:43cf6ccc340c971bbadd300cb96a4628d96a9876951f67643bbc826605729d07",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validator_inputs"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:05ecac1a4e8541693ce45e87ff4363bfa2b78efe719918d4d4ebcf69e02c4cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validation_block"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.\n\nAnchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:d71246584d20574f92b906966a05615f44168196fc58b7ccbcfb2860f8cba0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_lists"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:171f486bc232c059e0b8da4d591c579e9650b257280b771ea8033cebe412a677",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "Terminal implementation is application-owned and rejects unsupported tier/retired inputs\n\nAnchor: Dispatch selection and request refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3074cefd8040f8bf4cec5b2cb3bafac7dce94a45",
+            "content": "sha256:8c73ca029f4718b34800b0e066f92bf26753cc3f6d4d39a6e54d85c172b9f166",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3074cefd8040f8bf4cec5b2cb3bafac7dce94a45",
+            "content": "sha256:519c1376344b952c2e895f2a0e04acbe865c99b3704223608faab170f9e18ce0",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "Gate reclaim is control-plane-owned after durable decision work\n\nAnchor: Decision and reclaim",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:b8bccd1ae9df95fdeac1dd6282fef8e6db4af53cd39753846629ffba2d1248fd",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Skill registrar serves resources/extension methods without tools\n\nAnchor: Registrar",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:02a1d4ea980d00c9bfee5fd63e5778bf2db3af4c4fe3fa796b1572d451d2e9e4",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:0cff02d2c2d583325d44adb95419fcc1558cf75dd82dd96ea9fffd7332bb2731",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
           "kind": "code"
         }

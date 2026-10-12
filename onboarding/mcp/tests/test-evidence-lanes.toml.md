@@ -1,16 +1,5 @@
 # mcp/tests/test-evidence-lanes.toml
 
-## Current paired source contract — scoped assertions and incoming catalogs
-
-The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
-
-This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
-
-- The current source declares the selected lane population; citation-document transaction is integration, not unit-regression. [844]
-
-- The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
-
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -21,11 +10,11 @@ The canonical evidence-lane catalog: which test modules belong to which lane, so
 
 ## Code Commentary
 
-### Recorded reviewer judgments
-
 The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
 
-- The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
+The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
+
+`mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. Its membership adds no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
 
 The catalog records its declared test-module paths under evidence lanes, not an independently verified inventory of every filesystem module. On the admitted L147 successor the parsed lists are unique and sorted within each lane; that observation does not retroactively qualify the older frozen ordering. Source declarations and their loader checks, not this prose, decide current membership. The extracted capsule serving-surface and
 memory-opt-out refusal suites remain in `unit-regression`; those incoming registrations
@@ -93,3 +82,9 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 
 
 - The guard and recursive scanner cases carry the support-settings contract. [843]
+
+- The current source declares the selected lane population; citation-document transaction is integration, not unit-regression. [844]
+
+- The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
+
+- The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]

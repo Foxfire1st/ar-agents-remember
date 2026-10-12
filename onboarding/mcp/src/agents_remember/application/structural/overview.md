@@ -1,26 +1,75 @@
 # Structural Application Services Overview
 
-## Current operative account — MIK-R112
+## Governing Overview
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+[`application/overview.md`](../overview.md)
 
-- Current agent_tools.py retains dispatch and private initial-brief/rollback helpers only.
+## What This Area Is
 
-### Superseded inventory
+This package composes document-and-role dispatch and structural lifecycle-gate operations while keeping runtime occupant, lifecycle and gate correlations private. Dispatch accepts a canonical task document, role and initial brief. A hosted caller is proven from process identity and authorized against task containment; an ambient launcher is resolved from the process environment and still faces role-altitude validation. Gate services separately support a request-carried declared role/document caller when no hosted seat exists.
 
-- Pre-repair card claim: Card assigns parent/child messaging, retirement and rename to agent_tools.py. This is superseded archival wording, not a current prescription.
+`agent_tools.py` currently exposes dispatch and private initial-brief, receipt and rollback helpers. It does not expose the former parent/child messaging, public retirement or rename operations. The retained gate services are application code; their presence alone does not establish public MCP registration. This route must not create a second lifecycle implementation.
 
-### Source and authority bounds
+## Hot Path Summary
 
-- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:438 (def dispatch_agent_tool)`.
-- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:708 (def _curator_route_review_refusal)`.
+Dispatch resolves the canonical task document, proves the caller, derives dispatch provenance, and builds a transaction for one `(taskDocumentRef, role)` seat. `dispatch_transaction.py` holds the serializer across admission, spawn, durable initial briefing and bounded reconciliation. The MCP dispatch adapter projects the application result; the session registration module registers the single `dispatch_agent` entry for hosted and ambient callers.
 
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+Manager and worker admission resolves the owning master. Organizational work skips atomic-series creation; atomic work goes through the shared master-series contract owner before host creation. Curator admission validates the exact leaf-enclosure binding and calls the owning-altitude route-review authority. That authority can defer review for atomic children and for an atomic master until integration; a passing independent review is therefore not an unconditional dispatch-time prerequisite.
 
-## Historical original card — preserved, not the current operative account
+Initial briefs are internally pinned to the exact spawned occupant. Durable inbox evidence and the catalog receipt determine reconciliation: a viable brief converges, a missing receipt is repaired, and a surviving receipt supports a queued result after the inbox row is absent. The public result identifies the task document and role, with delivery state where available, rather than an occupant id.
 
-<details>
-<summary>Retained original source accounts and producer history</summary>
+## Construction And Ownership
+
+| Path | Role |
+|---|---|
+| `agent_tools.py` | Dispatch composition, admission, exact initial briefing and transaction rollback |
+| `dispatch_transaction.py` | Seat-scoped serialization and bounded spawn/reconcile transaction |
+| `outcomes.py` | Stable structural result projection |
+| `reviewer_parent.py` | Reviewer ownership and dispatch provenance |
+| `gate_tools.py` | Retained structural lifecycle-gate raising, decision and listing services |
+| `__init__.py` | Package marker |
+
+Catalog qualification and relationship authorization belong in `serving/structural_seats.py`; process caller resolution belongs in `serving/ambient_seat.py`; lock and pinned-brief primitives belong in `serving/structural_dispatch.py`. Agent-facing request and response models belong in `models/structural/`. Internal serving and control-plane owners retain runtime-id administration. This package composes those owners rather than implementing a second lifecycle.
+
+### Dispatch Construction
+
+1. Resolve the requested task document and validate caller authority. A hosted caller uses direct-child authorization; an ambient launcher uses role-altitude validation without a hosted parent seat.
+2. Derive provenance. Ambient leaf reviewers belong to their owning manager, master reviewers to the manager on that master, and sprint reviewers require a hosted owner rather than a guessed parent.
+3. Acquire the canonical-seat serializer and run admission before spawning. Manager/worker admission uses the atomic-series owner where required; curator admission checks its enclosure contract and route-review authority.
+4. Spawn the private generation and persist its exact initial brief and receipt.
+5. Reconcile existing durable evidence or recover an initial-brief failure before deciding whether rollback is safe. The transaction permits one bounded respawn attempt after reconciliation requests a retry.
+6. Return the structural outcome without exposing the private generation id.
+
+The shared spawn-binding preflight resolves task references and checks lineage for structural roles. Its taskless-role set includes curator, so the generic binding path returns before lineage validation for that role. The curator-specific dispatch predicate checks enclosure binding and route review; it does not itself check a manager current-lineage preflight. The standing current-lineage and independent-review intent remains distinct from these source predicates; this account does not certify the discrepancy as coherent.
+
+### Gate Construction
+
+The gate context prefers the hosted seat. Only `ambient-seat-unavailable` permits a declared caller; any declaration contradicting a hosted seat is refused as `structural-caller-conflict`. Raising a gate resolves the caller's document and delegates to the existing gate owner. Deciding a gate authorizes the target document, selects exactly one open gate by document, repository and kind, then uses its private gate/lifecycle ids internally. Listing projects gates in the caller's document and direct-child scope without those private correlations.
+
+### Atomic-Series Admission
+
+Task documents remain the structural authority used to resolve the owning master and effective execution nature. Structural admission delegates atomic-series construction and reconciliation to the worktree owner; it does not author tasks or own queue scheduling. The shared series-contract owner creates or recovers the requested contract, reconciles its pinned source pair and returns implementation authority through that owner.
+
+The standing boundary remains that task mutation is canonical, scheduling follows changed task truth, and sync conflicts stay with the worktree transaction for contract-addressed recovery. The old account that selection pauses another live master is not supported by the current dispatch owner: the shared contract owner's documented activation behavior touches the requested contract and explicitly says that no other master's record is touched. The wider task-mutation, scheduling-invalidation and conflict-recovery guarantees need their respective owners verified before they are presented here as fully established implementation facts.
+
+## Invariants And Boundaries
+
+- Structural dispatch inputs and result projections use task-document and role identity. Private runtime correlations remain internal to spawn, exact initial briefing, receipts and rollback.
+- A present but stale, invalid, mismatched or unbound hosted identity refuses; dispatch does not downgrade it to ambient. An environment role without hosted identity also refuses.
+- Initial dispatch briefing is exact-pinned internally. The structural resolver can produce authorized parent/child addresses without requiring a live occupant; those retained address APIs do not restore deleted public relationship-message tools.
+- Current-seat selection fails closed on duplicate incumbents or duplicate staged heirs. One incumbent remains current while one heir is staged; the heir becomes selectable when the incumbent is absent. No same-role global lookup substitutes for the canonical document/role seat.
+- The serializer combines a reclaimed in-process lock slot with a POSIX lock in one of 4,096 deterministic hash stripes. Collisions can serialize unrelated seats conservatively. There is no process-local fallback, and the implementation does not unlink lock files. Serializer setup/acquisition has its dedicated typed refusal.
+- Durable pinned-brief evidence is the reconciliation commit point. Contradictory receipts, duplicate pinned briefs and unreadable evidence refuse rather than authorize destructive rollback. A non-dispatch occupant with no brief remains `seat-taken`.
+- The standing safety intent is that unknown generation evidence never licenses cleanup. The current outer reconciliation path returns a retry request when its catalog occupant is missing or non-running; the inner evidence reader instead raises when its occupant disappears. Thus the previous blanket claim that every missing or terminal generation refuses is inaccurate. This discrepancy is disclosed for parent adjudication; the outer branch does not retire that missing/non-running occupant.
+- Rollback is an internal transaction capability, distinct from public retirement policy. It reconciles durable evidence before retiring a proven unbriefed generation; retirement-event logging failure does not reverse catalog retirement.
+
+## Memory Validation Boundary
+
+The shared memory-refresh validator composes sidecar and governing-route body/history validation. The inspected memory-quality caller uses it on the unconverted-tree path, but first checks for onboarding-trace sides and returns through the trace gate when those sides exist. The old unconditional parity account must therefore be read with that conversion boundary. Closeout caller parity was not established by the bounded source inspection and remains an uncertainty, rather than fresh acceptance evidence.
+
+## Retained Metadata
+
+The following tables are retained metadata, outside the operative promises above. Their `covered` entries are preserved labels, not a newly verified onboarding or lifecycle status.
 
 | Field | Value |
 |---|---|
@@ -28,144 +77,10 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
 
-## ARSPAWN-L5 A005 Serialized Dispatch Owner
-
-`dispatch_transaction.execute_serialized_dispatch` now owns the seat-scoped lock and bounded
-transaction call. `agent_tools.dispatch_agent_tool` remains the public composition boundary but no
-longer repeats serializer error translation. The extraction preserves the one canonical-seat lock
-policy and reduces the public function to 90 lines.
-
-## IAS Frozen Structural Admission Boundary
-
-Structural dispatch may trigger atomic-master selection, but it does not acquire task-authoring or
-queue authority. A selecting manager/attach path must reconcile the selected series before exposing
-implementation work; another live master is paused by the selector rather than deleted, completed,
-or rewritten. Any returned sync conflict stays owned by the worktree transaction and is resumed or
-cancelled through its contract-addressed public operation.
-
-Task documents remain canonical structural truth throughout this flow. Their otherwise-valid
-mutation is never refused because a queue projection or selector exists; downstream scheduling is
-invalidated and recomputed from the changed truth.
-
-## What This Area Is
-
-The structural application boundary translates a caller's intent (a hosted seat, or — since
-260815-DAG-L16 — a declared role + task document when no plane seat exists) into authorized
-document-and-role operations. It owns dispatch, parent/child messaging, retirement, rename, and
-delegated gate operations without accepting runtime session, lifecycle, inbox, or gate identifiers
-from an agent. The declared-caller fallback grants no authority beyond the same role/document pair
-a seat would have (L16 F5 trust model); hosted seats win and a contradicting declared caller
-refuses.
-
-## Hot Path Summary
-
-`agent_tools.py` resolves the caller and target structural seats before invoking the existing
-plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to delegated gates; since 260815-DAG-L16 it also accepts an
-optional request-carried `caller` (role + task_document_ref) when no plane seat exists, refusing a
-declared caller that contradicts the seat (`structural-caller-conflict`). Public response models
-expose task-document and role outcomes only.
-
-For L23, dispatch additionally validates transitive task-derived code and external-memory lineage
-before host creation. Curator dispatch requires the manager's current-lineage preflight and a
-passing independent route-review record bound to the exact candidate tree; the structural boundary
-rechecks both rather than trusting brief prose or model-carried commit identities.
-
-Since 260821-ARSPAWN-L1, `dispatch_agent` is the ONE public spawn tool for both caller kinds. A
-plane-hosted seat keeps the structural path (identity proof + `authorize_child` child-scope). An
-ambient launcher (no `AR_HOSTED_SESSION_ID`) is resolved from the PROCESS ENVIRONMENT by
-`serving/ambient_seat.py` — distinct from the L16 request-carried declared-caller path used by gate
-tools — and spawns in ambient mode with the pinned dispatch brief and the same rollback, no parent
-seat (so seat-authority and child-scope checks do not apply), role altitude still validated, and
-`spawnedByKind="ambient"` recorded in spawn provenance. Stale/invalid/mismatched/unbound plane
-identity refuses; it never silently downgrades to ambient.
-
-Since 260821-ARSPAWN-L2, the one-call contract is also idempotent at the canonical seat. A
-cross-process lock covers the complete spawn-plus-brief transaction for exactly
-`(task_document_ref, role)`. `dispatch_transaction.py` reconciles a pre-existing generation from
-the durable catalog receipt and exact-pinned inbox row, repairs a missing receipt through the
-serving-owned `DispatchBriefReceiptStore`, tolerates inbox
-compaction when the receipt survives, and replaces one generation proven to have failed before
-briefing. Missing, terminal, mismatched, or otherwise unreadable generation evidence is unknown,
-refuses reconciliation, and never licenses cleanup. It refuses contradictions and never retires an
-unattributed or manual occupant. Ordinary relationship messages persist the canonical address even
-while the seat is vacant, so the next occupant receives them without a dead-session-id rewrite.
-Serializer setup or acquisition has one dedicated typed refusal; it does not swallow or relabel
-failures raised by the protected transaction.
-
-## What Belongs Here
-
-| Path | Role |
-|---|---|
-| `agent_tools.py` | Structural dispatch, messaging, retirement, and rename orchestration |
-| `gate_tools.py` | Structural lifecycle-gate creation, decision, and listing |
-
-## What Does Not Belong Here
-
-| Nearby Thing | Belongs Instead In |
-|---|---|
-| Catalog qualification and hierarchy walking | `serving/structural_seats.py` |
-| Ambient caller resolution | `serving/ambient_seat.py` |
-| Strict agent-facing request/response schemas | `models/structural/` |
-| Runtime-id administration | Internal serving/control-plane surfaces, never public structural tools |
-
-## Operating Model
-
-1. Resolve the caller from trusted hosted-process context, or — when the process has no plane seat
-   (`ambient-seat-unavailable`) — from the request-carried declared caller, validated by the same
-   structural authorization a seat would face.
-2. Authorize the requested parent or child relationship from canonical task containment and role.
-3. Resolve exactly one current target occupant or return a typed structural failure.
-4. Invoke the existing plane-owned mutation using runtime ids internally.
-5. Return only structural work-domain identity to the model.
-
-## Main Flows
-
-### Dispatch
-
-1. Validate the requested child role and contained task document.
-2. Spawn and bind the child occupant.
-3. Persist an internally exact-pinned initial dispatch brief.
-4. Retire an unbriefed child if that transaction fails.
-
-### Ordinary relationship traffic
-
-1. Persist a document-and-role structural address.
-2. Re-resolve its current occupant immediately before delivery.
-3. Preserve the same address across parent or child replacement.
-
-## Load-Bearing Files
-
 | File | Role | Why It Matters | Onboarding |
 |---|---|---|---|
 | `agent_tools.py` | application boundary | Prevents model-supplied runtime addressing | covered |
 | `gate_tools.py` | authorization boundary | Prevents exact lifecycle/gate targeting by agents | covered |
-
-## Local Invariants And Traps
-
-- No public structural request or response carries a runtime id.
-- Initial dispatch remains exact-pinned internally; ordinary relationship traffic remains rebindable.
-- Missing or ambiguous seats fail closed; no same-role global fallback is permitted.
-- This package composes existing primitives and must not create a second lifecycle implementation.
-
-## Evidence
-
-### Repo-Internal References
-
-- The public structural operations are registered through one adapter module. [1]
-- Structural resolution qualifies document+role seats and refuses ambiguity. [2]
-
-### Cross-Repo References
-
-No cross-repository runtime dependency governs this package.
-
-
-### Docs References
-
-The resolved memory source registry has no configured Domain Documentation entry. The implementation
-contract is therefore evidenced by repository source, tests, and the approved task design.
-
-
-## File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 |---|---|---|---|
@@ -173,63 +88,18 @@ contract is therefore evidenced by repository source, tests, and the approved ta
 | `application/structural/agent_tools.py` | [`agent_tools.py.md`](agent_tools.py.md) | covered | Agent structural boundary |
 | `application/structural/gate_tools.py` | [`gate_tools.py.md`](gate_tools.py.md) | covered | Gate structural boundary |
 
-## Child Overviews
+## Reading And Verification Bounds
 
-No child overview is needed for this bounded package.
+Read this overview, the relevant file card, the structural-seat resolver card and the corresponding model card before changing a structural operation. This bounded package needs no child overview. Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. No current lifecycle status is inferred. The original excluded Needs Verification status line, "None.", is retained as metadata; it is not a fresh verification result.
 
-## How To Use This Area
+## Evidence
 
-Read this overview, the target file card, `serving/structural_seats.py.md`, and the strict model
-card before changing a structural operation.
-
-## Needs Verification
-
-None.
-
-## 260815-DAG-L4 L4 Organizational And Atomic Dispatch
-
-Structural dispatch distinguishes organizational masters, whose leaves start directly from the sprint super, from atomic masters, whose task-owned series refs are journaled before child admission. Dispatch never creates a universal master branch for organizational work.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`agent_tools.py` imports updated to the moved `application/task_docs/task_ref` location.
-
-## 260821-ARSPAWN-L2 Canonical Dispatch Architecture
-
-Structural dispatch is a transaction over one canonical `(taskDocumentRef, role)` seat. Runtime
-session ids identify private catalog generations and exact initial-brief correlation only; they
-never become caller-facing addresses or stable result identity.
-
-```mermaid
-flowchart LR
-    A[Canonical task document plus role] --> L[Seat-scoped serializer]
-    L --> S[Spawn or read current generation]
-    S --> E[Reconcile durable brief evidence]
-    E -->|Viable brief or retained receipt| R[Stable structural success]
-    E -->|Proven unbriefed generation| X[Retire private generation once]
-    X --> B[One bounded respawn attempt]
-    E -->|Unknown or contradictory evidence| F[Typed refusal without cleanup]
-```
-
-`exclusive_structural_dispatch_lock` combines a reclaimed in-process slot with a POSIX lock in
-one of 4,096 deterministic hash stripes. It serializes only the selected seat; hash collisions
-may conservatively serialize unrelated seats. Lock creation or acquisition failure becomes
-`StructuralDispatchLockError`; there is no process-local fallback and lock files are not unlinked.
-
-`execute_dispatch_transaction` owns the bounded spawn/reconcile loop. Durable pinned-brief
-evidence is the commit point: a viable brief converges, a missing catalog receipt is repaired,
-and a retained receipt survives inbox compaction as queued. A non-dispatch occupant remains
-`seat-taken`. Only a positively proven unbriefed dispatch generation may be retired; disappeared,
-unreadable, or contradictory evidence refuses. Public payloads are built by `StructuralOutcome`
-and exclude occupant ids.
-
-`current_seat_occupant` is the shared generation selector. It fails closed on duplicate primaries
-or duplicate staged heirs, prefers one live incumbent, and promotes the one heir only after the
-incumbent leaves. Message envelopes remain address-only and delivery re-resolves this selector,
-so planning and messaging remain valid while a seat is vacant or replaced.
-
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-</details>
+- The structural dispatch adapter delegates to the application boundary; public dispatch registration is in the session registration owner. [1]
+- Structural resolution qualifies document+role seats, authorizes containment and refuses ambiguity. [2]
+- Dispatch proves hosted or ambient callers, builds private provenance and composes admission, spawn, exact briefing and rollback. [3]
+- Serialization and bounded reconciliation use durable brief evidence; outer missing/non-running occupants request retry while inner disappearance refuses. [4]
+- Retained gate services prefer hosted identity, conditionally accept declared callers, resolve authorized gates and hide private correlations. [5]
+- Atomic manager/worker admission delegates to the shared series owner; curator review depends on owning altitude and can be deferred. [6]
+- Generic spawn binding resolves references and checks structural-role lineage, but curator is in the taskless-role set and skips that lineage predicate. [7]
+- Shared current-seat selection rejects duplicate claimants and prefers the incumbent over a staged heir. [8]
+- Memory-refresh validation composes sidecar and route checks; its inspected memory-quality caller routes converted trees through the trace gate first. [9]

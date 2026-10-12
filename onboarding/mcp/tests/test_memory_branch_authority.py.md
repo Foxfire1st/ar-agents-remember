@@ -31,8 +31,7 @@ rather than a copy.
 *Group 1 — the memory branch is chosen, recorded and followed (12 cases).* Minting records the
 named branch and validates the recorded name against a real ref; an omitted branch inherits the code
 repository's checked-out branch, and the call **refuses rather than inventing `main`** when neither
-source has an answer. The unborn repair path accepts the configured branch and still refuses a
-repository that already carries refs; a value that is not one local branch name is refused, and a
+source has an answer. The unborn repair path accepts the configured branch. For an already-referenced repository the named case asserts `ok=True`, no `repairAttempted`, and unchanged ref/HEAD rather than refusal; a value that is not one local branch name is refused, and a
 recorded `refs/heads/` spelling is accepted and normalized. Baseline adoption follows the configured
 branch, refuses a branch the memory repository does not record, and the memory default-branch
 accessor validates the recorded name against its refs while still refusing a recorded name with no
@@ -60,7 +59,7 @@ keeps the exception scoped.
 ### Conventions
 
 - Every case creates its own repository under `tmp_path` and drives the public operation; no fixture
-  is shared across cases and no test reaches into a private helper to assert a private fact.
+  is shared across cases and the baseline-adoption case explicitly asserts `_baseline_default_branch(memory)` before its public adoption call. Public-operation coverage does not mean every assertion avoids private helpers.
 - Every comparison takes its two sides from different artifacts — the recorded config, the actual
   ref, the returned payload, and, where a refusal is the behaviour, the refusal's own text. That is
   what makes a case falsifiable rather than self-derived.

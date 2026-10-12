@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
-            "content": "sha256:d2b19b94ab8b1709bbf05887fb6d470af890ca6e85d160671b72559a2bfbfd99",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "content": "sha256:d92987e44780f687c9627ea24cc97a283297cee2ae090f549c2f763156a49cdd",
             "locator": {
               "kind": "symbol",
               "name": "initialize_mcp_application"
@@ -100,6 +100,40 @@
               "name": "run_runtime_install"
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Measurement identity names the cached serving producer, not the candidate being measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "content": "sha256:3500c6bcf13e029163a8af609ea5070f5acbe80a5f9cc16b3f113a3f63ab2df1",
+            "locator": {
+              "kind": "symbol",
+              "name": "measuring_build_stamp"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Undeclared source-checkout execution is isolated or refused, rather than admitted to live coordination by a diagnostic workaround.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
           },
           "kind": "code"
         }

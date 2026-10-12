@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-        "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
+        "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+        "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
         "locator": {
           "kind": "symbol",
           "name": "test_baseline_adoption_follows_the_configured_branch"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-        "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
+        "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+        "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
         "locator": {
           "kind": "symbol",
           "name": "test_baseline_adoption_follows_the_configured_branch"

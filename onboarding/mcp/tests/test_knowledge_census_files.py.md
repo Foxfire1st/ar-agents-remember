@@ -7,8 +7,7 @@
 ## Purpose
 
 **MIK-R20: census file formats, the mechanical inventory, the writer and the validator's census
-rules.** Over the fixture census of `knowledge_census_test_support`, a test changes one thing and checks
-that exactly the owning rule answers. Registered in the `unit-regression` lane; 28 collected cases.
+rules.** Over the fixture census of `knowledge_census_test_support`, each case changes a selected fixture property and checks the expected rule/message. The eight parametrized integrity cases assert rule and message inclusion, not singleton equality; other groups retain their specific equality assertions. Registered in the `unit-regression` lane; 28 collected cases.
 
 ## Code Commentary
 
