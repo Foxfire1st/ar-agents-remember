@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
             "content": "sha256:c9f1ecaf392562179e757dc842d21100896249eed72192a67193cdeba61087e4",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
             "content": "sha256:fb94d6ed9519cd5f68a252fb3889ec3af56b920ae57ea5d63118678f9db94f7c",
             "locator": {
               "kind": "symbol",
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
-            "content": "sha256:d350012c0983f73963eb510723945adb8b42fa24c8ae784a7faa53c4b8b2c1e1",
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
             "locator": {
               "kind": "symbol",
               "name": "test_integration_receipt_is_bound_when_both_trees_match"
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
-            "content": "sha256:fba2faea35a9ef7b95a2049915235bf96e34829d5af0667884f2b4fd64c19f4b",
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:2c5059c18c1a1af60b5727eeab9fb15aa8daa21d36892cd78016fc2f3ff6ab68",
             "locator": {
               "kind": "symbol",
               "name": "test_sync_records_unmeasured_when_the_memory_capture_faults"
@@ -67,28 +67,74 @@
       ]
     },
     "5": {
-      "note": "A memory-disabled leaf records no comparison",
+      "note": "Removed-mode behavior is a named refusal, not a memory-free comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
-            "content": "sha256:0b63f999feac4a5117f78c368d718aa540e7eb8eb16f72fc12fb67c584bb3cd0",
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_memory_disabled_leaf_records_no_comparison"
-            }
+              "name": "test_start_refuses_disabled_where_knowledge_exists"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7636fca16b5ef52f0475f47115335d21b3094cc0",
+            "content": "sha256:ee27a81caa5fe83ee015d46f3c33732d926eb06b769d2064b371a97be66456a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_legacy_contract_with_the_way_out"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_routes.py"
           },
           "kind": "test"
         }
       ]
     },
     "6": {
-      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions.\n\nAnchor: `test_sync_records_not_measured_when_the_carry_fails`",
+      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "346d7d18bf1ca6aee2fe57c8afa90abff0511d69",
-            "content": "sha256:b44fcd49918a0fd1bd0e72c3c5a1cb24e89f96154030cea85e7a284d675edca8",
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:46a9fc639714cb4498548702aadcbcceafa9702835bfb58df6421e719daf3069",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_reviewed_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_receipt_is_bound_when_both_trees_match"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:ab56f1c18b9f14f208b8489e4db28b29ae49d650a8992b458291c5da0d2de249",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_receipt_is_moved_when_code_changes_after_review"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "content": "sha256:c856df100158f7aa6f8e3e0ee6589d7118fd58eb20e6a49550ddf3555f36f05d",
             "locator": {
               "kind": "file"
             }

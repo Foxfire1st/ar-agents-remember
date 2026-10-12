@@ -1,0 +1,90 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L156",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 2
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 2
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6Y92Q6",
+      "items": [
+        "sha256:9ecae3947dd714d70d4b2188bf175d0a0d034d679c5a28e1d88a505d54785e5d"
+      ],
+      "reason": "Examined the recorded Exact live reviewer reuse guarantee, all six members, declared routes and 45 entries on candidate code tree 35639721178e1ce5793f8eceaaa854851a4eca8a. F07 narrows one proof facet under unchanged INV-5M9WY3 nonretention intent and replaces its ID through the architect-admitted native route; it changes no member obligation, guarantee or route. The family remains applicable to exact reuse/capture/input publication boundaries; controlled gate recovery does not claim a blanket refusal obligation. Existing six-member/route coverage remains unchanged.",
+      "revision": 1,
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "15e331df10fd1a93a23a715fc24f437840b3f4f0",
+            "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "before": "absent",
+          "id": "PRF-GCYB5H"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "id": "PRF-RGMJDD"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-J4ARNV",
+      "items": [
+        "sha256:cfbb22934e4069fe076f220badd5cc9803d1377388ab74fd092e5543c1240eb8"
+      ],
+      "reason": "Preserve governing failed-read nonretention meaning. Architect F07 ruling authorizes removal of landed overbroad PRF-RGMJDD and replacement with L156-owned proof at the same test; narrow evidence to actual changed-contract refusal, gate contract-read recovery without memo retention, and failed manifest rather than packet-byte IO. All live references examined; only the obsolete live proof was found, plus the retained L42/L26/L86 historical covers. Old-to-new identity table is supplied from the actual writer outcome; no future ID invented. Evidence (L156-MEM-F07-reconciled-failed-read-nonretention): L156-MEM-F07; /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L156-A-LANDED-PROOF-WHOSE-FACET-IS-WRONG-IS-REMOVED-IN-THE-COVER-AND-WRITTEN-ANEW-BY-THE-TASK-THAT-CHANGES-ITS-FILE-RULING.json; mcp/tests/test_reviewer_worklist_reads.py::_packet_reads; mcp/tests/test_reviewer_worklist_reads.py::_gate_failed_selector; mcp/tests/test_reviewer_worklist_reads.py::test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors",
+      "revision": 2,
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VKDC8W",
+      "items": [
+        "sha256:6a0eb2885d162f38725a780797547eeaf8c210d13f7dc86861f29e94dfa46870"
+      ],
+      "reason": "Reviewed the complete governing tests overview against the five-file patch. Its current operative contract already distinguishes receipt/read fixtures holding another gate passing from acceptance of that gate, derives lane populations from the catalog and keeps retired-mode refusal and canonical text ownership. Only local fixture preparation and obsolete one-case attribution change; no route purpose, source catalog, support ownership or family guarantee changes.",
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

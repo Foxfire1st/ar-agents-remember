@@ -26,25 +26,35 @@ The source declares fifteen test functions. They cover requested-tree expansion,
 
 Serialized response checks exclude strengthening/harmlessness verdicts, mounted UI state, approval and severity. Paired unavailable/available probe substitutions distinguish an unmade observation from a measured gap. Index-shaped fixtures use test-only RowStore/revision helpers; payload substitution isolates the comparison projection and is not evidence of canonical writer duplicate_identity admission.
 
+The continuation-mutation helper creates a new invariant with its single revision.
+A text record cannot hold a second retained revision of one identity. The new record
+moves the candidate snapshot bound by the cursor; the refusal remains
+`continuation_binding_mismatch` with no partial page. The before/after counters
+account for one new invariant and revision and require all other tables unchanged.
+
 The old InventoryFixture/build_inventory_fixture six-case inventory population was removed. No current inventory-walk coverage or production store authoring is attributed to it.
 
 ### Logic
 
 `request_for(fixture, …)` builds the typed request per case and `run_diff` drives
-`application.knowledge_diff.diff_knowledge_scope`, so the cases exercise the seam a caller uses. Three
-cases drive the **production Git probe** rather than a substituted one, which is why the module is in the
-integration lane.
+`application.knowledge_diff.diff_knowledge_scope`, so the cases exercise the seam a caller uses.
+`run_diff` (`:116`–`:129`) supplies no probe override, and the application selects
+`git_tree_difference_probe` by default. Source inspection identifies twelve test functions
+using that driver, ten with positive-page assertions; two additional functions substitute
+the probe explicitly and one compares selected scopes directly. This is default-route
+and assertion census, not a new reached-probe execution count. Real Git-pair fixtures
+and default production observation support the integration classification.
 
 **What each group of cases protects:**
 
 | Group | Nodes | The property |
 | --- | --- | --- |
-| the expansion and the visible gap | `:145`, `:185` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the four changed paths classified exactly once across the attributed/unattributed lists; and the unattributed path listed, counted with its reason and surviving a display filter |
-| attributed source on the side that claims it | `:221` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
-| paging and the display budget | `:257`, `:708` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
-| refusal without substitution | `:303`, `:325`, `:408`, `:438` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
-| the response's honesty | `:481`, `:510`, `:543` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
-| the expansion's honesty | `:752`, `:774`, `:817` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
+| the expansion and the visible gap | `:152`, `:198` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
+| attributed source on the side that claims it | `:234` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
+| paging and the display budget | `:270`, `:738` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
+| refusal without substitution | `:316`, `:338`, `:438`, `:468` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
+| the response's honesty | `:511`, `:540`, `:573` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
+| the expansion's honesty | `:782`, `:804`, `:863` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
 
 **The verdict-word case is the packet's *Forbidden Overreach* measured rather than asserted.** It searches
 the serialized response's **field names and values** for nine verdict words and includes a positive
@@ -67,9 +77,13 @@ directly from the fixture, for the case that compares at the storage layer rathe
 ### Invariants And Boundaries
 
 - **Integration by behaviour, not by preference.** The module creates two real Git repositories under
-  `tmp_path`, commits both trees, borrows one object store from the other, copies a closed database and
-  curates it through the store, and drives the production Git probe — so its lane membership is its
-  behaviour-preserving classification.
+  `tmp_path`, commits both trees and borrows one object store from the other. Its
+  candidate index is built independently by `build_read_scope_fixture` over a text tree
+  with the revised statement, retired claim omitted and successor claim added; it is not
+  a copy of a closed baseline database. The test-only `RowStore` mutation helpers change
+  that text tree and rebuild its index, then reopen the connection. Default production
+  probing observes the real Git pair; these fixture helpers are not the canonical writer
+  or its public admission plane.
 
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
@@ -94,6 +108,8 @@ mutation applications, 126 scored node runs, 41 assertion kills, 1 exception dea
 
 ## Evidence
 
+- A new invariant and its one revision move the snapshot; refusal leaves every other row counter unchanged. [51]
+
 
 ### Docs References
 
@@ -107,7 +123,12 @@ No Domain Documentation source is configured for this slice.
 - `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` supplies the current fixture or assertion described above. [29]
 - `test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` supplies the current fixture or assertion described above. [30]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [31]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [32]
+
+
+
+- The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
+
+
 
 ### Docs References
 
@@ -116,29 +137,50 @@ repository source and package-local evidence only.
 
 No configured domain documentation could be checked.
 
+
 - The integration marker, the fixture, the request builder and the public-seam driver. [33]
+
+
 - The two readers that let a case name a record rather than a position. [34]
-- **The expansion naming both requested trees and every path they differ at, with the reproducing command and no `HEAD`.** [35]
+
+
+- Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
+
 - **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** [36]
 - The moved obligation's source observed on the side that claims it. [37]
 - **A small display budget paging the comparison without shrinking its totals.** [38]
 - **A missing side refusing and substituting no other snapshot.** [39]
-- **The real candidate write that moves the logical digest and refuses the continuation, and the helper that makes the write through the public store.** [40]
+
+
+- The continuation-mutation helper adds an invariant and one revision through test-only text mutation/index rebuild; the continuation then refuses the changed snapshot. No public canonical-store admission is claimed. [40]
+
+
 - **A continuation against another selector refusing and returning no page.** [41]
 - **A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.** [42]
 - **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** [43]
 
 - The two change statements kept apart, and the record comparison reporting exactly the field that changed. [44]
 
+
 - The input-substitution and scope-rewording helpers the last group of cases uses. [45]
+
 - **A page of a selection being what the comparison displays and not what it selected.** [46]
 
 - The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). [47]
 
 - **The probe that measured the trees being what makes a gap visible.** [48]
-- The production probe these cases drive rather than substitute. [49]
 
-- The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined. [50]
+- run_diff omits a probe override, and the application defaults to git_tree_difference_probe; this source-described route is not a fresh execution count. [49]
+
+
+
+
+
+
+- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]
+
+
+
 
 ### Cross-Repo References
 
