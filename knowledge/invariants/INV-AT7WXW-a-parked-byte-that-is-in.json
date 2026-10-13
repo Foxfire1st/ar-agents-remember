@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "Failure diagnosis for substantive parked paths whose exact expected reapply bytes are absent or whose required native merge is conflicted.",
+  "conditions": [
+    "The complete stash population remains the proof input.",
+    "A readable named carried-head merge attribute is shown beside the failed path.",
+    "Failed proof keeps the stash and the existing bounded inline/full-log recovery guidance."
+  ],
+  "exclusions": [
+    "Inline diagnosis names at most ten paths with the remaining count.",
+    "Unreadable attribute diagnostics cannot fabricate a rule name; native acquisition failure retains its separate reason.",
+    "The journal sample cannot establish a complete successful proof."
+  ],
+  "id": "INV-AT7WXW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_a_parked_row_missing_from_a_union_merged_catalog_fails_the_proof_on_it and ::test_a_driver_the_proof_cannot_start_fails_its_path_and_names_the_driver in mcp/tests/test_sync_reapply_merge.py; the cases of MIK-R153 in mcp/tests/test_sync_parked_candidate.py pass unchanged (evidence-A2/tests-after-neighbours-git255.log); freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 rule 4",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A parked byte that is in neither the worktree nor the carried line still fails the proof of restored parked work, and the failure names the path together with the merge rule the carried head's attributes give it; a path git reports as conflicted in the merge made again fails the same way.",
+  "status": "proposed",
+  "supersedes": []
+}

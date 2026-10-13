@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "Reading stage-zero parked-path index blobs for cancellation ownership, including binary additions absent from both committed heads.",
+  "conditions": [
+    "The blob reader preserves the original bytes, including carriage returns.",
+    "Independent index comparisons remain against admitted head or exact stash content."
+  ],
+  "exclusions": [
+    "Unmerged index stages refuse ownership.",
+    "An unreadable staged blob fails the read rather than inventing bytes."
+  ],
+  "id": "INV-9FP5Z8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_cancel_takes_a_file_staged_as_added_at_parking_as_its_own in mcp/tests/test_sync_reapply_merge.py (refused on the head, cancelled on the candidate); the cause measured on the unchanged code in attempt 1 (evidence/picture_cause.py, evidence/picture-cause-baseline.log); unchanged since attempt 1 and confirmed in review round 1; freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The staged bytes of a parked path are read from the index as exact bytes: read through a text pipe, every carriage return becomes a line feed, the staged content of a binary file never equals its parked bytes, and the cancel names the path as later work.",
+  "status": "proposed",
+  "supersedes": []
+}

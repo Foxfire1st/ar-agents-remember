@@ -42,7 +42,7 @@ rollback, and cancels; partial authority restores only complete provable sides a
 manual-repair evidence for what remains. Missing journals follow the same ref-proof path. Terminal
 cleanup is idempotent and republishes strict bytes after residue removal.
 
-Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Later work returns `sync-cancel-refused-later-work` with named paths and save/cancel/restore guidance. Unproved crash-window attribution returns `sync-cancel-unproven-after-interrupt`, names the unproved paths and directs resolve-and-continue without falsely claiming that the owner wrote them. Both refusal paths keep the prior record and all tree/index/head/stash state.
+Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Both stash and retained-tree assessments use the Git owner's one native reapply expectation; recovery adds no merge algorithm or byte-alternative policy. Reapplied union-catalog bytes and exact binary index bytes can therefore be owned without treating them as later edits. Later work returns `sync-cancel-refused-later-work` with named paths and save/cancel/restore guidance. A native merge/configuration fault from the assessments is deduplicated and carried into that refusal, explaining that the required reapply result could not be shown to own the both-changed path; it does not authorize a reset. Unproved crash-window attribution returns `sync-cancel-unproven-after-interrupt`, names the unproved paths and directs resolve-and-continue without falsely claiming that the owner wrote them. Both refusal paths keep the prior record and all tree/index/head/stash state.
 
 After all sides are proven, cancellation publishes cancelling, discards only attributable output, rolls heads back and restores every parked candidate, including already-restored sides. Terminal cancelled publication precedes `_retire_restored_stashes` and authority deletion. Completed-sync finalization has the same terminal-before-retirement boundary; terminal residue cleanup retries only exact owned resources. An interrupted cancellation keeps its stash authority for the next same action.
 
@@ -100,7 +100,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - All-side ownership prechecks precede cancelling journal mutation. [8]
 
-- Later-work and unknown-attribution refusals are distinct and truthful. [9]
+- Later-work and unknown-attribution refusals preserve state; native merge/configuration faults explain why a required reapply result could not establish ownership. [9]
 
 ### Cross-Repo References
 

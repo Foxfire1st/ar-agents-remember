@@ -1,0 +1,349 @@
+{
+  "path": "mcp/tests/test_sync_reapply_merge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:992be3fa2d7556dfdc134ad9dc05d683c321d03ef8503af5a108937ed9359956",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_the_reapply_under_a_configured_diff_algorithm_is_proven"
+        }
+      },
+      "facet": "Configured and default algorithm cases preserve the actual reapply bytes and finish synced.",
+      "id": "PRF-3C9CH1",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:28c0d623e06b1c45c2bd442b7e3690bd4b52827cbd8e01d6c7b82f31c195a4a7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge"
+        }
+      },
+      "facet": "Cancel refuses an other-algorithm later edit, names its path, preserves tree bytes and record phase, and retains stash authority.",
+      "id": "PRF-4BE1G3",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:7f26c3432d448373173e2469e0736792a3afeaa31811753bdf9b8ee37e3d9e6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in"
+        }
+      },
+      "facet": "Injected merge-tree/configuration failures stop proof with native reasons and no merge-file call; refused cancel preserves the reapplied tree and parked phase, and clearing the fault permits exact recovery.",
+      "id": "PRF-73MQY0",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:8cd53a7e62ac618763520f056a116b31ae3e0ee30476d9449c3f83896b7ed8d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_a_parked_row_missing_from_a_union_merged_catalog_fails_the_proof_on_it"
+        }
+      },
+      "facet": "Removing one parked union row fails only that path with merge=union and retains the stash and parked record state.",
+      "id": "PRF-9D0873",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:a00326b6c14918c1b2a8d118b688ef1560c37a6586c37a1573d694da9656a3b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync"
+        }
+      },
+      "facet": "Real sync preserves exact carried-first union rows, carried head and stash retirement with one merge per proof.",
+      "id": "PRF-BK3YKX",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:a25278125f7b113bcb12bcf6cb2ca61295614db9923b791405638ce3c72d1e87",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_the_merge_rule_is_the_carried_heads_when_the_parked_work_takes_it_away"
+        }
+      },
+      "facet": "A parked attribute removal is restored without changing the carried-head union expectation.",
+      "id": "PRF-C7MJ2G",
+      "invariant": "INV-8NGD56",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:7ebc622a8889effd6af57ec8c9ed2f8b5cff581562aeb076da46e3e45a1b831b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_cancel_after_a_stop_takes_the_reapplied_union_catalogs_as_its_own"
+        }
+      },
+      "facet": "After an unrelated proof stop, cancel restores the exact parked tree and pre-sync head and retires its stash.",
+      "id": "PRF-EBSJ6T",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:13c0a19b380800c4eb688894941809c565913be8f0a114302e98c1187c8e98ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_cancel_takes_a_file_staged_as_added_at_parking_as_its_own"
+        }
+      },
+      "facet": "A binary addition containing carriage returns is recognized during cancel; parked tree bytes, staged status and pre-sync head are restored.",
+      "id": "PRF-JJ1YNJ",
+      "invariant": "INV-9FP5Z8",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:137e8c52c15bfa78ee38f023e8e832120b17d35ff5d505091d790e309294d7ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_configuration_of_the_worktree_alone_is_the_proofs_configuration"
+        }
+      },
+      "facet": "Worktree-local driver and algorithm determine proof output; clean sync succeeds and unrelated-loss cancellation restores the parked tree.",
+      "id": "PRF-KE9QPR",
+      "invariant": "INV-8NGD56",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:d242bf3915a666a7bde13c2b9dba411d87ebe9faf647f22052d34477223c1237",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_a_driver_the_proof_cannot_start_fails_its_path_and_names_the_driver"
+        }
+      },
+      "facet": "A driver unavailable after reapply fails its named scripted path; restoring the program permits exact parked-tree cancellation.",
+      "id": "PRF-KPHMFH",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:fccc95498caacdad92431735c48c47a36257014b1e38d80fa98fd90bce6c51ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof"
+        }
+      },
+      "facet": "Replacing actual output with the other algorithm result fails the named union path and retains parked state.",
+      "id": "PRF-W1YZ59",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+        "content": "sha256:35420cad0c58931dc0b05756ce52ff14d00eebd30d263c12efabd0bcfa6d3aba",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReapplyMergeTests.test_the_merge_rule_is_the_carried_heads_wherever_the_repository_stands"
+        }
+      },
+      "facet": "A primary checkout without the landed rule does not replace the carried-head union rule.",
+      "id": "PRF-YDTVQT",
+      "invariant": "INV-8NGD56",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+        "leaf": "260928-MIK-L163"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Union rows added at the same place finish sync with exact carried-first output.\n\nAnchor: `ReapplyMergeTests.test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:a00326b6c14918c1b2a8d118b688ef1560c37a6586c37a1573d694da9656a3b7",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing parked union row fails only its named path and retains stash authority.\n\nAnchor: `ReapplyMergeTests.test_a_parked_row_missing_from_a_union_merged_catalog_fails_the_proof_on_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:8cd53a7e62ac618763520f056a116b31ae3e0ee30476d9449c3f83896b7ed8d8",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cancellation recognizes reapplied catalogs and restores the parked tree.\n\nAnchor: `ReapplyMergeTests.test_cancel_after_a_stop_takes_the_reapplied_union_catalogs_as_its_own`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:7ebc622a8889effd6af57ec8c9ed2f8b5cff581562aeb076da46e3e45a1b831b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cancellation recognizes a binary addition's exact staged bytes.\n\nAnchor: `ReapplyMergeTests.test_cancel_takes_a_file_staged_as_added_at_parking_as_its_own`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:13c0a19b380800c4eb688894941809c565913be8f0a114302e98c1187c8e98ea",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A byte-distinct other-algorithm result cannot satisfy restoration or authorize cancellation.\n\nAnchor: `ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof`, `ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:d41fffffd94af7edd3ed4980e125027bcc30be2de20e6cc7e93b143eb22d15b2",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The effective worktree driver/configuration is used for proof and cancellation.\n\nAnchor: `ReapplyMergeTests.test_configuration_of_the_worktree_alone_is_the_proofs_configuration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:137e8c52c15bfa78ee38f023e8e832120b17d35ff5d505091d790e309294d7ce",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Native acquisition failure retains the stopped generation and refuses without fallback before recoverable cancellation.\n\nAnchor: `ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:7f26c3432d448373173e2469e0736792a3afeaa31811753bdf9b8ee37e3d9e6f",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Every repository merge value needs a declared real-sync case.\n\nAnchor: `ReapplyMergeTests.test_every_merge_rule_of_the_repository_has_its_case`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:e6e56c14f9c9b92201e6ed925161db0aa64e6a1b58840bf771d65c91b42dceaf",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 566
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

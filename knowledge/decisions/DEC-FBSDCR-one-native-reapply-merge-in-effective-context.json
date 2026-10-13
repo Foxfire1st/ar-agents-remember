@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The considered plain-file, two-output and foreign-context/fallback designs caused distinct false proofs or destructive ownership; rejecting them constrains future restore/cancel implementations."
+  },
+  "alternatives": [
+    {
+      "option": "One native merge in the actual reapply worktree, carried-head attributes and explicit effective diff algorithm",
+      "reason": "It reproduces one actual reapply result and leaves failed acquisition uncomputable; bounded version and real-operation evidence supports the construction.",
+      "status": "chosen"
+    },
+    {
+      "option": "Plain merge-file over parked/base/carried scratch files",
+      "reason": "It ignores the repository merge rule and disagrees with real reapply placement even for ordinary text.",
+      "reconsider_when": "A different native reapply owner requires a new exact equivalence proof and a ruled change of construction.",
+      "status": "rejected"
+    },
+    {
+      "option": "Accept either of two byte-distinct merge algorithms",
+      "reason": "A later edit matching the nonexecuted algorithm was wrongly owned and discarded during cancellation.",
+      "reconsider_when": "Only if the reapply contract itself explicitly admits multiple outputs and ownership is independently safe; passing both computations is insufficient.",
+      "status": "rejected"
+    },
+    {
+      "option": "Use the primary repository configuration or a plain fallback after native acquisition fails",
+      "reason": "Worktree-only drivers/configuration can differ, and fallback success conceals the required native failure.",
+      "reconsider_when": "Only after an approved reapply-context contract makes those sources equivalent and preserves named fail-closed acquisition.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Proof and cancellation must share the same lazy native construction.",
+    "Native acquisition failure retains recovery authority and cannot borrow plain-file success.",
+    "Compatibility measurements remain bounded; no Git-version branch or unlimited compatibility claim is authored."
+  ],
+  "context": "Plain merge-file disagreed with repository union reapply; accepting two algorithm outputs lost later owner bytes, while primary-checkout configuration and a plain fallback falsely qualified native acquisition.",
+  "decider": "MIK-R162 packet owner clarification on 2026-10-13; Worker construction chosen and Reviewer RV-1/2/3 closure",
+  "id": "DEC-FBSDCR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence-A2/algorithm_by_git_version.sh and algorithm-by-git-version.log (six git versions, the reapply beside the merge under each algorithm, equal in every row; 2.50 and 2.51 not measured); evidence-A2/compare_constructions.py against the real `git stash apply`: git 2.55.0, 2,105 clean cases, merge-file differs in 17, the candidate's merge in 0; git 2.43.0, 2,097 clean cases, merge-file differs in 57, the candidate's merge in 0; report role-launch/260928-MIK-L163-worker-A2.md, section 'What it rests on, measured'"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "L163 construction",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

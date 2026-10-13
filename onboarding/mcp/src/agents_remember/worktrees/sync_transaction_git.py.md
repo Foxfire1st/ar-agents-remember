@@ -27,7 +27,9 @@ Dirty-path and WIP helpers take the typed side record. Only the memory domain ex
 
 The cache is refreshed as a disposable view after applicable memory results. A narrow cache-only stash conflict recovery additionally requires a clean content prestate and the existing restored-WIP proof. Other Git failures remain errors. Rollback and temporary removal retain exact side/ref identity and refuse later substantive work.
 
-Restoration compares each substantive parked entry with the computed reapply onto the carried head, rather than dirty-path presence or whole-file equality. `stashed_parked_paths` enumerates tracked changes and the untracked third parent completely; a capped journal sample is diagnostic only and unreadable inventory cannot pass. Already-held edits beside unrelated landed changes therefore restore successfully. Non-computable content fails the restoration proof; exact stash-owned raw content can still establish cancellation ownership where supported.
+Restoration compares each substantive parked entry with the computed reapply onto the carried head, rather than dirty-path presence or whole-file equality. `stashed_parked_paths` enumerates tracked changes and the untracked third parent completely; a capped journal sample is diagnostic only and unreadable inventory cannot pass. Already-held edits beside unrelated landed changes therefore restore successfully. For regular files changed differently on both sides, `_ReapplyMerge` delegates to one native `git merge-tree`, with the stash parent as merge base, carried side first, carried-head attributes and the actual reapply worktree's configuration. Its configured `diff.algorithm` is passed explicitly as the merge option. One assessment shares one lazy merge; neither plain `merge-file` nor an alternative algorithm's output can stand in for that exact result. Conflicted, absent or failed native output is uncomputable and cannot pass restoration. Identical sides and a side equal to the base need no native merge. Acceptance is exact native-result equality, not a separate guarantee that every prescribed driver preserves every parked-added line. The missing-row union-catalog witness fails because its native union result contains that row; other prescribed drivers can select or rewrite content.
+
+Cancellation uses the same expected-content owner, while retaining its separate index/fingerprint and raw stash-holder checks. The staged index blob is read as bytes, not through text newline conversion: a carriage return in a staged binary addition must not become a line feed and falsely turn parked content into later work. A native merge/configuration fault is carried in `CancelTreeAssessment.merge_fault`; diagnostic wording explains why the required reapply content could not be established. Exact stash-owned raw content can still establish cancellation ownership where supported; a native fault grants no new destructive authority. Rename relocation, checkout line-ending conversion and automatic save-before-cancel remain separate boundaries.
 
 Cancellation ownership is separate from restoration proof. `assess_stash_tree` compares worktree and index content against live recorded holders; `assess_retained_tree` checks operation-created worktree-plus-full-index fingerprints. Unknown attribution is not later-work attribution. Resumed merges and crash reapplies earn fingerprints through exact scratch reproduction of dirty/untracked sets and per-path content/index state; converted-memory replay includes structural crossing, paired code and owner. Where that proof fails, cancellation refuses without adopting owner bytes. Only explicitly proven owned untracked paths may be removed during rollback.
 
@@ -71,7 +73,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Current public content-conflict scenario. [15]
 
-- The report gate keeps conflicts, conversions, and every nonzero alignment population. [16]
+- The report gate selects conflicts, converted sides, nonzero renumberedReferences, evidenceLinesKept or skippedCards; alignedCards alone does not select a report. [16]
 
 - The merge installs the structural plan and persists the report through that gate. [17]
 
@@ -108,8 +110,9 @@ No external Domain Documentation entries are configured. Source and test asserti
 - Interrupted converted-memory output is attributed only by exact merge-plus-crossing replay. [44]
 
 - Cancellation compares live stash holders with worktree and independent index content. [45]
-
 - Retained fingerprints distinguish provable operation output from later and unknown bytes. [46]
+- One native carried-first merge uses carried-head attributes and the actual reapply worktree configuration, with its diff algorithm supplied explicitly and no alternative/fallback result. [47]
+- Staged blob reads preserve binary carriage returns for independent cancellation ownership. [48]
 
 - Supported staged continuation. [8]
 

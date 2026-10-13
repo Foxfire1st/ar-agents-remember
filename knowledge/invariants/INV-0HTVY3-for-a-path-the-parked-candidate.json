@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "Restoration comparison for a regular parked path changed differently on both sides of an admitted managed sync.",
+  "conditions": [
+    "The live recorded stash and carried head provide the native merge operands; the carried side is first.",
+    "Effective merge configuration is read in the actual reapply worktree, with attributes selected from the carried head.",
+    "One assessment uses one computed expected content and an exact byte comparison."
+  ],
+  "exclusions": [
+    "Identical sides and a side equal to the base need no native merge.",
+    "Unsupported file modes, deletion conflicts and absent merge output remain uncomputable.",
+    "Checkout line-ending conversion and rename relocation are not repaired by this obligation."
+  ],
+  "id": "INV-0HTVY3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync, ::test_a_plain_file_is_proven_by_gits_merge_not_by_a_plain_file_merge, ::test_the_reapply_under_a_configured_diff_algorithm_is_proven and ::test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof in mcp/tests/test_sync_reapply_merge.py (head: evidence-A2/tests-before-baseline-git255.log; attempt 1, finding L163-RV-1: evidence-A2/tests-before-attempt1-git255.log; pass: evidence-A2/tests-after-new-file-git255.log and -git243.log); the case of L109 with the real commits ends `synced` with e5208dae82e0… and e45c71121a47… (evidence-A2/replay-l109-candidate.log); 0 differences from the real reapply in 2,105 and 2,097 clean cases (evidence-A2/construction-comparison-git255.log, -git243.log); freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 rule 1",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For a path the parked candidate and the carried line both changed, the proof of restored parked work expects the one content git's own merge of the stash onto the carried head gives, with the merge the carried head's attributes prescribe for the path and the carried side first, and compares the worktree with it byte for byte.",
+  "status": "proposed",
+  "supersedes": []
+}

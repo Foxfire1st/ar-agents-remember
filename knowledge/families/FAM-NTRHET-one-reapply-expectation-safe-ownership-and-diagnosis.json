@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Exact output alone is insufficient without the actual context, byte-preserving index comparison and truthful failure/refusal; together the six obligations prevent false restore acceptance from becoming destructive cancellation."
+  },
+  "guarantee": "For a required regular-path native reapply merge, restoration and cancellation use one carried-first result from the effective reapply worktree and carried-head attributes, preserve binary staged bytes in independent ownership checks, reject a distinct alternative result, and retain authority with a named non-mutating refusal when required acquisition or expected bytes cannot be proved. Separate raw-holder/fingerprint ownership remains narrower and grants no fallback restoration acceptance.",
+  "id": "FAM-NTRHET",
+  "members": [
+    "INV-0HTVY3",
+    "INV-D637WA",
+    "INV-9FP5Z8",
+    "INV-AT7WXW",
+    "INV-8NGD56",
+    "INV-CMQTZF"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "exact-reapply-family",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One reapply expectation for safe ownership and diagnosis"
+}

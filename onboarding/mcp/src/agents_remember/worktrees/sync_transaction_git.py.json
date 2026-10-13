@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-        "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-01GD28",
+      "invariant": "INV-8NGD56",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "`_make` runs `git config --get diff.algorithm` and `git merge-tree` in `side.worktree`, passes `--attr-source=<carried head>` and, where the worktree's configuration names an algorithm, `-Xdiff-algorithm=<value>`.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:ce450856edb34d9a352b30e803418b6c75ec3ea2793daf2f763106361ab0adc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "parked_wip_failures"
+        }
+      },
+      "id": "RLZ-2ME18J",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Builds the one merge of a proof and compares every parked path's worktree bytes with the one content it expects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:c2f53b66ad9276b14f3416b04c5488c0a0bf661d9661981b2252ee55c81269bf",
         "locator": {
           "kind": "symbol",
           "name": "assess_retained_tree"
@@ -21,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-        "content": "sha256:d20106ab6c61baf552493518cc93c8be40549309c9a3cd476fe40249cbf10dc6",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_state"
+        }
+      },
+      "id": "RLZ-4D12QK",
+      "invariant": "INV-9FP5Z8",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Reads the staged blob of a path (`:0:<path>`) as bytes; this is the read whose text pipe made the cancel of L109 name the picture.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:ce450856edb34d9a352b30e803418b6c75ec3ea2793daf2f763106361ab0adc1",
         "locator": {
           "kind": "symbol",
           "name": "parked_wip_failures"
@@ -39,7 +93,43 @@
     },
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:96fed62b8bae623e57b18e65b23e035c2fce071f75ea857c8f2e42bb8407fca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_path_owned_by_stash"
+        }
+      },
+      "id": "RLZ-B8RFM2",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Takes a parked path as the transaction's own only when its worktree bytes are the parked bytes or the one content the reapply's merge gives.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:ead9177467d33bc0f2f62cb4653d289a22b28eb8209c2de7de9d6e6bf4439a77",
+        "locator": {
+          "kind": "symbol",
+          "name": "reapply_merge_fault"
+        }
+      },
+      "id": "RLZ-BF5MYN",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Recomputes expected content only for the paths its caller supplies. Restoration supplies failures[:10]; Git command/exit/reason is returned only if that population asks for the lazy native merge and it captures a fault. If the sample needs no native merge, fault is empty even when a later whole-proof failure needed one.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
         "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
         "locator": {
           "kind": "symbol",
@@ -57,8 +147,80 @@
     },
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-        "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-F2N2G7",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "For a both-changed path, supplies exactly the prescribed native merge result, or uncomputable for conflicted/absent/failed native output. parked_wip_failures compares those expected bytes with the worktree. There is no independent universal parked-added-line retention predicate: a prescribed driver can select or rewrite content. In the named union-catalog missing-row witness, the expected native union result contains that row, so removing it makes equality fail; that witness is not a guarantee for every driver.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-G67R94",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Stores the native command/exit/reason in fault when effective diff.algorithm acquisition or the one merge-tree result fails. Required both-changed native requests then have no computable result; equality/base cases remain direct. The owner does not itself promise exhaustive restoration inline disclosure, which is separately recomputed on named paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:b281c72ca7d8c5c5e82401730e2b698aaef738f654f59b0a25620a79e574e9e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_stash_tree"
+        }
+      },
+      "id": "RLZ-J6KY49",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "The cancel's judgement of a tree whose stash is kept: builds the same merge the proof builds and passes it to the ownership check of every parked path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:4aead0d8a8becdc1f4b7944418bb834b1cee9cdd49ed09b9f215cc527c4a815d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_later_paths"
+        }
+      },
+      "id": "RLZ-QCJ45K",
+      "invariant": "INV-9FP5Z8",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Compares those staged bytes with the head's and the stash's to find work that is only staged; it is exact only as far as the read is.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:b281c72ca7d8c5c5e82401730e2b698aaef738f654f59b0a25620a79e574e9e5",
         "locator": {
           "kind": "symbol",
           "name": "assess_stash_tree"
@@ -75,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
         "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
         "locator": {
           "kind": "symbol",
@@ -93,7 +255,115 @@
     },
     {
       "anchor": {
-        "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:8e9cf0191c598d950a9d469481e996552a7aee2b4e1c611bc89c7aa5584d9119",
+        "locator": {
+          "kind": "symbol",
+          "name": "CancelTreeAssessment"
+        }
+      },
+      "id": "RLZ-TX029V",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Carries git's words from the cancel's assessment (`merge_fault`) to the refusal.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+        "locator": {
+          "kind": "symbol",
+          "name": "_expected_changed_path"
+        }
+      },
+      "id": "RLZ-TXVVD8",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Returns what the merge answers and nothing else: there is no other merge to fall back to.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReapplyMerge"
+        }
+      },
+      "id": "RLZ-VQ8D48",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Makes the reapply's merge again with git itself (`git --attr-source=<carried head> merge-tree --write-tree --merge-base=<stash>^1 <carried head> <stash>`), once per proof, and hands out each path's merged bytes: one merge and one expected content per path, never a second result.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:c2f53b66ad9276b14f3416b04c5488c0a0bf661d9661981b2252ee55c81269bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_retained_tree"
+        }
+      },
+      "id": "RLZ-VV96GH",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "The same judgement for a tree with a retained conflict.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+        "locator": {
+          "kind": "symbol",
+          "name": "_expected_changed_path"
+        }
+      },
+      "id": "RLZ-W8M6DD",
+      "invariant": "INV-0HTVY3",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 1",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Decides where a merge is needed at all: identical sides and a side equal to the base need none, every other both-changed path takes its content from the merge git made.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "content": "sha256:dfb2d5334628b408500c7a12dee63869ed34ffff6c267579ec3e148f14b5c2f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "named_merge_rules"
+        }
+      },
+      "id": "RLZ-YBVF5N",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Asks git for the merge rule of each failed path at the carried head, for the failure's text.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
         "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
         "locator": {
           "kind": "symbol",
@@ -116,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:6b9626d58796145bd7249a358484606d3bc91ce5943d679da63783eb87ef11ba",
             "locator": {
               "kind": "symbol",
@@ -127,7 +397,7 @@
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:50793bd524b8366861a7d51098ec3b5e27accb5316b191a02fc027152176e2e4",
             "locator": {
               "kind": "symbol",
@@ -143,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -159,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -189,11 +459,11 @@
       ]
     },
     "16": {
-      "note": "The report gate keeps conflicts, conversions, and every nonzero alignment population.",
+      "note": "The report gate selects conflicts, converted sides, nonzero renumberedReferences, evidenceLinesKept or skippedCards; alignedCards alone does not select a report.",
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
               "kind": "symbol",
@@ -209,7 +479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
@@ -225,7 +495,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
             "locator": {
               "kind": "symbol",
@@ -236,7 +506,7 @@
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:6d2beacdabb7c9d68f26cb758dfac5e86811f0592561eb025c05829e1b2c2cec",
             "locator": {
               "kind": "symbol",
@@ -252,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:84580a01bb3869b8ec141c3c2d55a44b42eecd9a55c9637f2c2e766d93762cbf",
             "locator": {
               "kind": "symbol",
@@ -268,7 +538,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:22758862274652ff2b2cd100830fa9da84254b2b41c80ac176bbafc84a736b9e",
             "locator": {
               "kind": "symbol",
@@ -284,7 +554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
             "locator": {
               "kind": "symbol",
@@ -300,7 +570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:dcdca2ca3f138cc692e594ce192ef4f10bc043801c7c031008395522e8c4ba5c",
             "locator": {
               "kind": "symbol",
@@ -350,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -366,7 +636,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
+            "blob": "46c172e8011d51f4ca08ead6d4d85e9e2a82c905",
             "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
             "locator": {
               "kind": "symbol",
@@ -383,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -399,7 +669,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:30ee024b857f44ec240971a085e7e49adb1e8a90419914b735dff485d65fe1a4",
             "locator": {
               "kind": "symbol",
@@ -415,7 +685,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:1198290d616fa0d6414dae46011c099e7e7c84ef584a23fba0f455f9dd780a76",
             "locator": {
               "kind": "symbol",
@@ -448,7 +718,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
             "locator": {
               "kind": "symbol",
@@ -464,8 +734,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-            "content": "sha256:61d24dd7526a763231c8f71b9c862fd293aab3b6a42d6ece80117cf1f5ff4edc",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:739f328b6dd5ef2e5efab138a0caaf3153cf48df8a69116fb21020a98d26284a",
             "locator": {
               "kind": "symbol",
               "name": "expected_reapplied_content"
@@ -480,7 +750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:458743a503cc2d4f00b3d264bdcba721eca0ecc1056b86021fd44502707366d4",
             "locator": {
               "kind": "symbol",
@@ -496,8 +766,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-            "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:b281c72ca7d8c5c5e82401730e2b698aaef738f654f59b0a25620a79e574e9e5",
             "locator": {
               "kind": "symbol",
               "name": "assess_stash_tree"
@@ -512,11 +782,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
-            "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:c2f53b66ad9276b14f3416b04c5488c0a0bf661d9661981b2252ee55c81269bf",
             "locator": {
               "kind": "symbol",
               "name": "assess_retained_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "One native carried-first merge uses carried-head attributes and the actual reapply worktree configuration, with its diff algorithm supplied explicitly and no alternative/fallback result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Staged blob reads preserve binary carriage returns for independent cancellation ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_state"
             }
           },
           "kind": "code"
@@ -528,7 +830,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:50d5b06c31cb023b0dfded274d5fc9592ac6c8fd0576486aea7d7575bd4b9712",
             "locator": {
               "kind": "symbol",
@@ -539,7 +841,7 @@
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",

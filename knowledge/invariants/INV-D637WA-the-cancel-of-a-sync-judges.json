@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "The live-stash per-path ownership comparison used before cancelling an admitted sync stop.",
+  "conditions": [
+    "The path is in the complete parked population and independent index ownership checks also pass.",
+    "A computable reapply expectation is compared byte for byte with the worktree, using the restoration construction."
+  ],
+  "exclusions": [
+    "Retained fingerprints and exact raw stash-holder ownership for uncomputable entries retain their separate admission.",
+    "Foreign paths, later index stages and unresolved crash attribution do not become owned through this comparison.",
+    "Rename relocation is separately owned by MIK-R61 rule 13."
+  ],
+  "id": "INV-D637WA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_cancel_after_a_stop_takes_the_reapplied_union_catalogs_as_its_own and ::test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge in mcp/tests/test_sync_reapply_merge.py (the second fails on attempt 1 with git 2.55.0, where the cancel discarded the later edit: finding L163-RV-1, evidence-A2/tests-before-attempt1-git255.log and refusal-texts-attempt1.log); the case of L109 with a stop elsewhere ends `sync-cancelled` with the parked tree byte for byte (evidence-A2/replay-l109-candidate-stop.log); freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 rule 3",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The cancel of a sync judges each parked path with the proof's own construction: a path that holds exactly what the reapply gave back is the transaction's own and is never named as later work, and a path that holds anything else, also what git's merge would give under another diff algorithm, is later work and is kept.",
+  "status": "proposed",
+  "supersedes": []
+}

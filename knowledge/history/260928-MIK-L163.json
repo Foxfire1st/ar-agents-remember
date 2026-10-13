@@ -1,0 +1,1208 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L163",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0TY6GH",
+      "items": [
+        "sha256:8c929a9678e05764654d02a62eebf0df1ee338c0f4187d5cd91c1d437b92c909"
+      ],
+      "reason": "The expected-content wrapper accepts/reuses the one lazy native merge context and delegates its both-changed branch to the selector. That exact-output/shared-context obligation is already realized on the native merge owner and selector; signature, rationale text and call-through glue add no separate durable requirement. Examined every recorded before/candidate extent: [{\"base\":[390,1],\"candidate\":[527,2]}].",
+      "subject": "hunk:sha256:8c929a9678e05764654d02a62eebf0df1ee338c0f4187d5cd91c1d437b92c909"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:755b4a53687117e45aaa5b19bcc2022df52be8e9a52a7129eefcc10c8a64f104",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_03a_missing_path_beyond_sample_fails_proof"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:755b4a53687117e45aaa5b19bcc2022df52be8e9a52a7129eefcc10c8a64f104",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_03a_missing_path_beyond_sample_fails_proof"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-26BB6X"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:27cbf2aafd51683a2bf78ad560c1997773877b208a8cb94f9a27b1bfcf950267",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_already_held_edit_finishes_the_sync"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:27cbf2aafd51683a2bf78ad560c1997773877b208a8cb94f9a27b1bfcf950267",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_already_held_edit_finishes_the_sync"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-3M8WCC"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:e15009e15951dfb2ca0546f02de78e361c51b7ed17cbc95d2b541b7dfbaa0a67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_03b_failed_full_inventory_never_accepts_the_sample"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:e15009e15951dfb2ca0546f02de78e361c51b7ed17cbc95d2b541b7dfbaa0a67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_03b_failed_full_inventory_never_accepts_the_sample"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-ENFG5M"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-MM2DYD"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:ce450856edb34d9a352b30e803418b6c75ec3ea2793daf2f763106361ab0adc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:d20106ab6c61baf552493518cc93c8be40549309c9a3cd476fe40249cbf10dc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-72V1QQ"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-YGPCHM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-20D2BV",
+      "items": [
+        "sha256:d271307fdd87cd5b88f72c57edb162aa7d2d7e1a79e259a3e2fa6c02520f9d26"
+      ],
+      "reason": "MIK-R162 preserves the existing restoration/cancellation or historical retired catalog obligation; the native construction/diagnosis and one new consumer row change realization bytes, not this record statement, scope or entry membership. Every existing witness is renewed without reviving retired intent.",
+      "revision": 1,
+      "subject": "INV-70577K"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:8cd53a7e62ac618763520f056a116b31ae3e0ee30476d9449c3f83896b7ed8d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_a_parked_row_missing_from_a_union_merged_catalog_fails_the_proof_on_it"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-9D0873"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:d242bf3915a666a7bde13c2b9dba411d87ebe9faf647f22052d34477223c1237",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_a_driver_the_proof_cannot_start_fails_its_path_and_names_the_driver"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-KPHMFH"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-F2N2G7"
+        },
+        {
+          "after": {
+            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VBC46S"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:dfb2d5334628b408500c7a12dee63869ed34ffff6c267579ec3e148f14b5c2f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "named_merge_rules"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YBVF5N"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-2Q270Z",
+      "items": [],
+      "reason": "Adds a tested native reapply/context/ownership obligation under MIK-R162 without replacing MIK-R153 guarantees. Producer evidence stays freeze-bound; applicability names the current operation boundary. MEMORY-only authored correction on the sealed Reviewer MV baseline; original producer fields and historical CODE closures remain immutable. L163-MV-1: RLZ-F2N2G7 now states exact native-output equality, with added-row retention limited to the actual union witness; no universal line-retention assertion.",
+      "revision": 1,
+      "subject": "INV-AT7WXW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:28c0d623e06b1c45c2bd442b7e3690bd4b52827cbd8e01d6c7b82f31c195a4a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-4BE1G3"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:7ebc622a8889effd6af57ec8c9ed2f8b5cff581562aeb076da46e3e45a1b831b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_cancel_after_a_stop_takes_the_reapplied_union_catalogs_as_its_own"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-EBSJ6T"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:96fed62b8bae623e57b18e65b23e035c2fce071f75ea857c8f2e42bb8407fca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_path_owned_by_stash"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-B8RFM2"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:b281c72ca7d8c5c5e82401730e2b698aaef738f654f59b0a25620a79e574e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-J6KY49"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:c2f53b66ad9276b14f3416b04c5488c0a0bf661d9661981b2252ee55c81269bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VV96GH"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-3EPB6D",
+      "items": [],
+      "reason": "Adds a tested native reapply/context/ownership obligation under MIK-R162 without replacing MIK-R153 guarantees. Producer evidence stays freeze-bound; applicability names the current operation boundary.",
+      "revision": 1,
+      "subject": "INV-D637WA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-46GGW1",
+      "items": [
+        "sha256:a9febd37a6565c01a0623444928c461cb9b5ca1ba24a5ab2c53ef311439f9e47"
+      ],
+      "reason": "Reviewed the affected regression and catalog composition account: the new sync-reapply module uses existing fixture ownership and unit-regression selection, with no route-purpose, catalog-policy, budget or certification change.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5CQMH4",
+      "items": [
+        "sha256:f3b3a12d3bc55b977e1172b773ec574993d125443a4d8a9053ac58bf4668ebea"
+      ],
+      "reason": "Imports supply native-result/configuration acquisition and error capture inside the already authored shared merge owner. Import plumbing is not an additional independent semantic obligation. Examined every recorded before/candidate extent: [{\"base\":[11,0],\"candidate\":[13,1]}].",
+      "subject": "hunk:sha256:f3b3a12d3bc55b977e1172b773ec574993d125443a4d8a9053ac58bf4668ebea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5XE4NZ",
+      "items": [
+        "sha256:b9a3434c679aa2e922d04ce31b825fa23b8a1559a62b63f65480ff27ceb4a880"
+      ],
+      "reason": "The expected-content wrapper accepts/reuses the one lazy native merge context and delegates its both-changed branch to the selector. That exact-output/shared-context obligation is already realized on the native merge owner and selector; signature, rationale text and call-through glue add no separate durable requirement. Examined every recorded before/candidate extent: [{\"base\":[368,1],\"candidate\":[501,1]}].",
+      "subject": "hunk:sha256:b9a3434c679aa2e922d04ce31b825fa23b8a1559a62b63f65480ff27ceb4a880"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-676NXF",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "One sorted unit-regression test-module registration changes selection only; lane vocabulary, ordering and execution/acceptance separation remain unchanged.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-RHSGR7"
+        },
+        {
+          "after": {
+            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:462fd37a15ca7e74bf8a0fa127528fe25d2005f2cbb83db70351feb64e1d6a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "id": "RLZ-T7MCMT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6V9M3E",
+      "items": [
+        "sha256:1819f32dc0fc25c87eb9656903e0de89f3aae347e275b21fef6955f9d53664fd"
+      ],
+      "reason": "MIK-R162 preserves the existing restoration/cancellation or historical retired catalog obligation; the native construction/diagnosis and one new consumer row change realization bytes, not this record statement, scope or entry membership. Every existing witness is renewed without reviving retired intent.",
+      "revision": 1,
+      "subject": "INV-04KNZY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-04KNZY",
+          "revision": 1
+        },
+        {
+          "id": "INV-70577K",
+          "revision": 1
+        },
+        {
+          "id": "INV-JZRBBJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS6H65",
+          "revision": 1
+        },
+        {
+          "id": "INV-T46B5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-YVP7RQ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AJ5G3D",
+      "items": [
+        "sha256:558449f0564b3c28d1db1192abf7bd9064fe7c9695a0a7e860c86566ca02cf4a"
+      ],
+      "reason": "Examined all six base/candidate members: complete inventory, bounded diagnosis, exact rollback, later-work protection, truthful parked phase and ordinary conflict/validator boundaries remain the same joint guarantee and route. The new exact-native-context family adds detail separately rather than redefining this existing family.",
+      "revision": 1,
+      "subject": "FAM-1SEJYW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:992be3fa2d7556dfdc134ad9dc05d683c321d03ef8503af5a108937ed9359956",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_the_reapply_under_a_configured_diff_algorithm_is_proven"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-3C9CH1"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:a00326b6c14918c1b2a8d118b688ef1560c37a6586c37a1573d694da9656a3b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-BK3YKX"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:fccc95498caacdad92431735c48c47a36257014b1e38d80fa98fd90bce6c51ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-W1YZ59"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:ce450856edb34d9a352b30e803418b6c75ec3ea2793daf2f763106361ab0adc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2ME18J"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VQ8D48"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expected_changed_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-W8M6DD"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CQQBXT",
+      "items": [],
+      "reason": "Adds a tested native reapply/context/ownership obligation under MIK-R162 without replacing MIK-R153 guarantees. Producer evidence stays freeze-bound; applicability names the current operation boundary.",
+      "revision": 1,
+      "subject": "INV-0HTVY3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D8VJ8C",
+      "items": [
+        "sha256:f7be8b6ce3eada0a84d3e6b751cb29e335e899909bcb10b6a1f017c4f1cf11fc"
+      ],
+      "reason": "Imports the shared native-fault and named-rule diagnostic adapters. They propagate the already authored exact-native-failure obligation to the authority response, but introduce no independent durable promise or a second merge owner. Examined every recorded before/candidate extent: [{\"base\":[22,0],\"candidate\":[23,1]}].",
+      "subject": "hunk:sha256:f7be8b6ce3eada0a84d3e6b751cb29e335e899909bcb10b6a1f017c4f1cf11fc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-1BC0JZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1f792785830124a732e645f0a94d0dbc8b02f4561b6b0ace0921f04dd641848c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_02_restored_code_wip_returns_on_memory_stop_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1f792785830124a732e645f0a94d0dbc8b02f4561b6b0ace0921f04dd641848c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_02_restored_code_wip_returns_on_memory_stop_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-40GF9R"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:cb93871841beb51a9aa02808dac44ce1bf78575dbe00789e77fccae4cd2741cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_06a_uncomputable_symlink_cancel_leads_back"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:cb93871841beb51a9aa02808dac44ce1bf78575dbe00789e77fccae4cd2741cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_06a_uncomputable_symlink_cancel_leads_back"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-AG20V7"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3cf99553bbf87a081177b6967d01eefaa4240a0e2daa937fb78d322180ebc16",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_after_a_failed_proof_restores_heads_and_parked_work"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3cf99553bbf87a081177b6967d01eefaa4240a0e2daa937fb78d322180ebc16",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_after_a_failed_proof_restores_heads_and_parked_work"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-ASNHQJ"
+        },
+        {
+          "after": {
+            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_cancelled_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_cancelled_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "id": "RLZ-0TVE2Z"
+        },
+        {
+          "after": {
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_restored_stashes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_restored_stashes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "id": "RLZ-AGZTNF"
+        },
+        {
+          "after": {
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "content": "sha256:990e76a78c1117aa523579305c39e3b4f552f34593800243afa082cff7af12ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:98591220a756c2b7782927f39a31103529311ae02bbfc7defcc386628892dae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "id": "RLZ-C49S6G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GW89QW",
+      "items": [
+        "sha256:958871f590660aacbe44df3a398cbd6299f1c9f41224455a5150901d9e2eeebe"
+      ],
+      "reason": "MIK-R162 preserves the existing restoration/cancellation or historical retired catalog obligation; the native construction/diagnosis and one new consumer row change realization bytes, not this record statement, scope or entry membership. Every existing witness is renewed without reviving retired intent.",
+      "revision": 1,
+      "subject": "INV-T46B5W"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "examined": [
+        {
+          "id": "INV-0HTVY3",
+          "revision": 1
+        },
+        {
+          "id": "INV-8NGD56",
+          "revision": 1
+        },
+        {
+          "id": "INV-9FP5Z8",
+          "revision": 1
+        },
+        {
+          "id": "INV-AT7WXW",
+          "revision": 1
+        },
+        {
+          "id": "INV-CMQTZF",
+          "revision": 1
+        },
+        {
+          "id": "INV-D637WA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JJEVT0",
+      "items": [],
+      "reason": "Introduces the joint exact-native-context, staged-byte and truthful-refusal guarantee at the shared sync owner; all realizations are in the worktrees route. Existing parked-work family membership and guarantee remain unchanged. Re-examined all six members after the MV-1/2 qualifications: guarantee/routes/members unchanged, native equality and actual bounded/assessment-specific diagnosis retained.",
+      "revision": 1,
+      "subject": "FAM-NTRHET"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f34c54809b7b6a0c36d04188079aa8c723b4b763",
+            "content": "sha256:6ad6992867648d8c93fab727619cadd9d2714cea810265763183d8c925e1d665",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb412c94ecbafe02ca289a5af34d3f7b1c293182",
+            "content": "sha256:8005a6b1e31e4da02ffec3dccfc784e3206cf8281a50bbfdb5ebab4476fbb803",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JPQW6R",
+      "items": [
+        "sha256:b5ae7506f9ef8489bf1e886536b0b2cb7cbfe01ffecb77a134d1537713823103"
+      ],
+      "reason": "MIK-R162 preserves the existing restoration/cancellation or historical retired catalog obligation; the native construction/diagnosis and one new consumer row change realization bytes, not this record statement, scope or entry membership. Every existing witness is renewed without reviving retired intent.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:a25278125f7b113bcb12bcf6cb2ca61295614db9923b791405638ce3c72d1e87",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_the_merge_rule_is_the_carried_heads_when_the_parked_work_takes_it_away"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-C7MJ2G"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:137e8c52c15bfa78ee38f023e8e832120b17d35ff5d505091d790e309294d7ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_configuration_of_the_worktree_alone_is_the_proofs_configuration"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-KE9QPR"
+        },
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:35420cad0c58931dc0b05756ce52ff14d00eebd30d263c12efabd0bcfa6d3aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_the_merge_rule_is_the_carried_heads_wherever_the_repository_stands"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-YDTVQT"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-01GD28"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-MDHR3D",
+      "items": [],
+      "reason": "Adds a tested native reapply/context/ownership obligation under MIK-R162 without replacing MIK-R153 guarantees. Producer evidence stays freeze-bound; applicability names the current operation boundary.",
+      "revision": 1,
+      "subject": "INV-8NGD56"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NB4DWN",
+      "items": [
+        "sha256:765f9770075cbbd686464a872aa628a75c71cc2a101ce231d97a15257466fd9c"
+      ],
+      "reason": "Imports the shared native-fault and named-rule diagnostic adapters. They propagate the already authored exact-native-failure obligation to the authority response, but introduce no independent durable promise or a second merge owner. Examined every recorded before/candidate extent: [{\"base\":[24,0],\"candidate\":[26,1]}].",
+      "subject": "hunk:sha256:765f9770075cbbd686464a872aa628a75c71cc2a101ce231d97a15257466fd9c"
+    },
+    {
+      "because": [
+        "DEC-FBSDCR"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:7f26c3432d448373173e2469e0736792a3afeaa31811753bdf9b8ee37e3d9e6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-73MQY0"
+        },
+        {
+          "after": {
+            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
+            "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8PNA7G"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:ead9177467d33bc0f2f62cb4653d289a22b28eb8209c2de7de9d6e6bf4439a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "reapply_merge_fault"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BF5MYN"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G67R94"
+        },
+        {
+          "after": {
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "content": "sha256:3c22fe7de8313df4a3259d6b5e68451a1a6a937e2e199f3531f511403e4cb64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_cancel_for_later_work"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QTXJXM"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:8e9cf0191c598d950a9d469481e996552a7aee2b4e1c611bc89c7aa5584d9119",
+            "locator": {
+              "kind": "symbol",
+              "name": "CancelTreeAssessment"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TX029V"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:1659b22f220a65f382a381277e8d6c34078f0f17377bb607f60c17619c023e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expected_changed_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TXVVD8"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PABYP3",
+      "items": [],
+      "reason": "L163-MV-2: qualifies adopted native-failure diagnostic scope, not CODE or original producer wording. First-ten merge-needed recomputation bounds restoration refusal reason; cancellation carries its own observed assessment fault. Preserve every original cover and no-fallback/nonmutation boundary.",
+      "revision": 1,
+      "subject": "INV-CMQTZF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PF2NTD",
+      "items": [
+        "sha256:186b38ddc202c2c039926952363a73cc6c7e44a4bd783fc64c7326d503587e2f"
+      ],
+      "reason": "Imports supply native-result/configuration acquisition and error capture inside the already authored shared merge owner. Import plumbing is not an additional independent semantic obligation. Examined every recorded before/candidate extent: [{\"base\":[20,0],\"candidate\":[23,1]}].",
+      "subject": "hunk:sha256:186b38ddc202c2c039926952363a73cc6c7e44a4bd783fc64c7326d503587e2f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QYX9FG",
+      "items": [
+        "sha256:6fc6ba6fbb8532fb85ee60dd3c28ce4eb9bbd54709410c59a95f54eaf58a5032"
+      ],
+      "reason": "Deletes the attribute-blind merge-file reconstruction helper. Its rejected design is captured by the native-construction decision and exact-native/no-fallback obligations; deleted implementation has no separate enduring obligation to realize. Examined every recorded before/candidate extent: [{\"base\":[901,24],\"candidate\":[1060,0]}].",
+      "subject": "hunk:sha256:6fc6ba6fbb8532fb85ee60dd3c28ce4eb9bbd54709410c59a95f54eaf58a5032"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S8BA29",
+      "items": [
+        "sha256:9c752888947aaf05238e94ab693c3d0ef448674110ad112f704dd53058bdb136"
+      ],
+      "reason": "Imports supply native-result/configuration acquisition and error capture inside the already authored shared merge owner. Import plumbing is not an additional independent semantic obligation. Examined every recorded before/candidate extent: [{\"base\":[8,0],\"candidate\":[9,1]}].",
+      "subject": "hunk:sha256:9c752888947aaf05238e94ab693c3d0ef448674110ad112f704dd53058bdb136"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VQ3N0Y",
+      "items": [
+        "sha256:005704b30fea19cd6af64c98467034d96efe6b3f44ec0242a8f62c6959f82b30"
+      ],
+      "reason": "One sorted unit-regression module registration is a selection consumer. Existing lane purpose/order and execution-versus-certification boundaries are unchanged; the rule-2 behavioral registration guard and precise onboarding no-impact row carry this local contract. Examined every recorded before/candidate extent: [{\"base\":[318,0],\"candidate\":[319,1]}].",
+      "subject": "hunk:sha256:005704b30fea19cd6af64c98467034d96efe6b3f44ec0242a8f62c6959f82b30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VYAP0B",
+      "items": [
+        "sha256:475936d6a491718478c2eac299d2ae510a5be4090bed2122a021191f88ef5535"
+      ],
+      "reason": "Updates the existing regular-blob applicability comment from merge-file-specific wording to the native reapply construction. Blob-mode values and uncomputable symlink/submodule boundaries do not change; this corrected implementation description adds no separate invariant. Examined every recorded before/candidate extent: [{\"base\":[82,2],\"candidate\":[89,2]}].",
+      "subject": "hunk:sha256:475936d6a491718478c2eac299d2ae510a5be4090bed2122a021191f88ef5535"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W8M9H9",
+      "items": [
+        "sha256:0fabcddbd34397ea417399c25c8bcc0c4a4459ff89730ae6d006419df5307e95"
+      ],
+      "reason": "The object-name parser recognizes a full SHA-1 or SHA-256 name from native merge-tree output before reading that result. It supports the already authored native expectation/acquisition obligation, not an independent output alternative or compatibility certification. Examined every recorded before/candidate extent: [{\"base\":[85,0],\"candidate\":[93,3]}].",
+      "subject": "hunk:sha256:0fabcddbd34397ea417399c25c8bcc0c4a4459ff89730ae6d006419df5307e95"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WFMFXY",
+      "items": [
+        "sha256:fcd8b130c51de8aa7ef0da1a625cdeb18d12fc9281442d3472d863ea9b99bf2c"
+      ],
+      "reason": "The expected-content wrapper accepts/reuses the one lazy native merge context and delegates its both-changed branch to the selector. That exact-output/shared-context obligation is already realized on the native merge owner and selector; signature, rationale text and call-through glue add no separate durable requirement. Examined every recorded before/candidate extent: [{\"base\":[370,1],\"candidate\":[503,5]}].",
+      "subject": "hunk:sha256:fcd8b130c51de8aa7ef0da1a625cdeb18d12fc9281442d3472d863ea9b99bf2c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WK8HC6",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "One test consumer is added to the existing Node-lockfile artifact. Artifact/contract identity, owner, lifetime and replacement do not change; membership remains syntactic dependency accounting, not execution.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-GR9EZZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3ffdc3ddbc4c4a0e6efa19c8b9b842b44189c3ec64a53ab58719954b873b5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_refuse_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3ffdc3ddbc4c4a0e6efa19c8b9b842b44189c3ec64a53ab58719954b873b5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_refuse_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-H3CHMZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:604723ca57804f0ac5525bf01938cb629d78f18efd0da92236c8ccbda9dbeeef",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_refuses_without_later_work_claim"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:604723ca57804f0ac5525bf01938cb629d78f18efd0da92236c8ccbda9dbeeef",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_refuses_without_later_work_claim"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-MWDSXT"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:bc22966de69ef598327fa1e5434384e6aac548e562153e51f6b06bc51c42f6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_01b_crash_window_owner_bytes_are_never_blessed"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:bc22966de69ef598327fa1e5434384e6aac548e562153e51f6b06bc51c42f6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_01b_crash_window_owner_bytes_are_never_blessed"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "id": "PRF-PTQC32"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:c2f53b66ad9276b14f3416b04c5488c0a0bf661d9661981b2252ee55c81269bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-360CMM"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:b281c72ca7d8c5c5e82401730e2b698aaef738f654f59b0a25620a79e574e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-RW20FG"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_retained_digests"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_retained_digests"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-S4K3W3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WNGG48",
+      "items": [
+        "sha256:82f9658bcfb02985ceca1864ca85e3c8c90ebf22b26bdd754e4df01641e7d3b8"
+      ],
+      "reason": "MIK-R162 preserves the existing restoration/cancellation or historical retired catalog obligation; the native construction/diagnosis and one new consumer row change realization bytes, not this record statement, scope or entry membership. Every existing witness is renewed without reviving retired intent.",
+      "revision": 1,
+      "subject": "INV-JZRBBJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
+            "content": "sha256:13c0a19b380800c4eb688894941809c565913be8f0a114302e98c1187c8e98ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReapplyMergeTests.test_cancel_takes_a_file_staged_as_added_at_parking_as_its_own"
+            },
+            "path": "mcp/tests/test_sync_reapply_merge.py"
+          },
+          "before": "absent",
+          "id": "PRF-JJ1YNJ"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4D12QK"
+        },
+        {
+          "after": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:4aead0d8a8becdc1f4b7944418bb834b1cee9cdd49ed09b9f215cc527c4a815d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_later_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QCJ45K"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-XEWZQF",
+      "items": [],
+      "reason": "Adds a tested native reapply/context/ownership obligation under MIK-R162 without replacing MIK-R153 guarantees. Producer evidence stays freeze-bound; applicability names the current operation boundary.",
+      "revision": 1,
+      "subject": "INV-9FP5Z8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

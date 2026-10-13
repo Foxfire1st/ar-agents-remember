@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "Both-changed parked paths requiring native acquisition, without independent exact raw/fingerprint ownership; restoration diagnostic disclosure is separately limited to its bounded named-path recomputation.",
+  "conditions": [
+    "A failed effective-configuration read or native merge leaves no computed expectation for a both-changed path requiring that merge; no fallback or alternative algorithm supplies acceptance.",
+    "Restoration fails and cancellation refuses before mutation while the required content/ownership remains unavailable; complete parked inventory, retained stash, cancel/no-edit guidance and nonmutation are unchanged.",
+    "Restoration names at most the first ten failed paths inline, with readable merge rules and a remainder count; its full failed-name log is not an exhaustive inline native-reason channel.",
+    "The restoration refusal includes Git command/exit/reason only when reapply_merge_fault recomputation over failures[:10] invokes the lazy native merge and captures a fault. A native-dependent failure outside that sample does not imply that its reason appears in the refusal.",
+    "Cancellation carries the native fault actually captured by its ownership assessments into its refusal; this is a separate producer from restoration named-path recomputation and is not a promise of identical reasons for every failed path."
+  ],
+  "exclusions": [
+    "Equal-content/base cases need no native acquisition.",
+    "An undefined driver name can conform when Git chooses the same built-in text merge for proof and reapply.",
+    "Exact raw stash holders and retained fingerprints remain separately scoped ownership evidence.",
+    "Exhaustive restoration-reason disclosure: when every named diagnostic path takes an equality/base/simple-content case, recomputation has no native fault even if a later failed path needed failed native acquisition.",
+    "Unreadable carried-head attributes do not disclose a merge rule; the full failed-path name log does not enlarge the bounded inline rule/reason population."
+  ],
+  "id": "INV-CMQTZF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in in mcp/tests/test_sync_reapply_merge.py, with an injected fault of `git merge-tree` and of the configuration read (both sub-cases fail on attempt 1, where the sync ended `synced` through a plain file merge: finding L163-RV-3, evidence-A2/tests-before-attempt1-git255.log and -git243.log); the texts in evidence-A2/refusal-texts-candidate.log; freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Where git cannot make the reapply's merge again, or cannot read the configuration for it, no path both sides changed has an expected content: the proof fails on each such path, names it with its rule and says git's words; the cancel cannot show such a path to be the reapply's own, refuses over it with the same words and changes nothing; the proof never merges by a construction of its own.",
+  "status": "proposed",
+  "supersedes": []
+}

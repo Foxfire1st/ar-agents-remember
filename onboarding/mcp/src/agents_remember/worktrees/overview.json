@@ -374,7 +374,7 @@
         },
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
             "content": "sha256:02d4c1b7b9aed8051fbe1d5465a8ab5a3e6f2322a9994c54e75c1f1c4dd937c2",
             "locator": {
               "kind": "symbol",
@@ -386,7 +386,7 @@
         },
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
             "content": "sha256:4b86e7314fe45d353706268c078dacedf163136fb30d0c1ceb3f29ffd69dd306",
             "locator": {
               "kind": "symbol",
@@ -403,7 +403,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -427,7 +427,7 @@
         },
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -537,7 +537,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -820,7 +820,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",
@@ -907,7 +907,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -987,7 +987,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -999,7 +999,7 @@
         },
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
@@ -1132,7 +1132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
             "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
             "locator": {
               "kind": "symbol",
@@ -1144,7 +1144,7 @@
         },
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
             "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
             "locator": {
               "kind": "symbol",
@@ -1543,7 +1543,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -1886,12 +1886,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
-              "end": 1180,
+              "end": 1316,
               "kind": "line_range",
-              "start": 1165
+              "start": 1301
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
@@ -1904,12 +1904,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
-              "end": 1279,
+              "end": 1415,
               "kind": "line_range",
-              "start": 1251
+              "start": 1387
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
@@ -2191,6 +2191,69 @@
               "start": 9
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Binary staged bytes remain exact in cancellation ownership comparisons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+            "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "Native merge faults are propagated before cancellation mutation.\n\nAnchor: `cancel_sync`, `_refuse_cancel_for_later_work`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "content": "sha256:990e76a78c1117aa523579305c39e3b4f552f34593800243afa082cff7af12ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a7a16405348e507189e3ae1bf82879b6868362a",
+            "content": "sha256:3c22fe7de8313df4a3259d6b5e68451a1a6a937e2e199f3531f511403e4cb64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_cancel_for_later_work"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },
           "kind": "code"
         }
