@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "ca7cedbf727c1b66642ba13e40328965a2d22ee0",
+        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
           "kind": "symbol",
@@ -113,6 +113,21 @@
           "anchor": {
             "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
             "content": "sha256:5e0c28cd527a4a323d41631f88c4aab2eac2b8269e9f023a9070022af36bb033",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Folder-only abandon and conditional cleanup branches preserve distinct no-remains discriminators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+            "content": "sha256:ee8b4bdb44e163fb75c9784b7b41f98debdf07db7bda304a5954b59c439ab7a0",
             "locator": {
               "kind": "file"
             }

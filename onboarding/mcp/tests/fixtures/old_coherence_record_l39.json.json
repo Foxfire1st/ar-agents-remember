@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Complete historical record encoding is retained as test input.",
+      "note": "Complete historical encoding is retained as an eight-path translated compatibility derivative, not original bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ec300f8b20b75ad85a72f7f646ab7617eb91bf3",
-            "content": "sha256:407e11c31a0cc30ca1c1b48b89e18f3f47de840c657ae2835442675234e37ef6",
+            "blob": "23e75b0931e2ffa314262c5a4ed9edd052c27035",
+            "content": "sha256:81aa5fe19b98b35a53b55eae5e03e134c96da9b57aff4a6975ca7083ea7a6e0b",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

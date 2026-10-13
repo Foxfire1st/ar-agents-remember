@@ -31,6 +31,21 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "Series-refusal fixtures carry the mirrored external-memory landing leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaabd4a86bc6847cc124622d56978383e36d5bb",
+            "content": "sha256:ea3ee7553aa2bb1dea279424715ef1ad2006e1daa86c91fbe0b2d0786e1a5348",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

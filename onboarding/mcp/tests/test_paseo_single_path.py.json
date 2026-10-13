@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5aca5c8058fe23ab1f7faac9ec4d9d1f496e165",
+            "blob": "6811954d8311d64996ccbe08c516aa5f54c1ad39",
             "content": "sha256:067821f7c94845550343930854cc41ede98df645f88d2c797ab563f6092ba527",
             "locator": {
               "kind": "symbol",
@@ -39,6 +39,21 @@
               "end": 260,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dev-only fake host has two admitted pinned-server comments, not another host path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6811954d8311d64996ccbe08c516aa5f54c1ad39",
+            "content": "sha256:f09c3a13278ccc345e29dab01e87b22a71c67c053203f2666ffa33d31d710d25",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

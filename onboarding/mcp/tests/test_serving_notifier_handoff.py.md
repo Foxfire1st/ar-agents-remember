@@ -54,6 +54,8 @@ and the real notifier sweep are what these cases measure.
 
 ### Logic
 
+The default-phase case waits for its first notifier pass, then settles both loops before driving the next full sweep. This fixes re-park/poll ordering under MIK-R160 rule 9 without lengthening waits or weakening the timing oracle.
+
 Each case asserts the bound **and** its decomposition from measured terms rather than illustrating it,
 and each protects one clause of the oracle. Assertions such as
 `handoff.latency == WORST_PHASE_BOUND + overrun + commit_duration + notifier_overrun` are claims over
@@ -149,3 +151,5 @@ not execution evidence and is not a certification result.
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
+
+- The first notifier pass settles before the next observation sweep is driven. [19]

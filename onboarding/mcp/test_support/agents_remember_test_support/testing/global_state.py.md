@@ -23,6 +23,8 @@ per test and restored before reporting leaks. Import-time-only registries retain
 registrations from deferred imports. Reset rows are handled before and after each test module, only
 when their owner is already in `sys.modules`; resetting never imports a product module.
 
+The reset register also includes measured answer-folder budgets, suspended held-message sweep walks, message-stem counters, atomic-write temporary paths and the installed tool-event writer. Sweep walks and the writer delegate cleanup to their owning resetters rather than merely clearing a wrapper mapping.
+
 Cleanup follows the resource owner: wait for quality workers under their lock before clearing runs;
 stop and join the ambient heartbeat; terminate and reap this process's tracked children; clear caches,
 services and lock bookkeeping; undo installed wrappers together with their installation guards.
@@ -50,3 +52,5 @@ whose contract deliberately sets process state.
 - Worker completion precedes clearing the quality-run registry. [5]
 - Ambient reset joins the actual heartbeat before returning. [6]
 - Only process-owned spawned children are terminated and reaped. [7]
+
+- Loaded-owner reset includes delegated sweep and tool-writer cleanup. [8]

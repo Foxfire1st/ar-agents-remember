@@ -21,7 +21,7 @@ The assertions cover named registration absence, a route chain without entries, 
 
 ### Logic
 
-- **The world.** `_invariant`, `_family`, `_sidecar` and `_graph` write a converted memory tree through the text-file layout (records, families, onboarding sidecars with `realizes` and `proves`); `_read` calls `knowledge_read_payload` with a `CoordinationContext`. The module imports `knowledge_index_test_support` for the shared review fixtures and Git helpers.
+- **The world.** `_invariant`, `_family`, `_sidecar` and `_graph` write a converted memory tree through the text-file layout (records, families, onboarding sidecars with `realizes` and `proves`); `_read` calls the public `knowledge_read_payload` boundary with the selected roots. Long tails assert its overflow contract; `_read_body` supplies explicitly marked domain-unit rows and the next top-level continuation. This is not pointer retrieval or proof of a retained whole-result artifact. The module imports `knowledge_index_test_support` for the shared review fixtures and Git helpers.
 - **Selection and order** (`test_a_path_selects_one_family_hop_in_the_declared_order`). A three-family graph with a shared member, a retired member, a proof entry and an advertised family. It asserts the exact row sequence (rule 4), the header fields (rule 2), the member and entry fields (rule 3), the `member_reference` of `INV-CCCCCC` under `FAM-F22222` with `returnedUnder: FAM-F11111`, `title == "INV-CCCCCC holds."` and `titleDerivedFrom: "statement"` (rule 5, ruling Q1), one `advertised_family` row for `FAM-F33333` with `via == ["INV-CCCCCC", "INV-DDDDDD"]` (ruling N4), the exact `counts` (rule 8), `memoryTreeId` (rule 9), the block's top-level `policyVersion == "family-complete-leaf/v1"` (ruling Q5), and that a proof-only path also seeds the read (ruling Q3).
 - **Both surfaces** (`test_both_surfaces_return_one_selection_under_one_manifest`): identical rows and manifest digest from `read_ar_files` and `knowledge_read` `source_context` (rule 6).
 - **Family names** (`test_the_invariant_view_names_its_families`): the `invariant` view's `families` by ID and title (rule 7).
@@ -36,7 +36,7 @@ The assertions cover named registration absence, a route chain without entries, 
   - `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`: 104 seeds at deep `_DEEP` paths give `seed_queue_exceeded` with `seedCount` and `firstSeed`, the block stays within 8,000 tokens and nothing raises (carried 2026-09-29 21:32:34).
 
 - **The derived title** (`test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length`): the first of two sentences, a decimal inside a sentence, no sentence end, and a 200-character sentence cut to exactly `DERIVED_TITLE_LENGTH` ending in `…`.
-- **Identity seeds on a tree** (`test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`, ruling N2): a 30-member family read through `read_published_intent` with an identity seed, a path, then 29 more identity seeds. It covers a scope page in the block, each kind's collapsed tail (continuation views `invariant` and `source_context`), every continuation walked through `knowledge_read` (including `tree_read._scope_response` and the moves between queued seeds), every seed's rows exactly once against `select_knowledge_scope` and `select_leaf`, every page within the threshold, and the mixed-block policy: the top level keeps `recorded-family-frontier/v1`, and each page states its own `selectionPolicy`.
+- **Identity seeds on a tree** (`test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`, ruling N2): a 30-member family read through `read_published_intent` with an identity seed, a path, then 29 more identity seeds. It covers a scope page in the block, each kind's collapsed tail (continuation views `invariant` and `source_context`), every continuation walked through `knowledge_read` (including `tree_read._scope_response` and the moves between queued seeds), every seed's rows exactly once against `select_knowledge_scope` and `select_leaf`, delivered fitting pages measured through `response_tokens` and overflow pages retaining `resultKept: false`, and the mixed-block policy: the top level keeps `recorded-family-frontier/v1`, and each page states its own `selectionPolicy`.
 
 ### Conventions
 
@@ -96,3 +96,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the cases build their repositories under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+- Overflow read tails use marked domain-unit rows, not retained pointer retrieval. [38]

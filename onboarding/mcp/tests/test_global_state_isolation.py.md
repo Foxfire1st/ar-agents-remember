@@ -18,7 +18,7 @@ The expected owner is the kernel checkout-execution declaration, whose normal py
 leak and restoration to test mode before failure. It verifies that only restored rows enter
 per-test snapshots, that reset never imports unloaded owners, and that a subsequently loaded cache
 is cleared. The actual ambient heartbeat is stopped and joined. Each other reset row exercises its
-declared cleanup through a local owner double; each restored row keeps its original table while
+declared cleanup through a local owner double, with the sweep-cursor and tool-writer rows asserting delegation to their owner resetters; each restored row keeps its original table while
 reporting the leaked addition.
 
 `test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown` drives the actual unconfigure
@@ -50,3 +50,5 @@ restoration assertions.
 - Every loaded reset row participates in its declared cleanup proof. [2]
 - Each restored table is repaired and its leak named. [3]
 - Private tmux failure preserves all existing later teardown. [4]
+
+- Reset-row doubles assert owner delegation for sweep and tool-writer cleanup. [5]

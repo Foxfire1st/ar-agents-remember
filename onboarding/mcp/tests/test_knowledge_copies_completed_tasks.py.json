@@ -16,6 +16,21 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Legacy-copy fixtures build under a working filename and remove derived index tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5534b84c5ccc489266dc1eaf4c53eab31b4eeba",
+            "content": "sha256:effd210005daf7a228ce8a480fbf45fd40ac5029e5aae320b77041bdbce4d958",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:a8a4b16f79bbcdecd306f8681732018ffc395b23b187741dde0e482742776cf7",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
-        "content": "sha256:1130794d69601258c781c489dbd490b81ed474af5d29d4fccc6d1e89440f6c2c",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+        "content": "sha256:7aa15b4bf7f4660739228c01bfe25b4d448297e8db40d2b0062c000fd6db4c8e",
         "locator": {
           "kind": "symbol",
           "name": "InvestigatorTests.test_task_listing_is_bounded_task_owned_and_result_exact"
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+        "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
         "content": "sha256:4ae78471983abc6a70df613aa0a69ef04812e053524f4b8fa5bc97951eecfc69",
         "locator": {
           "kind": "symbol",

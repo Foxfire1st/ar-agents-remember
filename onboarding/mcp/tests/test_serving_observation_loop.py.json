@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
             "content": "sha256:0bc487dfe797271f86727c367a7803fbe60605bfdda8f1003dccbd637d236fe5",
             "locator": {
               "end": 23,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
             "content": "sha256:233e76a706f6e4f93c34dd69b01c3ae9c88d1e3e6911091acbeec09aadfb2d63",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
             "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
             "locator": {
               "kind": "symbol",
@@ -189,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
             "content": "sha256:8110f3d32520776a99626a049f899a9048d26e77a1cc8a9e846c08a59010b537",
             "locator": {
               "kind": "symbol",
@@ -201,12 +201,12 @@
       ]
     },
     "26": {
-      "note": "One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task.",
+      "note": "One failed pass is isolated: the owner stays scheduled, six sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task.",
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
-            "content": "sha256:3843bd7d787040e12e63974061170d0788ff0a614dee99ffc8c5703e51d3fd56",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
+            "content": "sha256:fcc01638c6db0e99a20cc356fdb369c16d7ccefc930b7ed7e932c8973631ce1b",
             "locator": {
               "kind": "symbol",
               "name": "ServingObservationFailureIsolationTests"
@@ -221,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
             "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
             "locator": {
               "kind": "symbol",
@@ -238,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
             "content": "sha256:baea31497d3f514c34c478c6ef5d772abb503cf72cde4b20ef5c16dfc3f9dfef",
             "locator": {
               "kind": "symbol",
@@ -287,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
             "content": "sha256:dffe0ad14c2d1fd5cd2f56897031e17662ad0641893ff2c17386400efaa4dc52",
             "locator": {
               "kind": "symbol",
@@ -320,12 +320,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "8e78fa5281fec75c12bf1a6de6f95d2f7ecceaf6",
             "content": "sha256:2d49413e5ade6f1518beff74d908be6c5e2ae361db5f17b028c96822bfb2058a",
             "locator": {
-              "end": 277,
+              "end": 307,
               "kind": "line_range",
-              "start": 273
+              "start": 303
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

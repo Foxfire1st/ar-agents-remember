@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cbef2a1c654534569644855860be90210bf72a23",
+        "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
         "content": "sha256:758c3058ac56076e2d6a6a002a25b460c283aa28c7e7d0d7de2fff972b8f7757",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "cbef2a1c654534569644855860be90210bf72a23",
-        "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
+        "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+        "content": "sha256:e581f6fb5d955923dc82167737ef738270ccbef667166b020ef88fb587bb3899",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "cbef2a1c654534569644855860be90210bf72a23",
-        "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
+        "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+        "content": "sha256:d668c67be23f2f5d57ca0fca445560bd24178605a932e1ac5f449effb3b97aca",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
@@ -92,6 +92,21 @@
               "end": 260,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Catalog shape retains modes/features while isolated settings are prepared per case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+            "content": "sha256:7188fc8065931fc405d5fc40a115a6d864668e7c3d92e7ca677d16f5a25afb34",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current RULE6_MODULES explicitly permits application/agent_binding.py and requires a positive name hit there.
+- RULE21 admits exactly cli/paseo_catalog.py and cli/paseo_launch.py for the existing least-permissive provider modes and the Claude-only `server_info` identity preapproval when the provider accepts MCP definitions. The retained `assignmentReadGrant` receipt key reports that identity-only preapproval (or that it was not applied), not assignment-content access or a restored `assignment_read` grant. Each file must have exactly its declared harness-name set; silence and an unrelated provider word both fail. Real-file mutant probes prevent this admission widening into a module-wide exception.
 
 ### Superseded inventory
 
@@ -35,3 +36,5 @@ The source guard derives the launch seam and the code it uses or that uses it, t
 - The scoped current source carries the module/document behavior described above. [1]
 
 </details>
+
+- RULE21 admits exact provider-name sets and rejects unrelated real-file mutants. [2]

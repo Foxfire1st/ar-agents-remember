@@ -22,6 +22,7 @@
 - **Expansion from a family seed** (rule 3; ruling Q1):
   - `test_a_family_seed_returns_the_full_family_content`: following a chain row's `expand` gives the family header, every live member with its entries, then the advertised families, equal to the path read's rows for that family, with no `routeChain`;
   - `test_a_family_seed_is_named_by_id_revision_or_projected_uuid`: `ID`, `ID@1` and the projected UUID give one manifest; `@2`, a bare `@` (ruling R2-1) and an unknown ID are `selector_absent`.
+- **Public boundary and domain-body scope.** `_walk` accepts either payload-nested tool rows or top-level published-intent rows. It checks public outcomes and externally measures fitting answers; overflow tails keep the named overflow contract, while the explicitly marked domain body supplies rows and its top-level next token. These assertions do not claim pointer retrieval. Family walks retain the complete 75-row selection, not merely the first page.
 - **Budget and resumption** (the module-scoped `long_tree`: 24 long members in one family and 24 long-guarantee families at `.`):
   - `test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf`: page 1 continues, the walk returns every row exactly once, every page is within the threshold (`_walk`), and the 25 chain rows are the last 25;
   - `test_a_family_seed_walk_resumes_under_any_spelling_of_its_family` (review F4): a family-seed walk resumed naming `FAM-B16000`, `FAM-B16000@1` or the projected UUID walks all 24 members; naming another family is `continuation_binding_mismatch`;
@@ -75,3 +76,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the cases build their repositories under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+- Route-chain walks keep public outcomes and obtain complete domain-unit rows and continuations. [13]

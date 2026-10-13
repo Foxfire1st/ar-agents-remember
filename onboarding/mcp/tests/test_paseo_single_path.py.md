@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The source census admits exactly the configured bridge and runtime-command boundary and plants forbidden alternative routes to test detection. Its own disclosure excludes dynamically assembled names/addresses, unscanned file kinds and certain replacement shapes. A clean text census is not comprehensive proof that no second runtime path can exist.
+The source census admits exactly the configured bridge and runtime-command boundary and plants forbidden alternative routes to test detection. Its own disclosure excludes dynamically assembled names/addresses, unscanned file kinds and certain replacement shapes. A clean text census is not comprehensive proof that no second runtime path can exist. The dev-only `dashboard/src/dev/FakePaseoHost.tsx` is admitted for exactly two comments naming the pinned server it follows; its page still drives the genuine bridge code, not a second production host route.
 
 ## Evidence
 
@@ -17,3 +17,5 @@ The source census admits exactly the configured bridge and runtime-command bound
 The single-path test now proves that the install step, the dashboard start and the runtime commands all reach the host through the same runner and the moved host package, and that no second host path was opened by the host step; the moved-module imports and the shared authority are asserted alongside the original single-path rule.
 
 - The single-path cases over the moved host modules. [2]
+
+- The dev-only fake host has two admitted pinned-server comments, not another host path. [3]

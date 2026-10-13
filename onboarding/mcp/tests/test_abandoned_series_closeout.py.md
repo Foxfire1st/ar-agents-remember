@@ -14,8 +14,7 @@ are about and the action that clears them. It runs in the `unit-regression` lane
 
 ### Logic
 
-The `series` builder creates a scratch code repository, a series contract, one leaf document per row, and, for each
-`Completed` row, a landing commit with a leaf enclosure whose integration is completed. Abandoned rows get a document and
+The `series` builder creates scratch code and external-memory repositories through the shared initializer, a series contract and one leaf document per row. Each `Completed` row has a paired code/memory landing and a leaf enclosure recording both legs; the successive memory bases follow that chain. The unordered-chain control gives its two leaves the same landing on both sides, so memory ordering cannot hide the intended refusal. Abandoned rows get a document and
 no enclosure unless a case adds one.
 
 - **Abandoned rows pass the closeout proof.** The parameterized witness uses 1 completed and 3 abandoned rows,
@@ -48,3 +47,5 @@ no enclosure unless a case adds one.
 - An all-abandoned master proves an empty chain and refuses a foreign commit. [4]
 - Malformed rows are refused with the master, the row and the action named. [5]
 - Checkpoint refusals name the master and the action. [6]
+
+- The series fixture mirrors completed landings on code and external memory. [7]

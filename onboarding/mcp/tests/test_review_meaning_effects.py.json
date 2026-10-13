@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:02d022c6e60c6fd9474d9afd392ffdf647b966f73a9ecaec14c1795c482d1aff",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:16ae2f7ece06c6c44132e113d42a8df0d2a49b2ac9f54f149a94e1131ad99603",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:7a1cd131c7b74ca30beaeb4abc4e7b52470e2a4ba00bf9bd02ecad4499d3fec0",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:8f81b93c7acd385755d5035ef7d19bc19128a0680f65c7e12afc8bf17d391782",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:106ec2ea5627b0986006186ab0f5af541b9b4f3c18892f47d30f7f056ef10831",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
-        "content": "sha256:84e53799262ceb615beb921aedf2ddfb3c8be5d6980f34f7b66ce29788d8cfd8",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+        "content": "sha256:6e56d1d906085b5bb7cdd272e5381526e538198cc26d60a105dcce74bc7c9469",
         "locator": {
           "kind": "symbol",
           "name": "test_a_half_recorded_family_row_makes_the_display_unavailable"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
         "content": "sha256:e8aa8f433b807b318d4a5a87aab2522bc72a4a07368e713a14a05f7afc65131c",
         "locator": {
           "kind": "symbol",
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
             "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
             "locator": {
               "kind": "symbol",
@@ -178,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
             "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
             "locator": {
               "kind": "symbol",
@@ -194,11 +194,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
             "content": "sha256:ad6b429f513176e7a60668cacc4c1d4ca3bc4428cefacdfcefe02564e68de3a4",
             "locator": {
               "kind": "symbol",
               "name": "test_the_l37_sequences_from_the_real_history_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Invalid derived history is fault-injected by updating exactly one text-staged index row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:89a95701a60826424cae2da77f17b43dc2d3f2e4884ee8d8c0556543b5f5198f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

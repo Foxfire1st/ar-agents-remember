@@ -76,6 +76,8 @@ Shared waits provide hang guards and condition-specific failures, not performanc
 
 ### Responsibility map and enduring semantic intent
 
+Bounded-knowledge regression distinguishes the public payload outcome from explicitly marked domain-unit detail when the mounted answer cannot keep the whole result. The public fitting/overflow contracts remain checked; raw domain bodies are not pointer retrieval. Series fixtures carry both code and external-memory landing legs, and observation fixtures park held delivery among their six siblings. Exact provider-name admissions and sandbox resolver-key checks protect the current mechanisms rather than licensing wider exceptions.
+
 Knowledge and onboarding tests own text formats, curator writing, validation, histories, planned effects, trace gates, unexplained-change disposition, reconsideration, closeout worklists and derived read/index behavior. Preserve typed partial/unavailable/absent outcomes: a schema failure names its file and makes an index partial; tool surfaces must not disguise incompleteness; a failed/unrun lookup is unavailable rather than observed absence. Historical index/database parity records describe their former comparison boundary, not renewed authority for a retired database substrate.
 
 The existing reconsideration suite now protects candidate-side supersession: a successor suppresses

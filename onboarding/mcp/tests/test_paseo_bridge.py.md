@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The Python caller admits the configured home/version, supplies data through stdin, distinguishes subprocess/decoding/timeout failures and parses runtime catalog data. Node stand-ins check the native client seam and reject another daemon. Catalog availability and shape are measured independently of launching a paid turn.
+The Python caller admits the configured home/version, supplies data through stdin, distinguishes subprocess/decoding/timeout failures and parses runtime catalog data. Node stand-ins check the native client seam and reject another daemon. Catalog availability and shape are measured independently of launching a paid turn. Provider assertions include modes, default-mode identity, fetched-at metadata and model features. Each failure subcase writes or removes its own shared settings immediately before the call; the hostile environment retains its isolated `XDG_CONFIG_HOME` so discovery cannot read the account settings.
 
 ## Evidence
 
@@ -17,3 +17,5 @@ The Python caller admits the configured home/version, supplies data through stdi
 The bridge tests assert the product Node path in the bridge environment, the configured-server identity, and the new install/start remedy texts for an unloaded host client; the refusal and reconnection-off cases are unchanged.
 
 - The bridge environment case with the product Node. [2]
+
+- Catalog shape retains modes/features while isolated settings are prepared per case. [3]

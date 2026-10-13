@@ -11,6 +11,8 @@ Checks converted knowledge reads, bounded file diffs, index integrity and explic
 ## Code Commentary
 
 
+Public payload calls retain the bounded outcome and overflow contract (`resultKept: false` when overflowed). Displaced diff and integrity details are checked through explicitly marked domain-unit bodies of those same operations, not a retrieved pointer or a retained whole-result artifact. `response_tokens` measures delivered-answer width externally; the response itself no longer carries that count. Both short-root fitting answers and long-root overflow cases retain their distinct facts.
+
 Current cases read a converted tree through its index; compare knowledge files and adjacent cards; name unknown paths, unheld records, directories and unknown revisions; and report omitted items within the read threshold. Separate cases compare an omitted after revision with the working tree and refuse an unconverted working tree. Retired records are not live selections, partial indexes stay incomplete, and unbuildable indexes return a refusal. The removed combined database-unchanged case is not current coverage; no test execution is asserted here.
 
 ### Logic
@@ -57,3 +59,5 @@ The cases.
 No meaningful cross-repo references found: every case builds its own repository under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+- Public diff and integrity outcomes are checked separately from marked domain-body details. [14]

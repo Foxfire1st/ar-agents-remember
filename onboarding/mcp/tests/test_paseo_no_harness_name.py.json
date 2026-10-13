@@ -16,6 +16,21 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "RULE21 admits exact provider-name sets and rejects unrelated real-file mutants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4760971828eee0faed38e710074f1cd58340696",
+            "content": "sha256:516f5391011de61890bf60a78e176884f1ba0d0e737a9ba37f1bf291ebefb6e0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

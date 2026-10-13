@@ -64,7 +64,7 @@ The overview-order test module is a consumer of eleven existing artifact rows, a
 
 ### Structure
 
-The old coherence-record fixture is an exact retained external-recorded artifact, owned and consumed by `test_evidence_dependency_bounds.py`; its permanence protects old-record compatibility under the derived dependency bound. The landing/gate suites register their actual shared support consumers, never a new execution claim.
+The old coherence-record fixture retains its external-recorded catalog provenance and permanent compatibility purpose. Its current bytes are a declared derivative: eight original-machine home-prefix occurrences were retargeted to `/home/test`, so the retained exact-byte source pin does not authenticate this derivative. The production-model loading test documents that discrepancy; neither catalog permanence nor loading makes it current coherence authority. The landing/gate suites register their actual shared support consumers, never a new execution claim.
 
 - Two top-level values: `schema_version = "ar-test-evidence-lifecycle/v3"` and
   `large_fixture_bytes`, the size from which any non-source file under `mcp/tests` counts as a

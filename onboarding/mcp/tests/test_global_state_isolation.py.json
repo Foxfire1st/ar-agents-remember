@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+        "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
         "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+        "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
         "content": "sha256:f7aa08ab6966f9aa9b5c76338f508e2673c3bc73e79ccf836bd829412c7f000e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
             "content": "sha256:b3a7b23a9d262802fb2c300d441ec0fb5b1e1606eb79d80ab83fc9f16c2ce008",
             "locator": {
               "kind": "symbol",
@@ -91,11 +91,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
             "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
             "locator": {
               "kind": "symbol",
               "name": "test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reset-row doubles assert owner delegation for sweep and tool-writer cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
+            "content": "sha256:a8e94d49633d431c3a15916753d6c28ab6ba8d44663b7d8c25d117829d70e07f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

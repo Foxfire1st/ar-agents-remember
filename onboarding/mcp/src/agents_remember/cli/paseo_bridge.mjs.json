@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
-        "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "content": "sha256:b6fe755a426528b19ea0c85bd3143cbd00df84472173cccabf3f138973cf3f7b",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
         "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
         "content": "sha256:b6baa17f873e054de1e17daa3038a235883d45284cf322049de8378983281834",
         "locator": {
           "kind": "symbol",
@@ -115,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
               "kind": "symbol",
@@ -135,6 +135,22 @@
             "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+            "content": "sha256:8f20824ca1a7a145e73b03e91e72398a6f2cd96399fd7b08e9f62071199336c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "stillLoading"
             }
           },
           "kind": "code"

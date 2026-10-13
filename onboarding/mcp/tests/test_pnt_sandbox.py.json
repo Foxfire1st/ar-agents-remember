@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:2700d6456c8018530039ec9b02d2694e0ab7dccc05bbddd8df0108f004962075",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:d4413865144e3a314bd07da2efaf556962edb40240f6a9995d13534f1646b026",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+        "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
         "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
         "locator": {
           "kind": "symbol",
@@ -239,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+            "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
             "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
             "locator": {
               "kind": "symbol",
@@ -255,11 +255,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24312e3a65ef9961c4f7d082150e2be8db862013",
+            "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
             "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
             "locator": {
               "kind": "symbol",
               "name": "test_foreign_package_admission_prevents_public_install_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real resolver command must return empty errors, every expected non-null root and five resolver keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b642596f4b6acaa784b65125ddcbdbf4a7a78bca",
+            "content": "sha256:4825effc53db0c8ae492bf4271cd1e032f2f546b98a5d583b313c955fd5e568a",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

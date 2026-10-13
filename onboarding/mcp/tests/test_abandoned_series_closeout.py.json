@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
         "content": "sha256:df2da732c8b4f09959007c5e091b88db49da9654ff67a2fe635cbfa844e01522",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
         "content": "sha256:b3862a96d7ae18002a476331b8141ccae493a96bfb2f6859987c229b9daa48d4",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
-        "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+        "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
+        "content": "sha256:c7595c0bb5b500de4d9627dc19ea4a980ef5551e556109576dd469ac9a9313d6",
         "locator": {
           "kind": "symbol",
           "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
-        "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+        "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
+        "content": "sha256:7b21884c7527022e3b68b1769f18268589d9e55e2d608be29ed92ad912cf28cc",
         "locator": {
           "kind": "symbol",
           "name": "test_landed_abandoned_row_refuses_with_named_remedy"
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
             "content": "sha256:ba4058f1cfdb4339c547c4e395f69994d4074b88c2f6c499c2c33b001991680d",
             "locator": {
               "kind": "symbol",
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
             "content": "sha256:a1b0df5085bc8723dfdb0cfad1b5d4b82737cc9b824e89557117ac23f425ab34",
             "locator": {
               "kind": "symbol",
@@ -141,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
             "content": "sha256:934a2398821bd7540dfcb292d58addccd31488de59efefe15e5548a69ec82da3",
             "locator": {
               "kind": "symbol",
@@ -157,11 +157,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
             "content": "sha256:9df55cf7c106be22520dfe40a27b4d3bd1699485a2ff057da37c84494f348632",
             "locator": {
               "kind": "symbol",
               "name": "test_checkpoint_refusals_name_the_master_and_the_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The series fixture mirrors completed landings on code and external memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
+            "content": "sha256:f7cacd27561faddb4d28dc6b0053d7cf02e71bb0d671120b98c680fd557c78dd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

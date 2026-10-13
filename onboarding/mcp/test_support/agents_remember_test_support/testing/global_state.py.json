@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
-        "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+        "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
+        "content": "sha256:c6fb821bf499e5de4f9f7645b820b8484caf40ba50e59c9c37e1a84afefcee2e",
         "locator": {
           "kind": "symbol",
           "name": "PROCESS_MUTABLE_STATES"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+        "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
         "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
             "content": "sha256:80068ea5fda12ee371d15fa0b0015285dc018e4d29308d159ed6f4214ffcab8d",
             "locator": {
               "kind": "symbol",
@@ -130,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
             "content": "sha256:fecf325cce31d06171e585a777aa0d59ef6f55ee13e0b4b5e09a9b3c28567d37",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
             "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
             "locator": {
               "kind": "symbol",
@@ -162,11 +162,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
             "content": "sha256:b526214cf1d90732f739832b696528694ec2db83e24ee3732b5b86a29b7e6201",
             "locator": {
               "kind": "symbol",
               "name": "_stop_spawned"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Loaded-owner reset includes delegated sweep and tool-writer cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
+            "content": "sha256:e8c66074641905127c4ccfe3a9e81d60e52dd93355f665b25e3cc7a1791e984e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

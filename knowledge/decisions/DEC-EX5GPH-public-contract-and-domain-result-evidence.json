@@ -1,0 +1,94 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Requiring pointer retrieval in every domain test was weighed against separately checking public projection and complete domain facts; the chosen boundary prevents future tests from crediting raw function calls as retained-detail custody."
+  },
+  "alternatives": [
+    {
+      "option": "Check the bounded public contract and assert whole facts through the same function behind the tool, with one independent guard witness for detail custody.",
+      "reason": "The function computes the whole result by MIK-R108 rule 5, so the public outcome and complete facts are tested at their separate owners.",
+      "status": "chosen"
+    },
+    {
+      "option": "Require each overflow-sensitive regression to retrieve the whole result through its public answer pointer.",
+      "reason": "The ruling accepts domain-unit assertions without claiming pointer retrieval; custody is established once at the guard, not duplicated in every domain test.",
+      "reconsider_when": "A requirement changes the complete-result owner or requires per-operation mounted pointer retrieval rather than domain-unit assertions.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Domain-body assertions do not prove retained-pointer retrieval or runtime acceptance.",
+    "Fixed answer bounds and substantive assertions remain unchanged; the detail-custody witness is separate."
+  ],
+  "context": "The public tool boundary intentionally projects bounded answers; regression tests need the domain function’s complete facts without claiming unavailable pointer retrieval.",
+  "decider": "Architect 97e0320d, L159 F03 ruling of 2026-10-13T08:03:49+02:00, interpreting approved MIK-R108 rule 5 and MIK-R159 rule 3.",
+  "id": "DEC-EX5GPH",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
+        "content": "sha256:8488af2311fb4e74c7d352953d73d7ee83ae28acb5798cd848c42a786f54eb75",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_body"
+        },
+        "path": "mcp/tests/test_knowledge_leaf_read.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "874885a025a88d07d976a8846a8775a37045d35f",
+        "content": "sha256:f05e26c93de967cac9054a18add2d1f86d8adb60acce9d93fb1701245008d66b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_diff_body"
+        },
+        "path": "mcp/tests/test_knowledge_index_surfaces.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "874885a025a88d07d976a8846a8775a37045d35f",
+        "content": "sha256:0feb0ac3de02cedc9c633c472a20c7140406269891978b447a2d879e42a60f36",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_body"
+        },
+        "path": "mcp/tests/test_knowledge_index_surfaces.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "cde6b8bccadbf890bb75c2317cae8134c72c6e59",
+        "content": "sha256:637e6174c3b36c51cead7e72462d6caae847a49e204f7f1e2aed5cc7ba8994fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_walk"
+        },
+        "path": "mcp/tests/test_knowledge_route_chain.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect F03 ruling (notes/run3/L159-THE-WHOLE-RESULT-IS-THE-FUNCTIONS-RESULT-THE-POINTER-IS-SHOWN-ONCE-AT-THE-GUARD-THE-SANDBOX-STEP-IS-GREEN-AT-THE-BASE-RULING.json), MIK-R108 rule 5 and MIK-R159 rule 3; Reviewer r2-final/fix-dispositions.json and successor CODE qualification."
+      ],
+      "path": "knowledge-authoring-v1.json"
+    },
+    "handoffEntry": "L159-CDEC-F03",
+    "leaf": "260928-MIK-L159",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

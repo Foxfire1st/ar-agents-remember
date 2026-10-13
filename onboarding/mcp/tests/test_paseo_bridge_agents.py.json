@@ -16,6 +16,21 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Feature discovery may precede refusal, but refused features send no agent create or message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfa96daa7162d12ca301a9512c3f9cb77e0d9d6c",
+            "content": "sha256:02ee61a3bf16fb50cf3381329fecf4d975634bdb73caf79bdbe6f1b575d527c9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

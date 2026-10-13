@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The safety suite judges outside, missing and defaulted AR roots, exact sandbox values and resolving-build identity. Build-input cases preserve unmarked directories, marker replacement, repeatable incomplete reset, generated layout/settings and exact environment scrub. Port and environment checks use real child processes; failed-rmdir recovery includes a mock.
+The safety suite judges outside, missing and defaulted AR roots, exact sandbox values and resolving-build identity. Build-input cases preserve unmarked directories, marker replacement, repeatable incomplete reset, generated layout/settings and exact environment scrub. Port and environment checks use real child processes; failed-rmdir recovery includes a mock. The resolver-success control executes the real `build_roots.py` command and checks the JSON rather than exit zero alone: errors are empty, roots have exactly the expected keys and all values are non-null, including the five repository resolver roots. This protects the existing sandbox script; it does not claim that script was repaired here.
 
 ## Evidence
 
@@ -19,3 +19,5 @@ The sandbox tests gained the public install route receipts and admission cases, 
 - The safety case for the product Node and cache roots. [2]
 - The public install receipt cases. [3]
 - The foreign-package admission case. [4]
+
+- The real resolver command must return empty errors, every expected non-null root and five resolver keys. [5]

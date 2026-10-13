@@ -21,7 +21,7 @@ failed pass is isolated, retried and leaves every other durable artifact unchang
   chosen attempt. `_Gate` parks one chosen invocation in its worker thread. `_LiveHost` is a host whose
   catalog rows are alive.
 - `_ServingFixture` builds one serving runtime in which only the observation loop is real; the projector,
-  metrics, notifier, death-watch and compaction loops are parked coroutines. Its runtime carries a
+  metrics, notifier, death-watch, held-delivery and compaction loops are parked coroutines. Its runtime carries a
   `review_trees_shutdown` callable that records the thread it runs on. Every time the fixture's lifespan
   ends, the fixture asserts that this callable was called exactly once more and never on the main thread.
   Every case of the module therefore also checks that the lifespan invokes the provided shutdown callback
@@ -79,7 +79,7 @@ verdict, and `_LiveHost.probed` records which tmux name each sweep probed — an
 (every durable file under the case root as relative path → sha256), `_durable_tree_without_observer_health`
 (the same map minus exactly this lifetime's observer-health row), `_background_tasks`,
 `_serving_probe_route`, `_seed_emitted_signal_marker` and `_seed_workspace_cursor`. Its five cases
-drive the real lifespan task collection and the real sweeper over a real catalog: five sibling loops
+drive the real lifespan task collection and the real sweeper over a real catalog: six sibling loops
 stay alive across a failed pass while the real notifier loop keeps reaching its own cadence with its
 sweep uncalled, an in-process ASGI request through the same app object still answers 200, and teardown
 then cancels every task and calls `host.shutdown()` exactly once; every durable artifact **outside the
@@ -206,7 +206,7 @@ references describe the behavior under test and do not claim a certification res
 - The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built. [23]
 - The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`. [24]
 - The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1. [25]
-- One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task. [26]
+- One failed pass is isolated: the owner stays scheduled, six sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task. [26]
 - The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. [27]
 - The like-scoped exclusion that keeps the R11 identity exact while accounting for the one row R17 must rewrite on every completed observer call. [28]
 - The health row's own path and the category a failed steady pass must publish, asserted by the failure case. [29]

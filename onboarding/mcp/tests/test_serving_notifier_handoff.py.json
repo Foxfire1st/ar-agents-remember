@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:7ed6f6cd4cb4ba41a9433caa086a1d4d292a0b9c27507f3b98b94ba5a40bd7c2",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:3687cd918b86f9de01f0bb3867a40d5b443a4d4a3590cf862a126bf9d93cfceb",
             "locator": {
               "kind": "symbol",
@@ -68,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:357682afd663daa6121897e6021d2b97d5b9c131aa5102f0bbf2405de6c3ae7b",
             "locator": {
               "kind": "symbol",
@@ -84,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:17e0d7331f1160ced4aee51e9715f6707c78e14cf4c15c8af21d2a2d2dcafded",
             "locator": {
               "kind": "symbol",
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:9a81df01f9e413aa9056e2e0ee035c6097ad6e5fe050136bcdf3e54d3aa52b64",
             "locator": {
               "kind": "symbol",
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:9a516faccb5696bea3bc78cacc2c52745bea3febed2f56185bec68a83564e3c0",
             "locator": {
               "kind": "symbol",
@@ -132,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
             "content": "sha256:85cc5f501fe5da05a3990558268b458630df37a2f907995408aff63f6af1bddf",
             "locator": {
               "kind": "symbol",
@@ -165,14 +165,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "8e78fa5281fec75c12bf1a6de6f95d2f7ecceaf6",
             "content": "sha256:fa505d15a052e5e92b709a0a817b6dc8f3fe3c68f3dbaf06a43d1b08df524a48",
             "locator": {
-              "end": 274,
+              "end": 304,
               "kind": "line_range",
-              "start": 274
+              "start": 304
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The first notifier pass settles before the next observation sweep is driven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e01ac48ccf437cb72a45a8ecffd1ef62ca0cab0",
+            "content": "sha256:e740f717721764c4bce40857cd51066a5576d4f6fd8fd03876cc30e50f4d9c1e",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "test"
         }
@@ -246,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "308164ec1fe3322d0b4a5a269cb74d351d714d22",
+            "blob": "2591458016a34aa15a4f686c84ee79ecdb4f4736",
             "content": "sha256:f635b5663e8accd9faa1042552b4c2a5592f50c153c2756d071dd113fcea945f",
             "locator": {
               "kind": "symbol",
