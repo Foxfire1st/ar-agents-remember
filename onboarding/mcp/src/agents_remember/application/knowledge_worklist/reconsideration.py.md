@@ -162,3 +162,12 @@ The requirement trigger reads a task under the coordination root (`tasks/<reposi
 through `requirement_endpoint.py`; the task documents are coordination artifacts outside the code repository.
 
 - The manifest read happens in the resolver module, from the resolved task root. [23]
+
+
+### Source-assertion qualification
+
+The unrelated candidate fixture carries no `reconsider_on` link, so its absence
+assertion alone is not a stimulus-rich proof about newly wired candidate links.
+The source evaluation loop remains base-only. Cited assertions are not a fresh
+collection or execution result. Supersession rationale formerly attributed to
+a3d79e94 is convergently owned by the landed MIK-R148 account above.

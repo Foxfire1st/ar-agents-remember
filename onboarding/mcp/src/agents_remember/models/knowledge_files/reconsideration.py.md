@@ -83,13 +83,45 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
+
+
+
+
+
+
+
+
+
+
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the module defines names only.
+
+No cross-repo boundary is crossed by this file.
+
+
+## Requalified checked-source evidence
+
 - The module docstring: the subject, the triggers, the rows and the one satisfying rule. [1]
+
+- The row kind, the subject parser and the item kind are registered with MIK-R14 as owner. [10]
+
+- The stored predicate agrees with `satisfiedBy` on the answered item. [11]
+
 - The kind and the two row dispositions. [2]
+
 - The history-row dispositions that count as a change of the row's subject. [3]
+
 - The five triggers, and the three a `still_rejected` answer refreshes. [4]
+
 - The subject pattern over the shared decision ID pattern. [5]
+
 - The subject spelled and parsed. [6]
+
 - One question per subject and leaf. [7]
+
 - The one spelling of a link target, compared before a refresh (N1). [8]
 
 - The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior. [9]
@@ -115,6 +147,9 @@ No configured live documentation source was available for this pass.
 
 ### Cross-Repo References
 
-No meaningful cross-repo references found: the module defines names only.
+## Candidate-aware succession evidence
 
-No cross-repo boundary is crossed by this file.
+Inspected source assertions, not a fresh Curator test run or deployment of the
+checked leaf repair to the serving build.
+
+- An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility. [18]

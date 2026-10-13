@@ -14,6 +14,9 @@ Locks the pull-request landing route and the ways it must refuse. A recording th
 
 ## Evidence
 
+
+### Current Source-Inspection References
+
 - External-memory series contract over real code and memory repos [7]
 - Approved-call shorthand with typed arguments [8]
 - Landed commit sets the terminal cell with the pr label [9]

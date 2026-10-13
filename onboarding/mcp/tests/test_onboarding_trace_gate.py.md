@@ -41,8 +41,7 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
   `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
   are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
   written; `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
-  pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_keeps_todays_gate_unchanged`
-  asserts that the sides and the worklist are `None` and today's gate runs.
+  pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_is_refused_before_any_gate_runs` asserts that sides and worklist remain `None`, but the controller refuses (`state: refused`, `code: unconverted-memory`) with the central `legacy-format` message and conversion command before either gate runs; the legacy gate is not called and no `onboardingTrace` is delivered.
 - **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
   `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also
   asserts that the run's drift context carries a callable `knowledge_base`: the converted check is given its
@@ -92,7 +91,7 @@ No configured live documentation source was available for this pass.
 - No stamps and no history sort on converted trees. [14]
 - Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). [15]
 - The items are in the persisted worklist. [16]
-- An unconverted leaf keeps today's gate. [17]
+- An unconverted leaf is refused before either gate runs, with the conversion step. [17]
 - The unit-lane registration. [18]
 
 - The memory-quality run gives the converted check its comparison base. [19]

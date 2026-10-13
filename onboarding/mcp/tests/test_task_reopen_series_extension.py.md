@@ -4,12 +4,9 @@
 
 [mcp/tests overview](overview.md)
 
-Working candidate verification: this file is new in `260918-TSIP-L9` and **no commit carries its
-bytes**, so `lastVerifiedCommitHash` names the base the leaf was cut from rather than a commit that
-contains this source; it does not claim the uncommitted content was verified at that commit. The
-recorded working candidate names the exact candidate and its digest, and the governed closeout
-owns the real stamp. Every claim below was read against that candidate, and every range below was
-re-derived from the candidate's own syntax tree rather than carried from a report.
+Source-inspection boundary: this module already has committed history. The L9 working-candidate
+account below is historical, not the identity or acceptance status of the present L46 candidate.
+Current route claims describe source assertions only; verification metadata remains closeout-owned.
 
 ## Purpose
 
@@ -35,16 +32,19 @@ fails if the refusal comes back — set against the guards that were kept and ar
 Three `unittest.TestCase` classes and three module-level readers, **18 cases**, no `pytest` marks.
 The lane placement is load-bearing and is `integration`, not unit-regression (`T98`): the world is a
 real Git repository with a real coordination root, so the module is registered in the `integration`
-array of `mcp/tests/test-evidence-lanes.toml` at its **merged** row, line 266 — verified by reading
-that line rather than by arithmetic, since two siblings inserted above it.
+array of `mcp/tests/test-evidence-lanes.toml` at current row 464. Registry placement is a
+source fact, not a collected or executed case result.
 
 - **The route** (`SeriesExtensionRouteTests`). The single case
   `test_a_reopened_master_runs_a_new_leaf_through_closeout_and_lands_again` runs nine private steps
   in order, each of which asserts where it stands, and appends to `ROUTE_COMPLETIONS` only on the
   last line so a skipped or half-run route cannot report success. Every step goes through a
   registered entry point — `reopen_task`, the `task_doc` application function,
-  `worktree_start_tool`, the closeout and integrate tools, `lifecycle_finalize_task_tool` — and no
-  ref, branch or document is written by hand anywhere in the sequence. Two of the steps exist
+  `worktree_start_tool`, the closeout and integrate tools, `lifecycle_finalize_task_tool`.
+  `_work_the_leaf` first calls the public conversion command and asserts return 0, then authors
+  fixture Markdown and an open canonical history row for `onboarding:extension.txt` with
+  `disposition: no_impact` and empty `items` before committing code. This is test scaffolding,
+  not a new execution or semantic acceptance receipt. Two of the steps exist
   because the open question they answer had never been measured: `_start_the_leaf_off_the_reopened_master`
   carries the new row's `file` cell through the real start, and `_close_the_master_out_again_and_land_it`
   re-runs closeout and integration on a master that was already `Completed` once.
@@ -91,7 +91,7 @@ that line rather than by arithmetic, since two siblings inserted above it.
    the contract, and then requires the **typed** `atomic-series-contract-reopen-required` refusal with
    `nextTool: task_reopen`; that no replacement contract was minted; that **no integration branch
    exists**; and — through `_coordination_files` — that the whole coordination root is the same file
-   set afterwards, which is the assertion that catches the two journal bytes the old path left
+   set afterwards, which detects newly created journal and lock files the old path left
    behind. This is the case whose absence was `T123`; its acceptance test is the mutation that
    removes the plane query, not a green run.
 5. **The `source-lineage-unavailable` symptom** —
@@ -178,7 +178,7 @@ proof of arbitrary mixed-state publication or a whole-suite compatibility claim.
   deliberately do not overlap: each names one failing state, and the two "direction" pairs exist so
   that neither removing a guard nor hardening one can pass unnoticed.
 
-### Todos
+### Historical L9 follow-up account (not current blocker status)
 
 Verification metadata remains closeout-owned; this card records source inspection of the working
 candidate only. Two obligations this card does **not** discharge, recorded with their identity rather
@@ -203,18 +203,27 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
 
 Each row names one construct and cites the exact span that construct occupies in the reviewed
 candidate, so the row is falsifiable by the source alone.
+
+
+### Cross-Repo References
+
+Every repository this module touches is a temporary fixture created inside the case; no real
+adjacent repository, external service or network boundary is involved.
+
+No cross-repository claim is made.
+
+### Current Source-Inspection References
 
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
 - A retired branch whose landing left the source line is rebuilt **at the recorded landing**, reports `reconstructed`, and leaves the master reopenable. [2]
 - The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it. [3]
 - A contract that no longer records its landing refuses the re-cut, writes nothing, and creates no branch. [4]
 - A start over an archived terminal contract refuses with the typed status and `nextTool: task_reopen`, mints nothing, and the named route then really works. [5]
-- A hand-deleted contract beside an archived generation is refused before any ref or journal byte exists, and the whole coordination root is unchanged. [6]
-- The write surface that assertion uses: every file under the coordination root, relative and sorted, git internals excluded. [7]
+- The archived-generation start asserts the typed refusal, no replacement contract or integration branch, and equality of the coordination-root file-name set. [6]
+- The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
 - A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
@@ -224,7 +233,7 @@ candidate, so the row is falsifiable by the source alone.
 - With both landing cells empty on both sides there is nothing to reconstruct or re-cut from, and the reopen refuses. [14]
 - An existing ref at a tip that is neither the source tip nor the recorded landing is refused, not moved — the arm the reconstruction must not swallow. [15]
 - The reachable direction: a work branch on the source tip whose line still holds the landing is adopted, so "refuse harder" cannot pass. [16]
-- The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility. [17]
+- The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility.  Anchor: `SeriesExtensionRouteTests.test_the_budget_screen_and_the_declaration_agree_in_either_landing_order` [17]
 - The ruling arm: a plain assertion once the ruled pair is declared, and a skip naming the owner and the observed pair while it is not. [18]
 - The screen's proved pair is read from the `parametrize` marks the screen runs with, so literals and named constants resolve alike. [19]
 - The case ceilings are read from the repository-root declaration rather than copied, so this check cannot rot into a third copy of the number. [20]
@@ -232,10 +241,4 @@ candidate, so the row is falsifiable by the source alone.
 - The population assertion no skip can satisfy, sorting last by construction. [22]
 - The guard cases' invariant that a refused reopen writes nothing to the contract or the master document. [23]
 - The disposable world every case is built on, and the two hand-repair shapes the reachability proof has to survive. [24]
-
-### Cross-Repo References
-
-Every repository this module touches is a temporary fixture created inside the case; no real
-adjacent repository, external service or network boundary is involved.
-
-No cross-repository claim is made.
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]

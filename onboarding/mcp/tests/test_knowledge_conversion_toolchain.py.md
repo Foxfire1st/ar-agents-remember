@@ -7,8 +7,7 @@
 ## Purpose
 
 **MIK-R24 rules 5 and 9: the master line's toolchain reads the text format, and unconverted memory is read
-as legacy-format and refused elsewhere once its official line is converted.** Cases in the
-`unit-regression` lane.
+as legacy-format and refused by ordinary memory operations whether or not any line is converted.** The existing unit cases remain; the composed first-conversion cases explicitly carry `pytest.mark.integration`.
 
 ## Code Commentary
 
@@ -30,8 +29,7 @@ as legacy-format and refused elsewhere once its official line is converted.** Ca
   - a changed body is left stale for the curator.
 - `test_memory_quality_reads_the_converted_format`: the run is `ok`, `knowledge.converted` is present,
   the legacy-format checks are `not-applicable-converted`, and there is no drift check.
-- `test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted`: no refusal while the
-  official line is unconverted; afterwards the refusal names the crossing sync and `worktree_sync`.
+- `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`: refusal before the official line converts names `agents-remember knowledge-convert`; afterwards it also names the crossing sync and `worktree_sync`. A converted worktree is not locked.
 - `test_memory_init_creates_new_memory_in_the_text_format_only`: a new root gets the marker with exactly
   `LAYOUT_MARKER_TEXT` (`created`); a root holding a legacy card is `unconverted-existing-memory` and gets
   no marker.
@@ -45,7 +43,7 @@ as legacy-format and refused elsewhere once its official line is converted.** Ca
   - `test_a_converted_cards_kind_and_source_come_from_its_place_and_its_sidecar`;
   - `test_citation_rows_author_a_converted_cards_sidecar_with_resolved_anchors`: a new card's sidecar, and a
     reference re-authored by its number;
-  - `test_one_converted_card_is_fixed_by_its_document_alone_and_legacy_keeps_the_snapshot`;
+  - `test_one_converted_card_is_fixed_by_its_document_alone_and_unconverted_is_refused`;
   - `test_the_converted_check_compares_an_unconverted_head_through_its_converted_base` (R3-1): a carried
     reference to a file the candidate deleted or moved is reported, never refused as newly written;
   - `test_authoring_numbers_after_existing_references_dry_runs_and_validates` (R3-2);
@@ -68,12 +66,16 @@ as legacy-format and refused elsewhere once its official line is converted.** Ca
 
 ### Invariants And Boundaries
 
-- The rule 9 refusal case pins that nothing changes before the official line converts, the ruling that
-  keeps every route unchanged before MIK-R37.
+- MIK-R46 replaces the historical conditional lock: ordinary operations refuse unconverted memory even before any official line converts. Legacy reading and conversion stay available; converted candidates and crossing sync retain their routes. The composed tests cover official-line conversion/closeout/landing and second-leaf crossing, plus conversion in place before first baseline adoption. The official-line case explicitly fast-forwards `main` to `super` as repository-check setup; it does not prove public master integration.
 
 ### Todos
 
 None recorded.
+
+## MIK-R46 R8: first-baseline refusal is said once
+
+The integration-marked `test_memory_without_a_baseline_converts_in_place_then_adopts` keeps the real Git/unborn-branch setup and public conversion/adoption calls. Before conversion it asserts `state=legacy-format`, a short unconverted-root reason in `message`, and the conversion command in both `detail` and `nextAction`. It then converts in place and still asserts `ok=true`/`state=adopted`; the old long-message expectation is replaced, not the completion predicate. This case does not turn the separately open fixer R3-3 failure into whole-file green.
+
 
 ## Evidence
 
@@ -92,27 +94,32 @@ No configured live documentation source was available for this pass.
 
 The cases.
 
-- The read tool on both formats, with the converted knowledge section through the tool. [1]
-- The reference check and fixer. [2]
 
-- Memory quality on a converted tree. [3]
 
-- The rule 9 refusal. [4]
-- `memory_init` in the text format. [5]
-- Its lane row. [6]
 
-- The census compares a converting leaf with its converted base. [7]
-- Citation rows author a converted card's sidecar with resolved anchors. [8]
-- One converted card is fixed by its document alone; legacy keeps the snapshot. [9]
-- The converted check compares an unconverted HEAD through its converted base. [10]
-- The fixer checks every card first and refuses by name. [11]
-- A leftover evidence line is refused, and only the named card loses references. [12]
 
-- One document's fix reports its own stale references, and the response is bounded. [13]
-- Two tables with no blank line between them are refused by name. [14]
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
 No cross-repo boundary is crossed by this file.
+
+### Current Source-Inspection References
+
+- The read tool on both formats, with the converted knowledge section through the tool. [1]
+- The reference check and fixer. [2]
+- Memory quality on a converted tree. [3]
+- The rule 9 refusal. [4]
+- `memory_init` in the text format. [5]
+- Its lane row. [6]
+- The census compares a converting leaf with its converted base. [7]
+- Citation rows author a converted card's sidecar with resolved anchors. [8]
+- One converted card is fixed by its document alone; unconverted fixing refuses with the conversion step. [9]
+- The converted check compares an unconverted HEAD through its converted base. [10]
+- The fixer checks every card first and refuses by name. [11]
+- A leftover evidence line is refused, and only the named card loses references. [12]
+- One document's fix reports its selected stale references and status counts; the delivered projection names retained whole-result artifacts. [13]
+- Two tables with no blank line between them are refused by name. [14]
+
+- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption. [15]

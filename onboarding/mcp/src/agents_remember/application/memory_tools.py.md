@@ -19,11 +19,13 @@ Provides the memory-facing application entry points and the ordinary leaf writer
 `drift_check_tool` binds the application-owned converted base when the call names a contract, so a leaf
 that deleted a file carries that anchor as carried and stale rather than refusing it as newly written;
 without a contract the base is the memory checkout's converted `HEAD`, as the converted check already
-does. `memory_baseline_status_tool` reports `ok=false` for `blocked-drift`, `blocked-invalid` and
-`blocked-legacy-cards` and `unavailable`.
+does. On an existing unconverted directory, `drift_check_tool` returns `ok=false`,
+`status: "error"` and the shared `legacy_format_refusal` message before measuring drift.
+`memory_baseline_status_tool` reports `ok=false` for `blocked-drift`, `blocked-invalid`,
+`blocked-legacy-cards`, `unavailable` and `legacy-format`.
 The baseline owner returns `unavailable` when an existing memory HEAD resolves but its Git
-attribution history cannot be read. An unborn repository can remain `ready` under the existing
-drift rules. This adapter preserves the owner's state and details; cache-file availability does
+attribution history cannot be read. An unborn converted repository can remain `ready`
+under the existing drift rules; an existing unconverted directory receives `legacy-format` first. This adapter preserves the owner's state and details; cache-file availability does
 not become a new admission requirement.
 
 `CarryoverCommitMessages` contains only the memory-content subject. The apply adapter forwards
@@ -41,13 +43,15 @@ The module defines four parameter objects for separate application contracts:
 Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse
 before resolving trees; that shared constant is the only list bound. Each selected member has
 singleton authoring/refresher semantics, and a refused member does not prevent the other named
-cards from being processed. Converted selections need no snapshot; legacy selections retain
-their existing generation lease. Check, migration and source-index build reject `documents`.
+cards from being processed. Converted selections need no snapshot. Unconverted check/fix
+refuse instead of acquiring or repairing legacy citations; a generation lease cannot admit
+them. Check and source-index build reject `documents`; the retained internal migration
+helper does too, but no public MCP/CLI migration route remains.
 
-- Finite fix selection is validated before reads with the shared bound. [34]
 
 **One construction point serves the legacy `Trees` branches.** `_citation_trees` builds the
-citation `Trees` for legacy check/fix, source-index build and migration. It validates the caller's
+citation `Trees` for source-index build and the retained internal migration helper,
+not for the now-refused unconverted check/fix. It validates the caller's
 excludes through `validate_caller_excludes` and hands them to `Trees`, where they narrow that
 invocation's population alongside the memory layer's `system/settings.json` register. The value is
 call-local, and a meaningless pattern is refused by name.
@@ -56,8 +60,9 @@ This is not a converted-path filtering guarantee. Converted check/fix returns be
 `Trees`: caller-exclusion syntax is validated, but `operation_scope.excludes` is not forwarded to
 converted reference checking, card authoring or mechanical refresh. Converted fixing forwards each
 selected document to both stages and excludes authoring-refused sidecars from mechanical refresh;
-that internal exclusion set is distinct from caller globs. Source-index build and migration remain
-legacy-format operations.
+that internal exclusion set is distinct from caller globs. Source-index build still uses
+`Trees`; the internal migration implementation is retained pending MIK-R65, not registered
+as `citation_migrate` or reachable through `memory-citations --migrate`.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
 were extracted to `application/memory_scope.py` and `application/memory_quality_controller.py`.
@@ -80,9 +85,12 @@ references (`memory/conversion/card_authoring.author_card_references`), then re-
 bytes moved mechanically (`reference_state.fix_references`). With one `document` named, both steps touch
 that card and its sidecar only, and the result is `ok` only when no card was refused. On converted memory a
 `document` needs no `expected_snapshot`: `CitationOperationScope.validate(document_alone=True)` admits it,
-and every legacy operation still validates strictly before it does any work. An unconverted tree takes the legacy citation-table path
-exactly as before. The source-index build and `citation_migrate` are legacy-format operations and are
-not adapted.
+and retained source-index/internal migration operations still validate strictly. An unconverted
+tree receives `ok=false`, `code: "legacy-format"` and the shared conversion guidance from
+`legacy_format_refusal` for both check and fix, including fix dry runs. There is no legacy
+citation-table check/fix fallback. Route-index apply also refuses unconverted memory;
+its `dry_run=true` preview is preserved. These refusals do not depend on converted memory
+elsewhere. The existing contractless pre-baseline admission still requires a converted root.
 
 ### Conventions
 
@@ -107,9 +115,18 @@ None known for the MX-FIX-4 application entry point boundary.
 
 ### Role Runtime and Scope
 
-When a task-scoped config has replaced repo.memory_root with a leaf root, `_refuse_official_memory` obtains the original configured repository only after `require_configured_contract_repositories` proves repository lineage and candidate worktree identity. That guard remains the ordinary leaf route. Without a contract, the existing fixer and route-index apply admit only a declared repository whose resolved memory root is the declared converted root, has no attributed baseline, and has no linked memory worktree. An unreadable worktree list refuses. The result names `admission: pre-baseline`; a failed condition writes nothing and names the leaf route. Once a baseline exists the contractless write is refused. This is a card/index admission, not permission to author knowledge or to commit.
+When a task-scoped config has replaced repo.memory_root with a leaf root, `_refuse_official_memory` obtains the original configured repository only after `require_configured_contract_repositories` proves repository lineage and candidate worktree identity. That guard remains the ordinary leaf route. Without a contract, the existing fixer and route-index apply admit only a declared repository whose resolved memory root is the declared converted root, has no attributed baseline, and has no linked memory worktree. An unreadable worktree list refuses. The result names `admission: pre-baseline`; a failed condition writes nothing.
+Unconverted format names the shared conversion procedure; other admission failures
+retain their missing-condition and leaf-route guidance. Once a baseline exists the contractless write is refused. This is a card/index admission, not permission to author knowledge or to commit.
 
 Both converted fixer admissions use the same authoring and mechanical-refresh composition. Sidecars of cards refused by authoring are excluded from mechanical refresh, so neither stage changes that card or its sidecar. Successful siblings may still be authored; a refused run is not a claim that the whole bootstrap is complete.
+
+## MIK-R46 R8: refusal envelope at the application boundary
+
+`memory_carryover_apply_tool` catches only a `RuntimeError` recognized by `is_legacy_format_refusal`; other runtime errors are re-raised. `_carryover_legacy_refusal` returns `ok=false`, `state=refused`, code `legacy-format`, one short refusal `message`, full rule text in logged `detail`, and conversion/retry guidance in `nextAction`/`nextStep`. The lower-level converted-target/writer refusal remains raising; this is not a new permission to copy converted memory or a catch-all error envelope. Successful carryover forwarding and attribution are otherwise unchanged.
+
+The unconverted `citation_fix_tool` whole result now explicitly carries `nextAction=citation_fix`, matching its delivered projection. It still refuses before citation authoring/refresh; the converted card-writer and pre-baseline admissions retain their boundaries.
+
 
 ## Evidence
 
@@ -122,32 +139,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- Carryover has one memory subject and forwards it without a ledger-message option. [3]
-- Canonical quality scope is owned by the focused scope module. [4]
-- Typed quality execution and public run translation are owned by the controller. [5]
-- The route-index builder. [7]
-- The route-index builder receives storage authority explicitly in its typed signature. [8]
-- The apply entry point that forwards that subject and nothing else. [9]
-- Carryover has one memory subject and forwards it without a ledger-message option. [12]
-- The apply entry point that forwards that subject and nothing else. [13]
-- Canonical quality scope is owned by the focused scope module. [14]
-- Its resolver, which binds a repository to the scope the quality surface runs against. [15]
-- The one execution path both the report and the closeout gate run through. [16]
-- The curator worklist publication that follows a full scoped call. [17]
-- On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. [18]
-- The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
 
-- Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
-- The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build. [32]
-- Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
 
-- The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
-- The scope object the caller's excludes ride with, validated at construction. [21]
-- The refusal rule for a caller exclude that cannot mean anything. [22]
-- **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
-- The read that decides the block's state, and the unavailable form its states come from. [25]
 
-- One document with no frozen generation is admitted for converted memory; legacy operations validate strictly. [26]
 
 ### Cross-Repo References
 
@@ -158,8 +152,6 @@ No meaningful cross-repo references found.
 
 ### Runtime Source References
 
-- Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
-- Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -207,19 +199,49 @@ is the case that holds that boundary, and the docstring states it.
 
 ## 260928-MIK-L37 The Card Writers Stay Unlocked On An Unconverted Line
 
-`citation_fix_tool`, `citation_migrate_tool` and `route_index_refresh_tool` do not ask the cutover lock. They write
-onboarding cards and route indexes into a leaf's working tree, never knowledge records and never the database, and
-they commit nothing; the closeout that would commit their edits is locked. The decision record DEC-VMMJDN states
-this exception to MIK-R24 rule 9 and is linked to the three functions, so a change to one of them raises the
-decision's rejected alternative (lock the three tools like every other write) for reconsideration.
+This L37 exception is historical and superseded by MIK-R46@v2. `citation_fix_tool`
+refuses unconverted memory in every mode; `route_index_refresh_tool` refuses apply
+while preserving its read-only preview. The MCP `citation_migrate` tool and CLI
+`memory-citations --migrate` option are unregistered; the internal migration function
+is retained for later removal under MIK-R65, not a supported workaround. The prior
+DEC-VMMJDN exception does not authorize any of these writes on unconverted memory.
 
-- The three card writers, which ask no cutover lock. [27]
-
-- The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
+### Current Source-Inspection References
 
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
+- Carryover has one memory subject and forwards it without a ledger-message option. [3]
+- Canonical quality scope is owned by the focused scope module. [4]
+- Typed quality execution and public run translation are owned by the controller. [5]
 - The route-index application entry point forwards resolver-owned authority. [6]
+- The route-index builder. [7]
+- The route-index builder receives storage authority explicitly in its typed signature. [8]
+- The apply entry point that forwards that subject and nothing else. [9]
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
+- Carryover has one memory subject and forwards it without a ledger-message option. [12]
+- The apply entry point that forwards that subject and nothing else. [13]
+- Canonical quality scope is owned by the focused scope module. [14]
+- Its resolver, which binds a repository to the scope the quality surface runs against. [15]
+- The one execution path both the report and the closeout gate run through. [16]
+- The curator worklist publication that follows a full scoped call. [17]
+- On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. [18]
+- The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
+- The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
+- The scope object the caller's excludes ride with, validated at construction. [21]
+- The refusal rule for a caller exclude that cannot mean anything. [22]
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
+- **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
+- The read that decides the block's state, and the unavailable form its states come from. [25]
+- One document with no frozen generation is admitted for converted memory; legacy operations validate strictly. [26]
+- The three card writers, which ask no cutover lock. [27]
+- Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
+- Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
+- The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
+- Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
+- The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build. [32]
+- Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
+- Finite fix selection is validated before reads with the shared bound. [34]
+
+- Only a recognized legacy RuntimeError becomes the typed short-message/full-detail conversion refusal; unrelated runtime errors still raise. [35]
+- The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]

@@ -8,7 +8,7 @@
   },
   "applicability": "Citation-fix finite selections through the application and CLI.",
   "conditions": [
-    "Converted selections need no source snapshot; legacy selections retain their required snapshot.",
+    "Converted selections need no source snapshot; legacy operational inputs now refuse before citation authoring.",
     "document is a singleton; documents is bounded by MAX_CURATOR_SOURCE_CANDIDATES."
   ],
   "exclusions": [
@@ -28,7 +28,7 @@
     "leaf": "260928-MIK-L110",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Citation fix admits a finite list under the shared candidate bound, rejects ambiguous/empty/over-bound selections before tree reads, handles each named card as a singleton and continues other cards after a member refusal.",
   "status": "proposed",

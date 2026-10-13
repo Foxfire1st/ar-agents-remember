@@ -14,6 +14,16 @@ the addressed contract's own `reconciling -> active` transition.
 
 ## Code Commentary
 
+A fresh series sync evaluates `_legacy_series_memory_refusal` before publishing its reconciling selection.
+The check mirrors the exact transaction sides: already-current (including source-ancestor/work-ahead) and
+skip-memory remain admitted; legacy fast-forward pairs and all-legacy merge triples refuse; an adopting
+converted source proceeds; a converted target refuses an out-of-format legacy source. Mixed or all-converted
+merges retain their normal transaction. Missing branches and unanswered early probes proceed to the existing
+transaction's named judgment, not an invented early format result. In-flight continue/cancel retain their
+own selection authority. A certain legacy refusal therefore publishes no reconciling state.
+
+
+
 ### Logic
 
 `activate_atomic_series_contract` rejects invalid sync inputs before fetch or selector mutation,

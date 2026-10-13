@@ -33,11 +33,19 @@ report's currentness counts.
 
 ### Invariants And Boundaries
 
-- **The command commits nothing.** Committing a conversion to a real memory line is the cutover's
-  (MIK-R37), or a crossing sync's (rule 8).
+- **The command commits nothing.** With no attributed baseline, run
+  `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` on the memory
+  root itself, then adopt its validated baseline. With an official line, start one
+  new leaf and convert its memory worktree with its paired code worktree as that
+  leaf’s first memory change, then close out and land under the validator/invariant
+  gate; the conversion itself counts as no change. Other open lines cross at their
+  next `worktree_sync` with `merge-memory`. See `c-13-install-and-onboard` and
+  `docs/guides/first-conversion.md`.
 - It writes only after the whole converted tree validated.
-- No installed route calls it before MIK-R37. Later leaves use it to make the converted scratch copies
-  their evidence runs on.
+- The conversion command, the read-only legacy-database reader
+  (`memory/conversion/legacy_db.py`) and conversion-format version 1 are permanent.
+  The build cannot know that every clone or machine has converted; removing any
+  requires a separate developer breaking-change decision, not this master’s landing.
 
 ### Todos
 

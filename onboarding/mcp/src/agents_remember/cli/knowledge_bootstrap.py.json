@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-        "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+        "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
         "locator": {
           "kind": "symbol",
           "name": "_run"
@@ -16,13 +16,13 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Asks the lock before the database ingest of a taskless bootstrap on unconverted memory, and prints the refusal.",
+      "rationale": "Taskless knowledge bootstrap refuses an unconverted root before the converted file writer; it does not reach database ingest.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-        "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+        "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
         "locator": {
           "kind": "symbol",
           "name": "_run"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-        "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+        "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
         "locator": {
           "kind": "symbol",
           "name": "_run"
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:d6ec1939f594e8be8c6bc8d83400d7972ed22a9390f17fb790fd232dde0feb2a",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:aee2dab902982ce95c53b26a6f541659f0293cf290e1b12d3dbb694453d699b3",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:c17bae8dfc4136214fc543c77ed57b07a32ca8ae85ade53684ed28859eaf4375",
             "locator": {
               "kind": "symbol",
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:14d04c9638aaa7d67ddc98afd49fe873a55eac07cc8c41e7ed9e7960e8488ac3",
             "locator": {
               "kind": "symbol",
@@ -141,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:a82f1eaefe4044507a5d3f0d818542fb15fb79188eea3a7edaca49fb0f11474d",
             "locator": {
               "kind": "symbol",
@@ -157,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
             "content": "sha256:d6ec1939f594e8be8c6bc8d83400d7972ed22a9390f17fb790fd232dde0feb2a",
             "locator": {
               "kind": "symbol",
@@ -202,15 +202,15 @@
       ]
     },
     "36": {
-      "note": "knowledge-bootstrap refuses unconverted memory once the repository holds converted memory.",
+      "note": "knowledge-bootstrap refuses unconverted memory whether or not the repository holds converted memory elsewhere, naming crossing sync or the first-conversion procedure.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
-            "content": "sha256:95ce2809bd9e6ad3e706dbe037dbdae571c6ff4451ae63c4b56112f69c9e5722",
+            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "content": "sha256:4a88ef3aa4169e90919b9dead800543a77c077fc861739a96454dc6d60102d51",
             "locator": {
               "kind": "symbol",
-              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },

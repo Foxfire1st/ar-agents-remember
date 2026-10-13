@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:228db8db105a5f557edf0a1405a8235be2ff5fd41f7b771d1f158f9998f18e75",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:e8e6b7e5ab47b425340bf9438926dcae1aa60e65eafd8e6bdd5c8416424573fa",
             "locator": {
               "kind": "symbol",
               "name": "test_every_registered_read_leaves_nothing_but_cache"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:14919254d7b0f8ada7b564efaa0218345e2f430e72aac61c49201452a99edd2e",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:19def97c240bedafb45d15377960ff50d79409d1b23282c321abbfc1ac2f1053",
             "locator": {
               "kind": "symbol",
               "name": "test_converted_adopt_dry_run_writes_nothing"
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:b9eb482f0980a5141ea8b8443b00becbe4db810a1ea07ce4dc4dd47f30552fdd",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:8e2de195edb8ac16e76eea4ae2a2f5aa82ef4d8fa1b60da4f1e784f2e637dca4",
             "locator": {
               "kind": "symbol",
               "name": "test_context_packet_freshness_fetch_is_bounded"
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:dd13fd8a1f76610be7f3659f7e1f542784383a1f3629613c35edea7ed526cfef",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:b4321b57435254c6139ce6673143b99ccd7d1e31d0b8afbb710a816d8f13d9c9",
             "locator": {
               "kind": "symbol",
               "name": "test_adopted_seat_status_preview_and_dry_runs"
@@ -71,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:02dbdc423ec06b16151bad30e0b30625acc6b47a03a9597f6d8232298488d6c3",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:700fa8242f83ad1fa20292ff05bdd4c120317928976140ef8a34757e99f3c534",
             "locator": {
               "kind": "symbol",
               "name": "test_remaining_preview_plan_and_queue_reads_write_nothing"
@@ -87,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:68ed06c8047a5e41dce8001aa2c6b1396ebd08e0bc6cededdde83bdffdc5a1e6",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:477a55b059b7eeeca6409cf1b6466f05c1803dc3e451c1c240bcd31fa335766c",
             "locator": {
               "kind": "symbol",
               "name": "test_a_mutated_read_is_caught"
@@ -103,8 +103,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:25583a31f1533c64a3645bea4320896909679aa18520a642711456dd10f5e7b7",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:1d064e20942fb4eab7468fc660ac0549fea8deb06ca98d4314df77edc5764676",
             "locator": {
               "kind": "symbol",
               "name": "test_enclosure_reads_record_only_comparisons_and_previews"
@@ -119,8 +119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:501c4a09fdd8a79b95e0b1fbc5ede4bbaf4183678ed4c06e3ee5d2b7c9fd7ad2",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:8460630c6d8c83890cd4226572ca95b031344da703be088de7d94be5b9c5d763",
             "locator": {
               "kind": "symbol",
               "name": "test_review_get_routes_read_without_writing"
@@ -135,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:bae3bd60b0574df21a451c139c8f7982b7eb87e6111c2e80815e0e188f57d2a2",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:70c9f83cd51184503b0b74e39bc9099c3e16d712970ff8581b821620fa7fd039",
             "locator": {
               "kind": "symbol",
               "name": "test_remaining_dashboard_gets_read_without_writing"
@@ -151,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:4efdc28d533ae0a1f85c777830fb21798740e7693b65a7525925802453dea47c",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:f52a08e56ca15af64b4c27180c08d8e8131fffe916fbfbd4ff042b31d009ce70",
             "locator": {
               "kind": "symbol",
               "name": "test_converted_drift_check_read_writes_nothing"
@@ -167,8 +167,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:4ad062f66a540775adc8c310de882ec1814e5bb4ddf56e6e070721e474dd1b4e",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:a1684f1ff198d630b57d774a98eee32d1e5925269dbe03e8dedee1a1f1ae3587",
             "locator": {
               "kind": "symbol",
               "name": "test_miscellaneous_description_called_reads_write_nothing"
@@ -179,12 +179,12 @@
       ]
     },
     "8": {
-      "note": "Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including a named missing-root refusal.",
+      "note": "Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including ok=False and state=\"legacy-format\" for unconverted baseline status.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fb5e34f10f0ab3ab87f58c4cc758be03a5d9869",
-            "content": "sha256:59d8216b202ca12ffde96a272818e822ac3e4daceae6d947d1ae33924196e45e",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
+            "content": "sha256:9814eaca47855c7619925788073005507e10a218d83b8f96086ed7d532a735b3",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_backed_reads_write_nothing"
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98c1339b668c287e26eba89b85d50c7a41ce6ace",
+            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
             "content": "sha256:87a7db096e1c7ff7c155e019995a19e3eedf7ae8b10905b12de86d541078e5dd",
             "locator": {
               "kind": "symbol",

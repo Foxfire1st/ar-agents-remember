@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
+        "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+        }
+      },
+      "facet": "A registered working marker is reported in recovery wording; timed-out or failing Git probes return their named refusal rather than an unlocked fact.",
+      "id": "PRF-4K78SB",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
         "content": "sha256:48dfeab92520aca8dce4bbf82e088db887f58053b002fab865d3b8451b6c3427",
         "locator": {
           "kind": "symbol",
@@ -20,60 +37,43 @@
     },
     {
       "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
           "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
         }
       },
-      "facet": "A plain directory is unlocked, while a pruned linked worktree, an ownership refusal and a permission error each refuse by name.",
-      "id": "PRF-FJHVPR",
+      "facet": "The location probe returns no location for a definite plain directory but names pruned-worktree, ownership and permission failures; no ordinary legacy admission is inferred.",
+      "id": "PRF-NKEYBD",
       "invariant": "INV-JT28KJ",
       "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
       }
     },
     {
       "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
-        "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
+        "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
         "locator": {
           "kind": "symbol",
-          "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+          "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
         }
       },
-      "facet": "The13 declared route probes refuse unconverted memory while a converted sibling exists. After that branch is deleted, the knowledge-ingest probe still refuses legacy format and names conversion/crossing sync; the remaining12 probes return None. No successful landing is asserted.",
-      "id": "PRF-M1DGK1",
+      "facet": "Every selected route refuses legacy input before and after deletion of the converted sibling, with the central code and conversion guidance.",
+      "id": "PRF-SB58VA",
       "invariant": "INV-JT28KJ",
       "origin": {
-        "handoffEntry": "L52-M1-F05-cutover-proof-correction",
-        "leaf": "260928-MIK-L52"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
-        "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
-        }
-      },
-      "facet": "An uncommitted marker in a registered worktree locks the repository, and a timed-out or failing Git probe refuses as 'never read as unlocked' with Git's own reason.",
-      "id": "PRF-VEG64W",
-      "invariant": "INV-JT28KJ",
-      "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
+        "blob": "c70467d5b527bd705e1148bfcfaae6ca785f525e",
         "content": "sha256:d2c324cfe8da1e7acd1a3399410b9a42df71458f93e702e616f056ba63f9cfb6",
         "locator": {
           "kind": "symbol",
@@ -110,15 +110,15 @@
   ],
   "references": {
     "11": {
-      "note": "`test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory` owns the current boundary described above.",
+      "note": "`test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere` asserts the unconditional `legacy-format` refusal and conversion step, including after the only converted branch is removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
-            "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
+            "blob": "72ed6d873c649f80ff031f9d557b0dd4c9af1780",
+            "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
             "locator": {
               "kind": "symbol",
-              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+              "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
             }
           },
           "kind": "test"
@@ -158,11 +158,11 @@
       ]
     },
     "14": {
-      "note": "A converted worktree locks, and an unanswered probe refuses.",
+      "note": "Converted memory elsewhere words the already-required legacy refusal; unreadable probes retain their named error",
       "targets": [
         {
           "anchor": {
-            "blob": "9321ce70b03378842a8ff8dc305ec52644f3371c",
+            "blob": "72ed6d873c649f80ff031f9d557b0dd4c9af1780",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",

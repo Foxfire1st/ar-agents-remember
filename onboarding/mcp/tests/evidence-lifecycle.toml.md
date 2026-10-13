@@ -38,6 +38,14 @@ The machine-readable inventory declares durable test-evidence ownership and repl
 
 The curator_coherence_test_support.py artifact declares test_abandoned_series_closeout.py, test_master_retirement.py and test_standalone_master_retirement.py among its consumers; the Node lockfile artifact declares both retirement modules. This describes the held declarations, not an addition history or a test result.
 
+## Native reapply regression registration
+
+The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; this adds no artifact or replacement contract and certifies no invocation.
+
+## L110 transitive refusal-suite consumer
+
+The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_envelope.py` among its exact consumers. This is the transitive dependency through `test_tool_answer_table`: the refusal suite imports `ROW_CASE_FRAMEWORK_KEYS` from that module, which imports `L110_ROW_DATA` from the shared support. Registration adds no artifact or replacement contract and proves no test invocation or acceptance. Other consumers and all non-consumer lifecycle fields remain unchanged.
+
 ## Code Commentary
 
 The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance.
@@ -646,3 +654,9 @@ Historical L112 post-L74 intake preserved the parked W03 comparison prose and or
 
 
 The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance. The complete source block is included in the grouped role-agent/role-message declaration evidence [267].
+
+- The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; this adds no artifact or replacement contract and certifies no invocation. [271]
+
+- The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution. [272]
+
+

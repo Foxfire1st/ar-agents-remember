@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+        "blob": "67047cdc76636d31e271034da84f81412b46da1c",
         "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
         "locator": {
           "kind": "symbol",
@@ -16,13 +16,31 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Defines when the lock holds: the first local branch tip, then the first registered worktree, that holds the layout marker; only a directory that is definitely not a repository holds none.",
+      "rationale": "The location probe finds converted sibling/worktree memory only to word recovery; it no longer decides legacy operational admission.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
-        "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+        "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+        "content": "sha256:bc9851c2214e53aea9ca0086edaadbf798e9b41a622e2e35c3e91ed18bd6e03b",
+        "locator": {
+          "kind": "symbol",
+          "name": "legacy_format_refusal"
+        }
+      },
+      "id": "RLZ-JRGRCT",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "This is the single refusal message owner; it names legacy format, operation and crossing or first-conversion recovery.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+        "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
         "locator": {
           "kind": "symbol",
           "name": "cutover_lock_refusal"
@@ -34,22 +52,21 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Is the one question every route asks once it knows its memory is unconverted: it returns the refusal that names the operation, the line, where the converted memory is and the crossing sync, returns nothing for a repository that holds none, and words an unanswered probe as a refusal.",
+      "rationale": "Once the caller establishes legacy input, the central lock refuses unconditionally, including a repository with no converted line; failed probes keep their named errors.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The module docstring: what is refused, when the lock holds, and fail closed.\n\nAnchor: \"The lock holds for a memory repository once that repository\"",
+      "note": "Unconditional legacy refusal, named probe error, and definite non-repository boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
-            "content": "sha256:8a5926c78c149b554e664214fc2650a5d1abcf9e7a5bfddf97481135d294b994",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
             "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
             }
           },
           "kind": "code"
@@ -57,15 +74,15 @@
       ]
     },
     "10": {
-      "note": "Every route refuses unconverted memory once the repository holds converted memory, and is unchanged once it does not.",
+      "note": "Public routes refuse with or without converted memory elsewhere.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+            "blob": "6df5cc21c5cbb50d56cb9682a190a0acafb530ee",
+            "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
             "locator": {
               "kind": "symbol",
-              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+              "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
             },
             "path": "mcp/tests/test_knowledge_cutover.py"
           },
@@ -74,11 +91,11 @@
       ]
     },
     "11": {
-      "note": "The converting candidate is gated, never locked.",
+      "note": "A converting candidate is gated, not legacy-locked.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "6df5cc21c5cbb50d56cb9682a190a0acafb530ee",
             "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
             "locator": {
               "kind": "symbol",
@@ -91,11 +108,11 @@
       ]
     },
     "12": {
-      "note": "A plain directory is unlocked; a pruned worktree, an ownership refusal and a permission error refuse by name.",
+      "note": "Plain directory and unanswered repository probes have distinct outcomes.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "6df5cc21c5cbb50d56cb9682a190a0acafb530ee",
             "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
             "locator": {
               "kind": "symbol",
@@ -108,11 +125,11 @@
       ]
     },
     "2": {
-      "note": "Where the repository holds converted memory: a branch tip, then a registered worktree.",
+      "note": "Converted locations contribute recovery wording only.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
             "locator": {
               "kind": "symbol",
@@ -124,11 +141,11 @@
       ]
     },
     "3": {
-      "note": "Every local branch tip is asked for the marker in one batch.",
+      "note": "Local branch marker probe in one batch.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:10c3ef6d58151b43b608e4a1d4a81225b1b9718b155bb0e1b6b1a24e74b0923a",
             "locator": {
               "kind": "symbol",
@@ -140,11 +157,11 @@
       ]
     },
     "4": {
-      "note": "A registered worktree whose working tree holds the marker locks too.",
+      "note": "Registered working-tree marker lookup.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:4cdc7ab792e9e68c051a98e1793ca5a5e7853e90caf2cfb3f289ea63069af2ab",
             "locator": {
               "kind": "symbol",
@@ -156,15 +173,15 @@
       ]
     },
     "5": {
-      "note": "The refusal: an unanswered probe refuses by name, and a locked repository names the crossing sync.",
+      "note": "Central legacy-format message and both conversion routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
-            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
+            "content": "sha256:bc9851c2214e53aea9ca0086edaadbf798e9b41a622e2e35c3e91ed18bd6e03b",
             "locator": {
               "kind": "symbol",
-              "name": "cutover_lock_refusal"
+              "name": "legacy_format_refusal"
             }
           },
           "kind": "code"
@@ -172,11 +189,11 @@
       ]
     },
     "6": {
-      "note": "Only a definite non-repository reads as holding no converted memory.",
+      "note": "Only a definite non-repository reads as absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:bd5135698b454a69d52919911a6118c20e41a9b045047ed85616b3b5f3b7b2f8",
             "locator": {
               "kind": "symbol",
@@ -188,11 +205,11 @@
       ]
     },
     "7": {
-      "note": "A `.git` entry in the directory or a parent, or a bare repository, says there is a repository.",
+      "note": "Structural repository evidence prevents false absence.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:da4a6c9f0b18f55520cd6b1f01b15e9af086b806be202a12aa3b9fb84fc20552",
             "locator": {
               "kind": "symbol",
@@ -204,11 +221,11 @@
       ]
     },
     "8": {
-      "note": "A failed or timed-out Git probe is named, never read as empty output.",
+      "note": "Failed or timed-out Git probes stay named.",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "blob": "04d14d09ea854760eec2fb9096cab70670ebdb80",
             "content": "sha256:fc1d09d6f9b0a74b508a4eb9a35f5a3c6e21a768d349709e4a1f4ad4d012ab94",
             "locator": {
               "kind": "symbol",
@@ -220,12 +237,12 @@
       ]
     },
     "9": {
-      "note": "The worktree layer's routes reach the lock through one helper that names the leaf's line.",
+      "note": "Leaf route names its own memory line.",
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
-            "content": "sha256:0cca0c5b74d0a07af5e532b88dcc4a8c79a274e4d1f04b218bb2923a015dfcc9",
+            "blob": "826aa4a8a35abec6fd131c9f54958db13d5f9835",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
             "locator": {
               "kind": "symbol",
               "name": "leaf_cutover_refusal"

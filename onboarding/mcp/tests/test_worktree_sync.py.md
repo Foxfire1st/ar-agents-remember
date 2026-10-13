@@ -16,7 +16,7 @@ SyncFixture drives the public transaction with an explicit code and memory pair.
 
 ### Logic
 
-`SyncFixture` creates disposable code/memory worktrees and canonical contracts. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit.
+`SyncFixture` creates disposable code/memory worktrees and canonical contracts. Its default converted=True seeds knowledge/layout.json into the attributed base so ordinary scenarios reach converted judgment; converted=False is explicit legacy-format/refusal/crossing setup, not permission for ordinary legacy sync. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit.
 
 The scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
 

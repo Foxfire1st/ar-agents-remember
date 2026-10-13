@@ -358,3 +358,5 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - Capsule skill references and semantic digest exclude diagnostic output. [309]
 
 - The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
+
+- The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior. [311]

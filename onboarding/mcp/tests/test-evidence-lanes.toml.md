@@ -8,6 +8,10 @@
 
 The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed.
 
+## Native reapply regression registration
+
+test_sync_reapply_merge.py is declared once in unit-regression; lane membership selects evidence and certifies no invocation.
+
 ## Code Commentary
 
 The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
@@ -88,3 +92,6 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 - The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
 
 - The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
+
+- test_sync_reapply_merge.py is declared once in unit-regression; lane membership selects evidence and certifies no invocation. [847]
+

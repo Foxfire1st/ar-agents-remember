@@ -12,11 +12,11 @@ Contract-addressed driver for resumable source synchronization.
 
 ### Logic
 
-Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash.
+Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash. [1] [2]
 
-Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Validator refusal leaves phase/staged merge intact and names repair.
+Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Validator refusal leaves phase/staged merge intact and names repair. [4] [6] [9]
 
-Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored.
+Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored. [5]
 
 
 `sync_contract_under_authority` validates input choices and reads the enclosure-root journal. It
@@ -86,14 +86,14 @@ consumer artifact on the memory side, not a second source of sync truth.
 - Validator refusal is never committed around.
 
 - New moving-side admission cannot adopt an unrelated active merge.
-- **A memory sync between unconverted sides waits for the crossing sync (L37, MIK-R09 rule 6).**
-  `_admit_participating_sides` asks `_cutover_locked(memory, fetch)` before the preflight, so before any preview or
-  Git move. It refuses with `sync-unconverted-memory-locked` (exit 2) only when no side holds the layout marker
-  (the own head, the incoming commit and, for a merge, their merge base, asked of the repository because a series
-  side has no worktree yet) and the repository holds converted memory elsewhere. A crossing sync (some side
-  converted), a code-only sync (`skip-memory`) and an already-current side are never refused. A marker probe Git
-  cannot answer refuses by name; it is never read as unconverted memory. A sync already in flight is not
-  re-admitted, so it can still be continued or cancelled.
+- **The sync preflight judges its exact memory sides before any move (MIK-R46).**
+  `_sync_side_outcome` names `preSyncHead`, `sourceCommit`, and a merge's exact base.
+  Already-current and `skip-memory` perform no memory move and remain admitted. A fast-forward from legacy
+  target to converted source adopts conversion; two legacy sides refuse, and a converted target refuses a legacy
+  source that would leave the text format. A merge of three legacy sides refuses rather than taking plain Git;
+  a mixed merge uses the existing crossing plan, and all-converted sides retain their existing route.
+  Refusals retain `sync-unconverted-memory-locked` with central legacy-format detail; unanswered probes remain
+  named errors. In-flight continue/cancel is not re-admitted and remains available.
 
 
 ### Todos
@@ -134,7 +134,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Terminal finalization/cancellation and damaged-journal recovery are delegated. [42]
 
-- The cutover lock at sync admission: unconverted on every side and a locked repository. [43]
+- Fresh sync judges exact moving-side formats independent of converted memory elsewhere; retained transaction recovery is separate [43]
 
 - The lock is asked before the preflight of the participating sides. [44]
 

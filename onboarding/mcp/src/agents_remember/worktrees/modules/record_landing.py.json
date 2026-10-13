@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
         "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
         "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
-        "content": "sha256:6a04ed42f6bdbe4b3b89ae68473df6d4faf013f0cde52a06ea720adce42b6699",
+        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
+        "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
           "name": "_knowledge_gate_refusal"
@@ -70,7 +70,7 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Refuses record_landing through the lock when neither the line nor the landed memory commit is converted; in a repository that holds no converted memory such a landing is recorded as before.",
+      "rationale": "Recorded landing refuses a missing/legacy candidate before reading landing state; a present converted candidate on a legacy line reaches its own validator.",
       "role": "enforcement"
     }
   ],

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-        "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
         "locator": {
           "kind": "symbol",
           "name": "_pre_baseline_official_scope"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
         "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-        "content": "sha256:83e70239fb2fe29685ed990efe29b609d050cf2a0b0b59e99215e570c384646f",
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        }
+      },
+      "id": "RLZ-NRP4N9",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "The application refuses legacy memory before invoking the converted card authoring writer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-        "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
           "name": "route_index_refresh_tool"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
         "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
         "locator": {
           "kind": "symbol",
@@ -98,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:431d4ad02cf89e722e25e6ceceabe1364ca89fa4a23534bdbbb3c4ae9213c997",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
               "name": "memory_baseline_status_tool"
@@ -114,8 +132,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:431d4ad02cf89e722e25e6ceceabe1364ca89fa4a23534bdbbb3c4ae9213c997",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
               "name": "memory_baseline_status_tool"
@@ -130,8 +148,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
-            "content": "sha256:56a63fac47b10d9fb1f7f5ac4d5b07c5ae803f32865fe25e8531754696fb7094",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
             "locator": {
               "kind": "symbol",
               "name": "baseline_status"
@@ -147,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -163,8 +181,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
-            "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
             "locator": {
               "kind": "symbol",
               "name": "memory_carryover_apply_tool"
@@ -213,8 +231,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61235f183098674af657bd7c65ba948fdf0ae8b3",
-            "content": "sha256:bbc6c8eec6abd72c58ef138a17194df556985cb66be8730f82728c5cac4958b5",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -230,8 +248,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61235f183098674af657bd7c65ba948fdf0ae8b3",
-            "content": "sha256:5fdde227e80fe5d42edaca4a020cf36d4dda5e893680e32328998ef29e9107b3",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -243,12 +261,12 @@
       ]
     },
     "18": {
-      "note": "On a converted tree the citation check reports the sidecar references' state instead of reading citation tables.",
+      "note": "On a converted tree the citation check reports the sidecar references' state instead of reading citation tables.\n\nAnchor: `citation_check_tool`, `is_converted_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
-            "content": "sha256:e70224a236d01d2ea1af736d759b241d6eba717fa9b73aa02f1b26da17162fbf",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:61e5e7470ca2a50fe7d96e26bd86ead6725425db2ffb5c799eb767e4b24eb897",
             "locator": {
               "kind": "symbol",
               "name": "citation_check_tool"
@@ -275,8 +293,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-            "content": "sha256:b4057a1a006a3c5e2a9d3a6b17a77bfae0e3c294c0cfb5193a27bd7ed62cbe74",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
               "name": "_converted_citation_fix"
@@ -291,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -308,7 +326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
             "locator": {
               "kind": "symbol",
@@ -324,8 +342,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-            "content": "sha256:ab62910d1dada62078530161905e63919f621b57b1c23302febddf16c8683644",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
             "locator": {
               "kind": "symbol",
               "name": "CitationOperationScope"
@@ -357,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -369,7 +387,7 @@
       ]
     },
     "24": {
-      "note": "**The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.**",
+      "note": "**The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.**\n\nAnchor: `admit_bootstrap_context`, `BootstrapRefusal`",
       "targets": [
         {
           "anchor": {
@@ -398,12 +416,12 @@
       ]
     },
     "25": {
-      "note": "The read that decides the block's state, and the unavailable form its states come from.",
+      "note": "The read that decides the block's state, and the unavailable form its states come from.\n\nAnchor: `resolve_published_intent`, `PublishedIntentUnavailable`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cf99837a0a835809c8b221705f2ba36642e7f0b3589f9e2216ef1dc4a0760978",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
             "locator": {
               "kind": "symbol",
               "name": "resolve_published_intent"
@@ -431,8 +449,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-            "content": "sha256:105d762bd4cebcc835c97e7d3aa1b77ca4afc2886c24c154da22856426cf1b37",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:08ccfc7f882a91bd029c829b20ddc5837accc8fb3529e3b31dc9fca44a75f268",
             "locator": {
               "kind": "symbol",
               "name": "validate"
@@ -443,12 +461,12 @@
       ]
     },
     "27": {
-      "note": "The three card writers, which ask no cutover lock.",
+      "note": "The three card writers, which ask no cutover lock.\n\nAnchor: `citation_fix_tool`, `citation_migrate_tool`, `route_index_refresh_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:88ee98a2e116d21f76242e567dbf3a401eb1c177fc5d7de2018d276de82dd046",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix_tool"
@@ -458,8 +476,8 @@
         },
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-            "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:a50d2c3e7bb227cf80120eb7e2169138ffa607f5301aaad6b7a227d9aa93a372",
             "locator": {
               "kind": "symbol",
               "name": "citation_migrate_tool"
@@ -469,8 +487,8 @@
         },
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
               "name": "route_index_refresh_tool"
@@ -485,7 +503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -501,7 +519,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -517,7 +535,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -533,8 +551,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:9f12995207aee0994148f303ede553344bb2fd8c44561370b44bdef062c0e956",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:f763db344a416efd66bbb0d3414cfd2cfcf00cfec743dabcb71778a18ef92f63",
             "locator": {
               "kind": "symbol",
               "name": "drift_check_tool"
@@ -549,8 +567,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
-            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
             "locator": {
               "kind": "symbol",
               "name": "_pre_baseline_official_scope"
@@ -565,8 +583,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-            "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix_tool"
@@ -581,8 +599,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
-            "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
               "name": "route_index_refresh_tool"
@@ -597,7 +615,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
             "locator": {
               "kind": "symbol",
@@ -608,8 +626,40 @@
         }
       ]
     },
+    "35": {
+      "note": "Only a recognized legacy RuntimeError becomes the typed short-message/full-detail conversion refusal; unrelated runtime errors still raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:438da248e5847f354d564f8d02805294a30d26dcfbfb01abc434edbdf668e088",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carryover_legacy_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
-      "note": "Canonical quality scope is owned by the focused scope module.",
+      "note": "Canonical quality scope is owned by the focused scope module.\n\nAnchor: `resolve_memory_scope`, `MemoryScope`",
       "targets": [
         {
           "anchor": {
@@ -638,11 +688,11 @@
       ]
     },
     "5": {
-      "note": "Typed quality execution and public run translation are owned by the controller.",
+      "note": "Typed quality execution and public run translation are owned by the controller.\n\nAnchor: `run_memory_quality_request`, `_resolve_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -654,7 +704,7 @@
         },
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -671,8 +721,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
               "name": "route_index_refresh_tool"
@@ -721,8 +771,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
-            "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
+            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
             "locator": {
               "kind": "symbol",
               "name": "memory_carryover_apply_tool"

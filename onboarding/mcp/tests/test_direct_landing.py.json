@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
-        "content": "sha256:62441929118df8b1dc35a941ef405b3603961a62fb0a2bfe698576d044979e61",
+        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
+        "content": "sha256:5efaa63befdc35b2582e174d5ccbbc7190a1772ef73335a2a5b82d33b27e1c00",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_public_recover_control_completes_cut_generation"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
-        "content": "sha256:a5e51cf7d057de24ba99f87fb886ea1c3c53262e341276d8aa351aeb6b8b821b",
+        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
+        "content": "sha256:8ec24a9dcf6d92a47f5f451e5c29d761a67faa275e69ffc27835bcc1c7eeb167",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_create_precode_census_pins_each_row"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
+        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
         "content": "sha256:3146079df45e5db08e3ee183abe12217dbaefc0c0297eb6559647489c38c86aa",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
+        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
         "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
+        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
         "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
         "locator": {
           "kind": "symbol",
@@ -122,26 +122,28 @@
       ]
     },
     "3": {
-      "note": "Recovery rejects real drift and accepts cache misses without extra commits.",
+      "note": "Converted paired-commit/replay guarantees and retained interrupted-receipt recovery",
       "targets": [
         {
           "anchor": {
-            "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
-            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "blob": "d6a40f74201114a69c5b3ea41177605d28676779",
+            "content": "sha256:878c4333273738cf1512d3a47abf10b0bc5a6b33438ccde09274a933a0f249e6",
             "locator": {
-              "kind": "symbol",
-              "name": "_recover_after_interrupted_receipt"
+              "end": 2433,
+              "kind": "line_range",
+              "start": 2392
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
-            "content": "sha256:bf8bff0b7d0ce816b2d6bd1857b53a75438b2c7735a99ca15bca5ecfbffe0c99",
+            "blob": "d6a40f74201114a69c5b3ea41177605d28676779",
+            "content": "sha256:d1909fab6294dfa49e3d610f8cab1908972b7297038210bfe3042bec6e8f25a9",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_clean_memory_reused"
+              "end": 2390,
+              "kind": "line_range",
+              "start": 2318
             }
           },
           "kind": "test"

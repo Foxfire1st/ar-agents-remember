@@ -16,7 +16,6 @@ and translates registry outcomes into stable public results.
 
 The full quality execution binds two independent base ports: knowledge validation still uses its converted operation base, while landing observations use the contract's admitted memory/code base. Resolving the landing port changes neither candidate capture/revalidation nor existing refusing findings; it retains cuts and additions already committed within the leaf.
 
-- Full execution supplies the contract-bound landing base separately from the validator base. [25]
 
 
 ### Logic
@@ -128,7 +127,7 @@ The standalone runner is the half an operator can drive without pytest:
 <root>` prints the five counters and one row per finding, and exits **non-zero** while any declaration
 is dead. Before this leaf no command in the product could fail on a dead governing overview.
 
-## 260928-MIK-L24 The Unconverted-Line Refusal (MIK-R24 Rule 9)
+## Historical L24/L37 Unconverted-Line Refusal (superseded by MIK-R46)
 
 `_execute_memory_quality` now asks `worktrees/knowledge_crossing.unconverted_line_refusal` first, for
 every contract-scoped run whose contract names a memory worktree. When the leaf's memory tree has no
@@ -152,7 +151,6 @@ the crossing sync (`worktree_sync`) as the only way such a leaf converts.
   `knowledge_base=converted_check_base(scope, coordination_root)`, so on an unconverted `HEAD` the check validates
   against `HEAD`'s conversion, as the gate, the worklist and the writer do.
 
-- The refusal runs before any scan and returns a refused result naming the crossing sync. [1]
 
 ## 260928-MIK-L28 The "Invariants Without Proof" Input (MIK-R28 Rule 5)
 
@@ -168,7 +166,6 @@ MIK-R37, it returns `None`, and the checklist renders nothing new.
   index or cache that cannot be read becomes a `problem` line in the section, never an exception, so the
   run that shows the list cannot fail because of it.
 
-- The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. [2]
 
 ## 260928-MIK-L08 The Leaf's Change-To-Knowledge Worklist (MIK-R08 Rules 7 And 8)
 
@@ -193,11 +190,6 @@ worklist applies (both memory sides unconverted, which is every production leaf 
   recompute for a scope the gate does not apply to.
 - **Unconverted runs are unchanged:** with no worklist, neither the response field nor the section appears.
 
-- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. [3]
-- The prepared inputs handed to the checklist. [4]
-- Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
-- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
-- The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
 
 ## 260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)
 
@@ -218,8 +210,6 @@ report-only findings of the leaf's onboarding gate:
 The checklist's leaf block hands the gate the changed paths and the accepted identities.
 
 Anchor: "gate_findings, gate_report_only = _onboarding_refresh_gate(" [8] |  | mcp/src/agents_remember/application/memory_quality/controller.py:747-753 |
-- The dispatch: the history-file gate on a converted tree, today's gate otherwise. [9]
-- Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. [10]
 
 ## 260928-MIK-L10 A Needed Onboarding Row Is Not Reported Unnecessary (MIK-R10 Rule 5)
 
@@ -242,8 +232,6 @@ they join the checklist (ruling 2026-09-30T01:56:39 Q3):
 The report-only findings pass through the filter.
 
 Anchor: "report_only.extend(_needed_rows_dropped(" [11] |  | mcp/src/agents_remember/application/memory_quality/controller.py:755-755 |
-- The filter and the adjusted count. [12]
-- The raw count is 2 and the response count 1; only the stray row remains. [13]
 
 ## 260928-MIK-L09 The Mandatory Gate Counts Every Open Item (MIK-R09 Rules 1, 3 And 7)
 
@@ -275,16 +263,19 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 The run evaluates the gate and briefs it.
 
 Anchor: "gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)"; "response.update(_knowledge_briefs(worklist, gate))" [14] |  | mcp/src/agents_remember/application/memory_quality/controller.py:478-478; mcp/src/agents_remember/application/memory_quality/controller.py:517-517 |
-- The gate carried to the checklist. [15]
-- The gate over the exact curator candidate; `None` where it does not apply. [16]
 Each gate finding is one repair finding, each open item counted once.
 
 Anchor: "repair_findings.extend(_with_gate(gate_findings, prepared.gate))" [17] | `_with_gate`; `_onboarding_findings_beside` | mcp/src/agents_remember/application/memory_quality/controller.py:819-840; mcp/src/agents_remember/application/memory_quality/controller.py:843-852; mcp/src/agents_remember/application/memory_quality/controller.py:754-754 |
-- The census blockers, split out. [18]
+
+## MIK-R46 R8: unconverted refusal and delivered-key validation
+
+The current conversion-first refusal is unconditional; the L24/L37 account below records earlier conditional-lock epochs, not present permission to check an unconverted tree. On refusal `_execute_memory_quality` forms the whole result before scanning, computes `quality_result_answer(whole)` once, and copies its own `status`, `blockingCount` and `nextAction` back into that whole result. It does not guess constants or change projection policy. The ordinary converted quality/gate/coherence path remains separate. Matching whole/delivered refusal keys does not discharge a converted candidate's repairs, stale indexes or coherence dependency, and combined readiness still does not waive the final affected-closure authority.
+
+The companion test invokes `run_memory_quality_request` on an actual unconverted external-memory fixture and checks `unconverted-memory`, whole/delivered equality (`failed`, `0`, `worktree_sync`) and the delivered-key subset except framework keys. These are source assertions; the recorded Reviewer R8 CODE PASS is a bounded repair result, not whole-MEMORY or final certification.
+
 
 ## Evidence
 
-- Quality computation retains whole material beside its computed status. [24]
 
 ### Docs References
 
@@ -292,14 +283,10 @@ No configured Domain Documentation source applies; the controller contract is re
 
 ### Repo-Internal References
 
-- The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
-- Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
 Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.
 
 Anchor: "if not execution.publish_curator_report"; "_attach_curator_checklist(" [21] | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:635-789; mcp/src/agents_remember/application/memory_quality/controller.py:518-518; mcp/src/agents_remember/application/memory_quality/controller.py:522-522 |
-- R03 candidate-tree freezing and change refusal around curator publication. [22]
 
-- Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run. [23]
 
 ### Cross-Repo References
 
@@ -399,3 +386,34 @@ this leaf re-pointed at the shipped per-record measurement. The read remains str
 more counted limitation downstream: the section that consumes these summaries can now say
 `not-measured` rather than letting `| stale | 0 |` be read as "nothing moved" when nothing was
 measured at all.
+
+### Current Source-Inspection References
+
+- The refusal runs before any scan and returns a refused result naming the crossing sync. [1]
+- The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. [2]
+- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. [3]
+- The prepared inputs handed to the checklist. [4]
+- Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
+- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
+- The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
+- The checklist's leaf block hands the gate the changed paths and the accepted identities. [8]
+- The dispatch: the history-file gate on a converted tree, today's gate otherwise. [9]
+- Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. [10]
+- The report-only findings pass through the filter. [11]
+- The filter and the adjusted count. [12]
+- The raw count is 2 and the response count 1; only the stray row remains. [13]
+- The run evaluates the gate and briefs it. [14]
+- The gate carried to the checklist. [15]
+- The gate over the exact curator candidate; `None` where it does not apply. [16]
+- Each gate finding is one repair finding, each open item counted once. [17]
+- The census blockers, split out. [18]
+- The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
+- Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
+- Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+- R03 candidate-tree freezing and change refusal around curator publication. [22]
+- Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run. [23]
+- Quality computation retains whole material beside its computed status. [24]
+- Full execution supplies the contract-bound landing base separately from the validator base. [25]
+
+- Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated. [26]
+- The unconverted fixture checks whole/delivered status, count, next action and key subset. [27]

@@ -6,18 +6,19 @@
 
 ## Purpose
 
-Checks the pure route-review scope resolver: atomic child deferral, master ownership, currentness,
-evidence and dependency freshness, ordered membership, and exclusion of status-only bookkeeping.
+Checks route-review altitude and ownership: atomic child deferral, a missing canonical master,
+a parented leaf without its parent contract, and the existing organizational leaf review boundary.
+Aggregate master currentness, membership and dependency checks belong to the identity tests.
 
 ## Code Commentary
 
 ### Logic
 
-The tests construct canonical contract and candidate inputs, then exercise scope ownership errors,
-master-review requirements, currentness changes, stale evidence, membership changes, and status-only
-updates. The shared fixture asserts that a parent contract exists before loading the series contract,
-so a parented leaf cannot silently become a standalone case. They keep the resolver's typed refusal
-surface explicit so integration callers can act on the exact stale edge.
+The tests construct canonical contracts and exercise the four retained ownership/altitude cases.
+Explicit worktree-services composition enables converted-memory fixture setup without adding
+aggregate-master assertions. The shared fixture requires a parent contract before loading it,
+so a parented leaf cannot silently become a standalone case. Typed ownership refusals and the
+organizational leaf's current review boundary remain distinct.
 
 ### Conventions
 
@@ -28,8 +29,8 @@ integration quality gate or make any protected-ref publication.
 
 - Atomic child review is deferred and never accepted as a local gate.
 - The atomic fixture must retain a parent contract before the series contract is loaded.
-- Master scope membership/order and evidence/dependency digests are currentness inputs.
-- Status-only bookkeeping cannot manufacture a current review.
+- Missing or invalid parent/master ownership keeps its typed refusal.
+- Organizational leaves retain their own current review; aggregate membership and dependency checks are elsewhere.
 
 ### Todos
 

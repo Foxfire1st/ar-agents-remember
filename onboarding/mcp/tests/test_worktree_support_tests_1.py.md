@@ -22,9 +22,11 @@ memory, and checks the exact series/leaf branch and parent-contract relationship
 leaf document's lifecycle/enclosure references and checks that reattach preserves them.
 
 The early-closeout helper alters binding facts to prove refusal, then restores the task document.
-The queue helper uses normalized code/memory messages and checks that the one member points to the
-expected canonical leaf task. It no longer supplies a ledger message. Finally, abandon removes the
-leaf enclosure while the parent series contract and its branch remain.
+The queue helper publishes fixture curator evidence, declares a closeout door with priority
+judgment and typed admission, then reads the one member’s canonical leaf-task address. The
+fixture pairs the memory base with a `Code-Commit` trailer and calls public first conversion
+before evidence publication, asserting return 0. It removes the layout marker before abandon;
+abandon then removes the leaf enclosure while the parent series contract and its branch remain.
 
 ### Conventions
 
@@ -36,7 +38,7 @@ at its stated boundaries and does not stand in for every closeout route.
 
 - Starting/attaching the leaf preserves canonical parent and document binding.
 - Invalid binding is still refused before closeout work.
-- Queue fixture intent uses only code and memory outputs.
+- Queue fixture admission uses explicit priority judgment and a typed closeout-door declaration.
 - Abandoning the leaf must not remove the parent series contract or branch.
 
 ### Todos
@@ -58,9 +60,6 @@ No configured external domain-documentation evidence.
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-- The fixture queue and early refusal helpers retain typed inputs and exact bindings. [1]
-- The retained lifecycle scenario preserves the parent through start/attach/abandon. [2]
-- Shared closeout arguments normalize the two real content messages. [3]
 
 ### Cross-Repo References
 
@@ -76,3 +75,9 @@ No external Domain Documentation source is configured for this internal route; t
 ### Cross-Repo References
 
 This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
+
+### Current Source-Inspection References
+
+- The fixture queue and early refusal helpers retain typed inputs and exact bindings. [1]
+- The retained lifecycle scenario preserves the parent through start/attach/abandon. [2]
+- Shared closeout-input helpers are background support, not called by this retained scenario. [3]

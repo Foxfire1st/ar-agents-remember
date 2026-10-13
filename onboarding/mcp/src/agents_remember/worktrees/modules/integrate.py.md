@@ -22,7 +22,7 @@ Handover gates are folded across gate logs by matching master/task identity. Pre
 
 **The invariant gate before every landing.** `_handover_or_apply_integration` delegates admission to `integration_gate.integration_gate_block` before ancestry proof or ref publication, in preview and apply. A leaf with converted memory rejudges the closeout-cell pair through the shared leaf validator and recomputed worklist gate against the current parent-memory tip; the earlier closeout verdict is not trusted as landing authority. A master final or checkpoint route runs validator, net staleness and newly closed history ownership, then the chain proof up to its actual pair. Final requires the complete canonical non-abandoned leaf population; checkpoint examines the leaves already landed.
 
-A refusal projects `knowledge-gate-refused` (exit 2) without persisting the contract or recomputed worklist, even on apply. Git read failures are named unreadable inputs. Unconverted memory retains the cutover lock; a converted side is gated rather than locked. These judgments do not add code-quality, full MQC, coherence or independent-review gates. [5]
+A refusal projects `knowledge-gate-refused` (exit 2) without persisting the contract or recomputed worklist, even on apply. Git read failures are named unreadable inputs. Legacy memory input is refused by the central conversion boundary even without a converted sibling; converted or converting sides are judged rather than classified as legacy. The former local `_leaf_landing_lock` and `_knowledge_gate_block` sites are retired; `integration_gate.integration_gate_block` owns this admission. These judgments do not add code-quality, full MQC, coherence or independent-review gates. [5]
 
 ### Conventions
 

@@ -18,7 +18,7 @@ three-commit closeout. Initial tracked `memory.md` seeds remain deliberately in 
 repositories so consumers can exercise old history and migration; they do not define the current
 publication protocol.
 
-`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. `write_current_task_lineage` also creates the external-memory repository and its matching
+`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a baseline containing knowledge/layout.json alongside its deliberately historical tracked-cache seed, task lineage and an external-memory contract. `write_current_task_lineage` also creates the external-memory repository and its matching
 super/work branches, using that repository's own base commit. The code edge alone cannot
 establish a current paired lineage for task-bound seat admission.
 
@@ -53,9 +53,6 @@ No configured external source applies.
 
 ### Repo-Internal References
 
-- Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. [1]
-- External-memory fixture supplies real isolated Git repositories and current contract inputs. [2]
-- The base class provides helper methods rather than collected test cases. [3]
 
 
 ### Cross-Repo References
@@ -63,3 +60,9 @@ No configured external source applies.
 Temporary fixture repositories do not establish a live cross-repository integration.
 
 No separate external implementation source applies.
+
+### Current Source-Inspection References
+
+- Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. [1]
+- External-memory fixture supplies real isolated Git repositories and current contract inputs. [2]
+- The base class provides helper methods rather than collected test cases. [3]

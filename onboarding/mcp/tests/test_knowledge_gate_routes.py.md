@@ -45,8 +45,7 @@ probes call `integration_gate_block` directly with chain proof held passing; the
   refuses a master landing.
 - A recorded blob that the store lacks is named as unavailable where it is raised; a Git failure while
   asking for a recorded blob is `incomplete`, is never kept, and is named by the trees and by the lane.
-- Record landing on unconverted memory does not read the landed commit. A record the leaf wrote before
-  is judged as new against the parent line, whose tip the route reads itself.
+- Record landing refuses a readable unconverted landed commit with `legacy-format` before deeper gate reads; it no longer answers `would-record`. An unreadable landed commit keeps its named probe error on either format, never a legacy classification. A record the leaf wrote before is judged as new against the parent line, whose tip the route reads itself.
 
 ### Logic
 
@@ -86,7 +85,7 @@ probes call `integration_gate_block` directly with chain proof held passing; the
   incomplete, naming Git's error; two evaluations, two `_evaluate` calls).
 - **F6:** `test_the_routes_judge_a_leaf_s_earlier_record_new_against_the_parent_line`;
   `test_the_memo_key_holds_the_parent_tip`.
-- **F7:** `test_record_landing_on_unconverted_memory_never_reads_the_landed_commit` (`would-record`).
+- **F7 / MIK-R46:** `test_record_landing_on_unconverted_memory_refuses_before_reading_the_landed_commit` asserts legacy refusal for a readable old-format commit and the separate named probe error for an unreadable commit.
 - **F9 and notes:** `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`;
   `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory` (an unreadable candidate tree, a missing official
   branch, a timed-out probe at `leaf_gate_refusal`); `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`.

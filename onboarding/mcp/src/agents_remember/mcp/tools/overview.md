@@ -19,6 +19,8 @@ Ambient enrichment preserves a producer-supplied recovery `nextStep` before cons
 
 `context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information and an optional actual agent binding; it does not return the public roster.
 
+A citation-fix legacy refusal retains its central code and conversion message in the caller-visible projection, not solely in a full-result log; converted status counts and bounded entries stay unchanged.
+
 ## Construction And Ownership
 
 direct_execution_grant_payload shapes the strict result and the pure facade exports it. Payload/import/registry membership is not authority; caller and store checks stay at the application/kernel owners.

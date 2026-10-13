@@ -15,8 +15,13 @@ tree, and reopens a recorded comparison from its tree IDs. It copies no tree and
 
 ### The four sides of a live comparison
 
-- `memory_converted(contract)` decides whether a leaf gets a tree comparison: its memory worktree, or the
-  tip of its official memory line, holds the layout marker. Otherwise `live_review_trees` returns `None`.
+- `memory_converted(contract)` returns `True` when the memory worktree or the official
+  memory tip holds the layout marker, and `False` for answered unconverted applicability
+  (or absent repository/line inputs). `official_line_converted` first resolves the named
+  tip with `rev-parse --verify --quiet`; failure or no answer is named error text, never
+  a legacy classification. `live_review_trees` turns that string into a memory-side
+  `candidate_unresolved` refusal before capture/pin/record; only an answered unconverted
+  case (or absent worktree/repository) returns `None`.
 - `_live_draft` resolves B from the contract's code base commit, pairs K_B with `paired_memory_commit`
   (the worklist's own pairing), and captures K_C through a private index (`_capture`). C is the tree the
   caller captured. A side that cannot be resolved raises `TreeSideUnreadable` and becomes a

@@ -13,7 +13,12 @@ The workflow selects sidecar or inline storage, stores sidecar onboarding under 
 **Converted memory (L37 fix round P1b).** The workflow now opens with a pointer: when the memory tree holds
 `knowledge/layout.json`, use `converted-card-workflow.md` instead. A converted card has no metadata table, no
 Update History and no citation tables, and its sidecar references are authored by `citation_fix`. The metadata,
-Update History and citation rules of this workflow are for unconverted memory.
+Update History and citation rules of this workflow describe the retained old-format
+shape, not permission for ordinary operations on unconverted memory. MIK-R46
+requires conversion first; step 8 no longer advertises `--migrate`: the
+`memory-citations` CLI has only `--fix` for repair, with no migration mode. A tree
+still in the superseded shape converts to text knowledge first, then uses the
+converted curator workflow. Removing the retained old-format sections is MIK-R65.
 
 ### Conventions
 

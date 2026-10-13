@@ -7,10 +7,10 @@
   },
   "applicability": "Unconverted review descriptions.",
   "conditions": [
-    "The review reads a source-only identity because the canonical dataset is unavailable."
+    "The requested review input is positively identified as legacy-format; lack of a readable Git answer is not that identification."
   ],
   "exclusions": [
-    "A converted review, which reads tree comparisons."
+    "Converted reviews, which use tree comparisons and their own validator."
   ],
   "id": "INV-YJZKYC",
   "origin": {
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Unconverted review descriptions state source-only identities and unavailable retired knowledge.",
+  "statement": "Unconverted review descriptions retain source-only identities, mark memory legacy-format and attach no knowledge comparison; an unreadable official-line probe retains its named error instead of becoming an unconverted fact.",
   "status": "proposed",
   "supersedes": []
 }

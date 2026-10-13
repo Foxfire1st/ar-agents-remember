@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
             "content": "sha256:0f9898da052dfd031c1562176e498fa65e249d674f25e5a201848ce6665d188a",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
             "content": "sha256:daf344a50081beffabf6589adfa9b2f2b9a7a71220cab33d03da4007adbcd809",
             "locator": {
               "kind": "symbol",
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
-            "content": "sha256:c801b1bfd0eebcb8c77d62d6c6dbfc8a91ee504bd7849a7b0729464e16a91a39",
+            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
+            "content": "sha256:f97fe83dfb32444de63267b0a1be9bd1ace11e127d81d8d414cff10c70dd5d33",
             "locator": {
               "kind": "symbol",
               "name": "_fixture"
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
-            "content": "sha256:b6495743e89eefaa416cb24d9f5481ff4ed9d4f3bd7ae5832834c9fef4f638b6",
+            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
+            "content": "sha256:15f390f86c4ae9671cef50d7c4a0f0ae4b84e6c919de69f99bda15797c84d7ca",
             "locator": {
               "kind": "symbol",
               "name": "_record"
@@ -71,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
-            "content": "sha256:7c06a4f19e90db5445ffddc59d097c0184237cfa9f48a2a6c1f6cc0e56842c91",
+            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
+            "content": "sha256:5054ef7c824978099338d3618bdd5c1614b374c29bc7bd04c04590c99d763251",
             "locator": {
               "kind": "symbol",
               "name": "test_landed_commit_sets_the_terminal_integration_cell"

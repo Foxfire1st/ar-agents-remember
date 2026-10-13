@@ -3,15 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Report and no-report carryover retain all forty source paths.",
+      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.\n\nAnchor: `CarryoverProductionTests.test_forty_path_population_passes_through_whole`; `CarryoverProductionTests.test_plan_and_apply_derive_the_row_cases`",
       "targets": [
         {
           "anchor": {
-            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_forty_path_population_passes_through_whole"
+              "end": 435,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "content": "sha256:f30e5edc7a435b55f8aa77aa89c7b764ea7adc559ae891002c4c9be430d8cb6d",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 387
             }
           },
           "kind": "test"
@@ -23,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
               "kind": "symbol",
@@ -39,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
-            "content": "sha256:90706c87a8c3295a61b9f25bbebcc8e525fc8280d667eb74ce09d6648e4e019f",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
+            "content": "sha256:8c868e437eb58b49841cc87267bf18ad94210a156d5eb22f7f0342dec7c7158a",
             "locator": {
               "kind": "symbol",
               "name": "IntegrityProductionTests"
@@ -55,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
             "content": "sha256:f37a402e535a54fbbb7fddecbf6c928c248af5c72b5285329b9847898f2e899e",
             "locator": {
               "kind": "symbol",
@@ -71,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
             "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
             "locator": {
               "kind": "symbol",
@@ -87,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f3ae99200ad955d44ce4245bf00ad3810055ee",
+            "blob": "b6bc8af29249c854568e3ea9a69cbd5e87852149",
             "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
             "locator": {
               "kind": "symbol",

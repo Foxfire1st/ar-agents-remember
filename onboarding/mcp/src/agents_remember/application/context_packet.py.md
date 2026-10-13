@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current request removes provider inclusion/detail knobs and always passes include_providers=False.
+- With `include_drift=false` the drift block is `not-checked`. When drift is requested for an existing unconverted memory directory, `_drift_packet` returns `status: "error"` and the shared `legacy_format_refusal` message for `context_packet`, without measuring drift. This is unconditional: a converted branch elsewhere is not an admission prerequisite. Convert first through the procedure named by the refusal, then repeat; a missing root still reaches the existing summary error.
 
 ### Superseded inventory
 

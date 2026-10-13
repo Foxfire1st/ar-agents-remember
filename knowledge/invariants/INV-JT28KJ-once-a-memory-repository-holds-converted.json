@@ -5,19 +5,18 @@
       "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "The lock is one question asked at every memory route of the worktree, application and command-line layers; without it an unconverted line would be checked, committed or landed in the old format beside converted memory, where the old format is misread."
+    "justification": "The application, CLI and landing routes must not commit or operate on a legacy line just because no converted sibling is visible; the public route matrix guards this cross-layer refusal."
   },
   "applicability": "Every route of the runtime that writes, checks, syncs, closes out or lands a memory line: knowledge writes, memory-quality runs, managed memory syncs, closeouts, direct landing, record landing, leaf, master and checkpoint landing, and carryover.",
   "conditions": [
-    "The route has established that its memory holds the layout marker on no side (own, incoming, base or landed commit).",
-    "The memory repository holds converted memory: a local branch tip or a registered worktree's working tree holds knowledge/layout.json."
+    "The route has established that its memory input lacks knowledge/layout.json; missing, unreadable and corrupt inputs retain their own errors."
   ],
   "exclusions": [
-    "Reads: read_ar_files marks an unconverted card legacy-format, and taskless reads of an unconverted dataset keep their answers.",
-    "A managed sync already in flight when the lock begins to hold, which can still be continued or cancelled.",
-    "Series closeout and baseline adoption, which commit no unconverted memory into a locked repository.",
-    "The onboarding card writers citation_fix, citation_migrate and route_index_refresh on an unconverted line: they commit nothing, and the closeout that would land their edits is locked.",
-    "The retired database-era realization site; the obligation is recorded on converted memory only."
+    "read_ar_files retains legacy cards marked legacy-format with no knowledge section, and the conversion command remains supported.",
+    "An already-current or skip-memory sync moves no memory side; an in-flight sync can continue or cancel.",
+    "A legacy target may adopt a converted source by fast-forward; mixed merges retain the crossing sync and all-converted sides retain their normal route.",
+    "A converted target cannot fast-forward from a legacy source; marker presence alone is not validator acceptance.",
+    "No absent/non-directory or definite non-repository input is fabricated into a memory line."
   ],
   "id": "INV-JT28KJ",
   "origin": {
@@ -31,9 +30,9 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Once a memory repository holds converted memory anywhere -- a local branch whose tip holds knowledge/layout.json or a registered worktree whose working tree does -- every route that writes, checks, syncs, closes out or lands memory refuses memory that is unconverted on every side, naming the crossing sync, while a route with a converted side is gated and never locked, a repository that holds no converted memory is not locked, and a probe Git cannot answer refuses by name.",
+  "statement": "Every ordinary check, write, managed memory sync, closeout or landing with legacy memory input refuses with the central legacy-format conversion message whether or not converted memory exists elsewhere; named probe failures are never classified as legacy, and converted or converting candidates retain their validator and gate.",
   "status": "proposed",
   "supersedes": []
 }

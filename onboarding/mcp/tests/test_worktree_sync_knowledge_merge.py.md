@@ -6,12 +6,11 @@
 
 ## Purpose
 
-Tests for the knowledge merge in managed sync: the structural merge of knowledge files on every managed sync,
-the conversion boundary, and since MIK-R66 the reference alignment through the real transaction.
+Tests for the knowledge merge in managed sync: the structural merge of knowledge files on converted or crossing memory merges, the conversion boundary, and since MIK-R66 the reference alignment through the real transaction.
 
 ## Code Commentary
 
-The tests drive the structural merge of knowledge files on every managed sync and the conversion boundary.
+The tests drive structural knowledge merging on converted or crossing memory merges and the conversion boundary. All-unconverted fast-forward/merge movement refuses with the central `legacy-format` message before mutation; converted merges never fall back to plain Git when the structural merge is unbound. Already-current and `skip-memory` plans are not structural-merge claims.
 Both-lines-added references align to a fresh number through the transaction; the report seam keeps every
 nonzero alignment population; evidence-only and skip-only plans still write a report; and a successful sync
 carries the journaled report and counts.

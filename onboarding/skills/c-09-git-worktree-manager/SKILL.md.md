@@ -51,6 +51,18 @@ at `SKILL.md:293-299` says the same: it and its generated copies were corrected 
 code, because they had told agents that continuation validates every exact parent ledger row
 survives.
 
+Unconverted-memory guidance is unconditional (MIK-R46@v2), not triggered by a
+converted branch elsewhere. A moving sync with unconverted target and source
+refuses `legacy-format`; merging three unconverted trees is not a plain Git
+fallback. A fast-forward that takes a converted source remains admitted, and a
+mixed-format merge takes the crossing route. Fast-forwarding an unconverted
+source onto a converted target refuses rather than removing the text format.
+The unchanged no-memory-move cases remain outside this new refusal. Convert first
+through `c-13-install-and-onboard` and `docs/guides/first-conversion.md`: one new
+leaf converts its memory worktree, then closes out and lands; other open lines
+cross at their next `worktree_sync` with `merge-memory`. Retained continue/cancel
+recovery is not a fresh legacy-write admission.
+
 Cleanup releases an exact selected terminal contract before removing the authority needed to name
 it and never clears a newer selection. Integration conflicts use the same evidence boundary:
 agents resolve technically derivable conflicts; only genuine semantic ambiguity escalates to the
@@ -67,6 +79,8 @@ copy and the eight harness starter copies byte-identically from this source.
 The closeout paragraph says since L37 that the preview does ask the mandatory invariant gate on converted memory:
 a leaf the apply would refuse is answered `knowledge-gate-refused` with the open findings, never `would-closeout`
 (see `c-12-closeout`).
+On unconverted memory, preview and apply refuse `legacy-format` before claim or
+commit; first conversion precedes closeout regardless of converted memory elsewhere.
 
 **Memory cannot be disabled for a task (260928-MIK-L50).** The skill's recovery list is now `reconciliation` / `custom` — the `disabled-memory` choice is gone — and a start that names the removed mode or choice is refused (`memory-opt-out-refused`). A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (the dry run first), then `worktree_start` at the same address without `memory_mode` (skills/c-09-git-worktree-manager/SKILL.md:211-216).
 

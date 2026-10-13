@@ -51,6 +51,15 @@ No external domain claim is required.
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
+
+### Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+No external evidence is needed for these assertions.
+
+### Current Source-Inspection References
+
 - Leaf identity proves code and memory transitively [1]
 - Organizational super move blocks the leaf boundary [2]
 - Start rechecks exact source tips before start effects [3]
@@ -66,9 +75,3 @@ to removed methods are superseded by this current inventory.
 - A dirty (uncommitted) candidate is parked, carried, and returned by the closeout boundary. [13]
 - A parked-candidate reapply conflict surfaces as `source-lineage-sync-conflict` with the candidate recoverable. [14]
 - The moved-source integration guidance routes through the sync. [15]
-
-### Cross-Repo References
-
-This card establishes test behavior, not a separate cross-repository protocol or live installation.
-
-No external evidence is needed for these assertions.

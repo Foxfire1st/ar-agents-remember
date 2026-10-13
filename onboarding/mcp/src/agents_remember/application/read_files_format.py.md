@@ -17,11 +17,15 @@ the new one.
 
 - `memory_format(root)` is `text/v2` exactly when the tree holds `knowledge/layout.json`, and
   `legacy-format` otherwise.
-- `legacy_published_intent(root)` is the knowledge section of an unconverted tree: `state:
-  "legacy-format"`, the memory root, and a detail naming both conversion routes. A line that descends from a
-  converted official line converts through the crossing sync (`worktree_sync`). An unconverted official
-  line, or a repository without one, converts by running `agents-remember knowledge-convert` on that line
-  and committing it through its normal route.
+- `legacy_published_intent(root)` reports `state: "legacy-format"`, the memory root
+  and why no knowledge is read; this is a format/refusal explanation, not a legacy
+  knowledge dataset. Cards are returned unchanged and marked `legacy-format`. A line
+  descending from converted memory crosses through `worktree_sync` with `merge-memory`.
+  A never-converted repository follows `first_conversion_procedure()`: run
+  `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` in place
+  before baseline adoption when no attributed baseline exists, or on one new leaf
+  as its first memory change when an official line exists, then close out and land.
+  The refusal names `c-13-install-and-onboard` and `docs/guides/first-conversion.md`.
 - `converted_card_parts(root, onboarding_rel)` reads `onboarding/<rel>.json` and returns `format:
   "text/v2"`, the sidecar, and the references resolved in number order:
   - a `code` or `test` target has its anchor `path` filled in from the sidecar's own path;
@@ -39,9 +43,10 @@ the new one.
 
 ### Invariants And Boundaries
 
-- **Legacy-format reads are active in this build (architect ruling, 2026-09-29).** This build is not
-  installed before MIK-R37. Refusals of unconverted trees elsewhere stay inert until the official line
-  is converted.
+- **Legacy-format card reads remain supported; ordinary operations refuse unconditionally
+  (MIK-R46@v2).** The refusal is not deferred until an official line or another branch
+  is converted. Read the old cards, convert through the named procedure, then repeat
+  the ordinary converted operation.
 - Nothing is resolved from sidecars on an unconverted tree.
 
 ### Todos

@@ -44,12 +44,9 @@ memory-quality runs and (later) closeouts call.
   stages, each `knowledge/history/<task>-crossing-<n>.json` that the merge adds and that neither parent
   holds, so the file is frozen from that commit on (MIK-R07 rule 7).
 - `unconverted_line_refusal(*, memory_worktree, memory_repository, official_branch, operation)` returns
-  `None` when the leaf tree is converted or there is no repository directory. When the leaf tree is
-  unconverted **and** the official tip holds the layout marker (`_official_line_converted`), it returns
-  the rule 9 refusal, which names the crossing sync (`worktree_sync`) and MIK-R24 rules 8 and 9. In
-  every other case (no branch, a tip that cannot be read, an unconverted tip) the cutover lock decides
-  (`cutover_lock.cutover_lock_refusal`, L37): the unconverted tree is refused as well once its memory
-  repository holds converted memory anywhere, and gets `None` in a repository that holds none.
+  `None` when the leaf tree is converted or there is no repository directory. Every unconverted leaf in an actual repository is refused through the central legacy-format message.
+  A converted official line names crossing sync with `merge-memory`; otherwise the cutover helper names first
+  conversion. An unreadable official marker object keeps its named probe error, not a guessed legacy state.
 
 ### Conventions
 
@@ -65,12 +62,9 @@ memory-quality runs and (later) closeouts call.
   validator with the converted base.
 - **A crossing sync that cannot complete leaves the line unchanged and names the failing step.** The plan
   is computed before Git touches the worktree.
-- **Rule 9 refusals are inert until the repository holds converted memory (architect ruling, 2026-09-29; L37).**
-  A repository that holds no converted memory is not locked, so no route changes behaviour there. From the
-  cutover (MIK-R37 rule 6) other masters' unconverted lines are only read until they cross. **Conversion and crossing
+- **Legacy operational inputs are unconditionally refused (MIK-R46).** The older cutover-window exemption no longer grants permission to a never-converted repository. **Conversion and crossing
   are separate routes:** the crossing sync is only for lines that descend from a converted official line.
-  An unconverted official line, or a repository without one, converts by running `agents-remember
-  knowledge-convert` and committing through its normal route.
+  An unconverted official line converts inside a new leaf, as that leaf's first memory change, and lands through normal validation/gates. A root without an attributed baseline converts in place and is then adopted.
 - The crossing sync's own commit converts the line. There is no separate conversion commit.
 ### Todos
 
@@ -104,11 +98,14 @@ No cross-repo boundary is crossed by this file.
 - A crossing sync: one tree unconverted and one converted. [17]
 - The plan through the bound port, refused without a paired code commit or a bound crossing. [18]
 - The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [19]
-- The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock. [20]
+- The shared legacy refusal names crossing sync for a converted official line and first conversion otherwise. [20]
 - A master-line crossing history file is closed in the merge commit. [21]
 - The durable report and its bounded summary, with the how-to. [22]
-- Rule 9, then the cutover lock for every other unconverted tree. [23]
-- Whether the official line's tip holds the marker; no line or an unreadable one reads as no. [24]
+- Legacy refusal is unconditional; converted candidates retain their gate route. [23]
+
+- No branch or unresolved tip returns False; a resolved tip whose marker object is unreadable returns its named LayoutProbeError [24]
+
 - The managed sync crosses an unconverted leaf into a converted line. [25]
 - Overlapping edits go to the curator with markers; a failed step changes nothing. [26]
-- The refusal fires only once the official line is converted. [27]
+
+- The refusal fires on legacy leaf memory independent of converted memory elsewhere. [27]

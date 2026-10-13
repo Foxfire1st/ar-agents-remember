@@ -15,10 +15,14 @@ CLI adapter for citation checks and fixes. Fixing uses an ordinary leaf contract
 Module-level surface:
 
 - `add_arguments` (function, lines 53-117) — declares the citation modes plus `--repo`, `--contract`,
-  repeatable `--document`, `--expected-snapshot`, `--build-index`, `--fix`, `--migrate`, `--dry-run`, and since
+  repeatable `--document`, `--expected-snapshot`, `--build-index`, `--fix`, `--dry-run`, and since
   260915-CAPS-L14 the repeatable **`--exclude GLOB`**.
-- `run` (function, lines 120-184) — validates the selected mode, builds the `CitationOperationScope`
-  (carrying the caller's excludes), and dispatches to the matching citation tool.
+- `run` (function, lines 120-184) — validates one of the three modes (report,
+  `--build-index`, `--fix`), builds the `CitationOperationScope` carrying caller
+  excludes, and dispatches to check, source-index build or fix. `--migrate` is no
+  longer registered or dispatched; conversion is `knowledge-convert`, not citation
+  migration. The MCP migration tool is also unregistered; its internal code is
+  retained for MIK-R65, not available as an alternative route.
 
 On a legacy `Trees` branch, `--exclude` adds a code-root-relative path glob to **this call's**
 exclusion register alongside the memory layer's `settings.json → onboarding.pathRules.exclude`
@@ -33,11 +37,14 @@ and internally skips authoring-refused sidecars; neither is a promise that `--ex
   become the multi-card selection admitted only for `--fix`. Other operations refuse a list.
   The CLI continues to print the whole result, not the MCP status projection. Each listed card is
   handled as a singleton and a refused member does not prevent the other members.
-- **Converted memory (L37 fix round P1b).** The `--document` help says that on converted memory `--fix`
-  takes `--document` alone (one card and its sidecar), and on unconverted memory it comes with
-  `--expected-snapshot`. The behaviour is `application/memory_tools.citation_fix_tool`'s: on a converted tree
-  the fixer authors the card's citation rows into sidecar references and re-records moved anchors. The
-  curator's procedure is the c-05 skill's `converted-card-workflow.md`.
+- **Converted memory (L37 fix round P1b, MIK-R46).** On converted memory `--fix`
+  takes `--document` alone and authors card citation rows into sidecar references,
+  then refreshes mechanical anchor moves. The procedure is c-05’s
+  `converted-card-workflow.md`. The parser’s retained legacy `--document` help
+  still mentions `--expected-snapshot`, but that is not admission: application
+  check/fix refuse unconverted memory, including `--fix --dry-run`, with
+  `legacy-format` and the conversion procedure regardless of converted branches
+  elsewhere. Convert first, then repeat the operation.
 
 ### Conventions
 
@@ -46,7 +53,7 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 ### Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/...` path.
-- Omitting `--contract` is admitted only for `--fix` before the configured converted root's first attributed baseline, with no linked memory worktree. A failed admission or a later contractless fix refuses; report, index-build and migration modes still require `--contract`. Caller excludes remain call-local on branches that use the register; converted check/fix does not apply them.
+- Omitting `--contract` is admitted only for `--fix` before the configured converted root's first attributed baseline, with no linked memory worktree. A failed admission or a later contractless fix refuses; report and index-build modes still require `--contract`; migration mode is removed. Caller excludes remain call-local on branches that use the register; converted check/fix does not apply them.
 
 ### Todos
 

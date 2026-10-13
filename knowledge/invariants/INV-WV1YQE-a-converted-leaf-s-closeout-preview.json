@@ -12,8 +12,8 @@
     "The preview is called on explicit request; nothing polls it (assumption ASM-NJ9P83)."
   ],
   "exclusions": [
-    "A contract the gate does not govern (not a leaf, no memory worktree, unconverted memory): its preview is unchanged.",
-    "The exact tree at the memory commit, which the apply judges again because the history closing makes it a new tree."
+    "The exact memory-commit tree, which apply judges again after history closing.",
+    "No external memory to judge; the gate is not made applicable by this preview contract."
   ],
   "id": "INV-WV1YQE",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A converted leaf's closeout preview reads the same gate verdict as the apply's preflight, over the same two trees: a leaf the apply would refuse is previewed as knowledge-gate-refused with its findings, never as would-closeout, asks for no commit approval and offers no apply; a passing preview says that the gate passed; an unconverted leaf's preview carries no gate verdict; and preview performs no closeout publication to the leaf's code, memory or contract. The enclosing registered tool call retains its daily tool-log record and its completed-call river event; these records are not closeout publication.",
+  "statement": "A converted leaf's closeout preview reads the same gate verdict as apply preflight over the same two trees: a refusal shows its findings, asks for no commit approval and offers no apply; a passing preview says the gate passed. Legacy external memory is refused before the preview promises closeout, including a series format verdict before publication authority. Preview publishes no closeout to code, memory or contract; the registered call retains its own daily log and completed-call event.",
   "status": "proposed",
   "supersedes": []
 }

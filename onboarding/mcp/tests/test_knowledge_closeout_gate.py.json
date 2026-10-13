@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6d6756386651fac997300a59f2e880422f881cea",
+        "blob": "2e7ae378a9f44503ddb195ff63f32b986de02721",
         "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6d6756386651fac997300a59f2e880422f881cea",
+        "blob": "2e7ae378a9f44503ddb195ff63f32b986de02721",
         "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
         "locator": {
           "kind": "symbol",
@@ -259,11 +259,11 @@
       ]
     },
     "8": {
-      "note": "The insertion-only symmetry, the unconverted leaf, the prepared path.",
+      "note": "The insertion-only symmetry, the unconverted leaf, the prepared path.\n\nAnchor: `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range`, `test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves`, `test_the_prepared_closeout_path_fails_closed_on_converted_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "blob": "b9719b5efabdc26fc1a71bcb0c782a05fc77d182",
             "content": "sha256:7fa5b29eda280e79edd29520a8d31ea4dd75359eb169b3a1c7ffcdf8451d38d6",
             "locator": {
               "kind": "symbol",
@@ -274,18 +274,18 @@
         },
         {
           "anchor": {
-            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
-            "content": "sha256:5e662159a1575f5fd4f2721519c47d5d94418db893fba41bd1c5aacc36d1e6c9",
+            "blob": "b9719b5efabdc26fc1a71bcb0c782a05fc77d182",
+            "content": "sha256:ee82c695cdc4833e34ab78586cde1a115d916173d8d4bbf158e610023c691014",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_unconverted_leaf_is_not_gated_at_any_route"
+              "name": "test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "blob": "b9719b5efabdc26fc1a71bcb0c782a05fc77d182",
             "content": "sha256:c4fad6b8bca82c1ce80ab4075b633dba932f329419868ffa04d005c1af78aa8b",
             "locator": {
               "kind": "symbol",

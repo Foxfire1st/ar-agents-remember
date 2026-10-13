@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-        "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+        "content": "sha256:53ec00387e7306cd1e352c660296331a45c01a1cc25f1b8c2a409ada67d4277e",
         "locator": {
           "kind": "symbol",
           "name": "unconverted_line_refusal"
@@ -16,17 +16,17 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Refuses an operation on an unconverted tree whose official line is converted, and otherwise lets the lock decide, so an unconverted tree in a repository that holds converted memory anywhere is refused as well; knowledge-ingest and a leaf's memory-quality run call it.",
+      "rationale": "The leaf writer/quality choke refuses a legacy worktree with crossing guidance from a converted official source or first-conversion guidance otherwise.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
         "content": "sha256:7cb5e728878c9f83736071027ced10ef6989208cf8f258cfc7e211ce330da909",
         "locator": {
-          "end": 351,
+          "end": 377,
           "kind": "line_range",
-          "start": 293
+          "start": 319
         }
       },
       "id": "RLZ-91VYMY",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:d75a23a84851f8574389dd80ff2ebd6eb8de1736e498e6eff825d3b5cf830bca",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:aa2c2719d400a40951748e06dd979d480eee5fc30387595467df93f30768aa66",
             "locator": {
               "kind": "symbol",
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
             "locator": {
               "kind": "symbol",
@@ -141,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -189,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
             "locator": {
               "kind": "symbol",
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
             "locator": {
               "kind": "symbol",
@@ -233,12 +233,12 @@
       ]
     },
     "24": {
-      "note": "Whether the official line's tip holds the marker; no line or an unreadable one reads as no.",
+      "note": "No branch or unresolved tip returns False; a resolved tip whose marker object is unreadable returns its named LayoutProbeError",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:1b59f6b06f19b2177d0fe13c7e1743256970ab21280487644fcc35731d962885",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:8889988433959f51bbce82c0c730d0291f8d840ff3c978e4141ac0aa6e9b9744",
             "locator": {
               "kind": "symbol",
               "name": "_official_line_converted"
@@ -253,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
             "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
             "locator": {
               "kind": "symbol",
@@ -270,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
             "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
             "locator": {
               "kind": "symbol",
@@ -283,15 +283,15 @@
       ]
     },
     "27": {
-      "note": "The refusal fires only once the official line is converted.",
+      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:ce973bceccdc86d02c658e0d9d5a9cc626c1112b5d2d58b469d2e5879098d739",
+            "blob": "737a38f7aeef4298e5aca6f39699b7bf4e717303",
+            "content": "sha256:2b85249b3238ebc5abd9cc91235c1d1eff333e9d01335ccff476a44ff9241bad",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted"
+              "name": "test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line"
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },

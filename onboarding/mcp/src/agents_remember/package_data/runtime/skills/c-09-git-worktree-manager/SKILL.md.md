@@ -19,6 +19,18 @@ External memory incompatibility is interactive and offers `reconciliation` or `c
 
 Integration follows applicable authority (`ff-only` for unmoved sources, `replay` for parallel work); the recorded `source_branch` is the integration target. Lifecycle finalization proves the landed commit reachable from the recorded local source branch, runs or verifies cleanup, and reconciles task documents to `Completed`. The closeout preview runs no quality/test/memory/certification/review tool but does ask the mandatory invariant gate on converted memory. Atomic-series activation is scoped to the exact canonical series contract; terminal cleanup releases only the exact still-selected contract.
 
+Unconverted-memory guidance is unconditional (MIK-R46@v2), not triggered by a
+converted branch elsewhere. A moving sync with unconverted target and source
+refuses `legacy-format`; merging three unconverted trees is not a plain Git
+fallback. A fast-forward that takes a converted source remains admitted, and a
+mixed-format merge takes the crossing route. Fast-forwarding an unconverted
+source onto a converted target refuses rather than removing the text format.
+The unchanged no-memory-move cases remain outside this new refusal. Convert first
+through `c-13-install-and-onboard` and `docs/guides/first-conversion.md`: one new
+leaf converts its memory worktree, then closes out and lands; other open lines
+cross at their next `worktree_sync` with `merge-memory`. Retained continue/cancel
+recovery is not a fresh legacy-write admission.
+
 ## Granted direct workspace
 
 A granted canonical leaf works in its master series checkouts without leaf worktree_start or an enclosure. Product role preparation keeps report/scratch artifacts in the separate group and refuses missing authority/roots or another active direct sibling. Ordinary ungranted enclosure start/attach, source-edge sync and transaction recovery retain their owners; directness is not a shell permission or OS sandbox.

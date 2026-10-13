@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:111a7dafacf68cc3b315012d0ac60e68e64e397bb250afb5da1a780c23486e8f",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:45a98b59f3d0b0cc65020b6a97b7826ba61fa2c326f078231c620085d6a5455f",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:ffed780182abfbb04ce28956d6ca536955a4b321426f1b6f3f1565bc1854e3ff",
             "locator": {
               "kind": "symbol",
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
-            "content": "sha256:860d2d836b299d7e77bfee0c94485d0cef0baae27859b3fa5f117f4a5079c282",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "content": "sha256:906f02b121226be9c395d46872148d88b559b0fbf39d3d626bdce9e099611c43",
             "locator": {
               "kind": "symbol",
               "name": "test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references"
@@ -67,15 +67,15 @@
       ]
     },
     "13": {
-      "note": "One document's fix reports its own stale references, and the response is bounded.",
+      "note": "One document's fix reports its selected stale references and status counts; the delivered projection names retained whole-result artifacts.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:c69fc638c7048214c08a7d809605e5451b242f96cc4a106102802dce0f1af01a",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "content": "sha256:e614d2725b13a0030c62f9bd39a58f4b917cbad3a5d7c6b43970c9ef14aa15c4",
             "locator": {
               "kind": "symbol",
-              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded"
+              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts"
             }
           },
           "kind": "test"
@@ -87,11 +87,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:f2dde7a95d731493b66677960d67be86e66497273740783fdd10fd50abae0f35",
             "locator": {
               "kind": "symbol",
               "name": "test_two_tables_with_no_blank_line_between_them_are_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "content": "sha256:32d9231fec3a9ca3b9077d2a2c59426f245998ae969fecc2a6dc104827ca5f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_without_a_baseline_converts_in_place_then_adopts"
             }
           },
           "kind": "test"
@@ -103,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:2d63c14aee7e1b3369e902a5c73e9c20b76158a403a72893ee402b8e38909ed2",
             "locator": {
               "kind": "symbol",
@@ -119,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:d201622fbc0b6e8297c7d01b455708781d29ef06c07413abc29c5500c4fa1043",
             "locator": {
               "kind": "symbol",
@@ -135,11 +151,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:ce973bceccdc86d02c658e0d9d5a9cc626c1112b5d2d58b469d2e5879098d739",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "content": "sha256:2b85249b3238ebc5abd9cc91235c1d1eff333e9d01335ccff476a44ff9241bad",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted"
+              "name": "test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line"
             }
           },
           "kind": "test"
@@ -151,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:6090ce7ef3c04c42c8448bb9179d3c922c8abfe88f4dfe7cd27cd7d9b35fd4ce",
             "locator": {
               "kind": "symbol",
@@ -163,16 +179,16 @@
       ]
     },
     "6": {
-      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_conversion_toolchain.py\"",
+      "note": "Its lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
-              "end": 111,
+              "end": 124,
               "kind": "line_range",
-              "start": 111
+              "start": 124
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -185,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:58e0b33c8ea09d6a860dfeb5ba28fd9dd6cebea773fbbf584b31d741c5b03a3c",
             "locator": {
               "kind": "symbol",
@@ -201,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
             "content": "sha256:2d7823696a9b555e9ce97a1b24c2add26a4d60d10295f69dce40a901707ce83d",
             "locator": {
               "kind": "symbol",
@@ -213,15 +229,15 @@
       ]
     },
     "9": {
-      "note": "One converted card is fixed by its document alone; legacy keeps the snapshot.",
+      "note": "One converted card is fixed by its document alone; unconverted fixing refuses with the conversion step.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:b6e32a0dd170d7d477b4725252fb0dcb1e2767189edd6a873ba2f412918a77f5",
+            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "content": "sha256:cbe77959de4108350dac4c2f5f64aba47a6a852cf3ff78041e53636c3bdbb1be",
             "locator": {
               "kind": "symbol",
-              "name": "test_one_converted_card_is_fixed_by_its_document_alone_and_legacy_keeps_the_snapshot"
+              "name": "test_one_converted_card_is_fixed_by_its_document_alone_and_unconverted_is_refused"
             }
           },
           "kind": "test"

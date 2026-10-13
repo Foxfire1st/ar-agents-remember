@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "702332c5ff85bb0592c8b1d3b33a564a3b077ade",
+        "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
         "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
         "locator": {
           "kind": "symbol",
@@ -22,15 +22,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Real run states and complete blocking populations derive quality row contracts.",
+      "note": "Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation.",
       "targets": [
         {
           "anchor": {
-            "blob": "702332c5ff85bb0592c8b1d3b33a564a3b077ade",
-            "content": "sha256:9594f71770090e0addcea51a94e108daa25dfc582047f6bd86b010faa5e761c9",
+            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+            "content": "sha256:72dbaea635d3936902aa2b8ae2c30742705adb551f8b3693f9c2783484f44395",
             "locator": {
               "kind": "symbol",
               "name": "QualityProductionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+            "content": "sha256:693e282817bd69306dfddd37f2eeb6bceb5953adebfb4e2c801eec6897cf0765",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_missing_anchor_sidecars"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
+            "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_converted_layout"
             }
           },
           "kind": "test"

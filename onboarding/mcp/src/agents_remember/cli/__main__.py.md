@@ -51,12 +51,17 @@ only the text knowledge files named on its command line (the MIK-R21 canonical f
 touches no store, no leaf and no admission. Until the text knowledge layout goes live (MIK-R37) the
 installed runtime never calls it; it exists so the file shapes can be formatted and checked.
 
-`knowledge-convert` (MIK-R24) converts a memory working tree, with its `knowledge.sqlite`, into the text
-knowledge format. Every card's citations are anchored at the code commit its `lastVerifiedCommitHash` names,
-read from the object store of `--code`. The command validates the whole converted tree before writing
-anything, refuses any conversion-format version other than `1`, and commits nothing: committing a
-conversion to a real line is MIK-R37's, or a crossing sync's. No installed route calls it before
-MIK-R37; later leaves use it to make the converted scratch copies their evidence runs on.
+`knowledge-convert` (MIK-R24, MIK-R46) converts a memory working tree with its
+`knowledge.sqlite` into text knowledge. Card citations remain anchored at the code
+commit named by `lastVerifiedCommitHash`, read through `--code`; the whole result
+validates before writes and only conversion-format version `1` is supported. The
+command commits nothing. Its help names `c-13-install-and-onboard` and
+`docs/guides/first-conversion.md`: without an attributed baseline convert the root
+in place, then adopt; with an official line convert one new leaf’s memory worktree
+as its first memory change, then close out and land. Other open lines cross through
+`worktree_sync` with `merge-memory`. The command, its read-only legacy-database
+reader and conversion-format version 1 are permanent product parts; retirement
+requires a separate developer decision, because other clones can retain unconverted lines.
 
 `knowledge-validate` (MIK-R22) is the formatter's read-only companion: the curator's standalone run of the
 mandatory knowledge validator over a memory working tree, against a code checkout and optional

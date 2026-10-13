@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:c9f1ecaf392562179e757dc842d21100896249eed72192a67193cdeba61087e4",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:fb94d6ed9519cd5f68a252fb3889ec3af56b920ae57ea5d63118678f9db94f7c",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:2c5059c18c1a1af60b5727eeab9fb15aa8daa21d36892cd78016fc2f3ff6ab68",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       ]
     },
     "5": {
-      "note": "Removed-mode behavior is a named refusal, not a memory-free comparison.",
+      "note": "Removed-mode behavior is a named refusal, not a memory-free comparison.\n\nAnchor: `test_start_refuses_disabled_where_knowledge_exists`, `test_admission_refuses_a_legacy_contract_with_the_way_out`",
       "targets": [
         {
           "anchor": {
@@ -96,12 +96,12 @@
       ]
     },
     "6": {
-      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam.",
+      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam.\n\nAnchor: `_closed_reviewed_leaf`, `test_integration_receipt_is_bound_when_both_trees_match`, `test_integration_receipt_is_moved_when_code_changes_after_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
-            "content": "sha256:46a9fc639714cb4498548702aadcbcceafa9702835bfb58df6421e719daf3069",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
+            "content": "sha256:2f05c6acf789e0194b1c43f2a047c4885039cde4f377475a438b6aeab2f7e0f9",
             "locator": {
               "kind": "symbol",
               "name": "_closed_reviewed_leaf"
@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
             "content": "sha256:ab56f1c18b9f14f208b8489e4db28b29ae49d650a8992b458291c5da0d2de249",
             "locator": {
               "kind": "symbol",
@@ -133,10 +133,26 @@
         },
         {
           "anchor": {
-            "blob": "1f32d76b81ae4eee98170270cab69e550c1f0bd5",
-            "content": "sha256:c856df100158f7aa6f8e3e0ee6589d7118fd58eb20e6a49550ddf3555f36f05d",
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
+            "content": "sha256:edf3b78957e049193a52d7dfdee9026bd05020332e1393f48fdfec9b550a2014",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Close the real owner history and take a fresh production comparison before closeout; original receipt assertions remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
+            "content": "sha256:2f05c6acf789e0194b1c43f2a047c4885039cde4f377475a438b6aeab2f7e0f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_reviewed_leaf"
             }
           },
           "kind": "test"

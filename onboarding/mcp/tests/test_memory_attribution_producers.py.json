@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The one-definition guard and explicit five-producer census.",
+      "note": "The one-definition guard and explicit five-producer census.\n\nAnchor: `_PRODUCERS`, `test_every_census_producer_reaches_the_shared_renderer`",
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
             "content": "sha256:6f9fe2bef8dca1db0776bd5cecc7e80119f2df99f799ad26820d27b2314898b6",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
             "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
             "content": "sha256:086b19f745277f6fcd7bd201e6975f2a66d8b7715da14724707f9f9a32404156",
             "locator": {
               "kind": "symbol",
@@ -46,15 +46,15 @@
       ]
     },
     "3": {
-      "note": "The public carryover case verifies one commit and no extra repeat commit with absent cache.",
+      "note": "Public unconverted carryover asserts conversion guidance and no observed ref, index, cache or content mutation; the prior successful-attribution test is retired",
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:f5a9f40bcc0a1fbcfb056e2e1deca71f3de2c21f3c0577bea425d3a6bae847ac",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "content": "sha256:247b9bf839c62ed0b67345a16f6de9ea6a4d4d8a2c0fc64240a3beb94b9a5886",
             "locator": {
               "kind": "symbol",
-              "name": "test_carryover_attributes_its_memory_content_commit_to_the_official_head"
+              "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"
             }
           },
           "kind": "test"
@@ -66,8 +66,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:84474b916d80410176e1759c0102ee6b31d0291336f2df2512c051d54f170133",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "content": "sha256:fbd73e5adafa1d1f599eb51a01e2b2875ca9517566f13574ff16c965522faeb3",
             "locator": {
               "kind": "symbol",
               "name": "test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch"
@@ -78,7 +78,7 @@
       ]
     },
     "5": {
-      "note": "The kernel owns the key and the single writer.\n\nAnchor: \"CODE_COMMIT_TRAILER_KEY = \\\"Code-Commit\\\"\"",
+      "note": "The kernel owns the key and the single writer.\n\nAnchor: `CODE_COMMIT_TRAILER_KEY`, `render_memory_content_message`",
       "targets": [
         {
           "anchor": {
@@ -107,7 +107,7 @@
       ]
     },
     "6": {
-      "note": "Closeout-shaped producers reach that writer through the effective input model.",
+      "note": "Closeout-shaped producers reach that writer through the effective input model.\n\nAnchor: `memory_content_message`, `EffectiveCloseoutInput`",
       "targets": [
         {
           "anchor": {
@@ -123,8 +123,8 @@
         },
         {
           "anchor": {
-            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
-            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:457b9ce311765d89fa23812aeecfe4ef682abdaf9bab7db651d5350730d5ccf0",
             "locator": {
               "kind": "symbol",
               "name": "EffectiveCloseoutInput"
@@ -140,11 +140,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:bc5c043af086c3e51c880b10223be8624c949d67783070dac5793f19d1cd3ae6",
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "content": "sha256:d83aa9f60b40954bc7cc06b8d9b51197fd9ff62bab50d5059e47952eeb8959c5",
             "locator": {
               "kind": "symbol",
               "name": "test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Unconverted carryover returns the legacy-format envelope and preserves the complete observed state population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "547cf8a18b48bcc101d9dc2a4a5613aa6a9ed62f",
+            "content": "sha256:247b9bf839c62ed0b67345a16f6de9ea6a4d4d8a2c0fc64240a3beb94b9a5886",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"
             }
           },
           "kind": "test"

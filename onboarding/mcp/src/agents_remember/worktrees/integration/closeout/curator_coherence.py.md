@@ -51,7 +51,7 @@ cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp
 worklist, decides every item through its kind's predicate and runs the validator (as a leaf publication, against the
 parent line's memory tip); any open item, incomplete run or violation raises `curator-coherence-knowledge-gate-refused`
 with next action `memory_quality_check`, naming every finding. A converted leaf with no bound gate refuses
-(`GATE_UNBOUND`). An unconverted leaf is not gated and is validated exactly as before. The curator-coherence record,
+(`GATE_UNBOUND`). An unconverted leaf is refused here with the central `legacy-format` message; a failed marker probe keeps its named error rather than being classified as legacy. The curator-coherence record,
 its identity checks and pair identity are unchanged (MIK-R09 Preservation): the gate is one more refusal after them.
 Because the curator publication computed the same memo key, this read is normally served from the gate's memo.
 cit:([`_require_knowledge_gate`, "_require_knowledge_gate(contract, observation)"], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:345-369).

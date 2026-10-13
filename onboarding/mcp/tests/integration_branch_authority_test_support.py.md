@@ -20,7 +20,7 @@ Build configured disposable repository/topology and closed-leaf fixtures for int
 
 `_authority_fixture` constructs the exact code/memory repositories, protected branches, task topology, selected profile configuration, and sibling atomic-series contract. External baseline memory is a real content commit with Code-Commit attribution; its ledger is refreshed only as an untracked cache.
 
-`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two accepted outputs. `_publish_completed_closeout_fixture` optionally enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
+`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates the converted knowledge/layout.json marker and authored no_impact coverage for onboarding:candidate.txt before coherence evidence publication, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two accepted outputs. `_publish_completed_closeout_fixture` optionally enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
 
 Unused atomic-landing/door/preview builders and their ledger-only commit machinery were removed. Support code itself is not collected scenario coverage.
 

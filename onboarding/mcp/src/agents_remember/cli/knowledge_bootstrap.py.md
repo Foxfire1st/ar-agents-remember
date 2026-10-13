@@ -10,7 +10,7 @@ The taskless knowledge-bootstrap CLI admits a named repository and writes a name
 
 ## Code Commentary
 
-`run` validates the hand-off list, authorization, configured settings and taskless admission before `_run` selects the converted route. A converted root delegates to `run_wave_write`; an unconverted root refuses as legacy-format or by the cutover lock. The parser accepts no database destination, staging root, status or discard mode. Planned/written, writer refusal and invocation refusal remain distinct outcomes. The old canonical bootstrap progress, staged publication and resume/discard command modes are retired.
+`run` validates the hand-off list, authorization, configured settings and taskless admission before `_run` selects the converted route. A converted root delegates to `run_wave_write`; an unconverted root refuses unconditionally with the shared `legacy-format` conversion message. Converted memory elsewhere is not a precondition for refusal. The parser accepts no database destination, staging root, status or discard mode. Planned/written, writer refusal and invocation refusal remain distinct outcomes. The old canonical bootstrap progress, staged publication and resume/discard command modes are retired.
 
 ### Logic
 
@@ -40,4 +40,5 @@ traceback.
 - The `--wave` argument, required only for converted memory. [33]
 - **The admission resolver this entry point is the public face of.** [34]
 - The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4). [35]
-- knowledge-bootstrap refuses unconverted memory once the repository holds converted memory. [36]
+
+- knowledge-bootstrap refuses unconverted memory whether or not the repository holds converted memory elsewhere, naming crossing sync or the first-conversion procedure. [36]

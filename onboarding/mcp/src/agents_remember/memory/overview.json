@@ -360,12 +360,12 @@
       ]
     },
     "116": {
-      "note": "Carryover writes legacy-format memory only, and only while the repository is not locked.",
+      "note": "Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read",
       "targets": [
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-            "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
+            "content": "sha256:a4f3e4affe886c339b5e8fead2992be5d9e7cef38af39a3443b83feaa34ca22f",
             "locator": {
               "kind": "symbol",
               "name": "_require_legacy_format_target"

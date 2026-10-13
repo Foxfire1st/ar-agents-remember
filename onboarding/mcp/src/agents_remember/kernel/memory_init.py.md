@@ -62,7 +62,11 @@ root**, and the payload's `layoutMarker` says which case applied:
 - `unconverted-existing-memory`: the root already holds `knowledge.sqlite` or any onboarding `*.md`
   (`_holds_legacy_memory`, mcp/src/agents_remember/kernel/memory_init.py:24-34). Writing the marker beside
   legacy cards would make the old format be read as the new one, so such a root converts through the
-  conversion command or a crossing sync, never by being marked;
+  conversion command or a crossing sync, never by being marked. Its result now
+  includes `nextStep` naming `agents-remember knowledge-convert MEMORY_ROOT --code
+  CODE_REPOSITORY`, `c-13-install-and-onboard` and `docs/guides/first-conversion.md`: without
+  an attributed baseline convert the root then adopt; with an official line convert
+  one new leaf’s memory worktree as its first memory change, then close out and land;
 - `existing-repository-unchanged`: the root already has `.git`. An existing repository is repaired, never
   re-founded;
 - `created`: a fresh root; the `knowledge/` directory and the marker join the planned scaffold

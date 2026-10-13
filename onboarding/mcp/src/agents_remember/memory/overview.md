@@ -29,7 +29,9 @@ Converted first adoption validates the selected immutable tree with no compariso
 
 Publication constructs a commit from the validated tree, uses a conditional branch update, and verifies the resulting commit tree. The implementation reads the parent HEAD inside `_publish_validated_tree`, after validation, and subsequently reads the branch name; it does not carry a ref/HEAD observation captured at validation into this helper. Thus exact tree publication is supported, while the inherited stronger claim that the branch must still point where validation saw it is not established by this local implementation. Publication and subsequent real-index preparation also lie outside `_prepare_stage_validate`'s restoration handler; the broad claim of rollback for every possible adoption exception exceeds that interval's source evidence.
 
-`carryover.py` remains a legacy-format recovery writer. It refuses a converted target and directs the caller to file-based knowledge ingestion. An unconverted target is also checked against the repository cutover lock, with a refusal directing it toward crossing sync when the repository has crossed. This is a refusal check, not acquisition of a lock for the duration of carryover. Carryover authority remains separately checked.
+`carryover.py` retains the legacy recovery planning account, but apply refuses both a converted target (directing file-based knowledge ingestion) and an unconverted target unconditionally with the central conversion message. The read plan stays separate; no never-converted write exception remains. This refusal check is not acquisition of a lock for the duration of carryover, and carryover authority remains separately checked.
+
+An existing legacy root first answers `legacy-format` with conversion guidance; it cannot be adopted until it converts. An unattributed root converts in place before adoption; an official legacy line converts as one new leaf's first memory change and lands through normal converted validation. The command, read-only legacy database reader and conversion-format version 1 remain permanent because other clones and machines can retain unseen unconverted lines.
 
 ### Index and retained logical representation
 
@@ -180,7 +182,7 @@ Historical test passes, counts, performance figures (including the anchor memo's
 - Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
 - Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
 - Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
-- Retained reference account (no fresh execution or acceptance inferred): Carryover writes legacy-format memory only, and only while the repository is not locked. [116]
+- Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read. [116]
 - Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
 - Retained reference account (no fresh execution or acceptance inferred): Two tables with no blank line between them are refused when either holds citations. [118]
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]

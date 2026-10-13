@@ -24,6 +24,15 @@ before closeout; the transaction consumes that evidence and mandatory invariant 
 not a newly run curation/test/review campaign. Code tests and independent review retain
 separate owning workflows, rather than becoming automatic transaction prerequisites.
 
+On unconverted memory, both closeout tools refuse `legacy-format` before
+claiming approval or committing: preview returns `knowledge-gate-refused`, not
+`would-closeout`, and apply refuses the same way. This is independent of converted
+memory elsewhere. Convert first through `c-13-install-and-onboard` and
+`docs/guides/first-conversion.md`, then close out the converted leaf under the
+validator/invariant gate; the conversion itself counts as no change. A failed
+crossing plan leaves the line unchanged; a retained conflict or validator refusal
+after merge start uses the existing `continue`/`cancel` recovery.
+
 Hook effects depend on publication route. `commit-tree` legs run no pre-commit/message
 hooks; prepared code uses its documented no-verify policy, prepared ordinary memory has
 its own ordinary hooks, and ref transactions can run reference-transaction hooks. Do not

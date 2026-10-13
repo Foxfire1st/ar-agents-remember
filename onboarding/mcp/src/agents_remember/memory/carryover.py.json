@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-        "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+        "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
+        "content": "sha256:a4f3e4affe886c339b5e8fead2992be5d9e7cef38af39a3443b83feaa34ca22f",
         "locator": {
           "kind": "symbol",
           "name": "_require_legacy_format_target"
@@ -16,7 +16,7 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Refuses memory_carryover_apply for a converted target, naming the file writer, and for an unconverted target once its memory repository holds converted memory, naming the crossing sync.",
+      "rationale": "Carryover apply refuses a converted target in favor of the file writer and refuses a legacy target with central conversion guidance; the read plan remains separate.",
       "role": "enforcement"
     }
   ],
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
             "content": "sha256:70d995ddcb9a0ae5695f02f371dda09351c4d8e7a1981c45ba032ff50e80220c",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
             "content": "sha256:21acfe200141bff26a1f5934a7916819f9eb398695cdf3c265c8a89f3beebd5b",
             "locator": {
               "kind": "symbol",
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
             "content": "sha256:f65af551c6010f015e95f621e2138afe74fcb96ed9b95789b56adb42ec0d5d70",
             "locator": {
               "end": 239,
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
             "content": "sha256:dfa99ee31e7f92c07f24ca8f4f893677f6139263e11b2ee9582de4b17888aeaa",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
         },
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
             "content": "sha256:fed86363160cefb3b92ed2de4dbf62c3760401ba528d5c243e1fe9154ed9a8bf",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
             "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
             "locator": {
               "kind": "symbol",
@@ -133,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
             "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
             "locator": {
               "kind": "symbol",
@@ -146,15 +146,15 @@
       ]
     },
     "5": {
-      "note": "The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit.",
+      "note": "Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired",
       "targets": [
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:f5a9f40bcc0a1fbcfb056e2e1deca71f3de2c21f3c0577bea425d3a6bae847ac",
+            "blob": "57cd36d5ff05363f74589b58c19c0c339174062a",
+            "content": "sha256:93c0e060e4976d0e9d2d1e911cf92d98d3572192445dc02c28c0bfd9b7fa0e1c",
             "locator": {
               "kind": "symbol",
-              "name": "test_carryover_attributes_its_memory_content_commit_to_the_official_head"
+              "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },

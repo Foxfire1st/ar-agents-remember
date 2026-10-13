@@ -588,7 +588,7 @@ On converted memory three places of this module ask the mandatory invariant gate
     answer the findings, rerun `memory_quality_check` and preview again.
 
   `_closeout_entry` returns that preview with return code 2. A passing preview of a converted leaf carries
-  `knowledge_gate: {"state": "pass"}`; an unconverted leaf's preview carries no such block. The preview writes
+  `knowledge_gate: {"state": "pass"}`; an unconverted leaf's preview is refused by the cutover lock before it can promise a closeout. The preview writes
   no closeout publication to the leaf's code, memory or contract, and the gate's memo lets the apply that follows reuse its verdict. This module-level mutation boundary is not universal zero-I/O: the enclosing registered tool call records its daily tool-log line and any required detail, plus its completed-answer workspace-river event or existing ambient lifecycle event. The preview evaluates the gate itself
   whenever the memo holds no verdict for the same inputs; that is sound while the preview is called only on explicit
   request and nothing polls it (assumption ASM-NJ9P83, which the decision record DEC-TJ0CX7 links as a reason to
@@ -602,7 +602,7 @@ On converted memory three places of this module ask the mandatory invariant gate
 - A refused preview returns code 2. [32]
 - A recovered closeout is finalized only for a gated memory commit. [33]
 - The preview answers what the apply will do. [34]
-- An unconverted leaf's preview carries no gate verdict. [35]
+- An unconverted leaf's preview is refused before closeout publication. [35]
 
 - Registered calls keep the daily call record independently of closeout publication. \[36] [36]
 - Completed calls keep their workspace-river event independently of closeout publication. \[37] [37]

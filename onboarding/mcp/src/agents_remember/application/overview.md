@@ -25,6 +25,8 @@ Contract-scoped memory quality measures the admitted leaf code/memory pair, prod
 
 A current review binds code B/C and memory K_B/K_C as four trees. Source inventory, selected knowledge, record availability, attribution, family context, staleness and focused expressions have separate owners. Retained comparison records and pins provide exact historical operands; unavailable trees are reported rather than replaced by today's tip. Final-output and managed-sync records measure completed operations against retained comparisons and cannot gate the transactions they describe.
 
+Ordinary operations on legacy memory refuse unconditionally using central conversion guidance; `read_ar_files` still returns legacy cards marked `legacy-format` with no knowledge section. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
+
 ## Construction And Ownership
 
 direct_execution_grants owns architect admission and pre-start grant mutation/reclamation. task_scoped_mcp retains exact enclosure readers and adds canonical granted-leaf/master-series readers; callers supply identities, not roots, and current grant authority is not a launch receipt or runtime setting.

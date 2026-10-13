@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+        "blob": "5e425eb8e9fc7eed9b3b44787136c6712ceec84a",
         "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-        "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
+        "blob": "5e425eb8e9fc7eed9b3b44787136c6712ceec84a",
+        "content": "sha256:113301394597b4d19db7b2b9bc73bb804db9c2b1b67170e9dbb1d32ec5d37625",
         "locator": {
           "kind": "symbol",
           "name": "_cutover_locked"
@@ -34,8 +34,26 @@
         "handoffEntry": "L37-cutover-lock",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Refuses a managed memory sync at admission, before any preview or Git move, when the own head, the incoming commit and their merge base all lack the marker and the repository is locked; a crossing sync, a code-only sync and an already-current side pass.",
+      "rationale": "Admission judges exact moving memory sides before preview or Git movement; already-current and skip-memory do not move memory, and converted-source adoption/crossing remain available.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5e425eb8e9fc7eed9b3b44787136c6712ceec84a",
+        "content": "sha256:63a4e1542652988032beed8286ebf4684f786c3df106a5d9c9d11f3444e8fc9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sync_side_outcome"
+        }
+      },
+      "id": "RLZ-ZTF0YF",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "This owner judges the pinned target/source/merge-base sides; it refuses all-legacy movement and converted-target rollback while admitting crossing or converted-source adoption.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -67,16 +85,16 @@
       ]
     },
     "18": {
-      "note": "Real content conflict continuation scenario.",
+      "note": "Real content conflict continuation scenario.\n\nAnchor: `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
       "targets": [
         {
           "anchor": {
-            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "blob": "64be9a0ba72aac13b56b200c5afb96f680a7f522",
             "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "end": 417,
+              "end": 428,
               "kind": "line_range",
-              "start": 331
+              "start": 342
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -264,12 +282,12 @@
       ]
     },
     "43": {
-      "note": "The cutover lock at sync admission: unconverted on every side and a locked repository.",
+      "note": "Fresh sync judges exact moving-side formats independent of converted memory elsewhere; retained transaction recovery is separate",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
+            "blob": "7433ccac69facb82936eddfd333ab608fbde672e",
+            "content": "sha256:113301394597b4d19db7b2b9bc73bb804db9c2b1b67170e9dbb1d32ec5d37625",
             "locator": {
               "kind": "symbol",
               "name": "_cutover_locked"

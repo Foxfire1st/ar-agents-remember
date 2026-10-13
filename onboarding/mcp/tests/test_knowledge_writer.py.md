@@ -57,8 +57,7 @@ in the `unit-regression` lane; 23 test functions, each over real Git repositorie
     now an object with the entry and the lifted D12, the fake `admitted` carries `authority.coordination_root`, and it
     asserts `[("links.2", "resolved"), ("links.3", "unresolved")]`. The file writer's bare-list branch stays covered
     by `_write(world, [proven])`.
-- **L37.** `test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory`: the
-  taskless database route is locked, naming the crossing sync (MIK-R09 rule 6).
+- **L37, re-ruled by MIK-R46.** `test_knowledge_bootstrap_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere`: the taskless bootstrap refuses either unconverted input, naming the conversion command and crossing sync; a never-converted repository is explicitly identified and remains byte-identical.
   `test_a_master_line_crossing_records_its_rows_through_the_writer`: `knowledge-ingest --crossing` writes a
   `crossing` owner's rows into `<task-id>-crossing-<n>.json`; a non-series contract, another task's or an unopened
   crossing id, a closed file and database-only flags are refused. The leaf route passes `code_base ==
@@ -113,7 +112,6 @@ The cases.
 - A content-rule break refuses the write and writes nothing. [12]
 - The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4). [13]
 
-- knowledge-bootstrap refuses unconverted memory once the repository holds converted memory. [14]
 - A master line's crossing records its rows through the writer. [15]
 
 - A cover revises a realization entry's rationale in place. [16]
@@ -124,3 +122,5 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- knowledge-bootstrap refuses unconverted memory with or without converted memory elsewhere. [14]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
-        "content": "sha256:0e5264293702419b6720f6d41418015c54d6daea214577d4820df6a1bd9ef966",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
+        "content": "sha256:6a12c76ffd9389b0384564c1b039465f074d873f71e7c4d7cd690920884aea0f",
         "locator": {
           "kind": "symbol",
           "name": "_direct_gate_owner"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:a3283de749cb1a03b7546976ec5eecf7c08f1a4387bed56459a864ddc166bb27",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:26a4ff632d99d88891018ab65beba952ead015260c64a0b28c65dbdcc4ba64f1",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "7f132539dd2cbc895addba93d95bce5b291b3b20",
+        "blob": "9892eefbb4ae19a50aaa17c1ffa7689fd483575b",
         "content": "sha256:99844e8600b6361d2825639d9792f596ebc4428074127e4296da39948792cc2a",
         "locator": {
           "kind": "symbol",
@@ -217,12 +217,12 @@
       ]
     },
     "12": {
-      "note": "Unconverted memory: the lock refuses it once the repository holds converted memory, else the landing is ungated as before.",
+      "note": "Unconverted input refuses before fresh capture regardless of converted memory elsewhere; converted validation remains unchanged",
       "targets": [
         {
           "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
-            "content": "sha256:0e5264293702419b6720f6d41418015c54d6daea214577d4820df6a1bd9ef966",
+            "blob": "084f2913f8bfe44f5b404688daa9461bf148466d",
+            "content": "sha256:6a12c76ffd9389b0384564c1b039465f074d873f71e7c4d7cd690920884aea0f",
             "locator": {
               "kind": "symbol",
               "name": "_direct_gate_owner"

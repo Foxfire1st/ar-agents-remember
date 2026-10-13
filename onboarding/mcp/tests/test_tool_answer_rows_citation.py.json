@@ -3,15 +3,59 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Real citation results supply measured row cases and pathological overflow control.",
+      "note": "Converted citation tests assert clean, stale, unreadable-sidecar and two-document projections, plus bounded delivery and pathological overflow control.",
       "targets": [
         {
           "anchor": {
-            "blob": "02b1f8a6f6b2df533fa520229f3bc64dfe0ee294",
-            "content": "sha256:66918dd753f37bc15deda3bdcc782635649059a8e2586e67fe0733f9c2e649d0",
+            "blob": "c456fd7a42cf492a016f785b8695c216b0d14727",
+            "content": "sha256:ae6b7b78cf8b2e6182d8634dcefc0c942181ffe0b150aac5a535c45dd75e01c5",
             "locator": {
               "kind": "symbol",
               "name": "CitationProductionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c456fd7a42cf492a016f785b8695c216b0d14727",
+            "content": "sha256:c13a2f07734cdcca464f86b8cd7dd555ae59b9eb9c1e6508e5303c9de2ed91cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_anchor_sidecar"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c456fd7a42cf492a016f785b8695c216b0d14727",
+            "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_converted_layout"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c456fd7a42cf492a016f785b8695c216b0d14727",
+            "content": "sha256:67681919a04bf6e71cfc6f0c42d2628d1b4b4aaf23d9a0a6145076d8b500d41d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_stale_world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c456fd7a42cf492a016f785b8695c216b0d14727",
+            "content": "sha256:95027c61538664a8a7f8bc6267815554bdef88cd95c1a161a1c9017f70403f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_documents_scope"
             }
           },
           "kind": "test"

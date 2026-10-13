@@ -445,12 +445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "blob": "64be9a0ba72aac13b56b200c5afb96f680a7f522",
             "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "end": 417,
+              "end": 428,
               "kind": "line_range",
-              "start": 331
+              "start": 342
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -586,7 +586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -603,7 +603,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
             "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
             "locator": {
               "kind": "symbol",
@@ -701,7 +701,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "blob": "64be9a0ba72aac13b56b200c5afb96f680a7f522",
             "content": "sha256:7641ca0bc19096ed37cd771b996d024e734975642b0c58e621c4ae98c302c37e",
             "locator": {
               "kind": "symbol",

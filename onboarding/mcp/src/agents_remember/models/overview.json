@@ -4340,6 +4340,23 @@
         }
       ]
     },
+    "311": {
+      "note": "The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsideration_item_open"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The one continuation token and what it binds.",
       "targets": [
@@ -5317,7 +5334,7 @@
       ]
     },
     "64": {
-      "note": "The subject pattern, the triggers and the refreshed triggers.",
+      "note": "The subject pattern, the triggers and the refreshed triggers.\n\nAnchor: `RECONSIDER_SUBJECT_PATTERN`, `TRIGGERS`, `REFRESHED_TRIGGERS`",
       "targets": [
         {
           "anchor": {
@@ -5358,7 +5375,7 @@
       ]
     },
     "65": {
-      "note": "The one spelling of a link target, and the gate's predicate.",
+      "note": "The one spelling of a link target, and the gate's predicate.\n\nAnchor: `link_target_key`, `reconsideration_item_open`",
       "targets": [
         {
           "anchor": {
@@ -5374,8 +5391,8 @@
         },
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
-            "content": "sha256:101cd958471aeb9cff4c7082fb839b56dd03196d81c0e27337200b3ad8e8a75e",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
             "locator": {
               "kind": "symbol",
               "name": "reconsideration_item_open"

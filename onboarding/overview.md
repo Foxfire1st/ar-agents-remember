@@ -76,6 +76,18 @@ A converted memory-quality result reports measured card/overview cuts and files 
 
 Canonical role instructions own these duties. The package and eight harness surfaces propagate them without separate authority. The sixteen Curator/Reviewer harness copies remain sidecar-only propagation homes; their nearest governing root overview carries this shared substantive account.
 
+### Memory-format admission
+
+Legacy memory remains readable through `read_ar_files` (legacy-format cards, no knowledge section) and convertible.
+Ordinary checks, writes, memory sync, closeout and landing refuse it with the central legacy-format recovery message,
+even when no converted memory exists elsewhere. A root without an attributed baseline converts in place then is
+adopted; an official line makes its first conversion inside a new leaf and lands through the existing validator/gate.
+Other open lines cross on their supported sync with merge-memory from a converted source. The converter, read-only
+legacy database reader and conversion-format version 1 remain permanent until a separate developer breaking-change
+decision. Card writers have no legacy exemption, and the old citation migration tool/option is unregistered.
+The generated skill mirrors retain their canonical-source ownership; their changed guidance does not create a second
+writer or a transaction bypass.
+
 ## Invariants And Boundaries
 
 File onboarding is one-to-one with source. Path rules govern file coverage; generated route metadata is a navigation cache, not hand-authored truth. A changed source outside file-card rules can still affect its nearest governing overview. Exact include/exclude rules and the current status of this memory repository belong to the parent-owned settings and metadata; they are not re-established by reading this card. Retained root-skill and eve cards describe generated mirrors, and extra Markdown under onboarding remains subject to reference checks even where its source lies outside the coverage census.

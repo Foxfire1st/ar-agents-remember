@@ -12,7 +12,7 @@
     "The memory tree is converted, so the closeout holds a judged tree."
   ],
   "exclusions": [
-    "Unconverted memory, which has no judged tree and is staged from the working tree as before.",
+    "Legacy external memory is refused before the ordinary closeout stamps or stages it; absence of a judged legacy tree is not permission for an unjudged publication.",
     "Direct landing is outside this ordinary worktree-closeout invariant; its own preparation compares the admitted memory snapshot with the judged closed tree, and its gate, validator and publication consume that judged candidate tree.",
     "The ledger memory.md, which the commit excludes. The cache preparation removes it from the repository's index before the judged-tree check; that is the one index write that precedes the memory commit's mutation.",
     "The retired database-era realization site; the obligation is recorded on converted memory only."
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "The tree a converted leaf's closeout commits to memory is the tree its gate judged: every write the closeout itself makes to memory content -- the metadata refresh, the history closing and the ledger cache's ignore rule -- is on disk before the tree is read; a working tree or index that changed while the gate ran is refused before the memory commit's Git mutation; and the commit is staged from the judged tree object and proved against it, so a file written after that check stays an uncommitted change and is never committed unjudged.",
   "status": "proposed",

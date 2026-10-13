@@ -39,11 +39,7 @@ as fixture-card and transaction cases.
 - `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`: the sync gives an exact
   two-parent merge and the layout marker, the untouched card equals the line's bytes, the marker row lands
   in the leaf's history file, Update History is gone, and the journal names a report under
-  `<group>/reports/`. The fixture's first, ordinary sync writes no `crossingReport` key (ruling N2).
-  **Since MIK-R08** the case also checks the worklist recompute of a completed managed sync (rule 8): the
-  first sync, with both memory sides unconverted, carries no `knowledgeWorklist`; the crossing sync into
-  the converted line carries a `complete` one, persisted as `knowledge-worklist.json` beside the contract,
-  whose pairing names the line's new code tip as B and the converted line head as K_B.
+  `<group>/reports/`. The preliminary sync with all sides unconverted refuses `sync-unconverted-memory-locked` with the central `legacy-format` message and conversion command; line and leaf tips stay unchanged and no journal is created. A subsequent manual Git merge only prepares the fixture. The actual crossing into the converted line carries a `complete` worklist persisted as `knowledge-worklist.json` beside the contract, paired with the new code base B and converted memory base K_B.
 - `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing`:
   - with the crossing unbound, the sync fails at `convert`, with `HEAD` unchanged and no `MERGE_HEAD`;
   - then the resolution lists `(lines)` and `references.1`, and the report holds all three notes;
@@ -125,8 +121,12 @@ The cases and the plan check.
 - Long markers in one valid row. [5]
 - The master-line crossing history file. [6]
 - The converted base at the base's own code commit. [7]
-- The managed crossing sync, and an ordinary journal without the new key. [8]
-- The unconverted first sync carries no worklist; the crossing sync's worklist is complete and persisted at the new base pair. [9]
+
+- Managed crossing sync follows an all-unconverted preflight refusal without a journal [8]
+
+
+- The all-unconverted preliminary sync refuses without movement or journal; the successful crossing persists the complete worklist at its new base pair [9]
+
 - Overlapping edits reach the curator; a failed step changes nothing. [10]
 - Its lane row. [11]
 

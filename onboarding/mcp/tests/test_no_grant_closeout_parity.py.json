@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "221cb76cfc579ef81419db67c4ae3d45848cdd71",
-        "content": "sha256:88e3d9995ec6b831ba0af37b6725371f25767d15d8ca110f8a8ea5c645541e43",
+        "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+        "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
         "locator": {
           "kind": "symbol",
           "name": "NoGrantCloseoutParityTest.test_before_after_implementation_parity"
@@ -22,16 +22,45 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Compares unchanged enclosed leaf and master lifecycle answers across source-bound baseline and candidate fixtures",
+      "note": "Three source-bound worlds retain separate raw current/grant equality before conversion take-out and subsequent baseline comparisons; this is comparison structure, not a whole-test PASS\n\nAnchor: NoGrantCloseoutParityTest.test_before_after_implementation_parity; NoGrantCloseoutParityTest.test_master_checks_read_unchanged",
       "targets": [
         {
           "anchor": {
-            "blob": "d2603fceb44f5f97256f000b367b300be6e91f47",
-            "content": "sha256:7cfb98bdaaaa17d34a17e08571481f8c852aba543616f9d4c0a6a631d26f211a",
+            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
             "locator": {
-              "end": 361,
+              "end": 437,
               "kind": "line_range",
-              "start": 1
+              "start": 402
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "content": "sha256:e4b3267066522068ed851b6736935f0e88d86ba35491f06266d137f6a816f0f8",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 439
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Conversion marker provenance, at-most-one matching ledger row, attached counts, pass-gate and leaf bare-count take-out are test-only baseline comparison scaffolding\n\nAnchor: _converted_marker_commits; _without_marker_row_entries; _without_marker_row_counts; _without_conversion_row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "content": "sha256:b8130d29fae3c7fef2313e441944178b4fa2588de6851adcfb2dbd760457e86c",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 183
             }
           },
           "kind": "test"

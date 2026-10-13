@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
+            "blob": "f936979ad3d5b97619f2cb56377dddea2f6698ee",
             "content": "sha256:854d679b3eb915623568246fff61d0627d50eca67c497e35b62eccfb9afe9b4b",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
+            "blob": "f936979ad3d5b97619f2cb56377dddea2f6698ee",
             "content": "sha256:c4acaf7a725b7ae5f63374f46991a1688b2c6f8311829ae5e4839650344e4a28",
             "locator": {
               "kind": "symbol",
@@ -30,15 +30,16 @@
       ]
     },
     "2": {
-      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.",
+      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.\n\nAnchor: `WorktreeSupport1.test_master_start_and_abandon_preserve_parent_series`",
       "targets": [
         {
           "anchor": {
-            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
-            "content": "sha256:00198e8745f9d7d71bebdf011cbbaea0714e73fb544f17567553f60272bcd5ef",
+            "blob": "f936979ad3d5b97619f2cb56377dddea2f6698ee",
+            "content": "sha256:0c4caa35a4514fefbd75e702327aaf4a9a287d3880dbc1285219eb4a298ad290",
             "locator": {
-              "kind": "symbol",
-              "name": "test_master_start_and_abandon_preserve_parent_series"
+              "end": 379,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "test"
@@ -46,7 +47,7 @@
       ]
     },
     "3": {
-      "note": "Shared closeout arguments normalize the two real content messages.",
+      "note": "Shared closeout-input helpers are background support, not called by this retained scenario.",
       "targets": [
         {
           "anchor": {

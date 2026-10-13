@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Source removes that route and only says starter packages supply skills.
+- Existing legacy content without `knowledge/layout.json` is not initialized around: `memory_init` writes no marker and names the first-conversion procedure. Ordinary unconverted-memory operations refuse with `legacy-format` even if no converted branch exists. Convert first as `c-13-install-and-onboard` and `docs/guides/first-conversion.md` describe, then resume scaffolding; legacy card reads and conversion remain available.
 
 ### Superseded inventory
 

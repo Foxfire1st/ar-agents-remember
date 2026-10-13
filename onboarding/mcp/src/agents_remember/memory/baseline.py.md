@@ -10,12 +10,21 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Inspects and adopts an existing external-memory onboarding baseline. Adoption creates an attributed
-memory-content commit; the consumer ledger is computed from Git and refreshed as a disposable cache.
-On a converted tree the first baseline is validated before it is made: the adoption stages the
-content on a private index, validates the staged tree with no comparison bases paired with the
-attributed code commit, and records exactly that tree. A refusal, a dry run, or any validation
-exception leaves the index, the refs and every owned file as they were.
+Inspects and adopts an existing external-memory onboarding baseline after conversion.
+Both status and adoption return `state: "legacy-format"` with the shared conversion
+message for an existing unconverted root, before drift measurement or adoption;
+adoption returns exit code 2 even in dry-run mode. With no attributed baseline,
+convert the root in place using `agents-remember knowledge-convert MEMORY_ROOT
+--code CODE_REPOSITORY`, then adopt. With an official line, first convert one new
+leaf and land it using the procedure in `c-13-install-and-onboard` and
+`docs/guides/first-conversion.md`. This refusal is independent of converted memory
+elsewhere, and cannot be bypassed by `accept_drift`. Adoption creates an attributed
+memory-content commit; the consumer ledger is computed from Git and refreshed as
+a disposable cache. On a converted tree the first baseline is validated before
+it is made: adoption stages content on a private index, validates the staged tree
+with no comparison bases paired with the attributed code commit, and records
+exactly that tree. A refusal, a dry run or validation exception leaves the index,
+refs and every owned file as they were.
 
 ## Code Commentary
 
@@ -23,8 +32,9 @@ exception leaves the index, the refs and every owned file as they were.
 
 `BaselineRequest`, `baseline_status`, and `baseline_adopt` are the service entry points. CLI parsing
 adapts into the request object, and `resolve_request_context` passes topology and coordination hints
-through the shared resolver. Drift measurement uses the shared summary. An adoption selects
-`write_report=not dry_run` before either storage-format branch: its dry-run preview files neither
+through the shared resolver. The legacy-format preflight returns before drift or report
+production. Otherwise drift measurement uses the shared summary, and adoption selects
+`write_report=not dry_run` before its remaining storage-format branch: its dry-run preview files neither
 the drift report nor observer snapshot and advertises no unfiled path. A mutating adoption keeps
 its report-producing default and files the report before the adoption decision. The registered
 baseline-status read accepts only the repository identifier and constructs a request with
@@ -40,8 +50,9 @@ has no role in that decision.
 A resolvable HEAD whose ancestry cannot be read reports top-level `unavailable`. `baseline_adopt`
 returns that refusal before cache preparation, content staging, or ref mutation; accepting drift
 cannot override unreadable history. An unborn repository has no resolvable HEAD, so its unavailable
-initial walk does not by itself block bootstrap: it remains `ready` subject to the ordinary drift
-rules. Drift reporting precedes the adoption decision only for the mutating producer; dry-run
+initial walk does not by itself block bootstrap on converted memory: it remains
+`ready` subject to the ordinary drift rules. The legacy-format preflight still
+refuses an existing unconverted directory before this history decision. Drift reporting precedes the adoption decision only for the mutating producer; dry-run
 measurement preserves the summary without filing report or snapshot.
 
 `has_adopted_baseline` remains the direct bootstrap guard inside `adopt_initial_baseline`. Actionable
@@ -67,12 +78,14 @@ ledger-only commit.
 
 Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and no longer
 classifies by itself, so the drift block of the baseline tools carries the converted rule-2 fields
-on a converted tree and keeps today's behaviour elsewhere. The memory layer imports nothing from the
+on a converted tree. An existing unconverted root is now refused before that
+measurement with `state: "legacy-format"`; its drift block has `status: "error"`
+and the same refusal detail. Missing-root errors are not recast as legacy format. The memory layer imports nothing from the
 application layer; the optional converted comparison base stays with callers that own a contract.
 Before first adoption, the converted payload also reports `blocked-legacy-cards` with the listed
 cards when a metadata-key first cell names `doc_type`, `lastVerifiedCommitHash` or
 `lastVerifiedCommitDate`, or a card has `## Update History`. Prose mentions do not count.
-Existing attributed adoption retains `already-adopted` precedence. The other blocking states remain
+On converted memory, existing attributed adoption retains `already-adopted` precedence. The other blocking states remain
 `blocked-invalid` for validator violations, `blocked-drift` for stale anchors and `unavailable`
 for unreadable existing history. `accept_drift` accepts stale anchors only: it never clears
 legacy-card or validator refusals. This is an adoption-only check, not a new ordinary-operation
@@ -112,7 +125,9 @@ cache computation, while the shared Git module owns content staging.
 - Cache existence, content, or a missing cache path cannot authorize or block adoption.
 - A resolvable HEAD with unavailable ancestry cannot be adopted as a new baseline, even with drift accepted.
 - Attribution is stored in the real memory commit, not reconstructed from a hand-written pair.
-- Repeating adoption with readable attributed history returns `already-adopted` without another commit.
+- Repeating adoption on converted memory with readable attributed history returns
+  `already-adopted` without another commit. An unconverted root is refused first,
+  even when attributed history exists.
 - **Memory-root-level `bootstrap/` is excluded from the baseline commit, not deleted from the worktree; `onboarding/bootstrap/` audit artifacts are retained unless removed before adoption.** The exclusion
   must ride the staging call; a bare `git add` before `commit_if_dirty` is inert.
 - **The worktree's own index is never written before validation passes.** Prepare, stage and tree

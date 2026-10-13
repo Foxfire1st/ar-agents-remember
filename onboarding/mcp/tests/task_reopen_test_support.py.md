@@ -46,10 +46,13 @@ No external Domain Documentation source governs these repository-owned fixtures.
 
 The source file is the direct evidence for the shared fixture boundary.
 
-- The helper publishes an exact terminal predecessor and real super-to-leaf branch chain. [1]
-- Runtime configuration and external-memory directories are built from the contract identity. [2]
-- Leaf and master documents expose controlled lifecycle, topology, and row-status variants. [3]
 
 ### Cross-Repo References
 
 No real adjacent repository is involved; all repositories are temporary test fixtures.
+
+### Current Source-Inspection References
+
+- The helper publishes an exact terminal predecessor and real super-to-leaf branch chain. [1]
+- Runtime configuration and external-memory directories are built from the contract identity. [2]
+- Leaf and master documents expose controlled lifecycle, topology, and row-status variants. [3]

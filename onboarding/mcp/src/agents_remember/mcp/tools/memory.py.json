@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6379f4552ea2a65eed09380a580733143e208098",
-        "content": "sha256:d71246584d20574f92b906966a05615f44168196fc58b7ccbcfb2860f8cba0fb",
+        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+        "content": "sha256:984daf3ad48bb0b4d0b90bdc40cbe4579e67d48a13b240133ae460a8283a7a32",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carry_legacy_refusal"
+        }
+      },
+      "id": "RLZ-CN0MBW",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "The public status projection preserves the central legacy code and conversion detail instead of leaving recovery only in a log.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
+        "content": "sha256:c80779f7fe5d090b8f34c42292a7983b2eab492bd4576850c935dc6ad93977eb",
         "locator": {
           "kind": "symbol",
           "name": "_citation_fix_answer"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6379f4552ea2a65eed09380a580733143e208098",
+        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
         "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6379f4552ea2a65eed09380a580733143e208098",
+        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
         "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "6379f4552ea2a65eed09380a580733143e208098",
+        "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
         "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
             "locator": {
               "kind": "symbol",
@@ -128,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -161,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
             "locator": {
               "kind": "symbol",
@@ -213,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:3ad14df6f0cb0c228b49fdd388fc0034b0993668f75311d52fefb5ce45a86309",
             "locator": {
-              "end": 116,
+              "end": 117,
               "kind": "line_range",
-              "start": 116
+              "start": 117
             }
           },
           "kind": "code"
@@ -230,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:91efc6cb9c35e004c197d83521a8f0a8893232470d8d0fae53a490b0ba2f34ec",
             "locator": {
-              "end": 278,
+              "end": 294,
               "kind": "line_range",
-              "start": 278
+              "start": 294
             }
           },
           "kind": "code"

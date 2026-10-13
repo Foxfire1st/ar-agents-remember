@@ -1,0 +1,123 @@
+{
+  "path": "mcp/tests/test_legacy_refusal_envelope.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+        "content": "sha256:cacd885f58199b59762153c0fe38914f5aad470047bf14fba0688aa58f73293a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_series_closeout_preview_and_apply_refuse_legacy"
+        }
+      },
+      "facet": "The public series preview/apply both refuse with the central conversion message, before publication, preserving the compared byte trees.",
+      "id": "PRF-4RZZS5",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L46-curator-closeout-preview",
+        "leaf": "260928-MIK-L46"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+        "content": "sha256:00cb3af03050cfcd398e9a0a8ac476280155ed2a03ada56f8105c47919b9e637",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_citation_fix_legacy_refusal_carries_code_and_detail_to_the_caller"
+        }
+      },
+      "facet": "Public citation_fix_payload returns code legacy-format and knowledge-convert guidance in detail for a legacy leaf.",
+      "id": "PRF-Z36PWA",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Divergent series legacy sync refuses with judged sides/conversion, leaves absent activation, contract bytes and observed state unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:babcc4387a9e42048dd41b31ec86a796f75a8134896cab1c2783eed5945443a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_series_sync_refusal_publishes_no_activation_and_changes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Converted candidate not legacy; public rejection equals direct validator refusal on identical request; observed state unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:5ea7e20875e3f029d285fc6030f7f2dee179cbb899f29c176d9b369f5ba01b26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_converted_candidate_on_legacy_line_reaches_its_validator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "All-three-legacy merge refuses with preSyncHead/sourceCommit/merge base; refs/worktree/index-path observations unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:a66608f80484ed79cc192a9126fa9ad78f0b7197084868c470bc23cbc370e1ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_merge_of_three_unconverted_sides_refuses_with_sides_and_no_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Public start RETURNED; memoryFormat legacy-format; memoryFormatProcedure names conversion command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:9da1f57920ad850d2b1e37c8670149adb3fb4f4b40359eaa991fed4371cb643a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_start_on_unconverted_memory_reports_legacy_format"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An actual unconverted quality request returns refusal keys equal to its delivered projection, except the established framework-key convention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:41c32b29dbddfbdcf8cc0a0472bbad1594d00a58373490b3cd3c51420f9bab8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_check_unconverted_refusal_answer_validates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

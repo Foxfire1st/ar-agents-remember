@@ -8,7 +8,7 @@
 Checks append-only leaf attempt histories and the exact-tree memory gate on closeout and recovery.
 
 ## Code Commentary
-A reopened leaf writes its next attempt without reopening a closed history file; the latest row about a subject governs across attempts. Closeout closes the latest attempt, preview reads its verdict, and an unconverted preview reports no gate verdict. A continued leaf creates its next attempt. A file rewritten while the gate runs must not be committed unjudged, and a missing landed history refuses by name. Removed canonical-dataset reopen scenarios are historical, not current helpers or tests. This card records assertions, not a passing run.
+A reopened leaf writes its next attempt without reopening a closed history file; the latest row about a subject governs across attempts. Closeout closes the latest attempt, preview reads its verdict, and an unconverted preview now refuses with the central legacy-format message before invariant evaluation. A continued leaf creates its next attempt. A file rewritten while the gate runs must not be committed unjudged, and a missing landed history refuses by name. Removed canonical-dataset reopen scenarios are historical, not current helpers or tests. This card records assertions, not a passing run.
 
 The same-size, same-second Git rewrite scenario imports the single `rewrite_in_the_second_of_the_index_write` owner from [knowledge_index_test_support.py](knowledge_index_test_support.py.md). Its real clock alignment is the scenario's subject; the 120-second alignment guard does not assert scheduler speed. The original captured-tree/currentness assertions remain at this file's test owner.
 
@@ -40,7 +40,8 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
     `knowledge-gate-refused` (return code 2) with the findings, no commit approval and no next tool; sixty findings
     are capped at fifty with `truncated`; a passing preview is `would-closeout` with `knowledge_gate` pass, and
     the apply that follows evaluates the gate once more only, for the exact tree at the commit.
-  - `test_an_unconverted_leafs_preview_carries_no_gate_verdict`: no `knowledge_gate` block and no evaluation.
+  - `test_an_unconverted_leafs_preview_carries_no_gate_verdict`: historical name retained, but now asserts
+    `knowledge-gate-refused`, legacy-format guidance, no invariant-gate evaluation and unchanged sides.
   - `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged`: a card rewritten in place, same size,
     in the second its index was written, after the gate judged, is refused before the memory commit's Git mutation ("changed
     while the gate ran") with the closing and `.gitignore` restored; on the rerun the commit and its proof are bound
@@ -92,7 +93,9 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - The merged reading under test. [37]
 - The public closeout refuses an open item and commits once it is answered. [38]
 - The closeout preview answers what the apply will do. [39]
-- An unconverted leaf's preview carries no gate verdict. [40]
+
+- Legacy preview refuses without evaluating the invariant gate or changing the compared sides. [40]
+
 - A leaf that continues after its closeout writes its next attempt. [41]
 - A file rewritten while the gate runs is never committed unjudged. [42]
 - The latest row about a subject governs across attempts. [43]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e78fa5281fec75c12bf1a6de6f95d2f7ecceaf6",
+        "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
           "end": 418,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "8e78fa5281fec75c12bf1a6de6f95d2f7ecceaf6",
+        "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
           "end": 298,
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 23,
@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
-              "end": 205,
+              "end": 206,
               "kind": "line_range",
-              "start": 204
+              "start": 205
             }
           },
           "kind": "test"
@@ -143,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 363,
+              "end": 365,
               "kind": "line_range",
-              "start": 363
+              "start": 365
             }
           },
           "kind": "test"
@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:773d961a55b66d78a8b5f148e4213a686db9d6c93da204a12002bdded6aea8f2",
             "locator": {
-              "end": 365,
+              "end": 367,
               "kind": "line_range",
-              "start": 354
+              "start": 356
             }
           },
           "kind": "test"
@@ -223,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:c372215cd621c00ce707c322b624640ee13a5cc4659d2d155c9f323929286cc9",
             "locator": {
-              "end": 280,
+              "end": 281,
               "kind": "line_range",
-              "start": 280
+              "start": 281
             }
           },
           "kind": "test"
@@ -240,24 +240,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:92ce09777615fb294c5e4872a2305ccb83a25057dbabc91371fa1688959c34b0",
             "locator": {
-              "end": 231,
+              "end": 232,
               "kind": "line_range",
-              "start": 231
+              "start": 232
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4d79fe9504b348a74e5179104f93addb60132548",
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
             "content": "sha256:10a9b7676e19fc0e9eabc3dce72230dbbcdaf005331b172b44b6c27f77cf716d",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 295
+              "start": 296
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "847": {
+      "note": "test_sync_reapply_merge.py is declared once in unit-regression; lane membership selects evidence and certifies no invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
+            "content": "sha256:2bb67d64f00606431afad15f170cf284a5243887cd07a4f8d9df8aa10aa426b9",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 319
             }
           },
           "kind": "test"

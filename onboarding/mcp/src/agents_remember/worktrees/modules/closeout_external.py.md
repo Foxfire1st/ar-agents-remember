@@ -8,11 +8,11 @@
 Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. The shared `leaf_pair_refusal` also judges recovery, recorded leaf landing and leaf integration with caller-supplied validator bases and a worklist recomputed over the exact commit trees. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
 ## Code Commentary
 
-A series delegates to its series owner. An ordinary leaf resumes an already recorded memory output only after the recovery gate; otherwise it refreshes the owned metadata/index inputs, closes the converted leaf's latest history file and calls `_commit_memory_content`. The cutover lock refuses an unconverted leaf once its repository holds converted memory.
+A series delegates to its series owner. An ordinary leaf resumes an already recorded memory output only after the recovery gate; otherwise it refreshes the owned metadata/index inputs, closes the converted leaf's latest history file and calls `_commit_memory_content`. The cutover lock refuses an unconverted leaf unconditionally; first conversion or crossing must precede ordinary closeout.
 
 For converted memory, the history closing and cache ignore rule are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged against the parent line as it stands when recovery reads it. An earlier pass does not guarantee a later pass on moved inputs. A refusal after code publication names the actual code commit, says nothing is integrated and explains that rerunning completes the pair.
 
-`_commit_memory_content` binds the contract work branch and the tip observed before judgment. It rechecks that admission, prepares the cache exclusion, and refuses a staged output different from the judged tree before mutation intent. It publishes the judged object through `publish_tree_commit`; content written after the final check cannot enter that commit and stays uncommitted. The exact accepted memory message supplies code attribution. An unconverted route, where admitted, stages actual content under its existing owner rather than claiming a converted-tree gate.
+`_commit_memory_content` binds the contract work branch and the tip observed before judgment. It rechecks that admission, prepares the cache exclusion, and refuses a staged output different from the judged tree before mutation intent. It publishes the judged object through `publish_tree_commit`; content written after the final check cannot enter that commit and stays uncommitted. The exact accepted memory message supplies code attribution. The retained legacy staging helper is not an admitted public operating path: an unconverted input is refused before this content leg.
 
 The restoring block runs from the first preparation until publication returns. `_restore_preparations` restores history/ignore bytes only while each still holds what this call wrote, preserving concurrent content. A provably unpublished refusal restores those preparations. A partial publication can raise after the branch moves: a switched HEAD and failed expected-old take-back may leave the memory commit reachable while preparations restore. Proof runs after successful publication return, outside that restoring block; a proof failure leaves preparations in place for recovery. Universal rollback is therefore not this contract. Code is committed before memory; a memory refusal can leave the accepted code output awaiting a successful memory leg.
 
@@ -41,9 +41,7 @@ official memory line's tip), `external_closeout_commits` now:
   which keeps its `Code-Commit` trailer (MIK-R09 Preservation: the paired c-12 transaction).
 
 The plain closeout does not require the curator coherence record, so this call is the enforcement, not a backstop
-(L37 section below). **Unconverted leaves in a repository that holds no converted memory are unchanged:** `leaf_memory_converted` is
-false, no file is written, and `unconverted.sh` finds the real memory commit (tree `20ccf39a…`, message and trailer)
-identical between the base build and this build. Tests: `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`,
+(L37 section below). **Legacy closeout is now refused even in a never-converted repository (MIK-R46).** The earlier ungated `unconverted.sh` result is historical evidence of the retired permission, not a current closeout contract. Tests: `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`,
 and through the public entry `test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid`
 and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed` (N08).
 ## 260928-MIK-L37 The Memory Commit Is Gated And Built From The Judged Tree (MIK-R09 Rules 3 And 5)
@@ -70,10 +68,10 @@ and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed
 
   Any failure before the commit begins restores route-owned history/ignore bytes only while they still match this call's preparations; concurrent edits are preserved and named (`_restore_preparations`). The closeout commits the code before the memory (`closeout.py::_closeout_commit_phase`),
   so a refusal here leaves the code commit made and no memory committed; a rerun takes that commit as it is and
-  completes once the gate passes. Unconverted memory has no judged tree and stages from the working tree as before.
+  completes once the gate passes. Unconverted memory has no admitted closeout content leg; its public preflight refuses first.
 - **`candidate_gate_verdict(contract, code_tree)`** asks the gate about the accepted code candidate tree and the
   memory worktree's current tree and writes nothing. It answers `None` (pass), the refusal text, or
-  `GATE_NOT_APPLICABLE` for a contract the gate does not govern (not a leaf, no memory worktree, unconverted memory).
+  `GATE_NOT_APPLICABLE` when the invariant gate does not govern; legacy external memory instead receives its format refusal, including the series format verdict before publication authority.
   `refuse_ungated_candidate` raises that refusal for the apply's preflight; the preview reads the same verdict.
 - **`require_gated_recovery(contract, code_commit, memory_commit)`** judges the tree of a memory commit that a
   resumed closeout recovered, before `external_closeout_commits` resumes with it. A commit the gate passed passes
@@ -96,8 +94,7 @@ Accepted messages and the `VerifiedChange` travel explicitly into their consumer
 - A series never enters leaf memory mutation or owns a synthetic leaf memory checkout.
 - Real ref, tree, and ancestry contradictions remain recovery failures. Missing or malformed cache bytes do not.
 - Direct landing retains its own journal owner; this module does not execute that route.
-- **Unconverted memory is never stamped or committed once the repository holds converted memory (L37, MIK-R09
-  rule 6).** `external_closeout_commits` asks `leaf_cutover_refusal(contract, "the closeout")` right after the
+- **Unconverted memory is never stamped or committed by ordinary closeout, even when no converted memory exists elsewhere (MIK-R46).** `external_closeout_commits` asks `leaf_cutover_refusal(contract, "the closeout")` right after the
   conversion probe and before `_refresh_external_memory`, and raises its refusal. The closeout as a whole writes
   nothing in that case because the closeout validator refuses by the same lock before the commit phase starts; this
   call is the backstop at the memory side.

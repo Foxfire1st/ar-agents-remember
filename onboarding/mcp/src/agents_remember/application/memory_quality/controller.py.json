@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "adf33020c862905f50d7358b34941854b5176535",
+        "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
         "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The refusal runs before any scan and returns a refused result naming the crossing sync.",
+      "note": "The refusal runs before any scan and returns a refused result naming the crossing sync.\n\nAnchor: `_execute_memory_quality`, `unconverted_line_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -37,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:53ec00387e7306cd1e352c660296331a45c01a1cc25f1b8c2a409ada67d4277e",
             "locator": {
               "kind": "symbol",
               "name": "unconverted_line_refusal"
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
+            "blob": "65ee523805c7e3bb0487083ac6e87d9c695aaf2f",
             "content": "sha256:3791c03cb6a7b1e0c4c7d47bfda608971ed4afd7ffa62183d20f6c6d8b187f93",
             "locator": {
               "kind": "symbol",
@@ -67,16 +67,16 @@
       ]
     },
     "11": {
-      "note": "The report-only findings pass through the filter.\n\nAnchor: \"report_only.extend(_needed_rows_dropped(\"",
+      "note": "The report-only findings pass through the filter.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:efe76312e77682e68e992671355a3d71847f9fe3476e46414da36a4c0c18a76b",
             "locator": {
-              "end": 755,
+              "end": 763,
               "kind": "line_range",
-              "start": 755
+              "start": 763
             }
           },
           "kind": "code"
@@ -84,11 +84,11 @@
       ]
     },
     "12": {
-      "note": "The filter and the adjusted count.\n\nAnchor: `answering_trace_subjects`",
+      "note": "The filter and the adjusted count.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:e3eed057ca2ce1987b93c26ff3a0d4086762ea0473199bc965a64601abdf36a8",
             "locator": {
               "kind": "symbol",
@@ -117,28 +117,28 @@
       ]
     },
     "14": {
-      "note": "The run evaluates the gate and briefs it.\n\nAnchor: \"gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)\"; \"response.update(_knowledge_briefs(worklist, gate))\"",
+      "note": "The run evaluates the gate and briefs it.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:d30622187a30162290aaf9f949eddfb22aef39fa7c6e81518b08b818748ac930",
             "locator": {
-              "end": 478,
+              "end": 486,
               "kind": "line_range",
-              "start": 478
+              "start": 486
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:13443460f3ad91b4157b1fd9c1852797656053dba94a16ffb331d9e3093cb0ee",
             "locator": {
-              "end": 517,
+              "end": 525,
               "kind": "line_range",
-              "start": 517
+              "start": 525
             }
           },
           "kind": "code"
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
             "locator": {
               "kind": "symbol",
@@ -166,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:58c69b529ff72df2527aa7718489f45d33129774eb5e9b546e4a2384b09acda8",
             "locator": {
               "kind": "symbol",
@@ -178,11 +178,11 @@
       ]
     },
     "17": {
-      "note": "Each gate finding is one repair finding, each open item counted once.\n\nAnchor: \"repair_findings.extend(_with_gate(gate_findings, prepared.gate))\"",
+      "note": "Each gate finding is one repair finding, each open item counted once.\n\nAnchor: `_with_gate`, `_onboarding_findings_beside`",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:f46bff14ccf15ad96dfaf4add6284831b1be86fc914733e91c17558c139f1fdb",
             "locator": {
               "kind": "symbol",
@@ -193,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:3fa222544a3a64f21cce38b1d127538ae58ed3bd7944912bd587f6c6549f0602",
             "locator": {
               "kind": "symbol",
@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:e6d8900949c661a6afba962e7adfbdbc9918f3c38c6ada8d8cf42943e90bb628",
             "locator": {
-              "end": 754,
+              "end": 762,
               "kind": "line_range",
-              "start": 754
+              "start": 762
             }
           },
           "kind": "code"
@@ -221,8 +221,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:13ba507951d84e7229ae4cfe7395f5d55b0c9b5d88bcb3deb6db6dafbf727674",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:a8c147a6009b1be7a3486b7272a8efb14c7c455da72219b32a7274806ab050ec",
             "locator": {
               "kind": "symbol",
               "name": "_prepared_findings"
@@ -237,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:0cfcbea14c2832d8e4f50ae6be718a4b709293bd5c1e8965e5e3c12fcecc0f96",
             "locator": {
               "kind": "symbol",
@@ -249,12 +249,12 @@
       ]
     },
     "2": {
-      "note": "The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree.",
+      "note": "The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree.\n\nAnchor: `_attach_curator_checklist`, `_without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -264,7 +264,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:e8b26e89b7081e4a34d185bda2198f8cb1b1d124a25104055eca841e18724bb5",
             "locator": {
               "kind": "symbol",
@@ -276,11 +276,11 @@
       ]
     },
     "20": {
-      "note": "Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations.",
+      "note": "Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations.\n\nAnchor: `run_memory_quality_request`, `start_memory_quality_request`, `poll_memory_quality_request`",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -291,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -302,7 +302,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -314,12 +314,12 @@
       ]
     },
     "21": {
-      "note": "Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.\n\nAnchor: \"if not execution.publish_curator_report\"; \"_attach_curator_checklist(\"",
+      "note": "Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -329,24 +329,24 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:fa11606fa82c7bb78f5a4d83332e6c2950facf38dc6df4205db8dd4b305b8f98",
             "locator": {
-              "end": 518,
+              "end": 526,
               "kind": "line_range",
-              "start": 518
+              "start": 526
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:2cac897afdc9131e3bcace94eb09e67f20fc497380f995630e188fd25c5d9523",
             "locator": {
-              "end": 522,
+              "end": 530,
               "kind": "line_range",
-              "start": 522
+              "start": 530
             }
           },
           "kind": "code"
@@ -354,11 +354,11 @@
       ]
     },
     "22": {
-      "note": "R03 candidate-tree freezing and change refusal around curator publication.",
+      "note": "R03 candidate-tree freezing and change refusal around curator publication.\n\nAnchor: `_curator_candidate_inputs`, `_require_same_curator_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:0bc34dd86368215adac6559c168363adf1c1169c366e0f8790436cdc0f66302f",
             "locator": {
               "kind": "symbol",
@@ -369,7 +369,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:e00fdf6cb79ab8f97990ce8e38e0391ee664b89e845d50142e407dcc7d2fe966",
             "locator": {
               "kind": "symbol",
@@ -385,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
             "locator": {
               "kind": "symbol",
@@ -401,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
             "locator": {
               "kind": "symbol",
@@ -417,8 +417,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
-            "content": "sha256:dcb1b2d40a3ac159fcba79b20c8a458730067afa2f7415707639274222e01be4",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -428,12 +428,45 @@
         }
       ]
     },
-    "3": {
-      "note": "The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.\n\nAnchor: `worklist_summary`",
+    "26": {
+      "note": "Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The unconverted fixture checks whole/delivered status, count, next action and key subset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5526a5f3346861e5fc00623b77a4b61c1acbafbc",
+            "content": "sha256:41c32b29dbddfbdcf8cc0a0472bbad1594d00a58373490b3cd3c51420f9bab8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_check_unconverted_refusal_answer_validates"
+            },
+            "path": "mcp/tests/test_legacy_refusal_envelope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.\n\nAnchor: `_knowledge_gate_and_worklist`, `_knowledge_briefs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:52f08d5ee85c00d08d65558dcfc05c043c5a1eb91a66b562efa56726350d1eed",
             "locator": {
               "kind": "symbol",
@@ -444,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:ef9b492e9cbacddddf4e0196fe8fc93f1ba3a6971b27dcaa5637d4225637c070",
             "locator": {
               "kind": "symbol",
@@ -460,7 +493,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
             "locator": {
               "kind": "symbol",
@@ -472,11 +505,11 @@
       ]
     },
     "5": {
-      "note": "Only a contract-scoped run gets a worklist, through the one recompute entry point.\n\nAnchor: `recompute_leaf_worklist`",
+      "note": "Only a contract-scoped run gets a worklist, through the one recompute entry point.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:5237413a80e1aa4c55eaf5683bf672c745d09079acf3197ecba5d862e70bfa8f",
             "locator": {
               "kind": "symbol",
@@ -488,12 +521,12 @@
       ]
     },
     "6": {
-      "note": "The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.\n\nAnchor: `knowledge_worklist_path`",
+      "note": "The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -508,8 +541,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
-            "content": "sha256:760603c37479f3c55f9774626c7bd71d0f3e556c64a2ed9b763e59a1bdf4707e",
+            "blob": "57e1ed667583a6785be6fac21796aa8a1314bc0d",
+            "content": "sha256:97d167479c46526e971c737b39edb1a5a866e564a441c05066da749bfb6791f7",
             "locator": {
               "kind": "symbol",
               "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
@@ -521,16 +554,16 @@
       ]
     },
     "8": {
-      "note": "The checklist's leaf block hands the gate the changed paths and the accepted identities.\n\nAnchor: \"gate_findings, gate_report_only = _onboarding_refresh_gate(\"",
+      "note": "The checklist's leaf block hands the gate the changed paths and the accepted identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
             "content": "sha256:7e7dcf9ee26ea14497f7605dd049bd825b1d8743336f97326fac290fe9293da4",
             "locator": {
-              "end": 747,
+              "end": 755,
               "kind": "line_range",
-              "start": 747
+              "start": 755
             }
           },
           "kind": "code"
@@ -538,12 +571,12 @@
       ]
     },
     "9": {
-      "note": "The dispatch: the history-file gate on a converted tree, today's gate otherwise.\n\nAnchor: `leaf_onboarding_trace_sides`",
+      "note": "The dispatch: the history-file gate on a converted tree, today's gate otherwise.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:d1d84de99bef2d8de31b440791aad3947b5f3687812f74f97d09bb4397a674e3",
+            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
             "locator": {
               "kind": "symbol",
               "name": "_onboarding_refresh_gate"

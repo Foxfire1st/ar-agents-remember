@@ -28,7 +28,7 @@ enclosure contract, branch or worktree exists yet. The commanded id is recorded 
 `QueueFixture.unstarted_leaf_a`. `start_leaf` cit:([`start_leaf`], mcp/tests/test_closeout_queue.py:371-441) then starts one authored leaf from its
 master's branches **as they now stand** (a real enclosure, leaf document, worktrees and branches,
 based on the master's current tips rather than the base it had when the leaf was first commanded),
-publishes the lifecycle operation location and writes curator evidence. `declare_leaf`
+publishes the lifecycle operation location, covers `feature.txt` with a writer-authored `no_impact` row on converted memory, and publishes curator evidence only when the memory worktree holds `knowledge/layout.json`. The shared constructor defaults to converted memory with the marker in its attributed base commit; `converted=False` is reserved for format/refusal scenarios. `declare_leaf`
 cit:([`declare_leaf`], mcp/tests/test_closeout_queue.py:626-655) declares the closeout door for a leaf that is not yet the
 master's current one, reading its own canonical grade from the priority register it was authored with
 and naming the master whose command it executes.

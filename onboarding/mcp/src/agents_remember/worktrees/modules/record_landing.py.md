@@ -62,12 +62,10 @@ every finding):
 - **Probe first (review R1 F7, ruling 2026-09-30T16:07:55).** `_line_converted` probes the official memory line and
   the task's `memory_base_commit` for the layout marker **before** anything reads the landed commit; a probe Git
   cannot answer refuses by name. On an unconverted line the landed commit is only probed (`_commit_converted`), and
-  one Git cannot read is exempt, exactly as before this master. Since L37 that branch returns
-  `leaf_cutover_refusal(contract, "record_landing")`, with or without a named memory commit: the cutover lock
-  refuses once the repository holds converted memory (MIK-R09 rule 6), and in a repository that holds none an
-  unconverted route records exactly as it did
-  (`test_record_landing_on_unconverted_memory_never_reads_the_landed_commit`, `would-record`; `unconverted.sh`
-  agrees with base, including an unreadable memory commit).
+  one Git cannot read refuses by its named probe error. A missing or unconverted candidate
+  receives the central legacy-format refusal; a present converted candidate reaches `_judged_landing_refusal`
+  and its leaf/master pair judgment even when the official line remains legacy (MIK-R46). The prior tip never
+  makes a converted candidate legacy or grants an exemption for an unreadable commit.
 - **A converted line must name its memory commit** (`_unnamed_memory_commit_refusal`).
 - **The leaf pair.** Converted leaf recording requires the contract's memory base by name; no landed-parent fallback replaces a missing base. The actual landed memory commit is judged by `leaf_pair_refusal` with a recomputed worklist over its exact tree. Code is the recorded closeout code commit when the landed commit contains it, otherwise the landed code commit. An unreadable recorded object/ancestry refuses rather than silently selecting another pair. The latest leaf history file must remain closed.
 - **The master pair.** Recorded master landing also runs validator, net staleness from the series code base, newly closed history ownership, and the full admitted code/memory chain up to the supplied landed commits, not today's branch tips. A converted route refuses unreadable inputs before either dry-run or apply recording; recording publishes no memory commit or ref.

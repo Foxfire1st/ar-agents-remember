@@ -41,8 +41,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-        "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+        "blob": "14a9847dc0fe1618a504d9409b12301cf85b3a58",
+        "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
         "locator": {
           "kind": "symbol",
           "name": "_pre_baseline_official_scope"
@@ -62,7 +62,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

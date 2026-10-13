@@ -16,6 +16,15 @@ Every later converted landing is judged again: leaf integration judges the close
 
 The skill owns closeout sequencing while the worktree manager owns start, integration, finalization, and cleanup: ordinary closeout preview and apply run against the enclosure contract with explicit nonblank commit messages per enabled leg, and operation control resumes or cancels the advertised generation only. On converted memory both tools ask the mandatory invariant gate about the exact candidate pair, and the memory commit records exactly the tree the gate judged.
 
+On unconverted memory, both closeout tools refuse `legacy-format` before
+claiming approval or committing: preview returns `knowledge-gate-refused`, not
+`would-closeout`, and apply refuses the same way. This is independent of converted
+memory elsewhere. Convert first through `c-13-install-and-onboard` and
+`docs/guides/first-conversion.md`, then close out the converted leaf under the
+validator/invariant gate; the conversion itself counts as no change. A failed
+crossing plan leaves the line unchanged; a retained conflict or validator refusal
+after merge start uses the existing `continue`/`cancel` recovery.
+
 Authority is contextual but never assumed: standalone and final work relays the preview and asks the developer through the orchestrator hand-off protocol, ending the turn after the plain preview/commit ask and STOP, not after invoking a removed lifecycle notification tool; subordinate work inside an accepted series applies under delegated authority with the source recorded. The closeout-approval block is evidence of an explicitly raised human gate, never a second lifecycle, and no durable gate is created as an incident workaround.
 
 Memory cannot be disabled for a task: every closeout runs under the invariant gate, and a contract on disk that carries the removed mode is abandoned and started again rather than closed out. Closeout order commits code then memory-content with code attribution trailers, refreshes the consumer ledger cache without staging it, and refuses before mutation on moved refs, conflicts, blank messages, or unreconciled pairs. Branch-direct landing stays a policy-gated counterpart for a canonical granted leaf without its own enclosure, never a direct-checkout path; legacy operation repair is explicit and bounded; worker and curator failures route back to their owners rather than becoming gates.

@@ -18,7 +18,7 @@ including existing-code memory pairing, prospective code creation, interrupted-g
 ### Logic
 
 The retained integration scenario refuses a foreign requested code commit before dereferencing
-it, previews with malformed cache bytes while checking that files stay unchanged, and then stages
+it, previews with malformed cache bytes while checking that all bytes outside loose Git objects stay unchanged, and then stages
 real memory content. It interrupts `prove_git_commit` after Git has committed the content, so the
 subsequent recovery must infer that exact object rather than publish another one.
 
@@ -28,10 +28,7 @@ After restoring those facts, both cache absence and malformed cache text remain 
 Recovery goes through `recover_direct_landing_under_authority`, including the lifecycle requeue step,
 and ends with the same HEAD, a completed journal, and proven `memoryContentCommit`.
 
-The case asserts exactly one new memory commit, the caller body plus its real attribution trailer,
-an ignored/untracked cache, and a derived cached pair. `_assert_clean_memory_reused` removes the
-cache in a separate fixture and verifies successful reuse of the existing memory HEAD without a
-new commit or invented attribution for the new code state.
+The cache-independence case asserts exactly one new memory commit, the caller body plus its real attribution trailer, an ignored/untracked cache, and a derived cached pair. `test_converted_direct_landing_reuses_clean_memory_and_replays_terminal` ports the non-format reuse guarantees onto converted memory: exactly one paired commit, with only the asserted first-landing scaffolding and gate-authored sidecar changes. Repeating the accepted request refuses with `direct-landing-input-conflict`, names the accepted fingerprint, and leaves the completed generation, HEAD and attribution unchanged, including after cache deletion.
 
 ### Conventions
 
@@ -72,7 +69,9 @@ the current working-candidate behavior; historical entries below retain their or
 
 - The fixture owns real temporary code/memory refs and an admitted series contract. [1]
 - The retained scenario proves one content commit and reads its attribution from Git. [2]
-- Recovery rejects real drift and accepts cache misses without extra commits. [3]
+
+- Converted paired-commit/replay guarantees and retained interrupted-receipt recovery [3]
+
 - The lifecycle recovery owner performs the required same-generation resumption. [4]
 
 ### Cross-Repo References

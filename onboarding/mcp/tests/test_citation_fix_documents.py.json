@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0f76f2674c47bfb50b8c0856a2e2de9d4166f274",
+        "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
         "content": "sha256:6674fc42a338ecfd1fdeb59d55c236cff2e3f7cf289fb4666b8a0912aaece1c6",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0f76f2674c47bfb50b8c0856a2e2de9d4166f274",
+        "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
         "content": "sha256:77664dd8cd77d8379753146c3328cd529e54d75681de8b3749202662d42403a7",
         "locator": {
           "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d99283e6dd8a379228503cdb94c3b80b20572c5",
-            "content": "sha256:e8906eb8f16c55a293a195e01fb808fa13b283b371095d1bdc5d401a05c93f29",
+            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
+            "content": "sha256:da4edc39d92c764fe019e648604753d2c51e043c7708404a1a9cfb852fc3d126",
             "locator": {
               "kind": "symbol",
               "name": "DocumentListRefusalTests"
@@ -55,11 +55,11 @@
       ]
     },
     "2": {
-      "note": "Legacy list/single parity and isolation are asserted.",
+      "note": "Lower-level legacy list/single parity, dry-run Markdown-byte preservation and selection isolation are asserted; this is not public legacy admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d99283e6dd8a379228503cdb94c3b80b20572c5",
+            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
             "content": "sha256:efb7a072ac7ca3182ebb8098b7b7b7695fe166863cd360f6f3c5043a0d9e8085",
             "locator": {
               "kind": "symbol",
@@ -71,12 +71,12 @@
       ]
     },
     "3": {
-      "note": "Converted list/single parity and partial refusal are asserted.",
+      "note": "Converted list/single byte parity and a single missing-card refusal/count are asserted; successful sibling bytes are not checked by the mixed-selection case.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d99283e6dd8a379228503cdb94c3b80b20572c5",
-            "content": "sha256:b49ae01beb4094f7eba6c9f9cfc4ef87a649b52ffb1a7a744a5cc96a81b62ab1",
+            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
+            "content": "sha256:6e909b43f0aa18d87223944cec3304ef046d838ccaa4a0ca40c47acfb2ff85d6",
             "locator": {
               "kind": "symbol",
               "name": "ConvertedListFixTests"
@@ -87,11 +87,11 @@
       ]
     },
     "4": {
-      "note": "Repeated CLI selection and whole-result output are checked.",
+      "note": "Repeated CLI selection and whole-result output from a mocked tool payload are checked.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d99283e6dd8a379228503cdb94c3b80b20572c5",
+            "blob": "df48b06f9e965b53d85e5d26a93f3c5a450fb857",
             "content": "sha256:5ddea8874aef71d769160952c915c5d2e060e6c3c3c39af8d20d61642def8913",
             "locator": {
               "kind": "symbol",

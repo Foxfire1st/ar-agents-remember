@@ -28,18 +28,20 @@ worklist-item judgment acceptance.
 The refused-carry case parks `SAME = 1` while the landed line holds `SAME = 2`; it invokes the public sync tool and keeps the original assertions that `review_rebinding.state` is `not-measured` and `covers_resolved_pair` is false. The different-byte scenario is deliberate: the separately owned parked-candidate case exercises an identical-byte successful carry and asserts a `current` rebinding block. A refused sync is not upgraded to current, and branch movement alone is not tree mismatch. Source assertions describe the cases; execution receipts remain separately owned.
 
 
+## MIK-R46 R8: compare the closed history before closeout
+
+`_closed_reviewed_leaf` retains the initial real review-tree capture, then closes LEAF-C's owner history through `close_owner_history`. It takes another production `live_review_trees` comparison using a fresh code capture and requires a real `ReviewTrees` before `close_out_leaf`. The reviewed memory now includes the closed history that closeout delivers; no fabricated receipt or relaxed bound/moved assertion replaces that comparison. The separately documented item-gate fixture seam and selected-outcome limits remain.
+
+
 ## Evidence
 
-
-- A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam. [6]
-
+### Current Source-Inspection References
 
 - Sync records current when the line leaves both trees [1]
 - Closeout receipt is moved when code changes after review [2]
-
 - Integration receipt is bound when both trees match [3]
-
-
 - Memory capture fault records unmeasured [4]
-
 - Removed-mode behavior is a named refusal, not a memory-free comparison. [5]
+- A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam. [6]
+
+- Close the real owner history and take a fresh production comparison before closeout; original receipt assertions remain. [7]

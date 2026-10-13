@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+        "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
         "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+        "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
         "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,12 @@
         "handoffEntry": "MIK-R45@v2 rule 3",
         "leaf": "260928-MIK-L45"
       },
-      "rationale": "The adoption gate refusing legacy trees before validator/drift checks regardless of accept_drift.",
+      "rationale": "Converted first adoption refuses listed old-format cards in its converted tree, and accept_drift cannot clear blocked-legacy-cards or a validator violation. This helper is distinct from baseline_adopt's earlier unconditional legacy-root preflight.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+        "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
         "content": "sha256:a843cdf2df6a5134b51b80ebd09ca644412133b8a1488a0f351b077259ebd0b0",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+        "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
         "content": "sha256:a843cdf2df6a5134b51b80ebd09ca644412133b8a1488a0f351b077259ebd0b0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+        "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
         "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
         "locator": {
           "kind": "symbol",
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:87089c2e6dbfe2eafe63643a5244b85b3c3c85bbd1dc809587118b6951816fd7",
             "locator": {
               "kind": "symbol",
@@ -109,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:3b86a90a082ae2efbbd19c39b7c27b6766f4880aa40670557a243987a426f1f0",
             "locator": {
-              "end": 112,
+              "end": 113,
               "kind": "line_range",
-              "start": 101
+              "start": 102
             }
           },
           "kind": "code"
@@ -310,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",
@@ -321,12 +321,12 @@
         },
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:2287c0cf045f9c6fe1a22f6ed90f2672feefdceeff9d1df91de61a943458bdf7",
             "locator": {
-              "end": 204,
+              "end": 205,
               "kind": "line_range",
-              "start": 168
+              "start": 169
             }
           },
           "kind": "code"
@@ -417,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:6c003dff711cbfdebdf5a90aa5acd07e71ac5bb9d10652e1b12e295036c5b20a",
             "locator": {
               "kind": "symbol",
@@ -428,19 +428,19 @@
         },
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:491f41882733e596faf95a0c8b934e96c585c9e9e07b0e5d31eb5f1b465401cb",
             "locator": {
-              "end": 84,
+              "end": 85,
               "kind": "line_range",
-              "start": 76
+              "start": 77
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:d8445b203b66c95d257fffc5ea97a6a596f8997ef552a6d9781b6b410a6d1c15",
             "locator": {
               "kind": "symbol",
@@ -451,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "201591550de79f6cfe0d05addca9dc2005ad445d",
+            "blob": "09c8c9b07ba3c2e49a1a4e8971da54ad64df7b44",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",

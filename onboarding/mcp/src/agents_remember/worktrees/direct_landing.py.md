@@ -33,12 +33,9 @@ A completed doorless generation retired by its authorized owner stays readable f
 ### 260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)
 
 Direct landing is one of MIK-R09's leaf-publication routes. On converted memory (the layout marker in the checkout's
-working tree or `HEAD`) it gates before admission. Unconverted memory is refused by the cutover lock once the memory
-repository holds converted memory (L37, MIK-R09 rule 6: `_direct_gate_owner` raises
-`direct-landing-unconverted-memory-locked`, in preview and apply alike, before anything is captured). In a repository
-that holds none it lands exactly as before (probed before anything
-is captured or written: `count-objects` and `status` unchanged in the unconverted test; `unconverted.sh` finds the
-preview payload and object count identical to base).
+working tree or `HEAD`) it gates before admission. Unconverted memory is refused unconditionally by the cutover lock (MIK-R46): `_direct_gate_owner` raises
+`direct-landing-unconverted-memory-locked` in preview and apply before anything is captured.
+The refusal names conversion even when this memory repository holds no converted line.
 
 - **The gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
   the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
@@ -121,7 +118,10 @@ References 3, 5 and 6 below are re-authored for the current retained-record retr
 - The focused integration scenario verifies cache-independent publication and recovery. [11]
 
 
-- Unconverted memory: the lock refuses it once the repository holds converted memory, else the landing is ungated as before. [12]
+
+- Unconverted input refuses before fresh capture regardless of converted memory elsewhere; converted validation remains unchanged [12]
+
+
 
 
 ### Cross-Repo References

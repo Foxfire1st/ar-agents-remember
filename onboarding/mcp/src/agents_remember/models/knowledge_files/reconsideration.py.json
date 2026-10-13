@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring: the subject, the triggers, the rows and the one satisfying rule.\n\nAnchor: \"Reconsideration candidates (MIK-R14@v2)\"",
+      "note": "The module docstring: the subject, the triggers, the rows and the one satisfying rule.\n\nAnchor: `current source extent`",
       "targets": [
         {
           "anchor": {
@@ -174,8 +174,24 @@
         }
       ]
     },
+    "18": {
+      "note": "An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsideration_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "The kind and the two row dispositions.",
+      "note": "The kind and the two row dispositions.\n\nAnchor: `RECONSIDERATION_ITEM_KIND`, `RECONSIDER_DISPOSITIONS`",
       "targets": [
         {
           "anchor": {
@@ -218,7 +234,7 @@
       ]
     },
     "4": {
-      "note": "The five triggers, and the three a `still_rejected` answer refreshes.",
+      "note": "The five triggers, and the three a `still_rejected` answer refreshes.\n\nAnchor: `TRIGGERS`, `REFRESHED_TRIGGERS`",
       "targets": [
         {
           "anchor": {
@@ -261,7 +277,7 @@
       ]
     },
     "6": {
-      "note": "The subject spelled and parsed.",
+      "note": "The subject spelled and parsed.\n\nAnchor: `reconsider_subject`, `parse_reconsider_subject`",
       "targets": [
         {
           "anchor": {

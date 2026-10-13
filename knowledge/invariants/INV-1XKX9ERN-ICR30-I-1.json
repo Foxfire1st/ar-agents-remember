@@ -2,7 +2,7 @@
   "admission": "legacy-unassessed",
   "applicability": "Every authored write of knowledge through the two admitted command lines.",
   "conditions": [
-    "The memory tree holds the conversion marker; a tree without it is refused as legacy-format and names the crossing sync."
+    "The memory tree holds the conversion marker; a tree without it is refused with the central conversion message."
   ],
   "exclusions": [
     "The mechanical writers (conversion, crossing sync, formatter) and the closeout routes, which set flags rather than author knowledge.",
@@ -21,9 +21,9 @@
     "legacyId": "bad62dd0-d67f-4efc-a733-c78eebc6a6b0",
     "task": "260921-ICR"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-invariant/v1",
-  "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of the two admitted command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and each writes a converted memory tree through the curator file writer; a tree without the conversion marker is refused as legacy-format, naming the crossing sync. The mounted MCP tool surface exposes no authoring writer of its own.",
+  "statement": "Every authored knowledge write uses the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer at the resolved repository or leaf memory root. An unconverted root refuses as legacy-format with conversion guidance: crossing sync from a converted source, otherwise first conversion. Mounted MCP tools expose no authoring writer and publish no canonical dataset.",
   "status": "proposed",
   "supersedes": []
 }

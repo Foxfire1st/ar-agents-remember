@@ -23,6 +23,11 @@ values; the summary/projection owners carry those separate contracts.
 
 ## Evidence
 
+
+
+
+### Current Source-Inspection References
+
 - Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint. [1]
 - A mutated read is caught, so the roster cannot pass vacuously. [2]
 - Enclosure reads attribute comparison objects and allow only preview effects. [3]
@@ -30,11 +35,9 @@ values; the summary/projection owners carry those separate contracts.
 - Remaining dashboard GETs read without writing. [5]
 - Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. [6]
 - Server-info, resolver, gate and file reads preserve the synthetic seat. [7]
-- Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including a named missing-root refusal. [8]
+- Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including ok=False and state="legacy-format" for unconverted baseline status. [8]
 - Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
 - Baseline adoption dry run preserves the converted fixture. [10]
 - Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint. [11]
-
 - Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance. [12]
-
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]

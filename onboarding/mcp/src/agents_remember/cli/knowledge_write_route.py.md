@@ -10,7 +10,7 @@ The converted knowledge CLI's file-write routes share admission, owner identity,
 
 ## Code Commentary
 
-Leaf writes use the supplied enclosure and its leaf owner; named waves use their admitted repository root. Crossing writes retain their separately admitted crossing owner. Each delegates to the file writer rather than selecting a canonical database. `unconverted_write_refusal` supplies the typed legacy/cutover refusal. Database-publication arguments are refused by their CLI front door, not accepted here as an alternative destination. The removed `_file_route_refusal` and legacy dataset writer dispatch are not current routes.
+Leaf writes use the supplied enclosure and its leaf owner; named waves use their admitted repository root. Crossing writes retain their separately admitted crossing owner. Each delegates to the file writer rather than selecting a canonical database. `unconverted_write_refusal` refuses unconverted memory unconditionally with shared conversion guidance: cross from a converted source through `worktree_sync` with `merge-memory`, otherwise make the first conversion described by `c-13-install-and-onboard` and `docs/guides/first-conversion.md`. A missing memory worktree retains its own named error. Database-publication arguments are refused by their CLI front door, not accepted here as an alternative destination. The removed `_file_route_refusal` and legacy dataset writer dispatch are not current routes.
 
 ### Logic
 
@@ -68,7 +68,7 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The layout-marker test. [21]
-- The write refusal for an unconverted leaf tree: rule 9 when its official line is converted, else the cutover lock. [22]
+- The unconditional write refusal for an unconverted leaf tree names crossing from a converted source or the first conversion; converted memory elsewhere is not an admission prerequisite. [22]
 - The owner from the contract and `task.json`. [23]
 - The task owner's decision resolver for the leaf (MIK-R11). [24]
 - The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist. [25]

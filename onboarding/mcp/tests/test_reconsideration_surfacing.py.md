@@ -62,6 +62,13 @@ uses.
     worklist is refused as a stale item; a curator-set unapproved version (v4) and an anchor re-pointed to other code
     are re-authored.
 
+The candidate-successor cases additionally assert no base-decision item, skipped summary
+with the successor ID and stored-rule closure without a row; without a successor the changed
+target still raises, and an unrelated supersedes target does not silence it. The unrelated
+new decision fixture omits reconsider_on links, so its absence assertion alone is not a
+stimulus-rich proof that new candidate links never fire. The base-only evaluation loop is
+the source boundary; these are source assertions, not Curator execution.
+
 ### Conventions
 
 - The module is in the `unit-regression` lane (`test-evidence-lanes.toml:253`); the evidence catalog derives it as a
@@ -100,23 +107,55 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The unit-lane row. [19]
+- The catalog consumer row. [20]
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: every repository, task root and coordination root the cases use is built
+under `tmp_path`.
+
+No cross-repo boundary is crossed by this file.
+
+
+## Requalified checked-source evidence
+
 - The module docstring: the fixture's two decisions and the case shape. [1]
-- D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
-- D12, reconsidered on a family and on D18. [3]
-- The fixture world with both decisions and the assumption in K_B. [4]
-- The manifest and the owning task. [5]
-- Rule 2: the highest approved version by integer. [6]
-- Rule 1 and the conforming example. [7]
-- Rule 1: rows, anchors and requirement endpoints. [8]
-- Rule 3: one hop. [9]
+
 - The task-owner stand-in and the writer call. [10]
+
 - Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. [11]
+
 - The reorder guard and the registrations. [12]
+
 - Ruling 04:37:56: route targets, superseded decisions and the refresh. [13]
+
 - Ruling 05:31:11: F1, the unmappable range, F3 and F4. [14]
+
 - Ruling 06:17:11: N1 and N2. [15]
+
 - R3-1: idempotent reruns. [16]
+
 - R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
+
 - R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
 
 
@@ -137,9 +176,30 @@ No configured live documentation source was available for this pass.
 
 - An unrelated candidate decision suppresses nothing and raises no item itself. [23]
 
-### Cross-Repo References
+- D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
 
-No meaningful cross-repo references found: every repository, task root and coordination root the cases use is built
-under `tmp_path`.
+- D12, reconsidered on a family and on D18. [3]
 
-No cross-repo boundary is crossed by this file.
+- The fixture world with both decisions and the assumption in K_B. [4]
+
+- The manifest and the owning task. [5]
+
+- Rule 2: the highest approved version by integer. [6]
+
+- Rule 1 and the conforming example. [7]
+
+- Rule 1: rows, anchors and requirement endpoints. [8]
+
+- Rule 3: one hop. [9]
+
+
+## Candidate-aware succession evidence
+
+Inspected source assertions, not a fresh Curator test run or deployment of the
+checked leaf repair to the serving build.
+
+- The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure. [24]
+
+- Without a successor the same changed target still raises. [25]
+
+- An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion. [26]

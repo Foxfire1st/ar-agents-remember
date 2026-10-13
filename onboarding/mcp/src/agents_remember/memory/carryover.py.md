@@ -10,9 +10,13 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Plans and applies evidence-backed onboarding carryover after code lands. Selected memory content
-is committed in the exact ordinary recovery leaf and attributed to the selected official code tip.
-Integration of that leaf remains a separate operation.
+Plans evidence-backed onboarding carryover after code lands. The retained legacy
+apply engine is no longer an admitted write route: `_require_legacy_format_target`
+refuses converted targets with `CONVERTED_TARGET` and unconverted targets through
+the unconditional cutover lock with `legacy-format` conversion guidance. Planning
+is a read and remains unchanged; adapted apply on converted memory belongs to
+MIK-R56. The former apply mechanics below describe retained internal code, not a
+supported way to commit legacy memory.
 
 ## Code Commentary
 
@@ -58,14 +62,16 @@ than copied, and default read settings cannot substitute for explicit target wri
 - A missing or malformed cache does not change candidate evidence or admission.
 - Nothing-to-carryover cannot invent attribution for a new code state or create a cache-only commit.
 - The real memory commit carries the official tip's attribution; cache rows are derived afterward.
-- **Carryover writes legacy-format memory only, and only while the repository is not locked (L37, review R1
-  F2).** `_apply_carryover_for_request` calls `_require_legacy_format_target` right after its authority checks,
-  before the checkout requirement, the plan and every write. A target whose working tree holds
-  `knowledge/layout.json` is refused with `CONVERTED_TARGET`, naming the file writer: carryover copies
-  legacy-format Markdown and commits it with no format check and no knowledge validator. An unconverted target
-  asks the cutover lock on the configured memory repository and is refused, naming the crossing sync, once that
-  repository holds converted memory (MIK-R09 rule 6). `memory_carryover_plan` is a read and is unchanged.
-  Carryover stays unavailable on converted lines until it is adapted to converted memory.
+- **Carryover apply refuses both storage-format targets in this candidate.**
+  `_apply_carryover_for_request` calls `_require_legacy_format_target` after
+  authority checks and before checkout, plan or writes. A target holding
+  `knowledge/layout.json` retains the `CONVERTED_TARGET` refusal naming
+  `knowledge-ingest`; an unconverted target now receives the shared
+  `legacy-format` conversion message whether or not the configured repository
+  contains converted memory elsewhere. Convert through the named first-conversion
+  procedure or crossing sync, but do not promise conversion alone enables this
+  legacy apply engine: converted carryover adaptation is MIK-R56.
+  `memory_carryover_plan` is a read and remains unchanged.
 
 ### Todos
 
@@ -90,7 +96,9 @@ the current working-candidate behavior; historical entries below retain their or
 - Apply owns one content commit and preserves exact leaf/repository authority. [2]
 - Target storage is established from effective explicit settings. [3]
 - Shared committing explicitly excludes the consumer cache. [4]
-- The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. [5]
+
+- Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired [5]
+
 
 - A converted target is refused, and an unconverted one takes the cutover lock. [6]
 - Carryover never writes converted memory and takes the cutover lock. [7]

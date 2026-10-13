@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:f6c104244f87e83b53dade29f4d2c132681eab51f06e1b82a891bbd7dd188ef9",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:ef460ba8e700164430ff7e76cda068f08ee07cb43037a5ec037390e42c0e05fd",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:46537cc99828d2e4bdd3b094c42c8fe706d06c35f09b32a2f1c440acde63c767",
             "locator": {
               "kind": "symbol",
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
-            "content": "sha256:1ae28781024cf41ee42c94323ec8d8d5f9e2fae86af5338c7dc1690314de8d79",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:71ede2bc10ee69bfbbb661b4bc27725800e440fbc034d4643733f403ac2c9932",
             "locator": {
               "kind": "symbol",
               "name": "WorkflowWorld"
@@ -67,16 +67,16 @@
       ]
     },
     "13": {
-      "note": "Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.\n\nAnchor: `call`",
+      "note": "Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call`\n\nAnchor: `WorkflowWorld.call`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:c69d1824fd81390798d929d34b533832a8d77eb403b01618a4f6ac6efa91db31",
             "locator": {
-              "end": 434,
+              "end": 443,
               "kind": "line_range",
-              "start": 422
+              "start": 431
             }
           },
           "kind": "test"
@@ -88,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
-            "content": "sha256:24b5a583908e9e0fd93fda1fc229e30deb8aef4a66ca09137ae9cb0f5591c9dd",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:7c85b3c22304dc76bc80cab77a22a5d68410d379cca36109201f2bfad937a542",
             "locator": {
               "kind": "symbol",
               "name": "WorkflowChainObservation"
@@ -100,15 +100,16 @@
       ]
     },
     "15": {
-      "note": "What the guidance supplies for a hop, and the arguments it declares as required.",
+      "note": "What the guidance supplies for a hop, and the arguments it declares as required.\n\nAnchor: `WorkflowChainObservation._recommendation`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:5cb970c968a280dfcc44b5d9752886eaa4a65891402b670a9f587b506ccc3b8c",
             "locator": {
-              "kind": "symbol",
-              "name": "_recommendation"
+              "end": 673,
+              "kind": "line_range",
+              "start": 644
             }
           },
           "kind": "test"
@@ -116,15 +117,16 @@
       ]
     },
     "16": {
-      "note": "The first call exactly as given, then again with only what the model named as missing.",
+      "note": "The first call exactly as given, then again with only what the model named as missing.\n\nAnchor: `WorkflowChainObservation._as_given_call`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:685f203edcbe701778d86c1fcc94b4ee4480df92fddb287c1277a0be38d348ac",
             "locator": {
-              "kind": "symbol",
-              "name": "_as_given_call"
+              "end": 729,
+              "kind": "line_range",
+              "start": 709
             }
           },
           "kind": "test"
@@ -132,15 +134,16 @@
       ]
     },
     "17": {
-      "note": "Execute one recommended step as given, then again with only the arguments it omitted.",
+      "note": "Execute one recommended step as given, then again with only the arguments it omitted.\n\nAnchor: `WorkflowChainObservation._record`",
       "targets": [
         {
           "anchor": {
-            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
-            "content": "sha256:68130c3435689393c55299343d52ade63b54b59b1bccad8e4e0598f533119a23",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:ba7fca44a88b4c3005997d975866771dd9763b8c75275e8fd701cc8a8ef0c8b9",
             "locator": {
-              "kind": "symbol",
-              "name": "_record"
+              "end": 771,
+              "kind": "line_range",
+              "start": 731
             }
           },
           "kind": "test"
@@ -148,15 +151,16 @@
       ]
     },
     "18": {
-      "note": "The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe.",
+      "note": "The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe.\n\nAnchor: `WorkflowChainObservation._walk`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
-            "content": "sha256:ef96830a1f3b520fcfdadee56aed4102fbf849d7661c09548c3fab8eabdbaec9",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:ff0ad4eb7c7a639ab96b93133b1a1a7adfd938f5974764916e4a1324b578ba16",
             "locator": {
-              "kind": "symbol",
-              "name": "_walk"
+              "end": 852,
+              "kind": "line_range",
+              "start": 773
             }
           },
           "kind": "test"
@@ -164,15 +168,16 @@
       ]
     },
     "19": {
-      "note": "The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing.",
+      "note": "The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing.\n\nAnchor: `WorkflowChainObservation._sibling_arrangement`",
       "targets": [
         {
           "anchor": {
-            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
-            "content": "sha256:ea06b294ab171ee7ebd77f0b9f49c971f04b31b6232a4ba8ac7aaf1ab91a7366",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:9635227e8b6733aa5572491a93f3c1de516b06d912d9025e0f3f764defd04f44",
             "locator": {
-              "kind": "symbol",
-              "name": "_sibling_arrangement"
+              "end": 902,
+              "kind": "line_range",
+              "start": 854
             }
           },
           "kind": "test"
@@ -184,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:a65a165cb54d55273b82f73be6777c7ba7379e134039953793594a64abd7e399",
             "locator": {
               "kind": "symbol",
@@ -196,15 +201,16 @@
       ]
     },
     "20": {
-      "note": "The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`.",
+      "note": "The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`.\n\nAnchor: `WorkflowChainObservation._stale_base_arrangement`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
             "locator": {
-              "kind": "symbol",
-              "name": "_stale_base_arrangement"
+              "end": 939,
+              "kind": "line_range",
+              "start": 904
             }
           },
           "kind": "test"
@@ -212,15 +218,16 @@
       ]
     },
     "21": {
-      "note": "Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see.",
+      "note": "Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see.\n\nAnchor: `WorkflowChainObservation._probe_operational_triples`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:36e2d3de861794b909486faacdb57f1339b284d4583879d04b8fd9363e24b762",
             "locator": {
-              "kind": "symbol",
-              "name": "_probe_operational_triples"
+              "end": 973,
+              "kind": "line_range",
+              "start": 957
             }
           },
           "kind": "test"
@@ -228,15 +235,16 @@
       ]
     },
     "22": {
-      "note": "The second producer of the same recommendation, driven in the same world rather than cited.",
+      "note": "The second producer of the same recommendation, driven in the same world rather than cited.\n\nAnchor: `WorkflowChainObservation._retry_provider_setup_arrangement`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
-            "content": "sha256:746d5df423fe97b896c4ee42da5b39201f52cd071b8e3d4ccdb6a243199cdd46",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:0d7af63423c07e63dc4113629e4ef6ff846aee57b56bfa5750b72368d5776be2",
             "locator": {
-              "kind": "symbol",
-              "name": "_retry_provider_setup_arrangement"
+              "end": 1049,
+              "kind": "line_range",
+              "start": 975
             }
           },
           "kind": "test"
@@ -244,15 +252,16 @@
       ]
     },
     "23": {
-      "note": "The union of the walk's own as-given calls and every probe, asserted equal to the pin.",
+      "note": "The union of the walk's own as-given calls and every probe, asserted equal to the pin.\n\nAnchor: `WorkflowChainObservation.callability_population`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:12f7b894c72792bed3d39a30618573b10ef04a57e8c34f02379785736ee9c831",
             "locator": {
-              "kind": "symbol",
-              "name": "callability_population"
+              "end": 1068,
+              "kind": "line_range",
+              "start": 1053
             }
           },
           "kind": "test"
@@ -260,15 +269,16 @@
       ]
     },
     "24": {
-      "note": "The order, asserted against what the run actually did rather than stated beside it.",
+      "note": "The order, asserted against what the run actually did rather than stated beside it.\n\nAnchor: `WorkflowChainTests.test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:9efe7bc5e587b6afb144ec5bd01a6790ef2513a8be38e580d74097399cb54823",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points"
+              "end": 1109,
+              "kind": "line_range",
+              "start": 1094
             }
           },
           "kind": "test"
@@ -276,15 +286,16 @@
       ]
     },
     "25": {
-      "note": "The order derived from the guidance, with the derivation's own bound.",
+      "note": "A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted.\n\nAnchor: `WorkflowChainTests.test_each_hop_was_the_move_the_previous_response_named`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:ead2983065a8b78459a890e0409bcfce8632a824e5f52a0dc66ae7798386e964",
             "locator": {
-              "kind": "symbol",
-              "name": "test_each_hop_was_the_move_the_previous_response_named"
+              "end": 1160,
+              "kind": "line_range",
+              "start": 1126
             }
           },
           "kind": "test"
@@ -292,15 +303,16 @@
       ]
     },
     "26": {
-      "note": "Guidance must name the response's own place, on every channel it uses (`T54`).",
+      "note": "Guidance must name the response's own place, on every channel it uses (`T54`).\n\nAnchor: `WorkflowChainTests.test_every_guidance_channel_names_the_callers_own_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:3eff1de2f738fa20d2904568bcb975269cea1fae40a199c5ea19612f4b483923",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_guidance_channel_names_the_callers_own_task"
+              "end": 1182,
+              "kind": "line_range",
+              "start": 1164
             }
           },
           "kind": "test"
@@ -308,15 +320,16 @@
       ]
     },
     "27": {
-      "note": "The sibling arrangement asserted first, then the property (`T54`'s arm).",
+      "note": "The sibling arrangement asserted first, then the property (`T54`'s arm).\n\nAnchor: `WorkflowChainTests.test_a_concurrent_siblings_guidance_never_reaches_this_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:62d7bb484eb1cf77edfe94c3ca3d718aa3c3cfb0614c4d8ff9c55202bcdfd0da",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_concurrent_siblings_guidance_never_reaches_this_task"
+              "end": 1218,
+              "kind": "line_range",
+              "start": 1184
             }
           },
           "kind": "test"
@@ -324,15 +337,16 @@
       ]
     },
     "28": {
-      "note": "The derived population, asserted equal to the pin over both channels.",
+      "note": "The derived population, asserted equal to the pin over both channels.\n\nAnchor: `WorkflowChainTests.test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies"
+              "end": 1241,
+              "kind": "line_range",
+              "start": 1222
             }
           },
           "kind": "test"
@@ -340,15 +354,16 @@
       ]
     },
     "29": {
-      "note": "The population of the case above, so it cannot silently shrink — with its own boundary stated.",
+      "note": "The population of the case above, so it cannot silently shrink — with its own boundary stated.\n\nAnchor: `WorkflowChainTests.test_every_response_that_published_an_operational_triple_was_called_with_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:36584383d924e267b1506f23a8f2b65c121558954035b6f27d2796463ff40b40",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_response_that_published_an_operational_triple_was_called_with_it"
+              "end": 1293,
+              "kind": "line_range",
+              "start": 1243
             }
           },
           "kind": "test"
@@ -356,11 +371,11 @@
       ]
     },
     "3": {
-      "note": "The phase progression, read from the product's state machine and never restated from a literal.",
+      "note": "Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract.\n\nAnchor: `WorkflowChainTests.test_the_chain_reaches_every_declared_state_and_the_terminal_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:97c46f72c18bdfe4fd6821ade3ff7f0e8034820dc003570ef6beffb68c95701b",
             "locator": {
               "kind": "symbol",
@@ -368,19 +383,32 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
+            "content": "sha256:ff8aa0c088786de93413005a94af30adebafb79e9241a47132b3f6b3b7e26602",
+            "locator": {
+              "end": 1124,
+              "kind": "line_range",
+              "start": 1111
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "30": {
-      "note": "The classifier's control: an unusable recommendation must be seen as one.",
+      "note": "The classifier's control: an unusable recommendation must be seen as one.\n\nAnchor: `WorkflowChainTests.test_the_callability_arm_can_actually_fail`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:604c714b8eb1b19fb2fdc00ac2bae3137165a28c28d32947d4626e8bf6ef7e18",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_callability_arm_can_actually_fail"
+              "end": 1325,
+              "kind": "line_range",
+              "start": 1295
             }
           },
           "kind": "test"
@@ -388,15 +416,16 @@
       ]
     },
     "31": {
-      "note": "The withhold is real, counted, and explained in both directions.",
+      "note": "The withhold is real, counted, and explained in both directions.\n\nAnchor: `WorkflowChainTests.test_the_guidance_that_could_not_be_validated_is_withheld_and_counted`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:6c20aab7356881c81bfd36b6eb3aea4e61849b29d1e286ca5b5c42de29c0cc27",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_guidance_that_could_not_be_validated_is_withheld_and_counted"
+              "end": 1348,
+              "kind": "line_range",
+              "start": 1327
             }
           },
           "kind": "test"
@@ -404,15 +433,16 @@
       ]
     },
     "32": {
-      "note": "`T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed.",
+      "note": "`T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed.\n\nAnchor: `WorkflowChainTests.test_every_preview_step_answered_and_the_drift_snapshot_was_actually_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:f815a91b6a78f49c23e1ce5d0512d3ffc105ddd312cca852fdbd3e49a5bfce6e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_preview_step_answered_and_the_drift_snapshot_was_actually_read"
+              "end": 1392,
+              "kind": "line_range",
+              "start": 1352
             }
           },
           "kind": "test"
@@ -420,15 +450,16 @@
       ]
     },
     "33": {
-      "note": "The stale base driven, and the raiser pinned by set equality.",
+      "note": "The stale base driven, and the raiser pinned by set equality.\n\nAnchor: `WorkflowChainTests.test_a_stale_base_closes_the_envelope_by_raising_and_is_counted`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:d335673cf828593cfeb53b4695068887715c114cefab136e74da360d7e017c5d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_stale_base_closes_the_envelope_by_raising_and_is_counted"
+              "end": 1423,
+              "kind": "line_range",
+              "start": 1394
             }
           },
           "kind": "test"
@@ -436,15 +467,16 @@
       ]
     },
     "34": {
-      "note": "`T109`: the declaring channel asserted where it is defined, and its four-phase population stated.",
+      "note": "Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance.\n\nAnchor: `WorkflowChainTests.test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable`",
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:36e1d4abe81da191cd750a6d5af735bca00260cefb6ee4c85a224eaa719d0908",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable"
+              "end": 1498,
+              "kind": "line_range",
+              "start": 1427
             }
           },
           "kind": "test"
@@ -452,16 +484,16 @@
       ]
     },
     "35": {
-      "note": "The lane row that keeps this module in the default selection, inside the array opening at `:5`.\n\nAnchor: \"mcp/tests/test_workflow_chain_guidance.py\"",
+      "note": "The lane row that keeps this module in the default selection, inside the array opening at `:5`.  Anchor: \"mcp/tests/test_workflow_chain_guidance.py\"\n\nAnchor: `lines 362-362`",
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "c3344e384970dc5f31a32339137775b488c64fde",
             "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 324,
+              "end": 362,
               "kind": "line_range",
-              "start": 324
+              "start": 362
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -470,16 +502,16 @@
       ]
     },
     "36": {
-      "note": "The operational triple's declared home, and the reason it is a channel of the response's own contract.\n\nAnchor: `nextArgs`",
+      "note": "The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs`\n\nAnchor: `WorktreeCommandResponse.nextArgs`",
       "targets": [
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
             "content": "sha256:1eafbb7c037d1730705006d347b1fbd9fd61fb76f4ac45e4ee7f0de7ecde45c7",
             "locator": {
-              "end": 406,
+              "end": 366,
               "kind": "line_range",
-              "start": 406
+              "start": 366
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -488,15 +520,16 @@
       ]
     },
     "37": {
-      "note": "The overlay's model, which can declare what it leaves to the caller and the operational triple cannot.",
+      "note": "The overlay's model, which can declare what it leaves to the caller and the operational triple cannot.\n\nAnchor: `NextStep.nextRequiredArgs`",
       "targets": [
         {
           "anchor": {
             "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
             "locator": {
-              "kind": "symbol",
-              "name": "nextRequiredArgs"
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -509,7 +542,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
             "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
             "locator": {
               "kind": "symbol",
@@ -526,8 +559,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
-            "content": "sha256:51be012d8c1fb51ca4d362f7a3eb8025862f19d7729b7894e11e315c169d102b",
+            "blob": "7cb1e42b65b42df8b7e5324c27ed10bbf9e3a14b",
+            "content": "sha256:8f56d8a6c64ecff02d932b27277d398b3f7c2652557a3b0ab71be1a08328f4f1",
             "locator": {
               "kind": "symbol",
               "name": "next_step_for"
@@ -543,7 +576,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:8c49ad5ee44785f88b9aa22d202446eaeac4abf4adb3260b53035f8047b67346",
             "locator": {
               "kind": "symbol",
@@ -559,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -606,7 +639,7 @@
       ]
     },
     "43": {
-      "note": "The exception a stale base escapes as, carrying the remedy in prose only.",
+      "note": "SourceLineageRefusal carries status and payload internally; the workflow case asserts stale-lineage and remedy strings in rendered tool-error detail.",
       "targets": [
         {
           "anchor": {
@@ -623,12 +656,12 @@
       ]
     },
     "44": {
-      "note": "The repaired pre-integration recommendation the walk reaches (`guidance.py:451`).",
+      "note": "The pre-integration worktree_status recommendation carries repo_id; this is the phase arm the workflow reaches.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:6edaa87c906bb3ddd1eb9f7837b359ebbc09e4f429110c2f635d55919f2a0275",
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:91baeeac6b5631221e271615b925ac817d90a399f72365c35e23e2a0984ac1ac",
             "locator": {
               "kind": "symbol",
               "name": "_pre_integration_phase"
@@ -640,7 +673,7 @@
       ]
     },
     "45": {
-      "note": "The repaired `checkpointed` recommendation the module does **not** reach (`guidance.py:369`).",
+      "note": "The checkpoint worktree_status recommendation also carries repo_id; this arm is not reached by the workflow module.",
       "targets": [
         {
           "anchor": {
@@ -657,16 +690,15 @@
       ]
     },
     "46": {
-      "note": "The declaration `T109` pins where it is defined; it is at `:433`, not the `:432` two reports cite.\n\nAnchor: `required_args`",
+      "note": "The closeout intent_note requirement is declared by _pre_integration_phase and asserted on a constructed declaring contract.",
       "targets": [
         {
           "anchor": {
             "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
-            "content": "sha256:1375697bbc06445e3fe0f6ec2f0f1481c6b999fe50f9c379fe8232682763ffe1",
+            "content": "sha256:91baeeac6b5631221e271615b925ac817d90a399f72365c35e23e2a0984ac1ac",
             "locator": {
-              "end": 396,
-              "kind": "line_range",
-              "start": 396
+              "kind": "symbol",
+              "name": "_pre_integration_phase"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -675,16 +707,15 @@
       ]
     },
     "47": {
-      "note": "The declaration `A5c` shows is not asserted (`carryover-pending`).\n\nAnchor: `required_args`",
+      "note": "The declaration `A5c` shows is not asserted (`carryover-pending`).  Anchor: `required_args`",
       "targets": [
         {
           "anchor": {
             "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
-            "content": "sha256:a452db68c18a3929567e68a1e2fb8d8c2fad9c8cfcc349c9659c3099fc4c946d",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
             "locator": {
-              "end": 304,
-              "kind": "line_range",
-              "start": 304
+              "kind": "symbol",
+              "name": "_post_integration_phase"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -693,16 +724,15 @@
       ]
     },
     "48": {
-      "note": "The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.\n\nAnchor: `LifecycleRecommendedAction`",
+      "note": "The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.  Anchor: `LifecycleRecommendedAction`",
       "targets": [
         {
           "anchor": {
             "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:9195ca5d0d8276c93a32ae6d24737d3d6adc413d2542e3e0a288e57b28f90ee4",
+            "content": "sha256:7d7217bdb7fbb22366c2641172fb4802a66f724d0aff8418c990774f981cf7af",
             "locator": {
-              "end": 453,
-              "kind": "line_range",
-              "start": 450
+              "kind": "symbol",
+              "name": "_recommended_action"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },
@@ -732,7 +762,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:399cf22e9c8297eef7614578af2f817a1d95f2a3ca9a5d2078200d1994e4b84e",
             "locator": {
               "kind": "symbol",
@@ -761,15 +791,16 @@
       ]
     },
     "51": {
-      "note": "Where the tuple becomes the operational triple a seat reads.",
+      "note": "Where the tuple becomes the operational triple a seat reads.\n\nAnchor: `TaskUnstartedEvidence.public_payload`",
       "targets": [
         {
           "anchor": {
             "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
             "content": "sha256:446b71bb0a5b1934c3c32bd6629930a796e70171a39906021293ac7814a32f34",
             "locator": {
-              "kind": "symbol",
-              "name": "public_payload"
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
           },
@@ -782,7 +813,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:a52982a353e3019485b6848ddec0fb0c666554b553d35abbd21fcff50cf5f671",
             "locator": {
               "kind": "symbol",
@@ -798,7 +829,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:8070317511aa7d05bd2ffc04ad3d5b91d449b952c8ee23235e61af38d1a7960f",
             "locator": {
               "kind": "symbol",
@@ -814,7 +845,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:179f105168f5baffc1ea28bb0b185823f3c36a385ad393f17ef8e1769a40640c",
             "locator": {
               "kind": "symbol",
@@ -830,7 +861,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396e55351708a8b2672451c1f8cf8f59e3aacb17",
+            "blob": "02a8c0e023552d3ffad2e2a7c1e1b1e60c22d84e",
             "content": "sha256:0aaf70bbebeb59c71454a460c15bde3f59432628fcc8338f49cc838a7013b7ae",
             "locator": {
               "kind": "symbol",

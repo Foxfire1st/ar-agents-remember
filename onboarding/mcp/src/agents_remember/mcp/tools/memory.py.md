@@ -36,7 +36,9 @@ Previews and actual operations retain their separate authority and dry-run seman
 The citation-fix adapter forwards optional `contract_path` unchanged to the application owner.
 That owner admits the ordinary leaf route or measured pre-baseline route. The application
 result and full-detail log retain scalar `admission`; the ordinary citation status whitelist
-does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow.
+does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow. For a legacy-format refusal,
+`_carry_legacy_refusal` additionally carries the central `code` and conversion `detail`
+into the public answer: a whole-result log alone does not tell the caller how to recover.
 
 - The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch. [9]
 
