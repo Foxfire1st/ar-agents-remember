@@ -13,11 +13,16 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_tool_response_conformance.py:225 (ROSTER_SIZE =)`.
-- Source comparison: `mcp/tests/test_tool_response_conformance.py:422 (def test_every_registered_model_is_strict_or_declared_flexible)`.
+- Source comparison: the current module declares ROSTER_SIZE=41, TOOL_MODULE_COUNT=20 and TOOL_HANDLER_COUNT=65; its source assertions compare populations rather than granting acceptance from numbers.
+- Source comparison: test_every_registered_model_is_strict_or_declared_flexible derives strict/flexible model sets; imports and compatibility rows do not enlarge the public roster.
 - Source comparison: `mcp/tests/test_tool_response_conformance.py:991 (declared = set(DispatchAgentResponse.model_fields))`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [21]
+
 
 ## Historical original card — preserved, not the current operative account
 

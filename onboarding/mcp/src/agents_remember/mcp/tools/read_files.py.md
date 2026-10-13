@@ -4,6 +4,10 @@
 
 [overview.md](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [6]
+
 ## Purpose
 
 `read_files.py` is the thin payload builder for the `read_ar_files` tool
@@ -14,16 +18,11 @@ Builds read_ar_files response payload through existing resolution and token owne
 
 ## Code Commentary
 
-`read_ar_files_payload(config, repo_id, files, refresh=False, *, task_context=None)` first derives
-the immutable call-local configuration through `task_scoped_mcp_config_for_reader`. It then calls
-`read_ar_files_tool`, where source/onboarding resolution remains, and wraps the dictionary in
-`_tool_payload("read_ar_files", ...)` for registered-model validation and token stamping. Task/enclosure
-admission belongs to its application owner; batch read, confinement, onboarding lookup, overview dedup
-and `read.packet` emission remain the existing reader owner's behavior.
+`read_ar_files_payload` derives call-local configuration through `task_scoped_mcp_config_for_reader`. Ordinary files are repository-relative strings, up to twenty. The receivable `refresh` sentinel is only a removed-argument refusal boundary: supplied true, false or null refuses `argument-removed`; the ordinary schema omits it. The builder passes the admitted leaf’s worktree group as `working_folder`, delegates naming to `read_ar_files_tool`, and validates/stamps through `_tool_payload`. The reader names existence, card state/counts and overview locations once per call; it carries no source, card or overview text and has no continuation. [1] [2] [3]
 
 ### Role Runtime and Scope
 
-Optional task_context is admitted to a call-local config with task_scoped_mcp_config_for_reader, then forwarded to read_ar_files_tool. Without context the original config is retained. Keep the existing thin-facade/token-stamping description, extending its signature and admission forwarding.
+Optional task_context is admitted to a call-local config, without mutating the shared configuration. `_working_folder` uses the admitted code checkout’s parent for caller-openable locations; absent task context keeps absolute locations. Task/enclosure authority stays with the admission owner.
 
 ## Invariants And Boundaries
 

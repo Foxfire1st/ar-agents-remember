@@ -4,16 +4,20 @@
 
 [tests route overview](overview.md)
 
+## Current source contract evidence
+
+- Diff answers are names/counts beside their whole report; integrity details remain marked domain-unit evidence. Source declarations describe these assertions, not execution or unconditional CODE acceptance. [14]
+
 ## Purpose
 
-Checks converted knowledge reads, bounded file diffs, index integrity and explicit legacy-format refusals.
+Checks converted knowledge reads, report-backed knowledge comparisons, index integrity and explicit legacy-format refusals.
 
 ## Code Commentary
 
 
-Public payload calls retain the bounded outcome and overflow contract (`resultKept: false` when overflowed). Displaced diff and integrity details are checked through explicitly marked domain-unit bodies of those same operations, not a retrieved pointer or a retained whole-result artifact. `response_tokens` measures delivered-answer width externally; the response itself no longer carries that count. Both short-root fitting answers and long-root overflow cases retain their distinct facts.
+The mounted diff assertions read the comparison from its report, not an inline patch body or `_diff_body`. At both forty long cards and nine hundred files, the ported threshold test uses `count_response_tokens` and `bound_for("knowledge_diff")`, asserts state `compared`, retains the full changed-file count and rejects an overflow/resultKept form. Every changed file is present in the report; one path narrows to its reported patch. Existing per-file patch caps and truncated flags remain report facts, not names of files left out of the answer. Integrity detail checks still use an explicitly marked domain-unit `_check_body`, not pointer retrieval or a claimed retained whole-result artifact.
 
-Current cases read a converted tree through its index; compare knowledge files and adjacent cards; name unknown paths, unheld records, directories and unknown revisions; and report omitted items within the read threshold. Separate cases compare an omitted after revision with the working tree and refuse an unconverted working tree. Retired records are not live selections, partial indexes stay incomplete, and unbuildable indexes return a refusal. The removed combined database-unchanged case is not current coverage; no test execution is asserted here.
+A small comparison names both trees, counts, a bounded decision-record list and its total beside the report. A named record has a repository-relative `knowledge/invariants/` path; its statement and the changed realization rationale are inspected in the report rather than delivered inline. Omitting the after revision compares the working tree, writes loose objects and leaves refs, HEAD and the Git index unchanged in the source assertions. Selectors, legacy-format refusals, retired-record selection, partial indexes and unbuildable-index refusals remain. The removed combined database-unchanged case is not current coverage. These are inspected source assertions, not test execution, an unconditional CODE verdict or an assertion that literal landed tails were preserved.
 
 ### Logic
 
@@ -34,7 +38,7 @@ None recorded.
 
 - `test_knowledge_diff_serves_the_git_diff_of_the_knowledge_files` owns the current boundary described above. [8]
 - `test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above. [9]
-- `test_knowledge_diff_answers_within_the_read_threshold_and_names_what_it_leaves_out` owns the current boundary described above. [10]
+- The report holds the whole forty-card/nine-hundred-file comparison with per-file caps; the ported threshold case measures both answers, retaining counts without overflow. [10]
 - `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above. [11]
 
 ### Docs References
@@ -60,4 +64,4 @@ No meaningful cross-repo references found: every case builds its own repository 
 
 No cross-repo boundary is crossed by this file.
 
-- Public diff and integrity outcomes are checked separately from marked domain-body details. [14]
+- Public diff outcomes name their whole report; integrity outcomes remain distinct from marked domain-unit details.

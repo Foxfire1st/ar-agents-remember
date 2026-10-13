@@ -4,12 +4,16 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current source has four shapes, 12 bare raisers, five always-answer pins and 17 test definitions.
+- Current declarations have four shapes, twelve bare-raiser pins, four always-answer pins and seventeen test definitions. STATEFUL_REFUSALS names knowledge_read, knowledge_diff, knowledge_integrity_check and read_ar_files; the last is driven with the removed object-entry form, not with a missing-path naming success. resolve_context is removed and worktree_enclosure_adopt is a bare-raiser pin for the outside-contract invocation. These are source counts and pins, not a freshly executed census.
 - Navigation oracle distinguishes available artifact, missing echo and no declared path.
 
 ### Superseded inventory
 
 - Pre-repair card claim: Card’s 67-tool/three-shape and eighteen-raiser census is obsolete. This is superseded archival wording, not a current prescription.
+
+### MIK-R109 stateful naming refusal
+
+The stateful axis asserts returned state=refused with nonempty refusalCode/refusalDetail, no delivered envelope fields, a readable whole-result log, and validation of that whole result under the registered model. The census object entry now drives read_ar_files into this arm. This test owns delivery-shape assertions, not all parameter migration cases or successful file naming.
 
 ### Source and authority bounds
 
@@ -18,6 +22,11 @@ The current source facts below replace the former operative inventory. The separ
 - Source comparison: `mcp/tests/test_tool_refusal_conformance.py:456-514,620-684`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [17]
+
 
 ## Historical original card — preserved, not the current operative account
 

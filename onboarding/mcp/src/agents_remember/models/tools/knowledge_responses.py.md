@@ -4,6 +4,10 @@
 
 [models route overview](../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
+
 ## Purpose
 
 Strict ToolResponse contracts for the three mounted knowledge operations: knowledge_read, knowledge_diff and knowledge_integrity_check. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
@@ -11,22 +15,18 @@ Strict ToolResponse contracts for the three mounted knowledge operations: knowle
 
 ### Logic
 
-KnowledgeReadResponse carries a named view or bounded page, its snapshot and completeness, continuation/page/threshold data, and the view payload itself. memoryTree and indexComplete state the selected memory tree and derived-index completeness; a partial index is never presented as a complete read. Optional proofs, currentness, families and routeChain carry their existing reader-owned blocks.
+KnowledgeReadResponse retains view/page/snapshot/completeness and opaque continuation, but its delivered rows are text ID, kind, computed state and memory-file/heading or line locations. `memoryCommit` and `memoryDirty` bind location provenance; worktree reads join relative files to the absolute memoryTree.memoryRoot, while no-worktree reads use absolute files with commit. The application still computes rich family-complete selection, proofs and currentness internally; projected names and compact derived status cross the mounted boundary, not record statements or proof facets. `report` is an admitted optional field, not evidence that a retired queue/worklist view is callable.
 
-Proofs state what anchored tests demonstrate, never that they passed. Currentness reports the states of returned obligations and family members at the caller's codeTreeId; no supplied code tree means realized obligations are unverifiable, and HEAD is not substituted. A currentness-step failure is reported beside the view rather than refusing it.
-
-A source_context path read is the family-complete leaf page. Its payload rows carry the path's invariants, containing-family headers and members, advertised families and route-chain families in declared order. families names the containing families on an invariant view; routeChain states the chain on a path refusal, while a page carries it within payload. Page and continuation fields preserve bounded reading and name an oversized indivisible row rather than claiming completeness.
-
-KnowledgeDiffResponse carries the bounded Git-tree diff of the selected knowledge files, with before/after revisions, threshold, complete flag and explicit leftOut facts. The diff groups file patches by record and source path. It carries no caller-supplied semantic effect labels, and neither infers an effect nor reads the trees through an index.
+KnowledgeDiffResponse holds before/after revisions and both compared trees, counts by kind, at most the list-bound `decisionRecords` and their total `decisionRecordCount`, plus a caller-readable whole-comparison report. Its strict declared fields contain no `threshold`, `complete`, `diff` or `leftOut`: neither patches nor a patch-overflow/omission body form is this response. The report retains the rich comparison for file/dashboard readers; no semantic effect label is inferred. This schema account does not itself claim an executed bound measurement.
 
 KnowledgeIntegrityCheckResponse carries the text-tree validator report against named memory bases and the paired code checkout: whole-report counts, per-rule counts and a bounded violations listing. Refusing violations are listed before report-only findings; violationsTruncated states an omitted listing without dropping whole-report totals. Validator ok describes these inputs, never a code or intent verdict. Optional worklistState and worklist report the leaf's persisted worklist when a leaf was named.
 
 ### Invariants And Boundaries
 
 - Each model is a strict ToolResponse with its own closed operation/state vocabulary and typed refusal fields; modeled refusals remain distinct from transport failure.
-- The read payload is the view's own JSON, not a second rendering or classification.
+- The mounted read is a mechanical naming projection of the existing view selection, not a second semantic classification; record text stays in the files.
 - Wire schema validation enforces declared fields; these models define no additional cross-field outcome validator.
-- knowledge_diff reports text-tree changes and omissions, not semantic effect judgments.
+- knowledge_diff names text-tree changes beside its whole comparison report, not carried patches/omissions or semantic effect judgments.
 - knowledge_integrity_check reports validator findings and applies no repair or publication.
 - Optional values are omitted by the inherited exclude_none rendering; unmeasured facts are not turned into measured zeroes.
 
@@ -34,6 +34,8 @@ KnowledgeIntegrityCheckResponse carries the text-tree validator report against n
 
 KnowledgeChangeResponse and KnowledgeProjectResponse, their registered tools and canonical-database write/projection handlers were retired. Old dataset diff/integrity response fields, supplied effect labels, detection-run selector fields and compatible are not current response fields. Earlier additive database-read field accounts describe the pre-retirement surface; current knowledge selections are memory trees.
 ## 260928-MIK-L05 The Optional `routeChain` Field And The Route-Chain Rows (MIK-R05)
+
+> Historical additive response account only: these earlier payload/proof/currentness/continuation descriptions do not authorize record text on the current mounted answer. The rich selection survives internally and paging remains, but rows and reference blocks are projected to names; database reads and `read_ar_files` publication continuations are not current capabilities.
 
 - **`routeChain`** (`dict[str, Any] | None = None`) is on a `registration_absent` refusal of a path read from a
   converted tree: the mechanical chain (`directory`, `links`, `derivation`, `state`, `families`) stating
@@ -47,6 +49,8 @@ KnowledgeChangeResponse and KnowledgeProjectResponse, their registered tools and
   unchanged.
 
 ## 260928-MIK-L01 The Leaf Read's Page And The Optional `families` Field (MIK-R01)
+
+> Historical additive response account only: these earlier payload/proof/currentness/continuation descriptions do not authorize record text on the current mounted answer. The rich selection survives internally and paging remains, but rows and reference blocks are projected to names; database reads and `read_ar_files` publication continuations are not current capabilities.
 
 A docstring paragraph names the family-complete leaf read, and the model gains one optional field.
 
@@ -62,6 +66,8 @@ A docstring paragraph names the family-complete leaf read, and the model gains o
 
 ## 260928-MIK-L28 The Optional `proofs` Field On A Read (MIK-R28 Rule 4)
 
+> Historical additive response account only: these earlier payload/proof/currentness/continuation descriptions do not authorize record text on the current mounted answer. The rich selection survives internally and paging remains, but rows and reference blocks are projected to names; database reads and `read_ar_files` publication continuations are not current capabilities.
+
 `KnowledgeReadResponse` gained `proofs: list[dict[str, Any]] | None = None`. An `invariant` or `family`
 read from a converted memory tree carries the `proves` entries of the invariant, or of every family member,
 each `{id, invariant, path, anchor, facet, sidecar}`. The field is absent for a database read and for the
@@ -72,6 +78,8 @@ other three views; an unknown subject also has no field, which is distinct from 
 - The module docstring states the boundary: a proof says what its test demonstrates, never that the test
   passed or that the invariant holds.
 ## 260928-MIK-L03 The Optional `currentness` Field On A Read (MIK-R03)
+
+> Historical additive response account only: these earlier payload/proof/currentness/continuation descriptions do not authorize record text on the current mounted answer. The rich selection survives internally and paging remains, but rows and reference blocks are projected to names; database reads and `read_ar_files` publication continuations are not current capabilities.
 
 `KnowledgeReadResponse` gained `currentness: dict[str, Any] | None = None`, and the module docstring a
 paragraph that is the field's description. A read from a converted memory tree carries the state of every
@@ -88,6 +96,8 @@ invariant the answer carries at the code tree named by `codeTreeId`: `codeTree`,
   so a stale invariant stays visible.
 
 ## 260928-MIK-L02 The Read Response States Its Page And Threshold (MIK-R02)
+
+> Historical additive response account only: these earlier payload/proof/currentness/continuation descriptions do not authorize record text on the current mounted answer. The rich selection survives internally and paging remains, but rows and reference blocks are projected to names; database reads and `read_ar_files` publication continuations are not current capabilities.
 
 `KnowledgeReadResponse.state` gains `"page"`, and the model gains two optional fields, `page` and
 `threshold`, beside a docstring paragraph that describes them.
@@ -115,6 +125,8 @@ invariant the answer carries at the code tree named by `codeTreeId`: `codeTree`,
   call's wire shape is unchanged.
 
 ## Evidence
+
+References to verbatim view payload, complete/leftOut diffs and pre-retirement database fields below are historical/internal witnesses only, not the current mounted shape. Present wire evidence is KnowledgeReadResponse provenance/naming fields, KnowledgeDiffResponse report fields and the naming projection. All test citations are fixture assertions, not execution in this review.
 
 ### Docs References
 
@@ -190,7 +202,7 @@ in the working candidate.
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [17]
 
 
-- The Git-tree diff response states exact revisions, completeness and omitted patch facts. [19]
+- The strict Git-tree diff response names revisions, trees, counts, bounded decision records and their total beside a report, without carried patch/completeness/omission fields. [19]
 
 
 - The integrity response carries the text-tree validator report. [20]

@@ -1,19 +1,85 @@
 {
   "path": "mcp/src/agents_remember/application/context_packet.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8189a91f17a9062872de4283e541094ec1484f70",
+        "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "slim_context_packet"
+        }
+      },
+      "id": "RLZ-JFEY5E",
+      "invariant": "INV-E2WDP2",
+      "origin": {
+        "handoffEntry": "L109-source-slim-orientation",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This projection constructs the compact agent answer from the retained full context rather than deleting the internal builder.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`ContextPacketV2` and nested summary models define the response shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
             "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
             "locator": {
               "kind": "symbol",
               "name": "ContextPacketV2"
             },
             "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Slim orientation factors shared roots and optional task/actions/build/pair fields without rich policy blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
+            "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "slim_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Rich V2 assembly remains internal and optionally includes index facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
+            "content": "sha256:a72215e0ba659cc1a37ceb35e303ed6e5f1bd2cf0b0c3226d6320e536c6aa097",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
+            "content": "sha256:e628a891ca9f23b727bc251eb06d337fc72a1926ea6ab40775c9eaa84c0464f1",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -136,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
             "content": "sha256:4d2a3b44d5eca0a3f8a6e952cb503bbbd7ba32a0f7aa43d4ce2faac56f0dd03a",
             "locator": {
               "kind": "symbol",

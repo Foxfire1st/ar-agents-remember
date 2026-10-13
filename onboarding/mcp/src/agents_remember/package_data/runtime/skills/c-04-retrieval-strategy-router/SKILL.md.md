@@ -4,6 +4,10 @@
 
 [overview.md](../../../../../../../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [16]
+
 ## Purpose
 
 The shipped retrieval router selects the missing-context contract first: Semantics for
@@ -12,23 +16,13 @@ for hidden repository obligations. It uses harness-native search, not retired pr
 
 ## Code Commentary
 
-Semantics searches onboarding/overviews; Relationship searches configured repository
-code. Hits are route hints and require bounded source confirmation. Intent pairs source
-and deterministic onboarding through `read_ar_files`, including governing overviews and
-published knowledge, before source decisions. Native reads remain edit preconditions
-once building starts, not substitutes for the research paired-read contract.
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
-Knowledge is authored text under `knowledge/` and onboarding sidecars, indexed through
-a disposable derived cache. There is no knowledge database publication destination.
-Taskless reads use the canonical memory tree; leaf reads use its contract memory worktree,
-with no fallback. Recorded, legacy-format and named seed-absence/refusal states are
-separate observations. A bounded page is not a smaller scope.
+For the current mounted surface, discovery hints are confirmed by file reads, not treated as proof. `read_ar_files` accepts up to twenty string paths and names existence, governing card location, counts/states, action-asking record headings and nearest-first overview locations once per call. It carries no document text or continuation. Ask it which cards govern, then read source/cards/overviews with native tools before and after the build decision. Removed refresh and object-form paths refuse `argument-removed`.
 
-Family-complete reads return own invariant/member entries, containing families and
-remaining members, advertised additional families, then ancestor-routed chain families.
-Follow actual continuation through `knowledge_read` using `memoryRoot`, returned view and
-opaque token; do not supply old databasePath/repositoryId arguments or treat a cache path
-as the memory root. Continue until the returned terminal page confirms completeness.
+Knowledge remains authored text under `knowledge/` and onboarding sidecars, indexed through a disposable derived cache, not a database publication destination. Taskless reads use canonical memory; admitted leaf reads use its contract memory worktree, with no fallback. `knowledge_read` takes memoryRoot and one of source_context/invariant/family, names records by text ID/kind/computed state/file location, and keeps short derived status plus provenance. Open the named files with native tools.
+
+The rich internal path selection remains family-complete (own obligations/entries, containing families/members, advertised and ancestor-routed families), but mounted rows are names with kind/role/memberOf where applicable, not statements/guarantees/facets. Only knowledge_read pages continue; read_ar_files has none. Follow its actual opaque continuation using memoryRoot and returned view, not databasePath/repositoryId, until it is absent.
 
 Generated route indexes give child routes, file-card coverage and hot-path hints. Absence
 from `coveredFiles` skips a card probe only; source reading remains permitted. Neither a
@@ -42,7 +36,7 @@ semantic hit, index membership nor an instruction request confers runtime author
 
 The following text is the prior onboarding account, retained for provenance.
 It is not current setup, query, publication, or tool-call guidance; the current
-contract above replaces its provider/tool/database and hook generalizations.
+contract above replaces its provider/tool/database, document-carrying, native-read-reservation and continuation generalizations.
 
 
 
@@ -53,6 +47,8 @@ onboarding/source confirmation before broad source reads.
 ## Code Commentary
 
 ### Logic
+
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
 The skill defines three retrieval substrates. `Semantics` is for fuzzy concepts
 whose route, structure, or source location is unknown and prefers GrepAI over
@@ -133,6 +129,8 @@ catalog for the full command set and synthetic example outputs.
 
 ### Conventions
 
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
+
 Use MCP provider tools for GrepAI so the server supplies provider authority and
 the provider-owned workspace environment:
 
@@ -155,6 +153,8 @@ Treat CGC output as discovery and confirm selected anchors with bounded source
 reads before editing.
 
 ### Invariants And Boundaries
+
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
 Provider output is never final proof. `c-04-retrieval-strategy-router` skill must confirm selected candidates with
 source and/or verified onboarding before answering or editing. If optional
@@ -181,11 +181,17 @@ their refusal codes, and the continuation limitation as a limitation (for a data
 
 ### Todos
 
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
+
 None.
 
 ## Evidence
 
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
+
 ### Docs References
+
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
 No external documentation is cited here. The skill is a repository-local
 retrieval contract over installed provider tooling and durable onboarding.
@@ -193,6 +199,8 @@ retrieval contract over installed provider tooling and durable onboarding.
 No relevant external documentation found.
 
 ### Repo-Internal References
+
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
 - `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. [1]
 - **The Intent bullet now names the published-intent half: the same `read_ar_files` call carries the invariants a previous task already recorded about the requested paths, at their exact snapshot and without needing a task.** [2]
@@ -210,6 +218,8 @@ No relevant external documentation found.
 - The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. [14]
 
 ### Cross-Repo References
+
+> Historical retrieval-owner scope only: paired source/card/publication bodies, reserved-after-build native reads, database/provider call examples, served_earlier and read_ar_files continuations below are not current tool guidance. Current tools name locations, native tools read content, and only knowledge_read has paging; catalog examples grant no callable provider or execution claim.
 
 The CGC examples in the source docs are synthetic response-shape illustrations.
 They do not contain private sibling repository names, symbols, paths, or code.

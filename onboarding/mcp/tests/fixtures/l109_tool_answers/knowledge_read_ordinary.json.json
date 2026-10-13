@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This static answer records the naming/compact fields and its own epoch qualifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddcc374879f71f71a40740f6aa47f8225ea50a57",
+            "content": "sha256:54790b4b9a50ec1cf9811a7aa8ec2423da8aca6686937da285e77290a5716dbb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

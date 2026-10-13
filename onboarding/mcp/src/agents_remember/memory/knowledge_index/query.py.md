@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The answers one index gives for one tree (MIK-R23 rule 3).** A `KnowledgeIndex` is one opened index file. Every lookup is a `SELECT` on a read-only connection, and every answer is an `Answer[T]` carrying the index's `IndexState` — the tree key it was built for, `complete` or `partial`, whether the tree is converted, and the files that failed — so a caller cannot present an answer from a partial index as complete without discarding that field.
+**The answers one index gives for one tree (MIK-R23 rule 3).** A `KnowledgeIndex` is one opened index file. Every lookup is a SELECT on a read-only connection. Structured knowledge lookups return `Answer[T]` carrying the index state; location/reverse-map helpers return `str | None` or dictionaries inside that already selected index and do not independently attach `IndexState`. A partial-index value must not be presented as complete.
 
 ## Code Commentary
 
@@ -85,6 +85,10 @@ The unused `outgoing_links` the first version added was removed (review F12). Th
 - The sibling-prefix, own-level, retired-count and route-link cases. [10]
 
 
+## Declared locations for naming answers
+
+`entry_sidecar` names the file declaring one indexed entry; `entry_sidecars`, `record_paths` and `uuid_text_ids` provide the bulk entry-file, record-file and projected-UUID maps for one answer. These SELECT-only lookups add location resolution, not another canonical store. An indexed declaration outranks a text mention elsewhere; scanning is only the unindexed fallback.
+
 ## Evidence
 
 ### Docs References
@@ -101,9 +105,12 @@ No configured live documentation source was available for this pass.
 
 The index handle, the answer types and the lookups.
 
-- The lookup list and the rule that every answer carries the index state. [11]
+- Structured Answer results carry IndexState; location and reverse helpers return scalar or map values inside the selected index, not a universal Answer wrapper. [11]
+
 - Every record ID of one kind, sorted: the reviewer's per-side currentness (MIK-R25) and, since MIK-R29, the reader's `records_of_kind`. [12]
-- The state every answer carries, and the answer wrapper. [13]
+
+- IndexState and Answer wrap structured lookup results, not scalar location or reverse maps. [13]
+
 
 - Opening refuses another format or another tree's key. [14]
 
@@ -120,3 +127,5 @@ The index handle, the answer types and the lookups.
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
 No cross-repo boundary is crossed by this file.
+
+- SELECT-only declaration and reverse maps support naming without Answer wrappers. [21]

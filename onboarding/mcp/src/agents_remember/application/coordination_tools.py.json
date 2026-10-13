@@ -96,6 +96,43 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63ae88194f6139bbf645a8124da15478ae62deb3",
+            "content": "sha256:b7eba9a5a62f32e8f3ebbf067c59dccd87ba3858e7aad7744485128c679f0e30",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
+            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

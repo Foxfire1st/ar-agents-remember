@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Naming without source/card/record text requires this explicit boundary or locator contract; otherwise callers can use removed carrier arguments, attach a governing statement to the wrong card section, or treat an unresolved record location as verified."
+  },
+  "applicability": "The mounted knowledge_read supported named-row projections on the selected converted knowledge epoch.",
+  "conditions": [
+    "Canonical configured or per-call admitted reader roots and the selected immutable source/memory epoch remain authoritative."
+  ],
+  "exclusions": [
+    "Source inspection and producer fixture evidence do not establish fresh runtime execution, current CODE acceptance, metadata-only acceptance, or a semantic verdict.",
+    "Private/dashboard/CLI full-result composition is not replaced by mounted naming."
+  ],
+  "id": "INV-AE005N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L109-A8-verify2-knowledge-batch.log (projection/route/paging suites); ReadOnlyMarkTests in L109-A8-verify34-answers-descriptions-marks.log"
+      ],
+      "path": "l109e-durable-producer-native-projection.json"
+    },
+    "handoffEntry": "MIK-R109@v1 §2 knowledge-projection",
+    "leaf": "260928-MIK-L109",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Answer rows carry ID, kind, computed state and location with no record text: member rows name the member record with the family beside it, declarations win over mentions, header references name families, and failed walks fall back to unverifiable.",
+  "status": "proposed",
+  "supersedes": []
+}

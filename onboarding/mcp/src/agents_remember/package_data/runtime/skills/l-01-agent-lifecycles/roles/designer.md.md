@@ -25,6 +25,16 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [2]
+
+
+## Current naming and source qualification
+
+Route-map pillars/indexes are read with source in the worktrees; read_ar_files names their governing cards and record states, not their text. Intent confirmation comes from opening the named files natively.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

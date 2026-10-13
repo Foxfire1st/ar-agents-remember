@@ -19,6 +19,8 @@ This section supersedes contrary earlier prose only for these changed seams; ret
 
 ## Purpose
 
+At the earlier L109 sync3 epoch, the source-owner repair closed the prior consumers array before the L109 artifact table; parent stdlib TOML parsing counted 101 artifacts on that exact pair. That is a dated source observation, not a current catalog total or execution/certification result. Metadata and consumer membership remain declarations.
+
 The machine-readable inventory declares durable test-evidence ownership and replacement: shared support, fixtures, recordings, recording generators and migration proofs. Each governed artifact has a row for its path, kind, authority, owner label, category, fidelity, cadence, source/version, introduction, lifetime, replacement and consumer scope. Contract rows bind stable identities to an existing owner file and exact executable evidence node. load_evidence_inventory in mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py validates schema, declarations, source-derived consumers, node selectors and governed-file coverage. These declarations are not execution proof.
 
 `evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of six artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
@@ -47,6 +49,11 @@ The existing Node-profile package-lock.json artifact declares test_sync_reapply_
 The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_envelope.py` among its exact consumers. This is the transitive dependency through `test_tool_answer_table`: the refusal suite imports `ROW_CASE_FRAMEWORK_KEYS` from that module, which imports `L110_ROW_DATA` from the shared support. Registration adds no artifact or replacement contract and proves no test invocation or acceptance. Other consumers and all non-consumer lifecycle fields remain unchanged.
 
 ## Code Commentary
+
+The current artifact paths and every exact consumer list are canonically sorted. The eight L109 fixture blocks retain their identities and nonconsumer fields. The retained L109 consumer edges declare the diff-report, naming-projection and paging modules. The current refusal suite is also declared on existing reader fixtures and shared supports, through its answer-table import. These memberships add no artifact and certify no invocation.
+
+- The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; the repaired catalog declares101artifacts with canonically ordered paths and exact consumers. The refusal suite is also declared on existing reader fixtures and shared supports. No artifact or replacement identity is added; source accounting proves no invocation. [271]
+
 
 The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance.
 
@@ -181,6 +188,8 @@ The unit-regression lane declares test_f07_missing_lock_cursor.py, test_f08_regi
 The catalog declares the grant, dashboard, direct-leaf integration/role-start and no-grant parity modules as consumers of its fixture/support rows. Node lockfile membership is syntactic dependency accounting and does not establish that this particular fixture was read. Membership and lifetime metadata establish declared ownership, never that these cases or a live host ran here; retained numeric history is not a current total.
 
 ## Evidence
+
+Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 - The schema version and the large-fixture threshold at the top of the file. [1]
@@ -535,7 +544,7 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The current catalog declares mcp/tests/test_knowledge_route_chain.py on 7 exact artifact consumer lists. [241]
+- The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists. [241]
 
 
 
@@ -648,15 +657,13 @@ Reference describes converted-drift consumer declarations. References and descri
 
 ## L112 post-L74 correspondence for parked comparison references
 
-Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The current working catalog declares 13 contract rows and 93 artifact rows; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
+Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The earlier 13-contract/93-artifact observation is historical. The repaired current catalog declares 13 contract rows and 101 artifact rows; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
 
 ## Current contract evidence
 
 
 The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance. The complete source block is included in the grouped role-agent/role-message declaration evidence [267].
 
-- The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; this adds no artifact or replacement contract and certifies no invocation. [271]
+
 
 - The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution. [272]
-
-

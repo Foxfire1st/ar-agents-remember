@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
             "content": "sha256:0235cc2a3f435dc6f95d5ad9ebf7f065f4a49503a944cbb4daa08a5d0f6e3625",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
             "content": "sha256:89e912b951809361ce333976f5bfb4f63c79932b6f51aff8d1b2e72cf1b98475",
             "locator": {
               "kind": "symbol",
@@ -124,14 +124,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "9675a53c5aa832c71b0b693382dbb234252955b6",
             "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
             "locator": {
-              "end": 319,
+              "end": 356,
               "kind": "line_range",
-              "start": 319
+              "start": 356
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
+            "content": "sha256:f50ea9ab4f9bc5c2493584a79295efea67f4bf7abb1aff20182396406fb5890d",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "test"
         }
@@ -190,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
             "content": "sha256:87fc319ca947b359f418d49e1ac324e5b8dcf4dbcd8cc7f2c8bfcd3e90c21bf3",
             "locator": {
               "kind": "symbol",
@@ -206,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
             "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
             "locator": {
               "kind": "symbol",
@@ -238,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
+            "blob": "571b44858d62eee049c4d206e940abdca526df21",
             "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
             "locator": {
               "kind": "symbol",

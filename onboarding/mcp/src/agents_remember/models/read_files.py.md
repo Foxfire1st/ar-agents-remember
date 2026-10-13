@@ -2,9 +2,21 @@
 
 ## Governing Overview
 
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
 [overview.md](overview.md)
 
+## Current naming-reader contract — MIK-R109
+
+`NamedRecord` names only action-asking records by ID, kind, state and heading (with disclosed titleFallback). `NamedFile` names source existence, governing card location, card state, per-state counts and action records; a confined-row refusal carries unknown existence and a reason, without dropping valid siblings. `ReadArFilesResponse` is strict, `state` is named/refused, `codeState`/`codeTree` say the observed code and `memoryState` says whether memory can be named. Governing overview locations are once per call, nearest first. No source/onboarding/overview text, sidecar/reference document, published_intent block, session dedup or continuation is in this model. Token stamping remains at the shared choke. The paired-read paragraphs below are historical only.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
 ## Purpose
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 `read_files.py` defines the AR-owned, strict response contract for the
 `read_ar_files` tool (slice 07): one batch of paired source+onboarding reads plus
@@ -13,6 +25,8 @@ the auto-attached overview front-door deduplicated by lifecycle and code/onboard
 Defines the strict paired source/onboarding read response.
 
 ## Code Commentary
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 `FileReadStatus` is the onboarding-lookup outcome Literal
 (`found | missing | disabled | unsupported | not_requested`) — the *onboarding*
@@ -65,9 +79,13 @@ carries it as a dict rather than re-declaring a second contract for the same rea
 
 ### Role Runtime and Scope
 
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
 The documented front-door dedup extent is lifecycle plus code/onboarding root, matching the application change. The strict response fields, independent source/status relationship, published-intent block and shared token choke point remain unchanged. Preserve the existing field explanations; update only the former lifecycle-only dedup sentence.
 
 ## Invariants And Boundaries
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 - STRICT AR-owned shape: both models forbid extra fields. `ReadArFilesResponse` is
   registered in `tool_registry.PUBLIC_TOOL_RESPONSE_MODELS` and exercised by the
@@ -86,7 +104,11 @@ The documented front-door dedup extent is lifecycle plus code/onboarding root, m
 
 ## Evidence
 
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
 ### Repo-Internal References
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 - The strict response base and `ToolResponse`. [1]
 - **The new field, and the owning module that decides its shape.** [2]
@@ -95,5 +117,7 @@ The documented front-door dedup extent is lifecycle plus code/onboarding root, m
 - The registry mapping `read_ar_files` to this response model (L120). [5]
 
 ### Runtime Source References
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 - Frozen implementation of ReadArFilesResponse supporting the stated file behavior. [6]

@@ -63,7 +63,7 @@ The assignments (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py
 | `status --porcelain` (L102) | `GIT_LOCAL_TIMEOUT_SECONDS` (300) | **not** constant time — it stats the whole work tree |
 
 The metadata band exists for exactly these reads because they sit under
-`resolve_context`, which runs on essentially every tool call: on the local
+`context_packet` assembly (the mounted packet is a separate slim projection): on the local
 default all four probes could hold one MCP call for twenty minutes behind a
 stalled mount or a held index lock, with no cancellation path for the client.
 `kernel/coordination_context/cross_repo.py` runs `branch --show-current` and
@@ -122,3 +122,5 @@ The shared git runner and the context-packet consumer are the direct evidence.
 code repos and external-memory repos, but its contract is local to this file.
 
 No meaningful cross-repo references found.
+
+- Metadata facts use short bounds and feed context assembly rather than a removed resolver tool. [7]

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/read_file_cards.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53e5f69269f94cc8d5161d00d731201b7d86eaee",
+        "content": "sha256:f02fc42dd92c8dbdba8280f3ebf5de536ac2fd493b5328c1fba1812b5a26b791",
+        "locator": {
+          "kind": "symbol",
+          "name": "card_records_for_path"
+        }
+      },
+      "id": "RLZ-1WMEJK",
+      "invariant": "INV-3NBM6H",
+      "origin": {
+        "handoffEntry": "MIK-R109@v1 §1 card-naming",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This resolves a path's records to their card headings the clause requires: per-anchor section scoring with honest title-fallback marking.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Card selection preserves computed states and partial-index qualifications.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e5f69269f94cc8d5161d00d731201b7d86eaee",
+            "content": "sha256:f02fc42dd92c8dbdba8280f3ebf5de536ac2fd493b5328c1fba1812b5a26b791",
+            "locator": {
+              "kind": "symbol",
+              "name": "card_records_for_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Heading resolution reports an actual title fallback when no section scores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e5f69269f94cc8d5161d00d731201b7d86eaee",
+            "content": "sha256:d60c150696669ba044ac29f03b01ce23b8d4f9e887bad851f0a7d2f12fa8f08f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_section"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recorded content, blob and path identity determine section priority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e5f69269f94cc8d5161d00d731201b7d86eaee",
+            "content": "sha256:9ea6fb3d0af44768476f2bc305c7f276b20335467abc33e5e0f9deee377395b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_section_score"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

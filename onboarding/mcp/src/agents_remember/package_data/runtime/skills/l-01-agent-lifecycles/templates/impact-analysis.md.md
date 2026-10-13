@@ -1,5 +1,13 @@
 # l-01-agent-lifecycles/templates/impact-analysis.md
 
+## Current naming and source qualification
+
+Evidence Inventory records read_ar_files namings (IDs/cards) and the native opens that follow; naming results are not source/onboarding text or independent proof of a collision/regression finding.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [4]
+
 ## Purpose
 
 Packaged runtime copy of the bounded impact-analysis report template. The canonical template owns

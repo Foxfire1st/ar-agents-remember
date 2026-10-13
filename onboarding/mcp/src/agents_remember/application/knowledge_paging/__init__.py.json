@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67e38141462a005c3f1c11cc524db2804e99b0de",
+            "blob": "9971a9a20ea8939e5551d9ebc3877799e6fad18a",
             "content": "sha256:fb7d5c05c20e988d4b65538fb47e3b021c3bfdc18145f8ce3a33416371daadd4",
             "locator": {
               "end": 30,
@@ -30,6 +30,21 @@
               "end": 55,
               "kind": "line_range",
               "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9971a9a20ea8939e5551d9ebc3877799e6fad18a",
+            "content": "sha256:6654b4b41f366db768a3528a266631cf5f368a55ac9039ec1e7bc1c8175ad99c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

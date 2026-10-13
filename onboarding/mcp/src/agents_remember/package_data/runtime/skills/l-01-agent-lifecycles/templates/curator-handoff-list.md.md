@@ -11,6 +11,10 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 [mcp route overview](../../../../../../../overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [19]
+
 ## Purpose
 
 Packaged runtime copy of the canonical skills/l-01-agent-lifecycles/templates/curator-handoff-list.md. It is synchronized by the existing skill propagation owner and introduces no independent doctrine.
@@ -98,7 +102,7 @@ evidence names a test, a test ID `path::name` or a path plus symbol `path -k nam
 `needs_facet` offers the statement only as a draft while the curator authors the facet: what this test
 demonstrates, not the invariant's statement. A test file named without a test in it is `unresolvable`. A
 new bullet, **"Proofs are shown and counted (MIK-R28)"**, tells the curator that `knowledge_read`'s
-`invariant` and `family` views of a converted tree return the proofs, that the checklist lists the
+`invariant` and `family` views of a converted tree name proofs by ID, kind, state and location; the proof files are opened natively, that the checklist lists the
 invariants without any proof as information and not as a gate, and that a curator pass turns a migrated
 record's "Evidence: …" text (`origin.handoff`) into proofs through `proofs`, with an authored facet. The
 same text reaches the package copy and the eight harness starter copies through `sync-skills.py`.

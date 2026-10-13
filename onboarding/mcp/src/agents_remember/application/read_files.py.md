@@ -4,6 +4,18 @@
 
 [overview.md](overview.md)
 
+## Current operative account — MIK-R109
+
+`read_ar_files_tool` names governing knowledge for one to `READ_AR_FILES_MAX_PATHS` (20) repository-relative path strings. It resolves admitted context once, measures record states at the code checkout's HEAD tree, and returns per-path existence, a readable governing card location or none, state counts/card state and bounded action-asking record names/headings. Source text, card text, sidecar bodies and overview text never leave this answer. Missing/unconverted memory names no card; unavailable HEAD leaves states unmeasured. A confined outside path is refused in its row without losing valid siblings. Existing sidecar storage and authoritative route-index decisions remain; overview locations are deduplicated once per call, deeper-first and deterministic. There is no published_intent payload, source-range parser, refresh/reset-marker consumer, served ledger or continuation. Ambient read.packet emission still carries facts only and zero content bytes. Removed refresh is refused by the payload boundary, while object/non-string entries are refused here with argument-removed.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [9]
+
+## Historical original card — all remaining original prose and evidence are non-operative
+
+The complete original account below, including Purpose, Commentary, invariants, dated notes and evidence captions, is retained only for custody. It grants no current callable tool, inline-text result, session deduplication, database read or execution acceptance.
+
 ## Purpose
 
 `read_files.py` is the application entry point behind the `read_ar_files` MCP tool (slice 07).

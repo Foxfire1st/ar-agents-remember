@@ -185,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
             "content": "sha256:42f22a52bc23231200bab37cd394f75fd4c8cac97f90ec086cac1ffea41c7de0",
             "locator": {
               "kind": "symbol",
@@ -265,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
             "content": "sha256:d508d6891a52082aa93efcb1f2e6f0c763d6bdef112b0b7bfa352d4941c1e5f3",
             "locator": {
               "kind": "symbol",
@@ -276,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
             "content": "sha256:d1757747966b5958b8fddc6f7b0917bf56b35d394574d00a6d0aeffe8735f175",
             "locator": {
               "kind": "symbol",
@@ -292,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
             "content": "sha256:9ec38008dbe37f6963594f3b765bfd7237a7cfd3e7406ae97cda89d48b149956",
             "locator": {
               "kind": "symbol",
@@ -335,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e78fa5281fec75c12bf1a6de6f95d2f7ecceaf6",
+            "blob": "2a8c53237f25ae65f015f93e2d11f1f80575b000",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 144,
+              "end": 146,
               "kind": "line_range",
-              "start": 144
+              "start": 146
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -349,12 +349,12 @@
       ]
     },
     "38": {
-      "note": "Overflow read tails use marked domain-unit rows, not retained pointer retrieval.",
+      "note": "The public leaf-tail premise measures a within-bound text-free page with continuation; rich domain-unit rows preserve selection/continued-family identities, not pointer retrieval or an execution verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:34d4a9a58c267c33a31c8754e32c2c671a9f7dd67b99dedbaebd95b784a3fa8a",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
             "locator": {
               "kind": "file"
             }

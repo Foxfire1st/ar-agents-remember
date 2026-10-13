@@ -4,11 +4,17 @@
 
 [overview.md](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [17]
+
 ## Purpose
 
-`context_packet.py` defines `ContextPacketV2`, the compact startup/bootstrap response contract for `context_packet`.
+`context_packet.py` defines the mounted `SlimContextPacket` v3 naming/orientation answer and retains `ContextPacketV2` as the whole-result contract. The slim answer holds roots, optional task/master, needed action lines, serving build and pair commits; it does not carry V2 provider/settings/freshness blocks.
 
 ## Code Commentary
+
+The V2 nested-object account below describes the retained whole result, not what leaves the mounted tool. `SlimRoots` names code/memory/enclosure/rendered task document; `SlimTask` names ID/master; `SlimPair` names code/memory commits. `SlimContextPacket.contextPacketVersion` is 3. Optional absent facts stay omitted; its declaration does not itself measure the ordinary under-600-token requirement.
 
 The model separates repository Git facts, resolved paths, memory/storage facts, worktree summary, provider summary, and drift summary into explicit nested objects. `ContextPacketV2` fixes `contextPacketVersion` to `2` and carries a diagnostics hint pointing agents at `provider_diagnostics` for raw provider details.
 
@@ -19,6 +25,8 @@ The same value must mean the same thing on every field of one response: `memory.
 `FreshnessSummary` is the opt-in branch-freshness section: `status` is `checked`/`not-checked`, with optional `BranchFreshness` blocks for the code and memory repos. `ContextPacketV2.worktree` is a `WorktreeSummary`, constructed directly by `application.worktree_status.worktree_status_packet`, not validated from a dict. `ContextPacketV2.drift` is `DriftSummary`, which carries an `error` field so `include_drift=true` against a repo with no onboarding root reports why instead of raising.
 
 ## Evidence
+
+The V2 references below witness the retained rich model/producer, not the current mounted packet. Current answer evidence must also cite SlimContextPacket and the registry’s slim mapping; no executor or token measurement was run here.
 
 
 - ContextPacketV2 carries the nested packet objects; RepoSummary, BranchFreshness and MemorySummary use vocabularies imported from the owning producers. [7]

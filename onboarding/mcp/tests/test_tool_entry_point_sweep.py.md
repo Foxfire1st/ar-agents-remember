@@ -10,6 +10,12 @@ The current source facts below replace the former operative inventory. The separ
 - UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
 - The benign invocation census includes role_start_set and native retire_child under the same roster-equality and envelope checks. Fixture caller/no-target refusals do not prove a bound Manager set or successful retirement.
 
+### MIK-R109 read-only annotation assertions
+
+ReadOnlyMarkTests asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
+
+The ordinary-file, Git-metadata and non-index-runtime controls write probe files directly and assert that the comparison oracle notices them; they do not inject a writing registered read handler. The requested context-packet fetch case asserts a false mark and FETCH_HEAD creation. These are source assertions, not executions performed here or a universal no-write theorem.
+
 ### Source and authority bounds
 
 - Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:117-168,192`.
@@ -17,6 +23,11 @@ The current source facts below replace the former operative inventory. The separ
 - Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1013-1092`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [55]
+
 
 ## Historical original card — preserved, not the current operative account
 

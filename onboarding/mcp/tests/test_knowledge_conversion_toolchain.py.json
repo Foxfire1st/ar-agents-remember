@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "blob": "195b59dbc96918176058f244c3c9959dd518a4b3",
             "content": "sha256:e614d2725b13a0030c62f9bd39a58f4b917cbad3a5d7c6b43970c9ef14aa15c4",
             "locator": {
               "kind": "symbol",
@@ -99,15 +99,42 @@
       ]
     },
     "15": {
-      "note": "Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption.",
+      "note": "Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "blob": "195b59dbc96918176058f244c3c9959dd518a4b3",
+            "content": "sha256:199c159305dd40c64f5ead95571f0cc126093725ee93ea01f80ba387a7bfeb30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_ar_files_names_the_converted_records_without_carrying_them"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "195b59dbc96918176058f244c3c9959dd518a4b3",
             "content": "sha256:32d9231fec3a9ca3b9077d2a2c59426f245998ae969fecc2a6dc104827ca5f4a",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_without_a_baseline_converts_in_place_then_adopts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The prepared-closeout source case checks its quality-phase converted comparison base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "195b59dbc96918176058f244c3c9959dd518a4b3",
+            "content": "sha256:071b4a6214bc00c1445f693c3b4183e4083ee59389fc9a575e5d5f6caf6159b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_prepared_closeout_hands_its_quality_phase_the_converted_base"
             }
           },
           "kind": "test"
@@ -183,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "655d9886a2c781ae7a462b51ccfef85a73057a1e",
+            "blob": "2a8c53237f25ae65f015f93e2d11f1f80575b000",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
-              "end": 124,
+              "end": 125,
               "kind": "line_range",
-              "start": 124
+              "start": 125
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -217,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a71d3c3aa0daa39bdbbaac412dd87bb61abe0c9d",
+            "blob": "195b59dbc96918176058f244c3c9959dd518a4b3",
             "content": "sha256:2d7823696a9b555e9ce97a1b24c2add26a4d60d10295f69dce40a901707ce83d",
             "locator": {
               "kind": "symbol",

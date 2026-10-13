@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Agents otherwise mistake omitted rich policy/configuration fields for absent authority or a compact orientation answer for acceptance."
+  },
+  "applicability": "Mounted context_packet agent orientation.",
+  "conditions": [
+    "The full source-bound builder and admitted reader task scope supply the projection."
+  ],
+  "exclusions": [
+    "Inferring settings, policy, permissions or code/memory acceptance from compact fields.",
+    "Changing CLI/dashboard rich context computation.",
+    "Claiming a new universal root-length/token execution result from historical producer fixtures."
+  ],
+  "id": "INV-E2WDP2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l109e-helper-epoch-source-deltas.json; current source-owner cards and the exact successor native plan"
+      ],
+      "path": "l109e-source-contracts.json"
+    },
+    "handoffEntry": "L109-source-slim-orientation",
+    "leaf": "260928-MIK-L109",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Mounted context_packet gives version3 roots, task/actions, build and pair orientation; it does not carry source/card/overview/record text or replace the retained full internal context and source-bound settings/policy authority.",
+  "status": "proposed",
+  "supersedes": []
+}

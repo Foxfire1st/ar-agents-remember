@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
-        "content": "sha256:9b5e86f4b8ae371a8083b1657da4e7b6ef2c81cad98ae7b123d61fecc9766dc7",
+        "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+        "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
         "locator": {
           "kind": "file"
         }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -114,6 +114,21 @@
               "end": 60,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

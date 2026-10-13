@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/mcp/read_only.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
+        "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1G500X",
+      "invariant": "INV-QCMCJX",
+      "origin": {
+        "handoffEntry": "L109-source-read-only-annotations",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "The central classifier supplies the disjoint declared mark lists and refuses missing classifications.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The explicit partition covers registered reads and mutating capabilities.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
+            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unknown registered name fails closed instead of receiving a default mark.\n\nAnchor: `read_only_hint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
+            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Annotations are applied after registrars from the same partition.\n\nAnchor: `apply_read_only_marks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
+            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

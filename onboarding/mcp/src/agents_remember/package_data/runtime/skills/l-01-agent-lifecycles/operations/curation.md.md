@@ -20,6 +20,14 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current naming and source qualification
+
+Name immutable baseline/candidate records with scoped knowledge_read, open the named files natively, and read the full knowledge_diff report before semantic changes. Family readback follows the same name-then-open route.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
+
 ## Purpose
 
 Reconcile current intent, ruled change intent and implemented reality, maintain affected onboarding, and author justified knowledge through the existing admitted writer.
@@ -28,7 +36,7 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
 
-On a native Paseo admission, read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use `arMcpContext.readerArguments` and actual schemas. `task_context` carries the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+On an AR-launched Paseo capsule, use the exact supplied taskDocReadArgs on agents-remember-task (extensionless slug), then open the canonical JSON at returned docPath with native file tools. Use `arMcpContext.readerArguments` and actual schemas. `task_context` carries the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
 MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 

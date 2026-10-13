@@ -67,11 +67,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4245ae0dec5940e62c5982d6c6889ac5d0111f53",
+            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
             "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live installation response is flexible and retains reportPath and host data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
+            "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
+            "content": "sha256:5ff1ff6ef8b7747d30d43a705f0821d0f3bbd6719483aa94e0427fe74d1c42a4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

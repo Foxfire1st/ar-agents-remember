@@ -2,22 +2,42 @@
 
 ## Current operative account — MIK-R112 after L74 sync
 
-`PUBLIC_TOOLS` is the one cycle-free literal owner, currently42 unique names in the working source, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple still ends knowledge_read, knowledge_diff and knowledge_integrity_check; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child` and `direct_execution_grant`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
+`PUBLIC_TOOLS` is the one cycle-free literal owner, currently 41 unique names in the working source, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple still ends knowledge_read, knowledge_diff and knowledge_integrity_check; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child` and `direct_execution_grant`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
 
 The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
 
-- Current working PUBLIC_TOOLS contains42 unique advertised names, distinct from historical73 and actual runtime list_tools. [14]
+- Current candidate PUBLIC_TOOLS declares 41 unique names after the retained grant addition and resolver removal; this is not runtime list_tools or test execution. [14]
+
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [15]
+
+
+## Synced current-source qualification
+
+R94 adds direct_execution_grant alongside the retained L100 additions; the current R109 candidate has 41 unique literal names after resolve_context removal. Neither this declaration nor old count snapshots are a live list_tools or execution result.
+
 
 ## Historical landed L74 card — preserved, not the current operative account
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 <details>
 <summary>Landed73-name source account and original numbered custody</summary>
 
 ## Governing Overview
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 [models overview](../overview.md)
 
 ## Purpose
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 `public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **73** tool
 names the MCP server advertises as its public surface. It is a
@@ -42,7 +62,13 @@ Owns the one cycle-free literal advertised MCP tool roster.
 
 ## Code Commentary
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 ### Logic
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 The module body is one module docstring and one literal:
 
@@ -69,12 +95,18 @@ PUBLIC_TOOLS = (
 
 ### Conventions
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 - The tuple's order is the order `mcp/registration/` publishes tools in; order is part of the
   advertisement contract, so an edit here is a wire change and not a cosmetic reorder.
 - Membership is maintained in one place and one place only. `mcp/tools/base.py` re-exports this
   object through `__all__`; it must never re-declare a second tuple.
 
 ### Invariants And Boundaries
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 - **Zero runtime imports, deliberately.** `models/worktree.py` imports this module at module scope,
   and it does so while `models.tools.tool_registry` may still be initializing. Any import added here
@@ -89,9 +121,15 @@ PUBLIC_TOOLS = (
 
 ### Role Runtime and Scope
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 PUBLIC_TOOLS adds role_start and role_message at the existing literal owner. It stays import-free; downstream MCP/model consumers re-export/read this tuple instead of redefining role tools or introducing an upward import cycle.
 
 ## Why The Roster Lives In `models`
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 This is the whole point of the relocation, so it is recorded rather than left to be re-derived.
 
@@ -117,6 +155,11 @@ violations with no `models → mcp` edge and no new cycle.
 
 ## 260928-MIK-L74 The Roster Tail Holds Three Knowledge Names
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
+> Historical landed-L74 roster scope only: the 73-name inventory, capsule/provider/lifecycle call claims and executor/closure statements below do not define current advertisement or execution. Current source has 41 unique names and no resolve_context; retained private compatibility is not a public tool.
+
 `knowledge_change` and `knowledge_project` are gone from the tail: the roster ends `knowledge_read`,
 `knowledge_diff`, `knowledge_integrity_check` under the comment "Knowledge operations over a memory
 tree: read, diff and integrity", and holds **73** names. The KS-L20 five-name append above is the
@@ -128,7 +171,13 @@ history of how the tail arrived; this section is its current state.
 
 ## Evidence
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 ### Repo-Internal References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 
 - PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check. [1]
@@ -166,9 +215,15 @@ history of how the tail arrived; this section is its current state.
 
 ### Cross-Repo References
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 No cross-repository implementation dependency governs this repository-local tuple.
 
 ### Runtime Source References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 
 - PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check. [12]
@@ -177,16 +232,28 @@ No cross-repository implementation dependency governs this repository-local tupl
 
 ## Historical parked pre-sync card — preserved verbatim
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 <details>
 <summary>Parked pre-sync prose; old reference numbers belong to its retained companion copy, not this current sidecar</summary>
 
 # mcp/src/agents_remember/models/tools/public_roster.py
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 ## Governing Overview
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 [models overview](../overview.md)
 
 ## Purpose
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 `public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **74** tool
 names the MCP server advertises as its public surface (66 until 260915-KS-L20 appended the five
@@ -213,7 +280,13 @@ Owns the one cycle-free literal advertised MCP tool roster.
 
 ## Code Commentary
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 ### Logic
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 The module body is one module docstring and one literal:
 
@@ -242,12 +315,18 @@ PUBLIC_TOOLS = (
 
 ### Conventions
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 - The tuple's order is the order `mcp/registration/` publishes tools in; order is part of the
   advertisement contract, so an edit here is a wire change and not a cosmetic reorder.
 - Membership is maintained in one place and one place only. `mcp/tools/base.py` re-exports this
   object through `__all__`; it must never re-declare a second tuple.
 
 ### Invariants And Boundaries
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 - **Zero runtime imports, deliberately.** `models/worktree.py` imports this module at module scope,
   and it does so while `models.tools.tool_registry` may still be initializing. Any import added here
@@ -262,9 +341,15 @@ PUBLIC_TOOLS = (
 
 ### Role Runtime and Scope
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 PUBLIC_TOOLS adds role_start and role_message at the existing literal owner. It stays import-free; downstream MCP/model consumers re-export/read this tuple instead of redefining role tools or introducing an upward import cycle.
 
 ## Why The Roster Lives In `models`
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 This is the whole point of the relocation, so it is recorded rather than left to be re-derived.
 
@@ -290,7 +375,13 @@ violations with no `models → mcp` edge and no new cycle.
 
 ## Evidence
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 ### Repo-Internal References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 - The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
 - The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
@@ -306,9 +397,15 @@ violations with no `models → mcp` edge and no new cycle.
 
 ### Cross-Repo References
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
+
 No cross-repository implementation dependency governs this repository-local tuple.
 
 ### Runtime Source References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; current source contains 41 unique names and no resolve_context.
 
 - Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior. [12]
 

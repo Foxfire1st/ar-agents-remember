@@ -4,9 +4,13 @@
 
 [Route overview](overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
+
 ## Purpose
 
-An in-memory registered MCP session verifies the optional exact task_context pair on context_packet/read_ar_files. Alternating and concurrent base/leaf reads return their own source and memory roots, wrong repository/contract or incomplete pair refuses, and the temporary marker cleanup restores both Git statuses. It launches no host runtime or stdio server.
+An in-memory registered MCP session verifies the optional exact task_context pair on context_packet/read_ar_files. Slim packets name distinct base/leaf code and memory roots. A memory root is normalized against its absolute answered code anchor only when it is code-relative; an absolute root stays absolute. The added os import supports that assertion, not a new protocol deadline or admission policy. Only a leaf marker is created: repeated and concurrent naming calls assert base exists=false and leaf exists=true, with no source in the serialized answers. The removed object-form entry refuses argument-removed with the required sentence; wrong repository/contract or an incomplete context pair raises the named protocol error. Marker cleanup restores both Git statuses in the assertions. It launches no host runtime or stdio server.
 
 ## Code Commentary
 

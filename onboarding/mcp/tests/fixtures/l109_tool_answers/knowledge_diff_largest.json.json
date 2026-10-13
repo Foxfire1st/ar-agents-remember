@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This static answer records the naming/compact fields and its own epoch qualifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585f5c8a5022f33bf48c33e1302edbd3939ab2c2",
+            "content": "sha256:2c1e7b6e3a5d8eaeb10bfa8f210af9d7f6555fd3d7a98676e05c099ab5885feb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

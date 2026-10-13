@@ -8,33 +8,9 @@
         {
           "anchor": {
             "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "content": "sha256:15c2f817c9b18f21bd8f1e07b6be5df663868bed3fe799ddd08a53ef13166115",
             "locator": {
-              "kind": "symbol",
-              "name": "TARGETS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:6922a63131aebb690d37d2cdf2ecf1a3a1a65cdb5ed866a47846866a88fe3280",
-            "locator": {
-              "kind": "symbol",
-              "name": "RuntimeTarget"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:ec76debdd322bbbae4e26ca8c91250435fe4d6f2a30dd34147ca866df6b5c478",
-            "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 27
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -149,6 +125,21 @@
             "locator": {
               "kind": "symbol",
               "name": "copy_ignore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:15c2f817c9b18f21bd8f1e07b6be5df663868bed3fe799ddd08a53ef13166115",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -24,7 +24,7 @@ The curation operation instruction.
 
 ## Code Commentary
 
-The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step states the same authoring fields as the role: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision.
+The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step owns the effect/revision rule to which the Curator role delegates: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision. The inherited RLZ-AHYBRR mismatched role-file anchor is left unchanged under mark60/ownerL142, not credited as an independent restatement of this rule.
 
 ## Evidence
 

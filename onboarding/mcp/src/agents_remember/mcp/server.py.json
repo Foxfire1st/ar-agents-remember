@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
-        "content": "sha256:a81f016614122f371f2adec3dbef8fd7d66c0e28c4ab9b1ec6bacb5afdbbce5b",
+        "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
+        "content": "sha256:756e467291e2f71364db580ec029734bd64c2531224c9da57f6187d0f968f8d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-562GH4",
+      "invariant": "INV-QCMCJX",
+      "origin": {
+        "handoffEntry": "L109-source-read-only-annotations",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "The product server applies the central classification after tool registrars, so actual advertisement cannot silently default an unlisted public tool.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
+        "content": "sha256:756e467291e2f71364db580ec029734bd64c2531224c9da57f6187d0f968f8d4",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -54,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
+            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
             "content": "sha256:dc2073ea4ae2f2e7197038a9a969ff15134dcb8da4095d3c87d7d2b70b1e8d94",
             "locator": {
               "kind": "symbol",
@@ -79,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
+            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
             "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
             "locator": {
-              "end": 25,
+              "end": 23,
               "kind": "line_range",
-              "start": 25
+              "start": 23
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
@@ -97,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:68e08fd0af1d0f9e7709b3ebca2332ace9b888551b696607dcfca0fe46dae953",
             "locator": {
               "end": 6,
@@ -115,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:7e384b95c08958d4ebd2088a2e5a043c805551caa34f5710d6b607b4a8d3762e",
             "locator": {
-              "end": 98,
+              "end": 59,
               "kind": "line_range",
-              "start": 98
+              "start": 59
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -133,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 118,
+              "end": 79,
               "kind": "line_range",
-              "start": 118
+              "start": 79
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -172,6 +190,21 @@
             "locator": {
               "kind": "symbol",
               "name": "create_server"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
+            "content": "sha256:8adf102b6961155732a9e1b6465180fb9ebd911b6fb110058cfe4b50735a15e5",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

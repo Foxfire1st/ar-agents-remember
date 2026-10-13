@@ -4,6 +4,10 @@
 
 [overview.md](../../../../../../../../overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [7]
+
 ## Purpose
 
 The packaged coordinator tools example separates shared coordinator commands from each
@@ -17,8 +21,7 @@ repository before choosing its task, memory or validation paths. Source/package-
 legacy lifecycle and Docker mechanics are distinct from coordinator-local scripts and
 shared authoritative settings. Discovery evidence never replaces verified source/intent.
 
-The current example retains pre-retirement provider dependency/setup, enabled-provider
-and include_providers wording. These are legacy specimen descriptions, not current calls
+The current context_packet example is context_packet(repo_id="<repoId>"), without include_providers. Pre-retirement provider dependency/setup and enabled-provider prose remains legacy specimen material, not current provider execution authority. These are legacy specimen descriptions, not current calls
 against the L112 candidate: the two retired providers never count as enabled, normal setup
 starts nothing, and former provider search/status/watcher tools are absent. Runtime
 installation retains scaffold/copy and old-watcher-stop behavior; explicit deletion is

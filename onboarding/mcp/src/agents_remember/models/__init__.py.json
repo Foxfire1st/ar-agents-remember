@@ -50,6 +50,21 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "012f3ff3a2a845e736826b666790d2e457b9d8a6",
+            "content": "sha256:a31085eb3f182eb9d0299eb1a254c749cbb484b4ba0836e461aaa6d522f5ef69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

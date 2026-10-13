@@ -4,6 +4,10 @@
 
 [overview.md](../../../../../../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [10]
+
 ## Purpose
 
 This file is the package-owned template for the installed coordinator root
@@ -38,10 +42,7 @@ the lifecycle skill rather than being repeated in this coordinator entrypoint.
 It requires agents to enter the architect lifecycle and clear its plan gate before
 changing code, points agents to the sibling installed `system/`, `tasks/`, and
 `skills/` `AGENTS.md` files when those scopes become relevant, resolves active
-repository context with `c-08-ar-coordination-context-resolver` skill before trusting memory or task surfaces, checks
-configured providers through the Agents Remember `context_packet` MCP tool when
-the MCP server is configured, and uses coordinator `system/*` files for
-workspace-wide defaults. It also routes
+repository context with `c-08-ar-coordination-context-resolver` before trusting memory or task surfaces, obtains roots/actions through `context_packet` when configured, and reads provider facts from authority settings/provider operations rather than from the packet. Coordinator `system/*` files remain workspace defaults. It also routes
 important developer clarifications through
 `c-01-findings-capture` and requires
 verification against code reality before onboarding propagation through `c-05-create-or-update-onboarding-files` skill.
@@ -49,15 +50,7 @@ The context retrieval path is routed at the coordinator entrypoint: source work
 that relies on onboarding, providers, or repository source goes through
 `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent
 routing across optional providers, route indexes, onboarding, and bounded source
-confirmation. This generated runtime mirror now also carries the slice-07
-**research-phase read** doctrine: until the build decision (the 260703-L10
-sweep retired the pre-convergence "build/job" compound), managed-repo
-source is read through the `read_ar_files` MCP tool rather than the native read
-(it pairs each file with its onboarding by construction and keeps the read trail
-observable), `read_ar_files` calls count as retrieval evidence alongside CGC and
-GrepAI, and native read is the edit precondition once building begins. (The
-authored doctrine lives in `c-04-retrieval-strategy-router` / `l-01-agent-lifecycles`;
-this template is the synced mirror of the coordinator-entry pointer.) The memory-layer read path is also explicit: memory repos are not
+confirmation. The generated mirror carries the research-phase naming doctrine: before the build decision, ask `read_ar_files` which cards govern the paths, then read named source/cards/overviews with harness-native tools. The tool carries no document text and has no session front-door or publication continuation. Naming calls remain retrieval evidence; native reads confirm content both before and after the build decision. The authored read doctrine is in `c-04-retrieval-strategy-router` and `l-01-agent-lifecycles`; this template is a synchronized mirror. The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
 from `system/settings.md`, `system/tools.md`, `system/git-workflow.md` (when
 present, for the gated-branch landing flow read before any commit/push/PR),
@@ -72,7 +65,7 @@ durable clarification capture, but repository-specific rules belong in the
 resolved memory layer. Memory-layer `system/*` files are listed as read-first
 surfaces once `c-08-ar-coordination-context-resolver` skill identifies the target repository. Provider readiness is
 checked only when the MCP server is configured and MCP settings report enabled
-providers. The coordinator names `c-04-retrieval-strategy-router` skill as the retrieval strategy owner instead of duplicating
+providers, but provider state is not returned by context_packet. The coordinator names `c-04-retrieval-strategy-router` skill as the retrieval strategy owner instead of duplicating
 provider, source, and onboarding ordering rules inline. `system/tools.md`
 guidance now explicitly includes code quality checks, and the final
 code-quality section routes repository-specific validation to the resolved
@@ -84,7 +77,7 @@ The installed coordinator root template must not become a per-repository policy
 file, and it must not imply that memory repos need their own root `AGENTS.md`.
 Developer clarifications must not be copied into onboarding verbatim; code
 reality mismatches are surfaced before propagation. Configured provider readiness
-is checked after `c-08-ar-coordination-context-resolver` skill through MCP authority.
+is checked from settings/provider operations after context resolution, not from context_packet provider blocks.
 `c-04-retrieval-strategy-router` skill owns retrieval strategy and source/onboarding confirmation after the
 relevant repository context is known. The template
 also preserves workflow approval boundaries by forbidding protected branch
@@ -119,7 +112,7 @@ This onboarding is backed by the source template itself.
 - The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. [2]
 - The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. [3]
 - The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. [4]
-- The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled. [5]
+- The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured. [5]
 - Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. [6]
 - The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. [7]
 - Branch/worktree approval boundaries and memory-layer authority remain listed in the template. [8]

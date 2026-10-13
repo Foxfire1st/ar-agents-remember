@@ -4,6 +4,10 @@
 
 [application route overview](../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [12]
+
 ## Purpose
 
 **The one state function of (code tree, memory tree) (MIK-R03 rules 2 to 4).** `invariant_currentness`
@@ -29,11 +33,11 @@ every read is served from. `knowledge_read` and the published-intent block call 
   whether or not the read named it), and observes every entry of every wanted invariant. An ID the index
   does not hold as a record of the right kind is left out rather than guessed at (`_is_record`).
 - **Rule 3, the wire shape.** `Currentness.to_document` gives `codeTree`, `counts` by state
-  (`INVARIANT_STATES` order), `invariants[]` each `{id, state, entries[]}` listing every entry that is not
-  current (`InvariantCurrentness.differing`), `families[]` each `{id, members, staleMembers, stale[]}`, and
+  (`INVARIANT_STATES` order), `invariants[]` each `{id, state, entries[]}` listing every observed entry, including
+  current ones; `InvariantCurrentness.differing` separately selects the non-current action subset, `families[]` each `{id, members, staleMembers, stale[]}`, and
   `unverifiableReason` when the whole read cannot be observed.
 - **Compact entries (review N4, 19:13:41).** When a read-wide `unverifiableReason` is set (for example no
-  tree), each differing entry is rendered as `{id, kind, path, state}` only, because the one reason already
+  tree), each observed entry is rendered as `{id, kind, path, state}` only, because the one reason already
   explains all of them.
 
 ### Conventions
@@ -44,8 +48,9 @@ every read is served from. `knowledge_read` and the published-intent block call 
 ### Invariants And Boundaries
 
 - **Stale takes precedence over every other state**, and a stale invariant is never presented as current.
-- **Nothing is withheld (D9).** The statement and relationships stay in the read's own payload, which this
-  module never edits.
+- **Internal visibility is preserved (D9).** This state module never edits the rich internal read
+  payload. The mounted `knowledge_read` projects records to text ID, kind, computed state and location;
+  statements and relationship prose are opened from files, not carried in the tool answer.
 - **Reads only.** Nothing is written or re-anchored.
 
 ### Todos
@@ -70,7 +75,7 @@ No configured live documentation source was available for this pass.
 - The one function, its consumers, the rule-2 order and the visibility rule. [1]
 - The state vocabulary in count order. [2]
 - Rule 2: stale, then unverifiable, then unrealized (proofs do not count), then current. [3]
-- One invariant's differing entries, compact when a read-wide reason explains them. [4]
+- One invariant's complete observed entry list, compact when a read-wide reason explains it; `differing` remains the non-current subset. [4]
 - The family header with its stale members. [5]
 - The block, its counts and the read-wide reason. [6]
 - The function: family members expanded, realizations and proofs observed alike. [7]

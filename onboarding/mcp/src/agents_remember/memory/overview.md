@@ -11,6 +11,8 @@ The route includes baseline adoption, bounded legacy carryover, conversion and s
 
 ## Hot Path Summary
 
+MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
+
 A selected Git tree is read through objects without checkout. A working directory is captured through a disposable Git index and object store, using the repository object store only as an alternate. Its key is the captured tree ID. JSON knowledge and onboarding documents supply indexed content; ordinary prose and other tracked content contribute to the tree key without becoming indexed documents. Generated route-index caches, hidden directories and census documents are excluded from indexed input.
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.

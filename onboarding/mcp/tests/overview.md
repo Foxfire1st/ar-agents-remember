@@ -11,6 +11,8 @@ A test declaration, fixture, source citation, catalog membership or historical d
 
 ## Hot Path Summary
 
+L109 protection follows the naming owners: `test_read_ar_files` covers twenty string paths, no document text, removed-argument/schema refusal, stateless repeat calls, per-row confinement/card/index failures and own-section headings; `test_knowledge_name_projection` covers named rows/endpoint roles, declarations, provenance and continued walks. `test_context_packet_slim` distinguishes agent roots/actions from the retained full builder. `test_knowledge_diff_report` checks whole reports, atomic publication/refusal and admitted resource accounting. `test_tool_entry_point_sweep.ReadOnlyMarkTests` checks list completeness/disjointness, every advertised mark and changes to the read world (including Git metadata and non-index runtime controls). `test_tool_answer_table` and `fixtures/l109_tool_answers/PROVENANCE.md` retain the final four rows and honest fixture epochs. These are source-described tests and inherited fixtures, not tests run by this semantic review or fresh certification.
+
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 Start with the operation or failure being protected and its retained module, rather than an old case count. Ordinary pytest selects units with four workers; integration selects the small real-boundary population, and combined selection observes both. Candidate commands use the code worktree's own environment as its repository tool notes prescribe; a run record names its interpreter. Focused file/node runs and serial debugging are useful development work without becoming certification.

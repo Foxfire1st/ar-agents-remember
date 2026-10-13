@@ -66,6 +66,10 @@ The Paseo host implementation belongs under `serving/paseo/`, shared by install 
 
 The dashboard bundle is placed from Vite output into ignored package data by `scripts/sync-dashboard.py`, with build-input freshness checks and a non-writing check mode. An absent bundle produces the named 503/build-command response. The retained account says no hook invokes bundle placement. The packaged tokenizer vocabulary avoids a network download: its own hash check precedes tiktoken consumption, and missing/damaged data raises the named vocabulary error.
 
+MIK-R109: use AR reads to name governing knowledge and its computed state, then open source, cards, overviews and records with harness-native file tools. `read_ar_files` names up to twenty paths with call-local nearest-first overview locations and no session carry/continuation; `knowledge_read` keeps bounded continuation but emits record names, and `knowledge_diff` files the whole comparison and names its report. Mounted `context_packet` supplies slim roots/task/actions/build/pair; settings/mode/policy authority stays with the source-bound settings and retained internal resolver, not guessed from a compact answer.
+
+Root `docs/` owns authored documentation but is not one of scripts/sync-runtime.py's five runtime targets. The unowned added documentation mirrors were removed; the retained packaged tool-details.md is distinct and does not restore that generator target. Retired mirror cards had no realization/proof entries: their copy-identity accounts remain historical in Git and the renewal intake archive, while canonical docs and their existing governing memory remain authoritative.
+
 Maintained converted knowledge is judged wherever a pair is published or recorded, not merely at the earlier closeout. Leaf routes share exact-pair judgment; master routes enforce leaf/parent-only chain and authentic newly closed history. Curator MQC/coherence remain pre-closeout authoring evidence, not broad checks invoked by landing.
 
 Inter-agent messages are wake requests and file pointers, not semantic report or verdict payloads. The file transport, settings bound and replacement-safe ordinary returns preserve peer-seat, fixed launch-parent, question/provenance and acceptance boundaries. Native turn-end metadata is a control-plane wake, not agent cognition or a verdict. Canonical instructions and explicitly generated copies share these rules without gaining separate authority.
@@ -141,6 +145,8 @@ L96 records the host-lifecycle move into `serving/paseo/` and the original share
 The retained five-gate memory-certification architecture is distinct from transaction-only closeout. Its final adapter demands the exact ordered green Gate 1–4 prefix and exact admitted code candidate before Gate 5 reuse; interactive catalogs name missing authority without eligibility. Source presence neither demonstrates that those gates ran nor makes them an automatic prerequisite of the current closeout transaction. Historical measurements, closure claims and diagnostic scores remain dated evidence only.
 
 ## Evidence
+
+- The runtime synchronizer declares five targets without docs; retained packaged tool details do not add a sixth generator target. [328]
 - Retained reference account (no fresh execution or acceptance inferred): The worktree skill's paragraph on how the finalizer derives a leaf's master. [1]
 - Retained reference account (no fresh execution or acceptance inferred): The retrieval skill's paragraph on the families of the route chain. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off template's decision-record section. [6]

@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
             "content": "sha256:622890cd7ebc088d9c7ecef080f6395a6f0b756eb7c5d86c0f3441d6a809b134",
             "locator": {
-              "end": 59,
+              "end": 61,
               "kind": "line_range",
-              "start": 50
+              "start": 52
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
             "content": "sha256:f4c8970fd6d305670b875d7dc6b40016aa1ce68fbb47a1f44470ae0e5e877676",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 60
+              "start": 62
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
             "content": "sha256:d6c30c83372bbc502fee72b30171bd37982e21601c43b96207840e2c7833e7e8",
             "locator": {
-              "end": 83,
+              "end": 85,
               "kind": "line_range",
-              "start": 68
+              "start": 70
             }
           },
           "kind": "code"
@@ -92,12 +92,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
             "content": "sha256:b7570c1b1bc43d91d3d897a1b025c02179dfe98e629dd0ed7f02144482d2af54",
             "locator": {
-              "end": 89,
+              "end": 91,
               "kind": "line_range",
-              "start": 84
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
+            "content": "sha256:63935876044a22ec8a40ed87c7c78cb904fd883604dae899bc2efe226ca85b67",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

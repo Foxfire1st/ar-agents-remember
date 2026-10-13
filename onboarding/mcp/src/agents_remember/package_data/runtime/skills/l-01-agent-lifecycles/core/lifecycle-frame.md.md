@@ -4,6 +4,10 @@
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [2]
+
 ## Purpose
 
 The shipped minimal lifecycle frame describes effects/signals, dispatch-time seat binding,
@@ -19,8 +23,7 @@ adopts or advances another seat's lifecycle. Dispatch binding is a separate iden
 
 Architect/orchestrator trust intake reports repository/memory/drift/freshness before relying
 on managed context; spawned roles consume the compiled facts instead of rerunning it.
-The source still contains legacy provider-start/degradation and include_providers example
-wording. Those are not current permission to invoke removed provider/lifecycle tools or
+The trust checkpoint calls context_packet with include_drift and include_freshness, without include_providers or provider-state reporting. Provider-start/degradation prose remains as legacy source residue, not provider execution authority. Those are not current permission to invoke removed provider/lifecycle tools or
 supply removed arguments to the candidate's advertised context-packet schema. Retired
 providers perform no normal install/start/index/watch; preserve report/order/no-kill safety
 boundaries without teaching the obsolete setup route as implemented.

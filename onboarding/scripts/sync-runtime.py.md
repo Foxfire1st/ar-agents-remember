@@ -4,6 +4,10 @@
 
 [overview.md](../overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
+
 ## Purpose
 
 `scripts/sync-runtime.py` keeps the root canonical runtime asset folders
@@ -60,11 +64,10 @@ are intentionally not included.
 
 ### Invariants And Boundaries
 
-- The five root runtime asset folders are canonical.
+- The five declared runtime asset folders are canonical. Root docs remain authored documentation, not a target of this synchronizer.
 - The matching MCP package-data folders are generated.
 - The helper refuses to sync a target path onto its own source path.
-- The helper does not sync skills, harness starter packages, docs, or user-owned
-  installed runtime files.
+- The helper does not sync docs, skills, harness starter packages or user-owned installed runtime files. The unowned added documentation mirrors were removed; retained packaged tool-details.md is separate from these five generator targets.
 - **A target whose canonical source is absent is never reported in sync**, and the packaged
   application mirror is generated content: it is never hand-edited, and the read-only `--check`
   is its currency proof.

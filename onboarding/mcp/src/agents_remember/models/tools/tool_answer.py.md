@@ -16,6 +16,10 @@ The current source facts below replace the former operative inventory. The separ
   production bounds used by the row witnesses and guard; status work-order lists and reasons have
   their own shared ceilings while full populations remain in the whole result.
 
+### Current naming-reader bounds
+
+The candidate assigns final explicit bounds: read_ar_files 2400, knowledge_read 4000, knowledge_diff 1500 and context_packet 360 tokens. These four names have no L109 interim row; resolve_context is removed, and INTERIM_LEAVES no longer contains L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps and 400-token overflow shaping remain unchanged.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Card says L112 rows remain interim until landing. This is superseded archival wording, not a current prescription.
@@ -27,6 +31,10 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [5]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -34,15 +42,23 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Governing Overview
 
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
+
 [models overview](../overview.md)
 
 ## Purpose
+
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
 
 The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it strips the four envelope fields, caps lists recursively through retained items and builds the measured 400-token short form for over-bound answers. The per-tool contract table that states each answer's fields, uses, cases and bounds is authored in the test module `mcp/tests/test_tool_answer_table.py` (see that module's card); this module owns shaping, bounds and interim leaves.
 
 ## Code Commentary
 
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
+
 ### Logic
+
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
 
 - Bounds and table: `TOOL_ANSWER_MAX_TOKENS = 1500`, exceptions to at most 4000, list cap 20, short-form ceiling 400 (250 fixed + location), error cut 600 chars, code max 120 chars. `TOOL_ANSWER_EXCEPTIONS` holds per-tool bounds; interim rows (bound 4000, no fields) name L109–L112 until those leaves land. `bound_for` resolves a tool's own bound; `interim_leaf_for` names the owning leaf.
 - `strip_envelope` removes exactly the envelope fields (`tokens`, `tokenizer`, `tokenCountExact`, `operation`) on all paths through the choke.
@@ -53,11 +69,15 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 
 ### Invariants And Boundaries
 
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
+
 - The bounds are ceilings, not allowances; a tool that reaches the guard in a table case fails that row.
 - `error` is never dropped, only cut; a valid `code` is never dropped or cut.
 - The short-form ceiling (400) holds for every tool and row, interim rows included.
 
 ## Evidence
+
+> Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
 
 - The choke strips the four envelope fields from every answer. [1]
 - The twenty-entry cap recurses through retained list items and mappings. [2]

@@ -27,7 +27,7 @@
   4. **The route chain (MIK-R05 rule 5):** one `chain_family` row per `structure.chain` entry, in `select_chain`'s order (nearest route, then family ID). It comes after all MIK-R01 content and has no paging group. A family expanded above still gets its chain row, flagged `memberAtSeed: true` (ruling Q2, 2026-09-30 03:32:18: the chain includes every entry).
 - **Rendering (`_Rendering`, `_RENDERERS`).** One renderer per row kind: `_render_member`, `_render_entry` (realizations and proofs), `_render_header`, `_render_reference`, `_render_advertised` and, since MIK-R05, `_render_chain` (the compact row from `chain.chain_row`). The dispatch table and the helper extractions keep every function at or below 10 under radon (ruling N1).
   - **`member`** (`_member_row`): `id`, `revision`, `status`, `admission`, `statement`, `applicability`, `conditions`, `exclusions`, `state` and `families`, every live family containing it, selected or advertised (rule 7).
-  - **`realization` / `proof`** (`_entry_row`): `id`, `invariant`, `path`, `locator`, `role` or `facet`, `state`, and `reason` when the entry is not current. `_observed` drops a read-wide reason (no code tree was requested), which the `currentness` block states once.
+  - **`realization` / `proof`** (`_entry_row`): `id`, `invariant`, `path`, `locator`, `role` or `facet`, `state`, and `reason` when the entry is not current. Optional `recordedBlob`/`recordedContent` come from this entry’s own anchor for section scoring and are removed by naming projection. Rich member statements/header guarantees here are internal rendering, not a delivered text promise. `_observed` drops a read-wide reason (no code tree was requested), which the `currentness` block states once.
   - **`family_header`** (`_header_row`): `id`, `revision`, `status`, `admission`, `title`, `guarantee`, `routes`, `memberCount`, `members` and `staleMembers`. It also returns the `family_header_reference` body (`id`, `revision`, `title`) as the row's paging `reference`; every row of a family carries the family as its paging `group`.
   - **`member_reference`**: `id`, `revision`, `returnedUnder` (the family, or `seed`, it was first returned under), and `title` with `titleDerivedFrom: "statement"`.
   - **`advertised_family`**: `id`, `title` and `via`.
@@ -93,3 +93,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the selection reads one memory tree's derived index.
 
 No cross-repo boundary is crossed by this file.
+
+- Internal entry rows preserve their own recordedBlob/recordedContent for naming section scoring. [19]

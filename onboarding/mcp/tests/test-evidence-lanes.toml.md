@@ -14,6 +14,10 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 ## Code Commentary
 
+L109 registers test_context_packet_slim.py, test_knowledge_diff_report.py and test_knowledge_name_projection.py in unit-regression. Each is selected once in the parsed catalog; this is membership only and establishes neither execution nor acceptance. The repaired lists are unique and canonically ordered; the naming-projection module precedes overview-order without changing either module’s lane membership.
+
+- test_sync_reapply_merge.py is declared once in unit-regression and current lane lists retain membership in canonical order; lane membership selects evidence and proves no invocation. [847]
+
 The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
 
 The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
@@ -45,6 +49,8 @@ The landing, ownership, strict-refusal and dependency-bound suites are selected 
 The grant and developer-dashboard modules have their declared L3 lanes; direct-leaf integration-refusal, role-start and no-grant closeout-parity modules have their declared L2 lanes. These are catalog maintenance and routing facts, not case counts or a live acceptance result.
 
 ## Evidence
+
+Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 - Extracted capsule surface suite in unit-regression [835]
@@ -92,6 +98,3 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 - The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
 
 - The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
-
-- test_sync_reapply_merge.py is declared once in unit-regression; lane membership selects evidence and certifies no invocation. [847]
-

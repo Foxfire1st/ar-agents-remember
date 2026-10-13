@@ -4,16 +4,23 @@
 
 [overview.md](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
 ## Purpose
 
-Build retained server information, scoped context, runtime installation and context-resolution answers.
+Build retained server information, scoped slim orientation and runtime-installation answers. `resolve_context_payload` is removed; there is no context-resolution adapter in this module.
 
 ## Code Commentary
 
 `server_info_payload` receives the boot-resolved serving build, reports unusedProviderKeys and
 optional launch agentBinding/toolServer, and does not publish tools/reservedTools or pretend to
 remeasure build identity. `context_packet_payload` resolves the reader's exact task context
-before calling the application builder. Resolve-context retains TaskRef locator ownership.
+before calling the rich application builder, then applies `slim_context_packet` with the optional
+serving-build commit. Mounted answers carry roots, task, action lines and short build/pair values;
+the log preserves that delivered slim answer. Rich V2 is rebuilt through the internal/CLI/dashboard
+builder, not automatically stored by this adapter. No TaskRef/resolve-context route remains.
 Runtime installation forwards its per-call request unchanged; the request experiment takes
 precedence over the documented environment fallback. With `request.dry_run=true`, the
 adapter passes `report_path=None`: the preview files no per-call report and exposes no

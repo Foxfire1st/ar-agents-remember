@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
             "content": "sha256:b3b174d7a11f9dc27a793ae196460152067e8717c59b1d86cb0c2b4fd2685b5b",
             "locator": {
               "end": 22,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
             "content": "sha256:a80d9fdb0c191772eeec0100ebf2c0732c15f8fc6543d5aece9173e70f339e46",
             "locator": {
               "end": 10,
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
             "content": "sha256:9072f03aa131e45d94501338a21cd148a0f58417a55a596d580b0a4cd60c70c2",
             "locator": {
-              "end": 65,
+              "end": 68,
               "kind": "line_range",
-              "start": 57
+              "start": 60
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
             "content": "sha256:a4af5714ce5fab939a1c4dc0d330e2078b71ced85bedc342661b99c7f1add96b",
             "locator": {
-              "end": 95,
+              "end": 120,
               "kind": "line_range",
-              "start": 95
+              "start": 120
             }
           },
           "kind": "code"
@@ -83,6 +83,21 @@
               "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
+            "content": "sha256:136547d6186fdf7c3f2fbed6ac44b5d901a074bbfe5ddabf0e22d4a81c480609",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

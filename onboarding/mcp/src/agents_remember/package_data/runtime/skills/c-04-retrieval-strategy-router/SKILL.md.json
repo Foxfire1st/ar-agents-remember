@@ -24,24 +24,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
             "content": "sha256:6a636de4f416a0fb0d479f8ecef17fc7cfd07c3f5866bd8e6fb0c9008d0d3621",
             "locator": {
-              "end": 82,
+              "end": 71,
               "kind": "line_range",
-              "start": 82
+              "start": 71
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
             "content": "sha256:c75d34c935c4ef82b98acbb8579939abf24bb883b84136fb844d9e65eca0741d",
             "locator": {
-              "end": 126,
+              "end": 114,
               "kind": "line_range",
-              "start": 126
+              "start": 114
             }
           },
           "kind": "code"
@@ -70,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
             "content": "sha256:25dafd1d62944c5e0729d8a899e4a8bdc50f736a45c48b70250bdfe273a95535",
             "locator": {
-              "end": 207,
+              "end": 267,
               "kind": "line_range",
-              "start": 199
+              "start": 259
             }
           },
           "kind": "code"
@@ -131,6 +131,21 @@
               "start": 1
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:d9d6a52ebdded4a88e5fecea5f55eeccbab5b880a4785692488bb01efc186ef4",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

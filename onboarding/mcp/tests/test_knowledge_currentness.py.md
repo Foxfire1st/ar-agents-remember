@@ -4,6 +4,14 @@
 
 [tests route overview](overview.md)
 
+## Current naming and source qualification
+
+The IndexMismatchError case still returns state view and a degraded currentness reason, with INV-AAAAAA/RLZ-A00001 named and statement absent. The separate internal published_intent_block case retains full seeds/statement and committed-tree behavior; that is not the public MCP naming answer.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [17]
+
 ## Purpose
 
 **The MIK-R03 cases: stale invariants flagged at read time, over real Git code and a converted memory
@@ -29,7 +37,7 @@ per-side computation, the observation cache key, Git failures, and the two read 
 - **Failures (ruling N2).** A patched `TimeoutExpired` gives an `unverifiable` entry, and the next read
   observes again (never cached). A patched `IndexMismatchError` in `knowledge_read` still returns
   `state: view` with its payload and a degraded block.
-- **Surfaces.** `knowledge_read` with `codeTreeId` flags the stale invariant and keeps its statement;
+- **Surfaces.** `knowledge_read` with codeTreeId keeps the stale invariant/realization visible as named IDs and states, without its statement text; the invariant currentness entry list includes both realization RLZ-A00001 and proof PRF-P00001.
   without a named tree, or with only `repositoryRoot`, it is `unverifiable` with compact entries even though
   `HEAD` holds the edit. The published-intent block names its resolved tree and the `treeScope` text; an
   uncommitted edit leaves every state unchanged; with no resolved tree it is `unverifiable`.

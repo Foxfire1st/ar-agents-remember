@@ -4,6 +4,10 @@
 
 [application overview](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [3]
+
 ## Purpose
 
 Owns the configured-contract application boundary for the single curator-coherence lifecycle API.
@@ -18,7 +22,9 @@ failures into the public typed refusal shape.
 contract admission API, executes `curator_coherence_action` inside that admitted authority, and
 returns its result unchanged. `_domain_refusal` preserves coherence status, detail, expected and
 observed facts, and the legal next action. `_configured_refusal` projects the lower-level configured
-contract family once rather than teaching the public tool every failure subtype.
+contract family once rather than teaching the public tool every failure subtype. A supplied projected
+`nextAction` is preserved; when absent or falsey, the fallback is `context_packet`, not the removed
+`resolve_context`.
 
 ### Conventions
 

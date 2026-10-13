@@ -1,5 +1,9 @@
 # c-08-ar-coordination-context-resolver/SKILL.md
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [6]
+
 ## Purpose
 
 This skill defines `c-08-ar-coordination-context-resolver` skill, the authoritative facts-only resolver for memory roots, coordination roots, settings, path rules, task roots, temporary artifact roots, worktree contract fields, ledger paths, and branch-gated cross-repo allowances.
@@ -7,6 +11,8 @@ This skill defines `c-08-ar-coordination-context-resolver` skill, the authoritat
 ## Code Commentary
 
 ### Logic
+
+For installed MCP callers, `resolve_context` is removed: request `context_packet` with repo_id and optional drift/freshness/task_context. A canonical leaf passes task_document_ref plus contract_path; admitted roots bind its code/memory worktrees. The slim answer names roots, task/master, actions, serving build and pair commits, not settings/storage/pathRules/crossRepo blocks. Read those source-bound settings files (JSON preferred, Markdown fallback); use server_info for metadata/code roots. Private package resolution still owns topology and full CoordinationContext facts. `include_freshness` can fetch/write and is not evidence of a purely read-only tool.
 
 The skill tells agents to resolve context once and pass the resulting facts downstream instead of re-deriving topology in every workflow. It documents `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `task_root`, `temp_root`, optional contract/worktree fields, JSON-first settings, path rules, storage settings, and cross-repo v2 result states. Without `task_name`, `task_root` is the repo-specific task namespace under `ar-coordination/tasks/<code-repository-name>/`; with `task_name` or a contract, it is the concrete task folder. Normal installed workflows resolve the coordination root from MCP settings; package-local resolver calls use explicit input, an installed runtime root, or the source-development `../ar-coordination` default. Source-checkout `.env` and `.env.example` files are not resolver inputs. Resolution validates supported memory locations and fails with a missing-memory error instead of inventing an empty context.
 
@@ -38,7 +44,7 @@ No relevant external documentation found.
 - The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. [2]
 - Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. A removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root; `external` is the only supported topology. [3]
 - Consumers include `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, c-04-retrieval-strategy-router, `c-05-create-or-update-onboarding-files` skill, task workflows, and `c-09-git-worktree-manager` skill; boundaries keep `c-08-ar-coordination-context-resolver` skill out of mutation work. [4]
-- The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. [5]
+- The private package context retains code_repository_name/code_repository_root and the full resolver facts; the mounted context_packet exposes slim roots/actions, with settings from file reads and metadata from server_info. [5]
 
 ### Cross-Repo References
 

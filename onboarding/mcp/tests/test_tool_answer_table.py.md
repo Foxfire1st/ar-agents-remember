@@ -4,6 +4,10 @@
 
 [tests route overview](overview.md)
 
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [3]
+
 ## Purpose
 
 The rule-6 contract table population for MIK-R108: one row per registered tool and per `task_doc` operation (fields with caller uses, ordinary/largest cases, bounds, interim ownership), and the row gate. The frozen source still includes `ToolAnswerGuardTests` and `ToolAnswerLogTests`; separate guard/log modules coexist with these table-local classes rather than replacing them.
@@ -18,6 +22,14 @@ The rule-6 contract table population for MIK-R108: one row per registered tool a
   results; the common table validates field/use and bound contracts.
 - Row-gate classes pin shaped-row acceptance, empty-use failure, invalid-code rejection and guard-hit failure. Table-local `ToolAnswerGuardTests` and `ToolAnswerLogTests` retain their own assertion populations alongside the separate guard/log modules; no source extraction or fresh execution is implied.
 
+### L109 final rows and bounded fixtures
+
+The read_ar_files, knowledge_read, knowledge_diff and context_packet rows declare their fields and caller uses with bounds 2400, 4000, 1500 and 360 tokens respectively. Each has ordinary/largest fixture JSON and no interim owner. The row gates validate the largest cases and reject overflow; the no-L109 test also checks production owner maps.
+
+Three operation-producer tests reconstruct registered read_ar_files for twenty governed paths, choose the largest delivered knowledge_read page in an eighteen-member deep-path fixture walk, and compare a synthetic changed-record knowledge_diff. They sanitize only declared volatile fields and assert byte equality against pinned JSON, no overflow and the tool bound; the read case asserts current cards and relative readable locations, and the diff case also caps decisionRecords. L109_REGEN=1 writes each pin before the equality assertion, so regeneration is not an independent equality witness. No producer was run in this review.
+
+These fixture-largest labels do not establish the mathematically largest legal response, the largest comparison on this repository memory line, or the packet-required real Codex/Pi file-read sessions. The context_packet row is modeled by its retained fixture; this file has no corresponding context-packet operation-producer test.
+
 ### Invariants And Boundaries
 
 - The table is the contract L109–L112 build their per-tool answers against; a registered tool without a row fails.
@@ -25,9 +37,7 @@ The rule-6 contract table population for MIK-R108: one row per registered tool a
   under L100, matching the product's interim owner declarations. The builder creates
   only declared rows; the roster gate still rejects any registered tool without one.
   Native `retire_child` is no longer asserted to be a removed tool.
-- Interim rows (bound4000, no fields) name their explicit current owner; L100 joins
-  the retained L109/L111 interim populations. L110's ten retained tools and L112's
-  retained tools keep their final rows. A leaf does not land while a row names it.
+- Interim rows (bound4000, no fields) name their explicit current owner; L100 and L111 remain. L109 has four final shaped rows and tests excluding L109 from authored, built and production interim ownership. L110 and L112 retain their final rows. A leaf does not land while a row names it.
 
 The table-local log witnesses retain ordinary-path preservation within the 200-character domain and exact length/digest shortening beyond it. Runtime-install row fixtures use the user-settings location and normalize its XDG prefix for their authored case dimensions; these fixture values are not production settings writes or a changed token ceiling.
 

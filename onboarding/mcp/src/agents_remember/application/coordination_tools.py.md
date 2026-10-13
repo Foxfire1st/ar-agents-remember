@@ -4,6 +4,18 @@
 
 [overview.md](overview.md)
 
+## Current operative account — MIK-R109
+
+`coordination_tools.py` retains `_topology(value)` and the unregistered `resolve_context_tool(config, task, *, worktree_name=None, topology=None)` computation for its former reader `scripts/pnt_sandbox/build_roots.py` (mark 56; that reader is unchanged). The restored function validates repository and contract confinement, resolves the supplied TaskRef through CoordinationHints/EnclosureSelector and serializes the result. Its signature, decorators and computation match the base apart from explanatory docstrings. No registrar mounts `resolve_context`: public orientation remains `context_packet`. A retained internal function is not a restored MCP tool or a new execution witness.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [5]
+
+## Historical original card — all remaining original prose and evidence are non-operative
+
+The complete original account below, including Purpose, Commentary, invariants, dated notes and evidence captions, is retained only for custody. It grants no current callable tool, inline-text result, session deduplication, database read or execution acceptance.
+
 ## Purpose
 
 `coordination_tools.py` exposes the `resolve_context` MCP application entry point.

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reports resolve through the existing enclosure or log root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3a9f2e9c8bf79ce5613d263f05ba8080a32ad5f",
+            "content": "sha256:c055d1f039eeb8b89e35a1de40a71ddb434c1d018640b958a472ed0c2d322e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_reports_dir"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication admits a whole streamed payload and reports cleanup residue honestly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3a9f2e9c8bf79ce5613d263f05ba8080a32ad5f",
+            "content": "sha256:4698dd43e703cac86af1a8a11968830b42795212e117ffee85d1f54ac55d2c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Admission charges measured family usage plus reserved margin and refuses unreadable usage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3a9f2e9c8bf79ce5613d263f05ba8080a32ad5f",
+            "content": "sha256:552ccc9a2b1a369f02ad66989675e481c0151043c32e459fdcec7d97e58490e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

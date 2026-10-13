@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e97a706e5eb108c5e94df6086ea2282acdc7360e",
+            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
             "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
             "locator": {
-              "end": 50,
+              "end": 51,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -24,12 +24,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e97a706e5eb108c5e94df6086ea2282acdc7360e",
+            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
             "content": "sha256:cdc29e21a0bc1843f14bbc319bf7b79a8b8c1bf76e464bc37653d5cde0107b0a",
             "locator": {
-              "end": 130,
+              "end": 131,
               "kind": "line_range",
-              "start": 129
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
+            "content": "sha256:ab7c745aa5d710557753d2d17b49e51cb8212374090fff3edbc066ca5fe5cb13",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

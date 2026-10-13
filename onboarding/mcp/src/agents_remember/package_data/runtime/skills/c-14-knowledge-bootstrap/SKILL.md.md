@@ -2,9 +2,21 @@
 
 ## Governing Overview
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 [MCP package overview](../../../../../../overview.md)
 
+## Current naming-reader contract — MIK-R109
+
+This generated skill describes the existing curator’s text-file foundation procedure, not a new role, database or publication destination. Records live under knowledge/ and realizations/proofs in sidecars; the existing curator file writer writes into the ordinary reader’s selected memory line. Resolve mounted context through context_packet/server_info, not removed resolve_context. For a converted tree with records, ask knowledge_read to name them, then open the named files with native tools before extending the foundation. Verify a written result by naming the affected records/families, opening each named file at its line and confirming its declared ID, plus the ordinary tree validator; a run’s prose/zero exit is not coverage. The canonical skills/c-14 source is the instruction owner and this package is its generated copy. Earlier database/publication/seat/ruling narratives below are historical, not restored capabilities or a fresh execution claim.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [22]
+
 ## Purpose
+
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 **The repository's knowledge foundation gets an operational procedure, and it is the curator's.**
 A repository's memory has two halves created in different ways. Onboarding is Markdown a seat writes
@@ -24,9 +36,13 @@ in place and never define independent behaviour.
 
 ## Code Commentary
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 The installed bootstrap invocation explicitly supplies --config with the active MCP authority settings. This is the existing CLI option and does not expand config discovery or checkout authority.
 
 ### 260921-ICR-L27 A Procedure, Not A Role — And Three Entries That Actually Exist
+
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 **What the procedure owns.** The semantic owner is the **existing curator**, the writer is the
 **existing admitted knowledge batch writer**, and the publication lands at the **one location the
@@ -121,6 +137,8 @@ and refuses an entry with an unexplained target (`realization_rationale_absent`)
 
 ### 260928-MIK-L27 Admission In Step 3 (MIK-R27)
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 Step 3's reconciliation list gains a bullet: **admission** for every new invariant, family and
 decision, the criterion it meets and a one-sentence justification. A following paragraph states the
 rule for a foundation run: a foundation is a small set of meaningful records, not a second test suite
@@ -140,6 +158,8 @@ runs behave as before.
 
 ### Invariants And Boundaries
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 - The knowledge batch writer, the publication owner and the location the ordinary read route selects are
   the only ones used — no second database, second writer or second destination.
 - No new agent role, harness, scheduler or parallel onboarding implementation.
@@ -156,11 +176,17 @@ runs behave as before.
 
 ### Todos
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 No open file-local todos.
 
 ## Evidence
 
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
+
 ### Docs References
+
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 The procedure's external-source obligations are stated in the skill itself; no repository-external
 document is needed to prove this contract.
@@ -168,6 +194,8 @@ document is needed to prove this contract.
 No external documentation is needed to prove this repository-local procedure contract.
 
 ### Repo-Internal References
+
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 - The skill is the procedure that authors the knowledge foundation (invariants, families, source realizations, external sources) as distinct from Markdown onboarding, and it adds no role and no second store. [1]
 - The new-project entry is a **taskless** seat, and since the developer's 2026-09-24 ruling the procedure states that a taskless curator seat **exists** and authors the foundation when no task does, instead of asserting a refusal the product no longer makes. [2]
@@ -195,6 +223,8 @@ Current working-candidate evidence for this card:
 - The procedure and its nine generated copies are byte-identical on this candidate, and the leaf's own catalog case reads the served bytes back against the canonical tree. [21]
 
 ### Cross-Repo References
+
+> Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 No sibling repository evidence is needed for this procedure.
 

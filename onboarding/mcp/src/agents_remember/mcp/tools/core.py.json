@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e669a850829d64077c748a66b6f13c25b6b47bea",
+            "blob": "d7dddbfa128df2f731540674c6c55f5c6469f2be",
             "content": "sha256:9a14e34f7745c5db9020921452d7a6138848f6ab87e25202ec04845419356fe4",
             "locator": {
-              "end": 26,
+              "end": 36,
               "kind": "line_range",
-              "start": 26
+              "start": 36
             }
           },
           "kind": "code"
@@ -74,12 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e669a850829d64077c748a66b6f13c25b6b47bea",
+            "blob": "d7dddbfa128df2f731540674c6c55f5c6469f2be",
             "content": "sha256:7d229ac09e86b11ffa2732163e447b81542c9ed7647c3951c2380ef5d39ee4ed",
             "locator": {
-              "end": 76,
+              "end": 97,
               "kind": "line_range",
-              "start": 76
+              "start": 97
             }
           },
           "kind": "code"
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
             "content": "sha256:a398f8aa5d3b033f907d46ab4601cd5bb9608f8d98a5591536b0fb67871436ac",
             "locator": {
               "end": 27,
@@ -99,6 +99,23 @@
               "start": 27
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dddbfa128df2f731540674c6c55f5c6469f2be",
+            "content": "sha256:b8903ef18d9f6131a065bc7ccd4af81b97291fb4488bab23e2d223f54b1c8461",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }

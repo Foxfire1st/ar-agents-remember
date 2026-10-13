@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
+        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 1409,
+          "end": 1607,
           "kind": "line_range",
-          "start": 1409
+          "start": 1607
         }
       },
       "id": "RLZ-1WK7P0",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
+        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
         "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
         "locator": {
-          "end": 2227,
+          "end": 2446,
           "kind": "line_range",
-          "start": 2227
+          "start": 2446
         }
       },
       "id": "RLZ-A31DQW",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
-        "content": "sha256:6f685b7a11bb4c60621e8365f520f18116903dbf708128b3096ac5d59125de54",
+        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
+        "content": "sha256:cfbb1e70f6f87c7d7bbff1f9e829df79432a1a64a04786703038ea94e29759fe",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
+        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 540,
+          "end": 555,
           "kind": "line_range",
-          "start": 540
+          "start": 555
         }
       },
       "id": "RLZ-TB9TST",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
+        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1568,
+          "end": 1766,
           "kind": "line_range",
-          "start": 1568
+          "start": 1766
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -201,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:a58fa86fe18bf3c11bc16759d0f13a04f16adbccc294bbb69c5a5d13c79a30e4",
             "locator": {
               "end": 7,
@@ -214,14 +214,14 @@
       ]
     },
     "212": {
-      "note": "The schema version and the large-fixture discovery threshold remain explicit.\n\nAnchor: `schema_version`",
+      "note": "The schema version and large-fixture discovery threshold remain explicit.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:ec47b978dc7bb6048e2626ef3e675029bdab1ecd557eff40c64e2d61434d9849",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
-              "end": 1,
+              "end": 2,
               "kind": "line_range",
               "start": 1
             }
@@ -231,16 +231,16 @@
       ]
     },
     "213": {
-      "note": "The four retained knowledge contracts and their evidence nodes.\n\nAnchor: `ar-durable-store/1.0-process-race-evidence`",
+      "note": "The four retained knowledge contracts declare their owners and exact evidence nodes.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:e920acf0da4d56f68bfbc8566c39535b2abca2e1ec762d7c590c3e657fb9f7c9",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:b12d324df928702e79aecef82adada6377dfffcde430ea229ec8ec845afde0e7",
             "locator": {
-              "end": 7,
+              "end": 33,
               "kind": "line_range",
-              "start": 5
+              "start": 14
             }
           },
           "kind": "test"
@@ -282,16 +282,16 @@
       ]
     },
     "216": {
-      "note": "The artifact the first pair belongs to, and the scope both lists carry.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -418,16 +418,16 @@
       ]
     },
     "224": {
-      "note": "The nine new fixture rows for the Doc14 knowledge-file examples.\n\nAnchor: `mcp/tests/fixtures/knowledge_files/4.1-direct_landing.py.json`",
+      "note": "The nine retained Doc14 knowledge-file fixtures each have an artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:0c3cded3fc398b5155aa4bd0e42d75210bc87e1cb445d6dd9c6bc44932c2a188",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:aadf5d213934c05d18e66c0579cd1085dbb30708d796345f65f9b0f05bd98b0c",
             "locator": {
-              "end": 867,
+              "end": 1098,
               "kind": "line_range",
-              "start": 865
+              "start": 883
             }
           },
           "kind": "test"
@@ -469,16 +469,16 @@
       ]
     },
     "227": {
-      "note": "The three rows they belong to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -503,16 +503,16 @@
       ]
     },
     "229": {
-      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -524,12 +524,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
             "locator": {
-              "end": 1352,
+              "end": 1548,
               "kind": "line_range",
-              "start": 1350
+              "start": 1546
             }
           },
           "kind": "test"
@@ -537,16 +537,16 @@
       ]
     },
     "231": {
-      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -590,12 +590,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
             "locator": {
-              "end": 1494,
+              "end": 1692,
               "kind": "line_range",
-              "start": 1492
+              "start": 1690
             }
           },
           "kind": "test"
@@ -603,16 +603,16 @@
       ]
     },
     "235": {
-      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -652,16 +652,16 @@
       ]
     },
     "238": {
-      "note": "The two rows it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -686,16 +686,16 @@
       ]
     },
     "240": {
-      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -703,16 +703,112 @@
       ]
     },
     "241": {
-      "note": "The route-chain module's consumer lines on the four rows.\n\nAnchor: `mcp/tests/test_knowledge_route_chain.py`",
+      "note": "The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
-            "content": "sha256:1336e9192e751b9fdcb32036b3dee0b19f6aac25b570f972632290485bc00e86",
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:131a9962aa05cf0c2d42929ab0bc827d7139497b3da3ed4eeddba94b0f90ca1d",
             "locator": {
-              "end": 271,
+              "end": 284,
               "kind": "line_range",
-              "start": 269
+              "start": 224
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:cb4b1dc1c00b8f8ce70b298437c3d59c45e68ce16ee63e228ad9c73a6b976d81",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:a7a0b01f4dbbebe93d70d7219fb5fdeb21d0f525099e62a804cb97472226163c",
+            "locator": {
+              "end": 617,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:c8d3a9ec71bab57ded07694d736f068ee3b87db127b32863cee65f961aa7bd70",
+            "locator": {
+              "end": 1863,
+              "kind": "line_range",
+              "start": 1335
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:687370f4bac4861d344bb72e9bcf47134cb7c1d775c0d5e6c59699b463cb1325",
+            "locator": {
+              "end": 2119,
+              "kind": "line_range",
+              "start": 2072
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:e6d3cd298eb2bcc824889d87fc08cd26dea825ca405eca72d6351745964c833a",
+            "locator": {
+              "end": 2236,
+              "kind": "line_range",
+              "start": 2158
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:a056ce2778c81c0dae00de7fe9d26b55d40bb13bdb3ca611f5b7f2a6f89b58ac",
+            "locator": {
+              "end": 2288,
+              "kind": "line_range",
+              "start": 2260
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:964ba634539aaec3cd33bc496dd13c9e38bbb56375809cea0e672a86e5540ba8",
+            "locator": {
+              "end": 2572,
+              "kind": "line_range",
+              "start": 2523
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8580cc55d167138ed138e52475b9367f09858f08",
+            "content": "sha256:31b19b58bee8ae23299dd722c39b3c68c260567a8840d671b03fff86229bbe9e",
+            "locator": {
+              "end": 2818,
+              "kind": "line_range",
+              "start": 2786
             }
           },
           "kind": "test"
@@ -724,12 +820,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
             "locator": {
-              "end": 1517,
+              "end": 1715,
               "kind": "line_range",
-              "start": 1515
+              "start": 1713
             }
           },
           "kind": "test"
@@ -737,16 +833,16 @@
       ]
     },
     "243": {
-      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "note": "The Node lockfile fixture declares an exact-scope artifact row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 1155,
+              "end": 1360,
               "kind": "line_range",
-              "start": 1153
+              "start": 1347
             }
           },
           "kind": "test"
@@ -1018,12 +1114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 1669,
+              "end": 1867,
               "kind": "line_range",
-              "start": 1669
+              "start": 1867
             }
           },
           "kind": "test"
@@ -1103,24 +1199,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:ff1bb545613860f64e9103026265842118d46ac93d1c2ea7169fea5b07812889",
             "locator": {
-              "end": 1096,
+              "end": 1291,
               "kind": "line_range",
-              "start": 1080
+              "start": 1275
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:d93c0bc8d592cd08cc840d9a3d456dfd898b12eeee48bbbe5c5f1f0e6b677048",
             "locator": {
-              "end": 1114,
+              "end": 1309,
               "kind": "line_range",
-              "start": 1098
+              "start": 1293
             }
           },
           "kind": "test"
@@ -1214,16 +1310,16 @@
       ]
     },
     "271": {
-      "note": "The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; this adds no artifact or replacement contract and certifies no invocation.",
+      "note": "The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; the repaired catalog declares101artifacts with canonically ordered paths and exact consumers. The refusal suite is also declared on existing reader fixtures and shared supports. No artifact or replacement identity is added; source accounting proves no invocation.\n\nAnchor: `schema_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:2bb67d64f00606431afad15f170cf284a5243887cd07a4f8d9df8aa10aa426b9",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:6b615643a327ecc30012775e44a075ed8569bbdc41e1509a2d957728f77fbca3",
             "locator": {
-              "end": 1602,
+              "end": 3183,
               "kind": "line_range",
-              "start": 1602
+              "start": 1
             }
           },
           "kind": "test"
@@ -1235,12 +1331,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:ef6f26f884e88cf8de9a0ff20f817804c85172282e31e5dcf44e116b046dde88",
             "locator": {
-              "end": 2574,
+              "end": 2798,
               "kind": "line_range",
-              "start": 2553
+              "start": 2777
             }
           },
           "kind": "test"
@@ -1260,7 +1356,7 @@
         },
         {
           "anchor": {
-            "blob": "a40b0f50a94ef68edce12685dd225ff66eaa593f",
+            "blob": "67d790b1962362bc7156432e033fc0b95560ab1a",
             "content": "sha256:b3c066f75d82fd5c9de6355becf806c04cd85d0c4eb1f9a8df740bbf2ad67d02",
             "locator": {
               "end": 110,
@@ -1347,12 +1443,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
             "content": "sha256:6bd63858346265c088e61fecb3321203a0ad462c2f425608430e58bb7bf26142",
             "locator": {
-              "end": 1166,
+              "end": 1361,
               "kind": "line_range",
-              "start": 1153
+              "start": 1348
             }
           },
           "kind": "test"
@@ -1375,16 +1471,16 @@
       ]
     },
     "98": {
-      "note": "Worklist process support declares its permanent local-composition contract.\n\nAnchor: \"path = \"mcp/tests/reviewer_worklist_process_test_support.py\"\"",
+      "note": "Worklist process support declares a permanent local-composition artifact and its replacement test node.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
-            "content": "sha256:ed54a755fbed1c6105c41a3a53be5406fd9fb2e09b07091b1075370d6f47125b",
+            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
+            "content": "sha256:45d3ad5ebf3b34c0d52363d06a02a1b01f53bcfd29c3edfb51548a3997408dd3",
             "locator": {
-              "end": 2411,
+              "end": 2651,
               "kind": "line_range",
-              "start": 2411
+              "start": 2634
             }
           },
           "kind": "test"

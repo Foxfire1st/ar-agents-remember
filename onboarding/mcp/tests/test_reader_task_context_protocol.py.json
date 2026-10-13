@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
-        "content": "sha256:f6349a5640d353aade56e3a4c400e736d4ba19370b2d9d1c31a0dfb541d77663",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+        "content": "sha256:28016fa8168937d0ed9e7e7ea1b4a0a07f34705a1c9ccc097b5c5ba671ce6259",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
-        "content": "sha256:a0b3451b4ef9542697dc389fdf39c67baa0301c3d80f2b7abaae362b8768ff60",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+        "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
-        "content": "sha256:a0b3451b4ef9542697dc389fdf39c67baa0301c3d80f2b7abaae362b8768ff60",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+        "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
@@ -56,8 +56,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
-        "content": "sha256:25e9092c51836cd05c3df7b3f082bf90aaf680346b1647c2eea0a5d0f4fdedd3",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+        "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
         "locator": {
           "kind": "symbol",
           "name": "_git_status"
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
         "content": "sha256:0f12e34c0afbba96924c11edc11e02c82224dda336af787e44848d7f9c7d5412",
         "locator": {
           "kind": "symbol",
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
-        "content": "sha256:8738ac3e5a80d294022c619428b4c74edb0b5d55a9101e12458c4b7ac10d9e80",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+        "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
         "locator": {
           "kind": "symbol",
           "name": "_await_protocol"
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
+        "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
         "content": "sha256:b859d5e06df0486918ec772f13566456e23d0712b3228329f6026430225fd222",
         "locator": {
           "kind": "symbol",
@@ -133,8 +133,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
-            "content": "sha256:6abb22c7ed2ac668aab18cd3e1fce0a0a0c5edc64439aede6563bd6dc67357e5",
+            "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+            "content": "sha256:523596c9ffd84f527450ab5d2758ba93c5db1894d5a93b1f6a8ac0c040c8e135",
             "locator": {
               "kind": "file"
             }
@@ -186,6 +186,21 @@
             "locator": {
               "kind": "symbol",
               "name": "test_late_tool_list_response_times_out_and_closes_the_handler"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
+            "content": "sha256:523596c9ffd84f527450ab5d2758ba93c5db1894d5a93b1f6a8ac0c040c8e135",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

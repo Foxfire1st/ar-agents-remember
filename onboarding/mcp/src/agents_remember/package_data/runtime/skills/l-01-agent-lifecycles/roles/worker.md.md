@@ -20,6 +20,16 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Synced current-source qualification
+
+Name affected realization claims and relevant sibling realizations with knowledge_read on agents-remember-task, then open the named record files natively.
+
+The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+
 ## Purpose
 
 The native Worker implements one selected leaf’s approved primary requirement and explicit preservation constraints in its paired code enclosure.
@@ -34,7 +44,7 @@ When all candidate findings are closed and only the Worker’s report/evidence/h
 
 A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
 
-Resolve apparent missing task facts from the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
+Read the selected requirement and leaf task only: use supplied taskDocReadArgs exactly (repo_id, task_name, extensionless slug, operation=get), then open canonical JSON at returned docPath. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
 Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 

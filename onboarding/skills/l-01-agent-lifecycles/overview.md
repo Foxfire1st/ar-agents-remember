@@ -10,6 +10,8 @@ Paseo hosts agents and supplies host delivery. AR persists held role messages an
 
 ## Hot Path Summary
 
+The canonical frame, roles, review criteria and handoff/impact templates now ask AR where governing knowledge lies and open those files with harness-native tools. `context_packet` supplies compact orientation, `read_ar_files` card/overview locations and `knowledge_read` record locations; no provider argument or old resolver call is prescribed. The existing peer loop, exact scoped readers, writer-owned fields, effect/revision obligations and role powers remain. Dated sections below retain their original source epoch, not a second current procedure.
+
 A launch uses explicit supported role, operation, canonical selection and workspace facts. Missing, conflicting or inapplicable bindings are reported rather than inferred from chat titles, nearby documents or runtime directories. Task-bound seats read the selected requirement packets and rendered task documents through their admitted interfaces; edits to rendered copies are not canonical task changes. Existing approvals survive reconnects and compaction.
 
 Architect delegates one master to one Manager, or concurrent masters to an Orchestrator on the sprint with one Manager per master. Direct Architect coordination and an Orchestrator above a single master are developer choices. A refused coordination start does not authorize direct coordination. Hosted coordination uses `role_start`, Manager-owned `role_start_set` and `role_message` on the bound task server, preserves returned IDs and artifacts, and reconciles an uncertain or partial start with the same request ID before creating anything else.

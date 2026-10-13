@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7627071af907f3e816bab28a0af4c509b3cbfb9d",
-        "content": "sha256:76cfe45fc6360eaa632437fa976f26bac67de7de9985cec20ac4cc118adcc941",
+        "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
+        "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
         "locator": {
           "kind": "file"
         }
@@ -109,11 +109,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aba153bb3b60f0ae537dcd8a2b0ef6becf67722a",
-            "content": "sha256:f7e4a450bd3d9c27d26cab0995546f4069e17d041493128fde78232aac1e4f12",
+            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
+            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_orientation_tools"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -141,11 +140,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aba153bb3b60f0ae537dcd8a2b0ef6becf67722a",
-            "content": "sha256:2e38a53715993680fd000957ce185a57b2c55f0948b2c4c27196bb134cf1fcc1",
+            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
+            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
             "locator": {
-              "kind": "symbol",
-              "name": "context_packet"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -157,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7627071af907f3e816bab28a0af4c509b3cbfb9d",
+            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
             "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
             "locator": {
-              "end": 47,
+              "end": 68,
               "kind": "line_range",
-              "start": 37
+              "start": 58
             }
           },
           "kind": "code"

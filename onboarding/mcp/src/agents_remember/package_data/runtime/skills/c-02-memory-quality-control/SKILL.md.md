@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current skill routes drift through context_packet(include_drift) or memory_quality_check.
+- Current skill resolves mounted roots/actions through `context_packet` or c-08; `resolve_context` is removed. Source-bound settings carry storage/pathRules/policy rather than slim packet blocks. Drift routes through context_packet(include_drift) or memory_quality_check.
 - Coherence preparation supplies counts/digest/file locations; the Curator reads and verifies the
   complete candidate file before authoring judgments and publishes its exact expectation identities.
 
@@ -18,12 +18,18 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [6]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
 <summary>Retained original source accounts and producer history</summary>
 
 ## Purpose
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 This skill defines `c-02-memory-quality-control` skill as on-demand memory-quality diagnostics and scoped
 onboarding checks. It keeps task-start drift evidence and routes missing-onboarding or targeted quality
@@ -32,7 +38,11 @@ and closeout and integration carry that completed result as a prerequisite inste
 
 ## Code Commentary
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 ### Logic
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 The skill instructs agents to resolve context through `c-08-ar-coordination-context-resolver` skill/MCP,
 use `drift_check` as task-start evidence, classify clean-source candidates versus dirty active work, and
@@ -52,6 +62,8 @@ as the c-05 skill's converted-card workflow describes. The rest of the section s
 
 ### Conventions
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 `c-02-memory-quality-control` skill reports and routes memory-quality work; it does not rewrite onboarding
 prose. Task-start drift reports remain local coordination artifacts under
 `c-08-ar-coordination-context-resolver` skill's resolved `temp_root`. Closeout style checks do not run at task start.
@@ -61,6 +73,8 @@ The curator checklist is the explicit temp-location exception: it lives under th
 enclosure's reserved `reports/` directory, outside both Git worktrees, and replaces its predecessor.
 
 ### Invariants And Boundaries
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 `c-02-memory-quality-control` skill must stay read-only with respect to onboarding prose. Any content update
 belongs to `c-05-create-or-update-onboarding-files` skill. Drift reports are temporary evidence, not durable onboarding,
@@ -72,14 +86,20 @@ gates.
 
 ### Todos
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 Add tests for `c-02-memory-quality-control` skill against a migrated external memory repo once such a fixture exists.
 
 
 ## CCR-R12@v5 Transaction Boundary
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 Current contract: the curator's complete memory-quality operation is part of curation — run at intake and after every repair until `curatorActionableCount=0` and the **raw** `qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale** — that is the coherence gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`. On the success path, where the record is already current, the combined field is **not rewritten** and keeps its incoming `ready-for-closeout` value, with `closeoutReady=true`; the value `ready-for-closeout` is therefore observable in the combined field once the whole pipeline is already complete. A named scoped check or a `checks=[...]` subset never stands in for the full operation. **Field-name correction (`D35`, made by 260915-CAPS-L10):** this sentence previously named `checklistStatus=ready-for-closeout` as the loop's condition; read the raw field to end the loop and the combined field to decide the coherence gate (`application/memory_quality/controller.py:664`, `:671`, `:678`, `:685-687`). **Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`):** the absolute claim that `ready-for-closeout` is *never* a value of the combined field is **literally false** and is superseded by `CAPS-R19`'s revision note; the field-name correction it supported still holds, and attribution is complementary — `260915-CAPS-L10` corrected the **onboarding cards**, while `CAPS-R19` corrected the **shipped sources** (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. Task-start drift remains diagnostic evidence, and the `curator_coherence` authority is published whenever the checklist reports `coherence-required`. Closeout and integration consume the prepared Git inputs and carry the completed curation as a prerequisite without invoking or requiring memory-quality, census, or review operations.
 
 ### Docs References
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 No external domain documentation applies to this repository-local maintenance skill.
 
@@ -87,7 +107,11 @@ No relevant external documentation found.
 
 ## Evidence
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 ### Repo-Internal References
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 `c-02-memory-quality-control` skill owns the memory-quality operation a curator runs as part of curation,
 together with task-start drift and the missing-onboarding report scoped to the curator's change set. Its
@@ -104,11 +128,15 @@ completed result travels with the curation handoff as a closeout and integration
 
 ### Cross-Repo References
 
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
+
 No cross-repo evidence is needed for the current skill contract.
 
 No meaningful cross-repo references found.
 
 ## 260821-DAGQC-L2 Canonical Quality Calls
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 The packaged skill now uses the same strict `request={mode: ...}` grammar as the public tool. Sync,
 start, and poll examples keep their field sets separate; capacity refusal directs the caller to
@@ -116,6 +144,8 @@ poll/wait and retry rather than bypassing the controller. This packaged copy rem
 from canonical doctrine and introduces no compatibility path.
 
 ## MCAR-L02 Structured Coherence Workflow
+
+> Historical maintenance-owner scope only: earlier resolve_context/drift_check and dated ready/closeout claims below are not present tool instructions or evidence of curation. Current skill uses context_packet for mounted roots/actions and the full curation/coherence workflow stated above; settings stay source-bound. No memory-quality operation or authority was produced in this support review.
 
 The packaged memory-quality doctrine now treats the deterministic structured checklist as the
 candidate census, then requires `curator_coherence prepare` → agent-owned exact judgments → atomic

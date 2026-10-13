@@ -5,7 +5,9 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - ping and skills_install registrations were removed.
-- context_packet no longer accepts include_providers.
+- context_packet no longer accepts include_providers. It delivers slim roots, task ID/master, action lines and optional build/pair commits. The process serving-build commit is forwarded into this projection. Its drift description measures onboarding reference anchors and tree validity, reports stale references without blocking, distinguishes invariant currentness via knowledge_read/integrity, requires a changed-source card or no-impact record, and repairs nothing; omitting include_drift measures nothing.
+- `read_ar_files` takes up to 20 path strings, names cards/states/overview locations and carries no file text, session served state or continuation. `refresh` remains receivable only for a typed removal refusal and is scrubbed from the advertised schema; object entries are refused.
+- `resolve_context` is not registered or forwarded; orientation is `context_packet`. Read-only marks are applied centrally after all registrars; `context_packet` is marked false because its opt-in freshness capability fetches remotes.
 - runtime_install now describes stop-only leftovers and unused provider keys, not provider builds/restarts.
 
 ### Source and authority bounds
@@ -15,6 +17,10 @@ The current source facts below replace the former operative inventory. The separ
 - Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/registration/core.py`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- The orientation registrar supplies the current naming/slim-packet and drift-description account; identity annotations and installer registration remain separately attributed. No execution acceptance is inferred. [6] [7] [9]
 
 ## Historical original card — preserved, not the current operative account
 

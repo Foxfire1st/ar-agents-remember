@@ -4,11 +4,15 @@
 
 [tests route overview](overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [15]
+
 ## Purpose
 
 **The MIK-R28 cases: tests that prove an invariant are first-class proof entries.** The module covers
-rule 2 (both evidence forms, the curator's facet, unresolvable evidence reported), rule 4 (the `proofs` of
-the `invariant` and `family` views of a converted tree, and none for a database), rule 5 (the index's
+rule 2 (both evidence forms, the curator's facet, unresolvable evidence reported), rule 4 (named `proofs`
+in the invariant and family views of a converted tree, with no top-level proofs on source_context), rule 5 (the index's
 "without proof" list and the informational checklist section) and rule 6 (migrated evidence listed, then
 turned into a proof by a curator pass through the writer). Rule 3 and the stale-proof clause are not
 covered here: by architect ruling they belong to L08 and L03.
@@ -25,10 +29,7 @@ covered here: by architect ruling they belong to L08 and L03.
   facet; an absent `-k` test and a bare file are `unresolvable`, and the rendered report says so. A proof
   waits for the curator's facet: no sidecar is written until it is authored, the report offers the
   statement as a draft, and a blank facet is refused and writes nothing.
-- **Rule 4.** A review tree (`write_review_tree`) with a proven and an unproven invariant: the `invariant`
-  view carries the proof or `[]`, the `family` view carries every member's proofs, and no pass or result
-  key exists. The parity database fixture's `invariant` and `family` reads, and the other views, carry no
-  `proofs`. A family whose members have no proof shows `[]`.
+- **Rule 4.** Converted invariant and family views name PRF-T3ST0K; the invariant view asserts its invariant ID, memory sidecar location, code file and symbol locator, and explicitly excludes facet and passed/status/result/satisfied keys. An unproven invariant and a family without proofs show an empty list. The current other-views case asserts no top-level proofs on source_context and an unknown_view refusal for curation_queue; it has no database parity fixture. [8] [9] [10]
 - **Rules 5 and 6.** The index lists live invariants without proof and excludes a retired one. The
   checklist renders the section as information: the wire summary is identical with and without the list,
   the count stays 0, and an unconverted checklist has no section. Migrated evidence is listed with its
@@ -74,7 +75,7 @@ The cases, by rule.
 - A proof waits for the curator's facet. [6]
 - The view cases' tree and read helper. [7]
 - Invariant and family views carry their proofs. [8]
-- A database read and the other views carry none. [9]
+- Source_context has no top-level proofs, and curation_queue is refused unknown_view; no database-read case remains here. [9]
 - A family with no proof shows `[]`. [10]
 - Live invariants without proof; a retired one is excluded. [11]
 - The checklist section is information that moves no count. [12]

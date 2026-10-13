@@ -3,16 +3,20 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "A diff displayed as complete after silently dropping files can hide changed intent from its reviewer; explicit omissions and the shared read threshold prevent that error."
+    "justification": "A mechanical diff can appear complete after hiding changed intent; compared trees, change counts, bounded decision-record names and a caller-readable complete selected-comparison report make the boundary explicit without implying a semantic verdict."
   },
-  "applicability": "knowledge_diff output bounding and omission disclosure.",
+  "applicability": "Mounted knowledge_diff naming/report answer on a converted memory repository; the dashboard comparison computation remains whole and unchanged.",
   "conditions": [
-    "A converted memory repository is selected, optionally narrowed by a path or record id.",
-    "The complete response is measured against the shared knowledge-read token threshold."
+    "A converted memory repository is selected, optionally narrowed by a path or record ID.",
+    "The selected comparison is reported before a successful compared answer; a report-write failure refuses with its reason.",
+    "The answer carries the compared trees, change counts, decisionRecords within TOOL_ANSWER_LIST_MAX, the total and a report location under the final tool-answer bound.",
+    "The report retains the underlying computation, including its per-file patch truncation flags."
   ],
   "exclusions": [
     "Inferring a semantic verdict from the mechanical diff.",
-    "Canonical database-path comparison, which MIK-R26 retires."
+    "Canonical database-path comparison, which MIK-R26 retires.",
+    "Reinstating inline patches, complete/leftOut or the knowledge_read threshold as this mounted answer promise.",
+    "Changing the dashboard or command-line full-result contract."
   ],
   "id": "INV-PPGGTW",
   "origin": {
@@ -26,9 +30,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Knowledge diff stays within the knowledge-read token threshold, names omitted files and cuts, and refuses an absent path.",
+  "statement": "Knowledge diff names the two compared trees, counts changes, names decision-asking changed records up to the list bound, and locates a caller-readable report of the selected comparison; absent selectors are refused, and per-file patch cuts are disclosed in the report.",
   "status": "proposed",
   "supersedes": []
 }

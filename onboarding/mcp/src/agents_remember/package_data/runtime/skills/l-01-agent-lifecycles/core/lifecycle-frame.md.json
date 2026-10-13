@@ -19,6 +19,21 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6452b02a58a01e1a4f5c4377995d5eebde2b6ac2",
+            "content": "sha256:83d08a0d1636b152f3933160f1c44db7307d6c9e19fed7f19ac5d4c2b8c8aa7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

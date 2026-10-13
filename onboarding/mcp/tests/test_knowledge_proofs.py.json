@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:c96d2dfa77ba3d0c63814481350ff4213d554a8204cc3ea10c15c7c1ce8d7f0b",
             "locator": {
               "end": 11,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:4e8f0ee59e4dac2a9e38a8452d74ed20d42dacb261a6b17b7b83ef550ba19e86",
             "locator": {
               "kind": "symbol",
@@ -99,12 +99,27 @@
         }
       ]
     },
+    "15": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
+            "content": "sha256:ce665b3929803225f7ff630ad6bb38ca9f9bb34bdeced08c688c07df9b051ecd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The writer runs as this leaf's owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:2708f82dd0fb86f72c4046a5d04a43445e5bfeb547fd1efeede558d0142ed98e",
             "locator": {
               "kind": "symbol",
@@ -115,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:c19db846abeb908c1fd2011ee55ba15281fa1c1b10e64813591a19ea20d26710",
             "locator": {
               "kind": "symbol",
@@ -179,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
             "locator": {
               "kind": "symbol",
@@ -195,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
+            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
             "content": "sha256:3feaa92e5c0f2bc4e07e617dcf5763ba806f550724bd4e5ef87504cd1cdbcc1f",
             "locator": {
               "kind": "symbol",

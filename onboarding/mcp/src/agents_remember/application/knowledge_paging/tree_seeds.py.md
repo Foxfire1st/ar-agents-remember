@@ -4,6 +4,10 @@
 
 [application route overview](../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
 ## Purpose
 
 **A read seed a converted memory tree does not hold is refused, never answered as an empty complete view (L37
@@ -18,8 +22,10 @@ This module decides whether a seed is held and words the `selector_absent` reaso
 
 - `absent_seed(index, name, named)` asks the index for the text ID behind `named` (`index.text_id`). The seed is
   held when that text starts with the parameter's prefix (`INV-` for `invariantRevisionId`, `FAM-` for
-  `familyRevisionId`) and holds an `@`. Otherwise it returns the reason, which ends with `SEED_SOURCES`: take a seed
-  from the knowledge section of `read_ar_files` or from a `source_context` row.
+  `familyRevisionId`) and holds an `@`. Otherwise its `SEED_SOURCES` direction names the
+  revision UUID given by the refusal for a held record, or the text ID (for example
+  `FAM-…` or `FAM-…@1`) accepted by a `source_context` read. `read_ar_files`
+  names cards now; it is not a source of inline revision records.
 - **A bare held ID is told its seed.** When `named` is itself a record ID the tree holds (not retired, with a
   revision), the reason adds "`<ID>` is held here at revision `<n>`, whose seed is `<uuid>`"
   (`text_uuid("revision", "<ID>@<revision>")`).
@@ -29,9 +35,10 @@ This module decides whether a seed is held and words the `selector_absent` reaso
 
 ### Conventions
 
-- Callers: `knowledge_paging/tree_read._fresh_seed_absent` (a fresh `knowledge_read` page) and
-  `mcp/tools/knowledge._tree_seeds_absent` (the view seeds of `knowledge_project`). Both refuse with
-  `selector_absent`.
+- `_fresh_seed_absent` uses this module for fresh converted-view seeds. Continuations use their
+  token-binding checks; an explicitly named resumed family-leaf revision is separately checked by
+  `tree_read._resumed_revision_absent` / `_revision_absent`. The former `knowledge_project` caller
+  is retired, not another public recovery surface.
 
 ### Invariants And Boundaries
 
@@ -54,7 +61,7 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: why an unheld seed is refused and that a database read is untouched. [1]
+- The module docstring explains unheld-seed refusal; its database-preservation sentence is historical, not the mounted contract. [1]
 - Why a named seed names no revision the tree holds; a bare held ID is told its seed. [2]
 - The reason for the first seed the tree does not hold. [3]
 - Where current seeds come from, as every refusal says. [4]
@@ -67,3 +74,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module reads one derived index.
 
 No cross-repo boundary is crossed by this file.
+
+- A held text record refusal names its current revision UUID; seed sources use the refusal or source_context text IDs. [6]

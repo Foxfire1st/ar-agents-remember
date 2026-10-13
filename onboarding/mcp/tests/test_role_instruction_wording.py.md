@@ -20,6 +20,10 @@ Compiled parented handovers distinguish fixed starter identity from ordinary ret
 
 [Route overview](overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
+
 ## Purpose and current source account
 
 The instruction census names the native router, seven role sources and their eight operations, one task tool server and the native role tool boundary, including the Manager’s leaf-set operation. It checks parent/no-parent instructions and compact handover text and retains the runtime-admitted curator writer rule. MIK-R99 added the per-role harness-freedom and boundary clauses with removal controls and the leaf roles' affirmative obligations (direct whole-stretch hand-offs, Reviewer begin/result, the sealed memory lane, the Curator post-PASS concern and upward recovery). The MIK-R72@v2 coordination sentences, the four manifest seat/purpose descriptions and the narrow parented-Manager/Orchestrator host values remain against every protected role and parent class. It checks authored wording and projections rather than executing curator authoring.
@@ -34,6 +38,10 @@ The wording tests now assert each role's affirmative harness freedom and its bou
 The parent-condition tests cover their declared canonical parentable-role set. OwnerRelation requires leaf sibling routes and no routine parent-result order while ordinary return addressing changes to the supplied role/task address; coordinating question/result duties remain separately protected. Historical SystemSpecialist naming is a read alias, not the current role vocabulary. The retired own-chat/direct-ask sentences remain registered and checked.
 
 The leaf startup positive guard now requires the one bound `role_start_set` call, Worker opening and held Reviewer/Curator seats. Permission waiting stays a developer-only prompt with an upward named-chat notice, but a product-held answer removes the second-send duty. Retired-wording insertion/removal controls remain source-confined and generated copies remain derived.
+
+## MIK-R109 — compiled file-read instruction
+
+The compiled architect handover asserts read_ar_files inputs as path strings and the sentence that a read names locations and carries no file text, followed by an instruction to open files with the harness own file tool. This is a compiled-wording assertion, not a concrete harness read or sandbox consumption witness.
 
 ## Evidence
 

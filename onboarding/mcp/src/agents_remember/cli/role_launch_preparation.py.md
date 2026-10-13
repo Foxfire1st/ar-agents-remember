@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Launch-aware AR tool guidance retains the host route’s other-server choice because exclusion_applied=False.
+- MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and carries no file text; the agent opens named files with its harness's own file tool. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
 - The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
 
 ### Superseded inventory
@@ -24,6 +25,16 @@ The pre-successor CUR-C04 source concatenated the baseline rather than composed 
 ## Grant-backed leaf preparation and revival
 
 Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location. Historical host/custody limitations remain separately attributed.
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [10]
+
+
+## Synced current-source qualification
+
+Granted direct-leaf revival binds the canonical leaf to its master series contract through the readable explicit grant; other leaves keep enclosure binding. Unreadable grant data refuses rather than falling back. This new-base preservation is not a Curator-issued grant.
+
 
 ## Historical original card — preserved, not the current operative account
 

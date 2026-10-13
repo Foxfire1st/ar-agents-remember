@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Naming without source/card/record text requires this explicit boundary or locator contract; otherwise callers can use removed carrier arguments, attach a governing statement to the wrong card section, or treat an unresolved record location as verified."
+  },
+  "applicability": "The mounted read_ar_files request boundary and its requested source/card payload acquisition.",
+  "conditions": [
+    "Canonical configured or per-call admitted reader roots and the selected immutable source/memory epoch remain authoritative."
+  ],
+  "exclusions": [
+    "Source inspection and producer fixture evidence do not establish fresh runtime execution, current CODE acceptance, metadata-only acceptance, or a semantic verdict.",
+    "Boundary preflight does not claim absence of ordinary task/configuration admission reads."
+  ],
+  "id": "INV-VSR6TF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L109-A8-verify2-knowledge-batch.log (read_ar_files suite incl. removed-parameter refusals)"
+      ],
+      "path": "l109e-durable-producer-native-projection.json"
+    },
+    "handoffEntry": "MIK-R109@v1 §1 read-files-boundary",
+    "leaf": "260928-MIK-L109",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Removed parameters (refresh, source/onboarding file entries, object files) are refused with argument-removed and the read-with-your-own-tools sentence; more than 20 paths or an empty list is refused before anything is read.",
+  "status": "proposed",
+  "supersedes": []
+}

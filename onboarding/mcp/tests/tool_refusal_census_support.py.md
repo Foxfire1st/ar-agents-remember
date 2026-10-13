@@ -4,10 +4,10 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- The failure table no longer contains lifecycle/provider/benchmark/old structural/capsule-skill calls.
+- The failure table omits resolve_context, removed lifecycle primitives, providers, benchmarks, old structural calls and capsule/skill tools; lifecycle_finalize_task remains. read_ar_files deliberately receives an object entry to drive argument-removed, not to request source text. The adoption invocation uses /none/absent-contract.md and /none/absent-group without dry_run; it is a refusal input, not a successful adoption witness.
 - drive_census arranges current.start through ambient API, not world.call lifecycle_start.
 - Returned rows carry both delivered payload and whole result read from log.
-- Failure inputs include role_start_set without a bound caller and native retire_child with an unknown native ID. The roster equality remains the population authority; these inputs do not own an acceptance assertion or restore the old structural plane.
+- Failure inputs include role_start_set without a bound caller and native retire_child selected by LEAF_REF task_document_ref plus role=worker, not an unknown native ID. The roster equality remains the population authority; these inputs own no acceptance assertion and restore no old structural plane.
 
 ### Source and authority bounds
 
@@ -19,6 +19,16 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 ## Grant failure dispatch
 
 The refusal driver adds the canonical grant failure input under its current ambient API. Its `direct_landing` failure request also names the canonical absent leaf explicitly, so the intended refusal is reached through the current input grammar. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [9]
+
+
+## Synced current-source qualification
+
+The new-base direct_execution_grant entry is an absent-task action=give stimulus, not successful grant creation or permissions evidence.
+
 
 ## Historical original card — preserved, not the current operative account
 

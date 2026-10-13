@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
+            "blob": "8bc70ba3cb21695b6dc67ae3033596df88286e95",
             "content": "sha256:2e791477c5199f2490f0f9284663d749d122e7b5408f311b36146e4beca90cae",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
+            "blob": "8bc70ba3cb21695b6dc67ae3033596df88286e95",
             "content": "sha256:2301bef3491f4515f105477c32ae5f557359e2a381e2e6f8f28f80563998a1c1",
             "locator": {
               "kind": "symbol",
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
+            "blob": "8bc70ba3cb21695b6dc67ae3033596df88286e95",
             "content": "sha256:2e791477c5199f2490f0f9284663d749d122e7b5408f311b36146e4beca90cae",
             "locator": {
               "kind": "symbol",
@@ -242,6 +242,21 @@
             "locator": {
               "kind": "symbol",
               "name": "test_an_empty_ordering_is_refused_not_defaulted_on_every_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bc70ba3cb21695b6dc67ae3033596df88286e95",
+            "content": "sha256:42441febfa498fd9d9d54172712e37213973864af15966b1b623b90ad92bb14e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

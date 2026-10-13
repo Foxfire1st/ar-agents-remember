@@ -35,6 +35,16 @@ into the product.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [3]
+
+
+## Current naming and source qualification
+
+read_ar_files names cards in the repositories of the caller's scope: leaf worktrees under task scope, official checkouts otherwise. It carries no paired source/card text; final verification uses native file reads. The former official-only/never-worktree wording is superseded.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

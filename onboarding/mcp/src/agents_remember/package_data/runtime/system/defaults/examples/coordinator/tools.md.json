@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
             "content": "sha256:f0f3a77bdbcb06318717dbf5636269fa324e62ba299f7bbdaf607d91f44e93f7",
             "locator": {
               "end": 22,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
             "content": "sha256:39cec743efc6c8438ab6d6f37e984b9d28839514ebc48ece8655a45ca61472da",
             "locator": {
               "end": 39,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
             "content": "sha256:3b88064d5d0d90075521e5fb4c5d6545224ffd833eb7166ae21400c0d807e5ab",
             "locator": {
               "end": 72,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
             "content": "sha256:f544f3f8e9bd70c0dcdf1fffe98147f47cebde772669bd1c5d95ae595327bff7",
             "locator": {
               "end": 75,
@@ -100,6 +100,21 @@
               "start": 1
             },
             "path": "system/defaults/examples/coordinator/tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
+            "content": "sha256:3216ac60c840c2eb9d0be7cfd5438cedbcd849bcb10f96087904fd67b3f7abb5",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

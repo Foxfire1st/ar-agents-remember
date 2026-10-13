@@ -4,13 +4,23 @@
 
 [MCP tools overview](overview.md)
 
+## Synced current-source qualification
+
+The new-base direct_execution_grant_payload import/export survives the native composition alongside the R109 resolver removal. An exported payload adapter does not itself authorize a grant or advertise a tool.
+
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [19]
+
 ## Purpose
 
 Provide the current import facade for pure MCP response/payload adapters, not the public roster.
 
 ## Code Commentary
 
-The facade retains dispatch, role start/message, context/runtime/resolve/server information,
+The facade retains dispatch, role start/message, context/runtime/server information.
+`resolve_context_payload` is neither imported nor exported; orientation is `context_packet`.
+It also retains
 quality sync/start/poll, citation fix, baseline/carryover/init/routes, worktree/closeout/task and
 trusted terminal/operator/hosted-readiness/internal adapters. `_tool_payload` is intentionally
 re-exported for response tests. Benchmark/provider/search/ping/skills-install/drift/migration,

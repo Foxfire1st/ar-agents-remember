@@ -26,6 +26,18 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [16]
+
+
+## Synced current-source qualification
+
+The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The prohibition also names message_child, retire_child and rename_*; four setup tools remains a source manifest count, not an execution result.
+
+The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

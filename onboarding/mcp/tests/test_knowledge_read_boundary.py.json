@@ -82,6 +82,23 @@
         }
       ]
     },
+    "14": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "015929e0ec228216ddc1086336baff53f14766c7",
+            "content": "sha256:9f431f1461fb6c3adece90f6d33bb358beedc9e5f8b92c90e5ad62f7abfbb387",
+            "locator": {
+              "end": 1037,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "A mutated read is caught, so the roster cannot pass vacuously.",
       "targets": [

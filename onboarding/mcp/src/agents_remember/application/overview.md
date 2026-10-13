@@ -11,6 +11,8 @@ The current account is the converted-text and native role route after MIK-R74 an
 
 ## Hot Path Summary
 
+MIK-R109: `read_files.py` names governing cards and overviews without carrying their bodies; `read_file_cards.py` computes record counts and the actionable card headings. `knowledge_names.py` projects rows/proofs/family endpoints to text ID, kind, state and declaring file/line or card heading, with selection-bound commit/dirtiness and explicit title fallback. Paging sizes the emitted names and keeps continuation/whole-row semantics. `knowledge_reports.py` admits and publishes the whole comparison report; an unwritable report refuses. The mounted orientation answer is slim version 3; the full context builder and kernel resolver still hold the full internal facts. `coordination_tools.py` retains topology narrowing, not a public resolver tool.
+
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 A role launch resolves canonical sprint/master/leaf selections through task topology. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects or the declared sprint/master chain and refuses leaf selection.

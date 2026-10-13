@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
             "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
               "kind": "symbol",
@@ -306,7 +306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
             "content": "sha256:8fb7e921e792821ea87584f669e4948e4241e31e10f999ebbfe1fcf3a32baf1f",
             "locator": {
               "kind": "symbol",
@@ -333,6 +333,21 @@
             "locator": {
               "kind": "symbol",
               "name": "PublishedIntentMountedRouteTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
+            "content": "sha256:2515b79eb10278f0c3e45076e4c215f7136f78a3d890c9ab8dfdb28c7d344a8a",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

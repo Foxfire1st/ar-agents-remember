@@ -4,6 +4,39 @@
 
 [Tests overview](overview.md)
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [40]
+
+## Purpose
+
+Pins read_ar_files naming, path confinement and removed-argument refusals under MIK-R109. Source, cards and overviews are opened by the caller's own file tools, not carried in this answer.
+
+## Current source contract
+
+- Direct request-shape cases accept twenty string paths and refuse twenty-one or an empty list; object/range/onboarding entries and refresh are refused with argument-removed. Repeated direct calls compare the whole returned dictionaries. Path/symlink escapes become per-row outside-repository refusals beside valid rows.
+- Direct naming cases check card/overview locations open relative to the stated working folder, no fixture source/card/overview prose is carried, four record-count states, missing-file/card cases, and missing/unconverted memory with no card. A stale card names its invariant ID/kind/state and matched heading; current cards have no action entries. Overviews are unique and nearest first within the batch, not deduplicated per session.
+- RegisteredNamingTests drives EntryPointWorld: omitted refresh names; explicit true/false/null refresh and object/source/onboarding entries refuse; refresh is absent from the schema; twenty shared-chain paths are unique/nearest-first; mixed escaped/good paths and partial/stale-card cases retain qualified sibling rows. RegisteredRepairEvidenceTests distinguishes complete current counts from malformed-record partial-index repair evidence.
+- RegisteredCardLifecycleTests deletes then corrupts one card while checking the valid sibling's exact empty counts/action fields and registration_absent qualification. Distinct-section, fallback and same-blob/different-content cases assert per-record headings or explicit titleFallback, including the registered route. These assertions do not run live agents or certify all possible anchor layouts.
+- PublishedIntentDirectTests still checks the internal rich published-intent helper and its seed/legacy refusals; it is not the name-only read_ar_files wire answer. CarrierParityTests now pins card, recordCounts, actionNeeded, overviews, codeState and memoryState and excludes old carrier names.
+
+This card reports source assertions only. No collection, test execution, sandbox Worker, harness file read or final-candidate acceptance occurred in this support review.
+
+## Evidence — current source references to add
+
+- RequestShapeTests.
+- NamingTests, StaleNamingTests, OverviewLocationTests and MemoryStateTests.
+- RegisteredNamingTests and RegisteredRepairEvidenceTests.
+- RegisteredCardLifecycleTests, DistinctSectionHeadingTests, RegisteredDistinctSectionTests and RegisteredSameBlobSectionTests.
+- PublishedIntentDirectTests and CarrierParityTests.
+
+## Historical pre-L109 account — not the current contract
+
+The retained wording and references below describe the old source-carrying/dedup population. Many targets were removed or renamed; the numbered custody is retained as historical only and grants neither current behavior nor test execution. Path-confinement names that survive do not restore the old text-carrier contract.
+
+<details>
+<summary>Retained pre-L109 wording and reference identities</summary>
+
 ## Purpose
 
 Pins source confinement, onboarding deduplication and the ordinary converted-tree knowledge carrier.
@@ -81,3 +114,5 @@ No external domain claim is required.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+</details>

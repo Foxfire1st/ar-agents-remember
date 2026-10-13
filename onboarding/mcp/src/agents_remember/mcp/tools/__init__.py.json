@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
             "locator": {
-              "end": 30,
+              "end": 29,
               "kind": "line_range",
-              "start": 30
+              "start": 29
             }
           },
           "kind": "code"
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:8f8e8dcfff2c6c1171451ad26878db4b4e152bd866a2ad6bd63f5b6bd6fcedd9",
             "locator": {
-              "end": 54,
+              "end": 53,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             }
           },
           "kind": "code"
@@ -219,17 +219,32 @@
         }
       ]
     },
+    "19": {
+      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
+            "content": "sha256:190f8d1f04e52d284d766b76b3c4f192d4421f84c1601efacda55ee2dd9a22bd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`gate_response_wait_payload` is listed in `__all__`.\n\nAnchor: \"__all__ = [\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 80,
+              "end": 79,
               "kind": "line_range",
-              "start": 80
+              "start": 79
             }
           },
           "kind": "code"
@@ -309,12 +324,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:cecfae3cb4b0d4d8643cb5455ee04bc593fb17e2877d1071efacabde7220497b",
             "locator": {
-              "end": 43,
+              "end": 42,
               "kind": "line_range",
-              "start": 43
+              "start": 42
             }
           },
           "kind": "code"
@@ -343,12 +358,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
+            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
             "content": "sha256:6885abeb8ba145e8fca758ac8fb90e71ec45cb4f9d09202db5b04aa1af21de09",
             "locator": {
-              "end": 49,
+              "end": 48,
               "kind": "line_range",
-              "start": 49
+              "start": 48
             }
           },
           "kind": "code"

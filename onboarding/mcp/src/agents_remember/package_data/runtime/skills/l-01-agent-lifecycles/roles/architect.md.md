@@ -20,6 +20,14 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current naming and source qualification
+
+Before planning repository work, name relevant records through knowledge_read on agents-remember-task bound to repository/code tree, then open the named files natively. Surface source/approved-requirement conflicts rather than silently reconciling them.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [6]
+
 ## Purpose
 
 The native Architect owns the developer conversation, semantic requirements and approved plan; a manual Projects launch may be taskless.

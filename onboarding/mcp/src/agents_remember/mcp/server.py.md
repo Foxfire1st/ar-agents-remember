@@ -4,6 +4,10 @@
 
 [MCP package overview](../../../overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [8]
+
 ## Purpose
 
 `server.py` is the stdio MCP **process and transport-boundary wiring** for Agents Remember. It holds
@@ -21,20 +25,23 @@ Starts the one configured MCP application and registrar loop.
 
 ### Logic
 
-`create_server(config) -> FastMCP` does four things in order:
+`create_server(config)` composes the application and server in the following order:
 
 1. `install_compact_content()` — idempotent; makes the JSON text mirror of every tool result emit
    without FastMCP's hardcoded indentation. It affects text-mirror serialization only, never
    `structuredContent` or tool behaviour.
-2. `install_ambient(AmbientLifecycle(EventStore(observer_root(config))))` — one ambient lifecycle
-   per server process, with the store root resolved through the shared `observer.observer_root`.
-   The `lifecycle_*` tools and the `_tool_payload` choke point read that singleton, so it must be
-   installed before any tool runs.
+2. Bind default worktree services with `LeafAgentArchive(config)`, initialize the application via
+   `server_startup.initialize_mcp_application(config)`, and complete FastMCP settings before
+   constructing the server. Application startup owns ambient initialization; retained internal
+   lifecycle/response consumers do not restore removed lifecycle tools.
 3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
    launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
    supplies no instruction line.
 4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
    place that decides which families a server advertises.
+5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
+   tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
+   an unmarked tool. This step changes annotations, not registration order or handler ownership.
 
 `run_server(config)` is `create_server(config).run()`.
 

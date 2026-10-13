@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
             "locator": {
               "end": 1,
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:a8f2952c31509b42c8ed45bb2c16eb135bb75c0b308d2590da5931cb38decafa",
             "locator": {
               "end": 90,
@@ -72,12 +72,27 @@
         }
       ]
     },
+    "13": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
+            "content": "sha256:f18274e891f7fe88531e71c7fd3f85c4bceaac47e0031270ff4904da4b362a79",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Selection rule, carrier start route, and the one-carrier table.\n\nAnchor: \"When it is selected:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:ed88a7efa96752ec6e6fc3f0904a790bb4b91d1dc3f4760f71e9a7b20fe9cbd5",
             "locator": {
               "end": 8,
@@ -95,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:f4e01bb7c6a142a5872c47e6b73ecbbc75d985d937b4b24d77ac765269943bc7",
             "locator": {
               "end": 33,
@@ -113,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:c684f3728e65efecfd6e42e04b5e500ba7fdec3b243306670bb2e9a512d62b1a",
             "locator": {
               "end": 49,
@@ -131,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:8ded118e5a88278b5f356bf717dfacf074b03853a52add74591fc2c32d7b9674",
             "locator": {
               "end": 95,
@@ -149,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:4ba6bfbea5830c82d8fbcc62dbc1cf7e8e17b4415582b52e86df893a477e8b1f",
             "locator": {
               "end": 114,
@@ -167,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:f5c4a294403fd5f33a9414bd1a77f10f43a707c77a69850b8c84bf60cfdc525a",
             "locator": {
               "end": 134,
@@ -185,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
             "content": "sha256:b1e59fa9736d9592ef4970a56bb204c1066b559353fc534c2bf4e102cc742342",
             "locator": {
               "end": 155,

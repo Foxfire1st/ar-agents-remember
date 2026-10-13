@@ -4,6 +4,18 @@
 
 [mcp/registration route overview](overview.md)
 
+## Current operative account — MIK-R109
+
+`register_knowledge_tools(server, config)` still registers read, diff and integrity in that order. Read rows are text ID, record kind, computed state and memory-file location; no record prose travels. Paging and the internal family-complete selection remain, while mounted `read_ar_files` no longer supplies a matching inline manifest or continuation. `_worktree_relative_locations` compares the requested root with configured memory checkouts: non-configured roots use memoryRoot-relative row files, configured/no-config roots use absolute files; the payload includes commit/dirtiness provenance. Both read and diff registrars now receive config: read uses workspace/cache/location mode; diff uses coordination_root for the full comparison report. `knowledge_diff` answers compared trees, change counts, bounded decision record names/count and report location, not patches. The rich comparison remains available to the dashboard reviewer. Integrity remains the converted-tree validator and persisted leaf-worklist read; change/project remain unregistered. Handler argument forwarding and record/anchor semantics remain with their domain owners; the registration's location-mode helper is real local policy, not a new dataset selector.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [21]
+
+## Historical original card — all remaining original prose and evidence are non-operative
+
+The complete original account below, including Purpose, Commentary, invariants, dated notes and evidence captions, is retained only for custody. It grants no current callable tool, inline-text result, session deduplication, database read or execution acceptance.
+
 ## Purpose
 
 The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: FastMCP publishes tools in registration order, so every existing name keeps the position it was advertised at." **It declares three operations: `knowledge_read`, `knowledge_diff` and `knowledge_integrity_check`,** through `_register_knowledge_read`, `_register_knowledge_diff` and `_register_knowledge_integrity_check`. **`knowledge_change` and `knowledge_project` are no longer registered**: the write plane is reached through the CLI file writer, and the mounted tool surface exposes no authoring writer and no projection renderer. It deliberately performs no domain reasoning, holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it the workspace root a read falls back to when the caller names no repository, and the coordination root.

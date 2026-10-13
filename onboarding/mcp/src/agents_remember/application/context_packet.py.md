@@ -1,6 +1,13 @@
 # mcp/src/agents_remember/application/context_packet.py
 
-## Current operative account — MIK-R112
+## Current operative account — orientation and internal packet
+
+`build_context_packet` retains rich V2 context for internal/CLI/dashboard consumers and optionally reports the derived index. The mounted payload applies `slim_context_packet`: version 3, shared roots, optional readable active-leaf task ID/master, action lines only where needed, optional serving build and paired commits. `roots.code` is absolute; join shorter relative memory, enclosure and task-document paths to it. Settings/storage/provider policy blocks do not travel in the mounted answer. A partial index asks for action; an unreadable index is omitted.
+
+The tool log preserves the delivered slim answer, not an automatic V2 dump. `include_freshness=true` may fetch remotes; default reads do not fetch. Root factoring is a compactness mechanism, not proof of a universal token ceiling for arbitrary names. The older rich-wire account below is internal/historical context, not the mounted answer.
+
+### Preserved provider-knob removal
+
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
@@ -13,10 +20,14 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/context_packet.py:99 (include_providers=False)`.
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:114 (include_providers=False)`.
 - Source comparison: `mcp/src/agents_remember/models/tools/public_roster.py:22 (PUBLIC_TOOLS =)`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [12]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -140,3 +151,6 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 - A leaf drift block compares against the leaf's converted base and agrees with the drift tool. [9]
 
 </details>
+
+- Slim orientation factors shared roots and optional task/actions/build/pair fields without rich policy blocks. [10]
+- Rich V2 assembly remains internal and optionally includes index facts. [11]

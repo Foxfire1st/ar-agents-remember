@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
         "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
         "locator": {
           "end": 90,
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 300,
+          "end": 281,
           "kind": "line_range",
-          "start": 300
+          "start": 281
         }
       },
       "id": "RLZ-4YAPS7",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
         "locator": {
           "kind": "file"
         }
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
         "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
         "locator": {
           "end": 268,
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
         "locator": {
           "kind": "file"
         }
@@ -111,12 +111,12 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
         "locator": {
-          "end": 121,
+          "end": 126,
           "kind": "line_range",
-          "start": 121
+          "start": 124
         }
       },
       "id": "RLZ-PAE912",
@@ -125,13 +125,13 @@
         "handoffEntry": "MIK-R48@v2 rule 7",
         "leaf": "260928-MIK-L48"
       },
-      "rationale": "The curation operation requires the same authoring fields during the existing pass.",
+      "rationale": "The curation operation explicitly requires a restated family guarantee to be named as changed with an authored effect, and leaves the family own revision to the writer.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
         "locator": {
           "kind": "file"
         }
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:99adb8a0e73183ed3ac0ae63626bf3066a1270a7ff970b92c90a694378907194",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:57dc196bf640467200c67ef9fa2912cd3340f4d427f45b9f1af5a643d113a59c",
         "locator": {
           "end": 75,
           "kind": "line_range",

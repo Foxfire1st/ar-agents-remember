@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_knowledge_diff_report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison answers identify the trees and record changes while the report retains patches.\n\nAnchor: `KnowledgeDiffReportTests.test_compared_names_trees_counts_records_and_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931a1f0e8995f72b17fbf64ee9d7dd675ffaabf8",
+            "content": "sha256:0d1484456d0d6a5009c2774b9a566b9024cfecf8d3a40e6fa46decf2da538a5d",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cleanup failure exposes a real sibling partial file rather than claiming absence.\n\nAnchor: `KnowledgeDiffReportTests.test_a_failed_cleanup_names_the_residual`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931a1f0e8995f72b17fbf64ee9d7dd675ffaabf8",
+            "content": "sha256:22cdb836587c65d0211fb5858b7ee9ed31a29f97dab90569250a2f79a019dc40",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The locator work witness counts actual declaration and line visits without replacing the retained contrast.\n\nAnchor: `ReportResourceTests.test_locator_line_work_grows_with_the_file_not_per_mark_scans`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931a1f0e8995f72b17fbf64ee9d7dd675ffaabf8",
+            "content": "sha256:a8411702029e021cc74c163789ea41b86fc5d1c14a1a4f3acd6f4321938260aa",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 734
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Report admission charges existing report bytes beside logs.\n\nAnchor: `ReportResourceTests.test_enclosure_family_charges_reports_beside_logs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931a1f0e8995f72b17fbf64ee9d7dd675ffaabf8",
+            "content": "sha256:40cb31851db3277aa58c1e737f85ae2ab40dfcba094368c1cab0b2835ab1321a",
+            "locator": {
+              "end": 965,
+              "kind": "line_range",
+              "start": 918
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

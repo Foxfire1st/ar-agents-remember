@@ -141,6 +141,22 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "Metadata facts use short bounds and feed context assembly rather than a removed resolver tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbc0127d89960a9767e05933e81b178828f7d52",
+            "content": "sha256:54d15211526923de830e7ff4b581c39cbc535833c44bc2eed3d6299f87b07ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_git_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

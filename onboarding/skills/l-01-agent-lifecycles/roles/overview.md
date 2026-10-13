@@ -8,6 +8,8 @@ Architect owns the developer conversation, requirement meaning and semantic plan
 
 ## Hot Path Summary
 
+Worker and Bootstrap intake now obtain naming/orientation and open source/card/overview files natively; this changes reading, not grants, scratch placement, CODE/MEMORY ownership, question provenance or peer handover. The successor restores the canonical scratch paragraph removed by L109 in those two role sources, and generated copies follow the repo sync script. Curator family authoring still delegates to its operation: the earlier L109 sync3 account left the inherited RLZ-AHYBRR mismatch under mark60/ownerL142 rather than repairing it in this role route. The newer landed role witnesses are retained; this reapply changes none of their anchors, roles or rationales. No new launch, test or acceptance grade is claimed.
+
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 A native role launch selects an explicit supported role and applicable operation, resolves the canonical task selection, prepares the paired enclosure for leaf roles, and delivers the role instructions and handover. Its instruction stream contains the selected role followed by one operation; task and workspace facts travel separately. Retained shared core is authored doctrine, not a prepended role instruction stream. Missing or unsupported bindings are refusals, never invitations to infer a role, repository, task, parent or substitute operation.

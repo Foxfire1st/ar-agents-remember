@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9056182414e730390d700e06024a59c5b9c6c400",
+        "blob": "20c871cdc753614aa9e493a7713d4fe27a998906",
         "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "9056182414e730390d700e06024a59c5b9c6c400",
-        "content": "sha256:627660c8a08e5539811b7ca1813a1bee27674663ba8bfb2f524a03dcc04efd08",
+        "blob": "20c871cdc753614aa9e493a7713d4fe27a998906",
+        "content": "sha256:e59031f1876b339a7c1ae72ed972a7a1ef295a3623d6b385fae12c6ceb5d0bc5",
         "locator": {
           "kind": "symbol",
           "name": "test_an_event_with_no_repository_frame_is_refused_unless_coverage_could_make_it"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9056182414e730390d700e06024a59c5b9c6c400",
+        "blob": "20c871cdc753614aa9e493a7713d4fe27a998906",
         "content": "sha256:b07cf4328fb93453960332223f756945670be1d7b2d8bd098fd5ff08fbd476dd",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9056182414e730390d700e06024a59c5b9c6c400",
+        "blob": "20c871cdc753614aa9e493a7713d4fe27a998906",
         "content": "sha256:9132040bb76e8b172ae849b612f0aee6fa9f6c0440b944cbb0fb24c3fedebce3",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9056182414e730390d700e06024a59c5b9c6c400",
+        "blob": "20c871cdc753614aa9e493a7713d4fe27a998906",
         "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
         "locator": {
           "kind": "symbol",

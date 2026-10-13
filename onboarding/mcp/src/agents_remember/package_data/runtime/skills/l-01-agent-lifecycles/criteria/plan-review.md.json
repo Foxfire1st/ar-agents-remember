@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:660b2f7b698dab73721bd0a1f4d5a93100254a483c2073430bf081e0d9c3243b",
             "locator": {
               "end": 60,
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
+            "blob": "de25dea24ab1511742b9182c96607d183991efb5",
             "content": "sha256:0ccd1fd27c348676979bd4728e3770b2cad9e94c729d36d5a8dbc4d768feb4d7",
             "locator": {
-              "end": 140,
+              "end": 139,
               "kind": "line_range",
-              "start": 129
+              "start": 128
             },
             "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
           },
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
             "content": "sha256:66e61aa88724f9f62f7235690163c3dc03d5797f6c0f94be6cd6b0c2375c21ff",
             "locator": {
               "end": 6,
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
             "content": "sha256:63d0c2a4127dc7c8a166858c14d5364222f390665e691f7c8c29f1ca85d366e0",
             "locator": {
               "end": 10,
@@ -135,12 +135,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
+            "blob": "de25dea24ab1511742b9182c96607d183991efb5",
             "content": "sha256:3d92e348217351bf05ded55cff1d7d92a83caef1e8c031988db27bc0317ea803",
             "locator": {
-              "end": 68,
+              "end": 67,
               "kind": "line_range",
-              "start": 64
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de25dea24ab1511742b9182c96607d183991efb5",
+            "content": "sha256:0e81c5eb2527418e742338a327ec096ee679c7964101065ea1736c7b6abca718",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

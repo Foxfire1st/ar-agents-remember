@@ -122,12 +122,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 167,
+              "end": 129,
               "kind": "line_range",
-              "start": 167
+              "start": 129
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -145,6 +145,21 @@
             "locator": {
               "kind": "symbol",
               "name": "ReadArFilesResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
-        "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+        "blob": "c45bcef363709898681242b987c6c4bbf83a75c8",
+        "content": "sha256:99ed329e517763d6a206e8abdde52a589546e332c5dea030c25895e6561d7610",
         "locator": {
           "kind": "symbol",
           "name": "read_ar_files_payload"
@@ -16,8 +16,26 @@
         "handoffEntry": "PNT-R04@v1 §4 / F10",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Forwards the call-local admitted config to source/onboarding reader.",
+      "rationale": "Forwards the call-local admitted config to the read_ar_files naming builder so existence, governing-card locations and states are computed from the selected checkout without carrying source or onboarding text.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c45bcef363709898681242b987c6c4bbf83a75c8",
+        "content": "sha256:99ed329e517763d6a206e8abdde52a589546e332c5dea030c25895e6561d7610",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_payload"
+        }
+      },
+      "id": "RLZ-WQW74G",
+      "invariant": "INV-VSR6TF",
+      "origin": {
+        "handoffEntry": "MIK-R109@v1 §1 read-files-boundary",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This is the read_ar_files handler that enforces the clause boundary: omission-only removed parameters, the 20-path bound, and refusal before any read.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -115,6 +133,21 @@
             "path": "mcp/tests/test_reader_task_context_protocol.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c45bcef363709898681242b987c6c4bbf83a75c8",
+            "content": "sha256:78b889c616eef2fb65466ea3c88a05e7cb612c1e2a29eb508d04f36703f17986",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

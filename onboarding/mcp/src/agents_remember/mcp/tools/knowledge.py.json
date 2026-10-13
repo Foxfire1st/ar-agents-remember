@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
         "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
-        "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
+        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "content": "sha256:a5193dd08a586ecc23bf0348d601ffe9b5f75ef8843877f744357bfe72293abd",
         "locator": {
           "kind": "symbol",
           "name": "_diff_result"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
-        "content": "sha256:189617cc157fd8b77817e82037d7999046c9984854df77ff9cf2ca58b7ec7f6e",
+        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "content": "sha256:de2f9005dc326c6b78321b383e9b4d133e268ce4b96c9ba6bf6a19c8ae935326",
         "locator": {
           "kind": "symbol",
           "name": "_absent_selector"
@@ -57,11 +57,11 @@
     },
     {
       "anchor": {
-        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
-        "content": "sha256:c2d9b84b9b9f3c6ad4ff77b7f5b14ddba22cc17b6415d216141f3e4ce652b709",
+        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "content": "sha256:d34fba8bbc173ea950cd3f34447c67133178ea1efce2dee3aac08a864bf4c167",
         "locator": {
           "kind": "symbol",
-          "name": "_bounded_body"
+          "name": "_reported_body"
         }
       },
       "id": "RLZ-TR53WB",
@@ -70,13 +70,13 @@
         "handoffEntry": "R3 note 13",
         "leaf": "260928-MIK-L26"
       },
-      "rationale": "This owner counts the complete response against the shared threshold.",
+      "rationale": "The mounted knowledge_diff boundary writes the full selected ReviewKnowledgeTreeDiff as a caller-readable report, then names compared trees, counts and list-bounded decision records beside its location. Per-file patch cuts remain in the report; this replaces, and does not preserve, _bounded_body and its inline shared-read-threshold promise.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
-        "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
+        "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+        "content": "sha256:a5193dd08a586ecc23bf0348d601ffe9b5f75ef8843877f744357bfe72293abd",
         "locator": {
           "kind": "symbol",
           "name": "_diff_result"
@@ -94,12 +94,12 @@
   ],
   "references": {
     "1": {
-      "note": "Read paging/source resolution.",
+      "note": "The public read projects names from its selected rich page; source-resolution pairs and internally prepared proof/currentness extras remain distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:399c47806fb8a166316ff7d19aacc27f1dbb760787c49d8d109455617c117099",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_read_payload"
@@ -109,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -132,12 +132,12 @@
       ]
     },
     "2": {
-      "note": "Bounded Git knowledge diff.",
+      "note": "The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body.",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:56aaadd50653a2a36a2842a9f1ea917b9ce7d53e8f6ff3ae6301b3398b471f55",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:975c36680d05e46ccbc57172197c540234273d29c70d3ea6800baad1fb58a50c",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_diff_payload"
@@ -147,22 +147,11 @@
         },
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:c2d9b84b9b9f3c6ad4ff77b7f5b14ddba22cc17b6415d216141f3e4ce652b709",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:d34fba8bbc173ea950cd3f34447c67133178ea1efce2dee3aac08a864bf4c167",
             "locator": {
               "kind": "symbol",
-              "name": "_bounded_body"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:342747979b1f1220776cb2cfe8c4f6ac0e9cc5caafff75c17c979c4709b0bbb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_left_out"
+              "name": "_reported_body"
             }
           },
           "kind": "code"
@@ -170,12 +159,12 @@
       ]
     },
     "3": {
-      "note": "Validator/worklist integrity answer.",
+      "note": "Integrity delivers bounded validator/worklist status beside the whole internal result, not selected-run identities or a semantic verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:0db9e2433f3b9b4f873c4de9cb281a6131d173726c3c66ed79e4dedf58072b44",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_integrity_check_payload"
@@ -203,12 +192,12 @@
       ]
     },
     "51": {
-      "note": "Current validator/worklist response, without selected-run identities.",
+      "note": "The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:485cfa3bb9afd5ca691bc3c15251a93b9dce8f2a1a756474ab312f717954cb3d",
+            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
+            "content": "sha256:7f92e4c4b7b0dad6ec8e9778e2813447e4c5120534bfd487e98d72d156020ee0",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeIntegrityCheckResponse"
@@ -220,12 +209,12 @@
       ]
     },
     "56": {
-      "note": "Legacy selections open no database; partial read stays incomplete.",
+      "note": "All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",
               "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
@@ -236,7 +225,7 @@
         },
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
             "content": "sha256:85b6a10d42ca9ab50606b80eae6b36d76b3bdc6869ed836f27dcbeeaf6ca9a2b",
             "locator": {
               "kind": "symbol",
@@ -253,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -269,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
             "locator": {
               "kind": "symbol",
@@ -302,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:6a752c679b21430b2a1536b8cbe54bc168013aafdbcc17e029889be3a6a756fb",
             "locator": {
               "kind": "symbol",
@@ -351,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "blob": "57e1ed667583a6785be6fac21796aa8a1314bc0d",
             "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
             "locator": {
               "kind": "symbol",
@@ -368,7 +357,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -451,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:49791f57cd0f2e684f30c1fe2f9d6feb1f7dac52dcdfae6e4457cfdc5018975b",
             "locator": {
               "kind": "symbol",
@@ -500,7 +489,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
             "locator": {
               "kind": "symbol",
@@ -516,7 +505,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
             "locator": {
               "kind": "symbol",
@@ -549,7 +538,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
             "locator": {
               "kind": "symbol",
@@ -565,7 +554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
             "locator": {
               "kind": "symbol",
@@ -581,7 +570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
             "locator": {
               "kind": "symbol",
@@ -597,7 +586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
             "locator": {
               "kind": "symbol",
@@ -609,12 +598,12 @@
       ]
     },
     "79": {
-      "note": "- The read builder: the five-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial.",
+      "note": "The internal read admits exactly three views and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
-            "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:19a746bf3e0daed645a20cabe202a283d2cc2ce54b65b111af3d8a31106f02a2",
             "locator": {
               "kind": "symbol",
               "name": "_read_result"
@@ -629,7 +618,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
             "locator": {
               "kind": "symbol",
@@ -645,11 +634,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:bd46131b34125fbbd1d1d23fa0fd79e29d355329f2e48ee6a4105399cb94ab1c",
             "locator": {
               "kind": "symbol",
               "name": "_selection_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
+            "content": "sha256:f0f9d4b2a32d8b1fc3595c1933523ab92a8ad8d8edf544c224a41ee25829c0b4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

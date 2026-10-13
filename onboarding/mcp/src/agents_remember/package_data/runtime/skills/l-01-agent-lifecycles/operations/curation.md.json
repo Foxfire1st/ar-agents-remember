@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
         "locator": {
           "kind": "file"
         }
@@ -80,6 +80,21 @@
               "end": 302,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+            "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

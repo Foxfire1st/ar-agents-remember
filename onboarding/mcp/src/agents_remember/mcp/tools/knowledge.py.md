@@ -4,6 +4,10 @@
 
 [mcp/tools route overview](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
+
 ## Purpose
 
 Payload builders for three mounted knowledge operations over converted trees.
@@ -12,9 +16,9 @@ Payload builders for three mounted knowledge operations over converted trees.
 
 ### Logic
 
-Read selects the tree's derived index and delegates through bounded paging, carrying tree/index state, currentness and applicable proofs. Named source roots with no commit refuse; resolution is complete or absent. [1]
+Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record text is delivered. Source-resolution pairs remain complete or absent. [1]
 
-Diff compares knowledge/onboarding Git files, or privately captures working memory when afterRevision is absent. It groups records/entries and cards/sidecars, bounds patches and names every omitted/cut portion; no effect label is inferred. [2]
+Diff compares knowledge/onboarding Git files, privately captures the memory working tree when afterRevision is absent, and writes the whole selected comparison as a report before projecting the answer. `_reported_body` returns both compared trees, counts by kind, decision-ordered record names up to `TOOL_ANSWER_LIST_MAX`, their total `decisionRecordCount`, and the report location. The report holds patches and source/record groups; the mounted answer carries no comparison body, `diff`, `complete` or `leftOut`, and infers no semantic effect label. A report write failure refuses `report-unwritable`, retaining the actual cleanup/residual facts. [2]
 
 Integrity runs the knowledge validator and retains the latest leaf worklist for a contract in its
 whole result, not a canonical detection run or compatibility verdict. Its delivered status
@@ -49,7 +53,7 @@ view instead of a raw `KnowledgeReadContext` validation error.
 
 - **No builder decides anything.** No classification is computed, no effect label inferred, no draft authored, no rationale judged, no ambiguity resolved by choosing, no missing assessment filled and no compatibility verdict produced anywhere in the module.
 
-- **The read payload is the view payload.** The success branch dumps the seam's own payload; no second renderer, filter or classification exists in this module for requirement 6.8 to be violated by.
+- **No semantic classification is added by naming.** `_read_result` retains the rich body, its selected tree and shared resolver internally; `_projected_body` mechanically projects that body for the mounted answer. It does not return record prose or invent assessments.
 
 - **A continuation is carried opaquely.** The builder never resolves or guesses a snapshot binding.
 
@@ -63,6 +67,8 @@ view instead of a raw `KnowledgeReadContext` validation error.
   raised validation error out of the mounted tool.
 
 ## 260928-MIK-L28 Proofs Beside The Invariant And Family Views (MIK-R28 Rule 4)
+
+> Historical additive account, not the current mounted response: proofs, currentness and family-complete paging still inform the internal selection, but the answer names records and locations, not these earlier prose-bearing blocks. Database reads and `read_ar_files` publication continuations are not restored by this account.
 
 `_read_result` now adds `proofs` to a read's result. Inside the existing selection-failure boundary, and
 only when the selection is a converted memory tree and the view was not refused, it calls
@@ -96,6 +102,8 @@ index only for the `invariant` and `family` views; every other view, and every d
 
 ## 260928-MIK-L03 Currentness Beside The View (MIK-R03)
 
+> Historical additive account, not the current mounted response: proofs, currentness and family-complete paging still inform the internal selection, but the answer names records and locations, not these earlier prose-bearing blocks. Database reads and `read_ar_files` publication continuations are not restored by this account.
+
 `_read_result` now adds `currentness` to a read's result when the selection is a converted memory tree and
 the view was not refused. Since MIK-R02 (260928-MIK-L02) it is computed by `_tree_extras`, once per page, through
 `knowledge_paging.currentness.WalkCurrentness` at the walk's code tree, and it counts toward the page's
@@ -113,6 +121,8 @@ threshold; the rules below are L03's and are unchanged.
 
 ## 260928-MIK-L02 A Converted Tree's Read Is A Bounded Page (MIK-R02)
 
+> Historical additive account, not the current mounted response: proofs, currentness and family-complete paging still inform the internal selection, but the answer names records and locations, not these earlier prose-bearing blocks. Database reads and `read_ar_files` publication continuations are not restored by this account.
+
 `_read_result` hands a converted memory tree's read to `application/knowledge_paging/tree_read.read_tree_page`
 right after the selection (a two-line seam), so every such response is a page cut to the shared token
 threshold, and its `continuation` is the shared token that also resumes the published-intent block's walks.
@@ -128,6 +138,8 @@ threshold, and its `continuation` is the shared token that also resumes the publ
   ordering, selection failure), because every response states the threshold (ruling F8).
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name (MIK-R01)
+
+> Historical additive account, not the current mounted response: proofs, currentness and family-complete paging still inform the internal selection, but the answer names records and locations, not these earlier prose-bearing blocks. Database reads and `read_ar_files` publication continuations are not restored by this account.
 
 The tool reaches the family-complete leaf read through `knowledge_paging.tree_read` (a converted tree's
 `source_context` read with `sourcePath`, and every `leaf` continuation); nothing in `_read_result` changed
@@ -156,22 +168,22 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
-- Read paging/source resolution. [1]
+- The public read projects names from its selected rich page; source-resolution pairs and internally prepared proof/currentness extras remain distinct. [1]
 
 
-- Bounded Git knowledge diff. [2]
+- The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
 
 
-- Validator/worklist integrity answer. [3]
+- Integrity delivers bounded validator/worklist status beside the whole internal result, not selected-run identities or a semantic verdict. [3]
 
 
 - Only admitted views carry proofs. [4]
 
 
-- Current validator/worklist response, without selected-run identities. [51]
+- The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
 
 
-- Legacy selections open no database; partial read stays incomplete. [56]
+- All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]
 
 
 - - The read adds `proofs` only for a converted memory tree's page, prepared once per page since MIK-R02. [57]
@@ -196,7 +208,7 @@ No configured domain documentation could be checked.
 - - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
-- - The read builder: the three-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial. [79]
+- The internal read admits exactly three views and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch. [79]
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 

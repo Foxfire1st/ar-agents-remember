@@ -22,6 +22,16 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [13]
+
+
+## Current naming and source qualification
+
+Unresolvable coordination uses server_info/context_packet, not removed resolve_context; missing-provider reporting also names runtime_install providerless/disabled keys. Failure-table step-7 references for adoption are inconsistent with the normal workflow's step 6 and require source-owner resolution.
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

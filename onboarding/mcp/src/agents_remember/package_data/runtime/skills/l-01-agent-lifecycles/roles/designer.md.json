@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74664e390089e844ad6ecf64a792247e0289eec8",
-        "content": "sha256:01abf3c0329550b85732ab218a47c8633bc74926f9069d25d4cdda9243e2275a",
+        "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+        "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
         "locator": {
           "kind": "file"
         }
@@ -25,12 +25,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74664e390089e844ad6ecf64a792247e0289eec8",
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
             "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 110
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+            "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

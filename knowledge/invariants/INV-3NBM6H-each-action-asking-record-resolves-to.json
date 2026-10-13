@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Naming without source/card/record text requires this explicit boundary or locator contract; otherwise callers can use removed carrier arguments, attach a governing statement to the wrong card section, or treat an unresolved record location as verified."
+  },
+  "applicability": "read_ar_files actionable-record heading projection on a converted governing card.",
+  "conditions": [
+    "Canonical configured or per-call admitted reader roots and the selected immutable source/memory epoch remain authoritative."
+  ],
+  "exclusions": [
+    "Source inspection and producer fixture evidence do not establish fresh runtime execution, current CODE acceptance, metadata-only acceptance, or a semantic verdict.",
+    "Private/dashboard/CLI full-result composition is not replaced by mounted naming."
+  ],
+  "id": "INV-3NBM6H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L109-A8-verify2-knowledge-batch.log (distinct-section suites: different-blob mirror and same-blob content-exact mapping)"
+      ],
+      "path": "l109e-durable-producer-native-projection.json"
+    },
+    "handoffEntry": "MIK-R109@v1 §1 card-naming",
+    "leaf": "260928-MIK-L109",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each action-asking record resolves to the card section citing its own anchor: content-exact beats blob-exact beats path, ties break toward the record's earliest differing anchor, and an unresolved title fallback is marked titleFallback.",
+  "status": "proposed",
+  "supersedes": []
+}

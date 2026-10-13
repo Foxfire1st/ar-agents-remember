@@ -4,6 +4,10 @@
 
 [overview.md](overview.md)
 
+## Current source contract evidence
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [4]
+
 ## Purpose
 
 `__init__.py` re-exports the public Pydantic response-contract model surface.
@@ -63,6 +67,8 @@ what the actual imports and __all__ make nameable:
 None recorded.
 
 ### Role Runtime and Scope
+
+`SlimContextPacket` is now re-exported beside `ContextPacketV2`: the slim model is the mounted naming-reader answer, while V2 remains the whole-result/internal contract. `ResolveContextResponse` is removed from both imports and `__all__`; model exports do not restore removed tools.
 
 AgentBindingPayload, RoleStartResponse and RoleMessageResponse are defined in core and
 role_agents, but this initializer currently re-exports none of those three. Consumers use

@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd187129994e86112236dc28d7d52fa0251cb361",
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
             "content": "sha256:1c12be3660829478493659875efca1319344cbca8a31a6d4787f0a6a30a8852c",
             "locator": {
               "end": 6,
@@ -77,6 +77,21 @@
               "start": 6
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
+            "content": "sha256:25a76c94e2ca4d99b4e3f9051172443eb7e4626e629dc5673e5b1d552ad86fd7",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

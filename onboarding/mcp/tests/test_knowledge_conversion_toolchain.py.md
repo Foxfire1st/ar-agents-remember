@@ -4,24 +4,25 @@
 
 [tests route overview](overview.md)
 
+## Current source contract evidence
+
+- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof. [15]
+
+- The prepared-closeout source case checks its quality-phase converted comparison base. [16]
+
 ## Purpose
 
-**MIK-R24 rules 5 and 9: the master line's toolchain reads the text format, and unconverted memory is read
-as legacy-format and refused by ordinary memory operations whether or not any line is converted.** The existing unit cases remain; the composed first-conversion cases explicitly carry `pytest.mark.integration`.
+**MIK-R24 rules 5 and 9: converted-format tooling and the legacy boundary.** Unconverted memory remains readable as legacy-format but ordinary memory operations refuse it whether or not any line is converted. The direct file reader names converted records rather than carrying text. Existing unit-regression cases remain; composed first-conversion cases explicitly carry `pytest.mark.integration`.
 
 ## Code Commentary
 
 ### Logic
 
-- `test_read_ar_files_returns_legacy_format_or_resolved_references`:
-  - an unconverted tree's file result is `legacy-format`, with no references or sidecar, and its knowledge
-    section is `legacy-format`;
-  - after conversion, the knowledge section read **through `read_ar_files`** is `recorded`, with index
-    `complete`, and holds the exported invariant. This is the converted-tree coverage that replaced the
-    displaced ICR-R19 route assertions (architect ruling). Since 260928-MIK-L01 the statement is read from
-    the seed's leaf `rows` (the family-complete leaf read, MIK-R01) rather than the scope `items`;
-  - the file result is `text/v2`, with the sidecar, numbered references, a filled-in own path, and an
-    invariant target carrying its record summary.
+- `test_read_ar_files_names_the_converted_records_without_carrying_them` converts fixture memory, then
+  calls the direct application reader with a string path. It asserts `state=named`, source existence,
+  and absence of the known `Alpha adds one.` statement in the serialized answer. The earlier
+  legacy/read-text/sidecar/reference-summary assertions were removed. This limited source assertion
+  is neither registered-handler execution nor a universal no-text proof.
 - `test_references_are_checked_and_only_mechanical_moves_are_fixed`:
   - stale references are report-only (`findingCount` 0);
   - a quoted literal moved two lines down is re-found exactly once;
@@ -33,8 +34,8 @@ as legacy-format and refused by ordinary memory operations whether or not any li
 - `test_memory_init_creates_new_memory_in_the_text_format_only`: a new root gets the marker with exactly
   `LAYOUT_MARKER_TEXT` (`created`); a root holding a legacy card is `unconverted-existing-memory` and gets
   no marker.
-- **L37: the census, the card authoring and the converted check on a converted candidate.** Eleven test
-  functions:
+- **L37: the census, card authoring and converted-candidate checks.** The retained case inventory
+  is listed below; the current module has 19 top-level test definitions, including its two integration-marked first-conversion cases; this is not an executed case total:
   - `test_the_census_compares_a_converting_leaf_with_its_converted_base`: a converted card's source comes from
     the converted format, the conversion itself is no task edit, and a sidecar counts only beyond its anchors'
     mechanical fields (MIK-R30 rule 3);
@@ -55,6 +56,9 @@ as legacy-format and refused by ordinary memory operations whether or not any li
   - `test_two_tables_with_no_blank_line_between_them_are_refused_by_name`: a card is refused, naming the line,
     when a second table starts inside one and either holds citations; nothing is written; a card whose
     tables hold no citations is left alone; a body row of single dashes is a placeholder.
+
+  - `test_the_prepared_closeout_hands_its_quality_phase_the_converted_base` checks the
+    prepared-closeout quality-phase converted comparison base.
 
   The existing `memory_init` case also asserts the L24 nit: the failed-Git early return carries `layoutMarker`.
   `test_memory_quality_reads_the_converted_format` also asserts the final catalog's drift item on a converted
@@ -107,7 +111,7 @@ No cross-repo boundary is crossed by this file.
 
 ### Current Source-Inspection References
 
-- The read tool on both formats, with the converted knowledge section through the tool. [1]
+- Historical former both-format/inline-knowledge read account only; the current direct reader names converted records and asserts the limited omission described above. [1]
 - The reference check and fixer. [2]
 - Memory quality on a converted tree. [3]
 - The rule 9 refusal. [4]
@@ -121,5 +125,3 @@ No cross-repo boundary is crossed by this file.
 - A leftover evidence line is refused, and only the named card loses references. [12]
 - One document's fix reports its selected stale references and status counts; the delivered projection names retained whole-result artifacts. [13]
 - Two tables with no blank line between them are refused by name. [14]
-
-- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption. [15]

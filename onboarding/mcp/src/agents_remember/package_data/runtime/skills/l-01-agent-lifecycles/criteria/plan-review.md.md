@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current PR-3 reads implicated dependents directly with read_ar_files.
+- Current PR-3 names implicated dependents with read_ar_files and opens them natively at capped depth; the retained naming tools carry no source, card or record text.
 - Review independence and sealed fix-verification remain unchanged.
 
 ### Superseded inventory
@@ -17,6 +17,11 @@ The current source facts below replace the former operative inventory. The separ
 - Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:34-40`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [7]
+
 
 ## Historical original card — preserved, not the current operative account
 
