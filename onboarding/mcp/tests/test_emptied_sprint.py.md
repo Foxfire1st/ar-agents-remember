@@ -12,7 +12,16 @@ A sprint that lost its last master to a retirement stays a sprint, for every too
 
 `_read_as_a_sprint` reads the emptied sprint through every listed tool and `_task_doc` drives operations; `test_a_sprint_that_lost_its_last_master_is_read_as_a_sprint_by_every_tool` and `test_an_emptied_sprint_is_edited_and_commands_a_master_again` carry the rule.
 
+The directly constructed replacement series uses the shared world's external-memory repository and supplies its
+own memory branch plan; reattaching a master does not opt the test out of the supported memory contract.
+
+
+
 ## Evidence
 
+
 - A sprint that lost its last master to a retirement is read as a sprint by every tool, with no next action that cannot work. [1]
+
 - An emptied sprint can be edited and commands a master again. [2]
+
+- The emptied-sprint control builds its new series with both code and external-memory plans. [3]

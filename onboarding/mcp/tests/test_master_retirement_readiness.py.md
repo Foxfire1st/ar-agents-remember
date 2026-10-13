@@ -22,10 +22,18 @@ logs-only remains, then calls abandon in dry-run mode: logs and the group are pl
 `byte_tree(group)` is unchanged. Guard-lease effects outside that enclosure are outside this oracle;
 it is not a whole-world no-write claim or a fresh runtime result.
 
+`_leaf` supplies a scratch memory-worktree path and ledger path when the derived external-memory leaf has none.
+Explicit per-case cells remain authoritative. Supplying a path does not create a worktree directory: the open-work
+cases decide whether the directory or unlanded branch actually exists.
+
 ## Evidence
 
 - Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement. [1]
+
 - A leaf worktree directory that exists and a leaf branch with unlanded commits are open work. [2]
+
 - The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact. [3]
 
 - A failed locator lookup checks the manual command text without executing it. [4]
+
+- Derived leaves keep explicit memory cells and fill missing external-memory worktree and ledger paths. [5]

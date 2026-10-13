@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc122ebe60d6e7b6cda9c4f40da654ac56aa013b",
-            "content": "sha256:6170e66ee1fd093dc476233a3dc8f508ef270a5e3fe90e56eb1546475f26d5d4",
+            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
+            "content": "sha256:fc96e58f57290726673064f4ec2794c88d088aa7ee7301e6b29f606401222c8d",
             "locator": {
               "kind": "file"
             }
@@ -22,10 +22,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc122ebe60d6e7b6cda9c4f40da654ac56aa013b",
-            "content": "sha256:6170e66ee1fd093dc476233a3dc8f508ef270a5e3fe90e56eb1546475f26d5d4",
+            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
+            "content": "sha256:fc96e58f57290726673064f4ec2794c88d088aa7ee7301e6b29f606401222c8d",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The emptied-sprint control builds its new series with both code and external-memory plans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
+            "content": "sha256:6b2632f8ce45d5ee975b9a7ed90e61970842c9e7cf100cf1898623f697d4f9cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sprint_that_lost_its_last_master_is_read_as_a_sprint_by_every_tool"
             }
           },
           "kind": "test"

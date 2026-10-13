@@ -50,6 +50,12 @@ reuses the `World` fixture of `test_master_retirement.py`. The module is in the 
 
 - These cases prove that a finalized master's folder stays in place, and the routes' recovery and refusal rules.
 
+The open-work refusal control gives its derived leaf both the scratch memory-worktree and ledger paths. It
+creates only the intended code worktree directory; the memory path stays a contract cell rather than an extra
+open-work witness. The retirement refusal and its no-write assertions remain the subject.
+
+
+
 ## Evidence
 
 - Finalizing a sprint-commanded master completes its row, keeps the folder and names the sprint. [1]
@@ -61,5 +67,8 @@ reuses the `World` fixture of `test_master_retirement.py`. The module is in the 
 - Any exception before archival ends restored on both routes. [7]
 - A record that does not match its canonical file name is refused. [8]
 
+
 - Pending cleanup alone permits preview while a real child worktree refuses. [9]
 - A refusal before a retirement record exists carries no restart notice. [10]
+
+- The open-work control supplies external-memory leaf cells and creates the intended code-side open work. [11]

@@ -8,8 +8,9 @@
 
 The integration cases of `task_doc.retire_master` on a sprint's master and of the shared missing-master message. The
 `World` fixture builds a scratch coordination root with a sprint that commands three masters (`master-a`, `master-b`,
-`master-c`) with a graph and edges, a scratch code repository, and a series contract for a master; the cases drive
-the public `task_doc` tool. The module is in the `integration` lane.
+`master-c`) with a graph and edges, separate scratch code and external-memory repositories, and a series contract
+for a master. `World.retire` calls the public task-document application operation and reads its whole result,
+not the bounded MCP delivery answer. The module is in the `integration` lane.
 
 ## Code Commentary
 
@@ -42,7 +43,14 @@ the public `task_doc` tool. The module is in the `integration` lane.
 
 ### Conventions
 
-- `world.snapshot()` captures every file of the scratch tree, and the cases assert it unchanged after a refusal.
+- `world.snapshot()` captures every file of the scratch task tree, and the cases assert it unchanged after a refusal.
+- `World.series` creates matching branches in the code and external-memory repositories and records the memory
+  content commits of its completed fixture. This exercises the supported memory contract without weakening the
+  opt-out or carryover guards.
+- Readiness assertions consume the application result. A long scratch path may make the bounded delivery answer
+  omit `readinessFacts`; that transport limit must not change the application behavior these cases examine.
+
+
 
 ### Invariants And Boundaries
 
@@ -62,3 +70,6 @@ the public `task_doc` tool. The module is in the `integration` lane.
 - A nested master is refused before anything changes. [7]
 
 - Pending cleanup without open work is a fact and permits preview. [8]
+
+- The shared world supplies separate scratch code and external-memory repositories with completed memory bookkeeping. [9]
+- Retirement readiness assertions read the whole application result rather than the bounded delivery answer. [10]

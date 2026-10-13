@@ -12,8 +12,18 @@ What finalizing a master decides again, reads, and refuses by name. Finalization
 
 `_finalize` and `_blocked` drive the finalize route and read its refusal. The cases cover an abandoned row that landed and one that did not, an unreadable enclosure of an abandoned row, another unreadable member reported by file, a seat row found by its file, a missing member, canonical identity for an unreadable member, a readable admitted title member, a missing admitted canonical member, duplicate and foreign typed refs, an unreadable own document, and several commanding sprints.
 
+`_leaf_rows` gives its derived leaf a scratch memory-worktree path and ledger path, so the external-memory
+contract passes structural admission before the abandoned/landed status is judged. These cells do not alter the
+finalizer's contradiction rule or create live open-work directories.
+
+
+
 ## Evidence
+
 
 - Finalization refuses an abandoned row that landed and names the row, for masters of either nature. [1]
 - A proven canonical unreadable sibling is reported as a fact; an unbound title and a missing member refuse by name. [2]
+
 - An unreadable proven canonical sibling is reported as a fact without changing its membership, row, node or bytes; an unbound title is a named unresolved identity. [3]
+
+- The finalization control supplies the external-memory leaf cells before testing retained landing truth. [4]

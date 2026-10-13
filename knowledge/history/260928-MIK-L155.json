@@ -1,0 +1,632 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L155",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:6c421e2bbef895ba5b7716185808c55a16ba30ea6c14dfeaa660e5332f177495",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "39377284054cf17b327a8511e18a88bd72766155",
+            "content": "sha256:6c421e2bbef895ba5b7716185808c55a16ba30ea6c14dfeaa660e5332f177495",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-6CH7FB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1255RZ",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-X1AH5G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-48V22G"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_a_mismatched_namespace_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_a_mismatched_namespace_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-5CQGMS"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-CNHZ7D"
+        },
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-N1EWSM"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_other_edge_arguments_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_other_edge_arguments_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-YWVZ7Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-395CG9",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-SS31ZW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:a73d8e7ec69d0384bb788d5937ab34510de4302ff2bfa1e7b8d830d097d77966",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_master_is_refused_before_anything_changes"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:a73d8e7ec69d0384bb788d5937ab34510de4302ff2bfa1e7b8d830d097d77966",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_master_is_refused_before_anything_changes"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-9VWWWD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-970ZAC",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-BWB3R3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_report_where_an_older_layout_kept_it_is_a_fact"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "39377284054cf17b327a8511e18a88bd72766155",
+            "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_report_where_an_older_layout_kept_it_is_a_fact"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-BFJAA4"
+        },
+        {
+          "after": {
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_record_that_is_unfinished_or_unreadable_is_open_work"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "39377284054cf17b327a8511e18a88bd72766155",
+            "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_record_that_is_unfinished_or_unreadable_is_open_work"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-E3D3S9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AZHGXK",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-8MKBTB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_does_not_match_its_canonical_file_name_is_refused"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_does_not_match_its_canonical_file_name_is_refused"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-CPGHCG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F62VPC",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-844T5H"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-H88VNZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-SS31ZW",
+          "revision": 1
+        },
+        {
+          "id": "INV-T4G7VY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-GGKMWD",
+      "items": [],
+      "reason": "Examined publication/rollback, exclusive proof ownership and state-qualified identical retry together. Test-support repairs restore execution in a supported world without altering their assertions or production owners. The protected recoverable retirement guarantee, all three members and the application/task_docs route stay unchanged; fixture sharing does not justify a new family.",
+      "revision": 1,
+      "subject": "FAM-HBNM5A"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
+            "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_refuses_an_abandoned_row_that_landed_and_names_the_row"
+            },
+            "path": "mcp/tests/test_series_finalize_rules.py"
+          },
+          "before": {
+            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+            "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_refuses_an_abandoned_row_that_landed_and_names_the_row"
+            },
+            "path": "mcp/tests/test_series_finalize_rules.py"
+          },
+          "id": "PRF-6MM5X5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HVKK5Y",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-E20AY2"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-B9EZM6",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZVCB8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K7E6M6",
+      "items": [],
+      "reason": "Examined all three members and their routes: atomic closeout, finalization and organizational completion still distinguish abandoned labels from retained completed landing truth. The external-memory leaf fixture repair supplies valid contract cells before the unchanged contradiction assertion. No realization moved, no member or joint guarantee changed.",
+      "revision": 1,
+      "subject": "FAM-E5BHSB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:86e4d4bfffc7b81670ab3fbf40d1ebe5a8640507bbbbac9e15ab1f7b1df9f3b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_move_restores_exact_sprint_source_pair"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:86e4d4bfffc7b81670ab3fbf40d1ebe5a8640507bbbbac9e15ab1f7b1df9f3b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_move_restores_exact_sprint_source_pair"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-2GKNG4"
+        },
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-JSKHDF"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_exception_before_archival_ends_restored_on_both_routes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_exception_before_archival_ends_restored_on_both_routes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-S37G97"
+        },
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:2899a8cb2b1f4f8a0c966f6bc9faf9e33724c9cd679080de2775b4ec4f0701f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_pair_cas_refuses_sprint_or_successor_drift_before_publication"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:2899a8cb2b1f4f8a0c966f6bc9faf9e33724c9cd679080de2775b4ec4f0701f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_pair_cas_refuses_sprint_or_successor_drift_before_publication"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-WQTYXF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KNR5ER",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-H88VNZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-GV8CQB"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_master_no_sprint_commands_keeps_it_and_names_the_retire_route"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_master_no_sprint_commands_keeps_it_and_names_the_retire_route"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-MN9YRV"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_archive_step_itself_never_archives_a_task_holding_a_series_contract"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_archive_step_itself_never_archives_a_task_holding_a_series_contract"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-RBBFCY"
+        },
+        {
+          "after": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_sprint_commanded_master_completes_its_row_and_names_the_sprint"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_sprint_commanded_master_completes_its_row_and_names_the_sprint"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "id": "PRF-W0PQKE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S03TKN",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 2,
+      "subject": "INV-D91D5G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
+            "content": "sha256:754f2c6459e47c40e478120e6399dea7798084fa92c7979754103b57b124d32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_masters_kept_seat_document_is_readable_and_its_writes_refuse"
+            },
+            "path": "mcp/tests/test_untyped_sprint_rows.py"
+          },
+          "before": {
+            "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
+            "content": "sha256:754f2c6459e47c40e478120e6399dea7798084fa92c7979754103b57b124d32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_masters_kept_seat_document_is_readable_and_its_writes_refuse"
+            },
+            "path": "mcp/tests/test_untyped_sprint_rows.py"
+          },
+          "id": "PRF-BSHDM1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WWBJ91",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-Y0S1BZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manual_move_keeps_an_earlier_given_up_record"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "39377284054cf17b327a8511e18a88bd72766155",
+            "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manual_move_keeps_an_earlier_given_up_record"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-RS1D5M"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XE93CN",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-8AJVN0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YKZMQ5",
+      "items": [
+        "sha256:cf5fddb54ab6e6ba298995b93900ee9886092462cbc0bd2b65cb5807e12dd474"
+      ],
+      "reason": "The six changes repair external-memory fixture admission, the retirement application-result reader and a completion precondition. They preserve the integration lane, source/test catalogs, case budgets, retirement/finalization assertions and the route's test-policy/selection account. Module-local support details now live in the six concrete cards, not a leaf-named route log.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:b63e975b1eb021fc033255677942257f4d175d80fbc2fcf4aaed31a9c8715c2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_proof_cannot_be_forged_or_erased_by_generic_task_edit"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:b63e975b1eb021fc033255677942257f4d175d80fbc2fcf4aaed31a9c8715c2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_proof_cannot_be_forged_or_erased_by_generic_task_edit"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "id": "PRF-EF9WX6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z3NVZP",
+      "items": [],
+      "reason": "Preserved existing obligation and proof facets. This leaf changes only the shared external-memory test setup, compliant derived-leaf cells, whole-application-result reading and an in-progress completion fixture. No production owner, refusal, recovery assertion or record statement is changed; renew these exact carried proof anchors against the synchronized candidate without inventing a new invariant.",
+      "revision": 1,
+      "subject": "INV-T4G7VY"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

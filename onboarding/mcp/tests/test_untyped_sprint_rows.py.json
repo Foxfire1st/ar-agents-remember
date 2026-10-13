@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
+        "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
         "content": "sha256:754f2c6459e47c40e478120e6399dea7798084fa92c7979754103b57b124d32a",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
-            "content": "sha256:3076ad6c8f52c2dcb2fd1fe6f5b90349092bb5b2885931bd2a6cb9ad1e8ce70d",
+            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
+            "content": "sha256:2b1a00d74635e30339c9cdf0f694295d4658b0ef941637b242e75226558e66f1",
             "locator": {
               "kind": "file"
             }
@@ -41,10 +41,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
-            "content": "sha256:3076ad6c8f52c2dcb2fd1fe6f5b90349092bb5b2885931bd2a6cb9ad1e8ce70d",
+            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
+            "content": "sha256:2b1a00d74635e30339c9cdf0f694295d4658b0ef941637b242e75226558e66f1",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The skipped-row control completes an in-progress master and preserves the sprint source pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
+            "content": "sha256:c083e5119b16ff458daad64241effeb6d4b3aa26a0a6cdc93615dce11779b46b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_completes_the_master_and_reports_the_sprint_row_as_skipped"
             }
           },
           "kind": "test"

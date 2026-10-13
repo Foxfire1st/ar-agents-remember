@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
         "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
         "locator": {
           "kind": "symbol",
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
             "locator": {
               "kind": "symbol",
@@ -178,11 +178,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:3a0a17e49ff1312eeb5e4c843f6ab815c04364a92f80e3033f774fa09a09afb8",
             "locator": {
               "kind": "symbol",
               "name": "test_a_refusal_before_anything_is_recorded_carries_no_restart_notice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The open-work control supplies external-memory leaf cells and creates the intended code-side open work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:72b25acb1b3791fd92508a0211da3ff9f45437e2279ab9a8f008317b044afdfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not"
             }
           },
           "kind": "test"
@@ -194,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
             "locator": {
               "kind": "symbol",
@@ -210,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
             "locator": {
               "kind": "symbol",
@@ -226,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
             "locator": {
               "kind": "symbol",
@@ -242,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
             "locator": {
               "kind": "symbol",
@@ -258,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
             "locator": {
               "kind": "symbol",
@@ -274,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
             "locator": {
               "kind": "symbol",
@@ -290,7 +306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
             "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
             "locator": {
               "kind": "symbol",
@@ -306,8 +322,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
-            "content": "sha256:add34c3f83dd3e3a913d70687f6986ff4d3825c142f10b00b93211a722988dee",
+            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
+            "content": "sha256:72b25acb1b3791fd92508a0211da3ff9f45437e2279ab9a8f008317b044afdfe",
             "locator": {
               "kind": "symbol",
               "name": "test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not"

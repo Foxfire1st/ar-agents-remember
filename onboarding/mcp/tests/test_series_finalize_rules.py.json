@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+        "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
         "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
-            "content": "sha256:46c237e98e2ca5399f3c1b2c98fefde2b5303e05e43ab1c652fb72f45fc90a46",
+            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
+            "content": "sha256:03a280bd34da8ffc8c3045f7603494ac0e95befb9a54b72486a9021bacc998d9",
             "locator": {
               "kind": "file"
             }
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
             "content": "sha256:5ed2137bfe86e6acfbc0ba82d04d2a29db57a325e519add0346f590e9739df94",
             "locator": {
               "kind": "symbol",
@@ -57,10 +57,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
-            "content": "sha256:46c237e98e2ca5399f3c1b2c98fefde2b5303e05e43ab1c652fb72f45fc90a46",
+            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
+            "content": "sha256:03a280bd34da8ffc8c3045f7603494ac0e95befb9a54b72486a9021bacc998d9",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The finalization control supplies the external-memory leaf cells before testing retained landing truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
+            "content": "sha256:6ed613a81d1f81ced9727b4749e5e286174ba8dbb0f632345568caa7bfb50fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_rows"
             }
           },
           "kind": "test"

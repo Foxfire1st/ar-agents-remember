@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "39377284054cf17b327a8511e18a88bd72766155",
+        "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
         "content": "sha256:6c421e2bbef895ba5b7716185808c55a16ba30ea6c14dfeaa660e5332f177495",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "39377284054cf17b327a8511e18a88bd72766155",
+        "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
         "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "39377284054cf17b327a8511e18a88bd72766155",
+        "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
         "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "39377284054cf17b327a8511e18a88bd72766155",
+        "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
         "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
         "locator": {
           "kind": "symbol",
@@ -73,15 +73,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement.",
+      "note": "Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement.\n\nAnchor: `test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated`",
       "targets": [
         {
           "anchor": {
-            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
-            "content": "sha256:892fa278ed99c7b1c6dc823969da808b27293fe385b65ffa49fd83ef0f306e7b",
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -89,12 +88,12 @@
       ]
     },
     "2": {
-      "note": "A leaf worktree directory that exists and a leaf branch with unlanded commits are open work.",
+      "note": "A leaf worktree directory that exists and a leaf branch with unlanded commits are open work.\n\nAnchor: `1–672`",
       "targets": [
         {
           "anchor": {
-            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
-            "content": "sha256:e34c2c5714a2f100bb6608bf21d48a208e215748cc4febfe9c51f31ec5323f5b",
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
             "locator": {
               "kind": "file"
             }
@@ -104,12 +103,12 @@
       ]
     },
     "3": {
-      "note": "The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact.",
+      "note": "The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact.\n\nAnchor: `1–672`",
       "targets": [
         {
           "anchor": {
-            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
-            "content": "sha256:e34c2c5714a2f100bb6608bf21d48a208e215748cc4febfe9c51f31ec5323f5b",
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:0c8a0f1d57bb0fb03059f737807071ae89517218cb1fafd5568851897f993db4",
             "locator": {
               "kind": "file"
             }
@@ -123,11 +122,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39377284054cf17b327a8511e18a88bd72766155",
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
             "content": "sha256:94b3da847aaec6aafd579ed2158c6035438fd32be9a7e891526b9c0f5aa19595",
             "locator": {
               "kind": "symbol",
               "name": "test_a_locator_that_cannot_be_looked_for_is_open_work_and_no_tool_is_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Derived leaves keep explicit memory cells and fill missing external-memory worktree and ledger paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e520eb5c0161fe362b346c31fbd68abd972a855",
+            "content": "sha256:846acc4178e847785a8cd1816c293367b1c35978c4c703c6369a41131f1cd7cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
             }
           },
           "kind": "test"
