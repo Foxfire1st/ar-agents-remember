@@ -1,0 +1,169 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L164",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4E787Y",
+      "items": [
+        "sha256:b963799c416d5409c4268dc003b10e8e8f59f1c557be9a026f4d93bf9d3d49c1"
+      ],
+      "reason": "This comment names the new text-size authority; it changes no separate executable obligation beyond the cross-file typography policy.",
+      "subject": "hunk:sha256:b963799c416d5409c4268dc003b10e8e8f59f1c557be9a026f4d93bf9d3d49c1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 1
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7Y9T49",
+      "items": [],
+      "reason": "Examined all member statements and candidate-bound realizations: explicit typography changes no hierarchy, selection/reveal, keyboard, attention, dismissal or launcher/shared-metrics promise. Keep guarantee, membership and routes unchanged; the new whole-policy invariant already expresses its cross-file typography obligation, so no additional joint family is justified.",
+      "revision": 1,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MPTC7A",
+      "items": [
+        "sha256:099cb182c6ff9771f0c9b575cf2c21eaf0eff477221b5b9651183c0c4d1e10e3"
+      ],
+      "reason": "The two-size text repair changes neither this route's purpose/owners nor its shared-control, overlay, row-truth and interaction boundaries; precise numeric typography belongs to the four file cards.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PSBQ2T",
+      "items": [
+        "sha256:53f9a90e5a5fe462346967564b5f1e199341ae0b44ff32f8625eeb4b449573ff"
+      ],
+      "reason": "The two-size text repair changes neither this route's purpose/owners nor its shared-control, overlay, row-truth and interaction boundaries; precise numeric typography belongs to the four file cards.",
+      "subject": "onboarding:dashboard/src/grammar/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TVDM17",
+      "items": [
+        "sha256:a4a87091c4401f067b9eccc8bebb580751bdae4e29d51f576f75519c6f73648e"
+      ],
+      "reason": "The group-header size is a local manifestation of the cross-file 0.72rem policy, not a separate invariant; exact prose and references are maintained in the LifecycleList card.",
+      "subject": "hunk:sha256:a4a87091c4401f067b9eccc8bebb580751bdae4e29d51f576f75519c6f73648e"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3DKC7T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXTMP8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-V2K5H2",
+      "items": [],
+      "reason": "Examined all member statements and candidate-bound realizations: explicit typography changes no hierarchy, selection/reveal, keyboard, attention, dismissal or launcher/shared-metrics promise. Keep guarantee, membership and routes unchanged; the new whole-policy invariant already expresses its cross-file typography obligation, so no additional joint family is justified.",
+      "revision": 1,
+      "subject": "FAM-AW30YS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:8cfa398e66b344e521f4bbbdf604cca52fa3e923a4b238d04c05a99e69c53ad5",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-1NYFX2"
+        },
+        {
+          "after": {
+            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
+            "content": "sha256:bbde4233fb39405d1693bbb00e07c27b030746668f8bc566c9d88e8426c859c1",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-B0ZF1M"
+        },
+        {
+          "after": {
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
+            "content": "sha256:e7391932a61d94f482c513c9016cf9ccf35022f2c1f20f3f3ac3ef4b3af3bf40",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-GDD925"
+        },
+        {
+          "after": {
+            "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+            "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnLook.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-SNMDJ0"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-W176KJ",
+      "items": [],
+      "reason": "The ruled two-size policy is newly realized across sidebar rows, caret, bell layer and column controls; source-only typography changes preserve the separately owned navigation, queue and selection contracts.",
+      "revision": 1,
+      "subject": "INV-8WM5H4"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

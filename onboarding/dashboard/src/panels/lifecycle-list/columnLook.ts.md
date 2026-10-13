@@ -10,8 +10,9 @@ The shared caret cell for the Operations task tree. It leaves the same room in a
 
 ## Code Commentary
 
-The approved column uses a 14-pixel design root while the dashboard root is 16 pixels; column-owned rem values use the 0.875 conversion. The surrounding shared Panel keeps its own scale. Grouping, bell and Clear all reuse columnTabButton rather than independent tab recipes.
+The approved layout remains column-local, but its text now follows the task page rather than applying the proposal's 14-to-16-pixel conversion. Row titles use 0.8rem; the caret and other owned sidebar/bell-layer text use 0.72rem, the task page's smaller text. caretCell keeps a one-character lane with muted colour and the explicit 0.72rem size. The surrounding shared Panel keeps its own scale. Grouping, bell and Clear all reuse columnTabButton rather than independent tab recipes.
 
 ## Evidence
 
-- The exported caret cell keeps a fixed one-character lane and muted column-scale glyph. [1]
+- The exported caret cell keeps a fixed one-character lane, muted colour and 0.72rem task-page smaller text. [1]
+- Sidebar typography takes its title and smaller-text sizes from the task-page row and count recipes. [2]

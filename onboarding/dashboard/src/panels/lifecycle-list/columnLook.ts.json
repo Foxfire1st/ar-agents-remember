@@ -1,18 +1,56 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/columnLook.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+        "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-SNMDJ0",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The exported caret cell keeps a fixed one-character lane and muted column-scale glyph.",
+      "note": "The exported caret cell keeps a fixed one-character lane, muted colour and 0.72rem task-page smaller text.",
       "targets": [
         {
           "anchor": {
-            "blob": "6f525db276f0227d17698dc2da037d57ee4031a5",
-            "content": "sha256:a64a1e31a0cc962d0105217e2f4e29fbafa2d6b623ef84946c4fa4f85ac68026",
+            "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+            "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
             "locator": {
               "kind": "symbol",
               "name": "caretCell"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sidebar typography takes its title and smaller-text sizes from the task-page row and count recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
           },
           "kind": "code"
         }

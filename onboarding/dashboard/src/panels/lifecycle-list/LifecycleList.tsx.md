@@ -38,6 +38,10 @@ Selection keys remain typed taskdoc:, series: and lifecycle:. A lifecycle chosen
 
 Typeahead uses the displayed short id plus title for numbered master children, and preserves title-prefix matching for sprint/master/standalone labels. A standalone task can now display a separate id cell while still matching its historical title prefix. Unmodified right/left arrows open/close a focused parent only; task and fold rows receive no such tree action, and browser/system modifiers are untouched. Existing up/down, Enter and typing stay owned by React Aria. TaskGroupDisclosure remains a separate accessible native control with press propagation stopped.
 
+### Task-page text sizes
+
+rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, priority word, progress figure, pickup dismissal and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the column width and signal/selection behavior remain unchanged. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
+
 ### Bounds and kept-alive execution
 
 The approved column uses shared Panel chrome and columnTabButton; the bell and bounded Popover do not consume tree height. Grouping/head/layer controls wrap inside a narrow rail. One-line title/word ellipsis is intentional and its full facts remain one hover away; minmax(0,1fr), constrained tracks and row padding prevent the list from expanding its owner. Do not impose this column's overflow rule on Panel globally.
@@ -49,6 +53,11 @@ Age values remain server-served: [servedAges](../../data/servedAges.ts.md) stamp
 The earlier landed-leaf admission/default-collapse extension was emergency-reverted (a9a1a41b); landedLeaves, appendLandedLeafRows and markAutoCollapsed are not current APIs. That earlier proposal is not revived by the new completed fold. Physical worktree admission and one row per enclosure still govern. The old two-array opened/collapsed storage form was also withdrawn: parent collapse remains the single operations.tasks.collapsed.v1 set. The original file/test split put this entry under lifecycle-list and divided suites by behavior; subsequent presentation changes do not change that ownership.
 
 ## Evidence
+
+- Group headings use 0.72rem; row titles inherit 0.8rem. [34]
+- Ids, completed-fold text, repository, priority word, progress and dismissal use explicit 0.72rem while titles retain ellipsis. [35]
+- The shared caret uses 0.72rem without changing its fixed lane. [36]
+- Task-page rows and smaller labels/counts supply the two text sizes. [37]
 
 - Admission is derived from documents and physical worktree enclosures with one row per enclosure, then augmented by exact session identity. [20]
 - Exact case-insensitive stem/id and taskRoot joins determine leaf admission. [21]

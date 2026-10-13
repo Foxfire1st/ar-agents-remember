@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
         "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
         "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
+        "content": "sha256:e7391932a61d94f482c513c9016cf9ccf35022f2c1f20f3f3ac3ef4b3af3bf40",
+        "locator": {
+          "end": 207,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-GDD925",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
         "content": "sha256:f058fdc61aecbaeef4672242b2e4adc74de88dac61e431e94347e2b14ab16ce4",
         "locator": {
           "kind": "symbol",
@@ -62,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
             "content": "sha256:347f261bcd2aaa4caf11cf43b4888c2920fda913f66bd56a842d920dcce35f95",
             "locator": {
               "kind": "symbol",
@@ -78,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
             "content": "sha256:f09d4f1b9bc435df5ad6bf1f5ddbb35404b8b8e618355e5fc0933f6c97149b5f",
             "locator": {
-              "end": 290,
+              "end": 297,
               "kind": "line_range",
-              "start": 232
+              "start": 239
             }
           },
           "kind": "code"
@@ -95,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
             "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
             "locator": {
               "kind": "symbol",
@@ -180,12 +199,64 @@
         }
       ]
     },
+    "16": {
+      "note": "Entry titles use 0.8rem; item-base, age and location/link text use 0.72rem, with dismissal inheriting the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
+            "content": "sha256:e7391932a61d94f482c513c9016cf9ccf35022f2c1f20f3f3ac3ef4b3af3bf40",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Bell and Clear all take the column-specific 0.72rem tab recipe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:d5bf9dfe06c81a1e35c163131306dd4ac35daf66719f30f42f828f442a4f1ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "columnTabButton"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Task-page rows and smaller labels/counts supply the two text sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "Queue ownership, accessible bell and contained Popover/Dialog retain tree geometry and open the same lifecycle target.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
             "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
             "locator": {
               "kind": "symbol",
@@ -201,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
             "content": "sha256:f058fdc61aecbaeef4672242b2e4adc74de88dac61e431e94347e2b14ab16ce4",
             "locator": {
               "kind": "symbol",

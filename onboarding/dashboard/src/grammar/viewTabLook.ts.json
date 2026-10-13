@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
+        "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+        "content": "sha256:8cfa398e66b344e521f4bbbdf604cca52fa3e923a4b238d04c05a99e69c53ad5",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-1NYFX2",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
         "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
         "locator": {
           "kind": "symbol",
@@ -26,10 +45,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
-            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "viewTabMetrics"
             }
           },
           "kind": "code"
@@ -41,8 +61,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
-            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:605fc078a7ebdf203071ff6345b8e3df803bfbd50760ed1bb3d3ced874e3ef8a",
             "locator": {
               "kind": "file"
             }
@@ -56,10 +76,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
-            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:040c954b7656cdd59f49156cb9e44c4a7040b204a1465576928e7cb5c658f8ac",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "launcherSelect"
             }
           },
           "kind": "code"
@@ -78,6 +99,39 @@
               "name": "ModeBar"
             },
             "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Operations grouping, bell and Clear all retain the shared tab authority with explicit 0.72rem task-page smaller text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:d5bf9dfe06c81a1e35c163131306dd4ac35daf66719f30f42f828f442a4f1ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "columnTabButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Task-page smaller text is 0.72rem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "content": "sha256:ea06381b97e9fd9e54571ebe9d6b480074598bb01f3f38921bceb7ef7e03ceec",
+            "locator": {
+              "kind": "symbol",
+              "name": "count"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
           },
           "kind": "code"
         }
