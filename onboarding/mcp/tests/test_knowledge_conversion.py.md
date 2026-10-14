@@ -30,9 +30,12 @@ which lives here, beside its only consumer, rather than in the product (review R
   - `legacy-unassessed`, family members and `routes: []`;
   - entries in their recorded blobs, and `incidental` written as `support`;
   - a Markdown-less sidecar for the deleted file, and realization states.
-- `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted` runs the CLI: `--version 2`
-  refuses and writes nothing, two clones convert byte-identically, a rerun is a no-op, and
-  `knowledge-validate` passes on the committed conversion.
+- `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted` exercises the CLI in
+  its source assertions: `--version 2` refuses without writes, two clones convert byte-identically,
+  and a rerun is a no-op. After committing those bytes, `knowledge-validate --base HEAD` expects
+  exit 1, `[R22.6-carried-stale]` and `is refused: 1 violation(s)` for the exported anchor at a
+  deleted path. Successful deterministic conversion is not publication-validation success; the
+  carried-stale refusal leaves a maintenance obligation. No conversion or tests were run here.
 - `test_a_refused_conversion_writes_nothing_and_names_what_failed` checks three refusals:
   - a colliding entry ID refuses through the CLI (exit 1, both legacy claims named), and the tree is
     unchanged;
@@ -74,7 +77,6 @@ The cases and the renderer.
 
 - Rule 1 and 2 over every row case. [1]
 - Rule 4, the export. [2]
-- Rule 6, determinism, the version refusal and the no-op. [3]
 - A refused conversion writes nothing. [4]
 - Back to prose. [5]
 - The version 1 golden digest. [6]
@@ -85,3 +87,6 @@ The cases and the renderer.
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
 No cross-repo boundary is crossed by this file.
+
+- Rule 6 source assertions: deterministic conversion, version refusal and no-op, followed by based validation refusing the carried anchor at a deleted path (`R22.6-carried-stale`, exit 1). [3]
+- Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries. [8]

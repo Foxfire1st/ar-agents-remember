@@ -46,6 +46,15 @@ Lifting is guidance only; nothing enforces it mechanically.
   `--publish-to` are refused there, and the history rows answer the leaf's worklist items. The rationale step that
   INV-0FBA8M52 anchors here is unchanged.
 
+### Current onboarding judgment and second-reader duties
+
+The new converted onboarding contract takes current source-bound updated/no_impact rows: updated requires authored Markdown/reference change, not realizes/proves-only or mechanical anchor edits; source movement reopens the answer. The earlier L37 summary describes only the unchanged-card case. This L53 rollout's own changed cards instead use amended rule 1's measured counted-change exception; no updated row, changed-card no_impact or later backfill is authorized.
+
+Before closeout a seat that wrote none of the leaf's cards or records fact-checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired. This is a lifecycle step, not a new automated closeout gate; full quality/coherence and Curator helpers do not supply independent acceptance.
+
+- Updated/no_impact source-bound onboarding judgments are distinct from mere mechanical changes. [13]
+- Independent non-author fact-check precedes closeout without adding a closeout predicate. [14]
+
 ### Bound native intake and admission
 
 Read the rendered task-document files named in the handover with the harness's own file tools before acting; document changes go through task_doc only, since edits to copies are never read back. Use `arMcpContext.readerArguments` and each tool's actual schema; `task_context` carries both canonical task and enclosure contract. Resolve the named source/field before reporting it missing. Read immutable baseline/candidate knowledge before semantic changes, preserve the baseline, contain knowledge/onboarding outputs in the selected memory root and read admitted records back. Evidence/report outputs instead follow the task/scratch custody boundary stated above.

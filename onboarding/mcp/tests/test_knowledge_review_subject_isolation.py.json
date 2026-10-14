@@ -20,7 +20,7 @@
       ]
     },
     "22": {
-      "note": "`test_every_page_size_classifies_the_same_records_the_same_way` owns the current boundary described above.",
+      "note": "`test_every_page_size_classifies_the_same_records_the_same_way` compares treatments/context signatures across page sizes and checks unrelated==1 and the summary partition on each page; it does not compare whole summaries.",
       "targets": [
         {
           "anchor": {
@@ -212,7 +212,7 @@
       ]
     },
     "34": {
-      "note": "**The F-V2 case: every page size classifies the same records the same way, context included.**",
+      "note": "**The F-V2 case: treatments and context signatures match across pages; unrelated==1 and the summary partition are asserted separately per page, not whole-summary equality.**",
       "targets": [
         {
           "anchor": {

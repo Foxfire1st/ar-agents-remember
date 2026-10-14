@@ -82,42 +82,6 @@
         }
       ]
     },
-    "13": {
-      "note": "The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only.\n\nAnchor: `# GrepAI High-Leverage Usage`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6a8c2a75da6352d224fc12a687e16f7f4224e7a",
-            "content": "sha256:5fcd1ce333cab8abb0ed4cfb355d9cedf6be2e3e4b5f73fbcad8a3e204d0beca",
-            "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only.\n\nAnchor: `analyze`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "14b47cf0602a95db8fba7c4f6ad990ea0c136e44",
-            "content": "sha256:4a8d0bf019257b66245156ebb7cce1d9fbbaeb14907040d2d735a2ee150eb919",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
       "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: ---",
       "targets": [

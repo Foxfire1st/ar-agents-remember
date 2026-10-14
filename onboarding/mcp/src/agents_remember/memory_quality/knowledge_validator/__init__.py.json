@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
             "content": "sha256:2227e920a47dfb31e1e613eb780c44df7c38b820c1a638abfdbb66994cdf6c5d",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,80 @@
         }
       ]
     },
+    "10": {
+      "note": "Current source delta inspected statically: Replace permanent reporting summaries with named reasons and governs refusal; retain common registry and meaning/currentness boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:62b7dcb0a94f501a08f6602e47d1b6590d78598fd0c15a560630aaf5b7fde823",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:f02ea1c6309e8c6467d2450523da86d8114fae2220bb303b96128fefb8b5ef5a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:bb50d078bccaacd1686fe49b419a3dce8f8dc7f278d038916b015ed91152b77c",
             "locator": {
               "end": 20,
@@ -36,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:ed8ea5e99c87135f8f2bd8425504645b5cb200ad9d2bcdfc5b7c67295a77cb08",
             "locator": {
               "end": 38,
@@ -49,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:af803519d48d730ae8acbbbb0c1b94a053b51346512b222a2b89d7898ac69b4e",
             "locator": {
               "end": 41,
@@ -62,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:562c7588b445717c4314dd9fb044d48d073653203fe9bb3ca02e4ca9121d0194",
             "locator": {
               "end": 44,
@@ -93,30 +161,68 @@
       ]
     },
     "4": {
-      "note": "The module map names MIK-R09's history-row rule, and importing the validator registers it.",
+      "note": "The module map names history-row rules; importing the validator registers the refusing rule and the merged-row rule with merge_reports.",
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
-            "content": "sha256:1658cb7ca59241db5e7b439281da7b38df9b15b9f034aa9e21d8deecf0b220ac",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:62b7dcb0a94f501a08f6602e47d1b6590d78598fd0c15a560630aaf5b7fde823",
             "locator": {
-              "end": 20,
+              "end": 16,
               "kind": "line_range",
-              "start": 19
+              "start": 13
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
-            "content": "sha256:e28c592b8a2fcbbac5a8f3438c49a4076e075b04365f166d5984f8f6ef753464",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:f02ea1c6309e8c6467d2450523da86d8114fae2220bb303b96128fefb8b5ef5a",
             "locator": {
-              "end": 29,
+              "end": 18,
               "kind": "line_range",
-              "start": 29
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
           "kind": "code"
         }
@@ -127,19 +233,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
             "content": "sha256:8ce6c3a589eb4b4f833315758f9eee40ce12ef682fea3b8672bfc637611e1cd1",
             "locator": {
-              "end": 17,
+              "end": 19,
               "kind": "line_range",
-              "start": 17
+              "start": 19
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:4beea48b7f752cbd777ca2a1d668b50dc7f70a100bb0d28a8c4257e9bac9537e",
             "locator": {
               "end": 35,
@@ -153,30 +259,68 @@
       ]
     },
     "6": {
-      "note": "The module map names MIK-R13's decision rules, and importing the validator registers them.\n\nAnchor: `rules_decisions`",
+      "note": "The module map names decision rules, including governs links refused at commit/landing publication; the validator registers them.",
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
-            "content": "sha256:0ffdd80cf121cb077567cd4aed0f21d9ad61bda705d2c2305ab9f6f0560ef821",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:62b7dcb0a94f501a08f6602e47d1b6590d78598fd0c15a560630aaf5b7fde823",
             "locator": {
               "end": 16,
               "kind": "line_range",
-              "start": 15
+              "start": 13
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
-            "content": "sha256:bfe534ad8976f20b23872f51fa7bd2448ba80562d1591816c0fcc7563255966b",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
+            "content": "sha256:f02ea1c6309e8c6467d2450523da86d8114fae2220bb303b96128fefb8b5ef5a",
             "locator": {
-              "end": 27,
+              "end": 18,
               "kind": "line_range",
-              "start": 25
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
           "kind": "code"
         }
@@ -202,19 +346,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
             "content": "sha256:ffd343b6679da08b5e4eebdf9e5e96f68fcb7e8f4070a805f8f889ec304393f7",
             "locator": {
-              "end": 24,
+              "end": 26,
               "kind": "line_range",
-              "start": 23
+              "start": 25
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:a3f7f9d96fd5b1ce33140d436114e8918d600ba132483d51fec2aed305d1ea53",
             "locator": {
               "end": 33,

@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R09@v2's evidence: the currentness rules, the packet's examples, the per-kind dispatch, and the gate at each
-route (18 statically specified cases across 17 test definitions, including one two-way parametrization; 1,206 physical source lines).** The fixture is a converted leaf on real Git repositories: two invariants of
+route (18 top-level test definitions and 1,353 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
@@ -20,13 +20,15 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Logic
 
 - **The fixture world (`Gated`, `build_gated`).** `contract_path` writes the leaf's series contract; helpers write
-  history rows (`invariant_row`, `family_row`, `trace_rows`), re-anchor entries after a code edit (`reanchor`), and
-  evaluate the gate (`gate()`, with or without an explicit tip). `_open` maps open-item findings by their head.
+  history rows (`invariant_row`, `family_row`, `trace_rows(world, ...)`), re-anchor entries after a code edit
+  (`reanchor`), and evaluate `gate()` with or without a tip. `trace_rows` recomputes the worklist and
+  fills `sources` from each trace item's `sourceBlobs`; `_open` maps findings by their head.
 - **Cases:**
   1. `test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two`: the packet's
      conforming example, the non-conforming "covers one of two" (open, "does not cover RLZ-A00002"), and the first
-     boundary: editing `land` again after the rows makes `RLZ-A00001` stale, and the count returns to 2 (the invariant
-     row and the family row).
+     boundary: editing `land` again makes `RLZ-A00001` stale and reopens four items: invariant, family,
+     file trace and route trace. The unchanged `reopens_two` test name is not its current count; the
+     source also asserts the file trace's "changed after" reason.
   2. `test_a_sibling_whose_meaning_changed_after_the_family_row_reopens_the_family`: the second boundary, "INV-BBBBBB
      (examined at 1, now 2)" and the touched sibling item, followed by readiness after current complete invariant/family rows. It does not assert a separate partial-cover stage.
   3. `test_a_new_invariant_needs_no_row_and_admission_judges_it_new_against_the_parent_line`: no item for
@@ -36,10 +38,11 @@ separate support module was an unregistered evidence artifact on the worker's fi
   5. `test_an_incomplete_run_is_one_finding_naming_its_input_never_an_unhandled_error`: a `SubprocessError` at the
      outer recompute and inside the run (`tree_difference_observation`) names `git`; an unreadable `leaf.json` gives
      exactly one finding, `leaf task document` (the L03 and L11 carries).
-  6. `test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup`: `set(GATE_PREDICATES) ==
-     set(ITEM_KINDS)`; a counted onboarding change passes where `satisfying_row` finds nothing; unreadable sidecars;
-     covered and uncovered unexplained items; planned items; reconsideration (D29); two item IDs with one subject; an
-     unknown kind is open.
+  6. `test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup`: registry/predicate
+     parity; planned, reconsideration and family-route dispatch; repeated item IDs and unknown-kind refusal.
+     `test_r53_kinds_are_decided_by_their_own_predicates` separately asserts counted-card edits alone
+     leave onboarding open, current/stale source-bound rows and uncovered-trace binding, unreadable
+     sidecars, membership candidate-revision currency and changed record-row revision/disposition.
   7. `test_the_gate_runs_the_validator_and_its_history_row_rule`: a hand-edited `after` and a ghost subject are
      refused by `R09-history-rows` where rule 2 alone would pass, `R22.3-markers` too; the leaf's own file closed by
      hand is no waiver (review R1 F1; the assertion was flipped and the test renamed).
@@ -67,13 +70,13 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Conventions
 
 - Real Git repositories under `tmp_path`, with a pinned environment (`git` helper); no network.
-- Static source population: 17 test definitions expand to 18 specified cases through one two-way parametrization; the file has 1,206 physical lines. No pytest collection, run or limit enforcement was executed for this card.
+- Static source population: 18 top-level test definitions and 1,353 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
 
 ### Invariants And Boundaries
 
-- The module pins MIK-R09 rules 1-8 and the carried obligations as the worker's obligation table lists them; the
-  worker's mutation sets (26, 37 and 4, plus the reviewer's) are killed by it together with
-  `test_knowledge_gate_routes.py`.
+- Historical worker/reviewer mutation evidence (sets of 26, 37 and 4, plus the reviewer's) belongs
+  to the named MIK-R09-era runs with `test_knowledge_gate_routes.py`; it is not fresh mutation
+  proof for the added R53 predicate cases.
 
 ### Todos
 
@@ -92,8 +95,6 @@ No configured live documentation source was available for this pass.
 
 - The module docstring: a converted leaf on real repositories. [1]
 - The fixture world. [2]
-- Rule 2 and the packet's examples. [3]
-- New invariants, recompute after a sync, incomplete runs, the dispatch. [4]
 - The validator's history-row rule at the gate. [5]
 
 - The closeout validator and the closeout memory commit. [6]
@@ -105,7 +106,6 @@ No configured live documentation source was available for this pass.
 
 - The lane row. [10]
 
-- The closeout test answers the items its code commit opens, because the memory commit is gated. [11]
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
 
 ### Cross-Repo References
@@ -113,3 +113,8 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the fixture builds its own repositories.
 
 No cross-repo boundary is crossed by this file.
+
+- Rule 2 examples: a new edit reopens four items, including source-bound file/route traces. [3]
+- New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
+- The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
+- Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]

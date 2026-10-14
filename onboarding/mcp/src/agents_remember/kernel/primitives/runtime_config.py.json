@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
             "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
             "locator": {
-              "end": 162,
+              "end": 166,
               "kind": "line_range",
-              "start": 162
+              "start": 166
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -56,74 +56,14 @@
         },
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
             "content": "sha256:5440abf4d376eb4e3ae1f3bd57caab9a1858be20c57e74f7f04a18d5528dff1c",
             "locator": {
-              "end": 186,
+              "end": 194,
               "kind": "line_range",
-              "start": 186
+              "start": 194
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "`provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:dacaa2467f3c54b789747a5f7f70ecdd5f5669876e3c74593da589d937d7b696",
-            "locator": {
-              "kind": "symbol",
-              "name": "provider_watchers_tool"
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:84ee6eab60de6306603de53c0410b3ff49e52e8eab3dd800307d349dd8a17a42",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 48
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent.\n\nAnchor: `ProviderOperation.required_provider`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:878cc098e12080a858e6ddae9f6d1d6105c020ecff4eaf42ad702c75c96067b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_provider_operation_result"
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:bcf50c44c2df8df9a55fad5353bf09f281c6268777fedf0e25e2b64b5ac97251",
-            "locator": {
-              "end": 1008,
-              "kind": "line_range",
-              "start": 961
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
           },
           "kind": "code"
         }
@@ -154,86 +94,6 @@
               "start": 77
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:90767b1cf7f32042d517f81c517ba348d61e953cca5a576ed7576f96c2c9198e",
-            "locator": {
-              "kind": "symbol",
-              "name": "codex_benchmark_prepare_tool"
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:313d69677bd41d25962fb7278dad42a5847cf254465729d62dafe4d017fb5d46",
-            "locator": {
-              "kind": "symbol",
-              "name": "codex_benchmark_run_tool"
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:adc8833b207a0d8b99835c2c4c3649211752d6e09d43890c5c3db219cbca33e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_live_provider_ids"
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:c30aaedfd499eafa8fa4bb70c89fe8d78d17c3154a177fd4b33f20e83f840242",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 64
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:47e54d81d3830d81f16ba66844987fdd03ce3286fe909fcf93543069505b3bdd",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 137
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
-            "content": "sha256:12e6f34a396975d2013c9a659eef4c2f4d674aabf64fbe084cc7eb622a18c2cc",
-            "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 87
-            },
-            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
           },
           "kind": "code"
         }

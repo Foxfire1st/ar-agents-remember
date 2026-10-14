@@ -6,8 +6,8 @@
 
 ## Purpose
 
-`runtime_environment.py` owns small runtime environment defaults used by
-provider lifecycle commands.
+`runtime_environment.py` defines retained provider lifecycle environment helpers.
+The removed CLI no longer uses its root/stdio defaults; command execution still uses `subprocess_env`.
 
 ## Code Commentary
 
@@ -27,5 +27,5 @@ environments that force UTF-8 Python IO.
 
 ### Repo-Internal References
 
-- The lifecycle CLI uses these root and stdio helpers. [1]
+
 - Command execution uses the subprocess environment helper. [2]

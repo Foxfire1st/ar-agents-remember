@@ -8,8 +8,10 @@
 
 **MIK-R27's admission rule in the validator's one registry (MIK-R22 rule 9).** Every invariant, family
 and decision record states which admission criterion it meets, with a one-sentence justification
-(the shape is MIK-R21 rule 4, in `models/knowledge_files/shapes.py`). Admission governs **creation, not
-maintenance**: the same failure is refused on a new record and only reported on every other one.
+(the shape is MIK-R21 rule 4, in `models/knowledge_files/shapes.py`). New-record admission refuses unsupported criteria or non-prose justification. Unsupported criteria on
+existing/exported live records also refuse commit/landing publication: only sync/standalone conversion
+reports under `merge_reports`, with writer-only reporting for repair. This is not a permanent
+admission-maintenance exemption.
 Importing the module registers the three admission rules and the refusing record-kept comparison rule; `validator.py` imports it next to the other rule modules,
 so every place the validator runs (the writer, `validate_tree`, `require_valid_commit`, the managed
 sync, `knowledge-validate`) runs them.
@@ -17,8 +19,8 @@ sync, `knowledge-validate`) runs them.
 | Rule | Status | What it does |
 | --- | --- | --- |
 | `R27.2-new-record` | refusing | refuses a new record that fails admission, naming the record and the criterion |
-| `R27.2-existing-record` | report-only | reports every other record whose checkable criterion no longer holds |
-| `R27.4-legacy-unassessed` | report-only | one tree-level finding counting the live records still `legacy-unassessed`, by kind |
+| `R27.2-existing-record` | `merge_reports`, writer-reported | unsupported existing criteria refuse commit/landing; report at sync/standalone conversion and in the writer for repair |
+| `R27.4-legacy-unassessed` | `migration_debt` | aggregate carried live debt while migration is incomplete; new debt and migration-complete carried debt refuse per record outside standalone conversion |
 | `R27.4-record-kept` | refusing | every ID held by a comparison base remains in the candidate; leave use with `status: retired`, never deletion |
 
 ## Code Commentary
@@ -72,17 +74,22 @@ sync, `knowledge-validate`) runs them.
     tokenizing, dotted sub-rules, master-prefixed IDs, step IDs and dates came in by ruling 23:04:57
     F1. Any other word in the justification admits it, so "Per D14 at 4e1c9a7f2b: a landing that pairs
     the wrong commits corrupts the ledger." is admitted.
-- **Reported on every other record** (`check_existing_record_admission`, report-only): the same
-  `_unsupported` failure, with "reported, not refused: admission governs creation (reassess … or
-  demote the record)".
-- **Counted** (`check_legacy_unassessed`, report-only): one finding at path `knowledge` giving the
-  number of live `legacy-unassessed` records by kind, until the migration (MIK-R19) assesses or
-  demotes each one.
+- **Existing-record criteria (`check_existing_record_admission`).** The same `_unsupported` failure
+  refuses at commit/landing, reports at sync/standalone conversion via `merge_reports`, and is
+  writer-reported for repair. The message names the criterion to reassess or demote; the source
+  docstring's old unrelated-commit exemption is not the executable route contract.
+- **Live unassessed debt (`check_legacy_unassessed`).** `_base_live_unassessed_ids` compares actual
+  live `legacy-unassessed` findings in parsed bases, not just record-ID presence. Assessed-to-unassessed
+  and retired-to-live-unassessed changes are new debt. Base-carried debt aggregates by kind while
+  migration is incomplete (no census routes is not completion); new debt refuses immediately, and
+  once every onboarding route is migrated or excluded carried debt also refuses per record.
+  Standalone conversion reports the debt it authors rather than accepting later publication.
 
 ### Conventions
 
-- None of these rules sets `writer_reports`, so the writer (MIK-R12) refuses exactly as every
-  commit route does.
+- Only `R27.2-existing-record` sets `writer_reports=True`; the writer reports that criterion failure
+  for repair instead of refusing there. New admission, record retention and refusing migration debt
+  are not waived by that writer setting. Later commit/landing still refuse unsupported existing criteria.
 - Messages name the record ("new invariant INV-…") and the criterion; the refusal text asks for the
   reason "in words".
 - Curly quotes and dashes are written as escapes in the source, because ruff's RUF001 flags the
@@ -95,24 +102,25 @@ sync, `knowledge-validate`) runs them.
   proved by `test_a_new_record_whose_justification_is_only_a_reference_is_refused`,
   `test_a_new_record_without_a_criterion_or_marked_legacy_unassessed_is_refused` and
   `test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it`.
-- **Admission defects on existing and exported records are only reported.** Deletion is separately refused by record-kept; this is not a general exemption from validator rules. Admission maintenance is realized by the report-only
-  `R27.2-existing-record` and the `new` split in `_admitted_records`; proved by
-  `test_an_existing_record_whose_test_was_deleted_is_only_reported` and
-  `test_exported_retired_and_merged_records_are_never_refused`.
+- **Unsupported criteria on existing/exported live records refuse off merge.**
+  `R27.2-existing-record` carries `merge_reports` and `writer_reports`; the static cases
+  `test_an_existing_record_whose_test_was_deleted_refuses_off_merge` and
+  `test_exported_retired_and_merged_records_refuse_off_merge` distinguish single-base refusal,
+  sync reporting and retired exemption. Record-kept independently refuses deletion.
 - **A record counts as exported only when its ID is the one the converter derives from its
   `legacyId`.** Realized by `_exported`; proved by `test_a_forged_legacy_id_does_not_make_a_record_exported`.
 - **A decision is never treated as an export for admission.** Realized by the `DecisionRecord` guard in
   `_exported`; proved by `test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing`
   (`test_knowledge_decisions.py`), which fails with the guard removed, and by the L13 reviewer's hand-forged
   decision on a converted clone (refused by the L13 build, not by the base build).
-- **Retired records are exempt.** Realized by `_retired`; proved by the retired block of
-  `test_exported_retired_and_merged_records_are_never_refused`.
-- **Nothing is refused until records are authored on a converted line.** The validator runs only
-  over converted memory (MIK-R22 rule 8): inside the writer, which refuses unconverted trees, and at a
-  commit route whose K_B or K_C holds the layout marker. The conversion commit carries only exports,
-  and a crossing sync only records a parent holds. The worker's and reviewer's real-data runs over a
-  converted scratch copy (108 exported records) showed 0 R27 refusals, and unconverted memory gives
-  byte-identical `memory_quality_check` output from the base and the leaf builds.
+- **Retired records are exempt.** Realized by `_retired`; statically asserted by the retired block of
+  `test_exported_retired_and_merged_records_refuse_off_merge`.
+- **Converted applicability is not an export exemption.** The validator runs over converted
+  candidate/comparison trees. Standalone conversion reports authored migration debt; ordinary
+  commit/landing refuses new debt and unsupported existing criteria, including exported records.
+  Historical worker/reviewer runs over 108 exported records with zero R27 refusals and byte-identical
+  unconverted quality output describe the earlier L27 state, not a current pre-conversion permission
+  or fresh execution. MIK-R46 ordinary operations now refuse unconverted memory.
 - The module judges no meaning (Exclusions, Doc13): whether a justification is plausible, and whether
   `family_guarantee`, `prevents_costly_mistake`, `joint_guarantee`, `real_alternatives` or
   `constrains_future_work` hold, is the reviewer's judgment (OM-4, entered by requirement, ruling
@@ -129,9 +137,9 @@ sync, `knowledge-validate`) runs them.
   counts as new.
 - **The R19 follow-up master (ruling 22:11:24 Q5; ruling 23:04:57 F2's remainder).** Whether demotion
   also removes a retired record's realization entries, recording the outcomes in the census (MIK-R20),
-  and the fact that exported records the migration assesses are only reported, never refused, so R19
-  must re-validate its assessments against the `R27.2-existing-record` report.
-- **The L06 sync (ruling 22:11:24 Q4, review F6): resolved.** L06 landed second. Its new cases pin no exact
+  and re-validation of exported records' assessments remain R19 concerns. The old report-only
+  admission premise is superseded: unsupported criteria now refuse the next publication/landing.
+- **Historical L06 sync (ruling 22:11:24 Q4, review F6): resolved at that time.** L06 landed second. Its new cases pin no exact
   findings list over the Doc14 fixture tree: the carried-route case asserts `validate_tree(...).ok` and
   filters the reports by rule (`R04.1-carried-route-absent`), so the `R27.4-legacy-unassessed` count needed
   no pin change, and L06's worker reran the validator, family-route and route-condition suites green on the
@@ -166,15 +174,11 @@ The detector, novelty, the entry facts, the three rules and their proofs.
 - The checkable facts come from the tree's sidecar realization and proof entries. [7]
 - An unsupported spans_locations or guarded_by_test claim. [8]
 - A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim. [9]
-- Every other record's unsupported claim is only reported. [10]
-- The live legacy-unassessed records are counted in one finding. [11]
 
-- The admission rules and independent record-kept refusal are registered on import; report-only admission maintenance does not waive deletion. [12]
 
 - The derivation the conversion writes and the export test reuses. [13]
 - Reference-only justifications are refused, and real prose is admitted. [14]
 - An unsupported checkable criterion on a new record is refused, naming it. [15]
-- An existing record whose test was deleted is only reported. [16]
 - A forged legacy ID does not make a record exported. [17]
 - The writer refuses a new invariant whose claim the tree does not support, and writes nothing. [18]
 
@@ -187,3 +191,9 @@ The detector, novelty, the entry facts, the three rules and their proofs.
 No meaningful cross-repo references found: the rules read the validation context's memory trees only.
 
 No cross-repo boundary is crossed by this file.
+
+- Existing unsupported criteria refuse commit/landing and report at sync/standalone conversion or writer repair. [10]
+- Actual base-carried live legacy debt aggregates while migration is incomplete; new or completion-time debt refuses per record. [11]
+- Admission rules register named merge_reports/migration_debt reasons and the independent record-kept refusal; no permanent maintenance waiver. [12]
+- The existing-record test-deletion case asserts single-base refusal and sync-merge reporting. [16]
+- Current source delta inspected statically: Repair admission status table, logic, writer flags, boundaries/TODO and captions; preserve retirement and dated historical evidence. [22]

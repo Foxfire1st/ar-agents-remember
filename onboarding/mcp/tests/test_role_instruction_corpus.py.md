@@ -15,7 +15,7 @@ coordination-owned and symbolic names retain their stated resolution limits.
 
 ## Current source account
 
-Compact native role and operation sources remain well-formed and manifest-resolved. Positive curation checks now address two policy surfaces through CURATION_POLICY_STATEMENTS while the exact retired-sentence census still reaches canonical and generated trees. The guard teeth now re-insert every registered retired sentence on each surface that shipped it and assert the finding names it, plus a real removal witness, so a guard that resolves nothing cannot pass. Preserve the handoff template contract and mutation controls; remove descriptions of the retired all-surface positive helper.
+Compact native role/operation sources remain manifest-resolved. Positive compact-curation checks use CURATION_POLICY_STATEMENTS; the exact retired-sentence guard retains seeded re-insertion/removal controls and developer-request doctrine. The handoff-contract test now declares canonical-plus-nine-generated containment checks for current onboarding rows, no counted-card-edit-alone answer and references-only counted sidecar edits; c-05 workflow copies are checked for current overview rows and updated/no_impact wording. These narrow text assertions are not propagation-owner byte equality.
 
 ## Code Commentary
 
@@ -34,9 +34,12 @@ because the earlier single-function version tripped ruff's complexity limits. Th
 that names a missing source, an unknown core block, an unknown operation, or a missing criteria catalog is
 **reported**, never skipped.
 
-`test_manifest_resolves_every_role_and_operation_source` additionally asserts the router still registers
-every `roles/<role>.md`, that `launcher` is absent from `manifest["roles"]`, that `ambient-launcher` is one
-of the routing conditions, and that the manifest carries no prose lines.
+`test_manifest_resolves_every_role_and_operation_source` additionally asserts the exact
+`ROLE_ORDER` registry, that `launcher` is absent from `manifest["roles"]`, and that the routing
+conditions are exactly `supplied-native-role-binding` and `manual-taskless-projects-role`.
+`ambient-launcher` belongs separately to `manifest["launcher"]["routing_condition"]`. The router
+checks require `composition-manifest.json` and `one applicable operation`, not every role-file
+name; the manifest must have no mechanically detected prose lines.
 
 `test_manifest_carries_routing_metadata_not_copied_payloads` is the metadata-plane case: it walks every
 JSON string in the manifest (`_iter_json_strings`), applies the `manifest_copy_indicators` heuristics, and
@@ -46,9 +49,10 @@ payload without failing the healthy tree.
 
 `test_every_role_source_is_concise_and_well_formed` checks canonical YAML name and
 description, readable headings, no inherited Core line, no machine/operator knob block
-or knob table rows, and no per-level override instructions in the role file. Sibling
-role references are allowed only for the architect designer hat; this does not restore
-retired orchestration/strategy/manager cross-references.
+or knob table rows, and no per-level override instructions in the role file. Sanctioned sibling
+references are the architect's designer hat and the architect/orchestrator referrals to
+`roles/manager.md` for the single questions-received policy; other sibling references remain
+forbidden.
 
 `test_manifest_reports_a_missing_source_instead_of_accepting_it` stages a copy of the tree in `tmp_path`
 and breaks the manifest several ways — a renamed role file, a moved operation source, an unknown
@@ -85,18 +89,21 @@ wording remains outside this matcher.
 ### Conventions
 
 Module-level helpers and disposable tree fixtures use no network or provider access.
-The manifest/role cases read the canonical tree; curation cases also inspect the declared
-generated trees. A new corpus invariant belongs
-here as a new assertion rather than in a separate ad-hoc script.
+The manifest/role cases read the canonical tree; curation cases and the handoff-contract test
+are written to inspect declared generated copies. This review inspected only test source, not
+private/generated trees, and establishes no copy synchronization or PASS.
 
 ### Invariants And Boundaries
 
-- Corpus-shape cases read canonical sources; curation-wording cases also read generated
-  copies. `scripts/sync-skills.py --check` and the projection suite guard byte equality.
+- Corpus-shape cases read canonical sources; retired-curation wording and the handoff-contract test
+  also declare generated-copy reads. The latter checks canonical plus nine copies of both the
+  handoff template and c-05 workflow for the R53 answer sentences. Narrow normalized-text
+  containment is distinct from propagation-owner byte equality (`scripts/sync-skills.py --check`
+  and the projection suite); none of those checks was run here.
 - Each positive case has a paired negative (a broken manifest, a copied payload, a dangling anchor), so a
   check that resolves nothing cannot pass as green.
-- Assertions are property-based on the corpus, so they stay valid as role prose changes; only a change to
-  the corpus **shape** should require editing this module.
+- Corpus-shape assertions target structural properties; the explicit handoff/c-05 R53 containment
+  assertions also pin selected prose contract sentences, not every possible semantic contradiction.
 - The module must never weaken `SANCTIONED_SIBLING_REFERENCES` to accommodate a new cross-reference — a
   new sibling reference is a corpus design change, not a test fix.
 - A manifest that names a missing source must keep failing: that assertion is what makes the manifest
@@ -116,13 +123,15 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- The resolver under test and the six shipped cases. [1]
-- The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `REQUIRED_SECTIONS`, `MACHINE_SECTION` and `OPERATION_KEYS`. [2]
+- The resolver under test. [1]
+- The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. [2]
 - The manifest this module resolves, and the corpus it governs. [3]
-- Generated copies are checked by the propagation owner, not by this module. [4]
 
 ### Cross-Repo References
 
 No sibling-repository contract defines this corpus check.
 
 No meaningful cross-repo references found.
+
+- This module declares narrow normalized-text R53 assertions over canonical plus nine generated handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this review. [4]
+- Current source delta inspected statically: Replace the blanket generated-copies-not-checked claim with the test-source contract for two narrow copy loops, preserving retired-sentence controls, positive-policy limits and propagation-owner equality responsibility. [5]

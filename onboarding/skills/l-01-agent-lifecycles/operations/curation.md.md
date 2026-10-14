@@ -24,7 +24,11 @@ The curation operation instruction.
 
 ## Code Commentary
 
-The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step owns the effect/revision rule to which the Curator role delegates: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision. The inherited RLZ-AHYBRR mismatched role-file anchor is left unchanged under mark60/ownerL142, not credited as an independent restatement of this rule.
+The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step owns the effect/revision rule to which the Curator role delegates: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision. RLZ-AHYBRR was repaired under its existing ID, origin and role: its Curator-role anchor now names lines 107–108, and its revised rationale describes delegation to this operation's Normal workflow for family coverage authoring and readback. The formerly mismatched role-file anchor was not left unchanged in this candidate; the delegation pointer is not itself an independent restatement of the effect/revision rule.
+
+Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
+
+- Raw clean curation and the independent second-reader fact-check have separate obligations. [2]
 
 ## Evidence
 

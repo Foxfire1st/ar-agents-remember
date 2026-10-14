@@ -9,11 +9,14 @@
 Plans and applies closeout-time onboarding metadata, route overview metadata,
 route index, and entity fingerprint refreshes for changed code paths.
 
-## CCR-R12@v5 Current Refresh Boundary
+## Retained Legacy Refresh Helpers (CCR-R12@v5)
 
-The normal closeout transaction uses the raw refresh helpers to stamp existing sidecar and route
-overview verification metadata, refresh entity fingerprints, and regenerate route indexes after
-the accepted code commit. `refresh_onboarding_metadata_for_context` and
+The retained legacy refresh helpers stamp existing sidecar/overview verification metadata, refresh
+entity fingerprints and regenerate route indexes after the accepted code commit. The body/history
+and stamp discussion below describes those unconverted helpers and their historical use, not the
+ordinary converted path: converted cards get no verification stamps and use the source-bound
+trace gate. MIK-R46 refuses ordinary unconverted operations even before any official line converts;
+the retained legacy branch is not an allowed fallback for those operations. `refresh_onboarding_metadata_for_context` and
 `refresh_route_overview_metadata_for_context` do not perform memory-quality, curator-coherence, or
 semantic body validation on this path; those validators remain explicit preparation/curation
 owners. This separation lets closeout publish mechanical metadata while keeping semantic review
@@ -57,7 +60,7 @@ body-gate baseline (`memory_content_commit` →
 ∪ committed-since-verified memory paths, and `_joined_sample` caps gate error
 path joins at `PATH_SAMPLE_LIMIT`.
 
-It also enforces the closeout content gate. `classify_sidecar_updates` sorts
+The retained unconverted helper path also enforces its historical closeout content gate. `classify_sidecar_updates` sorts
 each changed source's sidecar by meaningful body change (content outside the
 verification metadata rows and Update History, vs the last verified memory
 commit via `commit_text_or_none` — `memory_verified_commit`, falling back to
@@ -88,8 +91,8 @@ stamp that authored overview in the same transaction.
 
 `validate_memory_refresh_attestations` composes the existing sidecar and nearest-governing
 route-overview body gates independently, aggregates both classifications, and raises one
-refresh-validation error if either surface refuses (`onboarding.py:865-943`). Curator
-preparation and closeout therefore share the same current-memory body/history/no-impact
+refresh-validation error if either surface refuses (`onboarding.py:865-943`). The legacy helper path
+therefore shares its current-memory body/history/no-impact
 checks instead of accepting a green result from only one surface.
 
 Direct task editing is itself domain evidence for those baseline-relative
@@ -187,10 +190,10 @@ None known for the MX-FIX-4 closeout caller boundary.
 
 ## 260928-MIK-L30 The Converted-Tree Dispatch (MIK-R30)
 
-MIK-R30 adds the history-file gate for converted memory trees beside today's gate; this module gains its two
-entry points and the converted-tree guards. **On an unconverted tree nothing here changes**: today's refusal
-text, classification and stamps are byte-identical (the worker's and reviewer's base-against-worktree run on
-an unconverted clone of ICR L47).
+MIK-R30 introduced converted-tree trace entry points alongside the retained legacy helpers; MIK-R53
+now source-binds their answers. The older worker/reviewer base-against-worktree result on an
+unconverted ICR L47 clone is historical, not fresh execution or present permission to use that
+branch. MIK-R46 ordinary unconverted operations refuse with the conversion step.
 
 - **`converted_onboarding(context, memory_tree=None)`** is true when the memory tree holds
   `knowledge/layout.json`. On such a tree `refresh_onboarding_metadata_for_context` and
@@ -198,28 +201,34 @@ an unconverted clone of ICR L47).
   carries no `lastVerifiedCommit*` metadata (MIK-R30 rule 5).
 - **`_require_onboarded_sources`** is today's missing/unsupported sidecar refusal, factored out of
   `validate_onboarding_refresh_plan_for_context` with the same message, so both gates share it.
-- **`onboarding_trace_gate_for_context(context, changed_paths, sides, *, working_paths=None)`** is the
+- **`onboarding_trace_gate_for_context(context, changed_paths, sides, *, working_paths=None, code_blobs=...)`** is the
   curator's memory-quality entry point: it never raises, and returns the `OnboardingTraceResult` and its
-  repair findings (one per missing trace, one per unreadable input) with today's missing-onboarding refusal
-  prepended as a `memory-refresh-attestation-failed` finding when it applies.
-- **`validate_onboarding_traces_for_context(...)`** is the closeout validator's entry point: it runs the
-  missing-onboarding refusal, then raises `RuntimeError(result.refusal())` naming every missing trace.
+  repair findings (one per missing trace, one per unreadable input). Required keyword-only
+  `code_blobs: Mapping[str, str | None]` names each changed path's candidate blob (or deletion),
+  and is forwarded to `onboarding_trace_result`; the shared missing-onboarding refusal is prepended as a `memory-refresh-attestation-failed` finding when it applies.
+- **`validate_onboarding_traces_for_context(..., code_blobs=...)`** is the closeout validator's entry
+  point with the same required candidate-blob mapping: it runs the shared missing-onboarding refusal,
+  forwards `code_blobs`, then raises `RuntimeError(result.refusal())` naming every missing trace.
 - **Who dispatches.** `controller._onboarding_refresh_gate` and `prepared_certification._realize_prepared_memory`
   call these only when `leaf_onboarding_trace_sides` returns sides; otherwise they call today's
-  `validate_memory_refresh_attestations` and the two plan validators unchanged.
-- **Rulings.** On a converted tree only a counted change or a history row satisfies a trace, so a
-  curator-coherence no-impact judgment no longer counts there (architect ruling 2026-09-29T18:49:50 (1)).
-  Deleting `memory_quality/style/update_history/` and today's gate is left to the cutover, MIK-R37 (ruling
-  18:49:50 (5)).
+  the retained legacy validators. Dispatch syntax is not permission to bypass the unconditional
+  ordinary-operation refusal of unconverted memory.
+- **Current ordinary-candidate rule (MIK-R53).** Only an eligible source-current onboarding row
+  answers: `updated` additionally requires a real counted Markdown/reference edit; `no_impact`
+  covers an unchanged contract. Realizes/proves-only edits do not count, and later source movement
+  reopens the answer. Curator-coherence no-impact does not substitute for that row. The older L30
+  counted-edit-or-row ruling is historical; amended L53 rule 1 separately permits this leaf's own
+  counted changed cards under the old MAIN-LINE producer, with no updated or changed-card
+  no_impact/backfill. The old planned cutover deletion note predates MIK-R46 legacy retirement.
 
 - A tree holding the layout marker is converted. [1]
 - No route-overview stamps on a converted tree. [2]
 - Today's missing-onboarding refusal, shared by both gates. [3]
-- The memory-quality entry point, which never raises. [4]
-- The closeout entry point, which refuses naming every missing trace. [5]
+- The converted memory-quality entry point requires and forwards candidate code_blobs; it returns trace repair findings. [4]
+- The converted closeout entry point requires and forwards candidate code_blobs, then refuses missing traces. [5]
 - No card stamps on a converted tree. [6]
-- The rule both entry points evaluate. [7]
-- An unconverted leaf keeps today's gate. [8]
+- Both entry points evaluate source-current rows; updated also needs a counted Markdown/reference edit. [7]
+- Historical fallback dispatch is retained internally; an ordinary unconverted leaf now refuses before either gate. [8]
 
 ## Evidence
 
@@ -236,7 +245,7 @@ The following current source boundaries establish the ledger-retirement behavior
 - `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. [9]
 - `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. [10]
 
-Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
+The retained legacy plan validator refuses missing or unsupported source sidecars before memory commit when reached (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
 
 
 
@@ -251,3 +260,5 @@ Closeout can coordinate code and external-memory worktrees, but no external
 implementation governs this module.
 
 No additional cross-repository evidence applies.
+
+- Current source delta inspected statically: Document required blobs and current-row doctrine; retain useful legacy-helper/history prose, not ordinary unconverted permission. [13]

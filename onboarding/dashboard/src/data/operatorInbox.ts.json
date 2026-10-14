@@ -37,7 +37,7 @@
       ]
     },
     "3": {
-      "note": "`GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails.",
+      "note": "`GateResponder` posts nonempty ordinary replies through this durable inbox helper; adapter-interaction replies skip the duplicate inbox delivery.",
       "targets": [
         {
           "anchor": {
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
             "content": "sha256:140512e511d44248c7141ca5e8b0109bd0e2b0e587f664cb87820c2de2223070",
             "locator": {
-              "end": 344,
+              "end": 348,
               "kind": "line_range",
-              "start": 344
+              "start": 348
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -90,17 +90,17 @@
       ]
     },
     "6": {
-      "note": "`AgentPickupIndicator` calls the dismiss helper for stale pending responses.",
+      "note": "`PickupDismiss` in the lifecycle list calls the dismiss helper for overdue pickup warnings; pointer/key propagation is isolated and an open gate remains the row's primary word.",
       "targets": [
         {
           "anchor": {
-            "blob": "38f4348f9d417ec5f7744217df78ddbebc9143fd",
-            "content": "sha256:5390c3d38b730372c454a86a67bad7362107ae084087616b7f59e96388ead934",
+            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
+            "content": "sha256:aa5afb91f79f8cfe340b576408a591a80b99610fbac2653bbd088351b3c6706c",
             "locator": {
               "kind": "symbol",
-              "name": "AgentPickupIndicator"
+              "name": "PickupDismiss"
             },
-            "path": "dashboard/src/panels/AgentPickupIndicator.tsx"
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
           "kind": "code"
         }

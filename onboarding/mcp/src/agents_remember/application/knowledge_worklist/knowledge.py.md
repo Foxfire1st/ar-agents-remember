@@ -19,8 +19,9 @@ over the exact bytes of each record file.
   parsed layout marker), the `ParsedTree` and the indexed files' bytes.
 - `from_snapshot(label, snapshot)` parses a `MemoryTreeSnapshot`. **Any parse problem raises
   `KnowledgeSideUnreadable`**, naming every failing file (the first five in the message, then a count).
-- `from_tree(label, key, tree)` builds a side from the validator's `KnowledgeTree`, keeping only indexed
-  paths; the leaf uses it for the converted base of MIK-R24 rule 7.
+- `from_tree(label, key, tree)` builds a side from the validator's `KnowledgeTree`, retaining indexed
+  JSON and their Markdown prose companions through `with_prose_companions`; the leaf uses it for
+  the converted base of MIK-R24 rule 7. Markdown remains exact comparison bytes, not parsed records.
 - Derived views, each sorted: `invariants` and `families` (records by ID), `entries` (realization and proof
   entries by ID, each with the source path whose sidecar holds it), `entries_by_invariant`,
   `entries_by_path`, `families_of` (each invariant's families by the families' `members`), and `linked_from`
@@ -65,7 +66,9 @@ No configured live documentation source was available for this pass.
 - The unreadable-side error naming each failing file. [2]
 - An entry's anchor with its source path. [3]
 - Parsing a snapshot, refusing any problem. [4]
-- A side from the validator's tree (the converted base). [5]
+
+- A side from the validator's tree retains indexed JSON and unparsed Markdown companions for exact worklist comparison. [5]
+
 - Entries grouped by invariant and by path. [6]
 - Each invariant's families by membership. [7]
 - A record's file: location and exact bytes. [8]

@@ -18,6 +18,71 @@
         }
       ]
     },
+    "10": {
+      "note": "Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:e5097eca6cd6eed51b5fa249cd1e06e304c579c8262ec49e59067bd8466636be",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:8ccf2719441df8403e4dddb9aee8d67ddd61ea62e7e5fcf70cb0d478315a0439",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Coverage and Non-empty violations name the family, the route and the path.",
       "targets": [
@@ -66,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
             "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
             "locator": {
               "kind": "symbol",
@@ -78,26 +143,88 @@
       ]
     },
     "5": {
-      "note": "The root route covers a root-level realization, and a family whose only route is `.` is non-empty; each validation's only finding is the report-only legacy count.",
+      "note": "Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:07c8d52641000b6d0869c1abecce9e204ec6ed28ed88a41b7838901382d43fc1",
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:ebafb6a54e39135779a79d19c8296ececbae77d0d27bd96d9cb2cd2389a41561",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_root_route_covers_a_realization_at_the_repository_root"
+              "end": 313,
+              "kind": "line_range",
+              "start": 302
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
             "content": "sha256:23795dbb89c32d9420b6d86a0c55aae9bcd7fb9ca88ba74c0bbcd89334134514",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_root_route_alone_is_non_empty_whenever_the_family_is_realized"
+              "end": 319,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:e5097eca6cd6eed51b5fa249cd1e06e304c579c8262ec49e59067bd8466636be",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:8ccf2719441df8403e4dddb9aee8d67ddd61ea62e7e5fcf70cb0d478315a0439",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "test"
@@ -105,37 +232,76 @@
       ]
     },
     "6": {
-      "note": "The reported states and the retired exemption.",
+      "note": "Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption.",
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:21a35f2a0ee92d78a1210c3d86f42db4acb176258fee8e5f1e3b0e5518ea65a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unrealized_family_is_reported_and_non_empty_is_waived"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:6b558b50b4f4a37eb228f4599d6592662f6044e1c2f7efd946851ee85bc3ef59",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_exported_family_without_routes_is_route_unassigned_and_coverage_is_waived"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
             "content": "sha256:76fea8009a2752e0377995357901d818a3efa5b0fd20c0c6fbb94e569bc51dc1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_family_is_exempt_from_every_route_rule"
+              "end": 384,
+              "kind": "line_range",
+              "start": 377
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:e5097eca6cd6eed51b5fa249cd1e06e304c579c8262ec49e59067bd8466636be",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:8ccf2719441df8403e4dddb9aee8d67ddd61ea62e7e5fcf70cb0d478315a0439",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "test"
@@ -174,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "blob": "5948d7ddee2e7e9928efcd70ae185e877aca47dd",
             "content": "sha256:0d1e9c527689128fe7353f540791500ef4cfb5d2b118af2a6fa4cc6b6be28b9e",
             "locator": {
               "kind": "symbol",
@@ -190,12 +356,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
             "content": "sha256:8adda2e4b569169c29db5f94ba70ba865ffa308df881aa40153dd219b6e70d95",
             "locator": {
-              "end": 122,
+              "end": 135,
               "kind": "line_range",
-              "start": 122
+              "start": 135
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

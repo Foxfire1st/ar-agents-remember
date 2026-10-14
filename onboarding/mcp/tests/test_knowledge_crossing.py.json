@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:550bb60a3e1310573621b4d53158fffded34754720c23952fd2485dbaf145254",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:a38aca35bdacc1e3fcb7496d8d0d6050fcbb2b3f35aefedbfa16fffe60cec29f",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:7d7b3af7a162271d39794b9af65795c3aa3d1f31ca8b098a51d1dbbe2892831b",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:90d9336470fad995d46955f03650e805999326eafa9070887802b34d14040ddd",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
+        "content": "sha256:3a91de1b4ac513efa1db92d0013b4a10fa8db5328a365bf0d99e610c497d0e44",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_crossing_summary_carries_the_alignment_counts"
+        }
+      },
+      "facet": "For a report with explicitly supplied alignedCards=2, renumberedReferences=3, evidenceLinesKept=4, and one skippedCards entry, crossing_summary returns the same alignment object; missing-field and zero defaults are not exercised.",
+      "id": "PRF-3A5JTJ",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-0J9FS1",
+        "leaf": "260928-MIK-L53"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:a8ec568d3fd882e64171246a15396b192985e3a7870c5de86f0547534d1c92fd",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:1c042369542c247c7065e299bd7e24a21aabc21cecf4973788a6ba2eaf948f81",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:4aa681676a6264f1fe9f2b74bfbf60f0d4ca7c1f2429165bd5827181c5997785",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:07688e30b7bcff1178207c1eb3273d7110b7c5edc8291aa24416e07d7f85e58f",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:771f935ee323eba80597566f214b8febcaf39f7e48f0cee09b513154ca5b6a58",
         "locator": {
           "kind": "symbol",
@@ -156,24 +173,24 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:d22118d26c37a44908e886427aeb12019c7c321a91eec2f9a14066f141e619ad",
         "locator": {
           "kind": "symbol",
           "name": "test_gap_pairing_scales_near_linearly_on_fully_paired_inputs"
         }
       },
-      "facet": "Fully paired monotone inputs do bounded near-linear work with exact maps.",
-      "id": "PRF-B1B6TS",
+      "facet": "For 2000 fully paired monotone fixture references, _pair_with_base returns exactly {str(n): str(n) for n in range(1, 2001)} and asserts elapsed < 10 seconds; this single-size regression bound does not demonstrate near-linear scaling.",
+      "id": "PRF-BM7NAP",
       "invariant": "INV-Q0NS0N",
       "origin": {
-        "handoffEntry": "L66-W4-03",
-        "leaf": "260928-MIK-L66"
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-Q0NS0N",
+        "leaf": "260928-MIK-L53"
       }
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:aaabe8771c2dfc5f809563b43144a309955ea0720b547826dbd7b83924c21f30",
         "locator": {
           "kind": "symbol",
@@ -190,7 +207,24 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
+        "content": "sha256:d6de3577725d378277ee2b1783f68dcc4728fb5e18aef2a6b245feb7a70d3f84",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_gap_pairing_scales_on_crossed_fully_paired_inputs"
+        }
+      },
+      "facet": "For 2000 fully paired crossed fixture references, _pair_with_base returns exactly {str(base_number): str(side_number) for base_number, side_number in enumerate(order, start=1)}, with order starting [1, 2000, 2, 1999, 3] and alternating high/low through the remaining numbers, and asserts elapsed < 10 seconds; this single-size regression bound does not demonstrate near-linear scaling.",
+      "id": "PRF-CEQ82R",
+      "invariant": "INV-Q0NS0N",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-Q0NS0N",
+        "leaf": "260928-MIK-L53"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:d984fd7a09bd18d9dd0942e6848571073ca39223cfe15e8983fb9ecb15838bf9",
         "locator": {
           "kind": "symbol",
@@ -207,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:37a21f0c9720495f861fb5d7b1888d07080bc1a0862815830d54f8a25d5f8d5f",
         "locator": {
           "kind": "symbol",
@@ -224,24 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
-        "content": "sha256:3a91de1b4ac513efa1db92d0013b4a10fa8db5328a365bf0d99e610c497d0e44",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_crossing_summary_carries_the_alignment_counts"
-        }
-      },
-      "facet": "The summary carries the alignment counts with zero defaults.",
-      "id": "PRF-G2KN79",
-      "invariant": "INV-0J9FS1",
-      "origin": {
-        "handoffEntry": "L66-W4-07",
-        "leaf": "260928-MIK-L66"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:1e6a1d6dad53024741d97571fb309513706ad8c8116fe3d920cd21d853cafb54",
         "locator": {
           "kind": "symbol",
@@ -258,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:4a39b7424756d323d7e177f22061ae8488346988f550c280ceca9f69874edbea",
         "locator": {
           "kind": "symbol",
@@ -275,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:49cb0b3018d7624154d3e0b25c3d94ada5f1cd3be3d34130430e039ecb53c77c",
         "locator": {
           "kind": "symbol",
@@ -292,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:ace6564228b1d2dc12a39969501745b0a8d6eed5abe71770fa2c141008071299",
         "locator": {
           "kind": "symbol",
@@ -309,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:4aa681676a6264f1fe9f2b74bfbf60f0d4ca7c1f2429165bd5827181c5997785",
         "locator": {
           "kind": "symbol",
@@ -326,24 +343,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
-        "content": "sha256:ecec5b2c71859262a27d872d6327ecdfbea51da2f10b9b6d9cbe7b92e5d29d90",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_an_ordinary_converted_sync_aligns_through_the_same_merge"
-        }
-      },
-      "facet": "An ordinary converted sync aligns through the same merge.",
-      "id": "PRF-P24MGR",
-      "invariant": "INV-B644A4",
-      "origin": {
-        "handoffEntry": "L66-W4-08",
-        "leaf": "260928-MIK-L66"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:bb4de102566af46d1cd26db5cb51151973264a9b596320c54c16e4a3ad2e8b60",
         "locator": {
           "kind": "symbol",
@@ -360,24 +360,24 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
-        "content": "sha256:d6de3577725d378277ee2b1783f68dcc4728fb5e18aef2a6b245feb7a70d3f84",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
+        "content": "sha256:ecec5b2c71859262a27d872d6327ecdfbea51da2f10b9b6d9cbe7b92e5d29d90",
         "locator": {
           "kind": "symbol",
-          "name": "test_gap_pairing_scales_on_crossed_fully_paired_inputs"
+          "name": "test_an_ordinary_converted_sync_aligns_through_the_same_merge"
         }
       },
-      "facet": "Fully paired crossed inputs do the same bounded work with exact maps.",
-      "id": "PRF-RQZ8SM",
-      "invariant": "INV-Q0NS0N",
+      "facet": "With three already-converted fixture trees, a pure cross plan uses the shared structural merge without conversion, has no conflicts, renumbers one reference, and returns exactly the reference notes 1=A., 2=Incoming finding., and 3=Own finding.; this is not end-to-end managed-sync route coverage.",
+      "id": "PRF-WZ1FP7",
+      "invariant": "INV-B644A4",
       "origin": {
-        "handoffEntry": "L66-W4-03",
-        "leaf": "260928-MIK-L66"
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-B644A4",
+        "leaf": "260928-MIK-L53"
       }
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:dbc276b883d10ccb5cb9d96995031a37f2bb2da24f834dac8574da80ebb288fa",
         "locator": {
           "kind": "symbol",
@@ -394,7 +394,7 @@
     },
     {
       "anchor": {
-        "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+        "blob": "22bce9a3dd18113797b0af110527333ca17343cc",
         "content": "sha256:1a5557d622fc49df18ad95f02e35e5bb0ee64e4b0748be3c0dc5541d1bb84967",
         "locator": {
           "kind": "symbol",
@@ -413,15 +413,64 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The step 5 check for a pure plan (test-only).",
+      "note": "Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
-            "content": "sha256:89ecb57997c8062eb2e20887b38be38a82aa56279e44562fe348409875a7833d",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:9ed40a1f04fb76d6ffa926c6d1208196705dc47e894f5b923b65edd12f6cf196",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_plan"
+              "end": 101,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 657
             }
           },
           "kind": "test"
@@ -433,7 +482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
             "locator": {
               "kind": "symbol",
@@ -449,7 +498,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c9ae2027d091e3cdaaa9bb63d814c58a62522ad",
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
             "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
               "end": 128,
@@ -467,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:2d5a2622dbbef6146c60cda6f9e170aee71c3676175792825f24c3964eb33697",
             "locator": {
               "kind": "symbol",
@@ -483,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
             "locator": {
               "kind": "symbol",
@@ -499,7 +548,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:00d180445cc0a5711a39f10c4368491be8f1d35a6ce11cc0b640ab1d09885520",
             "locator": {
               "kind": "symbol",
@@ -515,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:86ec96fc2a1524fb696c5a3399245f39313121f04f4f8dcd37d49df9efd81c3f",
             "locator": {
               "kind": "symbol",
@@ -531,7 +580,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:83e0cb92d9717a12946da352ad28240399399f6559a9f58c0ce0e6dff8274bf8",
             "locator": {
               "kind": "symbol",
@@ -547,7 +596,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:7d7b3af7a162271d39794b9af65795c3aa3d1f31ca8b098a51d1dbbe2892831b",
             "locator": {
               "kind": "symbol",
@@ -563,7 +612,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:a38aca35bdacc1e3fcb7496d8d0d6050fcbb2b3f35aefedbfa16fffe60cec29f",
             "locator": {
               "kind": "symbol",
@@ -579,7 +628,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:07688e30b7bcff1178207c1eb3273d7110b7c5edc8291aa24416e07d7f85e58f",
             "locator": {
               "kind": "symbol",
@@ -595,7 +644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:ace6564228b1d2dc12a39969501745b0a8d6eed5abe71770fa2c141008071299",
             "locator": {
               "kind": "symbol",
@@ -607,11 +656,11 @@
       ]
     },
     "20": {
-      "note": "The report and the summary carry the alignment counts.",
+      "note": "The pure crossing plan report counts aligned cards, renumbered references, kept evidence lines, and marker-incomplete skips.",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:1e6a1d6dad53024741d97571fb309513706ad8c8116fe3d920cd21d853cafb54",
             "locator": {
               "kind": "symbol",
@@ -627,7 +676,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:1a5557d622fc49df18ad95f02e35e5bb0ee64e4b0748be3c0dc5541d1bb84967",
             "locator": {
               "kind": "symbol",
@@ -639,11 +688,11 @@
       ]
     },
     "22": {
-      "note": "Gap pairing scales near-linearly on fully paired inputs.",
+      "note": "For 2000 fully paired monotone references, pairing returns the exact identity map and asserts `elapsed < 10` seconds.",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:ea0d77923e399d4c77a8526b6281ac1e00d331ed46a079ce6b9c766e67b7d869",
             "locator": {
               "kind": "symbol",
@@ -654,8 +703,61 @@
         }
       ]
     },
+    "23": {
+      "note": "Current source delta inspected statically: Separate pure-plan sync context and real managed transaction evidence; replace whole-route conversion-pass claim with successful base conversion plus carried-stale refusal, preserving L46 legacy-lock assertions and bounded recovery commentary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 657
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "4": {
-      "note": "Markers first, conversion, then the structural merge through the real transaction.",
+      "note": "Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction.",
       "targets": [
         {
           "anchor": {
@@ -671,15 +773,64 @@
       ]
     },
     "5": {
-      "note": "Long markers in one valid row.",
+      "note": "Long markers in one valid row with paired source blobs supplied to marker transport.",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
-            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:b43c110050ef855fad41bb3150d93bf037feb38ab83468c82c957615d3983c2c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_many_long_markers_move_into_one_valid_history_row"
+              "end": 316,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 657
             }
           },
           "kind": "test"
@@ -691,7 +842,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:5f7ac04d3e3081631c06c2ab56043490a06a04dd8a5c037261ec3df453adc1b5",
             "locator": {
               "kind": "symbol",
@@ -703,15 +854,64 @@
       ]
     },
     "7": {
-      "note": "The converted base at the base's own code commit.",
+      "note": "Base conversion uses the base's own code commit and removes base-converted refusal, while the non-merge commit still refuses carried-stale.",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
-            "content": "sha256:710ffa62bab4ded60e4038a8f12ebab029d34c2cbb3989aa471584da8261a0af",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:9753b46bf0eea9403c668207d49f7711200fc69393bc0ce3414f87d25da45733",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base"
+              "end": 661,
+              "kind": "line_range",
+              "start": 613
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
+            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 657
             }
           },
           "kind": "test"
@@ -719,11 +919,11 @@
       ]
     },
     "8": {
-      "note": "Managed crossing sync follows an all-unconverted preflight refusal without a journal\n\nAnchor: `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`, `_crossing_fixture`",
+      "note": "Managed crossing sync follows an all-unconverted preflight refusal without a journal, commits the exact two-parent merge, and persists its complete worklist at the new base pair.\n\nAnchor: `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`, `_crossing_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
             "locator": {
               "kind": "symbol",
@@ -734,7 +934,7 @@
         },
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:65c3b08838a1c332b73d2b58359a987cf7b75bf67641af6bc8085240b507138d",
             "locator": {
               "kind": "symbol",
@@ -750,24 +950,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:65c3b08838a1c332b73d2b58359a987cf7b75bf67641af6bc8085240b507138d",
             "locator": {
-              "end": 691,
+              "end": 700,
               "kind": "line_range",
-              "start": 655
+              "start": 664
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:b89837e41a09ea1e53535a391bf9f21a470fd7a4ffdfd806128382385d688d85",
             "locator": {
-              "end": 766,
+              "end": 775,
               "kind": "line_range",
-              "start": 758
+              "start": 767
             }
           },
           "kind": "test"

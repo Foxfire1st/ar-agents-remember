@@ -43,13 +43,21 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
   `_family_facts`, `planned_untouched` → `_planned_facts`, `family_route_condition` → `_route_facts`, and
   since MIK-R10 `unexplained_hunk` and `unexplained_file` → `_unexplained_facts`, and since MIK-R14
   `reconsideration_candidate` → `_reconsideration_facts`); any other kind still gets
-  its sorted fact keys. The `if`/`elif` ladder it replaced rendered the same text.
+  its sorted fact keys. MIK-R53 also dispatches `unassigned_invariant` to `_membership_facts`
+  (candidate invariant revision and the current `no_family` membership-row requirement), and
+  `touched_record` to `_touched_record_facts` (base/candidate revision and status, current record-row
+  requirement with change-appropriate `changed`, `retired` or `no_impact` disposition). These are
+  distinct record kinds, not onboarding answers. The old ladder replacement predated these additions.
 - **`item_facts(item)` (MIK-R09).** The public one-line form of `_item_facts`: the gate's open-item findings quote it
   as their `Facts`, so a finding names the facts a curator acts on (MIK-R09 rule 1).
-- **Onboarding-trace facts (MIK-R30 items, rendered since MIK-R09, `_trace_facts`).** The changed sources a card or
-  route overview traces, "sidecar unreadable: repair it through the writer" when so, and "answered by <…>" or "needs
-  a counted change of its Markdown or sidecar, or a no_impact row". Before, an `onboarding_trace` item fell back to
-  its sorted fact keys.
+- **Onboarding-trace facts (MIK-R53, `_trace_facts`).** Render the changed sources, the sidecar-repair
+  message when unreadable, and `answered by <…>` or the current literal help:
+  "needs a counted change of its Markdown or sidecar references, or a current updated/no_impact row
+  (sources equal to the blobs at C)". That help still prints an edit-or-row alternative; the ordinary
+  candidate's executable gate requires an eligible source-current row, and `updated` additionally
+  requires a counted Markdown/reference change. Realizes/proves-only edits do not count. This pure
+  renderer neither fixes the misleading help nor validates currency itself; the bounded L53 rollout
+  exception under the old MAIN-LINE producer is separate from ordinary candidate doctrine.
 - **Family route facts (MIK-R06, `_route_facts`).** The condition and what it affects (`_route_affected`:
   the base view's routes or entry paths when the base view shows the condition, else the candidate view's;
   "no routes" for `route_unassigned`), "renamed to …" when there are rename candidates, the suggestion
@@ -65,7 +73,8 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
 - **Unexplained-change facts (MIK-R10, `_unexplained_facts`).** The path and where the change is (each hunk
   as `-<start>,<count> +<start>,<count>`, or a file change's content and status), the coverage (state,
   realization-entry count, governing route and its status), "delete-only: only no_invariant" for a
-  delete-only hunk, then "answered by <row or counted-change>", or for an open item either "needs attach/author
+  delete-only hunk, then "answered by <satisfiedBy>",
+  where an ordinary candidate's valid identity is an eligible row, not `counted-change`, or for an open item either "needs attach/author
   or a no_invariant row `hunk:…`" (covered) or "needs the onboarding trace `onboarding:<path>`" (uncovered).
   It is one pair of table entries; no branch was added to `_item_facts` (the L06 sync).
 
@@ -110,9 +119,7 @@ No configured live documentation source was available for this pass.
 - Per-kind facts, dispatched by kind; since MIK-R09 the public one-line form the gate quotes. [4]
 - The stale and reached-family renderers, split out of the ladder. [5]
 - A `family_route_condition` item's facts, its affected set and its suggestion text. [6]
-- The kind-to-renderer table, since MIK-R10 with both unexplained kinds. [7]
 - A reconsideration item's facts: the alternative, each changed target and trigger, and what answers it; its renderer entry. [8]
-- An onboarding-trace item's facts and its renderer entry (MIK-R09). [9]
 - An unexplained item's facts: where, coverage, delete-only, and what answers it. [10]
 - A `planned_untouched` item's facts. [11]
 - The planned-effects block, one line per declaration. [12]
@@ -127,3 +134,7 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module renders an in-memory document.
 
 No cross-repo boundary is crossed by this file.
+
+- The kind-to-renderer table includes both unexplained kinds and MIK-R53 membership/record renderers. [7]
+- Onboarding facts and current-source help literal; its edit-or-row wording is not the ordinary gate's row-required predicate. [9]
+- Current source delta inspected statically: Document new renderers and exact help; distinguish renderer hints from ordinary gate currency, without proposing record rows. [18]

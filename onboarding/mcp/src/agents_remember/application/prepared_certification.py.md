@@ -61,15 +61,18 @@ surface.
 
 ### The onboarding gate at closeout (MIK-R30)
 
-`_realize_prepared_memory` now asks `leaf_onboarding_trace_sides(current.contract, memory_tree=memory)`
-first. With sides (a converted K_B or K_C), it runs `validate_onboarding_traces_for_context`, which refuses
-naming every missing trace, every unreadable input and today's missing onboarding. With `None` it runs
-today's `validate_onboarding_refresh_plan_for_context` and `validate_route_overview_refresh_plan_for_context`
-exactly as before. This file is outside MIK-R30's Scope list, but rule 6 names "the closeout validator", and
-the architect accepted it as necessary wiring (ruling 2026-09-29T18:49:50 (6)).
+`_realize_prepared_memory` asks `leaf_onboarding_trace_sides(current.contract, memory_tree=memory)`
+when reached after its prepared-history and cutover guards. With converted sides, it captures
+`worktree_code_blobs(physical_code, change.changed_paths)` from the proved physical code view and
+passes `code_blobs` into `validate_onboarding_traces_for_context` alongside `working_paths`.
+Capture failure raises a named `RuntimeError("the code candidate's blobs cannot be read: …")`,
+not `CertificationContractError`. The trace validator names missing traces and unreadable inputs.
+The retained `None` branch calls the two legacy plan validators; its existence grants no ordinary
+unconverted prepared-closeout permission. This file was accepted as necessary MIK-R30 closeout
+wiring (ruling 2026-09-29T18:49:50 (6)); the new blob forwarding grants no prepared-closeout authority.
 
-- The closeout validator's dispatch between the two gates. [1]
-- The refusal names each missing trace. [2]
+- The guarded closeout dispatch: capture candidate blobs from the proved physical view and forward them to the converted trace validator. [1]
+- The trace refusal names missing traces; blob capture has its own named RuntimeError boundary. [2]
 
 ### The prepared path fails closed on converted memory (MIK-R09, L09 gap 3)
 
@@ -78,9 +81,9 @@ certified (prepared) path binds its memory commit to the exact curator-attested 
 `closed: true` into the leaf's history file (MIK-R07 rule 7, MIK-R09 rule 3). On converted memory it therefore refuses
 through the path's own `refuse(...)` (`CertificationContractError`, code
 `prepared-closeout-knowledge-history-unclosable`), naming why and that the leaf should close out through the worktree
-closeout commit; a marker probe Git cannot answer refuses too. Unconverted memory gets `None` and runs exactly as
-before. The path has no production caller today (ruling 2026-09-30T14:38:47 gap 3: "fails closed on converted memory
-with a named reason until it can close the history file"); `certification/execution.py::execute_selected_closeout`
+closeout commit; a marker probe Git cannot answer refuses too. The unclosable-history helper returns `None` for unconverted memory, but the following cutover
+lock refuses ordinary unconverted memory even when no converted line exists (MIK-R46). The path is wired through `certify_prepared_memory` and the default
+`PreparedMemoryCertificationAdapter`; `certification/execution.py::execute_selected_closeout`
 carries the same check at its entry. Tested by `test_the_prepared_closeout_path_fails_closed_on_converted_memory`.
 
 The refusal before anything is realized.
@@ -98,12 +101,15 @@ verification stamp.
 
 - The documented types and paths do not themselves establish execution, certification, delivery or
   acceptance. Those claims require the corresponding owning runtime evidence.
-- The adapter refuses by name through a typed `CertificationContractError`; it does not repair a
-  red finding and does not manufacture a curator judgment.
+- Certification-contract admissions refuse by name through `CertificationContractError`; the
+  converted trace branch instead raises a named `RuntimeError` if code-blob capture fails, and
+  its trace validator may raise `RuntimeError` for missing traces. Neither repairs red findings
+  nor manufactures curator judgments.
 - The source index it admits is the **candidate** route's index, so the exclusion register that
   produced the population is the one that route records.
 - **L37.** `_realize_prepared_memory` asks `prepared_closeout_lock` right after the unclosable-history check:
-  unconverted memory in a repository that holds converted memory is refused with `unconverted-memory-locked`
+  ordinary unconverted memory is refused with `unconverted-memory-locked`, whether or not the repository
+  holds converted memory elsewhere
   (MIK-R09 rule 6), before anything is realized. `_run` passes `knowledge_base=context_check_base(physical_code,
   context)` to the final memory-quality run, so its `knowledge.converted` check uses the converted base when
   `HEAD` is unconverted (review R3-1).
@@ -138,3 +144,5 @@ No configured domain documentation applies.
 ### Cross-Repo References
 
 No cross-repository source is needed for this card.
+
+- Current source delta inspected statically: Document physical candidate-blob forwarding and RuntimeError boundary; preserve guards, remove obsolete L46 legacy permission. [19]

@@ -23,7 +23,9 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   the authorization, so the report records it. Since MIK-R11 it also carries `decisions`, the task
   owner's `DecisionResolver` for a planned `dropped` row's cited decision, which `write_knowledge` hands to
   `Authoring`; a write without a task owner (a wave, `decisions=None`) refuses such a row. The leaf route
-  binds it (`cli/knowledge_write_route.leaf_decisions`).
+  binds it (`cli/knowledge_write_route.leaf_decisions`). `WriteRequest.memory_base` supplies the
+  leaf's paired K_B for the onboarding-card comparison; a persisted worklist flag cannot override
+  a known paired base. Without it, a persisted subject's counted flag is used, then own HEAD as fallback.
 - **Requirement endpoints (MIK-R13 rule 4).** `WriteRequest.coordination_root` (optional, default `None`) is where
   requirement endpoints' owning tasks live (`<root>/tasks/<repository>/<path>`). `write_knowledge` fills
   `WriteReport.requirements` from `requirement_links.requirement_endpoints(state, authoring.records,
@@ -51,11 +53,12 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   and this owner's own open history row that still names the old anchor as `after` follows it. The IDs go
   into `WriteReport.carried`. This is the mechanical update the worklist's `carried` class promises, so such
   an entry needs no disposition. The carry runs over the whole tree, not only the leaf's changed paths.
-- `_writer_split` turns refusals of the rules the registry marks `writer_reports`
-  (`writer_reported_rule_ids()`: today `R04.1-route-directory`, `R04.2-coverage`, `R04.2-non-empty`) into
-  report-only violations **inside the writer**, so a leaf may place family routes over several runs
-  (MIK-R04 rule 6). Every other refusal still refuses. `require_valid_commit` is not touched, so every
-  commit route still refuses those rules (the L04 carry-over obligation, met at the L12 sync).
+- `_writer_split` uses `writer_reported_rule_ids()` from the registry, not a fixed three-rule list.
+  Alongside the original added-route/Coverage/Non-empty rules, the registry includes R53
+  existing-record, carried-route-absent, unrealized-family, carried-stale and governs refusals.
+  Inside the writer these become reports so the leaf can repair across runs; each converted refusal
+  names that reason and the refusing commit/landing route. Validator/commit enforcement is unchanged;
+  `merge_reports` has its separate sync/conversion deferral and migration debt has its own carried/new policy.
 - `_finish`: without `commit` the state is `planned` and `written`/`removed` list what *would* change; with
   it, `MemoryState.write` writes and the state is `written`.
 - `_render` validates a history document with `parse_history_document` and every other document with
@@ -71,9 +74,12 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
   (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
   resolves at one more than the higher side's revision, and write `history` rows.
-- **The worklist's items for a row's `items` (L37, MIK-R07 rule 1).** `_worklist_items` reads `(kind, subject, id)`
-  of every well-formed item of `WriteRequest.worklist` (an ID must be `sha256:` plus 64 hex digits) and hands them
-  to `Authoring` as `worklist_items`. Without a worklist no item is filled in.
+- **Persisted worklist facts.** `_worklist_items` reads well-formed `(kind, subject, id)` tuples
+  (IDs are `sha256:` plus 64 hex digits) for row `items`. `_trace_items` supplies unexplained-item
+  trace links. `_onboarding_sources` and `_onboarding_counted` project covered paths and counted flags
+  from `onboarding_trace` items; together with `request.memory_base` they reach `Authoring`. A file
+  card uses its subject path; an overview row requires the persisted covered-source set and cannot
+  bind without it. Without a worklist no item is filled in.
 
 ### Conventions
 
@@ -82,9 +88,9 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
 ### Invariants And Boundaries
 
 - **All or nothing (rule 4):** a refused operation writes nothing and names every problem and every
-  refusing violation. Report-only findings (family coverage among them) are carried and never refuse.
-- A violation already present in the base still refuses a write unless the validator classes it as carried
-  and report-only (architect ruling 6); the curator repairs such damage by direct edit first.
+  refusing violation. Report-only findings do not refuse this writer run; they are not permanent
+  publication exemptions. A base-present violation still refuses unless the validator's specific
+  carried/deferred policy or the registry's inside-writer split applies; direct repair remains available.
 - Nothing is written before validation: `MemoryState.write` is reached only from `_finish` with
   `commit=True`.
 - **The carry never edits authored fields or another owner's row (architect ruling 5, MIK-R08).** It never
@@ -128,7 +134,6 @@ The operation and its stages.
 
 - The refusal text for an unconverted memory tree. [1]
 
-- One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. [2]
 - Read, author, check history, render, validate, then finish or refuse. [3]
 
 - The worklist and the task document's questions, both optional (MIK-R14). [4]
@@ -136,7 +141,6 @@ The operation and its stages.
 - The worklist's reconsideration items by subject; the append in a committing run. [6]
 - The carry-forward call and its report field. [7]
 - The carry itself. [8]
-- The `writer_reports` rules become reports inside the writer; commit routes still refuse them. [9]
 - Planned or written. [10]
 - Model validation then canonical rendering of every touched document. [11]
 - The registry side of the writer-reported rules. [12]
@@ -150,7 +154,6 @@ The operation and its stages.
 - The writer compares an unconverted HEAD through its converted base. [19]
 - A master line's crossing records its rows through the writer. [20]
 
-- The worklist's well-formed items, for the rows' items. [21]
 
 ### Cross-Repo References
 
@@ -158,3 +161,8 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- One operation's inputs, including authorization, task-owner decision resolver and paired onboarding memory base. [2]
+- Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named. [9]
+- The worklist's well-formed items and trace links, plus covered-source and counted-change projections passed with the paired memory base. [21]
+- Current source delta inspected statically: Document paired-base/source projection and registry-driven writer deferral without weakening whole-tree validation, carry, base conversion or all-or-nothing writes. [22]

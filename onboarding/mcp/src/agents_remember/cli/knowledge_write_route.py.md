@@ -36,6 +36,10 @@ Leaf writes use the supplied enclosure and its leaf owner; named waves use their
   trailerless unconverted `HEAD` is converted at, which is the gate's and the worklist's fallback, so the three
   share one converted-base cache key.
 
+`_leaf_memory_base` resolves the memory commit paired to the contract code base on the memory source branch. `run_leaf_write` passes that result to WriteRequest: the paired base governs counted-card comparison. Missing pairing inputs or lookup failure yield None, retaining the downstream fallback rather than inventing a base. Lazy settings/question ownership is unchanged.
+
+- Leaf writer request binds the independently resolved paired memory base. [34]
+
 ### Conventions
 
 - Imported by `cli/knowledge_ingest.py` and `cli/knowledge_bootstrap.py`; not registered as its own subcommand.

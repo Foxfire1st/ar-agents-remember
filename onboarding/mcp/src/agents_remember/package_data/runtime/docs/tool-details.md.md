@@ -6,10 +6,17 @@
 
 ## Purpose
 
-The shipped longer explanations behind the short `server_info` and `runtime_install`
-descriptions. The canonical checkout document is `docs/tool-details.md`; this packaged
-copy installs under `<coordinationRoot>/docs/`, making the same relative explanation
-pointer openable in both layouts. It is documentation, not another callable interface.
+The shipped longer explanations behind the short `server_info`, `runtime_install` and
+converted-onboarding drift descriptions. The canonical checkout document is
+`docs/tool-details.md`; this packaged copy installs under `<coordinationRoot>/docs/`,
+making the same relative explanation pointer openable in both layouts. It is
+documentation, not another callable interface.
+
+The drift account distinguishes anchor assessment from invariant currentness. A stale
+reference generally reports without blocking by itself. A carried anchor at a path the
+leaf deleted is the exception: `R22.6-carried-stale` refuses closeout and landing, and
+reports only at a sync merge. This replaces the earlier zero-violation boundary for
+that kind, not the reporting treatment of other stale references.
 
 ## Code Commentary
 
@@ -39,7 +46,9 @@ must not be interpreted as permission to restore provider install/index/watch wo
 
 ## Evidence
 
-- The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence. [1]
+### Repo-Internal References
+
+- The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence. [1]
 
 ## External and cross-repository evidence
 

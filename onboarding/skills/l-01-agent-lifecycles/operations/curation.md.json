@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
         "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
         "locator": {
           "end": 90,
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 281,
+          "end": 289,
           "kind": "line_range",
-          "start": 281
+          "start": 289
         }
       },
       "id": "RLZ-4YAPS7",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
         "locator": {
           "kind": "file"
         }
@@ -75,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
         "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
         "locator": {
-          "end": 268,
+          "end": 276,
           "kind": "line_range",
-          "start": 266
+          "start": 274
         }
       },
       "id": "RLZ-EEEG4W",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
         "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
         "locator": {
           "end": 126,
@@ -130,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
         "locator": {
           "kind": "file"
         }
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
         "content": "sha256:57dc196bf640467200c67ef9fa2912cd3340f4d427f45b9f1af5a643d113a59c",
         "locator": {
           "end": 75,
@@ -177,6 +177,23 @@
               "end": 302,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raw clean curation and the independent second-reader fact-check have separate obligations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "code"

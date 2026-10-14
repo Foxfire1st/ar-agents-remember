@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/membership.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registration binds membership subjects, revision facts and the leaf's current no_family row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147d6ab10a186f289fae949649b7ddaa9e7ffb5d",
+            "content": "sha256:2c2a88638fc3e5f1b51adbe7e6b0238866f567b85e9f1152767b48e7d5d25570",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNASSIGNED_INVARIANT_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Detection includes only new or newly unlisted live invariants and excludes old orphans and currently listed or retired invariants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147d6ab10a186f289fae949649b7ddaa9e7ffb5d",
+            "content": "sha256:36c373e3651495a66da65290f0740786e579469a8cba83bf0a4dbea2b1a896b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "membership_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

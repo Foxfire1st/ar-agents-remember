@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:ce74eb31525d3010c5f500e170ccd45166c3e34b38b61a5167b3227a4729df37",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:6f73c210af11cb55848c4bcc3fcc635e26006711875fc59d8ff62b19195f371f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:65c510f207bfd0257b2adacada81362a997a79457a69f8adcca3f8fb1661bea2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:54f1221aaeac48d535c485776a34c07b590983d7a2493dd9f25508317af30ee6",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:63501063105b3b174e0540637a880140f9c308bb048711eee19c3a3d4e954c0b",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:705ea780d6daabca17fc8b60e66f92a4cebfe7f688702119ae9fa7be3ad60953",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:480db71795a8361ce643cb3b8bdb019ab1b1d6c6508a015bc7d45522f718d560",
         "locator": {
           "kind": "symbol",
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:b773d7d18cc18cda15f39fb7fd23b25c144618b06946672a20f78ed28dd71651",
         "locator": {
           "kind": "symbol",
@@ -207,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:37b17ab87042ac080e02bd5a6a750d774609b40abe5167bb489dac99d1f016ab",
         "locator": {
           "kind": "symbol",
@@ -224,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
         "locator": {
           "kind": "symbol",
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
-        "content": "sha256:0570ef337e7f5306313a7534193844b93d31db726619bc9a07e76d043f18779b",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+        "content": "sha256:3c2ff2d1ca610d3d27f9245e8c6cb4b1bee53e8974e0e84ec46827fc71fc46d7",
         "locator": {
           "kind": "symbol",
           "name": "test_a_master_landing_does_not_judge_closed_legacy_rows_its_base_lacks"
@@ -258,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
         "content": "sha256:1ca96a00ca51abf963a1d412020a0f029ae38c6a90623371e1ccb34bb985760b",
         "locator": {
           "kind": "symbol",
@@ -281,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
             "locator": {
               "kind": "symbol",
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:762bd8e4259c786bf789e2bdd0d77f4b93177f7412a96434d74d50f8d3a5c5c0",
             "locator": {
-              "end": 170,
+              "end": 171,
               "kind": "line_range",
-              "start": 120
+              "start": 121
             }
           },
           "kind": "test"
@@ -309,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:65c510f207bfd0257b2adacada81362a997a79457a69f8adcca3f8fb1661bea2",
             "locator": {
               "kind": "symbol",
@@ -321,15 +321,52 @@
       ]
     },
     "3": {
-      "note": "Master landings pass over closed legacy rows the base lacks.",
+      "note": "The based master landing passes over closed historical rows absent from its base; baseless validation does not judge those rows but refuses new `R27.4-legacy-unassessed` debt alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
-            "content": "sha256:0570ef337e7f5306313a7534193844b93d31db726619bc9a07e76d043f18779b",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:3c2ff2d1ca610d3d27f9245e8c6cb4b1bee53e8974e0e84ec46827fc71fc46d7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_master_landing_does_not_judge_closed_legacy_rows_its_base_lacks"
+              "end": 410,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:0cc0488064543b492399bb172f8605eacb51a7da5820603338463054b9e733f5",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:892f4cadb7a56f373c00d8b27f417087c3e2cf5e27d3f4e795a6f21ac81e49bb",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 404
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:65c52b0ad89efa9992705f615f3726d4fc7e3f1c879e26e028d897733e227b73",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 409
             }
           },
           "kind": "test"
@@ -341,7 +378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:480db71795a8361ce643cb3b8bdb019ab1b1d6c6508a015bc7d45522f718d560",
             "locator": {
               "kind": "symbol",
@@ -357,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:ce74eb31525d3010c5f500e170ccd45166c3e34b38b61a5167b3227a4729df37",
             "locator": {
               "kind": "symbol",
@@ -368,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:1e4d30273f8d5f4e09d13889b155bbee851b4a5fc17b7701e6b07e72f0441bf6",
             "locator": {
-              "end": 442,
+              "end": 452,
               "kind": "line_range",
-              "start": 416
+              "start": 426
             }
           },
           "kind": "test"
@@ -385,11 +422,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
             "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
             "locator": {
               "kind": "symbol",
               "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source delta inspected statically: Correct baseless whole-validation success without erasing the distinct historical-row exemption or based master-landing success.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:0cc0488064543b492399bb172f8605eacb51a7da5820603338463054b9e733f5",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:892f4cadb7a56f373c00d8b27f417087c3e2cf5e27d3f4e795a6f21ac81e49bb",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 404
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc7efa376e346295e98f26e835f99c6aafa56828",
+            "content": "sha256:65c52b0ad89efa9992705f615f3726d4fc7e3f1c879e26e028d897733e227b73",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 409
             }
           },
           "kind": "test"

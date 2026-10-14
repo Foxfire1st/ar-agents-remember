@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "7248797421f5761513df5b86aead77124a2a859f",
             "content": "sha256:c84a28884cf2fdfd7cdb26db62298358debe3f2aa74ad6f2a4229536b2c998f7",
             "locator": {
-              "end": 92,
+              "end": 95,
               "kind": "line_range",
-              "start": 87
+              "start": 90
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "7248797421f5761513df5b86aead77124a2a859f",
             "content": "sha256:1ea732ed10ee413f94984de472f230cabcd09f7e0a382952228ed78b1296bbfa",
             "locator": {
-              "end": 733,
+              "end": 740,
               "kind": "line_range",
-              "start": 728
+              "start": 735
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -89,24 +89,6 @@
               "start": 12
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Provider application entry points route repo validation through \"from agents_remember.kernel.authority import require_repo\".\n\nAnchor: \"from agents_remember.kernel.authority import require_repo\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:4b0edbd564c2a95549f4d352442f9bb5125dea17c9e7d66b54882558308ae4de",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
           },
           "kind": "code"
         }

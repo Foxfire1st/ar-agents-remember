@@ -16,8 +16,12 @@
 - `route_covers(route, path)` is a pure path-prefix test (`path` lies under `route/`); the root route `.` (`ROOT_ROUTE_PATH`) covers every path.
 - `FamilyRouteState(family, locations)` holds the family record and its members' locations (`family_route_state` gathers them). Its properties:
   - `retired`: the family's status is `retired`; neither rule applies.
-  - `unrealized` (`unrealized_family`): no member has a realization entry; Non-empty is waived.
-  - `unassigned` (`route_unassigned`): `routes: []` with `admission: legacy-unassessed`, which only the export (MIK-R24) produces; Coverage is waived.
+  - `unrealized` (`unrealized_family`): no member has a realization; Non-empty is waived, but the
+    separate finding refuses publication/landing and reports only at sync merge/standalone conversion
+    (`merge_reports`), or inside the writer.
+  - `unassigned` (`route_unassigned`): `routes: []` with `admission: legacy-unassessed`; Coverage is
+    waived, but migration debt refuses when new, and base-carried debt reports only while migration
+    is incomplete (standalone conversion also reports). Neither waiver is a general advisory exemption.
   - `uncovered`: when Coverage applies, the locations under no route.
   - `emptied`: when Non-empty applies, the routes that contain no location.
   - `routeless`: Coverage applies and the family lists no route at all, a Coverage violation.
@@ -33,7 +37,9 @@
 
 - Coverage and Non-empty are evaluated over the realization entries of the same tree; a proof entry never satisfies Non-empty.
 - A retired family is exempt from every route rule (ruling Q2), including route existence.
-- An exported family with `routes: []` and no realization reports both `route_unassigned` and `unrealized_family`.
+- A live exported family with `routes: []` and no realization raises both `route_unassigned` and
+  `unrealized_family`; their separate migration-debt and merge/writer deferrals determine report
+  versus refusal. A retired family remains exempt.
 - The suggestion is offered, never written by itself: nothing here writes a route, and the curator places routes as deep as makes sense.
 - The suggestion never proposes the root except for a realization file at the root (ruling Q3).
 
@@ -59,7 +65,6 @@ The route state, the coverage test and the mechanical suggestion.
 
 - Realization entries only, located by the source path of their sidecar. [1]
 - A route covers a path by prefix; the root route covers every path. [2]
-- One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless. [3]
 - The suggestion is labelled mechanical and lists root-level realization files. [4]
 - Siblings collapse into a parent only when it holds nothing but family code. [5]
 - The mechanical suggestion, and its family-record form. [6]
@@ -71,3 +76,6 @@ The route state, the coverage test and the mechanical suggestion.
 No meaningful cross-repo references found: the module reads one parsed memory tree and a set of code paths the caller supplies.
 
 No cross-repo boundary is crossed by this file.
+
+- One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless; Coverage/Non-empty waivers do not waive separate finding enforcement. [3]
+- Current source delta inspected statically: Keep pure route computations and retired exemptions but replace the unconditional reports-both claim with the separate merge_reports and migration_debt enforcement policies. [9]

@@ -210,7 +210,7 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
 - **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** [46]
 - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
-- Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. [48]
+- Central expression cards mount SourceContent at the inventory exact tree IDs. [48]
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
 - **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]

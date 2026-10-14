@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a8c53237f25ae65f015f93e2d11f1f80575b000",
+        "blob": "eb6db94b6a94c7c3ea9b968f6b38be2492f093a7",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 421,
+          "end": 424,
           "kind": "line_range",
-          "start": 421
+          "start": 424
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "2a8c53237f25ae65f015f93e2d11f1f80575b000",
+        "blob": "eb6db94b6a94c7c3ea9b968f6b38be2492f093a7",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 301,
+          "end": 304,
           "kind": "line_range",
-          "start": 301
+          "start": 304
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -202,16 +202,16 @@
       ]
     },
     "844": {
-      "note": "The current source declares the selected lane population; citation-document transaction is integration, not unit-regression.",
+      "note": "The current source declares lane membership, including the three MIK-R53 modules in unit-regression; citation-document transaction is integration. Membership does not establish invocation or PASS.",
       "targets": [
         {
           "anchor": {
-            "blob": "64ff12d6fa64d962ae1f595592407f4ec8bdfa02",
-            "content": "sha256:1524adadc76c34d973bd7f8ed713e462ec841e64d4131519ada28d4d963bb339",
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "end": 517,
+              "end": 213,
               "kind": "line_range",
-              "start": 1
+              "start": 211
             }
           },
           "kind": "test"
@@ -275,6 +275,23 @@
               "end": 531,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "848": {
+      "note": "Current source delta inspected statically: Add the three exact R53 unit-regression declarations without totals, invocation or PASS; current witness supersedes the prior lead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 211
             }
           },
           "kind": "test"

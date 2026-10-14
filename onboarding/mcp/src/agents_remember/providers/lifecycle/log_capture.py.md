@@ -10,8 +10,8 @@
 responses caused by verbose provider command output (`pg_dump | psql`, `ollama
 pull`, `cgc bundle import`). It strips logs on success, tails them on failure,
 always drops the redundant `json` mirror, drops verbose plumbing keys
-(`command`, `commands`, `compose`, `migration`) on success, and redacts
-`PGPASSWORD=` tokens from command-line arguments.
+(`command`, `commands`, `compose`, `migration`) on success, and masks string command-list
+items containing `PASSWORD=` (including `PGPASSWORD=`), within the limits below.
 
 ## Code Commentary
 
@@ -23,9 +23,9 @@ always drops the redundant `json` mirror, drops verbose plumbing keys
   success, caps it to the failure tail otherwise. **The keys stay present (as `""`)** so the
   response keeps its shape either way.
 - `_drop_verbose_plumbing(node, *, succeeded)` — drops the always-redundant mirror keys, then
-  either the debug-only keys (on success) or the secrets inside them (on failure, via
-  `_redact_commands`). A failing node keeps the plumbing, redacted, **because that detail is what
-  makes the failure debuggable**.
+  the debug-only keys on success. On failure it keeps the plumbing and applies `_redact_commands`
+  only to `command`/`commands`, masking supported `PASSWORD=` string items in command-token lists;
+  this is not general secret redaction.
 
 `summarize_command_logs` still mutates in place, still recurses into dict values and list items,
 and still returns the same payload.
@@ -45,9 +45,13 @@ are tailed to `failure_tail` lines and `command`/`commands` are passed through
 node is evaluated independently so a failing child inside a successful parent
 retains its tail.
 
-`_redact_commands` walks list/dict values recursively. `_redact_token` replaces
-any string containing `PASSWORD=` with `<prefix>=***`, hiding credentials
-embedded inline in provider clone command arguments.
+`_redact_commands` recurses through dictionary values. For a list it calls `_redact_token`
+on each immediate item, not `_redact_commands`: string items containing the case-sensitive
+`PASSWORD=` substring are replaced with the text before the first `=` followed by `=***`
+(for example, `PGPASSWORD=...` becomes `PGPASSWORD=***`). Non-string list items, including
+nested lists/dictionaries, and scalar values passed to `_redact_commands` are unchanged.
+This covers flat command-token lists (including those reached through dictionary values),
+not arbitrary nested token containers, scalar command strings, logs, or every kind of secret.
 
 ### Invariants And Boundaries
 
@@ -56,8 +60,9 @@ embedded inline in provider clone command arguments.
   content afterwards.
 - The `json` key is always dropped (it is a duplicate mirror of `payload`
   attached by `setup_common`); this is not conditional on success/failure.
-- On failure, `command`/`commands` are retained for debugging but credential
-  tokens are redacted before the response reaches the client.
+- On failure, `command`/`commands` are retained for debugging. Their supported command-list
+  string items containing `PASSWORD=` are masked before transport; dictionary values recurse,
+  but nested list items and scalar strings have no blanket redaction guarantee.
 - Success is evaluated per-node, not globally; a parent node being ok does not
   silence a failing child's logs.
 - `tail_lines` returns the full text unchanged when the line count is within
@@ -73,5 +78,5 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. [1]
+
 - `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. [2]

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The MIK-R30@v1 gate cases on converted-format fixtures (16 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
+**The MIK-R30@v1 gate cases, amended by MIK-R53, on converted-format fixtures (16 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
 repository and a real converted memory repository (`main` is the official line, its commit carries the
 `Code-Commit` trailer naming the leaf's base) plus a leaf series contract: the inputs the curator's
 memory-quality run and the closeout validator hand the gate. The file runs in the unit lane
@@ -17,14 +17,19 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
 ### Logic
 
 - **Rule 3.** `test_only_an_anchors_blob_line_numbers_and_content_do_not_count` checks the counted-change
-  rule field by field; `test_the_writers_mechanical_anchor_update_is_not_a_trace` runs the real writer carry
+  rule field by field, including reference changes versus realizes-only rationale/locator/list edits
+  (the latter do not count; MIK-R53 excludes realizes/proves-only change); `test_the_writers_mechanical_anchor_update_is_not_a_trace` runs the real writer carry
   and the item stays open.
-- **Rule 2 and the examples.** `test_the_conforming_example_and_the_route_case` (a prose edit plus a
-  "test-only rename" row; only the nearest route; `onboarding:overview` for a root-level file) and
+- **Rule 2 and the examples.** `test_the_conforming_example_and_the_route_case` (a prose edit with its `updated` row, plus a
+  "test-only rename" `no_impact` row; only the nearest route; `onboarding:overview` for a root-level file) and
   `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses`.
 - **Rows.** `test_rows_are_only_about_changed_files_and_the_registry_rule_is_both_halves` (unnecessary rows
-  are report-only; the registered kind and `onboarding_item_open`);
-  `test_a_moved_marker_row_satisfies_its_item_and_survives_a_rewrite` (rule 4).
+  remain report-only; the registered kind now declares five facts including `sourceBlobs`;
+  `onboarding_item_open` rejects counted-edit-only and `satisfiedBy: counted-change` identities);
+  `test_a_moved_marker_row_binds_its_sources_and_reopens_on_change` asserts source-bound currency,
+  preservation of ID/markers and the unchanged candidate source binding across rewrite, an explicit
+  reason update from `Moved by the crossing sync.` to `Re-reviewed.`, and reopening after another source edit.
+  `_gate` captures candidate blobs and writer calls for overview rows receive recomputed worklists.
 - **Fail closed.** `test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass` (both mixed cases: the
   reason, the closeout refusal and the persisted `incomplete` worklist);
   `test_an_unreadable_sidecar_never_satisfies_a_trace` (a K_C sidecar corrupted beside a row and a Markdown
@@ -54,9 +59,15 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
 
 ### Invariants And Boundaries
 
-- **The cases pin the architect rulings:** 18:49:50 (1: only a counted change or a row; 2: the items in the
-  persisted worklist; 3: `onboarding:overview`; 4: the Markdown in the cache), 19:23:45 (N1, N2, N3, N5) and
-  19:53:54 (R2-1, R2-2, R2-3).
+- **The current ordinary-candidate cases supersede the older counted-edit-or-row ruling.**
+  MIK-R53 requires an eligible row bound to current source blobs; `updated` additionally requires
+  counted Markdown/reference change, `no_impact` covers unchanged contracts, and entry-only
+  realizes/proves edits do not count. A later source edit reopens the bound answer. Earlier rulings
+  18:49:50 (persisted items, `onboarding:overview`, cache Markdown), 19:23:45 (N1–N5) and
+  19:53:54 (R2-1–R2-3) remain historical context; only the old standalone-counted-edit answer is
+  superseded. Amended L53 rule 1 separately permits this leaf's counted changed cards under the
+  old MAIN-LINE producer without updated or changed-card no_impact/backfill; that rollout exception
+  is not a conflict blocker and is not what these ordinary-candidate tests assert.
 
 ### Todos
 
@@ -77,12 +88,8 @@ No configured live documentation source was available for this pass.
 
 - The fixture's description: real repositories plus a leaf series contract. [1]
 - The leaf fixture. [2]
-- Only mechanical anchor fields never count. [3]
-- The conforming example and the nearest route. [4]
 - A missing trace is named and refused. [5]
 - The writer's carry is not a trace. [6]
-- Unnecessary rows and the registered rule. [7]
-- Moved markers count and survive a rewrite. [8]
 - Mixed formats refuse. [9]
 - An unreadable K_C sidecar keeps its item open. [10]
 - An unreadable K_B sidecar is an input problem; a repair counts. [11]
@@ -101,3 +108,9 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the fixtures are temporary repositories.
 
 No cross-repo boundary is crossed by this file.
+
+- Mechanical anchor fields and realizes-only edits never count; reference/prose edits are separate counted changes. [3]
+- The conforming example pairs prose with updated and source-current no_impact rows, using the nearest route and candidate blobs. [4]
+- Unnecessary rows, five registry facts including sourceBlobs, and rejection of counted-change-only satisfaction. [7]
+- test_a_moved_marker_row_binds_its_sources_and_reopens_on_change preserves row identity/markers and the unchanged candidate source binding on rewrite, updates the reason to `Re-reviewed.`, then reopens after source movement. [8]
+- Current source delta inspected statically: Repair current-row/counting doctrine, moved-marker caption and worklist/blob inputs; keep historical rulings explicitly superseded. [20]

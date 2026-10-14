@@ -34,6 +34,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "Public index surface includes prose companions without making prose an indexed model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:0893781fbc4b3db3142fee70e226a60ea53a726104107f2348086accf8e25118",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

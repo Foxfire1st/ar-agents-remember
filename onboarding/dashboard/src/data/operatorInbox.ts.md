@@ -53,10 +53,11 @@ direct re-invocation is not available. This helper is the dashboard client side 
 ### Repo-Internal References
 
 - The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. [2]
-- `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. [3]
+- `GateResponder` posts nonempty ordinary replies through this durable inbox helper; adapter-interaction replies skip the duplicate inbox delivery. [3]
 - The serving endpoint writes the inbox entry with developer/dashboard attribution. [4]
 - The helper test pins the POST body and error mapping. [5]
-- `AgentPickupIndicator` calls the dismiss helper for stale pending responses. [6]
+
+- `PickupDismiss` in the lifecycle list calls the dismiss helper for overdue pickup warnings; pointer/key propagation is isolated and an open gate remains the row's primary word. [6]
 
 ### Cross-Repo References
 

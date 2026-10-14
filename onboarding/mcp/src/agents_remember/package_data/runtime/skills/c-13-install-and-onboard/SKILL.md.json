@@ -177,24 +177,6 @@
         }
       ]
     },
-    "6": {
-      "note": "The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action=\"refresh\"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed).\n\nAnchor: \"def provider_watchers_tool(\"; \"if action == \\\"refresh\\\":\"; \"if action not in {\\\"status\\\", \\\"start\\\", \\\"stop\\\", \\\"restart\\\", \\\"invalidate-indexes\\\", \\\"shutdown-all\\\"}:\"; \"if action in {\\\"start\\\", \\\"restart\\\", \\\"invalidate-indexes\\\"}:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:92116e884859858276c22cf793abb4e35ff04492ffccc62e251f3052fd8b2910",
-            "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 50
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
       "note": "The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical.",
       "targets": [

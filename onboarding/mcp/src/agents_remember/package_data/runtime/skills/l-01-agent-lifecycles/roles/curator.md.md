@@ -34,7 +34,11 @@ Citation authoring previews the finite card list in one call and repairs it in o
 
 Converted MIK memory uses the admitted entries/records/history file writer without dataset publication flags. Lift only governing decisions with real alternatives, examine exact family guarantees and memberships, retain unchanged sibling revisions explicitly when justified, declare external sources and read the result planes back. A large worklist is one full-intake list of distinct outstanding memory actions, counted once; the seat organises that work with whatever its harness offers, at any size, while every durable write, semantic judgment, the full memory-quality operation and the handoff stay with the seat.
 
-Every normal authoring pass runs complete contract-scoped MQC, resolves or exactly escalates curator-actionable findings, reruns the raw ready check and clears missing/stale coherence with prepare → publish → validate. The Reviewer compares the base and candidate code and memory Git trees; the Curator records no separate comparison. The Curator carries its actual quality/coherence generation or refusal. Explicit report-only admission writes its report/upstream message and claims none of the normal pass complete.
+Every normal authoring pass runs complete contract-scoped MQC, resolves or exactly escalates curator-actionable findings, reruns the raw ready check and clears missing/stale coherence with prepare → publish → validate. The Reviewer compares the base and candidate code and memory Git trees; the Curator records no separate comparison. The Curator carries its actual quality/coherence generation or refusal.
+
+Converted changed-source cards and governing overviews need current content-bound onboarding rows: `updated` with a counted Markdown/nonmechanical-reference change, or `no_impact` with its reviewed reason. Counted edits alone never answer. Before closeout, an independent nonauthor checks every changed card, sidecar and record statement against final code, every row's disposition, effect and reason against the diff, and important omissions; blocking findings are repaired. This is a lifecycle duty, not a mechanically enforced closeout gate.
+
+Explicit report-only admission writes its report/upstream message and claims none of the normal pass complete.
 
 ## Conventions
 
@@ -58,6 +62,10 @@ with its card and the governing history rows carries it.
 - The mirror carries the same effect contract as the canonical role. [1]
 
 ## Code Commentary
+
+Normal converted curation requires current source-bound updated/no_impact onboarding judgments, with counted Markdown/nonmechanical reference change supporting updated; mechanical or realizes/proves-only edits never stand for authored review. Amended rule1 separately permits this L53 rollout's own counted-card answers without updated rows/backfill. Before closeout a non-author second reader checks every changed card/sidecar/record statement, row disposition/effect/reason and important omission against final code/diff; blocking findings are repaired. The independent check is lifecycle evidence, not automated transaction acceptance.
+
+- Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [12]
 
 ### Logic
 
@@ -129,7 +137,7 @@ A cut-card observation calls for a causal account: the handover names the change
 
 - The curator’s prohibited writes and source-stamp boundary.  Anchor: `enclosure_in_scope` [3]
 - Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).  Anchor: `MIK-R13` [5]
-- On converted memory the curator follows the converted-card workflow.  Anchor: `citation_fix` [6]
+- Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout. [6]
 - Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [10]
 
 - Evidence and working files stay outside the memory worktree. [10]

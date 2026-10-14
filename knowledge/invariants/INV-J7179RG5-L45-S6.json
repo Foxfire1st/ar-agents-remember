@@ -16,9 +16,9 @@
     "legacyId": "f5768b70-4e16-49a2-b60a-58daf0bfa47e",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "For an entry that would write new realizations, a non-string rationale or role at either level is reported as realization_value_not_text, a role outside the shipped vocabulary (the word absent included) as realization_role_unknown, and a rationale longer than PROSE_MAX_LENGTH as realization_rationale_too_long, each naming the entry and offending targets before any identity is minted. In a converted file-writer hand-off any such violation refuses the whole hand-off and nothing is written. The clause that sibling entries commit belongs only to the earlier per-entry ingest, for as long as that path exists.",
+  "statement": "For an entry that would write new realizations, a non-null non-string rationale or role at either level is reported as realization_value_not_text, an unknown nonblank role (absent included) as realization_role_unknown, and an effective rationale longer than PROSE_MAX_LENGTH as realization_rationale_too_long. Null/missing values are unstated and resolve through target/entry defaults; absent effective rationale separately refuses. Diagnostics name the entry and offending targets before identity minting. A converted violation refuses the whole handoff with no writes; sibling commits are earlier-path provenance only.",
   "status": "proposed",
   "supersedes": []
 }

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:14cf06c1075c85c8e52a3a2904c8d2e2d70f609b8a2ff86ab450a71c9c13508f",
             "locator": {
               "end": 12,
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:a3355079a30e1451b3fcbb254811ed1ccb3ef38565a5902696ebd2eef138f6a1",
             "locator": {
               "end": 149,
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:070eca61f4efd808096e492624c0591feb22ca5be5d9ba71b0d8900fc3064975",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:7b5a352710eb26cdf8c056b2903812cdac694b8056ba6df690a0ec0502ef9acf",
             "locator": {
               "kind": "symbol",
@@ -68,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:f969e2f7d7df79e6dbadacd96a6932e52d834ee7bc97207d529828436c758883",
             "locator": {
               "kind": "symbol",
@@ -84,14 +84,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
             "content": "sha256:701dfc16e90a57bb20b47a098c9f3f67419c2cde1a56b17ed586636dbbe4c6e5",
             "locator": {
-              "end": 80,
+              "end": 90,
               "kind": "line_range",
-              "start": 80
+              "start": 90
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:03681ff884834015b28bc99894f0225ef04f04239316e1bf83be242b20209965",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:82435c7763a7647067bd51a73b0bc2de340aef10cbd3ae5526b48beb788ccc21",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 330
+            }
           },
           "kind": "test"
         }
@@ -102,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:cda0aab19aabc30b9ddc3bf54ca89cfdd6ae710ab44956b6f2d7d56ce84b0ccb",
             "locator": {
               "kind": "symbol",
@@ -118,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:081e44a40428fd342a54e7f426b5ca62a52ee394917b913ed9af4ef5720d3c33",
             "locator": {
               "kind": "symbol",
@@ -134,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:5287704295df5a8d4b5ee02d671de86a18a28c0226b4189b4f9cf90444f348b5",
             "locator": {
               "kind": "symbol",
@@ -146,15 +175,40 @@
       ]
     },
     "5": {
-      "note": "The carried L04 decision end to end.",
+      "note": "`test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption.",
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
-            "content": "sha256:4f279716c5ff49dc5944c00779e9b1bb1d14e4f47b416eb9d59fab74426ccd1f",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:8f13c33174fb722c6b01318169a35d34dd74c1602c09a474f1840a982a339008",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item"
+              "end": 358,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:03681ff884834015b28bc99894f0225ef04f04239316e1bf83be242b20209965",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:82435c7763a7647067bd51a73b0bc2de340aef10cbd3ae5526b48beb788ccc21",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 330
             }
           },
           "kind": "test"
@@ -166,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:564bb9e907b261c977f37066f644dd38ff97df27c1587733667994d30036d160",
             "locator": {
               "kind": "symbol",
@@ -182,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:af3de416d0146fc39df98bb243b74859f7585d49aa03a4b9fe7e3965eb84a7c0",
             "locator": {
               "kind": "symbol",
@@ -198,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:049e589cfdc57186b49f1a698ec7a924c16c22790458e2901751fbd6c3989acb",
             "locator": {
               "kind": "symbol",
@@ -214,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:f5ba934ea4487690c3daeaa704b7fb322b7354cb80b789154322e54c23821a6d",
             "locator": {
               "kind": "symbol",

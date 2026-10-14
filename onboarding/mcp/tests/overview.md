@@ -7,7 +7,7 @@
 
 `mcp/tests/` holds the package's Python behavioral tests, shared fixture and support modules, recordings and data, pytest composition, and two governed evidence catalogs. Its purpose is to preserve distinct user operations, consequential failures and regressions with the smallest maintainable protection. Module cards describe individual assertion sets; this overview explains composition, responsibility and authority across the route. The governing route is [MCP package overview](../overview.md).
 
-A test declaration, fixture, source citation, catalog membership or historical delivery statement is not evidence that a test ran on this candidate. Native-host and protocol cases qualify their exact tested surfaces; they imply neither a paid provider turn nor universal containment or semantic acceptance. Retained internal services and fixtures do not restore deleted public tools. The current literal public roster has 41 names against 39 at `8d2e7547`: `role_start_set` and native `retire_child` are the two additions, with registered entry points and response models. This source census establishes neither execution nor restoration of the other removed APIs.
+A test declaration, fixture, source citation, catalog membership or historical delivery statement is not evidence that a test ran on this candidate. Native-host and protocol cases qualify their exact tested surfaces; they imply neither a paid provider turn nor universal containment or semantic acceptance. Retained internal services and fixtures do not restore deleted public tools. The current literal public roster has 41 names on this successor after removal of `resolve_context` from the rejected freeze’s 42-name tuple; native `role_start_set`, `retire_child` and `direct_execution_grant` remain declared, while older39/41 epochs are historical. This source census establishes neither execution nor restoration of the other removed APIs.
 
 ## Hot Path Summary
 
@@ -407,8 +407,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The module's own statement of the read bound and the preserved projection. [1489]
 - The count-based scaling case. [1490]
 - Its lane registration. [1491]
-- The module's own statement of what it protects. [1492] [1495]
-- The count-based scaling case. [1493]
+- The module's own statement of what it protects. [1495]
+
 - Its lane registration. [1494]
 - Availability loss reported, not remembered. [1496]
 - The three new lane rows beside their siblings. [1498]

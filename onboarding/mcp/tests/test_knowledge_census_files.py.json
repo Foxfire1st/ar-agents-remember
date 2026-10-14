@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:85190e1cdfd7f60b6cedd65ff1c3c273eda95f83dd3e713326da326e45368b57",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:a7e571fe4b55fae42b75b97c8ed86496d3091c8fdca578456711d5de3beaea44",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:90035513d967f0bfee28adbb47aa4c524c90b6073e718758b12bb6e2472f3cf8",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:6ea4f74d7efc4feec6da3115001e9c5194d3da7a9a36ef7202961ffbd1cc654d",
             "locator": {
               "kind": "symbol",
@@ -57,15 +57,64 @@
       ]
     },
     "3": {
-      "note": "Pinned files.",
+      "note": "Pinned files and append-only statuses: complete migration leaves legacy-debt refusals; deleted/blocked status branches keep debt reportable.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
-            "content": "sha256:a6be626bdb0078679181a8163b9aecb8eb6e745f59e8f4c58234143c7dc5366c",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:1e55d1f3fcd74fd6f30f89834bf2726e0e2f9fd85d61f22aa50e6c8339a1ae20",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_baseline_and_inventory_are_pinned"
+              "end": 383,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:ab0762cf1b96e5ac3d279ec03c40aafc7f1dc8696b9df3fcd59ad7ff00ff95e8",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:5721c128d70d337dab2a8b59ad8c24887034aacc96b058dfdb1410832f74e0bf",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:a4da8322e2d3c400640b64bc804b64d6e39245cd53bea2755183bd97091d7f6f",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:22164103c722dc66b731632d25320a25170c4cba36094a63899375cae0dd1e6a",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 602
             }
           },
           "kind": "test"
@@ -77,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:3cf8438df9582b58cf5df4c9f1cbb4d2d0bd108eea8f0bbc15a126d5b84781a0",
             "locator": {
               "kind": "symbol",
@@ -89,15 +138,117 @@
       ]
     },
     "5": {
-      "note": "Stable claim fields.",
+      "note": "Stable claim fields: settlement removes the R20 finding but leaves LEGACY_COUNT refusing; cache release is asserted after a refusing report.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
-            "content": "sha256:f8672b5113e13ae7bfd4824516043496a26a1dda4cc95718d2c75c5739785ca9",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:d19bc0e243876bf86f16612cb9b105043b793342b5eccd082e5991a785176a98",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_claims_identity_and_cohort_fields_are_stable"
+              "end": 546,
+              "kind": "line_range",
+              "start": 528
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:ab0762cf1b96e5ac3d279ec03c40aafc7f1dc8696b9df3fcd59ad7ff00ff95e8",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:5721c128d70d337dab2a8b59ad8c24887034aacc96b058dfdb1410832f74e0bf",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:a4da8322e2d3c400640b64bc804b64d6e39245cd53bea2755183bd97091d7f6f",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:22164103c722dc66b731632d25320a25170c4cba36094a63899375cae0dd1e6a",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 602
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source delta inspected statically: Distinguish census-local settlement/writer success from migration-complete debt refusal; cache is checked after refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:ab0762cf1b96e5ac3d279ec03c40aafc7f1dc8696b9df3fcd59ad7ff00ff95e8",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:5721c128d70d337dab2a8b59ad8c24887034aacc96b058dfdb1410832f74e0bf",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:a4da8322e2d3c400640b64bc804b64d6e39245cd53bea2755183bd97091d7f6f",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:22164103c722dc66b731632d25320a25170c4cba36094a63899375cae0dd1e6a",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 602
             }
           },
           "kind": "test"

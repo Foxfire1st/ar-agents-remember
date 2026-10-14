@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -185,7 +185,7 @@
       ]
     },
     "19": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nL53 account: Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
       "targets": [
         {
           "anchor": {
@@ -193,6 +193,18 @@
             "content": "sha256:0a65792b6c221d385b9a838dc222e0a5c24e168b18a1006b594db5aac9ef8ba8",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 532
             }
           },
           "kind": "code"
@@ -263,7 +275,7 @@
       ]
     },
     "5": {
-      "note": "The public retention input and exact readback requirements.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
+      "note": "Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
       "targets": [
         {
           "anchor": {
@@ -280,7 +292,7 @@
       ]
     },
     "6": {
-      "note": "**Per-target realization rationale and role, and the stated supersession of revision 1's target element shape (generated copy).**\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
+      "note": "Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current.\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
       "targets": [
         {
           "anchor": {
@@ -338,14 +350,14 @@
       ]
     },
     "8": {
-      "note": "The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
+      "note": "Normal MIK-R53 source-bound onboarding rows and separate revision-bound membership/record judgments; this normal contract does not replace the amended L53 rollout described above.\n\nAnchor: lines 532-558",
       "targets": [
         {
           "anchor": {
-            "blob": "6b113b803fdcdd070e4588831486387e6917974e",
-            "content": "sha256:45648f762efd1f014b318ec5f46ac682697da0211fabf6faff2d7d25250b415d",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
             "locator": {
-              "end": 537,
+              "end": 558,
               "kind": "line_range",
               "start": 532
             }

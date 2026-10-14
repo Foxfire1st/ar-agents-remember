@@ -55,7 +55,7 @@ monolithic public surface.
 
 ### Repo-Internal References
 
-- The CLI parser and dispatcher live in the lifecycle package. [1]
+
 - CGC exports are grouped behind the CGC package facade. [2]
 - GrepAI exports are grouped behind the Docker-owned GrepAI package facade. [3]
 

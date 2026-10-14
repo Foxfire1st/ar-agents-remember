@@ -26,9 +26,11 @@ on a converted tree) calls `author_card_references` to turn it into references.
 - `_author_card` removes each citation table's header and separator lines and authors every row (`_author_row`):
   - a placeholder row (anchor and source both empty or a no-citation marker) keeps its finding as prose;
   - otherwise the row becomes `- <finding> [n]`, and `references[n]` is `citations.row_reference(...)` resolved
-    against the **code working tree** (captured once per run in `_Code`) by the conversion's own rules: a symbol
-    the extractor binds once, a `path:start-end` range, a whole file, a URL; anything else is `unresolved` and
-    reported;
+    against the **code working tree**, captured once per run in `_Code`. The cached context holds code
+    objects, the blob map and symlink paths derived from that same tree's modes. `_context` passes those
+    paths to `RowContext`, so symbol anchors on symlinks are refused instead of parsing target bytes as
+    source. The other conversion rules remain: a symbol uniquely bound by the extractor, a
+    `path:start-end` range, a whole file or a URL; otherwise an `unresolved` target is reported;
   - `n` is the next free number after the sidecar's highest (`_Card.number_for`), unless the finding ends in an
     existing `[n]`: then reference `n` is re-authored in place (its targets resolved again, its note replaced).
 - With `only`, `_remove_unused` drops the references the card's Markdown no longer cites. A tree-wide run never
@@ -47,6 +49,8 @@ on a converted tree) calls `author_card_references` to turn it into references.
     authoring;
   - a row that re-authors `[n]` while another evidence line still cites `[n]` (`_leftover`), which would silently
     re-point that line;
+  - two rows that re-author the same existing `[n]` in one run (`_Card.number_for`): the refusal names both
+    lines and says to keep one row or give the other no number so it becomes a new reference;
   - two tables with no blank line between them, when either holds citations (`_merged_tables`, called in `_load`).
     The table reader ends a table only at a blank line, so the second table's header and delimiter rows would be
     authored as findings, or a citation table below another table would be skipped. A delimiter row inside a table
@@ -57,8 +61,8 @@ on a converted tree) calls `author_card_references` to turn it into references.
   not.
 - Cards without a citation table are never touched, except the named card's unused references.
 - The module authors `references` only. `realizes` and `proves` entries are the writer's (`knowledge-ingest`).
-- Known limits: a removed highest number is reused by a later run; two rows that re-author the same `[n]` in one
-  run are not refused; and a second table whose delimiter cells have fewer than three dashes is not refused by name.
+- Known limits: a removed highest number is reused by a later run; a second table whose delimiter cells have
+  fewer than three dashes is not refused by name.
 
 ### Todos
 
@@ -80,7 +84,6 @@ No configured live documentation source was available for this pass.
 
 - The entry: author in memory first, then write the cards that passed. [2]
 - One card: its tables removed, its rows authored, a leftover line refused, unused references removed for the named card. [3]
-- One row: a placeholder stays prose; otherwise a numbered line and a resolved reference. [4]
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
 - The fixer calls this module on a converted tree, scoped to one document when one is named. [7]
@@ -96,3 +99,6 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module reads one code working tree and writes one memory tree.
 
 No cross-repo boundary is crossed by this file.
+
+- One row: a placeholder stays prose; otherwise a numbered line and a reference resolved through the once-captured blob/symlink context. Symbol targets do not parse symlink target bytes. [4]
+- Current source delta inspected statically: Explain cached symlink paths and RowContext forwarding; retain citation numbering, re-authoring and refusal boundaries. [12]

@@ -22,7 +22,7 @@ The recorded-meaning-effect regression module is selected in unit-regression. It
 
 The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
 
-`mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. Its membership adds no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
+`mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. The current catalog also selects `mcp/tests/test_mik_r53_judgment_rows.py`, `mcp/tests/test_mik_r53_onboarding_gate.py` and `mcp/tests/test_mik_r53_report_only_rules.py` in that lane (source rows 211–213). These memberships add no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
 
 The catalog records its declared test-module paths under evidence lanes, not an independently verified inventory of every filesystem module. On the admitted L147 successor the parsed lists are unique and sorted within each lane; that observation does not retroactively qualify the older frozen ordering. Source declarations and their loader checks, not this prose, decide current membership. The extracted capsule serving-surface and
 memory-opt-out refusal suites remain in `unit-regression`; those incoming registrations
@@ -93,8 +93,11 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 - The guard and recursive scanner cases carry the support-settings contract. [843]
 
-- The current source declares the selected lane population; citation-document transaction is integration, not unit-regression. [844]
 
 - The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
 
 - The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
+
+
+- The current source declares lane membership, including the three MIK-R53 modules in unit-regression; citation-document transaction is integration. Membership does not establish invocation or PASS. [844]
+- Current source delta inspected statically: Add the three exact R53 unit-regression declarations without totals, invocation or PASS; current witness supersedes the prior lead. [848]

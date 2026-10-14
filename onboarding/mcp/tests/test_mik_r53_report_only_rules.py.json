@@ -1,0 +1,150 @@
+{
+  "path": "mcp/tests/test_mik_r53_report_only_rules.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registration rejects unnamed reporting or competing report reasons and verifies the rule sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:ccae73e28ad9ef03dd4d6df611dc458094a55cdb86f6fcd81803ffb8071fc53b",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaf/publication versus merge cases exercise existing-record, absent-route, unrealized-family and gone-path refusal boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:e0fcd5912d2b7020a26f4e94827a952929942d8de08631d743860b3f73f0a483",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Standalone conversion rejects bases, paired code and publication; candidate overviews join the migration population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:4ee546e56c465c74828a63e870d6693ff39c9f6b32255d8c0bb93c11512cd1cc",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 393
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Admission operation counts constrain per-record classification rather than elapsed runtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:f00f50ac9020f679d88c77a0839fed5055d344e1874cd854fb6bafe4f289eea2",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Merge-moved rows report at merge but are refused by covered-entry validation at publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:96359996509fdcfe1ba3dc31aa69c3b180d2790c324870e25a948258df28c546",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 522
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:a5844232eb083e38b46fad2c78b1739f798cc0c3c54e44933dbc7bfcaea4fb16",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 783
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Messages, command help and skill text carry the named reporting and refusal decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:5f2a0bb378dd7991c38012f47e3e3b6a505f30a0d3376397ea7a761dffb04516",
+            "locator": {
+              "end": 734,
+              "kind": "line_range",
+              "start": 688
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Complete-census boundary cases cover carried debt at both landing and sync with incomplete controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:f8f40d925e36289e61049c3636a436dd581371bcbba966e0a0d4e4672584ea8f",
+            "locator": {
+              "end": 779,
+              "kind": "line_range",
+              "start": 744
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
+            "content": "sha256:43f5c50653caa3fa5ff3285651cd0bf1d46564d214021591cd3b4993ba2c3c52",
+            "locator": {
+              "end": 910,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -12,7 +12,7 @@
 
 ### Logic
 
-- `is_indexed_path(path)` is the file filter: a `.json` file not excluded by MIK-R22's shared `is_excluded_from_knowledge` (no `*.index.json` route cache, nothing in a hidden directory), under `knowledge/` but not `knowledge/census/` (MIK-R20 owns those schemas), or under `onboarding/`. Everything else contributes to the key only.
+- `is_indexed_path(path)` is the file filter: a `.json` file not excluded by MIK-R22's shared `is_excluded_from_knowledge` (no `*.index.json` route cache, nothing in a hidden directory), under `knowledge/` but not `knowledge/census/` (MIK-R20 owns those schemas), or under `onboarding/`. `with_prose_companions` additionally carries nonexcluded onboarding Markdown and a knowledge record's Markdown when its indexed JSON sibling exists. Those bytes serve card/record comparison and are never parsed as JSON. Onboarding Markdown needs no JSON sibling: the source helper docstring's blanket sibling restriction is broader than its executable branch. Other files contribute to the key only.
 - `git_tree_snapshot(repository, revision)` resolves `revision^{tree}`, lists it with `read_git_tree_bytes`, and reads every indexed blob with one `kernel.git_command.read_git_blobs_bytes` call, bytes unchanged.
 - `directory_snapshot(directory)` refuses a directory outside a Git working tree, then captures: `_capture` copies the repository's own index (for its stat cache) into a temporary directory, selectively clears `assume-unchanged` and `skip-worktree` on the copy (`_clear_index_flags`, one `update-index` per flag because it applies only the last such option), runs `git add --all -- .` and `git write-tree [--prefix=…]` with an isolated index and object directory whose alternate is the real object database, and lists the captured tree. A path that sparse checkout leaves out keeps its committed blob in the capture (`_captured_bytes` reads it through objects); a file absent without that flag is captured as deleted (MIK-R74 rule 5). It then reads the files from disk and checks each against its captured blob id (`_blob_id`, SHA-1 or SHA-256 by the tree id's length); a mismatch retakes the capture, up to three attempts, and then raises `MemoryTreeError`.
 - `directory_key(directory)` is the capture alone, without reading files — what the cache uses to decide reuse.
@@ -56,7 +56,10 @@ The filter, the two readers and the capture.
 
 - The two sources, the captured-state key and what the capture never writes. [1]
 - The snapshot value and the read error. [2]
-- The indexed-file filter, sharing the validator's exclusion predicate. [3]
+- The indexed JSON filter, sharing the validator's exclusion predicate. [3]
+
+- Snapshot selection retains nonexcluded onboarding Markdown and indexed-record Markdown companions as comparison bytes. [11]
+
 - The Git-object reader: one batch read, nothing checked out. [4]
 - The directory reader and its key, with the blob-id check and retry. [5]
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
             "content": "sha256:f2cf68bcf4d21caa9b24c23cc08d2541140e32e4b22cc4179eecc739ee898dc8",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
             "content": "sha256:b432c54ada3a8b7d902256c29b16aaf45274eb39b2ed3a9d9a57b885ad05621d",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
             "content": "sha256:6b4a7faa23e2d753a66fa0749a19ab68d87b7f29e0d980e83c9b6e33897e1de7",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
             "content": "sha256:b476be30586ef1134009e351102049b3716bbed3c2912304eac174840089a87b",
             "locator": {
               "kind": "symbol",
@@ -57,26 +57,102 @@
       ]
     },
     "3": {
-      "note": "Added anchors must name existing paths; carried anchors at absent paths are reported.",
+      "note": "Added anchors must name existing paths; carried absent-path anchors refuse off merge and report for sync/conversion or writer repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
             "content": "sha256:a97ec32fc055120417e3cf885e924e4f22a8bbe20cb8d30a42e3d1fb70b7555c",
             "locator": {
-              "kind": "symbol",
-              "name": "check_anchor_paths"
+              "end": 268,
+              "kind": "line_range",
+              "start": 258
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
-            "content": "sha256:d9bee8791ca6276a862e3fea8c37750061ae76e0cf5a67901ac9ffa2078ec712",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:e506d7dd100403a3b254b93a9454166fa636c68a816f2dd8a74dd033b0defb5e",
             "locator": {
-              "kind": "symbol",
-              "name": "check_carried_stale"
+              "end": 288,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "code"
@@ -84,15 +160,78 @@
       ]
     },
     "4": {
-      "note": "The eight registered reference rules, three report-only.",
+      "note": "Eight reference rules: two migration_debt, one merge_reports/writer-reported, no permanent report-only waiver.",
       "targets": [
         {
           "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
-            "content": "sha256:e1e5525613935345898e97ce70cd2d90d8e80556bf561d0672635df75461bfed",
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
             "locator": {
-              "kind": "symbol",
-              "name": "REFERENCE_RULES"
+              "end": 300,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "code"
@@ -121,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:0c4aded6e6bee9ab9a6f2722c21400cdba03cd92aaf1e76e624559b12aa402c6",
             "locator": {
               "kind": "symbol",
@@ -130,6 +269,85 @@
             "path": "mcp/tests/test_knowledge_validator.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source delta inspected statically: Repair debt keys and carried-anchor route disposition throughout prose/captions; retain carry and currentness scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:b403e4187d164a8f6ea83381bc5c452deafe2604705f04e24beb62badc764e61",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:31d2caadb745be2875b9930c139ceb25a6658dee019a1db252e92aea425bab70",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:c13d3fa64cc4f803ba01c84e47cf624d95b9385997eaf59eea1eae1ef8d238fb",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecfa88ded94dfd365f7efbde99024c310ed630a",
+            "content": "sha256:12a68ff677ceb29aea1069c3d1fd40388fc435c18bd53d2b7395efa66a9e597e",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
         }
       ]
     }

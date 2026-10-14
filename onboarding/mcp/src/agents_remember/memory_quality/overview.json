@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:edd4e53b3a92f67842ae50ef0a4484cd315a1cc3f4460053f86c5e4feb06281b",
             "locator": {
-              "end": 1012,
+              "end": 1043,
               "kind": "line_range",
-              "start": 976
+              "start": 1007
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -450,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
             "locator": {
               "kind": "symbol",
@@ -581,7 +581,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c864457140c677e0b424734a17ed5906f460c4",
+            "blob": "b1ad8e07ba813c53885e9e1e524bdaa62947bd86",
             "content": "sha256:2227e920a47dfb31e1e613eb780c44df7c38b820c1a638abfdbb66994cdf6c5d",
             "locator": {
               "kind": "symbol",
@@ -610,7 +610,7 @@
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
             "locator": {
               "kind": "symbol",
@@ -627,7 +627,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:38104cfc2ea2242ea31ca2343e2c3d0ec00d85a47a2dcae0b932d70adceb8227",
             "locator": {
               "kind": "symbol",
@@ -639,7 +639,7 @@
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:094ef17761f5eb9ce46f5fb6cd8ef49a30cf278a9c1b46dfa979358481ae3193",
             "locator": {
               "kind": "symbol",
@@ -669,29 +669,18 @@
       ]
     },
     "34": {
-      "note": "The registered rule sets, with their report-only flags.",
+      "note": "Named registry policy rather than unconditional report-only flags.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d97bd09671eb1aee4a00e8dac33dbecc0c949ea",
-            "content": "sha256:37a949b8d928e8a4a6aa537a4a70eeedf40f087d6886c7277aa4fbee20d49bba",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:10418103e24fa635bae05c0e75826a42b55925201d9719c5778c65b0448a3973",
             "locator": {
-              "kind": "symbol",
-              "name": "STRUCTURE_RULES"
+              "end": 117,
+              "kind": "line_range",
+              "start": 77
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
-            "content": "sha256:e1e5525613935345898e97ce70cd2d90d8e80556bf561d0672635df75461bfed",
-            "locator": {
-              "kind": "symbol",
-              "name": "REFERENCE_RULES"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
           "kind": "code"
         }
@@ -702,7 +691,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "blob": "d0797f106a6adbf934d7c614ae2b3f1ebe000070",
             "content": "sha256:1011fd5e9265e0839ca3f28fd96e21787a7b7a1c106cf22a58050fa54448235c",
             "locator": {
               "kind": "symbol",
@@ -715,17 +704,18 @@
       ]
     },
     "36": {
-      "note": "The six registered rules, three report-only and three writer-reported.",
+      "note": "Family writer deferral and named reporting boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
-            "content": "sha256:3bac0ea2049cfa7256b321605d02cf1d685f28583a58cb62d16a9ac158079dd3",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:0960ac5c4bb30d85757c20350ea4f80ca9f4e5567a241dc8d2341e453a94546a",
             "locator": {
-              "kind": "symbol",
-              "name": "ROUTE_RULES"
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
           "kind": "code"
         }
@@ -736,7 +726,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
             "locator": {
               "kind": "symbol",
@@ -977,7 +967,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
             "locator": {
               "kind": "symbol",
@@ -989,7 +979,7 @@
         },
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:c0ef806c3a17ccb37df6addaae75d1819939925def0d6d9726835a656b021670",
             "locator": {
               "kind": "symbol",
@@ -1083,7 +1073,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:d9411b77681707546aad1105fc0db5cd2a8372091dc491cc3d088a54bc21d71f",
             "locator": {
               "kind": "symbol",
@@ -1095,7 +1085,7 @@
         },
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:6f799ebc452b69d1dcd94e184667072e442dcb4a74591dde1436b81d0580ddfb",
             "locator": {
               "kind": "symbol",
@@ -1112,7 +1102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
             "locator": {
               "kind": "symbol",
@@ -1129,7 +1119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
             "content": "sha256:3c918e2da84a47cea7db603139138c6e6449401f4c5f24ea92a45981c56c143a",
             "locator": {
               "kind": "symbol",
@@ -1146,7 +1136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
             "content": "sha256:ea17ccdd0945abadf165282bdc72a4f0dfb830e132696250b0d74b9fb6f1da72",
             "locator": {
               "kind": "symbol",
@@ -1159,17 +1149,18 @@
       ]
     },
     "55": {
-      "note": "The three rules, one refusing and two report-only.",
+      "note": "Admission findings use route and actual carried-state policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
-            "content": "sha256:edc351652f7665c162a1e202b27a4f5647d0f505295f45f2634f4d819701e41f",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
+            "content": "sha256:c9b8a7ac52e395da6752d3ddb3997fbbd464d3f2fe7b075a11f7631400c0f6a8",
             "locator": {
-              "kind": "symbol",
-              "name": "ADMISSION_RULES"
+              "end": 87,
+              "kind": "line_range",
+              "start": 74
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
           "kind": "code"
         }
@@ -1180,7 +1171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:86a5717f062bf68b101a89ab12806803c64edcb63fd4edfd5d40164aaac12e9b",
             "locator": {
               "kind": "symbol",
@@ -1192,7 +1183,7 @@
         },
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:2592f4bcbd7fefdbf17f577fb8e28507d10e6bc93ba9ec982bd6847f85de1ab0",
             "locator": {
               "kind": "symbol",
@@ -1204,7 +1195,7 @@
         },
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:ddccdf8acb3370e8fa8752d0175cda0dfe48895d0ab3eed93816b3ec67d2d1b4",
             "locator": {
               "kind": "symbol",
@@ -1221,12 +1212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:2876e0f477bc06f62ef9d47f76e350162de417fa7c814d694351d9b545b0a0da",
             "locator": {
-              "end": 215,
+              "end": 236,
               "kind": "line_range",
-              "start": 215
+              "start": 236
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
           },
@@ -1235,17 +1226,18 @@
       ]
     },
     "58": {
-      "note": "The five rules, four refusing and one report-only.",
+      "note": "Decision governs is a refusing rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
-            "content": "sha256:48d5ebed88d5412d0bcb2cff3bb954c4afbd2d2323bdbeec03c7fe53103ca818",
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:b74013f12af057e36c0d68978d62268de6e79ec920a6adc393eefbcb3b905ba8",
             "locator": {
-              "kind": "symbol",
-              "name": "DECISION_RULES"
+              "end": 68,
+              "kind": "line_range",
+              "start": 49
             },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py"
+            "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
           },
           "kind": "code"
         }
@@ -1256,7 +1248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:a2148c1be1509f6169b2b49d45f809d67d691b21612f149335e9b418ee3c90fb",
             "locator": {
               "kind": "symbol",
@@ -1290,12 +1282,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
             "content": "sha256:2208746a1a33b3fdea0cb67417fbed8e562c0adf174452631e3fa247a61bcafc",
             "locator": {
-              "end": 193,
+              "end": 202,
               "kind": "line_range",
-              "start": 192
+              "start": 201
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
           },
@@ -1308,7 +1300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:d3f4538a1940bb2b07d0a934f3436def86bb05f31feecbf46b4bce742744d85a",
             "locator": {
               "kind": "symbol",
@@ -1325,12 +1317,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:b4cc134d34dde7bade29e9692873eee156051587b3fc76a194f972b4e819a322",
             "locator": {
-              "end": 224,
+              "end": 245,
               "kind": "line_range",
-              "start": 224
+              "start": 245
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
           },
@@ -1377,7 +1369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:f7e57c68db4ecf83c9e4a9f41f5f563d4547249ab7ebe7f2627876937ad2a2c8",
             "locator": {
               "kind": "symbol",
@@ -1394,7 +1386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1440,7 +1432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:edb0d5948b13f47b679dd00bde75cc27d16721e425b8f627cdfd67927fcda242",
             "locator": {
               "end": 30,
@@ -1492,7 +1484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
             "content": "sha256:fe4b93372a368d34f2267d913e639355b5808354274d412334b08d349c24f4f7",
             "locator": {
               "end": 8,
@@ -1578,7 +1570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1595,7 +1587,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
             "locator": {
               "kind": "symbol",
@@ -1815,7 +1807,7 @@
         },
         {
           "anchor": {
-            "blob": "1f8cdc9c32a1169d196cc6f25d9fce0e704b3bc7",
+            "blob": "c57787347bdc43fda7e1db9ad8a0534924e56a96",
             "content": "sha256:38104cfc2ea2242ea31ca2343e2c3d0ec00d85a47a2dcae0b932d70adceb8227",
             "locator": {
               "kind": "symbol",
@@ -1989,7 +1981,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
             "locator": {
               "kind": "symbol",
@@ -2001,7 +1993,7 @@
         },
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:6715fd9722c727a0b6b3c85ace1fe181104fd09d7ab86d755eed4ffc86f4bf99",
             "locator": {
               "kind": "symbol",
@@ -2018,7 +2010,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -2163,6 +2155,42 @@
               "name": "check_citations_at_end"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_overviews.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Migration completeness covers candidate onboarding and census routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:1cd6bc7bb0fd2b01faa1c6b38fa79b586e4d65326781da0d408b330fe8038fce",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "Membership, record and onboarding fact rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
+            "content": "sha256:ee3484bea6fe190c47943611d91489abcedb936811c05cc62a47b44bb01bd6ed",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
           },
           "kind": "code"
         }

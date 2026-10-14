@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:1763e7e061c56e369c104bd182cf861a2335a113caa641248d911903f343fe0c",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:8011c3748a618fb96168b0fa1eb61645da86cbc3345d0097d591b0ff2e52b1b6",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "30bbe109d1dc8629712ce577e2a7a055c185e0e1",
             "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
             "locator": {
               "kind": "symbol",
@@ -68,12 +68,67 @@
         }
       ]
     },
+    "13": {
+      "note": "Current source delta inspected statically: Document required blobs and current-row doctrine; retain useful legacy-helper/history prose, not ordinary unconverted permission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "content": "sha256:c99ef7fe7c8b22331150668246d78e257f98209035e8a92020c7eefee33024c4",
+            "locator": {
+              "end": 985,
+              "kind": "line_range",
+              "start": 983
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
+            "content": "sha256:b63b1ded8d5d46a05d0f4c9f2e9ea68a5c1f3f1aea4bf84724db229837a2dbfc",
+            "locator": {
+              "end": 1014,
+              "kind": "line_range",
+              "start": 1008
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:cf0ed1cf1c309bef6586bde8f6d78f76be3a103ca2c31c9e409ebfd6370613c0",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "No route-overview stamps on a converted tree.\n\nAnchor: \"a converted overview carries no verification metadata\"",
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:0c1f25a1d1d827c0d1016fe1a94fe79d53fac0f6727fc5e9083af3abbe258d3f",
             "locator": {
               "kind": "symbol",
@@ -89,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
             "locator": {
               "kind": "symbol",
@@ -137,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
             "locator": {
               "kind": "symbol",
@@ -187,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:f22efa767680140067a9174dd34dbaf1250dd95e48365e4317c849316a18b06e",
             "locator": {
               "kind": "symbol",

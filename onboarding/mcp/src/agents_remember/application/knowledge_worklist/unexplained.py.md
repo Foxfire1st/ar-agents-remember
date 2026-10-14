@@ -25,7 +25,8 @@ L09) are one function.
   with the one satisfying-row text `_SATISFYING_ROW` naming every answer and the coverage split.
   - `unexplained_hunk`: subject `hunk:<path>@<base lines>..<candidate lines>`, each side `sha256:<hex>` of the
     hunk's changed lines (`range_bytes` then `content_identity`) or `absent` for a side with no changed line.
-    Facts: `path`, `hunks`, `changedLines`, `deleteOnly`, `coverage`, `admits`, `row`. Its `row_lookup`
+    Facts: `path`, `candidateBlob` (the blob at C or `absent`), `hunks`, `changedLines`,
+    `deleteOnly`, `coverage`, `admits`, `row`. Its `row_lookup`
     (`_hunk_row`) finds the leaf's row `hunk:<item id>`.
   - `unexplained_file`: subject `file:<path>@<C-side object>` (`@absent` when C lacks the path), so a second,
     different change to the same path in the same leaf opens a new item. Facts: `path`, `blob`, `baseBlob`,
@@ -57,11 +58,16 @@ L09) are one function.
   `unexplained_satisfied_by` over the leaf's history rows in K_C. The **answering set is built from covered
   items only**: a `no_invariant` row about an uncovered item satisfies nothing (rule 5) and is listed in
   `unexplained.unnecessaryRows`, report-only, like any `no_invariant` row that answers no raised item.
-- **Uncovered items take the onboarding trace (`settle_uncovered`, `_settled`).** The run first records the
-  trace subject `onboarding:<path>` with no counted change (only that row can answer). After the leaf route
-  adds MIK-R30's own items, each uncovered item bound to an `onboarding_trace` item for its file takes that
-  item's ID, counted change, unreadable-sidecar flag and answer, so a card changed in the leaf satisfies it.
-  The caller recomputes the digest.
+- **Uncovered items take the current onboarding trace (`settle_uncovered`, `_settled`, MIK-R53).**
+  The initial run records `onboarding:<path>`, `item: None`, `countedChange: False` and
+  `sourceBlobs: {path: <C blob or absent>}`. Independently, `_finished` computes the card's counted
+  Markdown/reference change and names only an eligible onboarding row whose `sources` equal that
+  blob: `updated` also requires that counted change, while `no_impact` answers the unchanged-contract
+  case. A counted edit alone does not answer the ordinary candidate. This initial run lacks closed-file
+  provenance and never credits sourceless rows. Once the leaf adds the file's own `onboarding_trace`
+  item, settlement copies its ID, counted-change flag, unreadable-sidecar flag, `sourceBlobs` and
+  answer (retaining initial source blobs when the trace lacks them); the caller recomputes the digest.
+  Frozen sourceless rows are handled by the gate with their own closed-file provenance, not guessed here.
 - **`answering_trace_subjects` (ruling Q3).** The `onboarding:<path>` subjects that answer uncovered items.
   MIK-R30 raises no card item for a card-less path, so its report would call the leaf's row about that path
   unnecessary; the leaf route and the memory-quality controller drop exactly these subjects from that report.
@@ -96,16 +102,20 @@ L09) are one function.
 - **An onboarding row that answers an uncovered item is never reported as unnecessary.** Realized by
   `answering_trace_subjects`; proved by
   `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary`.
-- **Item IDs depend only on the changed lines** (rule 6): an edit elsewhere never reopens an answered item,
-  and a coverage flip keeps every ID. Proved by `test_an_edit_elsewhere_in_the_file_never_reopens_an_answered_item`
-  and the real w1 to w4 runs.
+- **Hunk item IDs depend only on the changed lines** (rule 6), and coverage is not part of the ID.
+  An elsewhere edit preserves the hunk ID and covered `no_invariant` answers, as the historical
+  `test_an_edit_elsewhere_in_the_file_never_reopens_an_answered_item` and w1–w4 witnesses described.
+  It can nevertheless reopen an uncovered item: its onboarding row binds the whole source blob,
+  so a later source edit makes that answer stale even when the changed-line identity survives.
 - **Unconverted memory reads are unchanged.** An unconverted leaf gets no worklist (MIK-R08 applicability:
   `leaf._sides` returns `None` before any coverage read), so no unexplained item exists on today's production
   leaves; the base and worktree builds both return `None` on the real unconverted pair.
 
 ### Todos
 
-- **L09:** the gate applies `unexplained_item_open(item, rows_by_subject)` to the stored item. Carried note
+- **Current gate:** covered items retain the `no_invariant` predicate; `unexplained_row_open` checks
+  uncovered items with the file's onboarding-row currency, including source blobs and counted change.
+  Historical L09 helper names are not a row-map-only currency check. Carried note
   (ruling 03:24:28 N3): an insertion-only hunk can still be linked by a K_B range through `hits_old`'s
   "strictly inside" rule; the symmetric strict reading was not applied here.
 - **Resolved by MIK-L31 and MIK-L32:** item volume is by design (160 on ICR L47). L31 groups the unexplained items
@@ -141,9 +151,7 @@ No configured live documentation source was available for this pass.
 - Unlinked hunks and non-text changes collected; identical lines share a subject. [12]
 - A symlink's or submodule's object from its tree entry. [13]
 - The file item bound to its C-side object. [14]
-- The ID, row subject, trace fact and `satisfiedBy`. [15]
 - The answering set from covered items only; stray `no_invariant` rows are unnecessary. [16]
-- Uncovered items bound to MIK-R30's item for their file. [17]
 - The onboarding subjects an uncovered item needs. [18]
 - Open unexplained items. [19]
 - Step 7 of the run: the items join the one sorted list. [20]
@@ -159,3 +167,7 @@ No meaningful cross-repo references found: the module reads the run's linkage, t
 one code repository's trees, handed to it by the worklist run.
 
 No cross-repo boundary is crossed by this file.
+
+- The ID, row subject, candidate source blob and eligible source-current onboarding `satisfiedBy`. [15]
+- Uncovered items bound to their file's trace ID, source blobs, counted flag and current-row answer. [17]
+- Current source delta inspected statically: Fix source-bound onboarding currency, provenance and settlement; separate stable hunk IDs from reopened answers. [26]

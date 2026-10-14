@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:d3a007e474f1c21391fb40676137d90e75c33ec6cf12201be934372340357e1a",
             "locator": {
               "end": 21,
@@ -16,6 +16,58 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Invariant truth and timeline preserve membership-row provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "content": "sha256:73642e9cda97b0b73ab0d797fb235e36a37dd877ec774d96b282996f98681729",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Membership judgments are rendered with their complete owning history context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
+            "content": "sha256:76db404c074c166db12ae8b17886543dc5e89eda9209e5b7075c3684e4876ed3",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Separate unresolved-locator control: the bad-request/code-size case sends a well-formed line-range locator with start=\"x\" and asserts locator.state==unresolved; no locator-detail or unreadable-census assertion. [12]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:0f53232fcd8dbf08cf4722f083f3ed665a8353a7b21da3868af9f4a84b7ece53",
+            "locator": {
+              "end": 1173,
+              "kind": "line_range",
+              "start": 1157
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -40,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:41976ea94dceb0c370b4a9fde5402ce7992ebda5459adc2e37507b773ce6a47a",
             "locator": {
               "kind": "symbol",
@@ -51,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:99218c29b802e572b76feb88b0f0332414ad971c00c7e5925d6bb0c36389b91e",
             "locator": {
               "kind": "symbol",
@@ -67,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:cf6a1294113f57e14297b0e4047546d04fb2b39e2bc405752385757e9b6bd0f8",
             "locator": {
               "kind": "symbol",
@@ -78,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:dd388475cbd25655fb9a729ab99bb9d53d1ded378727e448f045c81fba8590c7",
             "locator": {
               "kind": "symbol",
@@ -105,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:e29a1a30254b344b0e519a2e866a09c5010464650614c6739650c993f4018b87",
             "locator": {
               "kind": "symbol",
@@ -121,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:801279ae58903d828cbacfe6c38e7637d3588710a6eff99287786d8af1978fc7",
             "locator": {
               "kind": "symbol",
@@ -137,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:846355c025bc06ceb4c81f1aea4f10a3f8ad9c45fdc75615f3249e0a3873f73d",
             "locator": {
               "kind": "symbol",
@@ -153,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:f1a8b8213aa92860b53e3327748b7fa1e75999cde0a48d611db3b9f403c68c48",
             "locator": {
               "kind": "symbol",
@@ -164,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "blob": "6dfd558533a99e7bc9d3298e5234f0ee65996219",
             "content": "sha256:c0a17512cfb7cd2868a43a58d45f84d9be9b43d4b884e0d5454a35b8f83bdf76",
             "locator": {
               "kind": "symbol",
@@ -176,7 +228,7 @@
       ]
     },
     "9": {
-      "note": "The family, decision, incident and facet, and census cases.",
+      "note": "Family/decision/incident/facet truth assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID not-found control; not an unreadable-census or unresolved-locator control.",
       "targets": [
         {
           "anchor": {

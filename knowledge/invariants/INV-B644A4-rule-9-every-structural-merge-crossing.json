@@ -3,7 +3,7 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "One transaction test pins that an ordinary converted sync aligns through the same merge function, so a future route split that bypasses the alignment fails before it lands."
+    "justification": "The stored proof PRF-WZ1FP7 exercises pure cross() planning on three already-converted fixture trees: no conversion, no conflicts, one renumbered reference and the expected merged reference notes. It guards that planning fixture, not a managed worktree_sync transaction or an end-to-end discriminator for a future sync-route split; shared-route behavior is separately supported by the implementation."
   },
   "applicability": "Crossing syncs and ordinary syncs of converted lines.",
   "conditions": [

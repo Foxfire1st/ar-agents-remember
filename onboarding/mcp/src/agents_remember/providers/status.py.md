@@ -135,7 +135,7 @@ surface.
 
 - Provider response models define summary, diagnostics, watcher, and native provider payload shapes. [1]
 - Context packet construction consumes the compact provider summary. [2]
-- Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. [3]
+
 - Current-state projection and persistence live in the current-state module. [4]
 - Restart/rebind recovery wording is shared with runtime-install recovery reporting. [5]
 - The containment metrics store whose rolling current snapshot rides the status packet (containment R4). [6]

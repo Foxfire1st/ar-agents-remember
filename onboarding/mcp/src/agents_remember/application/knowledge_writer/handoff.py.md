@@ -29,10 +29,13 @@ checks the document's own shape and collects every problem, so one refusal names
 - **Records** are `{key, kind, entry?, id?, slug?, fields}`; `kind` is one of the ten record kinds of
   `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin` and `revision` (`WRITER_OWNED_FIELDS`) and
   refuses them in `fields`; a new record needs a `slug`.
-- **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?, ref?}`.
-  `id` and `revision` are writer-owned; unknown keys (a misspelled `cover`), a non-list `because` and a
+- **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?, considered?, ref?}`.
+  `id`, `revision` and source snapshots (`sources`) are writer-owned; unknown keys (a misspelled `cover`), a non-list `because` and a
   non-object `ref` are refused. `ref` (MIK-R11) is carried to `RowRequest.ref` for a planned row; what it
-  names is checked by `authoring._planned_row`, not here. A cover is an entry ID, `{id, path?, locator?, remove?}` or
+  names is checked by `authoring._planned_row`, not here. `considered` is an explicitly supplied list of
+  nonblank family-ID strings: an intentional empty list is accepted, but a malformed list or member
+  is a named refusal rather than silently erased. The writer fills candidate record revisions and
+  onboarding source blobs rather than accepting them from this input. A cover is an entry ID, `{id, path?, locator?, remove?}` or
   `{handoff}`; `path` (since MIK-R06, L06 ruling Q6) names the source file a `moved` row relocates the entry to.
 - `"handoff:<key>"` names the record the same document authors under that key wherever an ID is
   expected; `_require_distinct_handles` refuses two items sharing a handle.
@@ -44,7 +47,9 @@ checks the document's own shape and collects every problem, so one refusal names
 
 ### Conventions
 
-- Every reader appends a `Problem(where, message)` and returns `None` rather than raising, so all problems surface together.
+- `read_handoff` collects shape problems into a shared `Problem(where, message)` list.
+  String-refusal helpers such as `read_locator` rely on their callers to append problems;
+  a section reader such as `_entry` can still return a request after recording problems.
 
 ### Invariants And Boundaries
 
@@ -154,7 +159,9 @@ The document's sections and their readers.
 - Proofs carry the curator's facet. [16]
 - An entry: new invariant needs scope, admission and a statement. [17]
 - A record: kind, fields, and the writer-owned fields refused. [18]
-- A history row: strict keys (since MIK-R11 including `ref`, which must be an object), writer-owned `id` and `revision`. [19]
+
+- History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
+
 - The row keys and the request field a planned row's `ref` travels in. [20]
 - Four problems refused in one operation, each named. [21]
 - An entry that names no record is refused. [22]

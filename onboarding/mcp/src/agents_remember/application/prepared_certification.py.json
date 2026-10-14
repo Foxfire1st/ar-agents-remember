@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:5276c0f298b0f6ed8f9b9c18477fa31d3c35989f3e960ff582f3b65b239b0b95",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:e9db601ba700015ef42a2bdb174a892414d3e837641152586d84237fe0b10e1b",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",
@@ -167,12 +167,54 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:c26f3c420e1c7862298f7a73df260e91ff8c6a90462e54d1efa1d431a063d881",
             "locator": {
               "kind": "symbol",
               "name": "_run"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Current source delta inspected statically: Document physical candidate-blob forwarding and RuntimeError boundary; preserve guards, remove obsolete L46 legacy permission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "content": "sha256:75c89e76c75aee4f73c8927f602154c9e888a0e54d0e55dc1f7396ef3553ac51",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 391
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
+            "content": "sha256:4b81479d91fd2b09da8c0de7a9da5475dfb363ce6948f860bd5acc0310b63229",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:cf0ed1cf1c309bef6586bde8f6d78f76be3a103ca2c31c9e409ebfd6370613c0",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
         }
@@ -200,12 +242,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:8514085360cd3ea482a9ceee23179d59c07e6a6e48f82566346562747ef14a00",
             "locator": {
-              "end": 359,
+              "end": 360,
               "kind": "line_range",
-              "start": 357
+              "start": 358
             }
           },
           "kind": "code"
@@ -217,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "blob": "acd750eeb65d6a36d3a7b099b2d9699c130402c2",
             "content": "sha256:c4fad6b8bca82c1ce80ab4075b633dba932f329419868ffa04d005c1af78aa8b",
             "locator": {
               "kind": "symbol",
@@ -234,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
             "locator": {
               "kind": "symbol",
@@ -266,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:9cad0a9cd7f01db1864645a57db9a843d0d5346266724ac27d1c0a55fc3fe789",
             "locator": {
               "kind": "symbol",
@@ -282,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:50d9592a826ca01c1206a6d534175e852d251e30cbaca124922ffe51e95230fd",
             "locator": {
               "kind": "symbol",
@@ -298,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:343fa186beb1293439190a68bd7d168e59cd4ca76487da15ce6afc858965b63e",
             "locator": {
               "kind": "symbol",

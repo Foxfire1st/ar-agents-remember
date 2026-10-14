@@ -12,6 +12,13 @@ as the validator's `KnowledgeTree` holds them) into a `CensusTree` of `ParsedCen
 `CensusProblem`s. The path helpers `baseline_path`, `inventory_path`, `claims_path` and
 `route_status_path` are the one spelling of each census location.
 
+This lower reader also owns `onboarding_routes(memory_paths)` and `ROUTE_CARD = "overview.md"`.
+The helper returns a frozen set of actual onboarding overview directories (`.` for the root),
+without reading file content. Both the Git census inventory and the validator registry import
+this owner; census inventory still calls and publicly re-exports the same helper. Its relocation
+does not change the route population or permit a reverse import from the validator into the
+higher census inventory.
+
 ## Code Commentary
 
 ### Logic
@@ -55,11 +62,11 @@ No configured live documentation source was available for this pass.
 
 Locations, the reader and its entry point.
 
-- The census locations. [1]
-- A path's census ID. [2]
-- The parsed census and the tree of censuses. [3]
-- Location, canonical, schema, census and route-slug checks while reading. [4]
-- The entry point. [5]
+
+
+
+
+
 - Every census file parses by schema and is canonical. [6]
 
 ### Cross-Repo References
@@ -67,3 +74,10 @@ Locations, the reader and its entry point.
 No meaningful cross-repo references found: the package reads one memory tree's bytes, handed in by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- The census locations. [1]
+- A path's census ID. [2]
+- The parsed census and the tree of censuses. [3]
+- Location, canonical, schema, census and route-slug checks while reading. [4]
+- The entry point. [5]
+- The lower reader owns the unchanged overview-route selector and its overview.md marker. [7]

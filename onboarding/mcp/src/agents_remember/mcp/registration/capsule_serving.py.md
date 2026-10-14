@@ -139,7 +139,7 @@ extension specification, SEP-2640).
 - The extension declaration extends the SDK's initialization options at their one construction point, without narrowing a typed field. [7]
 - The resource shapes, whose loader re-checks the revision and proves containment before serving. [8]
 - The two mandatory methods and their handlers. [9]
-- The payload builders every declaration forwards to. [10]
+
 - The three response models the payloads are validated against. [11]
 - The resource `_meta` provenance block every served file carries. [12]
 - The live client/server exchange that executes the declaration, both methods and the resource list. [13]

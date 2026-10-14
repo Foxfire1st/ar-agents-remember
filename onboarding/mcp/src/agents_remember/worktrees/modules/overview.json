@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
             "locator": {
               "kind": "symbol",
@@ -255,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+            "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -301,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "069c1a517ae15e4ed31b45486b24f1b59666ea8c",
             "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
             "locator": {
               "kind": "symbol",
@@ -409,7 +409,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
             "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
             "locator": {
               "kind": "symbol",
@@ -1193,7 +1193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -1375,7 +1375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:98fa383b62c19d6ef178e589f5847970d21801a8296fbd8ba421f1a92dc882e7",
             "locator": {
               "kind": "symbol",
@@ -1387,7 +1387,7 @@
         },
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
               "kind": "symbol",
@@ -1404,7 +1404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
             "locator": {
               "kind": "symbol",
@@ -1438,7 +1438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -1501,7 +1501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
             "content": "sha256:5ecf83f1fb20831569b9427c6731c96c37511d1227c1eedcd326338117158004",
             "locator": {
               "kind": "symbol",
@@ -1855,6 +1855,60 @@
               "start": 29
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "References-only counted changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:d66d39a651167b84b8fe02bbb6b7e79f2d243e760bacdaf162f56d2f4a3df85f",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "Typed current-row answers and own closed provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:6e84a85e25e251079015d419f87e3bd57925eea2ebb80f8ff107f6d81499f538",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "Source-bound item construction and stored predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:563d64de544848865c6d3fa4e5d9d248203826f9846ec262a7ee840d126535f7",
+            "locator": {
+              "end": 665,
+              "kind": "line_range",
+              "start": 545
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
           "kind": "code"
         }

@@ -12,7 +12,7 @@
 
 ### Logic
 
-- `parse_tree(snapshot)` walks the files in sorted order into a `ParsedTree` (records, entries, file and route sidecars, histories, the layout marker, problems). A file that fails to decode or parse is appended to `problems` with its path and the first 2,000 characters of the reason; `ParsedTree.state` is `partial` when any problem exists.
+- `parse_tree(snapshot)` walks indexed JSON files in sorted order into a `ParsedTree` (records, entries, file and route sidecars, histories, the layout marker, problems). Markdown prose companions are skipped before decoding and parsing; their bytes are retained by the snapshot for worklist comparison, not interpreted as JSON. A JSON file that fails to decode or parse is appended to `problems` with its path and the first 2,000 characters of the reason; `ParsedTree.state` is `partial` when any problem exists.
 - `_parse_knowledge_file` accepts only `knowledge/<kind-dir>/<file>.json`: `history/` files parse as `HistoryFile` keyed by owner; any other directory must be a record directory, the record must be that directory's kind, its ID must equal the file name's ID, and a second file claiming an ID already indexed is a problem.
 - `_parse_onboarding_file` accepts file sidecars (whose `path` must map back to where the sidecar sits, and whose realization and proof entry IDs must be unique across the tree) and route sidecars (same location rule); any other onboarding JSON is a problem.
 - `build_index(snapshot, destination)` opens a new SQLite file with journaling off, runs `create_or_validate_schema` (the store's logical tables), then in one transaction creates the `ix_*` tables, writes the rows, calls `projection.project`, and writes `ix_meta`. It returns a `BuildReport` (key, state, converted, problems, record/entry/history-row counts).
@@ -58,7 +58,9 @@ The parser, the builder and the row writers.
 - The builder's contract: one snapshot in, problems named, nothing derived. [1]
 - The parsed tree and its completeness. [2]
 - What one build reports. [3]
-- Parsing: every failure becomes a named problem. [4]
+
+- Parsing skips Markdown companions before decoding; indexed JSON decode/schema failures become named problems. [4]
+
 - Location, kind, file-name and duplicate-ID rules for record and sidecar files. [5]
 - One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. [6]
 - The row writers: records, entries, members, routes, links, references and history rows. [7]

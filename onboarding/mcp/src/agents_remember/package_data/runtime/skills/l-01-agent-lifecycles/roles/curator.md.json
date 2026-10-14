@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:b319457fc6b8c16226e8b15b759a94d792a6652b16b8cbaee97f83524cce3d22",
             "locator": {
               "end": 83,
@@ -72,12 +72,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
             "locator": {
-              "end": 152,
+              "end": 160,
               "kind": "line_range",
-              "start": 145
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:784d74beba291bbcade026dcaaf871b683a2923d568de6ea1829524f121b9ab5",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "code"
@@ -106,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:7979f990bee5061a061df5dd00b315be4679a1e8bd3d0302ba20565a5a0d4a42",
             "locator": {
-              "end": 124,
+              "end": 132,
               "kind": "line_range",
-              "start": 120
+              "start": 128
             }
           },
           "kind": "code"
@@ -140,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 103,
+              "end": 106,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             }
           },
           "kind": "code"
@@ -153,14 +170,14 @@
       ]
     },
     "6": {
-      "note": "On converted memory the curator follows the converted-card workflow.\n\nAnchor: `citation_fix`",
+      "note": "Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout.\n\nAnchor: lines 86-118",
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-            "content": "sha256:f51112201ff416c2fdfbff42072127b3a0fdf55c5702b1f0fdd27c6e0c767b46",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:056a30dd09a5e252a427dc8c3c2716748c1bdf16567a5e2ab67e43fc8960c65e",
             "locator": {
-              "end": 92,
+              "end": 118,
               "kind": "line_range",
               "start": 86
             }

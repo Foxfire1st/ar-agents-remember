@@ -13,8 +13,9 @@ in the `unit-regression` lane; 23 test functions, each over real Git repositorie
 
 ### Logic
 
-- Conforming example: a decision, a realization with blob and content (blob equals `git rev-parse`, content
-  the sha256 of the symbol's lines) and a proof from tested evidence, all validated.
+- Conforming example: a decision, a realization with blob and content (blob equals `git rev-parse`,
+  content is the sha256 of the symbol's lines), and a proof from tested evidence. The source checks
+  post-write validation against the explicit memory `HEAD` comparison base, not a baseless run.
 - `knowledge-ingest --commit` round-trips every kind: all ten record kinds, a realization, a proof, a
   `moved` invariant row and a `no_impact` family row; a second run exits 0.
 - Idempotence: a rerun is byte-identical with every action `unchanged`.
@@ -32,10 +33,15 @@ in the `unit-regression` lane; 23 test functions, each over real Git repositorie
 - The MIK-R04 route rules are reports in the writer and refusals at `require_valid_commit`.
 - **MIK-R27 inside the writer** (leaf 260928-MIK-L27): a new invariant claiming `guarded_by_test` with no
   proof is refused (`[R27.2-new-record]`, naming the criterion) and the memory tree is byte-identical;
-  the same entry with a `proofs` item is written. The admission rules set no `writer_reports`, so the
-  writer refuses as every commit route does.
+  the same entry with a `proofs` item is written. This is the refusing `R27.2-new-record` rule, not
+  a blanket admission-rule policy: `R27.2-existing-record` carries `writer_reports=True` and
+  `merge_reports=True`, allowing authoring reports while ordinary commit/publication still refuses
+  outside the named sync-merge exception.
 - **A moved row relocates its entry** (leaf 260928-MIK-L06, ruling Q6):
-  `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` moves a file with `git mv`. An
+  `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` moves a file with `git mv` and
+  prepares the destination Markdown before ingestion. A new sidecar without its card is new
+  migration debt and refuses immediately, so relocation cannot rely on permanent report-only
+  debt. The fixture preparation is not broader writer acceptance. An
   `extended` row whose cover names a `path` is refused ("only on a moved row"); a cover path `../outside.py`,
   `/abs/landing.py` or `""`, and a cover with both `remove` and `path`, are each refused as a named problem
   with the memory tree byte-identical (review F1 and N7). A `moved` row relocates `RLZ-BASE01` into
@@ -98,7 +104,6 @@ No configured live documentation source was available for this pass.
 
 The cases.
 
-- The conforming example. [1]
 - Every kind through the command line. [2]
 - Unresolvable evidence reported and kept. [3]
 - A bootstrap of converted memory writes as a wave. [4]
@@ -106,7 +111,6 @@ The cases.
 - The bootstrap command dispatch. [6]
 - MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. [7]
 - Route rules: report in the writer, refusal at commit. [8]
-- MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused. [9]
 - The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. [10]
 - A lifted decision round-trips; its endpoints are reported, resolved and unresolved. [11]
 - A content-rule break refuses the write and writes nothing. [12]
@@ -124,3 +128,7 @@ worktree of one repository.
 No cross-repo boundary is crossed by this file.
 
 - knowledge-bootstrap refuses unconverted memory with or without converted memory elsewhere. [14]
+
+- The conforming post-write example validates against the explicit memory HEAD comparison base. [1]
+- MIK-R06 (ruling Q6): destination Markdown is prepared before relocation; the moved entry keeps its assertions, while malformed paths and remove-plus-path refuse. [9]
+- Current source delta inspected statically: Explain HEAD comparison and destination Markdown; remove blanket admission writer-policy claim, retaining malformed-cover and idempotence assertions. [17]

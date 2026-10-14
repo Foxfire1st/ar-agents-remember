@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
         "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
         "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
         "locator": {
           "kind": "symbol",
@@ -90,11 +90,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The resolver under test and the six shipped cases.\n\nAnchor: \"the resolver under test\"",
+      "note": "The resolver under test.\n\nAnchor: \"the resolver under test\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
             "content": "sha256:7bc833a6cd3bd98c48dbb8fd036ca62aa269f7588b64e7771e074918b9db671a",
             "locator": {
               "end": 143,
@@ -107,7 +107,7 @@
       ]
     },
     "2": {
-      "note": "The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `REQUIRED_SECTIONS`, `MACHINE_SECTION` and `OPERATION_KEYS`.\n\nAnchor: \"Focused behavioral check for the consolidated role-instruction corpus\"",
+      "note": "The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`.\n\nAnchor: \"Focused behavioral check for the consolidated role-instruction corpus\"",
       "targets": [
         {
           "anchor": {
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -141,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:f657ca4a79e44dd339e0199c6c5a7f219c9b2ada1d263c310bdbe5e1e188294d",
             "locator": {
               "end": 4,
@@ -154,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:a99ff78812f4ba8840370589fc2dc832d742c95ffe58e905f5b9e14eec6ce5f7",
             "locator": {
               "end": 18,
@@ -168,20 +168,84 @@
       ]
     },
     "4": {
-      "note": "Generated copies are checked by the propagation owner, not by this module.\n\nAnchor: \"[sync-skills] run: python3 scripts/sync-skills.py\"",
+      "note": "This module declares narrow normalized-text R53 assertions over canonical plus nine generated handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this review.",
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:d5e8d49ffb50a5c3b700c73fbb98d7b650160c6a9b7197642c59ee2372e6d494",
             "locator": {
-              "end": 201,
+              "end": 636,
               "kind": "line_range",
-              "start": 188
-            },
-            "path": "scripts/sync-skills.py"
+              "start": 634
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:b6ee0a87c1b50ee215e38f6c2af44480794fe3b4962fb7e4264d6a5a29ec4562",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 656
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:bda71826ed0921fe0cc0104413508a670aa3d64b8565689bb33d5e5e1e199a52",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source delta inspected statically: Replace the blanket generated-copies-not-checked claim with the test-source contract for two narrow copy loops, preserving retired-sentence controls, positive-policy limits and propagation-owner equality responsibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:d5e8d49ffb50a5c3b700c73fbb98d7b650160c6a9b7197642c59ee2372e6d494",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 634
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:b6ee0a87c1b50ee215e38f6c2af44480794fe3b4962fb7e4264d6a5a29ec4562",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 656
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "content": "sha256:bda71826ed0921fe0cc0104413508a670aa3d64b8565689bb33d5e5e1e199a52",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "test"
         }
       ]
     }

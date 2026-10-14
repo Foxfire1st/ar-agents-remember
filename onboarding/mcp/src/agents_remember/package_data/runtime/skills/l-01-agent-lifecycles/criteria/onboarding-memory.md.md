@@ -11,20 +11,23 @@ route overviews, route indexes, update histories (the onboarding-vs-code lens at
 ### Logic
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/criteria/onboarding-memory.md`. Two standing criteria with cited
-catching evidence: **OM-1 staleness diff vs as-landed code** — as of round 2 (L12R-1) cited to the
-verifiable record: two engagements — L8 cycle 6's OWNER follow-up pass (deleted canvas models in
-the panels overview's build-job/frame tail; duplicated Layout-table rows in the tools and
-controlplane overviews; all durably recorded in those overviews' own 2026-07-05T19:25 Update
-History entries) and L10's flowModels-sidecar de-stale (its 2026-07-06T12:05 history entry +
-L10R-3) — and **OM-2 history-only-update detection** ("refreshed" must mean a genuine body edit —
-the L8 cycle-6 closeout-body-gate catch of overviews claimed refreshed but history-only). A
-**Candidate Criteria** section (round 2, L12R-2) carries **OM-3 newest-first with the checker's
-own semantics** at candidate tier (single catching engagement: L11's four parallel-wave history
-collisions re-sorted with the checker's parse — naive as-is, tz-aware folds to UTC; promotes at
-≥2). Plus the exploratory mandate (default 2 novel lenses) and the promotion ratchet, which notes
-that the closeout body gate IS this catalog's OM-2 mechanized — the working example of a criterion
-graduating into a gate.
+`skills/l-01-agent-lifecycles/criteria/onboarding-memory.md`.
+
+**OM-1** compares onboarding with the as-landed source. Its retained catching examples
+include deleted canvas models, duplicated route-overview rows and a stale model census.
+**OM-2** is the requirement-bound independent second reader on converted memory, not the
+former Update History/body-only detector: a seat that authored none of the leaf's cards
+or records checks every changed card, sidecar and record statement against final code,
+every history row's disposition, effect and reason against the diff, and important omissions.
+Blocking findings are repaired before closeout. The lifecycle requires this check; closeout
+itself does not mechanically enforce it. A counted card edit alone cannot close a trace.
+OM-2 entered by the requirement, not the promotion ratchet, and only a developer ruling
+can demote it.
+
+**OM-3** remains the candidate criterion for newest-first Update History under the
+checker's naive/UTC comparison semantics. Its historical ordering examples do not require
+Update History on converted cards. Baseline review retains the exploratory mandate and
+promotion ratchet; fix-verification retains the sealed outstanding scope.
 
 **OM-4, admission justifications are plausible** (leaf 260928-MIK-L27, MIK-R27 rule 5, developer
 ruling D14) is a third standing criterion. It entered **by requirement, not by the promotion
@@ -46,9 +49,11 @@ Catalog files live beside the templates under `criteria/` and are bound per revi
 
 ### Invariants And Boundaries
 
-When an onboarding/memory review is explicitly requested, the standing list runs and reports each
-criterion; the catalog does not create a routine closeout or integration gate. Amendments land only
-through the promotion ratchet on the loop owner's acceptance.
+On converted memory the independent OM-2 second-reader check is required by the lifecycle
+before closeout, whether or not a separate review was otherwise requested. It does not
+create a check mechanically performed by closeout or integration. The other criteria
+run within the admitted review scope; ordinary promotions use the ratchet, while the
+requirement-bound OM-2 and OM-4 criteria are demoted only by a developer ruling.
 
 ### Todos
 
@@ -57,7 +62,11 @@ No TODO is recorded for this catalog.
 
 ## CCR-R12@v5 Review Scope
 
-This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker's targeted-check record together with the curator's complete memory-quality result and preserves any failed or not-run state.
+Converted-memory OM-2 supplies a required independent fact-check before closeout;
+only the other catalog criteria remain conditional on the corresponding requested review.
+OM-2 is a lifecycle prerequisite, not a check mechanically enforced by closeout or
+integration. Routine handoff still carries the worker's targeted-check record, the
+Curator's complete memory-quality result, and every failed, blocked or not-run state.
 
 ### Docs References
 
@@ -69,7 +78,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- Canonical source this bundle copy is sync-propagated from. [1]
+- The synchronized criteria source requires the independent converted-memory OM-2 check, binds its scope, and preserves the other review criteria's admission rules. [1]
 - OM-4, the requirement-bound standing criterion for plausible admission justifications. [2]
 - The reviewer role that binds this catalog per review type. [3]
 - The Update History order checker whose naive/UTC comparison semantics OM-3 pins. [4]

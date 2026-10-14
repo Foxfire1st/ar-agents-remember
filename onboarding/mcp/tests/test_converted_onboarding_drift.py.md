@@ -7,7 +7,8 @@
 ## Purpose
 
 One test per rule of the truthful converted onboarding drift packet (MIK-R44@v2). Each behavioural
-case discriminates its change: the named scenario fails before its fix and passes after. The
+case is written to discriminate its change with fail-before/pass-after expectations; this card
+describes static definitions and assertions, not a fresh run or renewed acceptance. The
 description, parity and packaging cases assert exact surfaces instead — every required statement on
 every surviving named surface and its generated copies, equal numbers at the three entrances with
 `include_drift=false`, and report/snapshot content from one measurement.
@@ -17,28 +18,33 @@ every surviving named surface and its generated copies, equal numbers at the thr
 Rule coverage runs through the shipped seams on real repositories under `tmp_path`: the converted
 branch of `run_drift_summary`, the retained internal drift-summary call, the context-packet drift block,
 and both baseline tools (no public `drift_check` adapter is restored), the converted adoption gate, and the private-index staging interval. The
-L44-C1 repair cases pin the staging-interval guarantees: a staged refusal restores the prepared
-ignore line and preserves a concurrent edit, a validation exception restores state and keeps its
-name on dry run and real adoption, preparation and Git failures restore, an unreadable ignore file
-is preserved with the refusal, a malicious hook cannot change the recorded tree, and success brings
-the real index to the adopted state.
+retained interval-failure case injects `RuntimeError("boom")` at `memory_commit_refusal` and, for
+`dry_run=True` and `False`, asserts the matching exception, unchanged `_fingerprint` and
+`ls-files --stage` output, the intent-to-add empty-blob entry, the untracked symlink's unchanged
+target and absence from the worktree index, and the staged file's unchanged text. `_fingerprint`
+compares HEAD (or `unborn`), `git write-tree` stdout, porcelain status and a digest of non-`.git`
+file paths/bytes; it does not measure raw index bytes or flags. Separate tests assert committed-tree
+identity with the validated candidate despite an installed pre-commit hook (asserted not to run),
+and that successful adoption leaves `git write-tree` equal to `HEAD^{tree}`. These stored cases do
+not witness concurrent edits, ignore-file restoration or mode, preparation failures, or Git failures.
 
-The description case rejects restoration of `drift_check` registration, then checks the surviving `context_packet` include-drift description, its longer-explanation pointer and both shipped skill populations. Measurement/currentness/advisory obligations survive the retired tool; the removed registration sentence does not. Context requests no longer carry the removed `include_providers` argument.
+The description case rejects restoration of `drift_check` registration, then checks the surviving `context_packet` include-drift description, its longer-explanation pointer and both shipped skill populations. It also requires each c-02 copy to contain the ordinary-candidate statements "a current `onboarding_trace` row about the file" and "a counted change of its card alone never answers". Those static corpus assertions do not remove L53's amended, leaf-local old-MAIN-LINE counted-card exception. Measurement/currentness/advisory obligations survive the retired tool; the removed registration sentence does not. Context requests no longer carry the removed `include_providers` argument.
 
 ## Evidence
 
 - Converted trees take the converted branch and skip legacy discovery. [1]
 - The converted result names every measured field. [2]
 - Empty, missing and unbuildable-base trees report truthfully, never as checked-zero. [3]
-- A carried anchor is reported stale, never refused as newly written. [4]
-- The three consumers return one answer from the same summary. [5]
 - Report and snapshot come from the same measured result. [6]
 - Converted baseline states block on violations first, then on unaccepted drift. [7]
 - Accepting drift never clears a validator violation. [8]
 - The first baseline commits exactly the validated tree. [9]
-- A dry run and a refusal change nothing. [10]
-- Every named surface states what the check is, and the generated copies match. [11]
+- A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint. [10]
 - The context-packet leaf route binds the leaf base. [12]
-- An interval failure leaves everything untouched. [13]
+- Injected RuntimeError("boom") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted. [13]
 
-- The description proof checks surviving surfaces and rejects restoration of the removed adapter. [14]
+- `test_carried_anchor_is_refused_as_carried_stale_never_as_new` asserts deleted-path carried anchors refuse R22.6-carried-stale, never new-anchor R22.6-anchor-path; it does not cover all content staleness. [4]
+- Consumers return the same summary; the carried deleted-path context/summary fixture asserts matching R22.6-carried-stale samples and three violations. [5]
+- Surviving surfaces and generated copies assert measurement/currentness/advisory wording; c-02 copies additionally assert ordinary-candidate current-row/no-counted-edit-alone doctrine. [11]
+- Static description assertions check surviving surfaces, current-row doctrine and generated copies, and reject restoration of the removed adapter. [14]
+- Current source delta inspected statically: Repair carried-anchor refusal/parity captions and current-row corpus witness; separate static tests from execution and rollout exception. [15]

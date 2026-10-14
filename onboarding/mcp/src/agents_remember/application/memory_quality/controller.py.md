@@ -23,7 +23,8 @@ The full quality execution binds two independent base ports: knowledge validatio
 `run_memory_quality_request` executes an explicit sync request. `start_memory_quality_request`
 resolves the same execution contract and admits it to the bounded registry; equivalent live work
 returns its existing run, while full live capacity returns `capacity-reached` plus retry guidance.
-`poll_memory_quality_request` accepts only configured `repo_id` and `run_id`, so a wrong repository
+`poll_memory_quality_request` takes configured `repo_id` and `run_id`; candidate-scoped polls must
+repeat the admitted `contract_path` and re-prove the stored code/memory pair. A wrong repository
 observes the same `run-not-found` result as an absent or evicted run.
 
 `MemoryQualityExecution.identity` freezes repository, resolved scope, normalized checks,
@@ -188,7 +189,7 @@ worklist applies (both memory sides unconverted, which is every production leaf 
   managed-sync completion. Closeout validation and landing pre-commit evaluation are L09's; since L09 this run
   also recomputes through the gate over its exact candidate, and `_knowledge_worklist` remains the plain
   recompute for a scope the gate does not apply to.
-- **Unconverted runs are unchanged:** with no worklist, neither the response field nor the section appears.
+- **Historical pre-cutover behaviour:** with no worklist, neither the response field nor the section appeared. MIK-R46 now refuses unconverted quality input before scanning.
 
 
 ## 260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)
@@ -197,15 +198,21 @@ The leaf block of `_attach_curator_checklist` now calls `_onboarding_refresh_gat
 working_paths, (accepted_no_impact, accepted_route_no_impact), response)`, which returns the repair and
 report-only findings of the leaf's onboarding gate:
 
-- **Converted tree** (`leaf_onboarding_trace_sides(contract, memory_tree=<memory root>)` returns sides): it
-  runs `onboarding_trace_gate_for_context`. Each missing trace is **one repair finding** that counts toward
-  `curatorActionableCount`, unreadable inputs are repair findings too, a row naming a subject the leaf raised
-  no item for is report-only, and the response gains `onboardingTrace` (the result's `brief()`: owner, item
-  and open counts, the first open subjects, unnecessary-row and problem counts). The curator-coherence
-  no-impact identities are not consulted there (architect ruling 2026-09-29T18:49:50 (1)).
-- **Unconverted tree** (`None`): it runs today's `validate_memory_refresh_attestations` with the same
-  arguments, and a refusal is the same single `memory-refresh-attestation-failed` finding with the same
-  text. This is every production leaf before MIK-R37, including this master's own leaves.
+- **Converted tree** (`leaf_onboarding_trace_sides(contract, memory_tree=<memory root>)` returns sides):
+  `worktree_code_blobs(contract.code_worktree, traced_paths)` first captures the code candidate's blobs,
+  including absent paths, and forwards them as `code_blobs` to `onboarding_trace_gate_for_context`.
+  Any capture/read exception returns one named `CHECK_NAME` / `INCOMPLETE_CODE` repair finding and an
+  empty report-only list; it is not a clean empty result and no successful trace brief is published.
+  Each missing or stale current-row trace counts toward `curatorActionableCount`; unreadable inputs
+  count too. A row for a subject the leaf raised no item for is report-only. A successful dispatch
+  publishes `onboardingTrace` (`brief()`: owner, item/open counts, first open subjects, unnecessary-row
+  and problem counts). Curator-coherence no-impact identities are not consulted here; they cannot
+  substitute for source-bound onboarding judgments.
+- **Historical unconverted fallback** (`None`): `_onboarding_refresh_gate` retains the
+  `validate_memory_refresh_attestations` branch and its single `memory-refresh-attestation-failed`
+  finding. It is not present permission to check legacy memory: the current MIK-R46 refusal occurs
+  in `_execute_memory_quality` before scanning or checklist dispatch, whether or not converted
+  memory exists elsewhere. The former pre-MIK-R37 production behaviour is historical.
 
 The checklist's leaf block hands the gate the changed paths and the accepted identities.
 
@@ -225,9 +232,9 @@ they join the checklist (ruling 2026-09-30T01:56:39 Q3):
   consistency fix). Doing this inside the helper keeps `_attach_curator_checklist` within PLR0915.
 - The findings now carry each row's `subject` (`worktrees/modules/onboarding_trace.report_only_findings`,
   additive), which is what the filter reads. `repair_findings`, which drive the gate decision, are untouched.
-- **Unconverted leaves are unchanged:** with no worklist the answering set is empty, nothing is dropped, and
-  today's gate runs as before; this leaf's own memory-quality runs returned no worklist and no
-  `onboardingTrace`.
+- **Historical pre-cutover behaviour:** with no worklist the answering set was empty and nothing was
+  dropped; the recorded leaf runs returned no worklist or `onboardingTrace`. This is not a current
+  legacy-quality path: MIK-R46 refuses unconverted input before scanning.
 
 The report-only findings pass through the filter.
 
@@ -257,8 +264,9 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
   it within the statement limit; its radon score fell from D 24 to D 21.
 - **The memo.** The closeout validator evaluates the same key (`evaluate_leaf_gate` resolves the same parent tip), so
   one memory-quality run recomputes the gate once and its two validator reads are served from the memo.
-- **Unconverted runs are unchanged:** with no gate and no worklist, neither `knowledgeGate` nor `knowledgeWorklist`
-  appears and the count is what it was; this curation's own `memory_quality_check` runs returned neither.
+- **Historical pre-cutover behaviour:** with no gate and no worklist, neither `knowledgeGate` nor
+  `knowledgeWorklist` appeared; this curation's recorded runs returned neither. MIK-R46 now refuses
+  unconverted input before a quality scan; absence of these fields is no clean-result warrant.
 
 The run evaluates the gate and briefs it.
 
@@ -397,8 +405,6 @@ measured at all.
 - The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
 - The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
 - The checklist's leaf block hands the gate the changed paths and the accepted identities. [8]
-- The dispatch: the history-file gate on a converted tree, today's gate otherwise. [9]
-- Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. [10]
 - The report-only findings pass through the filter. [11]
 - The filter and the adjusted count. [12]
 - The raw count is 2 and the response count 1; only the stray row remains. [13]
@@ -411,9 +417,13 @@ measured at all.
 - Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
 - Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
 - R03 candidate-tree freezing and change refusal around curator publication. [22]
-- Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run. [23]
 - Quality computation retains whole material beside its computed status. [24]
 - Full execution supplies the contract-bound landing base separately from the validator base. [25]
 
 - Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated. [26]
 - The unconverted fixture checks whole/delivered status, count, next action and key subset. [27]
+
+- Converted dispatch captures traced-path candidate blobs and forwards `code_blobs`; capture/read failure is a named `INCOMPLETE_CODE` repair, not an empty success. The retained fallback does not bypass MIK-R46's pre-scan legacy refusal. [9]
+- The source assertions count card/route traces and the uncovered file's `unexplained_hunk` once each; authored current-row answers, not bare card edits, settle the ordinary candidate. The historical Update History function is not called. [10]
+- Unconverted quality input refuses before scanning for either leaf or repository scope; current crossing/lock helpers word the conversion route, not permission to run the old format. [23]
+- Current source delta inspected statically: Describe candidate-blob capture and named failure; retire legacy-quality permission claims using current L46 authority, not the earlier recommendation. [28]

@@ -8,7 +8,8 @@
 
 Hunks, ranges and content identities over the two code trees of a worklist run, the base tree B and the
 candidate tree C. `CodeTrees` reads both trees through one object reader and answers where an anchor's
-locator lands in a blob, which lines two blobs differ in, and which file of C binds a symbol name.
+locator lands in a blob, which lines two blobs differ in, and which file of C binds a symbol name. Tree blob maps include regular files and symlink entries
+(mode `120000`); a symlink blob contains link-target bytes, not the referent's contents.
 
 ## Code Commentary
 
@@ -22,8 +23,10 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
   `GIT_DIFF_OPTS`, because that environment context option would override even `--unified=0`.
 - **Hits.** `hits_old` and `hits_new` say whether a hunk changes a line of a range on the B or the C side.
   A side on which the hunk changes nothing hits the range only when the hunk sits strictly inside it.
-- **Ranges.** `CodeTrees.resolve(path, locator, recorded_blob, blob)` returns the range and its content
-  identity. A `file` locator is every line. A `symbol` locator is the one extent the extractor binds for
+- **Ranges.** `CodeTrees.resolve(path, locator, recorded_blob, blob, side="candidate")` returns the range
+  and its content identity. `side="base"` selects B's symlink modes; every other value selects C's.
+  A symbol on a selected-side symlink raises `CodeReadError` before extraction; file and line-range
+  locators still bind entry bytes. A `file` locator is every line. A `symbol` locator is the one extent the extractor binds for
   the name (`CodeObjects.symbol_span`). A `line_range` locator is the recorded lines in the recorded blob
   and, in another blob, their image through the hunks between the two blobs (`map_range`); a range all of
   whose lines were deleted, with nothing written in its place, has no image. A recorded blob the store
@@ -34,7 +37,7 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
   call suppresses `CodeReadError` and `CodeObjectError`: a tree or blob that cannot be read here is read
   again, and fails, at the place that uses it. `compute_worklist` calls it with the changed text paths of
   every run.
-- **Other reads.** `base()` and `candidate()` map each regular file of a tree to its blob; a tree the store
+- **Other reads.** `base()` and `candidate()` map each regular file and symlink entry of a tree to its blob; a tree the store
   does not hold raises `CodeReadError`. `has_blob` turns a Git failure into `CodeReadError` and never into
   "absent". `unique_binder(name)` returns the one path of C that binds the name exactly once, found with
   `git grep` and the extractor.
@@ -57,8 +60,11 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
   surviving line (`_map_line` shifts it by the preceding hunks' deltas, or drops a deleted line) plus every
   line a hunk inside the range wrote. A range whose lines were all deleted with nothing written in their
   place has no image (`None`), which is "its line range has no mapping" (definition 4).
-- **Resolution.** `CodeTrees.resolve(path, locator, recorded_blob, blob)` returns a `Resolved` (blob, span,
-  content identity) or `None`:
+- **Resolution.** `CodeTrees.resolve(path, locator, recorded_blob, blob, side="candidate")` returns a
+  `Resolved` (blob, span, content identity) or `None`. `candidate_symlinks()` and `base_symlinks()`
+  cache mode-`120000` path sets independently; `_side_symlinks` turns a mode-read failure into a
+  `CodeReadError` naming the tree. Symbol resolution uses the selected side's set and refuses link
+  bytes before the extractor; file and line-range resolution remain entry-byte bindings:
   - `file`: every line, with the whole blob's content identity;
   - `symbol`: `CodeObjects.symbol_span`, the one extent the shipped extractor binds uniquely for the name
     (the rule the writer and the conversion bind with); a name bound twice or nowhere does not resolve;
@@ -70,7 +76,8 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 - **Unique match.** `unique_binder(name)` prefilters C with `git grep -l -z -F` on the name's last segment,
   then counts, for each candidate path with a grammar, how many constructs `extents.qualified_spans` binds to
   the name. It returns a path only when exactly one path binds the name, exactly once.
-- `CodeTrees.base()` and `candidate()` list each regular file of B and C with its blob.
+- `CodeTrees.base()` and `candidate()` list regular files and symlink entries of B and C with their blobs;
+  links are present entries, not `absent` and not dereferenced.
 - **A changed path's hunks (`change_hunks`, MIK-L32).** For a `TreeChange` of the landed change inventory and the
   path's blobs on B and C: `None` when the content is not text or the type changed (a non-text change, linked at file
   level, definition 8); the blob pair's hunks when both sides exist; one whole-file hunk (`Hunk(1, n, 0, 0)` or
@@ -110,10 +117,8 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 - Whether a hunk hits a range on one side. [17]
 - Hunk headers are parsed; a binary pair has none. [18]
 - The image of a line range through a diff. [19]
-- The two trees, the object reader and the hunk cache. [20]
 - The read-ahead of both sides' blobs, with read failures suppressed. [21]
 - The blob diff with its failure and cache. [22]
-- Where a locator lands in a blob. [23]
 - The one path that binds a name once. [24]
 - A changed path's hunks, or none for a file-level change. [25]
 - The object reader's batched prefetch. [26]
@@ -141,7 +146,6 @@ No configured live documentation source was available for this pass.
 - The image of a line range, or no mapping. [34]
 - The hunks of a blob pair, cached, with a named failure. [35]
 - Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2). [36]
-- Resolution by locator kind. [37]
 - A line range mapped from its recorded blob; an unknown blob has no mapping. [38]
 - The mechanical unique match of definition 6. [39]
 - A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). [40]
@@ -155,3 +159,8 @@ No meaningful cross-repo references found: the module reads one local code repos
 through Git.
 
 No cross-repo boundary is crossed by this file.
+
+- The two trees, the object reader, hunk cache and independent B/C symlink-mode caches. [20]
+- Where a locator lands in a blob; selected-side symlink symbols refuse before extraction. [23]
+- Resolution by locator kind and side, with cached mode reads and named symlink-symbol refusal. [37]
+- Current source delta inspected statically: Fix side-aware symlink resolution/caches and entry-blob maps; retain diff and range rules. [44]

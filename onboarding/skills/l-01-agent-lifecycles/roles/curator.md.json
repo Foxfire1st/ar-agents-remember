@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:2ee6531903d4dd13daac46450c9c16ce39fd0aed29161dbfef6377ee5e587f1c",
         "locator": {
           "end": 28,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:dbc0d5820eb978ab0687e1d7eed9f05e1a9c24ca68df552a34941f2e045d3189",
         "locator": {
-          "end": 170,
+          "end": 178,
           "kind": "line_range",
-          "start": 170
+          "start": 178
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:16a9d98f68567c8c72b592219f4041dc5f7c428778d4dd320b32ed003368a50f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:b075bc003e6404c4956b47678c45d67076dc4816e31d414d4daffc751c8fee02",
         "locator": {
-          "end": 144,
+          "end": 108,
           "kind": "line_range",
-          "start": 144
+          "start": 107
         }
       },
       "id": "RLZ-AHYBRR",
@@ -55,13 +55,13 @@
         "handoffEntry": "MIK-R48@v2 rule 7",
         "leaf": "260928-MIK-L48"
       },
-      "rationale": "The curator role instructs the author of family guarantee judgments to supply the meaning effect while the writer captures revision.",
+      "rationale": "The Curator role directs family coverage authoring and readback through the curation operation Normal workflow, where authored effect and writer-owned family revision are specified.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:4c0c4c01a89a7a026ec118d7fdd8ba3a00b35e8a5ee199391f24e20d679478e1",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:c37c2f26ce77e32c10a35aafaaa56330e1cca1f0330227412dc6d8fda370fb74",
         "locator": {
-          "end": 238,
+          "end": 213,
           "kind": "line_range",
-          "start": 236
+          "start": 199
         }
       },
       "id": "RLZ-DT71R6",
@@ -91,17 +91,17 @@
         "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This clause keeps the one-level read/search/reference allowance and the new paragraph defines the deduplicated list, the numeric threshold, what is handed out and what stays with the main Curator.",
+      "rationale": "The Curator may organise work using harness sub-agents at any size with no prescribed numeric threshold or depth; the main seat verifies their work and retains all boundary acts, one writer, placement/admission/meaning, full quality/coherence and handover responsibility.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
-          "end": 114,
+          "end": 122,
           "kind": "line_range",
-          "start": 114
+          "start": 122
         }
       },
       "id": "RLZ-HVJ3RJ",
@@ -115,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -132,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -148,12 +148,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:cfcc435b52af1f9d938d49ff10b13b54a461679ad65c95b96e0640ca40668de6",
         "locator": {
-          "end": 244,
+          "end": 252,
           "kind": "line_range",
-          "start": 242
+          "start": 250
         }
       },
       "id": "RLZ-PDP66S",
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:600335da77cabad9fdb615ee1f3b745321cbf69f140554123c49cc7676aafef0",
         "locator": {
           "end": 21,
@@ -186,8 +186,8 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -203,12 +203,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:3a039c53a190c37787c5410d9efc47da507f8d69479228ec30ab9671de4ba450",
         "locator": {
-          "end": 229,
+          "end": 237,
           "kind": "line_range",
-          "start": 222
+          "start": 230
         }
       },
       "id": "RLZ-SHXSR1",
@@ -222,12 +222,12 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
         "content": "sha256:51900cc8720c0bfed4bdfa12068c6bab7ad802039058e5be7d06d52ef3a125f6",
         "locator": {
-          "end": 215,
+          "end": 223,
           "kind": "line_range",
-          "start": 213
+          "start": 221
         }
       },
       "id": "RLZ-V1AKR1",
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -258,8 +258,8 @@
     },
     {
       "anchor": {
-        "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-        "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+        "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+        "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
         "locator": {
           "kind": "file"
         }
@@ -326,7 +326,7 @@
         },
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:b319457fc6b8c16226e8b15b759a94d792a6652b16b8cbaee97f83524cce3d22",
             "locator": {
               "end": 83,
@@ -343,12 +343,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
             "locator": {
-              "end": 152,
+              "end": 160,
               "kind": "line_range",
-              "start": 145
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Updated/no_impact source-bound onboarding judgments are distinct from mere mechanical changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:9c4ee978968c2e6202ea77b8efa655ab95d33ba67d98d60cafd09432fd17efac",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Independent non-author fact-check precedes closeout without adding a closeout predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:de413ba94526aa06747cb525534cd1f3dd39b374eb6fe4d12d771950924d8f14",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "code"
@@ -411,12 +445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 103,
+              "end": 106,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             }
           },
           "kind": "code"
@@ -462,7 +496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",

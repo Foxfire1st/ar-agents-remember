@@ -36,18 +36,20 @@ evidence names.
   is listed in the report (`abbreviatedAnchorCommits`; two cards on the real tree, both resolving to
   `cb906188f2572c…`).
 - `_convert_cards` splits each card (`cards.split_card`) and builds one reference per real row
-  (`citations.row_reference`), numbered by position. It renders the Markdown (`cards.render_card`) and
-  writes a file sidecar (`ar-onboarding-file/v1`, `{path, references, realizes: []}`) or, for an
-  `overview.md`, a route sidecar (`overview.json`, `references{}` only; `.` for the root route). A card
-  with no references gets no sidecar.
+  (`citations.row_reference`), numbered by position. `RowContext` uses that card's anchor-commit
+  tree and `CodeObjects.link_paths(objects.tree_modes(commit))`, so citation/symbol resolution
+  receives that tree's symlink set. It renders Markdown and a file sidecar (`ar-onboarding-file/v1`,
+  `{path, references, realizes: []}`) or route sidecar (`overview.json`, `references{}` only; `.` at root).
+  A card with no references gets no sidecar.
 - `_audit_card` counts the report's measures: cards, rows, placeholders, Update History bytes, residual
   metadata and stray citation rows. It also lists every `governingOverview` whose resolved value is not
   the nearest ancestor overview (`nearest_overview`), and every `path` metadata value that disagrees
   with the card's location.
 - `_merge_entries` puts exported `realizes` entries into their file's sidecar. A path with no card gets a
   sidecar without Markdown, which is listed.
-- `_entry_states` counts exported entries by MIK-R03 state at the paired commit (`current`, `stale`,
-  `stale:path-absent`).
+- `_entry_states` counts exported entries at the paired commit (`current`, `stale`,
+  `stale:path-absent`). It derives symlink paths from that commit's tree modes and passes them to
+  content resolution. Equal blobs still short-circuit as current before content is resolved.
 - `_require_valid` runs `validate_tree(..., conversion=True)`. Any refusing violation raises
   `ConversionRefused` naming every failing file. The report records the refusing and report-only counts.
 - `_report` returns the before and after counts: files, rows, references, targets by kind, covered
@@ -75,7 +77,7 @@ evidence names.
 - **Converting an already converted tree is a no-op.**
 - It authors no knowledge: no invariant is invented from prose, and every reference note is the row's own
   finding.
-- On the real repository (clones at memory `2285b3b2e`, code `cd3e943d`) the conversion wrote 5,184 files:
+- Historical real-repository conversion (clones at memory `2285b3b2e`, code `cd3e943d`) wrote 5,184 files:
   19,276 references, 86 unresolved targets, 94 invariants, 14 families and 178 realizations. Two clones
   are byte-identical, and a clone converted at a different paired commit is byte-identical too
   (reviewer), because every card is anchored at its own verified commit.
@@ -107,12 +109,10 @@ The entry point, its version pin and its steps.
 - An unsupported version is refused. [2]
 - The inputs: files, database, and the converted state the marker decides. [3]
 - The anchor commit: exact, prefix-resolved, or the listed fallback; an ambiguous prefix refuses. [4]
-- Cards become Markdown plus a file or route sidecar. [5]
 - The per-card audit, including the governing-overview and path mismatches. [6]
 - Exported entries join their file's sidecar; a path without a card gets a sidecar without Markdown. [7]
 - The whole tree is validated before anything is returned for writing. [8]
 - The conversion's steps, the no-op and the marker. [9]
-- The report's measures. [10]
 - Determinism, the version refusal and the no-op. [11]
 - Version 1's pinned bytes. [12]
 - A refused conversion writes nothing and names what failed. [13]
@@ -122,3 +122,7 @@ The entry point, its version pin and its steps.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+- Cards become Markdown plus file/route sidecars, with citation context bound to each anchor commit's symlink modes. [5]
+- The report's measures; exported-entry currentness uses paired-commit symlink context after the unchanged-blob shortcut. [10]
+- Current source delta inspected statically: Expose tree-mode symlink context at card anchoring and paired-commit currentness; retain pure inputs, unchanged-blob shortcut, version pin and explicitly historical conversion counts. [14]

@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Criteria Catalog — Onboarding/Memory Review`",
+      "note": "The synchronized criteria source requires the independent converted-memory OM-2 check, binds its scope, and preserves the other review criteria's admission rules.\n\nAnchor: lines 1-86",
       "targets": [
         {
           "anchor": {
-            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
-            "content": "sha256:35d564f4dd3f81264abe355f55a6673ef759aeadd486b1e04b6c0fc0b3f4d746",
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:2a027331d6f2f0e578122e31164a727cd21690ce9e5c9ff952f8412d2f23f32d",
             "locator": {
-              "end": 83,
+              "end": 86,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
             "content": "sha256:c3b3b3acbc99753b8d0331cd075d38a2d210897fd3ccc34a0dee93d9877a6c86",
             "locator": {
-              "end": 47,
+              "end": 49,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             }
           },
           "kind": "code"
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
             "content": "sha256:660b2f7b698dab73721bd0a1f4d5a93100254a483c2073430bf081e0d9c3243b",
             "locator": {
               "end": 60,

@@ -3,7 +3,7 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "Nine tests pin the three pairing tests, their order, the singleton-gap rule and the near-linear scaling on fully paired inputs, so a future pairing change that reorders tests or rescans paired populations fails before it lands."
+    "justification": "Selected stored tests check content-before-number pairing, same-number fallback and a singleton between paired neighbours. The monotone and crossed fully-paired controls each check exact pairing for one 2000-reference fixture and elapsed < 10 seconds. Those are bounded single-size regressions, not a multi-size near-linear scaling measurement or a guarantee that every rescanning implementation would fail; the near-linear implementation claim rests on the live-unpaired/Fenwick source analysis."
   },
   "applicability": "Every both-changed card: base with incoming and base with own, plus partnerless own with partnerless incoming.",
   "conditions": [

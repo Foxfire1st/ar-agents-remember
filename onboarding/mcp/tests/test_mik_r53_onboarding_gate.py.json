@@ -1,0 +1,162 @@
+{
+  "path": "mcp/tests/test_mik_r53_onboarding_gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Row schema and counted-change assertions exclude realizes/proves-only maintenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:93f1985cfd72fb34eb56ad306febb2ae32729919addd0dfdeaf5d750723ae0a3",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Writer assertions bind sources from the candidate and record deletion as absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:a5276bb6aae18273e273ac937376e900bd1d69de0c8c3a8ae7d52f00a2c1c9c7",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Currency, counted-change and legacy open/closed boundaries are tested separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:01e90ef00a244ec65b873b0ff8170d783fa70e6f905dcab41665e40259a0c26f",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worklist and generic gate cases keep rowless or stale counted edits open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:ad30c3ac25529c97d8c57f45023a79372947396985b6c75eec0d1aa4ceffa413",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The winning row retains its own attempt's closed flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:8d5621d1a84a9fccc93d7da308cc10e0134fb9d165b04de08d10c0423f7ba773",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 585
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Paired-base comparisons and stale-counted-flag regressions distinguish operation HEAD from the leaf base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:0511f6ea1556b595726f829dfb7a22431fca38a99478c7bdd5097166195174c9",
+            "locator": {
+              "end": 876,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:5c5d937a538d92b29d33dba02596e4e2f3a5463b19a8463b0a796e89669ede4a",
+            "locator": {
+              "end": 971,
+              "kind": "line_range",
+              "start": 941
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Symbol resolution on mode-120000 entries is refused across writer, conversion and worklist/carry paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:28982d105df53c3bab880d15dd9b74162a4f7f2e91dad05239f4924ca4d6578b",
+            "locator": {
+              "end": 914,
+              "kind": "line_range",
+              "start": 879
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:83420dda0a0e01ef96612b12fd5731726869da7e19c3ca22640bf5e7c3c814a5",
+            "locator": {
+              "end": 1019,
+              "kind": "line_range",
+              "start": 988
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "721413b78bb06a4d2d5ab30e26d04cc5e20e9190",
+            "content": "sha256:f4d0471ebf8b3e1c8310a69875d015945bd99d24e3ab0326d7c19b0df7e01af2",
+            "locator": {
+              "end": 1075,
+              "kind": "line_range",
+              "start": 1041
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

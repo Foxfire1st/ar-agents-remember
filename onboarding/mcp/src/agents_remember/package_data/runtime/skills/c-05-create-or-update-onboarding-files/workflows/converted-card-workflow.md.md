@@ -14,6 +14,10 @@ copies are generated from it by `scripts/sync-skills.py`. All copies are byte-id
 
 ## Code Commentary
 
+The newly built normal onboarding answer is the current source-bound updated/no_impact judgment: updated additionally needs authored Markdown or nonmechanical references changes; realizes/proves-only edits do not count. Every governing route has its own subject, and later covered-source movement reopens the answer. Moves preserve behavior/entry ownership before retiring the old card; gone-path references refuse publication/landing rather than granting permanent advisory immunity. These statements supersede the older counted-edit-or-row gate wording in the retained account. This L53 rollout itself uses amended rule1 counted card changes, without updated rows or later backfill.
+
+- Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [10]
+
 ### Logic
 
 The workflow states, in order:
@@ -36,8 +40,12 @@ The workflow states, in order:
 - **Remove a reference**: delete its line and run the fixer on that card; a tree-wide run never removes one.
 - **A source file moved or was deleted**: entries first, through the writer (`moved` rows with the new path, or
   covers with `remove: true`), then the card and the old sidecar, then the other cards that cite the file.
-- **When the card needs no change**: an `onboarding:<path>` or `onboarding:<route>/overview` row with disposition
-  `no_impact`, written through `knowledge-ingest`.
+- **Answer every changed-source card and its nearest governing route** with a current
+  `onboarding:<path>` or `onboarding:<route>/overview` row through `knowledge-ingest`.
+  `updated` requires a counted Markdown or nonmechanical `references` change; `no_impact`
+  gives the reviewed reason the card still holds. A counted edit alone never answers.
+  The writer binds the row to the covered source contents, so another source edit requires
+  the row to be named again. Mechanical anchors and realization/proof-only changes do not count.
 - **Never on converted memory**: a metadata table, an Update History entry, `lastVerifiedCommit*`, a citation table
   left after the fixer ran, hand-written sidecar anchors or reference numbers, and `memory_carryover_apply`.
 
@@ -82,7 +90,7 @@ No configured live documentation source was available for this pass.
 
 - Refreshing a card: prose, re-authoring one reference by its number, and mechanical moves. [3]
 - Removing a reference, and the moved-source and deleted-source procedures. [4]
-- The no-change trace rows, and what never belongs on converted memory. [5]
+- Every changed file and governing overview needs a current updated or no-impact row; counted edits alone never answer, and converted cards keep no legacy metadata or Update History. [5]
 - The c-05 skill routes converted memory to this workflow. [6]
 - The authoring the workflow drives. [7]
 

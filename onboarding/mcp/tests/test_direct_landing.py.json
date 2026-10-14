@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
+        "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
         "content": "sha256:5efaa63befdc35b2582e174d5ccbbc7190a1772ef73335a2a5b82d33b27e1c00",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
-        "content": "sha256:8ec24a9dcf6d92a47f5f451e5c29d761a67faa275e69ffc27835bcc1c7eeb167",
+        "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+        "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_create_precode_census_pins_each_row"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
-        "content": "sha256:3146079df45e5db08e3ee183abe12217dbaefc0c0297eb6559647489c38c86aa",
+        "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+        "content": "sha256:3e63cc87fdb255c40a85cdd917e4dbc9d8c116c7e279fc5b8deb56396649dcbe",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
-        "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
+        "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+        "content": "sha256:ccf8fa003a46c6e1685defc41ebecabff013a5a85c0e219f2f2fdf29fa894904",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "ba908893a5c7a0a0b36a975f78f7f39ff148f110",
+        "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
         "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:6ba2bd109c2e4421c8527e21352d9167090cc79a602f77dfae5e7cb227858101",
+            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+            "content": "sha256:6c79cc36e0f04fb0c6194710d51ec4d313b71ecf3872cad7c43e206080fb916e",
             "locator": {
               "kind": "symbol",
               "name": "_series_fixture"
@@ -110,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+            "content": "sha256:b191f935bf7b7600d95f30bc7d670d532d5dcd61b113bb401d437607d3594dea",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
@@ -126,24 +126,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6a40f74201114a69c5b3ea41177605d28676779",
-            "content": "sha256:878c4333273738cf1512d3a47abf10b0bc5a6b33438ccde09274a933a0f249e6",
+            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+            "content": "sha256:1c1440bf4223cec18452d070bbfbacee091357bef06eadc48964996e3b788b09",
             "locator": {
-              "end": 2433,
+              "end": 2444,
               "kind": "line_range",
-              "start": 2392
+              "start": 2396
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d6a40f74201114a69c5b3ea41177605d28676779",
-            "content": "sha256:d1909fab6294dfa49e3d610f8cab1908972b7297038210bfe3042bec6e8f25a9",
+            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+            "content": "sha256:2c3bf4d09ac0023059c5ba57ae933411165beee201e97a409c03c011a2d5e60f",
             "locator": {
-              "end": 2390,
+              "end": 2394,
               "kind": "line_range",
-              "start": 2318
+              "start": 2320
             }
           },
           "kind": "test"
@@ -164,6 +164,23 @@
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation.\n\nAnchor: `DirectLandingTests.test_create_precode_census_pins_each_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
+            "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
+            "locator": {
+              "end": 1056,
+              "kind": "line_range",
+              "start": 983
+            }
+          },
+          "kind": "test"
         }
       ]
     }

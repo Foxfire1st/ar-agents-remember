@@ -12,8 +12,9 @@
 
 The file currently contains no exported application-layer facade. Public MCP payload
 builders import application entry point functions directly from their domain modules such as
-`provider_tools.py`, `worktree_tools.py`, `memory_tools.py`, and
-`coordination_tools.py`.
+`worktree_tools.py`, `memory_tools.py`, and `coordination_tools.py`.
+The former `provider_tools.py` facade was removed; this initializer does not
+recreate that MCP surface.
 
 ## Invariants And Boundaries
 
@@ -26,4 +27,4 @@ builders import application entry point functions directly from their domain mod
 ### Repo-Internal References
 
 - The overview hot path summarizes guarded commit-message and forwarding boundaries. [1]
-- Public payload builders import application entry points from their owning modules. [2]
+- Public payload builders import application entry points directly from their owning modules. [2]

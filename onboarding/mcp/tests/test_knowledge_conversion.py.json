@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:a4331704d00458c653941537c9f3609c4eba11c917aa9acbf28d7040601b07ed",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:ec0d9bde3bf1ef7efa5741d8855c2a92425ee46d790e9443ff70a11afbae0c7c",
             "locator": {
               "kind": "symbol",
@@ -35,15 +35,28 @@
       ]
     },
     "3": {
-      "note": "Rule 6, determinism, the version refusal and the no-op.",
+      "note": "Rule 6 source assertions: deterministic conversion, version refusal and no-op, followed by based validation refusing the carried anchor at a deleted path (`R22.6-carried-stale`, exit 1).",
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
-            "content": "sha256:27d8c8a624b0821eb9b38bbb0bd49df08055def344e540994fc5cdb2ad788e7f",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
+            "content": "sha256:dc4e2058816533155d8660ffc660f0572a015fdfd41735e651c19f8ac80323e3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted"
+              "end": 265,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
+            "content": "sha256:0367aa8251759c1cd2b0e7238442873a3620ac4e51e92af9860e214b2d0cdfc9",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 255
             }
           },
           "kind": "test"
@@ -55,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:2a5dc5965c9d6725574fe207ce21fa8be0902e7c35fb98845d511eaa20ab8c01",
             "locator": {
               "kind": "symbol",
@@ -71,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:a71b4a198e6856dd6a81ffade7e4d0451767342554951eb83d074cab766dfa09",
             "locator": {
               "kind": "symbol",
@@ -82,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:ed3f43e01259a95aed3fd94782b254f185013c10d64670c9e664ccd31752000a",
             "locator": {
               "kind": "symbol",
@@ -98,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:ee79d4f39b9404172fd58db407faabf29b0e15a2c184e1585a57fcf014f8abf2",
             "locator": {
               "kind": "symbol",
@@ -120,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
             "content": "sha256:b957cd854d742c4db187144943705413883d638a12f415e233b5f4e4938d4017",
             "locator": {
               "kind": "symbol",
@@ -136,14 +149,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "0064e5651e1f3639069a6d800c14f446de1ef954",
             "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
             "locator": {
-              "end": 110,
+              "end": 123,
               "kind": "line_range",
-              "start": 110
+              "start": 123
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
+            "content": "sha256:0367aa8251759c1cd2b0e7238442873a3620ac4e51e92af9860e214b2d0cdfc9",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 255
+            }
           },
           "kind": "test"
         }

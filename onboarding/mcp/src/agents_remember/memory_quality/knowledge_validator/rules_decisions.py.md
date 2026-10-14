@@ -18,7 +18,7 @@ decision record of the candidate tree. The checks themselves are the pure functi
 | `R13.1-reconsider-when` | refusing | every `rejected` or `deferred` alternative states `reconsider_when` |
 | `R13.2-superseded-derived` | refusing | `superseded` is never stored, as the decision's status or an alternative's |
 | `R13.3-reconsider-on` | refusing | a `reconsider_on` link's `alternative` indexes an existing `rejected` or `deferred` alternative |
-| `R13.3-governs` | report-only | a decision with no `explains`, `constrains` or `motivated_change_to` link is read from nowhere |
+| `R13.3-governs` | refusing; writer-reported | a decision with no `explains`, `constrains` or `motivated_change_to` link is read from nowhere |
 
 ## Code Commentary
 
@@ -33,16 +33,18 @@ decision record of the candidate tree. The checks themselves are the pure functi
   file, and this rule says why and names the field (`status` or `alternatives.<i>.status`) with the remedy (keep it
   `active` and name it in the superseding decision's `supersedes`). A file that is not JSON is left to the shape
   rule. A record with `superseded` does not parse, so its other content rules are not evaluated until it is fixed.
-- `check_governs` reports a decision with no governs link: "link what it governs, or keep it in the task if it
-  governs nothing". It is **report-only by ruling 01:45:56 Q2**: the packet lists the link types but does not
-  require one, and whether a lifted decision still governs code is the curator's judgment.
+- `check_governs` finds a decision with no governs link: "link what it governs, or keep it in the task
+  if it governs nothing". R53 makes it refuse every validator commit route, including sync merges;
+  only the writer reports it (`writer_reports=True`) for repair across runs. The curator records
+  judgment by linking what the decision governs, not by an advisory waiver.
 
 ### Conventions
 
 - **The content rules apply to every decision, new or carried** (ruling 01:45:56 Q3): the packet's refusal list has
   no new/existing split, unlike MIK-R27, and the conversion exports no decisions, so no carried tree can be blocked
   at the cutover.
-- None of the five rules sets `writer_reports`, so the writer refuses exactly as a commit route does.
+- `R13.3-governs` alone sets `writer_reports=True`; the other four decision rules refuse inside the
+  writer too. There is no merge-report exception for governs.
 - Rule IDs carry the packet rule number (`R13.1`, `R13.2`, `R13.3`) and each `ValidationRule` cites "MIK-R13 rule N".
 
 ### Invariants And Boundaries
@@ -93,14 +95,16 @@ The five rules and their registration.
 - Every parsed decision with its path, and each problem as a finding. [2]
 - The three refusing content checks, one per rule. [3]
 - A stored superseded is named from the raw JSON, with the remedy. [4]
-- A decision with no governs link is reported. [5]
-- The five rules, four refusing and one report-only, registered on import. [6]
-- The rule table the module docstring states, including why the rules apply to every decision. [7]
-- D12 and D18 as records pass every rule. [8]
-- A governs-less decision is reported, not refused. [9]
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the rules read the validation context's candidate tree only.
 
 No cross-repo boundary is crossed by this file.
+
+- A decision with no governs link is found with the link-or-keep-in-task remedy. [5]
+- Five refusing rules; governs alone is writer-reported, not generally report-only. [6]
+- The current docstring table: every decision is checked; governs judgment is recorded in links. [7]
+- D12 and D18 as records pass every rule in the test source. [8]
+- `test_a_decision_that_governs_nothing_is_refused` asserts `R13.3-governs` with `reportOnly=False`; this is source inspection, not a fresh run. [9]
+- Current source delta inspected statically: Remove obsolete ruling-based governs waiver and four-refusing/one-report inventory, including stale test caption; preserve the other content checks and endpoint limits. [10]

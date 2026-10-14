@@ -8,7 +8,9 @@
 
 **Anchor resolution at the leaf's code candidate tree C (MIK-R12 rule 2, MIK-R07 rule 0).**
 `CodeSnapshot.capture` captures the code worktree, committed and uncommitted, as a tree through the shipped
-private-index capture (`worktrees/modules/git.worktree_candidate_tree`) and lists every regular file's blob.
+private-index capture (`worktrees/modules/git.worktree_candidate_tree`) and lists regular-file and symlink
+entry blobs (modes `100644`, `100755`, `120000`). A link binds its target bytes, not referent contents
+and not `absent`; only a missing entry is absent. `symlinks` records the mode-`120000` paths.
 `CodeSnapshot.resolve` turns a locator into an `Anchor{locator, blob, content}`, hashing the located bytes
 through `models/knowledge_files/anchor_content.py`.
 
@@ -16,7 +18,9 @@ through `models/knowledge_files/anchor_content.py`.
 
 ### Logic
 
-- `symbol`: the one extent the shipped citation extractor (`memory_quality/style/citations/extents`) binds
+- `symbol`: a path in `CodeSnapshot.symlinks` raises a named `AnchorResolutionError` before blob
+  parsing or extraction; cite the file or a line range of the link bytes instead. Otherwise, the one
+  extent the shipped citation extractor (`memory_quality/style/citations/extents`) binds
   for the name. A name bound nowhere, bound more than once, or in a language with no grammar does not
   resolve. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method
   of another class does not make it ambiguous. Since MIK-R24 the rule itself lives in the extractor as
@@ -24,7 +28,8 @@ through `models/knowledge_files/anchor_content.py`.
   curator writer and the conversion (`memory/conversion/code_objects.py`) bind symbols through one rule.
 - `line_range`: the recorded lines, which must be lines the blob holds (`RangeOutsideBlobError` becomes
   `AnchorResolutionError`).
-- `file`: every byte of the blob.
+- `file`: every byte of the entry blob; on a symlink this is the link-target text. `line_range` also
+  reads these entry bytes, never follows the link.
 - Blob bytes are read on demand and cached per blob.
 - **`file_subject_mismatch` (MIK-R10).** For a `no_invariant` row with a `file:<path>@<object>` subject, it
   reads the path's tree entry at C (`git rev-parse --verify --quiet <tree>:<path>`, with the metadata timeout
@@ -73,12 +78,10 @@ Capture and resolution.
 - The captured tree C and its blobs. [2]
 - A `file:` row subject must name the path's object at C, or `absent` (MIK-R10). [3]
 - Capture through the private-index candidate tree. [4]
-- Resolve a locator into an anchor with blob and content. [5]
 - A symbol must bind exactly once. [6]
 - A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]
 
 - The snapshot of a committed code state, for a master line's crossing. [8]
-- Both constructors read the regular files of one tree. [9]
 
 ### Cross-Repo References
 
@@ -86,3 +89,7 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- Resolve file/line-range locators against entry bytes; refuse symlink symbols before parsing. [5]
+- Both constructors read regular files and symlink entries of one tree, retaining a symlink path set. [9]
+- Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]

@@ -6,8 +6,8 @@
 
 ## Purpose
 
-`result_rendering.py` owns text/JSON rendering for provider lifecycle command
-results.
+`result_rendering.py` retains text/JSON rendering helpers for provider lifecycle result data.
+The lifecycle CLI caller was removed; these definitions do not establish an active CLI.
 
 ## Code Commentary
 
@@ -27,5 +27,3 @@ payloads, and routes dry-run versus live command rendering.
 ## Evidence
 
 ### Repo-Internal References
-
-- The lifecycle CLI delegates result display to this module. [1]

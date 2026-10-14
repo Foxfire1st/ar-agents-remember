@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-        "content": "sha256:9c67bedc2c8c36b18899210602706f4551c16c4c548d32548495fcd05c0476ed",
+        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+        "content": "sha256:21a87b4d4ca6d2a4dee314d43e1543abc09f33df70ef98adfcbb4b8579731eb9",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
         "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
         "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
         "locator": {
           "kind": "symbol",
@@ -93,82 +93,16 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring: one predicate per kind, never a generic lookup; while a record's revision differs from the parent line's, only its changed row governs.",
+      "note": "Row-own closed provenance and source/count currency.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:de3a6cfb0deab4a4092e9d17bcf934f9f69d882d21cd1e5baf71999599629cf7",
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:40c678f955ad5c1762658f12b4a669e7c4b2268f0ab0278136fe2864f4470fef",
             "locator": {
-              "end": 34,
+              "end": 430,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "A family whose guarantee the leaf changed is answered only by its changed row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:53da6194c78e5f14575a85286184420ff70a0222d6b399631d1a07c452270bff",
-            "locator": {
-              "kind": "symbol",
-              "name": "_hidden_guarantee_reason"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Leaf-owned changed records retain their changed governing row across attempts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
-            "content": "sha256:043f5668cb5ae5a0b3ce51c90b551f588de79b91fe1fc7d9aaeb7433b446f570",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
-            },
-            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "A family guarantee changed by the leaf remains governed by that changed row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
-            "content": "sha256:30d8f2cb537a6cea931c2216c79b7c8c11263b26ea90687b2a4e8c43667e14a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_whose_guarantee_the_leaf_changed_is_governed_by_its_changed_row"
-            },
-            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The gate reopens governing rows on family revision drift.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_row_open"
+              "start": 344
             }
           },
           "kind": "code"
@@ -176,26 +110,16 @@
       ]
     },
     "2": {
-      "note": "What a predicate reads, and the entry state that raises on a failed read.",
+      "note": "Covered versus uncovered unexplained admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:b6aaf90cc945ae59b774ddfe476f0b2e4e5ac76c7c7bac312c76446362723793",
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:63cdb302ff58c308d452322726f4e250fc8d5c27053e8585ddafcc930179f72a",
             "locator": {
-              "kind": "symbol",
-              "name": "GateContext"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:f052d9e85680da1c7eed7a67ecb1918551051cc2c708e0a89819c744363d970f",
-            "locator": {
-              "kind": "symbol",
-              "name": "GitReadFailed"
+              "end": 452,
+              "kind": "line_range",
+              "start": 433
             }
           },
           "kind": "code"
@@ -203,135 +127,16 @@
       ]
     },
     "3": {
-      "note": "Registration and dispatch; an unregistered kind is open.",
+      "note": "Membership/record revision and disposition predicates with registrations.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:1db214f0c369d9d12b79468e6ef43c88bbf2a2bcfbc6c1756e03960cb69c0470",
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:08fa8c24086d1b23db41203dbafabda029195b359d61d9a8cce01bbd0ac530cc",
             "locator": {
-              "kind": "symbol",
-              "name": "register_gate_predicate"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:dac1f15525909756ca3c2f0c59a91dda327a1c6796e1dc710ec87dc6ac813585",
-            "locator": {
-              "kind": "symbol",
-              "name": "item_open_reason"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The covers an invariant row must hold, and its currentness.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:990bc710c5e6e326f454b4c14f2278f6a6cec94c725cf749873d8c74292f4782",
-            "locator": {
-              "kind": "symbol",
-              "name": "required_covers"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
-            "locator": {
-              "kind": "symbol",
-              "name": "invariant_row_open"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The family row's own-revision check, then its four reasons: a hidden guarantee change, the examined set, moved members and uncovered members.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_row_open"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The route condition decided by subject.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:53ed51284a461e9c83c28a51ae91b466b430fa376c21c4b19760a28cbedd6a37",
-            "locator": {
-              "kind": "symbol",
-              "name": "_route_condition_open"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The ten registrations.\n\nAnchor: \"register_gate_predicate(\\\"touched_invariant\\\", invariant_row_open)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:a9a7031e241d1184ae2773c87a9d12712b2b74147d3674cc5de3e714ed58b238",
-            "locator": {
-              "end": 329,
+              "end": 528,
               "kind": "line_range",
-              "start": 321
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The dispatch test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
-            "content": "sha256:24c19a7ec6d96a2314e2ea37a56a49d1ee3b6d87722f9fb8cfce4f0f9eea00b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup"
-            },
-            "path": "mcp/tests/test_knowledge_closeout_gate.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "An invariant the leaf changed is answered only by its changed row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
-            "locator": {
-              "kind": "symbol",
-              "name": "invariant_row_open"
+              "start": 460
             }
           },
           "kind": "code"

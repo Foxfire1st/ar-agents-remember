@@ -2,312 +2,54 @@
   "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py",
   "realizes": [],
   "references": {
-    "12": {
-      "note": "The registered kind, its subjects, facts and satisfying rule.",
+    "31": {
+      "note": "Registration and ordinary row/source requirement.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:8a4c19a5f416c9df44916428c48caff7bce3ba53bc128c7902df37ca4da3a967",
+            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
+            "content": "sha256:00261523642095b79b0e353262b7d4b57fa53c66d8327d16bd7361e2cc4e5354",
             "locator": {
-              "kind": "symbol",
-              "name": "ONBOARDING_TRACE_KIND"
+              "end": 95,
+              "kind": "line_range",
+              "start": 80
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "The request, with the held converted base tree.",
+    "32": {
+      "note": "Side inputs, conversions and actual settings reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:311215e2225a860827338525fc2fa5a8efaa2568fdd647c86cb1c6868a47fed5",
+            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
+            "content": "sha256:15ae2120f5262296987cb1e5a1803f80ecf0d9752ebee47c0b5e307d4d5bc1b1",
             "locator": {
-              "kind": "symbol",
-              "name": "TraceSideRequest"
+              "end": 213,
+              "kind": "line_range",
+              "start": 98
             }
           },
           "kind": "code"
         }
       ]
     },
-    "14": {
-      "note": "The sides: not converted, the two incomplete cases, and the held tree or the cache for an unconverted K_B.",
+    "33": {
+      "note": "Candidate blobs and complete persisted trace merge.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:8a8dcaa0835bf4bbd184cab61a09ff440e7d786653dcdeadfd85cc461da421de",
+            "blob": "cc03b8f0cb45df2735dbb5f0b142ef0d5fd28565",
+            "content": "sha256:66d258f8d4e85252a7d73f03d4270cdadfb9047812679e14ce2f9cab022f5a9c",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_sides"
+              "end": 298,
+              "kind": "line_range",
+              "start": 222
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The settings: the memory worktree's own, the resolved context, or the default.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:a7ea456376914a23b14d158ee6841fc85d6b10f7b38cd8559caf2b1882a82706",
-            "locator": {
-              "kind": "symbol",
-              "name": "trace_context"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The merge into one sorted list with its digest.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:091d1a408b7b46c6c9736fde7a04dedc9603e6383ded0bf4cb33dd0fbc4182ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "with_onboarding_items"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The gate over the worklist's own changed paths.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:dba07c627f0253f04971b24734415ae35dbcea64bc81a5acba1446ca640bd9dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "worklist_onboarding"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The call records the absent memory settings and the contract it read, and not the coordination settings it never opened.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
-            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
-            },
-            "path": "mcp/tests/test_knowledge_gate_routes.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "Settings that are changed and restored while they are parsed are recorded with the bytes parsed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
-            "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
-            "locator": {
-              "kind": "symbol",
-              "name": "_settings_reads"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "The module docstring: registration, sides and the one list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:091d1a408b7b46c6c9736fde7a04dedc9603e6383ded0bf4cb33dd0fbc4182ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "with_onboarding_items"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The kind's four registry fields, registered on import.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:8a4c19a5f416c9df44916428c48caff7bce3ba53bc128c7902df37ca4da3a967",
-            "locator": {
-              "kind": "symbol",
-              "name": "ONBOARDING_TRACE_KIND"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The explicit inputs of the side resolution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:311215e2225a860827338525fc2fa5a8efaa2568fdd647c86cb1c6868a47fed5",
-            "locator": {
-              "kind": "symbol",
-              "name": "TraceSideRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The sides: `None`, the two mixed-format refusals, and the converted base.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:8a8dcaa0835bf4bbd184cab61a09ff440e7d786653dcdeadfd85cc461da421de",
-            "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_sides"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "K_C may be a Git tree, the gate's exact candidate (MIK-R09).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:311215e2225a860827338525fc2fa5a8efaa2568fdd647c86cb1c6868a47fed5",
-            "locator": {
-              "kind": "symbol",
-              "name": "TraceSideRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The storage settings the gate reads; since MIK-R09 each settings file read is recorded.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:a7ea456376914a23b14d158ee6841fc85d6b10f7b38cd8559caf2b1882a82706",
-            "locator": {
-              "kind": "symbol",
-              "name": "trace_context"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The gate's items merged, sorted and digested into the one list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:091d1a408b7b46c6c9736fde7a04dedc9603e6383ded0bf4cb33dd0fbc4182ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "with_onboarding_items"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The worklist step, which names any side failure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
-            "content": "sha256:dba07c627f0253f04971b24734415ae35dbcea64bc81a5acba1446ca640bd9dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "worklist_onboarding"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The worklist run that calls it after a complete run, since MIK-R09 inside `worklist_over`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
-            "content": "sha256:bdd0ef20017a99676355757e48b3ee057ffdc5d23afc399ef9e98c7ea9d48975",
-            "locator": {
-              "kind": "symbol",
-              "name": "worklist_over"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The persisted worklist carries the gate's items in order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
-            "content": "sha256:53cf52623c7054cf0bf953b325408656f4ed8b651b17cbad4f2c3df22b19168b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list"
-            },
-            "path": "mcp/tests/test_onboarding_trace_gate.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "30": {
-      "note": "Mixed formats are an incomplete side and the persisted worklist is `incomplete`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
-            "content": "sha256:5b9fbe74258752d2aff8fc96fc3f18410be512420057e5bfbd955b040cc18661",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass"
-            },
-            "path": "mcp/tests/test_onboarding_trace_gate.py"
-          },
-          "kind": "test"
         }
       ]
     }

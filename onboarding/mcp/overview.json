@@ -692,7 +692,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -733,7 +733,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -750,7 +750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",
@@ -1232,7 +1232,7 @@
         },
         {
           "anchor": {
-            "blob": "516f2eb5d188ee09a0a6c60d87a063a42f913c4e",
+            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
             "content": "sha256:1e1d4a8a1df739140262bcdae494d75c416f291d819d093fc188ceabf65bb8e0",
             "locator": {
               "kind": "symbol",
@@ -2021,7 +2021,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:50d560d22966ea1ea8c1d76d872ec7d244bed31e7297f75a33f1302e97fd987f",
             "locator": {
               "end": 6,
@@ -2628,7 +2628,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a19633d724e6ec9bd3808f7b685a5c62eae11040",
+            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -2645,7 +2645,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -2934,7 +2934,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -3052,7 +3052,7 @@
       ]
     },
     "288": {
-      "note": "bounded landing answer and human-review role contract\n\nPresent public vocabulary has 41 names, adds native retire_child and role_start_set, excludes historical provider/capsule/catalog tools and retains three knowledge operations",
+      "note": "bounded landing answer and human-review role contract\n\nPresent public vocabulary has 41 names, adds native retire_child and role_start_set, excludes historical provider/capsule/catalog tools and retains three knowledge operations\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
       "targets": [
         {
           "anchor": {
@@ -3082,12 +3082,12 @@
         },
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:b11f3e86d25fb55e65477008e7c32a7453581b3810ed96609cd17bac4d520c50",
             "locator": {
-              "end": 152,
+              "end": 160,
               "kind": "line_range",
-              "start": 151
+              "start": 159
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3273,7 +3273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
+            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
             "content": "sha256:a40bd88b9f9dbb36ce4567f2ccdcd9e26a9a697867057e90cf8d9b71a8708ca1",
             "locator": {
               "end": 32,
@@ -3291,7 +3291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:ae899856cf647c28b4c8448e2d8eca379ccb6dbcb50c9eb5d0ac887b6764c4a3",
             "locator": {
               "kind": "symbol",
@@ -3303,12 +3303,12 @@
         },
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
             "content": "sha256:9d1eb1610879be90797c11fd23bcb208c65c95e43cb9c46650015ac0cbd3a8b2",
             "locator": {
-              "end": 900,
+              "end": 912,
               "kind": "line_range",
-              "start": 875
+              "start": 887
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -3381,7 +3381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
             "locator": {
               "kind": "symbol",
@@ -3683,12 +3683,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
+            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
             "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
             "locator": {
-              "end": 626,
+              "end": 635,
               "kind": "line_range",
-              "start": 614
+              "start": 623
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },
@@ -3808,6 +3808,91 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "312": {
+      "note": "Named reporting and refusing routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:fec8891762c5537c1e16720e764bd2a32b52558071de152afd39b6d36546c80c",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "313": {
+      "note": "Source bindings, membership and record models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:98140684ab120315f502842c9bd3eda8bcf9ae928ce9ee5278aea19b9990c15f",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:03545e4ff043eb75145fa3b00225025a8da60ba4c128f25074f8b5908357a748",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "314": {
+      "note": "Non-author statement/diff/omission fact-check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "315": {
+      "note": "Paired-base authoring comparison and contract write route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
+            "content": "sha256:aeebac4b6600acb80d0032581b5094dbb0ff2674d602f5f2aaa7d67015cf850c",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
           "kind": "code"
         }
@@ -4021,12 +4106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
             "content": "sha256:2208746a1a33b3fdea0cb67417fbed8e562c0adf174452631e3fa247a61bcafc",
             "locator": {
-              "end": 193,
+              "end": 202,
               "kind": "line_range",
-              "start": 192
+              "start": 201
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
           },
@@ -4126,7 +4211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
+            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
             "content": "sha256:819d4ad74e6b71226fe3f393197fc02580e6a65b1b529af46a6679bf8904538b",
             "locator": {
               "kind": "symbol",
@@ -4161,7 +4246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
             "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
             "locator": {
               "kind": "symbol",
@@ -4219,7 +4304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
             "content": "sha256:ea17ccdd0945abadf165282bdc72a4f0dfb830e132696250b0d74b9fb6f1da72",
             "locator": {
               "kind": "symbol",
@@ -4236,7 +4321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4b05aedb8300aeb740f5a086f728ce914d85dc9",
+            "blob": "81f4d6599ad4ba2d02c4bd52b34b3e2fa64d958f",
             "content": "sha256:89e26290d1ee6377663ae5198808dba5413b98d58fb24b59e312795ce30833d2",
             "locator": {
               "end": 27,
@@ -4271,7 +4356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
             "locator": {
               "kind": "symbol",
@@ -4374,7 +4459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -4420,12 +4505,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
+            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
             "content": "sha256:c0df1ec2ee859677bc79e99fb0a8e5bf1289f424b74f96bcd4381ed4fe92dd49",
             "locator": {
-              "end": 670,
+              "end": 702,
               "kind": "line_range",
-              "start": 636
+              "start": 668
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -4502,12 +4587,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
+            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
             "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
             "locator": {
-              "end": 734,
+              "end": 766,
               "kind": "line_range",
-              "start": 699
+              "start": 731
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -4566,7 +4651,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
             "locator": {
               "end": 454,
@@ -4602,7 +4687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a427c4a06e479418c26e61261ac237036221c33a",
+            "blob": "497fd6a1b79ab6369488a3f0579cc9e461c200c1",
             "content": "sha256:e631c1b11216c787ff9129d0c0258450160d463f25b66772f9dd5615d6796756",
             "locator": {
               "kind": "symbol",
@@ -4619,7 +4704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ab738479059526e1b54164853b9f02681dc7a",
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
             "content": "sha256:99a15c7917b4c9f702d22c5448dcbf99c67a7fd8975c16ec72405239cc934f70",
             "locator": {
               "kind": "symbol",
@@ -4653,7 +4738,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:b7c70df72a0edef3458b02428b0556c7960dbc8dd3926584f6d6b0cc3cb521f6",
             "locator": {
               "kind": "symbol",
@@ -4665,7 +4750,7 @@
         },
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:f8476a4a9bd418d7ccb9cbdaaf8f04c73c2956c31312a47eb084ccbcae842490",
             "locator": {
               "kind": "symbol",
@@ -4734,12 +4819,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
+            "blob": "6b635cde5b243230eb3d38496bbe377784e97e2e",
             "content": "sha256:15831c158ad1e92f6f34cd93ecbe3810ff52be2bc4199aac54bcb568f24b877c",
             "locator": {
-              "end": 131,
+              "end": 145,
               "kind": "line_range",
-              "start": 126
+              "start": 140
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4786,12 +4871,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
+            "blob": "6b635cde5b243230eb3d38496bbe377784e97e2e",
             "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
             "locator": {
-              "end": 125,
+              "end": 139,
               "kind": "line_range",
-              "start": 120
+              "start": 134
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4838,12 +4923,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
+            "blob": "6b635cde5b243230eb3d38496bbe377784e97e2e",
             "content": "sha256:089d9a356d65210680825e8cacc93ca21948351ebcb197953ec848b3746427c1",
             "locator": {
-              "end": 113,
+              "end": 127,
               "kind": "line_range",
-              "start": 108
+              "start": 122
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -4942,7 +5027,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
             "content": "sha256:06be4b3199ce3222e2e93f1a7329db8933d229b79644d4923dfc7fdbbe291163",
             "locator": {
               "kind": "symbol",
@@ -5011,7 +5096,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
+            "blob": "6b635cde5b243230eb3d38496bbe377784e97e2e",
             "content": "sha256:4882b931be12a8501fe1007eb16cc7765d08dc1d28120f616393848497663c9f",
             "locator": {
               "end": 94,

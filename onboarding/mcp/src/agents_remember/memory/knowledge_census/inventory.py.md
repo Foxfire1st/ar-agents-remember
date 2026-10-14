@@ -19,9 +19,12 @@ no file content: the inventory is mechanical, and claims are agent work (D11).
   raises `CensusBaselineError` ("unreadable baseline").
 - `_paths_at` lists a commit with the validator's `code_tree_from_git`; a tree Git cannot list is also
   `CensusBaselineError`.
-- `onboarding_routes` are the directories under `onboarding/` holding an `overview.md`, with `.` for
-  `onboarding/overview.md`. `governing_route` walks up from a location to the nearest route (MIK-R21
-  rule 1), falling back to `.`; a path no route governs has no `route`.
+- `onboarding_routes` is imported from the lower `memory_quality/knowledge_census/files.py` owner,
+  which also defines `ROUTE_CARD`. It still selects the directories under `onboarding/` holding
+  an `overview.md`, with `.` for `onboarding/overview.md`; `build_inventory` calls that imported
+  helper, and the census package keeps its public re-export. `governing_route` remains local and
+  walks to the nearest governing route (MIK-R21 rule 1), falling back to `.`; an ungoverned path has
+  no `route`. This is a helper relocation, not a second route-selection implementation.
 - `build_inventory` (the Git-free part, used by the tests): one source row per code path in scope, routed
   by its onboarding location `onboarding/<path>.md`, and one artifact row per memory path under
   `onboarding/` that `is_knowledge_path` accepts (the `*.index.json` cache and hidden directories are
@@ -58,11 +61,11 @@ No configured live documentation source was available for this pass.
 
 Commit resolution, the route walk and the two builders.
 
-- A revision that names no commit is an unreadable baseline. [1]
-- A tree Git cannot list is an unreadable baseline. [2]
-- Routes are the directories holding `overview.md`; the nearest governs. [3]
-- The mechanical inventory from two path sets. [4]
-- Pin the baseline and inventory it. [5]
+
+
+
+
+
 - Inventory rows carry their governing onboarding route. [6]
 - Exact commits are pinned and an unreadable baseline refused. [7]
 
@@ -71,3 +74,9 @@ Commit resolution, the route walk and the two builders.
 The inventory reads two repositories, the code repository and its memory repository, each addressed explicitly by the caller as a path and a revision; it only reads their Git objects.
 
 No cross-repo boundary is crossed by this file.
+
+- A revision that names no commit is an unreadable baseline. [1]
+- A tree Git cannot list is an unreadable baseline. [2]
+- Routes are the directories holding `overview.md`; the nearest governs. [3]
+- The mechanical inventory from two path sets. [4]
+- Pin the baseline and inventory it. [5]

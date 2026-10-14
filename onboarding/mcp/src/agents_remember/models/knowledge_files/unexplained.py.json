@@ -3,17 +3,42 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module docstring: both subjects and what satisfies an item by coverage.\n\nAnchor: \"Unexplained changes: the item subjects\"",
+      "note": "Shared subject spellings and coverage-split lookup; higher-level worklist/gate checks own source currency.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:8131100c98d3b8498a664a29b9e7d08994471730597e4006df6e01c06e832803",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
             "locator": {
-              "end": 29,
+              "end": 140,
               "kind": "line_range",
-              "start": 1
+              "start": 133
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
           "kind": "code"
         }
@@ -24,7 +49,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
             "locator": {
               "kind": "symbol",
@@ -37,56 +62,152 @@
       ]
     },
     "11": {
-      "note": "Every case checks that the stored predicate agrees with `satisfiedBy`.\n\nAnchor: `unexplained_item_open`",
+      "note": "Every case checks `predicates.unexplained_row_open` over parsed history/GateContext against the worklist's stored `satisfiedBy`, including onboarding source currency.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e108013ca6f2f2a0a316b40a89ba0dff31652d9",
-            "content": "sha256:e95dee0f0297629fa18b3cdc979c6196bfd8dd9412228126c7a2ff5633037b51",
+            "blob": "cacca6669c67d4cb1ad38750ff6094487bb8df82",
+            "content": "sha256:6f8002b9283cff38025ecc1a0ad675670e7d9c5beae775a41494eb5bf975f192",
             "locator": {
-              "end": 91,
+              "end": 111,
               "kind": "line_range",
-              "start": 82
+              "start": 91
             },
             "path": "mcp/tests/test_unexplained_change_disposition.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cacca6669c67d4cb1ad38750ff6094487bb8df82",
+            "content": "sha256:e01774e8be21080b22842949059a2a241368aa6e9025ebaaf655a2d932d041a1",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current source delta inspected statically: Remove counted-change export/answer and one-helper agreement warrant; distinguish pure lookup from currency, preserving subject spellings and markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The kinds, the disposition and the coverage states.",
+      "note": "The kinds, `no_invariant`, `absent` and coverage states; the removed `COUNTED_CHANGE` symbol is not current evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:e520953064708233183c3f6c388b86555b158a5f898a769fb1720989409570cb",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
             "locator": {
-              "kind": "symbol",
-              "name": "HUNK_ITEM_KIND"
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:b78876411fe82d77795f78b7a571a387f7098f945db63318d406b529dae28b51",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
             "locator": {
-              "kind": "symbol",
-              "name": "FILE_ITEM_KIND"
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:9a30f3a221277593c028918f10ce27f8575cd5c15c38ad42fcf8eee54c46d067",
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
             "locator": {
-              "kind": "symbol",
-              "name": "COUNTED_CHANGE"
-            }
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
           "kind": "code"
         }
@@ -97,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:b90ec4b9ec1ccef5ccd8fce75f170764dc9967dbb8f4e67da30b8d54e584688d",
             "locator": {
               "kind": "symbol",
@@ -113,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:b60772fe790f4832181aa4f66c9c87bd180b2370af8e0453cf60022db632429f",
             "locator": {
               "kind": "symbol",
@@ -124,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:7b90b75254d921a08c81d136246d63f3ff9e3f3f8df2311bd34bbc44d12429e5",
             "locator": {
               "kind": "symbol",
@@ -140,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:644f7c2670e9b292710844ac61a53a178829bd9035aa3709d6452bfe139eff3a",
             "locator": {
               "kind": "symbol",
@@ -156,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:007db88111eef14712699f7872147c27496052b491a691770344698d72bfc7b7",
             "locator": {
               "kind": "symbol",
@@ -172,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:ad9ec2c22eec119da0e1f85f0e9a1c3e98d1a4db4edcc86585c98e77550f7a54",
             "locator": {
               "kind": "symbol",
@@ -184,32 +305,108 @@
       ]
     },
     "8": {
-      "note": "Covered: the row; uncovered: the onboarding trace.",
+      "note": "Covered: row-subject lookup; uncovered: onboarding-subject row-ID lookup, never a counted-edit answer. Source currency is checked outside this pure helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:39b0cd7ac374c1852152d8a2f8d1f26352994393969238aa7eaf9bd728aeca33",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:885ccec502fbc78036af9ebbc2ed25d9670b76d302d528e05b29900f5e026698",
             "locator": {
-              "kind": "symbol",
-              "name": "unexplained_satisfied_by"
+              "end": 144,
+              "kind": "line_range",
+              "start": 118
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The gate's predicate.",
+      "note": "The pure Boolean lookup wrapper is not the current gate owner; the source-bound gate predicate is `application/knowledge_gate/predicates.unexplained_row_open`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:2a46a8dd16dfde5feba21f8eceb0501ea84a0672ae07caaaa874b0acaea2df6a",
             "locator": {
-              "kind": "symbol",
-              "name": "unexplained_item_open"
+              "end": 150,
+              "kind": "line_range",
+              "start": 147
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7956dad608e7dc7f74c15908f97d0103f12ebe",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
           "kind": "code"
         }

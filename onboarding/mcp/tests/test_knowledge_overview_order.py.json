@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:5261dacf474bbbd10b27edc89cd8e6c17f05e0cc1a48a30528f1ac416f6b4511",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:785382cef9cac22bee2b5379a9017bdbc48b5fd7d2368cffe908e69693614489",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:8cca95d4a88a1a62c7ec4d684eb5fc5066a6b6c581c8c1516a068007f5a55f22",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:238476a2a7286f0e31a3679928eeea2698755502d59920958cf369676c3d19fc",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:939c76a12e2da921d48cae01332547b632dff6c8b5411497e57a13a1a83b25ce",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:11c33de6e99477d066edbf8a8b7ce6b9e9123d3e3bc8ef6c4a08aeacdc372a2d",
             "locator": {
               "kind": "symbol",
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:0441d082b8b7ff4b2c3caa8ed3a0a9dba2feb5ad556b903e19b7fd3c8a3c9461",
             "locator": {
               "kind": "symbol",
@@ -119,11 +119,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29c62bb42c897ecd01b24d3b7a1248b741f401f",
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
             "content": "sha256:5a6715e08d8784586f61cfdff5d672ff670a1a0fcf297d8c493454b94d6ba9de",
             "locator": {
               "kind": "symbol",
               "name": "_validate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Only the overview-local family fixture is assessed before its route Markdown is replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3fb74c6eff01fba9b768f31264d159eb2b230c7",
+            "content": "sha256:4d1c5b62654aae823a4727d3d4b28f380f2ca4e6bea3c2041d052bd7b11083d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_overview"
             }
           },
           "kind": "test"

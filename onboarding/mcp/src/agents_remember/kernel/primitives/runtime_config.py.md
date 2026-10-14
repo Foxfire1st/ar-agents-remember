@@ -57,7 +57,7 @@ now a member of the typed `AgentsRememberError` family (itself a `ValueError`
 subclass), so the server fails loudly at startup on unsafe settings.
 
 `config_from_mapping` (260707-HFX-L7) parses the optional `providerDegradation` block through
-`agents_remember.mcp.provider_degradation_settings.parse_provider_degradation_settings`,
+`agents_remember.kernel.primitives.provider_degradation_settings.parse_provider_degradation_settings`,
 wrapping any `ProviderDegradationSettingsError` into `ConfigError` at the call site so the
 boot fail-loud contract is unchanged; the result is stored on the new
 `McpRuntimeConfig.provider_degradation` field (default `ProviderDegradationSettings()` — detector
@@ -114,17 +114,19 @@ or when the live map is empty (the refusal names the operation, the authority
 path, and the stale boot-snapshot ids) and returns the live-map config when
 armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 
-`parse_retirement_settings` (260707-HFX-L8, renamed by HFX2-L11) validates the optional `retirement`
-object into `McpRuntimeConfig.retirement` — a frozen
-`RetirementSettings(auto_land_on_integration=True, auto_land_on_finalize=True)`, both defaulting ON
-per the developer ruling that successful completion should classify spent chats as landed/archive
-without anyone remembering to clean them up. It follows the same fail-loud-unknown-key discipline as
-`parse_dashboard_settings`: a non-dict `retirement` value, any key outside
-`KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`, `autoLandOnFinalize`, and one-cycle legacy aliases
-`autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value for any present known field
-raises `ConfigError`. When both a new and legacy key are present, the new `autoLandOn*` key wins.
-The legacy aliases are deliberate compatibility, not defensive slop: existing authority files using
-the HFX-L8 names would otherwise fail boot during this semantic rename. `config_from_mapping` calls
+`parse_retirement_settings` (introduced by 260707-HFX-L8; edge gates renamed by HFX2-L11)
+validates the optional `retirement` object into `McpRuntimeConfig.retirement` — a frozen
+`RetirementSettings(auto_land_on_integration=True, auto_land_on_finalize=True,
+auto_close_completed_seats=True)`. The two historical `autoLandOn*` names remain completion-edge
+gates; `autoCloseCompletedSeats` selects the cleanup mode when an enabled edge succeeds.
+By default, cleanup retires eligible report-bearing Worker/Reviewer/Curator seats and frees their
+tmux processes; seats without the exact qualified leaf's durable turn report are deferred.
+Setting only `autoCloseCompletedSeats` to `False` restores the prior landed/archive mode, not
+cleanup-off. A non-dict `retirement` value, any key outside `KNOWN_RETIREMENT_FIELDS`
+(`autoLandOnIntegration`, `autoLandOnFinalize`, `autoCloseCompletedSeats`, and the one-cycle
+legacy aliases `autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value for any
+present known field raises `ConfigError`. When both a new and legacy edge key are present,
+the new `autoLandOn*` key wins. The aliases preserve HFX-L8 authority-file compatibility. `config_from_mapping` calls
 `parse_retirement_settings(data.get("retirement"))` and threads the result into the constructed
 `McpRuntimeConfig`. This is a deliberate design choice, not an oversight: `retirement` stays a
 LOCAL MCP-authority boot-snapshot setting (like `dashboard`), NOT the global agentic-orchestration
@@ -155,10 +157,11 @@ threads it into `McpRuntimeConfig.tool_log`, from where the log writer reads its
 - `dashboard` accepts only `KNOWN_DASHBOARD_FIELDS` (`autoStart`, `port`) with the
   same fail-loud rejection; its defaults keep dashboard supervision off, so
   existing settings files are untouched by the feature.
-- `providerDegradation` accepts only the 15-key allowlist in
-  `provider_degradation_settings.KNOWN_PROVIDER_DEGRADATION_FIELDS`; its defaults keep the
-  degradation detector enabled with the critical failsafe armed at conservative thresholds, so
-  existing settings files inherit the protection without an explicit opt-in.
+- `providerDegradation` accepts only the 16-key allowlist in
+  `kernel.primitives.provider_degradation_settings.KNOWN_PROVIDER_DEGRADATION_FIELDS`, including
+  `recentSampleLimit` (positive integer; default 120). Its defaults keep the degradation detector
+  enabled with the critical failsafe armed at conservative thresholds, so existing settings files
+  inherit the protection without an explicit opt-in.
 - `orchestration.gateDelegation` defaults to all-human. Delegation is opt-in,
   validates through `controlplane.gate_policy`, and fail-loud rejects policies
   that would weaken human-pinned gate kinds.
@@ -172,10 +175,12 @@ threads it into `McpRuntimeConfig.tool_log`, from where the log writer reads its
   fail-closed (unreadable/invalid ⇒ refusal, never a snapshot fallback).
   Stop/status/cleanup operations are never gated on the reload.
 - `retirement` accepts only `KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`,
-  `autoLandOnFinalize`, plus legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases) with
-  the same fail-loud rejection as `dashboard`/`timeoutCaps`; both fields default to `True` —
-  existing settings files with no `retirement` key keep auto-land ON, not off, unlike `dashboard`'s
-  off-by-default posture.
+  `autoLandOnFinalize`, `autoCloseCompletedSeats`, plus legacy
+  `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases), with fail-loud key/type validation.
+  All three typed fields default to `True`: omitted settings enable completion-edge cleanup in
+  retire-and-free mode. `autoCloseCompletedSeats=False` keeps the enabled edge gates but selects
+  landed/archive behavior. Cleanup runs only after successful non-dry-run completion, and the
+  automatic role boundary excludes Manager and Orchestrator seats.
 
 ### Role Runtime and Scope
 
@@ -199,18 +204,18 @@ McpRuntimeConfig includes optional typed paseo_runtime while config_from_mapping
 <details>
 <summary>Historical retired provider/benchmark consumers — not current owners</summary>
 
-- `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. [10]
-- The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. [11]
+
+
 - Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. [12]
-- Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. [13]
+
 
 The provider_tools.py and benchmark_tools.py owners named by these retained historical references are absent from the current candidate; those citations preserve the older declared blobs only, not live call surfaces. reload_provider_authority and worktree setup remain distinct surviving owners.
 </details>
 
-| Retirement settings declare the two default-on cleanup toggles. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
-| Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564; mcp/src/agents_remember/application/worktree_tools.py:400-413 |
-| Finalization consults its retirement setting at the completed edge. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:891-922; mcp/src/agents_remember/application/worktree_tools.py:884-884 |
-| Seat cleanup remains subordinate to successful completion. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-71 |
+| Retirement settings declare two default-on edge gates and the default-on retire-mode selector. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-139 |
+| Integration consults its retirement edge gate after successful non-dry-run completion. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:535-543 |
+| Finalization consults its retirement edge gate after successful non-dry-run completion. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:977-986 |
+| Seat cleanup selects report-gated retirement or the prior landed/archive mode and remains subordinate to successful completion. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:25-71 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 

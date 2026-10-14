@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+        "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
         "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
@@ -50,19 +50,69 @@
       ]
     },
     "10": {
-      "note": "Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called.",
+      "note": "The source assertions count card/route traces and the uncovered file's `unexplained_hunk` once each; authored current-row answers, not bare card edits, settle the ordinary candidate. The historical Update History function is not called.",
       "targets": [
         {
           "anchor": {
-            "blob": "65ee523805c7e3bb0487083ac6e87d9c695aaf2f",
-            "content": "sha256:3791c03cb6a7b1e0c4c7d47bfda608971ed4afd7ffa62183d20f6c6d8b187f93",
+            "blob": "d1c4cca479de96be950e375e8ab899b1dbb8f731",
+            "content": "sha256:f31b5d629533d3dc36ca61355c76b19aec7791f3fda76ca3b806523c72c3f393",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count"
+              "end": 789,
+              "kind": "line_range",
+              "start": 766
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:cca5967f40c0d2ac3f34511a76c86ff070e005debc5415717daaf0099d06f7cd",
+            "locator": {
+              "end": 935,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:e1dc35d5b8f809250b104ac863675084c2721171bd79997a0b988b60c1843c5f",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 938
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:c49555ed2c9e2da04e15423d637d831ece50125438db1217990e2b7e285686b0",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 945
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:80e61a585e5afce292da15ebbc8cf44afd38e9ceb5798ab84e30411922109af8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -71,12 +121,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:efe76312e77682e68e992671355a3d71847f9fe3476e46414da36a4c0c18a76b",
             "locator": {
-              "end": 763,
+              "end": 765,
               "kind": "line_range",
-              "start": 763
+              "start": 765
             }
           },
           "kind": "code"
@@ -88,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:e3eed057ca2ce1987b93c26ff3a0d4086762ea0473199bc965a64601abdf36a8",
             "locator": {
               "kind": "symbol",
@@ -121,24 +171,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d30622187a30162290aaf9f949eddfb22aef39fa7c6e81518b08b818748ac930",
             "locator": {
-              "end": 486,
+              "end": 488,
               "kind": "line_range",
-              "start": 486
+              "start": 488
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:13443460f3ad91b4157b1fd9c1852797656053dba94a16ffb331d9e3093cb0ee",
             "locator": {
-              "end": 525,
+              "end": 527,
               "kind": "line_range",
-              "start": 525
+              "start": 527
             }
           },
           "kind": "code"
@@ -150,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
             "locator": {
               "kind": "symbol",
@@ -166,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:58c69b529ff72df2527aa7718489f45d33129774eb5e9b546e4a2384b09acda8",
             "locator": {
               "kind": "symbol",
@@ -182,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:f46bff14ccf15ad96dfaf4add6284831b1be86fc914733e91c17558c139f1fdb",
             "locator": {
               "kind": "symbol",
@@ -193,7 +243,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:3fa222544a3a64f21cce38b1d127538ae58ed3bd7944912bd587f6c6549f0602",
             "locator": {
               "kind": "symbol",
@@ -204,12 +254,12 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:e6d8900949c661a6afba962e7adfbdbc9918f3c38c6ada8d8cf42943e90bb628",
             "locator": {
-              "end": 762,
+              "end": 764,
               "kind": "line_range",
-              "start": 762
+              "start": 764
             }
           },
           "kind": "code"
@@ -221,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:a8c147a6009b1be7a3486b7272a8efb14c7c455da72219b32a7274806ab050ec",
             "locator": {
               "kind": "symbol",
@@ -237,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:0cfcbea14c2832d8e4f50ae6be718a4b709293bd5c1e8965e5e3c12fcecc0f96",
             "locator": {
               "kind": "symbol",
@@ -253,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
@@ -264,7 +314,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:e8b26e89b7081e4a34d185bda2198f8cb1b1d124a25104055eca841e18724bb5",
             "locator": {
               "kind": "symbol",
@@ -280,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -291,7 +341,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -302,7 +352,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -318,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
@@ -329,24 +379,24 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:fa11606fa82c7bb78f5a4d83332e6c2950facf38dc6df4205db8dd4b305b8f98",
             "locator": {
-              "end": 526,
+              "end": 528,
               "kind": "line_range",
-              "start": 526
+              "start": 528
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:2cac897afdc9131e3bcace94eb09e67f20fc497380f995630e188fd25c5d9523",
             "locator": {
-              "end": 530,
+              "end": 532,
               "kind": "line_range",
-              "start": 530
+              "start": 532
             }
           },
           "kind": "code"
@@ -358,7 +408,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:0bc34dd86368215adac6559c168363adf1c1169c366e0f8790436cdc0f66302f",
             "locator": {
               "kind": "symbol",
@@ -369,7 +419,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:e00fdf6cb79ab8f97990ce8e38e0391ee664b89e845d50142e407dcc7d2fe966",
             "locator": {
               "kind": "symbol",
@@ -381,16 +431,66 @@
       ]
     },
     "23": {
-      "note": "Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run.",
+      "note": "Unconverted quality input refuses before scanning for either leaf or repository scope; current crossing/lock helpers word the conversion route, not permission to run the old format.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
             "locator": {
-              "kind": "symbol",
-              "name": "_unconverted_refusal"
+              "end": 457,
+              "kind": "line_range",
+              "start": 433
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:cca5967f40c0d2ac3f34511a76c86ff070e005debc5415717daaf0099d06f7cd",
+            "locator": {
+              "end": 935,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:e1dc35d5b8f809250b104ac863675084c2721171bd79997a0b988b60c1843c5f",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 938
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:c49555ed2c9e2da04e15423d637d831ece50125438db1217990e2b7e285686b0",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 945
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:80e61a585e5afce292da15ebbc8cf44afd38e9ceb5798ab84e30411922109af8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
         }
@@ -401,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
             "locator": {
               "kind": "symbol",
@@ -417,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
@@ -433,7 +533,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
             "locator": {
               "kind": "symbol",
@@ -461,12 +561,66 @@
         }
       ]
     },
+    "28": {
+      "note": "Current source delta inspected statically: Describe candidate-blob capture and named failure; retire legacy-quality permission claims using current L46 authority, not the earlier recommendation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:cca5967f40c0d2ac3f34511a76c86ff070e005debc5415717daaf0099d06f7cd",
+            "locator": {
+              "end": 935,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:e1dc35d5b8f809250b104ac863675084c2721171bd79997a0b988b60c1843c5f",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 938
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:c49555ed2c9e2da04e15423d637d831ece50125438db1217990e2b7e285686b0",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 945
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:80e61a585e5afce292da15ebbc8cf44afd38e9ceb5798ab84e30411922109af8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.\n\nAnchor: `_knowledge_gate_and_worklist`, `_knowledge_briefs`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:52f08d5ee85c00d08d65558dcfc05c043c5a1eb91a66b562efa56726350d1eed",
             "locator": {
               "kind": "symbol",
@@ -477,7 +631,7 @@
         },
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:ef9b492e9cbacddddf4e0196fe8fc93f1ba3a6971b27dcaa5637d4225637c070",
             "locator": {
               "kind": "symbol",
@@ -493,7 +647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
             "locator": {
               "kind": "symbol",
@@ -509,7 +663,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:5237413a80e1aa4c55eaf5683bf672c745d09079acf3197ecba5d862e70bfa8f",
             "locator": {
               "kind": "symbol",
@@ -525,7 +679,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
@@ -558,12 +712,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:7e7dcf9ee26ea14497f7605dd049bd825b1d8743336f97326fac290fe9293da4",
             "locator": {
-              "end": 755,
+              "end": 757,
               "kind": "line_range",
-              "start": 755
+              "start": 757
             }
           },
           "kind": "code"
@@ -571,16 +725,66 @@
       ]
     },
     "9": {
-      "note": "The dispatch: the history-file gate on a converted tree, today's gate otherwise.",
+      "note": "Converted dispatch captures traced-path candidate blobs and forwards `code_blobs`; capture/read failure is a named `INCOMPLETE_CODE` repair, not an empty success. The retained fallback does not bypass MIK-R46's pre-scan legacy refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
-            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:8b9b520da4ffe50d37d6774735686c1c26c00c960ce2f4de2ee061ea1febd254",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "end": 980,
+              "kind": "line_range",
+              "start": 907
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:cca5967f40c0d2ac3f34511a76c86ff070e005debc5415717daaf0099d06f7cd",
+            "locator": {
+              "end": 935,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:e1dc35d5b8f809250b104ac863675084c2721171bd79997a0b988b60c1843c5f",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 938
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
+            "content": "sha256:c49555ed2c9e2da04e15423d637d831ece50125438db1217990e2b7e285686b0",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 945
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67047cdc76636d31e271034da84f81412b46da1c",
+            "content": "sha256:80e61a585e5afce292da15ebbc8cf44afd38e9ceb5798ab84e30411922109af8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
         }

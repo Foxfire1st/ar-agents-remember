@@ -12,12 +12,17 @@
 
 ### Logic
 
-- It imports only; there is no logic here. Importing `validator` (which the re-export does) imports `rules_structure` and `rules_references`, and that registers MIK-R22's 16 rules; since MIK-R04 (leaf 260928-MIK-L04) it also imports `rules_routes`, which registers MIK-R04's six family route rules; since MIK-R27 (leaf 260928-MIK-L27) it also imports `rules_admission`, which registers MIK-R27's three admission rules. Since MIK-R13 (leaf 260928-MIK-L13) it also imports `rules_decisions`, which registers MIK-R13's five decision content rules (four refusing, one report-only).
+- It imports only; there is no logic here. Importing `validator` (which the re-export does) imports `rules_structure` and `rules_references`, and that registers MIK-R22's 16 rules; since MIK-R04 (leaf 260928-MIK-L04) it also imports `rules_routes`, which registers MIK-R04's six family route rules; since MIK-R27 (leaf 260928-MIK-L27) it also imports `rules_admission`, which registers MIK-R27's three admission rules. Since MIK-R13 (leaf 260928-MIK-L13) it also imports `rules_decisions`, which registers five decision content rules; governs links now refuse commit/landing publication and are writer-reported for repair, not permanently report-only.
 - The module map names `family_routes` and `rules_routes` (MIK-R04's Coverage, Non-empty, the reported states and the mechanical suggestion), and the re-exports gain `writer_reported_rule_ids`, the IDs of the refusing rules a writer reports instead of refusing.
-- The module map names `rules_admission` (MIK-R27's admission rule: refused on a new record, reported on an existing one, and the count of records still `legacy-unassessed`). Nothing is re-exported for it: its rules reach callers through the one registry.
-- The module map names `rules_decisions` (MIK-R13's decision content rules: alternatives, `reconsider_when`, `superseded` never stored, `reconsider_on` indexes, and the governs links reported). Nothing is re-exported for it either.
+- The module map names `rules_admission`: new-record admission refuses; unsupported existing-record
+  criteria carry `merge_reports` (report at sync/standalone conversion, refuse commit/landing,
+  writer-report for repair). The live `legacy-unassessed` count carries `migration_debt`: base-carried
+  live debt reports while migration is incomplete, new debt refuses outside standalone conversion,
+  and carried debt refuses once every route is migrated/excluded. Nothing is re-exported for it: its
+  rules reach callers through the one registry, not an admission-maintenance exemption.
+- The module map names `rules_decisions` (MIK-R13's decision content rules: alternatives, `reconsider_when`, `superseded` never stored, `reconsider_on` indexes, and the governs links refused at commit/landing publication (writer-reported for repair)). Nothing is re-exported for it either.
 - The module map names `rules_reconsideration` (MIK-R14's guard `R14.1-linked-alternative-order`: an alternative a `reconsider_on` link addresses keeps its index, so a reorder never silently retargets the link). Nothing is re-exported for it; `validator.py` imports it for its registration.
-- The module map names `rules_history` (MIK-R09's rule on history rows that are not frozen: their subjects name records and their covered entries' `after` anchors are the tree's; leaf 260928-MIK-L09). Nothing is re-exported for it; `validator.py` imports it for its registration of `R09-history-rows` and the report-only `R09-history-rows-merged`.
+- The module map names `rules_history` (MIK-R09's rule on history rows that are not frozen: their subjects name records and their covered entries' `after` anchors are the tree's; leaf 260928-MIK-L09). Nothing is re-exported for it; `validator.py` imports it for its registration of `R09-history-rows` and `R09-history-rows-merged` with `merge_reports`: report at sync/standalone conversion, repair before the next refusing leaf publication/landing.
 - The docstring states the scope boundary: the validator judges no meaning (Doc13). Whether a statement is true or a realization really enforces its invariant is the curator's and the reviewer's; whether an anchor's content still matches the code is currentness (MIK-R03), not validity.
 - The module map names `rules_overviews`: R80's fixed purpose-first heading, prohibition of leaf/date-named sections, and terminal citation region. Importing the re-exported validator registers those checks through its `rules_overviews` import. No second registry or rule-skipping facade is introduced; see [the overview-rule card](rules_overviews.py.md) for the exact parser and leaf-publication/conversion-context boundary.
 
@@ -29,7 +34,8 @@
 ### Invariants And Boundaries
 
 - One validator, one rule registry: every caller (the sync's memory merge, the standalone command, later the writer and MIK-R09's routes) runs the same registered rules.
-- There is no API that skips a rule.
+- There is no API that skips a rule. Plain `report_only=True` registration is refused; reporting
+  requires a named `merge_reports` or `migration_debt` reason, not a permanent waiver.
 - Applicability is a property of the supplied trees: commit validation runs when the candidate or any comparison base has the layout marker. An unconverted pair returns without validation; this is not a claim that current live memory has no marker.
 
 ### Todos
@@ -63,10 +69,8 @@ The re-exported API and the module map.
 - The re-exported names, `writer_reported_rule_ids` included. [1]
 - Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. [2]
 - The route adapter the composition binds. [3]
-- The module map names MIK-R09's history-row rule, and importing the validator registers it. [4]
 
 - The module map names MIK-R14's link guard, and importing the validator registers it. [5]
-- The module map names MIK-R13's decision rules, and importing the validator registers them. [6]
 
 - The public module map documents overview order; the exported validator registers its checks through the common registry. [8]
 
@@ -77,3 +81,7 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 No cross-repo boundary is crossed by this file.
 
 - Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [9]
+
+- The module map names history-row rules; importing the validator registers the refusing rule and the merged-row rule with merge_reports. [4]
+- The module map names decision rules, including governs links refused at commit/landing publication; the validator registers them. [6]
+- Current source delta inspected statically: Replace permanent reporting summaries with named reasons and governs refusal; retain common registry and meaning/currentness boundary. [10]

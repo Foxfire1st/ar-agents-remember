@@ -21,7 +21,9 @@ Protect public transaction-only closeout/integration and recovery with two accep
 The module has twelve test definitions, not twelve measured cases. Normal public transaction
 scenarios forbid named quality, selected-certification and curator-certification entry points
 while retaining converted-memory judgment. Converted closeout fixtures use paired bases and
-open `leaf-1` history with a `no_impact` row for `onboarding:feature.py`; the branch/head
+open `leaf-1` history with a `no_impact` row for `onboarding:feature.py`;
+`_seed_leaf_trace_row` receives the full contract, captures its code worktree with `CodeSnapshot`,
+and binds the actual source path/blob in that row before public closeout; the branch/head
 disturbance scenario replaces `leaf_gate_refusal` with an injection seam. Public closeout begins with malformed cache text and must create exactly one code commit and one memory commit; recovery begins with a missing cache, interrupts after code publication, rejects a wrong recovery code identity, and resumes without another code commit.
 
 Configured failing pre-commit hooks are probed to prove they work, then the transaction scenarios assert no hook log. `_assert_memory_attribution` checks the exact memory message and both native trailer readers, and verifies memory.md is absent from the memory-content commit. The resulting cache is present and untracked; retired ledger result fields are absent. Integration still publishes exact refs and refuses a moved source before pair publication.
@@ -82,3 +84,4 @@ end; the guard's own four cases are in `mcp/tests/test_response_address_binding.
 - A recloseout after sync records the actual memory head. [5]
 - Cache materialization preserves both repositories' refs/commit objects and real content. [6]
 - Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status. [7]
+- The open trace fixture binds its actual contract code snapshot and source path/blob. [8]

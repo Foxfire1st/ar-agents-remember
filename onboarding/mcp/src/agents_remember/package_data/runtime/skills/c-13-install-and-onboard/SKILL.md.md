@@ -161,7 +161,7 @@ No external documentation is needed to prove this repository-local skill contrac
 - Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. [3]
 - Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
 - Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
-- The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). [6]
+
 - The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical. [7]
 
 ### Cross-Repo References

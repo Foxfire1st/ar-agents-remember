@@ -1,0 +1,58 @@
+{
+  "path": "skills/c-02-memory-quality-control/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Converted onboarding uses current source-bound rows; the gone-path exception is separated from general content drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:18812d3e2c588f9109c70c6439d095f929e62f58e7015b08adb2c255f0acb16f",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Complete curation and every named validator reporting/refusal boundary are part of the handoff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:1e88e16f2b621d34342e990b44f064dda2d46d04ec447ebbdde00f125ad0d38e",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Coherence uses the complete prepared identity set, its digest and actual candidate files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:68fdf17bd6b075b568369a491cd8ca14525763e9c9ce9b580f638600e8e0765b",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

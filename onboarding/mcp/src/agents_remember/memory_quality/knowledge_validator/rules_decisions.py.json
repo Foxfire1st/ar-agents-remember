@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:4119a112836ff4b5f2323a0908509205e84bee28a3e98588f8056b19c1f67d91",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,66 @@
         }
       ]
     },
+    "10": {
+      "note": "Current source delta inspected statically: Remove obsolete ruling-based governs waiver and four-refusing/one-report inventory, including stale test caption; preserve the other content checks and endpoint limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Every parsed decision with its path, and each problem as a finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:3f0cbe7bb8bcfafc643f4652bf81205d3433e4a55779c11332b32fe03779c1fa",
             "locator": {
               "kind": "symbol",
@@ -34,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:21e4fd0f980e16c07047b2f31b053b5ce7eae07382aaeed6ca11fee4447186d6",
             "locator": {
               "kind": "symbol",
@@ -50,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:9552e5a01c6c49edd6fac5abb643874003330bb947c13096577f04ce7436856e",
             "locator": {
               "kind": "symbol",
@@ -61,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:1c992631379ebae8265bcb3b9a61e6b4f23e01029baa0b2298dc5f1dacd84d2b",
             "locator": {
               "kind": "symbol",
@@ -72,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:b836c2dd91c976ed9c1892869f62495b8c4ff5c38a55a7190a56c015ef92fabe",
             "locator": {
               "kind": "symbol",
@@ -88,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:a2148c1be1509f6169b2b49d45f809d67d691b21612f149335e9b418ee3c90fb",
             "locator": {
               "kind": "symbol",
@@ -100,64 +154,239 @@
       ]
     },
     "5": {
-      "note": "A decision with no governs link is reported.",
+      "note": "A decision with no governs link is found with the link-or-keep-in-task remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
             "content": "sha256:a694ff46cb1ade4f2a58330827ec7eaa1cd6c3d475053fd2c220e064ce0861f6",
             "locator": {
-              "kind": "symbol",
-              "name": "check_governs"
+              "end": 110,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "6": {
-      "note": "The five rules, four refusing and one report-only, registered on import.",
+      "note": "Five refusing rules; governs alone is writer-reported, not generally report-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
-            "content": "sha256:48d5ebed88d5412d0bcb2cff3bb954c4afbd2d2323bdbeec03c7fe53103ca818",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
             "locator": {
-              "kind": "symbol",
-              "name": "DECISION_RULES"
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "The rule table the module docstring states, including why the rules apply to every decision.\n\nAnchor: \"They apply to every decision\"",
+      "note": "The current docstring table: every decision is checked; governs judgment is recorded in links.",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
-            "content": "sha256:8b9ba28083ed6af610b1c6b8c6076f278863447e0aa6d2929bad76d341112da1",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
             "locator": {
-              "end": 24,
+              "end": 19,
               "kind": "line_range",
-              "start": 1
+              "start": 16
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "8": {
-      "note": "D12 and D18 as records pass every rule.",
+      "note": "D12 and D18 as records pass every rule in the test source.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
             "content": "sha256:4ca001d21db856acaeb71d219ae6306b8f3379f4e9bf647a28366984dd60f935",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_packets_d12_and_d18_decisions_pass_every_rule"
+              "end": 177,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -166,15 +395,65 @@
       ]
     },
     "9": {
-      "note": "A governs-less decision is reported, not refused.",
+      "note": "`test_a_decision_that_governs_nothing_is_refused` asserts `R13.3-governs` with `reportOnly=False`; this is source inspection, not a fresh run.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
-            "content": "sha256:1f95c5a197cca2cdba9f97e24e1289f0e89c5116165e336d554d96900271bfbe",
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:e35a52b8080bddf08f0664db81fb3dda92e7a3626ec9abfa45e9f3429b7213cc",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_decision_that_governs_nothing_is_reported_not_refused"
+              "end": 250,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:71082c330af55c17d2974cb5798d49438fe750881f2a52ec558f2799842da0a4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:bdcb835ca05f7546b0406f035b252ec27fac3a19c0f3b93c2db02042601fdee1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:3044a887664564366dd07cef1779bb6130831a2d5825bca7cbaea94104e22565",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },

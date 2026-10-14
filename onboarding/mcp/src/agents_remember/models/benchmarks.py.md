@@ -6,8 +6,8 @@
 
 ## Purpose
 
-`benchmarks.py` defines response models for Codex benchmark preparation and run
-tools.
+`benchmarks.py` retains response models for Codex benchmark preparation and run payloads.
+Their MCP entrypoints were removed; model presence does not advertise a callable tool.
 
 ## Code Commentary
 
@@ -25,5 +25,3 @@ resolution behavior) is carried on `CodexBenchmarkRunResponse` as the untyped
 ## Evidence
 
 ### Repo-Internal References
-
-- Benchmark application entry points expose prepare/run service payloads through MCP. [1]

@@ -29,6 +29,9 @@ public names of its submodules; it contains no logic of its own.
   change) and, since MIK-R14, `reconsideration` (the `reconsideration_candidate` kind, registered by `compute`'s
   import: a decision whose `reconsider_on` target changed). `base_cache` (the
   converted-base cache, review R1 F6) is imported by `leaf` and `onboarding_trace` and is not re-exported.
+- `membership` registers `UNASSIGNED_INVARIANT_KIND` for live new/newly unlisted invariants; `touched_records` registers `TOUCHED_RECORD_KIND` for changed base decision/facet records. Both kinds are exported and enter through compute, not recursive family traversal. The four-kind L30 snapshot below is historical.
+
+- Membership and touched-record kinds join the public worklist surface. [15]
 - `__all__` re-exports the run (`compute_worklist`, `incomplete_worklist`, `WorklistInputs`, `Item`,
   `Incomplete`, `WORKLIST_SCHEMA`), the leaf surface (`leaf_worklist`, `recompute_leaf_worklist`,
   `LeafWorklistRecompute`, `worklist_for_sides`, `ExplicitSides`, `persist_worklist`, `read_leaf_worklist`,
@@ -40,8 +43,8 @@ public names of its submodules; it contains no logic of its own.
 
 ### Conventions
 
-- Consumers outside the package import from here, except `mcp/tools/knowledge.py`, which imports
-  `surface.leaf_worklist_fields` directly, and the tests, which reach into `code`, `leaf` and `registry`.
+- This module re-exports the public names listed in `__all__`; consumers also import submodules
+  directly.
 
 ### Invariants And Boundaries
 

@@ -12,7 +12,9 @@
 
 ### Logic
 
-- The docstring names the seven modules and their jobs: `tree` (read a tree and compute its key), `build` (parse through the MIK-R21/R07 models and write the index; a failing file marks it `partial`), `projection` (also write the index as a dataset of the store's newest schema generation), `query` (the lookups; every answer carries the index state), `adapters` (a read-only store for the registered-scope construction) and `cache` (one file per tree key under the coordination runtime, never inside a Git working tree).
+- The current package map names `tree`, `build`, `projection`, `query` and `cache`; the older adapters/count account is no longer its inventory. `with_prose_companions` is public: nonexcluded onboarding Markdown and indexed record JSON companions ride as unparsed bytes for card/record comparison, never parsed JSON. The index remains derived-only and is never a write authority.
+
+- Public index surface includes prose companions without making prose an indexed model. [3]
 - `__all__` re-exports the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
 
 ### Conventions

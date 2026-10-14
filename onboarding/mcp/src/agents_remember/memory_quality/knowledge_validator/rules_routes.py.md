@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R04's six family route rules in the validator's one registry (MIK-R22 rule 9).** Importing the module registers `ROUTE_RULES`; `validator.py` imports it next to MIK-R22's rule modules, so every place the validator runs (`validate_tree`, `require_valid_commit`, the managed sync, `knowledge-validate`) runs these rules too. Three refuse and three are report-only.
+**MIK-R04's six family route rules in the validator's one registry (MIK-R22 rule 9).** `ROUTE_RULES` runs wherever the validator runs. Five rules refuse publication/landing and carry `writer_reports`; carried-route-absent and unrealized-family also defer at sync merge/standalone conversion (`merge_reports`). Route-unassigned is `migration_debt`, not a plain report-only rule.
 
 ## Code Commentary
 
@@ -14,11 +14,19 @@
 
 - `_families` yields every parsed family record with its `FamilyRouteState` (from `family_routes`) over the tree's realization locations.
 - `R04.1-route-directory` (refuses, `writer_reports`): a route the candidate **adds** must be a directory of the paired code tree (`CodeTree.has_directory`). A route is *carried* when the same family lists it in any comparison base (K_B, or either merge parent; `_base_family_routes` unions all bases that parse).
-- `R04.1-carried-route-absent` (**report-only**): a carried route whose directory is absent is reported as `route_path_absent` for the route-maintenance pass (MIK-R06), not refused. This is the same split MIK-R22 rule 6 makes for anchors (ruling Q1). Since leaf 260928-MIK-L06 the route-maintenance pass exists (`application/knowledge_worklist/route_conditions.py`): a carried route that the leaf's own range killed (present at B, absent at C) becomes a mandatory `family_route_condition` worklist item, even for a family the worklist does not reach; a route already absent at B stays this report, for the migration (L06 ruling Q1, 2026-09-29T21:49:19+02:00).
+- `R04.1-carried-route-absent` (refuses; `writer_reports`, `merge_reports`): a carried route whose
+  directory is absent raises `route_path_absent` for MIK-R06. It reports at sync merge/standalone
+  conversion and inside the writer, but refuses ordinary publication/landing. The route-maintenance
+  pass still raises mandatory work for a route the leaf's own range killed (present at B, absent at C),
+  even for an unreached family; an already-absent base route is no permanent publication exemption.
 - Both existence rules are skipped for a standalone conversion or when there is no code tree, and for a retired family.
 - `R04.2-coverage` (refuses, `writer_reports`): each uncovered realization is named with its entry, invariant and path, and the family's routes; a `routeless` family that is not `legacy-unassessed` is refused with its realization paths.
 - `R04.2-non-empty` (refuses, `writer_reports`): each emptied route, under the field `routes.<i>`.
-- `R04.4-unrealized-family` and `R04.4-route-unassigned` (**report-only**): the two reported states of rule 4.
+- `R04.4-unrealized-family` refuses publication/landing, with merge/conversion and writer deferrals.
+  `R04.4-route-unassigned` is migration debt: new findings refuse immediately; actual base-carried
+  live/routeless/legacy-unassessed findings report only while migration is incomplete. A base
+  merely holding the same ID assessed, routed or retired does not carry that finding. Standalone
+  conversion reports authored debt; completed migration refuses all debt.
 
 ### Conventions
 
@@ -28,8 +36,10 @@
 ### Invariants And Boundaries
 
 - Enforcement goes through the registry only: there is no forked validator and no skip flag.
-- A carried absent route is reported, never silently kept and never refused; MIK-R06 turns it into a mandatory worklist item.
-- The three refusing rules refuse at every commit route; inside the writer they are reported (`writer_reports`, MIK-R04 rule 6), which the writer (MIK-R12) applies.
+- Carried absent routes are findings, not silent preservation: sync/conversion and inside-writer
+  reports name the deferral reason and refusing route; ordinary publication/landing refuses.
+- Five route rules carry `writer_reports`; `route-unassigned` instead follows migration-debt
+  currentness. Added-route, Coverage and Non-empty refusal mechanics remain unchanged.
 - The validator cannot tell a broad route (`mcp/`) from a deep one: route depth is curator judgment, supported by the suggestion (ruling Q4).
 
 ### Todos
@@ -54,11 +64,6 @@ The six rules, the carried-route computation and their registration.
 
 - Carried routes are the union of every base's family routes. [1]
 - Absent routes, skipped for a conversion, a missing code tree and a retired family. [2]
-- An added route is refused, a carried one reported. [3]
-- Coverage and Non-empty name the family, the route and the uncovered path. [4]
-- The two reported states. [5]
-- The six registered rules, three report-only and three writer-reported. [6]
-- An added route must be a directory; a carried one is reported. [7]
 - At a merge, a route carried by either parent is carried. [8]
 - A route holding only a proof entry violates Non-empty. [9]
 
@@ -67,3 +72,10 @@ The six rules, the carried-route computation and their registration.
 No meaningful cross-repo references found: the rules read one memory tree, its bases and one paired code tree, all addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Added route existence refuses; carried absent routes defer only in the named merge/conversion/writer contexts. [3]
+- Coverage and Non-empty name the family, route and uncovered path. [4]
+- Unrealized-family merge deferral and route-unassigned actual-base-finding migration debt. [5]
+- Six registered rules: five writer-reported, two also merge-reported, one migration-debt rule. [6]
+- Added-route existence and carried-route findings in the route fixture; a merge report is not publication permission. [7]
+- Current source delta inspected statically: Replace the obsolete three-refuse/three-report split and base-ID-only debt carry with actual base-finding enforcement, keeping route mechanics, realization-only coverage and retired exemptions. [10]

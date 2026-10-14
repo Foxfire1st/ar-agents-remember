@@ -27,11 +27,11 @@ no items.
    family that contains a touched invariant, or whose record changed, is reached, and every K_B entry of
    those families' members is classified once. What this last step finds raises items and reaches no
    further family.
-4. **Items.** `touched_invariant` for every touched invariant, `stale_invariant` for every invariant with
-   an entry that was stale at the base, `reached_family` for every reached family and for every family of
-   a stale invariant, and the family route conditions.
-5. **Planned effects.** `reconcile_planned_effects` marks invariant and family items `planned` or
-   `unplanned` and raises `planned_untouched` for a declaration no row delivers.
+4. **Items.** `touched_invariant`, `stale_invariant`, `reached_family` and family route conditions
+   are joined by MIK-R53 `unassigned_invariant` membership items and `touched_record` decision/facet items.
+5. **Planned effects.** `reconcile_planned_effects` marks the combined items `planned` or `unplanned`
+   and raises `planned_untouched` for a declaration no row delivers; only declared invariant/family
+   subjects can be `planned`.
 6. **Linkage.** `_linkage` marks each hunk of each changed path `linked` or not. A hunk is linked when its
    changed lines on the B side hit a K_B entry's range there, or its changed lines on the C side hit a
    K_C entry's range there (`_linked`). A change without text hunks, and the mode fact of a mode change,
@@ -41,8 +41,8 @@ no items.
    target changed.
 
 The document holds the pairing, the scope counts, the classified entries, the changes with their linkage,
-the summaries of planned effects, unexplained changes and reconsideration, the items sorted by kind and
-subject, the registered kinds and the digest.
+the summaries of planned effects, unexplained changes and reconsideration, and the combined items
+(including membership and touched records) sorted by kind and subject, the registered kinds and the digest.
 
 ### Failures
 
@@ -85,8 +85,8 @@ the incomplete entries.
   reduced to radon 10 or less by whichever of L06 and L11 landed second); the steps run in the same order
   and the worklist is unchanged (the worker's and reviewer's real-data preservation runs).
 - **`Item.extra`** (MIK-R06): a registrant's further top-level fields, merged into `to_document` after
-  `id`, `kind`, `subject` and `facts`. The route items use it for `satisfiedBy`; it is empty for every other
-  kind, so their documents are unchanged.
+  `id`, `kind`, `subject` and `facts`. The route items use it for `satisfiedBy`. The final assembly
+  applies `planned.mark` to rendered items, including route, unexplained, reconsideration and R53 items.
 - **Items.** `_touched` collects K_B invariants with a raising entry or a knowledge-side change.
   `_touched_item` carries each classified entry's facts, the added, retired and re-anchored entries, the
   record's K_B and K_C revisions, and the context (families on both sides, `linkedFrom` in K_C). Its
@@ -98,9 +98,11 @@ the incomplete entries.
   stale invariant (reason `stale:<INV>`); `_family_item` lists the union of members with each side's revision
   and both sides' routes, and its identities are the members' `{ id, revision }` per side.
 - **Gate linkage** (`_change`, definition 8): each changed path's text hunks are linked when a changed line
-  hits a K_B entry's range at B or a K_C entry's range at C (`_spans`). Non-text changes (binary, symlink,
-  submodule, type change, empty files) and the mode fact of a mode change are linked at `fileLevel` exactly
-  when a `file`-locator entry on either side covers the path (`_file_covered`). An added or deleted text
+  hits a K_B entry's range at B or a K_C entry's range at C (`_spans`). Base resolution passes
+  `tree_side="base"`; candidate resolution keeps the `"candidate"` default, so each uses its own
+  tree's symlink modes. Non-text changes (binary, symlink, submodule, type change, empty files) and
+  the mode fact of a mode change are linked at `fileLevel` exactly when a `file`-locator entry on
+  either side covers the path (`_file_covered`). An added or deleted text
   file is one whole-file hunk. **A delete-only hunk (`new_count == 0`) is linked only by a K_B range at B**
   (260928-MIK-L10, ruling 2026-09-30T01:56:39 Q2): it has no changed line at C, so L08's `hits_new`
   "strictly inside" extension no longer links it through a K_C range. This is the strict reading of
@@ -117,29 +119,35 @@ the incomplete entries.
   reviewer's unexplained-changes lane (`review_lane_classification.py`) calls the same two functions, so its hunks
   and its "gate" linkage of a non-text change are the gate's own; the gate's output is unchanged (the L08, L10 and
   L14 worklist suites pass, and the reviewer's real-data agreement check matched every path).
-- **Step 5, planned effects (MIK-R11, `planned_effects.py`).** After the items are built, the run calls
-  `reconcile_planned_effects(inputs.expected_effects, base, candidate, inputs.owner)`: every
-  `touched_invariant`, `stale_invariant` and `reached_family` item is marked `planning: planned | unplanned`,
-  and each declaration no row of the leaf's history file delivers adds a `planned_untouched` item. The marked
-  items and the new items are sorted together by `(kind, subject)` before the digest, so the digest covers the
-  marks. Without a declaration every item is `unplanned` and nothing is added.
+- **Step 5, planned effects (MIK-R11, `planned_effects.py`).** The run calls
+  `reconcile_planned_effects(inputs.expected_effects, base, candidate, inputs.owner)`. Final assembly
+  applies `planned.mark` to invariant, family, route, unexplained, reconsideration, membership and
+  touched-record items; only declared invariant/family subjects can be `planned`, all others are
+  `unplanned`. Each declaration no row of the leaf's history file delivers adds `planned_untouched`.
+  The combined items are sorted by `(kind, subject)` before the digest, which covers their marks.
+  Without a declaration the whole list is `unplanned` and nothing is added.
 - **Step 6, family route conditions (MIK-R06, `route_conditions.py`).** `_route_items` passes
   `family_route_conditions` a `RouteInputs` (K_B, K_C, C's files, B's files, the run's rename map and the
   owner) and the families that have a `reached_family` item (touched, record-changed or stale-reached).
   Every returned condition becomes a `family_route_condition` `Item` with `satisfiedBy` in `extra`. In code
-  order the route items join the item list before step 5 runs, so they are sorted and digested with the
-  rest; they are not in `planned_effects`'s marked kinds, so they carry no `planning` mark.
+  In code order the route items join the initial item list; final assembly applies `planned.mark`
+  to them too, so they carry `planning: unplanned` and are sorted and digested with the rest.
 - **Step 7, unexplained changes (MIK-R10, `unexplained.py`).** `_Run.document` computes the linkage once
   (`_linkage`), passes it with an `UnexplainedSides` (C, K_B, K_C, `inputs.coverage`, the owner) to
-  `unexplained_items`, and adds the returned items to step 5's one sort by `(kind, subject)`; the planning
-  marks are applied only to the knowledge items, never to these. The same linkage object is the document's
-  `changes`, and `unexplained.summary()` is its `unexplained` key.
+  `unexplained_items`, applies `planned.mark` to each returned item, and adds them to the one sort
+  by `(kind, subject)`. The same linkage object is the document's `changes`, and
+  `unexplained.summary()` is its `unexplained` key.
 - **Step 8, reconsideration candidates (MIK-R14, `reconsideration.py`).** `_Run.document` binds the run's
   `Classifier` to a local (it was an inline argument of `_scope`) so step 8 can reuse it: it calls
   `reconsideration_candidates` with a `ReconsiderationInputs` (K_B, K_C, `classifier.classify_anchor`, the owner and
-  `inputs.coordination_root`). The returned items join the one sort by `(kind, subject)` after the unexplained
-  items, unmarked like them, and `reconsideration.summary` (every evaluated link) is the document's
-  `reconsideration` key. L10 kept step 7, so L14 is step 8 (review F9, ruling 2026-09-30T05:31:11).
+  `inputs.coordination_root`). The returned items receive `planned.mark` and join the one sort by
+  `(kind, subject)` after the unexplained items; `reconsideration.summary` (every evaluated link) is
+  the document's `reconsideration` key. L10 kept step 7, so L14 is step 8 (review F9, ruling 2026-09-30T05:31:11).
+- **MIK-R53 additions.** `membership_items(K_B, K_C)` raises `unassigned_invariant` for a new or
+  newly unlisted live invariant, but not an old orphan or retired invariant. `touched_record_items`
+  compares existing decision/facet JSON and Markdown: new records and deletions raise no item here;
+  the leaf's own open `raise` row exempts only its status-only reconsideration mark. Both additions
+  receive `planned.mark`, then join the same sort and digest; they do not widen one-pass family scope.
 - **Document.** `state`, `incomplete`, `pairing`, `scope` (the flag, changed and unrepresentable path
   counts, classified count, class counts, reached families), `entries`, `changes`, `plannedEffects` (MIK-R11: `{declared: false}`, or
   `declared: true` with one entry per declaration, matched or not), `unexplained` (MIK-R10: `itemsByKind`,
@@ -164,7 +172,9 @@ the incomplete entries.
   file-level linkage).
 - **Stale items never widen the classification.** A `stale_invariant` reaches its families without
   classifying their members unless step 3 already reached them.
-- **Only K_B families are reached**; a family or invariant present only in K_C raises nothing of its own.
+- **Only K_B families are reached** by the family-scope pass; a new K_C family raises no reached-family
+  item of its own. A new live invariant no family lists can nevertheless raise MIK-R53 membership work;
+  new decisions/facets raise no `touched_record` item.
 - **A mode change keeps its text hunks** (review R1 F5): they are linked as for any text change, and the
   mode fact is added separately at file level.
 - No verdict, severity or cause is recorded (Exclusions).
@@ -174,9 +184,9 @@ the incomplete entries.
   already carry what it summarises. The `planning` mark is inside it, so every converted worklist's digest moves
   against a worklist persisted before MIK-R11; that consequence is carried to L09 (ruling F4,
   2026-09-29T22:35:34+02:00).
-- **Stage numbering with MIK-R06** (ruling F7, resolved by L06, which landed second): the route stage is
-  step 6 in the docstring; L11's marking and the one sort run over the combined items, and route items stay
-  unmarked.
+- **Historical stage numbering with MIK-R06** (ruling F7, resolved by L06, which landed second): the
+  route stage is step 6 in the docstring. Current executable assembly marks route items `unplanned`
+  alongside the other items; the former unmarked-route account is no longer the output contract.
 - **A link anchor is classified by the run's own classifier** (step 8 reuses the local), so it takes exactly an
   entry's class, yet it never joins `entries` or the scope counts.
 - **Route items never rewrite anything** (MIK-R06 Exclusions): the run only reports the conditions and the
@@ -188,12 +198,10 @@ the incomplete entries.
 
 ## Evidence
 
-- The module docstring: the eight steps and the incomplete rule. [33]
 - What one run reads. [34]
 - The one representation of unreadable input. [35]
 - The entry point and the three failures it turns into an incomplete document. [36]
 - The change inventory and the renames, each named when unavailable. [37]
-- The run: changes, read-ahead, scope, items, planned effects, linkage, unexplained, reconsideration, document. [38]
 - Classification, knowledge changes, reached families and their members, once. [39]
 - A changed path's hunks with their linkage, or its file-level linkage. [40]
 - A hunk is linked by changed lines on their own side only. [41]
@@ -228,12 +236,8 @@ No configured live documentation source was available for this pass.
 - The `stale_invariant` item. [56]
 - The `reached_family` items and their member identities. [57]
 - The leaf's declarations, one input of the run. [58]
-- Step 5: marks, `planned_untouched` items, one sort over both, and the summary. [59]
-- Step 6 in the docstring: the route conditions of reached families and of killed routes. [60]
 - Step 6: the route items, with `satisfiedBy` carried in `extra`. [61]
-- Step 7: one linkage, the unexplained items in the one sort, `changes` and `unexplained`. [62]
 - Step 8 in the docstring: MIK-R14's reconsideration candidates. [63]
-- Step 8: the run's classifier bound once and reused; the candidates join the one sort; the `reconsideration` key. [64]
 - A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry). [65]
 - A Git call that failed or timed out is `incomplete` naming `git` (MIK-R09). [66]
 - The insertion-only symmetry at the gate. [67]
@@ -252,3 +256,11 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the run reads one code repository and two parsed memory sides.
 
 No cross-repo boundary is crossed by this file.
+
+- The module docstring: the historical eight-step outline and the incomplete rule; current assembly also includes R53 items and marks the combined list. [33]
+- The run: changes, read-ahead, scope, linkage, unexplained, reconsideration, membership and touched-record items, planned marks, one sort and digest. [38]
+- Planned reconciliation and the final combined-list marks, `planned_untouched`, sort and summary. [59]
+- Historical step 6 outline: route conditions of reached families and killed routes; current assembly also marks route items. [60]
+- Step 7: one linkage, marked unexplained items in the one sort, `changes` and `unexplained`. [62]
+- Step 8: the run's classifier bound once and reused; marked candidates join the one sort; the `reconsideration` key. [64]
+- Current source delta inspected statically: Replace stale no-mark and blanket new-record exemptions with the executable combined-list contract; preserve deterministic identity, one-pass family reach and named incomplete-input behavior. [77]

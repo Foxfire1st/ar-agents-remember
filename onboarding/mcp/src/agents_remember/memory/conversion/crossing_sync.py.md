@@ -14,10 +14,11 @@ Plans a converted/unconverted memory crossing from the actual three input trees 
 
 ### Logic
 
-- `_pinned_version` refuses a sync that is not a crossing, or whose converted sides disagree
-  on the version.
+- `_pinned_version` refuses an all-unconverted merge or converted sides that do not share exactly one
+  version. Three converted sides sharing one version remain eligible for structural merge without conversion.
 
-- **Step 1, markers first.** For a leaf owner whose own tree is unconverted, `marker_rows(base, own)`
+- **Step 1, markers first.** For a leaf owner whose own tree is unconverted,
+  `marker_rows(base, own, *, code_blobs)`
   collects the Update History lines that leaf added (`kernel/onboarding_doc.new_history_lines`) matching
   the no-impact marker pattern. Each card with such lines becomes one `onboarding_trace` row:
   - `subject`: `onboarding:<path>`, `onboarding:<route>/overview`, or `onboarding:overview`;
@@ -25,7 +26,16 @@ Plans a converted/unconverted memory crossing from the actual three input trees 
   - `reason`: the fixed `MARKER_ROW_REASON`;
   - `markers`: one entry per marker line (architect ruling N1). `marker_pieces` splits a line longer than
     the text limit into consecutive pieces at the limit, deterministically and losslessly;
+  - `sources`: `_marker_sources` binds the own side's paired code commit. A file card records its
+    source blob or `absent`; an overview records every tracked file beneath its route (all tracked
+    files for the root overview). This is historical marker provenance, not an exact answer to a
+    future changed-source set: the future gate compares only changed files and the row must be judged
+    again there;
   - `items`: `[]`, and a minted `ROW-` ID.
+
+  `cross` reads `objects.tree(own_paired_commit)` before conversion and passes it as `code_blobs`.
+  Any paired-code read exception raises `CrossingError` with step `markers`; it cannot silently
+  convert with unbound provenance.
 
   `with_markers` adds the rows to the leaf's history file after the own side is converted. A subject that
   already has a row is not moved: the authored row is left alone, and the marker is returned as
@@ -90,11 +100,9 @@ No configured live documentation source was available for this pass.
 The steps and their helpers.
 
 - - A step failure names the step. [15]
-- - The crossing test and the pinned version. [16]
-- - Step 1: the leaf's added no-impact markers become onboarding_trace rows, with the lines in `markers`. [17]
+- - The pinned version refuses all-unconverted inputs or version disagreement; all-converted inputs sharing one version remain eligible. [16]
 - - Markers go into the leaf's history file; a subject with a row is reported, not dropped. [18]
 - - The master-line crossing history file's name. [19]
-- - Steps 1-4 and the report. [20]
 - - Cards counted by side. [21]
 - - The markers move, each side converts, and the trees merge. [22]
 - - Many long markers fit one valid row. [23]
@@ -105,3 +113,7 @@ The steps and their helpers.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+- - Step 1: the leaf's added no-impact markers become onboarding_trace rows, with full text in `markers` and sources bound to the own side's paired code commit; file and overview provenance have different source sets. [17]
+- - Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance. [20]
+- Current source delta inspected statically: Require paired-code marker provenance, distinguish overview history from future changed sets, and name fail-closed markers-step errors. [25]

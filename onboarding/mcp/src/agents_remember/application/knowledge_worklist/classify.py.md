@@ -17,7 +17,10 @@ re-anchored, and which K_B families' records changed. Since MIK-R14 it also clas
 ### Logic
 
 - **Classes, first that applies** (`Classifier._classify_anchor`; `_classify` passes it the entry's ID, kind,
-  invariant, path and anchor):
+  invariant, path and anchor): resolution at B explicitly passes `side="base"`; resolution at C uses
+  `_resolve`'s `side="candidate"` default. `_resolve` forwards the side to `CodeTrees.resolve`, so symbol
+  resolution checks the selected tree's symlink modes before extraction, never parses a symlink's target
+  bytes as source. The class precedence below remains unchanged:
   1. `stale_at_base`: the entry's `blob` differs from its path's blob at B, and at B its range content
      differs from the recorded `content` or its locator does not resolve.
   2. `moved_or_absent`: the path is absent at C or Git's rename detection renamed it, the symbol does not
@@ -34,8 +37,9 @@ re-anchored, and which K_B families' records changed. Since MIK-R14 it also clas
   (`reconsider:<DEC>#<i>/links.<j>`) as its ID. It is **not an entry**: it is not memoized in `classify` and never
   recorded among the run's classified entries. A link's anchor always names its path (asserted). The worklist's
   reconsideration registrant fires `anchor` on `touched`/`moved_or_absent` and `anchor_stale` on `stale_at_base`.
-  The split of the old `_classify` body into `_classify_anchor` is moved code: radon went from 14 to 13, with no
-  behaviour change (review R1).
+  The historical split of `_classify` into `_classify_anchor` was moved code (review R1: radon 14 to 13),
+  not a behaviour change. MIK-R53 separately adds the side-specific symlink guard described above;
+  that change also applies to link anchors through this shared body.
 - `Classification` holds the entry ID and kind (`EntryKind`: `realization` or `proof`, from `ProofEntry`, or
   `link`), invariant,
   path, class, anchor, both blobs, both resolutions, the hitting hunks, `renamed_to` and `unique_match`.
@@ -99,7 +103,6 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The class order, the definition-4 ruling and the definition-7 rules. [1]
 - Raising and covering classes. [2]
 - One entry's class and facts; the per-side content identity. [3]
 - Classify once per run. [4]
@@ -124,3 +127,6 @@ No meaningful cross-repo references found: classification reads the two parsed s
 of one run.
 
 No cross-repo boundary is crossed by this file.
+
+- The shared class order, with B-side resolution explicitly selected and C-side resolution using the candidate default; the definition-4 ruling and definition-7 rules remain. [1]
+- Current source delta inspected statically: Select B/C symlink modes without changing class precedence, link identity or carry; qualify the historical moved-code claim and caption. [19]

@@ -8,7 +8,7 @@
   },
   "applicability": "Every crossing sync and ordinary converted-line sync result.",
   "conditions": [
-    "Any nonzero diagnostic population persists a report, even on a clean merge with no conflict."
+    "A conflict, converted side, renumbered reference, kept evidence line or skipped card triggers a persisted report even on a clean merge; alignedCards alone is not an emission trigger."
   ],
   "exclusions": [
     "Clean merges with zero diagnostics, which write no report."
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L66",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Rule 8 reporting: the crossing report and the sync result summary count aligned cards, renumbered references, kept evidence lines and skipped cards with reasons, on resolution and success responses alike",
   "status": "proposed",

@@ -9,7 +9,7 @@
 **MIK-R07: per-leaf history files (`ar-history/v1`) at model level.** The cases pin each
 disposition and row shape, the revision binding, the freeze predicate, and that two leaves' history
 files merge without conflict. The writer's own tests belong to MIK-R12 and the validator's freeze
-test to MIK-R22. Registered in the `unit-regression` lane; 9 tests, 29 collected cases.
+test to MIK-R22. Registered in the `unit-regression` lane. The earlier 9-test/29-collected-case snapshot is historical; this read-only review did not collect or run tests.
 
 ## Code Commentary
 
@@ -21,14 +21,13 @@ test to MIK-R22. Registered in the `unit-regression` lane; 9 tests, 29 collected
   placed inside an invariant record is refused as an extra input.
 - `test_file_shape_owner_and_row_uniqueness_are_enforced`: exactly one of `leaf`/`wave`/`crossing`,
   the crossing pattern, strict `closed`, unique row IDs and subjects, and `mint_id("history_row")`.
-- `test_row_kind_registry_owns_disjoint_subject_forms`: the six registered kinds (`invariant`,
-  `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, since MIK-R10
-  `unexplained`, and since MIK-R14 `reconsideration`), **compared as a set since MIK-R14**: leaves register in
-  landing order, so the order is not asserted (review F9); the duplicate-name check the ordered list gave is gone,
-  while subject disjointness is still asserted below it (review N4, accepted as a note). MIK-R10's own row cases
-  are in `test_unexplained_change_disposition.py` and MIK-R14's in `test_reconsideration_surfacing.py`. The case also asserts the subject dispatch (an
-  `onboarding:<path>` subject now dispatches to `onboarding_trace`), the refusal of an unclaimed subject
-  (`DEC-…`, a legacy `INV-0143`), and both disposition tuples.
+- `test_row_kind_registry_owns_disjoint_subject_forms`: eight kinds (`invariant`, `family`,
+  `onboarding_trace`, `planned`, `unexplained`, `reconsideration`, and MIK-R53 `membership`/`record`),
+  compared as a set, not registration order (review F9). Subject disjointness remains asserted
+  (review N4). MIK-R10 cases remain in `test_unexplained_change_disposition.py`, MIK-R14
+  in `test_reconsideration_surfacing.py`. The case dispatches onboarding to `onboarding_trace`
+  and `DEC-7K3F9Q` to `record`; unclaimed subjects are `hunk:abc` and legacy `INV-0143`. Both
+  invariant/family disposition tuples remain asserted.
 - `test_invariant_row_dispositions_and_shape` (parametrized): every invariant disposition with
   accepted and refused covers and effects, including `moved` refusing an added or removed entry and
   a blob-only change counting as re-anchoring; each accepted row round-trips.
@@ -79,7 +78,6 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 
 - The conforming example and the owner path. [1]
 - File shape, owner and uniqueness. [2]
-- The row-kind registry, with the six kinds as a set (MIK-R10 adds `unexplained`, MIK-R14 `reconsideration`). [3]
 - Invariant dispositions, covers and effects. [4]
 - Family rows. [5]
 - Re-anchoring against the candidate. [6]
@@ -97,3 +95,6 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 No meaningful cross-repo references found.
 
 No cross-repo boundary is crossed by this file.
+
+- The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit. [3]
+- Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]

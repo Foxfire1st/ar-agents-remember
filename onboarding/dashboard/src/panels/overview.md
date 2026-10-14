@@ -171,7 +171,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | Responsibility | File onboarding |
 | --- | --- |
 | Review child route — the family tree and the central reading path | [FamilyTree.tsx](review/FamilyTree.tsx.md) · [FamilyReviewCenter.tsx](review/FamilyReviewCenter.tsx.md) |
-| Review child route — the workspace and the source explorer | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [SourceExplorer.tsx](review/SourceExplorer.tsx.md) |
+| Review child route — the workspace and comparison-bound source navigation | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx.md) |
 | Review child route — the leaf's knowledge panel and its notice | [LeafKnowledgeChanges.tsx](review/LeafKnowledgeChanges.tsx.md) · [LeafKnowledgeNotice.test.tsx](review/LeafKnowledgeNotice.test.tsx.md) |
 | Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
 | Review child route — the walked tree and the traversal between changes | [walkedTree.ts](review/walkedTree.ts.md) · [changeTraversal.ts](review/changeTraversal.ts.md) |
@@ -184,12 +184,12 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 ## Evidence
 - Marks only from the owner's response, placed on its side lines. [5]
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
-- A lane window marks each neighbour its context shows (the L32 F5 carry). [7]
+
 - The scope provided around the landed workspace body. [8]
 - The unknown-membership state in the rail. [9]
 - The explorer's and the details' labels from the lane. [10]
-- The rail nodes and the centre. [11]
-- One opened file: focused windows, full file and the gate's items. [12]
+- Unexplained and Unknown rail destinations open comparison-bound change-set pages filtered by the held lane answer. [11]
+
 - The one lane read handed to the workspace and the details. [13]
 - The entry's count as its own element. [14]
 - The decision, the ratio and rule 1a. [15]

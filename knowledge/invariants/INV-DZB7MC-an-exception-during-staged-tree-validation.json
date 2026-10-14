@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L44",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An exception during staged-tree validation exits a dry run with the staged index still installed.",
+  "statement": "An exception during staged-tree validation in a dry run discards the private staging index and leaves the worktree’s real index unchanged; the named error propagates after restoring only provably owned prepared ignore-file state.",
   "status": "proposed",
   "supersedes": []
 }

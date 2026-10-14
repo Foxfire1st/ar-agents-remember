@@ -30,8 +30,8 @@ declared. `compute._Run.document` calls it as step 5; the declaration itself com
 - **Matching (rule 3, `_match` and `_delivers`).**
   - `invariant:<ID>` with effect E: only a `changed` row about the invariant whose `effect` is E; for
     E = `retire`, also a `deleted` row whose `effect` is `retire`. A plain `deleted` row does not match.
-  - `family:<ID>`: any `changed` family row, whatever the declared effect, because family rows carry no
-    effect (ruling Q5).
+  - `family:<ID>`: any `changed` family row, whatever the declared effect; `_delivers` checks only
+    the family row's disposition, not its `effect`.
   - `new:<label>` (`_new_invariant`): an invariant present in K_C, absent from K_B, whose
     `origin.handoffEntry` equals the label and whose `origin.leaf` is this leaf when the owner is known.
     Legacy-converted records carry no `handoffEntry`, so `new:` matches writer-authored invariants only
@@ -44,10 +44,10 @@ declared. `compute._Run.document` calls it as step 5; the declaration itself com
   `{declared: false}` (rule 6). Otherwise each declaration becomes a summary entry (`key`, `subject`,
   `effect`, `requirementRef`, and `matched`/`matchedBy`, or `unmatched` plus the item ID) and each unmatched
   one becomes a `planned_untouched` item.
-- **Marks (`PlannedReconciliation.mark`).** Items of kind `touched_invariant`, `stale_invariant` and
-  `reached_family` get `planning: planned` when their subject is a declared record ID (with any effect), else
-  `unplanned`. Other kinds (`onboarding_trace`, `planned_untouched`) carry no mark. A stale invariant counts as
-  touched (ruling Q5).
+- **Marks (`PlannedReconciliation.mark`).** Every item passed to `mark` receives `planning: planned`
+  when its subject is a declared record ID (with any effect), otherwise `unplanned`. Only declared
+  invariant/family subjects can be planned. The retained `_MARKED_KINDS` constant does not filter
+  this method; items appended after its caller's marking step are not thereby promised a mark.
 - **The item (`_untouched_item`).** Subject is the planned key; facts are the declaration, the unmatched
   reason and every row of the leaf's history about the declared record (ID, disposition and effect); its ID
   is `item_id(planned_untouched, key, [requirementRef, reason])`, so it is stable across reorderings of the
@@ -105,7 +105,9 @@ No configured live documentation source was available for this pass.
 - The kind registered on import, with its satisfying row. [3]
 - One declaration, its planned key and its record ID. [4]
 - The task document's declarations read as `Declaration`s. [5]
-- The marks and the per-declaration summary. [6]
+
+- Every passed item receives a planning mark according to its declared subject; there is no kind filter. [6]
+
 - The reconciliation; no declaration gives `declared=False`. [7]
 - Matching by subject form, and `subject_unknown`. [8]
 - Which rows deliver an effect. [9]

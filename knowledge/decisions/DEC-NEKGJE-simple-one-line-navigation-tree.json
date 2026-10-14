@@ -25,7 +25,32 @@
   "context": "Developer direction D48 on the L86 reviewer sidebar (2026-10-04): a simple tree of one-line entries with the full lines in the main page, everything collapsed open by default, and the installed primitives reused instead of redeveloped.",
   "decider": "Developer direction D48 (2026-10-04).",
   "id": "DEC-NEKGJE",
-  "links": [],
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
+        "locator": {
+          "kind": "symbol",
+          "name": "OutlineNode"
+        },
+        "path": "dashboard/src/panels/review/FamilyTree.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+        "content": "sha256:d427fe717baf44ecac0664d40b37f18c6adbb7aa69db9e1af7929af6d60e514b",
+        "locator": {
+          "kind": "symbol",
+          "name": "readTreeView"
+        },
+        "path": "dashboard/src/panels/review/triageViewPreference.ts"
+      }
+    }
+  ],
   "origin": {
     "handoff": {
       "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
@@ -34,7 +59,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

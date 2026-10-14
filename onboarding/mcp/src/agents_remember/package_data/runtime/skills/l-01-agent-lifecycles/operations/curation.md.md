@@ -40,7 +40,11 @@ On an AR-launched Paseo capsule, use the exact supplied taskDocReadArgs on agent
 
 MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 
-Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation. An explicitly report-only admission supplies only its requested report/upstream message and claims none of this normal pass complete.
+Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
+
+Before converted-memory closeout, an independent seat that authored none of the leaf's cards or records fact-checks every changed card, sidecar and record statement against final code, every history row's disposition, effect and reason against the diff, and important omissions. Blocking findings are repaired with another full-quality run. This second reader is a lifecycle duty, not a check mechanically run by closeout. It preserves separate MEMORY/CODE reports and budgets and the one admitted producer/writer.
+
+An explicitly report-only admission supplies only its requested report/upstream message and claims none of this normal pass complete.
 
 Author semantic scope and each target’s rationale. Examine a family’s own guarantee, exact memberships and unchanged siblings; retain them explicitly only when a successor is justified. Declare inspected external sources and read each measured plane’s own state. Use the existing comparison producer with the admitted source-bound package and carry its actual immutable generation or refusal, including unchanged-knowledge work.
 
@@ -61,6 +65,10 @@ surface with its card and the governing history rows carries it.
 - The mirror carries the same authoring fields as the canonical operation. [1]
 
 ## Code Commentary
+
+Before converted-memory closeout, a seat that authored none of the leaf cards or records independently checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired with a full curation-operation rerun. This is a lifecycle duty, not a new closeout predicate or helper self-check; neither raw quality nor coherence substitutes for the second reader.
+
+- Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [6]
 
 ### Logic
 
@@ -88,7 +96,9 @@ No additional work is asserted by this card. Actual project publication and sema
 | --- | --- | --- |
 | Bound native intake, report-only admission and converted MIK file writer. | lines 54-113 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-113 |
 | Exact family/sibling/source coverage and admitted comparison producer. | lines 114-179 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179 |
-| Complete normal curation guards, role/write prohibitions and handoff. | lines 181-320 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-320 |
+| Complete normal curation guards, role/write prohibitions and handoff. | lines 181-310 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-310 |
+
+- An independent nonauthor fact-checks changed curated statements and judgment rows before converted-memory closeout; blocking repairs rerun full quality, and closeout does not mechanically run the check. [5]
 
 ### Docs References
 

@@ -214,8 +214,8 @@ No relevant external documentation found.
 - The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. [10]
 - Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. [11]
 - The generated route-index semantics close the skill, and are unchanged by this leaf. [12]
-- The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. [13]
-- The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. [14]
+
+
 
 ### Cross-Repo References
 

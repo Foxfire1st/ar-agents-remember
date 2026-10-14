@@ -21,7 +21,7 @@
       ]
     },
     "2": {
-      "note": "The MCP module delegates post, registered-post, poll, and consume commands to the application layer and validates each response through `_tool_payload`.",
+      "note": "The retained internal MCP adapters delegate post, registered-post helper, poll, consume, and supersede commands to the application layer and validate each response through `_tool_payload`; the registered-post helper is not a current public registrar.",
       "targets": [
         {
           "anchor": {
@@ -118,7 +118,7 @@
       ]
     },
     "3": {
-      "note": "The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements.",
+      "note": "The application layer roots the store, composes post requests, polls pending entries with optional terminal inspection, records consume attribution without fulfilling expectations, and explicitly supersedes pending entries without a false acknowledgement.",
       "targets": [
         {
           "anchor": {
@@ -171,7 +171,7 @@
       ]
     },
     "4": {
-      "note": "The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery.",
+      "note": "The serving post owner derives routing, persists the row, starts briefed-by expectations only for configured dispatch targets, and performs optional hosted delivery.",
       "targets": [
         {
           "anchor": {
@@ -304,29 +304,12 @@
         }
       ]
     },
-    "6": {
-      "note": "The tool declarations fix public-route attribution to model/cli.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4f721d34dbb7edc6927160dcf09a15f29c8908ab",
-            "content": "sha256:e101ee8b0f1e1b07d72031003bf5c02e9273cb719f1d21a0c636ca48251af910",
-            "locator": {
-              "kind": "symbol",
-              "name": "register_orchestration_tools"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/orchestration.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
       "note": "The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution.\n\nAnchor: \"def _operator_inbox_response(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
             "content": "sha256:5b3c3a18907b28d960b640da2f9b5d336a5b5c92656ab541c5213e997a365144",
             "locator": {
               "kind": "symbol",
@@ -338,12 +321,12 @@
         },
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
             "content": "sha256:7a353f81c10296665e5b413bdb977f4aa252d41e6b02168b2ec79664aed3f097",
             "locator": {
-              "end": 336,
+              "end": 340,
               "kind": "line_range",
-              "start": 336
+              "start": 340
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -351,12 +334,12 @@
         },
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
             "content": "sha256:140512e511d44248c7141ca5e8b0109bd0e2b0e587f664cb87820c2de2223070",
             "locator": {
-              "end": 344,
+              "end": 348,
               "kind": "line_range",
-              "start": 344
+              "start": 348
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -364,12 +347,12 @@
         },
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
             "content": "sha256:cbe3a5a1f0a762e86dbe1a6961af083c7e06b0beafbf86083f78b047afb4a33d",
             "locator": {
-              "end": 411,
+              "end": 415,
               "kind": "line_range",
-              "start": 405
+              "start": 409
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },

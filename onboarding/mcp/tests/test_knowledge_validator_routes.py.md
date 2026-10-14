@@ -19,7 +19,11 @@
 - `test_the_worktree_route_never_commits_converted_memory_unvalidated`: `memory_commit_refusal` refuses with no bound validator, with no paired code commit, and for an unreadable (`"0"*40`) tree, and passes unconverted memory.
 - `test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired`: a real `SyncFixture` sync is refused with `sync-knowledge-validation-refused` and the recovery line; `HEAD` is unchanged and `MERGE_HEAD` is the source; after `git rm` and a rerun, the sync completes with exact parents.
 - `test_parallel_minted_ids_sync_cleanly`: the conforming example through the real sync.
-- `test_the_standalone_command_validates_a_converted_fixture_tree`: the CLI passes the fixture (exit 0, "0 violation(s), 1 report-only finding(s)": since MIK-R27, leaf 260928-MIK-L27, the one report-only finding is the legacy count of the fixture's exported family), refuses an appended `[4]` with exit 1 and JSON output whose full sorted violation list is pinned with its report-only flags, `[("R22.3-markers", False), (LEGACY_COUNT, True)]` (review R1 finding F3, ruling 23:04:57), reports unconverted memory as out of scope (exit 0), and exits 2 for an unreadable `--base`.
+- `test_the_standalone_command_validates_a_converted_fixture_tree` has two distinct scopes: the
+  initial `--base` invocation asserts exit 0 with one carried legacy report; the malformed `[4]`
+  JSON invocation omits `--base`, making legacy debt new, and asserts exit 1 with
+  `[("R22.3-markers", False), (LEGACY_COUNT, False)]`. Unconverted memory is out of scope
+  (exit 0), and unreadable `--base` exits 2. These are current source assertions, not a CLI run.
 - `test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong` (MIK-R09, leaf 260928-MIK-L09; the sync part of ruling 2026-09-30T16:07:55), parametrised: after a real managed sync, the leaf's side (`knowledge/history/260928-MIK-L97.json`, `LEAF_HISTORY`) holds an open row covering the integrate route's entry, and the official line re-anchors that entry (`_moved`). "consistent" (the row agreed with the leaf's own side): the sync completes and the merged sidecar carries the incoming anchor, reported by `R09-history-rows-merged`. "already wrong" (the row's `after` disagreed on the leaf's side too): the sync is refused with `R09-history-rows`, not the merged rule. The cases live here, beside the module's `SyncFixture` cases, because importing either into the new route module would have added governed consumer rows to `evidence-lifecycle.toml` (review R1 F5 note).
 - `test_a_resolved_memory_conflict_that_breaks_validation_is_refused_on_continue`: a real conflict resolved into duplicate IDs is refused on `continue` with the right state, then syncs after the repair.
 
@@ -54,7 +58,6 @@ The route cases.
 - The Git readers. [1]
 - The adapter and the worktree gate. [2]
 - The managed sync refusal and repair, and the conforming parallel sync. [3]
-- The standalone command: the pass line counts the one report-only legacy finding, and the JSON refusal's full violation list is pinned. [4]
 - A sync merge refuses a history row only when the leaf's own side had it wrong (MIK-R09). [5]
 - The retained-conflict continuation. [6]
 
@@ -63,3 +66,6 @@ The route cases.
 No meaningful cross-repo references found: the cases create their own temporary code and memory repositories.
 
 No cross-repo boundary is crossed by this file.
+
+- Standalone source assertions: based fixture pass with carried legacy report, baseless malformed-marker JSON refusal with both reportOnly flags False, out-of-scope and unreadable-input exits. [4]
+- Current source delta inspected statically: Distinguish the based pass from baseless JSON refusal and repair the stale legacy reportOnly=True caption; retain sync/publication and reader-boundary accounts. [7]

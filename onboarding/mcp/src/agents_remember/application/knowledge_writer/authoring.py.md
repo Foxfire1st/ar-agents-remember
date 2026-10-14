@@ -9,7 +9,7 @@
 **The edits: a read hand-off document applied to the memory tree with every mechanical field filled
 (MIK-R12 rules 1-3).** The curator authors meaning (statements, scope, admission, facets, links,
 dispositions, reasons); `Authoring` fills IDs, anchors, revisions, origin and history-row fields. Nothing
-here judges meaning, and nothing is written to disk. History-row mechanics are implemented by the inherited `HistoryRowAuthoring` in `authoring_rows.py`; this implementation move changes neither authored dispositions nor worklist obligations.
+here judges meaning, and nothing is written to disk. History-row mechanics are implemented by the inherited `HistoryRowAuthoring` in `authoring_rows.py`. `Authoring` now supplies `onboarding_sources`, `onboarding_counted` and `memory_base`: the paired base governs the counted-card comparison, a persisted flag is used only without that base, and own HEAD is the final fallback. These fields carry facts, not curator judgment.
 
 ## Code Commentary
 
@@ -46,12 +46,14 @@ here judges meaning, and nothing is written to disk. History-row mechanics are i
   revision and `covers` with `before` (the base anchor, or `absent`) and `after`; re-anchoring writes the new
   anchor into the entry in the same operation (MIK-R07 rule 4), and `{remove: true}` removes it with
   `after: absent`. Since MIK-R06 (L06 ruling Q6) a `moved` row's cover may name another `path`: the entry
-  is relocated into that file's sidecar and re-anchored there (`_relocate`). Family rows need `examined` and record each member's revision. Since MIK-R30 an
-  `onboarding:` subject is an onboarding row (`_onboarding_row`), and since MIK-R11 a `planned:` subject is
-  a planned row (`_planned_row`), and since MIK-R10 a `hunk:<item id>` or `file:<path>@<blob>` subject is a
-  `no_invariant` row (`_unexplained_row`); `_row` dispatches these three through one table of (row model,
-  builder) pairs. Any subject that is not an invariant, a family, an onboarding card or route, a planned key
-  or an unexplained change is refused.
+  is relocated into that file's sidecar and re-anchored there (`_relocate`). Family rows need `examined` and record each member's revision.
+  `_row` uses four special `(row model, builder)` pairs: onboarding, planned, unexplained and
+  reconsideration. Onboarding rows admit `updated`/`no_impact` with writer-filled source blobs;
+  `updated` requires a counted card change. Membership dispatch is separate (`membership:<INV>`
+  or a resolved `no_family` request), recording the invariant revision and considered families;
+  decision/facet IDs dispatch separately to `record` rows with the candidate revision and
+  disposition-specific effect. Unknown subjects are refused; these additions do not create a
+  six-pair special-dispatch table.
 
 ### Conventions
 
@@ -93,20 +95,24 @@ curator's facet; the report offers the statement only as a draft.
 ## 260928-MIK-L30 The Onboarding Row Through The Writer (MIK-R30)
 
 `_row` sends a subject matching `OnboardingTraceRow.subject_pattern` (`onboarding:<path>` or
-`onboarding:<route>/overview`) to `_onboarding_row`, so the curator can author the `no_impact` row that
-satisfies an onboarding trace on a converted tree through `knowledge-ingest`:
+`onboarding:<route>/overview`, including `onboarding:overview`) to `_onboarding_row`:
 
-- it refuses `covers`, `effect`, `because` and `examined`;
-- it reuses an existing row's ID for the same subject, and keeps the `markers` a crossing sync moved into
-  that row (MIK-R24 rule 8 step 1);
-- it validates the row as `OnboardingTraceRow`, so `no_impact` is the only disposition accepted.
+- it accepts `updated` or `no_impact` and refuses `covers`, `effect`, `because`, `examined`, `considered` and `ref`;
+- it reuses an existing row's ID for the same subject and keeps markers a crossing sync moved into it;
+- it fills `sources` from C as `{path, blob}` (`absent` for deletion). File paths come from the subject;
+  overview covered paths require the persisted worklist's `onboarding_sources`;
+- it validates as `OnboardingTraceRow` and refuses `updated` without a counted Markdown/reference
+  change. A known `memory_base` is compared with the produced candidate and is never overridden by
+  `onboarding_counted`; only without that base can the persisted flag replace the own-HEAD comparison.
+  Ordinary candidate doctrine requires the current source-bound row; card edits alone do not answer,
+  and realization/proof-only edits are not counted onboarding change.
 
 The file is outside MIK-R30's Scope list; the architect accepted it as necessary wiring (ruling
 2026-09-29T18:49:50 (6)), since rows are authored only through the writer.
 
-- An `onboarding:` subject goes to its own row builder. [3]
-- The onboarding row: no extra members, the ID and moved markers kept, validated. [4]
-- A moved marker row satisfies its item and survives a rewrite through the writer. [5]
+- An `onboarding:` subject goes to its own row builder in the four-pair special dispatch. [3]
+- The onboarding row: writer-filled source binding, `updated`/`no_impact`, counted-change check, ID and moved markers retained. [4]
+- The historical moved-marker rewrite case retains its marker provenance; missing source binding is not a new open-row answer under R53. [5]
 
 ## 260928-MIK-L11 The Planned Row Through The Writer (MIK-R11 Rule 5)
 
@@ -153,9 +159,10 @@ Q6, 2026-09-29T21:49:19+02:00):
   `blob` and `content` are C's.
 - The row's `before` keeps the base anchor at the old path and its `after` names the new path, which is
   MIK-R07 rule 4 (`after` equals the entry's anchor in K_C). A rerun finds the entry already at the path.
-- **Known limit, unchanged:** the old file's sidecar stays with an empty `realizes`. Moving or removing the
+- **Known relocation limit:** the old file's sidecar stays with an empty `realizes`. Moving or removing the
   onboarding cards and sidecars of moved files is c-05 onboarding work, not the writer's row path (review
-  N3); each new sidecar raises a report-only `R22.3-sidecar-without-markdown` until a card exists.
+  N3). `R22.3-sidecar-without-markdown` is migration debt: newly introduced debt refuses immediately;
+  an actual base-carried finding reports only while migration is incomplete (or at standalone conversion).
 - The malformed-path and remove-plus-path refusals are the hand-off reader's (`handoff._cover_path`, review
   F1 and N7).
 
@@ -167,9 +174,10 @@ Q6, 2026-09-29T21:49:19+02:00):
 
 ## 260928-MIK-L10 The No-Invariant Row And The Retired-Attach Refusal (MIK-R10)
 
-- **Dispatch table.** `_row` now tries `OnboardingTraceRow`, `PlannedEffectRow` and `UnexplainedChangeRow` in
-  one loop over `(model, builder)` pairs, matching each model's `subject_pattern`, which keeps `_row` within
-  PLR0911. The behaviour for the first two is unchanged. (L14 adds `ReconsiderationRow` as a fourth pair.)
+- **Dispatch table.** `_row` tries four `(model, builder)` pairs: `OnboardingTraceRow`,
+  `PlannedEffectRow`, `UnexplainedChangeRow` and `ReconsiderationRow`. Membership and decision/facet
+  record dispatch are handled separately; the table still has four pairs. Onboarding semantics now
+  include the R53 source binding and counted-change checks, not the earlier no_impact-only contract.
 - **`_unexplained_row`.** A `no_invariant` row answers an unexplained change in a covered file (rule 3). It
   refuses `covers`, `effect`, `because`, `examined` and `ref` ("a no_invariant row carries no [...]"), reuses
   the row ID by subject, validates against `UnexplainedChangeRow` (only `no_invariant`; a blank `reason` is
@@ -185,7 +193,8 @@ Q6, 2026-09-29T21:49:19+02:00):
 - **Attach or author for a delete-only hunk is not refused here (ruling 01:56:39 Q1).** A hand-off entry names
   no worklist item, and a new entry may legitimately cover other hunks. The refusal is structural: such an
   entry cannot link a delete-only hunk, so the item stays open and the closeout gate refuses the leaf.
-- **Unconverted memory is unchanged.** The installed runtime writes no history files before MIK-R37.
+- **Historical pre-MIK-R37 boundary:** the runtime then wrote no history files on unconverted memory.
+  The current writer refuses an unconverted tree; this history is not a preserved legacy-write branch.
 
 - The retired-attach guard, called before the record is placed. [17]
 - The refusal names the invariant and the alternatives. [18]
@@ -224,8 +233,9 @@ Q6, 2026-09-29T21:49:19+02:00):
   further bump (R4-1).
 - **Fields.** `questions` (the `OpenQuestions` port, `None` without a task owner), `raised` (the queued questions)
   and `reconsiderations` (the worklist's reconsideration items by subject).
-- **Size and complexity.** The module is 1,094 lines (under the 1,200 limit). Radon reports no new C: the C blocks
-  (`run`, `_invariant_document`, `_write_record`, `_upsert_entry`) exist at base (reviews R1–R6).
+- **Historical size and complexity snapshot (reviews R1–R6).** The former module was 1,094 lines,
+  under the then-stated 1,200 limit, with no new Radon C in those runs. Row mechanics now live in
+  `authoring_rows.py`; these figures are not a current size, complexity or test result.
 
 - The port, the queued questions and the worklist's items. [22]
 - The fourth special row kind in the dispatch table. [23]
@@ -314,3 +324,5 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]

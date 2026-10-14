@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registered satisfying-row contract prioritizes newly retired status before revision growth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a214b740792f6a87880323825baf71d02b4fbe19",
+            "content": "sha256:2d528873db708db3ddfb0d3ed6e221bcef037e5afcddfeba0598dbbecaac4735",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOUCHED_RECORD_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A qualifying raise must belong to the current owner and an open individual history file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a214b740792f6a87880323825baf71d02b4fbe19",
+            "content": "sha256:096d9cb7186a85d5370af72424bd5d596522c32c5b6afa396a6f0e4be254c967",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_raise_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The status-only exemption rejects other JSON field changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a214b740792f6a87880323825baf71d02b4fbe19",
+            "content": "sha256:7782868644b47a9c062c105ea6db500ff2989711e4e39dfb79c762f0f61d55a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raise_mark_only"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a214b740792f6a87880323825baf71d02b4fbe19",
+            "content": "sha256:5871450f23f032597d78c2aa532da470bead7987e9251f0ec991a7442db1208c",
+            "locator": {
+              "kind": "symbol",
+              "name": "touched_record_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

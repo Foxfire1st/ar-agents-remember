@@ -28,11 +28,10 @@ masks `PASSWORD=...` values in any string.
   background behavior; disk stays bounded regardless of call frequency.
 - Reports are files on disk: secrets are redacted unconditionally (the
   response-path `summarize_command_logs` only redacts failing nodes).
-- Consumers: `runtime_install`, `provider_diagnostics`, `provider_watchers`
-  payload builders in the MCP tool layer; internal callers keep full data.
+- Current report consumer: `runtime_install` in `mcp/tools/core.py`. Provider diagnostics/watchers payload builders were removed by MIK-R112; retained provider internals are not public MCP consumers.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- Compact builders that pair with the reports. [1]
+- The runtime-install payload files executed reports and pairs them with its compact answer. [1]

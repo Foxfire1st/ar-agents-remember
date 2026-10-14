@@ -13,7 +13,7 @@ members and routes, what it supersedes) and its incoming links, and its timeline
 
 - **invariant:** every normative field, its realizations and proofs each with its MIK-R03 state at the
   selection's code tree, the invariant's own state, its families, and the records linking to it (a decision
-  shown whole);
+  shown whole), and membership history with its owner, kind, closed status, path, row identity, subject, disposition and document;
 - **family:** guarantee, members (each with statement and state), routes, every member location grouped by
   path, and MIK-R03's stale members;
 - **decision:** `records.decision_document`, the decision in full;
@@ -31,7 +31,10 @@ opened at a locator.
 - **The record.** `record_view` returns `None` for an ID the tree does not hold (the entry point answers
   `not-found`). It builds the record summary with its path and whole document, the prose, the outgoing and
   incoming links (`link_document` over `incoming_links`), the kind's own part, and the timeline over the
-  history rows about it and the entries that feed it (an invariant's own; a family's members').
+  history rows about it and the entries that feed it (an invariant's own; a family's members'). Invariant membership-subject rows join that timeline as well as the dedicated membership array.
+
+- Invariant truth and timeline preserve membership-row provenance. [10]
+- Membership judgments are rendered with their complete owning history context. [11]
 - **Outgoing links, or why not (F11).** `_links_of` validates the record through its kind's model in
   `RECORD_MODELS` and renders each link with `record_link_target` (and its `alternative` for a decision).
   A record that does not validate, or a kind no model reads, returns the reason; the view then carries
@@ -59,10 +62,21 @@ opened at a locator.
 
 ### Invariants And Boundaries
 
-- **A failed source is shown as partial or unavailable, never as empty:** unreadable links, an unreadable
-  census and an unresolvable locator are each named. Proved by
-  `test_incident_and_facet_views_show_every_field_and_typed_links_both_ways` (the unreadable-links case) and
-  `test_the_census_view_shows_measures_and_each_routes_status_history` (an unknown census).
+- **Implementation failure handling is not the same as the cited test controls.** `_links_of`
+  returns a reason when no model can read the kind or validation fails, and `record_view` adds
+  `outgoingState: unavailable`; the outgoing list can still be empty, but it is accompanied by
+  the named failure state. `census_view` returns `unavailable` with a detail on a read exception,
+  or `not-found` for an unknown ID; `code_view` returns a locator marked `unresolved` with a detail
+  when resolution fails. These are implementation branches, not three controls proved by the
+  original pair of named tests. [2] [4] [7] [8]
+- **Named assertions:** `test_incident_and_facet_views_show_every_field_and_typed_links_both_ways`
+  sets `RECORD_MODELS = {}` and asserts unavailable outgoing links.
+  `test_the_census_view_shows_measures_and_each_routes_status_history` checks normal census
+  measures/history and `wave-9` as `not-found`; it does not stimulate an unreadable census or
+  an unresolved locator. [9]
+  A separate existing case, `test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice`,
+  sends a well-formed line-range locator with `start: "x"` and asserts `locator.state == "unresolved"`.
+  It does not assert the locator detail or an unreadable-census branch. [12]
 - A decision is shown whole in the invariant's linked records and in its own view (the rule carried from L13).
 - Nothing here writes.
 
@@ -90,7 +104,8 @@ No configured live documentation source was available for this pass.
 - Every record by kind. [6]
 - MIK-R20's census report; an unknown census by membership. [7]
 - A code file at a locator; a malformed locator is a bad request (F3). [8]
-- The family, decision, incident and facet, and census cases. [9]
+- Family/decision/incident/facet truth assertions, unavailable outgoing links after removing RECORD_MODELS, and normal census measures/history with an unknown-ID not-found control; not an unreadable-census or unresolved-locator control. [9]
+- Separate unresolved-locator control: the bad-request/code-size case sends a well-formed line-range locator with start="x" and asserts locator.state==unresolved; no locator-detail or unreadable-census assertion. \[12] [12]
 
 ### Cross-Repo References
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "blob": "07595ea336ca08b04de158d4eec714442e8ad6e4",
             "content": "sha256:0a3a15bd9a04af0bb823dedc1b048f0f71756da713ec87ac72704a7ee9e9e659",
             "locator": {
               "end": 75,
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
+            "blob": "ad5550c74c12c4fa6b3bac7a4cb27d57c06aff2c",
             "content": "sha256:4a988cc5e423487009c71e7f22d521292aa99da322ef8ab1768db4ad9b41ac92",
             "locator": {
               "end": 66,
@@ -33,24 +33,6 @@
               "start": 66
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools.\n\nAnchor: \"def provider_status_tool\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
-            "content": "sha256:24c9859b1e94e8fb4710788ca5afae347bd030cc2bd6e2ddc660af4ebe035831",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 35
-            },
-            "path": "mcp/src/agents_remember/application/provider_tools.py"
           },
           "kind": "code"
         }
@@ -114,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f69234bdcc96f9151d173f456645ff89f9d2fc4b",
+            "blob": "5fed969801e59c3f21496bdd6c76892ccdc0b659",
             "content": "sha256:0e796fc86c9a82c8b37f93e8024f664505bc2ff6487133b900aef327c13c3eb7",
             "locator": {
               "end": 160,

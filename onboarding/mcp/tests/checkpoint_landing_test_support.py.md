@@ -18,7 +18,7 @@ Provide shared real-Git builders and readers for checkpoint and ordinary series/
 
 ### Logic
 
-`close_out_leaf` authors code, closes the owning leaf's history before its attributed memory-content commit, refreshes an untracked cache, and records the pair. `accumulate_master_line` selects an unlanded leaf enclosure or authors and starts a fresh one, preserves existing rows in its open history attempt, appends the label file's onboarding trace row, applies public closeout, reloads the contract, and integrates ff-only. Its LedgerRow names the integrated code/memory pair, not a cached-history row or direct master-branch commits.
+`close_out_leaf` authors code, closes the owning leaf's history before its attributed memory-content commit, refreshes an untracked cache, and records the pair. `accumulate_master_line` selects an unlanded leaf enclosure or authors and starts a fresh one, preserves existing rows in its open history attempt, appends the label file's onboarding trace row with its actual `sources` path/blob from `CodeSnapshot.capture(leaf.code_worktree)` after the label file is written, applies public closeout, reloads the contract, and integrates ff-only. Its LedgerRow names the integrated code/memory pair, not a cached-history row or direct master-branch commits.
 
 `branch_checkout` creates and removes an exact disposable branch worktree. Source advancement commits code on the source branch and attributed memory content on its source line; absorption uses the product's journaled merge-memory sync, after which callers reload the rebound contract; no helper creates ledger-only commits, rewrites cached rows to authorize a landing, or manually records a reconciled pair. The remaining readers expose exact revisions, memory repository, payload strings, and master task status.
 
@@ -56,7 +56,11 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 ### Current Source-Inspection References
 
+
+
+
+- The public boundary scenarios consume the shared builders. [4]
+
 - Leaf and accumulated-master pairs are built from real code/memory commits. [1]
 - Temporary branch ownership and real source-content reconciliation. [2]
 - Public checkpoint and canonical master status helpers. [3]
-- The public boundary scenarios consume the shared builders. [4]

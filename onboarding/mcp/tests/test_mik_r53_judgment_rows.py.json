@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_mik_r53_judgment_rows.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Membership detection and revision-bound satisfaction distinguish new or newly unlisted invariants from inherited old orphans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:f9bfd87631cc9bb34e120751e15f41cd23d9d4df5b4160cb524cba66f57bc369",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Record judgments validate effects and enforce changed/retired/no_impact according to revision and status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:a26ab03e7d32504e1a38f09f5b93810f441592248ae59aa3ad8fff2ac219c60c",
+            "locator": {
+              "end": 561,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real Git/directory fixtures protect Markdown-only changes and the owner/open-file status-mark exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:b058dd77e6d50061a2190167fe52d0b3c1090f162db40e1f548515bb1d5dd738",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 615
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Alias dispatch and strict considered-list parsing refuse invalid inputs without fabricated history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:2296ba9ca95d6e8226f9400bf43dc79f2bfc9d36040e5973d508e2f396f8817a",
+            "locator": {
+              "end": 998,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Membership is visible in the invariant reader and history timeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:002c573745860b515396c3d6dd40954a3aef7f61e8aa99d4cbf8362a6400d07a",
+            "locator": {
+              "end": 1443,
+              "kind": "line_range",
+              "start": 1426
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Closed-attempt, alias and evidence-marker regressions exercise stable row IDs and preserved foreign evidence/origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:a0b94926c6a46a6139e39f701e592a811240137b3fe5481825ec5484b963aa89",
+            "locator": {
+              "end": 1635,
+              "kind": "line_range",
+              "start": 1480
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each of the five writer-reported rules is checked on a real writer run and at the commit route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0bfb758fb0b2d6fe42fdac985c1c4ee282ba147",
+            "content": "sha256:bfafbe5c180e2eb7130eea352751ddb3b9f524d433281067b974d02f5577fd41",
+            "locator": {
+              "end": 1840,
+              "kind": "line_range",
+              "start": 1683
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

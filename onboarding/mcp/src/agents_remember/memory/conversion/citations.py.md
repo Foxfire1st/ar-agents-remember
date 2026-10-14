@@ -17,7 +17,10 @@ is lost.
 
 - **Symbols (`_symbol_targets`).** Each symbol-kind anchor (a backticked identifier) that the shipped
   extractor binds exactly once in one of the row's cited files, tried in citation order, becomes a `symbol`
-  target in that file (`CodeObjects.symbol_span` through `extents.qualified_spans`).
+  target in that file (`CodeObjects.symbol_span` through `extents.qualified_spans`). `RowContext.symlinks`
+  names symlink entries in this anchor-commit tree and is forwarded to `symbol_span` and `content`;
+  a symbol request at one of those paths raises a named `CodeObjectError` before extraction, not
+  a parsed link-target symbol. File and line-range locators still bind link-entry bytes, not referents.
 - **Ranges (`_source_targets`).** Each `path:start-end` source becomes its own `line_range` target,
   unless a symbol target of the row in the same file lies inside the range or contains it (`_covered`).
   Such a range is counted as covered and adds nothing. The packet's two sentences disagreed here ("lies
@@ -73,10 +76,8 @@ No configured live documentation source was available for this pass.
 The row-to-reference rules.
 
 - Test paths give `test` targets. [1]
-- Symbols bound exactly once in a cited file become symbol targets. [2]
 - A range a symbol target lies inside, or that contains it, is covered. [3]
 - Ranges, whole files, URLs and unresolved sources. [4]
-- An anchor records blob and content; path only when needed. [5]
 - The reference: targets, a no-target fallback, and the note. [6]
 - Anchor text no target carries is kept byte for byte in the note. [7]
 - The fixture rows: several anchors, covered ranges, a quoted anchor, a removed path, a range past the end. [8]
@@ -86,3 +87,7 @@ The row-to-reference rules.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+- Symbols bound exactly once in a cited file become targets; RowContext symlink paths refuse before extraction. [2]
+- An anchor records blob and content; path only when needed, with RowContext symlink modes forwarded to content resolution. [5]
+- Current source delta inspected statically: Document both symlink-mode propagation sites and named symbol refusal; retain coverage, deduplication and note preservation. [9]

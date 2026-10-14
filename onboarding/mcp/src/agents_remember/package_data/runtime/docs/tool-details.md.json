@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-95",
+      "note": "The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence.\n\nAnchor: lines 1-107",
       "targets": [
         {
           "anchor": {
-            "blob": "4b6a5d02f0fd3df52751012efaa4adeed005225b",
-            "content": "sha256:8cee225a5479e335500f95858776ca499a7879c47fdd3b5d9691e6381b4a8648",
+            "blob": "9455750a8616d3d25e28aaa4f158dee209c33e7f",
+            "content": "sha256:71120fb6a402ce740346a7d0627f957e952a426ff2f4239735c1df8261ee6f7e",
             "locator": {
-              "kind": "file"
+              "end": 107,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

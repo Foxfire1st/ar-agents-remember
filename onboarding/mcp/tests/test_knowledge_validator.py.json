@@ -3,15 +3,100 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The fixture tree passes with only the legacy count, and MIK-R22's report-only set is pinned.",
+      "note": "A based fixture passes with carried incomplete legacy debt; merge_reports/migration_debt sets and absence of plain report-only rules are pinned.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:037e6597c8624f1080c1a16534c7c34a6f993b4ca15c8802e72e11db08b07fcc",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:d38a0f24fa4613f25693a4f13d309e73b2f7e9a727c2f7031d6c735e9f3ba834",
             "locator": {
-              "kind": "symbol",
-              "name": "test_converted_fixture_tree_passes_every_rule"
+              "end": 119,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
             }
           },
           "kind": "test"
@@ -19,15 +104,100 @@
       ]
     },
     "10": {
-      "note": "MIK-R27: exported, retired and merge-parent records are never refused.",
+      "note": "MIK-R27: test_exported_retired_and_merged_records_refuse_off_merge retains retired exemption and sync reporting, not an export waiver.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:908e5a73e613e4d5bb4887e56694ca5e28fc9c8423e41b33015130254a19946a",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:e36e7172b4e90e625ed21d2cb04f2745c5eb073f59fdbdf6a785356f287aead7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_exported_retired_and_merged_records_are_never_refused"
+              "end": 844,
+              "kind": "line_range",
+              "start": 824
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
             }
           },
           "kind": "test"
@@ -51,26 +221,112 @@
       ]
     },
     "12": {
-      "note": "MIK-R27: the legacy count and the rules' registration flags.",
+      "note": "MIK-R27: actual base-held legacy debt, new-finding counterexamples and merge_reports/migration_debt/writer flags.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:679753060036ab6c3258c7e021fd935680b03e08124f0a7b940b49cbb69ec493",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:c100b249eb2732ef30f6c7c0f4bf0c14d4dd8a7aee8e29d8331937c5df62fde1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_legacy_records_are_counted_until_assessed_or_demoted"
+              "end": 884,
+              "kind": "line_range",
+              "start": 866
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:003cc1c516dcbd07bb3b209371d0c3603f17066d9ca67d185aa78f01ef89afbc",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:1b540e628536802ed7f77a2876b2010d54f5404af377e6ff5ebb14de361754e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_rules_are_registered_refusing_new_and_reporting_the_rest"
+              "end": 971,
+              "kind": "line_range",
+              "start": 957
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
             }
           },
           "kind": "test"
@@ -78,15 +334,100 @@
       ]
     },
     "13": {
-      "note": "A later rule runs everywhere; report-only never refuses.",
+      "note": "test_a_later_packets_rule_runs_everywhere_and_plain_report_only_is_refused rejects plain report-only registration and exercises a later refusing rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:ddbdd1414ffa1f78899897fc2f2de39aed2c1912dcdecb739816b44707a85f8a",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:e6f6670c32aa6c577dc576c8a5414a60b3c4c457478b841d613ad06a44f9d709",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses"
+              "end": 581,
+              "kind": "line_range",
+              "start": 561
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
             }
           },
           "kind": "test"
@@ -94,27 +435,244 @@
       ]
     },
     "14": {
-      "note": "R80 integration assertions explicitly select leaf publication without changing the shared helper default.",
+      "note": "Five negative/combined R80 assertions use genuine comparison bases and explicit leaf publication, retaining exact offending-heading/rule checks and the shared default.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:5b4a22f1f20d76e54f211ae5493078e2e4616ffcb2b9ef2da583a36c1f412025",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:7151974ff9aa53b9922c1bfd1e60d5bbdddebaf131d893b3d4111b0c1234edce",
             "locator": {
-              "kind": "symbol",
-              "name": "test_buried_purpose_is_refused_and_names_the_heading"
+              "end": 1025,
+              "kind": "line_range",
+              "start": 995
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:88a6d057f252aa493806e973ba5f87b5471db07742b0b4e6587ade76c5ccab00",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:8cf3c59873f4cc4bd4ff629b12110df5745037567e8521ade94efe2850f2d781",
             "locator": {
-              "kind": "symbol",
-              "name": "test_combined_fixture_fires_all_three_rules_and_refuses_closeout"
+              "end": 1210,
+              "kind": "line_range",
+              "start": 1169
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current source delta inspected statically: Repair baseline/admission/reporting and registry/R80 witnesses; preserve genuine new-admission bases, finding-based debt and retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The root-named positive control actually edits the nested worktrees overview via _route_overview/ROUTE_CARD and asserts no R80 findings there; it is not a repository-root control. [16]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:1fd601826778e42cf990515ad4ee1fe37b649c174796d97f28ac5ec6ece0aaa3",
+            "locator": {
+              "end": 986,
+              "kind": "line_range",
+              "start": 983
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:5a7ab6a4a26bcd3164c45526880252aac110b6fa36ddd14f417f4d6484bccabb",
+            "locator": {
+              "end": 1166,
+              "kind": "line_range",
+              "start": 1150
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "766b485d006029cd283feafd0fd0be0280a093aa",
+            "content": "sha256:b05706ae69e147e8e46f29da61920c250c5cc55f18280090f01356b80ccdb9c0",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/tests/knowledge_validator_test_support.py"
           },
           "kind": "test"
         }
@@ -125,7 +683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:ec3057f0f50f72b2665253fd96380574eec7c26422d70eabd928dee46f107182",
             "locator": {
               "kind": "symbol",
@@ -136,7 +694,7 @@
         },
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:7bd1074e567fa35a18cfb427750ac186eb9b52b1ffd34784c929e2dfcad8697b",
             "locator": {
               "kind": "symbol",
@@ -184,7 +742,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:0c4aded6e6bee9ab9a6f2722c21400cdba03cd92aaf1e76e624559b12aa402c6",
             "locator": {
               "kind": "symbol",
@@ -200,7 +758,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:983bccf913d29299ec2bac6b90e1c2acfecfbbeee33202240132a1119f699852",
             "locator": {
               "kind": "symbol",
@@ -216,7 +774,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
             "content": "sha256:1d507a0b00204f774835f0a32174e0897627d28c7a84aa3c4077b1045aa65f29",
             "locator": {
               "kind": "symbol",
@@ -244,15 +802,100 @@
       ]
     },
     "9": {
-      "note": "MIK-R27: an existing record whose test was deleted is only reported.",
+      "note": "MIK-R27: test_an_existing_record_whose_test_was_deleted_refuses_off_merge distinguishes leaf refusal from sync reporting.",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:73d94d29f91146feba7ff3c6ab739c04c8e118bc8d6218bab9f642a38f83b499",
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:381404b6eebdec20a0b9479d9154dfdeccd51cfaf3581879aca9833c59f45921",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_existing_record_whose_test_was_deleted_is_only_reported"
+              "end": 821,
+              "kind": "line_range",
+              "start": 805
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:2a3b4e0fdaba9c3e174f6d0b079156930f87d12f868f46ae2b0d9da0dd183027",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:fa65fdd4b0185e12587f7277a3053035293583b01c067b91d54608134858a280",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:95e81c7a3f2451d3d651273207599285bfe84891b3a8f8340910ac5497e56a40",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 819
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:657462f1c8eef5a5d7ee4d3ee50e5b2f1e00376ced54550cb5b285615de2fa55",
+            "locator": {
+              "end": 967,
+              "kind": "line_range",
+              "start": 963
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:f248e19c7720db2a5e93157a26508081a0a98fa34a099980c881ed6eb80b02f6",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 1021
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
+            "content": "sha256:cfb85709877ab35e03045567b10b5b381309d0fde64681042f190adec92e3b79",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
             }
           },
           "kind": "test"

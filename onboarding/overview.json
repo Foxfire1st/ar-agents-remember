@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd3885095d43bae730f9360b1ddb43aceda41f8a",
+            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 535,
+              "end": 545,
               "kind": "line_range",
-              "start": 528
+              "start": 538
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -910,7 +910,7 @@
       ]
     },
     "16": {
-      "note": "A changed source file's card and its governing overview need a counted change or a history row.",
+      "note": "Historical pre-R53/L53 rollout: counted change or history row for a changed source card and governing overview. This is not current ordinary admission; the amended L53 changed-card exception is leaf-bounded, while current ordinary admission requires an eligible source-current authored row.",
       "targets": [
         {
           "anchor": {
@@ -1008,7 +1008,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1060,12 +1060,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd3885095d43bae730f9360b1ddb43aceda41f8a",
+            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
             "content": "sha256:10504dfc6142bea874588a95b095a471fb2fe64d00aa13f21acbe842d6f73baa",
             "locator": {
-              "end": 529,
+              "end": 539,
               "kind": "line_range",
-              "start": 529
+              "start": 539
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -1168,12 +1168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:f850b42ccedb338c984cb723a72cb364e5449977ef7ef318709cb1aec36c455c",
             "locator": {
-              "end": 100,
+              "end": 103,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1222,12 +1222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
             "content": "sha256:b3e34349a0c5cc7ef7f312ae57e06b6245a150e03b2b4f0535558ee7f10d8183",
             "locator": {
-              "end": 36,
+              "end": 38,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -1400,7 +1400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1649,7 +1649,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -1666,7 +1666,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -1683,7 +1683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",
@@ -1855,7 +1855,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:2aaa68c15362418f38f59c074d6d5106eceac19b8031e3d49e99499ab582cc1a",
             "locator": {
               "end": 5,
@@ -2228,7 +2228,7 @@
       ]
     },
     "313": {
-      "note": "Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result.\n\nAnchor: carry_landing_answer and quality_result_answer\n\nPublic tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model.\n\nAnchor: `PUBLIC_TOOLS`, `_validated_live_names`",
+      "note": "Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result.\n\nAnchor: carry_landing_answer and quality_result_answer\n\nPublic tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model.\n\nAnchor: `PUBLIC_TOOLS`, `_validated_live_names`\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
       "targets": [
         {
           "anchor": {
@@ -2300,12 +2300,12 @@
         },
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
             "content": "sha256:6a4364374bb1c56589a98126bc07037848f43cc2c50069010d893b8100a581f4",
             "locator": {
-              "end": 251,
+              "end": 259,
               "kind": "line_range",
-              "start": 251
+              "start": 259
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2590,12 +2590,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1d0afc7aacaf6d39dce059af736004038b70818",
+            "blob": "ad5550c74c12c4fa6b3bac7a4cb27d57c06aff2c",
             "content": "sha256:156876c96ff91d546a6689a6b1a6ba24ffb8e15d2cfddb59113d48cd8a63d07e",
             "locator": {
-              "end": 129,
+              "end": 131,
               "kind": "line_range",
-              "start": 96
+              "start": 98
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -2746,6 +2746,24 @@
         }
       ]
     },
+    "329": {
+      "note": "Canonical independent non-author statement/diff/omission duty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "33": {
       "note": "The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.",
       "targets": [
@@ -2772,6 +2790,42 @@
               "start": 145
             },
             "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "330": {
+      "note": "Named validator route policies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:fec8891762c5537c1e16720e764bd2a32b52558071de152afd39b6d36546c80c",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "331": {
+      "note": "Canonical source-bound onboarding and separate row domains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 532
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
           "kind": "code"
         }
@@ -2971,7 +3025,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -3012,7 +3066,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -3029,7 +3083,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",
@@ -3144,7 +3198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:50d560d22966ea1ea8c1d76d872ec7d244bed31e7297f75a33f1302e97fd987f",
             "locator": {
               "end": 6,
@@ -3475,7 +3529,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -3488,12 +3542,12 @@
         },
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
-              "end": 99,
+              "end": 108,
               "kind": "line_range",
-              "start": 97
+              "start": 106
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },

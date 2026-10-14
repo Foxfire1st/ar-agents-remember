@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
         "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-        "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
+        "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
         "locator": {
           "kind": "symbol",
           "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
         "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-        "content": "sha256:b4e0fc3e10c1926ffe0f37de71b09a8786012843714b17f0f1b992d62681463d",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
+        "content": "sha256:b30fac3a6bfee2c55a4345f79178db7cf6a1ee3f73b478bc2584f1576f735150",
         "locator": {
           "kind": "symbol",
           "name": "test_the_latest_row_about_a_subject_governs_across_attempts"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
         "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-        "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
+        "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
         "locator": {
           "kind": "symbol",
           "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-        "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
+        "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
         "locator": {
           "kind": "symbol",
           "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+        "blob": "896036cda96da332680be444bab8b463b0170846",
         "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
         "locator": {
           "kind": "symbol",
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
             "locator": {
               "kind": "symbol",
@@ -237,18 +237,80 @@
       ]
     },
     "31": {
-      "note": "A reopened leaf writes its next attempt, and its history is every file.",
+      "note": "Reopening after a new source edit asks invariant, family and file/route traces again in attempt 2; the first history stays byte-identical.",
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+              "end": 274,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 683
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -257,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
             "locator": {
               "kind": "symbol",
@@ -273,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:7336d93c3b92459bec563bcd7cfc58878776a4a3af5dd15c274c7376da0c66b6",
             "locator": {
               "kind": "symbol",
@@ -289,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
             "locator": {
               "kind": "symbol",
@@ -305,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
             "locator": {
               "kind": "symbol",
@@ -321,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
             "locator": {
               "kind": "symbol",
@@ -333,18 +395,80 @@
       ]
     },
     "37": {
-      "note": "The merged reading under test.",
+      "note": "The merged reading includes refreshed attempt-2 traces, and `_history_rows` keeps the winning row's own closed flag.",
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+              "end": 274,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 683
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -353,7 +477,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
             "locator": {
               "kind": "symbol",
@@ -369,7 +493,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
             "locator": {
               "kind": "symbol",
@@ -385,7 +509,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:588c1d1ace1607293b82d6c1209d6e0e998b4cf6ca9fb7927159b87a1aa0feeb",
             "locator": {
               "kind": "symbol",
@@ -397,18 +521,80 @@
       ]
     },
     "41": {
-      "note": "A leaf that continues after its closeout writes its next attempt.",
+      "note": "A continued leaf writes its next attempt, including file/overview source-bound traces after the new edit; frozen invariant history remains separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-            "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
+              "end": 695,
+              "kind": "line_range",
+              "start": 619
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 683
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -417,7 +603,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
             "locator": {
               "kind": "symbol",
@@ -449,7 +635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:b2913766d98deb980382926340e843a26a599e4ae78542376a8aa78bd7ccb2e3",
             "locator": {
               "kind": "symbol",
@@ -465,7 +651,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
+            "blob": "896036cda96da332680be444bab8b463b0170846",
             "content": "sha256:68322f2420d1ab8a5c547174c23d08f577df481c5c429d5f0e041be7e83245cf",
             "locator": {
               "kind": "symbol",
@@ -473,6 +659,72 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "Current source delta inspected statically: Replace closed-trace presence claims with refreshed source bindings and own-file closed provenance; retain freeze and exact-tree assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "896036cda96da332680be444bab8b463b0170846",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 683
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f7d38c229865151d2aeba56c56b61c5a8acac3a2",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
         }
       ]
     }

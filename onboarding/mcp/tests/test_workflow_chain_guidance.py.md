@@ -129,8 +129,9 @@ Twelve cases, one shared disposable world per class, `unittest.TestCase` through
 
 One hermetic world per class (`WorkflowWorld`, `:357-598`): converted memory is scaffolded
 with the layout marker and a `Code-Commit` trailer pairing the code base. After start, `_walk`
-seeds open canonical leaf history with an `onboarding:{CODE_CHANGE}` `no_impact` row before the
-work file is written. This is fixture setup, not an additional declared workflow operation.
+writes the real work file first, captures the actual code worktree with `CodeSnapshot`, then
+seeds open canonical leaf history with an `onboarding:{CODE_CHANGE}` `no_impact` row whose
+`sources` path/blob names that edited file. This is fixture setup, not an additional declared workflow operation.
 The world uses a single `TemporaryDirectory`, two real
 Git repositories with remote-tracking authority, real task documents, a real server built by
 `create_server`, and a real in-memory MCP client session per call (`:431-443`, through
@@ -301,40 +302,15 @@ because the rows name modules that only exist once L8 and L9 have landed.
 
 ### Current Source-Inspection References
 
-- The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose. [1]
-- Each operation's own state vocabulary, and the terminal cleanup cell. [2]
-- Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract. [3]
-- The callability pin, with the repair rule stated at the constant. [4]
-- The withhold pinned by tool and count, so repairing the producers is a visible edit. [5]
-- The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state). [6]
-- Values for arguments a recommendation leaves to the caller — values, never a population. [7]
-- The two refusal arms separated by model identity, never by wording. [8]
-- The fields a tool's own argument model named as required and absent. [9]
-- One operation, what its own guidance supplied, and what came back. [10]
-- One response's own operational triple, and what calling it exactly as published produced. [11]
-- The disposable world: real repositories, a real server, one session per call. [12]
-- Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call` [13]
-- The single walk of the chain, the hops it produced, and the three arrangements. [14]
-- What the guidance supplies for a hop, and the arguments it declares as required. [15]
-- The first call exactly as given, then again with only what the model named as missing. [16]
-- Execute one recommended step as given, then again with only the arguments it omitted. [17]
-- The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe. [18]
-- The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing. [19]
-- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
-- Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see. [21]
-- The second producer of the same recommendation, driven in the same world rather than cited. [22]
-- The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
-- The order, asserted against what the run actually did rather than stated beside it. [24]
-- A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted. [25]
-- Guidance must name the response's own place, on every channel it uses (`T54`). [26]
-- The sibling arrangement asserted first, then the property (`T54`'s arm). [27]
-- The derived population, asserted equal to the pin over both channels. [28]
-- The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
-- The classifier's control: an unusable recommendation must be seen as one. [30]
-- The withhold is real, counted, and explained in both directions. [31]
-- `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. [32]
-- The stale base driven, and the raiser pinned by set equality. [33]
-- Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance. [34]
+
+
+
+
+
+
+
+
+
 - The lane row that keeps this module in the default selection, inside the array opening at `:5`.  Anchor: "mcp/tests/test_workflow_chain_guidance.py" [35]
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
 - The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. [37]
@@ -352,3 +328,38 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`. [49]
 - The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
 - Where the tuple becomes the operational triple a seat reads. [51]
+
+- The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose. [1]
+- One operation, what its own guidance supplied, and what came back. [10]
+- One response's own operational triple, and what calling it exactly as published produced. [11]
+- The disposable world: real repositories, a real server, one session per call. [12]
+- Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call` [13]
+- The single walk of the chain, the hops it produced, and the three arrangements. [14]
+- What the guidance supplies for a hop, and the arguments it declares as required. [15]
+- The first call exactly as given, then again with only what the model named as missing. [16]
+- Execute one recommended step as given, then again with only the arguments it omitted. [17]
+- The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe. [18]
+- The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing. [19]
+- Each operation's own state vocabulary, and the terminal cleanup cell. [2]
+- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
+- Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see. [21]
+- The second producer of the same recommendation, driven in the same world rather than cited. [22]
+- The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
+- The order, asserted against what the run actually did rather than stated beside it. [24]
+- A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted. [25]
+- Guidance must name the response's own place, on every channel it uses (`T54`). [26]
+- The sibling arrangement asserted first, then the property (`T54`'s arm). [27]
+- The derived population, asserted equal to the pin over both channels. [28]
+- The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
+- Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract. [3]
+- The classifier's control: an unusable recommendation must be seen as one. [30]
+- The withhold is real, counted, and explained in both directions. [31]
+- `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. [32]
+- The stale base driven, and the raiser pinned by set equality. [33]
+- Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance. [34]
+- The callability pin, with the repair rule stated at the constant. [4]
+- The withhold pinned by tool and count, so repairing the producers is a visible edit. [5]
+- The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state). [6]
+- Values for arguments a recommendation leaves to the caller — values, never a population. [7]
+- The two refusal arms separated by model identity, never by wording. [8]
+- The fields a tool's own argument model named as required and absent. [9]

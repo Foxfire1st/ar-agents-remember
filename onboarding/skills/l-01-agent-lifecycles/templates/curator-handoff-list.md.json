@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b113b803fdcdd070e4588831486387e6917974e",
-        "content": "sha256:0a65792b6c221d385b9a838dc222e0a5c24e168b18a1006b594db5aac9ef8ba8",
+        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
         "locator": {
           "kind": "file"
         }
@@ -19,8 +19,8 @@
     },
     {
       "anchor": {
-        "blob": "6b113b803fdcdd070e4588831486387e6917974e",
-        "content": "sha256:0a65792b6c221d385b9a838dc222e0a5c24e168b18a1006b594db5aac9ef8ba8",
+        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
         "locator": {
           "kind": "file"
         }
@@ -35,8 +35,8 @@
     },
     {
       "anchor": {
-        "blob": "6b113b803fdcdd070e4588831486387e6917974e",
-        "content": "sha256:0a65792b6c221d385b9a838dc222e0a5c24e168b18a1006b594db5aac9ef8ba8",
+        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
         "locator": {
           "kind": "file"
         }
@@ -52,8 +52,8 @@
     },
     {
       "anchor": {
-        "blob": "6b113b803fdcdd070e4588831486387e6917974e",
-        "content": "sha256:0a65792b6c221d385b9a838dc222e0a5c24e168b18a1006b594db5aac9ef8ba8",
+        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
+        "content": "sha256:d9d834917b1639d2adc4bf3696f3621eac042d1d278622a004518d2aebfbbfc6",
         "locator": {
           "kind": "file"
         }
@@ -68,7 +68,7 @@
     },
     {
       "anchor": {
-        "blob": "6b113b803fdcdd070e4588831486387e6917974e",
+        "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
         "content": "sha256:e92c25aa9d3f4323100058f851f378da1d56344f7b7ca28691d6422e69a78616",
         "locator": {
           "end": 338,
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
             "locator": {
               "end": 403,
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:4b0c4cebb53d006b474ea29f2ef8f0b80abc83f18013c7bada2674298c473dab",
             "locator": {
               "end": 401,
@@ -138,12 +138,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:0fa9d0c6055c786caf0d543096aaaa4812db11acc9a366150fbc0b5b67b90b78",
             "locator": {
-              "end": 581,
+              "end": 603,
               "kind": "line_range",
-              "start": 557
+              "start": 579
             }
           },
           "kind": "code"
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
             "locator": {
-              "end": 708,
+              "end": 736,
               "kind": "line_range",
-              "start": 705
+              "start": 733
             }
           },
           "kind": "code"
@@ -172,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
             "locator": {
-              "end": 669,
+              "end": 697,
               "kind": "line_range",
-              "start": 617
+              "start": 645
             }
           },
           "kind": "code"
@@ -189,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
             "locator": {
-              "end": 731,
+              "end": 759,
               "kind": "line_range",
-              "start": 670
+              "start": 698
             }
           },
           "kind": "code"
@@ -223,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -240,12 +240,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:823bf23d70ebd9920f848d6d47a43cfa86c9f1929bdc5e15ea5c07db5bfc390e",
             "locator": {
               "end": 135,
               "kind": "line_range",
               "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Onboarding, membership and ordinary-record judgment inputs have separate domains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 532
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Writer-supplied bindings and named report-only versus commit-route refusal stay separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
+            "content": "sha256:96137d335eaa252286bb312cf8e575db2b2868d5e17c9cb3a18582b613c60b01",
+            "locator": {
+              "end": 641,
+              "kind": "line_range",
+              "start": 608
             }
           },
           "kind": "code"
@@ -269,7 +303,7 @@
         },
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:5e3dd9d25748e384ded43b7ccc23de82c87bfaac4a89361e2f686145be3c6cea",
             "locator": {
               "end": 370,
@@ -316,7 +350,7 @@
       ]
     },
     "5": {
-      "note": "The public retention input and exact readback requirements.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
+      "note": "Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
       "targets": [
         {
           "anchor": {
@@ -333,7 +367,7 @@
       ]
     },
     "6": {
-      "note": "**Per-target realization rationale and role, the value/vocabulary/length/route rules, the committed-retry exemption, and the stated supersession of revision 1's target element shape.**\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
+      "note": "Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current.\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
       "targets": [
         {
           "anchor": {
@@ -349,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
             "locator": {
               "end": 18,
@@ -366,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:a937f60f51e72cd80ff44cb7b39363727e6d0f4503ebef9cf3da1679f5b29639",
             "locator": {
               "end": 449,
@@ -378,7 +412,7 @@
         },
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
             "locator": {
               "end": 454,
@@ -391,7 +425,7 @@
       ]
     },
     "8": {
-      "note": "The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
+      "note": "Historical MIK-R30 onboarding-row form: `no_impact` only and no row for a counted card change, not the normal MIK-R53 source-bound contract or this leaf's amended rollout authority.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
       "targets": [
         {
           "anchor": {
@@ -412,12 +446,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
             "content": "sha256:6c149f9e6175f0e6d63518b77bbfd86c24c1f92468ee2d7f257e20648424b556",
             "locator": {
-              "end": 548,
+              "end": 569,
               "kind": "line_range",
-              "start": 538
+              "start": 559
             }
           },
           "kind": "code"

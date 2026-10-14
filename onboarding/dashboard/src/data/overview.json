@@ -1247,29 +1247,18 @@
       ]
     },
     "48": {
-      "note": "Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs.",
+      "note": "Central expression cards mount SourceContent at the inventory exact tree IDs.",
       "targets": [
         {
           "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
+            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
+            "content": "sha256:967af88e6f864e62d8159a9c4b5786e7702ed6f42b4b0fc51ff2d337d4bcd55d",
             "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCard"
+              "end": 239,
+              "kind": "line_range",
+              "start": 182
             },
             "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "inventoryEntry"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
           },
           "kind": "code"
         }

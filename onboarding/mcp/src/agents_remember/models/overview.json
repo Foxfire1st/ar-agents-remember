@@ -1742,12 +1742,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "d007a9784b5cd8e74cc978725ce60f7c247d22b1",
             "content": "sha256:fec3a1b25a2e4f5d9a591ea64c09fbdf943e3bf5eb17ca2b4dced5be77856b06",
             "locator": {
-              "end": 515,
+              "end": 538,
               "kind": "line_range",
-              "start": 488
+              "start": 511
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -1755,12 +1755,12 @@
         },
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "d007a9784b5cd8e74cc978725ce60f7c247d22b1",
             "content": "sha256:62199b4101d82bf84a5c7cc31ea840d1b97f963f7e3b99ad5fc9b5d197e566c9",
             "locator": {
-              "end": 544,
+              "end": 567,
               "kind": "line_range",
-              "start": 517
+              "start": 540
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -3305,7 +3305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:4dee800a8bb13c6e5f68f405f9021616ec9631665e2fe76bad24c4a958c708ca",
             "locator": {
               "kind": "symbol",
@@ -3318,16 +3318,16 @@
       ]
     },
     "266": {
-      "note": "The row-kind registry: `invariant`, `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, since MIK-R10 `unexplained`, and since MIK-R14 `reconsideration`.\n\nAnchor: \"HISTORY_ROW_KINDS: Final[\"",
+      "note": "Registry includes membership and record.",
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
-            "content": "sha256:0bcde5fce6f90d8dd1ecf427c7cbc0351264dfceb67ad75589ada51de0950c2a",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:035aa98548afe89d3f76cdd4f38fa56689d6532a8f9bdd87b545b491314d96bc",
             "locator": {
-              "end": 415,
+              "end": 536,
               "kind": "line_range",
-              "start": 408
+              "start": 526
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3340,7 +3340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:2799b0cbe1e743ea523b7593ebb8498618c81f604095f8e51f25f9e61aa6cac4",
             "locator": {
               "kind": "symbol",
@@ -3450,7 +3450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:274273b127cd7bae61dbedb33794d3d26a4da04425a05a43b2138f987a38aad7",
             "locator": {
               "kind": "symbol",
@@ -3484,7 +3484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:2a6098f81a2571808253d02c5ba685e568e3fd6f3114a9a6cee85b651a2630dc",
             "locator": {
               "kind": "symbol",
@@ -3851,7 +3851,7 @@
       ]
     },
     "294": {
-      "note": "Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations.",
+      "note": "Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations.\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
       "targets": [
         {
           "anchor": {
@@ -3947,7 +3947,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
             "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
             "locator": {
               "kind": "symbol",
@@ -3959,7 +3959,7 @@
         },
         {
           "anchor": {
-            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
             "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
             "locator": {
               "kind": "symbol",
@@ -3983,7 +3983,7 @@
         },
         {
           "anchor": {
-            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
             "content": "sha256:de5ac759b3fba0735e2487b4b8c4c58641cb946e6fd03b14fc87e7f74612bbc3",
             "locator": {
               "kind": "symbol",
@@ -3995,7 +3995,7 @@
         },
         {
           "anchor": {
-            "blob": "cada14d2d6c959869645e545af9ac0be189c8cc7",
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -4357,6 +4357,60 @@
         }
       ]
     },
+    "312": {
+      "note": "SourceBlob and bound onboarding row validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:98140684ab120315f502842c9bd3eda8bcf9ae928ce9ee5278aea19b9990c15f",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "313": {
+      "note": "Membership and decision/facet record forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:dbbe37ce010409ef053c8a5848a10e88d77d02c21e648a3bb878161f61c59249",
+            "locator": {
+              "end": 514,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "314": {
+      "note": "Each winning row retains its own closed-file provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:873045d8f79b566fb17d05a0a8ba0f41d4a500052e8defa4959f4c8a88da73ed",
+            "locator": {
+              "end": 681,
+              "kind": "line_range",
+              "start": 648
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The one continuation token and what it binds.",
       "targets": [
@@ -4612,7 +4666,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:351ca76594016af73163b5744b84f92ac9ea626b79d1252cbe5dddff5500cafa",
             "locator": {
               "kind": "symbol",
@@ -4624,7 +4678,7 @@
         },
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
             "locator": {
               "kind": "symbol",
@@ -4637,16 +4691,16 @@
       ]
     },
     "41": {
-      "note": "The registry with the fourth kind (MIK-R10 later adds a fifth).\n\nAnchor: \"HistoryRowKind(\\\"planned\\\", PlannedEffectRow, \\\"MIK-R11\\\")\"",
+      "note": "History registry includes the full set of row forms.",
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
-            "content": "sha256:8fadb4ca161d335390177bbc2a171c5cbdfac023b5494b2a73c2dd45a37c70a0",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:035aa98548afe89d3f76cdd4f38fa56689d6532a8f9bdd87b545b491314d96bc",
             "locator": {
-              "end": 412,
+              "end": 536,
               "kind": "line_range",
-              "start": 412
+              "start": 526
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -4914,7 +4968,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:b60772fe790f4832181aa4f66c9c87bd180b2370af8e0453cf60022db632429f",
             "locator": {
               "kind": "symbol",
@@ -4926,7 +4980,7 @@
         },
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
             "content": "sha256:644f7c2670e9b292710844ac61a53a178829bd9035aa3709d6452bfe139eff3a",
             "locator": {
               "kind": "symbol",
@@ -4955,7 +5009,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
             "locator": {
               "kind": "symbol",
@@ -4968,16 +5022,16 @@
       ]
     },
     "53": {
-      "note": "The registry with the fifth kind.\n\nAnchor: \"HistoryRowKind(\\\"unexplained\\\", UnexplainedChangeRow, \\\"MIK-R10\\\")\"",
+      "note": "History registry retains unexplained and its neighboring row kinds.",
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
-            "content": "sha256:ba79991de34ee7f95287408b481cc14936a2a2ad73ce7634169ae4f9ecec85e1",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:035aa98548afe89d3f76cdd4f38fa56689d6532a8f9bdd87b545b491314d96bc",
             "locator": {
-              "end": 413,
+              "end": 536,
               "kind": "line_range",
-              "start": 413
+              "start": 526
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -5408,7 +5462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:d3e54223a5cf8e1c583975d19d64357ac9e83e202c04e318830a33f39f3eb24a",
             "locator": {
               "kind": "symbol",
@@ -5420,12 +5474,12 @@
         },
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
             "content": "sha256:30eef198dc125e95c9dcc355bffb786e3af9027b747f4704fdd489a3bd964cea",
             "locator": {
-              "end": 414,
+              "end": 534,
               "kind": "line_range",
-              "start": 414
+              "start": 534
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },

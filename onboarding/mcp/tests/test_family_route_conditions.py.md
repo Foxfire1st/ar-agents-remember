@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The MIK-R06@v2 cases (10 collected): family route maintenance, raised as `family_route_condition`
+**The MIK-R06@v2 cases (historical collection: 10): family route maintenance, raised as `family_route_condition`
 worklist items.** Every case reuses MIK-R08's real Git code and converted memory repositories
 (`test_knowledge_worklist.World`) with four families: `FAM-R00001` (routes `svc/application` and
 `svc/worktrees`, realized in three files), `FAM-W00001` (an `unrealized_family` routed at `svc/legacy`),
@@ -31,10 +31,12 @@ route does; the satisfying row is a family row in the leaf's own history file. T
   false (mutation-checked by the worker: judging only the locations at C fails this stage).
 - **The non-conforming example** (`test_a_no_impact_row_…`): a `no_impact` row never satisfies, even with
   fixed routes; a `rerouted` row does not satisfy while `svc/worktrees` is kept after its last entry left.
-- **`route_path_absent` and the carried L04 decision** (`test_a_carried_dead_route_…`): the validator passes
-  and only reports `R04.1-carried-route-absent` for `FAM-W00001`, which the worklist does not reach; the item
-  is still raised and open; a `changed` row alone does not satisfy it while the dead route stays; `rerouted`
-  plus an existing route does. The retired family on the same dead route raises nothing.
+- **`route_path_absent` under MIK-R53 rule 11**
+  (`test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`): source assertions require
+  `report.ok == False` and `R04.1-carried-route-absent` for `FAM-W00001` in `report.refusals`, not
+  reports. The worklist reaches no family through entries but still raises the mandatory open item.
+  A `changed` row alone does not satisfy it while the dead route stays; `rerouted` plus an existing
+  route does. The retired family on the same dead route raises nothing.
 - **Retired** (`test_a_reached_retired_family_raises_nothing`), **`route_unassigned`**
   (`test_a_reached_family_without_routes_…`: open at first, a `changed` row with `routes: []` stays open, an
   `assigned` row with a route is satisfied, the ID unchanged; ruling Q3), **the boundary example**
@@ -47,10 +49,11 @@ route does; the satisfying row is a family row in the leaf's own history file. T
   `test_the_suggestion_follows_renames_…` (Q5: a rename gives `[svc/application, svc/landing]` with no
   `unmappedLocations`; a deletion gives no suggestion and lists the absent files).
 
-- **MIK-R27 (L27 ruling Q4).** L06 landed after L27. The carried-route case asserts `validate_tree(...).ok`
-  and filters the reports by rule, so the report-only `R27.4-legacy-unassessed` count every fixture
-  validation now carries needs no pin here; the fixture families exist in K_B, so `R27.2-new-record` never
-  applies to them.
+- **Historical MIK-R27 account (L27 ruling Q4).** The earlier carried-route case passed and filtered
+  reports by rule. Current source instead asserts refusal and isolates the owning carried-route
+  finding from `report.refusals`; legacy-unassessed debt reporting is conditional, not a permanent
+  validator PASS. The fixture families already exist in K_B, so this is not new-record admission.
+  No collection or execution was performed for this source inspection.
 
 ### Conventions
 
@@ -83,7 +86,6 @@ No configured live documentation source was available for this pass.
 - The stored predicate checked against the live `satisfiedBy`. [2]
 - The conforming directory move, with the R2-N1 stage. [3]
 - `no_impact` refused; a kept dead route stays open. [4]
-- The carried L04 decision end to end. [5]
 - A reached retired family raises nothing. [6]
 - `route_unassigned` until an `assigned` row with routes. [7]
 - The boundary example. [8]
@@ -98,3 +100,6 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed: every repository is created under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+- `test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption. [5]
+- Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]

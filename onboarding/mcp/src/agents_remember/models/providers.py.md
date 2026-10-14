@@ -68,4 +68,3 @@ their service payloads can expose provider-specific fields.
 ### Repo-Internal References
 
 - Provider status projection builds these models before returning MCP payloads. [1]
-- Provider application entry point functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. [2]

@@ -20,8 +20,10 @@ through the shipped extractor.
 - `commits_with_prefix(prefix)` lists **every** object whose ID starts with the prefix
   (`rev-parse --disambiguate`) and keeps the commits (`cat-file --batch-check`). An abbreviated commit is
   therefore seen as ambiguous as the store grows, never silently read as missing (review R1 finding 3).
-- `tree(commit)` maps each regular file of the commit's tree to its blob ID (`read_git_tree_bytes`,
-  modes `100644`/`100755`).
+- `tree(commit)` maps regular files (`100644`/`100755`) and symlinks (`120000`) to their entry blobs. Cached tree modes, `tree_modes` and `link_paths` preserve mode identity; an extant link has target-text bytes, not absence or its referent contents. Symbol resolution receives the selected tree's symlink set and rejects a named link before extraction; file/line-range locators still read entry bytes.
+
+- Code-object mode snapshots retain symlink blobs and reject symbol extraction through them. [10]
+- Symbol and content locators use explicit symlink context. [11]
 - `prefetch(blob_ids)` reads uncached blobs in batches of 1,500 through `read_git_blobs_bytes`, and wraps
   any failure as `CodeObjectError`. `blob`, `has_blob` and `line_count` read single objects.
 - **`has_blob(blob_id)` tells a missing object from a Git failure (MIK-R09, L09 review R3-2, ruling

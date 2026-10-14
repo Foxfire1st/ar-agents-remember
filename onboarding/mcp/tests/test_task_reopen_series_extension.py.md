@@ -43,7 +43,9 @@ source fact, not a collected or executed case result.
   `worktree_start_tool`, the closeout and integrate tools, `lifecycle_finalize_task_tool`.
   `_work_the_leaf` first calls the public conversion command and asserts return 0, then authors
   fixture Markdown and an open canonical history row for `onboarding:extension.txt` with
-  `disposition: no_impact` and empty `items` before committing code. This is test scaffolding,
+  `disposition: no_impact`, empty `items`, and a `sources` entry naming `extension.txt` with the
+  actual blob from `CodeSnapshot.capture(self._leaf.code_worktree)` after its edit and before
+  committing code. This is test scaffolding,
   not a new execution or semantic acceptance receipt. Two of the steps exist
   because the open question they answer had never been measured: `_start_the_leaf_off_the_reopened_master`
   carries the new row's `file` cell through the real start, and `_close_the_master_out_again_and_land_it`
@@ -217,15 +219,18 @@ No cross-repository claim is made.
 
 ### Current Source-Inspection References
 
+
+
+
+
+
+
+
+
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
+
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
-- A retired branch whose landing left the source line is rebuilt **at the recorded landing**, reports `reconstructed`, and leaves the master reopenable. [2]
-- The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it. [3]
-- A contract that no longer records its landing refuses the re-cut, writes nothing, and creates no branch. [4]
-- A start over an archived terminal contract refuses with the typed status and `nextTool: task_reopen`, mints nothing, and the named route then really works. [5]
-- The archived-generation start asserts the typed refusal, no replacement contract or integration branch, and equality of the coordination-root file-name set. [6]
-- The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
-- A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
-- The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
 - The same fallback carries the memory landing. [11]
 - A missing master document no longer blocks: the reopen proceeds and reports the missing path. [12]
@@ -236,9 +241,16 @@ No cross-repository claim is made.
 - The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility.  Anchor: `SeriesExtensionRouteTests.test_the_budget_screen_and_the_declaration_agree_in_either_landing_order` [17]
 - The ruling arm: a plain assertion once the ruled pair is declared, and a skip naming the owner and the observed pair while it is not. [18]
 - The screen's proved pair is read from the `parametrize` marks the screen runs with, so literals and named constants resolve alike. [19]
+- A retired branch whose landing left the source line is rebuilt **at the recorded landing**, reports `reconstructed`, and leaves the master reopenable. [2]
 - The case ceilings are read from the repository-root declaration rather than copied, so this check cannot rot into a third copy of the number. [20]
 - A skipped route cannot report success: the sentinel and its boundary, stated rather than implied. [21]
 - The population assertion no skip can satisfy, sorting last by construction. [22]
 - The guard cases' invariant that a refused reopen writes nothing to the contract or the master document. [23]
 - The disposable world every case is built on, and the two hand-repair shapes the reachability proof has to survive. [24]
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
+- The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it. [3]
+- A contract that no longer records its landing refuses the re-cut, writes nothing, and creates no branch. [4]
+- A start over an archived terminal contract refuses with the typed status and `nextTool: task_reopen`, mints nothing, and the named route then really works. [5]
+- The archived-generation start asserts the typed refusal, no replacement contract or integration branch, and equality of the coordination-root file-name set. [6]
+- The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
+- A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
+- The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]

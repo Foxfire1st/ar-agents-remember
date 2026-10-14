@@ -18,12 +18,46 @@
         }
       ]
     },
+    "10": {
+      "note": "Code-object mode snapshots retain symlink blobs and reject symbol extraction through them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "content": "sha256:abdb9b0ce08c6498b987ed972b4dedfc76e7f20c85be527b88836bf85b693504",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Symbol and content locators use explicit symlink context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "content": "sha256:ca7e6e7d4b87cb893d62bc0ef32d2083a1254d99d91673753f1ac809e681410b",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A commit by exact name.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:51eac2097846b98da2d5b910557d344a3566ae28c85ccc15643ed91cc2afd83f",
             "locator": {
               "kind": "symbol",
@@ -39,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:8ae960f3597ab9bf56e7c9d1d40d6deadbaea5e38ad3691da134ff12516df22b",
             "locator": {
               "kind": "symbol",
@@ -71,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -82,12 +116,12 @@
         },
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:661c59ba6d84d2c519f21e3f21fcd824a8fe73348aae8310e3d880d9a79b5d3f",
             "locator": {
-              "end": 168,
+              "end": 189,
               "kind": "line_range",
-              "start": 143
+              "start": 164
             }
           },
           "kind": "code"
@@ -99,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
             "locator": {
               "kind": "symbol",
@@ -110,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
             "locator": {
               "kind": "symbol",
@@ -137,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
             "content": "sha256:4f4560e0b2f5bee9fce5a0cc28c0a9829616232cfc114115a3e08d186c627e21",
             "locator": {
               "kind": "symbol",

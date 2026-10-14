@@ -37,17 +37,19 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   difference, including a blob-only one, counts as re-anchored.
 - `FamilyRow` (subject `FAM-…`): `changed` | `rerouted` | `assigned` | `retired` | `no_impact`,
   with `examined[]` of `{id: INV, revision}` members, unique by ID.
-- `OnboardingTraceRow` (kind `onboarding_trace`, owner MIK-R30; subject `onboarding:<source path>` for a
-  file card, `onboarding:<route>/overview` for a route overview, `onboarding:overview` for the root):
-  a reviewed-no-impact attestation about one card, with the single disposition `no_impact`. **MIK-R24
-  rule 8 step 1 is its first writer:** when an open leaf's line crosses into the text format, the
+- `OnboardingTraceRow` (kind `onboarding_trace`, MIK-R30/MIK-R53; same file/overview/root subjects):
+  `updated` or `no_impact`, with optional `sources[]` of `SourceBlob {path, blob}`. Paths are unique
+  repository paths; blobs are hexadecimal IDs or `absent`. `updated` requires sources; the writer
+  fills them from C. Sourceless legacy rows keep the field omitted and only answer from their own
+  closed winning file, never an open row or a later aggregate closed flag. **MIK-R24
+  rule 8 step 1 was the kind's first writer:** when an open leaf's line crosses into the text format, the
   Update History `No content impact:`/`No route impact:` marker lines that leaf added move into its
   history file as these rows. Per the architect's ruling on review round 2 (N1), the moved lines go in
   the structured list field `markers` (`Text` values, at least one entry when present), one entry per
   marker line. A line longer than one text value is split deterministically into consecutive pieces,
   and `reason` becomes a short fixed summary. A real card gained 81 marker lines, 29,351 characters in
-  all, which no single `reason` could hold. Registering the kind minimally was accepted at L24; MIK-R30
-  (L30) then gave it its semantics without changing the model (see the L30 section below).
+  all, which no single `reason` could hold. Registering the kind minimally was accepted at L24; L30
+  gave it its initial semantics, and R53 now adds source binding and the `updated` disposition.
 - `PlannedEffectRow` (kind `planned`, owner MIK-R11; subject `planned:<declared subject>#<effect>`): the
   authored disposition of a declared effect no row delivered, with dispositions `realized_elsewhere`,
   `deferred` and `dropped` and a `ref` (`PlannedRef`) naming exactly one of `row`, `invariant`,
@@ -61,11 +63,14 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
 - `ReconsiderationRow` (kind `reconsideration`, owner MIK-R14; subject `reconsider:<DEC-ID>#<alternative index>`,
   the `RECONSIDER_SUBJECT_PATTERN` of `reconsideration.py`): the curator's answer to a reconsideration candidate,
   `still_rejected` or `raise`, with its `reason` and nothing beyond the common fields. See the L14 section below.
-- `HISTORY_ROW_KINDS` is the row-kind registry, now holding `invariant`, `family`, `onboarding_trace`,
-  `planned`, `unexplained` and `reconsideration`; `row_kind_for_subject` and `parse_row` dispatch a row to the one
-  kind whose subject form it has, and refuse a subject no kind claims. MIK-R06 adds its kind later; MIK-R30 owns
-  `onboarding_trace`'s semantics, MIK-R11 owns `planned`, MIK-R10 owns `unexplained` and MIK-R14 owns
-  `reconsideration`. Leaves register in landing order, so the tests compare the registry as a set.
+- `MembershipRow` (MIK-R53, `membership:<INV>`): `no_family`, invariant candidate revision and
+  unique `considered` family IDs (possibly empty); separate from invariant/family judgment rows.
+- `RecordRow` (MIK-R53): decision, incident, assumption, limitation, failure-mode, scenario, diagnostic
+  or term ID; candidate revision, `changed`/`retired`/`no_impact`, optional `because`. `changed` needs
+  an effect, `retired` needs `retire`, and `no_impact` carries no effect.
+- `HISTORY_ROW_KINDS` now has eight kinds: `invariant`, `family`, `onboarding_trace`, `planned`,
+  `unexplained`, `reconsideration`, `membership`, `record`. `row_kind_for_subject`/`parse_row` dispatch
+  by disjoint subject form and refuse unclaimed subjects; tests compare a set, not landing order.
 - `HistoryFile` has `schema`, exactly one of `leaf`/`wave`/`crossing` (a crossing must match
   `<task>-crossing-<n>`), `closed` (strict bool) and `rows[]`, with row IDs and subjects each
   unique, so a file holds at most one row per subject (`row_about`). `closed_copy` and
@@ -76,11 +81,12 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   differ, including deletion and reformatting.
 - Writer support: `reanchor_mismatches` (each `after` equals the entry's K_C anchor, `absent`
   means absent), `sidecar_entry_anchors` (fills the sidecar path into entry anchors for that
-  comparison), `unknown_subjects`, `invariant_revision_violation` (the row's revision is the K_C
-  revision; `changed` is exactly K_B + 1; `moved`, `extended` and `no_impact` keep the K_B revision;
-  `deleted` is checked only against K_C; an invariant absent from K_B needs no row) and
-  `stale_examined_members` (a member whose K_C revision differs is stale; one absent from K_C is
-  not).
+  comparison), `unknown_subjects` (invariant/family/record IDs and membership's prefixed invariant),
+  `invariant_revision_violation` (the K_C revision; `changed` exactly K_B + 1; `moved`, `extended`,
+  `no_impact` keep K_B; `deleted` checked only against K_C; new invariants need no invariant row), and
+  `stale_examined_members` (a different K_C revision is stale; an absent member is not).
+  `winning_row_closed` uses attempt order to retain each winning row's own file closure provenance,
+  unlike the latest-file flag carried by `merged_leaf_history`.
 
 ### Conventions
 
@@ -101,7 +107,8 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   judgment can only live in a history row.
 - The models check shape and the helpers check facts the caller supplies; whether a row is current
   for a worklist item is the gate's rule (MIK-R09 rule 2), and the writer is MIK-R12's.
-- Nothing in the installed runtime reads or writes history files before MIK-R37.
+- Historically the installed runtime read/wrote no history files before MIK-R37; this is not a
+  current unconverted-write branch. The current writer refuses unconverted memory.
 - **A leaf that writes again after its closeout (L37, decision record DEC-0AEQ28).** `HistoryFile.attempt` is optional
   (>= 2, a leaf only; a wave or crossing file with `attempt` is refused), so every existing file keeps its
   bytes; `attempt_number` is 1 without it. A leaf whose latest file a closeout closed (reopened after its integration, or continuing after a closeout that
@@ -128,16 +135,16 @@ ruling. Doc14 §4.7 still shows the older illustrative history shape; the archit
 
 ## 260928-MIK-L30 What An Onboarding Row Means (MIK-R30)
 
-L30 changes only the `OnboardingTraceRow` docstring; the model is L24's, unchanged. The docstring now states
-MIK-R30's semantics: on a converted tree, a row with disposition `no_impact` satisfies the onboarding gate's
-item for a changed source file's card or governing route overview that has no counted change
-(`worktrees/modules/onboarding_trace.py`); `no_impact` is the only disposition; the curator writes it through
-the writer's `history` section (`authoring._onboarding_row`), and MIK-R24 rule 8 step 1 also writes it by
-moving an open leaf's markers. The root route's subject is `onboarding:overview` (architect ruling
-2026-09-29T18:49:50 (3)).
+L30 originally gave the no-impact row its semantics; R53 now binds current judgments to covered
+source blobs. The writer authors `updated` with a real counted Markdown/reference change, or
+`no_impact` when the reviewed contract still holds, and fills `sources` from C. A counted card edit
+alone never answers an ordinary candidate item; realization/proof-only edits are not counted.
+A source edit after the row reopens the item. Historical rows without sources remain omitted and
+frozen: only a row in its own closed winning file retains legacy eligibility; open sourceless rows
+answer nothing. Marker transport and root subject `onboarding:overview` retain their earlier forms.
 
-- The row kind's docstring, with MIK-R30's semantics and the root subject. [1]
-- The gate that reads these rows. [2]
+- The row-kind docstring: `updated`/`no_impact`, writer-filled sources and legacy closed/open distinction. [1]
+- The gate reads source currency, counted-change requirements and each winning row's own closure provenance. [2]
 
 ## 260928-MIK-L11 The Planned Row (MIK-R11 Rule 5)
 
@@ -157,10 +164,10 @@ string `<ID>@v<n>` while a `deferred` row's `requirement` is structured; both sp
 R1 F5, accepted by ruling 2026-09-29T22:35:34+02:00). The module docstring now names MIK-R30 and MIK-R11 as
 the kinds that have landed.
 
-- The docstring's list of landed row kinds (since MIK-R14 it names MIK-R10's and MIK-R14's, with MIK-R06 still to come). [3]
+- Historical module-docstring landing outline; the current registry also includes MIK-R53 membership and record kinds. [3]
 - The ref: exactly one key. [4]
 - The planned row and its disposition-bound ref. [5]
-- The registry test, since MIK-R14 six kinds compared as a set. [6]
+- The current registry test compares all eight kinds as a set, including MIK-R53 membership and record. [6]
 
 ## 260928-MIK-L10 The No-Invariant Row (MIK-R10 Rule 3)
 
@@ -190,10 +197,10 @@ share one spelling); its disposition is `still_rejected` (the rejection holds, a
 (the alternative goes to the developer); it carries the common fields only, and extra members are refused by the
 model. The model checks shape only: what the subject names, the decision's `under_reconsideration` status, the
 task-document question and the link refresh are the writer's (`knowledge_writer/reconsideration.py`,
-`authoring._reconsideration_row`). The curator never reverses a decision. The module docstring now names
-MIK-R14's `reconsider:…` among the landed kinds, with MIK-R06 still to come. The registry is compared as a set in
-`test_knowledge_history_files.py`, because leaves register in landing order (review F9); the duplicate-name check
-that the ordered list gave is gone, while subject disjointness is still asserted (review N4, accepted as a note).
+`authoring._reconsideration_row`). The curator never reverses a decision. The historical module
+outline names MIK-R14's `reconsider:…`; the current registry also contains the two R53 kinds.
+`test_knowledge_history_files.py` compares the registry as a set because leaves register in landing
+order (review F9); subject disjointness remains asserted (review N4, accepted as a note).
 
 - The row's subject pattern and dispositions come from the one spelling. [11]
 - The reconsideration row: its kind, pattern and two dispositions. [12]
@@ -233,8 +240,6 @@ each rule.
 - What each disposition's covers must show. [18]
 - The invariant row. [19]
 - The family row and its examined members. [20]
-- The onboarding-trace row: one disposition, and the moved marker lines as a structured list. [21]
-- The row-kind registry, now with six kinds (MIK-R11 adds `planned`, MIK-R10 `unexplained`, MIK-R14 `reconsideration`), and dispatch. [22]
 - Many long marker lines move into one valid row. [23]
 - The file: one owner, one row per subject. [24]
 - The freeze predicate. [25]
@@ -261,3 +266,7 @@ No meaningful cross-repo references found: the module reads and writes only file
 repository layout it declares, and calls no sibling repository or external service.
 
 No cross-repo boundary is crossed by this file.
+
+- The onboarding row: `updated`/`no_impact`, unique source paths, required updated binding and moved markers. [21]
+- Eight registered kinds and subject dispatch, including MIK-R53 membership and decision/facet record rows. [22]
+- Current source delta inspected statically: Replace stale single-disposition/six-kind model and captions, add source-blob shape, membership/record models and per-winning-file closure provenance, while preserving frozen history, covers and FamilyRow compatibility. [39]

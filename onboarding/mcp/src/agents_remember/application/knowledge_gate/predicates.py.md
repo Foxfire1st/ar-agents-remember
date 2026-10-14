@@ -2,126 +2,34 @@
 
 ## Governing Overview
 
-[application route overview](../overview.md)
+[Application overview](../overview.md)
 
 ## Purpose
 
-**Each registered worklist kind's own satisfying rule over a stored item (MIK-R09 rules 1, 2 and 7).** The gate
-decides every item of the recomputed worklist through the predicate registered for its kind beside the kind registry,
-never through a generic row lookup: kinds differ in what satisfies them (the carried obligations from L06, L10, L14
-and L30, gathered by the start decision 2026-09-30T13:15:47). A predicate takes the item document and a
-`GateContext` and returns why the item is still open, or `None` when an authored row (or, for an onboarding item, a
-counted change) satisfies it. An item whose kind has no predicate is open.
+Dispatch every worklist kind to its own satisfying predicate over parsed leaf history, candidate knowledge and actual code currentness. Missing predicates and unreadable observations are not generic-row passes. A Git read failure or timeout raises `GitReadFailed` and makes the whole gate run `incomplete`; a persistently unavailable object or unsupported grammar is instead an ordinary not-current observation that leaves its item open.
 
 ## Code Commentary
 
-### Logic
+Invariant rows must cover the required touched/moved/stale entries and every declared addition, retirement or reanchor; their recorded revision must match the candidate invariant, and surviving covered entries must be current at C. A leaf-owned record change retains its governing changed/deleted disposition while it differs from the parent line. Family rows separately check own-revision drift, hidden guarantee changes, the exact examined member union, member revisions and uncovered invariant obligations. These predicates are structural/currentness admission, not an independent review of whether reasons or effects are true.
 
-- **`GateContext`** holds what a predicate reads: the owner, the leaf's parsed history file in K_C, K_C itself as a
-  `KnowledgeSide`, the opened code tree C, and `open_invariants` (the invariants whose invariant item is open, for the
-  family rule). `rows_by_subject` maps each row subject to its row ID (the registrants' predicates take that map).
-  `entry_state(entry_id)` observes a K_C entry's MIK-R03 state at C through `observe_entry` (`None` when K_C no longer
-  holds it) and raises **`GitReadFailed`** when the observation is `read_failed`: an entry whose state could not be
-  observed because a Git read failed or timed out is never decided (review R1 F9; the gate turns it into an
-  `incomplete` finding).
-- **`register_gate_predicate(kind, predicate)`** refuses a kind the MIK-R08 registry (`ITEM_KINDS`) does not know and
-  a second registration. **`item_open_reason`** dispatches through `GATE_PREDICATES`; an unregistered kind is open
-  ("no gate predicate is registered for the item kind …, so it cannot be answered").
-- **Invariant rows (rule 2).** `required_covers` is the set a row must cover: for a `stale_invariant`, every entry
-  its facts name (each is stale at base); otherwise every entry whose class is in `COVERING_CLASSES` (`touched`,
-  `moved_or_absent`, `stale_at_base`); plus every `added`, `retired` and `reanchored` entry.
-  `invariant_row_open` requires an `InvariantRow` about the subject, the required covers, a `revision` equal to the
-  invariant's K_C revision, and every covered entry that still exists in K_C `current` at C (`_not_current` names
-  each one that is not, with its MIK-R03 reason). Since L37 (INV-XN0FG8) it also asks
-  `changed_record_row_violation` with the item's `facts.record.baseRevision`: while the invariant's revision on the
-  parent line differs from its K_C revision, the governing row is the `changed` row of that change, or the `deleted`
-  row that retires it. A later `no_impact`, `moved` or `extended` row leaves the item open, and the reason says to
-  restate the changed row.
-- **Family rows (rule 2).** `family_row_open` requires a `FamilyRow` about the family and then the first failing of:
-  the recorded own-revision drift check (the row's recorded revision against the family's K_C revision),
-  `_hidden_guarantee_reason` (L37: when the item's `reachedBy` holds `guarantee-changed`, the row is `changed` or
-  `retired`; a `no_impact`, `assigned` or `rerouted` row does not answer a family whose guarantee the leaf changed),
-  `_examined_set_reason` (`examined` equals the union of the family's K_B and K_C members, naming the unexamined and
-  the extra), `_moved_members_reason` (every examined revision equals the member's K_C revision, or the member left
-  K_C: "INV-BBBBBB (examined at 1, now 2)", D7) and `_uncovered_members_reason` (no member has an open invariant item).
-- **The registrants' own predicates.** `family_route_condition` → `_route_condition_open` over
-  `family_route_item_open(item, history)`, which finds the row by the item's **subject** `<FAM-ID>#<condition>`, so an
-  item ID that changed between recomputes is answered by the same row (L06 review N2); its reason distinguishes a
-  family record that does not satisfy MIK-R04 routes from a missing disposition. `onboarding_trace` →
-  `onboarding_item_open` (a counted Markdown or sidecar change, or the `no_impact` row: the L30 carry);
-  `unexplained_hunk` / `unexplained_file` → `unexplained_item_open`; `planned_untouched` → `planned_item_open`;
-  `reconsideration_candidate` → `reconsideration_item_open` (an unanswered candidate blocks closeout, D29). The four
-  row-map predicates are wrapped by `_by_rows`.
-- Registration happens at import, for all ten kinds; the test asserts `set(GATE_PREDICATES) == set(ITEM_KINDS)`.
+Ordinary onboarding admission now consumes a typed `OnboardingTraceRow`, the winning row's own history-file closed flag, exact `sourceBlobs`, and counted-change facts. A current `updated` row needs a counted change; `no_impact` needs the current source binding; sourceless rows answer only from their closed historical file. Counted Markdown alone is not a new ordinary answer. Missing blobs, changed sources, sourceless open rows and unsupported update claims each have their own named repair reason. [1]
 
-### Conventions
+Unexplained covered changes keep the existing `no_invariant` requirement. An uncovered change instead consumes its own onboarding-trace facts and applies the same typed onboarding/currentness rule; mere presence in a subject-to-ID map is insufficient. [2]
 
-- Only authored rows satisfy items (rule 5); nothing here writes, and there is no waiver.
-- The predicates check presence and currentness only; whether a disposition is right is the independent reviewer's
-  (the packet's Exclusions).
+The new `unassigned_invariant` predicate requires a typed membership row and compares its recorded revision with the subject invariant in K_C. `touched_record` requires a typed record row at the item's revision, with disposition derived from record facts: newly retired wins, otherwise an increased revision needs `changed`, otherwise `no_impact`. These are distinct row classes, not substitutions for invariant/family changes or an authorization to write through an unsupported producer. [3]
 
-### Invariants And Boundaries
+Registration covers the membership and touched-record kinds as well as the prior invariant, family, route, onboarding, unexplained, planned and reconsideration kinds. Family-route conditions remain addressed by subject, and planned/reconsideration kinds retain their registered rules. [3]
 
-- **Every kind is decided by its own predicate, and an undecidable item is open.** Realized by
-  `register_gate_predicate`, `item_open_reason` and the ten registrations; proved by
-  `test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup` (a counted onboarding change
-  passes where `satisfying_row` finds nothing; two item IDs with one subject are answered by one `rerouted` row and
-  both open under `no_impact`; an unknown kind is open).
-- **Rule 2's currentness.** Proved by the packet's conforming, non-conforming ("covers one of two") and boundary
-  ("edit again", "a sibling's revision rises from 3 to 4") examples in `test_knowledge_closeout_gate.py`, and on the
-  real converted scratch (`gate-1` to `gate-4`).
-- **A read that did not happen decides nothing.** `entry_state` raises `GitReadFailed` for a Git failure only; a code
-  object that is persistently unavailable (a missing recorded blob, an unavailable grammar) is simply not `current`
-  and keeps the item open with its named reason (review R2-3).
-
-### Todos
-
-- None.
-
-## Gate Currentness On Own Revision (MIK-R48)
-
-`family_row_open` reopens a governing family row when the family record moved past
-the row's recorded own revision; the remedy text tells a stale changed row to name
-its effect again and a stale row of any other disposition to name a row of its own
-disposition.
-
-- The gate reopens governing rows on family revision drift. [13]
+Amended R53 rule 1 is the bounded pre-landing changed-card exception for this leaf, not a general relaxation of these candidate-code predicates. The nine deferred Family-examination obligations remain L54 work.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
-outside the repositories.
-
-No configured live documentation source was available for this pass.
-
 ### Repo-Internal References
 
-- The module docstring: one predicate per kind, never a generic lookup; while a record's revision differs from the parent line's, only its changed row governs. [1]
+- Row-own closed provenance and source/count currency. [1]
+- Covered versus uncovered unexplained admission. [2]
+- Membership/record revision and disposition predicates with registrations. [3]
 
-- What a predicate reads, and the entry state that raises on a failed read. [2]
-- Registration and dispatch; an unregistered kind is open. [3]
+### Docs References
 
-- The covers an invariant row must hold, and its currentness. [4]
-- The family row's own-revision check, then its four reasons: a hidden guarantee change, the examined set, moved members and uncovered members. [5]
-
-- The route condition decided by subject. [6]
-- The ten registrations. [7]
-- The dispatch test. [8]
-
-- An invariant the leaf changed is answered only by its changed row. [9]
-- A family whose guarantee the leaf changed is answered only by its changed row. [10]
-
-- Leaf-owned changed records retain their changed governing row across attempts. [11]
-
-
-- A family guarantee changed by the leaf remains governed by that changed row. [12]
-
-
-### Cross-Repo References
-
-No meaningful cross-repo references found.
-
-No cross-repo boundary is crossed by this file.
+The amended rollout rule and deferred L54 scope are external task authorities; these statements do not claim fresh test execution or independent MEMORY acceptance.

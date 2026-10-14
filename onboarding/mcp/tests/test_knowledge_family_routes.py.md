@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R04: the validator's family route rules, the reported states, the root route `.` and the mechanical suggestion, over the converted Doc14 fixture tree.** The fixture's family is Doc14 §4.2's "attribution-and-landing-pairing" with its three routes (`worktrees`, `models/knowledge`, `application`) and six realizations (`knowledge_validator_test_support`). A test changes one thing and checks that exactly the owning rule answers, naming the family, the route and the uncovered path. Registered in the `unit-regression` lane; 33 collected cases.
+**MIK-R04: the validator's family route rules, the reported states, the root route `.` and the mechanical suggestion, over the converted Doc14 fixture tree.** The fixture's family is Doc14 §4.2's "attribution-and-landing-pairing" with its three routes (`worktrees`, `models/knowledge`, `application`) and six realizations (`knowledge_validator_test_support`). Cases pin the applicable refusing/reporting rule sets, naming family, route and uncovered path; deleted carried routes can also trigger carried-anchor refusals. Registered in the `unit-regression` lane; the earlier 33-case collection is historical, not freshly recertified. This card describes static source assertions.
 
 ## Code Commentary
 
@@ -14,12 +14,23 @@
 
 - **Doc14 example.** `test_the_doc14_family_example_validates_with_every_route_holding_realizations` asserts the exact route-to-files table of Doc14 §4.2 and that the proof `PRF-T3ST0K` is not among the family's locations.
 - **Coverage and Non-empty.** An added realization outside every route is refused under `R04.2-coverage`; a route whose only realization is removed, and a route (`mcp/tests`) holding only a proof entry, are refused under `routes.<i>: [R04.2-non-empty]`. One broad route (`mcp`) passes the rules while the suggestion offers the three local routes.
-- **Route existence.** An added absent route is refused (`R04.1-route-directory`); a carried absent route is reported (`R04.1-carried-route-absent`); at a merge, a route carried by either parent is carried, and one carried by neither is refused. A standalone conversion checks no route directory. Both code trees answer `has_directory`, the root included.
-- **Writer reporting.** `test_the_refusing_route_rules_are_reported_inside_the_writer` pins MIK-R04's writer-reported set exactly (through `ROUTE_RULES`) and shows a Non-empty break still refuses in `validate_tree` while all its refusals fall inside `writer_reported_rule_ids()`.
+- **Route existence.** An added absent route is refused (`R04.1-route-directory`); a carried absent route refuses off merge (`R04.1-carried-route-absent`, alongside `R22.6-carried-stale` when anchors are absent); at a sync merge it reports, and a route carried by neither parent is refused as added. A standalone conversion checks no route directory. Both code trees answer `has_directory`, the root included.
+- **Writer reporting.** `test_the_refusing_route_rules_are_reported_inside_the_writer` pins MIK-R04's five writer-reported rules exactly through `ROUTE_RULES` (route-directory, coverage, non-empty, carried-route-absent and unrealized-family) and shows a Non-empty break still refuses in `validate_tree` while all its refusals fall inside `writer_reported_rule_ids()`.
 - **The root route.** Eight spellings are parametrised: `.` is accepted and `""`, `" ."`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/./src"` and `"mcp/"` are refused by `FamilyRecord`. A realization in `setup.py` violates Coverage until `.` is added; a family whose only route is `.` passes both rules.
-- **Reported states.** `unrealized_family` is reported with Non-empty waived, but still needs a route unless it is an unassessed export; `route_unassigned` is reported with Coverage waived; `routes: []` on any other family violates Coverage; a retired family raises nothing.
+- **Route states.** `test_an_unrealized_family_refuses_off_merge_and_non_empty_is_waived`
+  asserts unrealized-family refusal on one base and reporting at sync, while preserving the
+  Non-empty waiver. A realized family with no routes still violates Coverage unless an unassessed
+  export; a newly admitted routeless/unrealized family fires Coverage and unrealized-family.
+  `test_a_carried_exported_family_without_routes_is_migration_debt` uses a base already holding
+  `route_unassigned`, reports actual carried incomplete debt with Coverage waived, and is not a
+  blanket no-base exemption. Retired families raise nothing.
 - **Suggestion.** Five parametrised collapse cases (siblings collapse into a parent of only family code; no collapse when the parent holds other code; a directory under another is covered; collapsing repeats; never the root) and the root-route case.
-- **The legacy count in the pins (leaf 260928-MIK-L27).** Since MIK-R27 registers its admission rules, every validation of the fixture tree carries one report-only `R27.4-legacy-unassessed` count (`LEGACY_COUNT`), because the Doc14 family is an export. The eight pins that expected no violation or an exact report-only set now include it and stay exact: the Doc14 example, the carried-route case, the standalone conversion, both root-route cases, and the two reported-state cases, whose `reports[0]` lookups now select the report by rule because the count sorts first. By ruling 22:11:24 Q4 (review F6), whichever of L06 and L27 lands second makes its own new pins over this tree include the count.
+- **Actual carried debt in the pins (MIK-R53 superseding the L27 report-only premise).**
+  Positive coverage/non-empty/root-route fixtures now supply explicit bases so live legacy debt is
+  genuinely carried, not newly introduced by a no-base run. That incomplete migration reports
+  `LEGACY_COUNT`; standalone conversion also reports the debt it authors. New debt at other routes
+  refuses, and migration-complete carried debt refuses. The historical L06/L27 landing-order re-pin
+  requirement explains the old pins, not permanent report-only permission for every fixture.
 - **Command.** `test_the_routes_command_offers_the_suggestion_and_writes_nothing` runs `knowledge-routes` in text and JSON mode, checks `unknown family: <ID>`, and asserts the memory bytes are unchanged.
 
 ### Conventions
@@ -28,7 +39,9 @@
 
 ### Invariants And Boundaries
 
-- Every rule is asserted to land in either the refusals or the reports, so report-only disposition is pinned behaviourally.
+- Static assertions distinguish single-base refusal, sync reporting, standalone conversion and
+  actual base-held incomplete debt. Report disposition is route/finding-specific, not permanently
+  report-only; writer reporting grants repair access, not commit/landing permission.
 
 ### Todos
 
@@ -54,8 +67,6 @@ The cases and their helpers.
 - Coverage and Non-empty violations name the family, the route and the path. [2]
 - One broad route passes; the suggestion offers local routes. [3]
 - Route spellings: `.` or a repository path. [4]
-- The root route covers a root-level realization, and a family whose only route is `.` is non-empty; each validation's only finding is the report-only legacy count. [5]
-- The reported states and the retired exemption. [6]
 - A family without routes that is not an unassessed export violates Coverage. [7]
 - A standalone conversion checks no route directory: with no code tree it passes, reporting only the legacy count. [8]
 - The lane registration. [9]
@@ -65,3 +76,7 @@ The cases and their helpers.
 No meaningful cross-repo references found: the tests read the repository's own fixtures and a temporary directory.
 
 No cross-repo boundary is crossed by this file.
+
+- Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass. [5]
+- Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption. [6]
+- Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption. [10]

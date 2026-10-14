@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:b542f7ac836190d2b7bc162ba0b53493660b5d917f1aac9cfb841cdbb9f8fb30",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:317b1b914ec5f794716798a785c45ca15966965ea4dc39b13c420f45ef822ccf",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:88220b8479feeacff0bd5ca914b99293a2077b2c9c349fb5bbc2f4427b6a9717",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:b40dc8f34f95039c2d1d5f40acd3ad5956d39156ca4d094c79651124debc7532",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:f7b2cfa593a74ca9c244a7c0e3c2fd61ce02fef00e78a4a84695217856b7baea",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:345fdfe758ca659dd5c2cb11eb1cdbd10b4e343a900ba1ac24e24c946006acd0",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
             "content": "sha256:20c7e9a15bc81ea10af15b4a248b528237668bd3251ef90b2c97f7c4877a3fb3",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
             "content": "sha256:85190e1cdfd7f60b6cedd65ff1c3c273eda95f83dd3e713326da326e45368b57",
             "locator": {
               "kind": "symbol",
@@ -118,6 +118,22 @@
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The lower reader owns the unchanged overview-route selector and its overview.md marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8dd84066d9712a5e0bc7811833e7c72f4990fc9",
+            "content": "sha256:d33dc472bba8406ed17bc56a82ff310e7baec2b9423919c519236cbfd74e6946",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_routes"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

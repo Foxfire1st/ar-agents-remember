@@ -3,18 +3,68 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Arguments.",
+      "note": "Arguments, RawDescriptionHelpFormatter and the ten-rule reason/refusing-route table.",
       "targets": [
         {
           "anchor": {
-            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
-            "content": "sha256:aad0db0b3bd27e37a79c07ff70c8ba90d1c799aba689647d1f7a3a1a62a5604e",
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:06c425496dd9b7bc16f4ea0a4b554518c1486ca45a3026bf1438746d289b826d",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
+              "end": 83,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -23,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
             "content": "sha256:9afaba359c8b7c508b842a1137620cfcd784997afb2ab4b940041b9e0601c199",
             "locator": {
               "kind": "symbol",
@@ -39,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
             "content": "sha256:06be4b3199ce3222e2e93f1a7329db8933d229b79644d4923dfc7fdbbe291163",
             "locator": {
               "kind": "symbol",
@@ -69,15 +119,119 @@
       ]
     },
     "5": {
-      "note": "The command passes the fixture tree and refuses a hand-added marker (re-read after MIK-R09 moved the case below the new sync-merge cases; unchanged).",
+      "note": "Current source assertions distinguish the fixture pass with `--base` (carried legacy report) from the baseless malformed-marker JSON refusal (both marker and legacy debt refuse); no command was run for this account.",
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
-            "content": "sha256:72281b1010c8682009aedd5f4b5c3b050f645f2098811f2a9e676d1bd76f4cd0",
+            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "content": "sha256:4f0adf7e76356668861fdbafaf5028f592f47b86b055ae658a3e439e74825d0d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_standalone_command_validates_a_converted_fixture_tree"
+              "end": 308,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source delta inspected statically: Add the preserved help-table policy and correct the stale blanket fixture-pass caption while retaining arguments, read-only/no-skip behavior and exit codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
+            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
+            "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },

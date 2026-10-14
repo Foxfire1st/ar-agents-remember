@@ -50,10 +50,11 @@ re-reads, which is what makes the same assessment a previous generation's record
    is `unresolved`, its detail says a reference that is not a recorded revision of the subject is never
    matched, and it claims no retained revision.
 7. `test_every_page_size_classifies_the_same_records_the_same_way` (`:361-395`) — the F-V2 case: at
-   every page size in the fixture's series the treatments, the context signature (identity, true
-   subject and recorded relationship spelling) and the summary are identical, and exactly the one
-   genuinely unreachable subject is counted `unrelated`, so no page size may report a
-   recorded-reachable record as unreachable.
+   every page size in the fixture's series has the same treatments and context signature
+   (identity, true subject and recorded relationship spelling). Each page separately asserts
+   `summary.unrelated == 1` and `summary.supplied == summary.direct + summary.historical +
+   summary.context + summary.unresolved + summary.unrelated`; it does not compare whole summaries
+   across page sizes. No page size may count an additional recorded-reachable record as unrelated.
 8. `test_a_direct_label_never_cites_a_retained_list_that_does_not_carry_the_record` (`:398-434`) — the
    F-V6 case: at every page size the `direct` sentence carries exactly one of the two bases, and citing
    ICR-R07 **requires** R07's own published retained lists — read back from the pane's own
@@ -105,7 +106,7 @@ None recorded.
 ### Repo-Internal References
 
 - `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` owns the current boundary described above. [21]
-- `test_every_page_size_classifies_the_same_records_the_same_way` owns the current boundary described above. [22]
+- `test_every_page_size_classifies_the_same_records_the_same_way` compares treatments/context signatures across page sizes and checks unrelated==1 and the summary partition on each page; it does not compare whole summaries. [22]
 - `test_the_source_inventory_is_independent_of_the_record_selection` owns the current boundary described above. [23]
 - `_publish_assessments` owns the current boundary described above. [24]
 
@@ -125,7 +126,7 @@ No configured domain documentation could be checked.
 - **An unresolvable binding displayed with its references and never as support.** [31]
 - **A previous generation's record labelled historical with the tree it examined, and never current.** [32]
 - **The F-V1 case: a malformed revision binding is unresolved and claims no retained revision.** [33]
-- **The F-V2 case: every page size classifies the same records the same way, context included.** [34]
+- **The F-V2 case: treatments and context signatures match across pages; unrelated==1 and the summary partition are asserted separately per page, not whole-summary equality.** [34]
 - **The F-V6 case: a `direct` sentence cites ICR-R07 only when R07's own published list carries the matched revisions.** [35]
 - **The complete populations: the channels' counts beside the pane's own, and every summary a partition.** [36]
 - **The source inventory is a measurement of the two bound trees and is untouched by record selection.** [37]

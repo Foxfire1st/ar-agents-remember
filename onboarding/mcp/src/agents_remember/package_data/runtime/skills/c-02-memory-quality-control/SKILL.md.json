@@ -83,16 +83,28 @@
       ]
     },
     "5": {
-      "note": "On converted memory the legacy-format checks are not applicable, and currentness comes from anchors.\n\nAnchor: \"**On converted memory** (the tree holds the knowledge layout marker)\"",
+      "note": "Converted checks use anchor assessment and current onboarding rows; validator reports name their reason and refusing route, including the gone-path exception and migration/sync policy.\n\nAnchor: lines 108-125 and 221-252",
       "targets": [
         {
           "anchor": {
-            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
-            "content": "sha256:4cfb835c2cae38565d499def1a7633dbfb2aa77576a2925a71dde336663de4e1",
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:18812d3e2c588f9109c70c6439d095f929e62f58e7015b08adb2c255f0acb16f",
             "locator": {
-              "end": 126,
+              "end": 125,
               "kind": "line_range",
-              "start": 117
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:f3e2672d10f4a2a0138fb2a6262a4549d1ad2f0f35257fbb0c8d0fcc0a20a7eb",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 221
             }
           },
           "kind": "code"
@@ -100,7 +112,7 @@
       ]
     },
     "6": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.\n\nL53 account: The curator handoff runs the complete curation check and repairs or escalates every curator-actionable finding with its exact returned code; required coherence uses the complete prepared candidate identities.\n\nAnchor: lines 203-219 and 254-275",
       "targets": [
         {
           "anchor": {
@@ -108,6 +120,30 @@
             "content": "sha256:85591912b519b7385a2b247d57558e8f4f5b97bc659fc125671d3bfacb69715a",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:438817c291c7210e360ad484b29a804128785f43941ba9d293350333c4f1fa83",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "486f3e68bba0e605e0e78f2abced7f9f6e54ec64",
+            "content": "sha256:68fdf17bd6b075b568369a491cd8ca14525763e9c9ce9b580f638600e8e0765b",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 254
             }
           },
           "kind": "code"

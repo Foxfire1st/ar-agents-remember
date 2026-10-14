@@ -19,6 +19,23 @@
         }
       ]
     },
+    "10": {
+      "note": "Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:17b903572caf487e9dd78a2d9bfb0b1338ac23bfae64a0b9da409ec43a1feea9",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Creating a card for a new source file: the Markdown, the citation table, one fixer run and the refusal reasons.",
       "targets": [
@@ -41,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:e036e0cb99863e6fba61f72bb065b3fdf79ec46ffe25c8744c38cf33c0a6fa64",
             "locator": {
               "end": 110,
@@ -71,16 +88,16 @@
       ]
     },
     "5": {
-      "note": "The no-change trace rows, and what never belongs on converted memory.\n\nAnchor: \"When the card needs no change\"",
+      "note": "Every changed file and governing overview needs a current updated or no-impact row; counted edits alone never answer, and converted cards keep no legacy metadata or Update History.\n\nAnchor: lines 156-183",
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
-            "content": "sha256:44025590f2b83bafa525c3bdd92ed9c9266abeac1e1de577e755f1a947586192",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "content": "sha256:56e438f05ed8fead2b5675cac80c7dce433bd1de38c739ce32536786b8021499",
             "locator": {
               "end": 183,
               "kind": "line_range",
-              "start": 159
+              "start": 156
             }
           },
           "kind": "code"
@@ -110,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -127,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:13a3891b08283cb375d8372fa61599ca7c6c1866cd31fe38ac6a71f9fa427597",
             "locator": {
               "end": 84,
@@ -144,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1636ea751fe089d9ee9587fb0419841e4e516a9",
+            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
             "content": "sha256:9e5c23153af599bae860871190314b3a053f9602f1d4a2ddbc4268717179a271",
             "locator": {
               "end": 31,

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
-        "content": "sha256:ebd00a9cdc167595759bb2c18b19a6794f5143cc12fec01fbc0c2d84f2153e6d",
+        "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+        "content": "sha256:930dde8e49031aed35627898bdc80525f96e22aca48e3661d9086b0527a819a8",
         "locator": {
           "end": 290,
           "kind": "line_range",
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:216c7f7465c28039e32efe120c6ec4b1f82c03475d6e7611234941be82bcc311",
             "locator": {
               "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:3f722526699d1b2d71565e28a0cf73adf9da717c80e85a742fd1b814ecb5aef4",
             "locator": {
               "kind": "symbol",
@@ -87,11 +87,11 @@
       ]
     },
     "16": {
-      "note": "- The crossing test and the pinned version.",
+      "note": "- The pinned version refuses all-unconverted inputs or version disagreement; all-converted inputs sharing one version remain eligible.",
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:b1cb993e5fcc5b657f9c28e4994e3a062ba75ff4fac32ca7b7cd20ea84d97d0c",
             "locator": {
               "kind": "symbol",
@@ -103,15 +103,64 @@
       ]
     },
     "17": {
-      "note": "- Step 1: the leaf's added no-impact markers become onboarding_trace rows, with the lines in `markers`.",
+      "note": "- Step 1: the leaf's added no-impact markers become onboarding_trace rows, with full text in `markers` and sources bound to the own side's paired code commit; file and overview provenance have different source sets.",
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
-            "content": "sha256:22d6e294c1f4eff9f134de208acee3b138fbc703b85a8155c23a390c05e59bbd",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:be07c284fbbebd4add2263367fe902fc810069eacd2987149d09751c46926069",
             "locator": {
-              "kind": "symbol",
-              "name": "marker_rows"
+              "end": 167,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
             }
           },
           "kind": "code"
@@ -123,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:d372068980e5c96d4c0e96c3ff9c47f0a6258c22dd8335edd325f87a1a722812",
             "locator": {
               "kind": "symbol",
@@ -139,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
             "locator": {
               "kind": "symbol",
@@ -151,15 +200,64 @@
       ]
     },
     "20": {
-      "note": "- Steps 1-4 and the report.",
+      "note": "- Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
-            "content": "sha256:ebd00a9cdc167595759bb2c18b19a6794f5143cc12fec01fbc0c2d84f2153e6d",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:ff3c3983f15eacf02f014ee806eedaada474d50d7c11dd10fbb72273d3af7531",
             "locator": {
-              "kind": "symbol",
-              "name": "cross"
+              "end": 324,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
             }
           },
           "kind": "code"
@@ -171,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
             "content": "sha256:0cbf5676de63bf4123fe5fb45cf4cab77652d3ed904cc7d7e11a71b0bdc9bfeb",
             "locator": {
               "kind": "symbol",
@@ -221,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
             "content": "sha256:5f7ac04d3e3081631c06c2ab56043490a06a04dd8a5c037261ec3df453adc1b5",
             "locator": {
               "kind": "symbol",
@@ -230,6 +328,59 @@
             "path": "mcp/tests/test_knowledge_crossing.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Current source delta inspected statically: Require paired-code marker provenance, distinguish overview history from future changed sets, and name fail-closed markers-step errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
         }
       ]
     }

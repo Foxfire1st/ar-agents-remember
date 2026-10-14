@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+        "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
         "content": "sha256:323e5b5660ce755861594dabd7b3bbf9608ff272c0d56aa0ffb102ddf46fcdf3",
         "locator": {
           "kind": "symbol",
@@ -22,26 +22,193 @@
   ],
   "references": {
     "1": {
-      "note": "A rule, with its `report_only` and `writer_reports` flags, and what a check returns.",
+      "note": "A rule may carry `writer_reports` and a named route policy; `Finding.carried` distinguishes base debt. Plain report-only registration and both named policies together refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
-            "content": "sha256:7a4a4bb2a52c447055d842771a35358afb726602c8f5c3b80ede0d32f0644bd8",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:c5b949bec9d48691ab4f9f8a98449a8d51d161737ee6251bddff26ae251a575f",
             "locator": {
-              "kind": "symbol",
-              "name": "ValidationRule"
+              "end": 91,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
-            "content": "sha256:f8426a2db586cd5d96e4131a2e87c0e68d598810ab6347a67caf51ab500ca82e",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:536ad8080505629bec9fe2a2003d1f026edb73d3bdbaaba608e0fa79d85b84af",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:3370f0b41402c3c85d88a49ce1e0070d49dce230718683a69bb57e8808a47f41",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:876cc4c3de978b999b614487728733a472c04ffe5fb0e3903acd8147595a2cb3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:594e6a8bf736bfaf6e63ee1476b4f40bea7e452e58db079c87434a855cf15ebc",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:0d1f5252cbab63b39905c420e6eab4a9d81ab3dd1c02dba1f88adb9d7d0ee981",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Current source delta inspected statically: Replace blanket reporting and stale writer inventory with named route/finding policy, migration completion and explicit conversion context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:3370f0b41402c3c85d88a49ce1e0070d49dce230718683a69bb57e8808a47f41",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:876cc4c3de978b999b614487728733a472c04ffe5fb0e3903acd8147595a2cb3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:594e6a8bf736bfaf6e63ee1476b4f40bea7e452e58db079c87434a855cf15ebc",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:0d1f5252cbab63b39905c420e6eab4a9d81ab3dd1c02dba1f88adb9d7d0ee981",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Migration completeness uses the lower census reader and the same actual-route/status union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:d4f0ff1e0b6a90da10e9ac603c9b537e2f59fae6dd8fe631db6bcc877816ce4e",
             "locator": {
               "kind": "symbol",
-              "name": "Finding"
+              "name": "migration_state"
             }
           },
           "kind": "code"
@@ -53,8 +220,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
-            "content": "sha256:93d5f335443f6b1c4144a68c70a68d5bd998f8c00c5f50d5e245801a736ca7d3",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:cecc8a55915171cddb4a009e7d8c17627b3b01faf640b0d312b9be3b261a55fc",
             "locator": {
               "kind": "symbol",
               "name": "register_rule"
@@ -64,7 +231,7 @@
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
             "locator": {
               "kind": "symbol",
@@ -76,11 +243,11 @@
       ]
     },
     "3": {
-      "note": "The refusing rules a writer reports instead; the docstring states the contract.\n\nAnchor: \"only reported inside the\"",
+      "note": "The refusing rules a writer reports instead; the docstring states the contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
             "locator": {
               "kind": "symbol",
@@ -91,12 +258,12 @@
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:d40be055dfb49563dbe86aa3a3bba96288476fb8e003fec4df344331b5483e79",
             "locator": {
-              "end": 8,
+              "end": 22,
               "kind": "line_range",
-              "start": 8
+              "start": 22
             }
           },
           "kind": "code"
@@ -125,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:2673554761807852785e6a37922cd2f9546e69de3bb1177d33fb7ef575bedf8d",
             "locator": {
               "kind": "symbol",
@@ -136,7 +303,7 @@
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:3eac4ef752328b41a6c7337bfe15b2de955e85ff380b18eef629a35428d13e74",
             "locator": {
               "kind": "symbol",
@@ -147,7 +314,7 @@
         },
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:498d9ff6fca7ce10c8f2a052de74325866bbc2a7dfdd90c0e3b571164f9c7fea",
             "locator": {
               "kind": "symbol",
@@ -159,15 +326,88 @@
       ]
     },
     "6": {
-      "note": "The context every rule reads.",
+      "note": "The shared context includes `is_sync_merge` and cached migration state over census and actual onboarding routes, beside candidate/bases/code/publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
-            "content": "sha256:c039b5ef7bd638c37a2e421780d36996e56cbb529359e91ea9d3763f81735c32",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:fd6e3762465d42b9d16addb648ac95a99c389d232991eff34f8a1ec637340572",
             "locator": {
-              "kind": "symbol",
-              "name": "ValidationContext"
+              "end": 341,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:3370f0b41402c3c85d88a49ce1e0070d49dce230718683a69bb57e8808a47f41",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:876cc4c3de978b999b614487728733a472c04ffe5fb0e3903acd8147595a2cb3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:594e6a8bf736bfaf6e63ee1476b4f40bea7e452e58db079c87434a855cf15ebc",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:0d1f5252cbab63b39905c420e6eab4a9d81ab3dd1c02dba1f88adb9d7d0ee981",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 326
             }
           },
           "kind": "code"
@@ -175,16 +415,16 @@
       ]
     },
     "7": {
-      "note": "The flag a leaf-publication commit sets (MIK-R09).\n\nAnchor: \"leaf_publication: bool = False\"",
+      "note": "The flag a leaf-publication commit sets (MIK-R09).",
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
             "content": "sha256:c6d79341a499f45319cb71f3db62c6627a95eba44d48a5829cf8f4c8d7573217",
             "locator": {
-              "end": 151,
+              "end": 304,
               "kind": "line_range",
-              "start": 149
+              "start": 302
             }
           },
           "kind": "code"
@@ -192,19 +432,79 @@
       ]
     },
     "8": {
-      "note": "A later packet's rule runs everywhere, and report-only never refuses.",
+      "note": "Every registered check runs; per-finding report/refuse depends on sync-merge/standalone-conversion context or carried debt and migration completeness, never a blanket report-only registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
-            "content": "sha256:ddbdd1414ffa1f78899897fc2f2de39aed2c1912dcdecb739816b44707a85f8a",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:3370f0b41402c3c85d88a49ce1e0070d49dce230718683a69bb57e8808a47f41",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses"
-            },
-            "path": "mcp/tests/test_knowledge_validator.py"
+              "end": 107,
+              "kind": "line_range",
+              "start": 104
+            }
           },
-          "kind": "test"
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:876cc4c3de978b999b614487728733a472c04ffe5fb0e3903acd8147595a2cb3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:594e6a8bf736bfaf6e63ee1476b4f40bea7e452e58db079c87434a855cf15ebc",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:0d1f5252cbab63b39905c420e6eab4a9d81ab3dd1c02dba1f88adb9d7d0ee981",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -213,8 +513,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
-            "content": "sha256:c039b5ef7bd638c37a2e421780d36996e56cbb529359e91ea9d3763f81735c32",
+            "blob": "69d843f056ca4acf784ccfa7fde3680b31d1dd7c",
+            "content": "sha256:639dec4f352a7b2eabba502c3df63f2423db2416516081d4f88e45ddf8646240",
             "locator": {
               "kind": "symbol",
               "name": "ValidationContext"

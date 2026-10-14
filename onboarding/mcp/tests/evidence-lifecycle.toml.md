@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture.
+The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
 
 - The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. [267]
@@ -431,7 +431,6 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The nine retained Doc14 knowledge-file fixtures each have an artifact row. [224]
 
 
 
@@ -634,7 +633,6 @@ each behavioural case failing before its fix and passing after.
 
 
 
-- The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
 
 
 
@@ -667,3 +665,7 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 
 - The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution. [272]
+
+- All nine retained Doc14 fixture artifact rows declare the R53 judgment-row and report-policy modules as consumers; their artifact identities are unchanged. [224]
+- Durable-artifact declarations include the R53 consumers on Doc14 fixtures, validator/writer support and the existing Node lockfile; lane rows remain in test-evidence-lanes.toml. [14]
+- At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), the source diff added consumers only to twelve existing artifact rows. The 13-contract/93-artifact source observation is retained as historical on this successor (13 contracts/101 artifacts); declarations remain reachability, not a loader, test, lane or acceptance result. [273]

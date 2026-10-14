@@ -30,6 +30,8 @@ and ends with the same HEAD, a completed journal, and proven `memoryContentCommi
 
 The cache-independence case asserts exactly one new memory commit, the caller body plus its real attribution trailer, an ignored/untracked cache, and a derived cached pair. `test_converted_direct_landing_reuses_clean_memory_and_replays_terminal` ports the non-format reuse guarantees onto converted memory: exactly one paired commit, with only the asserted first-landing scaffolding and gate-authored sidecar changes. Repeating the accepted request refuses with `direct-landing-input-conflict`, names the accepted fingerprint, and leaves the completed generation, HEAD and attribution unchanged, including after cache deletion.
 
+The create fixture defaults to an answered world, but the pre-code census case selects `answer=False`. It first performs its legal revoke, negative ungranted-call control and give; only then does it edit the code, reanchor and compute `trace_rows(world, *TRACES)`, which materializes the enclosure. The existing message/tree refusal and admitted code-leg assertions stay in the same fixture. The converted reuse/replay case also passes its actual `world` to the trace helper.
+
 ### Conventions
 
 The current source contains multiple direct landing cases over disposable repositories, including verify-existing, exact-pair create, same-generation public recovery and ambiguous-cut refusal. A historical single-case account does not describe the expanded source population.
@@ -67,10 +69,8 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-- The fixture owns real temporary code/memory refs and an admitted series contract. [1]
-- The retained scenario proves one content commit and reads its attribution from Git. [2]
 
-- Converted paired-commit/replay guarantees and retained interrupted-receipt recovery [3]
+
 
 - The lifecycle recovery owner performs the required same-generation resumption. [4]
 
@@ -81,3 +81,8 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- The fixture owns real temporary code/memory refs and an admitted series contract. [1]
+- The retained scenario proves one content commit and reads its attribution from Git. [2]
+- Converted paired-commit/replay guarantees and retained interrupted-receipt recovery [3]
+- The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation. [5]

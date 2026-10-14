@@ -6,9 +6,9 @@
 
 ## Purpose
 
-`lifecycle_service.py` is the typed provider lifecycle service boundary for MCP
-callers. It lets MCP application entry points run provider operations from trusted lifecycle
-settings without building CLI `argv` or invoking `lifecycle.main()`.
+`lifecycle_service.py` retains typed provider lifecycle services for internal consumers.
+The former MCP provider application entrypoints and lifecycle CLI were removed; these
+service definitions do not restore either callable surface.
 
 ## Code Commentary
 
@@ -24,7 +24,7 @@ unchanged.
 
 ### Logic
 
-`ProviderLifecycleServiceConfig` carries the server-derived coordination root,
+`ProviderLifecycleServiceConfig` carries the trusted coordination root,
 temporary lifecycle settings path, dry-run mode, and timeout. The service
 functions normalize those paths, build internal namespaces, and dispatch to the
 provider lifecycle implementation functions:
@@ -35,21 +35,20 @@ provider lifecycle implementation functions:
   `shutdown-all`.
 
 The service API catches provider lifecycle operational errors and returns
-structured `ok: false` payloads for MCP callers.
+structured `ok: false` payloads for internal callers.
 
 ### Invariants And Boundaries
 
-- MCP callers should pass only server-owned settings, not caller-selected roots.
-- This module is not a generic shell wrapper and does not expose arbitrary
-  provider CLI parsing to MCP.
+- Internal service callers must supply trusted lifecycle settings, not treat these helpers as public provider tools.
+- This module is not a generic shell wrapper and does not parse arbitrary provider CLI arguments.
 - CGC service calls do not carry a Python executable because Docker runner
   lifecycle owns provider execution.
-- The dev/operator CLI facade is `lifecycle.py`; MCP provider tools should call
-  this service layer instead of the CLI `main()` path.
+- The retained `lifecycle` package is a lazy backend facade; its CLI and `main()` execution
+  adapter were deleted. Do not prescribe a CLI or public MCP provider-tool replacement.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- MCP provider tool application entry points call this service layer. [1]
-- CLI/operator implementation functions remain behind the lifecycle facade. [2]
+
+- Retained backend implementation functions are exported lazily through the lifecycle facade, not an active CLI parser. [2]

@@ -25,7 +25,32 @@
   "context": "Architect qualification 2026-10-08 11:18:45 UTC amending MIK-R86@v1 (packet a78d9ae3) with referenced MIK-R57@v2: six family/two narrow cases port test-only to current elements with assertions preserved; dataset-context/count/history/pre-label assertions retire; direct pane-3 treatment and sibling isolation remain until L57.",
   "decider": "Architect canonical decision 2026-10-08 11:18:45 UTC.",
   "id": "DEC-D0ZZXM",
-  "links": [],
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "414196eb7345aa87d3ccc1cba87aed4b4d7945ca",
+        "content": "sha256:7c774625fbf5601b76e1fe313562a9358ccdfc6bba1d369084d231e84bca0dc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "payload"
+        },
+        "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "414196eb7345aa87d3ccc1cba87aed4b4d7945ca",
+        "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
+        "locator": {
+          "kind": "symbol",
+          "name": "mountSubject"
+        },
+        "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx"
+      }
+    }
+  ],
   "origin": {
     "handoff": {
       "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
@@ -34,7 +59,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

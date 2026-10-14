@@ -15,11 +15,14 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 ### Logic
 - `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`:
   1. attempt 1 is answered through the writer, the gate passes and the leaf closes out and integrates;
-  2. a new edit reopens the invariant and its family (the closed rows no longer hold), while the closed trace rows
-     still count, and the gate's refusal names `<leaf>-attempt-2.json`;
-  3. the writer writes the rows into attempt 2 (`attempt: 2`, open) and the closed file keeps its bytes;
+  2. a new edit reopens the invariant, its family and the file/route onboarding traces: the closed
+     source-bound trace rows still bind the first edit's blobs and are stale for the new edit. The
+     gate's refusal names `<leaf>-attempt-2.json`;
+  3. the writer writes the rows, including the refreshed source-bound traces, into attempt 2
+     (`attempt: 2`, open); the closed first file keeps its bytes;
   4. the parsed tree's `histories[leaf]` is the merged reading and `history_files` holds both paths; the index
-     answers "rows about X" from both files; MIK-R30's `_history_rows` reads both;
+     answers "rows about X" from both files; MIK-R30's `_history_rows` reads both and retains each
+     winning onboarding row together with its own file's closed flag;
   5. a hand edit of the frozen file is refused by the validator (`R22.7`);
   6. record landing refuses an open second attempt (`knowledge-history-not-closed`), and after the second closeout
      passes, with the first file still byte-identical.
@@ -49,8 +52,9 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - **A leaf that continues after a closeout that was not integrated (INV-MS9BMJ).**
   - `test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt`: nothing left to commit is still
     judged; the committed closed file may not be edited (`R22.7-history-frozen`); a new edit is refused, naming
-    attempt 2; the writer starts attempt 2 and the second closeout closes it, with the first file byte-identical;
-    a frozen row whose entry the writer carried is not judged again; the landing check freezes the first attempt
+    attempt 2; the writer starts attempt 2, naming the file and overview traces again beside the
+    re-anchor and sibling comment row. The second closeout closes it with the first file byte-identical;
+    a frozen invariant row whose entry the writer carried is not judged again; the landing check freezes the first attempt
     only once the contract records that closeout.
   - `test_the_latest_row_about_a_subject_governs_across_attempts`: for the writer, the gate's currentness and
     the validator's re-anchor rule; a `changed` row that restates no earlier `changed` row is refused.
@@ -65,7 +69,11 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 ### Invariants And Boundaries
 - The first file's bytes are asserted unchanged after every later step: the freeze is byte-level.
-- Trace rows are presence-based: a closed `onboarding_trace` row answers a reopened leaf's item for the same card.
+- Trace rows are source-bound, not presence-based: a closed row with `sources` can stale after a new
+  source edit and must be judged again in the next attempt. Only sourceless historical rows have
+  closed-file compatibility; a sourceless row in an open file answers nothing. `_write` recomputes
+  the leaf worklist when none is supplied so overview rows bind the item's actual source set. Closed
+  history remains byte-frozen; that freeze does not make a source-bound answer permanently current.
 
 ### Todos
 - None recorded.
@@ -84,19 +92,16 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above. [27]
 
 - The module docstring: reopen after a converted closeout. [30]
-- A reopened leaf writes its next attempt, and its history is every file. [31]
 - Attempt files are named, ordered and backward compatible. [32]
 - The closeout closes the latest attempt and never reopens a closed one. [33]
 - The gate names the attempt the writer writes. [34]
 - Record landing refuses when the landed history cannot be listed. [35]
 - The history target under test. [36]
-- The merged reading under test. [37]
 - The public closeout refuses an open item and commits once it is answered. [38]
 - The closeout preview answers what the apply will do. [39]
 
 - Legacy preview refuses without evaluating the invariant gate or changing the compared sides. [40]
 
-- A leaf that continues after its closeout writes its next attempt. [41]
 - A file rewritten while the gate runs is never committed unjudged. [42]
 - The latest row about a subject governs across attempts. [43]
 - A world whose contract records the leaf's completed closeout that was not integrated. [44]
@@ -115,3 +120,8 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the suite builds scratch repositories under its temporary directory.
 
 No cross-repo boundary is crossed by this file.
+
+- Reopening after a new source edit asks invariant, family and file/route traces again in attempt 2; the first history stays byte-identical. [31]
+- The merged reading includes refreshed attempt-2 traces, and `_history_rows` keeps the winning row's own closed flag. [37]
+- A continued leaf writes its next attempt, including file/overview source-bound traces after the new edit; frozen invariant history remains separate. [41]
+- Current source delta inspected statically: Replace closed-trace presence claims with refreshed source bindings and own-file closed provenance; retain freeze and exact-tree assertions. [46]

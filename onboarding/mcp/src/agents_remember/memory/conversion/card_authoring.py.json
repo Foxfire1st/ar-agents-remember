@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:c59b1c021b9ab901580c7dc4fd8701f42e7414c80def8ed2dc645277960e7274",
             "locator": {
               "end": 40,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "blob": "255d11630cac57a42281fd2bcd9e8e9145d8ff39",
             "content": "sha256:f2dde7a95d731493b66677960d67be86e66497273740783fdd10fd50abae0f35",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:7e3d5e175fa1a2b9ffbde9cf235a00ec17d67124e2d0816b434062d27d3d3510",
             "locator": {
               "kind": "symbol",
@@ -52,12 +52,54 @@
         }
       ]
     },
+    "12": {
+      "note": "Current source delta inspected statically: Explain cached symlink paths and RowContext forwarding; retain citation numbering, re-authoring and refusal boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
+            "content": "sha256:ebe72fd903a85084a3498718717fbf90cc6ecc92ffcf5b7803bab6b1c2f96d21",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
+            "content": "sha256:e7a68952117962dcdd994bf3fd162c2d9e9d8b8d21444fd5a46a130f1256bdf4",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca851a7ad416ce12946800d1b5cbe0dcd62a643c",
+            "content": "sha256:dd4f374cf29a88038ec75e9829188f97b65e7cdf9cbb388a96efeccfb2b3c29f",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The entry: author in memory first, then write the cards that passed.",
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -73,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:8daa6629906d4c216d6ce6135c557b82d9c064f4c8c0ef755fcd60cbf5d6777e",
             "locator": {
               "kind": "symbol",
@@ -85,16 +127,54 @@
       ]
     },
     "4": {
-      "note": "One row: a placeholder stays prose; otherwise a numbered line and a resolved reference.",
+      "note": "One row: a placeholder stays prose; otherwise a numbered line and a reference resolved through the once-captured blob/symlink context. Symbol targets do not parse symlink target bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:14d5f4ea97b2f8ed7170ff5549d33528e493359b93959273ce694e621b9fe148",
             "locator": {
-              "kind": "symbol",
-              "name": "_author_row"
+              "end": 253,
+              "kind": "line_range",
+              "start": 235
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
+            "content": "sha256:ebe72fd903a85084a3498718717fbf90cc6ecc92ffcf5b7803bab6b1c2f96d21",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
+            "content": "sha256:e7a68952117962dcdd994bf3fd162c2d9e9d8b8d21444fd5a46a130f1256bdf4",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca851a7ad416ce12946800d1b5cbe0dcd62a643c",
+            "content": "sha256:dd4f374cf29a88038ec75e9829188f97b65e7cdf9cbb388a96efeccfb2b3c29f",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/citations.py"
           },
           "kind": "code"
         }
@@ -105,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:c8fb1829ffe2f8da2520f380d0fe0d9bd7c48974b7861e33b7cacc2444a4634c",
             "locator": {
               "kind": "symbol",
@@ -121,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:3c14c12500a9f14b25be8fd9c376810b7d6716a252d633d9435d951122bdb7d3",
             "locator": {
               "kind": "symbol",
@@ -154,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:82dfd3e55eeae211238e5f46695e37de83130fee22142419132fb53db93f623e",
             "locator": {
               "kind": "symbol",
@@ -170,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "blob": "4e965010eb109ec90b8c345006b8d932ef1e88b1",
             "content": "sha256:380a00b881e365da16c6bbb64325b8c4cf6d9c8af01af937f0c085aca07c1914",
             "locator": {
               "kind": "symbol",

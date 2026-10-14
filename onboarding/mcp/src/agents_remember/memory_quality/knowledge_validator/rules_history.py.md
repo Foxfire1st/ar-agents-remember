@@ -13,16 +13,19 @@ The same two MIK-R07 writer-support checks therefore also run as validator rules
 row's subject names a record of the candidate (`unknown_subjects`), and every covered entry's `after` anchor equals
 that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_anchors`, MIK-R07 rule 4).
 `validator.py` imports the module, which registers `R09-history-rows` (refusing, `writer_reports`) and
-`R09-history-rows-merged` (report-only).
+`R09-history-rows-merged` (`merge_reports`, not plain report-only).
 
 ## Code Commentary
 
 ### Logic
 
 - **Which files (review R1 F1, ruling 16:07:55; review R2-1, ruling 17:59:48):**
-  - `unknown_subjects` runs over **every** history file, open or closed, at every route. A retired record still
-    resolves (MIK-R22 rule 3: records are never deleted), so no legitimate row names an unknown subject, and a closed
-    file committed outside the AR routes cannot carry a ghost subject past a master or checkpoint landing.
+  - `unknown_subjects` runs over **every** history file, open or closed, at every route. Invariant,
+    family and decision/facet `RecordRow` subjects resolve to their candidate record; `MembershipRow`
+    resolves the invariant after `membership:`. Other row kinds answer worklist items rather than
+    records and are not checked here. A retired record still resolves (MIK-R22 rule 3: records are
+    never deleted), so a closed file committed outside AR routes cannot carry a ghost subject past
+    master or checkpoint landing. This subject check does not judge revision currentness.
   - `checked_history_files(context)` picks the files the re-anchor check reads: every **open** file; and, when
     `context.leaf_publication` is set (closeout, direct landing, a leaf's recorded landing), every file closed in K_C
     but **not closed in any comparison base or frozen commit** (`context.closed_before`). The leaf's own file stays editable until its closeout commit writes
@@ -35,7 +38,7 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
   lazily, whether it holds the **identical row** at the same path and whether that row agreed with **that parent's**
   entries; if some parent does, the mismatch was caused by the merge (`moved`).
   - `check_history_rows` refuses unknown subjects and every disagreeing row at a leaf publication, including a mismatch a merge moved. At a merge that is not a leaf publication, an unmoved mismatch still refuses.
-  - `check_merged_history_rows` reports moved mismatches only for non-publication merges. This sync exemption never admits a disagreeing row on a leaf publication; the next leaf gate rechecks its current rows.
+  - `check_merged_history_rows` yields moved mismatches only for non-publication merges. Its `merge_reports` registration gives bounded reporting at the sync merge, not permanent immunity. The finding names the deferral reason (the merge cannot judge against its new base) and says the next publication/landing refuses if the row still disagrees. The leaf-publication check still refuses every mismatch, including moved ones.
 - The revision and examined-member bindings are currentness, not validity: a row whose invariant changed revision
   afterwards reopens its item at the gate and is not invalid here.
 - **A leaf's attempt files are one history (L37, decision record DEC-0AEQ28; INV-MS9BMJ).**
@@ -56,8 +59,10 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
 
 ### Conventions
 
-- `writer_reports=True`: inside the writer these rules only report, because the writer refuses its own owner's rows
-  through its whole-file check and a leaf may repair another file before closeout; every commit route refuses.
+- `R09-history-rows` carries `writer_reports=True`: the writer reports its validator findings while
+  independently refusing its own owner's rows through the whole-file check, so another file can be
+  repaired before closeout. `R09-history-rows-merged` instead carries `merge_reports=True`; the
+  non-publication sync exemption is bounded and leaf publication never inherits it.
 - `HISTORY_ROWS_RULE` cites "MIK-R09 (carried from MIK-R12)"; `HISTORY_ROWS_MERGED_RULE` "MIK-R09 (sync)".
 
 ### Invariants And Boundaries
@@ -96,7 +101,6 @@ file are exempt inside a judged file.
 
 ## Evidence
 
-- Leaf publication refuses merged-row mismatches; only a non-publication merge gets report-only treatment. [19]
 
 
 ### Docs References
@@ -123,9 +127,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- Report-only moved-row treatment applies only to a non-publication merge. [6]
 
-- The two rules registered on import. [7]
 - The context flag a leaf publication sets. [8]
 - A ghost subject in a closed file is refused at master landing. [9]
 - The sync merge cases. [10]
@@ -151,3 +153,8 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the rule reads the validation context's trees only.
 
 No cross-repo boundary is crossed by this file.
+
+- Leaf publication refuses all merged-row mismatches; the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication/landing. [19]
+- Moved-row findings are bounded `merge_reports` at non-publication sync merges; their messages explain deferral and the next refusing publication/landing. [6]
+- The history-row registrations: `R09-history-rows` uses `writer_reports`, while `R09-history-rows-merged` uses `merge_reports`, not plain report-only. [7]
+- Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]

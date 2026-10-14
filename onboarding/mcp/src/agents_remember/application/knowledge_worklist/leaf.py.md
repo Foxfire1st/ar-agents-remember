@@ -54,9 +54,12 @@ The reviewer's worklist child passes both; the gate passes `CandidateTrees` only
 - `worklist_for_sides(sides)` runs `compute_worklist` over explicit sides and turns an unreadable side, a
   `CodeReadError` and a Git failure into an `incomplete` document.
 - `worklist_over(contract, sides)` adds the onboarding gate's items (`worklist_onboarding`) and settles
-  the unexplained changes of uncovered files (`_settled_unexplained`): such a change is answered by its
-  file's onboarding trace, the digest and the open count are recomputed, and a row that answers such a
-  trace is not listed as unnecessary.
+  uncovered unexplained changes (`_settled_unexplained`). On a complete run, `_candidate_code_blobs` reads
+  every changed path from the document's captured C tree, including `None` for absent paths, and forwards
+  the map as `code_blobs`; it does not recapture C. A missing tree or code-read/Git failure returns a
+  named `C` incomplete document retaining owner and pairing. An already incomplete run returns without
+  that read. Settlement propagates the file trace's current-row answer, recomputes digest and open count,
+  and keeps answering rows out of the unnecessary list.
 - `recompute_leaf_worklist(contract)` computes and persists and never raises: a Git failure and any other
   exception become an `incomplete` document, and an enclosure that cannot be written returns the document
   without a path. `LeafWorklistRecompute` is the port bound into the worktree layer.
@@ -193,9 +196,10 @@ document or `None`.
     conversion files. A conversion writes no census, so every route of a converted base is `pending`.
   - An unreadable census (`CoverageUnreadable`) makes the run `incomplete`, naming K_B.
 - **Settling after the onboarding trace (`_settled_unexplained`).** After `worklist_onboarding`, a complete
-  document goes through `unexplained.settle_uncovered`: each uncovered unexplained item bound to MIK-R30's
-  `onboarding_trace` item for its file takes that item's counted change and answer. The digest is recomputed
-  over the settled list, and `unexplained.openCount` is recounted.
+  document goes through `unexplained.settle_uncovered`: each uncovered unexplained item bound to its
+  file's `onboarding_trace` takes that trace's counted-change facts, source blobs and current eligible
+  row answer. In the ordinary MIK-R53 candidate contract a counted card edit alone is not an answer.
+  The digest is recomputed over the settled list, and `unexplained.openCount` is recounted.
 - **Needed onboarding rows are not unnecessary (ruling Q3).** The persisted
   `onboardingTrace.unnecessaryRows` drops every row whose subject is in `answering_trace_subjects`: an
   `onboarding:<path>` row that answers an uncovered item in a card-less path is that item's trace. Rows about
@@ -210,7 +214,7 @@ document or `None`.
 - The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`.
 - Settled items, a recomputed digest and open count, and needed rows kept out of the unnecessary list.
 - Coverage by entries, a migrated route, a later status, and an unreadable census.
-- The leaf route: an uncovered new file answered by writing its card.
+- The leaf-route source assertions: writing an uncovered new file's card alone leaves it open; its authored source-bound onboarding row answers it.
 
 ## 260928-MIK-L14 The Coordination Root Reaches The Run (MIK-R14)
 
@@ -241,9 +245,11 @@ document or `None`.
   (strict) and the pairing inside one fail-closed `try` (`LeafDocumentUnresolved` → `leaf task document`;
   `_Unreadable` or `SubprocessError` → `_missing`, which names the side or `git`), then `worklist_over`.
 - **`worklist_over(contract, sides)`** is the full worklist over explicit sides: L08's run (`worklist_for_sides`),
-  MIK-R30's onboarding items (`worklist_onboarding` over a `TraceSideRequest` built from the sides, whose K_C may be
-  a Git tree) and MIK-R10's settling (`_settled_unexplained`). `None` when both memory sides are unconverted. Direct
-  landing (`knowledge_gate/direct.py`) reuses it.
+  candidate-blob extraction from that run's captured C tree, MIK-R30's onboarding items (`worklist_onboarding`
+  with `code_blobs` and a `TraceSideRequest` whose K_C may be a Git tree), then MIK-R10's settling
+  (`_settled_unexplained`). An unreadable or unnamed C tree fails closed as `C` incomplete; no second
+  capture supplies substitute blobs. `None` when both memory sides are unconverted. Direct landing
+  (`knowledge_gate/direct.py`) reuses it.
 - **Probes fail closed (review R1 F9, ruling 16:07:55).** `_holds_marker` is `has_layout_marker` (`ls-tree`), which
   raises `LayoutProbeError` with a named reason; `leaf_worklist` then returns the `incomplete` worklist naming
   `layout marker` (and persists it), and `leaf_onboarding_trace_sides` returns an incomplete side
@@ -272,7 +278,6 @@ document or `None`.
 - The marker probe, on the held tree when a base is given. [53]
 - The entry point with its three not-applicable cases and the persistence. [54]
 - Declared effects, scope and K_B's commit, from the caller's base when given. [55]
-- The onboarding items and the settling of uncovered files. [56]
 - The recompute entry point never raises. [57]
 - The held tree gives the same document and reads as the conversion, at two sizes, with no second capture, pairing or conversion. [58]
 - The reviewer passes the comparison's candidate trees and base commits. [59]
@@ -303,9 +308,7 @@ No configured live documentation source was available for this pass.
 - Coverage chosen per base kind; an unreadable census names K_B. [70]
 - The coverage passed into the run. [71]
 - The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`. [72]
-- Settled items, a recomputed digest and open count, and needed rows kept out of the unnecessary list. [73]
 - Coverage by entries, a migrated route, a later status, and an unreadable census. [74]
-- The leaf route: an uncovered new file answered by writing its card. [75]
 - The named sides carry the coordination root. [76]
 - The run over named sides passes it on. [77]
 - A leaf's run takes it from the contract. [78]
@@ -341,3 +344,8 @@ No configured live documentation source was available for this pass.
 The leaf worklist reads the code repository and the memory repository of one leaf (the external memory
 repository and its official line) and writes into the coordination task root. These are the configured
 code/memory pair of one repository, not a boundary to another code repository.
+
+- The captured-C changed-path blobs (including absent paths) reach onboarding items before current-row settlement; unreadable C is named incomplete. [56]
+- Settled uncovered items inherit their file trace's current answer and source facts; digest/open count are recomputed and needed rows stay out of the unnecessary list. [73]
+- The leaf-route source assertions: a counted card edit alone leaves the uncovered file open; its authored source-bound onboarding row answers it. [75]
+- Current source delta inspected statically: Bind changed paths to captured C, fail closed on missing/unreadable blobs, and replace counted-card-only settlement and leaf-route captions. [105]

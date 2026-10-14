@@ -5,8 +5,22 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current skill resolves mounted roots/actions through `context_packet` or c-08; `resolve_context` is removed. Source-bound settings carry storage/pathRules/policy rather than slim packet blocks. Drift routes through context_packet(include_drift) or memory_quality_check.
+- Current skill routes drift through `context_packet(include_drift)` or the complete
+  contract-scoped `memory_quality_check`; a successful diagnostic execution is not a clean checklist.
+- Converted onboarding is answered only by a current source-content-bound `onboarding_trace` row.
+  A counted Markdown or nonmechanical-reference edit supports `updated` but never answers alone;
+  `no_impact` records why the reviewed card still holds. Realization/proof-only edits do not count.
+- The validator's reporting policy is named rather than an unconditional report-only exemption.
+  The five writer-reported rules refuse at commit/landing; eligible sync merges report the
+  `merge_reports` cases. Carried migration debt reports only before complete route migration,
+  while new debt refuses immediately; completion makes the four debt rules refusing.
+  `R09-history-rows-merged` reports at the merge and is refused at the next leaf publication.
+- Stale references generally report; the carried gone-path anchor is the `R22.6-carried-stale`
+  exception that refuses publication/landing and reports only at the sync merge. Anchor drift
+  assessment does not decide whether an invariant still holds.
 - Coherence preparation supplies counts/digest/file locations; the Curator reads and verifies the
   complete candidate file before authoring judgments and publishes its exact expectation identities.
+  Raw full-quality readiness precedes coherence publication; neither substitutes for semantic review.
 
 ### Superseded inventory
 
@@ -122,9 +136,9 @@ completed result travels with the curation handoff as a closeout and integration
 - Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. [3]
 - Curation publishes the coherence authority the checklist requires and uses focused style fixers only after reported findings. [4]
 
-| The curator handoff runs the complete curation check and repairs or escalates every curator-actionable finding with its exact returned code. | "### 6. Run the Complete Curation Check"; "### 7. Publish the Curator Coherence Authority When the Checklist Requires It" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:189-208; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:209-228 |
+- The curator handoff runs the complete curation check and repairs or escalates every curator-actionable finding with its exact returned code; required coherence uses the complete prepared candidate identities. [6]
 
-- On converted memory the legacy-format checks are not applicable, and currentness comes from anchors. [5]
+- Converted checks use anchor assessment and current onboarding rows; validator reports name their reason and refusing route, including the gone-path exception and migration/sync policy. [5]
 
 ### Cross-Repo References
 

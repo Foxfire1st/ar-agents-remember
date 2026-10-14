@@ -16,6 +16,8 @@ The offer/admission matrix includes integrated contracts, active integration cla
 
 After owner retire, the converted same-leaf case refuses advanced code with `direct-landing-knowledge-gate-refused`, retaining completed generation 1 and its retired disposition without creating another history attempt. The converted fixture explicitly names another leaf, checks both correctly closed histories and leaves memory clean; it does not reopen the first leaf's closed history. Source assertions are evidence of the contract, not a claim that this Curator executed pytest.
 
+Each converted fixture trace call supplies its actual `world` to `trace_rows`; source identities therefore come from the real fixture worklist, rather than a sourceless call or guessed blob. This preparation retains the owner/stranger, same-generation recovery and distinct-successor assertions described above.
+
 ## Evidence
 
 No external Domain Documentation source is configured. Same-repository witnesses own these claims.

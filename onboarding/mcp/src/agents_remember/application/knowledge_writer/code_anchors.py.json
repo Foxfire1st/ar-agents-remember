@@ -7,11 +7,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:0d6a01344898beeb8d62493d06d27a8e94703d0762c4c9040226341ff6a8c7a8",
             "locator": {
               "kind": "symbol",
               "name": "AnchorResolutionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:76cbc0fc574d8f53089063be37b0280476b2270dea36fa2983042b41fb445e03",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:a8c0b0789823e6cc2c61fe0f420b9dcfbf03e86582e7e23676749604c19356c3",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"
@@ -39,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:2575c01115c40f0cd75c1cd60371abe20b5dacce0e354e2a62736bbfdfdd40f8",
             "locator": {
               "kind": "symbol",
@@ -55,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:33a098e68cd5df3d1fe9f3c50a40c6ac3cd83699031a4cb669819baecae0fb10",
             "locator": {
               "kind": "symbol",
@@ -67,15 +108,40 @@
       ]
     },
     "5": {
-      "note": "Resolve a locator into an anchor with blob and content.",
+      "note": "Resolve file/line-range locators against entry bytes; refuse symlink symbols before parsing.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
-            "content": "sha256:e22efd530081de646d8ac5be7f15b57e4f84ba2e6d2b9875051db516a9c77e75",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:76cbc0fc574d8f53089063be37b0280476b2270dea36fa2983042b41fb445e03",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve"
+              "end": 46,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:a8c0b0789823e6cc2c61fe0f420b9dcfbf03e86582e7e23676749604c19356c3",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"
@@ -87,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:573bac58759240358706539e42e95eff1948766aa6a1ac4742e74e209eb3c224",
             "locator": {
               "kind": "symbol",
@@ -103,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:99ae16c99d181d0db7ef7ff7ab2831445bbf183e0afe66582563c0a5699760b4",
             "locator": {
               "kind": "symbol",
@@ -126,12 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:ee8bea02f9640eba00856b87d932045c8764c2c74c9c60b3f3c94daa7200849f",
             "locator": {
-              "end": 159,
+              "end": 179,
               "kind": "line_range",
-              "start": 156
+              "start": 176
             }
           },
           "kind": "code"
@@ -143,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
             "content": "sha256:51bb53a56b198579fc9c5c2737fc2fa91c6acc3d918ddf929034da07024b7ee5",
             "locator": {
               "kind": "symbol",
@@ -155,15 +221,40 @@
       ]
     },
     "9": {
-      "note": "Both constructors read the regular files of one tree.",
+      "note": "Both constructors read regular files and symlink entries of one tree, retaining a symlink path set.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
-            "content": "sha256:ec9f46b76547f55f557ceb82a0e3b87c8558c286cd6f9a777853c9f5a24dd112",
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:76cbc0fc574d8f53089063be37b0280476b2270dea36fa2983042b41fb445e03",
             "locator": {
-              "kind": "symbol",
-              "name": "of_tree"
+              "end": 46,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
+            "content": "sha256:a8c0b0789823e6cc2c61fe0f420b9dcfbf03e86582e7e23676749604c19356c3",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"

@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current body claims are checked against shipped code under OM-1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:7610f5d7d6a039667279c36815e7e1748d5f82831101ccf0947d9fa778fd1fb9",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "OM-2 requires a non-author second reader for final statements, history meanings and omissions before closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Plausible admission, baseline exploration and the promotion/fix-verification boundaries remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "content": "sha256:6f5f3eb594feaf80c18b8336149be1f5f59cf9e84b4f7108a2380fff7a57b4d1",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

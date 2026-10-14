@@ -21,6 +21,17 @@ Producer entries identify one obligation and all its targets together. Target lo
 
 Converted memory declares a family as a `records` item with its own title, guarantee, exact invariant member IDs and code routes. Nothing is inferred from a shared path or anchor. Read the actual stored members/routes and relevant revisions; a restated guarantee uses the governing changed history row with authored effect and full examined base/candidate member union. This file writer publishes no dataset and uses no database membership-revision selector.
 
+### Current converted judgment-row contract
+
+Current onboarding subjects use updated with a counted Markdown/nonmechanical references change, or justified no_impact. The writer binds every covered source to its candidate blob, including absent for deletion; later source changes reopen the answer. Pre-binding rows remain valid only in closed history and answer nothing in open history. Realizes/proves-only changes do not count. This L53 rollout's own changed cards use amended rule 1's measured counted-change exception without updated rows or later backfill; the historical MIK-R30 paragraph below is not the new normal contract.
+
+A membership:<invariant ID> no_family judgment carries considered families and the current invariant revision; it answers a new or newly unlisted live invariant and refuses for a familied subject. A record judgment concerns a touched existing decision or other facet record: changed with effect, retired with retire, or no_impact, with applicable because and foreign-owner evidence. New records and the writer's own isolated raise status change do not create touched_record. The writer supplies revisions and item identities; the Curator never writes these rows manually. L53's real producer does not yet implement these new kinds, and the nine inherited Family examination repairs remain L54, not a candidate-producer substitution.
+
+Named validator route reasons replace blanket never-refused claims: five designated rules report inside the writer but refuse publication/landing; sync merge and carried migration debt have their stated reporting boundaries. Existing/exported admission and carried absent/unrealized family text below are historical provenance, not permanent gate exemptions. Ordinary content drift remains advisory; carried gone-path anchors are the refusing exception.
+
+- Onboarding, membership and ordinary-record judgment inputs have separate domains. [18]
+- Writer-supplied bindings and named report-only versus commit-route refusal stay separate. [19]
+
 ### Historical database membership declaration — not the converted writer
 
 MIK-R26 retired the earlier declaration/allocation interface. Its original selector and retention syntax are preserved below only as provenance, not current authoring instructions:
@@ -204,8 +215,8 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 ### Invariants And Boundaries
 
 - Ground every record in accepted scope and real source evidence; do not create records to inflate coverage.
-- Exact retained revisions are reused without rewriting old meaning or provenance.
-- New membership edges are not new invariant revisions or semantic acceptance.
+- The retired database writer reused exact retained revisions without rewriting old meaning or provenance.
+- Historical database membership edges are not new invariant revisions or semantic acceptance; current file families declare invariant member IDs in records.
 - A refusal or unexamined plane stays explicit; no favorable default substitutes for it.
 
 ### Todos
@@ -232,11 +243,11 @@ writer's input gate, not in this schema.
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-The operative contract is defined by the repository sources cited below.
+The operative contract is defined by current repository sources; explicitly historical references below preserve provenance, not authoring instructions.
 
 ### Repo-Internal References
 
-These references name the current owners and the behavior they establish.
+The captions distinguish current guidance from explicitly historical witnesses.
 
 - **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** [1]
 
@@ -244,10 +255,10 @@ These references name the current owners and the behavior they establish.
 
 - **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** [3]
 - Curator-owned semantic scope remains required. [4]
-- The public retention input and exact readback requirements. [5]
-- **Per-target realization rationale and role, the value/vocabulary/length/route rules, the committed-retry exemption, and the stated supersession of revision 1's target element shape.** [6]
+- Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API. [5]
+- Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current. [6]
 - **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** [7]
-- The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. [8]
+- Historical MIK-R30 onboarding-row form: `no_impact` only and no row for a counted card change, not the normal MIK-R53 source-bound contract or this leaf's amended rollout authority. [8]
 - The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. [9]
 - The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files. [10]
 - The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index. [11]

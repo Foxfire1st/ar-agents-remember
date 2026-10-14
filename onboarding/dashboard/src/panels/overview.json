@@ -84,29 +84,57 @@
       ]
     },
     "11": {
-      "note": "The rail nodes and the centre.",
+      "note": "Unexplained and Unknown rail destinations open comparison-bound change-set pages filtered by the held lane answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
-            "content": "sha256:cfa62609af294f29b3a049fd640b342fefba9ff0b4f8aa829f750198c013c211",
+            "blob": "79b9df933874721d54216189dfe94463118877aa",
+            "content": "sha256:ae60df0c329316293597aaa109b9a539015c2f2ea58d8925554a591c4a6690ad",
             "locator": {
-              "kind": "symbol",
-              "name": "LaneDestinations"
+              "end": 713,
+              "kind": "line_range",
+              "start": 674
             },
-            "path": "dashboard/src/panels/review/UnexplainedLane.tsx"
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
-            "content": "sha256:5cea963027e96ea86cb7ad9f86802a67d1ff38fdf846702b7fd52d4fd00dcada",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
             "locator": {
-              "kind": "symbol",
-              "name": "UnexplainedLaneCenter"
+              "end": 543,
+              "kind": "line_range",
+              "start": 497
             },
-            "path": "dashboard/src/panels/review/UnexplainedLane.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 580
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:8f3e0039e93677f278439502d52836c055a85f56991e752542716197cc7fd4da",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
           },
           "kind": "code"
         }
@@ -360,35 +388,6 @@
               "name": "leafFacts"
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "One opened file: focused windows, full file and the gate's items.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:38d56a8e02e980600179f6c8cbfd68d9d23c9938673a11fc16e0ec8927b82d26",
-            "locator": {
-              "kind": "symbol",
-              "name": "LaneFileFocus"
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:24fd07556f3f583e77b877e4acd8710153efab2c46fce5f37ff52b1027cf2df2",
-            "locator": {
-              "kind": "symbol",
-              "name": "GateItems"
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
           },
           "kind": "code"
         }
@@ -2339,7 +2338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
               "end": 720,
@@ -2724,7 +2723,7 @@
         },
         {
           "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
               "end": 508,
@@ -3047,23 +3046,6 @@
               "start": 13
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "A lane window marks each neighbour its context shows (the L32 F5 carry).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:fc9a442c8911448259bfa1bdf25681805db6c795d8ea365b2b1f2b0b11073b5b",
-            "locator": {
-              "kind": "symbol",
-              "name": "useWindowMarking"
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
           },
           "kind": "code"
         }

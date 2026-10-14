@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
+        "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 1607,
+          "end": 1625,
           "kind": "line_range",
-          "start": 1607
+          "start": 1625
         }
       },
       "id": "RLZ-1WK7P0",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
+        "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
         "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
         "locator": {
-          "end": 2446,
+          "end": 2471,
           "kind": "line_range",
-          "start": 2446
+          "start": 2471
         }
       },
       "id": "RLZ-A31DQW",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
-        "content": "sha256:cfbb1e70f6f87c7d7bbff1f9e829df79432a1a64a04786703038ea94e29759fe",
+        "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
+        "content": "sha256:061d72359b73b37166549ae5b4a2f341ad4d02a0b8e5c35a8a50c63c706d7e80",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
+        "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
           "end": 555,
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "5960eea5013e1d7d64481db862241bcb62fea0bc",
+        "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1766,
+          "end": 1787,
           "kind": "line_range",
-          "start": 1766
+          "start": 1787
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -182,14 +182,52 @@
       ]
     },
     "14": {
-      "note": "The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml.",
+      "note": "Durable-artifact declarations include the R53 consumers on Doc14 fixtures, validator/writer support and the existing Node lockfile; lane rows remain in test-evidence-lanes.toml.",
       "targets": [
         {
           "anchor": {
-            "blob": "72e3b28c42115f858a0c87cc7053a3f795ad058e",
-            "content": "sha256:07e1d25c2fbf733c400603653933ef745bb9da70f780c617599415973015da27",
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "kind": "file"
+              "end": 887,
+              "kind": "line_range",
+              "start": 886
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
+            "locator": {
+              "end": 1470,
+              "kind": "line_range",
+              "start": 1468
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 2081,
+              "kind": "line_range",
+              "start": 2080
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
+            "locator": {
+              "end": 2107,
+              "kind": "line_range",
+              "start": 2106
             }
           },
           "kind": "test"
@@ -418,16 +456,52 @@
       ]
     },
     "224": {
-      "note": "The nine retained Doc14 knowledge-file fixtures each have an artifact row.\n\nAnchor: file",
+      "note": "All nine retained Doc14 fixture artifact rows declare the R53 judgment-row and report-policy modules as consumers; their artifact identities are unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "a965f245555bb824fb20a9620327d1e30f340e48",
-            "content": "sha256:aadf5d213934c05d18e66c0579cd1085dbb30708d796345f65f9b0f05bd98b0c",
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
             "locator": {
-              "end": 1098,
+              "end": 887,
               "kind": "line_range",
-              "start": 883
+              "start": 886
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
+            "locator": {
+              "end": 1470,
+              "kind": "line_range",
+              "start": 1468
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 2081,
+              "kind": "line_range",
+              "start": 2080
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
+            "locator": {
+              "end": 2107,
+              "kind": "line_range",
+              "start": 2106
             }
           },
           "kind": "test"
@@ -1165,12 +1239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
             "content": "sha256:7e4ff68f51da2f5c91995ad7d5a20aa33b0f2342e28f7265604bfd822f428717",
             "locator": {
-              "end": 2365,
+              "end": 2390,
               "kind": "line_range",
-              "start": 2320
+              "start": 2345
             }
           },
           "kind": "test"
@@ -1364,6 +1438,59 @@
               "start": 110
             },
             "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "273": {
+      "note": "At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 887,
+              "kind": "line_range",
+              "start": 886
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
+            "locator": {
+              "end": 1470,
+              "kind": "line_range",
+              "start": 1468
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:1c4283fcfbf95371e3d500626b85b0fc2a713f59908fa88169ba45c9ddb73704",
+            "locator": {
+              "end": 2081,
+              "kind": "line_range",
+              "start": 2080
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8598da4f9aef063bd6109cbbd64d4cdef0826785",
+            "content": "sha256:9408240cc5c77aeb098dd1110fa933254d26ab9ee40948406b9a5f35395fc234",
+            "locator": {
+              "end": 2107,
+              "kind": "line_range",
+              "start": 2106
+            }
           },
           "kind": "test"
         }

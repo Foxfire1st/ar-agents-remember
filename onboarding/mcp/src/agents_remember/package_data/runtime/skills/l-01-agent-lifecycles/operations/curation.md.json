@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-        "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       ]
     },
     "5": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nL53 account: An independent nonauthor fact-checks changed curated statements and judgment rows before converted-memory closeout; blocking repairs rerun full quality, and closeout does not mechanically run the check.\n\nAnchor: lines 155-163",
       "targets": [
         {
           "anchor": {
@@ -95,6 +95,35 @@
             "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a128b68a6aef684285a7860ef6205971ab29c58",
+            "content": "sha256:1611a8d6acf1e2a3d9d4a818b1d53e1675733aea4de8ebb9775c9ee997291f79",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a128b68a6aef684285a7860ef6205971ab29c58",
+            "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "code"

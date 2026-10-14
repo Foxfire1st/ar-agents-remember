@@ -7,7 +7,7 @@
 
 `mcp/tools/` is the domain-organized payload-adapter package between MCP registration and the application services that implement Agents Remember operations. Its facade preserves a shared import surface for builders and protocol constants; an exported builder is not necessarily an advertised tool. Most builders forward typed inputs to their responsibility-owning application entry point and return through `base._tool_payload`. The package is not globally pure: application calls can perform authorized mutations, the shared response boundary records calls, and the knowledge and enclosure-adoption modules also compose selection, validation or approval-sensitive results.
 
-`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 41 names, adding `retire_child` and `role_start_set` to the old 39-name tuple; the historical 61–66-name inventories remain historical.
+`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 41 names on this successor after `resolve_context` was removed from the rejected freeze’s 42-name tuple; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, and older39/41 epochs are historical; the historical 61–66-name inventories remain historical.
 
 ## Hot Path Summary
 
@@ -118,8 +118,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Lifecycle control uses the operation-control payload; explicit enclosure adoption retains its own typed payload builder delegating to the adoption service. [25]
 
 - The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. [26]
-- The capsule builder re-shapes the flat declaration arguments into the application request record. [27]
-- The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default. [28]
+
+
 - The declarations that call these builders, which pass no corpus override to the wire surface. [29]
 - The capsule envelope carries its refusal in the same shape as a success. [30]
 - The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
@@ -132,7 +132,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - - A converted tree's citation-fix result is bounded for transport. [43]
 
 - Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade. [44]
-- One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names. [45]
+- One model-owned 41-name successor roster (42 on the rejected freeze; resolve_context removed), including adoption, native-role, native retirement and knowledge names. [45]
 - Public registry excludes explicitly retained internal names and includes native retirement and set-start responses. [46]
 - Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
 - Guidance uses exact response address and enrichment precedes serialization [48]

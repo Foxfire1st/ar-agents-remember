@@ -23,6 +23,10 @@ Defines the producer/curator handoff data boundary. Nine producer fields travel 
 
 ## Code Commentary
 
+Current normal onboarding rows admit updated only with counted Markdown/nonmechanical references change, or justified no_impact. The writer fills covered candidate source blobs; source changes reopen the answer, while sourceless historical rows answer only from their own closed history. Membership:no_family carries the invariant's current revision and explicitly considered family IDs; touched existing decision/facet rows use changed with effect, retired with retire, or no_impact, with writer-owned revision and foreign-owner evidence. New records and the writer's isolated own raise status change do not raise touched_record. Named merge/migration/writer reporting boundaries supersede permanent never-refused family/admission wording in the retained earlier account. This L53 rollout has no updated, membership or ordinary-record rows for its own curation under the controlling amendments; the nine inherited condition repairs remain L54.
+
+- Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [19]
+
 ### Logic
 
 Producer entries identify one obligation and all its targets together. Target locators are required; evidence locators may be absent. Statements and producer dispositions are preserved rather than paraphrased. Applicability, conditions and exclusions are authored before invariant ingest.
@@ -107,15 +111,28 @@ invariants without any proof as information and not as a gate, and that a curato
 record's "Evidence: …" text (`origin.handoff`) into proofs through `proofs`, with an authored facet. The
 same text reaches the package copy and the eight harness starter copies through `sync-skills.py`.
 
-Since leaf `260928-MIK-L30` (MIK-R30) the MIK-R12 section's history-row bullets gain one for the
-**onboarding row**, on converted memory only: subject `onboarding:<source path>` or
-`onboarding:<route>/overview` (`onboarding:overview` for the root route), disposition `no_impact`, and
-nothing else. It records that a changed source file's card, or its governing route overview, was reviewed
-and needs no change; a counted change of the card or overview (its Markdown, or a sidecar field other than
-an anchor's `blob`, line numbers and `content`) needs no row. This is the curator's side of the
-onboarding gate on history files, where only a counted change or such a row satisfies a trace (architect
-ruling 2026-09-29T18:49:50 (1)). The bullet reaches the package copy and the eight harness starter copies
-through `sync-skills.py`.
+On converted memory, the template declares a current `onboarding:<source path>` or
+`onboarding:<route>/overview` row (`onboarding:overview` for the root). `updated` requires
+counted Markdown or nonmechanical `references` change; realization/proof-only edits do
+not count. `no_impact` states why the reviewed card still holds. The writer fills every
+covered source blob; a later source edit reopens the item. A counted card edit alone
+never answers. A pre-existing sourceless row remains frozen in closed history and answers
+nothing in an open file.
+
+The other newly declared judgment forms are `membership:<invariant ID>` with `no_family`
+and authored considered-family IDs, and a `record` row about an existing decision or facet.
+Membership judgments bind the invariant revision and refuse an invariant actually listed
+in a family. Record judgments bind the candidate revision: newly retired status takes
+`retired`/`retire` even when revision also grew; otherwise a higher revision takes `changed`
+with its effect, and unchanged meaning takes `no_impact`. New records and the writer's
+own status-only reconsideration mark do not raise touched-record items. Foreign-record
+evidence belongs in the updater's row, not the original owner's origin.
+
+The earlier per-packet descriptions of report-only family/decision states below are
+historical introduction accounts, not unconditional publication permission. The current
+validator distinguishes refusing rules, eligible sync reports and carried migration debt;
+its governing policy is described by the quality-control skill and actual rule registry.
+This generated copy introduces none of these contracts independently of the canonical template.
 
 Since leaf `260928-MIK-L11` (MIK-R11) the same list gains a bullet for the **planned row**, on converted
 memory only. It answers a `planned_untouched` worklist item: an effect the leaf's task document declared in
@@ -215,8 +232,8 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 ### Invariants And Boundaries
 
 - Ground every record in accepted scope and real source evidence; do not create records to inflate coverage.
-- Exact retained revisions are reused without rewriting old meaning or provenance.
-- New membership edges are not new invariant revisions or semantic acceptance.
+- The retired database writer reused exact retained revisions without rewriting old meaning or provenance.
+- Historical database membership edges are not new invariant revisions or semantic acceptance; current file families declare invariant member IDs in records.
 - A refusal or unexamined plane stays explicit; no favorable default substitutes for it.
 
 ### Todos
@@ -238,11 +255,11 @@ the canonical surface with its card and the governing history rows carries it.
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-The operative contract is defined by the repository sources cited below.
+The operative contract is defined by current repository sources; explicitly historical references below preserve provenance, not authoring instructions.
 
 ### Repo-Internal References
 
-These references name the current owners and the behavior they establish.
+The captions distinguish current guidance from explicitly historical witnesses.
 
 - **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** [1]
 
@@ -250,10 +267,10 @@ These references name the current owners and the behavior they establish.
 
 - **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** [3]
 - Curator-owned semantic scope remains required. [4]
-- The public retention input and exact readback requirements. [5]
-- **Per-target realization rationale and role, and the stated supersession of revision 1's target element shape (generated copy).** [6]
+- Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API. [5]
+- Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current. [6]
 - **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** [7]
-- The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. [8]
+- Normal MIK-R53 source-bound onboarding rows and separate revision-bound membership/record judgments; this normal contract does not replace the amended L53 rollout described above. [8]
 - The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. [9]
 - The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files. [10]
 - The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index. [11]

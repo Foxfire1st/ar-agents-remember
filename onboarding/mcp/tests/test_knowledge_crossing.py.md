@@ -7,14 +7,15 @@
 ## Purpose
 
 **MIK-R24 rules 7 and 8: the converted base and the crossing sync.** The item rules are exercised on the
-pure merge. The whole crossing (markers first, conversion of every unconverted side, structural merge,
-validation at commit) runs through the real managed sync transaction on real Git repositories. Eight
-cases in the `unit-regression` lane. The module also holds `validate_plan`, the step 5 check for the pure
-plan, which moved here from the product (review R1 finding 7).
+pure merge. The managed crossing case (`test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`,
+Evidence [8]) runs the real sync transaction on fixture Git repositories; the marker/conversion/merge
+case in Evidence [4] checks a pure `cross` plan and `validate_plan`, not a managed transaction. Eight
+cases in the original R24 account (historical, not a current collection total). The module also holds
+`validate_plan`, the pure step-5 check, separate from production validation at the managed merge commit.
 
 **MIK-R66: the structural merge aligns reference numbers.** Pairing tests and order, rule 3 allocation,
-prose remapping, true conflicts staying one item, evidence-line regions, both fallbacks, report counts, the
-ordinary converted sync through the same merge, determinism, and the near-linear scaling witnesses live here
+prose remapping, true conflicts staying one item, evidence-line regions, marker-incomplete merge and helper-collision fallbacks, report counts, the
+all-converted pure `cross` planning through the shared merge, determinism, and the finite 2000-reference timing regressions live here
 as fixture-card and transaction cases.
 
 ## Code Commentary
@@ -28,14 +29,16 @@ as fixture-card and transaction cases.
   (it replaced the old `renumber one side` collision case).
 - `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges`: marker rows with `markers` and
   the fixed reason, `markersNotMoved` for a subject that already has a row, the incoming marker taken, the
-  converted sides, and a valid plan.
-- `test_many_long_markers_move_into_one_valid_history_row`: more than 20,000 characters of markers, a
-  45,034-character line split into 3 pieces without loss, and a valid `HistoryFile` (ruling N1).
+  converted sides, and a valid pure plan against both converted own and incoming comparison sides;
+  two bases supply sync-merge context for `merge_reports`, not a general publication waiver.
+- `test_many_long_markers_move_into_one_valid_history_row`: more than 20,000 characters of markers,
+  a 45,034-character line split into 3 pieces without loss, paired `code_blobs` supplied to marker
+  transport, and a valid `HistoryFile` (ruling N1); these are source assertions.
 - `test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit`: a conflicting
   statement opens `260101-FIX-crossing-1`, and `close_crossing_history` closes and stages it.
-- `test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base`: refused
-  (`R22.6-base-converted`) without the converter, and passing with it, converted at the base's own
-  `Code-Commit`.
+- `test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base`: without a converter
+  `R22.6-base-converted` refuses. With it that refusal disappears, but `carried-stale` still refuses
+  this non-merge commit; the spy asserts conversion used the base's own `Code-Commit`, not C.
 - `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`: the sync gives an exact
   two-parent merge and the layout marker, the untouched card equals the line's bytes, the marker row lands
   in the leaf's history file, Update History is gone, and the journal names a report under
@@ -56,11 +59,15 @@ as fixture-card and transaction cases.
   - Prose, conflicts, regions: markers follow references while code and escapes do not; a true conflict
     stays one item at the incoming number; both-added evidence lines are kept in order; fenced, escaped,
     multiline-span, and shared-context cases.
-  - Fallbacks and counts: an incomplete card merges without alignment exactly as today (whole-merge witness); a repeated number refuses alignment at the helper injectivity guard (no whole-merge witness); a non-decodable-Markdown side on a would-be-renumbered card skips with its reason;
-    the report and the summary carry the alignment counts; the ordinary converted sync aligns through the
-    same merge; the same three trees merge to identical bytes.
-  - Scaling: fully paired monotone and crossed populations show near-linear bounded work with exact
-    injective maps.
+  - Fallbacks and counts: an incomplete card merges without alignment exactly as today (whole-merge witness); a repeated number refuses alignment at the helper injectivity guard (no whole-merge witness);
+    the report and the summary carry the alignment counts; an all-converted pure `cross` plan aligns through
+    the shared merge; the same three trees merge to identical bytes.
+  - Finite timing regressions: each of the fully paired monotone and crossed 2000-reference fixtures
+    asserts its exact map and `elapsed < 10` seconds. The monotone map is `str(n) -> str(n)` for
+    `n=1..2000`; the crossed map follows the fixture order `[1, 2000, 2, 1999, 3, ..., 1001]`. These
+    single-size wall-clock bounds do not establish an asymptotic scaling curve. The source
+    `_LiveUnpaired` Fenwick index and `_pair_with_base` gap pass describe sorting-dominated work;
+    that is implementation reasoning, not an additional assertion in these timing tests.
 - **L37: the crossing owner's resolution, the writer's converted base, and cancel.**
   - `test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side`, parametrised `own-converted`
     and `own-unconverted` (ONT's case): a real `cross()` and `apply_crossing()` leave the record unmerged; a new
@@ -106,23 +113,20 @@ No configured live documentation source was available for this pass.
 
 The cases and the plan check.
 
-- The step 5 check for a pure plan (test-only). [1]
 - The item rules. [2]
 
 - Both sides added one reference each: alignment numbers each, no conflict. [16]
 - Fresh numbers follow own order, then base order. [17]
 - A true conflict stays one item at the incoming number. [18]
 - Both-added evidence lines are kept in order. [19]
-- The report and the summary carry the alignment counts. [20]
+- The pure crossing plan report counts aligned cards, renumbered references, kept evidence lines, and marker-incomplete skips. [20]
 - The same three trees merge to identical bytes. [21]
-- Gap pairing scales near-linearly on fully paired inputs. [22]
+- For 2000 fully paired monotone references, pairing returns the exact identity map and asserts `elapsed < 10` seconds. [22]
 
-- Markers first, conversion, then the structural merge through the real transaction. [4]
-- Long markers in one valid row. [5]
+- Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction. [4]
 - The master-line crossing history file. [6]
-- The converted base at the base's own code commit. [7]
 
-- Managed crossing sync follows an all-unconverted preflight refusal without a journal [8]
+- Managed crossing sync follows an all-unconverted preflight refusal without a journal, commits the exact two-parent merge, and persists its complete worklist at the new base pair. [8]
 
 
 - The all-unconverted preliminary sync refuses without movement or journal; the successful crossing persists the complete worklist at its new base pair [9]
@@ -140,3 +144,8 @@ The cases and the plan check.
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
 No cross-repo boundary is crossed by this file.
+
+- Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation. [1]
+- Long markers in one valid row with paired source blobs supplied to marker transport. [5]
+- Base conversion uses the base's own code commit and removes base-converted refusal, while the non-merge commit still refuses carried-stale. [7]
+- Current source delta inspected statically: Separate pure-plan sync context and real managed transaction evidence; replace whole-route conversion-pass claim with successful base conversion plus carried-stale refusal, preserving L46 legacy-lock assertions and bounded recovery commentary. [23]

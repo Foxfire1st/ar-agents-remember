@@ -382,52 +382,6 @@
         }
       ]
     },
-    "27": {
-      "note": "The capsule builder re-shapes the flat declaration arguments into the application request record.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
-            "content": "sha256:74d130d7392edbd2060c8dd5624fe46c0c2c1a6bff0e1a518f12a47651025ab5",
-            "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_compile_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
-            "content": "sha256:78b74ad03e8fc930e8491136a0a4ce725cbe522ec1cde895ee3eb3a9eca75f37",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_list_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
-            "content": "sha256:0b5436cfc3823b3d5b72272844fdcabe592dffee0ff29eff96b306358d48368a",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_read_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "29": {
       "note": "The declarations that call these builders, which pass no corpus override to the wire surface.",
       "targets": [
@@ -771,7 +725,7 @@
       ]
     },
     "45": {
-      "note": "One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names.",
+      "note": "One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names.\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
       "targets": [
         {
           "anchor": {
@@ -893,7 +847,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dce580de49e602d4f1b47a8dd07cb870286c9853",
+            "blob": "e669a850829d64077c748a66b6f13c25b6b47bea",
             "content": "sha256:9ab6c1d68085dc42ce63a6ed90ff4da83e657164d1b06defb1920e18184c76c2",
             "locator": {
               "end": 73,
@@ -946,7 +900,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f468d14f085cacdc952af613f102ed68d58ffc5a",
+            "blob": "8f7ff6442d59728e3c67f09ca865a74abb26e67d",
             "content": "sha256:23ea81197aac68aedc17b34d1695a96196360c484b8549646f78e0c73797b994",
             "locator": {
               "kind": "symbol",
@@ -999,7 +953,7 @@
         },
         {
           "anchor": {
-            "blob": "8a4023c8529a694f1dcb21603171b78086d2eb7a",
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
             "content": "sha256:81b9567abe147f942979af153da9ee71939a0699aa897b10cfb114cf47fdf181",
             "locator": {
               "kind": "symbol",
@@ -1189,7 +1143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
             "locator": {
               "kind": "symbol",
@@ -1213,7 +1167,7 @@
         },
         {
           "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",

@@ -6,77 +6,91 @@
 
 ## Purpose
 
-Transport-thin response adapters for the `operator_inbox_*` MCP tools. They delegate post, poll, and
-consume behavior to the application layer, then validate the returned dictionaries through
+Transport-thin response adapters for retained internal `operator_inbox_*` operations. They delegate post, poll, consume, and
+supersede behavior to the application layer, then validate the returned dictionaries through
 `_tool_payload`.
 
 ## Code Commentary
 
-### 260707-HFX2-L20 Durable Consume
+### 260707-HFX2-L20 Durable Consume (terminal semantics superseded by N16)
 
-`operator_inbox_consume_payload` returns the same response contract but no longer physically deletes
-the inbox id after appending its consumed snapshot. Retaining that terminal fact until normal
-compaction prevents a concurrent in-flight delivery from recreating a pending current row.
+`operator_inbox_consume_payload` does not physically delete the inbox id. For an unstamped pending
+row, the store appends optional `consumedAt`/`consumedBy`/`consumedVia` attribution without changing
+its state, retry schedule, or expectations. An already-stamped or non-pending row is returned
+unchanged with `consumedNow=False`. Terminal folding protects formal terminal states such as
+`landed` and `superseded` from stale pending snapshots; consumption itself is not terminal.
 
 ### 260707-HFX2-L13 Completion Wake Routing
 
 Completion-wake routing is no longer implemented in this MCP adapter. The application post command
 delegates to `serving.operator_inbox_posts`, where `_post_address` derives the current owner and leaf
-anchor, `_persist_post` creates the durable row and ack-by expectation, and `_deliver_post` attempts
+anchor, `_persist_post` persists the durable row and starts a briefed-by expectation only for a configured
+dispatch target, and `_deliver_post` attempts
 optional hosted delivery. For `turn-report` and `master-handover`, that serving owner replaces stale
 caller-supplied addressing with the resolved current owner; ordinary peer addressing remains explicit.
 
-### Current Signatures (260731-EFA-L2)
+### Current Adapter Signatures
 
 ```python
-operator_inbox_post_payload(config, *, address: InboxAddress, message: InboxMessage,
-                            poster: InboxPoster, delivery: HostedDelivery = HOSTED_DELIVERY)
-operator_inbox_poll_payload(config, *, lifecycle_id, agent_id, recipient_role=None)
-operator_inbox_consume_payload(config, *, entry_id, consumed_by, consumed_via, ...)
+operator_inbox_post_payload(config: McpRuntimeConfig, *, address: Any, message: Any,
+                            poster: Any, delivery: Any = None) -> dict[str, Any]
+registered_operator_inbox_post_payload(config: McpRuntimeConfig,
+                                       request: OperatorInboxPostRequest) -> dict[str, Any]
+operator_inbox_poll_payload(config: McpRuntimeConfig, *, lifecycle_id: str | None,
+                            agent_id: str | None, recipient_role: Any = None,
+                            include_terminal: bool = False) -> dict[str, Any]
+operator_inbox_consume_payload(config: McpRuntimeConfig, *, entry_id: str,
+                               consumed_by: str, consumed_via: Any) -> dict[str, Any]
+operator_inbox_supersede_payload(config: McpRuntimeConfig, *, entry_id: str, reason: str,
+                                 superseded_by: str = "model") -> dict[str, Any]
 ```
 
-The adapter accepts the same four concepts: **where** it goes (`InboxAddress` —
-lifecycle/agent/recipient role), **what** it says (`InboxMessage` — ask, response, message kind,
-gate id, artifact path), **who** sent it (`InboxPoster` — `created_by`/`created_via` plus the
-sender's agent id and role), and **how** it is pushed (`HostedDelivery` from `dispatch_brief.py`,
-bundling `enabled` with the catalog/host/paster/readiness/gate seams; `HOSTED_DELIVERY` is the real
-default). The application and serving owners receive those bundles unchanged.
+The direct post adapter annotates its bundles as `Any` and forwards them to the application
+boundary, whose typed concepts are `InboxAddress`, `InboxMessage`, `InboxPoster`, and
+`HostedDelivery`. The adapter's literal delivery default is `None`; the application resolves
+`delivery or HOSTED_DELIVERY`. The retained `registered_operator_inbox_post_payload` helper
+passes a composed `OperatorInboxPostRequest` to the application, which constructs the bundles
+and overrides delivery `enabled` from `request.deliver_to_hosted`. Serving also resolves delivery
+collaborators; these are not unchanged bundles end-to-end. The helper's name does not imply a
+current public registrar: the removed orchestration registrar is not registered.
 
 ### Logic
 
-Each public function delegates once to its application counterpart and passes that result through
-`_tool_payload`. The application layer roots `OperatorInboxStore` under `observer_root(config)`,
-composes post requests, lists pending mailbox entries, and consumes/acknowledges entries. The serving
-post owner derives completion routing, persists entries and ack-by expectations, and attempts hosted
-delivery using the configured supervisor redelivery floor. Consume remains the operation that marks
-the matching pending ack-by expectation met; the consumed snapshot is retained until compaction.
+Each retained internal adapter delegates once to its application counterpart and passes that result
+through `_tool_payload`. The application layer roots `OperatorInboxStore` under `observer_root(config)`,
+composes post requests, polls pending rows (plus retained terminal markers when `include_terminal=True`),
+and exposes attribution-only consume and explicit supersede operations. The serving post owner derives
+completion routing, persists entries, starts briefed-by expectations for configured dispatch targets,
+and attempts hosted delivery using the configured redelivery floor. Consume only stores
+and returns attribution; it neither fulfills an expectation nor changes state or retry scheduling.
+Supersede explicitly transitions a pending row to `superseded`, stamps its terminal reason and author,
+and clears its retry schedule without claiming acknowledgement or landing.
 
-The trusted caller still supplies `poster.created_by` / `poster.created_via`.
-`mcp/registration/orchestration.py` fixes those to `model` / `cli` for the public MCP route, so an
-agent cannot post as the developer. The dashboard path supplies trusted developer/dashboard
-attribution directly to the serving post owner.
+The internal adapter accepts caller-supplied attribution. The removed orchestration registrar is
+not a current public operator-inbox route. Internal structural messaging sets model/cli attribution
+in its own serving call; the dashboard supplies trusted developer/dashboard attribution.
 
 ### Conventions
 
 The MCP functions stay transport-thin: application and serving modules own composition, persistence,
-routing, delivery, and acknowledgement; this file owns response adaptation through `_tool_payload`.
+routing, delivery, attribution, and terminal transitions; this file owns response adaptation through `_tool_payload`.
 Attribution is explicit rather than inferred.
 
 ### Invariants And Boundaries
 
-- Public MCP registration must not let a model claim developer/dashboard
-  attribution; `mcp/registration/orchestration.py` fixes model/cli on the `InboxPoster` it builds
-  for every MCP call.
+- Retained internal adapters do not themselves fix poster attribution; their trusted callers own it.
+  The deleted registrar supplies no current public MCP attribution guarantee.
 - The dashboard serving endpoint calls `serving.operator_inbox_posts.post_operator_inbox_entry`
   directly with trusted developer/dashboard attribution; it does not route through this MCP adapter.
 - Polling requires at least one mailbox key because an unaddressed read would
   not represent an addressable agent inbox.
-- A consumed row keeps its terminal snapshot until normal compaction removes it (260707-HFX2-L20);
-  it is not deleted at consume time, because a concurrent in-flight delivery could otherwise
-  recreate a pending current row.
-- Hosted push delivery is opportunistic; the durable row remains pollable unless
-  the consumer explicitly consumes it, and its retry schedule is floor-aware when a runtime config is
-  present.
+- Consume does not physically delete the row or make it terminal. Attribution-stamped pending rows
+  remain pending and pollable; default polling excludes terminal states, while `include_terminal=True`
+  exposes retained terminal markers. Terminal folding, not consumption, prevents stale pending
+  snapshots from reversing formal terminal states.
+- Hosted push delivery is opportunistic. Correlated adapter acceptance at a turn boundary can land
+  a row; explicit supersession is a separate terminal transition and never a false acknowledgement.
+  Consume changes neither terminality nor the floor-aware retry schedule.
 
 ### Todos
 
@@ -87,18 +101,18 @@ None.
 ### Docs References
 
 The observable-lifecycle design describes pull-based return channels over
-durable gate state; these builders expose the active pull mailbox for chats that
+durable gate state; these retained internal builders support pull-mailbox callers that
 cannot receive direct session injection.
 
 - Passive/active pull and gate-wait are the return-channel layers available when push cannot be guaranteed. [1]
 
 ### Repo-Internal References
 
-- The MCP module delegates post, registered-post, poll, and consume commands to the application layer and validates each response through `_tool_payload`. [2]
-- The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements. [3]
-- The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery. [4]
+- The retained internal MCP adapters delegate post, registered-post helper, poll, consume, and supersede commands to the application layer and validate each response through `_tool_payload`; the registered-post helper is not a current public registrar. [2]
+- The application layer roots the store, composes post requests, polls pending entries with optional terminal inspection, records consume attribution without fulfilling expectations, and explicitly supersedes pending entries without a false acknowledgement. [3]
+- The serving post owner derives routing, persists the row, starts briefed-by expectations only for configured dispatch targets, and performs optional hosted delivery. [4]
 - Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt. [5]
-- The tool declarations fix public-route attribution to model/cli. [6]
+
 - The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. [7]
 
 ### Cross-Repo References

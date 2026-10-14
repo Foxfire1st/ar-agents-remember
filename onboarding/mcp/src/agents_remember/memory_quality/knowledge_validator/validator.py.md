@@ -12,7 +12,7 @@
 
 ### Logic
 
-- `validate_tree(candidate, *, bases=(), code=None, conversion=False)` builds a `ValidationContext` with `parse_tree(candidate)` and collects a `Violation` for every finding of every registered rule, stamping the rule's ID and `report_only`. It returns a sorted `ValidationReport`. `code` is required unless `conversion` is set; a conversion run checks no anchor for path existence.
+- `validate_tree(candidate, *, bases=(), code=None, conversion=False, leaf_publication=False)` builds `ValidationContext` with `parse_tree(candidate)` and collects every finding from every registered check. `_reports_at_route` stamps each `Violation.report_only` from its own route and finding, not the registration's legacy flag. `merge_reports` uses sync-merge or standalone-conversion context; `migration_debt` uses `Finding.carried` and migration completeness (standalone conversion reports debt it authors). At ordinary routes new debt refuses immediately; complete migration makes all debt refuse. Other rules refuse. The result is a sorted `ValidationReport`. `code` is required unless this is standalone conversion, which checks no anchor for path existence.
 - `validation_applies(candidate, bases)` is true when the candidate or any base holds the layout marker.
 - **`leaf_publication` (MIK-R09, leaf 260928-MIK-L09).** `validate_tree` and `require_valid_commit` gained a defaulted `leaf_publication` keyword that they pass into the `ValidationContext`: a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing) then has MIK-R09's history-row rule read every history file not closed in a base, whatever its own `closed` flag (review R1 F1). Every other caller is unchanged.
 - `require_valid_commit(candidate, *, bases, code)` returns `None` when validation does not apply, the report when the candidate passes (report-only findings included), and raises `KnowledgeValidationError` naming every refusing violation otherwise.
@@ -23,19 +23,19 @@
 
 ### Conventions
 
-- The module imports `rules_history` (MIK-R09, since leaf 260928-MIK-L09: `R09-history-rows` and the report-only `R09-history-rows-merged`), `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_decisions` (MIK-R13, since leaf 260928-MIK-L13), `rules_reconsideration` (MIK-R14, since leaf 260928-MIK-L14), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's three admission rules, MIK-R13's five decision content rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because the admission rules are registered here, the fixture tree's every validation now carries one report-only `R27.4-legacy-unassessed` count (its Doc14 family is an export).
+- The module imports `rules_history` (MIK-R09, since leaf 260928-MIK-L09: `R09-history-rows` and the bounded `merge_reports` rule `R09-history-rows-merged`), `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_decisions` (MIK-R13, since leaf 260928-MIK-L13), `rules_reconsideration` (MIK-R14, since leaf 260928-MIK-L14), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's registered admission rules, MIK-R13's decision content rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because admission rules register here, the fixture's exported Doc14 family also produces `R27.4-legacy-unassessed` debt. Reporting depends on an explicit comparison base carrying that state and incomplete migration, or on standalone conversion; this is not an unconditional report-only count at every validation.
 - With no bases every anchor is checked for path existence (a writer's or a curator's run).
 - `rules_overviews` is also imported for registration. Its registered refusing R80 checks use the same context but return outside leaf publication or during conversion: at publication they enforce fixed purpose heading first, no leaf/date-named sections, and a terminal contiguous citation region. The detailed syntax and standalone-conversion exemption belong to [the overview-rule card](rules_overviews.py.md); neither syntax validation nor a current anchor judges whether the prose is true.
 
 ### Invariants And Boundaries
 
 - `require_valid_commit` has no parameter that skips a rule.
-- `conversion=True` exists in the API only; it is deliberately not exposed on the CLI (ruling Q2), so the tool surface has no skip flag.
+- `conversion=True` is explicit standalone-conversion API context, not a CLI skip flag. It may not be combined with comparison `bases`, a paired `code` tree, or a truthy `leaf_publication` (including `LeafCommit`); the validator rejects such combinations with `ValueError` before running checks. Every registered check still runs on a valid standalone conversion.
 - Commit applicability is conditional on the candidate and comparison bases, not on an assumed deployment date: validation is skipped only when neither side is converted. A converted candidate or any converted base activates the registered rules.
 
 ### Todos
 
-Commit callers must supply the comparison bases. A standalone conversion uses the explicit API conversion context; ordinary calls must supply the paired code tree. This API boundary does not authorize a CLI skip flag or a production guard bypass.
+Commit callers must supply the comparison bases and paired code tree. Standalone conversion uses only its explicit API context, without bases, paired code or leaf publication. This boundary does not authorize a CLI skip flag, a report-only commit route or a production guard bypass.
 
 ## Evidence
 
@@ -53,14 +53,12 @@ No configured live documentation source was available for this pass.
 
 The three entry points.
 
-- The validator: every registered rule over the candidate. [1]
 
 - Rule 8's applicability: the marker on any side. [2]
 
 - The commit route's call: nothing, the report, or the refusal. [3]
 
 - Commit routes validate only when a side has the marker. [4]
-- An unconverted base is refused, and a standalone conversion checks no path. [5]
 - The registering import of MIK-R09's history-row rules. [6]
 
 - A leaf publication, and the frozen history files of a `LeafCommit`, reach the context (MIK-R09). [7]
@@ -80,3 +78,7 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 No cross-repo boundary is crossed by this file.
 
 - Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [13]
+
+- The validator runs every registered check and computes each violation's report/refuse through `_reports_at_route`, using route and carried-debt context. [1]
+- An unconverted base is refused; standalone conversion checks no anchor path and cannot combine with comparison bases, paired code or leaf publication. [5]
+- Current source delta inspected statically: Compute per-finding route reporting, reject mixed conversion contexts and qualify fixture debt; retain applicability and LeafCommit scope. [14]

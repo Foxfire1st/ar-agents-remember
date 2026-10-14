@@ -25,7 +25,32 @@
   "context": "Developer direction D48 with D47 on the L86 main page (2026-10-04): unexplained/unknown attribution opens a full-page diff viewer with return; no source-change bar; default to changed first; the leaf worklist as a view of its own.",
   "decider": "Developer direction D48 with D47 (2026-10-04).",
   "id": "DEC-8MH0KM",
-  "links": [],
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "content": "sha256:4f5da64fc090439fd29f3356214a220f97ffc377e6c7496e0af78c42fa24ef30",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafWorklistView"
+        },
+        "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "79b9df933874721d54216189dfe94463118877aa",
+        "content": "sha256:8b74b0da1fc1ea7bda7d77e5cb42a3d4307f406bd78d07d402f5a413d576417a",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorkspaceCenter"
+        },
+        "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+      }
+    }
+  ],
   "origin": {
     "handoff": {
       "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
@@ -34,7 +59,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

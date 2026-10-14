@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+        "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
         "content": "sha256:20089bdfe8636fa7c3caaf6baa8842fae8047e6ba616f7f3c7e406c18b0937e3",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+        "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
         "content": "sha256:778cd5126befa5baac53c5508cfa665be50c25a15c493990fdf5d4b52c478774",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:c62723d18b1c4fd0296917077f2d9fab713dd26cec34a39f65d3ce3a9b48f40b",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:66e0c06d73a6299adc8ab6ee6e4bc7d43df255bec2bf84c8a2c9d1ec3e51fb9c",
             "locator": {
               "kind": "symbol",
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:7070919722fc3ff277ea397bed40f2c54b5c9476b665757c7b43513caf5fbcc7",
             "locator": {
               "kind": "symbol",
@@ -81,8 +81,8 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:e72360513a995a1b286b88ef9e9a3e9db0680c041b96a0fc695e4415bfa74d0a",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:6e9d5695a89fe0f39629f72a99c6bd4b1053325d1cafe18539e0425168c3b2f7",
             "locator": {
               "kind": "symbol",
               "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
@@ -92,8 +92,8 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:8f60c162d543d697f781987004bbe3d45c8a88e7a6c46cd4126a568431426865",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:55859b50a952b7bbb6d76a5decfaf8fb1dcbbef36f83b1a222dd8b387abf7a10",
             "locator": {
               "kind": "symbol",
               "name": "_converted_closeout_fixture"
@@ -103,8 +103,8 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:b7abe15ccf21c20236d59e4417ec0c689937ae286b765c11c767b45653611712",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
             "locator": {
               "kind": "symbol",
               "name": "_seed_leaf_trace_row"
@@ -114,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:b6ec886dc96b9c7fa88876fdf84d44d6a06b9f19a320de9051f8ab9b0d3da4ab",
             "locator": {
               "kind": "symbol",
@@ -130,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:a1344f1dbda9889705ce5274d19fd808fc74fc5e18c3e42c7093744e77f5c79b",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:ee94b034ba3db12dcb9f9891abb9c7d1841c7dacddb85c40b1aef7b5fb2d6ad2",
             "locator": {
               "kind": "symbol",
               "name": "test_closeout_recovery_attributes_the_memory_commit_it_still_owed"
@@ -141,8 +141,8 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:e72360513a995a1b286b88ef9e9a3e9db0680c041b96a0fc695e4415bfa74d0a",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:6e9d5695a89fe0f39629f72a99c6bd4b1053325d1cafe18539e0425168c3b2f7",
             "locator": {
               "kind": "symbol",
               "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
@@ -152,8 +152,8 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
-            "content": "sha256:b7abe15ccf21c20236d59e4417ec0c689937ae286b765c11c767b45653611712",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
             "locator": {
               "kind": "symbol",
               "name": "_seed_leaf_trace_row"
@@ -163,7 +163,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:b6ec886dc96b9c7fa88876fdf84d44d6a06b9f19a320de9051f8ab9b0d3da4ab",
             "locator": {
               "kind": "symbol",
@@ -179,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:4e88fc7509ba3e9c1d9e8f2b5ab4297970cce6f98d8583f87d692eef7ff50117",
             "locator": {
               "kind": "symbol",
@@ -190,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:3c7212346c6d01ef181cdd225659881cd5bac326804f5a935692d2e8fe6d71f9",
             "locator": {
               "kind": "symbol",
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:8f3b85d477f3dcb3bfb0b1e50ae4f9fd386d5920e9ba49497eff1034ff428c1a",
             "locator": {
               "kind": "symbol",
@@ -218,11 +218,11 @@
       ]
     },
     "6": {
-      "note": "Cache materialization preserves both repositories' refs/commit objects and real content.\n\nAnchor: `_ClosedCacheLeaf.assert_content_unchanged`; `_ClosedCacheLeaf.git_state`",
+      "note": "Cache materialization preserves both repositories' refs/commit objects and real content.",
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:76ea4daee605c50b692f0fcfc449469ed964a366c25aff883f0c0297e44deef3",
             "locator": {
               "kind": "symbol",
@@ -233,7 +233,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:1b83ad50655ccf0ea2f1cb04fcda3cf6cc73c007c6db52cbd7cfb62c083b42f3",
             "locator": {
               "kind": "symbol",
@@ -244,7 +244,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:ae11c684c920d9a2911e01c2ca5458d5f6c3f11ae80d3288103cf2b930588203",
             "locator": {
               "kind": "symbol",
@@ -256,11 +256,11 @@
       ]
     },
     "7": {
-      "note": "Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status.\n\nAnchor: `_ClosedCacheLeaf.git_state`; `_ClosedCacheLeaf.assert_content_unchanged`",
+      "note": "Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status.",
       "targets": [
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:76ea4daee605c50b692f0fcfc449469ed964a366c25aff883f0c0297e44deef3",
             "locator": {
               "kind": "symbol",
@@ -271,7 +271,7 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:1b83ad50655ccf0ea2f1cb04fcda3cf6cc73c007c6db52cbd7cfb62c083b42f3",
             "locator": {
               "kind": "symbol",
@@ -282,11 +282,27 @@
         },
         {
           "anchor": {
-            "blob": "f41de3ad7abcfc1d163cb381ac0e4e66c5df9d37",
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
             "content": "sha256:ae11c684c920d9a2911e01c2ca5458d5f6c3f11ae80d3288103cf2b930588203",
             "locator": {
               "kind": "symbol",
               "name": "_ClosedCacheLeaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The open trace fixture binds its actual contract code snapshot and source path/blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f63c50b00d9392d4fa306146211b971c2bc353b",
+            "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_leaf_trace_row"
             }
           },
           "kind": "test"

@@ -89,5 +89,5 @@ state before the next AR tool call resumes the lifecycle to `running`.
 - The choke point each builder returns through. [3]
 - Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`. [4]
 - The response models these payloads validate against. [5]
-- Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle. [6]
+
 - The design's signal surface (§1.3). [7]

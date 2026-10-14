@@ -20,8 +20,9 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 - `_child_script(script)` replaces only the launch of the child module with `python -P -c <script>`.
   `_observations()` wraps the parent's `_reply` and collects every validated reply of a child.
 - `_task_document`, `_settings`, `_retarget`, `_subjects` and `_packet_inputs` build task documents,
-  settings files, symbolic links, item-subject lists and a decision with a `reconsider_on` link to a
-  requirement packet. `_packet_inputs` writes that decision in canonical text and
+  settings files, symbolic links, item-subject lists and a decision whose `constrains` link names
+  the existing `INV-AAAAAA`, alongside its retained `reconsider_on` link to a requirement packet.
+  Governing-decision validity is real fixture input, not a relaxation of the packet gate. `_packet_inputs` writes that decision in canonical text and
   fast-forwards the leaf memory branch to the advanced parent tip. Record retention
   and formatting remain real gate prerequisites: packet retargeting is tested only
   after the fixture carries the parent's decision, not by bypassing those checks.
@@ -91,26 +92,8 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 
 ## Evidence
 
-- Canonical decision bytes and parent-tip carriage establish the real packet-gate prerequisites. [18]
-
 - The long case: the leaf's document, then settings, contract, packet, root, ledger and gate parts. [1]
-- The launch replacement for faulty children. [2]
-- Settings changed, restored and unreadable during the child's read. [3]
-
-- The rows of the settings selection. [4]
-
-
-- The fallback contract read and a sibling read at two identities. [5]
-
-- Packet bytes, a link retargeted during the read, and a failed manifest read. [6]
-- The packet link outside, inside and outside again, for the view and the gate. [7]
-
-- A contract link retargeted during the read. [8]
-
-- Root absence, retargeting, the removed sidecar root, and probe errors. [9]
-
 - The external ledger's bytes, change, absence and failure. [10]
-
 - A failed contract read behind the gate keeps nothing. [11]
 - Documents the view did not read do not invalidate it. [12]
 - A second claimant is computed again. [13]
@@ -118,3 +101,12 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 - No task document read is not a change. [15]
 - The judgments of moved_inputs. [16]
 - The gate's warm pass becomes the refusal. [17]
+- Canonical decision bytes and parent-tip carriage establish the real packet-gate prerequisites. [18]
+- The launch replacement for faulty children. [2]
+- Settings changed, restored and unreadable during the child's read. [3]
+- The rows of the settings selection. [4]
+- The fallback contract read and a sibling read at two identities. [5]
+- Packet bytes, a link retargeted during the read, and a failed manifest read. [6]
+- The packet link outside, inside and outside again, for the view and the gate. [7]
+- A contract link retargeted during the read. [8]
+- Root absence, retargeting, the removed sidecar root, and probe errors. [9]

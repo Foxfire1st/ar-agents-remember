@@ -17,7 +17,7 @@ MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existe
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-`tools/public_roster.py` declares the advertised tuple once, independently of live registration and response-model registration. Its present literal contains 41 names, including the added `retire_child` and `role_start_set`; their response models are registered without restoring the other retired operations. `PUBLIC_TOOL_RESPONSE_MODELS` filters the full registry by the explicitly declared internal compatibility names. Those internal rows include trusted session, inbox, gate, readiness, and manager-nudge builders; their presence does not advertise public tools. The public knowledge family is `knowledge_read`, `knowledge_diff`, and `knowledge_integrity_check`. Provider operations, the former knowledge mutations/projection, and status-change wait are not entries in the present public tuple.
+`tools/public_roster.py` declares the advertised tuple once, independently of live registration and response-model registration. Its present literal contains 41 names, including the added `retire_child` and `role_start_set`; their response models are registered without restoring the other retired operations. `PUBLIC_TOOL_RESPONSE_MODELS` filters the full registry by the explicitly declared internal compatibility names. Those internal rows include trusted session, inbox, gate, readiness, and manager-nudge builders; their presence does not advertise public tools. The public knowledge family is `knowledge_read`, `knowledge_diff`, and `knowledge_integrity_check`. Provider operations, the former knowledge mutations/projection, and status-change wait are not entries in the present public tuple. The successor tuple has41 after removal of `resolve_context` from the rejected freeze’s42; these are static literal counts, not live advertisement or test results.
 
 The answer policy is presently mixed rather than uniformly final: L100's `retire_child` and `role_start_set`, and L111 tools, retain named interim rows at 4,000 tokens; `role_message` and `server_info` have explicit 4,000-token exceptions. L110 memory/coherence tools now have `SHAPED_TOOL_BOUNDS` between 400 and 1,500 tokens, including 850 for curator coherence. Retained drift/migration bound entries do not advertise removed tools. L112 final rows assign `runtime_install` 600 tokens and `dispatch_agent` 1,500. Lookup checks exceptions, shaped bounds, interim ownership, then finalized task rows (including L109 and L112), and otherwise returns the 4,000-token net. General lists have a 20-entry cap; status projections use a 10-entry cap where selected, and overflow has a separate 400-token short form. These are source declarations, not a fresh measurement that every delivered answer meets them. Logging failure is reported without failing the underlying call.
 
@@ -69,11 +69,13 @@ Repository paths use the confined plain-Git-path rule. `RoutePath` alone also ad
 
 Admission meanings remain `spans_locations`, `guarded_by_test`, `family_guarantee`, `prevents_costly_mistake`, `joint_guarantee`, `real_alternatives`, and `constrains_future_work`. Mechanical support for the first two uses sidecar realization/proof facts; reviewer judgment owns the others. An exported record is recognized by a legacy identity that actually derives its record ID, not mere `legacyId` presence; decisions receive no export exemption. Census baseline, inventory, claims and route-status formats retain provenance and distinguish import disposition from authored semantic assessment. Root route slug is `@root`; claim IDs use `CLM-` plus six Crockford characters; latest status across censuses governs. Pinning and append-only checks belong to the validator rather than format construction.
 
-History files are owned by a leaf, wave or crossing and contain one row per subject. The six registered kinds are invariant, family, onboarding trace, planned effect, unexplained change and reconsideration. Invariant rows distinguish changed/moved/deleted/extended/no-impact; family rows distinguish changed/rerouted/assigned/retired/no-impact, carrying the covered entries or examined members. A history file closed on any base must remain byte-identical. Reopened leaves write attempt-qualified files from attempt 2 onward; the first file omits `attempt`. Merged reading uses attempt order and lets a later subject row supersede its earlier row while retaining other rows, including closed-file rows. An unchanged-revision `changed` row is allowed only as restatement of that leaf's prior frozen changed revision. The governing row cannot hide a changed invariant/family behind a later no-impact or movement row; changed or retirement evidence must remain visible.
+History files are leaf, wave or crossing-owned and contain one row per subject. The registry retains invariant, family, onboarding_trace, planned, unexplained and reconsideration and adds membership and record. Invariant/family dispositions keep their covered-entry/examined-member obligations and governing changed-or-retirement rule. Reopened files merge by attempt, with later subjects superseding earlier ones. The merged latest-file closed flag is not each winning row's provenance: winning_row_closed computes those own-file flags separately. Closed-base history stays frozen, and unchanged-revision changed rows remain restatements rather than a new arbitrary judgment.
 
-Onboarding trace rows have only `no_impact`; they answer unchanged counted-content gates for the source card or nearest governing route overview. Crossing-sync marker lines belong in the structured `markers` list, split deterministically when needed, with a short reason. Root route subject is `onboarding:overview`. Planned declarations use invariant/family/new subjects and stable requirement revision references; `planned:<subject>#<effect>` depends on declaration content rather than list position. Their three answers are realized elsewhere, deferred, and dropped, each with exactly one disposition-appropriate reference; the writer owns resolution. An unrelated no-impact row cannot satisfy an open planned item.
+Onboarding trace rows allow updated/no_impact and writer-filled SourceBlob bindings. Each SourceBlob has a repository path and lowercase hex object token or absent sentinel; source paths are distinct. Updated requires sources in the model, while old sourceless rows remain syntactically readable and answer only in their own closed files. The normal gate checks source equality and counted Markdown/nonmechanical references, not realizes/proves-only changes. Crossing markers retain their structured list and root subject onboarding:overview. This leaf's rollout exception permits its own measured changed card through the old producer with no invented updated/no_impact row or later backfill. Planned effects retain their disposition-specific resolved references.
 
-Unexplained hunk identity depends on its changed-line identities; file subjects bind candidate-side object or absence. Covered items require their no-invariant row; uncovered items require counted onboarding change or the file's onboarding trace, never a no-invariant substitution. Unreadable sidecars and unstated coverage cannot satisfy the item. Delete-only hunks retain the no-invariant answer route. Reconsideration subjects are `reconsider:<DEC-ID>#<alternative index>`, answered by `still_rejected|raise`. Triggering dispositions are changed/moved/deleted/rerouted/retired; triggers are record file, history row, anchor, stale anchor and requirement version. Still-rejected refresh applies to anchor, stale-anchor and requirement-version triggers. Shared target keys prevent refresh drift and question prefixes identify one raised question per subject and leaf. Decision helpers require at least two alternatives, exactly one chosen, reconsideration prose for every rejected/deferred alternative, and links to valid rejected/deferred indexes. They derive superseded status and governs/reconsider links; they do not evaluate reconsideration prose. Linked alternative-order stability is a validator responsibility.
+Unexplained hunk identity is changed-line based; nontext subjects bind the candidate object or absence. The pure helper reads a subject-to-row map but does not establish row currency or count a card edit. Covered items keep no_invariant; uncovered items use the application gate's typed current onboarding answer, so an elsewhere source edit can reopen that answer without changing hunk identity. Unreadable sidecars or unstated coverage do not pass. Reconsideration subject/index, still_rejected/raise forms, refreshable triggers and derived decision supersession remain separate rules, not substitutes for onboarding currentness.
+
+MembershipRow names membership:<invariant> with no_family, current candidate revision and distinct considered family IDs; it cannot answer a listed invariant. RecordRow names a decision/facet at candidate revision: changed requires effect, retired requires retire, no_impact forbids effect and because is optional. Unknown-subject checks resolve the membership invariant and record subject. These candidate schemas are not authority to write new kinds through an unsupported main-line producer.
 
 The reconsideration satisfying function accepts `superseded=frozenset()` after its item and rows.
 A matching row still closes an item; without a row, a valid reconsideration subject also closes when
@@ -167,7 +169,6 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - The row kind's docstring with MIK-R30's meaning. [38]
 - The planned forms, the key and the gate predicate. [39]
 - The planned row and its disposition-bound ref. [40]
-- The registry with the fourth kind (MIK-R10 later adds a fifth). [41]
 - The invariant criteria's meanings, and which two the validator checks. [42]
 - The derivation that identifies an export. [43]
 - The response kinds a token pages, and the public queue cap. [44]
@@ -179,7 +180,6 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - The tree view's answer. [50]
 - The subjects, the row subject and the gate predicate. [51]
 - The no_invariant row. [52]
-- The registry with the fifth kind. [53]
 - The optional field. [54]
 - The docstring paragraph. [55]
 - The range and change states and the excerpt bounds. [56]
@@ -190,7 +190,7 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - The tree view's two new fields, and the summary's. [61]
 - The facts derive the primary and the marks. [62]
 - The entry's facts describe exactly its returned members. [63]
-- The sixth row kind. [66]
+- The reconsideration row retains its own subject and disposition grammar. [66]
 - Public MCP payload builders validate through the response model registry. [67]
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
 - The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. [69]
@@ -313,7 +313,6 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - An invariant record carries no second-owner fields. [263]
 - Schema dispatch refuses unknown schemas. [264]
 - The history file: one owner, one row per subject, a strict `closed` flag. [265]
-- The row-kind registry: `invariant`, `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, since MIK-R10 `unexplained`, and since MIK-R14 `reconsideration`. [266]
 - The freeze predicate. [267]
 - The history schema in the dispatch table. [268]
 - The history row ID kind. [269]
@@ -342,7 +341,7 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - The subject pattern, the triggers and the refreshed triggers. [64]
 - The one spelling of a link target, and the gate's predicate. [65]
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
-- Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
+- Present public roster is a single literal with 41 successor names (the rejected freeze had42; resolve_context removed) and no provider diagnostics or knowledge mutations. [294]
 - Full and public registries separate retained internal builders from public responses, including native retirement and set start. [295]
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
@@ -362,3 +361,10 @@ Legacy final-output receipts and sync rebindings remain readable under their exp
 - The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
 
 - The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior. [311]
+
+- History registry includes the full set of row forms. [41]
+- History registry retains unexplained and its neighboring row kinds. [53]
+- Registry includes membership and record. [266]
+- SourceBlob and bound onboarding row validation. [312]
+- Membership and decision/facet record forms. [313]
+- Each winning row retains its own closed-file provenance. [314]

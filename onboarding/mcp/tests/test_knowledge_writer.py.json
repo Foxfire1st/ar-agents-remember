@@ -3,18 +3,56 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The conforming example.",
+      "note": "The conforming post-write example validates against the explicit memory HEAD comparison base.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
-            "content": "sha256:bb2cf4dd9b773030da0cd6184d6daa71906840845643f755bef8cf05d0df996b",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:255af836e84031a6a7adb2e0aeda1bdb666b54f884f1031cfe4a0d73b2a3ef22",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files"
+              "end": 169,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:bacbb7faea00e4e7a5f43881ce7fe443fb71e295dc2c32c0a736b5f24a4b48c0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:e9100911285079acf76a3da29847a370e03d18ec6fa86ae99a739a25ef673495",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 743
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
+            "content": "sha256:bb7b5d67655fe72501f6c4ff0e4a88dfe573980a732f79221d807d820b33d5e7",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -23,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:2d221585f59252148554ca2b722212a954e92d6158c3283a447d4014faecd430",
             "locator": {
               "kind": "symbol",
@@ -34,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:fc7fd7161ce923ac71e751b143ced47f901c6ac872a6e7d0b4d00e274fdaf171",
             "locator": {
               "kind": "symbol",
@@ -50,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
             "locator": {
               "kind": "symbol",
@@ -66,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:85a0d4277d72529872371513df1e6bc7acc158c7767c3ea26ac0ce1239bbc24b",
             "locator": {
               "kind": "symbol",
@@ -82,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:800060feb8f23fea50c1400c09768e7b87a4dd590411cf47ea35d3fb93276a22",
             "locator": {
-              "end": 648,
+              "end": 651,
               "kind": "line_range",
-              "start": 645
+              "start": 648
             }
           },
           "kind": "test"
@@ -99,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:4a88ef3aa4169e90919b9dead800543a77c077fc861739a96454dc6d60102d51",
             "locator": {
               "kind": "symbol",
@@ -131,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
             "locator": {
               "kind": "symbol",
@@ -139,6 +177,48 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Current source delta inspected statically: Explain HEAD comparison and destination Markdown; remove blanket admission writer-policy claim, retaining malformed-cover and idempotence assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:bacbb7faea00e4e7a5f43881ce7fe443fb71e295dc2c32c0a736b5f24a4b48c0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:e9100911285079acf76a3da29847a370e03d18ec6fa86ae99a739a25ef673495",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 743
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
+            "content": "sha256:bb7b5d67655fe72501f6c4ff0e4a88dfe573980a732f79221d807d820b33d5e7",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -163,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:46ba98b7ee3702e4829e4e07edfb704f4c2724a762524fd2107205f4a25f9f78",
             "locator": {
               "kind": "symbol",
@@ -179,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:ea73e44ce2550b670923f42c441106293a51c470fec4cce9265ceaec8960cbfe",
             "locator": {
               "kind": "symbol",
@@ -195,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:02105122a99dc3a42494a6ce19f6ce4f4f024cbc6bebddcb412775103b3ac38b",
             "locator": {
               "kind": "symbol",
@@ -211,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:9233667de56acf8ae662f0bcf5fb4c318fd5385e54eae25e96d6143e74b2a052",
             "locator": {
               "kind": "symbol",
@@ -227,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
             "locator": {
               "kind": "symbol",
@@ -243,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
             "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
             "locator": {
               "kind": "symbol",
@@ -255,18 +335,56 @@
       ]
     },
     "9": {
-      "note": "MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused.",
+      "note": "MIK-R06 (ruling Q6): destination Markdown is prepared before relocation; the moved entry keeps its assertions, while malformed paths and remove-plus-path refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a70b5025a8f4c4d320716da85149bee5cf5c781",
-            "content": "sha256:52c82a8871830d881e7a452f143a08ddffba667aad44f387070c04f042a31bae",
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:dba7ab7887111ebb367fd2e55c69b88264d78ab8cd035b1b7b99d00a1d0db71a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_row_whose_after_names_another_path_relocates_the_entry"
+              "end": 806,
+              "kind": "line_range",
+              "start": 731
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:bacbb7faea00e4e7a5f43881ce7fe443fb71e295dc2c32c0a736b5f24a4b48c0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
+            "content": "sha256:e9100911285079acf76a3da29847a370e03d18ec6fa86ae99a739a25ef673495",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 743
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d37616f6691a9ec42f9781d7f0fdcdf2ae24a80",
+            "content": "sha256:bb7b5d67655fe72501f6c4ff0e4a88dfe573980a732f79221d807d820b33d5e7",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
         }
       ]
     }

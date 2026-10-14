@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
         "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
         "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
         "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
         "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-        "content": "sha256:35b167726ea01747baa5d2d87fa38d2d341f239c445826eef614a669b75f9ea4",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+        "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
         "locator": {
           "kind": "symbol",
           "name": "check_merged_history_rows"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
         "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-        "content": "sha256:2ec1c5e42e55002422069833399dfe81fd6e81181e5cffceb33f38465b7ab973",
+        "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+        "content": "sha256:5885ae28f3415d7b4ea1afc3f8351fdc014a002111fc278a016b6bb4545c0fd8",
         "locator": {
           "kind": "file"
         }
@@ -133,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:da97b9ed6324c58b5a41b9a41264694d26a5e251a2c25b68feaa7237e3a78a76",
             "locator": {
               "end": 72,
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
+            "blob": "3c93b0c72ae53a54e25c424ae1a27b1b447f5621",
             "content": "sha256:ca8026f753e814efb423427ba9db47666900ae917825a632db04f9b936f8b72c",
             "locator": {
               "kind": "symbol",
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:53f33a86c22abbd5093804d624057da20622979d983fe06abc4ef321e661e03f",
             "locator": {
               "kind": "symbol",
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
             "locator": {
               "kind": "symbol",
@@ -215,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
             "locator": {
               "kind": "symbol",
@@ -231,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:f7abed20650cba1d743187c351a7bdfd498ab954797afc796f245b4314079860",
             "locator": {
               "kind": "symbol",
@@ -247,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "996b57288ef3f907186b1a856b06344c82397c9d",
+            "blob": "893ba0db963594518ddb991ce2e7b485b2dc03c1",
             "content": "sha256:5ce8a0a8766fccf1b060bbf7966774c165b00a39ff4cc8a760284830ebf8adbe",
             "locator": {
               "kind": "symbol",
@@ -281,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
             "locator": {
               "kind": "symbol",
@@ -293,16 +293,66 @@
       ]
     },
     "19": {
-      "note": "Leaf publication refuses merged-row mismatches; only a non-publication merge gets report-only treatment.",
+      "note": "Leaf publication refuses all merged-row mismatches; the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication/landing.",
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-            "content": "sha256:35b167726ea01747baa5d2d87fa38d2d341f239c445826eef614a669b75f9ea4",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
             "locator": {
-              "kind": "symbol",
-              "name": "check_merged_history_rows"
+              "end": 304,
+              "kind": "line_range",
+              "start": 290
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:c01040bdedb8c44da02d110076938958c5e0ad2cd2c849ac231d2010551e0439",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:fb4ceeac28b45206c4540305be0f73e60b68b44a0fccb85bc477f6c9fb31bca4",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:46b8d2b3029fa38861b3cbbcbe135baac09c5d062c46747e5f29bc4e24e39359",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 753
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
           "kind": "code"
         }
@@ -313,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -324,12 +374,66 @@
         }
       ]
     },
+    "20": {
+      "note": "Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:c01040bdedb8c44da02d110076938958c5e0ad2cd2c849ac231d2010551e0439",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:fb4ceeac28b45206c4540305be0f73e60b68b44a0fccb85bc477f6c9fb31bca4",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:46b8d2b3029fa38861b3cbbcbe135baac09c5d062c46747e5f29bc4e24e39359",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 753
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "A merge parent's rows, read only when a row disagrees.\n\nAnchor: \"def agreed(self, path: str, row: InvariantRow)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:cf108146f9604aa3fd19b01e83275815d1131c62fbf6683583a4b6655d6b1585",
             "locator": {
               "kind": "symbol",
@@ -345,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
             "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
             "locator": {
               "kind": "symbol",
@@ -373,43 +477,120 @@
       ]
     },
     "6": {
-      "note": "Report-only moved-row treatment applies only to a non-publication merge.",
+      "note": "Moved-row findings are bounded `merge_reports` at non-publication sync merges; their messages explain deferral and the next refusing publication/landing.",
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-            "content": "sha256:35b167726ea01747baa5d2d87fa38d2d341f239c445826eef614a669b75f9ea4",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
             "locator": {
-              "kind": "symbol",
-              "name": "check_merged_history_rows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The two rules registered on import.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-            "content": "sha256:ada10dcf1b001a10048f21dde3833e4c18cf80cb08e0a1a22bb08a27bb39f403",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_ROWS_RULE"
+              "end": 304,
+              "kind": "line_range",
+              "start": 290
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-            "content": "sha256:9810864eafef596d9db43cd1edaae57748cabf4b3a8128db9dcf0bfc8c0bf58e",
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:c01040bdedb8c44da02d110076938958c5e0ad2cd2c849ac231d2010551e0439",
             "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_ROWS_MERGED_RULE"
+              "end": 272,
+              "kind": "line_range",
+              "start": 270
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:fb4ceeac28b45206c4540305be0f73e60b68b44a0fccb85bc477f6c9fb31bca4",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:46b8d2b3029fa38861b3cbbcbe135baac09c5d062c46747e5f29bc4e24e39359",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 753
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The history-row registrations: `R09-history-rows` uses `writer_reports`, while `R09-history-rows-merged` uses `merge_reports`, not plain report-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:c01040bdedb8c44da02d110076938958c5e0ad2cd2c849ac231d2010551e0439",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:fb4ceeac28b45206c4540305be0f73e60b68b44a0fccb85bc477f6c9fb31bca4",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf54e700cce002dacc59f216d2e65e1bd2e78ee7",
+            "content": "sha256:46b8d2b3029fa38861b3cbbcbe135baac09c5d062c46747e5f29bc4e24e39359",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
+            "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 753
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
           "kind": "code"
         }
@@ -420,12 +601,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "blob": "7778e9e7bc24dc8ed3dc6acf189a8df1730198f7",
             "content": "sha256:d2f3d96dd8948e4416449730447149f27c8cf5b9d69b79f5949fa145243ee771",
             "locator": {
-              "end": 149,
+              "end": 303,
               "kind": "line_range",
-              "start": 149
+              "start": 303
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -438,7 +619,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
+            "blob": "598b909c865084294464205f973448c52098d16c",
             "content": "sha256:ef8538598b8aee42a9457276d2d54cc12edf8860af6a1b50d66b4b8cbef5863d",
             "locator": {
               "kind": "symbol",
