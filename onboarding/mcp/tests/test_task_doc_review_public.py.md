@@ -13,6 +13,10 @@ contract; it does not perform an independent review or certify a candidate.
 
 ## Code Commentary
 
+### Current Contract
+
+Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported.
+
 ### Logic
 
 `_create` authors a minimal sub-task through `task_doc_tool`, and `_call` invokes the same public
@@ -28,7 +32,8 @@ and a repeated begin resumes the pending round without incrementing it. The firs
 seals findings A and B; later rounds can only shrink the remaining set through B and then an empty
 passing set.
 
-The boundary cases cover direct baseline recording, replacement to absent state and shrink-only successors. The cap case follows the fallback budget, refuses the next unapproved begin with count/limit, normalizes legacy developerApproval input, then records an architect approval and accumulates extras while pending replay stays unchanged. Added settings cases use an isolated user file for a lower/higher number, next-call settings reload and unreadable-settings refusal with readable get. Record-only cases compare the independently resolved identity, reject tracked/untracked mutations or unresolved bindings, and keep the prior count/findings on refusal. Legacy zero-limit get and direct first-record cases backfill the answer/record from settings plus extras without rewriting a positive stored limit. The route sibling case passes a SimpleNamespace to _with_route_review_state; it does not run the complete route builder/admission chain.
+> **Retained historical source account — superseded by the current contract:**
+> The boundary cases cover direct baseline recording, replacement to absent state and shrink-only successors. The cap case follows the fallback budget, refuses the next unapproved begin with count/limit, normalizes legacy developerApproval input, then records an architect approval and accumulates extras while pending replay stays unchanged. Added settings cases use an isolated user file for a lower/higher number, next-call settings reload and unreadable-settings refusal with readable get. Record-only cases compare the independently resolved identity, reject tracked/untracked mutations or unresolved bindings, and keep the prior count/findings on refusal. Legacy zero-limit get and direct first-record cases backfill the answer/record from settings plus extras without rewriting a positive stored limit. The route sibling case passes a SimpleNamespace to _with_route_review_state; it does not run the complete route builder/admission chain.
 
 ### Conventions
 
@@ -90,3 +95,5 @@ The historical frozen L41 source tree was `2d2e1ae39b2046b5663aca2cf82f27779dafe
 operation proof with exhaustion-only direct permission and cumulative round-four/round-five
 behavior. No focused pass, landed commit identity, independent review, or acceptance is asserted;
 verification metadata remains blank until governed closeout stamps a genuine code commit.
+
+- Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported. [7]

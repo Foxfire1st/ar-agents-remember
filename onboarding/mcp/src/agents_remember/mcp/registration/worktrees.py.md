@@ -21,6 +21,10 @@ says "create, re-attach, observe, sync, stop" for exactly that reason.
 
 ## Code Commentary
 
+### Current Contract
+
+The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority.
+
 ### Logic
 
 `worktree_start` is the widest declaration in the family and splits into the three parameter objects
@@ -31,26 +35,28 @@ its application entry point takes — who the task is, what it is cut from, and 
 - `TaskBases(source_branch, work_branch, memory_mode, memory_choice, stale_base_choice)`.
 - `StartExecution(dry_run, skip_provider_setup, retry_provider_setup)`.
 
-Its docstring carries two contracts that are invisible in the types. The **stale-base preflight**:
-a start refuses when the source branch is behind or diverged from its remote tracking branch, and
-the blocked `choose_stale_base_recovery` result is cleared by re-running with
-`stale_base_choice='fast-forward'` or `'proceed-stale'`. And the **async provider setup**: start
-returns within seconds with the providers block reporting `starting` plus a `progressFile`; the
-caller polls `worktree_status` until a terminal state (a seed copy takes seconds, a refused seed
-falls back to a full reindex flagged `seedFallback`), and re-runs with `retry_provider_setup=true`
-after a failed or stale setup.
+> **Retained historical source account — superseded by the current contract:**
+> Its docstring carries two contracts that are invisible in the types. The **stale-base preflight**:
+> a start refuses when the source branch is behind or diverged from its remote tracking branch, and
+> the blocked `choose_stale_base_recovery` result is cleared by re-running with
+> `stale_base_choice='fast-forward'` or `'proceed-stale'`. And the **async provider setup**: start
+> returns within seconds with the providers block reporting `starting` plus a `progressFile`; the
+> caller polls `worktree_status` until a terminal state (a seed copy takes seconds, a refused seed
+> falls back to a full reindex flagged `seedFallback`), and re-runs with `retry_provider_setup=true`
+> after a failed or stale setup.
 
 `worktree_attach` and `worktree_status` both pack their five locators into a `TaskRef` — the same
 bundle `resolve_context` uses. Attach is read-only (it mutates no git) and takes `on_unsaved`
 (`save` promotes an unsaved fleeting lifecycle, `discard` abandons it) to clear the save gate.
 Status reports phase, dirty flags, next-step hints, and the live provider-setup block.
 
-`worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with
-shared `Literal` types. Its help now describes retained code/chosen-memory conflicts: the agent
-resolves and stages in the reported worktree, then calls the same contract with
-`resolution_action='continue'`, or restores pinned pre-sync heads with `cancel`. It does not expose
-an operation id or promise abort-on-conflict behavior. `skip-memory` is an admission/preflight
-choice, not a way to change an already-running generation.
+> **Retained historical source account — superseded by the current contract:**
+> `worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with
+> shared `Literal` types. Its help now describes retained code/chosen-memory conflicts: the agent
+> resolves and stages in the reported worktree, then calls the same contract with
+> `resolution_action='continue'`, or restores pinned pre-sync heads with `cancel`. It does not expose
+> an operation id or promise abort-on-conflict behavior. `skip-memory` is an admission/preflight
+> choice, not a way to change an already-running generation.
 
 ### Invariants And Boundaries
 
@@ -71,18 +77,18 @@ No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
-- The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication. [1]
-- **The public sync declaration: typed memory choice, contract-addressed continue/cancel, and the flat `knowledge_resolution` argument whose description carries the engine's diagnosis and both decisions' meanings.** [2]
-- The start payload forwards task identity, bases and execution configuration to the application owner. [3]
-- The attach payload forwards the requested worktree attachment to the application owner. [4]
-- The status payload reads status through the application owner. [5]
-- The sync payload forwards the paired resolution value to the application owner. [6]
-- The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. [7]
-- The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. [8]
-- The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. [9]
-- `TaskRef` — the shared task locator attach and status pack. [10]
+- **Retained historical source account — superseded by the current contract:** The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication. [1]
+- **Retained historical source account — superseded by the current contract:** **The public sync declaration: typed memory choice, contract-addressed continue/cancel, and the flat `knowledge_resolution` argument whose description carries the engine's diagnosis and both decisions' meanings.** [2]
+- **Retained historical source account — superseded by the current contract:** The start payload forwards task identity, bases and execution configuration to the application owner. [3]
+- **Retained historical source account — superseded by the current contract:** The attach payload forwards the requested worktree attachment to the application owner. [4]
+- **Retained historical source account — superseded by the current contract:** The status payload reads status through the application owner. [5]
+- **Retained historical source account — superseded by the current contract:** The sync payload forwards the paired resolution value to the application owner. [6]
+- **Retained historical source account — superseded by the current contract:** The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. [7]
+- **Retained historical source account — superseded by the current contract:** The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. [8]
+- **Retained historical source account — superseded by the current contract:** The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. [9]
+- **Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack. [10]
 
-- **The pairing this registrar performs, and the vocabulary the decision is typed by.** [11]
+- **Retained historical source account — superseded by the current contract:** **The pairing this registrar performs, and the vocabulary the decision is typed by.** [11]
 
 ### Cross-Repo References
 
@@ -108,11 +114,12 @@ The current source seams include `register_worktree_tools`. The public schema/co
 
 ## 260821-CLIVE Stable-Address Registration Contract
 
-Registered help now makes the address chain explicit: start reserves the configured contract
-address and enclosure manifest before exposing work; attach resumes only through that exact locator
-and never scans task/worktree/report paths; status resolves the independent locator and then either
-the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
-terminal proof fail closed, with no inferred enclosure-root fallback.
+> **Retained historical source account — superseded by the current contract:**
+> Registered help now makes the address chain explicit: start reserves the configured contract
+> address and enclosure manifest before exposing work; attach resumes only through that exact locator
+> and never scans task/worktree/report paths; status resolves the independent locator and then either
+> the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
+> terminal proof fail closed, with no inferred enclosure-root fallback.
 
 ## 260831-CCR-L15 Status-Wait Server Tool
 
@@ -130,17 +137,19 @@ L15 state, because the L15 paragraph would otherwise assert a registered tool a 
 one tool, `worktree_pause(contract_path)`. `register_worktree_tools` calls the four in order: start,
 address, observation, stop.
 
-The registered description is the whole public contract an agent reads, and it says the three
-things a stop must say: that it **PAUSES an atomic master** and hands control back to the developer;
-that it **publishes NOTHING** — no ref move, no commit, no landing, no ledger row — while releasing
-the master's atomic-series activation selection and leaving its code and memory work branches,
-worktrees, enclosure and every unstarted leaf exactly as they were; and that the result **proposes no
-next step**, so resuming is the normal attach/start route rather than a pause verb. It names
-`worktree_checkpoint_landing` as the separate, explicitly requested **PUBLICATION** and states that
-pausing never does that.
+> **Retained historical source account — superseded by the current contract:**
+> The registered description is the whole public contract an agent reads, and it says the three
+> things a stop must say: that it **PAUSES an atomic master** and hands control back to the developer;
+> that it **publishes NOTHING** — no ref move, no commit, no landing, no ledger row — while releasing
+> the master's atomic-series activation selection and leaving its code and memory work branches,
+> worktrees, enclosure and every unstarted leaf exactly as they were; and that the result **proposes no
+> next step**, so resuming is the normal attach/start route rather than a pause verb. It names
+> `worktree_checkpoint_landing` as the separate, explicitly requested **PUBLICATION** and states that
+> pausing never does that.
 
-The signature is flat and single-argument (`contract_path`), like every other tool on this route, so
-the published JSON schema stays a flat object. `mcp/tests/test_tools.py` pins this wording.
+> **Retained historical source account — superseded by the current contract:**
+> The signature is flat and single-argument (`contract_path`), like every other tool on this route, so
+> the published JSON schema stays a flat object. `mcp/tests/test_tools.py` pins this wording.
 
 **Two verbs, two registrars, two halves.** This file registers the stop; `closeout.py` registers the
 publication. Neither is reachable through the other, and the split is the point: before L37 an agent
@@ -148,6 +157,10 @@ that wanted to stop a master found only a protected-branch publication under the
 
 ## 260915-KS-L40 The Authored Sync Resolution On The Public Surface
 
-**`worktree_sync` gained a third argument, `knowledge_resolution: AuthoredReconciliation | None`**, and the published description is where an agent learns the whole recovery. The signature stays **flat** — `contract_path`, `memory_sync_choice`, `resolution_action`, `knowledge_resolution`, `dry_run` — because on this route the signature *is* the published JSON schema, so the decision is advertised as its own argument rather than as a nested object. The registrar pairs the two into the one `SyncResolutionInput` the payload layer takes before forwarding, which is also why the pairing is visible here and only here.
+> **Retained historical source account — superseded by the current contract:**
+> **`worktree_sync` gained a third argument, `knowledge_resolution: AuthoredReconciliation | None`**, and the published description is where an agent learns the whole recovery. The signature stays **flat** — `contract_path`, `memory_sync_choice`, `resolution_action`, `knowledge_resolution`, `dry_run` — because on this route the signature *is* the published JSON schema, so the decision is advertised as its own argument rather than as a nested object. The registrar pairs the two into the one `SyncResolutionInput` the payload layer takes before forwarding, which is also why the pairing is visible here and only here.
 
-The description now carries the diagnosis as well as the action: a retained *knowledge dataset* conflict is reported **with the engine's own diagnosis** — the table, the operation and the exact row it refused, plus the action it advertises — and is settled by authoring one decision for that row, `resolution_action='reconcile'` with `knowledge_resolution={table, record_id, decision}`, where `decision` is one of the conflict's advertised decisions. Both meanings are stated in prose (`keep-left` retracts the arriving change so the stored value stands; `keep-right` applies it over the stored value) because an agent that has to read the enum's source to choose has not been told what it is choosing. The merge then continues in the same call. No registrar, tool name, registration order or advertised count changed.
+> **Retained historical source account — superseded by the current contract:**
+> The description now carries the diagnosis as well as the action: a retained *knowledge dataset* conflict is reported **with the engine's own diagnosis** — the table, the operation and the exact row it refused, plus the action it advertises — and is settled by authoring one decision for that row, `resolution_action='reconcile'` with `knowledge_resolution={table, record_id, decision}`, where `decision` is one of the conflict's advertised decisions. Both meanings are stated in prose (`keep-left` retracts the arriving change so the stored value stands; `keep-right` applies it over the stored value) because an agent that has to read the enum's source to choose has not been told what it is choosing. The merge then continues in the same call. No registrar, tool name, registration order or advertised count changed.
+
+- The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. [13]

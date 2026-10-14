@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Verbose documentation assertions read the reference document instead of compact registration text. Actual named memory-mode refusals stay tested at their original surfaces; retired wording is not restored to the public API.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 The executable guard for the removal of the `internal` and `disabled` memory modes. `internal` — a repo-sidecar root — and `disabled` — a task running with no memory at all — are both gone (MIK-R50): a task in `disabled` can be neither closed out, synced, integrated nor landed, and where converted knowledge exists invariant work is mandatory (D5), so no task may opt out of memory. The supported set is `external` alone.
 
 ## Code Commentary
@@ -25,3 +31,5 @@ The configuration helper emits no direct_execution setting. Direct cases seed th
 - Contract writers refuse disabled as an opt-out [24]
 - A disabled contract stays readable and byte-identical [25]
 - Removed tokens refused while unknown tokens still degrade [26]
+
+- Verbose documentation assertions read the reference document instead of compact registration text. Actual named memory-mode refusals stay tested at their original surfaces; retired wording is not restored to the public API. [27]

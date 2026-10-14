@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b01fb8d56b3291f61c6851cac325c155c04f02a7",
+            "blob": "fee85957fe70a55c1e5af61b588115580141b2d6",
             "content": "sha256:40d1266bae3a91f22931a1a5bf1a33cc3fa138793a107d1a4133f76ebcc1f1ce",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b01fb8d56b3291f61c6851cac325c155c04f02a7",
+            "blob": "fee85957fe70a55c1e5af61b588115580141b2d6",
             "content": "sha256:b0d140c68a0a9e968e3524da869d1760741535a90fd3ae144d6f3f1a8386bf1a",
             "locator": {
               "kind": "symbol",
               "name": "ToolPartialWriteTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fee85957fe70a55c1e5af61b588115580141b2d6",
+            "content": "sha256:efe1232200834595bdcea526833d5ab901f774c9aabea4ce90de943906cf3f63",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

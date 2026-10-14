@@ -1,5 +1,11 @@
 # mcp/tests/test_role_instruction_wording.py
 
+## STOP-delta current source contract
+
+Long host-consumption instruction checks move to their reference-document owner. Compact registration keeps its intended wording boundary, rather than regaining the removed verbose descriptions.
+
+This source account supplies no fresh test execution or MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 ## Current paired source contract — scoped assertions and incoming catalogs
 
 Current protected instruction/compiled/tool-description sentences require the Manager-owned three-seat set and product-held permission/start/turn messages with ordered delivery and no prompt answering or sender resubmission. Description census includes role_start_set beside role_start/role_message. Investigator report-notice substring, actual-parent developer questions and ordinary role/task report return stay distinct; no wording case proves a concrete live recipient or host consumption.
@@ -62,3 +68,6 @@ The current wording guards pin canonical Investigator scope and the exact approv
 
 
 - Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
+
+- Long host-consumption instruction checks move to their reference-document owner. Compact registration keeps its intended wording boundary, rather than regaining the removed verbose descriptions. [6]
+

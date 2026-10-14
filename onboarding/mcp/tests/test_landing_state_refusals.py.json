@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_landing_state_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cleanup fixture requires matching blocked dry and real answers.\n\nAnchor: `LandingStateRefusalTests.test_cleanup_dry_run_with_blockers_agrees_with_the_real_call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "content": "sha256:a3c63cee19b5a0004f3ead30b57ae42e10056f31bcfaf6c63eecd9c536016d79",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Deletion of a dropped field must fail the independent whole-result identity check.\n\nAnchor: `WholeIdentityDiscriminatorTests.test_removed_dropped_field_fails_whole_identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "content": "sha256:f2b3d4fd373c63157eadc3604ab4ba42fcf487a7a8f9a25c20056f2022379550",
+            "locator": {
+              "end": 1385,
+              "kind": "line_range",
+              "start": 1384
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Changing a retained value must also fail that identity check.\n\nAnchor: `WholeIdentityDiscriminatorTests.test_changed_retained_value_fails_whole_identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "content": "sha256:babfea6ab149107818492e2cd88679c7d7273bd56536ef4fd5641b28c1ae6f72",
+            "locator": {
+              "end": 1393,
+              "kind": "line_range",
+              "start": 1387
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "content": "sha256:fe432ad44cbd60a33f839f20063329ffc3d3fbb6a2c9018c910e1c6e3317ddee",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -314,6 +314,22 @@
         }
       ]
     },
+    "26": {
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.\n\nAnchor: Current scoped route",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a511c60f4845f2ef92f4dc559d3592b66019f8fd",
+            "content": "sha256:d37f23dac6b524c54dc066ae8dad73d382d447cc919bea4cba52cb96e3563997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller.",
       "targets": [

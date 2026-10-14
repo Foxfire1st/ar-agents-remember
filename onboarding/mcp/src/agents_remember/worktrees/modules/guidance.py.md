@@ -16,55 +16,66 @@ Build lifecycle status payloads and typed next-operation guidance from the workt
 
 ## Code Commentary
 
+### Current Contract
+
+Status guidance may include task_document_copies from stale_copy_line, with refresh occurring on later canonical publication. No notice is not a universal hash equality proof. Copy drift is informational and separate from carryover ancestry. The readable-disabled/non-external branch is a retained boundary, not a restored internal-mode feature or permission to bypass landing controls.
+
 ### Logic
 
 `lifecycle_guidance` preserves three ordered groups: reclaimed/abandoned contracts first, attempted integration next, then pre-integration work. Dirty worktree diagnostics do not manufacture a commit-approval gate. A completed integration whose accepted outputs are carried home routes to `lifecycle_finalize_task`; a checkpointed series remains `worktree-started` with `continue_work`, because its master is still open.
 
-`carryover_done` proves that the recorded code and memory outputs are ancestors of their named source tips. It uses integrated output cells when populated and otherwise the recorded closeout outputs. Missing repositories, output identities, source refs, or ancestry return false. Internal/disabled memory passes without an external-memory milestone. The timestamp is read from the accepted memory commit, not a cache row. Missing or malformed `memory.md` cannot change this completion proof.
+> **Retained historical source account — superseded by the current contract:**
+> `carryover_done` proves that the recorded code and memory outputs are ancestors of their named source tips. It uses integrated output cells when populated and otherwise the recorded closeout outputs. Missing repositories, output identities, source refs, or ancestry return false. Internal/disabled memory passes without an external-memory milestone. The timestamp is read from the accepted memory commit, not a cache row. Missing or malformed `memory.md` cannot change this completion proof.
 
-**The `validate` step now travels with the hint (260915-KS-L23, D-25).** Two helpers were added
-between `lifecycle_guidance` and the phase helpers, and one phase branch changed:
+**Current pre-integration guidance.** When closeout is completed, `_pre_integration_phase` offers `worktree_integrate` with `strategy="ff-only"` and `dry_run=True`. If a published coherence digest is present, the summary identifies it as historical pre-closeout evidence: it does not validate the live tree after history/fingerprint writes. `_canonical_curator_caller` is absent and no standalone coherence-validate precondition is supplied by this hint. Existing copy-drift and carryover qualifications remain separate.
 
-- `_published_coherence_authority(contract)` returns the digest of the leaf's **published**
-  curator-coherence authority, or `""`. It answers `""` for a series contract, a leaf whose
-  `memory_mode` is not `external`, and a leaf with no memory worktree, and it swallows
-  `CuratorCoherenceError`/`OSError` — so an applicability miss or an unreadable authority degrades to
-  the ordinary integration step instead of sending an operator to a tool that would refuse.
-- `_canonical_curator_caller(contract)` builds the exact `caller` payload the coherence route expects
-  (`role: "curator"` plus a `task_document_ref` derived from the contract's own `task_root` and
-  `leaf_id`). It exists because the refusal that asks for that argument is the same
-  instructions-do-not-travel defect one level up: a hint that names a tool while leaving its one
-  identity argument blank is not a usable move (D-26).
-- The `closeout_status == "completed"` branch of `_pre_integration_phase` now returns, **when an
-  authority is published**, the `integration-pending` phase with the `curator_coherence` tool,
-  `action="validate"`, that canonical caller, and a summary that states the reason: finalize's
-  automatic cleanup collects the enclosure root, so the validate window closes with it. When no
-  authority is published the branch is unchanged — those contracts still route straight to
-  `worktree_integrate`. The move itself is still the integration decision; the validation is its
-  precondition, which is why `NextOperation` was not widened (see `models/worktree.py`).
+> **Historical pre-integration hint — retained, not a current operation or prerequisite:**
+> **The `validate` step now travels with the hint (260915-KS-L23, D-25).** Two helpers were added
+> between `lifecycle_guidance` and the phase helpers, and one phase branch changed:
+> 
+> - `_published_coherence_authority(contract)` returns the digest of the leaf's **published**
+>   curator-coherence authority, or `""`. It answers `""` for a series contract, a leaf whose
+>   `memory_mode` is not `external`, and a leaf with no memory worktree, and it swallows
+>   `CuratorCoherenceError`/`OSError` — so an applicability miss or an unreadable authority degrades to
+>   the ordinary integration step instead of sending an operator to a tool that would refuse.
+> - `_canonical_curator_caller(contract)` builds the exact `caller` payload the coherence route expects
+>   (`role: "curator"` plus a `task_document_ref` derived from the contract's own `task_root` and
+>   `leaf_id`). It exists because the refusal that asks for that argument is the same
+>   instructions-do-not-travel defect one level up: a hint that names a tool while leaving its one
+>   identity argument blank is not a usable move (D-26).
+> - The `closeout_status == "completed"` branch of `_pre_integration_phase` now returns, **when an
+>   authority is published**, the `integration-pending` phase with the `curator_coherence` tool,
+>   `action="validate"`, that canonical caller, and a summary that states the reason: finalize's
+>   automatic cleanup collects the enclosure root, so the validate window closes with it. When no
+>   authority is published the branch is unchanged — those contracts still route straight to
+>   `worktree_integrate`. The move itself is still the integration decision; the validation is its
+>   precondition, which is why `NextOperation` was not widened (see `models/worktree.py`).
 
 `NextGuidance`, `LifecycleGuidance`, `WorktreeStatusFacts`, and `WorktreeStatusPayload` retain typed response boundaries. `WorktreePhase`, `NextOperation`, and `NextTool` are imported from `models.worktree`; only the recovery vocabulary is declared locally. The separate `recovery_guidance` builder serves blocked/gated flexible responses without widening lifecycle phases.
 
-Status retains `ledger_path` as consumer metadata, exposes contract/enclosure identity, providers, source lineage, local base freshness, and optional landing observations. `unknown_contract_cells` remains an explicit degraded-read diagnostic. Interactive status calls the landing observation owner; projected status accepts an already-observed snapshot.
+> **Retained historical source account — superseded by the current contract:**
+> Status retains `ledger_path` as consumer metadata, exposes contract/enclosure identity, providers, source lineage, local base freshness, and optional landing observations. `unknown_contract_cells` remains an explicit degraded-read diagnostic. Interactive status calls the landing observation owner; projected status accepts an already-observed snapshot.
 
 ### Conventions
 
-Next-move keys are omitted when they have no value. Guidance keys are merged after factual status keys. Local base freshness is separate from upstream fetch and remote landing observation.
+> **Retained historical source account — superseded by the current contract:**
+> Next-move keys are omitted when they have no value. Guidance keys are merged after factual status keys. Local base freshness is separate from upstream fetch and remote landing observation.
 
 ### Invariants And Boundaries
 
-- Lifecycle position, rather than raw dirtiness, selects the next operation.
-- A published coherence authority must be validated **before** integration, and the hint says so: the
-  step is named while the enclosure root still exists, because `lifecycle_finalize_task`'s automatic
-  cleanup collects it and the standalone validate is then no longer reachable.
-- The coherence route is offered only where it applies. `_published_coherence_authority` answers `""`
-  — and the branch falls back to the plain integration step — for a series contract, a non-external
-  memory leaf, a leaf with no memory worktree, an unpublished leaf, and an unreadable authority; it
-  never raises into the guidance path.
-- Code and memory completion require real Git reachability; cached mappings carry no completion authority.
-- Finalization owns reclamation; a checkpoint does not close the master or make cleanup pending.
-- Lifecycle wire vocabulary has one model owner; recovery guidance keeps its separate response vocabulary.
-- Consumer ledger paths and raw status diagnostics remain available without becoming admission facts.
+> **Retained historical source account — superseded by the current contract:**
+> - Lifecycle position, rather than raw dirtiness, selects the next operation.
+> - A published coherence authority must be validated **before** integration, and the hint says so: the
+>   step is named while the enclosure root still exists, because `lifecycle_finalize_task`'s automatic
+>   cleanup collects it and the standalone validate is then no longer reachable.
+> - The coherence route is offered only where it applies. `_published_coherence_authority` answers `""`
+>   — and the branch falls back to the plain integration step — for a series contract, a non-external
+>   memory leaf, a leaf with no memory worktree, an unpublished leaf, and an unreadable authority; it
+>   never raises into the guidance path.
+> - Code and memory completion require real Git reachability; cached mappings carry no completion authority.
+> - Finalization owns reclamation; a checkpoint does not close the master or make cleanup pending.
+> - Lifecycle wire vocabulary has one model owner; recovery guidance keeps its separate response vocabulary.
+> - Consumer ledger paths and raw status diagnostics remain available without becoming admission facts.
 
 ### Todos
 
@@ -90,3 +101,5 @@ These current source spans identify the implementation owners and the specific a
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+- Status guidance may include task_document_copies from stale_copy_line, with refresh occurring on later canonical publication. No notice is not a universal hash equality proof. Copy drift is informational and separate from carryover ancestry. The readable-disabled/non-external branch is a retained boundary, not a restored internal-mode feature or permission to bypass landing controls. [7]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:5b46a64269a66d193bd36f56914b292e6d417b931eb9d93c82e3044f7a6152d5",
         "locator": {
           "kind": "symbol",
           "name": "_publish_copy_writes"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
           "name": "refresh_task_document_copies"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
           "name": "refresh_task_document_copies"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:f4dfa4282ff079a1da5341d0ccba273a44931231a090cfe0eed4af02b7c5366d",
         "locator": {
           "kind": "symbol",
           "name": "_select_refresh_contract"
@@ -75,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:801be0b9ba72a820e9ad0e5a48ce65dfb01cd93bae60b7fddc9e449251879340",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot_for_rollback"
+        }
+      },
+      "id": "RLZ-M3NSDW",
+      "invariant": "INV-36DA0H",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.20 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This per-path snapshot keeps every admitted original restorable inside the running total, so bounded rollback without silent loss starts here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:f4dfa4282ff079a1da5341d0ccba273a44931231a090cfe0eed4af02b7c5366d",
         "locator": {
           "kind": "symbol",
           "name": "_select_refresh_contract"
@@ -93,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
           "name": "refresh_task_document_copies"
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
         "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
         "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
         "locator": {
           "kind": "symbol",
@@ -152,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
             "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
             "locator": {
               "kind": "symbol",
@@ -216,12 +234,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
             "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
             "locator": {
-              "end": 165,
+              "end": 698,
               "kind": "line_range",
-              "start": 161
+              "start": 694
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An admitted leaf receives its own rendered document plus declared requirement files at repository-task-relative paths, deduplicated from local Markdown links/typed references. It does not copy master/sprint/reference baggage. INDEX records copied digests and missing requirement rows; missing sources are named without failing launch solely for absence. Refresh resolves the bound own leaf using artifact identity or the safe leaf_id/task_root binding, recomputes the leaf-plus-requirements set, reclaims obsolete copies and includes deletions in rollback. Foreign/unrecognized contracts still fail closed. Per-file/aggregate copy and rollback budgets and bounded status reconciliation remain explicit; large-file size/time comparison is not a universal hash witness. Copies are outside Git and never replace canonical authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

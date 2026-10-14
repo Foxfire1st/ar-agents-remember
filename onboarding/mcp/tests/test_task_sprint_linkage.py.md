@@ -6,9 +6,14 @@
 
 ## Purpose
 
-Provides a shared temporary task-linkage fixture and canonical attach/detach/report helpers; no test methods remain. It writes typed master/sprint documents and snapshots their bytes for consuming structural-publication tests. The historical attach/render/registration acceptance inventory in its docstring is not the current executed population.
+> **Retained historical source account — superseded by the current contract:**
+> Provides a shared temporary task-linkage fixture and canonical attach/detach/report helpers; no test methods remain. It writes typed master/sprint documents and snapshots their bytes for consuming structural-publication tests. The historical attach/render/registration acceptance inventory in its docstring is not the current executed population.
 
 ## Code Commentary
+
+### Current Contract
+
+SprintLinkageTests now defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to40. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module.
 
 ### Logic
 
@@ -18,8 +23,9 @@ still run. The retained behavior and its fixture limits, described above, govern
 
 ### Conventions
 
-The test-shaped filename is retained for imports by other suites. Helper availability is not
-a passing test, and the module has no collected test definitions of its own.
+> **Retained historical source account — superseded by the current contract:**
+> The test-shaped filename is retained for imports by other suites. Helper availability is not
+> a passing test, and the module has no collected test definitions of its own.
 
 ### Invariants And Boundaries
 
@@ -43,15 +49,18 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
+> **Retained historical source account — superseded by the current contract:**
+> Each current definition below can be inspected in the exact source file. Historical references
+> to removed methods are superseded by this current inventory.
 
-- Shared helper _judgment_register [1]
-- Shared helper _judgment_row [2]
-- Shared helper _register_section [3]
+- **Retained historical source account — superseded by the current contract:** Shared helper _judgment_register [1]
+- **Retained historical source account — superseded by the current contract:** Shared helper _judgment_row [2]
+- **Retained historical source account — superseded by the current contract:** Shared helper _register_section [3]
 
 ### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+- SprintLinkageTests now defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to40. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module. [4]

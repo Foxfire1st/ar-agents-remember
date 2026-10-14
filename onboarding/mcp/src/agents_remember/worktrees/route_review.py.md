@@ -14,6 +14,10 @@ bytes.
 
 ## Code Commentary
 
+### Current Contract
+
+Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.
+
 ### Logic
 
 `build_route_review` accepts only reviewer-authored verdict, evidence, and route rows; the plane
@@ -39,14 +43,15 @@ cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.p
 `route-review-dependencies-stale` when the declared inputs no longer match the current record
 cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:392-415; mcp/src/agents_remember/worktrees/route_review.py:449-491).
 
-CCR-R25 adds `route_review_refusal_projection`, a pure explanation layer for an already-observed
-`RouteReviewError`. It classifies currentness and task-intent statuses as a
-`record_route_review` correction, maps a blocked or otherwise invalid status to developer
-decision, and maps a missing task document to a task-document inspection. With an exact contract it
-adds only the contract-bound `task_doc` address; the caller must provide the `review` value named in
-`nextRequiredArgs`. It never writes a task document, creates a review record, changes route-review
-altitude, or weakens the currentness gate. `route_review_refusal_fields` is the typed adapter used
-by application start/admission and direct closeout.
+> **Retained historical source account — superseded by the current contract:**
+> CCR-R25 adds `route_review_refusal_projection`, a pure explanation layer for an already-observed
+> `RouteReviewError`. It classifies currentness and task-intent statuses as a
+> `record_route_review` correction, maps a blocked or otherwise invalid status to developer
+> decision, and maps a missing task document to a task-document inspection. With an exact contract it
+> adds only the contract-bound `task_doc` address; the caller must provide the `review` value named in
+> `nextRequiredArgs`. It never writes a task document, creates a review record, changes route-review
+> altitude, or weakens the currentness gate. `route_review_refusal_fields` is the typed adapter used
+> by application start/admission and direct closeout.
 
 ### Conventions
 
@@ -110,3 +115,5 @@ Route review now stamps and re-verifies the exact SHA-256 of every evidence file
 direct dependencies (code tree, task intent, evidence bytes, validator), and self-addresses the
 record; the closeout door fingerprints review provenance as `recordDigest` instead of a
 recomputed evidence tuple (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+- Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]

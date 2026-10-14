@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Tests the invariant gate through public worktree closeout, direct landing preview/apply and recorded-leaf
 entry points, plus the gate's read set, memo key and Git failures using `Gated`. Public master/checkpoint
 chain coverage lives in `test_master_chain_public_routes.py`. This module's synthetic master net-staleness
@@ -168,3 +174,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the fixture builds its own repositories.
 
 No cross-repo boundary is crossed by this file.
+
+- The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return. [34]

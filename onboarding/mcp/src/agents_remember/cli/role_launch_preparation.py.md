@@ -24,7 +24,8 @@ The pre-successor CUR-C04 source concatenated the baseline rather than composed 
 
 ## Grant-backed leaf preparation and revival
 
-Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location. Historical host/custody limitations remain separately attributed.
+> **Retained historical source account — superseded by the current contract:**
+> Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location. Historical host/custody limitations remain separately attributed.
 
 ## Current source contract evidence
 
@@ -51,7 +52,12 @@ Resolves role defaults, workspace, admitted reader scope, compiled capsule and h
 
 ## Code Commentary
 
-prepare_role_handover validates selection before workspace/enclosure changes. _ar_mcp_context carries exact taskDocReadArgs and per-call taskContext; leaf enclosure roots come from canonical authority, while real sprint/master roles share their selected Projects task workspace. _compile_handover records launcher/native parent ownership, operation, source build and canonical artifact/report locations; Revive only compares saved/current leaf scope. MIK-R93@v1 makes both host values depend on one condition: any role with a starting parent receives the parent-routed `developerQuestions` that sends the developer's decision to the parent agent id with `role_message` and keeps working, and `_owner_relation(started_by, role=...)` names the parent — for a leaf Worker, Reviewer or Curator with the direct sibling seat routes and no routine result to the parent — while every parentless or dashboard launch keeps the base sentence. That preserved baseline remains historical; the current approved Investigator exception below states which concern/delegation wording and derived seals change, while unrelated ownership and parent identity remain protected.
+### Current Contract
+
+The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness.
+
+> **Retained historical source account — superseded by the current contract:**
+> prepare_role_handover validates selection before workspace/enclosure changes. _ar_mcp_context carries exact taskDocReadArgs and per-call taskContext; leaf enclosure roots come from canonical authority, while real sprint/master roles share their selected Projects task workspace. _compile_handover records launcher/native parent ownership, operation, source build and canonical artifact/report locations; Revive only compares saved/current leaf scope. MIK-R93@v1 makes both host values depend on one condition: any role with a starting parent receives the parent-routed `developerQuestions` that sends the developer's decision to the parent agent id with `role_message` and keeps working, and `_owner_relation(started_by, role=...)` names the parent — for a leaf Worker, Reviewer or Curator with the direct sibling seat routes and no routine result to the parent — while every parentless or dashboard launch keeps the base sentence. That preserved baseline remains historical; the current approved Investigator exception below states which concern/delegation wording and derived seals change, while unrelated ownership and parent identity remain protected.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -63,7 +69,8 @@ The condition is now parent presence: every parentable role (orchestrator, manag
 
 ## Host-resolved choices, folders, copies and instructions
 
-`_role_defaults` now carries mode, feature values, notes, the host role profile, settings sources and per-choice field origins into one launch-default record. `_prepare_role_folders` allocates per-request report and scratch roots — leaf roles under the group's real `role-reports/<role>/<requestId>` and `scratch/<role>/<requestId>`, other roles under `.agents-remember/role-executions/<requestId>` — refusing links and outside roots. `_prepare_task_document_files` publishes the leaf's own rendered document under `task-documents/` before the first turn. `_compile_handover` composes user plaintext over the capsule baseline (a first-nonblank-line `<overwrite>` tag replaces the baseline, otherwise append), records launch-choice metadata with sources and digests, and names the canonical report path; the brief tells the agent to read the rendered files with its own file tools and to change documents through `task_doc` only.
+> **Retained historical source account — superseded by the current contract:**
+> `_role_defaults` now carries mode, feature values, notes, the host role profile, settings sources and per-choice field origins into one launch-default record. `_prepare_role_folders` allocates per-request report and scratch roots — leaf roles under the group's real `role-reports/<role>/<requestId>` and `scratch/<role>/<requestId>`, other roles under `.agents-remember/role-executions/<requestId>` — refusing links and outside roots. `_prepare_task_document_files` publishes the leaf's own rendered document under `task-documents/` before the first turn. `_compile_handover` composes user plaintext over the capsule baseline (a first-nonblank-line `<overwrite>` tag replaces the baseline, otherwise append), records launch-choice metadata with sources and digests, and names the canonical report path; the brief tells the agent to read the rendered files with its own file tools and to change documents through `task_doc` only.
 
 ## Evidence
 
@@ -95,4 +102,6 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 
 </details>
 
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+- **Retained historical source account — superseded by the current contract:** Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+
+- The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness. [10]

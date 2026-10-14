@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The obsolete forced-overflow shape is replaced by the actual answered bound. The controlled fifteen-master/sixteen-move evidence remains complete; a compact delivery does not remove archived custody assertions.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Sprint-archive recovery, legacy-row, and preview-bound regressions.
 
 ## Code Commentary
@@ -23,3 +29,6 @@ cannot stand in for a file-backed public answer.
 
 
 - Archive custody, legacy admission and logged whole-preview bounds are pinned. [1]
+
+- The obsolete forced-overflow shape is replaced by the actual answered bound. The controlled fifteen-master/sixteen-move evidence remains complete; a compact delivery does not remove archived custody assertions. [2]
+

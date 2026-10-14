@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 The integration cases for what finalization does to a master, for retiring a master that no sprint commands, for the
 retry rules of both retirement routes, and for the restart notice and the archive reader's canonical-path check. It
 reuses the `World` fixture of `test_master_retirement.py`. The module is in the `integration` lane.
@@ -72,3 +78,6 @@ open-work witness. The retirement refusal and its no-write assertions remain the
 - A refusal before a retirement record exists carries no restart notice. [10]
 
 - The open-work control supplies external-memory leaf cells and creates the intended code-side open work. [11]
+
+- A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains. [12]
+

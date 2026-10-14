@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents quoting, root substitution or sentence parsing from offering a recovery command different from the actual argument values."
+  },
+  "applicability": "Legacy-format recovery next calls offered by record_landing/state_refusal_result.",
+  "conditions": [
+    "Converted, none and unknown cases come from the same central typed probe.",
+    "Argument values remain separate; display command is shlex.join of that same argv.",
+    "Affected branch-test source invokes the offered step; historical R13 execution remains bound to its historical freeze."
+  ],
+  "exclusions": [
+    "Unknown probe gives no invented step; first conversion is a non-server CLI, not a fabricated tool; source inspection gives no new execution grade."
+  ],
+  "id": "INV-H8WSA9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "2 affected producer tests passed; independent exact argv/standard command/quote+dollar productionCLI passed exit0/layout present; lint/format passed; 4200 CODE/7684 MEMORY live bodies/modes accounted; untouched facets not reopened."
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "MIK-R111@v1",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The ruled next step is a call with separate actual argument values; the printable CLI uses standard quoting of the same values and both affected branch tests execute what the answer shows.",
+  "status": "proposed",
+  "supersedes": []
+}

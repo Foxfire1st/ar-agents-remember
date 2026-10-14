@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
+        "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
         "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
+        "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
         "content": "sha256:a65a05a8019b67b8070acda0cab30c5dff2f84b10f0cdaa8a3269b85e773ac42",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
+        "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
         "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
+            "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
             "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
             "locator": {
               "kind": "symbol",
@@ -110,6 +110,21 @@
           "anchor": {
             "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
             "content": "sha256:d19f69270314cfdddddf4a910647d51d70bc523d059ef715030c48117c937e8f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
+            "content": "sha256:f027d0b1419c5be3b3b45d4a2b1a0a4790edc060eee06e7fa010a82322b2a809",
             "locator": {
               "kind": "file"
             }

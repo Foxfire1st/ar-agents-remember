@@ -4,11 +4,12 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- The self-contained world seeds user settings through the protected-settings guard under pytest’s isolated XDG home; its code repository is a workspace sibling, not a coordination-root child. The benign census includes `direct_execution_grant` and explicit canonical leaf identity for direct landing. The invalid-input control omits required `repo_id`, not the now-optional citation contract.
-- EntryPointWorld, classifier/constants and control classes are now defined in this file, not only extracted owners.
-- STATE_DEPENDENT_RAISERS is empty and the derived matrix population retains lifecycle_finalize_task only.
-- UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
-- The benign invocation census includes role_start_set and native retire_child under the same roster-equality and envelope checks. Fixture caller/no-target refusals do not prove a bound Manager set or successful retirement.
+> **Retained historical source account — superseded by the current contract:**
+> - The self-contained world seeds user settings through the protected-settings guard under pytest’s isolated XDG home; its code repository is a workspace sibling, not a coordination-root child. The benign census includes `direct_execution_grant` and explicit canonical leaf identity for direct landing. The invalid-input control omits required `repo_id`, not the now-optional citation contract.
+> - EntryPointWorld, classifier/constants and control classes are now defined in this file, not only extracted owners.
+> - STATE_DEPENDENT_RAISERS is empty and the derived matrix population retains lifecycle_finalize_task only.
+> - UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
+> - The benign invocation census includes role_start_set and native retire_child under the same roster-equality and envelope checks. Fixture caller/no-target refusals do not prove a bound Manager set or successful retirement.
 
 ### MIK-R109 read-only annotation assertions
 
@@ -54,6 +55,10 @@ of two **pinned** defect families, and a pin is the only place an exception is t
 The benign invocation census adds role_start and role_message. Because the scratch server was started by no role launch, both exercise caller-has-no-binding refusal before any read/start/send. These rows expand the advertised population without weakening pinned envelope/error assertions or proving bound-agent success.
 
 ## Code Commentary
+
+### Current Contract
+
+ENVELOPE_LOSING_RAISERS is empty on the current source; exact bidirectional equality still pins the declared population. The formerly carried four L111 raisers are historical, not today's backlog. The separate ambient-state/finalize populations and same-change owner rules remain distinct. No sweep execution, broader acceptance or relaxed pin is implied by this current declaration.
 
 EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. Every tool and every aspect is judged on its own subTest, so one tool's failure never keeps the aspects behind it unrun. The pins record the measured surface — the four lifecycle raisers owned by L111 and the bare `memory_quality_check` answer owned by L110 — with bidirectional exactness: a new raiser or a vanished pin fails. The classifier, census controls and phase-budget machinery are extracted owners, not declarations in this module. A probe records the tool's actual route outcome; its existence alone proves neither every environment nor every unsupported consumer. Removed local classifier helpers, pin constants and control class names must not be attributed to this file. Test definitions are not an execution result.
 
@@ -263,3 +268,5 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 
 - The self-contained world obtains its protected-settings write path and uses a workspace-sibling code repository. [55]
 - The benign census includes grant input and canonical direct-landing leaf identity. [56]
+
+- ENVELOPE_LOSING_RAISERS is empty on the current source; exact bidirectional equality still pins the declared population. The formerly carried four L111 raisers are historical, not today's backlog. The separate ambient-state/finalize populations and same-change owner rules remain distinct. No sweep execution, broader acceptance or relaxed pin is implied by this current declaration. [57]

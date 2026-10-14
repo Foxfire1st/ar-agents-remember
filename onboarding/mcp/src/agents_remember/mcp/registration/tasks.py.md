@@ -16,74 +16,82 @@ register_task_tools declares the reopen, finalizer, task-document, curator-coher
 
 ## Code Commentary
 
+### Current Contract
+
+The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.
+
 ### Review description contract
 
-The registered `task_doc` description names the settings-owned limit and the answer’s `reviewState.limit`, approval `{by: architect|developer, text}` with positive `additionalRounds`, and legacy `developerApproval` input. It describes shrink-only sealed findings and the record-only check on the last round without a new begin when the candidate is unchanged. Actual identity proof and transition admission live in the application/worktree owners, not the registrar; the same-round exception qualifies the ordinary instruction to begin before publication.
+> **Retained historical source account — superseded by the current contract:**
+> The registered `task_doc` description names the settings-owned limit and the answer’s `reviewState.limit`, approval `{by: architect|developer, text}` with positive `additionalRounds`, and legacy `developerApproval` input. It describes shrink-only sealed findings and the record-only check on the last round without a new begin when the candidate is unchanged. Actual identity proof and transition admission live in the application/worktree owners, not the registrar; the same-round exception qualifies the ordinary instruction to begin before publication.
 
 
 ### Logic
 
-`task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
-because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
-`set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
-`remove_subtask` | `set_section` | `append_decision` |
-`begin_review` | `record_review` | `record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
-`archive_sprint` | `linkage_report` | `set_field` |
-`get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
-is never parsed back. Read-only `get`, `read_steps` and report operations do not publish task edits; mutating operations prepare validated candidates, and `dry_run=true` builds and
-validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
-adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subtask` /
-`remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
-`subtask.keep_file`; every step operation is leaf-only. Since 260831-LOCR-L33 the description spells
-the **step plane** out by intent, because `operation` is a plain `str` and the vocabulary is the only
-place the split exists: `set_step` updates exactly one existing unit and never creates; `add_step`
-creates exactly one and requires `{id, title}`, refusing an id that already exists in its scope;
-`remove_step` deletes exactly one and requires a nonblank `step.reason`, records a decision entry, and
-**may** remove a `done` unit or operate on a `Completed` document once that reason is given;
-`read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
-by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
-reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:121-121; mcp/src/agents_remember/mcp/registration/tasks.py:137-137; mcp/src/agents_remember/mcp/registration/tasks.py:143-144).
+> **Retained historical source account — superseded by the current contract:**
+> `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
+> because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
+> `set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
+> `remove_subtask` | `set_section` | `append_decision` |
+> `begin_review` | `record_review` | `record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
+> `archive_sprint` | `linkage_report` | `set_field` |
+> `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
+> is never parsed back. Read-only `get`, `read_steps` and report operations do not publish task edits; mutating operations prepare validated candidates, and `dry_run=true` builds and
+> validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
+> adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subtask` /
+> `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
+> `subtask.keep_file`; every step operation is leaf-only. Since 260831-LOCR-L33 the description spells
+> the **step plane** out by intent, because `operation` is a plain `str` and the vocabulary is the only
+> place the split exists: `set_step` updates exactly one existing unit and never creates; `add_step`
+> creates exactly one and requires `{id, title}`, refusing an id that already exists in its scope;
+> `remove_step` deletes exactly one and requires a nonblank `step.reason`, records a decision entry, and
+> **may** remove a `done` unit or operate on a `Completed` document once that reason is given;
+> `read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
+> by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
+> reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
+> explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:121-121; mcp/src/agents_remember/mcp/registration/tasks.py:137-137; mcp/src/agents_remember/mcp/registration/tasks.py:143-144).
 
-Since 260815-DAG-L11 the docstring also spells out the graph operation:
-`author_execution_graph` applies one
-validated atomic batch of typed mutations (`add_node`/`remove_node`/`add_edge`/`remove_edge`/
-`move_leaf`/`set_nature`) to a sprint's `executionGraph` — segment-addressed by sampling
-leaf ids, with judgment-bearing mutations requiring a `judgmentId` row in the sprint's Judgment
-Register (the mechanism never invents one), typed refusals for segment-on-atomic and incomplete
-partitions, and unplaced-leaf placements plus numbering inversions reported as facts. Since
-260815-DAG-L13 the first `add_node` batch on a graph-less sprint bootstraps the graph (the result
-reports `bootstrapped: true`), sprint creation scaffolds the empty canonical Judgment and Priority
-Register sections, and a `set_section` carrying a canonical register heading must keep the exact
-register table shape (write-time validation). Since 260815-DAG-L14 the docstring also spells
-out the sprint linkage operations: `attach_master` writes the typed `masterRef` row, the
-`orchestrates` slug, and — only on a graphed sprint — the lump graph node as one validated atomic
-batch (a nature-less master requires `executionNature` + a `judgmentId` from the sprint Judgment
-Register; graph-less sprints report `graphNode: deferred-no-graph-default`); `detach_master`
-removes the typed row, membership slug, and graph node, refusing while any edge touches the node
-and never deleting files; `linkage_report` surfaces seat-doc rows, slug-only membership,
-row/membership mismatches, and uncommanded masters as facts, and `get` on a sprint carries the
-same `linkageFacts`. The description also lists `retire_master` and states its contract in plain words:
-it is the route that archives an individual master, with or without a sprint (a whole sprint with its moving masters goes by `archive_sprint`), and finalizing a master never archives
-it. `fields={masterRef, reason, removeEdges?}`. Called on a sprint it removes the master's membership, graph
-nodes and touching edges, keeps a plain abandoned row with a typed proof (reason, time, recovery data), then
-archives the folder and runs the review-artifact archive hook; outgoing edges to unfinished successors need
-their exact endpoints in `removeEdges`. Called on a master that no sprint commands (`masterRef` is that master and
-there is no `removeEdges`), it edits no sprint, writes its proof to `notes/reports/master-retirement.json` and moves
-the folder under `0_archive/`. Open enclosures and unfinished operations refuse with their cleanup route; a sprint's
-only graphed master cannot be retired because a graph cannot be empty; a master nested inside another task's folder
-is refused because only root task folders have a `0_archive/<name>` location. `dry_run` previews each change and the
-hook's effect, repeating the same request resumes after an interruption, and when the hook failed in part
-(`ok=false`, `state: retired-with-hook-failures`) the repeat retries the cleanup only. The description also says an
-`abandoned` row never blocks a master's closeout, and that a finalized master a sprint commands stays in place with
-its sprint row `Completed`.
+> **Retained historical source account — superseded by the current contract:**
+> Since 260815-DAG-L11 the docstring also spells out the graph operation:
+> `author_execution_graph` applies one
+> validated atomic batch of typed mutations (`add_node`/`remove_node`/`add_edge`/`remove_edge`/
+> `move_leaf`/`set_nature`) to a sprint's `executionGraph` — segment-addressed by sampling
+> leaf ids, with judgment-bearing mutations requiring a `judgmentId` row in the sprint's Judgment
+> Register (the mechanism never invents one), typed refusals for segment-on-atomic and incomplete
+> partitions, and unplaced-leaf placements plus numbering inversions reported as facts. Since
+> 260815-DAG-L13 the first `add_node` batch on a graph-less sprint bootstraps the graph (the result
+> reports `bootstrapped: true`), sprint creation scaffolds the empty canonical Judgment and Priority
+> Register sections, and a `set_section` carrying a canonical register heading must keep the exact
+> register table shape (write-time validation). Since 260815-DAG-L14 the docstring also spells
+> out the sprint linkage operations: `attach_master` writes the typed `masterRef` row, the
+> `orchestrates` slug, and — only on a graphed sprint — the lump graph node as one validated atomic
+> batch (a nature-less master requires `executionNature` + a `judgmentId` from the sprint Judgment
+> Register; graph-less sprints report `graphNode: deferred-no-graph-default`); `detach_master`
+> removes the typed row, membership slug, and graph node, refusing while any edge touches the node
+> and never deleting files; `linkage_report` surfaces seat-doc rows, slug-only membership,
+> row/membership mismatches, and uncommanded masters as facts, and `get` on a sprint carries the
+> same `linkageFacts`. The description also lists `retire_master` and states its contract in plain words:
+> it is the route that archives an individual master, with or without a sprint (a whole sprint with its moving masters goes by `archive_sprint`), and finalizing a master never archives
+> it. `fields={masterRef, reason, removeEdges?}`. Called on a sprint it removes the master's membership, graph
+> nodes and touching edges, keeps a plain abandoned row with a typed proof (reason, time, recovery data), then
+> archives the folder and runs the review-artifact archive hook; outgoing edges to unfinished successors need
+> their exact endpoints in `removeEdges`. Called on a master that no sprint commands (`masterRef` is that master and
+> there is no `removeEdges`), it edits no sprint, writes its proof to `notes/reports/master-retirement.json` and moves
+> the folder under `0_archive/`. Open enclosures and unfinished operations refuse with their cleanup route; a sprint's
+> only graphed master cannot be retired because a graph cannot be empty; a master nested inside another task's folder
+> is refused because only root task folders have a `0_archive/<name>` location. `dry_run` previews each change and the
+> hook's effect, repeating the same request resumes after an interruption, and when the hook failed in part
+> (`ok=false`, `state: retired-with-hook-failures`) the repeat retries the cleanup only. The description also says an
+> `abandoned` row never blocks a master's closeout, and that a finalized master a sprint commands stays in place with
+> its sprint row `Completed`.
 
-The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
-which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
-is. `operation` and `dry_run` stay separate arguments; since 260815-DAG-L16 the registered `task_doc`
-also exposes `branch_addressed` (policy-gated direct-execution opt-in for `record_route_review`,
-bound to the task-root series contract — L16-R6). A read (`operation='get'`) leaves every edit
-slot unset.
+> **Retained historical source account — superseded by the current contract:**
+> The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
+> which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
+> is. `operation` and `dry_run` stay separate arguments; since 260815-DAG-L16 the registered `task_doc`
+> also exposes `branch_addressed` (policy-gated direct-execution opt-in for `record_route_review`,
+> bound to the task-root series contract — L16-R6). A read (`operation='get'`) leaves every edit
+> slot unset.
 
 `lifecycle_finalize_task` packs its three document arguments into `FinalizeTaskDocs(task_doc_path,
 master_doc_path, subtask_number)` and keeps `dry_run` and `teardown_providers` separate. Its
@@ -106,15 +114,16 @@ recreates everything.
 
 ### Invariants And Boundaries
 
-- Flat signature; `TaskDocTarget` / `TaskDocEdit` / `FinalizeTaskDocs` are built in the body.
-- `task_doc` registers `dry_run=False`; get/read_steps/report paths stay read-only, and dry-run mutating calls preview without publication.
-- **The operation vocabulary lives only in the description text.** `operation` is a plain `str`, not
-  an enum and not a schema member, so adding or changing an operation is a description edit and
-  nothing else — the 260831-LOCR-L33 step-plane change touched this module's description only, with
-  no schema, `PUBLIC_TOOLS`, or response-model change. A reader looking for the operation set in the
-  types will not find it here.
-- Document schema validation, master/leaf rules, and the reopen refusals live in
-  `application/task_doc_tools.py` and `application/worktree_tools.py`.
+> **Retained historical source account — superseded by the current contract:**
+> - Flat signature; `TaskDocTarget` / `TaskDocEdit` / `FinalizeTaskDocs` are built in the body.
+> - `task_doc` registers `dry_run=False`; get/read_steps/report paths stay read-only, and dry-run mutating calls preview without publication.
+> - **The operation vocabulary lives only in the description text.** `operation` is a plain `str`, not
+>   an enum and not a schema member, so adding or changing an operation is a description edit and
+>   nothing else — the 260831-LOCR-L33 step-plane change touched this module's description only, with
+>   no schema, `PUBLIC_TOOLS`, or response-model change. A reader looking for the operation set in the
+>   types will not find it here.
+> - Document schema validation, master/leaf rules, and the reopen refusals live in
+>   `application/task_doc_tools.py` and `application/worktree_tools.py`.
 
 ## Evidence
 
@@ -139,7 +148,8 @@ turn a projection row into lifecycle authority.
 
 ## 260815-DAG Master Full-Gate Repair
 
-The `task_doc` tool's long docstring moved to the module-level `_TASK_DOC_TOOL_DESCRIPTION` constant, passed through `@server.tool(description=...)` (wire-contract conformance); the import of `task_doc_tools` follows the move to `application/task_docs/`. The registered tool surface is unchanged.
+> **Retained historical source account — superseded by the current contract:**
+> The `task_doc` tool's long docstring moved to the module-level `_TASK_DOC_TOOL_DESCRIPTION` constant, passed through `@server.tool(description=...)` (wire-contract conformance); the import of `task_doc_tools` follows the move to `application/task_docs/`. The registered tool surface is unchanged.
 
 ## 260821-CLIVE Door, Projection, And Discard Registration
 
@@ -175,15 +185,19 @@ against both surfaces at once.
 
 ## 260918-TSIP-L4 — The `task_doc` Description Stops Advertising `'light'` (`T43`)
 
-The `_TASK_DOC_TOOL_DESCRIPTION` constant's `kind` clause now reads
-`kind ['subTask'|'master'] (the former 'light' kind is refused)` (**`:126-127`**), replacing the
-stale `kind ['light'|'subTask'|'master']`. Net `+1` from the old `:127`, so every line at or below
-the old `:127` moved `+1` (the `skip_step` vocabulary citation into this file moved
-`:119-141 → :119-142` and was re-derived in the same pass).
+> **Retained historical source account — superseded by the current contract:**
+> The `_TASK_DOC_TOOL_DESCRIPTION` constant's `kind` clause now reads
+> `kind ['subTask'|'master'] (the former 'light' kind is refused)` (**`:126-127`**), replacing the
+> stale `kind ['light'|'subTask'|'master']`. Net `+1` from the old `:127`, so every line at or below
+> the old `:127` moved `+1` (the `skip_step` vocabulary citation into this file moved
+> `:119-141 → :119-142` and was re-derived in the same pass).
 
-The tool itself had refused `light` since the light-task removal; only the *published* description
-still advertised it, so the surface and the behaviour disagreed in the direction this master
-exists to find — a capability refused by a surface that still advertises it (`D13`'s class,
-reversed). The pin is taken from the **registered** FastMCP surface
-(`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
-`mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+> **Retained historical source account — superseded by the current contract:**
+> The tool itself had refused `light` since the light-task removal; only the *published* description
+> still advertised it, so the surface and the behaviour disagreed in the direction this master
+> exists to find — a capability refused by a surface that still advertises it (`D13`'s class,
+> reversed). The pin is taken from the **registered** FastMCP surface
+> (`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
+> `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+
+- The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]

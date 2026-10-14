@@ -1,5 +1,11 @@
 # mcp/tests/test_paseo_role_tools.py
 
+## STOP-delta current source contract
+
+The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change.
+
+This source account supplies no fresh test execution or MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 ## Current paired source contract — scoped assertions and incoming catalogs
 
 The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.
@@ -30,3 +36,6 @@ Concurrent role starts observe the second caller's failed nonblocking acquisitio
 - The scoped current source carries the module/document behavior described above. [1]
 
 - Native binding refusals have no redundant operation envelope. [4]
+
+- The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change. [5]
+

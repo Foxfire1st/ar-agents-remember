@@ -144,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
+            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -173,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
             "locator": {
-              "end": 220,
+              "end": 224,
               "kind": "line_range",
-              "start": 197
+              "start": 201
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -208,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eee0c9bf8a90ccf04448ee3002d63b468403bfe4",
+            "blob": "d24cc75ddfbf1f337e4c4d85e8153c345e7a4041",
             "content": "sha256:0ba071bb133b1efea24e7aa7e020f44ec4784642f1c05f8f726e3914d3bb630e",
             "locator": {
               "kind": "symbol",
@@ -232,6 +232,66 @@
               "name": "_resume"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Compact task delivery/reporting and informational copy drift leave canonical task and Git-lineage authority distinct; recognized integration refusals preserve pre-write eligibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
+            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "content": "sha256:802bf8699a1ccaa77f126ead412500e989bdbd19441d01ea07803137cf7e99a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
+            "content": "sha256:b93c9b036f1d93a9f32ff95e9cce15ca814b5e19c0c781f51dd6d3d39553df2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "content": "sha256:59ca6b97dd141b21ecae14d80e3c161b0efaa1b18822ea1cde305d97dc9a8653",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
           },
           "kind": "code"
         }
@@ -442,12 +502,12 @@
         },
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
             "locator": {
-              "end": 569,
+              "end": 570,
               "kind": "line_range",
-              "start": 562
+              "start": 563
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -460,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "kind": "symbol",
@@ -472,7 +532,7 @@
         },
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -497,12 +557,12 @@
         },
         {
           "anchor": {
-            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:5a6b1c2938cdd94d020e4577fede262e2d07ac0c0819d28ab391196777696fd2",
             "locator": {
-              "end": 618,
+              "end": 619,
               "kind": "line_range",
-              "start": 609
+              "start": 610
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

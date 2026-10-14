@@ -399,6 +399,33 @@
         }
       ]
     },
+    "19": {
+      "note": "Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "content": "sha256:02d133a34a8d526aed5a4715429b42cce962256cc8279fa7b3ec23f2ecc158ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:f83cf50f2ead77d7527b6ce79d9a48f72185c6adc140038550016b9838771b94",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The layering contract loader establishes package ranks; the checker enforces their order on imports between distinct packages.\n\nAnchor: `mcp/test_support/agents_remember_test_support/code_quality/layering.py`",
       "targets": [

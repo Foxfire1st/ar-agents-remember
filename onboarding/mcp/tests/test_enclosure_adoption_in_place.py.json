@@ -16,6 +16,21 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "Direct application whole facts retain exact found-in-place identity, digest and byte-size pins, plus no-copy/no-move comparisons. The adapter projection is not mistaken for that raw result.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "335e09b4a56d6e040c38c54cd99dfd256187a505",
+            "content": "sha256:63d42020b2ec90535b9e7849a02b29c111b58119d8fed3faee6db3f7b3234ba2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

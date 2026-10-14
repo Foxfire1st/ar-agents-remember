@@ -10,8 +10,9 @@ candidate's actual advertised roster and current request schemas.
 
 ## Code Commentary
 
-The candidate literal PUBLIC_TOOLS has 42 distinct entries. This reference source still
-states 40 and contains older databasePath/repositoryId knowledge rows plus removed
+The candidate literal PUBLIC_TOOLS has 41 distinct entries after L109 removes
+resolve_context. The earlier 42-entry count is historical, not this candidate's roster.
+The frozen reference source header literally states38 advertised tools, a documentation-header count distinct from the actual41-name roster. The earlier Curator header40 attribution was incorrect, not a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
 use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
@@ -105,4 +106,4 @@ review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
 (`mcp/registration/tasks.py`) and the c-09 skill.
 
-- Current literal PUBLIC_TOOLS contains the grant function alongside role_start_set and retire_child; its measured42 source names, not the reference header40, own advertisement. [1]
+- Current literal PUBLIC_TOOLS has41 names after L109 removes resolve_context; the reference-document header literally says38, not40. Registry cardinality and documentation-header text are separate units; neither proves live advertisement. Earlier Curator caption retained, with its header40 attribution explicitly withdrawn: Current literal PUBLIC_TOOLS contains 41 names after L109 removes resolve_context, retaining direct_execution_grant, role_start_set and retire_child; this is source currency, not a fresh live-advertisement check. Historical earlier account, retained but superseded: Current literal PUBLIC_TOOLS contains the grant function alongside role_start_set and retire_child; its measured42 source names, not the reference header40, own advertisement. [1]

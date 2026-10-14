@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5a8a8d1f65ae51ae3c134f199dfdccd9813d8a6e",
-        "content": "sha256:6353e278f5576c1f0d1ffa9063771be93514167b750232d975e8bab2a31afb00",
+        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+        "content": "sha256:bbf5b49ae71ddc0ecf90b185b442cde47c15141c8da3cb8cd37a528f876b281d",
         "locator": {
           "kind": "symbol",
           "name": "test_a_hand_merge_refuses_through_the_public_recorded_route"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5a8a8d1f65ae51ae3c134f199dfdccd9813d8a6e",
+        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
         "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
         "locator": {
           "kind": "symbol",
@@ -75,11 +75,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26d6172b1f8b8f91e9680896e04425e6e79fb3c1",
+            "blob": "14f9c242734c0d569c1a589a74d13f442cd990a6",
             "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
             "locator": {
               "kind": "symbol",
               "name": "test_a_hand_edited_leaf_closeout_cell_refuses_through_public_leaf_integration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f9c242734c0d569c1a589a74d13f442cd990a6",
+            "content": "sha256:1198eca76391eae70e6cead456582d6f204aca99dc0d8bed0486e1aff8d533ac",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

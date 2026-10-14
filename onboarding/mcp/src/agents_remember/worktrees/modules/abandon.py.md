@@ -16,6 +16,10 @@ or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the 
 
 ## Code Commentary
 
+### Current Contract
+
+Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.
+
 `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
 
 ### Logic
@@ -35,19 +39,21 @@ unmerged commits, recording them in the result under `unmergedCommits` with a
 `hint`. With `force` it calls `delete_branch_force` (which uses `git branch
 -D`). An already-absent branch is always a no-op.
 
-`_abandon_blockers` collects worktrees and branches that are neither removed
-nor would-remove — i.e. kept because of a real blocking reason. If any blockers
-exist, the contract is not marked `cleanup="abandoned"` and the state is
-`"abandon-blocked"`. On a clean run the contract is stamped and state is
-`"abandoned"`. Dry-run yields `"would-abandon"`.
+> **Retained historical source account — superseded by the current contract:**
+> `_abandon_blockers` collects worktrees and branches that are neither removed
+> nor would-remove — i.e. kept because of a real blocking reason. If any blockers
+> exist, the contract is not marked `cleanup="abandoned"` and the state is
+> `"abandon-blocked"`. On a clean run the contract is stamped and state is
+> `"abandoned"`. Dry-run yields `"would-abandon"`.
 
-**Terminal result validation (260913-LCA-L8).** `_abandon_outputs_result` and each staged step of
-`_abandon_terminal_outputs` pass their outputs to the terminal validator as a `TerminalResult`
-rather than as loose keyword collections. Every blockage it can report names its component and a
-non-empty reason, and a result item that reports no usable reason is answered in operator language
-instead of reaching an operator as `reason: null`. Abandon's own contract is unchanged: a
-genuinely blocked abandon still blocks with its own reason, and the dry run still reports
-`would-abandon` where the apply reports `abandon-blocked`.
+> **Retained historical source account — superseded by the current contract:**
+> **Terminal result validation (260913-LCA-L8).** `_abandon_outputs_result` and each staged step of
+> `_abandon_terminal_outputs` pass their outputs to the terminal validator as a `TerminalResult`
+> rather than as loose keyword collections. Every blockage it can report names its component and a
+> non-empty reason, and a result item that reports no usable reason is answered in operator language
+> instead of reaching an operator as `reason: null`. Abandon's own contract is unchanged: a
+> genuinely blocked abandon still blocks with its own reason, and the dry run still reports
+> `would-abandon` where the apply reports `abandon-blocked`.
 
 Non-force abandon removes the reserved `<worktree_group>/reports` tree before its empty-group check, so
 the operational curator checklist cannot keep an otherwise reclaimable enclosure alive. Since
@@ -178,3 +184,5 @@ Rule 5 no-remains exception: with no locator, no worktree folder and no work bra
 ## Governing Overview
 
 [governing overview](overview.md)
+
+- Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]

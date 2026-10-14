@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a bounded copy refresh from silently shedding a file it can no longer restore."
+  },
+  "applicability": "Admitted leaf task-copy admission, reconciliation and status scans.",
+  "conditions": [
+    "Per-file and cumulative rollback budgets cover every admitted written copy before first publication.",
+    "Index/scan/status populations have explicit budgets and honest refusal or bounded projection."
+  ],
+  "exclusions": [
+    "No silent skipping of an admitted original, unbounded copy corpus or Git transaction authority."
+  ],
+  "id": "INV-36DA0H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Budget refusal/restore tests (over-file, over-total, at-cap, 5MiB INDEX-fault) + scans/index/rows/reclamation tests green: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.20 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Copy admission, scans, index and status work stay inside explicit byte, row and entry budgets that refuse loudly instead of shedding silently.",
+  "status": "proposed",
+  "supersedes": []
+}

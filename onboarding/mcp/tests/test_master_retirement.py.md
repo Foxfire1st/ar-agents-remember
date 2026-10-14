@@ -6,13 +6,26 @@
 
 ## Purpose
 
-The integration cases of `task_doc.retire_master` on a sprint's master and of the shared missing-master message. The
-`World` fixture builds a scratch coordination root with a sprint that commands three masters (`master-a`, `master-b`,
-`master-c`) with a graph and edges, separate scratch code and external-memory repositories, and a series contract
-for a master. `World.retire` calls the public task-document application operation and reads its whole result,
-not the bounded MCP delivery answer. The module is in the `integration` lane.
+### STOP-delta current source contract
+
+World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
+> **Retained historical source account — superseded by the current contract:**
+> The integration cases of `task_doc.retire_master` on a sprint's master and of the shared missing-master message. The
+> `World` fixture builds a scratch coordination root with a sprint that commands three masters (`master-a`, `master-b`,
+> `master-c`) with a graph and edges, separate scratch code and external-memory repositories, and a series contract
+> for a master. `World.retire` calls the public task-document application operation and reads its whole result,
+> not the bounded MCP delivery answer. The module is in the `integration` lane.
 
 ## Code Commentary
+
+### Current Contract
+
+World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls.
+
+> **Historical attempt13 carrier account — superseded at the changed callsites:** World.retire retains its raw task_doc_tool seam. New _whole(answer[log]) consumers obtain rich readiness/preview/state/graph/retry facts from the retained record, not directly from every delivered mapping. These source-defined carriers are not a whole live server/session qualification. Existing retirement identity, protection and rollback assertions remain.
 
 ### Logic
 
@@ -43,12 +56,13 @@ not the bounded MCP delivery answer. The module is in the `integration` lane.
 
 ### Conventions
 
-- `world.snapshot()` captures every file of the scratch task tree, and the cases assert it unchanged after a refusal.
-- `World.series` creates matching branches in the code and external-memory repositories and records the memory
-  content commits of its completed fixture. This exercises the supported memory contract without weakening the
-  opt-out or carryover guards.
-- Readiness assertions consume the application result. A long scratch path may make the bounded delivery answer
-  omit `readinessFacts`; that transport limit must not change the application behavior these cases examine.
+> **Retained historical source account — superseded by the current contract:**
+> - `world.snapshot()` captures every file of the scratch task tree, and the cases assert it unchanged after a refusal.
+> - `World.series` creates matching branches in the code and external-memory repositories and records the memory
+>   content commits of its completed fixture. This exercises the supported memory contract without weakening the
+>   opt-out or carryover guards.
+> - Readiness assertions consume the application result. A long scratch path may make the bounded delivery answer
+>   omit `readinessFacts`; that transport limit must not change the application behavior these cases examine.
 
 
 
@@ -71,5 +85,12 @@ not the bounded MCP delivery answer. The module is in the `integration` lane.
 
 - Pending cleanup without open work is a fact and permits preview. [8]
 
-- The shared world supplies separate scratch code and external-memory repositories with completed memory bookkeeping. [9]
-- Retirement readiness assertions read the whole application result rather than the bounded delivery answer. [10]
+- **Retained historical source account — superseded by the current contract:** The shared world supplies separate scratch code and external-memory repositories with completed memory bookkeeping. [9]
+- **Retained historical source account — superseded by the current contract:** Retirement readiness assertions read the whole application result rather than the bounded delivery answer. [10]
+
+
+- World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls. Earlier carrier account retained literally as historical: World.retire retains its raw task_doc_tool seam. New _whole(answer[log]) consumers obtain rich readiness/preview/state/graph/retry facts from the retained record, not directly from every delivered mapping. These source-defined carriers are not a whole live server/session qualification. Existing retirement identity, protection and rollback assertions remain. [11]
+
+- World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls. [12]
+
+

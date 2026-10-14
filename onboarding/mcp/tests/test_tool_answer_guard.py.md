@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Guards bounded delivery, final measurement and shared-log failure handling at the production choke.
 
 ## Code Commentary
@@ -19,3 +25,6 @@ No Domain Documentation sources are configured; the evidence below is repository
 - Shaping and failure preservation are asserted at the choke. [1]
 - Final delivered measurements include bookkeeping. [2]
 - Partial and concurrent writes preserve record boundaries and counted losses. [3]
+
+- The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census. [4]
+

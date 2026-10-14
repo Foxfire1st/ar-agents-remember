@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:315e5b68edc6457dfff3f31d6d7f4f5cafb8182dc63794f36e2c2bfdb7abe845",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:71ac5c83dd1bfddfc1c50e9d05f1a0338138ce066ccd27406b555150ef495607",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:7e0b4d4b380e0a3e28309188b55b623713b5d2255cffd783bdede6bd4ee28dbc",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:83520b7e05764949cf70b994de2ade53aa408a3a0d979af9427faec9411054f3",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:898fd592ef91b6208261f81b776a1cc92dbb8791fab3ade846f2792fecd96b19",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:765add8b9fa6fdd6d38f7c9d8ea6daca56065feeaa3ce261f3133936b1c8fd03",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
         "content": "sha256:59e06a2130583601992858a69d131e0c10de697769ee7c2d8324fe5ddf6beedd",
         "locator": {
           "kind": "symbol",
@@ -124,8 +124,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
-        "content": "sha256:f5309fb01870b784bb0925d9be57f25190fe21e2806bf1bdb7b8bce5be52fcd9",
+        "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
+        "content": "sha256:c59bb41bdfaf28340a5c4d91c2894110dbc8f1bf7f36e800fd2a0b6e51f0fe33",
         "locator": {
           "kind": "file"
         }
@@ -148,6 +148,21 @@
           "anchor": {
             "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
             "content": "sha256:f5309fb01870b784bb0925d9be57f25190fe21e2806bf1bdb7b8bce5be52fcd9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own-leaf copy controls now include real nonsymlink requirement bytes/digest rows, missing rows and handover warning, exclusion of reference/master/sprint baggage, publication adding a requirement, source drift/stale_copy_line then refresh, and requirement-copy reclamation. Adding/refreshing fixtures patch contract enumeration/load seams; they are not real-host launch acceptance. Transactional rollback and canonical-file authority remain unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e34f957be1ab6cf3720350ced284896e8f56c342",
+            "content": "sha256:c59bb41bdfaf28340a5c4d91c2894110dbc8f1bf7f36e800fd2a0b6e51f0fe33",
             "locator": {
               "kind": "file"
             }

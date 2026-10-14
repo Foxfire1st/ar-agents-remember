@@ -6,15 +6,20 @@
 
 ## Purpose
 
-The task-document **step plane**: it owns the addressing rule and the four step operations
-(`set_step`, `add_step`, `remove_step`, `skip_step`) plus the focused `read_steps` projection. It
-exists as a separate module because keeping the plane inline pushed `task_doc_tools.py` to 1,243
-lines, over the armed 1,200-line hard limit — the same decomposition pattern as
-`task_doc_discard`, `task_doc_route_review`, and `task_sprint_linkage`. `task_doc_tools.py`
-registers the operations and delegates through thin `_apply_*` adapters; this module owns the
-behaviour.
+> **Retained historical source account — superseded by the current contract:**
+> The task-document **step plane**: it owns the addressing rule and the four step operations
+> (`set_step`, `add_step`, `remove_step`, `skip_step`) plus the focused `read_steps` projection. It
+> exists as a separate module because keeping the plane inline pushed `task_doc_tools.py` to 1,243
+> lines, over the armed 1,200-line hard limit — the same decomposition pattern as
+> `task_doc_discard`, `task_doc_route_review`, and `task_sprint_linkage`. `task_doc_tools.py`
+> registers the operations and delegates through thin `_apply_*` adapters; this module owns the
+> behaviour.
 
 ## Code Commentary
+
+### Current Contract
+
+Checklist operations create, update, skip and remove steps or substeps; a completed removal still needs its governed reason. There is no step_payloads/read_steps projection here. Both removed task reads are answered with operation-removed and canonical file guidance, not a successful checklist read. Step addressing and mutation authority remain with the existing dispatcher.
 
 ### Logic
 
@@ -45,8 +50,9 @@ parent ("did you mean parent 'S1'?"), and for a `<parent>.<child>` id whose chil
 parent it names both halves. `skip_step` deliberately keeps its original miss wording (it never
 acquired the bare-id defect); `set_step` and `remove_step` pass `hint=True`.
 
-`step_payloads` / `_substep_payload` are the read projection behind the `read_steps` operation:
-`id`, `title`, `status`, `note`, and nested `substeps` — never the whole authored document.
+> **Retained historical source account — superseded by the current contract:**
+> `step_payloads` / `_substep_payload` are the read projection behind the `read_steps` operation:
+> `id`, `title`, `status`, `note`, and nested `substeps` — never the whole authored document.
 
 `step_reason` is shared with the tools module: `task_doc_tools._enforce_terminal_status` calls it to
 recognize a reasoned removal before the Completion guard.
@@ -99,21 +105,23 @@ No relevant external documentation was found after checking the configured sourc
 
 ### Repo-Internal References
 
-- The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it. [1]
-- The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption. [2]
-- The single addressing rule every step operation shares, including the parent-naming miss hint. [3]
-- The create-only operation requires a title and refuses an existing id in its scope. [4]
-- The delete-only operation requires a reason and appends the removal decision. [5]
-- The update-only operation and the fields it may copy. [6]
-- `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. [7]
-- The focused checklist read behind the `read_steps` special operation. [8]
-- The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. [9]
-- The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. [10]
-- The schema field that made a top-level `note` storable at all. [11]
-- The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. [12]
+- **Retained historical source account — superseded by the current contract:** The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it. [1]
+- **Retained historical source account — superseded by the current contract:** The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption. [2]
+- **Retained historical source account — superseded by the current contract:** The single addressing rule every step operation shares, including the parent-naming miss hint. [3]
+- **Retained historical source account — superseded by the current contract:** The create-only operation requires a title and refuses an existing id in its scope. [4]
+- **Retained historical source account — superseded by the current contract:** The delete-only operation requires a reason and appends the removal decision. [5]
+- **Retained historical source account — superseded by the current contract:** The update-only operation and the fields it may copy. [6]
+- **Retained historical source account — superseded by the current contract:** `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. [7]
+- **Retained historical source account — superseded by the current contract:** The focused checklist read behind the `read_steps` special operation. [8]
+- **Retained historical source account — superseded by the current contract:** The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. [9]
+- **Retained historical source account — superseded by the current contract:** The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. [10]
+- **Retained historical source account — superseded by the current contract:** The schema field that made a top-level `note` storable at all. [11]
+- **Retained historical source account — superseded by the current contract:** The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. [12]
 
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 No cross-repository protocol or external system is involved.
+
+- Checklist operations create, update, skip and remove steps or substeps; a completed removal still needs its governed reason. There is no step_payloads/read_steps projection here. Both removed task reads are answered with operation-removed and canonical file guidance, not a successful checklist read. Step addressing and mutation authority remain with the existing dispatcher. [13]

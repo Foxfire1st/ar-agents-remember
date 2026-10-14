@@ -11,12 +11,17 @@ stable enclosure-root sync journal into the read-only worktree summary used by c
 
 ## Code Commentary
 
-`worktree_status_packet()` returns inactive, missing-contract, or invalid-contract
-states without mutating Git. For valid contracts it delegates to
-`git_worktree_manager.status_payload()` and maps the result into the compact
-context-facing worktree shape. The projection no longer preserves the full
-manager payload as `rawStatus`; `WorktreeSummary` owns the explicit context
-fields.
+### Current Contract
+
+The context-facing WorktreeSummary also carries taskDocumentCopies from the producer's optional task_document_copies notice. That one-line copy drift/refresh notice is informational, not mutation, acceptance or proof that every copied byte was exhaustively hashed. Existing sync and source-lineage evidence remains a separate owner.
+
+> **Retained historical source account — superseded by the current contract:**
+> `worktree_status_packet()` returns inactive, missing-contract, or invalid-contract
+> states without mutating Git. For valid contracts it delegates to
+> `git_worktree_manager.status_payload()` and maps the result into the compact
+> context-facing worktree shape. The projection no longer preserves the full
+> manager payload as `rawStatus`; `WorktreeSummary` owns the explicit context
+> fields.
 
 After the canonical lifecycle locator resolves, the packet observes
 `.lifecycle/sync-operation.json` from the locator's stable `worktree_group` **before** reading the
@@ -75,20 +80,21 @@ able to touch.
 
 ## Invariants And Boundaries
 
-- This module is read-only; it must not create, close out, integrate, or clean
-  worktrees.
-- Contract parsing failures should become structured packet state rather than
-  escaping context packet construction.
-- Stable sync-operation evidence must survive contract read failure and remain present on every
-  summary path once the lifecycle locator establishes the enclosure root.
-- Context packets expose typed lifecycle and next-operation hints, not shell
-  command strings or raw manager payloads.
-- **Build the model here; do not hand the caller a dict to validate.** The whole point of the
-  return type is that a producer/model mismatch is a pyright error at this seam rather than a
-  `ValidationError` at packet-build time, in a handler with no `except`.
-- Absent next-move keys stay absent. Do not reintroduce a `""` / `{}` / `[]` default for
-  `nextTool` / `nextArgs` / `nextRequiredArgs` — a value this projection invents is by definition
-  one no producer declares.
+> **Retained historical source account — superseded by the current contract:**
+> - This module is read-only; it must not create, close out, integrate, or clean
+>   worktrees.
+> - Contract parsing failures should become structured packet state rather than
+>   escaping context packet construction.
+> - Stable sync-operation evidence must survive contract read failure and remain present on every
+>   summary path once the lifecycle locator establishes the enclosure root.
+> - Context packets expose typed lifecycle and next-operation hints, not shell
+>   command strings or raw manager payloads.
+> - **Build the model here; do not hand the caller a dict to validate.** The whole point of the
+>   return type is that a producer/model mismatch is a pyright error at this seam rather than a
+>   `ValidationError` at packet-build time, in a handler with no `except`.
+> - Absent next-move keys stay absent. Do not reintroduce a `""` / `{}` / `[]` default for
+>   `nextTool` / `nextArgs` / `nextRequiredArgs` — a value this projection invents is by definition
+>   one no producer declares.
 
 ## Evidence
 
@@ -98,20 +104,20 @@ No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
-- Status observes the stable sync journal before contract parsing and threads it through all result branches. [1]
-- The journal observer returns a typed projection without reading task or queue state. [2]
-- `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
-- Worktree lifecycle status and next hints are composed by the worktree manager. [4]
-- Worktree summary model constrains the context-facing shape, including the optional series activation fact. [5]
-- Worktree summary model constrains the context-facing shape, including the optional series activation fact. [6]
-- Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. [7]
-- `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). [8]
-- `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]
-- The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. [10]
-- The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. [11]
-- The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. [12]
-- The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. [13]
-- `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. [14]
+- **Retained historical source account — superseded by the current contract:** Status observes the stable sync journal before contract parsing and threads it through all result branches. [1]
+- **Retained historical source account — superseded by the current contract:** The journal observer returns a typed projection without reading task or queue state. [2]
+- **Retained historical source account — superseded by the current contract:** `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
+- **Retained historical source account — superseded by the current contract:** Worktree lifecycle status and next hints are composed by the worktree manager. [4]
+- **Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact. [5]
+- **Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact. [6]
+- **Retained historical source account — superseded by the current contract:** Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. [7]
+- **Retained historical source account — superseded by the current contract:** `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). [8]
+- **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]
+- **Retained historical source account — superseded by the current contract:** The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. [10]
+- **Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. [11]
+- **Retained historical source account — superseded by the current contract:** The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. [12]
+- **Retained historical source account — superseded by the current contract:** The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. [13]
+- **Retained historical source account — superseded by the current contract:** `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. [14]
 
 ### Cross-Repo References
 
@@ -183,3 +189,5 @@ the `task_doc` surface may name a non-public one (`session_retire`). That is why
 `WorktreeCommandResponse` and not on the shared flexible envelope, and why widening `PUBLIC_TOOLS` would
 be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives this module's real
 `worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
+
+- The context-facing WorktreeSummary also carries taskDocumentCopies from the producer's optional task_document_copies notice. That one-line copy drift/refresh notice is informational, not mutation, acceptance or proof that every copied byte was exhaustively hashed. Existing sync and source-lineage evidence remains a separate owner. [16]

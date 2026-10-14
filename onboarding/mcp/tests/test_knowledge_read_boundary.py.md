@@ -10,6 +10,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 **MIK-R74 rule 6: a read changes no branch, tag or HEAD, no worktree file, no Git index, no task document and no requirement packet.** The selected knowledge, enclosure, memory, skill and dashboard read roster runs against scratch fixtures and compares refs/HEAD, index files, working trees, task files, object stores and directories. Its oracle distinguishes allowed `runtime/` caches, attributed comparison objects and pin refs, and preview worklists, reports and judged-tree objects. The dedicated freshness case additionally permits only the requested fetch's remote-tracking refs, objects, reflogs and `FETCH_HEAD`; without that request nothing fetches or changes.
 
 ## Code Commentary
@@ -41,3 +47,5 @@ values; the summary/projection owners carry those separate contracts.
 
 - Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance. [12]
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]
+
+- Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression. [15]

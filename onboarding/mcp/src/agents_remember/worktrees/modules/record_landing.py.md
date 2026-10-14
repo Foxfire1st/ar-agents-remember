@@ -56,8 +56,7 @@ bound worktree services.
 ### 260928-MIK-L09 The Landed Memory Commit Is Checked (MIK-R09 Rule 3)
 
 Record landing commits no memory, but on converted memory it now checks the landed memory commit before the dry-run
-and apply branches (`_require_knowledge_gate(contract, commit, landed_memory_content_commit)`, a `RuntimeError` naming
-every finding):
+and apply branches. The retained gate judge supplies its complete refusal; the public precondition adapter now answers the recognized legacy-format or knowledge-gate refusal before any record write, retaining its exact sentence and detail:
 
 - **Probe first (review R1 F7, ruling 2026-09-30T16:07:55).** `_line_converted` probes the official memory line and
   the task's `memory_base_commit` for the layout marker **before** anything reads the landed commit; a probe Git
@@ -101,8 +100,7 @@ every finding):
 The route label is a module constant, not a string literal at the call site, so the cell's value is
 greppable and single-sourced.
 
-Refusals raise `RuntimeError` with the corrective action in the message (pull the protected branch
-locally, then record the commit it landed) instead of a bare failure.
+Reachable task-state preconditions return `ok:false`, their existing code and unchanged sentence before any landing record is written; caller bugs, I/O failures and unrecognized internal failures retain their named exception behavior. Legacy-format recovery is selected from the central refusal’s existing case value, not its text: converted-source case offers `worktree_sync` with the exact contract and merge-memory arguments; never-converted case offers the first-conversion program/subcommand and actual memory/code roots as separate values with a `shlex.join` display; unknown case offers no next step. The presentation changes neither conversion admission nor sync behavior.
 
 ### Boundaries Of The Recorded State (260831-LOCR-L30)
 
@@ -150,7 +148,9 @@ No configured external source applies.
 The following current source boundaries establish the ledger-retirement behavior.
 
 
-- `record_landing_result` validates the recorded code landing, since MIK-R09 checks the landed memory commit on converted memory (before the dry-run and apply branches), and forwards the actual code/memory facts. [5]
+- The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts. [5]
+
+- Conversion guidance follows the central case value, with exact sync arguments or separately carried first-conversion argv; unknown supplies no step. [18]
 
 
 - The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) [6]

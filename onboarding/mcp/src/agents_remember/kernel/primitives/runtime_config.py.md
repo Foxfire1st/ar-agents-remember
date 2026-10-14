@@ -15,6 +15,10 @@ Builds configured repository/provider authority and optional runtime settings.
 
 ## Code Commentary
 
+### Current Contract
+
+Legacy gateDelegation migration warnings are emitted once per authority-file-path/shadowed-state pair in the process, not at every configuration re-resolution. Provider degradation parsing belongs to kernel/primitives/provider_degradation_settings.py. This clarification introduces neither a restored provider/benchmark tool nor a new settings or delegation authority.
+
 ### Logic
 
 Before authority-path validation, `load_config` asks the checkout-coordination primitive whether
@@ -65,6 +69,16 @@ enabled, failsafe armed, conservative thresholds). This follows the same fail-lo
 pattern as `timeoutCaps`/`dashboard` below, just with its own dedicated settings module rather
 than an inline parser in this file.
 
+> **Retained historical source account — superseded by the current contract:**
+> `config_from_mapping` (260707-HFX-L7) parses the optional `providerDegradation` block through
+> `agents_remember.mcp.provider_degradation_settings.parse_provider_degradation_settings`,
+> wrapping any `ProviderDegradationSettingsError` into `ConfigError` at the call site so the
+> boot fail-loud contract is unchanged; the result is stored on the new
+> `McpRuntimeConfig.provider_degradation` field (default `ProviderDegradationSettings()` — detector
+> enabled, failsafe armed, conservative thresholds). This follows the same fail-loud-allowlist
+> pattern as `timeoutCaps`/`dashboard` below, just with its own dedicated settings module rather
+> than an inline parser in this file.
+
 `parse_dashboard_settings` (260703 L2) validates the optional `dashboard` object
 into `McpRuntimeConfig.dashboard` — a frozen `DashboardSettings(auto_start=False,
 port=DEFAULT_DASHBOARD_PORT=8765)`, so omitted settings keep supervision fully
@@ -73,26 +87,27 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 `autostart` must surface at boot, not silently leave the daemon unsupervised),
 `autoStart` must be a boolean, and `port` a non-bool integer in 1..65535.
 
-`parse_orchestration_settings` (260703-L4, re-homed by 260703-L13) resolves the
-boot-snapshot `orchestration.gateDelegation`. Its HOME is now the GLOBAL user agentic
-settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set), read ONCE at boot
-through `kernel/agentic_settings.load_agentic_settings` (per-use semantics do
-not apply to this one key; a change needs a restart — documented). The parse
-itself (`parse_gate_delegation` — named policy, per-kind overrides,
-`requireReviewerVerdictAtSeams` via `apply_seam_verdict_requirement`) MOVED to
-`kernel/agentic_settings.py` and is imported back; `AgenticSettingsError` is
-wrapped into `ConfigError` so the boot contract is unchanged. An authority-file
-`orchestration.gateDelegation` is honored as a ONE-CYCLE legacy fallback with a
-`warnings.warn` boot warning naming the new home
-(`_warn_legacy_gate_delegation`); when the global file also sets the key the
-global value wins and the shadowed authority value warns as IGNORED. Every
-other `orchestration.*` key in the authority file
-(`KNOWN_AUTHORITY_ORCHESTRATION_FIELDS` = gateDelegation only) fails loud
-pointing at the global file — including `roles`/`concurrency`, which were
-previously reserved-and-silently-dropped (that trap is closed), and `loops`,
-which never belonged there. Unknown keys, bad roles, human-pinned gate
-delegation, and unsupported delegated kinds still raise `ConfigError` at
-startup, whichever file they come from.
+> **Retained historical source account — superseded by the current contract:**
+> `parse_orchestration_settings` (260703-L4, re-homed by 260703-L13) resolves the
+> boot-snapshot `orchestration.gateDelegation`. Its HOME is now the GLOBAL user agentic
+> settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set), read ONCE at boot
+> through `kernel/agentic_settings.load_agentic_settings` (per-use semantics do
+> not apply to this one key; a change needs a restart — documented). The parse
+> itself (`parse_gate_delegation` — named policy, per-kind overrides,
+> `requireReviewerVerdictAtSeams` via `apply_seam_verdict_requirement`) MOVED to
+> `kernel/agentic_settings.py` and is imported back; `AgenticSettingsError` is
+> wrapped into `ConfigError` so the boot contract is unchanged. An authority-file
+> `orchestration.gateDelegation` is honored as a ONE-CYCLE legacy fallback with a
+> `warnings.warn` boot warning naming the new home
+> (`_warn_legacy_gate_delegation`); when the global file also sets the key the
+> global value wins and the shadowed authority value warns as IGNORED. Every
+> other `orchestration.*` key in the authority file
+> (`KNOWN_AUTHORITY_ORCHESTRATION_FIELDS` = gateDelegation only) fails loud
+> pointing at the global file — including `roles`/`concurrency`, which were
+> previously reserved-and-silently-dropped (that trap is closed), and `loops`,
+> which never belonged there. Unknown keys, bad roles, human-pinned gate
+> delegation, and unsupported delegated kinds still raise `ConfigError` at
+> startup, whichever file they come from.
 
 `ProviderAuthority` / `reload_provider_authority` / `require_provider_launch_authority`
 (containment R1, task 260707-HFX-L1) make the on-disk settings file — not the
@@ -238,3 +253,5 @@ L4 routes this file's existing application, configuration, task, model, registra
 - The shared authority reader. [20]
 
 - The retired settings key is ignored and warned; current grants are not a runtime-config field. [21]
+
+- Legacy gateDelegation migration warnings are emitted once per authority-file-path/shadowed-state pair in the process, not at every configuration re-resolution. Provider degradation parsing belongs to kernel/primitives/provider_degradation_settings.py. This clarification introduces neither a restored provider/benchmark tool nor a new settings or delegation authority. [22]

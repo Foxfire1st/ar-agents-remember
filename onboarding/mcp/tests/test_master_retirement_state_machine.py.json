@@ -46,6 +46,21 @@
           "kind": "test"
         }
       ]
+    },
+    "4": {
+      "note": "Only raw/projected boundary navigation changes. Existing transition, recovery, receipt and complete no-write assertions retain their original values; a helper change does not create fresh state-machine execution.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3e2c92b30090c20577384ad93352dfedf240fd",
+            "content": "sha256:dc619d14bc212bbc797614933388180c57b5d6deff61b5d0e3144947ac6e7cf8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

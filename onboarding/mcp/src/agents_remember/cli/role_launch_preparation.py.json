@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
-        "content": "sha256:e41abed441671a85b892d5fe420194995b25d8848c83adf97e81323afd6b6adc",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
+        "content": "sha256:42e6049680f72aecaeb9b36e493d08a590602805a52a426cf3a677723cc89b1c",
         "locator": {
           "kind": "symbol",
           "name": "_task_document_read_metadata"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:7183f9a43b241f32f17fa1b158007450f70aa13a8d7ff544428b5a496c7d7d9f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:ecc5e8d784455cbe09a8854005fd7d653cb5f9a44ef5395a72bd63547a1cc0b0",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:f68c6e26dd460031cd38b5c7dd871ca7b4140261b4a3f481b0523c13c3248098",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:ecc5e8d784455cbe09a8854005fd7d653cb5f9a44ef5395a72bd63547a1cc0b0",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:8aeb4c9c5feaf03555182b2ce173b50d4b63d042afdcedddcfccbd9cfb055bda",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:7183f9a43b241f32f17fa1b158007450f70aa13a8d7ff544428b5a496c7d7d9f",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:367b623d0c9136729dec508d9dd1bbff6a5520b04b3ef4b2ff625e4e620874be",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:5fcb1f31a4ed6f2fa1a6a5822c7d74491b7fc712e3fedebf7f7fccacc10ebb2e",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:7a8cad7a4059cc95233992378766546c30d7689d21ead9faa255fc9c33ece757",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:ecc5e8d784455cbe09a8854005fd7d653cb5f9a44ef5395a72bd63547a1cc0b0",
         "locator": {
           "kind": "symbol",
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:d3fa63ccb9e72a910144da48a39df255c354b98e9411cd3b22b9c7c331e5b981",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+        "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -308,7 +308,7 @@
       ]
     },
     "10": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.\n\nAnchor: file",
+      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.\n\nAnchor: file\n\nRetained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness.",
       "targets": [
         {
           "anchor": {

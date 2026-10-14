@@ -23,11 +23,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "442ba26117e74abfd7a4e161b6ff0dede79cc12f",
+            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
             "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
               "kind": "symbol",
               "name": "register_closeout_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states, blocked/refused outcomes and state/next/log presentation, with docs/reference/mcp-tools.md carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
+            "content": "sha256:fcaca5dc43a7a37236131a3c630f14c9bcd4f072f3ab4e12ed8ed0ba34066310",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

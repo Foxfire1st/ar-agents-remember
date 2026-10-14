@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
             "content": "sha256:56058015a92fef97436b9d0c169947ec7559a0c25f5575074e1b73b6d76bf4c3",
             "locator": {
               "end": 159,
@@ -76,6 +76,21 @@
               "end": 30,
               "kind": "line_range",
               "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4535b29be845a12a0c73c33058d1c990bac581ad",
+            "content": "sha256:857c08c50d7c4f6984bbe7f8eacbecd38af1493b334dd36c5fe3e4713e2e3b73",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

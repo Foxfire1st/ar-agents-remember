@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
+        "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
         "content": "sha256:cf2561610b0a9af1ebd594476fdbeced7893162885ca3139fb0679c2de945e08",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
             "content": "sha256:df5f1a4ebe8dcb4e12dd1cfe9ecae6b85084ca7b3b60a390f3106c618997d5b7",
             "locator": {
               "kind": "symbol",
@@ -153,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:f2facc296a553bfaa1e09dc8003c91147ba938a9850f85f2b3241256e2209a19",
             "locator": {
               "kind": "symbol",
@@ -176,6 +176,21 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
+            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -307,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7865ba58d82f4e42292d2c4a605da455f063da3e",
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
             "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
             "locator": {
               "kind": "symbol",
@@ -346,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
             "content": "sha256:1cb72dc1f27f10067975d8cc3abe5d75855a3f04c57714bcbe59b424a73c2f0b",
             "locator": {
               "kind": "symbol",
@@ -357,7 +372,7 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
             "content": "sha256:d68a0559ae35767208cf5c944faa1f774a6aee25721bdadd5a60ec63ecf2302f",
             "locator": {
               "kind": "symbol",
@@ -397,7 +412,7 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
             "content": "sha256:861e2cb48e41c0ef7371da5ec6ca7aed471730da035d21578deb6ca40ed1d44d",
             "locator": {
               "kind": "symbol",

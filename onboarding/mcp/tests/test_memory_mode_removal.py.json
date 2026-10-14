@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
+        "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
         "content": "sha256:447c4d08122d8772ffbb4a60055feda8f0a52e89a317f73c989d56c39d947b64",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
+        "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
         "content": "sha256:e4910a773ed01ec31d7a4c1bba99bfe6616321322b9302f28da036069eb2a807",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
+        "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
         "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "548bb0044e2c9b94b55c92c9b261fc360f7501d2",
+        "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
         "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
         "locator": {
           "kind": "symbol",
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:9f08d9550971438f439f292c5c7bf8bbf078bff5f983b1206fd482f85c5b7e9f",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:e4910a773ed01ec31d7a4c1bba99bfe6616321322b9302f28da036069eb2a807",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:aa346b740de18f2decf62b44a98f8a575cbc39817b70b71a91dd8240bcfe5f5d",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:2998597ded4b6b77abb6903aacdbec10359829a4b4af0a7a320e7a86376bb4b6",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:b93953b4f387b1fcf9cf39196e70f376b0729644e593d61ea54e19eeccabc0c5",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:bd4868dc0c7d5c72ab3c4e870726e158e32677f544d197a10f3d30786d16b2af",
             "locator": {
               "kind": "symbol",
@@ -175,11 +175,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
             "content": "sha256:4835eff102a83ac9071365c3153d42b20025d640199716386412b107da1672e8",
             "locator": {
               "kind": "symbol",
               "name": "test_a_removed_token_is_refused_while_an_unknown_token_still_degrades"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Verbose documentation assertions read the reference document instead of compact registration text. Actual named memory-mode refusals stay tested at their original surfaces; retired wording is not restored to the public API.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be83838dff1deb790d5c735a85fb9bfb63b657a",
+            "content": "sha256:0c74fca0e35bf45e185ed49eabd92fb935873a454b9dbd6e016e25f4004ca8b6",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

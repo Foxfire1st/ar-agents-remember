@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_tool_answer_rows_l111.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The assembled table must contain no row still naming L111 as interim owner.\n\nAnchor: `ToolAnswerL111ShapedRowsTests.test_no_interim_row_names_l111`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a17a59bb59182bab60f9aba7f0eb736c0124cc",
+            "content": "sha256:047d4b98e9d862e010e63316f11a0e2473da3eda051d92ec3cc6c71f6dcfdcb7",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every owned tool's rows carry the noninterim shaped-row fields, uses and illustration payloads.\n\nAnchor: `ToolAnswerL111ShapedRowsTests.test_every_l111_tool_has_a_shaped_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6a17a59bb59182bab60f9aba7f0eb736c0124cc",
+            "content": "sha256:603f96d9675dcaf7c40b335e1726dd8a9a2e4110e54fb30bf660be487d4c7921",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The staying record_landing adapter call is judged by its exact returned refusal and retained detail, with the existing complete no-write oracle. Fixture publication precedes the snapshot; the control is not attributed to an earlier pre-publication frame.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Protect no-write landing refusal and exact closeout-cell pair selection.
 
 ## Code Commentary
@@ -19,3 +25,5 @@ No external Domain Documentation source is configured for this repository. The f
 - Apply refusal preserves contract, worklist and refs. [1]
 - Recorded landing refusal also preserves its footprint. [2]
 - Changed cells produce their actual record-kept finding. [3]
+
+- The staying record_landing adapter call is judged by its exact returned refusal and retained detail, with the existing complete no-write oracle. Fixture publication precedes the snapshot; the control is not attributed to an earlier pre-publication frame. [4]

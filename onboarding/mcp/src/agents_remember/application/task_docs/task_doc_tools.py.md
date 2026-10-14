@@ -6,193 +6,203 @@
 
 ## Purpose
 
-The operation-dispatched application entry point behind the `task_doc` MCP tool: it loads or
-creates the `ar-task-document/v1` JSON for a task, applies one edit, and rewrites both
-the JSON (source of truth) and the rendered markdown. `task_reopen_tool` — the task-domain reset
-that reopens a fully landed leaf under its exact leaf id (delegating to `worktrees/reopen.py`) —
-moved to the sibling `application/task_reopen.py` module in 260815-DAG-L11 and is re-exported
-here unchanged (facade); its response keeps the worktree-command contract shape because the
-payload carries the enclosure state. Since 260831-LOCR-L33 the whole **step plane** — the one
-exact addressing rule and the `set_step`/`add_step`/`remove_step`/`skip_step` operations plus the
-`read_steps` projection — lives in the sibling `task_doc_steps.py`; this module registers those
-operations, keeps thin `_apply_*` adapters, and owns validation/publication. The extraction is a
-size decision, not a behaviour one: keeping the plane inline took this file to 1,243 lines against
-the armed 1,200-line hard limit, the same decomposition pattern as `task_doc_discard`,
-`task_doc_route_review`, and `task_sprint_linkage`. Since 260815-DAG-L14 the dispatcher also routes the
-sprint linkage operations (`attach_master`/`detach_master`/`retire_master`/`linkage_report`) to
-`application/task_sprint_linkage.py` through `SPRINT_LINKAGE_OPERATIONS`, wraps
-`SprintLinkageError` in `TaskDocError`, and a sprint `get` carries its `linkageFacts`; the
-Completed-row terminal check now delegates to `task_sprint_linkage.validate_completed_master_row`
-(typed rows complete against the linked master document).
+> **Retained historical source account — superseded by the current contract:**
+> The operation-dispatched application entry point behind the `task_doc` MCP tool: it loads or
+> creates the `ar-task-document/v1` JSON for a task, applies one edit, and rewrites both
+> the JSON (source of truth) and the rendered markdown. `task_reopen_tool` — the task-domain reset
+> that reopens a fully landed leaf under its exact leaf id (delegating to `worktrees/reopen.py`) —
+> moved to the sibling `application/task_reopen.py` module in 260815-DAG-L11 and is re-exported
+> here unchanged (facade); its response keeps the worktree-command contract shape because the
+> payload carries the enclosure state. Since 260831-LOCR-L33 the whole **step plane** — the one
+> exact addressing rule and the `set_step`/`add_step`/`remove_step`/`skip_step` operations plus the
+> `read_steps` projection — lives in the sibling `task_doc_steps.py`; this module registers those
+> operations, keeps thin `_apply_*` adapters, and owns validation/publication. The extraction is a
+> size decision, not a behaviour one: keeping the plane inline took this file to 1,243 lines against
+> the armed 1,200-line hard limit, the same decomposition pattern as `task_doc_discard`,
+> `task_doc_route_review`, and `task_sprint_linkage`. Since 260815-DAG-L14 the dispatcher also routes the
+> sprint linkage operations (`attach_master`/`detach_master`/`retire_master`/`linkage_report`) to
+> `application/task_sprint_linkage.py` through `SPRINT_LINKAGE_OPERATIONS`, wraps
+> `SprintLinkageError` in `TaskDocError`, and a sprint `get` carries its `linkageFacts`; the
+> Completed-row terminal check now delegates to `task_sprint_linkage.validate_completed_master_row`
+> (typed rows complete against the linked master document).
 
 ## Code Commentary
 
+### Current Contract
+
+task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. Failed master synchronization is an answered refusal. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
+
 ### Settings-owned review state
 
-`_prepare_task_doc_edit` loads the settings number for each begin and each record. Both generic and route results receive the authority-resolved identity of the candidate root, distinct from a checked-tree claim. `_get_task_doc_result` does no write: absent state receives the readable settings number, and a legacy state with `limit == 0` receives that number plus approved extras in the answer only. A positive stored limit stays the last begun limit. If settings cannot be read, get remains readable from stored state, while begin/record refuse. Preparation still precedes validation and transactional publication.
+> **Retained historical source account — superseded by the current contract:**
+> `_prepare_task_doc_edit` loads the settings number for each begin and each record. Both generic and route results receive the authority-resolved identity of the candidate root, distinct from a checked-tree claim. `_get_task_doc_result` does no write: absent state receives the readable settings number, and a legacy state with `limit == 0` receives that number plus approved extras in the answer only. A positive stored limit stays the last begun limit. If settings cannot be read, get remains readable from stored state, while begin/record refuse. Preparation still precedes validation and transactional publication.
 
 
 ### Logic
 
-`task_doc_tool(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
-call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` — since 260731-EFA-L2 the arguments arrive as two
-objects that answer two different
-questions. `TaskDocTarget(repo_id, task_name, contract_path, slug)` is **which document**;
-`TaskDocEdit(fields, step, decision, subtask, section, review)` is **what the edit is**, with `NO_EDIT` the
-shared empty value a `get` passes. Internally the operation table dispatches through one private
-`_Edit` view and a per-operation `_apply_set_status` / `_apply_set_field` / `_apply_set_step` /
-`_apply_set_subtask` / `_apply_set_section` / `_apply_append_decision` function behind `_apply`,
-replacing the former single branching applier. Since 260831-LOCR-L33 the four step adapters
-(`_apply_set_step` / `_apply_add_step` / `_apply_remove_step` / `_apply_skip_step`) are one-line
-delegations to `task_doc_steps`, and `read_steps` dispatches in the special-op path through
-`_read_steps`.
+> **Retained historical source account — superseded by the current contract:**
+> `task_doc_tool(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
+> call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` — since 260731-EFA-L2 the arguments arrive as two
+> objects that answer two different
+> questions. `TaskDocTarget(repo_id, task_name, contract_path, slug)` is **which document**;
+> `TaskDocEdit(fields, step, decision, subtask, section, review)` is **what the edit is**, with `NO_EDIT` the
+> shared empty value a `get` passes. Internally the operation table dispatches through one private
+> `_Edit` view and a per-operation `_apply_set_status` / `_apply_set_field` / `_apply_set_step` /
+> `_apply_set_subtask` / `_apply_set_section` / `_apply_append_decision` function behind `_apply`,
+> replacing the former single branching applier. Since 260831-LOCR-L33 the four step adapters
+> (`_apply_set_step` / `_apply_add_step` / `_apply_remove_step` / `_apply_skip_step`) are one-line
+> delegations to `task_doc_steps`, and `read_steps` dispatches in the special-op path through
+> `_read_steps`.
 
-It validates `operation` against `VALID_OPERATIONS`
-(`create`/`replace`/`set_status`/`set_step`/`add_step`/`remove_step`/`skip_step`/`read_steps`/
-`set_subtask`/`remove_subtask`/`set_section`/
-`append_decision`/`begin_review`/`record_review`/`record_route_review`/`author_execution_graph`/
-`set_field`/`get` — `migrate_execution_topology` was removed in 260815-DAG-L13; a graph-less
-sprint runs the atomic-sequential default and `author_execution_graph` is the bootstrap seam), then `_resolve()`s the task root + optional contract: a
-`contract_path` can point at either a root `series-contract.md` or a leaf
-`enclosures/<leaf-id>/series-contract.md`; otherwise `task_name` is mapped through
-`worktrees.task_resolver.resolve_active_task_root`, with leaf lookup as the fallback. `get`
-reads and returns without writing; `create` builds a new `TaskDocument` from `fields`
-(refusing an explicit `kind="light"` and defaulting an absent `kind` context-awarely — `subTask`
-under a leaf contract, else `master` — while picking up `seriesContractPath` plus `enclosures[]` from
-the contract when present; leaf contracts also seed `lifecycleId` for non-masters), refusing to overwrite an existing doc.
-Since 260913-LCA-L5 `_build_doc`'s `if contract is not None` block is followed by an
-`elif data.get("kind") != "master"` arm calling `_require_bindable_leaf_authoring(task_root)`
-(`:619-649`): a leaf document authored under a task root with **no master document at all** is refused
-with the field names, the exact missing `task.json` path and the remedy, because no operation would ever
-bind its derived fields;
-`replace` builds the same full `TaskDocument` from `fields` (so it shares the `light` refusal and the
-context-aware `kind` default), validates it, refuses a slug/kind change that would move the JSON document
-path, and then rewrites the existing JSON plus rendered markdown;
-the mutating ops load the existing JSON, apply the edit on a `model_dump(by_alias=True)`
-dict, and re-validate. `_build_doc` sends raw create/replace input through the extracted
-`scaffold_register_sections` boundary before model construction. That helper first proves
-`sections` is a list and every member is a mapping, then appends only missing canonical Judgment
-and Priority Register scaffolds for an orchestration master. Wrong container/member shapes fail as
-typed `TaskDocError`s before any partial scaffolding; the `TaskDocument` model and
-`require_register_sections_valid` remain the semantic owners. Every applied edit also passes
-`_enforce_register_section_shapes`: a section carrying a canonical register heading must keep the
-exact register table shape or the write fails with `TaskDocError`. The step plane is split by
-intent and delegates to `task_doc_steps`: `set_step` **updates exactly one existing** unit
-(top-level, or one exact `parent`'s substep) and **never creates** — it used to be an
-unconditional upsert, so a bare substep id minted a top-level step titled after the id and
-reported success (the L30/L31/L32 defect); `add_step` **creates exactly one** and requires
-`{id, title}`, refusing an existing id in its scope; `remove_step` **deletes exactly one** and
-requires a nonblank `step.reason`, appending a decision entry in `skip_step`'s shape; `read_steps`
-is the read-only focused checklist read (`id`/`title`/`status`/`note` plus nested substeps).
-All of them reject a master. `set_subtask` upserts a
-`SubTaskRef` by `number` (master-only); `remove_subtask` (master-only) drops the `SubTaskRef` by
-`number` AND deletes the referenced leaf doc (`<slug>.json` + `.md`) unless `subtask.keep_file`,
-raising when the number is absent; and `set_section` upserts a freeform `Section` by `heading`
-(master, or a leaf — freeform-only, R4). `_validate_task_doc_candidate` runs the terminal-status
-guard last: a `Completed` document admits no new unresolved work, with one deliberate exception —
-`remove_step` carrying a nonblank reason (`_enforce_terminal_status(operation, candidate, edit)`
-reads the reason through `task_doc_steps.step_reason`, the same reader the delete path uses before
-its own refusal). Every op ends in `write_task_doc` and returns a compact
-result (`taskId`, `status`, `lifecycleId`, `docPath`, `renderedPath`,
-`stepsDone`/`stepsTotal`). After any create/update, the application entry point calls
-`master_sync.plan_master_sync`: same-root leaf docs can create/update the parent master row, preserving
-manual `scope`, while cross-series refs and missing masters do not write anything. Real ops pass the
-leaf and changed master to `write_task_docs` so both JSON+markdown pairs are persisted from prepared
-payloads; `dry_run=True` (R5) builds + validates the would-be doc and returns `_preview` (the compact
-result plus `rendered`/`diff`/`wouldLose`, a `difflib` diff vs the on-disk `.md` + a dropped-line flag)
-**without** writing, including a nested `masterSync` preview (`would-create`/`would-update`, rendered
-master markdown, diff, and dropped-line flag) when the master row would change. `TaskDocError` (a
-subclass of `AgentsRememberError`) wraps unknown ops, missing docs, empty edits, wrong-kind ops,
-validation failures, and invalid resolvable parent master docs.
+> **Retained historical source account — superseded by the current contract:**
+> It validates `operation` against `VALID_OPERATIONS`
+> (`create`/`replace`/`set_status`/`set_step`/`add_step`/`remove_step`/`skip_step`/`read_steps`/
+> `set_subtask`/`remove_subtask`/`set_section`/
+> `append_decision`/`begin_review`/`record_review`/`record_route_review`/`author_execution_graph`/
+> `set_field`/`get` — `migrate_execution_topology` was removed in 260815-DAG-L13; a graph-less
+> sprint runs the atomic-sequential default and `author_execution_graph` is the bootstrap seam), then `_resolve()`s the task root + optional contract: a
+> `contract_path` can point at either a root `series-contract.md` or a leaf
+> `enclosures/<leaf-id>/series-contract.md`; otherwise `task_name` is mapped through
+> `worktrees.task_resolver.resolve_active_task_root`, with leaf lookup as the fallback. `get`
+> reads and returns without writing; `create` builds a new `TaskDocument` from `fields`
+> (refusing an explicit `kind="light"` and defaulting an absent `kind` context-awarely — `subTask`
+> under a leaf contract, else `master` — while picking up `seriesContractPath` plus `enclosures[]` from
+> the contract when present; leaf contracts also seed `lifecycleId` for non-masters), refusing to overwrite an existing doc.
+> Since 260913-LCA-L5 `_build_doc`'s `if contract is not None` block is followed by an
+> `elif data.get("kind") != "master"` arm calling `_require_bindable_leaf_authoring(task_root)`
+> (`:619-649`): a leaf document authored under a task root with **no master document at all** is refused
+> with the field names, the exact missing `task.json` path and the remedy, because no operation would ever
+> bind its derived fields;
+> `replace` builds the same full `TaskDocument` from `fields` (so it shares the `light` refusal and the
+> context-aware `kind` default), validates it, refuses a slug/kind change that would move the JSON document
+> path, and then rewrites the existing JSON plus rendered markdown;
+> the mutating ops load the existing JSON, apply the edit on a `model_dump(by_alias=True)`
+> dict, and re-validate. `_build_doc` sends raw create/replace input through the extracted
+> `scaffold_register_sections` boundary before model construction. That helper first proves
+> `sections` is a list and every member is a mapping, then appends only missing canonical Judgment
+> and Priority Register scaffolds for an orchestration master. Wrong container/member shapes fail as
+> typed `TaskDocError`s before any partial scaffolding; the `TaskDocument` model and
+> `require_register_sections_valid` remain the semantic owners. Every applied edit also passes
+> `_enforce_register_section_shapes`: a section carrying a canonical register heading must keep the
+> exact register table shape or the write fails with `TaskDocError`. The step plane is split by
+> intent and delegates to `task_doc_steps`: `set_step` **updates exactly one existing** unit
+> (top-level, or one exact `parent`'s substep) and **never creates** — it used to be an
+> unconditional upsert, so a bare substep id minted a top-level step titled after the id and
+> reported success (the L30/L31/L32 defect); `add_step` **creates exactly one** and requires
+> `{id, title}`, refusing an existing id in its scope; `remove_step` **deletes exactly one** and
+> requires a nonblank `step.reason`, appending a decision entry in `skip_step`'s shape; `read_steps`
+> is the read-only focused checklist read (`id`/`title`/`status`/`note` plus nested substeps).
+> All of them reject a master. `set_subtask` upserts a
+> `SubTaskRef` by `number` (master-only); `remove_subtask` (master-only) drops the `SubTaskRef` by
+> `number` AND deletes the referenced leaf doc (`<slug>.json` + `.md`) unless `subtask.keep_file`,
+> raising when the number is absent; and `set_section` upserts a freeform `Section` by `heading`
+> (master, or a leaf — freeform-only, R4). `_validate_task_doc_candidate` runs the terminal-status
+> guard last: a `Completed` document admits no new unresolved work, with one deliberate exception —
+> `remove_step` carrying a nonblank reason (`_enforce_terminal_status(operation, candidate, edit)`
+> reads the reason through `task_doc_steps.step_reason`, the same reader the delete path uses before
+> its own refusal). Every op ends in `write_task_doc` and returns a compact
+> result (`taskId`, `status`, `lifecycleId`, `docPath`, `renderedPath`,
+> `stepsDone`/`stepsTotal`). After any create/update, the application entry point calls
+> `master_sync.plan_master_sync`: same-root leaf docs can create/update the parent master row, preserving
+> manual `scope`, while cross-series refs and missing masters do not write anything. Real ops pass the
+> leaf and changed master to `write_task_docs` so both JSON+markdown pairs are persisted from prepared
+> payloads; `dry_run=True` (R5) builds + validates the would-be doc and returns `_preview` (the compact
+> result plus `rendered`/`diff`/`wouldLose`, a `difflib` diff vs the on-disk `.md` + a dropped-line flag)
+> **without** writing, including a nested `masterSync` preview (`would-create`/`would-update`, rendered
+> master markdown, diff, and dropped-line flag) when the master row would change. `TaskDocError` (a
+> subclass of `AgentsRememberError`) wraps unknown ops, missing docs, empty edits, wrong-kind ops,
+> validation failures, and invalid resolvable parent master docs.
 
 ### Invariants And Boundaries
 
-- Every mutation re-validates the whole document (`TaskDocument.model_validate`) before
-  writing, so a bad edit fails loudly and the markdown is only ever a render of a valid
-  model.
-- `set_field` may only touch the scalar/flat-list fields in `_MUTABLE_FIELDS` (which includes
-  `codeExamplesNote`, `statusNote`, `seriesContractPath`, `enclosures`, and — since L14 —
-  `orchestrates`, the flat string list that makes an existing master an orchestration task without
-  a `replace`, and — since MIK-R08 — the boolean `knowledgeMaintenanceScope`, and — since MIK-R11 — the
-  `expectedKnowledgeEffects` declaration list; the structured
-  `headerNotes` list is create-set);
-  structural edits go through `create`/`replace`/the step plane (`task_doc_steps`)/`set_subtask`/`set_section`/`append_decision`.
-  The schema validator backstops `orchestrates` as master-only, so `set_field` on a leaf fails loudly.
-- **The step plane is owned by `task_doc_steps.py`, not here.** This module registers the operations,
-  keeps thin `_apply_*` adapters, and owns validation/publication; the one addressing rule
-  (`parent` selects the namespace; zero or multiple matches refuse) and the four step operations live
-  in the sibling module. `set_step` never creates and `add_step` never updates — neither is a
-  fallback for the other — and `remove_step` ("this step should never have existed") is deliberately
-  distinct from `skip_step` ("this planned unit was deliberately not done", which keeps and resolves
-  the unit). Do not document them as interchangeable.
-- **A reasoned `remove_step` is the only terminal-status exception.** A `Completed` document refuses
-  every other mutation that would add unresolved work; a removal with a nonblank reason is admitted
-  because the reason and the appended decision are its audited substitute. The exemption is required
-  rather than merely permitted: the motivating repair targeted an already-`Completed` leaf document,
-  and gating on document status would have forced a full-document `replace` that was correctly
-  refused as too destructive.
-- `replace` is the supported reset/replan path for changing structural arrays such as steps,
-  `codeExamples`, decisions, and sections; it is not a path-move operation.
-- Master vs leaf ops are kind-gated up front: every step operation (`set_step`/`add_step`/
-  `remove_step`/`skip_step`/`read_steps`) rejects a master through the shared
-  `_require_step_payload` guard in `task_doc_steps`, and `set_subtask` rejects a
-  non-master; `set_section` works on both (a leaf gets freeform-only sections — R4 — with the schema
-  validator as the backstop), so a wrong-kind edit fails with a clear `TaskDocError`.
-- Authoring is master/leaf only: `_build_doc` (shared by `create` and `replace`) raises `TaskDocError`
-  on an explicit `kind="light"`, and an absent `kind` defaults context-awarely — `subTask` when
-  resolving against a leaf contract, otherwise `master`. `light` survives in `DocKind`
-  (`tasks/document.py`) only so a legacy light document still loads.
-- **A leaf document is never authored where nothing could bind its derived fields.** Authoring under a
-  task root with no master document is refused by `_require_bindable_leaf_authoring`; the refusal is the
-  fail-closed half of 260913-LCA-L5, and it corrects the earlier claim that leaf authoring succeeds under
-  any task root. The **planning** case is deliberately still allowed — a master document exists but no
-  series contract has been bootstrapped yet — and that allowance is a *guarantee*, not an absent branch:
-  the leaf's first `worktree_start`/`worktree_attach` runs the start binding publisher
-  (`plan_leaf_doc_lifecycle_restamp` / `plan_leaf_doc_enclosure_registration`, see the
-  `tasks/leaf_doc.py` card), which writes both derived fields once the contract exists. The guarantee is
-  asserted in the helper's own docstring precisely so a future reader can tell the two cases apart.
-- No derived field is dropped silently anywhere in `_build_doc`: for every field skipped because no
-  contract resolved, the code either refuses (no master document) or names the operation that will bind it
-  (planning under an existing master). There is no `# noqa`, per-file ignore or `TODO` standing in for
-  either half.
-- `remove_subtask` completes task-doc CRUD (the **D**): master-only, it removes the `SubTaskRef` by
-  `number` and, by default, deletes the leaf doc the row points at (`SubTaskRef.file` → `<slug>.json` +
-  `.md`) — "remove means remove"; `subtask.keep_file` unlinks the index row but leaves the leaf doc on
-  disk. It does not touch the leaf's worktree/enclosure. dry-run reports `wouldDeleteFiles` without
-  writing or deleting; it has its own handler (a file side effect), so it bypasses `plan_master_sync`.
-- **Complete retired rows are protected from generic edits.** `_validate_task_doc_candidate` calls
-  `require_retirement_proofs_unchanged` before its other candidate checks. The guard compares complete retired
-  rows by number, including proof, name, scope, status and file, and refuses additions, changes or removals.
-  The diagnostic instructs the caller to leave the row unchanged. `retire_master` creates the retirement
-  record; repeating its identical request completes remaining work rather than editing the retained proof.
-- A `retire_master` answer carries the document identity of the document it was called on. When a master
-  retired on its own has moved under `0_archive/` by the time it answers, `_sprint_doc_identity` reads the
-  identity from the archive path the result names (`taskArchive.archivePath`) instead of the vanished task root.
-- Resolution is coordination-local: the task root comes from `config.coordination_root`
-  plus active task-name resolution (or an explicit root/leaf `series-contract.md` path).
-- Master sync is an additive leaf-write side effect only when the parent master resolves inside the
-  same task root. It deliberately preserves manually-authored master `scope` and does not follow
-  cross-series master refs.
-- Register scaffolding performs no coercion, catch-and-continue, or partial mutation on malformed
-  raw sections. It validates the raw container and all members first, appends only missing
-  scaffolds, and leaves semantic register validation to the existing model/validator owners.
+> **Retained historical source account — superseded by the current contract:**
+> - Every mutation re-validates the whole document (`TaskDocument.model_validate`) before
+>   writing, so a bad edit fails loudly and the markdown is only ever a render of a valid
+>   model.
+> - `set_field` may only touch the scalar/flat-list fields in `_MUTABLE_FIELDS` (which includes
+>   `codeExamplesNote`, `statusNote`, `seriesContractPath`, `enclosures`, and — since L14 —
+>   `orchestrates`, the flat string list that makes an existing master an orchestration task without
+>   a `replace`, and — since MIK-R08 — the boolean `knowledgeMaintenanceScope`, and — since MIK-R11 — the
+>   `expectedKnowledgeEffects` declaration list; the structured
+>   `headerNotes` list is create-set);
+>   structural edits go through `create`/`replace`/the step plane (`task_doc_steps`)/`set_subtask`/`set_section`/`append_decision`.
+>   The schema validator backstops `orchestrates` as master-only, so `set_field` on a leaf fails loudly.
+> - **The step plane is owned by `task_doc_steps.py`, not here.** This module registers the operations,
+>   keeps thin `_apply_*` adapters, and owns validation/publication; the one addressing rule
+>   (`parent` selects the namespace; zero or multiple matches refuse) and the four step operations live
+>   in the sibling module. `set_step` never creates and `add_step` never updates — neither is a
+>   fallback for the other — and `remove_step` ("this step should never have existed") is deliberately
+>   distinct from `skip_step` ("this planned unit was deliberately not done", which keeps and resolves
+>   the unit). Do not document them as interchangeable.
+> - **A reasoned `remove_step` is the only terminal-status exception.** A `Completed` document refuses
+>   every other mutation that would add unresolved work; a removal with a nonblank reason is admitted
+>   because the reason and the appended decision are its audited substitute. The exemption is required
+>   rather than merely permitted: the motivating repair targeted an already-`Completed` leaf document,
+>   and gating on document status would have forced a full-document `replace` that was correctly
+>   refused as too destructive.
+> - `replace` is the supported reset/replan path for changing structural arrays such as steps,
+>   `codeExamples`, decisions, and sections; it is not a path-move operation.
+> - Master vs leaf ops are kind-gated up front: every step operation (`set_step`/`add_step`/
+>   `remove_step`/`skip_step`/`read_steps`) rejects a master through the shared
+>   `_require_step_payload` guard in `task_doc_steps`, and `set_subtask` rejects a
+>   non-master; `set_section` works on both (a leaf gets freeform-only sections — R4 — with the schema
+>   validator as the backstop), so a wrong-kind edit fails with a clear `TaskDocError`.
+> - Authoring is master/leaf only: `_build_doc` (shared by `create` and `replace`) raises `TaskDocError`
+>   on an explicit `kind="light"`, and an absent `kind` defaults context-awarely — `subTask` when
+>   resolving against a leaf contract, otherwise `master`. `light` survives in `DocKind`
+>   (`tasks/document.py`) only so a legacy light document still loads.
+> - **A leaf document is never authored where nothing could bind its derived fields.** Authoring under a
+>   task root with no master document is refused by `_require_bindable_leaf_authoring`; the refusal is the
+>   fail-closed half of 260913-LCA-L5, and it corrects the earlier claim that leaf authoring succeeds under
+>   any task root. The **planning** case is deliberately still allowed — a master document exists but no
+>   series contract has been bootstrapped yet — and that allowance is a *guarantee*, not an absent branch:
+>   the leaf's first `worktree_start`/`worktree_attach` runs the start binding publisher
+>   (`plan_leaf_doc_lifecycle_restamp` / `plan_leaf_doc_enclosure_registration`, see the
+>   `tasks/leaf_doc.py` card), which writes both derived fields once the contract exists. The guarantee is
+>   asserted in the helper's own docstring precisely so a future reader can tell the two cases apart.
+> - No derived field is dropped silently anywhere in `_build_doc`: for every field skipped because no
+>   contract resolved, the code either refuses (no master document) or names the operation that will bind it
+>   (planning under an existing master). There is no `# noqa`, per-file ignore or `TODO` standing in for
+>   either half.
+> - `remove_subtask` completes task-doc CRUD (the **D**): master-only, it removes the `SubTaskRef` by
+>   `number` and, by default, deletes the leaf doc the row points at (`SubTaskRef.file` → `<slug>.json` +
+>   `.md`) — "remove means remove"; `subtask.keep_file` unlinks the index row but leaves the leaf doc on
+>   disk. It does not touch the leaf's worktree/enclosure. dry-run reports `wouldDeleteFiles` without
+>   writing or deleting; it has its own handler (a file side effect), so it bypasses `plan_master_sync`.
+> - **Complete retired rows are protected from generic edits.** `_validate_task_doc_candidate` calls
+>   `require_retirement_proofs_unchanged` before its other candidate checks. The guard compares complete retired
+>   rows by number, including proof, name, scope, status and file, and refuses additions, changes or removals.
+>   The diagnostic instructs the caller to leave the row unchanged. `retire_master` creates the retirement
+>   record; repeating its identical request completes remaining work rather than editing the retained proof.
+> - A `retire_master` answer carries the document identity of the document it was called on. When a master
+>   retired on its own has moved under `0_archive/` by the time it answers, `_sprint_doc_identity` reads the
+>   identity from the archive path the result names (`taskArchive.archivePath`) instead of the vanished task root.
+> - Resolution is coordination-local: the task root comes from `config.coordination_root`
+>   plus active task-name resolution (or an explicit root/leaf `series-contract.md` path).
+> - Master sync is an additive leaf-write side effect only when the parent master resolves inside the
+>   same task root. It deliberately preserves manually-authored master `scope` and does not follow
+>   cross-series master refs.
+> - Register scaffolding performs no coercion, catch-and-continue, or partial mutation on malformed
+>   raw sections. It validates the raw container and all members first, appends only missing
+>   scaffolds, and leaves semantic register validation to the existing model/validator owners.
 
 ## External grant display and branch review
 
-get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. Branch review needs explicit canonical task_name/slug selection, a live grant and no open direct sibling. Enclosed leaf start/attach continues to bind an enclosure; grant-backed role preparation uses the master series contract without creating one. Strict authoring, publication/CAS, retirement and step ownership remain unchanged.
+> **Retained historical source account — superseded by the current contract:**
+> get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. Branch review needs explicit canonical task_name/slug selection, a live grant and no open direct sibling. Enclosed leaf start/attach continues to bind an enclosure; grant-backed role preparation uses the master series contract without creating one. Strict authoring, publication/CAS, retirement and step ownership remain unchanged.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. [1]
-- The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
-- The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. [3]
-- `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. [4]
-- The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
-- `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
-- Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
-- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. [8]
+- **Retained historical source account — superseded by the current contract:** The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. [1]
+- **Retained historical source account — superseded by the current contract:** The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
+- **Retained historical source account — superseded by the current contract:** The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. [3]
+- **Retained historical source account — superseded by the current contract:** `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. [4]
+- **Retained historical source account — superseded by the current contract:** The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
+- **Retained historical source account — superseded by the current contract:** `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
+- **Retained historical source account — superseded by the current contract:** Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
+- **Retained historical source account — superseded by the current contract:** Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. [8]
 
 - The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
 
@@ -215,36 +225,39 @@ get returns readable directGrant as response-only evidence; TaskDocument and set
 
 ## 260928-MIK-L08 `knowledgeMaintenanceScope` Is Settable
 
-`_MUTABLE_FIELDS` gained `knowledgeMaintenanceScope`, the MIK-R08 task-document field that makes a leaf's
-worklist classify every entry of its memory base. `set_field` can therefore turn it on for an existing
-leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
-not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
+> **Retained historical source account — superseded by the current contract:**
+> `_MUTABLE_FIELDS` gained `knowledgeMaintenanceScope`, the MIK-R08 task-document field that makes a leaf's
+> worklist classify every entry of its memory base. `set_field` can therefore turn it on for an existing
+> leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
+> not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
 
-- The settable flat fields, now including the maintenance-scope flag. [22]
-- The field's `LIFECYCLE` classification. [23]
+- **Retained historical source account — superseded by the current contract:** The settable flat fields, now including the maintenance-scope flag. [22]
+- **Retained historical source account — superseded by the current contract:** The field's `LIFECYCLE` classification. [23]
 
 ## 260928-MIK-L11 `expectedKnowledgeEffects` Is Settable
 
-`_MUTABLE_FIELDS` gained `expectedKnowledgeEffects`, the MIK-R11 declaration of a leaf's expected
-invariant and family effects (MIK-R11 rule 1: written through `task_doc`). `set_field` validates the whole
-document, so a malformed declaration (a repeat, a bad subject form, a label outside the vocabulary, a prose
-`requirementRef`, an empty list, an extra key, or the field on a master) is refused by the model before any
-write; `null` clears it. The field is classified `NORMATIVE`, so setting it changes the leaf's intent digest
-and clearing it restores the former digest. Who may write it (the architect, or the worker with the
-architect's approval) is procedural: `task_doc` has no per-field role gate, and the reviewer checks the
-declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
-(ruling Q2, 2026-09-29T21:56:18+02:00).
+> **Retained historical source account — superseded by the current contract:**
+> `_MUTABLE_FIELDS` gained `expectedKnowledgeEffects`, the MIK-R11 declaration of a leaf's expected
+> invariant and family effects (MIK-R11 rule 1: written through `task_doc`). `set_field` validates the whole
+> document, so a malformed declaration (a repeat, a bad subject form, a label outside the vocabulary, a prose
+> `requirementRef`, an empty list, an extra key, or the field on a master) is refused by the model before any
+> write; `null` clears it. The field is classified `NORMATIVE`, so setting it changes the leaf's intent digest
+> and clearing it restores the former digest. Who may write it (the architect, or the worker with the
+> architect's approval) is procedural: `task_doc` has no per-field role gate, and the reviewer checks the
+> declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
+> (ruling Q2, 2026-09-29T21:56:18+02:00).
 
-- The settable flat fields, now including the declaration. [24]
-- `set_field` sets it, the digest changes, and clearing restores it. [25]
+- **Retained historical source account — superseded by the current contract:** The settable flat fields, now including the declaration. [24]
+- **Retained historical source account — superseded by the current contract:** `set_field` sets it, the digest changes, and clearing restores it. [25]
 
 ## Current Task-First Publication Boundary
 
-This dispatcher prepares candidate task truth and exact accepted-source snapshots, then delegates
-preview/apply to `task_doc_publication.py`. A valid mutation is not subordinate to current queue
-state. The publication transaction validates source bytes, commits the task document batch,
-invalidates every affected waiting projection to an empty state, and independently rebuilds each
-projection from current closeout-door facts. Leaf writes still include any synchronized master row.
+> **Retained historical source account — superseded by the current contract:**
+> This dispatcher prepares candidate task truth and exact accepted-source snapshots, then delegates
+> preview/apply to `task_doc_publication.py`. A valid mutation is not subordinate to current queue
+> state. The publication transaction validates source bytes, commits the task document batch,
+> invalidates every affected waiting projection to an empty state, and independently rebuilds each
+> projection from current closeout-door facts. Leaf writes still include any synchronized master row.
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -262,7 +275,8 @@ lock. Documents without an `executionGraph` render without a title context.
 
 ## 260815-DAG Master Full-Gate Repair
 
-The module moved to `application/task_docs/` (relative imports within the package) and gained `_sprint_doc_identity`, which merges the standard task-doc identity (taskId/slug/kind/status/lifecycleId/docPath/renderedPath/stepsDone/stepsTotal) into the special-op results (sprint linkage ops + `author_execution_graph`) — pairing with the `TaskDocResponse` special-op wire fields in `models/task_doc.py`.
+> **Retained historical source account — superseded by the current contract:**
+> The module moved to `application/task_docs/` (relative imports within the package) and gained `_sprint_doc_identity`, which merges the standard task-doc identity (taskId/slug/kind/status/lifecycleId/docPath/renderedPath/stepsDone/stepsTotal) into the special-op results (sprint linkage ops + `author_execution_graph`) — pairing with the `TaskDocResponse` special-op wire fields in `models/task_doc.py`.
 
 ## Current Contract After CLIVE
 
@@ -312,4 +326,6 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
-- get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. [30]
+- **Retained historical source account — superseded by the current contract:** get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. [30]
+
+- task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. Failed master synchronization is an answered refusal. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields. [31]

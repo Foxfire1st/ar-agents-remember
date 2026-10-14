@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Four preview callsites and their imports use the corrected preview driver under the architect ruling. No count-key repair or assertion subtraction is included. The two reported pristine-tip count-key parity failures remain architect-qualified and assigned to L113; this source repair is not full-suite green.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Checks grant-inert enclosed leaf/master lifecycle answers in a source-bound baseline world and current pristine/unrelated-grant worlds; distinguishes raw current/grant parity from the conversion-adjusted comparison with the world of before.
 
 ## Contract
@@ -24,3 +30,6 @@ Uses the existing `QueueFixture` and public closeout/integration services for cu
 
 - Three source-bound worlds retain separate raw current/grant equality before conversion take-out and subsequent baseline comparisons; this is comparison structure, not a whole-test PASS [1]
 - Conversion marker provenance, at-most-one matching ledger row, attached counts, pass-gate and leaf bare-count take-out are test-only baseline comparison scaffolding [2]
+
+- Four preview callsites and their imports use the corrected preview driver under the architect ruling. No count-key repair or assertion subtraction is included. The two reported pristine-tip count-key parity failures remain architect-qualified and assigned to L113; this source repair is not full-suite green. [3]
+

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_removed_operations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper uses best-effort identity with caught fallback and refuses removed operations in both branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7fc3e9b859df32cc113ccbcc2fea21f266fa564",
+            "content": "sha256:3c2185d824ca1340ecfe24230cd0fbb0445038578ee5c99e6a9ac93f0bbdcf67",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_read_operation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

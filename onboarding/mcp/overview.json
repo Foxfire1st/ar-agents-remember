@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b113b803fdcdd070e4588831486387e6917974e",
+            "blob": "51b36507eadab66b0c06411c48b222e8fe69ca9c",
             "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
             "locator": {
               "end": 18,
@@ -1202,12 +1202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 260,
+              "end": 264,
               "kind": "line_range",
-              "start": 260
+              "start": 264
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1484,7 +1484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a19633d724e6ec9bd3808f7b685a5c62eae11040",
+            "blob": "7ff293540604ee769a7f545fdcb04d064dc22ca5",
             "content": "sha256:762bedcfa33c21a7d3ab12f1388230b4f7a87d636294ad507755d89baebcecf7",
             "locator": {
               "kind": "symbol",
@@ -2200,7 +2200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
               "end": 123,
@@ -2213,7 +2213,7 @@
         },
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
               "end": 140,
@@ -2439,7 +2439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15e331df10fd1a93a23a715fc24f437840b3f4f0",
+            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
             "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
             "locator": {
               "kind": "symbol",
@@ -2985,7 +2985,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
               "end": 176,
@@ -3291,7 +3291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:ae899856cf647c28b4c8448e2d8eca379ccb6dbcb50c9eb5d0ac887b6764c4a3",
             "locator": {
               "kind": "symbol",
@@ -3321,7 +3321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -3333,12 +3333,12 @@
         },
         {
           "anchor": {
-            "blob": "d5a38f9a120a12411506b1466c0551cff1ec2aa4",
+            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
             "content": "sha256:a3dfff9a80ab61dac7ec8d6e71c9b8dcc5b75fc736832cd9dd532921a2a28ced",
             "locator": {
-              "end": 455,
+              "end": 493,
               "kind": "line_range",
-              "start": 426
+              "start": 464
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -3363,12 +3363,12 @@
         },
         {
           "anchor": {
-            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:1bda677913ca655ca47640df5d6c12f48f6c63799a00674f5b3001f802c02427",
             "locator": {
-              "end": 797,
+              "end": 847,
               "kind": "line_range",
-              "start": 787
+              "start": 837
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -3491,12 +3491,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13c10af5d7f721f31e207b1a3e5d95ae098bd267",
+            "blob": "d529b27e3f44b0db56864e215c949bad61dc61cb",
             "content": "sha256:6e77f12e0543c46c775700024cbb7d40d6cd0499bf89fe2e18a912063d726639",
             "locator": {
-              "end": 813,
+              "end": 835,
               "kind": "line_range",
-              "start": 800
+              "start": 822
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -3898,17 +3898,77 @@
         }
       ]
     },
+    "316": {
+      "note": "Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current source roster has42 names; the earlier41-name population is historical. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "content": "sha256:ccc887406edd9c0802533977d85f3af82aeb53bbd3a6bacf9a26ff53e1123c46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
+            "content": "sha256:bd94801866b98c0f4c6272743ab8679f4d77c5ae77fa16c57c63e8d67916f368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "content": "sha256:9b47d6e52794dccc01bb27cf4e27c8856ef938f3a5d2e6642f99d280fac9bdbc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The lane row.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 363,
+              "end": 370,
               "kind": "line_range",
-              "start": 363
+              "start": 370
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3989,12 +4049,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
             "locator": {
-              "end": 281,
+              "end": 285,
               "kind": "line_range",
-              "start": 281
+              "start": 285
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4002,12 +4062,12 @@
         },
         {
           "anchor": {
-            "blob": "3ea2cb453f9dc92c90df62033648e904511b6759",
+            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
             "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 267,
+              "end": 271,
               "kind": "line_range",
-              "start": 267
+              "start": 271
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

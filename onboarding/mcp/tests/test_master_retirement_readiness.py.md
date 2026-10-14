@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Retirement readiness and the named remedies for its refusals. Readiness refuses open work of the master's leaves and an unfinished or unreadable operation of the master's own enclosure. The operation-record and real paired-enclosure controls carry out the named action and repeat retirement; the locator-lookup refusal checks the manual worktree-removal command without executing it.
 
 ## Code Commentary
@@ -37,3 +43,5 @@ cases decide whether the directory or unlanded branch actually exists.
 - A failed locator lookup checks the manual command text without executing it. [4]
 
 - Derived leaves keep explicit memory cells and fill missing external-memory worktree and ledger paths. [5]
+
+- Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain. [6]

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/tests/test_paseo_role_answers_l111.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "106a292fc7ef655cb72f6b7be318622b8d4acf5f",
+        "content": "sha256:e9fb6f2b7432650bdaff536d9da57eeefcd27746cc7b11801a549a28ed7acae5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleWaitPrefixTests"
+        }
+      },
+      "id": "RLZ-PCJBB2",
+      "invariant": "INV-ZZQXZ3",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.15 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This class pins beginning-preserving cuts and the late-attachment refit, so a lost reply head would fail exactly here.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The held permission fixture checks delivered facts through the adapter and reads back the issued id.\n\nAnchor: `RoleMessageAnswerTests.test_held_answers_keep_their_hold_facts_through_delivery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c05ba81affd4398cd61fdba012940b15a53146",
+            "content": "sha256:ed2c24816699bb9a51ea4b33e8b0dbf66bcc20ace1d2fc7f6edb1954cdf181f6",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Role addressing preserves recipient identity and host-cancellation warning.\n\nAnchor: `RoleMessageAnswerTests.test_role_addressed_answer_names_the_recipient_and_a_cancelled_turn_warns`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c05ba81affd4398cd61fdba012940b15a53146",
+            "content": "sha256:483c522993b355c50e19fc2d45f2a00c1619be4c3b13921829b7332cce86ceb1",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The waited-reply fixture retains a bounded prefix and the whole reply in detail.\n\nAnchor: `RoleWaitPrefixTests.test_long_wait_reply_keeps_its_beginning_within_bound`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c05ba81affd4398cd61fdba012940b15a53146",
+            "content": "sha256:b73380c337276694be99c9ca524a2751c7d89dd33ca531abbd30c3508bb22a08",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

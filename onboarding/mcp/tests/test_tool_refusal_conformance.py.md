@@ -2,10 +2,16 @@
 
 ## Current operative account — MIK-R112
 
+The composed source declares four shapes, eleven bare-raiser pins, four always-answer pins and seventeen test definitions. These are independently parsed source declarations; prior twelve-raiser/five-always-answer captions below remain historical, not fresh executed measurements.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current declarations have four shapes, twelve bare-raiser pins, four always-answer pins and seventeen test definitions. STATEFUL_REFUSALS names knowledge_read, knowledge_diff, knowledge_integrity_check and read_ar_files; the last is driven with the removed object-entry form, not with a missing-path naming success. resolve_context is removed and worktree_enclosure_adopt is a bare-raiser pin for the outside-contract invocation. These are source counts and pins, not a freshly executed census.
+- Retained L109 incoming pre-R111 declaration account (historical, not the composed census): four shapes, twelve bare-raiser pins, four always-answer pins and seventeen test definitions. STATEFUL_REFUSALS names knowledge_read, knowledge_diff, knowledge_integrity_check and read_ar_files; the last is driven with the removed object-entry form, not with a missing-path naming success. resolve_context is removed and worktree_enclosure_adopt is a bare-raiser pin for the outside-contract invocation. These are source counts and pins, not a freshly executed census.
 - Navigation oracle distinguishes available artifact, missing echo and no declared path.
+
+> **Retained historical source account — superseded by the current contract:**
+> - Current source has four shapes, 12 bare raisers, five always-answer pins and 17 test definitions.
+> - Navigation oracle distinguishes available artifact, missing echo and no declared path.
 
 ### Superseded inventory
 
@@ -17,9 +23,10 @@ The stateful axis asserts returned state=refused with nonempty refusalCode/refus
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:153-226`.
-- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:248-389`.
-- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:456-514,620-684`.
+> **Retained historical source account — superseded by the current contract:**
+> - Source comparison: `mcp/tests/test_tool_refusal_conformance.py:153-226`.
+> - Source comparison: `mcp/tests/test_tool_refusal_conformance.py:248-389`.
+> - Source comparison: `mcp/tests/test_tool_refusal_conformance.py:456-514,620-684`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -39,6 +46,12 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Only the repaired enclosure_adopt bare-raiser exclusion is removed. The declared bare-raiser set now has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Every public tool's **failure** path, driven through its production entry point. L5's
 `test_tool_entry_point_sweep.py` sweeps the same surface with a *benign* argument set and can
 therefore only see half of it; this module drives the other half — the one where a seat actually
@@ -52,6 +65,10 @@ one the leaf measured on the live adapter: **67 tools = 32 refusals + 18 pinned 
 repair where it is observable — at the entry point, through the real MCP adapter.
 
 ## Code Commentary
+
+### Current Contract
+
+The composed BARE_RAISERS declaration has eleven entries after task_doc's same-change repair. Four response shapes, four always-answer pins and seventeen test definitions remain; the earlier five-always-answer account is historical. Earlier larger-tool/raiser captions are historical; current source pins and fixture assertions are not a fresh live advertisement or execution census.
 
 ### 260921-ICR-L32 The Write Plane Must Be Named By Both Its Entry Points
 
@@ -167,3 +184,8 @@ claimed by this census.
 No repository or external-system boundary is proved by this module.
 
 </details>
+
+- The composed BARE_RAISERS declaration has eleven entries after task_doc's same-change repair. Four response shapes, four always-answer pins and seventeen test definitions remain; the earlier five-always-answer account is historical. Earlier larger-tool/raiser captions are historical; current source pins and fixture assertions are not a fresh live advertisement or execution census. [17]
+
+- Only the repaired enclosure_adopt bare-raiser exclusion is removed. The declared bare-raiser set now has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution. [18]
+

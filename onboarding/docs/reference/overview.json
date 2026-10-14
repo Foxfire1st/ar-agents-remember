@@ -35,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a248f8962fa6fda00bdfb8526233512bca0d21b7",
+            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
             "content": "sha256:db2e5557cc428798a0a83e5f4d6a5a7b97ce6b56fc98780eac1d5e6b49eb4cc8",
             "locator": {
-              "end": 156,
+              "end": 159,
               "kind": "line_range",
-              "start": 119
+              "start": 122
             },
             "path": "mcp/src/agents_remember/models/memory.py"
           },
@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
-              "end": 619,
+              "end": 631,
               "kind": "line_range",
-              "start": 551
+              "start": 563
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:5341d23a5b03cdaf667bbe234478e3c94a2691baa313b75ef28be5ff47e59ab9",
             "locator": {
-              "end": 665,
+              "end": 677,
               "kind": "line_range",
-              "start": 650
+              "start": 662
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:f3a2d7cb0f2350a087df56ee847ea235331e3f4bf708dd240131a2cc4c3d6e63",
             "locator": {
-              "end": 737,
+              "end": 749,
               "kind": "line_range",
-              "start": 702
+              "start": 714
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -381,14 +381,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
             "content": "sha256:2f093f149dc575866c1c537784e7d40f4b7fa935ba02f78aaf5b729f3a2afbbe",
             "locator": {
-              "end": 417,
+              "end": 457,
               "kind": "line_range",
-              "start": 377
+              "start": 417
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Current literal roster:41 names after resolve_context removal, including direct_execution_grant, retire_child and role_start_set; source count is not executed/live advertisement. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current literal roster has42 public names, including direct_execution_grant as well as native retire_child and role_start_set; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "content": "sha256:ccc887406edd9c0802533977d85f3af82aeb53bbd3a6bacf9a26ff53e1123c46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
         }

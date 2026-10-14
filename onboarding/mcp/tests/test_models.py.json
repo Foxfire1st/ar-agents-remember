@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -47,6 +47,21 @@
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9b404f047b5827e4efbeac17d9028c2f67fc004",
+            "content": "sha256:521acdbb2d91e077cca4412ef12b25cc72a3f627badae1c27a404721f1170ccb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

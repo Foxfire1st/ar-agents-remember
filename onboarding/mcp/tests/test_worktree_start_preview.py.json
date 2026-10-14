@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
         "locator": {
           "kind": "symbol",
@@ -37,25 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-        "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
-        }
-      },
-      "facet": "Repeated memory-disabled/external first-leaf public previews preserve the complete startup/Git/content/index state without prepublishing a parent.",
-      "id": "PRF-2W13PT",
-      "invariant": "INV-EX6T0F",
-      "origin": {
-        "handoffEntry": "MIK-R47@v1-preview-authority",
-        "leaf": "260928-MIK-L47"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-        "content": "sha256:0d90764695b5032a1d7278a61ef654296e8a001ea22357e567d6e348fad7b2a5",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+        "content": "sha256:3bf811586700629c2ae24de72b0d3ae46021022e4fae3023c5e48fbabf7a40ab",
         "locator": {
           "kind": "symbol",
           "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
@@ -71,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+        }
+      },
+      "facet": "Repeated admitted external-memory first-leaf previews carry the same owner-validated parent and bases, preserve startup/Git state except the separately checked daily call-log and completed-call river records, and publish no parent.",
+      "id": "PRF-3BA4YQ",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "L111-external-preview-facet-correction",
+        "leaf": "260928-MIK-L111"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
         "locator": {
           "kind": "symbol",
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-        "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+        "content": "sha256:bd88ae17f239e405f1886b308af909fe2e7a42d92c4c60e95759ab86575cefb0",
         "locator": {
           "kind": "symbol",
           "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
         "locator": {
           "kind": "symbol",
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:137e5cb0ffae92ce39e71a2fcea84feb24c878932b9bcdf6b8d60a4b4137f262",
         "locator": {
           "kind": "symbol",
@@ -207,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-        "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
         "locator": {
           "kind": "symbol",
           "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
@@ -224,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
         "locator": {
           "kind": "symbol",
@@ -241,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
         "locator": {
           "kind": "symbol",
@@ -260,7 +260,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
+        "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
         "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
         "locator": {
           "kind": "symbol",

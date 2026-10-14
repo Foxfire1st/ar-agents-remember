@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:b61da9d6eda573fbd5100bb19f4708ea5534f3c5a374f540ce3cc7cf6f9b0d67",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:b71d1bb12180b822420f827acd2350e1bd839ad85a5622c6fec4536d0af43d88",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
             "locator": {
               "kind": "symbol",
@@ -100,12 +100,12 @@
         },
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
             "content": "sha256:0aa1777f692d1221d9ff36fe608a862949d251aabdc2c03151ced2180003e929",
             "locator": {
-              "end": 269,
+              "end": 274,
               "kind": "line_range",
-              "start": 254
+              "start": 259
             }
           },
           "kind": "code"
@@ -117,13 +117,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
             "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
             "locator": {
               "kind": "symbol",
               "name": "RouteReviewRecord"
             },
             "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
+            "content": "sha256:7d0675ce4e26e43ac3461f9d85d560068cf7a9ffc9652ad55f7a1a07ce70ccd8",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

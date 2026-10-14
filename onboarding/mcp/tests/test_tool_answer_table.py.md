@@ -10,9 +10,14 @@
 
 ## Purpose
 
-The rule-6 contract table population for MIK-R108: one row per registered tool and per `task_doc` operation (fields with caller uses, ordinary/largest cases, bounds, interim ownership), and the row gate. The frozen source still includes `ToolAnswerGuardTests` and `ToolAnswerLogTests`; separate guard/log modules coexist with these table-local classes rather than replacing them.
+> **Retained historical source account — superseded by the current contract:**
+> The rule-6 contract table population for MIK-R108: one row per registered tool and per `task_doc` operation (fields with caller uses, ordinary/largest cases, bounds, interim ownership), and the row gate. The frozen source still includes `ToolAnswerGuardTests` and `ToolAnswerLogTests`; separate guard/log modules coexist with these table-local classes rather than replacing them.
 
 ## Code Commentary
+
+### Current Contract
+
+The assembled table applies final L111 shaped rows over its scaffold; no built row names L111, and direct_execution_grant is final. L100 interim ownership remains; L109 now has four final shaped rows and no assembled L109 interim owner. The earlier L109 interim wording is historical, not current policy. ToolAnswerRow's actual definition is in tool_answer_l111_test_support; the table imports it. Task operation rows follow VALID_OPERATIONS without successful get/read_steps rows. Authored illustrations and largest-case labels are not observed universal maxima or live acceptance.
 
 ### Logic
 
@@ -32,23 +37,37 @@ These fixture-largest labels do not establish the mathematically largest legal r
 
 ### Invariants And Boundaries
 
-- The table is the contract L109–L112 build their per-tool answers against; a registered tool without a row fails.
-- `AUTHORED_INTERIM_OWNERS` explicitly includes `retire_child` and `role_start_set`
-  under L100, matching the product's interim owner declarations. The builder creates
-  only declared rows; the roster gate still rejects any registered tool without one.
-  Native `retire_child` is no longer asserted to be a removed tool.
-- Interim rows (bound4000, no fields) name their explicit current owner; L100 and L111 remain. L109 has four final shaped rows and tests excluding L109 from authored, built and production interim ownership. L110 and L112 retain their final rows. A leaf does not land while a row names it.
+> Retained L109 incoming table-owner account; the R111 final row account supersedes only its L111 interim caption:
+> - The table is the contract L109–L112 build their per-tool answers against; a registered tool without a row fails.
+> - `AUTHORED_INTERIM_OWNERS` explicitly includes `retire_child` and `role_start_set`
+>   under L100, matching the product's interim owner declarations. The builder creates
+>   only declared rows; the roster gate still rejects any registered tool without one.
+>   Native `retire_child` is no longer asserted to be a removed tool.
+> - Interim rows (bound4000, no fields) name their explicit current owner; L100 and L111 remain. L109 has four final shaped rows and tests excluding L109 from authored, built and production interim ownership. L110 and L112 retain their final rows. A leaf does not land while a row names it.
+
+> **Retained historical source account — superseded by the current contract:**
+> - The table is the contract L109–L112 build their per-tool answers against; a registered tool without a row fails.
+> - `AUTHORED_INTERIM_OWNERS` explicitly includes `retire_child` and `role_start_set`
+>   under L100, matching the product's interim owner declarations. The builder creates
+>   only declared rows; the roster gate still rejects any registered tool without one.
+>   Native `retire_child` is no longer asserted to be a removed tool.
+> - Interim rows (bound4000, no fields) name their explicit current owner; L100 joins
+>   the retained L109/L111 interim populations. L110's ten retained tools and L112's
+>   retained tools keep their final rows. A leaf does not land while a row names it.
 
 The table-local log witnesses retain ordinary-path preservation within the 200-character domain and exact length/digest shortening beyond it. Runtime-install row fixtures use the user-settings location and normalize its XDG prefix for their authored case dimensions; these fixture values are not production settings writes or a changed token ceiling.
 
 ## Grant answer row scope
 
-The added direct_execution_grant row belongs to the interim answer contract; its map/roster assertions are structural evidence, not L94 completion or full-final answer acceptance. Retained final-row exceptions and historical counts remain attributed.
+> **Retained historical source account — superseded by the current contract:**
+> The added direct_execution_grant row belongs to the interim answer contract; its map/roster assertions are structural evidence, not L94 completion or full-final answer acceptance. Retained final-row exceptions and historical counts remain attributed.
 
 ## Evidence
 
-- Each row carries fields, uses, cases, bound and interim ownership. [1]
-- Rows are validated against missing uses, extra fields and over-bound cases. [2]
+- **Retained historical source account — superseded by the current contract:** Each row carries fields, uses, cases, bound and interim ownership. [1]
+- **Retained historical source account — superseded by the current contract:** Rows are validated against missing uses, extra fields and over-bound cases. [2]
 
 - An explicitly over-long log path becomes its exact length and digest. [3]
 - Authored install-case dimensions normalize the current user-settings XDG prefix. [4]
+
+- The assembled table applies final L111 shaped rows over its scaffold; no built row names L111, and direct_execution_grant is final. L100 interim ownership remains; L109 now has four final shaped rows and no assembled L109 interim owner. The earlier L109 interim wording is historical, not current policy. ToolAnswerRow's actual definition is in tool_answer_l111_test_support; the table imports it. Task operation rows follow VALID_OPERATIONS without successful get/read_steps rows. Authored illustrations and largest-case labels are not observed universal maxima or live acceptance. [5]

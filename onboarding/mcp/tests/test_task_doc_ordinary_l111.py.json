@@ -1,0 +1,113 @@
+{
+  "path": "mcp/tests/test_task_doc_ordinary_l111.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+        "content": "sha256:5ad843bc4b4ed9f2dff420ca46bbe1030730a94f2b2fd64afc91ea7a1684648b",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocPhraseTests"
+        }
+      },
+      "id": "RLZ-KRKRV9",
+      "invariant": "INV-G2A0YM",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.10 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This class pins value-carrying phrases per operation, so a phrase that omits the new value would fail exactly here.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+        "content": "sha256:0c03cc75b825635daee440f64a1af5c5fcf0f5fbc57bbc635bf316414983de98",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocByFileTests"
+        }
+      },
+      "id": "RLZ-RHFY0K",
+      "invariant": "INV-MJB028",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.8 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This class pins digest-carrying by-file writes on both transports, so a lost input hash would fail exactly here.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "71dbb3f49f4fe25dd453868ddb896fa307b1d4e5",
+        "content": "sha256:afca8cc7973cb24d65d5a54bd1d4a2cb129bc4044ec0db400c71ff8316870ab7",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafBindingRecoveryTests"
+        }
+      },
+      "id": "RLZ-Y8QB0A",
+      "invariant": "INV-VGQTBR",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.12 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This class pins exact-leaf recovery and file-repair-over-master-replace, so a wrong recovery address would fail exactly here.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The create fixture measures its ordinary answer and independent whole result.\n\nAnchor: `TaskDocLiveOrdinaryTests.test_create_meets_location_separated_target_counts_distinct_locations_and_holds_whole_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9810667b4f44b97baaa774ad204ef8f91e2da0da",
+            "content": "sha256:207d6422925d39170ea0d8c6aae1963238a875ffc74a07871d7c480eac00f2fc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Corrupt task content still produces the removed-operation refusal.\n\nAnchor: `TaskDocRemovedReadTests.test_removed_read_on_corrupt_document_refuses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9810667b4f44b97baaa774ad204ef8f91e2da0da",
+            "content": "sha256:29cd349507ffae5167716d523cc559d0842b16c6d4e6f586837297cca0a7b970",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 386
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A separate full diff report can survive loss of the investigation detail.\n\nAnchor: `AttachDetachDryTests.test_diff_report_survives_a_lost_detail_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9810667b4f44b97baaa774ad204ef8f91e2da0da",
+            "content": "sha256:9949afc4255476427cf52145fa4bab1f4c419e8df26e5756ac32f57f914918b4",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 641
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -47,6 +47,36 @@
           "kind": "test"
         }
       ]
+    },
+    "4": {
+      "note": "The _whole boundary helper distinguishes a raw retirement application result from a projected answer. Raw taskArchive-bearing retirement facts stay direct; projected answers require their retained log. Removed get controls, linkage reportPath, empty topology and reattachment assertions keep their separate surfaces. Earlier carrier account retained literally as historical: Pre/post-retirement get controls assert operation-removed rather than a successful sprint read. Linkage facts come from linkage_report's reportPath; rich retirement/projection state is read through _whole from the retained log. Empty-sprint topology, no impossible next action and reattachment assertions remain distinct from their bounded delivery carriers.\n\nAnchor: Current whole-result carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ef49236daa150822614b10a9f3270eb5c3b92d",
+            "content": "sha256:ab5235c8002f534c898644c64460e9ec99950e00eb4df44c71760b4b53445600",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The _whole boundary helper distinguishes a raw retirement application result from a projected answer. Raw taskArchive-bearing retirement facts stay direct; projected answers require their retained log. Removed get controls, linkage reportPath, empty topology and reattachment assertions keep their separate surfaces.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ef49236daa150822614b10a9f3270eb5c3b92d",
+            "content": "sha256:ab5235c8002f534c898644c64460e9ec99950e00eb4df44c71760b4b53445600",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

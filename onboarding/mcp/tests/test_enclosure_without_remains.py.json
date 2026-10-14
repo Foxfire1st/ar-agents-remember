@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
+        "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
         "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
         "locator": {
           "kind": "symbol",
@@ -128,6 +128,21 @@
           "anchor": {
             "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
             "content": "sha256:ee8b4bdb44e163fb75c9784b7b41f98debdf07db7bda304a5954b59c439ab7a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
+            "content": "sha256:97bde096e591af18159844ee6c9ac395ae9feb7e2b4640807d0772f92a353065",
             "locator": {
               "kind": "file"
             }

@@ -6,6 +6,8 @@ This directory owns the shared runtime configuration, checkout coordination isol
 
 ## Hot Path Summary
 
+Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.
+
 `runtime_config.py` supplies the trusted runtime configuration record and parser. Its Paseo authority property reads the shared host settings on each use; a folder does not establish runtime readiness or model availability. `checkout_coordination.py` selects the loaded checkout's write boundary before runtime configuration reads. Gate policy defaults to human decisions, inbox backoff supplies redelivery timing, and memory-cap planning remains an explicit opt-in.
 
 Repository configuration carries an optional certification-profile reference. This parser validates its path spelling; profile loading and execution belong to downstream certification owners. Native role launch and replay likewise belong downstream: the CLI launch owner carries task/workspace identity and the stored launch call, while its catalog owner validates model, effort and service-tier selections.
@@ -14,7 +16,8 @@ Repository configuration carries an optional certification-profile reference. Th
 
 directExecutionEnabled is ignored for every value and warned when trusted settings contain it; it creates no runtime field. Current direct-leaf grant authority belongs to the external addressed store and product mutation owners, not primitives settings or harness restarts. Other configured authority/provider/host semantics are unchanged.
 
-The runtime record and parser live in kernel so consumers can share configuration without importing the MCP package. The record separates repository and provider scopes, gate policy, dashboard settings, degradation settings, retirement settings and tool-log settings. The Paseo runtime is read through the shared authority reader rather than stored as a boot snapshot.
+> **Retained historical source account — superseded by the current route account:**
+> The runtime record and parser live in kernel so consumers can share configuration without importing the MCP package. The record separates repository and provider scopes, gate policy, dashboard settings, degradation settings, retirement settings and tool-log settings. The Paseo runtime is read through the shared authority reader rather than stored as a boot snapshot.
 
 The host primitives comprise the packaged host/Node contract, release-owned Node paths, the installation-wide shared authority reader, the session-environment filter, and the strict Paseo settings parser. Node path selection requires Linux x86_64 with `/proc`. A configured Paseo block requires `installPrefix`, `home`, `listen`, `providers` and `embed`; `version` is optional and does not select a build. The shared reader uses the user's settings location and reads it per use. The environment filter removes named session variables plus the `PASEO_` and `AR_SPAWN_` prefixes, while retaining unrelated login/configuration variables.
 
@@ -147,3 +150,5 @@ None.
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
 - Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections. [17]
 - Profile loading and certification execution remain downstream consumers of the configured profile reference. [18]
+
+- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools. [19]

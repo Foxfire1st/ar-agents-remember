@@ -156,6 +156,36 @@
         }
       ]
     },
+    "11": {
+      "note": "World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls. Earlier carrier account retained literally as historical: World.retire retains its raw task_doc_tool seam. New _whole(answer[log]) consumers obtain rich readiness/preview/state/graph/retry facts from the retained record, not directly from every delivered mapping. These source-defined carriers are not a whole live server/session qualification. Existing retirement identity, protection and rollback assertions remain.\n\nAnchor: Current whole-result carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:27b2a44c65b844b37b530a7ea1e68a6ec5884c56a70acc40303a1ff6f1c7e430",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "World.retire calls raw task_doc_tool and its retirement assertions consume that whole application result directly. The obsolete _whole(answer[log]) wrapper is removed from these raw callsites. Existing readiness, preview, state, graph, identity, retry and rollback assertions remain separate from registered compact-answer controls.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
+            "content": "sha256:27b2a44c65b844b37b530a7ea1e68a6ec5884c56a70acc40303a1ff6f1c7e430",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "A failed move restores the sprint's source pair and the folder.",
       "targets": [

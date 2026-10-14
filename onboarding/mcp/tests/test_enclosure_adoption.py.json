@@ -32,6 +32,21 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "Existing _adopt_tool application controls remain. Registered adapter details such as the adoption artifact use the retained log. Identity, receipt, no-write and move comparisons remain intact; no second mutator is called merely to obtain whole facts.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f89d833442627c4b8e63cb92ca236ca28230551",
+            "content": "sha256:a9f1defbbe26152f6222a5c23ee99da730abb52f4efa57dd25e4e92744014d75",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c93324eb724998150f14d5d107f03ca73e2e9571",
-        "content": "sha256:5b7409a26dbf4008105fd75138a049a2c938e233dad804f13da7bc55dcf09d4d",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_legacy_pre_limit_get_adds_approved_extra_rounds"
-        }
-      },
-      "facet": "Legacy get returns effective settings plus approved extra rounds and the retained developerApproval words; this test asserts returned values only and captures/asserts no before/after stored-document bytes.",
-      "id": "PRF-APP5PQ",
-      "invariant": "INV-7HBKZR",
-      "origin": {
-        "handoffEntry": "L116-W3-effective-limit-answers",
-        "leaf": "260928-MIK-L116"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c93324eb724998150f14d5d107f03ca73e2e9571",
+        "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
         "content": "sha256:c49575f1730f7919a50d0984595d0396775d6ca69a5c56328e0969c54d97f35b",
         "locator": {
           "kind": "symbol",
@@ -43,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:e56585c767773429b0ffa2ba91fbaa39f5a0883d9f0eb4b7944b745ca98beeda",
             "locator": {
               "kind": "symbol",
@@ -54,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
@@ -65,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:651e659356b8f8924020e5693b932196883c09f61694d4f0a43e0c0821987753",
             "locator": {
               "kind": "symbol",
@@ -81,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:3654fea8aca304c5ce8c2165352701935bb27115804e9d27b5cbbb78aed7b315",
             "locator": {
               "kind": "symbol",
@@ -97,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:f31064f916dbdb3aa8348b2e6d65dc722502239b0b12d9a0d642b647006caf13",
             "locator": {
               "kind": "symbol",
@@ -113,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:6b1394fcd62e707c7c397c6b8a4e439ab26b64307149a072bcfe645d596e8dd9",
             "locator": {
               "kind": "symbol",
@@ -145,11 +128,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
               "name": "_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
+            "content": "sha256:4f9ae3a9ad729c09893d23f037fbe5ff8c7feece1591a3f4470a6ff16d46d98b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

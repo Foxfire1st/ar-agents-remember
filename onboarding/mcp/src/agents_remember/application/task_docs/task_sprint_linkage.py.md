@@ -6,17 +6,22 @@
 
 ## Purpose
 
-Own the sprint↔master linkage contract (260815-DAG-L14): one atomic `attach_master` /
-symmetric `detach_master` operation pair, the read-only `linkage_report` drift surface, and the
-dispatch of `retire_master`, the explicit operation that removes a master from its sprint and archives it
-(its implementation lives in `task_master_retirement.py`).
-`attach_master` supersedes the three-write manual flow (`set_subtask` + `set_field
-orchestrates` + `author_execution_graph add_node`) that produced the M16/rc7 drift, and
-`task_doc.get` on a sprint carries the same linkage facts as `linkage_report` (L14-R5).
-Registered as a reviewed task-document writer in `mcp/registration/tasks.py` and gated as a
-task-document-writer authority in `code_quality/single_owner.py`.
+> **Retained historical source account — superseded by the current contract:**
+> Own the sprint↔master linkage contract (260815-DAG-L14): one atomic `attach_master` /
+> symmetric `detach_master` operation pair, the read-only `linkage_report` drift surface, and the
+> dispatch of `retire_master`, the explicit operation that removes a master from its sprint and archives it
+> (its implementation lives in `task_master_retirement.py`).
+> `attach_master` supersedes the three-write manual flow (`set_subtask` + `set_field
+> orchestrates` + `author_execution_graph add_node`) that produced the M16/rc7 drift, and
+> `task_doc.get` on a sprint carries the same linkage facts as `linkage_report` (L14-R5).
+> Registered as a reviewed task-document writer in `mcp/registration/tasks.py` and gated as a
+> task-document-writer authority in `code_quality/single_owner.py`.
 
 ## Code Commentary
+
+### Current Contract
+
+linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps.
 
 ### Logic
 
@@ -63,18 +68,19 @@ disk as historical records (L14-R3). `retire_master` dispatches to the retiremen
 removes the required edges, calls `_detached_data`, installs the retirement row and validates before publication,
 archival and cleanup. Ordinary `detach_master` continues to use `_detach_candidate`.
 
-`linkage_report` / `linkage_facts_for_get` compute `collect_linkage_facts` — read-only and never
-raising. Facts are exception-guarded (`sprint-scan-failed` fallback) and classify legacy and
-inconsistent shapes without hard errors (L14-R7): `orchestrates-entry-unresolved`,
-`seat-doc-row` (legacy rows correlated through the seat doc's references via `_correlate_seat_row`),
-`row-without-membership`, `membership-without-row`, `slug-only-membership`, and
-`uncommanded-master` (a master named in the sprint's decisions but never commanded — the
-260812_mcp-rc7-release and 260815_ias-memory-ledger-reconciliation witnesses). Since 260815-DAG-L15
-(F8) the uncommanded-master scan excludes sprints themselves (orchestrates-bearing docs — a sprint
-named in another sprint's decisions is not an uncommanded master), and a seat-doc row whose master
-correlation fails (seat doc absent, or present with no `../<master>/task.json` reference) reports
-`seat-doc-row-unresolved` instead of a master-less `seat-doc-row`, so a paired
-`membership-without-row` reads as a correlation miss, not a genuinely missing row.
+> **Retained historical source account — superseded by the current contract:**
+> `linkage_report` / `linkage_facts_for_get` compute `collect_linkage_facts` — read-only and never
+> raising. Facts are exception-guarded (`sprint-scan-failed` fallback) and classify legacy and
+> inconsistent shapes without hard errors (L14-R7): `orchestrates-entry-unresolved`,
+> `seat-doc-row` (legacy rows correlated through the seat doc's references via `_correlate_seat_row`),
+> `row-without-membership`, `membership-without-row`, `slug-only-membership`, and
+> `uncommanded-master` (a master named in the sprint's decisions but never commanded — the
+> 260812_mcp-rc7-release and 260815_ias-memory-ledger-reconciliation witnesses). Since 260815-DAG-L15
+> (F8) the uncommanded-master scan excludes sprints themselves (orchestrates-bearing docs — a sprint
+> named in another sprint's decisions is not an uncommanded master), and a seat-doc row whose master
+> correlation fails (seat doc absent, or present with no `../<master>/task.json` reference) reports
+> `seat-doc-row-unresolved` instead of a master-less `seat-doc-row`, so a paired
+> `membership-without-row` reads as a correlation miss, not a genuinely missing row.
 
 `validate_completed_master_row` is the moved terminal check for a master row newly marked
 `Completed`: a typed `masterRef` row completes against the linked master document's own status and
@@ -82,28 +88,30 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 ### Conventions
 
-- Errors are `SprintLinkageError(AgentsRememberError)` with `task-sprint-linkage-*` statuses and
-  are translated to `TaskDocError` at the tool boundary.
-- All validation precedes the single `write_task_doc_batch` (rollback-safe); dry-run previews the
-  rendered diff + `wouldLose` for every affected pair.
-- Judgment provenance is shared with graph authoring: `verify_sprint_judgment_ids` (canonical home
-  in `task_execution_topology.py`) is the single verifier.
+> **Retained historical source account — superseded by the current contract:**
+> - Errors are `SprintLinkageError(AgentsRememberError)` with `task-sprint-linkage-*` statuses and
+>   are translated to `TaskDocError` at the tool boundary.
+> - All validation precedes the single `write_task_doc_batch` (rollback-safe); dry-run previews the
+>   rendered diff + `wouldLose` for every affected pair.
+> - Judgment provenance is shared with graph authoring: `verify_sprint_judgment_ids` (canonical home
+>   in `task_execution_topology.py`) is the single verifier.
 
 ### Invariants And Boundaries
 
-- Sprint↔master membership is same-repository only; a sprint cannot attach itself, and a master
-  that itself orchestrates cannot be commanded.
-- A nature-less master requires `executionNature` + `judgmentId`; disagreeing with an existing
-  nature refuses (reclassify via `author_execution_graph` instead).
-- Attach refuses over existing `orchestrates` membership (detach-first is the conversion path);
-  detach refuses on touching edges and on emptying the graph.
-- Linkage-schema writes are served-build-preflighted (L15-R4); dry-run never writes the
-  integration-authority lock file (F2).
-- Preview and apply share `build_publication_batch_graph_titles`; this module has no private
-  first-graph selector, catch-and-split retry, or alternative title-joining path.
-- This module never deletes files and never hard-fails on legacy shapes — those are facts, not
-  errors (L14-R7 backward tolerance). The F8 fact kinds keep facts-not-errors semantics:
-  `seat-doc-row-unresolved` and the sprint exclusion are facts, never judgment.
+> **Retained historical source account — superseded by the current contract:**
+> - Sprint↔master membership is same-repository only; a sprint cannot attach itself, and a master
+>   that itself orchestrates cannot be commanded.
+> - A nature-less master requires `executionNature` + `judgmentId`; disagreeing with an existing
+>   nature refuses (reclassify via `author_execution_graph` instead).
+> - Attach refuses over existing `orchestrates` membership (detach-first is the conversion path);
+>   detach refuses on touching edges and on emptying the graph.
+> - Linkage-schema writes are served-build-preflighted (L15-R4); dry-run never writes the
+>   integration-authority lock file (F2).
+> - Preview and apply share `build_publication_batch_graph_titles`; this module has no private
+>   first-graph selector, catch-and-split retry, or alternative title-joining path.
+> - This module never deletes files and never hard-fails on legacy shapes — those are facts, not
+>   errors (L14-R7 backward tolerance). The F8 fact kinds keep facts-not-errors semantics:
+>   `seat-doc-row-unresolved` and the sprint exclusion are facts, never judgment.
 
 ## Evidence
 
@@ -142,11 +150,12 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 ## 260815-DAG-L14 Linkage Boundary
 
-The module is the one authority for typed sprint↔master linkage: attach and detach are atomic
-batches, `linkage_report`/`linkageFacts` are the read-only drift surface, and
-`validate_completed_master_row` completes typed rows against the linked master document. The
-consistency cross-check (`validate_sprint_linkage` in `tasks/document_refs.py`) hard-fails only
-new-shape drift; legacy shapes surface as facts (L14-R5/R7).
+> **Retained historical source account — superseded by the current contract:**
+> The module is the one authority for typed sprint↔master linkage: attach and detach are atomic
+> batches, `linkage_report`/`linkageFacts` are the read-only drift surface, and
+> `validate_completed_master_row` completes typed rows against the linked master document. The
+> consistency cross-check (`validate_sprint_linkage` in `tasks/document_refs.py`) hard-fails only
+> new-shape drift; legacy shapes surface as facts (L14-R5/R7).
 
 
 ## 260815-DAG-L12 Title Threading
@@ -180,3 +189,5 @@ lock or lifecycle evidence owner.
 ### Reconciled Source Evidence
 
 - The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. [9]
+
+- linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps. [18]

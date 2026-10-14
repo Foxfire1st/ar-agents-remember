@@ -1,0 +1,33 @@
+# mcp/src/agents_remember/application/landing_answer_shapes.py
+
+## Governing Overview
+
+[Application overview](overview.md)
+
+## Purpose
+
+Project validated task, landing and role results into the answer the caller can act on, while the complete result remains available to the logging owner. This module owns field selection, not the transaction, task authority, host delivery or generic overflow guard.
+
+## Code Commentary
+
+Landing projections retain the reached state, blockers, executable next-step inputs and produced commits/control values from each tool's declared roster. Unrelated tools return `None` to select the ordinary completion path. An answered refusal keeps existing code/error; when the producer supplied only status/detail, the envelope derives them from those producer words rather than creating a new check or changing its order.
+
+Redundant contract echoes are removed only from copied answer mappings. Preview commit intent/count information remains while additional worktree/ledger locations stay in the whole result. Nested next-step information still reaches the common guidance translation; removing an echo must not remove the arguments needed to act.
+
+A successful role start retains the agent ID, handover location and a meaningful warning. A successful role message retains outcome/status/taken, adds the recipient ID only for role addressing, and keeps a host cancellation warning. A waited reply additionally carries text and actionable wait detail; an oversized reply is fitted to keep its beginning. Refused role operations retain their producer refusal shape.
+
+Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and review state on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained.
+
+## Boundaries
+
+- The validated whole result is not modified by answer-only address or preview-location trimming.
+- Projections do not reserve a candidate, accept a requirement, waive a blocker or perform a landing.
+- The common completion owner still applies list limits, log outcomes and the delivered-answer guard.
+- Ordinary target counts exclude locations recursively; at most two distinct locations are named, while the entire delivered mapping remains subject to its separate bound. This is a measurement/answer contract, not a root-length restriction.
+
+## Evidence
+
+- Landing tools select their declared answer fields and preserve producer refusals without altering the transaction. [1]
+- A successful start retains the new agent and handover, while failures keep their shape. [2]
+- Role-addressed and waited messages retain only the conditional information their caller needs, including cancellation warnings and reply beginnings. [3]
+- Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections. [4]

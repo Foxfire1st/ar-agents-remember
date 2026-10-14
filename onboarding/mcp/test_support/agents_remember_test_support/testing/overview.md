@@ -14,6 +14,8 @@ Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest b
 
 The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill copies and their harness mirrors belong to the synchronization owner, `scripts/sync-skills.py`.
 
+The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.
+
 ## Hot Path Summary
 
 - **Process setup.** `hermetic_bootstrap.py` sets up the candidate and pytest environment. `global_state.py` snapshots, restores and resets registered module-level state. `random_order.py` shuffles collected items when supplied a seed. `dagger_admission.py` mints the testing-layer capability after matching the Dagger environment nonce to the attestation file.
@@ -92,3 +94,6 @@ The generated route index lists the source files of this route and their cards.
 - Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives. [24]
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
+
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control. [26]
+

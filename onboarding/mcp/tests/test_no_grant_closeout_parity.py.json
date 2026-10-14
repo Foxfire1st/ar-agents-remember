@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+        "blob": "9f4bfddad3c3837f00232518cbfac5c9a8b5a880",
         "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
         "locator": {
           "kind": "symbol",
@@ -26,24 +26,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "blob": "9f4bfddad3c3837f00232518cbfac5c9a8b5a880",
             "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
             "locator": {
-              "end": 437,
+              "end": 439,
               "kind": "line_range",
-              "start": 402
+              "start": 404
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "blob": "9f4bfddad3c3837f00232518cbfac5c9a8b5a880",
             "content": "sha256:e4b3267066522068ed851b6736935f0e88d86ba35491f06266d137f6a816f0f8",
             "locator": {
-              "end": 464,
+              "end": 466,
               "kind": "line_range",
-              "start": 439
+              "start": 441
             }
           },
           "kind": "test"
@@ -55,12 +55,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a7ee9a431790ee1008b846b09b4a233b062e3",
+            "blob": "9f4bfddad3c3837f00232518cbfac5c9a8b5a880",
             "content": "sha256:b8130d29fae3c7fef2313e441944178b4fa2588de6851adcfb2dbd760457e86c",
             "locator": {
-              "end": 283,
+              "end": 281,
               "kind": "line_range",
-              "start": 183
+              "start": 181
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Four preview callsites and their imports use the corrected preview driver under the architect ruling. No count-key repair or assertion subtraction is included. The two reported pristine-tip count-key parity failures remain architect-qualified and assigned to L113; this source repair is not full-suite green.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f4bfddad3c3837f00232518cbfac5c9a8b5a880",
+            "content": "sha256:453302ad6d41c488928594201d2976655d139fccd3977e1db288417786417189",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

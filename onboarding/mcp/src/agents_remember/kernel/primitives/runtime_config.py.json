@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7248797421f5761513df5b86aead77124a2a859f",
+        "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
         "content": "sha256:793e06ec22cd166b8449fd68bd591ed3c0a34f2b6056249377eb6e7075209e58",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "7248797421f5761513df5b86aead77124a2a859f",
-        "content": "sha256:a5f6d6e673f1b6adfdb4594ae78c6eb35f3afb391a90e63899861ea04f034be0",
+        "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+        "content": "sha256:02d133a34a8d526aed5a4715429b42cce962256cc8279fa7b3ec23f2ecc158ba",
         "locator": {
           "kind": "file"
         }
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7248797421f5761513df5b86aead77124a2a859f",
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
             "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
             "locator": {
               "kind": "symbol",
@@ -274,12 +274,27 @@
         }
       ]
     },
+    "22": {
+      "note": "Legacy gateDelegation migration warnings are emitted once per authority-file-path/shadowed-state pair in the process, not at every configuration re-resolution. Provider degradation parsing belongs to kernel/primitives/provider_degradation_settings.py. This clarification introduces neither a restored provider/benchmark tool nor a new settings or delegation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "content": "sha256:02d133a34a8d526aed5a4715429b42cce962256cc8279fa7b3ec23f2ecc158ba",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "`DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port.",
       "targets": [
         {
           "anchor": {
-            "blob": "7248797421f5761513df5b86aead77124a2a859f",
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -314,12 +329,12 @@
         },
         {
           "anchor": {
-            "blob": "7248797421f5761513df5b86aead77124a2a859f",
+            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
             "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
             "locator": {
-              "end": 109,
+              "end": 115,
               "kind": "line_range",
-              "start": 104
+              "start": 110
             }
           },
           "kind": "code"

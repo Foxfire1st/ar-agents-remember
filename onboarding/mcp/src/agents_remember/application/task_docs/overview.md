@@ -14,19 +14,24 @@ This package owns the application seam for task-document authoring: operation di
 
 ## Hot Path Summary
 
+task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a failed sync is an answered refusal. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.
+
 `task_doc_tool` resolves the task address, dispatches special operations or prepares an ordinary candidate, validates that candidate, and publishes or previews it. Publication rechecks accepted source bytes, derives affected projection scopes, writes task truth, invalidates those scopes, and rebuilds projections independently. `task_unstarted_evidence.py` checks actual code/memory-content and integrated commit cells; an existing enclosure is independent started evidence, and task, locator, lifecycle-operation, seat, and report facts also participate.
 
 ## Construction
 
 ### Dispatch And Candidate Validation
 
-The MCP payload adapter calls `task_doc_tool`. The dispatcher handles create, replace, field and checklist edits, review operations, and special operations. Sprint linkage and execution-graph authoring publish through their own functions; their operation payloads are merged with the standard document identity through `_sprint_doc_identity`. `read_steps` is a focused read-only checklist projection.
+> **Retained historical source account — superseded by the current route account:**
+> The MCP payload adapter calls `task_doc_tool`. The dispatcher handles create, replace, field and checklist edits, review operations, and special operations. Sprint linkage and execution-graph authoring publish through their own functions; their operation payloads are merged with the standard document identity through `_sprint_doc_identity`. `read_steps` is a focused read-only checklist projection.
 
-Ordinary candidates pass retirement-proof preservation, disposition and route-review authority, unresolved-unit preservation, terminal-status checks, master completion, register shape, and execution-topology validation before publication. Route-review preparation binds the selected source path and contract context. The exact semantic admission predicate inside that owner remains a bounded verification uncertainty here. The existing strict `TaskDocResponse` wire-shape claim likewise remains pending confirmation of its response-model owner.
+> **Retained historical source account — superseded by the current route account:**
+> Ordinary candidates pass retirement-proof preservation, disposition and route-review authority, unresolved-unit preservation, terminal-status checks, master completion, register shape, and execution-topology validation before publication. Route-review preparation binds the selected source path and contract context. The exact semantic admission predicate inside that owner remains a bounded verification uncertainty here. The existing strict `TaskDocResponse` wire-shape claim likewise remains pending confirmation of its response-model owner.
 
 ### Publication And Projection Scope
 
-`task_doc_publication.py` owns accepted JSON/Markdown source snapshots, exact source-conflict reporting, prepared-document publication, and preview. Dry-run preflight checks source currency and resolves the affected scope union through the same owners used by apply. Publication also refreshes task-document copies; a copy-refresh failure attempts restoration of the accepted source snapshots.
+> **Retained historical source account — superseded by the current route account:**
+> `task_doc_publication.py` owns accepted JSON/Markdown source snapshots, exact source-conflict reporting, prepared-document publication, and preview. Dry-run preflight checks source currency and resolves the affected scope union through the same owners used by apply. Publication also refreshes task-document copies; a copy-refresh failure attempts restoration of the accepted source snapshots.
 
 `task_doc_queue_scope.py` uses the closed field-effect classification to skip changes that do not invalidate projections and derive the canonical old/new affected sprint union for those that do. Task truth is the authoring authority; queue state is a disposable scheduling projection. A planning change does not itself establish lifecycle evidence or change downstream activation state. Per-contract activation and retained sync state remain downstream authorities whose next-admission behavior is not independently established by this bounded read.
 
@@ -95,22 +100,25 @@ The existing statement that finalizing a master never archives it remains an int
 
 ## External grant display, separate authoring
 
-Task get/preview may display readable external grants; publication reads a batch-local census, but grants are not authored TaskDocument fields. Branch review uses explicit canonical leaf opt-in and current grant with exact series binding. Enclosed leaf start/attach keeps its enclosure; granted role preparation does not create one.
+> **Retained historical source account — superseded by the current route account:**
+> Task get/preview may display readable external grants; publication reads a batch-local census, but grants are not authored TaskDocument fields. Branch review uses explicit canonical leaf opt-in and current grant with exact series binding. Enclosed leaf start/attach keeps its enclosure; granted role preparation does not create one.
 
 ## Evidence
 
 
-- Task-first publication and projection refresh, with shared preview and source preflight; atomic-lock intent has the disclosed discrepancy. [1]
-- Zero-or-one graph-bearing publication batch and in-memory title context. [2]
-- Atomic raw-section shape validation and missing-register scaffolding. [3]
-- The step plane owns exact addressing, mutations, and the focused read projection. [4]
-- The settable flat fields include the knowledge-effect declaration. [5]
-- Execution evidence checks real code and memory output cells. [6]
-- Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence. [7]
-- The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure. [8]
-- The lone-master route writes its proof into the master's folder and moves that folder. [9]
-- Caught archive-hook exceptions are reported failures. [10]
-- Generic task-document edits preserve complete retired rows. [11]
-- The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function. [12]
-- The no-contract leaf guard tests whether task.json exists; its valid-master and first-binding descriptions are stated intent. [13]
-- Commanded-master completion requires abandonment or Completed without completion blockers. [14]
+- **Retained historical source account — superseded by the current route account:** Task-first publication and projection refresh, with shared preview and source preflight; atomic-lock intent has the disclosed discrepancy. [1]
+- **Retained historical source account — superseded by the current route account:** Zero-or-one graph-bearing publication batch and in-memory title context. [2]
+- **Retained historical source account — superseded by the current route account:** Atomic raw-section shape validation and missing-register scaffolding. [3]
+- **Retained historical source account — superseded by the current route account:** The step plane owns exact addressing, mutations, and the focused read projection. [4]
+- **Retained historical source account — superseded by the current route account:** The settable flat fields include the knowledge-effect declaration. [5]
+- **Retained historical source account — superseded by the current route account:** Execution evidence checks real code and memory output cells. [6]
+- **Retained historical source account — superseded by the current route account:** Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence. [7]
+- **Retained historical source account — superseded by the current route account:** The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure. [8]
+- **Retained historical source account — superseded by the current route account:** The lone-master route writes its proof into the master's folder and moves that folder. [9]
+- **Retained historical source account — superseded by the current route account:** Caught archive-hook exceptions are reported failures. [10]
+- **Retained historical source account — superseded by the current route account:** Generic task-document edits preserve complete retired rows. [11]
+- **Retained historical source account — superseded by the current route account:** The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function. [12]
+- **Retained historical source account — superseded by the current route account:** The no-contract leaf guard tests whether task.json exists; its valid-master and first-binding descriptions are stated intent. [13]
+- **Retained historical source account — superseded by the current route account:** Commanded-master completion requires abandonment or Completed without completion blockers. [14]
+
+- task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a failed sync is an answered refusal. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]

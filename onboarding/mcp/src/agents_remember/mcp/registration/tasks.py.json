@@ -1,26 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/tasks.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "8ab149b388e11912041dbd480da7855a7de32451",
-        "content": "sha256:3d3d3ecf9ab0589cf800658c35b387e6d808feaf1f844e64698b74da3231faee",
-        "locator": {
-          "end": 233,
-          "kind": "line_range",
-          "start": 230
-        }
-      },
-      "id": "RLZ-XZX0GE",
-      "invariant": "INV-GYCF1R",
-      "origin": {
-        "handoffEntry": "L41 ruling 2 (own-master operations)",
-        "leaf": "260928-MIK-L41"
-      },
-      "rationale": "These lines of the task tool's description carry the ruled sentence about what readiness refuses.",
-      "role": "presentation"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
@@ -113,6 +93,21 @@
             "locator": {
               "kind": "symbol",
               "name": "_TASK_DOC_TOOL_DESCRIPTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77997c190e94b5136fe35a0064fcadff62345fbd",
+            "content": "sha256:c207544ed56e11a3ae8fbbb50a5a53cbbcb685dddfde211310bb8c19ec540d4f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

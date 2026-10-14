@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Protect final, checkpoint and recorded master route wiring with a full foreign-commit/hand-merge/managed-sync matrix.
 
 ## Code Commentary
@@ -19,3 +25,5 @@ No external Domain Documentation source is configured for this repository. The f
 - Recorded-master dispatch reaches the chain refusal for the actual foreign commit. [1]
 - The final route admits the recorded sync position and produced head. [2]
 - Public leaf integration rejudges the actual edited closeout cell. [3]
+
+- Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result. [4]

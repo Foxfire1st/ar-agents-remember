@@ -193,6 +193,21 @@
           "kind": "code"
         }
       ]
+    },
+    "9": {
+      "note": "Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a539d42748ddf84cd602b7b7b20f7857b2a312aa",
+            "content": "sha256:33eb8506cbcd2cfb835cad8833386bcc4ffca36c66909e726ae1c2be96aa5eb7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

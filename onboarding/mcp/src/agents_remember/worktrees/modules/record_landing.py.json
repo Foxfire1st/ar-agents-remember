@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
-        "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "content": "sha256:d08d103431de4ec8f086858a27fb194f83f58bd71522341f448db21cab1c8ae2",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
+        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
-        "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "content": "sha256:d08d103431de4ec8f086858a27fb194f83f58bd71522341f448db21cab1c8ae2",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
+        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
         "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
@@ -72,6 +72,24 @@
       },
       "rationale": "Recorded landing refuses a missing/legacy candidate before reading landing state; a present converted candidate on a legacy line reaches its own validator.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+        "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_legacy_format_next_step"
+        }
+      },
+      "id": "RLZ-KW7HDH",
+      "invariant": "INV-H8WSA9",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "The no-converted-memory branch substitutes complete root values as argument values, not a template string.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
             "content": "sha256:78b0f2b0eafce3df121a726bca9004428d02ce72efbb9e8ad69b222624d7a0e8",
             "locator": {
               "end": 28,
@@ -209,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a5929aad150b20ced228f2051c3e4fd06322f62",
+            "blob": "eeac5095661c7abcbe16e27b33a09582aca201f9",
             "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
             "locator": {
               "kind": "symbol",
@@ -221,12 +239,28 @@
         }
       ]
     },
+    "18": {
+      "note": "Conversion guidance follows the central case value, with exact sync arguments or separately carried first-conversion argv; unknown supplies no step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_format_next_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Probe the line first; an unconverted line's commit is only probed.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -248,7 +282,7 @@
         },
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
             "content": "sha256:a1b596b6f0429719e7b4397794458ef506cbb5acb0fd7b2bedaa4a15628afefa",
             "locator": {
               "kind": "symbol",
@@ -275,7 +309,7 @@
         },
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
             "content": "sha256:8f22be077df113664044ec0008c38deb3b0d46fe6fa096f99295a2f0a1b98fbe",
             "locator": {
               "kind": "symbol",
@@ -314,12 +348,12 @@
       ]
     },
     "5": {
-      "note": "`record_landing_result` validates the recorded code landing, since MIK-R09 checks the landed memory commit on converted memory (before the dry-run and apply branches), and forwards the actual code/memory facts.",
+      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1628c94f93e1b8108e52792c1ee5b5a7773962c",
-            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "content": "sha256:d08d103431de4ec8f086858a27fb194f83f58bd71522341f448db21cab1c8ae2",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
@@ -351,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
             "locator": {
               "kind": "symbol",

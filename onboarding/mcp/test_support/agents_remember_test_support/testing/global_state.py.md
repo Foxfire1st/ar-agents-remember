@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Owns the explicit registry of production module state that every supported pytest route snapshots
 and restores. This behavior moved from the test tree so production plugins no longer import test
 helpers.
@@ -54,3 +60,5 @@ whose contract deliberately sets process state.
 - Only process-owned spawned children are terminated and reaped. [7]
 
 - Loaded-owner reset includes delegated sweep and tool-writer cleanup. [8]
+
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control. [9]

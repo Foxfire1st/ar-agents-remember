@@ -23,7 +23,7 @@ operation and line, absent `knowledge/layout.json`, and two recovery routes: `wo
 
 `converted_memory_location` looks at local branch tips, then registered worktrees. `_converted_branch`
 asks for the marker at every tip in one `cat-file --batch-check`; `_converted_worktree` checks actual
-working-tree marker files. These probes supply location text, not a conditional lock trigger.
+working-tree marker files. These probes never make the legacy lock conditional. `legacy_format_refusal` creates one `LegacyFormatCase` where the existing probe runs and returns a text-equal `LegacyFormatRefusal` carrying that value. Both the complete central sentence and the caller’s recovery step derive from this same case: a named converted line permits the merge-memory recovery, no converted memory selects first conversion, and unknown/error supplies no next step. The caller does not parse any diagnostic text or run a second probe to choose the case.
 
 `_is_repository` accepts only a definite non-repository as false. A `.git` entry at this path or a
 parent, or bare-repository `HEAD` and `objects`, prevents a failed rev-parse from being treated as
@@ -48,10 +48,10 @@ which deliberately supersedes the earlier cutover-window exception. No live exte
 ### Repo-Internal References
 
 - Unconditional legacy refusal, named probe error, and definite non-repository boundary. [1]
-- Converted locations contribute recovery wording only. [2]
+- Converted locations inform recovery but never unlock an ordinary legacy operation. [2]
 - Local branch marker probe in one batch. [3]
 - Registered working-tree marker lookup. [4]
-- Central legacy-format message and both conversion routes. [5]
+- The unchanged central text carries the single probe-made case used for conversion guidance. [5]
 - Only a definite non-repository reads as absent. [6]
 - Structural repository evidence prevents false absence. [7]
 - Failed or timed-out Git probes stay named. [8]

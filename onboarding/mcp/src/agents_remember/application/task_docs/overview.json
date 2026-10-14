@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
             "locator": {
               "kind": "symbol",
@@ -158,6 +158,66 @@
               "name": "master_is_terminal"
             },
             "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a failed sync is an answered refusal. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "357aec82628395caa196d1afe6fe19245eeb5a39",
+            "content": "sha256:9e60fabf261f626d6531b232953d7bec3c11960414b52e04b47f42db1b4757c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
+            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c4560da4c36a177144fa5dd4577e3defdc7a4e0",
+            "content": "sha256:c5779f725a1eea34d5ec9307e1ff541ca9754b0d3227392502e1e9e30763ef4c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
           },
           "kind": "code"
         }
@@ -238,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
             "content": "sha256:686a84728208b38930b1e1d555a55e2448fb53971e0808542af2ffff1864108b",
             "locator": {
               "kind": "symbol",
@@ -250,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
             "content": "sha256:07aa3475c79541ba7178f4918565264e2ca301032a77c3e2e185ee6ad44e34e4",
             "locator": {
               "kind": "symbol",
@@ -262,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
             "content": "sha256:40f10bb1136cc4587f43c14f2e8202d578f2807156e9eae9ffb0b4c3e396e87c",
             "locator": {
               "kind": "symbol",
@@ -274,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
             "content": "sha256:0110412065db6535f1263f0e86b274b7f15308da44b8d61e422f3a493c09e2fb",
             "locator": {
               "kind": "symbol",

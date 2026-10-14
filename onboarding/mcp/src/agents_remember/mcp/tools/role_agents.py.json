@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
         "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
         "locator": {
           "end": 24,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
         "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
-        "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
+        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+        "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
         "locator": {
           "kind": "symbol",
           "name": "role_message_payload"
@@ -59,12 +59,12 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of role_start_payload supporting the stated file behavior.",
+      "note": "The start builder brackets its producer and response choke with role context and resets that context afterward.",
       "targets": [
         {
           "anchor": {
-            "blob": "94f0e1075edafc541fb6c8fd444d3028be95e7a9",
-            "content": "sha256:938549046fb723eb3ab9f41defd35f7ccfa657e3b67dff4afa472110cacd05a6",
+            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
               "name": "role_start_payload"
@@ -75,12 +75,12 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of role_message_payload supporting the stated file behavior.",
+      "note": "Message completion retains the addressed-role context through the choke, with a held-answer override and reset afterward.",
       "targets": [
         {
           "anchor": {
-            "blob": "94f0e1075edafc541fb6c8fd444d3028be95e7a9",
-            "content": "sha256:f604ac7bf0d3b96282a149692e85aba90697839ba6f18d24a1eb1d70ac70a4f1",
+            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+            "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
             "locator": {
               "kind": "symbol",
               "name": "role_message_payload"

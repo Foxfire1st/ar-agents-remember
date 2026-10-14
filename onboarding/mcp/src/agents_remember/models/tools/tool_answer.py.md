@@ -6,15 +6,27 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- `direct_execution_grant` explicitly belongs to L111 in `INTERIM_TOOL_LEAF`; the roster/table must carry the same current tool rather than inferring interim ownership from a fallback.
-- Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.
-- The repaired current source explicitly assigns `retire_child` and `role_start_set` to
-  L100 in `INTERIM_TOOL_LEAF` and includes L100 in `INTERIM_LEAVES`; these two declared
-  interim tools retain the interim bound of4000, not L110's final memory/coherence bounds.
-- interim_leaf_for now returns None without an explicit interim row. L110 memory/coherence rows
-  are final shaped bounds, not interim 4000-token allowances. `SHAPED_TOOL_BOUNDS` supplies the
-  production bounds used by the row witnesses and guard; status work-order lists and reasons have
-  their own shared ceilings while full populations remain in the whole result.
+> **Retained historical source account — superseded by the current contract:**
+> - `direct_execution_grant` explicitly belongs to L111 in `INTERIM_TOOL_LEAF`; the roster/table must carry the same current tool rather than inferring interim ownership from a fallback.
+> - Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.
+> - The repaired current source explicitly assigns `retire_child` and `role_start_set` to
+>   L100 in `INTERIM_TOOL_LEAF` and includes L100 in `INTERIM_LEAVES`; these two declared
+>   interim tools retain the interim bound of4000, not L110's final memory/coherence bounds.
+> - interim_leaf_for now returns None without an explicit interim row. L110 memory/coherence rows
+>   are final shaped bounds, not interim 4000-token allowances. `SHAPED_TOOL_BOUNDS` supplies the
+>   production bounds used by the row witnesses and guard; status work-order lists and reasons have
+>   their own shared ceilings while full populations remain in the whole result.
+
+> **Retained historical source account — superseded by the current contract:**
+> - `SHAPED_TOOL_BOUNDS` also owns the composed task/landing/role bounds. These tools no longer
+>   carry an L111 interim row. Ordinary `role_message` has its shaped 150-token bound; only
+>   `wait` takes the 4000-token reply exception. Task-document dry diffs retain the 1500-token
+>   delivered bound rather than treating the ordinary target as a ceiling on a whole diff.
+> - `bound_for` looks up tuple keys with operation-specific then tool-wide precedence: exceptions,
+>   shaped bounds, explicit interim ownership, final L112 rows and the fallback net. The packet's
+>   ordinary targets measure content without locations, independently from this delivered-answer
+>   guard. User roots are not shortened or capped, and neither a target nor a report's size changes
+>   the guard or the detail-file byte budget.
 
 ### Current naming-reader bounds
 
@@ -56,6 +68,10 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 
 > Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
 
+### Current Contract
+
+SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict.
+
 ### Logic
 
 > Historical original shaping/ownership scope only: its interim L109–L112 inventory and default-bound prose are superseded by the current tables. The pure algorithms that still exist may be consulted in current source, but this scope supplies no current interim-owner, test-pass or landing assertion.
@@ -82,8 +98,11 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 - The choke strips the four envelope fields from every answer. [1]
 - The twenty-entry cap recurses through retained list items and mappings. [2]
 - The measured short form fits 400 with fixed part, location, cut error and short scalars. [3]
-- Each tool resolves its own bound from the exception table or the default. [4]
+
+- A tool resolves operation/tool exceptions, shaped bounds, explicit interim ownership and final rows before the fallback ceiling. [4]
 
 </details>
 
-- The grant tool has explicit L111 interim ownership. [5]
+- **Retained historical source account — superseded by the current contract:** The grant tool has explicit L111 interim ownership. [5]
+
+- SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict. [6]

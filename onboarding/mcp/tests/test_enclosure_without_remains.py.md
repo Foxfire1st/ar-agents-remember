@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 An enclosure with nothing left ends without adoption.
 
 ## Code Commentary
@@ -21,3 +27,5 @@ The populated-series-log regression calls `_abandon_directories` directly: it sn
 - No-remains abandon and cleanup with persisted reason are pinned. [1]
 
 - Folder-only abandon and conditional cleanup branches preserve distinct no-remains discriminators. [2]
+
+- Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier. [3]

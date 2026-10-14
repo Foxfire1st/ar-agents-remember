@@ -7,9 +7,9 @@
   },
   "applicability": "Ordinary enclosed leaf roles reading their own rendered task document.",
   "conditions": [
-    "The copy is a real enclosure/task-documents file for the agent's own leaf.",
-    "One INDEX entry exists before the first turn.",
-    "Public writes that render the own leaf refresh copies atomically."
+    "The copied leaf is the agent's own leaf; declared approved requirement references extend that bound file set, never another leaf.",
+    "Real JSON/Markdown files and one INDEX artifact with copied digests and explicit missing rows exist before the first turn.",
+    "Public writes rendering bound documents reconcile the exact copy set with rollback on failed publication."
   ],
   "exclusions": [
     "Reading another leaf's document.",
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A leaf role reads only its own rendered leaf document as a real enclosure/task-documents file, with one INDEX entry before the first turn; public writes rendering that own leaf refresh its copies atomically.",
+  "statement": "An enclosed leaf role reads its own rendered leaf document and declared approved requirements as real task-documents files, with one INDEX artifact recording copied digests and named missing files before the first turn; public writes refresh only the exact bound copy set atomically.",
   "status": "proposed",
   "supersedes": []
 }

@@ -28,16 +28,17 @@ already pass keywords. Registered tools are unchanged.
 
 ## 260731-EFA-L17 Change
 
-The five tool declarations are all keyword-only (bare `*` — the L8 remediation completed
-here for `worktree_cleanup`/`worktree_abandon`, which still had positional parameters),
-and the published docstrings now state the quality altitude ladder: preview/apply
-describe the leaf change-set-scoped contract (`--targeted`: changed files +
-reverse-import closure + derived test subset, mandatory CRAP over the changed modules)
-and say the full wrapper is NOT a leaf gate; `worktree_integrate` states that it runs the
-altitude-routed gate itself before any merge (leaf targeted; master full with
-host-managed RAM/swap by default and an optional explicit
-`orchestration.qualityGate.memoryCapBytes`). The registered tool surface is
-unchanged.
+> **Retained historical source account — superseded by the current contract:**
+> The five tool declarations are all keyword-only (bare `*` — the L8 remediation completed
+> here for `worktree_cleanup`/`worktree_abandon`, which still had positional parameters),
+> and the published docstrings now state the quality altitude ladder: preview/apply
+> describe the leaf change-set-scoped contract (`--targeted`: changed files +
+> reverse-import closure + derived test subset, mandatory CRAP over the changed modules)
+> and say the full wrapper is NOT a leaf gate; `worktree_integrate` states that it runs the
+> altitude-routed gate itself before any merge (leaf targeted; master full with
+> host-managed RAM/swap by default and an optional explicit
+> `orchestration.qualityGate.memoryCapBytes`). The registered tool surface is
+> unchanged.
 
 ## Purpose
 
@@ -47,18 +48,19 @@ an enclosure, requiring its current external canonical-leaf grant),
 `worktree_closeout_preview`, `worktree_closeout_apply`,
 `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_abandon`.
 
-`worktree_checkpoint_landing` (260831-LOCR-L30, docstring corrected by 260831-LOCR-L34 and again by 260831-LOCR-L36) is the
-partial-master landing route registered between `worktree_integrate` and `worktree_record_landing`.
-Its published docstring is the contract a client sees: it **partially publishes** an **unfinished**
-atomic master's accumulated line and keeps the master open, shares `worktree_integrate`'s whole preflight and ref move
-while dropping only the completion assumptions (`worktree_integrate` proves the task document
-`Completed`, one landed enclosure per canonical leaf, **and a completed closeout** — an unfinished master
-has none of those), captures the master's own committed refs (the live series code work branch tip
-and the live memory work branch tip) and proves the source ancestry before landing
-exactly those, records the integration cell as `checkpointed` rather than `completed`, retires nothing
-and runs no cleanup, and is MUTATING with a `dry_run` preview. The L34 correction matters because the
-published text is the only thing a client reads: the old wording omitted the closeout requirement,
-which is exactly what made the route unreachable.
+> **Retained historical source account — superseded by the current contract:**
+> `worktree_checkpoint_landing` (260831-LOCR-L30, docstring corrected by 260831-LOCR-L34 and again by 260831-LOCR-L36) is the
+> partial-master landing route registered between `worktree_integrate` and `worktree_record_landing`.
+> Its published docstring is the contract a client sees: it **partially publishes** an **unfinished**
+> atomic master's accumulated line and keeps the master open, shares `worktree_integrate`'s whole preflight and ref move
+> while dropping only the completion assumptions (`worktree_integrate` proves the task document
+> `Completed`, one landed enclosure per canonical leaf, **and a completed closeout** — an unfinished master
+> has none of those), captures the master's own committed refs (the live series code work branch tip
+> and the live memory work branch tip) and proves the source ancestry before landing
+> exactly those, records the integration cell as `checkpointed` rather than `completed`, retires nothing
+> and runs no cleanup, and is MUTATING with a `dry_run` preview. The L34 correction matters because the
+> published text is the only thing a client reads: the old wording omitted the closeout requirement,
+> which is exactly what made the route unreachable.
 
 **The L36 correction is the route's name.** The description used to open "Use this to pause a
 master", which routes an ordinary stop request into a protected-branch publication: the ref move puts
@@ -83,9 +85,14 @@ payload owners remain unchanged.
 
 ## Code Commentary
 
+### Current Contract
+
+This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states, blocked/refused outcomes and state/next/log presentation, with docs/reference/mcp-tools.md carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted.
+
 Closeout apply accepts typed `RedCatalogDisposition` values and forwards them as a tuple to the payload/application owner. These are explicit corrective dispositions, not permission to bypass a failed catalog or weaken gate authority.
 
-Current IAS policy treats coverage as diagnostic and production CRAP above 20 as a review signal, not a numeric rejection. The retained registration docstrings still contain older mandatory-CRAP wording; that wording is stale and must not restore a metric gate. Full suite and whole-master review remain master-end obligations. The registrar preserves distinct commit messages and approval intent, and an accepted journal generation survives disposable queue loss.
+> **Retained historical source account — superseded by the current contract:**
+> Current IAS policy treats coverage as diagnostic and production CRAP above 20 as a review signal, not a numeric rejection. The retained registration docstrings still contain older mandatory-CRAP wording; that wording is stale and must not restore a metric gate. Full suite and whole-master review remain master-end obligations. The registrar preserves distinct commit messages and approval intent, and an accepted journal generation survives disposable queue loss.
 
 ### Logic
 
@@ -93,13 +100,14 @@ Current registered signatures expose code and memory commit messages. Direct lan
 landing take no ledger message, and PR landing records only code plus optional memory content.
 The retained ledger is a downstream computed cache, never an MCP-requested Git output.
 
-The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_apply` L47-L76)
-share `CloseoutCommitMessages(code, memory)`, built in each body from
-the two flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
-dry_run)`, precisely so the approval-bearing half cannot be confused with the commit text: folding
-`dry_run` in with the messages would let a preview read as an approved apply. A preview is a
-read: it writes only the leaf's worklist, its quality reports and the judged tree's objects, and
-never falls back to writing anywhere else.
+> **Retained historical source account — superseded by the current contract:**
+> The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_apply` L47-L76)
+> share `CloseoutCommitMessages(code, memory)`, built in each body from
+> the two flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
+> dry_run)`, precisely so the approval-bearing half cannot be confused with the commit text: folding
+> `dry_run` in with the messages would let a preview read as an approved apply. A preview is a
+> read: it writes only the leaf's worklist, its quality reports and the judged tree's objects, and
+> never falls back to writing anywhere else.
 
 **Historical quality-gate registration, superseded by the current transaction boundary above.**
 The former docstrings stated a pre-commit gate order. Preview reports whether strict
@@ -107,28 +115,31 @@ project-owned quality under the selected project checks will run — since 26073
 description is specific about *what it runs over*: "over the staged task worktree before the code
 commit", not merely "before the code commit".
 
-Apply's docstring was rewritten in the same leaf, and it is now a conditional statement rather
-than an unconditional one. It reads: when code would commit **AND the checkout carries the
-project-owned quality wrapper**, apply resets the index, stages the whole task worktree, and runs
-strict quality with diagnostic CRAP reporting **over exactly that staged content**, before any
-code, memory, ledger, contract, or applied-gate **commit**; then commits code, memory and ledger
-in order. It states four things the previous text did not:
+> **Retained historical source account — superseded by the current contract:**
+> Apply's docstring was rewritten in the same leaf, and it is now a conditional statement rather
+> than an unconditional one. It reads: when code would commit **AND the checkout carries the
+> project-owned quality wrapper**, apply resets the index, stages the whole task worktree, and runs
+> strict quality with diagnostic CRAP reporting **over exactly that staged content**, before any
+> code, memory, ledger, contract, or applied-gate **commit**; then commits code, memory and ledger
+> in order. It states four things the previous text did not:
 
-- **Staging is what lets the gate see files the task created**, not only the ones it edited; the
-  **reset** is what makes a retry stage what a first run would, instead of inheriting a refused
-  attempt's index.
-- **Staging is not undone when the gate refuses** — the checkout staged is the task's own
-  disposable worktree.
-- The **two refusals guard that staging step**, so they run only where the gate runs: apply
-  refuses before staging when the code checkout is not a task worktree (a series/master contract
-  records the repository path itself) or has unresolved merge conflicts.
-- A checkout carrying **no wrapper** runs neither the gate nor those refusals and reaches the
-  ordinary commit step's own `git add -A` exactly as it always has.
+> **Retained historical source account — superseded by the current contract:**
+> - **Staging is what lets the gate see files the task created**, not only the ones it edited; the
+>   **reset** is what makes a retry stage what a first run would, instead of inheriting a refused
+>   attempt's index.
+> - **Staging is not undone when the gate refuses** — the checkout staged is the task's own
+>   disposable worktree.
+> - The **two refusals guard that staging step**, so they run only where the gate runs: apply
+>   refuses before staging when the code checkout is not a task worktree (a series/master contract
+>   records the repository path itself) or has unresolved merge conflicts.
+> - A checkout carrying **no wrapper** runs neither the gate nor those refusals and reaches the
+>   ordinary commit step's own `git add -A` exactly as it always has.
 
-The blocker wording also narrowed from "before any … mutation" to "before any … commit", which is
-the accurate claim now that staging is itself a mutation the gate performs. The published process
-recommends preview before approval/apply, but apply independently validates the same effective
-input and does not treat a prior preview as authority; apply requires `intent_note`.
+> **Retained historical source account — superseded by the current contract:**
+> The blocker wording also narrowed from "before any … mutation" to "before any … commit", which is
+> the accurate claim now that staging is itself a mutation the gate performs. The published process
+> recommends preview before approval/apply, but apply independently validates the same effective
+> input and does not treat a prior preview as authority; apply requires `intent_note`.
 
 The publication and reclamation tools forward flat:
 
@@ -152,34 +163,35 @@ Keep registered signatures and descriptions aligned with the application request
 
 ### Invariants And Boundaries
 
-- Keep `CloseoutApproval` separate from `CloseoutCommitMessages`.
-- The public direct-landing description must distinguish its narrow leaf-without-enclosure route
-  from ordinary master/series closeout and integration; contract kind alone does not select direct
-  execution, and those ordinary lifecycle routes do not gain a grant prerequisite.
-- Preview is the non-mutating inspection surface, but it is not durable authority that apply may
-  trust. Preview and direct apply each normalize the same effective input independently; apply
-  additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
-  preceding preview.
-- Closeout is worktree-only; the retired `direct_closeout_*` tools are not registered anywhere.
-- Application composition lives in `application/worktree_tools.py`; Git publication and recovery
-  belong to the worktree operation owners.
-- **These docstrings are the published MCP tool descriptions**. They must describe the current
-  candidate/source checks, explicit approval, and code/memory publication behavior. The historical
-  wrapper-gate description above is superseded and must not restore a normal quality gate.
-- Keep internal registrar helper names ending in `_tools`; the suffix is part of the narrow
-  structural-rule attribution for this declaration-only route.
-- **The checkpoint docstring must name the whole completion refusal set, not two of three
-  (260831-LOCR-L34).** It said the route dropped only the two "master is finished" assumptions while
-  the code also demanded a completed closeout — and that omission described a route a client could
-  not actually use. A published refusal list is a promise about what will *not* happen; keep it
-  complete when the gate changes.
-- **The checkpoint description must present a partial publication and deny being the pause
-  (260831-LOCR-L36).** "Use this to pause a master" invited an agent to publish unfinished work for
-  an ordinary stop request — changes the developer never asked to publish. The text must keep saying
-  that the route moves committed refs onto the protected source branch under explicit approval, and
-  that pausing is a separate matter which is NOT this call. `mcp/tests/test_tools.py` pins the
-  wording (`PUBLISH`, "not a pause", "separate matter and is NOT this call") and asserts the old
-  invitation is gone.
+> **Retained historical source account — superseded by the current contract:**
+> - Keep `CloseoutApproval` separate from `CloseoutCommitMessages`.
+> - The public direct-landing description must distinguish its narrow leaf-without-enclosure route
+>   from ordinary master/series closeout and integration; contract kind alone does not select direct
+>   execution, and those ordinary lifecycle routes do not gain a grant prerequisite.
+> - Preview is the non-mutating inspection surface, but it is not durable authority that apply may
+>   trust. Preview and direct apply each normalize the same effective input independently; apply
+>   additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
+>   preceding preview.
+> - Closeout is worktree-only; the retired `direct_closeout_*` tools are not registered anywhere.
+> - Application composition lives in `application/worktree_tools.py`; Git publication and recovery
+>   belong to the worktree operation owners.
+> - **These docstrings are the published MCP tool descriptions**. They must describe the current
+>   candidate/source checks, explicit approval, and code/memory publication behavior. The historical
+>   wrapper-gate description above is superseded and must not restore a normal quality gate.
+> - Keep internal registrar helper names ending in `_tools`; the suffix is part of the narrow
+>   structural-rule attribution for this declaration-only route.
+> - **The checkpoint docstring must name the whole completion refusal set, not two of three
+>   (260831-LOCR-L34).** It said the route dropped only the two "master is finished" assumptions while
+>   the code also demanded a completed closeout — and that omission described a route a client could
+>   not actually use. A published refusal list is a promise about what will *not* happen; keep it
+>   complete when the gate changes.
+> - **The checkpoint description must present a partial publication and deny being the pause
+>   (260831-LOCR-L36).** "Use this to pause a master" invited an agent to publish unfinished work for
+>   an ordinary stop request — changes the developer never asked to publish. The text must keep saying
+>   that the route moves committed refs onto the protected source branch under explicit approval, and
+>   that pausing is a separate matter which is NOT this call. `mcp/tests/test_tools.py` pins the
+>   wording (`PUBLISH`, "not a pause", "separate matter and is NOT this call") and asserts the old
+>   invitation is gone.
 
 ### Todos
 
@@ -248,10 +260,13 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
-The public descriptions now state the durable ownership boundary directly: direct landing and
-closeout recovery use the retained operation journal, never a transient landing lock or queue row;
-queue invalidation does not affect an accepted generation. Cleanup and abandon first archive and
-read back bounded canonical enclosure evidence, publish the external receipt, and only then remove
-worktrees, branches, reports, providers, and the enclosure root. Active, ambiguous, unreadable, or
-mismatched evidence refuses deletion. Shared grade/admission request types come from the canonical
-closeout-source model.
+> **Retained historical source account — superseded by the current contract:**
+> The public descriptions now state the durable ownership boundary directly: direct landing and
+> closeout recovery use the retained operation journal, never a transient landing lock or queue row;
+> queue invalidation does not affect an accepted generation. Cleanup and abandon first archive and
+> read back bounded canonical enclosure evidence, publish the external receipt, and only then remove
+> worktrees, branches, reports, providers, and the enclosure root. Active, ambiguous, unreadable, or
+> mismatched evidence refuses deletion. Shared grade/admission request types come from the canonical
+> closeout-source model.
+
+- This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states, blocked/refused outcomes and state/next/log presentation, with docs/reference/mcp-tools.md carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted. [11]

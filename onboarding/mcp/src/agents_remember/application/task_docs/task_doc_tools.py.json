@@ -3,25 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
-        "content": "sha256:b9ac16aba8556a7da127a1ea950124ebd44ef1807957da3bec6ef1ea1db7b84d",
-        "locator": {
-          "kind": "symbol",
-          "name": "_get_task_doc_result"
-        }
-      },
-      "id": "RLZ-993RTH",
-      "invariant": "INV-7HBKZR",
-      "origin": {
-        "handoffEntry": "L116-W3-effective-limit-answers",
-        "leaf": "260928-MIK-L116"
-      },
-      "rationale": "This read path answers the effective number on pre-limit records without rewriting history.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+        "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
         "content": "sha256:ef74f01566444add66dcc592096c367c87f1023fbc7172a60dabfcc9eeaec0bd",
         "locator": {
           "kind": "symbol",
@@ -173,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
               "kind": "symbol",
@@ -218,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
             "locator": {
               "kind": "symbol",
@@ -234,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
               "kind": "symbol",
@@ -250,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:48d14f39461c7ca9cfd7782f34f5c2cc37dd362690a7d01fc8f875e4d366d354",
             "locator": {
               "kind": "symbol",
@@ -378,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:70023d0f7d81395410f449bb13a29b0e18702552db38a6e5b86e2f25f4c25599",
             "locator": {
               "kind": "symbol",
@@ -433,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -466,7 +448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
             "locator": {
               "kind": "symbol",
@@ -477,7 +459,7 @@
         },
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
             "locator": {
               "kind": "symbol",
@@ -488,7 +470,7 @@
         },
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
             "locator": {
               "kind": "symbol",
@@ -499,7 +481,7 @@
         },
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
             "locator": {
               "kind": "symbol",
@@ -527,6 +509,21 @@
         }
       ]
     },
+    "31": {
+      "note": "task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. Failed master synchronization is an answered refusal. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "`read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document.",
       "targets": [
@@ -548,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
             "locator": {
               "kind": "symbol",
@@ -564,7 +561,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:57a94856797aaa2f4d3299470732dfe199c46838e0d113bca960ba43f5677cb2",
             "locator": {
               "kind": "symbol",
@@ -580,7 +577,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "blob": "4312fbb3ae5b54c8c12f511e4257df4794cb55df",
             "content": "sha256:9b183eb2a268c4dea11f7e281db45a46fc7ef5f55f6aa512ff1237dec94910f6",
             "locator": {
               "kind": "symbol",
@@ -597,12 +594,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:0234011a9670a0dc815223b9c940729ef6d16426010a2b97f169b68ef5d0ec14",
             "locator": {
-              "end": 377,
+              "end": 463,
               "kind": "line_range",
-              "start": 377
+              "start": 463
             }
           },
           "kind": "code"

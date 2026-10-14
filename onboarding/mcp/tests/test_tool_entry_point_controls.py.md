@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The negative classifier/no-fallback control now uses the staying read_ar_files list vehicle rather than the obsolete task_doc checklist vehicle. Its purpose remains refusal discrimination without a fallback route.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Tests for tool entry-point controls.
 
 ## Code Commentary
@@ -25,3 +31,6 @@ The argument-versus-response validation control calls `citation_fix` with no `re
 - A handler that goes round the choke point arrives as unvalidatable with its key named. [4]
 
 - The retained handler deadline control names server_info and checks cleanup plus the next call. [6]
+
+- The negative classifier/no-fallback control now uses the staying read_ar_files list vehicle rather than the obsolete task_doc checklist vehicle. Its purpose remains refusal discrimination without a fallback route. [7]
+

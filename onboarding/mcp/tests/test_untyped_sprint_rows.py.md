@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Navigation of raw whole application results is direct. Existing row, file and proof assertions remain unchanged; source porting does not reinstate a retired public reader.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 A sprint that commands a master without a typed row blocks neither finalize nor retire. The fixture reproduces the rows of the real sprint: a master behind a legacy seat row whose seat document names it, a master behind a seat row whose seat document names nobody, and a master with a typed row. The linkage report states the first two as facts; finalize and retire work on all three.
 
 ## Code Commentary
@@ -26,3 +32,6 @@ a fresh completion decision was written. The sprint source pair stays unchanged 
 - Finalize and retire work on typed rows, correlated legacy seat rows, and a commanded master with no row. [2]
 
 - The skipped-row control completes an in-progress master and preserves the sprint source pair. [3]
+
+- Navigation of raw whole application results is direct. Existing row, file and proof assertions remain unchanged; source porting does not reinstate a retired public reader. [4]
+

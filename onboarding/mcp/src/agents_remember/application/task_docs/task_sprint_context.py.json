@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7865ba58d82f4e42292d2c4a605da455f063da3e",
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
             "content": "sha256:1dc07ce49fd98c1207ef50bab225b81b1f8afc170a5bf23db7cc2afa56e5f7f5",
             "locator": {
               "kind": "symbol",
@@ -23,14 +23,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
             "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
             "locator": {
-              "end": 823,
+              "end": 824,
               "kind": "line_range",
-              "start": 812
+              "start": 813
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "SprintLinkageRequest threads the optional configuration to linkage-report destination resolution. Fact collection edits no tasks. A real linkage_report still needs a resolvable report/log root and can refuse with linkage-report-unwritable; dry run computes facts without writing its per-call JSON report. Absence of config is not a promise of a successful no-file apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

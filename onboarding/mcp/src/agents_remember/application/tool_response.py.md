@@ -14,18 +14,24 @@ Complete one tool result at the application boundary.
 
 Module-level surface:
 
-- `_agent_notifier_banner` (function, lines 127-138) — Return the stale-supervisor banner without blocking a tool response.
-- `_attach_lifecycle_tail` (function, lines 139-158)
+- `_agent_notifier_banner` — Return the stale-agent-notifier banner without blocking a tool response.
+- `_attach_lifecycle_tail` — Preserve producer recovery guidance and bind ambient task addresses.
 - `complete_tool_response` — Validate the whole result, shape or receive its status projection, log, measure final delivery, and observe one application result.
 
 The registered response model is selected and validated before final output. Lifecycle hints
-and notifier banners are attached as model fields through the finalizer’s enrichment callback,
-then whole-result serialization retains that finalized payload. An optional caller-sized `answer`
-projection is distinct from the whole result; when absent, the choke strips the envelope and caps
-lists itself. Both paths retain the same generic guard, final delivered-token accounting and
-whole-result digest/detail custody. Explicit producer recovery guidance takes precedence;
-cross-task guidance is omitted. Observer tool completion receives the finalized whole payload
-with the delivered answer count, not an independently reconstructed result.
+and notifier banners are attached as model fields through the finalizer's enrichment callback,
+then whole-result serialization retains that finalized payload. An explicit caller-sized `answer`
+projection wins when supplied. Without it, `_select_shaped_answer` applies the task/landing/role
+projectors only to their owned tools; unrelated tools retain the stripped whole result. That default selection invokes `truncate_lists`. An explicit `answer` is instead dict-copied and does not pass through that default list-cap function; an under-bound explicit mapping returns unchanged by the token guard. Both paths retain whole-result validation/logging and the final delivered-token guard, whose short form is not a universal per-list cap.
+Explicit producer recovery guidance takes precedence; cross-task guidance is omitted. Observer
+completion receives the finalized whole payload with the delivered answer count, not a rebuilt result.
+
+Caller diffs are separate readable reports: `_attach_caller_diff_report` attempts to retain the
+complete diff independently of the investigation detail. A cut diff names that report when it
+exists, otherwise the available detail or an honest not-retained marker. Waited role replies are
+fitted to keep their beginning after log attachment and again after a late line error, before the
+generic guard. These answer changes preserve lifecycle-versus-workspace event ownership and do
+not supply Git, task or review acceptance.
 
 ### 260928-MIK-L114 Event River Feed At The Completion Choke
 
@@ -58,15 +64,16 @@ None.
 
 ## Evidence
 
-- Whole-result validation/logging and projected-answer guarding remain distinct. [4]
+- Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct. [4]
 
 ### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the function `_agent_notifier_banner` (lines 127-138) — Return the stale-supervisor banner without blocking a tool response. [1]
-- Defines the function `_attach_lifecycle_tail` (lines 139-158). [2]
-- Defines the function `complete_tool_response` (lines 303-411) — Validate, enrich, count, and observe one application result. [3]
+- `_agent_notifier_banner` returns the stale-agent-notifier banner without blocking a tool response. [1]
+- `_attach_lifecycle_tail` binds lifecycle guidance to the response while preserving explicit producer recovery. [2]
+
+- The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]
 
 ## L23 Final Candidate Disposition
 

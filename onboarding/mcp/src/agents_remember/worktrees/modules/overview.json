@@ -255,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5958d8edb20cb702223555139431cca1b4ae267",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -378,12 +378,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:c37e22cd9045bf316672d3f14d7db587ddb38016375cc167cbb8505504c2f669",
             "locator": {
-              "end": 611,
+              "end": 640,
               "kind": "line_range",
-              "start": 611
+              "start": 640
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -438,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
             "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
             "locator": {
               "end": 293,
@@ -451,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -590,7 +590,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -1387,7 +1387,7 @@
         },
         {
           "anchor": {
-            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
               "kind": "symbol",
@@ -1404,7 +1404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
             "locator": {
               "kind": "symbol",
@@ -1547,7 +1547,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
             "content": "sha256:f3d4cd655c8a1a332af3690694d1b34c9601496f1f826c25f9542c8c45a737c2",
             "locator": {
               "kind": "symbol",
@@ -1593,7 +1593,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -1605,7 +1605,7 @@
         },
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
             "locator": {
               "kind": "symbol",
@@ -1789,7 +1789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
+            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
               "kind": "symbol",
@@ -1909,6 +1909,77 @@
               "start": 545
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+            "content": "sha256:5ad1872922b289898616ea4f50b6449749007c82bb8e83d1fe4ba7ed8cd30a66",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+            "content": "sha256:65bc2ae4744ab9977aa385f6c58bc6a54146fb9db8432180f605851963ee3387",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
+            "content": "sha256:4e79e6b39cd6e6f4899d834d6eee8afc37bfc202697345af48e9bb44ee2b5310",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
+            "content": "sha256:b93c9b036f1d93a9f32ff95e9cce15ca814b5e19c0c781f51dd6d3d39553df2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "content": "sha256:9b47d6e52794dccc01bb27cf4e27c8856ef938f3a5d2e6642f99d280fac9bdbc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed290801bb80c1162650eb5b582cb58bd46b8543",
+            "content": "sha256:cda86111e3da91e6eedf5b71dccdef512fe955f33081376477bd9dfd07dc7cc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/state_refusals.py"
           },
           "kind": "code"
         }

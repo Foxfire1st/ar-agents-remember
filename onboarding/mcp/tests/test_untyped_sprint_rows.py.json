@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
-        "content": "sha256:754f2c6459e47c40e478120e6399dea7798084fa92c7979754103b57b124d32a",
+        "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
+        "content": "sha256:c5fcdb8272971695d51836c757997b7c59efc672711e0865916c2cf22e13916c",
         "locator": {
           "kind": "symbol",
           "name": "test_a_retired_masters_kept_seat_document_is_readable_and_its_writes_refuse"
@@ -56,11 +56,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
+            "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
             "content": "sha256:c083e5119b16ff458daad64241effeb6d4b3aa26a0a6cdc93615dce11779b46b",
             "locator": {
               "kind": "symbol",
               "name": "test_finalize_completes_the_master_and_reports_the_sprint_row_as_skipped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Navigation of raw whole application results is direct. Existing row, file and proof assertions remain unchanged; source porting does not reinstate a retired public reader.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
+            "content": "sha256:3f0490466744047f9322e1fadcd723f4694b142570a6d1da4cae2c7d18dafd4c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

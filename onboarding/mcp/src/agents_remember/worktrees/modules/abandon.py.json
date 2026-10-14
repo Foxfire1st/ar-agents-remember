@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
         "content": "sha256:4ff8e477f7cf07b5c9cc0495a3d07f5d9234cbc015fab1c5073cbbfaf6421573",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+        "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -208,6 +208,21 @@
         }
       ]
     },
+    "16": {
+      "note": "Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+            "content": "sha256:5ad1872922b289898616ea4f50b6449749007c82bb8e83d1fe4ba7ed8cd30a66",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner.",
       "targets": [
@@ -230,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
+            "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
             "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
             "locator": {
               "kind": "symbol",
@@ -297,12 +312,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "442ba26117e74abfd7a4e161b6ff0dede79cc12f",
+            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 356,
+              "end": 257,
               "kind": "line_range",
-              "start": 356
+              "start": 257
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

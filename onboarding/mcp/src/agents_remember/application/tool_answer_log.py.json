@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
         "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
         "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
         "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
-        "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
         "locator": {
           "kind": "symbol",
           "name": "resolve_log_roots"
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
-        "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+        "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
         "locator": {
           "kind": "symbol",
           "name": "resolve_log_roots"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
         "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
         "locator": {
           "kind": "symbol",
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
             "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
             "locator": {
               "kind": "symbol",
@@ -128,12 +128,12 @@
       ]
     },
     "2": {
-      "note": "Enclosure calls log beside the enclosure; terminating calls always route to the root.",
+      "note": "A live ambient enclosure contract selects the enclosure log folder; terminating calls always select the resolved transcript root.",
       "targets": [
         {
           "anchor": {
-            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
-            "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "content": "sha256:8554ffa051d9ce4a05a06162946b89846b25a5459d15dcec136da25159378f42",
             "locator": {
               "kind": "symbol",
               "name": "resolve_log_roots"
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
             "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
             "locator": {
               "kind": "symbol",
@@ -164,11 +164,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
             "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
             "locator": {
               "kind": "symbol",
               "name": "_redact_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A caller diff has its own bounded readable report, or no report when oversize or unwritable; it is independent of detail retention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772c02e790b0e0c5dde08929c8b18b8fd0adcaf6",
+            "content": "sha256:dcceb9ddc3af3c1b08c2536e0f13911cab65344b646fc4c08f96ca4f856201c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_diff_report"
             }
           },
           "kind": "code"

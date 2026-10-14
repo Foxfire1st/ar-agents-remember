@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Registered FastMCP proof for actionable atomic-series activation admission and read-only status
 evidence. The admission payload is contract-scoped: it explains the addressed contract's own state and
 never names a foreign master as the blocker.
@@ -86,3 +92,5 @@ No external domain evidence applies.
 No cross-repository implementation evidence is required for this disposable registered fixture.
 
 The fixture does not establish a live external integration.
+
+- Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers. [9]

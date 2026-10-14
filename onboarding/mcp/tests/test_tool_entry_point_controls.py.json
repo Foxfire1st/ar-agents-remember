@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
-        "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+        "content": "sha256:16b4e30fb815c64fc6f431f12cb12d603a86c40724f5cf812cdb0599ab1ec533",
         "locator": {
           "kind": "symbol",
           "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
@@ -175,8 +175,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
-        "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+        "content": "sha256:16b4e30fb815c64fc6f431f12cb12d603a86c40724f5cf812cdb0599ab1ec533",
         "locator": {
           "kind": "symbol",
           "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
@@ -188,12 +188,12 @@
         "handoffEntry": "L130-controls-bite",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "Corrupts a retained checklist item of a real task_doc answer, proving a kept list does not launder a new key inside its items.",
+      "rationale": "Corrupts a retained list item of a real read_ar_files answer, proving a kept list does not launder a new key inside its items. The former task_doc-checklist carrier is historical; the negative classifier/no-fallback purpose remains.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
@@ -211,7 +211,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
         "locator": {
           "kind": "symbol",
@@ -229,7 +229,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -247,7 +247,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
         "locator": {
           "end": 26,
@@ -266,7 +266,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
         "locator": {
           "end": 30,
@@ -285,7 +285,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -303,7 +303,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -321,7 +321,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
@@ -339,7 +339,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -357,7 +357,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -375,7 +375,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
@@ -393,7 +393,7 @@
     },
     {
       "anchor": {
-        "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+        "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -464,12 +464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
             "content": "sha256:33130145055549ab94d277f921efd2ccfe6a699fa7b23e2bac7f40b086db8dcb",
             "locator": {
-              "end": 313,
+              "end": 314,
               "kind": "line_range",
-              "start": 299
+              "start": 300
             }
           },
           "kind": "test"
@@ -481,12 +481,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
             "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
             "locator": {
               "end": 87,
               "kind": "line_range",
               "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The negative classifier/no-fallback control now uses the staying read_ar_files list vehicle rather than the obsolete task_doc checklist vehicle. Its purpose remains refusal discrimination without a fallback route.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

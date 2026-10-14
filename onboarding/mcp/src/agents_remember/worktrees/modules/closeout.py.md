@@ -17,6 +17,10 @@ quality-gate sections below describe pre-R12 behavior and are not prerequisites 
 
 ## Code Commentary
 
+### Current Contract
+
+Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. The gate retains gate_list guidance; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority.
+
 ### Logic
 
 Closeout records code and memory-content commits, then publishes the exact contract state. External cache refresh is informational: it supplies no approval message, source-head expectation, recovery completeness cell, or integration output. Source-head validation uses `integrated_memory_content_commit`, and no-op finalization proves the existing two outputs without inventing a cache-maintenance commit.
@@ -302,12 +306,13 @@ always has.
 
 ### Approval Claim And Mutation Evidence
 
-Closeout keeps the early read-only gate check so an unsatisfied dashboard gate can refuse before
-quality work. The actual approval claim remains under the gate-store lock after reversible quality,
-lineage, route-review, and accepted-candidate checks and before the first journaled mutation intent
-or Git action. A contract without a lifecycle gate still requires the approval claim and nonblank
-note persisted by the canonical closeout operation; the retired synchronous chat/CLI apply path is
-not a fallback.
+> **Retained historical source account — superseded by the current contract:**
+> Closeout keeps the early read-only gate check so an unsatisfied dashboard gate can refuse before
+> quality work. The actual approval claim remains under the gate-store lock after reversible quality,
+> lineage, route-review, and accepted-candidate checks and before the first journaled mutation intent
+> or Git action. A contract without a lifecycle gate still requires the approval claim and nonblank
+> note persisted by the canonical closeout operation; the retired synchronous chat/CLI apply path is
+> not a fallback.
 
 Approval consumption and mutation recovery are deliberately separate facts. The gate claim proves
 that this accepted operation may proceed; it does not prove that Git changed, retain a generation,
@@ -366,24 +371,27 @@ No additional cross-repository evidence applies.
 
 ## The Closeout Preview Reads The Same Completion Gate As The Apply (260831-LOCR-L34)
 
-`closeout_preview_payload` cit:([`closeout_preview_payload`], mcp/src/agents_remember/worktrees/modules/closeout.py:235-292) now calls
-`require_closeout_publication_authority(contract)`
-cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:33-57) immediately after `refuse_series_workbench_commit`, so **the preview refuses
-exactly what the apply refuses**.
+> **Retained historical source account — superseded by the current contract:**
+> `closeout_preview_payload` cit:([`closeout_preview_payload`], mcp/src/agents_remember/worktrees/modules/closeout.py:235-292) now calls
+> `require_closeout_publication_authority(contract)`
+> cit:([`require_closeout_publication_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:33-57) immediately after `refuse_series_workbench_commit`, so **the preview refuses
+> exactly what the apply refuses**.
 
-**Why this was a real defect, not a tidy-up.** The atomic-completion gate (master `Completed`, every
-canonical leaf landed) existed only behind the apply, in `publish_closeout_under_authority`. A partial
-master's preview therefore answered `state: "would-closeout"` with a plan, and the apply then refused
-on every completion blocker — 19 of them on LOCR. That misleading plan is what led a human to write a
-false note about the series being closable. The gate is now one definition with two callers (the
-preview and the apply), and its first statement is `if contract.kind == "leaf": return`, so **no leaf
-closeout preview changes** — a leaf owes nothing there, exactly as it owed nothing to the old
-publication wrapper.
+> **Retained historical source account — superseded by the current contract:**
+> **Why this was a real defect, not a tidy-up.** The atomic-completion gate (master `Completed`, every
+> canonical leaf landed) existed only behind the apply, in `publish_closeout_under_authority`. A partial
+> master's preview therefore answered `state: "would-closeout"` with a plan, and the apply then refused
+> on every completion blocker — 19 of them on LOCR. That misleading plan is what led a human to write a
+> false note about the series being closable. The gate is now one definition with two callers (the
+> preview and the apply), and its first statement is `if contract.kind == "leaf": return`, so **no leaf
+> closeout preview changes** — a leaf owes nothing there, exactly as it owed nothing to the old
+> publication wrapper.
 
-This is instance 1 of the preview/apply parity invariant recorded on the `worktrees/overview.md`
-route; the full instance inventory lives there and in `memory_quality/overview.md`. The reason it
-belongs in memory at all is that a preview is a *plan* and plans are read by humans and by agents:
-when the two surfaces are two implementations, the plan is a promise nobody enforces.
+> **Retained historical source account — superseded by the current contract:**
+> This is instance 1 of the preview/apply parity invariant recorded on the `worktrees/overview.md`
+> route; the full instance inventory lives there and in `memory_quality/overview.md`. The reason it
+> belongs in memory at all is that a preview is a *plan* and plans are read by humans and by agents:
+> when the two surfaces are two implementations, the plan is a promise nobody enforces.
 
 ## A Checkpointed Series Passes Its Own Landed Source Head (260831-LOCR-L30)
 
@@ -574,35 +582,39 @@ own four cases are in `mcp/tests/test_response_address_binding.py`.
 On converted memory three places of this module ask the mandatory invariant gate (MIK-R09), through
 `closeout_external` (decision record DEC-TJ0CX7; invariants INV-HWAWFT and INV-WV1YQE):
 
-- **The apply's preflight.** `closeout_result` calls `refuse_ungated_candidate(contract, accepted_candidate_tree)`
-  after `_revalidate_candidate` and before `_publish_closeout_candidate`. A closeout refused here claims no approval
-  and commits neither side. The exact memory tree is judged again at the memory commit, after the code commit
-  (`_closeout_commit_phase` commits the code first): a refusal there leaves the code commit made and no memory
-  committed, and a rerun takes that commit as it is and completes once the gate passes.
-- **The preview.** `closeout_preview_payload` calls `candidate_gate_verdict` after the publication checks. When the
-  gate refuses, it returns `_gate_refused_preview` instead of the plan:
-  - `state: "knowledge-gate-refused"` (`GATE_REFUSED_PREVIEW`), never `would-closeout`;
-  - `knowledge_gate: {state: "refused", findingCount, findings, truncated}` with at most `MAX_PREVIEW_FINDINGS` (50)
-    findings;
-  - `commit_approval_required: false`, `nextOperation: "continue_work"`, no `nextTool`, and a `nextStep` that says to
-    answer the findings, rerun `memory_quality_check` and preview again.
+> **Retained historical source account — superseded by the current contract:**
+> - **The apply's preflight.** `closeout_result` calls `refuse_ungated_candidate(contract, accepted_candidate_tree)`
+>   after `_revalidate_candidate` and before `_publish_closeout_candidate`. A closeout refused here claims no approval
+>   and commits neither side. The exact memory tree is judged again at the memory commit, after the code commit
+>   (`_closeout_commit_phase` commits the code first): a refusal there leaves the code commit made and no memory
+>   committed, and a rerun takes that commit as it is and completes once the gate passes.
+> - **The preview.** `closeout_preview_payload` calls `candidate_gate_verdict` after the publication checks. When the
+>   gate refuses, it returns `_gate_refused_preview` instead of the plan:
+>   - `state: "knowledge-gate-refused"` (`GATE_REFUSED_PREVIEW`), never `would-closeout`;
+>   - `knowledge_gate: {state: "refused", findingCount, findings, truncated}` with at most `MAX_PREVIEW_FINDINGS` (50)
+>     findings;
+>   - `commit_approval_required: false`, `nextOperation: "continue_work"`, no `nextTool`, and a `nextStep` that says to
+>     answer the findings, rerun `memory_quality_check` and preview again.
 
-  `_closeout_entry` returns that preview with return code 2. A passing preview of a converted leaf carries
-  `knowledge_gate: {"state": "pass"}`; an unconverted leaf's preview is refused by the cutover lock before it can promise a closeout. The preview writes
-  no closeout publication to the leaf's code, memory or contract, and the gate's memo lets the apply that follows reuse its verdict. This module-level mutation boundary is not universal zero-I/O: the enclosing registered tool call records its daily tool-log line and any required detail, plus its completed-answer workspace-river event or existing ambient lifecycle event. The preview evaluates the gate itself
-  whenever the memo holds no verdict for the same inputs; that is sound while the preview is called only on explicit
-  request and nothing polls it (assumption ASM-NJ9P83, which the decision record DEC-TJ0CX7 links as a reason to
-  reconsider).
-- **A recovered closeout.** `_recover_closeout_finalization` calls `require_gated_recovery` before it proves the
-  recovered commits, so the contract is finalized only for a memory commit the gate passes.
+> **Retained historical source account — superseded by the current contract:**
+>   `_closeout_entry` returns that preview with return code 2. A passing preview of a converted leaf carries
+>   `knowledge_gate: {"state": "pass"}`; an unconverted leaf's preview is refused by the cutover lock before it can promise a closeout. The preview writes
+>   no closeout publication to the leaf's code, memory or contract, and the gate's memo lets the apply that follows reuse its verdict. This module-level mutation boundary is not universal zero-I/O: the enclosing registered tool call records its daily tool-log line and any required detail, plus its completed-answer workspace-river event or existing ambient lifecycle event. The preview evaluates the gate itself
+>   whenever the memo holds no verdict for the same inputs; that is sound while the preview is called only on explicit
+>   request and nothing polls it (assumption ASM-NJ9P83, which the decision record DEC-TJ0CX7 links as a reason to
+>   reconsider).
+> - **A recovered closeout.** `_recover_closeout_finalization` calls `require_gated_recovery` before it proves the
+>   recovered commits, so the contract is finalized only for a memory commit the gate passes.
 
-- The apply asks the gate before it publishes the closeout. [29]
-- The preview asks the same verdict and answers the refused preview. [30]
-- The refused preview: the findings, no approval, no next tool. [31]
-- A refused preview returns code 2. [32]
-- A recovered closeout is finalized only for a gated memory commit. [33]
-- The preview answers what the apply will do. [34]
-- An unconverted leaf's preview is refused before closeout publication. [35]
+- **Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout. [29]
+- **Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview. [30]
+- **Retained historical source account — superseded by the current contract:** The refused preview: the findings, no approval, no next tool. [31]
+- **Retained historical source account — superseded by the current contract:** A refused preview returns code 2. [32]
+- **Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit. [33]
+- **Retained historical source account — superseded by the current contract:** The preview answers what the apply will do. [34]
+- **Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication. [35]
 
 - Registered calls keep the daily call record independently of closeout publication. \[36] [36]
 - Completed calls keep their workspace-river event independently of closeout publication. \[37] [37]
+
+- Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. The gate retains gate_list guidance; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]

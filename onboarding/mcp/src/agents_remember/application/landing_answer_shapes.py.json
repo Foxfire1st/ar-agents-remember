@@ -1,0 +1,144 @@
+{
+  "path": "mcp/src/agents_remember/application/landing_answer_shapes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "content": "sha256:31590d40eb7608e3c9a1891a727e13695bc47c44fdb59d0a5e8bdf814df1dcf3",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_landing_answer"
+        }
+      },
+      "id": "RLZ-3Q48EF",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every landing-chain answer into state, blockers, next step and log location, so the packet rule 1 contract lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_task_doc_answer"
+        }
+      },
+      "id": "RLZ-CTF3D5",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every task_doc write answer and dry run, so the writes-don't-read contract of packet rule 2 lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_role_message_answer"
+        }
+      },
+      "id": "RLZ-DJE35K",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every role-message answer with its warning and waited-reply handling, so the packet rule 5 contract lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_role_message_answer"
+        }
+      },
+      "id": "RLZ-SJSWXC",
+      "invariant": "INV-YAWRJ4",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.13 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This projection shapes every role-message answer and keeps the warning the host behavior requires, so the line shape is decided here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Landing tools select their declared answer fields and preserve producer refusals without altering the transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "content": "sha256:31590d40eb7608e3c9a1891a727e13695bc47c44fdb59d0a5e8bdf814df1dcf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_landing_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A successful start retains the new agent and handover, while failures keep their shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_start_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Role-addressed and waited messages retain only the conditional information their caller needs, including cancellation warnings and reply beginnings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_message_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_doc_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,7 +4,8 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- The current literal declarations include the grant adapter and its handler alongside role_start_set and native retire_child. Their numeric roster/module/handler guards are source declarations at this candidate, not a fresh execution or live tool-list result; retained prior numbers below are historical.
+> **Retained historical source account — superseded by the current contract:**
+> - The current literal declarations include the grant adapter and its handler alongside role_start_set and native retire_child. Their numeric roster/module/handler guards are source declarations at this candidate, not a fresh execution or live tool-list result; retained prior numbers below are historical.
 
 ### Superseded inventory
 
@@ -17,7 +18,13 @@ The current source facts below replace the former operative inventory. The separ
 - Source comparison: test_every_registered_model_is_strict_or_declared_flexible derives strict/flexible model sets; imports and compatibility rows do not enlarge the public roster.
 - Source comparison: `mcp/tests/test_tool_response_conformance.py:991 (declared = set(DispatchAgentResponse.model_fields))`.
 
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+> **Retained historical source account — superseded by the current contract:**
+> - Source comparison: `mcp/tests/test_tool_response_conformance.py:225 (ROSTER_SIZE =)`.
+> - Source comparison: `mcp/tests/test_tool_response_conformance.py:422 (def test_every_registered_model_is_strict_or_declared_flexible)`.
+> - Source comparison: `mcp/tests/test_tool_response_conformance.py:991 (declared = set(DispatchAgentResponse.model_fields))`.
+
+> **Retained historical source account — superseded by the current contract:**
+> Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
 ## Current source contract evidence
 
@@ -46,6 +53,10 @@ would have told it the work was done. This module moves that guarantee into the 
 The deliberate population pins become 74 public tools, 21 adapter modules and 98 handler/call sites after native role tools replace the removed preparation route. Live registration equality and AST return-through-choke-point assertions still guard both directions. Older source/sidecar counts remain historical rather than current.
 
 ## Code Commentary
+
+### Current Contract
+
+The composed source declares41 public tools,20 modules and65 handlers; the R111 pre-sync42/20/66 and older39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent.
 
 ### Logic
 
@@ -138,3 +149,5 @@ No cross-repository implementation evidence is required for these local contract
 No repository or external-system boundary is proved by this module.
 
 </details>
+
+- The composed source declares41 public tools,20 modules and65 handlers; the R111 pre-sync42/20/66 and older39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent. [21]

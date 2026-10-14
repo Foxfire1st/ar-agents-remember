@@ -620,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea5764081bbb7a9fa9f16d71c4164e1626564383",
+            "blob": "10893332b1e69cfd66783b8546ba95ff7cf10642",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -4239,7 +4239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d504af4df20e17280188e743d502c3b26d281d5e",
+            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
             "content": "sha256:b029f4b411580cf26df4ad0ad467daad97781d7a5f215546e3a6b7883881769d",
             "locator": {
               "kind": "symbol",
@@ -4429,7 +4429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67e38141462a005c3f1c11cc524db2804e99b0de",
+            "blob": "9971a9a20ea8939e5551d9ebc3877799e6fad18a",
             "content": "sha256:fb7d5c05c20e988d4b65538fb47e3b021c3bfdc18145f8ce3a33416371daadd4",
             "locator": {
               "end": 30,
@@ -4886,7 +4886,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfecb1a12353cebd13ba65a1140776e39f09a8d7",
+            "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
             "content": "sha256:5d0add20880108858b26602373c0cccfe4f338d623c4ddecf6aa85f8f17a8278",
             "locator": {
               "kind": "symbol",
@@ -4898,7 +4898,7 @@
         },
         {
           "anchor": {
-            "blob": "cfecb1a12353cebd13ba65a1140776e39f09a8d7",
+            "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
             "content": "sha256:0df771362cb89741e238cf6756bf93084af6275d2c7753ffdfb0c98afa55093c",
             "locator": {
               "kind": "symbol",
@@ -5019,7 +5019,7 @@
         },
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
             "content": "sha256:6625b0c40d39e4704f07b82d66dd54cb17f9c7631f88a801fddb2d6f3152e091",
             "locator": {
               "kind": "symbol",
@@ -5500,7 +5500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfecb1a12353cebd13ba65a1140776e39f09a8d7",
+            "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
             "content": "sha256:8602ef2b4c920ebe5c4f0a5ab95d5c9db3ebd18491f0a27b287a88cfa112268c",
             "locator": {
               "end": 297,
@@ -5518,7 +5518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfecb1a12353cebd13ba65a1140776e39f09a8d7",
+            "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
             "content": "sha256:dadc3cb260375d5bae3b1330f6f32c99d58b0b39f8463c9e8e5a0f6f5099c9f8",
             "locator": {
               "kind": "symbol",
@@ -5535,7 +5535,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
             "content": "sha256:15d773d2870340bf74179440b77dd787a93638ced7d1f6f7f34f542d32b0c47e",
             "locator": {
               "kind": "symbol",
@@ -5547,7 +5547,7 @@
         },
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
             "content": "sha256:4747c3fad29ee2d5b1ef0d71f89cb41e190acecd3fd6e1d0a173f00559e76dfb",
             "locator": {
               "kind": "symbol",
@@ -5846,12 +5846,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "blob": "ddf86aa9d634cedd85802b77ccad90d371225171",
             "content": "sha256:b3c0027d37d32393aa666a980598eb91836c0d22523e929cece227e14cd87d12",
             "locator": {
-              "end": 144,
+              "end": 147,
               "kind": "line_range",
-              "start": 116
+              "start": 119
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
           },
@@ -6622,7 +6622,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
+            "blob": "c698021618cda8477c60dae1731504db396c28e1",
             "content": "sha256:7c185c735181e38c9dd1c7dd1806d17230ee84968f86cca1aeb703e228d66d80",
             "locator": {
               "kind": "symbol",
@@ -7212,7 +7212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15e331df10fd1a93a23a715fc24f437840b3f4f0",
+            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -7229,7 +7229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15e331df10fd1a93a23a715fc24f437840b3f4f0",
+            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
             "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
             "locator": {
               "kind": "symbol",
@@ -8808,12 +8808,12 @@
         },
         {
           "anchor": {
-            "blob": "ee38b1ead3059d26ed06115ca79c36a0f40b3990",
+            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
             "content": "sha256:853733543314f6d28a8ebdaf5289fa227b18f89eb240c7fde7a75753304b7964",
             "locator": {
-              "end": 896,
+              "end": 919,
               "kind": "line_range",
-              "start": 738
+              "start": 761
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -8976,6 +8976,55 @@
               "start": 999
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "487": {
+      "note": "Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
+            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
+            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c96acc8ecc74d2d772eefa7b1cb35474e413e8d4",
+            "content": "sha256:82b300b63bc12dc16451aae1eaf7a28b5636a578ccb52a9424aa4979add20a8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
           },
           "kind": "code"
         }

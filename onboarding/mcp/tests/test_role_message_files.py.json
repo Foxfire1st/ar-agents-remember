@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4f7ef4020950659abdfb73871dacf6c68b45a3d",
+            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
             "content": "sha256:7da92962a58b0a3c52b928ce56a133952cc04697af02ef4348185c05e0ea4306",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4f7ef4020950659abdfb73871dacf6c68b45a3d",
+            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
             "content": "sha256:caae0475b3c9189baf871c50e95d79bd9b5ba544e6269a198933f2190cc25b93",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "f4f7ef4020950659abdfb73871dacf6c68b45a3d",
+            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
             "content": "sha256:303f44eb9c69744a4356a19a5d646a5b93def7afb102d5247a4d0fe584472977",
             "locator": {
               "kind": "symbol",
@@ -99,6 +99,21 @@
               "end": 670,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
+            "content": "sha256:1554bb630b9f68fb16ceb7ea8fdc6f781eac83a8a77f7b6ada8fc87df3b829ae",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

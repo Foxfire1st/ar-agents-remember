@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
+            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
             "content": "sha256:c01ec63e077c1f54f8d409ce8df2e0c0bced59b01234b9961f631814f2f7099b",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
+            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
             "content": "sha256:ba73bb49dc8e61a4b45cc6933c76eea58117d7d5b538b42c8e05d5837ebfc5b1",
             "locator": {
               "kind": "symbol",
@@ -200,7 +200,7 @@
       ]
     },
     "21": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
+      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.\n\nRetained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: Current source pins are 42 public tools,20 modules and66 handlers; former39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent.",
       "targets": [
         {
           "anchor": {
@@ -235,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
+            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
             "content": "sha256:a30646fc8a8af95305e19572cb143889b84ea0510b28dae90fa1888a400710b9",
             "locator": {
               "kind": "symbol",
@@ -267,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
+            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
             "content": "sha256:29bbc6291ff08de8522956701ed7e06a87550720eedb292a3012105e1a7d252e",
             "locator": {
               "kind": "symbol",

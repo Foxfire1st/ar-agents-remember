@@ -1,5 +1,11 @@
 # Role-message file and refusal tests
 
+## STOP-delta current source contract
+
+The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced.
+
+This source account supplies no fresh test execution or MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 ## Current paired source contract — scoped assertions and incoming catalogs
 
 The composed file fixtures patch facade utc_stem, pin retained refusal files on a non-holdable unresumable session instead of busy holding, and archive the old holder before constructing successor fixtures. Full-payload/collision/rollback/strict-response checks remain controlled in-process cases; currentness does not claim a runtime pass or promote an old busy-refusal case.
@@ -21,3 +27,6 @@ Controlled role-tool fixtures cover settings-reloaded character bounds, file-onl
 - Message fixtures inspect stored payloads, pointers, reply files and workspace links. [2]
 - Faults and collisions exercise rollback and retained concurrent payloads. [3]
 - Successor guidance and strict refusal fields remain separate from automatic retargeting. [4]
+
+- The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced. [6]
+

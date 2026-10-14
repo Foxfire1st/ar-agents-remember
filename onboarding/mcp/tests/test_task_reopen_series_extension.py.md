@@ -27,13 +27,18 @@ fails if the refusal comes back — set against the guards that were kept and ar
 
 ## Code Commentary
 
+### Current Contract
+
+The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result.
+
 ### Logic
 
-Three `unittest.TestCase` classes and three module-level readers, **18 cases**, no `pytest` marks.
-The lane placement is load-bearing and is `integration`, not unit-regression (`T98`): the world is a
-real Git repository with a real coordination root, so the module is registered in the `integration`
-array of `mcp/tests/test-evidence-lanes.toml` at current row 464. Registry placement is a
-source fact, not a collected or executed case result.
+> **Retained historical source account — superseded by the current contract:**
+> Three `unittest.TestCase` classes and three module-level readers, **18 cases**, no `pytest` marks.
+> The lane placement is load-bearing and is `integration`, not unit-regression (`T98`): the world is a
+> real Git repository with a real coordination root, so the module is registered in the `integration`
+> array of `mcp/tests/test-evidence-lanes.toml` at current row 464. Registry placement is a
+> source fact, not a collected or executed case result.
 
 - **The route** (`SeriesExtensionRouteTests`). The single case
   `test_a_reopened_master_runs_a_new_leaf_through_closeout_and_lands_again` runs nine private steps
@@ -254,3 +259,7 @@ No cross-repository claim is made.
 - The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
 - A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
+
+- The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result. [26]

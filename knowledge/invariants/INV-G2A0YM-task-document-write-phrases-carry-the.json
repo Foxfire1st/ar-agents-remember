@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a caller from reporting a changed field, parent or value the operation did not write."
+  },
+  "applicability": "Admitted set_field calls with supported mutable fields, set_status calls with a supplied status, and set_step calls with supplied update keys.",
+  "conditions": [
+    "set_field renders only the actual mutable-field allowlist; ignored fields are not reported changed.",
+    "set_status renders the supplied status. set_step identifies its step and supplied parent when present, and renders only supplied supported update keys.",
+    "Each rendered value is bounded by the phrase formatter; a set_step payload with no supported update keys has only the generic addressed-step summary."
+  ],
+  "exclusions": [
+    "append_decision, record_review and record_route_review have fixed summaries (decision appended or review recorded), not this changed-value guarantee.",
+    "create/replace, add/remove/skip-step, subtask/section, execution-graph, master/archive and linkage operations retain their own operation-specific phrase contracts and are outside this three-operation scope.",
+    "The phrase is not the complete rendered document, aggregate diff, implicit approval, observed execution or a guarantee for every changed-unit operation."
+  ],
+  "id": "INV-G2A0YM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "TaskDocPhraseTests green: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.10 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For task_doc set_field, set_status and set_step operations that supply values to their supported formatter branches, the update phrase identifies the field or addressed step and carries bounded new values.",
+  "status": "proposed",
+  "supersedes": []
+}

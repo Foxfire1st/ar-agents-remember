@@ -10,6 +10,10 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 ## Code Commentary
 
+### Current Contract
+
+Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field.
+
 _start_execution reconciles matching receipt before recompiling and rejects reused request identity or another starter. _launch_prepared_role_session writes artifact and complete starting receipt before saved runtime call. Leaf Revive checks recorded/current task scope before any bridge operation. Register these APIs through the serving injection before static mount; no removed-host route alias is installed. The module also registers the one read-only report route beside them (`role_report.register_role_report_route`, MIK-R75 rule 4a).
 
 ## Leaf-set preparation and replacement
@@ -20,7 +24,8 @@ The prepared start writes each held seat’s handover and `heldOpeningPrompt` be
 
 ## Receipt fields carried for choices, documents and predecessors
 
-The prepared receipt and start answer carry launch-choice metadata, instruction composition, task-document files and predecessor reports. `_reserve_message_binding_projection` recovers the archived receipt for the selection and records its request, workspace and report as `predecessorReports`; `_launch_prepared_role_session` stores choices, instruction composition, task-document files and predecessor reports on the receipt.
+> **Retained historical source account — superseded by the current contract:**
+> The prepared receipt and start answer carry launch-choice metadata, instruction composition, task-document files and predecessor reports. `_reserve_message_binding_projection` recovers the archived receipt for the selection and records its request, workspace and report as `predecessorReports`; `_launch_prepared_role_session` stores choices, instruction composition, task-document files and predecessor reports on the receipt.
 
 ## Grant-backed leaf preparation and revival
 
@@ -65,3 +70,5 @@ Investigator dispatch uses the existing selection admission lock; options expose
 ## Current contract evidence
 
 - The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
+
+- Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
-        "content": "sha256:6f37eee1306f0b1290af83d70a8b34f34565b01541c5e96286bee19acc88c754",
+        "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
+        "content": "sha256:8ed1ddd32ce18bafe1ee0df1609432fd2eae760e091454cf3f10152fc8a79aae",
         "locator": {
           "kind": "symbol",
           "name": "role_message"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
-        "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
+        "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
+        "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
         "locator": {
           "kind": "file"
         }
@@ -64,6 +64,21 @@
               "end": 141,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
+            "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

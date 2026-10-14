@@ -6,6 +6,12 @@
 
 ## Purpose
 
+### STOP-delta current source contract
+
+Returned refusal controls keep the original abandoned-row sentence/regex and complete no-write world frame while checking the exact code and recorded detail. The missing canonical leaf-document I/O case still raises; it is not silently converted into a returned-refusal case.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 Proves that an `abandoned` row needs no landing in an atomic master's closeout, that a recorded landing cannot be hidden
 by that label, and that the chain, checkpoint and master-completion refusals name the master, row or contract cell they
 are about and the action that clears them. It runs in the `unit-regression` lane.
@@ -49,3 +55,5 @@ no enclosure unless a case adds one.
 - Checkpoint refusals name the master and the action. [6]
 
 - The series fixture mirrors completed landings on code and external memory. [7]
+
+- Returned refusal controls keep the original abandoned-row sentence/regex and complete no-write world frame while checking the exact code and recorded detail. The missing canonical leaf-document I/O case still raises; it is not silently converted into a returned-refusal case. [8]

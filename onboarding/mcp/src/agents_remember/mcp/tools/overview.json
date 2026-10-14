@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
+            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
             "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
             "locator": {
-              "end": 51,
+              "end": 50,
               "kind": "line_range",
-              "start": 50
+              "start": 49
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
+            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
-              "end": 44,
+              "end": 43,
               "kind": "line_range",
-              "start": 44
+              "start": 43
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -251,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:56c28a24b4574bbd167a6c2db330fac203f0c5b8bbec11f82510db2ca04cb251",
             "locator": {
-              "end": 219,
+              "end": 223,
               "kind": "line_range",
-              "start": 219
+              "start": 223
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -472,7 +472,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -484,7 +484,7 @@
         },
         {
           "anchor": {
-            "blob": "19212002f9db3886d61ca225d6252a51cd337b1a",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
             "content": "sha256:85b6a10d42ca9ab50606b80eae6b36d76b3bdc6869ed836f27dcbeeaf6ca9a2b",
             "locator": {
               "kind": "symbol",
@@ -513,7 +513,7 @@
         },
         {
           "anchor": {
-            "blob": "19212002f9db3886d61ca225d6252a51cd337b1a",
+            "blob": "874885a025a88d07d976a8846a8775a37045d35f",
             "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
             "locator": {
               "kind": "symbol",
@@ -525,7 +525,7 @@
         },
         {
           "anchor": {
-            "blob": "19212002f9db3886d61ca225d6252a51cd337b1a",
+            "blob": "874885a025a88d07d976a8846a8775a37045d35f",
             "content": "sha256:7e1e729d4246d5a2324fb9fe15f5684ab9fcb8e6a56f1fe41f480e811afb4724",
             "locator": {
               "kind": "symbol",
@@ -590,7 +590,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -636,7 +636,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:bd46131b34125fbbd1d1d23fa0fd79e29d355329f2e48ee6a4105399cb94ab1c",
             "locator": {
               "kind": "symbol",
@@ -653,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
             "content": "sha256:43e9c655a29b5d9fccede6aa85726d12d1eb226200ff17a3ba433f77822de0c1",
             "locator": {
               "kind": "symbol",
@@ -746,7 +746,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -770,7 +770,7 @@
         },
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -816,12 +816,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
             "content": "sha256:2aa3ab894ac53a515e506623fe8573513234ea61a25d2b7ad878be38ac5e8b91",
             "locator": {
-              "end": 155,
+              "end": 164,
               "kind": "line_range",
-              "start": 80
+              "start": 89
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -917,7 +917,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
             "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
             "locator": {
               "kind": "symbol",
@@ -929,7 +929,7 @@
         },
         {
           "anchor": {
-            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
             "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
@@ -970,7 +970,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
             "locator": {
               "kind": "symbol",
@@ -1006,7 +1006,7 @@
         },
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
             "locator": {
               "kind": "symbol",
@@ -1030,7 +1030,7 @@
         },
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -1078,7 +1078,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:6a752c679b21430b2a1536b8cbe54bc168013aafdbcc17e029889be3a6a756fb",
             "locator": {
               "kind": "symbol",
@@ -1090,7 +1090,7 @@
         },
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:0db9e2433f3b9b4f873c4de9cb281a6131d173726c3c66ed79e4dedf58072b44",
             "locator": {
               "kind": "symbol",
@@ -1102,7 +1102,7 @@
         },
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
             "locator": {
               "kind": "symbol",
@@ -1126,7 +1126,7 @@
         },
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:05ecac1a4e8541693ce45e87ff4363bfa2b78efe719918d4d4ebcf69e02c4cf1",
             "locator": {
               "kind": "symbol",
@@ -1276,13 +1276,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
               "name": "_tree_extras"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The current model-owned public roster has42 names. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7adebce1927792005324013f15696b8a2f69d12e",
+            "content": "sha256:2a2bcdd90754efcc593791922fc2b037fb304b84e2a4fa6b68f6d25ac44275ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+            "content": "sha256:47a19153c612b25593b18a8e08da0efa207f6de6001a6dc96cada93a3ad1947f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
           },
           "kind": "code"
         }
@@ -1361,7 +1388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -1378,7 +1405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
             "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
             "locator": {
               "kind": "symbol",

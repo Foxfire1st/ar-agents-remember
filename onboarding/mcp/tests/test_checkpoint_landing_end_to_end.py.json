@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:7aafc8dcfc0dc4452b2aa156fbfad690b7abf3ffb7c43cd594eb9702963e1ff3",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:2fa86bd1e7b83534ae9df91230a7ddf97840579858061c62334576864a1384ac",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:3217e64e900a0008dfa52f66514e37ec7a7ee5f557a3db196cb6a145e18d3022",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:926a9a2efad134bfad57c8fc20801929bf01022715c17e6c2f6324abe61dc8cc",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:dc7b615860987c8324de1ad54311b1b5675e4c8fe023617e0bf4d5103b544aee",
             "locator": {
               "kind": "symbol",
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:8177a85e3f132ed885e2b1210968559f3cb5edb612146b21d17b2d32256a4f68",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:42d04bfca4a6f4d2a903c192224b1533e3f3e12094a20d74300f463e7813e1eb",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:1c0c261f03d34ffa9b9b490f52d261f2281be4bb7710b24b9d519ee2ffc59c9d",
             "locator": {
               "kind": "symbol",
@@ -165,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:860312c008f3ee43fffba3b0a1c6701969ef8ce6117282b0c983162d8e611adf",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:2de865c2b550d9a9b8db83f51fc8ad2503269a12c6d621d76484132ea4b8dbfc",
             "locator": {
               "kind": "symbol",
@@ -192,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:e8deed6f7bc066eb66549d736775fee04632c74c4e6f4d27f88a320ea8a44519",
             "locator": {
               "kind": "symbol",
@@ -208,6 +208,21 @@
             "locator": {
               "kind": "symbol",
               "name": "CheckpointPausesAnUnfinishedMasterTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

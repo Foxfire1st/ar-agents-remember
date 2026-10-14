@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
             "content": "sha256:1b07e3a860d52c858396aa54385859cf4405abbbdb94a6ea3ba7fac33e7cbe88",
             "locator": {
-              "end": 211,
+              "end": 156,
               "kind": "line_range",
-              "start": 211
+              "start": 156
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
+            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -99,6 +99,21 @@
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional masterSync error/paths, updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c4560da4c36a177144fa5dd4577e3defdc7a4e0",
+            "content": "sha256:c5779f725a1eea34d5ec9307e1ff541ca9754b0d3227392502e1e9e30763ef4c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -19,6 +19,12 @@ This section supersedes contrary earlier prose only for these changed seams; ret
 
 ## Purpose
 
+### STOP-delta current source contract
+
+The fifteen already governed artifacts gain consumer declarations only. Their owners, authority, category, fidelity, cadence, lifetime, introduction provenance and replacement contracts remain distinct from consumer membership; membership establishes neither execution nor acceptance.
+
+These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+
 At the earlier L109 sync3 epoch, the source-owner repair closed the prior consumers array before the L109 artifact table; parent stdlib TOML parsing counted 101 artifacts on that exact pair. That is a dated source observation, not a current catalog total or execution/certification result. Metadata and consumer membership remain declarations.
 
 The machine-readable inventory declares durable test-evidence ownership and replacement: shared support, fixtures, recordings, recording generators and migration proofs. Each governed artifact has a row for its path, kind, authority, owner label, category, fidelity, cadence, source/version, introduction, lifetime, replacement and consumer scope. Contract rows bind stable identities to an existing owner file and exact executable evidence node. load_evidence_inventory in mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py validates schema, declarations, source-derived consumers, node selectors and governed-file coverage. These declarations are not execution proof.
@@ -52,8 +58,13 @@ The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_e
 
 The current artifact paths and every exact consumer list are canonically sorted. The eight L109 fixture blocks retain their identities and nonconsumer fields. The retained L109 consumer edges declare the diff-report, naming-projection and paging modules. The current refusal suite is also declared on existing reader fixtures and shared supports, through its answer-table import. These memberships add no artifact and certify no invocation.
 
-- The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; the repaired catalog declares101artifacts with canonically ordered paths and exact consumers. The refusal suite is also declared on existing reader fixtures and shared supports. No artifact or replacement identity is added; source accounting proves no invocation. [271]
+- The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer; the L109 incoming catalog declared101artifacts before R111 composition with canonically ordered paths and exact consumers. The refusal suite is also declared on existing reader fixtures and shared supports. No artifact or replacement identity is added; source accounting proves no invocation. [271]
 
+### Current Contract
+
+The composed source TOML now declares14 contract rows and102 artifact rows, including R111's permanent local-composition support and replacement contract alongside every L109 fixture/consumer addition. Counts are source inventory, not executed catalog validation or acceptance. Native source-reference currency is renewed only after the transaction.
+
+The R111 pre-sync declarative catalog had14 contract rows and94 artifact rows; that population is historical, not the composed catalog. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical.
 
 The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance.
 
@@ -655,7 +666,10 @@ Reference describes converted-drift consumer declarations. References and descri
 
 ## L112 post-L74 correspondence for parked comparison references
 
-Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The earlier 13-contract/93-artifact observation is historical. The repaired current catalog declares 13 contract rows and 101 artifact rows; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
+Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The earlier 13-contract/93-artifact observation is historical. The L109 incoming catalog declared13 contract rows and101 artifact rows before R111 composition; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
+
+> **Retained historical source account — superseded by the current contract:**
+> Historical L112 post-L74 intake preserved the parked W03 comparison prose and original261/262/263 targets in its intermediate account; that account is superseded, not current registration authority. The held source retains test_comparison_changeset.py on six exact artifact rows, including read_scope_test_support.py under knowledge-read-scope-cases. The current working catalog declares 13 contract rows and 93 artifact rows; this is read-only TOML parsing, not a loader or test invocation. The earlier 13/90 observation belongs only to the named 450ade9c/e06f241b epoch. Neither observation is loader/test execution or CODE/MEMORY acceptance; retained qualified contracts, preview consumers and read-boundary registrations remain declarations.
 
 ## Current contract evidence
 
@@ -668,4 +682,26 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 - All nine retained Doc14 fixture artifact rows declare the R53 judgment-row and report-policy modules as consumers; their artifact identities are unchanged. [224]
 - Durable-artifact declarations include the R53 consumers on Doc14 fixtures, validator/writer support and the existing Node lockfile; lane rows remain in test-evidence-lanes.toml. [14]
-- At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), the source diff added consumers only to twelve existing artifact rows. The 13-contract/93-artifact source observation is retained as historical on this successor (13 contracts/101 artifacts); declarations remain reachability, not a loader, test, lane or acceptance result. [273]
+- Retained historical L53 source account: at the pre-L109 freeze (CODE d457a9ae / MEMORY bacaaf79), the recorded diff added consumers to twelve existing artifact rows and recorded 13 contracts/93 artifacts. Its inherited 13-contract/101-artifact successor caption belongs to that L53 epoch, not the complete attempt15 candidate population. The passed-L111 population caption in this group is likewise retained as a historical authored claim, not a refreshed census. Declarations are reachability, not loader execution, test, lane or acceptance. [273]
+
+
+- The R111 pre-sync declarative catalog had14 contract rows and94 artifact rows; that population is historical, not the composed catalog. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [273]
+
+- The fifteen already governed artifacts gain consumer declarations only. Their owners, authority, category, fidelity, cadence, lifetime, introduction provenance and replacement contracts remain distinct from consumer membership; membership establishes neither execution nor acceptance. [274]
+
+- Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [275]
+- Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [276]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [277]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [278]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [279]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [280]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [281]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [282]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [283]
+- Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [284]
+- Consumers of `mcp/tests/knowledge_index_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [285]
+- Consumers of `mcp/tests/knowledge_rows_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [286]
+- Consumers of `mcp/tests/knowledge_writer_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [287]
+- Consumers of `mcp/tests/read_boundary_oracle_test_support.py` add `mcp/tests/test_abandoned_series_closeout.py`, `mcp/tests/test_closeout_refusal_aftermath.py`, `mcp/tests/test_direct_landing_leaf_identity.py`, `mcp/tests/test_enclosure_without_remains.py`, `mcp/tests/test_knowledge_gate_routes.py`, `mcp/tests/test_master_chain_public_routes.py`. All other governed row attributes are preserved; declaration is not execution. [288]
+- Consumers of `mcp/tests/read_scope_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [289]
+

@@ -10,19 +10,29 @@ Land an accepted code/memory pair into its named source branches, or checkpoint 
 
 ## Code Commentary
 
+### Current Contract
+
+Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication.
+
 ### Logic
 
-Ordinary integration validates completed approved closeout, the exact work branches and accepted code/memory heads, and clean substantive content. Memory cleanliness excludes root `memory.md`. `IntegrationSources` captures source tips and fast-forward/replay facts once; source movement routes through the owning sync and a fresh closeout or the explicit resolution handoff. Transitive lineage and current source tips are re-proved at publication.
+> **Retained historical source account — superseded by the current contract:**
+> Ordinary integration validates completed approved closeout, the exact work branches and accepted code/memory heads, and clean substantive content. Memory cleanliness excludes root `memory.md`. `IntegrationSources` captures source tips and fast-forward/replay facts once; source movement routes through the owning sync and a fresh closeout or the explicit resolution handoff. Transitive lineage and current source tips are re-proved at publication.
 
-A checkpoint obtains `CheckpointLanding` from the live series refs instead of closeout cells an unfinished master cannot have. The same captured pair feeds preview and apply, and publication rechecks it. A completed master cannot use this weaker route. Source code advancing without a matching memory trailer is not a refusal: the actual memory ref is still the accepted memory output.
+> **Retained historical source account — superseded by the current contract:**
+> A checkpoint obtains `CheckpointLanding` from the live series refs instead of closeout cells an unfinished master cannot have. The same captured pair feeds preview and apply, and publication rechecks it. A completed master cannot use this weaker route. Source code advancing without a matching memory trailer is not a refusal: the actual memory ref is still the accepted memory output.
 
-Handover gates are folded across gate logs by matching master/task identity. Preview evaluates the addressed gate without writing; apply enforces it. Unmatched open gates produce the existing addressing diagnostic. Normal integration does not run code quality, memory quality, certification, curator coherence, or independent review; since MIK-R09 a series (master or checkpoint) landing on converted memory does run the mandatory invariant gate (below).
+> **Retained historical source account — superseded by the current contract:**
+> Handover gates are folded across gate logs by matching master/task identity. Preview evaluates the addressed gate without writing; apply enforces it. Unmatched open gates produce the existing addressing diagnostic. Normal integration does not run code quality, memory quality, certification, curator coherence, or independent review; since MIK-R09 a series (master or checkpoint) landing on converted memory does run the mandatory invariant gate (below).
 
-`_publish_integration_edge` reloads the exact contract, checks atomic/series or ordinary authority, re-proves the source snapshot, and delegates expected-old CAS. A CAS race reports the operation that actually ran, including the checkpoint tool on that route. The shared landing writer records `completed` plus pending cleanup for final integration, or `checkpointed` while preserving cleanup for a checkpoint. Neither landing reclaims the task; finalization owns that step.
+> **Retained historical source account — superseded by the current contract:**
+> `_publish_integration_edge` reloads the exact contract, checks atomic/series or ordinary authority, re-proves the source snapshot, and delegates expected-old CAS. A CAS race reports the operation that actually ran, including the checkpoint tool on that route. The shared landing writer records `completed` plus pending cleanup for final integration, or `checkpointed` while preserving cleanup for a checkpoint. Neither landing reclaims the task; finalization owns that step.
 
-**The invariant gate before every landing.** `_handover_or_apply_integration` delegates admission to `integration_gate.integration_gate_block` before ancestry proof or ref publication, in preview and apply. A leaf with converted memory rejudges the closeout-cell pair through the shared leaf validator and recomputed worklist gate against the current parent-memory tip; the earlier closeout verdict is not trusted as landing authority. A master final or checkpoint route runs validator, net staleness and newly closed history ownership, then the chain proof up to its actual pair. Final requires the complete canonical non-abandoned leaf population; checkpoint examines the leaves already landed.
+> **Retained historical source account — superseded by the current contract:**
+> **The invariant gate before every landing.** `_handover_or_apply_integration` delegates admission to `integration_gate.integration_gate_block` before ancestry proof or ref publication, in preview and apply. A leaf with converted memory rejudges the closeout-cell pair through the shared leaf validator and recomputed worklist gate against the current parent-memory tip; the earlier closeout verdict is not trusted as landing authority. A master final or checkpoint route runs validator, net staleness and newly closed history ownership, then the chain proof up to its actual pair. Final requires the complete canonical non-abandoned leaf population; checkpoint examines the leaves already landed.
 
-A refusal projects `knowledge-gate-refused` (exit 2) without persisting the contract or recomputed worklist, even on apply. Git read failures are named unreadable inputs. Legacy memory input is refused by the central conversion boundary even without a converted sibling; converted or converting sides are judged rather than classified as legacy. The former local `_leaf_landing_lock` and `_knowledge_gate_block` sites are retired; `integration_gate.integration_gate_block` owns this admission. These judgments do not add code-quality, full MQC, coherence or independent-review gates. [5]
+> **Retained historical source account — superseded by the current contract:**
+> A refusal projects `knowledge-gate-refused` (exit 2) without persisting the contract or recomputed worklist, even on apply. Git read failures are named unreadable inputs. Legacy memory input is refused by the central conversion boundary even without a converted sibling; converted or converting sides are judged rather than classified as legacy. The former local `_leaf_landing_lock` and `_knowledge_gate_block` sites are retired; `integration_gate.integration_gate_block` owns this admission. These judgments do not add code-quality, full MQC, coherence or independent-review gates. [5]
 
 ### Conventions
 
@@ -59,21 +69,23 @@ These current source spans identify the implementation owners and the specific a
 
 - Checkpoint capture, route output selection, and shared memory ancestry. [3]
 
-- Addressed handover gates and publication preserve the operation's real identity. [4]
+- **Retained historical source account — superseded by the current contract:** Addressed handover gates and publication preserve the operation's real identity. [4]
 
-- Admission before ancestry and publication judges leaf or master pairs without writing refused state. [5]
+- **Retained historical source account — superseded by the current contract:** Admission before ancestry and publication judges leaf or master pairs without writing refused state. [5]
 
-- Final and checkpoint result publication differ without performing reclamation. [6]
-- The shared writer records the two accepted output commits. [7]
-
-
-- The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock. [8]
+- **Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation. [6]
+- **Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits. [7]
 
 
+- **Retained historical source account — superseded by the current contract:** The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock. [8]
 
-- One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment. [9]
+
+
+- **Retained historical source account — superseded by the current contract:** One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment. [9]
 
 
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
+- Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication. [10]

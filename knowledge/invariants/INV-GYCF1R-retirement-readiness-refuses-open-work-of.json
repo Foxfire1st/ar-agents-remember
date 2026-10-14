@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/mcp/registration/tasks.py and mcp/src/agents_remember/worktrees/task_retirement.py, so the rule holds only when both places do."
+    "justification": "An unfinished or unreadable operation of the master enclosure must not be mistaken for completed or absent work and permit retirement of unfinished work. _survey_operations explicitly records unreadable locator/evidence and unfinished locator/sync states as open work and supplies the applicable recovery action; older-layout operation reports remain status/phase facts. This guards that plausible costly premature-retirement error in the one present enforcement location; it claims neither multi-file realization nor a fresh test execution."
   },
   "applicability": "Retirement readiness reading the master's own enclosure operations and an operation kept by an older layout.",
   "conditions": [

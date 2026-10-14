@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:4b3ecbd80f7986cca1ac3edc049ff782ec94d689e59a0653f71a10f36382c5cf",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "8c43639db1bd79a0c198d629ece85dee2df0351b",
+        "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
         "content": "sha256:e6bab7b8ca5f483bc4622bbaee7fbaafdc33c4221e6716cb90615ae71b30806d",
         "locator": {
           "kind": "symbol",
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
             "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
             "locator": {
               "kind": "symbol",
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
             "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
             "locator": {
               "kind": "symbol",
@@ -166,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
             "content": "sha256:4b3ecbd80f7986cca1ac3edc049ff782ec94d689e59a0653f71a10f36382c5cf",
             "locator": {
               "kind": "symbol",
@@ -203,6 +203,21 @@
             "locator": {
               "kind": "symbol",
               "name": "INTERIM_TOOL_LEAF"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
+            "content": "sha256:98fb9141f0adb12c062813044ebb9d2b0477e662418dc79417df19e35ec1ff65",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

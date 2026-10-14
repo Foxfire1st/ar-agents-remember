@@ -12,9 +12,12 @@
 
 MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
 
+The composed literal public roster has41 names after L109 removed resolve_context; the pre-sync R11142-name account is historical. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
+
 `create_server` calls nine registrars in order: core, sessions, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, and knowledge. Eight declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current `PUBLIC_TOOLS` literal contains 41 names, adding native `retire_child` and `role_start_set` to the old 39-name tuple.
 
-A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
+> **Retained historical source account — superseded by the current route account:**
+> A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
 
 ## Construction
 
@@ -70,15 +73,20 @@ Worktree registration advertises contract-addressed reconciliation with memory-s
 
 The pause/checkpoint distinction remains explicit in the registered descriptions. Pause releases atomic-series activation and hands control to the developer without publication, ref movement, commit, landing, or ledger row; it retains the master's branches, worktrees, enclosure, and unstarted leaves. Checkpoint landing publishes an unfinished master's accumulated committed pair to its source branch under explicitly requested developer approval, keeps the master open, and does not retire or clean it up. These are distinct verbs in separate families.
 
-Closeout wiring is divided into direct-landing, closeout-command, integration-command, and reclamation helpers. The public message vocabulary is code and memory only; the canonical input model forbids extras. Enabled commit legs require explicit nonblank messages according to the descriptions; direct landing verifies existing code rather than accepting a code-message input. Operation control is task-addressed and publishes a generation, while keeping private operation keys and process IDs off the wire. Registration forwards corrective dispositions rather than deciding them.
+> **Retained historical source account — superseded by the current route account:**
+> Closeout wiring is divided into direct-landing, closeout-command, integration-command, and reclamation helpers. The public message vocabulary is code and memory only; the canonical input model forbids extras. Enabled commit legs require explicit nonblank messages according to the descriptions; direct landing verifies existing code rather than accepting a code-message input. Operation control is task-addressed and publishes a generation, while keeping private operation keys and process IDs off the wire. Registration forwards corrective dispositions rather than deciding them.
 
-The standing transaction-only account says closeout/integration delegate publication and do not automatically acquire certification, strict quality, coherence, or independent-review authority. The older automatic altitude-gate account conflicts with that standing account and is not retained as a current promise. The lower application owners were not completely examined here, so neither account is promoted to fresh lifecycle acceptance.
+> **Retained historical source account — superseded by the current route account:**
+> The standing transaction-only account says closeout/integration delegate publication and do not automatically acquire certification, strict quality, coherence, or independent-review authority. The older automatic altitude-gate account conflicts with that standing account and is not retained as a current promise. The lower application owners were not completely examined here, so neither account is promoted to fresh lifecycle acceptance.
 
-Task-document authoring remains separate from activation/publication. Its operation is a plain string; the published description carries the operation vocabulary. The step plane distinguishes update, create, reasoned removal, and focused read, addresses a unit by `step={id,parent?}`, and describes reasoned removal of a done unit or on a Completed document. Execution-graph authoring describes a validated mutation batch, graph-less bootstrap, judgment-bearing changes, and structural constraints; registration forwards the typed target/edit/call values.
+> **Retained historical source account — superseded by the current route account:**
+> Task-document authoring remains separate from activation/publication. Its operation is a plain string; the published description carries the operation vocabulary. The step plane distinguishes update, create, reasoned removal, and focused read, addresses a unit by `step={id,parent?}`, and describes reasoned removal of a done unit or on a Completed document. Execution-graph authoring describes a validated mutation batch, graph-less bootstrap, judgment-bearing changes, and structural constraints; registration forwards the typed target/edit/call values.
 
-The task description identifies retirement as the operation that archives a master, distinguishes sprint-commanded and standalone retirement, and states readiness refusals, explicit edge removal for unfinished successors, preview, and same-request recovery. It also says an abandoned row does not block a master and that a sprint-commanded master stays in place when finalized. These facts belong to the task description, not the native-role source attached to inherited reference 24.
+> **Retained historical source account — superseded by the current route account:**
+> The task description identifies retirement as the operation that archives a master, distinguishes sprint-commanded and standalone retirement, and states readiness refusals, explicit edge removal for unfinished successors, preview, and same-request recovery. It also says an abandoned row does not block a master and that a sprint-commanded master stays in place when finalized. These facts belong to the task description, not the native-role source attached to inherited reference 24.
 
-Lifecycle finalization's current description derives the exact leaf row from an existing immediate parent or a folder `task.json` master listing it; a sub-task with neither is refused. Optional parent assertions must match the derived edge. It refuses unresolved declared steps, does not auto-check steps or complete recursive ancestors, and requires landed-state/carryover checks before cleanup.
+> **Retained historical source account — superseded by the current route account:**
+> Lifecycle finalization's current description derives the exact leaf row from an existing immediate parent or a folder `task.json` master listing it; a sub-task with neither is refused. Optional parent assertions must match the derived edge. It refuses unresolved declared steps, does not auto-check steps or complete recursive ancestors, and requires landed-state/carryover checks before cleanup.
 
 Curator coherence's description names all nine conditional publication identity/caller fields and forbids them for status/prepare/validate. It separates structured authority from generated Markdown, requires explicit evidence namespaces and candidate judgments, and delegates validation to the shared owner. `prepare` describes a complete candidate-set file and reading rendering, with counts, digest and locations in the answer. `publish` permits inline judgments/assessments or one absolute `judgments_file`, refuses supplying a list both ways, and answers published counts and the file SHA-256 when used. These transport changes do not change publication expectations or acceptance authority. Closeout queue now advertises inspection or idempotent rebuild of a disposable projection: exact-current valid-built or non-admitting invalid-empty, with current task/door truth as inputs. It explicitly does not declare, select, defer, withdraw, or mutate closeout intent; the inherited action-specific scheduling-mutation account is obsolete.
 
@@ -90,7 +98,8 @@ Resource construction delegates reads to the served-file owner; registration doe
 
 Closeout and landing descriptions separate each route's exact invariant judgment from broad quality/certification/review. Direct landing exposes optional leaf_id; leaf integration rejudges its closeout pair; master final/checkpoint/recorded routes declare validator, net staleness, chain and history checks.
 
-The existing role_message registration adds file-only body, attachments and filed-message/reply/hash/limit/successor response fields through its strict models. Registered tool identity remains the same while input/result shape extends; no message index/search/public dashboard tool is introduced. Whole payloads are not copied into wake text.
+> **Retained historical source account — superseded by the current route account:**
+> The existing role_message registration adds file-only body, attachments and filed-message/reply/hash/limit/successor response fields through its strict models. Registered tool identity remains the same while input/result shape extends; no message index/search/public dashboard tool is introduced. Whole payloads are not copied into wake text.
 
 ## Invariants And Boundaries
 
@@ -116,36 +125,38 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 ## Evidence
 
 
-- Finalization description includes folder-master derivation and refusal. [1]
-- Read description retains route-chain rows and family selection. [2]
-- Current family-complete read description; former range crossed into request construction. [3]
-- Bounded paging, continuation, and walk-currentness description. [4]
-- Current walk-code-tree currentness description. [5]
-- Current tree/contract integrity signature and delegate replace the database/run-selection account. [6]
-- Three-operation knowledge composition. [7]
-- Server invokes the ordered registrar tuple after application/transport wiring. [8]
-- Shared response adapter delegates whole-result and optional answer completion. [9]
-- Roster declaration and unchanged adapter export; current count is 41. [10]
-- Inherited argument-count exemption target retained pending location confirmation. [11]
-- Shared task locator. [12]
-- Canonical message input and refused-field vocabulary retain both named co-targets. [13]
-- Current worktree registrar composition replaces the old import-range target. [14]
-- Attach import retained; enclosure adoption is also currently imported. [15]
-- Existing status-related range retained with the complete current handler as deciding witness. [16]
-- Three-operation knowledge family, without mounted change/project. [17]
-- Read receives runtime roots; diff and integrity keep separate delegates. [22]
-- Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions. [23]
-- Native role registration declares start, set start and messaging; it does not witness task retirement. [24]
-- Core identity, reader-context, and install registration. [25]
-- Current ordered family composition. [26]
-- Server wiring and strict dispatch boundary. [27]
-- Runtime request construction and current installation description. [28]
-- Current 41-name roster membership. [29]
-- Exact-order inventory and dispatch advertisement validation. [30]
-- Skill resources, declaration coupling, and index/file construction. [31]
-- Extension installation and catalog-backed methods. [32]
-- Task descriptions, including coherence transport, retirement and current queue projection. [33]
-- Pause and sync descriptions and forwarding. [34]
-- Closeout descriptions, message inputs, and delegate composition. [35]
-- Ambient/hosted dispatch description and typed forwarding. [36]
-- Native-role adapters forward typed single-start, set-start and message calls to Paseo owners. [37]
+- **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal. [1]
+- **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection. [2]
+- **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction. [3]
+- **Retained historical source account — superseded by the current route account:** Bounded paging, continuation, and walk-currentness description. [4]
+- **Retained historical source account — superseded by the current route account:** Current walk-code-tree currentness description. [5]
+- **Retained historical source account — superseded by the current route account:** Current tree/contract integrity signature and delegate replace the database/run-selection account. [6]
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge composition. [7]
+- **Retained historical source account — superseded by the current route account:** Server invokes the ordered registrar tuple after application/transport wiring. [8]
+- **Retained historical source account — superseded by the current route account:** Shared response adapter delegates whole-result and optional answer completion. [9]
+- **Retained historical source account — superseded by the current route account:** Roster declaration and unchanged adapter export; current count is 41. [10]
+- **Retained historical source account — superseded by the current route account:** Inherited argument-count exemption target retained pending location confirmation. [11]
+- **Retained historical source account — superseded by the current route account:** Shared task locator. [12]
+- **Retained historical source account — superseded by the current route account:** Canonical message input and refused-field vocabulary retain both named co-targets. [13]
+- **Retained historical source account — superseded by the current route account:** Current worktree registrar composition replaces the old import-range target. [14]
+- **Retained historical source account — superseded by the current route account:** Attach import retained; enclosure adoption is also currently imported. [15]
+- **Retained historical source account — superseded by the current route account:** Existing status-related range retained with the complete current handler as deciding witness. [16]
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge family, without mounted change/project. [17]
+- **Retained historical source account — superseded by the current route account:** Read receives runtime roots; diff and integrity keep separate delegates. [22]
+- **Retained historical source account — superseded by the current route account:** Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions. [23]
+- **Retained historical source account — superseded by the current route account:** Native role registration declares start, set start and messaging; it does not witness task retirement. [24]
+- **Retained historical source account — superseded by the current route account:** Core identity, reader-context, and install registration. [25]
+- **Retained historical source account — superseded by the current route account:** Current ordered family composition. [26]
+- **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary. [27]
+- **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description. [28]
+- **Retained historical source account — superseded by the current route account:** Current 41-name roster membership. [29]
+- **Retained historical source account — superseded by the current route account:** Exact-order inventory and dispatch advertisement validation. [30]
+- **Retained historical source account — superseded by the current route account:** Skill resources, declaration coupling, and index/file construction. [31]
+- **Retained historical source account — superseded by the current route account:** Extension installation and catalog-backed methods. [32]
+- **Retained historical source account — superseded by the current route account:** Task descriptions, including coherence transport, retirement and current queue projection. [33]
+- **Retained historical source account — superseded by the current route account:** Pause and sync descriptions and forwarding. [34]
+- **Retained historical source account — superseded by the current route account:** Closeout descriptions, message inputs, and delegate composition. [35]
+- **Retained historical source account — superseded by the current route account:** Ambient/hosted dispatch description and typed forwarding. [36]
+- **Retained historical source account — superseded by the current route account:** Native-role adapters forward typed single-start, set-start and message calls to Paseo owners. [37]
+
+- The composed literal public roster has41 names after L109 removed resolve_context; the pre-sync R11142-name account is historical. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
