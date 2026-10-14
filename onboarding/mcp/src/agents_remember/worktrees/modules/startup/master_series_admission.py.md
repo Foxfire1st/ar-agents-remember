@@ -14,6 +14,9 @@ repository/memory, and branch edges, and returns bounded actionable startup refu
 
 ## Code Commentary
 
+The delivered reason is a finite status-specific sentence for unreadable, wrong-kind, mismatched-edge or archived-terminal parent state. Detailed parser diagnosis and expected/observed admission evidence stay in the whole log; the corrected worktree_status/task_reopen next operation is distinct from that detail. This is reason projection, not a new admission, repair or activation authority.
+
+
 ### Logic
 
 `MasterSeriesContractSpecLike` describes the required identity inputs. The evidence/error types
@@ -73,3 +76,6 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+
+- Stable status-specific reason sentences are separate from bounded parser/admission detail and the addressed next operation. [4]

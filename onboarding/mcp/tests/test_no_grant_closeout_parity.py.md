@@ -8,7 +8,7 @@
 
 ### STOP-delta current source contract
 
-Four preview callsites and their imports use the corrected preview driver under the architect ruling. No count-key repair or assertion subtraction is included. The two reported pristine-tip count-key parity failures remain architect-qualified and assigned to L113; this source repair is not full-suite green.
+Four preview callsites and their imports use the corrected preview driver. The frozen successor additionally maps only the baseline subprocess's own leaf_preview/leaf_apply route-index facts: refreshedCount=written, unchangedCount=unchanged, staleCount=len(staleIndexes). This process has no current/grant result to copy; original raw current/grant and baseline comparison assertions remain. The earlier two count-key failures are historical observations, not a current failure census or a new full-suite-green claim.
 
 These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
 
@@ -31,5 +31,5 @@ Uses the existing `QueueFixture` and public closeout/integration services for cu
 - Three source-bound worlds retain separate raw current/grant equality before conversion take-out and subsequent baseline comparisons; this is comparison structure, not a whole-test PASS [1]
 - Conversion marker provenance, at-most-one matching ledger row, attached counts, pass-gate and leaf bare-count take-out are test-only baseline comparison scaffolding [2]
 
-- Four preview callsites and their imports use the corrected preview driver under the architect ruling. No count-key repair or assertion subtraction is included. The two reported pristine-tip count-key parity failures remain architect-qualified and assigned to L113; this source repair is not full-suite green. [3]
+- The baseline-only subprocess maps its own written/unchanged/staleIndexes facts onto L110 count keys; no current/grant response is copied and the original comparisons remain. [3]
 

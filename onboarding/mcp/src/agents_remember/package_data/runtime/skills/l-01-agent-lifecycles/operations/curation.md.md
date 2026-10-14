@@ -36,7 +36,7 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
 
-On an AR-launched Paseo capsule, use the exact supplied taskDocReadArgs on agents-remember-task (extensionless slug), then open the canonical JSON at returned docPath with native file tools. Use `arMcpContext.readerArguments` and actual schemas. `task_context` carries the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+On an AR-launched Paseo capsule, taskDocReadArgs supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; only read_ar_files carries task_context with the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
 MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 
@@ -121,3 +121,6 @@ No meaningful cross-repository implementation dependency.
 ## Current Contract Evidence
 
 - Current review-budget and preserved ownership obligations are defined by these source instructions. [3]
+
+
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. [7]

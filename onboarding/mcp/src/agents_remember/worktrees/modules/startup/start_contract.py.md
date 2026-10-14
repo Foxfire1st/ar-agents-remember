@@ -23,6 +23,9 @@ memory bases, validates the requested leaf ref, and returns a request-scoped `St
 
 ## Code Commentary
 
+Caller parent/source fields are assertions checked before bootstrap publication. Parent validation uses canonical task topology. An explicit source is compared to the task-derived source using a dry-run parent plan, with the caller source cleared for derivation; a mismatch returns the corrected worktree_start arguments without publishing a parent, activation or protected ref. Actual apply still resolves current durable authority and preview reserves nothing.
+
+
 ### Logic
 
 `build_start_contract` is the public start-side entry. It wraps
@@ -255,3 +258,6 @@ source-side debt note.
 
 Read the docstring for the mechanism it describes; it is now the same per-contract rule this card
 documents.
+
+
+- Parent/source assertions are validated read-only before actual bootstrap; apply still re-resolves durable authority. [20]

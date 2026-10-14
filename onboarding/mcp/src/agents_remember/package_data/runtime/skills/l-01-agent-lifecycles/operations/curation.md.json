@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
-        "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
         "locator": {
           "kind": "file"
         }
@@ -101,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "8a128b68a6aef684285a7860ef6205971ab29c58",
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
             "content": "sha256:1611a8d6acf1e2a3d9d4a818b1d53e1675733aea4de8ebb9775c9ee997291f79",
             "locator": {
-              "end": 163,
+              "end": 165,
               "kind": "line_range",
-              "start": 155
+              "start": 157
             }
           },
           "kind": "code"
@@ -118,12 +118,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a128b68a6aef684285a7860ef6205971ab29c58",
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
             "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
             "locator": {
-              "end": 163,
+              "end": 165,
               "kind": "line_range",
-              "start": 149
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

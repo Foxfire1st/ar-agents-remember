@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58446701110928b148de99d43451baf3dd617a98",
+            "blob": "46bc5280766aa6e4da364b0c6c59b0d7d592893a",
             "content": "sha256:99fbd92d2c75f350e741595b0cf2b7a2e9c461ba524b20ce45e7e99ac40b9aea",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
             "locator": {
               "kind": "symbol",
@@ -147,12 +147,12 @@
       ]
     },
     "17": {
-      "note": "The public fixer signature and description state the optional contract and ordinary/pre-baseline admissions.",
+      "note": "The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions.",
       "targets": [
         {
           "anchor": {
-            "blob": "58446701110928b148de99d43451baf3dd617a98",
-            "content": "sha256:6568c2bd71187ff2f5fde35c7948d18f6c4f4b5693b8b5980626c9e9c48c3dd4",
+            "blob": "46bc5280766aa6e4da364b0c6c59b0d7d592893a",
+            "content": "sha256:992573c53b50bddb1fe85261dd20b3e599c9bde48b5608eebb5df1ad636c3a46",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix"
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
             "locator": {
               "kind": "symbol",
@@ -247,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -259,12 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:26494e9f7665bf9eddcdde616b8c858e1b74b9e7a8fbe3f1289c9849eb396bf6",
             "locator": {
-              "end": 464,
+              "end": 698,
               "kind": "line_range",
-              "start": 453
+              "start": 687
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -272,12 +272,12 @@
         },
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 663,
+              "end": 915,
               "kind": "line_range",
-              "start": 644
+              "start": 896
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -290,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -302,12 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
             "content": "sha256:3bd53f467745ee3f70e010103aefb9efa75c118a6ab83d70904f666b62aa6130",
             "locator": {
-              "end": 678,
+              "end": 930,
               "kind": "line_range",
-              "start": 664
+              "start": 916
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -337,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "blob": "78f277b5ed8c400a748841e464ebb4f9e3457ab9",
             "content": "sha256:376bec3b46afe08cc4835f775fda796868adc38a828138644f0e1ef290104d4a",
             "locator": {
               "kind": "symbol",

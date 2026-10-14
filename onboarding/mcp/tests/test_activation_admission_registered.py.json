@@ -30,6 +30,21 @@
         }
       ]
     },
+    "10": {
+      "note": "Registered refusal assertions require bounded no-overflow code/summary/next operation and retain detailed admission/parser evidence in the log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f51ebc6d57918dd9bf36cc7168f448490be5b4e5",
+            "content": "sha256:7292072df05076b313a803f7d4a2635122db126b03aaeb426f655c18d01a80e7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The sync refusal addresses only the addressed contract's own state: no `classification`/`blocking`/`sourcePair*` key, this contract's fingerprint and status action, and a foreign live master named nowhere.",
       "targets": [

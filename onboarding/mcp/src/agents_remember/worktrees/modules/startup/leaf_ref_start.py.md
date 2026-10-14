@@ -50,9 +50,13 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 - Both refusal builders return a `WorktreeCommandResult` rather than raising. `worktree_start`'s
   handler has no `except` for either `LeafRefResolutionError` or `ContractError`, so anything that
   escapes this module reaches the MCP client as a traceback.
-- The three `state` values this module can emit — `leaf-ref-not-found`, `leaf-ref-ambiguous`,
-  `invalid-request` — are all bad-argument refusals raised before any worktree, branch or contract
-  write.
+- The original leaf-ref/vocabulary states remain `leaf-ref-not-found`, `leaf-ref-ambiguous`
+  and `invalid-request`. Task-derived parent/source assertions also return
+  `start-parent-task-mismatch` or `start-source-branch-mismatch`. The caller parent is not
+  authority to author an edge: the immediate master or its canonical commanding parent
+  may disambiguate it; an unrelated parent is refused. The retry preserves dry_run,
+  skip_provider_setup and the other supplied operation arguments while replacing the
+  offending field with the expected task-derived value. These checks precede startup publication.
 
 ## Evidence
 
@@ -61,3 +65,6 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 - Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. [1]
 - Start contract builder that calls these helpers. [2]
 - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. [3]
+
+
+- Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication. [4]

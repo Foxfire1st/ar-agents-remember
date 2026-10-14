@@ -82,6 +82,9 @@ No self-review, implementation, task acceptance/publication, packet rewrite, ver
 
 ## Code Commentary
 
+Current intake opens exactly rendered_path and json_path supplied by taskDocReadArgs through own file tools. task_doc writes and never supplies a read; knowledge_read takes memoryRoot, while only read_ar_files uses canonical task_context. Missing capability is reported, not bypassed through another server or an unscoped route; independent review and peer transport ownership remain unchanged.
+
+
 ### Logic
 
 The synchronized caller matrix keeps reviewer target-only while making ownership seam-specific:
@@ -232,3 +235,6 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## Current Contract Evidence
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [31]
+
+
+- Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]

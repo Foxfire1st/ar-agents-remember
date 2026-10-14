@@ -44,7 +44,7 @@ When all candidate findings are closed and only the Worker’s report/evidence/h
 
 A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
 
-Read the selected requirement and leaf task only: use supplied taskDocReadArgs exactly (repo_id, task_name, extensionless slug, operation=get), then open canonical JSON at returned docPath. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
+Read the selected requirement and leaf task only: open the exact rendered_path and json_path supplied by taskDocReadArgs with own file tools; these are file locations, not a tool-server read call. task_doc writes and does not read. Name relevant records through knowledge_read using supplied memoryRoot; only read_ar_files uses task_context with the canonical task and enclosure contract. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
 Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
@@ -112,3 +112,6 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]
+
+
+- Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads. [8]

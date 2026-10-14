@@ -10,6 +10,9 @@ Registered public operation proofs for exact planned-parent preview, no startup-
 
 ## Code Commentary
 
+Invalid source_branch and parent_task are exercised in both preview and actual requests. Each returns its exact mismatch code without error/overflow, preserves dry_run and skip_provider_setup in the corrected nextArgs, and leaves the parent unpublished. The existing whole-state/call-record comparator still runs after every refusal; expanded assertions are source evidence, not a fresh execution.
+
+
 The confined fixtures use real temporary code/external-memory repositories and the registered MCP/application/start/bootstrap path. `PreviewFixture` builds every world external-memory; repeated first-leaf preview is parametrized by commanded versus uncommanded parentage, not removed memory modes. Repeated previews materialize no startup contract, activation, ref, worktree or provider state, reserve nothing, and preserve repository refs, worktree lists and real index bytes. The whole-root comparison includes the transcript root inside coordination; harness receipts remain beside the observed root.
 
 `test_disabled_start_is_refused_before_any_publication` separately checks that preview and actual requests naming `memory_mode="disabled"` return `memory-opt-out-refused` before any startup branch, worktree, contract or task binding is published. Both refused calls still record a daily line, any named detail and a completed-call river event. After each call, the same strict comparator checks those records cumulatively and preserves all other product/Git state; the typed refusal and no-parent-publication assertions remain separate. This is not global byte equality or a successful apply proof.
@@ -52,3 +55,6 @@ No Domain Documentation source is configured in system/sources.md. These are cur
 
 
 - Actual apply re-resolves current source; fresh-session persisted-parent preview preserves startup/Git state and checks its call records. [17]
+
+
+- Wrong source/parent assertions refuse in preview and actual calls with corrected executable arguments and no parent publication. [18]

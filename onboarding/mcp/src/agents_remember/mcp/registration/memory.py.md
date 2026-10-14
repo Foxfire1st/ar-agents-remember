@@ -10,9 +10,9 @@ The current source facts below replace the former operative inventory. The separ
   empty and shared-bound refusals. Quality, citation and route descriptions advertise status and
   corpus locations, not a new authority to change their scopes or checks.
 - Typed MQC sync/start/poll, baseline/carryover and citation exclude boundaries survive.
-- `citation_fix` exposes optional `contract_path` and states its two admissions: the ordinary leaf enclosure, or the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
+- `citation_fix` exposes optional `contract_path`; the short description names the ordinary leaf call and points to shipped tool-details for the full ordinary/pre-baseline admissions. The application guard still permits the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
 
-- The public fixer signature and description state the optional contract and ordinary/pre-baseline admissions. [17]
+- The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions. [17]
 - The index description retains pre-baseline apply and qualifies other unscoped calls as read-only previews. [18]
 
 ### Source and authority bounds

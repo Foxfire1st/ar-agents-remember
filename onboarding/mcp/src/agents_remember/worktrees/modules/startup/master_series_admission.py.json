@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
             "content": "sha256:9812df5fe4bc4f7e42f5ab0ecd411ff4cf4526a59674adc4dc39187ae724a1db",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
             "content": "sha256:7e3277ce2bff3fe8f9e694147b8109bb58e896a39eb4e4ff133f86c5b68d383a",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
             "content": "sha256:bd23f2c38658ae62772657d026dbf94718541c1dd7bb23b3f6b42323c58b2e5f",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
             "content": "sha256:1d9c589edcdfb9e5a725c997f14ea8084adfc1d42181d6a205915746f11176d6",
             "locator": {
               "kind": "symbol",
@@ -84,12 +84,27 @@
         },
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
             "content": "sha256:be0cb03faa5d007e33167cdbf13758005a7dfc5ea6390e6abed3ace13afe41c5",
             "locator": {
-              "end": 273,
+              "end": 279,
               "kind": "line_range",
-              "start": 257
+              "start": 263
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stable status-specific reason sentences are separate from bounded parser/admission detail and the addressed next operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
+            "content": "sha256:ac7b764e7b4afef2d6f69da22fc7e6ee5339743a0d3387a191cbfbee6b7ae1fc",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

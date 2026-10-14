@@ -10,7 +10,7 @@ Project validated task, landing and role results into the answer the caller can 
 
 ## Code Commentary
 
-Landing projections retain the reached state, blockers, executable next-step inputs and produced commits/control values from each tool's declared roster. Unrelated tools return `None` to select the ordinary completion path. An answered refusal keeps existing code/error; when the producer supplied only status/detail, the envelope derives them from those producer words rather than creating a new check or changing its order.
+Landing projections retain the reached state, blockers, executable next-step inputs and produced commits/control values from each tool's declared roster. Unrelated tools return `None` to select the ordinary completion path. An ordinary answered refusal keeps its existing code, or derives one from the producer status, and carries the producer reason in summary (or detail when no summary exists), not the raised-error field. Actual code="raised" answers retain error. Admission tables, duplicate diagnostics and guidance remain in the complete log; the bounded answer keeps its executable next step. This projection changes neither the underlying refusal/check order nor its no-write boundary.
 
 Redundant contract echoes are removed only from copied answer mappings. Preview commit intent/count information remains while additional worktree/ledger locations stay in the whole result. Nested next-step information still reaches the common guidance translation; removing an echo must not remove the arguments needed to act.
 
@@ -31,3 +31,6 @@ Task-document writes retain the changed-unit/value phrase, file-input digest whe
 - A successful start retains the new agent and handover, while failures keep their shape. [2]
 - Role-addressed and waited messages retain only the conditional information their caller needs, including cancellation warnings and reply beginnings. [3]
 - Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections. [4]
+
+
+- Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log. [5]

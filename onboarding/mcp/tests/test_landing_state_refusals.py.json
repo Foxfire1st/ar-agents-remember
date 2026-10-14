@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
             "content": "sha256:a3c63cee19b5a0004f3ead30b57ae42e10056f31bcfaf6c63eecd9c536016d79",
             "locator": {
-              "end": 257,
+              "end": 258,
               "kind": "line_range",
-              "start": 222
+              "start": 223
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
             "content": "sha256:f2b3d4fd373c63157eadc3604ab4ba42fcf487a7a8f9a25c20056f2022379550",
             "locator": {
-              "end": 1385,
+              "end": 1386,
               "kind": "line_range",
-              "start": 1384
+              "start": 1385
             }
           },
           "kind": "test"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
+            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
             "content": "sha256:babfea6ab149107818492e2cd88679c7d7273bd56536ef4fd5641b28c1ae6f72",
             "locator": {
-              "end": 1393,
+              "end": 1394,
               "kind": "line_range",
-              "start": 1387
+              "start": 1388
             }
           },
           "kind": "test"
@@ -60,6 +60,21 @@
           "anchor": {
             "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
             "content": "sha256:fe432ad44cbd60a33f839f20063329ffc3d3fbb6a2c9018c910e1c6e3317ddee",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+            "content": "sha256:b34798b76e54af521f3beeb546e90c30a729a07cd3d9f8ca22a1c9cb5303cd87",
             "locator": {
               "kind": "file"
             }

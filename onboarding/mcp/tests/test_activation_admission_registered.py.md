@@ -32,9 +32,10 @@ unreadable activation snapshots remain distinct corrective evidence, that oversi
 diagnostics retain a bounded parser-error prefix, and that persisted master edge mismatches retain
 expected/observed branch facts across both the initial and authoritative reread paths. The
 unreadable-contract case derives the malformed parser reason's length from the 9000-character
-invalid kind and the actual contract path. Oversized refusals deliver a short overflow answer;
-the full bounded parser detail, contract path, next arguments and admission are checked in that
-call's `log`, while delivered refusal identity and retry guidance remain separately asserted.
+invalid kind and the actual contract path. Oversized parser/admission diagnostics stay in that call's whole-result log; the ordinary delivered refusal itself must fit the unchanged answer
+bound without overflow, with code, summary and an executable next step, no error field
+and no admission/redundant guidance table. The malformed input, concrete parser prefix,
+contract identity, original admission facts and retry arguments remain separately checked.
 The malformed source bytes remain unchanged. The fixture is disposable;
 it does not prove a live control-plane run or acceptance.
 
@@ -94,3 +95,6 @@ No cross-repository implementation evidence is required for this disposable regi
 The fixture does not establish a live external integration.
 
 - Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers. [9]
+
+
+- Registered refusal assertions require bounded no-overflow code/summary/next operation and retain detailed admission/parser evidence in the log. [10]

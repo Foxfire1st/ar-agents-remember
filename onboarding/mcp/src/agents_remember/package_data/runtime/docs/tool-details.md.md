@@ -20,6 +20,9 @@ that kind, not the reporting treatment of other stale references.
 
 ## Code Commentary
 
+The current canonical document also owns the long explanations relocated from citation_fix, context_packet, curator_coherence, memory_baseline_adopt, memory_carryover_plan, memory_quality_check, retire_child, role_start_set and route_index_refresh. The short registration strings retain the operation/admission cues and point here; callable signatures, handlers, guards and the installer-owned documentation-copy route remain unchanged.
+
+
 `server_info` takes no arguments and reports startup-loaded build/configuration, roots,
 allowed repositories, unused provider keys and optional role-launched binding metadata.
 It does not enumerate tools. Failure to load configuration is a startup refusal, not an
@@ -55,3 +58,6 @@ must not be interpreted as permission to restore provider install/index/watch wo
 No Domain Documentation entries are configured in the resolved source registry.
 This card claims only the package-local source contract; no external runtime or
 cross-repository acceptance evidence is inferred.
+
+
+- The shipped document retains the relocated long explanations while short registrations preserve callable signatures and guards. [2]

@@ -18,6 +18,21 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The shipped document retains the relocated long explanations while short registrations preserve callable signatures and guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
+            "content": "sha256:9c41664d82fc346a3cbf4bc4722c6e0ec1630848e8e1461fb5f3a3fb7892cf02",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

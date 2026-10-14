@@ -59,10 +59,12 @@ L09) are one function.
   items only**: a `no_invariant` row about an uncovered item satisfies nothing (rule 5) and is listed in
   `unexplained.unnecessaryRows`, report-only, like any `no_invariant` row that answers no raised item.
 - **Uncovered items take the current onboarding trace (`settle_uncovered`, `_settled`, MIK-R53).**
-  The initial run records `onboarding:<path>`, `item: None`, `countedChange: False` and
-  `sourceBlobs: {path: <C blob or absent>}`. Independently, `_finished` computes the card's counted
-  Markdown/reference change and names only an eligible onboarding row whose `sources` equal that
-  blob: `updated` also requires that counted change, while `no_impact` answers the unchanged-contract
+  The initial run records `onboarding:<path>`, `item: None`, the actual `countedChange` from
+  the card's Markdown/reference difference between K_B and K_C, and
+  `sourceBlobs: {path: <C blob or absent>}`. `_finished` passes that same counted value to
+  both the stored trace facts and current-row selection, including when no separate
+  onboarding item is raised; worklist satisfaction and gate currency must not disagree.
+  It names only an eligible onboarding row whose `sources` equal that blob: `updated` also requires that counted change, while `no_impact` answers the unchanged-contract
   case. A counted edit alone does not answer the ordinary candidate. This initial run lacks closed-file
   provenance and never credits sourceless rows. Once the leaf adds the file's own `onboarding_trace`
   item, settlement copies its ID, counted-change flag, unreadable-sidecar flag, `sourceBlobs` and
@@ -171,3 +173,6 @@ No cross-repo boundary is crossed by this file.
 - The ID, row subject, candidate source blob and eligible source-current onboarding `satisfiedBy`. [15]
 - Uncovered items bound to their file's trace ID, source blobs, counted flag and current-row answer. [17]
 - Current source delta inspected statically: Fix source-bound onboarding currency, provenance and settlement; separate stable hunk IDs from reopened answers. [26]
+
+
+- The initial uncovered trace and row selection share the actual counted card change before separate-item settlement. [27]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
-        "content": "sha256:31590d40eb7608e3c9a1891a727e13695bc47c44fdb59d0a5e8bdf814df1dcf3",
+        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+        "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
           "name": "project_landing_answer"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
         "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+        "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
             "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
             "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
             "locator": {
               "kind": "symbol",
@@ -128,11 +128,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0a2205b53020458de91dc763aaeab8cee97d4c0",
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
             "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
             "locator": {
               "kind": "symbol",
               "name": "project_task_doc_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "content": "sha256:ff4d07038857d9956ca42087426f54f6b3061dd1f3effbe34617c108c15a3916",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -68,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
             "locator": {
               "kind": "symbol",
@@ -80,7 +80,7 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -104,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:b701690fa31ab142e0b84c9ec93e4cf3f74d8eafc5e0b94a771f65ff7216d53a",
             "locator": {
-              "end": 92,
+              "end": 93,
               "kind": "line_range",
-              "start": 91
+              "start": 92
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -117,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
             "locator": {
-              "end": 180,
+              "end": 181,
               "kind": "line_range",
-              "start": 163
+              "start": 164
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -130,14 +130,29 @@
         },
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:0749af96a39a4f9c9c3e6f215ae2d6c41515e5938ca0cfe68edd204dd337733c",
             "locator": {
-              "end": 198,
+              "end": 199,
               "kind": "line_range",
-              "start": 183
+              "start": 184
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+            "content": "sha256:22f75cfc02317350cbd45a3133408cf775b56a57d6c8f134c48d8b6c1dc9fd70",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

@@ -11,6 +11,9 @@
 
 ## Code Commentary
 
+The instruction-removal sweep includes all eight shipped harness skill roots as well as canonical/package text. It detects unquoted operation=get, the old taskDocReadArgs tool-read sentence and obsolete blanket task_context instructions, while preserving documentary mentions of removal and the existing write/undeclared-key controls.
+
+
 ### Current Contract
 
 Removed-read tests assert ok=false/operation-removed, canonical file guidance, unchanged JSON/Markdown, no steps and rejection of an undeclared model key. Ordinary write fixtures use their fixed 40-character coordination root; that measure is distinct from location-separated content measurement. ApplicationWriteAnswers and TaskDocReadRemovalSweepTests cover phrase answers, dry diffs without master/rendered dumps, by-file section bytes/SHA256 and conflict/nonregular input refusal, and removal of read instructions/helpers. Earlier successful checklist-read defects are historical. These source tests do not forbid best-effort identity parsing or certify a fresh registered session.
@@ -106,3 +109,6 @@ This card establishes test behavior, not a separate cross-repository protocol or
 No external evidence is needed for these assertions.
 
 - Removed-read tests assert ok=false/operation-removed, canonical file guidance, unchanged JSON/Markdown, no steps and rejection of an undeclared model key. Ordinary write fixtures use their fixed 40-character coordination root; that measure is distinct from location-separated content measurement. ApplicationWriteAnswers and TaskDocReadRemovalSweepTests cover phrase answers, dry diffs without master/rendered dumps, by-file section bytes/SHA256 and conflict/nonregular input refusal, and removal of read instructions/helpers. Earlier successful checklist-read defects are historical. These source tests do not forbid best-effort identity parsing or certify a fresh registered session. [27]
+
+
+- The removal sweep covers all eight shipped skill roots and obsolete tool-read/blanket-context instruction shapes. [28]

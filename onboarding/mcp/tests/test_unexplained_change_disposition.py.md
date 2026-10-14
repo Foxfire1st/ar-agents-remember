@@ -16,6 +16,9 @@ assertions; no collection or test execution was performed for this inspection.
 
 ## Code Commentary
 
+The added updated-card/no-separate-trace-item case writes an actual card change and an updated source-bound row through the ordinary fixture writer, settles an uncovered hunk with item=None, then requires both the worklist's satisfiedBy and the gate predicate to accept that same row with countedChange=True. It is the discrepancy regression, not permission to relabel updated as no_impact or satisfy a hunk by a bare counted edit.
+
+
 ### Logic
 
 - **Helpers.** `world` builds MIK-R08's fixture; `unexplained` returns items by subject **after**
@@ -109,3 +112,6 @@ No cross-repo boundary is crossed by this file.
 - The uncovered-file source assertions keep the item open after card creation and settle it only with the authored source-bound row ID; no counted-change-only answer remains. [10]
 - An answering onboarding row is not unnecessary (Q3); the trace-result call supplies the candidate code_blobs map before filtering and adjusted-count assertions. [12]
 - Current source delta inspected statically: Replace counted-edit settlement and helper owner, show explicit blobs, narrow hunk stability and fix captions; prior blocked advice is superseded. [15]
+
+
+- An updated row with a real card change answers a no-separate-item uncovered hunk identically in worklist and gate. [16]
