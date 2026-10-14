@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
             "content": "sha256:b0448c920f01a9e14300fb5c17751232ed4536dbf63c27667d28e819ae48f78b",
             "locator": {
               "kind": "symbol",
@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
             "content": "sha256:0693d69fb010f7e2e2e804d63311a55cc3f14abefd151cf40fc790c573906213",
             "locator": {
-              "end": 52,
+              "end": 43,
               "kind": "line_range",
-              "start": 52
+              "start": 43
             }
           },
           "kind": "code"
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
             "locator": {
               "kind": "symbol",
@@ -85,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
             "locator": {
               "kind": "symbol",
@@ -97,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
             "locator": {
               "kind": "symbol",
@@ -121,23 +121,6 @@
               "name": "Affordance"
             },
             "path": "dashboard/src/grammar/Affordance.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`GateResponder` compact worktree-gate control.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
-            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
-            "locator": {
-              "kind": "symbol",
-              "name": "GateResponder"
-            },
-            "path": "dashboard/src/panels/GateResponder.tsx"
           },
           "kind": "code"
         }

@@ -6,31 +6,13 @@
 
 ## Purpose
 
-Attention queue: rank what needs the human from the reduced surfaces. Pure and deterministic: every source contributes one small builder and the queue sorts by (severity, wait, id). Dismissals suppress lifecycle-bound items until a newer triggering signal re-surfaces them.
+Pure deterministic attention ranking over retained lifecycle, provider, drift, setup and worktree-start facts. Gate/ask/await-summary attachment builders are removed.
 
 ## Code Commentary
 
-- `_ask_text`
-- `build_attention_queue`
-- `_is_dismissed`
-- `_signal_after`
-- `_await_summary`
-- `_lifecycle_attention`
-- `_gate_node`
-- `_attach_gates`
-- `_gate_attention`
-- `_provider_attention`
-- `_drift_attention`
-- `_drift_attention_detail`
-- `_setup_attention`
-- `_start_attention`
+build_attention_queue uses server-computed ages and a total severity/wait/id order. Matching acknowledgements suppress the current triggering signal; a newer signal resurfaces, while targetless suppression belongs only to actionable drift. Enclosure debt remains with the hangar, and a quiet event-backed lifecycle differs from a synthesized paused worktree. Provider, setup and blocked-start alarms keep their own provenance instead of recreating gate/inbox nodes.
 
-## Invariants And Boundaries
+## Evidence boundary
 
-- The card mirrors the source file one-to-one at `mcp/src/agents_remember/observer/reducer_impl/_attention.py`.
+This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
 
-## Evidence
-
-### Repo-Internal References
-
-The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.

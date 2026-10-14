@@ -15,22 +15,19 @@ The retained **seat authority** corpus block: it states structural binding, disp
 `## One lifecycle per agent type` fixes the corpus's structural premise: each agent type runs its own
 self-contained lifecycle, no role is defined by reference to another role's, and **authority is
 structural, never textual** — a seat's address is its task document plus its role name, and the control
-plane owns occupant identity, readiness, and the pinned brief.
+product records the agent holding the seat when `role_start` starts it.
 
 `## Seat binding` is the altitude table (sprint / master / leaf / portfolio artifact), the rule that the
-session↔seat association is the dispatch-time catalog binding rather than lifecycle adoption, the
+seat association is the role-start binding rather than lifecycle adoption. An Architect starts at Projects without a document; other roles bind their required sprint/master/leaf selection. The
 hat-collapse rule (sanctioned only for the owner/developer-facing architect seat), and role-seat
 immutability in dashboard-owned sessions.
 
-`## Dispatch is one structural transaction` gives the six control-plane steps, the two disjoint caller
-kinds (plane-hosted seat vs ambient launcher) with their authority and forbidden shortcuts, the
-consumption rules for `dispatched` / `dispatch-queued` / `source-lineage-stale`, and the rule that the
-model never handles runtime occupant, session, lifecycle, branch, or commit identifiers.
+`## Starting a role agent` now uses one `role_start` call with the required role/task references and a request ID. An identical request reconciles the same agent; refusal never falls back to another tool. Settings select launch choices unless an allowed override supplies agent kind, model or effort; the call cannot choose a permission mode. A leaf’s three seats are started with `role_start_set`. The old six-step `dispatch_agent` transaction and its queued/readiness/plane-identity vocabulary are historical, not current instructions.
 
 `## Developer-declared task-seat takeover`, `## Escalation ladder` (**worker → manager → orchestrator →
-architect → developer**; a system-specialist escalates to the orchestrator; no rung skipped), `##
+architect → developer**; an Investigator escalates to the parent that started it, or the developer when parentless; no rung skipped), `##
 Developer clarification triage`, `## Delegated series authority`, `## Minimal decision-item relay`,
-`## Notify-and-stop is safe by design` (including the **watcher ban**), and `## Change authority`
+`## Notify-and-stop is safe by design` (host one-line parent wake-up, not the removed notifier; the **watcher ban** stays), and `## Change authority`
 complete the block. `## Change authority` no longer lists memory quality among the operations closeout
 and integration may not launch: curation is never deferred that way, because the curator runs the
 complete memory-quality operation as part of curation and the transaction carries that completed result
@@ -46,7 +43,7 @@ one-line consequence and need no rewrite.
 
 - No role is defined by reference to another role's lifecycle.
 - A spawned role never adopts its spawner's lifecycle and never wears another role's hat.
-- A malformed, stale, or unauthorized plane identity is a refusal and never falls back to ambient.
+- A refused `role_start` selection never falls back to another tool; a chat without a binding has no replacement authority.
 - No role watches, polls, nudges, or timer-loops on its own initiative.
 - A question escalates only one rung at a time; no rung is skipped.
 
@@ -65,11 +62,15 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-| The seat-binding altitude table and the structural (non-textual) authority rule. | `## Seat binding` | skills/l-01-agent-lifecycles/core/authority.md:16-36 |
-| The six-step dispatch transaction and the two disjoint caller kinds. | `## Dispatch is one structural transaction` | skills/l-01-agent-lifecycles/core/authority.md:56-113; skills/l-01-agent-lifecycles/core/authority.md:50-50 |
-| The escalation ladder and the quo-vadis developer-worthy test. | `## Escalation ladder` | skills/l-01-agent-lifecycles/core/authority.md:118-128 |
-| The watcher ban and the passive liveness duty. | `## Notify-and-stop is safe by design` | skills/l-01-agent-lifecycles/core/authority.md:187-201; skills/l-01-agent-lifecycles/core/authority.md:181-181 |
-| Every role's `**Inherits:**` line names this block, which is how the corpus composes it without duplication. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-453 |
+- role_start records structural seat binding; Architect starts at Projects without a document. \[1] [1]
+
+- One role_start request reconciles the same agent; refusal has no alternate-route fallback. \[2] [2]
+
+- Escalation stays one rung at a time, with Investigator addressed to its actual parent or developer. \[3] [3]
+
+- A host parent wake-up names the newest report; no seat-local watcher is authorized. \[4] [4]
+
+- Retained corpus inheritance is a source-text convention, not evidence that native launch injects this shared core. \[5] [5]
 
 ### Cross-Repo References
 

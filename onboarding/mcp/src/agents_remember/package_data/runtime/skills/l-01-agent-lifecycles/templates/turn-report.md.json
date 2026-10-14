@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Sync-propagated bundle copy of the canonical templates source.\n\nAnchor: `# Turn-Report Template`",
+      "note": "The canonical worker-report shape assigns its path to the supplied handover and retains exact acceptance-envelope, journal/checks and respawn obligations.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "30472b4d8e38c5d1575c013c4d7a3df828d3aa7f",
-            "content": "sha256:d7a88f2a088a8d65fd6af1da62572a985af69822c5b5a7f92438960e03b21b50",
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "content": "sha256:149a15a6ff1f8bb6f714005dbea49b28f6f7053cdda6e424bea671b85a79a120",
             "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/templates/turn-report.md"
           },
@@ -21,29 +19,25 @@
       ]
     },
     "2": {
-      "note": "The worker writes the turn report in its main loop and never delegates it; the template governs its shape.\n\nAnchor: `# Worker`; `## Outputs`; \"The turn report\"",
+      "note": "The Worker owns one report; the report template requires authoring in the main loop rather than delegating its artifact and keeps the report distinct from the journal.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e75a34a51405b6de8203b38c4e806b63c28e22",
-            "content": "sha256:1cb90f1f30c7fd4ec6057a1bda9e839c9c9b4d6c0e4b955db518baac0f2b3156",
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "content": "sha256:149a15a6ff1f8bb6f714005dbea49b28f6f7053cdda6e424bea671b85a79a120",
             "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+            "path": "skills/l-01-agent-lifecycles/templates/turn-report.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9210bbacd978073332af13197d3e95904f247ea0",
-            "content": "sha256:6375f6836dca538278bf3286235092421e228376a77f863a04fc183c5121cd64",
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
             "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 72
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -52,29 +46,14 @@
       ]
     },
     "3": {
-      "note": "The truth boundary this template obeys has one home.\n\nAnchor: `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates`",
+      "note": "The current truth boundary separates host turn-end evidence from parent artifact validation; it restores neither an observer nor acceptance by signal.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
-            "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:116d9c9bcdb6575401bbd8d9737886d23fcc1d4ae4a48bf4634528e91e0e77b4",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
-            "content": "sha256:516df12454f84b82450d778bcbc54c282cc5d62252801befb3be55e2c1e5b965",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 27
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -83,16 +62,14 @@
       ]
     },
     "4": {
-      "note": "The check duty this report records has one home.\n\nAnchor: `## The targeted-check contract (what closeout consumes as evidence)`",
+      "note": "Closeout carries actual targeted results and required curation/coherence under Owner transaction authority; failed or not-run checks remain visible and no blanket full-suite gate is substituted.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "e7824d98508b3f0c4d8ec8f2feb523a71a37cced",
-            "content": "sha256:d05d495f411f57df3a67acb96597b2ec57637adaf5d73df1c482ef559a55eb95",
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
             "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 22
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
           },
@@ -101,17 +78,16 @@
       ]
     },
     "5": {
-      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "note": "Messages wake; complete payloads and evidence travel as files.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "d1f6148040f344edcc1f1cdca4c337de383684fb",
-            "content": "sha256:bcc83704ec5d619e63b0686763738958a79038b47e9174fad4a2d651aa23b0b3",
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "content": "sha256:149a15a6ff1f8bb6f714005dbea49b28f6f7053cdda6e424bea671b85a79a120",
             "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 37
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/turn-report.md"
           },
           "kind": "code"
         }

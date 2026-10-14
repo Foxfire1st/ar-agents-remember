@@ -178,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "blob": "b250594c4d8b56d5cb43abc24ead92d4e178b1a2",
             "content": "sha256:857300ce08b97b2670b6396a264f03bb281d1fce3f315f3ca51dc56ef3ae3099",
             "locator": {
               "kind": "symbol",
@@ -190,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "blob": "b250594c4d8b56d5cb43abc24ead92d4e178b1a2",
             "content": "sha256:454676e6ba10ca5dd14b876ff480c29989c9c87c8397307b8e3e9336363686d3",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
         },
         {
           "anchor": {
-            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "blob": "b250594c4d8b56d5cb43abc24ead92d4e178b1a2",
             "content": "sha256:210ab313df8309e8045d0942cda2d11423f682faf50ce18a7173c97125dce7ed",
             "locator": {
               "kind": "symbol",
@@ -214,13 +214,29 @@
         },
         {
           "anchor": {
-            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "blob": "b250594c4d8b56d5cb43abc24ead92d4e178b1a2",
             "content": "sha256:384fa3f4f3d9ce72c9dabb2eabee14c4ee0acd4ca845d44217eb13826b438ea5",
             "locator": {
               "kind": "symbol",
               "name": "SERVED_RECORD_SCHEMA"
             },
             "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current explicit facade exports the retained dependency-light observer and served-ledger names, not the removed guard/pickup/expectation/age-helper surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda4c53a0067f5b3fe6eb1839ba255847b4a186",
+            "content": "sha256:ae4578b9ff3e84d04239e6f3290b5c18958e8d7290ad942b731b3af568c6bfe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
           },
           "kind": "code"
         }

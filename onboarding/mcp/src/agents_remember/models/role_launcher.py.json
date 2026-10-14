@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b54fe675ca416a7739f907ee67d6cc5871dca9af",
-        "content": "sha256:55b92cac07137932b30b983a62013ed139d5be6293801728cc9c2a6600c79665",
+        "blob": "b1024277b460ece8315abbad24554b4c827340c5",
+        "content": "sha256:1201a3f4583a5ec9f289d8830ca20c348cd686541811560e022fa4f0d0618d19",
         "locator": {
           "kind": "file"
         }
@@ -78,6 +78,22 @@
               "end": 81,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Parentless chat-start marker is default false wire data, not launch or replacement authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1024277b460ece8315abbad24554b4c827340c5",
+            "content": "sha256:ba038f929be5899bc2d34a1ef4e67e373d43623f583dea55eb64e8e005cabf07",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleDispatchRequest"
             }
           },
           "kind": "code"

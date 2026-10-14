@@ -8,7 +8,7 @@ The current source facts below replace the former operative inventory. The separ
 - The early seven-step account is stale beside the current eight-step workflow and its knowledge-foundation step.
 - In the current workflow step 5 authors initial onboarding with the existing pre-baseline fixer, step 6 adopts its attributed baseline, and step 7 reads/reports the foundation and hands authoring to the curator. New memory needs the baseline commit before foundation; earlier foundation is admitted only when memory already has a commit. Neither cards nor a baseline claim that knowledge records exist.
 
-- The bootstrap operation orders scaffold/fixer, attributed adoption and then foundation; the earlier-foundation exception needs an existing memory commit. [12]
+- The bootstrap operation orders scaffold/fixer, attributed adoption and then foundation; the earlier-foundation exception needs an existing memory commit. \[12]
 
 ### Superseded inventory
 
@@ -24,13 +24,37 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [13]
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. \[13]
 
 
 ## Current naming and source qualification
 
-Unresolvable coordination uses server_info/context_packet, not removed resolve_context; missing-provider reporting also names runtime_install providerless/disabled keys. Failure-table step-7 references for adoption are inconsistent with the normal workflow's step 6 and require source-owner resolution.
+The carrier is a free agent without a task document and without a brief. The removed session-open/AR_SPAWN_ROLE transport is historical, not a current setup command or task-seat prerequisite.
 
+Unresolvable coordination uses server_info/context_packet, not removed resolve_context; missing-provider reporting also names runtime_install providerless/disabled keys. The operative sequence is baseline adoption at step 6, then the read-and-report knowledge-foundation stage at step 7; a baseline is not a recorded foundation. Manager232632 expressly keeps failure-table rows101/104/105/106 as a named non-operative inherited source-pointer inconsistency for later outside-scope work. Their step-7 adoption labels and baseline-only setup-done phrase do not override the normal sequence or claim foundation completion. The source is not edited and no acceptance is inferred.
+
+
+## Renewed source-qualified reference facts
+
+- Selection includes missing/unresolved setup; the carrier is free, taskless and without a brief, not the removed session-open transport. [2]
+
+- Inputs are workspace facts and the developer’s repository/branch/layout/index decisions; absence of a brief or ticket is normal. [3]
+
+- The current normal workflow names each owning surface and reaches attributed baseline before the foundation read/report stage. [4]
+
+- The failure inventory is current source context, but rows101/104/105/106 are a disclosed non-operative inherited residual under Manager232632; they do not override normal steps6→7. [5]
+
+- Conformance requires re-derivable surface claims, explicit completion-truth rather than acceptance, preview/read-back and real failed output. [6]
+
+- The agent is taskless, cannot land code or author knowledge, and writes memory only through setup owners; absent task altitude is intentional. [7]
+
+- Failure handling stops for missing decisions and named refusals, retains the superseding instruction-channel source account, and does not manufacture an executed PASS. [8]
+
+- The role delegates governing procedure to operations/bootstrap.md, reports exact resolved state and cannot author the curator’s foundation. [11]
+
+- Initial onboarding/fixer precedes attributed baseline; the foundation stage reports state and hands authoring to Curator, with an earlier-foundation exception only for an existing memory commit. [12]
+
+- Current source declares free/no-task/no-brief transport and source-qualified setup reporting; it supplies no executed test or acceptance. [13]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -137,16 +161,16 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - Canonical source this package-data copy is sync-propagated from. [1]
-- Selection rule, carrier start route, and the one-carrier table. [2]
-- Required inputs, including the three developer decisions. [3]
-- The seven-step ordered workflow, each step naming its owner. [4]
-- The seven-row failure inventory a new user actually hits. [5]
-- The conformance standard: re-derivability, no independent acceptor, failures reported as failures. [6]
-- The authority gates, including the absent-altitude-is-the-shape rule. [7]
-- The two known failure-handling rows, including the capsule-delivery gap. [8]
+- Selection rule, carrier start route, and the one-carrier table. \[2]
+- Required inputs, including the three developer decisions. \[3]
+- The seven-step ordered workflow, each step naming its owner. \[4]
+- The seven-row failure inventory a new user actually hits. \[5]
+- The conformance standard: re-derivability, no independent acceptor, failures reported as failures. \[6]
+- The authority gates, including the absent-altitude-is-the-shape rule. \[7]
+- The two known failure-handling rows, including the capsule-delivery gap. \[8]
 - The manifest entry binding this operation to its single carrier. [9]
 - The operation vocabulary extension that publishes `bootstrap` as the ninth operation. [10]
-- The role card this operation is the procedure for. [11]
+- The role card this operation is the procedure for. \[11]
 
 ### Cross-Repo References
 

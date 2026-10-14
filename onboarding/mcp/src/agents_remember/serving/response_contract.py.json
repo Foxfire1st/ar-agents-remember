@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+        "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
         "content": "sha256:15ab3999ca957c919a14638c78cae2cc9a6d98e7a2726d812b38be1e96d2a2ed",
         "locator": {
           "kind": "symbol",
@@ -22,26 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "**The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.**\n\nAnchor: \"state: Literal[\\\"recorded\\\", \\\"unrecorded\\\"]\"",
+      "note": "Anchor: Recorded/unrecorded state and stateDetail are LeafChangeSet fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafChangeSet"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
-            "locator": {
-              "kind": "symbol",
-              "name": "state_detail"
+              "end": 550,
+              "kind": "line_range",
+              "start": 533
             }
           },
           "kind": "code"
@@ -49,15 +39,16 @@
       ]
     },
     "10": {
-      "note": "One folder's entries model parts with total, remaining and reason.",
+      "note": "Anchor: Notes-folder parts retain total/remaining/reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:0d61b8fcf3adcface15bf07bbcd40ef376cedd1cd00f94488eed139ce7ed53f4",
             "locator": {
-              "kind": "symbol",
-              "name": "NotesFolder"
+              "end": 377,
+              "kind": "line_range",
+              "start": 359
             }
           },
           "kind": "code"
@@ -65,15 +56,16 @@
       ]
     },
     "11": {
-      "note": "Each reference resolves to a path or null.",
+      "note": "Anchor: Reference resolution has nullable paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:e4c37f23a2b7ec027a5e6016991bc2940a7c6feee2e9c139d58d773f58cc101d",
             "locator": {
-              "kind": "symbol",
-              "name": "NotesResolutions"
+              "end": 392,
+              "kind": "line_range",
+              "start": 387
             }
           },
           "kind": "code"
@@ -81,15 +73,16 @@
       ]
     },
     "12": {
-      "note": "Recorded starts model newest-first rows with nullable paths.",
+      "note": "Anchor: Current task-report row vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:787087b81498e16e4c169b78ed4abe9d74f67788712e5b2a0cb5864b22ef7615",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskReportRow"
+              "end": 420,
+              "kind": "line_range",
+              "start": 407
             }
           },
           "kind": "code"
@@ -97,16 +90,16 @@
       ]
     },
     "13": {
-      "note": "The comparison list carries its four measured code/memory trees.",
+      "note": "Anchor: The four comparison endpoints.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:12208388281f844054724f017af6bd73164d64a3b231b28e115b75e1a90ee81f",
             "locator": {
-              "end": 911,
+              "end": 522,
               "kind": "line_range",
-              "start": 907
+              "start": 518
             }
           },
           "kind": "code"
@@ -114,16 +107,16 @@
       ]
     },
     "14": {
-      "note": "ComparisonChangeSet extends TaskChangeSet with comparison mode, number and trees.",
+      "note": "Anchor: Explicit comparison mode and number.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:a2fbced769c412e66cd5da28dc2562d77f2b4b255dad72149b84dddc63b129a4",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
+            "content": "sha256:da306d15dcc99a8866de546539e909fbdb772539190765a7dbb183368f4ec716",
             "locator": {
-              "end": 919,
+              "end": 530,
               "kind": "line_range",
-              "start": 898
+              "start": 525
             }
           },
           "kind": "code"
@@ -131,116 +124,57 @@
       ]
     },
     "15": {
-      "note": "LeafChangeSet retains explicit working/committed and recorded/unrecorded states.",
+      "note": "Anchor: Current working/committed and recorded/unrecorded vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "end": 939,
+              "end": 550,
               "kind": "line_range",
-              "start": 922
+              "start": 533
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The producer that publishes it, with the counter zero it exists to annotate.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
-            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_changeset"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The client mirror and the control that renders the state and withholds the total.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:1d08d2d1e3b9ee475152be5029ffa52b02d3079169aeca5d205633f21c468331",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskChangeset"
-            },
-            "path": "dashboard/src/data/changeset.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetButton"
-            },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The cases that measure the discriminator and the route status.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c592a267a980f828d8674554354ca185d56ddc70",
-            "content": "sha256:73635ca023404c29caeca12869416be8c3db15eb8d4b05840a5f062af780f184",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "5": {
-      "note": "The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state.",
+      "note": "Anchor: Master generation endpoints, scoped net and leaf breakdown models.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterNetGeneration"
+              "end": 573,
+              "kind": "line_range",
+              "start": 561
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterChangeSet"
+              "end": 586,
+              "kind": "line_range",
+              "start": 576
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafSummary"
+              "end": 558,
+              "kind": "line_range",
+              "start": 553
             }
           },
           "kind": "code"
@@ -248,74 +182,16 @@
       ]
     },
     "6": {
-      "note": "**The leaf view's own recordedness: the `state` discriminator, its `recorded` default, and the route's sentence it carries (260921-ICR-L25).**",
+      "note": "Anchor: Unrecorded leaf counters are not landed-empty evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafChangeSet"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
-            "locator": {
-              "kind": "symbol",
-              "name": "state_detail"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The catalog wire mirrors structural binding, replacement, and the private dispatch receipt.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:99d12fb092b2aaee432f74aab4ded60d437f14818ef6d2e7c33bad36582e28b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalCatalogEntryWire"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Open and seat-conflict responses carry structural identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:0d48bf4c3921c4f055a62be30df77cd363018e46aae040503a1f5f370b8745a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalOpened"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Task assignment success/refusal use task-document identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
-            "content": "sha256:f38e5b44460554fe46bf88809cbf5bcf8bd8db31457bd37f06a4a8f5988f8e06",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalTaskAttached"
+              "end": 550,
+              "kind": "line_range",
+              "start": 533
             }
           },
           "kind": "code"

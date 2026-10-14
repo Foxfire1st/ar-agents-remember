@@ -29,7 +29,7 @@ that chat is never a build route.
 escalation for a plan delta beyond blank-filling, and that the **spirit test is orchestrator-only**.
 `## Knob resolution and capability doctrine` fixes the resolution order (role-file defaults < global
 settings < repo-local settings), which rows are settings keys, the deliberate absence of per-harness role
-files, and `dispatch_agent` as the harness-independent fan-out. `## Instruction-surface boundaries`
+files, and `role_start` as the harness-independent role-agent fan-out. Current launch rows are harness, model, effort, serviceTier, mode and featureValues; the retained launchArgs/sessionCommands/promptKeywords keys load but are no longer read. `## Instruction-surface boundaries`
 assigns task-collaboration doctrine to `tasks/AGENTS.md`, the task format to
 `w-02-light-task-workflow`, repository specifics to the memory layer, and the corpus's own division of
 labour to `roles/` / `operations/` / `reference/`.
@@ -45,8 +45,7 @@ Keep each invariant to the statement and its consequence; long rationale belongs
 - Sequential execution is the exception and must name its reason.
 - Only the launch-setting rows are settings keys; `dispatch` and `tools` are structural descriptions.
 - There are deliberately no per-harness role files.
-- The normative path injects `core/` + the role + the current operation, and references rationale rather
-  than embedding it.
+- The retained corpus describes core/role/operation inheritance, but native role launch selects its role and operation without injecting this shared core; source doctrine is not evidence of delivered capsule contents.
 
 ### Todos
 
@@ -63,10 +62,13 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-| The task-doc → branch → worktree spine and what may create a branch. | `## The spine: task doc → branch → worktree` | skills/l-01-agent-lifecycles/core/invariants.md:36-51 |
-| Knob resolution order, the settings-key rows, and the no-per-harness-files decision. | `## Knob resolution and capability doctrine` | skills/l-01-agent-lifecycles/core/invariants.md:64-81 |
-| The instruction-surface boundary that keeps task doctrine, task format, memory specifics, and role duties in separate owners. | `## Instruction-surface boundaries` | skills/l-01-agent-lifecycles/core/invariants.md:83-93 |
-| Every role's `**Inherits:**` line names this block. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-453 |
+- Task intent creates its branch and build worktree; design and chat are not build routes. \[1] [1]
+
+- Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. \[2] [2]
+
+- Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. \[3] [3]
+
+- Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \[4] [4]
 
 ### Cross-Repo References
 

@@ -1,19 +1,48 @@
 # mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md
 
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+## Current operative account — MIK-R113
+
+The Manager prepares the leaf documents for a Curator started held by role_start_set and opened by its first message. The call carries no supplied dispatch brief. The passed frozen change set and literal hand-off lists still come directly from Worker and Reviewer. Current source-lineage is required before opening the Curator; the former claim that dispatch_agent repeats that proof before process creation is historical. Exact paired roots and enclosure scope, three-way intent, producer-owned fields and the ordinary complete MQC/coherence stage remain mandatory; no CODE counter or Git authority is acquired.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- Leaf documents feed exact passed-candidate/producer inputs to a Curator started held in role_start_set and opened by its first message. [1]
+
+- The canonical template owns the document values, not independent duties or a caller-supplied dispatch brief. [4]
+
+- The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. Curator start is held until its first message and direct passed-candidate evidence remains mandatory. [7]
+
+- The Curator’s three-way reconciliation and one admitted writer remain owned by the curation operation, not the input template. [2]
+
+- Completion truth and acceptance remain distinct; Curator hands structured coherence to Reviewer and Manager retains gate acceptance. [3]
+
+- A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional. Messages wake and complete payloads travel as files. [6]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
 ## Current supported-pair account — R100/R116 composition
 
 The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct. [7]
+- The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct. \[7]
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [6]
+- Messages wake; complete payloads and evidence travel as files. \[6]
 
 
 ## Governing Overview
@@ -78,10 +107,10 @@ moves between preflight and dispatch.
 
 ### Repo-Internal References
 
-- The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. [1]
-- The curator's three-way reconciliation procedure has one home outside the brief. [2]
-- The truth boundary the brief obeys, and the curator's handoff artifact, have one home. [3]
-- The canonical template is the doctrine owner. [4]
+- The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. \[1]
+- The curator's three-way reconciliation procedure has one home outside the brief. \[2]
+- The truth boundary the brief obeys, and the curator's handoff artifact, have one home. \[3]
+- The canonical template is the doctrine owner. \[4]
 - Synchronization replaces package targets and checks equality. [5]
 
 ## CCR-R12@v5 Handoff Boundary
@@ -111,4 +140,6 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
 
-- A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional. [6]
+- A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional. \[6]
+
+</details>

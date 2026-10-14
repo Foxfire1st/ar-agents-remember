@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: # Core — The Minimal Lifecycle Frame",
+      "note": "Worktree tools alone adopt the current contract lifecycle, while role-start binding is separate.\n\nAnchor: current contract frame",
       "targets": [
         {
           "anchor": {
-            "blob": "5d1cf7f9da0def48e90cb11650cf37b3c4c6cc73",
-            "content": "sha256:4ae5c8d558b043c492d6f04731ed7b27f4353a8157e8ebd6c346698b792b049b",
+            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
+            "content": "sha256:33b86993f9bfcb5981ada32ce63525778cd1c284073d74e63b5b114e966c77a7",
             "locator": {
-              "end": 70,
+              "end": 25,
               "kind": "line_range",
               "start": 1
             },
@@ -21,14 +21,16 @@
       ]
     },
     "2": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "The packaged frame is byte-equal to the canonical current worktree-only contract account; no executed acceptance is inferred.\n\nAnchor: current packaged frame",
       "targets": [
         {
           "anchor": {
-            "blob": "6452b02a58a01e1a4f5c4377995d5eebde2b6ac2",
-            "content": "sha256:83d08a0d1636b152f3933160f1c44db7307d6c9e19fed7f19ac5d4c2b8c8aa7c",
+            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
+            "content": "sha256:33b86993f9bfcb5981ada32ce63525778cd1c284073d74e63b5b114e966c77a7",
             "locator": {
-              "kind": "file"
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

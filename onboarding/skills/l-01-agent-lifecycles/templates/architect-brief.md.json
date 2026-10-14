@@ -1,6 +1,24 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+        "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0W0MTJ",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The launcher's note: the `role_start` call for the Architect passes no document reference and the sprint stays in the text.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The launcher submits one complete identity-free architect dispatch.\n\nAnchor: `# Template — Architect Brief`",

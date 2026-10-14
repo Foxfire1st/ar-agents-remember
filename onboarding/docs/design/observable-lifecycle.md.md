@@ -1,5 +1,13 @@
 # docs/design/observable-lifecycle.md
 
+## Current A10 retained-source account
+
+R113 marks the entire observable-lifecycle design as historical: the session lifecycle, raised developer gates and product-owned agent hosting are removed. The earlier R112 session-driven transition account is superseded as present intent. The current tool surface is separately owned by docs/reference/mcp-tools.md; this retained design source grants no restored transition or execution acceptance.
+
+- R113 marks the entire observable-lifecycle design as historical: the session lifecycle, raised developer gates and product-owned agent hosting are removed. The earlier R112 session-driven transition account is superseded as present intent. The current tool surface is separately owned by docs/reference/mcp-tools.md; this retained design source grants no restored transition or execution acceptance. [3]
+
+
+
 ## Current operative account — MIK-R112
 
 The amended design retains states, phases, gates, event correlation and persistence tiers, but removes the model-facing lifecycle signal surface. Transitions are session-driven/guarded or system-owned; a raised gate records the ask, ending a turn is not a lifecycle_gate call and there is no restored lifecycle_resume/end/switch tool prescription. Design remains pre-implementation authority, not proof every design transition is shipped. Historical retention and inbox recovery accounts retain their original dated custody.
@@ -50,6 +58,5 @@ metrics and compact normally.
 
 - Retention policy implementation follows this design split. [1]
 - Projection readers apply interaction TTL and pickup feedback. [2]
-- MCP `lifecycle_gate` exposes the unified public gate junction. [3]
 
 </details>

@@ -442,129 +442,6 @@
         }
       ]
     },
-    "117": {
-      "note": "The carrier format added to this route: schema, value types and the on-disk byte contract.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:f17d6c4cbb1f6caa0a483e1972eb602bca0a62942f64daec54e93fb3bc2ede15",
-            "locator": {
-              "kind": "symbol",
-              "name": "EVE_CAPSULE_CARRIER_SCHEMA"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:7b70655206e67231389d15539125636dd91c7fbcabce083605db181e095fdbee",
-            "locator": {
-              "kind": "symbol",
-              "name": "EveCapsuleCarrier"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:3b7ec570f0251c45f23ad0439c709bc3deb82e6bd72c8745c0f33fa164584c9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "to_bytes"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:f9e9714e2795116d5e3f68de7009dd445055d822c3cb765e21468a7c6c6d4f10",
-            "locator": {
-              "kind": "symbol",
-              "name": "from_bytes"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:1453584ce334174a9324f67c97d44550efc5d20dfac69c6578e9219a61d6118b",
-            "locator": {
-              "kind": "symbol",
-              "name": "carrier_digest"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "118": {
-      "note": "The two channels and why the distinction is load-bearing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:203d4011f13195d873cbdcf520f8b46540ff6875b72a6e8b4f6822bd6670a3e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "ROLE_INSTRUCTION_CHANNEL"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:20008307c37d88f3067bbf86a7315b635d613f1de646f6a469fc42b5ca4886eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "TASK_CONTEXT_CHANNEL"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "119": {
-      "note": "The parse-time confinement invariant and the wrong-seat refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:2b27a7a398ca5ed90b25b66934527913a799ca28d0c3840774e96693b3da293e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_workspace_confinement"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:8b724e51e7a1121eaf07960975530c14903de2e42326f51387354e2b6999b812",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_identity"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "**The unresolved fact as a value, and the side whose validator refuses a recorded state without a relationship identity.**",
       "targets": [
@@ -589,100 +466,6 @@
               "name": "ReviewRelationshipSide"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "120": {
-      "note": "The four environment names declared beside the format so writer and reader cannot drift.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:98443210ff187a5c1a7a4389e1c30e2a6824e9258444e8f7960eeb1ab28bdc6d",
-            "locator": {
-              "kind": "symbol",
-              "name": "BINDING_REF_ENV"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:b0082851957c57882ea1410385280bcf9ea224e02ed595998d5cc499a03f77de",
-            "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_PATH_ENV"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:2bba1964c3be276b013b090cb2e3933d47c27696d7381cca39b9f5a8e762451f",
-            "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_DIGEST_ENV"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:b1d54515704c485ad25ac3dd736b4f0949fe9af2eb43d8f6180746b7321f23c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "WORKSPACE_ROOT_ENV"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "121": {
-      "note": "The producer that builds this value and the two consumers that verify it, none of them in this route.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:c3ac2db23042f3f633e7462ac0a5dcb713611ed4a7dc48dc2af94982ed7889a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_carrier"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
-            "locator": {
-              "kind": "symbol",
-              "name": "verify_capsule_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
-            "content": "sha256:744cdce3083db7bb1e9b6d30818ef0e172e4f53889dcd55ba8476a74698df06d",
-            "locator": {
-              "kind": "symbol",
-              "name": "loadVerifiedCapsule"
-            },
-            "path": "eve_runtime/agent/lib/capsule.ts"
           },
           "kind": "code"
         }
@@ -2642,7 +2425,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
+            "blob": "fea17f8538e2614a2be674e0f88a636f6070ca19",
             "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
             "locator": {
               "kind": "symbol",
@@ -2659,12 +2442,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 129,
+              "end": 82,
               "kind": "line_range",
-              "start": 129
+              "start": 82
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -3736,7 +3519,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
             "locator": {
               "kind": "symbol",
@@ -3787,7 +3570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",
@@ -3851,12 +3634,12 @@
       ]
     },
     "294": {
-      "note": "Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations.\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
+      "note": "Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
-            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:b678282dd750b710810314db6feaaf211093143603358f8d45d2b8a724220219",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -3930,7 +3713,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
             "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
               "kind": "symbol",
@@ -3945,30 +3728,6 @@
     "298": {
       "note": "L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
-            "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_ANSWER_EXCEPTIONS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
-            "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "ebf640a7f03fcf6844eaaf4b89ffccd3dd9d2399",
@@ -3995,7 +3754,31 @@
         },
         {
           "anchor": {
-            "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
+            "blob": "ab28fceb45cf89ffe4da54a54e4888bb3f56c480",
+            "content": "sha256:17c0e9027e9bd6bcefb0be23e225f6c47f3401f1883a8e97fa317e2aa3bedf4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "891a63152e092b77d7e6a7630adc88aa4587b73a",
+            "content": "sha256:b780921bfae82f23351b98f0359d970689bdc2fb97d59f1b46562c3e78a25fe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_EXCEPTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "345f0a5c362cd2c1c2c76f2ac1362793e36a9933",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -4412,7 +4195,7 @@
       ]
     },
     "315": {
-      "note": "Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.",
+      "note": "Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.",
       "targets": [
         {
           "anchor": {
@@ -5558,19 +5341,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
-            "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 22
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
             "locator": {
@@ -5581,6 +5351,19 @@
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -5589,7 +5372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
               "end": 369,
@@ -5602,12 +5385,12 @@
         },
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
-              "end": 405,
+              "end": 398,
               "kind": "line_range",
-              "start": 394
+              "start": 387
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5695,12 +5478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:3cc313e2860d45df53ee5cb6523d5f2f2cf815539a3f0561a9145b4c6ba29504",
             "locator": {
-              "end": 499,
+              "end": 486,
               "kind": "line_range",
-              "start": 499
+              "start": 486
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5713,12 +5496,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:f924166f66525f4621134d24e722009a7a63e1accb841867259a6300b4108e4b",
             "locator": {
-              "end": 480,
+              "end": 467,
               "kind": "line_range",
-              "start": 480
+              "start": 467
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5757,12 +5540,12 @@
         },
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:6a84725e589ed877ccac50e10aec18ac8c8997b2b446025a3c99fcedf446928b",
             "locator": {
-              "end": 144,
+              "end": 91,
               "kind": "line_range",
-              "start": 144
+              "start": 91
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5770,12 +5553,12 @@
         },
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:4b71d3bff3108b0030d796377e565c8d6099f4d8a3ba716a8abe479b51ffa522",
             "locator": {
-              "end": 145,
+              "end": 92,
               "kind": "line_range",
-              "start": 145
+              "start": 92
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5783,12 +5566,12 @@
         },
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
             "locator": {
-              "end": 151,
+              "end": 98,
               "kind": "line_range",
-              "start": 151
+              "start": 98
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5796,12 +5579,12 @@
         },
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
             "locator": {
-              "end": 152,
+              "end": 99,
               "kind": "line_range",
-              "start": 152
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5862,47 +5645,6 @@
         }
       ]
     },
-    "76": {
-      "note": "Operator inbox response models cover post, poll, consume, and hosted-delivery metadata.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
-            "content": "sha256:78ae75724a69c353304a1929b84940310e2a140489475c408b580371be665c34",
-            "locator": {
-              "kind": "symbol",
-              "name": "OperatorInboxPostResponse"
-            },
-            "path": "mcp/src/agents_remember/models/operator_inbox.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
-            "content": "sha256:dd467d3e8c00e4500969bf233052f6eac4700b98378b3149ac512d042384939e",
-            "locator": {
-              "kind": "symbol",
-              "name": "OperatorInboxPollResponse"
-            },
-            "path": "mcp/src/agents_remember/models/operator_inbox.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "123c7eaf256393182681706fb3f5b80a98a47a12",
-            "content": "sha256:3a67c503a36c49b1855b27723da3cbe83d56b32bd609117d16bd301e6f052bf4",
-            "locator": {
-              "kind": "symbol",
-              "name": "OperatorInboxConsumeResponse"
-            },
-            "path": "mcp/src/agents_remember/models/operator_inbox.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "77": {
       "note": "Contract tests prove public tool coverage and schema generation.\n\nAnchor: \"def test_every_public_tool_has_a_schema_generating_response_model(\"",
       "targets": [
@@ -5929,23 +5671,6 @@
             "path": "mcp/tests/test_models.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "78": {
-      "note": "Orchestration response models cover the public manager-nudge helper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "10f5cc66daca5f30fc924fd78b0a73812c73875d",
-            "content": "sha256:2e5e511015f3f36a1da910bc4e1cf4ab95cb7cf39b12addf635205bfb8455b76",
-            "locator": {
-              "kind": "symbol",
-              "name": "OrchestrationNudgeManagerResponse"
-            },
-            "path": "mcp/src/agents_remember/models/orchestration.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -5983,35 +5708,6 @@
         }
       ]
     },
-    "80": {
-      "note": "Terminal response models cover trusted task-seat assignment and internal hosted-session spawn.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
-            "content": "sha256:59b7dc579d7745bd7badd418b5940c15d36b49d888b3833245887fa731560f76",
-            "locator": {
-              "kind": "symbol",
-              "name": "AttachTerminalSessionToTaskResponse"
-            },
-            "path": "mcp/src/agents_remember/models/terminal.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
-            "content": "sha256:b76dd0668335367552b9d3ea176dea2f35efe1532c6ca6be7984f77b946aee34",
-            "locator": {
-              "kind": "symbol",
-              "name": "SpawnAgentSessionResponse"
-            },
-            "path": "mcp/src/agents_remember/models/terminal.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "81": {
       "note": "The next-step engine that fills `nextStep` from the active lifecycle.\n\nAnchor: `nextStep`",
       "targets": [
@@ -6035,7 +5731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717aa39ae800a072c978e62f06d55f424c8d6fe9",
+            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
             "content": "sha256:1a22ae86979a1c1a6b103e03d0a75ae4328df2bb77612560782a3e95472794f7",
             "locator": {
               "end": 7,
@@ -6066,7 +5762,7 @@
         },
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:f7ddf4c25d010439807b3b6c80acc3feb89a6d01628b0e7d485d926953f9147c",
             "locator": {
               "end": 41,
@@ -6084,7 +5780,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -6097,7 +5793,7 @@
         },
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
             "locator": {
               "end": 56,
@@ -6110,7 +5806,7 @@
         },
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:60c082da986f1df921d8415fd7403fc61c689d99feff4c1b7751169780bf0297",
             "locator": {
               "end": 78,
@@ -6128,7 +5824,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:243974cc7452f180152758ccfad8fa0818c2f6a3b9cede132a151225b7e86f00",
             "locator": {
               "end": 10,

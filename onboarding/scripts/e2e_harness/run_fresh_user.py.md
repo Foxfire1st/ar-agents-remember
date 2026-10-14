@@ -71,7 +71,6 @@ None.
 - The transcript lands under this directory name. [3]
 - The acceptance the entry point drives. [4]
 - The shared writer for the transcript file. [5]
-- The existing Dagger-admitted entry point this module deliberately does not modify. [6]
 - The case pinning the argument contract. [7]
 
 ### Cross-Repo References

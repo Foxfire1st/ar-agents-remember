@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The state response merges the serve-time tail onto a copy of the memoized body.",
+      "note": "Anchor: Copy-on-tail state response and bodyless ETag match.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
-            "content": "sha256:b503a4b9b1198b6890e892eed0f101821c3310e4686df511f290ad13ba622461",
+            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
+            "content": "sha256:809ddeb1544c1e0c0f0fb5ffa25e10a9d8e106278a9aeb347d99cb1db4a7a829",
             "locator": {
-              "kind": "symbol",
-              "name": "_state_response"
+              "end": 71,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"
@@ -19,33 +20,17 @@
       ]
     },
     "2": {
-      "note": "The SSE route hands the same readers to the projection stream.",
+      "note": "Anchor: Projection snapshots/deltas and raw event stream retain distinct contracts.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
-            "content": "sha256:1c604721f00c2d26ce206f320899c397f698091fb6dda01cc576ca85c416ceb1",
+            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
+            "content": "sha256:fc5b00aabb66eb68824fba477acb5f28ad154aa538c59c20ec266561c17565e8",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_projection_routes"
+              "end": 157,
+              "kind": "line_range",
+              "start": 89
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The observer-health reader whose `None` makes the key absent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observer_health_payload"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
           "kind": "code"
         }

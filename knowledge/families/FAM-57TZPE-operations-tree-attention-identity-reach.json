@@ -5,7 +5,7 @@
     ],
     "justification": "A compact overlay alone can hide a chosen or completed task; priority words alone can hide the inbox action, and correct identity alone cannot ensure keyboard reach. The combined owners preserve readable truth and actionable reach while the tree retains its space."
   },
-  "guarantee": "The Operations task column exposes waiting attention over, not instead of, its tree; rows preserve their actual document/lifecycle truth and highest-priority word with every secondary fact recoverable; need order, completed folds, lifecycle reveal, arrow/typeahead navigation and independent inbox controls jointly keep each admitted target reachable without changing selection or dismissal identity.",
+  "guarantee": "The Operations task column exposes waiting attention over, not instead of, its tree; rows preserve actual document/lifecycle truth and the task-own word with every other current fact recoverable in hover. Need order, completed folds, lifecycle reveal and arrow/typeahead navigation keep admitted targets reachable. The retired inbox-control member and earlier composite-word surface supply no current independent control or status band.",
   "id": "FAM-57TZPE",
   "members": [
     "INV-K9B8G8",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/cockpit",
     "dashboard/src/panels"

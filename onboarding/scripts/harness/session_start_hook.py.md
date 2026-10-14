@@ -19,12 +19,14 @@ module at run time.
 
 ### Logic
 
-`emit(build_payload)` is the whole program: read the sibling `.md` directive file
+`emit(build_payload)` first calls `has_binding` and returns without output for a bound native role agent; otherwise it reads the sibling `.md` directive file
 (`DIRECTIVE_PATH` is the script's own path with a `.md` suffix, which is why the
 generator also emits `hooks/agents-remember-session-start.md` as a composed file), wrap
 it in the harness's payload envelope, and print the JSON on stdout.
 
-Exactly two things vary, and both are protocol requirements rather than preference:
+`has_binding` reads only labels in the host's authoritative agent record selected by validated PASEO_AGENT_ID under PASEO_HOME and HOST_RECORD_FOLDER. A truthy ar.role label suppresses the free-chat directive on start/reload/resume. Missing/invalid identity, missing/unreadable record or missing label is indeterminate: the hook speaks and never fails session start or prints record contents. This card describes that source algorithm; no actual host/private settings are read by curation.
+
+The following envelope/workspace variations are protocol requirements, not preferences:
 
 | Variation | Fragments | Harnesses |
 | --- | --- | --- |

@@ -5,7 +5,7 @@
     ],
     "justification": "The Python suite brackets modules with reset of already-imported owners, enforces a closed state-treatment register, and gives each process private tmux and provider resources with complete cleanup. Together these prevent the recorded ambient and resource collisions from depending on module order or other pytest processes."
   },
-  "guarantee": "The Python suite brackets modules with reset of already-imported owners, enforces a closed state-treatment register, and gives each process private tmux and provider resources with complete cleanup. Together these prevent the recorded ambient and resource collisions from depending on module order or other pytest processes.",
+  "guarantee": "The remaining Python suite brackets modules with reset of already-imported owners, enforces its closed state-treatment register, and gives each process a private test-created tmux server with owned cleanup. Together these prevent retained ambient and tmux-resource collisions from depending on module order or other pytest processes; removed local Eve provider-process/socket guarantees are no current member obligation.",
   "id": "FAM-3FTGSA",
   "members": [
     "INV-5YPFVJ",
@@ -20,7 +20,7 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/test_support/agents_remember_test_support/testing",
     "mcp/tests"

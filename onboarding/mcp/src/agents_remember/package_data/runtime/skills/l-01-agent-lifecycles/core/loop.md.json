@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "note": "The loop still separates owner, builder and independent Reviewer, and preserves opt-in review, settings-owned rounds and the sealed monotone finding set. The current list of review labels no longer advertises hosted review; removing that label neither resets findings nor creates another review lane. Native, plan, integration, route, lens, replacement, resumed, bootstrap, diagnostic, delta and final labels stay subject to the same rule.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
-            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
+            "blob": "c2ff2ee039218dcd1990046b394c3d17586cb872",
+            "content": "sha256:fcffbc62de515ea75bfb2361c98fb80a9a373c4261444714206889d4d5a8e9f3",
             "locator": {
               "kind": "file"
-            }
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
           },
           "kind": "code"
         }

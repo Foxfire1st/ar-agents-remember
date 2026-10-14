@@ -70,9 +70,9 @@ File-level onboarding is intended to cover every current Python source below thi
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
 - Applicable teardown validates two fresh checkpoint reports; not-applicable teardown records zero starts and requires no summary. [11]
 - Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations. [12]
-- The relay census covers reviewed observation authority, route handlers and wire submissions, with declared limits. [13]
 - Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates. [14]
-- Observer-health output preserves required nulls and bounded counter refinements in the dashboard contract. [15]
+
+- Current projection generator derives serialized TypeScript/schema contracts from Pydantic declarations, including the servingBuild-only served extension; removed observer-health payloads are not current required fields. [15]
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement. [16]
 - Case budgets are root declarations rather than overview-owned constants. [17]
 - Dagger owns the retained build and retry cache bindings. [18]

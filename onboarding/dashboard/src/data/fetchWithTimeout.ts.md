@@ -19,7 +19,7 @@ to fetch, and clears the timer in `finally` on every settle path.
 ### Conventions
 
 It deliberately uses timer-visible controller cancellation rather than `AbortSignal.timeout`, so fake-timer
-tests can advance the real transport bound.
+tests can advance the real transport bound. Removed catalog-poll, missedBeats and boundedAttempt examples no longer describe consumers; the helper’s controller/fetch/finally policy itself is unchanged.
 
 ### Invariants And Boundaries
 
@@ -41,7 +41,7 @@ No relevant external documentation is configured.
 ### Repo-Internal References
 
 - The helper aborts and always clears its timer. [1]
-- Shared boot reads use the helper before entering their single-flight maps. [2]
+- shareInflight shares a caller-supplied pending callback and owns no fetch or timeout; the transport bound is supplied inside the caller callback, not by this map itself. [2]
 
 ### Cross-Repo References
 

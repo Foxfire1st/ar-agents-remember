@@ -6,10 +6,7 @@
 
 ## Purpose
 
-`test_provider_degradation.py` is the failing-first suite for the 260707-HFX-L7 provider
-degradation protocol: the pure classifier's hysteresis contract, and the full evaluator's
-durable-event/inbox-alert/critical-failsafe behavior end to end against a real temp coordination
-root.
+`test_provider_degradation.py` retains the 260707-HFX-L7 classifier hysteresis and evaluator event/state/critical-failsafe fixtures against a temporary coordination root. R113 removed the terminal recipient catalog, inbox delivery/alerts and role-addressed all-clear assertions; their earlier failing-first/R2 attribution is historical, not current coverage. The injected stopper does not establish real container shutdown or hosted notification.
 
 ## Code Commentary
 
@@ -29,26 +26,11 @@ effects):
   rows drive both the commit-lag threshold path (`behindFiles` count) and the sustained-age lag
   path (`staleIndex.served` + row age in minutes) to `degraded`/`critical`.
 
-`ProviderDegradationEvaluatorTests` drives `evaluate_provider_degradation` against a real
-`load_test_config`-built `McpRuntimeConfig` and a temp coordination root:
-- `test_critical_transition_records_event_inbox_and_failsafe_once` seeds two `running`
-  `harness`-kind catalog entries (`spawn_role="orchestrator"`/`"manager"`), records two
-  memory-pressure samples crossing `critical_samples=2`, patches `deliver_inbox_entry` to capture
-  delivery attempts, and asserts: one durable event row with `to="critical"` and a
-  `criticalFailsafe.action == "provider_watchers stop"`; the injected `stop_provider_stacks` fake
-  called exactly once (not on the second same-state evaluation); the persisted state file matches;
-  exactly one `degradation-alert` inbox row per catalogued session (`orchestrator-1`/`manager-1`);
-  and — the R2 fix this test was extended to cover — exactly 2 delivery attempts, one per
-  recipient, proving the hosted-delivery side effect actually runs (closes reviewer F1).
-- `test_critical_stop_failure_still_records_event_inbox_and_state` (R2, new) makes the injected
-  stopper raise `RuntimeError("docker stop failed")` and asserts the event, inbox rows, and
-  persisted `critical` state all still land, with `criticalFailsafe.result` carrying
-  `{"ok": False, "errorType": "RuntimeError", "error": "...docker stop failed..."}` — proving the
-  degradation record survives a teardown failure (closes reviewer F2).
-- `test_recovery_transition_survives_restart_and_posts_role_addressed_all_clear` drives a
-  degraded→healthy round trip with no catalogued sessions (role-fallback `agentId=None` rows) and
-  asserts two ordered event rows (`degraded` then `healthy`) plus role-addressed all-clear inbox
-  rows for both `orchestrator` and `manager`.
+`ProviderDegradationEvaluatorTests` drives `evaluate_provider_degradation` using temporary config/store files and injected stop actions:
+- `test_critical_transition_records_event_and_failsafe_once` asserts a critical event and matching state/last-event ID, one injected stop call, and no second same-state event. It has no catalog or delivery-count assertion.
+- `test_critical_stop_failure_still_records_event_and_state` makes the stopper raise `RuntimeError("docker stop failed")` and verifies the persisted critical event/state and structured failsafe failure. Its current durability claim concerns the stopper failure, not an inbox/delivery failure.
+- `test_recovery_transition_survives_restart` asserts degraded-to-healthy event ordering using `unreachable_stopper`, which raises if the critical branch unexpectedly runs. The current body does not restart the process or assert all-clear recipients; the method name is not additional evidence.
+Earlier R2 F1/F2 claims described removed notification assertions; this narrower current inventory does not reopen or regrade those historical CODE findings.
 
 ### Conventions
 
@@ -56,17 +38,14 @@ Real temp-rooted `McpRuntimeConfig` via `load_test_config`/`config_payload` (wri
 `.codex/mcp/settings.json` and calls `load_config`), matching the test-writing style in
 `test_config.py`; no mocking of the config layer. `record_memory_sample` and `read_event_rows` are
 small local helpers building/reading the real `ProviderMetricsStore`/`ProviderDegradationStore`
-files. `unittest.mock.patch` is used only for the `deliver_inbox_entry` delivery-capture seam, not
-for the store/config layers.
+files. The current suite has no delivery mock; injected stop functions isolate the external teardown boundary. These are temporary fixture settings, not permission to mutate real user settings.
 
 ### Invariants And Boundaries
 
 - The classifier tests must stay side-effect-free (no store/inbox I/O) so they pin the pure
   hysteresis contract independent of the evaluator's durability/delivery machinery.
-- The evaluator tests must prove durability (event + state survive) even when the injected
-  stopper or the delivery seam misbehaves — that is the point of the R2 additions.
-- Delivery-attempt assertions must count exactly one per role-addressed recipient, not per alert
-  target, so a delivery-parity regression (queue-only alerts) fails loudly here first.
+- The retained evaluator cases establish event/state persistence with an injected stopper, including a stopper failure. R113's removed notification/delivery seams are not covered by these assertions.
+- No fresh execution, live container stop, hosted delivery or whole-candidate acceptance is claimed by this static card reconciliation.
 
 ### Todos
 
@@ -87,8 +66,7 @@ No relevant documentation found after checking; the protocol is repo-internal do
 - The detector and evaluator under test. [1]
 - The settings dataclass this suite constructs directly to tune thresholds per test. [2]
 - The metrics store/schema rows the classifier tests construct as fixtures. [3]
-- The terminal catalog entries seeded as alert recipients. [4]
-- The operator inbox store read back to assert alert rows/roles/responses. [5]
+- The three current evaluator cases pin one-shot injected failsafe/event/state persistence, stop-failure durability, and degraded/healthy event ordering, with no terminal catalog/inbox/delivery assertions. [6]
 
 ### Cross-Repo References
 

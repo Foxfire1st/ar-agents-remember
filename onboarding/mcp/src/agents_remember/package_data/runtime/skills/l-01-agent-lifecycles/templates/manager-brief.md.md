@@ -1,19 +1,40 @@
 # l-01-agent-lifecycles/templates/manager-brief.md
 
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+## Current operative account — MIK-R113
+
+A Manager starts through role_start with its sprint/master references; its first message is compiled from the master documents, not a caller-supplied brief. One role_start_set on each leaf starts Worker, Reviewer and held Curator, with the Curator opened by its first message and direct producer packages preserved. Host archival on leaf finalization/cleanup/abandonment retains reports and excludes Manager/Orchestrator; retire_child belongs only to the agent that started the child, not arbitrary force retirement. The old tmux/config-gated retirement and routine master-handover-approval claims are historical. Optional review, source-edge admission, protected provider recovery, canonical operation journals and Owner transaction/gate duties stay unchanged.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- A Manager starts through role_start with its sprint/master references; its first message is compiled from the master documents, not a caller-supplied brief. One role_start_set on each leaf starts Worker, Reviewer and held Curator, with the Curator opened by its first message and direct producer packages preserved. Host archival on leaf finalization/cleanup/abandonment retains reports and excludes Manager/Orchestrator; retire_child belongs only to the agent that started the child, not arbitrary force retirement. The old tmux/config-gated retirement and routine master-handover-approval claims are historical. Optional review, source-edge admission, protected provider recovery, canonical operation journals and Owner transaction/gate duties stay unchanged. [1]
+
+- The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. [2]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
 ## Current supported-pair account — R100/R116 composition
 
 The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. [2]
+- The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. \[2]
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [1]
+- Messages wake; complete payloads and evidence travel as files. \[1]
 
 
 ## Current operative account — MIK-R112
@@ -166,4 +187,6 @@ The dispatched Manager briefing now sends each leaf role through `role_start` as
 
 ## Source Evidence
 
-- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. [1]
+- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. \[1]
+
+</details>

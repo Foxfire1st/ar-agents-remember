@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+            "blob": "b7bdcc43343e202243006b298a6fa9ca9e9d1428",
             "content": "sha256:a3c63cee19b5a0004f3ead30b57ae42e10056f31bcfaf6c63eecd9c536016d79",
             "locator": {
-              "end": 258,
+              "end": 259,
               "kind": "line_range",
-              "start": 223
+              "start": 224
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+            "blob": "b7bdcc43343e202243006b298a6fa9ca9e9d1428",
             "content": "sha256:f2b3d4fd373c63157eadc3604ab4ba42fcf487a7a8f9a25c20056f2022379550",
             "locator": {
-              "end": 1386,
+              "end": 1389,
               "kind": "line_range",
-              "start": 1385
+              "start": 1388
             }
           },
           "kind": "test"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+            "blob": "b7bdcc43343e202243006b298a6fa9ca9e9d1428",
             "content": "sha256:babfea6ab149107818492e2cd88679c7d7273bd56536ef4fd5641b28c1ae6f72",
             "locator": {
-              "end": 1394,
+              "end": 1397,
               "kind": "line_range",
-              "start": 1388
+              "start": 1391
             }
           },
           "kind": "test"
@@ -69,7 +69,7 @@
       ]
     },
     "5": {
-      "note": "Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards.",
+      "note": "Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards.\n\nThe closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance.\n\nAnchor: `GateBlockedTests.test_closeout_preview_with_closed_gate_answers_blocked`",
       "targets": [
         {
           "anchor": {
@@ -77,6 +77,18 @@
             "content": "sha256:b34798b76e54af521f3beeb546e90c30a729a07cd3d9f8ca22a1c9cb5303cd87",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b7bdcc43343e202243006b298a6fa9ca9e9d1428",
+            "content": "sha256:ee594d766e1e5e9cb0182dbca17e201e5c5a9fc5cfadb222ca5a791dfb9ba445",
+            "locator": {
+              "end": 849,
+              "kind": "line_range",
+              "start": 832
             }
           },
           "kind": "test"

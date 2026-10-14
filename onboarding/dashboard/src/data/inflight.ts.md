@@ -17,7 +17,7 @@ removes only its own slot after success or rejection, allowing later reads to is
 
 ### Conventions
 
-Callers supply the async read and are responsible for an abort-capable transport bound.
+Callers supply the async read and are responsible for an abort-capable transport bound. The retained production caller is the File Viewer repository catalog; earlier terminal/catalog-poll examples are historical after their retirement.
 
 ### Invariants And Boundaries
 
@@ -39,7 +39,10 @@ No relevant external documentation is configured.
 ### Repo-Internal References
 
 - The map shares a pending promise and releases it by identity on settle. [1]
-- Repository and terminal catalogs use the helper for boot contention. [2]
+
+- The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer. [2]
+
+- The retained File Viewer repository-catalog read shares its in-flight callback and bounds its fetch; removed terminal/catalog-poll callers are not current consumers. \[4] [4]
 
 ### Cross-Repo References
 

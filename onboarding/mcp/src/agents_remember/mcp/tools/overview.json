@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
             "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
             "locator": {
-              "end": 50,
+              "end": 49,
               "kind": "line_range",
-              "start": 49
+              "start": 48
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
-              "end": 43,
+              "end": 42,
               "kind": "line_range",
-              "start": 43
+              "start": 42
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -189,24 +189,6 @@
             "path": "mcp/tests/test_models.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "The external-chat inbox builders post, poll, and consume operator responses.\n\nAnchor: \"def operator_inbox_post_payload\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
-            "content": "sha256:4426270d1078d878e7ced0255d4394a3bf2f08108f6fa596a4b46352c6494251",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -251,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:56c28a24b4574bbd167a6c2db330fac203f0c5b8bbec11f82510db2ca04cb251",
             "locator": {
               "end": 223,
@@ -264,30 +246,12 @@
         }
       ]
     },
-    "21": {
-      "note": "The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5).\n\nAnchor: \"class AgentNotifierHeartbeatStore\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
-            "content": "sha256:60c9112e004533b496696d9545ba1efb12e28e7eef28269ee8f131e6dfd1d3bb",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 63
-            },
-            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "22": {
       "note": "The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases.\n\nAnchor: \"class StrictResponseModel\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
+            "blob": "fea17f8538e2614a2be674e0f88a636f6070ca19",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 13,
@@ -295,24 +259,6 @@
               "start": 13
             },
             "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The trusted terminal assignment response carries document-and-role binding plus private session correlation.\n\nAnchor: \"class AttachTerminalSessionToTaskResponse\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
-            "content": "sha256:398c56ff2987ccd2377c21546ac852fb789dd04612f5ef8350529245978f8c2c",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "mcp/src/agents_remember/models/terminal.py"
           },
           "kind": "code"
         }
@@ -340,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
             "content": "sha256:7cf4fa3e68ddaa0bd592051a7872a2b8e810780982feb18cc56e09714e7738b1",
             "locator": {
               "kind": "symbol",
@@ -615,22 +561,6 @@
         }
       ]
     },
-    "40": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
-            "content": "sha256:b702ad77cc5ea86293cc43be41e9d5518b6a8aa43a397f8a08c76caa57419262",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "41": {
       "note": "- The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.",
       "targets": [
@@ -683,38 +613,14 @@
       ]
     },
     "44": {
-      "note": "Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade.\n\nAnchor: Facade imports; `dispatch_agent_payload`, `retire_child_payload`",
+      "note": "Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members.\n\nAnchor: lines 10-95",
       "targets": [
         {
           "anchor": {
-            "blob": "4d145648dc790acd5b97035e97a09b5f1d98a24d",
-            "content": "sha256:55f5ba971a49d36fcd6b52b94c4ad8c8e4d3279be607cc34303c5a334dffbd52",
+            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "content": "sha256:08b426d6b9741f5519f27cffbcba164f484eda21f8e28b25fa59330ccfa4145e",
             "locator": {
-              "kind": "symbol",
-              "name": "dispatch_agent_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4d145648dc790acd5b97035e97a09b5f1d98a24d",
-            "content": "sha256:8ee57a7eac8fcf3f1aba3b6a9472cc783f57ab9d650484d3bfbf9f72bc612dad",
-            "locator": {
-              "kind": "symbol",
-              "name": "retire_child_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
-            "content": "sha256:2800a408d2f8b2e2f1717ad56b4f6b8543a0fe6cbefd38665080d2a64fdafa5c",
-            "locator": {
-              "end": 77,
+              "end": 95,
               "kind": "line_range",
               "start": 10
             },
@@ -725,12 +631,12 @@
       ]
     },
     "45": {
-      "note": "One model-owned 41-name roster, including adoption, native-role, native retirement and knowledge names.\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
+      "note": "Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
-            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:b678282dd750b710810314db6feaaf211093143603358f8d45d2b8a724220219",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -787,7 +693,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
             "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
             "locator": {
               "kind": "symbol",
@@ -799,7 +705,7 @@
         },
         {
           "anchor": {
-            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
             "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
               "kind": "symbol",
@@ -895,53 +801,24 @@
         }
       ]
     },
-    "51": {
-      "note": "Hosted identity cannot silently switch to ambient dispatch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8f7ff6442d59728e3c67f09ca865a74abb26e67d",
-            "content": "sha256:23ea81197aac68aedc17b34d1695a96196360c484b8549646f78e0c73797b994",
-            "locator": {
-              "kind": "symbol",
-              "name": "dispatch_agent"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/sessions.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "52": {
       "note": "Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime.\n\nAnchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller`",
       "targets": [
         {
           "anchor": {
-            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
-            "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
+            "blob": "6a3f013bb62f4d45d60686439620c0c00718d314",
+            "content": "sha256:81b9567abe147f942979af153da9ee71939a0699aa897b10cfb114cf47fdf181",
             "locator": {
               "kind": "symbol",
-              "name": "role_start_set_payload"
+              "name": "_caller"
             },
-            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
-            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
-            "locator": {
-              "kind": "symbol",
-              "name": "role_start_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+            "blob": "e1eef6ed0aa97b11817757ae200f78b5166acbce",
             "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
             "locator": {
               "kind": "symbol",
@@ -953,13 +830,25 @@
         },
         {
           "anchor": {
-            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
-            "content": "sha256:81b9567abe147f942979af153da9ee71939a0699aa897b10cfb114cf47fdf181",
+            "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
+            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
-              "name": "_caller"
+              "name": "role_start_payload"
             },
-            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
+            "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_start_set_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
           },
           "kind": "code"
         }
@@ -1186,55 +1075,6 @@
               "name": "_bounded_citation_fix"
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "57": {
-      "note": "Terminal implementation is application-owned and rejects unsupported tier/retired inputs\n\nAnchor: Dispatch selection and request refusal",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3074cefd8040f8bf4cec5b2cb3bafac7dce94a45",
-            "content": "sha256:8c73ca029f4718b34800b0e066f92bf26753cc3f6d4d39a6e54d85c172b9f166",
-            "locator": {
-              "end": 487,
-              "kind": "line_range",
-              "start": 387
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3074cefd8040f8bf4cec5b2cb3bafac7dce94a45",
-            "content": "sha256:519c1376344b952c2e895f2a0e04acbe865c99b3704223608faab170f9e18ce0",
-            "locator": {
-              "end": 673,
-              "kind": "line_range",
-              "start": 601
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "58": {
-      "note": "Gate reclaim is control-plane-owned after durable decision work\n\nAnchor: Decision and reclaim",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
-            "content": "sha256:b8bccd1ae9df95fdeac1dd6282fef8e6db4af53cd39753846629ffba2d1248fd",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
           },
           "kind": "code"
         }

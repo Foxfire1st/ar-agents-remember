@@ -6,23 +6,18 @@
 
 ## Purpose
 
-Vitest unit coverage for `dashboard/src/data/actions.ts`, the dashboard action POST client for gate
-decisions, lifecycle-scoped attention dismissals, gate-only dismissals, and repo-level actionable-drift
-dismissals.
+Three retained Vitest source cases for the attention-dismiss POST client: a stale-session lifecycle target, targetless actionable drift and non-202 error mapping. Gate-decision/gate-id-only cases are removed; this card declares assertions, not executed coverage.
 
 ## Code Commentary
 
-The tests stub global `fetch` and exercise `postGateDecision` directly. One case asserts a targeted
+Historical removed case inventory (not current tests): the tests previously stubbed global `fetch` and exercised `postGateDecision` directly. One case asserts a targeted
 reject sends `{target, gateId, note}` to `/api/actions/reject` and maps `202` to `recorded`. Another
 case asserts gate-id-only `cancel` omits `target` for stale queue cleanup. The final case asserts
-`409` payloads distinguish `stale-gate` from `no-open-gate`. The `postAttentionDismiss` cases assert
-targeted lifecycle/gate payloads, gate-id-only gate-open payloads, targetless actionable-drift payloads,
-and non-202 response mapping.
+`409` payloads distinguish `stale-gate` from `no-open-gate`. The earlier `postAttentionDismiss` cases included targeted lifecycle/gate and gate-id-only payloads. Current cases instead assert stale-session itemId/kind/target, actionable-drift itemId/kind with no target, and status 500 mapping to error; none retains gateId.
 
 ## Invariants And Boundaries
 
-These tests cover the transport/status mapping only; server-side gate mutation, lifecycle acknowledgement
-writes, and rejection-reason validation are covered in `mcp/tests/test_serving.py`.
+These source assertions concern client transport/status mapping only. They establish no server-side gate mutation, acknowledgement write or rejection validation, and this renewal ran no test.
 
 ## Evidence
 
@@ -36,8 +31,9 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- Client under test. [1]
-- Targetless actionable drift dismissal omits `target` while still carrying `itemId` and `kind`. [2]
+- The retained client builds attention-dismiss itemId/kind and optional lifecycle target, maps 202 to dismissed and other/network failures to error; gate-decision export is removed. [1]
+
+- The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body. [2]
 
 ### Cross-Repo References
 

@@ -35,6 +35,14 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 Route-map pillars/indexes are read with source in the worktrees; read_ar_files names their governing cards and record states, not their text. Intent confirmation comes from opening the named files natively.
 
 
+
+
+## Current role boundary
+
+The designer source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach and therefore has no adopted lifecycle; lifecycle_finalize_task and other owning-seat machinery remain prohibited. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
+
+- The current designer role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[3] [3]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

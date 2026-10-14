@@ -5,6 +5,14 @@
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
 
+
+
+## Current role boundary
+
+The designer source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach and therefore has no adopted lifecycle; lifecycle_finalize_task and other owning-seat machinery remain prohibited. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
+
+- The current designer role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[1] [1]
+
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -22,7 +30,7 @@ task design plus its declared cross-master blind spot to the architect. It refra
 evidence, measures the within-master blast radius, authors the requirement-derived task topology,
 and never implements. A dispatched designer returns through the admitted `role_message` transport and supplied parent role/task address; an architect may perform the same method inline without changing roles. The earlier `message_parent` wording describes the retired hosting path, not a current tool grant.
 
-When separately hosted, designer is target-only. Its architect ordinarily creates or switches the
+Historical removed hosting account (not a current callable): when separately hosted, designer was target-only. Its architect ordinarily created or switched the
 seat with one `dispatch_agent` call on the sprint document and is the plane-hosted caller. An
 identity-free developer launcher may target the designer only for an explicit task-seat takeover;
 the designer itself has no dispatch caller authority or ambient recovery route. Its role-table

@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6a17a59bb59182bab60f9aba7f0eb736c0124cc",
+            "blob": "54abe1dda54a25bedf1a695244d42273c0718f05",
             "content": "sha256:603f96d9675dcaf7c40b335e1726dd8a9a2e4110e54fb30bf660be487d4c7921",
             "locator": {
-              "end": 37,
+              "end": 34,
               "kind": "line_range",
-              "start": 26
+              "start": 23
             }
           },
           "kind": "test"

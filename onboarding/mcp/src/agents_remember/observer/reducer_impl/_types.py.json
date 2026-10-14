@@ -1,0 +1,34 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation inputs.\n\nAnchor: `WorkspaceStructure`, `AnalyticalInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22ebc14a52491cc205438d17efdcb79faabc6eb5",
+            "content": "sha256:e20231740aabb8954e6142a0c398a321ab7d0ee768cfabb47a5302cb7040d05b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceStructure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22ebc14a52491cc205438d17efdcb79faabc6eb5",
+            "content": "sha256:6b20ff96da5f116ec65927fc35989c4ee53d8eaba1eddb36173715edd04995f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnalyticalInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

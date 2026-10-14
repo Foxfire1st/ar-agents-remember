@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
         "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
         "locator": {
-          "end": 92,
+          "end": 90,
           "kind": "line_range",
-          "start": 86
+          "start": 84
         }
       },
       "id": "RLZ-2JHTJ3",
@@ -39,12 +39,29 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+        "blob": "a3dc9e7e90fa284c9945fbf10a449595a8f90a31",
+        "content": "sha256:7418ed815fe11f5de3b2d754dee45ae1e90df912dd82ae2fac3fbee0a7abc016",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3W9GWW",
+      "invariant": "INV-CQCPAD",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 10",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The curation operation's own account of its carriers; it names an instructed session for the taskless writer and no taskless Curator seat.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 291,
+          "end": 289,
           "kind": "line_range",
-          "start": 291
+          "start": 289
         }
       },
       "id": "RLZ-4YAPS7",
@@ -58,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
         "locator": {
           "kind": "file"
         }
@@ -75,12 +92,12 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
         "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
         "locator": {
-          "end": 278,
+          "end": 276,
           "kind": "line_range",
-          "start": 276
+          "start": 274
         }
       },
       "id": "RLZ-EEEG4W",
@@ -94,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
         "locator": {
           "kind": "file"
         }
@@ -111,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
         "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
         "locator": {
-          "end": 128,
+          "end": 126,
           "kind": "line_range",
-          "start": 126
+          "start": 124
         }
       },
       "id": "RLZ-PAE912",
@@ -130,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
         "locator": {
           "kind": "file"
         }
@@ -147,8 +164,8 @@
     },
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:1337d10a96d7bcd9a69ade1adc6f2fe6b3deef2efc090ca5f4185bb8cb78076a",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:6c0779d2597c480f5f3b0f51c2023c72346db21e49a7f34d00e3597329296977",
         "locator": {
           "end": 77,
           "kind": "line_range",
@@ -188,12 +205,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
             "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
             "locator": {
               "end": 163,
               "kind": "line_range",
               "start": 149
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. [2]\n\nAnchor: Foundation carrier and admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+            "content": "sha256:d1ddba3cca503f5f3cad370e448bf88011ea98e6139536e976bfcb1d1201a5e9",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+            "content": "sha256:9f5b328082283a5858c2b02a98ea5a9e8d03d6aedc04b72c1eca22964d95c7e5",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 182
             }
           },
           "kind": "code"

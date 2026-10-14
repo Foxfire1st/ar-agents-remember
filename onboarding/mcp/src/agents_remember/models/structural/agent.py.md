@@ -6,22 +6,25 @@
 
 ## Purpose
 
-Declare canonical structural dispatch models and the native receipt-tracked retirement request/response.
+Declare the native receipt-tracked seat-retirement request/response and canonical role vocabulary.
+Dispatch, shared structural-delivery and parent/child messaging DTOs are absent.
 
 ## Code Commentary
 
-StructuralRole retains canonical roles and the earlier system-specialist spelling; the
-response role validator delegates canonicalization. DispatchAgentRequest is a frozen
-record of task_document_ref, role, brief and optional label. StructuralTargetResponse names
-work/role/status/detail, not a runtime occupant, and declares optional deliveryState and
-adapterDeliveryState; DispatchAgentResponse retains those fields and its operation label.
-Parent/child messaging, rename DTOs and AgentMessageKind remain removed. RetireChildRequest and RetireChildResponse are restored for native retirement only: the request carries agent_id and explicit interrupt_turn, and the native owner verifies the original starter and unique recorded target before effects. This is not restoration of the former plane-hosting API. The old
-six-consumer/three-producer inventory is history. Untouched internal gate/activation models
-remain separate owners; retirement here does not erase their state or authority.
+`StructuralRole` includes canonical role names and the earlier system-specialist spelling.
+The frozen `RetireChildRequest` carries task_document_ref, role, reason, optional agent_id and
+interrupt_turn; the native owner, not this dataclass, enforces starter/receipt identity and
+refuses an empty target or an unadmitted interruption.
+
+`RetireChildResponse` declares retire_child, status, optional taskDocumentRef, role and detail;
+its role validator calls canonical_role. It inherits the retained ToolResponse envelope and
+does not expose a runtime-occupant response field. Internal task gate/activation owners remain
+separate; this DTO does not revive the old plane-hosting API.
 
 ## Current model evidence
 
-- Current source section contains excerpt `StructuralRole = Literal[`; DTO/control ownership is not execution acceptance. [3]
+The complete current source has only the role Literal, RetireChildRequest and
+RetireChildResponse; historical shared-delivery claims below are non-operative.
 
 ## Historical superseded account (non-operative)
 
@@ -58,18 +61,9 @@ None.
 
 ## Evidence
 
-### Docs References
+- The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO. [1]
 
-
-### Repo-Internal References
-
-- The request family uses structural fields only. [1]
-- The response family returns structural targets without runtime ids. [2]
-
-### Cross-Repo References
-
-
-## 260918-TSIP-L4 — The Delivery Projection Declared On The Shared Base (`T4`)
+## Historical 260918-TSIP-L4 delivery projection (non-operative)
 
 `StructuralTargetResponse` now declares `deliveryState: InboxDeliveryState | None = None`
 and `adapterDeliveryState: AdapterDeliveryState | None = None` (**`:86-87`**), which moved every

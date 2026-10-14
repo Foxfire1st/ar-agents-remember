@@ -6,8 +6,7 @@
 
 ## Purpose
 
-Package export surface for control-plane records: gate records/store/enforcement
-and the external-chat operator inbox records/store.
+Package export surface for gate records, the gate store, enforcement and policy, plus the shared durable-store contract types and process-role functions.
 
 ## Code Commentary
 
@@ -20,11 +19,7 @@ Re-exports `GATE_RECORD_SCHEMA`, `DECISION_STATES`, the `GateKind` / `GateState`
 `kernel.primitives.gate_policy`; and (slice 6b/L4) `GateGuard`, `CloseoutGuard`,
 `evaluate_gate`, and `evaluate_closeout_gate` from `enforcement`.
 
-Task 10 adds the operator inbox exports: `OPERATOR_INBOX_RECORD_SCHEMA`,
-`OperatorInboxEntry`, `OperatorInboxState`, `OperatorInboxVia`,
-`create_operator_inbox_entry`, `consume_operator_inbox_entry`, and
-`OperatorInboxStore`. The module docstring now names this as the pull-based
-counterpart for non-AR-hosted chats, while `__all__` keeps the facade explicit.
+Historically, Task 10 added operator-inbox records, helpers and the store to this facade. The candidate patch removes those imports and every corresponding `__all__` entry; the current package docstring names gates only.
 
 ### 260731-EFA-L5 Durable Store Contract Exports
 
@@ -34,8 +29,7 @@ error types `DurableStoreError`, `CompactionOwnerError` and `UnsafeLockFilesyste
 base `DurableRecord`; the ownership value object `StoreOwnership`; and the process-role pair
 `declare_process_role` / `declared_process_role`. All are in `__all__`.
 
-What is deliberately **not** exported is the I/O itself — `exclusive_access`, `require_lock_held`,
-`append_line`, `rewrite_lines`, `read_log_text` and the six per-store `*_OWNERSHIP` constants remain direct durable-store imports. The mechanical `thread_mutex_for` and `lock_path_for` functions now belong to `kernel.file_lock`; they are neither defined by `durable_store` nor exported by this facade. The facade exports what a *caller outside the package* legitimately
+What is deliberately **not** exported is the I/O itself: `exclusive_access`, `require_lock_held`, `append_line`, `rewrite_lines` and `read_log_text`. The surviving `GATE_OWNERSHIP` and `ATTENTION_DISMISSAL_OWNERSHIP` constants also remain direct durable-store imports; the other four ownership constants were removed. The mechanical `thread_mutex_for` and `lock_path_for` functions now belong to `kernel.file_lock`; they are neither defined by `durable_store` nor exported by this facade. The facade exports what a *caller outside the package* legitimately
 needs (declare which process I am, catch a contract violation, subclass the record base), not the
 primitives that would let an outside caller write one of these logs by hand.
 
@@ -50,9 +44,7 @@ Keep the import list and `__all__` explicit; package exports remain distinct fro
 
 ### Invariants And Boundaries
 
-- Pure export facade — no behavior. The `gate_*` MCP tools live in
-  `mcp/tools/gates.py`, and the `operator_inbox_*` MCP tools live in
-  `mcp/tools/operator_inbox.py`, not here.
+- This is an explicit Python export facade, not a registered-tool surface. R113 removes `mcp/tools/gates.py` and `mcp/tools/operator_inbox.py`; retained gate record/store/policy exports do not restore those tool modules or authorize deciding a stored gate.
 - **The facade exports the contract, not the file I/O.** Adding `exclusive_access` or
   `rewrite_lines` to `__all__` would make it possible to write a control-plane log from outside
   this package without going through the store that owns it, which is exactly the shape the leaf
@@ -76,9 +68,8 @@ No configured domain documentation source.
 - The gate delegation policy this package exports (moved to kernel primitives by L9). [2]
 - The store this package exports. [3]
 - The enforcement policy this package exports (slice 6b). [4]
-- The operator inbox records and store this package now exports. [5]
 - The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108. [6]
-- The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. [7]
+- Historical six-ownership witness; current `GATE_OWNERSHIP` and `ATTENTION_DISMISSAL_OWNERSHIP` remain direct durable-store imports, not facade exports. [7]
 
 
 ### Cross-Repo References
@@ -86,3 +77,5 @@ No configured domain documentation source.
 No cross-repository implementation dependency is exported here.
 
 No cross-repository evidence is required.
+
+- The current facade explicitly exports gate and durable-contract declarations; operator-inbox and direct file-I/O names are not exported. [8]

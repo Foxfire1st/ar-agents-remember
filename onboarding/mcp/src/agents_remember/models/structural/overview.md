@@ -12,7 +12,7 @@ Read `agent.py` for dispatch/native-retirement requests and structural target re
 
 ## Construction And Main Flows
 
-`DispatchAgentRequest` is a frozen dataclass containing `task_document_ref`, `role`, `brief`, and optional `label`. `StructuralTargetResponse` identifies work and role, declares delivery-state fields, and canonicalizes the response role; `DispatchAgentResponse` fixes the operation to `dispatch_agent`. The frozen `RetireChildRequest` carries `task_document_ref`, `role`, `reason`, optional `agent_id` and default-false `interrupt_turn`; `RetireChildResponse` fixes the operation to `retire_child`. The native owner refuses an absent/invalid agent ID, checks the receipt's original starter and requires interruption permission for an active turn. Those are owner checks, not guarantees supplied by the dataclass. These responses inherit the shared strict tool envelope, so the work-domain boundary concerns their operation-specific identity fields rather than every inherited envelope field.
+RetireChildRequest is a frozen request carrying task_document_ref, role, reason, optional agent_id and default-false interrupt_turn. RetireChildResponse fixes operation retire_child and identifies canonical work/role in the shared strict envelope, not a runtime occupant. Native owner checks require a valid receipt-tracked agent, original starter and interruption permission for an active turn. The removed DispatchAgentRequest/DispatchAgentResponse/StructuralTargetResponse are not current schema or calling surfaces.
 
 The dispatch registration constructs that request from the four advertised arguments. Its adapter calls the structural application service, which resolves the task document and caller behind the boundary. A hosted caller must pass child authorization; an ambient launcher has no parent seat but still undergoes role validation against document altitude. Invalid hosted identity is refused rather than treated as ambient. The structural outcome projection returns work identity and delivery state without occupant identity.
 
@@ -86,6 +86,5 @@ Current lifecycle and closeout authority for that statement was not established 
 
 ## Evidence
 
-- Current dispatch caller resolution owns the structural boundary; source inspection is not execution evidence. [1]
 - The record carries the fingerprint, canonical path, selected master, record state, positive revision and selection time. [2]
 - The store derives the fingerprint from the canonical resolved contract path and refuses any record that is not this exact contract. [3]

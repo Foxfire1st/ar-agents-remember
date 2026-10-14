@@ -162,10 +162,11 @@
         {
           "anchor": {
             "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
-            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
             "locator": {
-              "kind": "symbol",
-              "name": "carryover_done"
+              "end": 224,
+              "kind": "line_range",
+              "start": 201
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -174,11 +175,10 @@
         {
           "anchor": {
             "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
-            "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 201
+              "kind": "symbol",
+              "name": "carryover_done"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },

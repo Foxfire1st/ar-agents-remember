@@ -16,9 +16,14 @@ Build task-state refusal results and preserve caller-owned checks, rather than d
 
 The shared terminal-blocker formatter retains producer fields and adds coded sentences. Its dirty/unmerged sentences mention force; that wording does not add a force input to cleanup or waive its preflight, which calls with force false. Recovery authority belongs to the actual route, not to this presentation helper.
 
+handover_gate_blocked preserves the existing master-handover refusal code, gate ID, reason and coded blocker, while stripping inherited nextTool, nextArgs and nextRequiredArgs. Its blocker names STORED_GATE_WAY_OUT: no product tool decides a stored gate; agents-remember removed-stores names the log and removes it only on the user’s word. Dry/real refusals retain their distinction from success and no approval is fabricated.
+
 ## Evidence
 
 - The constructor preserves the producer sentence and carries tool arguments or separate CLI values with a correctly quoted display. [1]
 - Terminal conversion is a recognized-message mapping with an unrecognized fallback. [2]
 - Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller. [3]
 - Cleanup calls terminal preflight with force false; formatter prose supplies no override to that route. [4]
+
+
+- handover_gate_blocked preserves the existing master-handover refusal code, gate ID, reason and coded blocker, while stripping inherited nextTool, nextArgs and nextRequiredArgs. Its blocker names STORED_GATE_WAY_OUT: no product tool decides a stored gate; agents-remember removed-stores names the log and removes it only on the user’s word. Dry/real refusals retain their distinction from success and no approval is fabricated. [5]

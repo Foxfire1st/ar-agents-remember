@@ -37,6 +37,21 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged.\n\nAnchor: `docs/reference/skills.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6723dcb81e360097d1bd7f2e435b9ad371085de6",
+            "content": "sha256:3baf41c9a75e66991909efdac61fb66175051362a18a45e489499a058705c106",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

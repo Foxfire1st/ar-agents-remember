@@ -6,75 +6,21 @@
 
 ## Purpose
 
-Public settings reference for Agents Remember. It separates the four settings homes (MCP
-authority, memory topology, agentic orchestration, provider lifecycle), documents their read
-cadence, and gives examples for internal/external memory and MCP authority files. The agentic
-orchestration and host-runtime homes live in the single user configuration file
-(`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set), shared by every
-harness; the coordinator root no longer selects a host settings file.
+The public settings reference states five distinct homes and their read cadences: boot infrastructure in the MCP authority file; host runtime in the shared user configuration; memory topology under the memory root; global/repository-local agentic settings; and provider lifecycle settings derived from authority configuration. User configuration is neither an MCP authority file nor an implicit provider settings source.
 
-## Code Commentary
+## Current source account
 
-**260707-HFX2-L15 current contract.** The settings reference now names Codex's explicit
-`--model`/`--config model_reasoning_effort=` mapping, describes post-bind harness-log verification
-for session commands, and sets the default supervisor `redeliverBudget` to `1`. The single-row
-budget is part of the delivery latency bound: one log-confirmed input may consume three calibrated
-acceptance windows, so one sweep must not multiply that synchronous wait across a backlog.
+The user file is installed read-only and its folder closed to new/removed entries. Opening them for editing and closing them again are explicit user operations; the product does not relax permissions by itself. The one product write is the explicit upgrade-user-settings move. server_info reads live modes and reports exact-path edit/close commands without changing any file byte or permission. The reference spells those commands for XDG_CONFIG_HOME and quoted paths, not a grant to a role agent.
 
-### 260707-HFX2-L12 CS-6 Update
+Paseo runtime is one shared per-use configuration, with no fallback to old per-harness blocks. Missing runtime and unknown keys have named refusal behavior. Host catalog data supplies actual agent kinds, models, modes and features. Role and per-level knobs merge at field granularity, with retained source/provider/model provenance; unknown settings and conflicting effective speed aliases are not silently normalized into authority.
 
-Documented the new `orchestration.agent-notifier.escalationBudget` reference row: the supervisor now has a settings-owned per-sweep cap for escalation-rung emissions, distinct from `redeliverBudget`, and deferred rung-due rows stay level-triggered for the next sweep.
+Legacy retirement, launchArgs/promptKeywords/sessionCommands, native command/model/effort delivery fields, agentNotifier/supervisor/expectations, and concurrency limits remain accepted only where the reference says so, but are unread or unenforced and reported by server_info. The removed supervisor has no current redelivery budget, cadence, escalation ladder or emergency setting taught by this card. Caller spend overrides, current host role settings and unused compatibility fields are distinct surfaces; no removed spawn tool or adapter command is restored.
 
-**260713-TES-L4 — escalationBudget reserved (N3).** The `escalationBudget` reference row now
-states the timed escalation ladder is demolished as policy: inbox rows resolve by the 5-attempt
-ceiling (`unresolved`), the 5-minute rebind grace, or explicit supersession. The knob no longer
-gates sweep behavior and is removed with the L5 demolition leaf.
-
-**260713-TES-L5 — escalationBudget is a load-shed cap.** The L4 "reserved/removed" row is
-superseded: `escalationBudget` (250) is now the per-sweep load-shed cap on owner-signal
-emissions (seat-liveness + dead-upstream), the twin of `redeliverBudget`; shed findings re-fire
-next sweep (level-triggered). The timed escalation ladder is retired — rows resolve by
-landing/ceiling/grace, never a rung.
-
-The page is documentation, not parser code. Runtime parsing lives in `kernel/agentic_settings.py`
-for `orchestration.*` and the MCP authority/config loaders for boot infrastructure. HFX2-L8 added the
-`orchestration.agentNotifier` table documenting safe defaults for the deterministic agent-notifier sweep:
-`enabled`, `intervalSeconds`, `staleCutoffSeconds`, `redeliverRateLimitSeconds`, and
-`redeliverBudget` (default 250) so an empty supervisor block remains bounded during large inbox
-backlogs. HFX2-L9 updates that table for the production redelivery incident:
-`redeliverRateLimitSeconds` inherits a store default of 900 seconds, `signalCooldownSeconds` defaults
-to 900 seconds, both reject below-floor values, `redeliverBudget` remains the per-sweep backlog cap,
-and `enabled: false` is documented as the emergency supervisor kill switch used until the
-cadence/cooldown fix lands and passes smoke. HFX2-L10 updates the role-knob and spawn sections to
-make settings the ordinary developer-controlled spend surface: callers declare role/level, while
-legacy `harness`/`model`/`effort`, direct launch/session controls, namespaced spawn model/effort env,
-and maintained Claude/Anthropic + Codex/OpenAI harness-native spend/endpoint env keys refuse with
-`spend-override-unsupported`; the doc points readers to `docs/reference/harnesses.md` for the full
-spawn-surface manual.
-
-The global agentic settings file and the host-runtime block both moved to the single user
-configuration file above; an old coordinator `system/settings.json` file is never read and requires
-the explicit upgrade before settings load. Neither the user configuration file nor the old
-coordinator path is an MCP authority file or a provider settings source.
-
-## Invariants And Boundaries
-
-- Settings families have exactly one home; do not present coordinator `system/settings.json` as an
-  MCP authority file, and do not present the user configuration file as one either.
-- Unknown keys under `orchestration.*` fail loud in the parser; docs must track parser field names.
-- The agent-notifier redelivery and repeated-signal cadence floor is 900 seconds; docs must not suggest
-  a sub-15-minute setting can run.
-- The agent-notifier redelivery budget is a conservative default, not a required operator knob.
-- The settings reference should not describe caller-supplied `spawn_agent_session` spend fields as
-  a valid precedence rung; HFX2-L10 makes settings the spend authority and treats those caller
-  fields as compatibility refusals.
+The document is guidance, not parser execution, proof of real permission protection, live host launch, installation or settings mutation. The memory example names memory-repo storage; old internal/external-memory examples and supervisor operational advice are withdrawn from this live owner's account.
 
 ## Evidence
 
-### Repo-Internal References
+- Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. \[4] [4]
+- The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. \[5] [5]
 
-- Agentic settings parser that implements the documented `orchestration.*` families. [1]
-- Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. [2]
-- Serving app that reads supervisor settings per sweep. [3]
-- Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. [4]
-- Backoff math enforcing the shared 900-second redelivery floor documented here. [5]
+No external Domain Documentation source or fresh executed acceptance is inferred.

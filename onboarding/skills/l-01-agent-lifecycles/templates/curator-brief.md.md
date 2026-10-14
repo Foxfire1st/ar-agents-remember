@@ -1,5 +1,13 @@
 # skills/l-01-agent-lifecycles/templates/curator-brief.md
 
+## Current A10 retained-source account
+
+The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it. Worker and Reviewer feed the candidate-bound list/freeze/verdict directly. The template feeds values, not new duties; current role/operation/acceptance sources remain the rule owners. No synthetic brief, grade or new acceptance is authored.
+
+- The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it. Worker and Reviewer feed the candidate-bound list/freeze/verdict directly. The template feeds values, not new duties; current role/operation/acceptance sources remain the rule owners. No synthetic brief, grade or new acceptance is authored. [7]
+
+
+
 ## Current supported-pair account — R100/R116 composition
 
 The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct.

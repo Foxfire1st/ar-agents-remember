@@ -12,7 +12,7 @@ Attention priority and occurrence-scoped dismissal behavior.
 
 ### Logic
 
-Provider-down alarms precede blocked asks. A dismissal suppresses the current actionable-drift occurrence, while a newer snapshot surfaces it again. A later turn end similarly supersedes an awaiting-developer dismissal.
+Provider-down alarms rank above the surviving quiet-session informational occurrence. A dismissal suppresses the current actionable-drift occurrence until a newer snapshot, and a stale-session occurrence until later heartbeat activity creates a newer quiet signal. These current assertions do not establish the removed blocked-ask/awaiting-developer/turn-end cases.
 
 ### Conventions
 
@@ -38,9 +38,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- Blocked and provider down rank alarm first. [1]
+- Provider-down ranks ahead of a quiet-session signal, whose lifecycle/time are asserted. [4]
 - Dismiss suppresses actionable drift until newer snapshot. [2]
-- Newer turn end supersedes dismissal. [3]
+- Later heartbeat activity creates a newer stale-session occurrence after dismissal, not a turn-end/awaiting-developer assertion. [5]
 
 ### Cross-Repo References
 

@@ -46,35 +46,6 @@
         }
       ]
     },
-    "3": {
-      "note": "Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
-            "content": "sha256:a19b85655923cc16ae5d517e632642efce6e0ff99b10f7d3d4237cf0d3f3642c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_context"
-            },
-            "path": "mcp/src/agents_remember/application/structural/gate_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
-            "content": "sha256:8c870c16195acf423a14486439a4b63e189b2244257aa1759f44ffc28037f43c",
-            "locator": {
-              "kind": "symbol",
-              "name": "DeclaredGateCaller"
-            },
-            "path": "mcp/src/agents_remember/application/structural/gate_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The request field that carries the declaration on the queue wire model.\n\nAnchor: \"caller: DeclaredCaller\"",
       "targets": [

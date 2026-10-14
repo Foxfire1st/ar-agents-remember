@@ -3,47 +3,33 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
-        "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
+        "blob": "81bf59f09c99309509b11052ac7d79ac60e843be",
+        "content": "sha256:faa2d9eeafab0c8b5ffd17efef18aba28c935212465cce2163240d9e514c8801",
         "locator": {
           "kind": "symbol",
           "name": "NoGrantCloseoutParityTest.test_before_after_implementation_parity"
         }
       },
-      "facet": "Each named lifecycle phase has equal source-bound baseline/pristine/unrelated-grant responses after explicit volatility/root scrubbing.",
-      "id": "PRF-S8NQJ4",
+      "facet": "Current pristine/unrelated-grant answers compare after volatility/root scrub before any adaptation. The baseline-only process maps its own leaf route-index facts to the current count shape; conversion scaffolding and baseline-only four-seat-field removal qualify subsequent baseline comparison. Current count keys are not removed. Static A12 source/frozen Worker evidence, not Curator execution.",
+      "id": "PRF-VSJEW3",
       "invariant": "INV-F029P2",
       "origin": {
-        "handoffEntry": "L94-CODE-F14",
-        "leaf": "260928-MIK-L94"
+        "handoffEntry": "L113-curator-parity-qualified-replacement",
+        "leaf": "260928-MIK-L113"
       }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Three source-bound worlds retain separate raw current/grant equality before conversion take-out and subsequent baseline comparisons; this is comparison structure, not a whole-test PASS\n\nAnchor: NoGrantCloseoutParityTest.test_before_after_implementation_parity; NoGrantCloseoutParityTest.test_master_checks_read_unchanged",
+      "note": "The three worlds retain raw pristine/grant equality and the original comparison after conversion and baseline-only removed-seat-field adaptation; A12 takes no route-index counts out of current answers.\n\nAnchor: `mcp/tests/test_no_grant_closeout_parity.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
-            "content": "sha256:a40852535cddb2a9286a30ac3ff168c66172e975e3c2a52fb8e34b4bf08fbc6f",
+            "blob": "81bf59f09c99309509b11052ac7d79ac60e843be",
+            "content": "sha256:b56ac620076ed7256268a31dde8555f819e74daab22ac8ce25d7725d3c108e44",
             "locator": {
-              "end": 446,
-              "kind": "line_range",
-              "start": 411
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
-            "content": "sha256:e4b3267066522068ed851b6736935f0e88d86ba35491f06266d137f6a816f0f8",
-            "locator": {
-              "end": 473,
-              "kind": "line_range",
-              "start": 448
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,16 +37,14 @@
       ]
     },
     "2": {
-      "note": "Conversion marker provenance, at-most-one matching ledger row, attached counts, pass-gate and leaf bare-count take-out are test-only baseline comparison scaffolding\n\nAnchor: _converted_marker_commits; _without_marker_row_entries; _without_marker_row_counts; _without_conversion_row",
+      "note": "Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression.\n\nAnchor: `mcp/tests/test_no_grant_closeout_parity.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
-            "content": "sha256:b8130d29fae3c7fef2313e441944178b4fa2588de6851adcfb2dbd760457e86c",
+            "blob": "81bf59f09c99309509b11052ac7d79ac60e843be",
+            "content": "sha256:b56ac620076ed7256268a31dde8555f819e74daab22ac8ce25d7725d3c108e44",
             "locator": {
-              "end": 288,
-              "kind": "line_range",
-              "start": 188
+              "kind": "file"
             }
           },
           "kind": "test"

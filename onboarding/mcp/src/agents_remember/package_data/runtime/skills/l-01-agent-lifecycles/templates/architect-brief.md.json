@@ -3,46 +3,32 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The packaged packet carries the same one-call launcher contract.\n\nAnchor: `# Template — Architect Brief`",
+      "note": "The sprint document holds the request before one role_start; Architect start carries no brief or document and the developer selects the sprint in the dashboard.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:5435dccb3334bda8a6528f218deaa9ae72c3f25a488101ec37b0d2a7cf8b1bd3",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
             "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 1
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The hosted child-authority and no-fallback boundary is embedded in the brief.\n\nAnchor: \"This architect seat is now plane-hosted.\"",
+      "note": "Starting agents uses role_start/role_message and forbids fallback after refusal, not the retired hosted dispatch transaction.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:2dec3eaffd9b9e82c6bb63fe8382fae18ea3250db16acaf10dd984147d04f292",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
             "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:01cdacc64123d8d2b1c8c6fad5c3859df5e808aed2d3c719f87f021947c27fc3",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 61
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md"
           },
           "kind": "code"
         }
@@ -91,17 +77,16 @@
       ]
     },
     "4": {
-      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "note": "Messages wake; complete payloads and evidence travel as files.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:cdc29e21a0bc1843f14bbc319bf7b79a8b8c1bf76e464bc37653d5cde0107b0a",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
             "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 74
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md"
           },
           "kind": "code"
         }

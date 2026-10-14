@@ -7,7 +7,7 @@
 
 `mcp/tools/` is the domain-organized payload-adapter package between MCP registration and the application services that implement Agents Remember operations. Its facade preserves a shared import surface for builders and protocol constants; an exported builder is not necessarily an advertised tool. Most builders forward typed inputs to their responsibility-owning application entry point and return through `base._tool_payload`. The package is not globally pure: application calls can perform authorized mutations, the shared response boundary records calls, and the knowledge and enclosure-adoption modules also compose selection, validation or approval-sensitive results.
 
-`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 41 names on this successor after `resolve_context` was removed from the rejected freeze’s 42-name tuple; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, and older39/41 epochs are historical; the historical 61–66-name inventories remain historical.
+`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 40 names on this successor after `dispatch_agent` was removed; preceding 41/42-name source epochs stay historical; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, and older39/41 epochs are historical; the historical 61–66-name inventories remain historical.
 
 ## Hot Path Summary
 
@@ -30,7 +30,7 @@ A citation-fix legacy refusal retains its central code and conversion message in
 
 direct_execution_grant_payload shapes the strict result and the pure facade exports it. Payload/import/registry membership is not authority; caller and store checks stay at the application/kernel owners.
 
-The present facade groups core/context/install, reader, memory, worktree, direct-landing, explicit enclosure-adoption, task-document/reopen, lifecycle-finalization, curator-coherence, closeout-queue and role-agent adapters. `structural_agent.py` contains `dispatch_agent` and native receipt-tracked `retire_child` adapters. Retirement delegates to `cli/role_retire.py::retire_native_seat`, which checks the original starter and turn-interruption permission; it does not restore the former hosted-seat retirement path. Exact-id terminal, readiness, inbox, nudge and split gate/block/wait adapters remain internal; facade exports and response-registry entries do not make them public. `benchmark.py`, `providers.py`, `capsule_serving.py` and `leaf_ref.py` are absent from this tools directory. The removed worktree-status-wait builder is not replaced by adapter polling.
+The present facade groups retained core/context/install, knowledge reader, memory, worktree/direct, explicit enclosure adoption, task/reopen/finalize/coherence/queue and native role-agent adapters. seat_retirement.py adapts receipt-tracked retire_child to cli/role_retire.py::retire_native_seat; original starter and active-turn interruption authority remain owner checks. structural_agent.py/dispatch adapters and exact-id terminal/readiness/inbox/nudge/split-gate/block/wait adapters are absent, not internal calling alternatives. Removed benchmark/providers/capsule_serving/leaf_ref files are not tools-directory owners. No adapter polling replaces the removed worktree-status wait.
 
 `mcp/registration/` owns declarations and their order; `server.py` is described by that registration package as process wiring. Its present registrar tuple contains nine family registrars, including a historically named capsule/skill registrar that now registers resources and extension methods, not tools. The skill surface provides `skills/list`, `skills/get` and ordinary skill-file resources. `skill://index.json` is this server's separate convenience discovery resource. Optional directory reading is neither implemented nor declared. Serving skill text does not activate a skill, grant permission or turn server text into trusted local-file instructions. The former capsule and skill-catalog payload builders and their corpus-override seam are historical, not current MCP tool capabilities.
 
@@ -111,12 +111,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. [15]
 - The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. [16]
 - Schema tests assert public tool and response model coverage. [17]
-- The external-chat inbox builders post, poll, and consume operator responses. [18]
 - The lifecycle finalizer builder exposes the terminal task finalization tool. [19]
 - The linear-half hint delegates to the worktree guidance state machine. [20]
-- The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). [21]
 - The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
-- The trusted terminal assignment response carries document-and-role binding plus private session correlation. [23]
 - The application request owner has only code and memory messages. [24]
 
 - Lifecycle control uses the operation-control payload; explicit enclosure adoption retains its own typed payload builder delegating to the adoption service. [25]
@@ -128,8 +125,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - This server's own index resource, kept deliberately distinct from that method. [32]
 - Read carries tree/index state and partial-index completeness. [34]
 - Legacy paths and unheld current seeds refuse truthfully. [35]
-- Current imported source owns this scoped route boundary. [37] [38] [39] [40]
-- - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [41]
+- Current imported source owns this scoped route boundary. [37] [38] [39] - - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [41]
 - - A partial index is never presented as complete. [42]
 - - A converted tree's citation-fix result is bounded for transport. [43]
 
@@ -140,14 +136,14 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Guidance uses exact response address and enrichment precedes serialization [48]
 - **Retained historical source account — superseded by the current route account:** Server info reports binding/build rather than roster; context reader is scoped [49]
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
-- **Retained historical source account — superseded by the current route account:** Hosted identity cannot silently switch to ambient dispatch. [51]
 - **Retained historical source account — superseded by the current route account:** Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime. [52]
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 - **Retained historical source account — superseded by the current route account:** Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts. [55]
 - **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. [56]
-- **Retained historical source account — superseded by the current route account:** Terminal implementation is application-owned and rejects unsupported tier/retired inputs [57]
-- **Retained historical source account — superseded by the current route account:** Gate reclaim is control-plane-owned after durable decision work [58]
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
 
-- The composed model-owned public roster has41 names after L109 removed resolve_context; the pre-sync R11142-name account is historical. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
+- The L111 predecessor model-owned public roster had41 after resolve_context removal; the current R113 source has40 after dispatch_agent removal (earlier42 is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
+
+- Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members. [44]
+- Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [45]

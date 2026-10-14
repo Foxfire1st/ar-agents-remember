@@ -1,0 +1,30 @@
+# mcp/tests/test_stored_gates.py
+
+## Governing Overview
+
+[Area overview](overview.md)
+
+## Purpose
+
+Protects the retained stored-gate data and landing refusal semantics after public gate creation/decision/wait tools and agent hosting are removed.
+
+## Code Commentary
+
+### Logic
+
+Pure GateRecord snapshots and append/last-wins folding remain testable data operations. Existing open/applied logs refuse closeout, direct landing, finalization and integration with their existing statuses/codes plus the explicit removed-stores way out. Parameterized refusal assertions forbid removed tool names, fresh gate channels and unregistered nextTool values; queue repair names only retained selection tools.
+
+### Invariants And Boundaries
+
+Creating a fixture record is not a restored production gate channel. Refused claims spend no gate state. Stored logs are removed only on the user’s explicit command, never silently ignored to admit a landing. This is static assertion documentation, not acceptance of a Git transaction.
+
+The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.
+
+## Evidence
+
+No Domain Documentation source is configured for this repository-specific boundary.
+
+- Stored-gate refusal preservation: implementation/assertion boundary described above. [1]
+
+
+- The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence. [2]

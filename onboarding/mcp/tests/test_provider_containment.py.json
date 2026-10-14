@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab207e2470ab1e009b0ffb0cfca50777e6e92d",
+            "blob": "83b22d92ee6c177d83cd2d62faae1198ccf63f33",
             "content": "sha256:dea67cd0dea03a2ccbca36ade60efa475519727d1f91f576708dcf8bc5332eff",
             "locator": {
               "kind": "symbol",
@@ -18,15 +18,54 @@
         },
         {
           "anchor": {
-            "blob": "80ab207e2470ab1e009b0ffb0cfca50777e6e92d",
+            "blob": "83b22d92ee6c177d83cd2d62faae1198ccf63f33",
             "content": "sha256:e1ddf69dbeae5c29e948c77387bfd63de2f96f99c582c61a6a0f7d81018b7fef",
             "locator": {
-              "end": 73,
+              "end": 72,
               "kind": "line_range",
-              "start": 52
+              "start": 51
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "This fixture supplies a bound/non-fleeting current lifecycle and asserts truthful session-local refusal; production now tests current-lifecycle presence, not fleeting.\n\nAnchor: `_bound_lifecycle`, `test_the_refusal_states_the_session_binding_rather_than_a_protected_lifecycle`, `worktree_start_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b22d92ee6c177d83cd2d62faae1198ccf63f33",
+            "content": "sha256:567c6fe57cea526f3180ccb3e3a0f79fa88f07e3e01311b808aedcf3ac117902",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_lifecycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83b22d92ee6c177d83cd2d62faae1198ccf63f33",
+            "content": "sha256:2c3e1b0158df3a49c755c8cbb0d67d634b92cb9ac7ac4c0f695ae9c2ff0133f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refusal_states_the_session_binding_rather_than_a_protected_lifecycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "content": "sha256:584c3b27e482babd4f363a4f6701b9705fa670e5685fc10913769494117718c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
         }
       ]
     }

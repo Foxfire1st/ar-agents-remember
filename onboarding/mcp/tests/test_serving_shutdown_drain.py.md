@@ -6,19 +6,19 @@
 
 ## Purpose
 
-Cancellation and shutdown ownership checks over the real serving lifespan: a running observation worker drains before the terminal host closes, startup-prime cancellation drains its worker, and the final durable commit remains relayable after the next startup.
+Source-level teardown tests for the retained leaf-archive recovery owner and its off-loop tick worker. The retired terminal-refresh/startup-prime cases are not current test coverage.
 
 ## Code Commentary
 
-The suite reuses the observation-loop virtual clock and recorders while parking a real refresh worker in its thread. A scoped task factory identifies that exact `to_thread` task and observes its direct await by the cancelling product coroutine. The monitor releases the still-held worker only after this drain boundary, so cancellation ordering is causal.
+The current suite parks a real LeafArchiveRecovery.tick worker under the real serving lifetime and observes the cancellation owner directly await that worker before release. Its virtual clock drives archive-recovery cadence, not terminal observation. Fixture/finalizer bounds and patched-surface restoration belong to the test, not production shutdown deadlines. Current assertions concern in-flight recovery drain and the final durable archive result; no current pytest run is claimed by this card.
 
-The host callback captures the durable state it closes over. Subsequent absence checks require every recorded producer task to be done and the virtual cadence to have no waiter, then compare the captured calls and bytes. Startup absence is checked after the same actual drain await. Finalizer waits and bounded cleanup rounds use the shared hang guard, independently of production's drain ownership. The fixture reports unfinished tasks and restores shared patch surfaces rather than letting a stuck drain strand the test runner. These local proofs do not constitute full-suite certification.
+## Evidence boundary
 
-## Evidence
+This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
-No Domain Documentation source is configured; the references below establish repository-owned fixture and assertion behavior.
+## Source-bound reference inputs
 
-- The cancelled product owner's direct await witnesses the exact worker drain. [1]
-- The running worker drains before host close and post-close state stays unchanged. [2]
-- Startup cancellation waits for its worker and finalizer bounds use the shared guard. [3]
-- The last in-flight durable commit remains available to the next startup. [4]
+- [1]
+- [2]
+- [3]
+

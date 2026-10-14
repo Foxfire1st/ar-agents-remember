@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:2d7a0ad20596b244c29a60076925cb0acf9ba4264f7eebe8ce2f3bb128deb756",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
-        "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        }
+      },
+      "id": "RLZ-8QRPKW",
+      "invariant": "INV-P8F6BT",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Puts the options into the agent definition of the launch call and keeps the record beside it.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -75,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
-        "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,43 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:5af30fa7f2b0102d719cfa66cc1c67342d88fc9e8f3798687c44a876c421edd5",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_create_input"
+        }
+      },
+      "id": "RLZ-GVT6GP",
+      "invariant": "INV-ZKV9B3",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Builds what the host is handed from the agent definition alone; the record `serverExclusion` of the launch call is no key of it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:ced19ea6b174f056a8a1a08c19beae94f6b0d78ab2659cc9b98e33781f3681e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "exclusion_applied_agent"
+        }
+      },
+      "id": "RLZ-K7781S",
+      "invariant": "INV-XJJ3NX",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 preservation boundary 3 / L113-R1-F06",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The agent definition as the host is handed it: decides from the map, or from the earlier mode's record of a saved call, whether the other server's entry is left out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -129,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -147,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
-        "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -165,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -183,8 +237,26 @@
     },
     {
       "anchor": {
-        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
-        "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:408d4f9eea48cd27a4b0d7889a30459cd3993fd4320e04226850b10885937d63",
+        "locator": {
+          "kind": "symbol",
+          "name": "_CARRIED_VARIABLES"
+        }
+      },
+      "id": "RLZ-QAG0KP",
+      "invariant": "INV-C9SY1X",
+      "origin": {
+        "handoffEntry": "L113 ruling 2026-10-13 00:44 / the carried configuration folder",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The list of variables a launch carries from its own process into the agent's tool server; the comment above it gives the reason for each kind.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+        "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"

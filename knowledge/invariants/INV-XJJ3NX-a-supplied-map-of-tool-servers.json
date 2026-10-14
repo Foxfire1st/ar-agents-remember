@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Filtering a user server or the only product definition would strand the agent; failing the legacy filter restores duplication."
+  },
+  "applicability": "Current and saved supplied MCP maps passed through the host bridge.",
+  "conditions": [
+    "Remove only the ambient product entry when the bound task server is supplied or the saved legacy mode requires that filter.",
+    "Preserve every other supplied definition byte-for-byte in meaning.",
+    "A map without the task server keeps its sole product definition."
+  ],
+  "exclusions": [
+    "This supplied-map filter does not establish suppression of harness-loaded ambient configuration."
+  ],
+  "id": "INV-XJJ3NX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the two places named in found_at; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R132@v1 preservation boundary 3 / L113-R1-F06",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A supplied map of tool servers that names `agents-remember-task` is handed to the host without the entry `agents-remember` and with every other entry unchanged; a saved call recorded under the earlier mode loses the entry as then, and a map without the task server keeps it.",
+  "status": "accepted",
+  "supersedes": []
+}

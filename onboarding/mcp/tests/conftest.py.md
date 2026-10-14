@@ -63,6 +63,7 @@ certifying services.
 
 ### Fixtures
 
+- `_user_settings_home` is automatic and sets each test's `XDG_CONFIG_HOME` to its own temporary user-config directory. `_user_settings_env_intact` is an automatic teardown enforcement for MIK-R137 rule2: after the test yields, it derives the settings write path through the single `_user_settings_guard.user_settings_path_for_write` owner. Refusal of the account's real path becomes an AssertionError. A derived path must be the test's `tmp_path`/descendant or the run-wide isolated root/descendant; both are allowed because fixture teardown order need not retain the per-test environment. Outside either root fails by name rather than repairing the environment. A test that clears environment for an assertion must restore what it cleared; the guard carries protection while it is cleared. No guard, allowlist or real account settings are changed or probed by this curation.
 - `worktree_services` binds the default worktree services for one test and resets them afterwards.
 - `_integration_composition` is automatic: a test with the `integration` marker gets
   `worktree_services` unless the run uses `--certify`. A unit test asks for the fixture only when
@@ -72,6 +73,8 @@ The module is a governed test artifact: `mcp/tests/evidence-lifecycle.toml` hold
 scope `all-tests`.
 
 ## Evidence
+
+- Automatic settings teardown derives through the single write guard and fails for a real-account refusal or a path outside the per-test/run-wide temporary roots; it never repairs or relaxes settings. [19]
 
 - The candidate's source and test-support roots come first on the import path. [1]
 - The two budget names are registered without a default, beside the certify option. [2]

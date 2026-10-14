@@ -14,10 +14,15 @@ Proves whether a planning leaf is genuinely unstarted before destructive task-do
 
 The enclosure commit census considers recorded code and memory-content outputs, including
 their integrated counterparts. Ledger cache state is not execution evidence and cannot turn an
-otherwise unstarted leaf into a started one. Other task, operation, seat, review, and contract
-evidence remains part of the absence proof.
+otherwise unstarted leaf into a started one. Canonical task fields/steps, locator/manifest/journal and contract evidence remain part of the
+absence proof. Removed seat and operator-inbox stores are not read.
 
-It censuses task steps, enclosure contracts, durable operation projections, seats, review artifacts, and commit evidence, then emits one stable recovery route when any execution authority exists.
+The A6 owner reads exact binding-addressed task status/steps and execution registrations, the
+independent lifecycle locator and its manifest/journals, enclosure contract and recorded code/
+memory-content commits. It does not enumerate a reports tree or terminal-seat catalog. A present
+terminal archive is addressed through its locator; unreadable canonical authority is ambiguous,
+not proof of absence. Recovery follows the actual terminal, operation, contract, locator or task
+registration state.
 
 It no longer emits a `door` fact. The closeout-door cut (commit `fad9808e`) removed both the
 absent-door and present-door `_fact("door", ...)` entries when `contract.closeout_door` stopped
@@ -40,22 +45,4 @@ None recorded.
 
 ## Evidence
 
-### Docs References
-
-The configured Domain Documentation registry is empty. No external documentation claim is made.
-
-No external domain source is required to establish this repository-owned implementation.
-
-### Repo-Internal References
-
-The source file is the direct evidence for this unit; its governing overview records adjacent owners.
-
-- The contract census observes actual code/memory and integrated output evidence, with no cache requirement. [1]
-- The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard. [2]
-
-### Cross-Repo References
-
-No cross-repository source is allowed by the resolved settings, and this unit owns no external
-protocol claim.
-
-No meaningful cross-repository reference applies.
+- Canonical task, locator/manifest/journal, contract and commit evidence govern the unstarted proof; removed seat and report scans are absent. [1]

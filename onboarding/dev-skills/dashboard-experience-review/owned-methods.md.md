@@ -1,5 +1,13 @@
 # dev-skills/dashboard-experience-review/owned-methods.md
 
+## Current A10 retained-source account
+
+The retained analyses are cognitive walkthrough, missing-view matrix, observability, motion and information-scent review. Method5 explicitly records that the dashboard embeds no interactive TUI and no longer performs a terminal-control review. The retained personas and severity rules are review doctrine, not a new executed dashboard assessment.
+
+- The retained analyses are cognitive walkthrough, missing-view matrix, observability, motion and information-scent review. Method5 explicitly records that the dashboard embeds no interactive TUI and no longer performs a terminal-control review. The retained personas and severity rules are review doctrine, not a new executed dashboard assessment. [3]
+
+
+
 ## Governing Overview
 
 [overview.md](../overview.md)

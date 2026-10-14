@@ -12,9 +12,7 @@ The proof that `fixtures/overrides.ts` does what its header claims — and the c
 The header states the division precisely cit:([`exactOptionalPropertyTypes`], dashboard/src/test/fixtureOverrides.test.ts:16-16). `wireFixtureGuard.ts` measures property NAMES: it
 catches a field the mirror never declared, an `any` with no shape at all, and every syntactic way of
 opting out. It cannot catch a fixture whose names are all correct and whose VALUE is `undefined` on a
-field the server always sends. `conversationPage({ capabilities: undefined })` names nothing wrong,
-asserts nothing and suppresses nothing — yet it produces the exact page `conversationWire.ts`'s header
-says it fixed: one whose REQUIRED `capabilities` is absent.
+field the server always sends. `provider({ state: undefined })` has correct field names and no cast/suppression, yet asks a required wire field to be absent. The retained probe uses this provider call; conversationPage/conversationWire are removed and supply no current fixture coverage.
 
 `exactOptionalPropertyTypes` is what would make that a compile error project-wide. It is not on here —
 measured at 222 errors across 71 files, most of them in app code this leaf does not own — so the
@@ -31,8 +29,7 @@ cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:138-149)
 - `ROOT` / cit:([`PROBE_DIR`], dashboard/src/test/fixtureOverrides.test.ts:23-23): probe sources are planted under `src/__override_probe__`, a directory
   that never exists on disk.
 - cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): three virtual modules, each importing the REAL builders and the REAL mirror.
-  - `impossible.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): the four calls that must fail — `conversationPage({ capabilities:
-    undefined })`, `lifecycle({ state: undefined })`, `taskDoc({ steps: undefined })`,
+  - `impossible.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): the four calls that must fail — `provider({ state: undefined })`, `lifecycle({ state: undefined })`, `taskDoc({ steps: undefined })`,
     `projection({ enclosures: undefined })`. All four compiled before `Overrides` replaced the builders'
     bare `Partial<Node>`.
   - `excess.test.ts` cit:([`PROBE_FILES`], dashboard/src/test/fixtureOverrides.test.ts:25-78): the property `Overrides` must not cost — `lifecycle({ refusedPolarity:
@@ -79,9 +76,8 @@ diagnostic arriving for the wrong reason fails rather than passing as evidence.
   pre-widened through a variable (`const widened: Partial<LifecycleProjection> = …`) infers
   `Partial<…>` for `O`, every slot admits `undefined` again, and it compiles. That is asserted so it is
   a known pass rather than a surprise — only `exactOptionalPropertyTypes` closes it.
-- Nested overrides are out of reach: `conversationCapabilities({ controls: { interrupt: undefined } })`
-  is one level deeper than `Overrides` binds and is not probed here.
-- Nothing outside `fixtures/wire.ts` and `fixtures/conversationWire.ts` is covered. Any other
+- Nested override constraints are not established by these flat call-site probes. No removed conversation-capability builder is a current example or probe.
+- Nothing outside the retained `fixtures/wire.ts` builders is covered. Any other
   `Partial<WireType>` parameter in the tree still admits an explicit `undefined`.
 - These are **semantic diagnostics from an in-memory program**, not a run of the project's real
   `tsc -b`. They prove the constraint's shape; the typecheck gate is what proves the tree.
@@ -106,7 +102,6 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 - `buildProgramWithVirtualFiles` and `GUARD_COMPILER_OPTIONS` — the harness these probes borrow, whose option set is strict/bundler/`resolveJsonModule` and contains no `exactOptionalPropertyTypes` entry. [8]
 - The guard's own statement of the same hole — item 5, "A VALUE" — which names this file as the answer. [9]
 - The builders whose parameters are being pinned. [10]
-- The conversation builders, including the `capabilities`-required page the first probe attacks. [11]
 - The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics. [12]
 - The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. [13]
 
@@ -115,4 +110,4 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 No cross-repository or external-system boundary is exercised. The probes import in-repo builders and
 the in-repo mirror; the compiler is a devDependency, not a system boundary.
 
-- Every probe import resolves inside this repository (`../test/fixtures/wire`, `../test/fixtures/conversationWire`, `../types/projection`). [14]
+- Probe imports resolve to retained wire builders and projection types only; the provider-state replacement probe keeps the required-undefined control. [14]

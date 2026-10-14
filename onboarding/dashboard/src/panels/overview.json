@@ -588,7 +588,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -811,7 +811,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
             "locator": {
               "kind": "symbol",
@@ -823,7 +823,7 @@
         },
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
             "locator": {
               "kind": "symbol",
@@ -835,7 +835,7 @@
         },
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
             "locator": {
               "kind": "symbol",
@@ -881,7 +881,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
             "locator": {
               "kind": "symbol",
@@ -1190,42 +1190,6 @@
         }
       ]
     },
-    "157": {
-      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const DEFAULT_RIDES_NOTE = (rides: string) =>`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
-            "content": "sha256:f9c8b8682995b43dde28add3554d45a2eb12fcf412cc3b8500f98be087278abc",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 57
-            },
-            "path": "dashboard/src/panels/FlowTab.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "158": {
-      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `{ line: \"3 structural edges — route indexes · onboarding · read_ar_files → ORDER / CONFLICT / INDEPENDENT (new surfaces: declaration cross-reference)\" },`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
-            "content": "sha256:3b9e1a5f9a164a276a9d988e6b9f13255c09080c3d1256e29191a696ccbf2f7b",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 173
-            },
-            "path": "dashboard/src/panels/flowModels.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "159": {
       "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const TOOL_LABELS: Record<string, string> = {`",
       "targets": [
@@ -1369,12 +1333,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
-              "end": 86,
+              "end": 74,
               "kind": "line_range",
-              "start": 81
+              "start": 69
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1382,12 +1346,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:5719561bf51b9c35e56f72220b5b28aed3899326509ea0810c804fb10888efad",
             "locator": {
-              "end": 808,
+              "end": 770,
               "kind": "line_range",
-              "start": 789
+              "start": 751
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1635,7 +1599,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:e9a7f246cbe7d8894e4bfc21c5b19bd039c2e72be4a890f427ee82a706811426",
             "locator": {
               "end": 88,
@@ -1648,7 +1612,7 @@
         },
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
             "content": "sha256:cd7e177a7fb3506b7a7321cf524d7f7f394bcea08de63d60093d2cfbcf6da2f0",
             "locator": {
               "end": 143,
@@ -2001,73 +1965,6 @@
         }
       ]
     },
-    "187": {
-      "note": "Shared composer branches between interaction answers and ordinary draft submission",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
-            "content": "sha256:3032a0a45b100ff27bf93560178cae5371a0f064ea731b914efd4464b479e61e",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 108
-            },
-            "path": "dashboard/src/panels/sessionComposerHooks.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "188": {
-      "note": "FlowTab is static design composition, not a runtime store consumer",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
-            "content": "sha256:b937ee666d39d29d06275a244a84a8ea91a3dcb2f1a5be409c9d171aba879c18",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 6
-            },
-            "path": "dashboard/src/panels/FlowTab.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "189": {
-      "note": "Session rails materialize document-keyed sprint/role/master groups and keep unattached sessions separate; FlowTab is not their live-data owner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:12afc3ab01743e8f39005715ff1c90852321c898b43e0f8d7157e6b8dc5b49fa",
-            "locator": {
-              "end": 435,
-              "kind": "line_range",
-              "start": 375
-            },
-            "path": "dashboard/src/data/railModel.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6898fc6e495a1b8986c1757cb25ba16d391d86",
-            "content": "sha256:61ea4a38800b7d42c89fadcb60711787b38050b985bc859c9190dcd051f16757",
-            "locator": {
-              "end": 951,
-              "kind": "line_range",
-              "start": 832
-            },
-            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "19": {
       "note": "On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged.\n\nAnchor: \"word-diffs a tree review's member statement and family guarantee in the center\"; \"never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review\"",
       "targets": [
@@ -2119,12 +2016,12 @@
       ]
     },
     "192": {
-      "note": "Pure row/tree facts and chat summary retain separate state owners.",
+      "note": "The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner.\n\nAnchor: whole current source; whole current source",
       "targets": [
         {
           "anchor": {
-            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
-            "content": "sha256:4d8790f814f12157c16127781fa9bcf09a6ed6322c9d772ad658c01fbba7c822",
+            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
+            "content": "sha256:0d027e307a6eecdc58c883570a3e50663fbd5da290363a28f52b8f45ce5ee66b",
             "locator": {
               "kind": "file"
             },
@@ -2140,17 +2037,6 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "36afb6dff629125edc5f4b80b6f7562420642eff",
-            "content": "sha256:5efce25c4d17983f9e8b4d6c8e6208b77e63b3b5e719e7b5a4d0f1a874943c9d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/ChatActivityIndicator.tsx"
           },
           "kind": "code"
         }
@@ -2338,12 +2224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
+            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 720,
+              "end": 655,
               "kind": "line_range",
-              "start": 720
+              "start": 655
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2374,7 +2260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
               "kind": "symbol",
@@ -2420,12 +2306,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:321dfb2796157b97cccb9a0074dd3d4c41ce87bff8defc8119177d8b736f3ea9",
             "locator": {
-              "end": 813,
+              "end": 775,
               "kind": "line_range",
-              "start": 813
+              "start": 775
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -2462,7 +2348,7 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -2474,12 +2360,12 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:fdbcca409a845b5ec0a408ab1849630b644e54948c9faeb6905fb090804f5d3d",
             "locator": {
-              "end": 19,
+              "end": 18,
               "kind": "line_range",
-              "start": 18
+              "start": 17
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -2539,40 +2425,6 @@
         }
       ]
     },
-    "48": {
-      "note": "The terminal panel owns the shared terminal surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
-            "content": "sha256:c8d9a25ffaa776bddf1e754414fc2441636f61cfa6784d82c1d0dc713cb67570",
-            "locator": {
-              "kind": "symbol",
-              "name": "Terminal"
-            },
-            "path": "dashboard/src/panels/Terminal.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "49": {
-      "note": "The shared composer surface is implemented by `SessionComposer`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6bb3a062aadcf8a288bd4f1b8d2af05b8b8994e2",
-            "content": "sha256:4d795770f18dc7835ec304967fc5c43612b9a62f7b30007f780e1142427e2ba3",
-            "locator": {
-              "kind": "symbol",
-              "name": "SessionComposer"
-            },
-            "path": "dashboard/src/panels/SessionComposer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "Marks only from the owner's response, placed on its side lines.",
       "targets": [
@@ -2597,23 +2449,6 @@
               "name": "markAnchor"
             },
             "path": "dashboard/src/panels/review/hunkMarkers.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "50": {
-      "note": "Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7a1314caf2e8d8c90443415ff08066baaf34253",
-            "content": "sha256:3451d9d3bb68ddd3a20fd46f8538a5a7e5ae71b58f9839efcbd090fd01b039d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "HighlightComposerImpl"
-            },
-            "path": "dashboard/src/panels/HighlightComposer.tsx"
           },
           "kind": "code"
         }
@@ -2666,7 +2501,7 @@
         },
         {
           "anchor": {
-            "blob": "5fc47d2f0162a9f76bea5427359161727342a013",
+            "blob": "f96cdd9be0b6931b1633809cb781c9be0cfa0874",
             "content": "sha256:36eb7db918cf362094b42a7696eb4db5dcda6113c52439a2bce0cbc199739ab5",
             "locator": {
               "end": 66,
@@ -2684,12 +2519,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
             "content": "sha256:44c8d45e3b5599ef3ead09d582379cfa8aad059442a8ba986d59a79c55752845",
             "locator": {
-              "end": 19,
+              "end": 14,
               "kind": "line_range",
-              "start": 19
+              "start": 14
             },
             "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
           },
@@ -2697,7 +2532,7 @@
         },
         {
           "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
             "content": "sha256:4603a9739fe3f72c132302525a83ad80786c7fdb576a68cdd57cc7c686255062",
             "locator": {
               "end": 107,
@@ -2710,7 +2545,7 @@
         },
         {
           "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
             "content": "sha256:8c4374938879f79e4d6802c63925956662c216e71284014a1a4b7cc3a49d882d",
             "locator": {
               "end": 108,
@@ -2723,12 +2558,12 @@
         },
         {
           "anchor": {
-            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
+            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 508,
+              "end": 484,
               "kind": "line_range",
-              "start": 508
+              "start": 484
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2741,7 +2576,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
             "locator": {
               "kind": "symbol",
@@ -2765,7 +2600,7 @@
         },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
             "locator": {
               "kind": "symbol",
@@ -2777,7 +2612,7 @@
         },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
             "locator": {
               "kind": "symbol",
@@ -2794,7 +2629,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
             "locator": {
               "kind": "symbol",
@@ -2806,7 +2641,7 @@
         },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
             "locator": {
               "kind": "symbol",
@@ -2818,7 +2653,7 @@
         },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:1ec7c03aacff4fca142143c53ebffb23a0ebeaa58260d527613090632daacb30",
             "locator": {
               "kind": "symbol",
@@ -2853,7 +2688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddef0c7aeef2f5cdf7801233052007e107b0942f",
+            "blob": "60132425ca2b1e98e191260346c72c49b3e824ae",
             "content": "sha256:8c2edda1c2305b95f5517495c5620ad3444d736a6b014a5c4aa72335f3be9d3a",
             "locator": {
               "kind": "symbol",

@@ -1,10 +1,37 @@
 # l-01-agent-lifecycles/templates/turn-report.md
 
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+## Current operative account — MIK-R113
+
+The mandatory report is authored by the Worker in its own main loop at the path named by its handover; the former default-path/control-plane-nudge convention is not the current path authority. Report, exact requirement acceptance envelope and immutable attempt journal remain separate, and checks, forcing evidence, direct handovers, helper contributions and respawn state remain explicit. The source preamble’s inherited relay wording is retained as source history and does not restore the removed relay or observer; present completion truth comes from core/acceptance.md, with parent artifact validation distinct from a host turn-end signal.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- The canonical worker-report shape assigns its path to the supplied handover and retains exact acceptance-envelope, journal/checks and respawn obligations. [1]
+
+- Messages wake; complete payloads and evidence travel as files. [5]
+
+- The Worker owns one report; the report template requires authoring in the main loop rather than delegating its artifact and keeps the report distinct from the journal. [2]
+
+- Closeout carries actual targeted results and required curation/coherence under Owner transaction authority; failed or not-run checks remain visible and no blanket full-suite gate is substituted. [4]
+
+- The current truth boundary separates host turn-end evidence from parent artifact validation; it restores neither an observer nor acceptance by signal. [3]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [5]
+- Messages wake; complete payloads and evidence travel as files. \[5]
 
 
 ## Current operative account — MIK-R112
@@ -86,10 +113,10 @@ No relevant external documentation found.
 
 This bundle copy is the shape the worker job writes at every hand-off; the frame catalogs it as a per-role artifact obligation.
 
-- Sync-propagated bundle copy of the canonical templates source. [1]
-- The worker writes the turn report in its main loop and never delegates it; the template governs its shape. [2]
-- The truth boundary this template obeys has one home. [3]
-- The check duty this report records has one home. [4]
+- Sync-propagated bundle copy of the canonical templates source. \[1]
+- The worker writes the turn report in its main loop and never delegates it; the template governs its shape. \[2]
+- The truth boundary this template obeys has one home. \[3]
+- The check duty this report records has one home. \[4]
 
 ### Cross-Repo References
 
@@ -121,5 +148,7 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
+
+</details>
 
 </details>

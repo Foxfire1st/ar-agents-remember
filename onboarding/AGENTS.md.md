@@ -12,7 +12,7 @@ The source-checkout operating contract routes repository work through the resolv
 
 ### Logic
 
-The opening distinguishes this source package from the installed runtime and sends sibling-repository work to installed coordinator instructions. Sessions follow role briefs or the developer-facing lifecycle; approved durable task documents own code changes. Explicit session authorization determines which workflow actions are already approved.
+The opening distinguishes this source package from the installed runtime and sends sibling-repository work to installed coordinator instructions. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer speaks with the started agent in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route. Approved durable task documents own code changes; explicit authorization determines which workflow actions are already approved.
 
 Memory context and provider configuration are resolved before relying on onboarding. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root skills, runtime assets and harness templates are canonical; their sync scripts refresh generated package and starter copies.
 

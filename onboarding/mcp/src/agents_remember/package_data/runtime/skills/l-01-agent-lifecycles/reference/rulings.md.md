@@ -4,6 +4,25 @@
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current operative account — MIK-R113
+
+This index records reasons and supersession; the rule is followed at its core/operation/role home. Free chat now starts the Architect once with role_start, rather than relying on the former router condition. No seat-local watcher is restored: the host’s turn-end line wakes the parent, and the parent validates the artifact. The LOCR relay/sweep/terminal-observer section is explicitly history under R113, not current doctrine; current completion truth is owned by core/acceptance.md. The old harness-helper ban is withdrawn in the source index, while AR role seats and permitted harness helpers remain distinct.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- This index records reasons and supersession; the rule is followed at its core/operation/role home. Free chat now starts the Architect once with role_start, rather than relying on the former router condition. No seat-local watcher is restored: the host’s turn-end line wakes the parent, and the parent validates the artifact. The LOCR relay/sweep/terminal-observer section is explicitly history under R113, not current doctrine; current completion truth is owned by core/acceptance.md. The old harness-helper ban is withdrawn in the source index, while AR role seats and permitted harness helpers remain distinct. [1]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
 ## Purpose
 
 Reference-only index of the durable rulings the corpus obeys — each row recording the ruling, its date or
@@ -64,4 +83,6 @@ No meaningful cross-repo references found.
 
 ## Source Evidence
 
-- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. [1]
+- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. \[1]
+
+</details>

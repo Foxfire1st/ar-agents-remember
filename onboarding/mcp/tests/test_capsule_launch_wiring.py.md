@@ -182,7 +182,8 @@ No configured live documentation source was available for this pass.
 - D20: a refused stage refuses again in the same process, never passing. [13]
 - The two boundary doubles: the vendor-process recorder and the tmux host. [14]
 - The lane row D9's fail-closed loader requires for every new test module. [15]
-- The launch points this module drives, and the modules whose wiring it pins. [18]
+
+- The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes. [18]
 - **Superseded evidence pointer, kept for the record** — `L15`'s round-1 production-chain transcript no longer exists at this path (`citation_source_vanished`; the enclosing `notes/reports/` tree holds only the master's own artifacts, and L15's evidence directory was never carried into this memory repo). The **live** equivalent claimed by the module is `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` below, plus `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace`. Do not re-cite the deleted file. [19]
 - The three governed-artifact rows registering this module as a consumer. [21]
 

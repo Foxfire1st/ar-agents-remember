@@ -4,7 +4,7 @@
 
 ## Purpose and authority
 
-Bootstrap is the taskless first-hour setup/report seat for one repository, not a general maintenance or leaf transaction role. `operations/bootstrap.md` owns its ordered procedure and wins on disagreement. Setup mutations use their existing owning surfaces with preview/read-back and developer decisions; native reads and checked helpers grant no extra authority. It authors no onboarding or knowledge, moves no branch and creates no worktree.
+Bootstrap is the taskless first-hour setup/report seat for one repository, not a general maintenance or leaf transaction role. `operations/bootstrap.md` owns its ordered procedure and wins on disagreement. Setup mutations use their existing owning surfaces with preview/read-back and developer decisions; native reads and checked helpers grant no extra authority. It authors no onboarding or knowledge, moves no branch and creates no worktree. Its current reader surface names `context_packet`, `server_info` and `read_ar_files`: `resolve_context` is removed, so card discovery and opening the returned files are distinct steps. The negative list explicitly retains `retire_child`; a supported public tool is not automatically a Bootstrap power.
 
 Its sole durable output names its own exact report path and records resolved state, decisions, real step results, skips/failures, limitations and boundaries. Knowledge foundation is read/reported, not authored by Bootstrap. Missing inputs/capabilities and instruction/system contradictions are reported honestly; no alternate mode or artifact migration substitutes for a refused step.
 
@@ -14,3 +14,5 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 
 
 - Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit. [1]
+
+- Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. \[2] [2]

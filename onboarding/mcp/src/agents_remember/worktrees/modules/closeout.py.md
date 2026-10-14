@@ -19,7 +19,7 @@ quality-gate sections below describe pre-R12 behavior and are not prerequisites 
 
 ### Current Contract
 
-Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. The gate retains gate_list guidance; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority.
+Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. A stored-gate refusal names STORED_GATE_WAY_OUT and no gate_list or other deciding tool; inherited nextTool/nextArgs/nextRequiredArgs are removed, while the preview retains its coded blocker and summary; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority.
 
 ### Logic
 
@@ -617,4 +617,6 @@ On converted memory three places of this module ask the mandatory invariant gate
 - Registered calls keep the daily call record independently of closeout publication. \[36] [36]
 - Completed calls keep their workspace-river event independently of closeout publication. \[37] [37]
 
-- Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. The gate retains gate_list guidance; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]
+
+
+- Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. A stored-gate refusal names STORED_GATE_WAY_OUT and no gate_list or other deciding tool; inherited nextTool/nextArgs/nextRequiredArgs are removed, while the preview retains its coded blocker and summary; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]

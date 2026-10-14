@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_removed_stores.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Removed-store reporting and explicit deletion tests: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8869be4ce9a764a383adf8bd8ffd97d076d235f",
+            "content": "sha256:d6262aa41ec6cc81acf2e0bb0da11e0cda89a96094e29427106dae1380055910",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_install_files_the_stores_and_answers_their_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

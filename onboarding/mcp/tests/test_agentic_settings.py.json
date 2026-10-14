@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+        "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
         "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
         "locator": {
           "kind": "symbol",
@@ -22,44 +22,34 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The curated table the order assertion derives its expected prefix from, and the probe-carry merge the override case pins.",
+      "note": "Anchor: ID vocabulary has no native runtime detector.",
       "targets": [
         {
           "anchor": {
-            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
-            "content": "sha256:fe54da6f1eb24c77412375eda6e1bf6e847f9d466b12fa75b2fd09a97833cc55",
+            "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+            "content": "sha256:01d99c5c6f83c2d31bc26562ee7f00a643410150f865dc13860b0caf638c47ba",
             "locator": {
-              "kind": "symbol",
-              "name": "HARNESSES"
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
             },
             "path": "mcp/src/agents_remember/kernel/harnesses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
-            "content": "sha256:b0016a0900cf47457bf0a0857488d7687bcb7a13d519b4cb7b0a522a1322c33d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_merged_harness"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
           },
           "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "New id adds a harness with defaults derived.",
+      "note": "Anchor: New ID appended, command named unused.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:20d5e254f84863b16e99af8659c97768a7e279297ae7a13abcc3497658c51697",
             "locator": {
-              "kind": "symbol",
-              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+              "end": 380,
+              "kind": "line_range",
+              "start": 375
             }
           },
           "kind": "test"
@@ -67,15 +57,16 @@
       ]
     },
     "11": {
-      "note": "Cross layer reference and partial override merge.",
+      "note": "Anchor: Merged ID references and unused keys are source-owned.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:1d39c06835183b2b1e12fccbf8c7c82e2413c0ac349ed59c0cf704988f5893a6",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:c776e8852aa20556ca3eed6cd63f874ad271b70a50b0233a863fdbc2802ddb5a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_cross_layer_reference_and_partial_override_merge"
+              "end": 412,
+              "kind": "line_range",
+              "start": 397
             }
           },
           "kind": "test"
@@ -83,15 +74,16 @@
       ]
     },
     "12": {
-      "note": "Reference to an id known nowhere fails naming the manual.",
+      "note": "Anchor: Unknown ID refusal names actual field and admitted IDs.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:d1224bfa84f8c3bf6a7ea2a3727e48fdb4b68c32130f0f0231ab92ff0baca653",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:6159c6a8700bce9aa8a6bbf43dde963d67758eba67e58c4ff389d022700dec2f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_reference_to_an_id_known_nowhere_fails_naming_the_manual"
+              "end": 418,
+              "kind": "line_range",
+              "start": 414
             }
           },
           "kind": "test"
@@ -99,15 +91,16 @@
       ]
     },
     "13": {
-      "note": "Executor authority is not accepted in agentic settings.",
+      "note": "Anchor: Executor authority stays outside agentic settings.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
             "content": "sha256:cee1cd7598e85607c010fb7a2edb2fb05a779b432e43e5e5101d7659c053da09",
             "locator": {
-              "kind": "symbol",
-              "name": "test_executor_authority_is_not_accepted_in_agentic_settings"
+              "end": 523,
+              "kind": "line_range",
+              "start": 515
             }
           },
           "kind": "test"
@@ -115,15 +108,16 @@
       ]
     },
     "14": {
-      "note": "Settings-load cases pin the role-message wake-text limit: absence uses its declared default, positive whole numbers and repository-layer precedence work, and zero/negative/fractional/string/boolean values refuse with the field named.",
+      "note": "Anchor: Actual wake-text limit assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
-            "content": "sha256:a9fdf47ceaceb3558fd0fc0a45c2a3342fb41f969c27e9172cdb2566b2280b9d",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:60b7af198934555e49556b0808055b489112e7a06f6f0e6c1cfbc31e10b5c164",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleMessageLimitSettingsTests"
+              "end": 500,
+              "kind": "line_range",
+              "start": 467
             }
           },
           "kind": "test"
@@ -131,16 +125,16 @@
       ]
     },
     "15": {
-      "note": "Current review-limit cases expect fallback5 and accept positive maxRounds values4/99 in global/repository layers; zero, negative and fractional values refuse with the settings field named. This supersedes the historical hard-three ceiling, not the independent character-limit parsing cases. These are load/merge assertions, not native review-round authority or a new execution.",
+      "note": "Anchor: Positive review-limit settings assertions, not live review execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
-            "content": "sha256:b912cf88b7005c604185faaf2c758474db11d0573f18bb3655fefdb991f05689",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
             "locator": {
-              "end": 680,
+              "end": 204,
               "kind": "line_range",
-              "start": 1
+              "start": 169
             }
           },
           "kind": "test"
@@ -148,26 +142,28 @@
       ]
     },
     "2": {
-      "note": "The two harness-vocabulary cases this change set touched.",
+      "note": "Anchor: Current new/builtin ID cases name ignored execution keys.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:20d5e254f84863b16e99af8659c97768a7e279297ae7a13abcc3497658c51697",
             "locator": {
-              "kind": "symbol",
-              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+              "end": 380,
+              "kind": "line_range",
+              "start": 375
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:75f14323cb00ebfe6d4ac5fcf3e7f14efdf6000df0ddcb61c4efcdaa7c27146e",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:7190642719b34b8ed93c1db3265002a1e8b7cf1e25bb2ba5f52f5268642ccff5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_builtin_override_keeps_its_runtime_readiness_probe"
+              "end": 395,
+              "kind": "line_range",
+              "start": 382
             }
           },
           "kind": "test"
@@ -175,15 +171,16 @@
       ]
     },
     "3": {
-      "note": "Local leaf overrides global leaf and siblings survive.",
+      "note": "Anchor: Leaf override and sibling retention assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:9b87340f4a80eec936773b7f4bf317dd6f25827c5df66011bcb7ebf86db6db03",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:5d5f2eb4ebb9ecc0e0c963c19a96b57db1c25e1b4a0516a8478e99d9a8c13172",
             "locator": {
-              "kind": "symbol",
-              "name": "test_local_leaf_overrides_global_leaf_and_siblings_survive"
+              "end": 94,
+              "kind": "line_range",
+              "start": 58
             }
           },
           "kind": "test"
@@ -191,15 +188,16 @@
       ]
     },
     "4": {
-      "note": "Arrays replace never concatenate.",
+      "note": "Anchor: Arrays replace rather than concatenate.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
             "content": "sha256:024f21c3058af680dae2e6b93d44f0ef306d6a7a7c75dcaa26927f38c85046e8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_arrays_replace_never_concatenate"
+              "end": 102,
+              "kind": "line_range",
+              "start": 96
             }
           },
           "kind": "test"
@@ -207,15 +205,16 @@
       ]
     },
     "5": {
-      "note": "Absent files mean documented defaults.",
+      "note": "Anchor: Absent settings retain parser defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d656cd21510937787fabd6593531bb2335f9f52",
-            "content": "sha256:a64763ca5ff5ac6f8035e7397c88da07eed0bb35c38d597eb4c47e79bcd551f8",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:5093cd32b6294c6afed9b99c8095dd225e3f158a1a10bb478ccfcd7b52091c5f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_absent_files_mean_documented_defaults"
+              "end": 125,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "test"
@@ -223,15 +222,16 @@
       ]
     },
     "6": {
-      "note": "Local gate delegation is refused global layer only.",
+      "note": "Anchor: Global-only gate policy boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
             "content": "sha256:f45fe864f6ad3dace4527ed04464f861de03e76876026d702dbb291e9fd988a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_local_gate_delegation_is_refused_global_layer_only"
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
@@ -239,15 +239,16 @@
       ]
     },
     "7": {
-      "note": "Malformed json fails loud with path.",
+      "note": "Anchor: Malformed JSON refusal names the source.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
-            "content": "sha256:01357f8c1cd0f749380d19038205226c7e091d4e3f351ce39f35b551b1dfb030",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
+            "content": "sha256:ba7b0a495b0d576cdb2e68f420e73992e97bf351b74d32a6a6e990058179947e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_malformed_json_fails_loud_with_path"
+              "end": 167,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "test"
@@ -255,15 +256,16 @@
       ]
     },
     "8": {
-      "note": "Human pinned gate kind cannot be delegated.",
+      "note": "Anchor: Human-pinned gate policy remains nondelegable.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
             "content": "sha256:13a25c42267cce5feceb8403717f608809634a7d879ac82d2f1546bbfe9e35be",
             "locator": {
-              "kind": "symbol",
-              "name": "test_human_pinned_gate_kind_cannot_be_delegated"
+              "end": 222,
+              "kind": "line_range",
+              "start": 220
             }
           },
           "kind": "test"
@@ -271,15 +273,16 @@
       ]
     },
     "9": {
-      "note": "Level override deep merges over the flat default.",
+      "note": "Anchor: Per-level knobs merge by field.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2354f98aa8355209c823ec0f27d70d6134ceca1",
+            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
             "content": "sha256:7c8394fea600480afddd9ca7203c793b1988a71cf9cd0dc19e8c25e8379a201b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_level_override_deep_merges_over_the_flat_default"
+              "end": 348,
+              "kind": "line_range",
+              "start": 332
             }
           },
           "kind": "test"

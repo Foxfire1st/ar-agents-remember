@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
+        "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
         "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
         "locator": {
-          "end": 51,
+          "end": 47,
           "kind": "line_range",
-          "start": 48
+          "start": 44
         }
       },
       "id": "RLZ-05PN1D",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
-        "content": "sha256:ab7c745aa5d710557753d2d17b49e51cb8212374090fff3edbc066ca5fe5cb13",
+        "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
+        "content": "sha256:d9732d94ee9b01528e5af9fa557e04454aeb6e58b78ce33579e9e9e1f77a8c43",
         "locator": {
           "kind": "file"
         }
@@ -34,7 +34,7 @@
         "handoffEntry": "MIK-R101@v1 rule 5",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This brief carries dispatch values with repeats removed and the guideline gloss corrected.",
+      "rationale": "Worker document-input template carries bounded input/output values subordinate to canonical role/operation procedure; host role_start/role_start_set carry references, not a pasted dispatch brief.",
       "role": "primary-authority"
     }
   ],

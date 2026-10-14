@@ -12,16 +12,16 @@ Resolve caller-specific authority for completed lifecycle dispositions.
 
 ### Logic
 
-The public surface is `LifecycleCallerError`, `resolve_lifecycle_caller`, `completed_disposition_owner`, `completed_disposition_authorized`, `require_completed_disposition_authority`. This application boundary exposes a closed public result and delegates durable mutation to its owning domain seam. Expected configured-contract, location, or legacy failures are translated through typed decisions; callers do not enumerate lower-level exception families or invent alternate authority.
+The public surface is `LifecycleCallerError`, `completed_disposition_owner`, `completed_disposition_authorized`, `require_completed_disposition_authority`. This application boundary exposes a closed public result and delegates durable mutation to its owning domain seam. Expected configured-contract, location, or legacy failures are translated through typed decisions; callers do not enumerate lower-level exception families or invent alternate authority.
 
 Completed retire/supersede authority comes from live topology: `orchestrator` at the enclosing
 sprint, or `architect` at a standalone master. The caller must match both role and exact document;
-a leaf worker is not an authorized disposition owner. Hosted seat identity wins only when an
-explicit declaration agrees with it; an unbound or conflicting hosted identity refuses.
+a leaf worker is not an authorized disposition owner. The caller is an explicit `DeclaredCaller`;
+this module no longer resolves a hosted seat. Missing declaration, invalid topology and a
+role/document mismatch retain distinct typed refusals.
 
 cit:([`completed_disposition_owner`], mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:54-65)
 cit:([`require_completed_disposition_authority`], mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:81-101)
-cit:([`resolve_lifecycle_caller`], mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:23-51)
 
 ### Conventions
 
@@ -39,16 +39,4 @@ None recorded.
 
 ## Evidence
 
-### Docs References
-
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
-
-### Repo-Internal References
-
-The source file itself is the current evidence for this file-specific contract.
-
-- The module defines `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` as its public seam. [1]
-
-### Cross-Repo References
-
-No meaningful cross-repository boundary is owned by this file.
+- Completed disposition requires orchestrator at the exact enclosing sprint or architect at the exact standalone master; both role and document must match. [1]

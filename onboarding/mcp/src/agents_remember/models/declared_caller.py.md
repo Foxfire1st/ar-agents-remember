@@ -53,7 +53,6 @@ No configured Domain Documentation source applies; this is an internal authority
 
 - The strict bounded shape of a request-carried ambient identity. [1]
 - Consumed by the closeout-queue ambient fallback. [2]
-- Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`). [3]
 - The request field that carries the declaration on the queue wire model. [4]
 
 ### Cross-Repo References

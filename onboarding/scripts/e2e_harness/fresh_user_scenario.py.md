@@ -6,132 +6,25 @@
 
 ## Purpose
 
-Drive the **fresh-user end-to-end acceptance**: one clean-room repository's first hour, per step,
-through the product's own entry points, recorded as one transcript.
-
-The packet's flow, in order, against the fixtures `fresh_user_fixture` creates:
-
-```
-install runtime -> memory_init (with the spear-branch choice) -> thin bootstrap (c-03)
--> exclusion review -> baseline adoption -> first worktree task (light leaf)
--> citation_fix + memory_quality_check + closeout validation
-```
-
-Every step runs the product's own entry point, records the exact call it made and the real result
-it got, and **never summarises**: a sentence like "the bootstrap succeeded" is not evidence, the
-transcript is. A step that cannot run in this environment is recorded as `blocked` with the exact
-reason and with what evidence would have been required.
+Fixture-only first-hour installation/onboarding/baseline/worktree/citation-quality chain recorder. The removed free-agent terminal consumer step is not part of the current flow or acceptance.
 
 ## Code Commentary
 
-### Logic
+The run binds its actual package source and declares test execution before fixture configuration, records each real call/result, distinguishes fixture-created memory series topology and names unavailable steps as blocked. Each of the two freshly created fixture repositories goes through the ordered chain; bootstrap paths, confidence tags, adoption ledger and work-branch existence are checked independently. Citation preview records an actual work order without rewriting, and unavailable enclosure paths remain blocked. No transcript or green execution is manufactured by this current-source account.
 
-`run_fixture_scenario` drives the ordered steps for one fixture and `run_fresh_user_acceptance`
-runs both fixtures, collects the invariants and checkpoints, and returns the transcript document.
-`StepRecord` is the unit of evidence — one call, one real result, one status.
+## Evidence boundary
 
-`_assert_candidate_source()` runs **before the first product call** and the transcript records
-`packageSource` per step. This is load-bearing, not decorative: `MCP_SRC` must be inserted into
-`sys.path` as a **string**, because a non-`str` `sys.path` entry is silently ignored by the import
-machinery — the interpreter's editable install would then answer every import from the primary
-checkout while every line of this module still looked right.
+This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
 
-The steps:
+## Source-bound reference inputs
 
-| Step | What it does |
-| --- | --- |
-| `install-runtime` | the product's runtime install entry point |
-| `memory-init` | `initialize_memory` with the fixture's spear-branch choice |
-| `thin-bootstrap-c03` | the `c-03` thin bootstrap, recorded as `emulated-outcome` and stated as such |
-| `exclusion-review` | persists the exclusion register (status `persisted`) |
-| `baseline-adoption` | memory baseline adoption, plus the first ledger row |
-| `fixture-memory-series-branch` | the **declared fixture setup** that makes the memory series branch exist |
-| `first-worktree-task` | the ordered worktree starts, through `worktree_start_tool` |
-| `citation-fix` | a **real `citation_fix` call** (`dryRun: true`) once the enclosure contract exists; when it does not, `citation_fix_blocked` records the step `blocked` **by name** rather than `completed` |
-| `memory-quality-check` | the closeout gate's own declared check group over the fixture's memory root |
-| `closeout-validation` | closeout validation over the produced state |
-| `free-agent-bootstrap-seat` | a **free agent** opened the way a user opens it — the product's registered `POST /api/terminal/{session}` with `role='bootstrap'` and **no task document** |
-
-### The free-agent step reads the capsule from the consumer side
-
-`free_agent_acceptance` opens the seat through the product's own route and reads the capsule back
-**from the artifact that launch produced**: the encoded launch token the child process is started
-with, parsed by the product's own `parse_runner_config`. The expected side is the same application
-entry point the route itself calls (`compile_launch_capsule` with a `LaunchCapsuleRequest`), so
-**neither side is hand-supplied**. The step records `routeStatus`, `instructionMode`,
-`equalsCompilerResult`, `routeDigestEqualsSessionDigest`, and a `sessionReceived` block carrying
-the byte count and the digest the session actually received.
-
-This is what closes the standing rule: *a delivery claim is closed by a production path from
-producer to consumer, with the artifact read from the consumer's side — never a seam plus a
-caller-supplied value.*
-
-### The blocked entry is derived from the run's own records
-
-`first_worktree_task_blocked(records, chains)` builds `result.refusals` by reading the
-`StepRecord`s the run already wrote — every `first-worktree-task` record whose status is `failed`
-or `refused` — so the entry and the transcript's `steps` **can only agree**. Nothing is asserted
-about attempts the transcript does not carry. It fires only when not every chain's work branch
-exists; at a clean run it adds nothing.
-
-### Invariants And Boundaries
-
-`INVARIANTS` asserts four readings **per fixture**: no bootstrap content in the first memory
-commit, no confidence tags in durable onboarding, the first ledger row, and a working first
-worktree task.
-
-The module's `WHAT THIS SCENARIO DOES AND DOES NOT CERTIFY` section states the boundary, and the
-divergence between that section and the code is a recorded finding, not a claim this card makes:
-
-- It certifies the **chain** over disposable fixtures created by the harness: two repositories from
-  nothing, the register persisted, the baseline adopted, the invariants asserted.
-- The module docstring still says it "does not certify the free-agent bootstrap seat, because at
-  this base nothing delivers a compiled capsule into an opened session … and the scenario records
-  it as blocked". **The code no longer matches that sentence.** Since this leaf synced onto the
-  wiring leaf's landing, `free_agent_acceptance` opens the seat through the product's route and
-  reads the capsule back from the launched token, and the delivered transcript records the step as
-  `completed` with the digest agreement asserted. The docstring is stale source text; the code is
-  the conduct. This is recorded for the owning seat and is not repaired here — this seat writes
-  memory, never code.
-
-### Conventions
-
-- One `StepRecord` per call; the transcript, not prose, is the evidence.
-- Fixtures are **disposable repositories the harness creates from nothing** under one run root.
-  They are **not** the developer's repositories.
-- `memory-quality-check` on a fresh card reports `ok:false` **with findings**. That is the honest
-  `checked` state of a brand-new memory layer, not a run failure; the step's own status is
-  `refused`, and the transcript states it that way.
-- The scenario is a **governed evidence artifact** with an `[[artifact]]` row in
-  `mcp/tests/evidence-lifecycle.toml` (`owner: fresh-user-acceptance`,
-  `introduced_by: 260915-CAPS-L14`).
-
-### Todos
-
-None.
-
-## Evidence
-
-### Repo-Internal References
-
-- The one step record: the call made and the real result it returned. [1]
-- Why `MCP_SRC` must be a **string** in `sys.path`: the import machinery silently ignores a `Path`. [2]
-- The candidate-source assertion that runs before the first product call, and the per-step provenance it records. [3]
-- The ordered steps for one fixture. [4]
-- The two-fixture acceptance, its invariants and its transcript. [5]
-- The free agent's capsule, read back from the launch token the session was actually started with. [6]
-- The citation step is a real `citation_fix` call once the enclosure contract exists. [7]
-- The citation step when no enclosure contract exists: blocked by name, never completed. [8]
-- The blocked entry is built from the run's own step records, so it cannot disagree with them. [9]
-- The ordered worktree starts the product's authority requires. [10]
-- The declared fixture setup that creates the memory series branch. [11]
-- The four per-fixture invariants. [12]
-- The register the citation and memory-quality steps honour. [13]
-- The step that must never be `completed` when it could not run. [14]
-- The delivered transcript these ranges are read against. [15]
-
-### Cross-Repo References
-
-No sibling-repository contract defines these values.
-
-No meaningful cross-repo references found.
+- [1]
+- [3]
+- [4]
+- [5]
+- [7]
+- [8]
+- [9]
+- [10]
+- [11]
+- [12]

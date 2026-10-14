@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/cli/removed_stores.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f0ccd44a27aa75224b1585c1790e1216099c188e",
+        "content": "sha256:452b1361eae1bd0bc6971e45880566c4a1e477c309eb830a5c816007bcbb27e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-5AZ8QZ",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one place that removes such data, on the user's command: lists on a dry run, removes otherwise, names what it could not read or remove, goes on with the rest and ends 1 when anything stayed.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Explicit removed-store cleanup: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ccd44a27aa75224b1585c1790e1216099c188e",
+            "content": "sha256:c3d7596802c4e719523a1daf1802322dab878cbb96602e9d509b0012fce748fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contained_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

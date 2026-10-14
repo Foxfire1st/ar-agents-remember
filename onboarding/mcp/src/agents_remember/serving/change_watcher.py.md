@@ -54,7 +54,7 @@ dot-prefixed sidecar temps, **every control-plane lockfile, by suffix, in any wa
 (see below), the projection's own outputs (`latest-state.json`/
 `latest-metrics.json`, defensive — they also live *outside* every watched subdirectory), and the
 `workspace/` non-input churn by name **only when the parent dir is `workspace`** (the raw event
-river `events.jsonl` + its cursor/lock files and the supervisor's own heartbeat row). A lifecycle's
+river `events.jsonl` + its cursor/lock files with no supervisor heartbeat input). A lifecycle's
 `events.jsonl` is NOT confused with the workspace river.
 
 ### 260731-EFA-L5 The Lockfile Exclusion Is Derived, Not Spelled Out
@@ -68,7 +68,7 @@ that function** rather than written down. `is_projection_input_event` suffix-mat
 `_EXCLUDED_WORKSPACE_NAMES` while `lock_path_for` had moved to `operator-inbox.jsonl.lock`, so the
 exclusion silently stopped matching anything — a filter that looks correct and filters nothing. The
 name is now out of that set entirely; the set keeps only `events.jsonl`, the workspace cursor and
-lock, and the supervisor heartbeat.
+lock, with no supervisor heartbeat name.
 
 **Suffix-and-everywhere is what the old list structurally could not express.** Five of the six
 durable logs live only under `workspace/`, but `gates.jsonl` lives there **and once per lifecycle**
@@ -76,8 +76,8 @@ under `<obs>/lifecycles/<id>/` — so `gates.jsonl.lock` appears in every lifecy
 a basename list scoped to `parent == "workspace"` could never have covered it. A suffix rule also
 needs no list to keep in step with the stores as they are added.
 
-**Why it matters for pacing:** every append and every rewrite of the six durable logs opens its
-lockfile `a+b` (including each projection tick's own `read_agent_pickups`), which makes these the
+**Why it matters for pacing:** every append and every rewrite of a retained durable log opens its
+lockfile `a+b` (including each projection tick's attention-dismissal prune), which makes these the
 highest-frequency writes in the watched tree, and none of them is a projection input. The rule is
 safe because no projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs
 themselves and `.json` sidecars.

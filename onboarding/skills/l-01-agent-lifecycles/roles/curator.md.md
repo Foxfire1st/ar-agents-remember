@@ -8,6 +8,14 @@
 
 Defines the curator’s current leaf and repository-foundation responsibilities: reconcile existing intent, ruled intent and implemented reality; maintain affected memory; author justified knowledge through the admitted writer; and report exact outcomes and unresolved limits.
 
+
+
+## Foundation carrier and writer admission
+
+The Curator seat opens only on a leaf task document. Before any task exists, Bootstrap carries foundation read/report work and an instructed session runs knowledge-bootstrap under the Curator rules without opening a taskless Curator seat or fabricating an enclosure. This deliberately supersedes the earlier taskless-seat admission account, not the foundation writer itself. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+
+- Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. \[13] [15]
+
 ## Code Commentary
 
 ### Logic

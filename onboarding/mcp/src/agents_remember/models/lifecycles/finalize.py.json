@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
-        "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
+        "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
+        "content": "sha256:f92c115ae913a644e337f0b3c315b69884feb14a30909dc7edff8f0763b4c0ae",
         "locator": {
           "kind": "symbol",
           "name": "LifecycleFinalizeTaskResponse"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
+            "blob": "fea17f8538e2614a2be674e0f88a636f6070ca19",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 13,
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
             "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
             "locator": {
-              "end": 225,
+              "end": 108,
               "kind": "line_range",
-              "start": 225
+              "start": 108
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -58,12 +58,12 @@
       ]
     },
     "3": {
-      "note": "The finalizer response model is the current wire authority; deleted representative-payload tests provide no current pass.",
+      "note": "The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "eefe9957926f7c5e703c6dff044bdfebba98d76e",
-            "content": "sha256:3e11bc3ad41eaee18d73bded639a20efbae22405a74292f6646941a25856bd73",
+            "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
+            "content": "sha256:f92c115ae913a644e337f0b3c315b69884feb14a30909dc7edff8f0763b4c0ae",
             "locator": {
               "kind": "symbol",
               "name": "LifecycleFinalizeTaskResponse"
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:f6d066ed830a743ac850c9150d2e1aef3a625454194bd6cb4ccda4e5099bbb20",
             "locator": {
-              "end": 880,
+              "end": 917,
               "kind": "line_range",
-              "start": 860
+              "start": 897
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

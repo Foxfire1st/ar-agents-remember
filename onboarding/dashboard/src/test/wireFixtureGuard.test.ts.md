@@ -30,23 +30,12 @@ lies.
 **`SANCTIONED_WIRE_SITES`**, keyed `<file> :: <what was written>` so it does not churn on
 line moves, in four groups:
 
-- **The decode boundary** — 24 entries across `data/store.ts`, `data/seatEvents.ts`,
-  `data/taskDocuments.ts`, `data/terminal.ts`, `data/terminalOpen.ts`, `data/launchFlow.ts`,
-  `data/submitClient.ts`, `data/sessionCapabilities.ts`, `data/capabilityCatalog.ts`,
-  `data/conversation/{client,stream}.ts` and `data/conversation-library/client.ts`. Outside the fixture
-  surface a cast to a wire type is the client saying "this JSON came from the server and I am trusting
-  it" — a different act from a test authoring the server's answer. Listed rather than rewritten because
-  narrowing them honestly is a runtime-validation problem, not a fixture one.
+- **The current decode boundary** names retained store lifecycle/enclosure/provider/metrics/analytics/event casts and taskDocuments body decoding. No seatEvents, terminal, submit or conversation/library decoder is a current sanctioned site. Runtime decoding is distinct from a test authoring a producer answer.
 - **The mirror's own derivations** — two casts inside `types/projection.ts`:
   `as StateCountField<S>` (the bucket-name rule's runtime twin, re-narrowing what template concatenation
   widens) and `as LifecycleStateCounts` (`Object.fromEntries` answers a plain record; the KEYS come from
   the vocabulary).
-- **The fixture surface's four legitimate casts** — `servedProjection.ts`'s sanctioned
-  narrowing; three brand mints in `fixtures/conversationWire.ts` (`ActivePageCursor`, `ActiveEventCursor`,
-  `LibraryConversationKey` — opaque server-issued tokens with no structure to get wrong); and one in
-  `topology/model.test.ts` described as *the one deliberate WIDENING* — `State` is a bare `str`
-  server-side, so the mirror's closed union is narrower than the wire by construction, and that test
-  exists to prove an unlisted member still classifies.
+- **The current fixture cast sites** are servedProjection's sanctioned narrowing and topology/model.test.ts's deliberately widened State control. No conversationWire brand mint remains. These exact, reasoned registry entries and their counts are bidirectional, not a general permission for consumer-authored casts.
 - **Compiler suppressions** — one entry, `contract.test.ts :: @ts-expect-error`, count **3**,
   reasoned as the inverted pins: each asserts a field the server CANNOT send is absent from the mirror,
   and an unused `@ts-expect-error` is itself a compile error, so they fail the moment a field comes back.
@@ -72,7 +61,7 @@ line moves, in four groups:
 
 **`no dashboard test asserts against a payload the server cannot produce`** — the
 reconciliation: `unregistered` must be empty (with a failure message telling the author to build the
-fixture with `fixtures/wire.ts` or `conversationWire.ts`, annotate it, or `satisfies` it — *do not cast
+fixture with retained `fixtures/wire.ts`, annotate it, or `satisfies` it — *do not cast
 it*), `spent` and `miscounted` must be empty, and every entry must carry a written reason.
 
 **`PLANTED_FILES`** — seven virtual modules under `src/__wire_guard_planted__`, numbered
@@ -172,15 +161,10 @@ No external documentation is used for this bounded card.
 - The `StateCountField` mirror-internal cast. [13]
 - The `LifecycleStateCounts` mirror-internal cast. [14]
 - The sanctioned narrowing the registry names. [15]
-- The `ActivePageCursor` brand mint. [16]
-- The `ActiveEventCursor` brand mint. [17]
-- The `LibraryConversationKey` brand mint. [18]
 - The contract uses @ts-expect-error to assert that master references cannot have createdAt. [19]
 - The contract uses @ts-expect-error to assert that series rows cannot have linkedLifecycleId. [20]
 - The contract test suppresses the carried `refusedPolarity` property. [21]
 - The deliberate widening in the topology suite. [22]
-- KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. [23]
-- KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. [24]
 
 ### Cross-Repo References
 

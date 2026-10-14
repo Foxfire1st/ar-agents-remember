@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
-        "content": "sha256:ff6ed074606328f4a86090e2f142e1e0150c61ee0ad9b624b506021189aa029b",
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
           "name": "upgrade_user_settings"
@@ -16,8 +16,153 @@
         "handoffEntry": "L71-CURRENT242-W-16",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The existing install owner performs the whole-file one-time move and refusal/metadata contract without parsing out or copying only role settings.",
+      "rationale": "The existing install owner exclusively transfers the whole file/metadata before old-file removal, then attempts0444/0555 permission closure and reports closure OSError without undoing the move; no role-only fallback.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
+        "locator": {
+          "kind": "symbol",
+          "name": "REMOVED_PART_STORE_PATHS"
+        }
+      },
+      "id": "RLZ-8RPPPA",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The list of the stores of removed parts; discovery and removal both read it and nothing else decides what counts as such a store.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
+        "locator": {
+          "kind": "symbol",
+          "name": "upgrade_user_settings"
+        }
+      },
+      "id": "RLZ-AA7ZAW",
+      "invariant": "INV-4GV8PF",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one place where the product writes the user's settings file: the explicit move of the whole old file, once and without overwriting, after which it closes file and folder.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:f763fb8a76e54f81a097d2649a7a80121361cb0127d059300242b19d5f6c72ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "removed_part_stores_report"
+        }
+      },
+      "id": "RLZ-NYH1WY",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The part of an install's result on these stores: count, size, the sentence that names the command, the way out of a stored gate, and the list.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_close_user_settings_permissions"
+        }
+      },
+      "id": "RLZ-P87WJS",
+      "invariant": "INV-4GV8PF",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Sets the two modes: the file read-only, its folder closed to new and removed entries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_user_settings_notice"
+        }
+      },
+      "id": "RLZ-QWD32Q",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Decides what a state report names: the block while file or folder is open to writing, nothing while both are closed or absent; it reads modes and changes none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
+        "locator": {
+          "kind": "symbol",
+          "name": "user_settings_protection_report"
+        }
+      },
+      "id": "RLZ-V00WZB",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads the modes of the file and its folder and states what is open, with the two commands for that exact path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:d0074fa1308ad52a6b1895dc053dd5634ab681ad123ba28ad826d27ce475815b",
+        "locator": {
+          "end": 399,
+          "kind": "line_range",
+          "start": 376
+        }
+      },
+      "id": "RLZ-X20BVH",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Finds the stores with their files and sizes without following a link, and records every place that is there and could not be read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+        "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
+        "locator": {
+          "kind": "symbol",
+          "name": "_user_settings_commands"
+        }
+      },
+      "id": "RLZ-YF7904",
+      "invariant": "INV-R34KP2",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Builds the two commands the product emits, each operand quoted for a shell, for folder and file.",
+      "role": "support"
     }
   ],
   "references": {
@@ -60,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
@@ -72,12 +217,55 @@
         }
       ]
     },
+    "12": {
+      "note": "Whole-file exclusive transfer precedes old-file removal; permission closure and its OSError report follow it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+            "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
+            "locator": {
+              "kind": "symbol",
+              "name": "upgrade_user_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File0444/folder0555 closure is attempted, and protection reporting reads modes with exact commands.\n\nAnchor: `_close_user_settings_permissions`, `user_settings_protection_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+            "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_close_user_settings_permissions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
+            "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
+            "locator": {
+              "kind": "symbol",
+              "name": "user_settings_protection_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`RuntimeInstallScope` carries the required resolved selection, and both public entry points funnel through one private installer.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:e4fec328bd3a60d5ee744f217835980dfa2d8f113efc1b3c60097970fa52f12c",
             "locator": {
               "kind": "symbol",
@@ -88,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",
@@ -99,7 +287,7 @@
         },
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:f2592acb3de309e5d5c9d230a540dc6b8dbb08fbf49afdb79e8cbd5d9846823c",
             "locator": {
               "kind": "symbol",
@@ -121,12 +309,12 @@
         },
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:60b74a9ee66f025d175b9d6378eff0dbb52a4c6497c1ee5426ae63da2808ac03",
             "locator": {
-              "end": 650,
+              "end": 837,
               "kind": "line_range",
-              "start": 634
+              "start": 821
             }
           },
           "kind": "code"
@@ -197,23 +385,6 @@
         }
       ]
     },
-    "7": {
-      "note": "The launch path probes the packaged `runtime/eve-agent` path before the checkout's `eve_runtime/` and honours `AR_EVE_RUNTIME_ROOT` first; the generator writes the differently-named packaged mirror `runtime/eve-runtime`, which is why that probe path stays deliberately unpopulated in a checkout.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:19cda5555f03bf915477aba7ab1af77453d01f8a611967753e71d974c9922736",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_runtime_root"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "Provider settings generation derives lifecycle settings from MCP authority.",
       "targets": [
@@ -249,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",

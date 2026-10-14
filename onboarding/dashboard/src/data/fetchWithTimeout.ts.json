@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9418a86f2df6b7b216b5188d35fd2c86571e6141",
+            "blob": "267592b033b86b9d8103224cfb18871d7c77e0d5",
             "content": "sha256:274231f39ed69b97388c24135388f76bba083821e98576b6264aa720b5c6f10e",
             "locator": {
-              "end": 15,
+              "end": 14,
               "kind": "line_range",
-              "start": 15
+              "start": 14
             }
           },
           "kind": "code"
@@ -20,16 +20,15 @@
       ]
     },
     "2": {
-      "note": "Shared boot reads use the helper before entering their single-flight maps.\n\nAnchor: \"export function shareInflight\"",
+      "note": "shareInflight shares a caller-supplied pending callback and owns no fetch or timeout; the transport bound is supplied inside the caller callback, not by this map itself.",
       "targets": [
         {
           "anchor": {
-            "blob": "94ca179c937d5841948b4d9c4f937592f60e38c7",
-            "content": "sha256:d2cda498ebcf9eb0ac787a013cefc33f0f83e2737b9284c268dd04c903bf8da8",
+            "blob": "40e6cb6099b76a7389dfcea16cfc7c0f82a4e92d",
+            "content": "sha256:a474625df3d164e3b0fb0413f4d63eab79fe8ac96d18da4808748f21e63be9b6",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 21
+              "kind": "symbol",
+              "name": "shareInflight"
             },
             "path": "dashboard/src/data/inflight.ts"
           },
@@ -42,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9418a86f2df6b7b216b5188d35fd2c86571e6141",
+            "blob": "267592b033b86b9d8103224cfb18871d7c77e0d5",
             "content": "sha256:274231f39ed69b97388c24135388f76bba083821e98576b6264aa720b5c6f10e",
             "locator": {
-              "end": 15,
+              "end": 14,
               "kind": "line_range",
-              "start": 15
+              "start": 14
             }
           },
           "kind": "code"

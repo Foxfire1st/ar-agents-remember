@@ -23,6 +23,8 @@ The fixture cases construct real test repositories and call the entry-point worl
 
 Location-separated content targets, distinct path counts and the full delivered bound are separate metrics. Whole-result identity uses an independent validated-whole capture and compares the complete parsed detail; deletion of dropped source_lineage and a changed retained summary are discriminating negative controls. Largest-case methods cover named finite fixtures, not every legal input/root or an actual host landing transcript.
 
+The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance.
+
 ## Evidence
 
 - The cleanup fixture requires matching blocked dry and real answers. [1]
@@ -32,4 +34,4 @@ Location-separated content targets, distinct path counts and the full delivered 
 - Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness. [4]
 
 
-- Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards. [5]
+- Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards. The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance. [5]

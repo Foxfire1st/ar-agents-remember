@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A nested test omitted from the scan could bypass the shared protection on a future test run."
+  },
+  "applicability": "The repository settings-writer regression scan over mcp/tests and mcp/test_support.",
+  "conditions": [
+    "Test-prefixed Python files are included recursively, not excluded as implicitly isolated.",
+    "A direct settings-path writer outside the guard must fail the scan."
+  ],
+  "exclusions": [
+    "This syntactic scan is not a general Python security proof."
+  ],
+  "id": "INV-R4DZS7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_user_settings_guard.py (the two tests named in found_at); notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R137@v1 rule 3",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The check that every write of the user's settings path goes through the guard reads every Python file under `mcp/tests`, test files at any depth included, and fails on a test file that writes directly.",
+  "status": "accepted",
+  "supersedes": []
+}

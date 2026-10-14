@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
         "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
         "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
         "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
         "locator": {
           "kind": "symbol",

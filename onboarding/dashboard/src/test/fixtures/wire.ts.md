@@ -50,40 +50,15 @@ shapes and vocabularies the fixture contract explicitly measures.
 
 - **`SERVED`** cit:(["export const SERVED: WorkspaceProjection = asServedProjection(snapshot)"], dashboard/src/test/fixtures/wire.ts:66-66) — `asServedProjection(snapshot)`, the fixture read as the projection the server
   would have sent.
-- **`demandServed(row, what)`** cit:([`demandServed`, `SERVED_LIFECYCLE`, `SERVED_ENCLOSURE`, `SERVED_PROVIDER`, `SERVED_TASK_DOC`, `SERVED_ENGINE_PROCESS`, `SERVED_PICKUP`, `SERVED_ATTENTION`, `SERVED_GATE`], dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91) throws `snapshot.json no longer carries ${what}` rather than
-  spreading `undefined`. Eight anchors are pulled through it: `lifecycles[0]`, `enclosures[0]`,
-  `providers[0]`, `analytics.taskDocuments[0]`, `analytics.engineProcesses[0]`,
-  `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and `SERVED.lifecycles.find(entry =>
-  entry.gate !== undefined)?.gate`. A snapshot that stops sampling one of them fails loudly here instead
-  of producing a base quietly missing every field.
-- **The bases** cit:([`BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`, `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`], dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
-  `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Since 260815-DAG-L14 `BASE_TASK_DOC` also defaults `seats: []` (the new required
-`TaskDocNode` field). Each is annotated with the
-  generated mirror type, so a new required field fails compilation until the base supplies it.
-  Values have distinct origins: copied served fields, derived fields and explicit neutral defaults.
-  In BASE_TASK_DOC, form is recomputed from served kind/orchestrates; type is an empty string,
-  headerNotes an empty list and statusNoteTruncated false. Those four typed neutral/recomputed
-  defaults are Owner-admitted; construction does not prove they were copied from the sample.
-  Existing literal collection defaults predate this change. This is not permission to invent wire
-  fields or cast past the generated contract. The source header's stronger every-value-from-served
-  sentence is retained as the Owner's mark52, not an operative provenance guarantee here.
-  **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `carryoverDoneAt`, …) are left
-  off on purpose — a default gate nobody asked for would silently change what an attention-queue test is
-  measuring.
+- **demandServed and required bases.** Six retained sample anchors cover lifecycles, enclosures, providers, task documents, engine processes and attention. Missing rows fail loudly rather than spreading undefined. BASE_LIFECYCLE, BASE_ENCLOSURE, BASE_PROVIDER, BASE_TASK_DOC, BASE_ENGINE_PROCESS and BASE_ATTENTION are annotated with generated mirror types. Gate/pickup anchors and bases are removed. Only required fields are supplied; optional behavior is deliberately requested. Copied served values, derived values and neutral defaults remain separate provenance: BASE_TASK_DOC form is recomputed, type is empty, headerNotes is empty and statusNoteTruncated is false under the bounded Owner mark52. The source header's stronger every-value-from-served sentence remains mark52, not a universal copied-value guarantee. Do not broaden the admitted neutral/recomputed defaults or cast past the contract.
 - **`EMPTY_ANALYTICS`** cit:([`EMPTY_ANALYTICS`], dashboard/src/test/fixtures/wire.ts:223-237) — every analytics list present and empty. The reducer always sends
   every key (they are list defaults server-side), so "empty" is a shape the server produces — unlike an
   object that omits them, which is what a `{} as Analytics` fixture claimed.
-- **The builders** cit:([`lifecycle`, `gate`, `lifecycleWithGate`, `enclosure`, `provider`, `taskDoc`, `engineProcess`, `agentPickup`, `attentionItem`, `action`, `analytics`, `observerEvent`], dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:268-273; dashboard/src/test/fixtures/wire.ts:275-280; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:289-294; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:303-308; dashboard/src/test/fixtures/wire.ts:310-315; dashboard/src/test/fixtures/wire.ts:317-322; dashboard/src/test/fixtures/wire.ts:373-385) — `lifecycle`, `gate`, `lifecycleWithGate`, `enclosure`, `provider`,
-  `taskDoc`, `engineProcess`, `agentPickup`, `attentionItem`, `action`, `analytics`. Each takes
-  `Overrides<O, Node>` and widens it to a plain `Partial<Node>` locally before spreading. `action` and
-  `observerEvent` differ: their override is REQUIRED rather than optional, via
-  `Partial<T> & Pick<T, "…">`.
+- **Retained builders.** lifecycle, enclosure, provider, taskDoc, engineProcess, attentionItem and analytics take Overrides over their actual mirror nodes. action and observerEvent require their action/kind override. Local widening to Partial before spread does not authorize an absent required field at a fresh call site. No gate, lifecycleWithGate, agentPickup or agentNotifierHeartbeat builder remains.
 - **`projection`** cit:([`projection`], dashboard/src/test/fixtures/wire.ts:329-345) — destructures `lifecycles`, `analytics` and `metrics` out of the
   override, then sets `metrics: metrics ?? metricsFor(lifecycles)`. **`metrics` is DERIVED from the
   lifecycles by the mirror's own rollup rather than restated beside them** — the hand-kept bucket lists
   are where the `awaiting-developer` gap kept reappearing, on both sides of the wire.
-- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:349-354) — a typed literal, not a served row, because the field is
-  app-injected and therefore absent from the snapshot (`contract.test.ts::KnownUnsampled` names it).
 - **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:370-375) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
   `snapshot.json`.
@@ -112,8 +87,7 @@ shapes and vocabularies the fixture contract explicitly measures.
   broaden it into arbitrary consumer-authored semantics or an undocumented exception elsewhere.
 - `projection()` must keep deriving `metrics`. Passing a hand-written `metrics` override is possible and
   is the escape hatch, not the default.
-- The conversation grammar is NOT here — it lives in `fixtures/conversationWire.ts`, which mirrors a
-  different pair of server modules.
+- The removed conversationWire fixture grammar has no current builder/consumer home; this module targets only retained projection/event contracts.
 
 ### Todos
 
@@ -158,8 +132,9 @@ does not.
 - Every sampled registered vocabulary value must be legal. [10]
 - The contract keeps master and series sub-task row fields distinct. [11]
 - Required base fields are typed, with copied, derived and explicitly neutral defaults distinguished; optional behavior is requested deliberately. [12]
-- `demandServed` and the eight served anchors it demands the snapshot keep. [13]
-- The eight bases are annotated with generated mirror types and rooted in served samples; that does not make every initializer a copied value. [14]
+- demandServed requires six current sample anchors for lifecycle/enclosure/provider/task/engine/attention, without removed gate/pickup rows. [13]
+
+- Six current bases retain generated type checks and scoped copied/derived/neutral origins, not a universal copied-value guarantee. [14]
 - `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. [15]
 - `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. [16]
 - `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. [17]
@@ -167,7 +142,6 @@ does not.
 - The fixture bases draw their lifecycle sample from the hand-maintained oracle. [19]
 - The fixture bases draw their enclosure sample from the same oracle. [20]
 - The wire oracle carries the hand-maintained sampled analytics payload. [21]
-- The agent-pickup builder takes its sample from analytics. [22]
 - The task-document builder takes its sample from analytics. [23]
 - The attention-item builder takes its sample from analytics. [24]
 - The engine-process builder takes its sample from analytics. [25]
@@ -175,9 +149,7 @@ does not.
 - The served snapshot supplies the code provider and memory provider in its top-level provider array.
 - The override constraint every builder takes, and the three limits it documents. [28]
 - The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. [29]
-- `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. [30]
 - `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. [31]
-- The companion builder module for the conversation grammar. [32]
 
 ### Cross-Repo References
 

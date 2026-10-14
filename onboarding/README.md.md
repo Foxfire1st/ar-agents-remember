@@ -52,17 +52,7 @@ default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
-The post-quickstart workflow sentence now speaks the current `l-01-agent-lifecycles` vocabulary:
-developer-facing free chat answers research inline and, for ordinary role-shaped work, compiles the
-canonical architect brief and calls `dispatch_agent` once on the sprint document. An explicit
-developer-declared task-seat takeover targets the named role on its canonical document instead. The identity-free launcher
-hands over only after the exact brief is durable. Hosted seats use the same tool under structural
-authority, and a plane refusal never falls back to ambient. Spawned backend orchestrators and
-other role seats then follow their role briefs. The
-named build modes remain the research-only exit, the `w-02-light-task-workflow` skill task, and the
-master + light sub-task series (the chat build is retired — chat is never a build route). The
-Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the
-retired "session job lifecycle" phrase.
+The post-quickstart workflow sentence uses the host role-start route. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer speaks with the started Architect in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route. Context resolution, full memory-quality curation, paired source/onboarding reads and approved memory maintenance keep their existing owners.
 
 A ToC-linked `## Run The Dashboard` section (260703 L3) sits between Quickstart and
 Documentation. For this checkout it leads with the local artifact: build the dashboard bundle
@@ -125,7 +115,7 @@ The README routes readers into the split documentation tree and gives the curren
 - The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. [6]
 - The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
 - The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. [8]
-- The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the source version, that the Python 3.14 candidate awaits an official release, the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. [9]
+- The README's Status first paragraph distinguishes the Python 3.14 source candidate from the historical Python 3.13 artifact at the same `3.0.0rc8` version, states core-path and harness maturity, and sends stability guarantees to Stability and release notes to GitHub Releases, the canonical changelog rather than a local CHANGELOG.md. Its second paragraph retains the historical observable/steerable-session and durable-gate 3.0 account with the rc settling caveat. MIK-R113 removed the product-owned session/gate surfaces: that retained source paragraph is not authority to restore them or a claim that the current product still hosts chats. Native host role agents and the dashboard remain. [9]
 - The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed. [10]
 - The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). [11]
 - The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
@@ -192,12 +182,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## R39 Acceptance And Workflow Model
 
-The README now distinguishes deterministic hooks and pull-request checks from lifecycle
-acceptance. Pre-commit/pre-push and GitHub PR validation are non-test checks; leaf closeout owns
-targeted Dagger once, leaf integration reuses the certified commit, and master integration owns
-full Dagger once. Direct pytest, Playwright, changed-lines CLI, and Python-wrapper execution
-refuse. Direct targeted Vitest is supported diagnostic feedback only. Retry proof is an internal,
-attested-Dagger optimization rather than a host acceptance path.
+The README distinguishes deterministic hooks and pull-request checks from lifecycle acceptance. Pre-commit/pre-push and GitHub PR validation are non-test checks; leaf closeout owns targeted Dagger once, leaf integration reuses its certified commit, and master integration owns full Dagger once. Ordinary Python development can use pytest directly as diagnostic feedback without Dagger admission, coverage, mutation or catalog preflight. Direct targeted Vitest remains diagnostic feedback. Neither development loop replaces the targeted/full acceptance graph; retry proof remains an internal attested-Dagger optimization.
 
 ## 260824-PDLS — Contributor-Facing Python Route
 

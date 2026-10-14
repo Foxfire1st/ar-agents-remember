@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-        "content": "sha256:a50d0ccf1fa03a767bbcf25626c8b560920effdbefa17b309b30fee4b3aca93b",
+        "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+        "content": "sha256:2afe03edcb4b185de3756538c32d3f275637684bd0c772e3bc88d62ce157067a",
         "locator": {
           "kind": "file"
         }
@@ -21,15 +21,16 @@
   ],
   "references": {
     "12": {
-      "note": "Frozen implementation of ServingCollaborators supporting the stated file behavior.",
+      "note": "Anchor: Optional review/reader collaborators, distinct missing-port capabilities.",
       "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:3f4db49d601587879be3cf86bbf6351ceb40d67a20b1007a63760a3d16c2fc4e",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "ServingCollaborators"
+              "end": 231,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -37,16 +38,28 @@
       ]
     },
     "13": {
-      "note": "The shutdown callable of the tree route's child computations on the collaborator record.",
+      "note": "Anchor: Current tree-child shutdown hook on collaborator and runtime.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "end": 511,
+              "end": 231,
               "kind": "line_range",
-              "start": 510
+              "start": 162
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:9aa9d3581fc47a636874039e6fb0b0b0db690873ed1884b2dea6ce56a88c5878",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "code"
@@ -54,15 +67,16 @@
       ]
     },
     "14": {
-      "note": "The runtime bundle the routes and the loops share.",
+      "note": "Anchor: Runtime without a terminal host or inbox registrar.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:9a5e8ea3f5277fcd7c35c9b03120a139cb373e79443fbb51831baa9a92e50dc6",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:9aa9d3581fc47a636874039e6fb0b0b0db690873ed1884b2dea6ce56a88c5878",
             "locator": {
-              "kind": "symbol",
-              "name": "_ServingRuntime"
+              "end": 258,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "code"
@@ -70,15 +84,16 @@
       ]
     },
     "15": {
-      "note": "The live inputs and their resolution against the replay seam.",
+      "note": "Anchor: Live-input defaults resolved together from replay ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:93e448c6b86608c4f5c9f0b9bad13ece196b06d740b0c62d4637989858235b10",
             "locator": {
-              "kind": "symbol",
-              "name": "LiveProjectionInputs"
+              "end": 158,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "code"
@@ -86,15 +101,16 @@
       ]
     },
     "16": {
-      "note": "One dump of the projection per published instance.",
+      "note": "Anchor: Projection memo keyed by published instance, not content revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:a3db4fab3ff054db1691862a0e5b6a1dcd594890cc7e971db199c7ac44270684",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:519cff90173f7ea436f312b9bc50f4b6301f4a4a8aecc8b60d2610a840e5dcf4",
             "locator": {
-              "kind": "symbol",
-              "name": "_ProjectionBodyCache"
+              "end": 72,
+              "kind": "line_range",
+              "start": 45
             }
           },
           "kind": "code"
@@ -102,47 +118,16 @@
       ]
     },
     "17": {
-      "note": "The event sequence of one subscription.",
+      "note": "Anchor: SSE snapshots copy the memo and inject the serve-time build tail; deltas stay bare.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:8c67a0d5ac466e779b93acb764c053e3d40c297bdb7f3b09e33f33fa596177c5",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:56ea65b73fe840616936fd8f8a355629e64fa9f8d78c64ef436cf1abd1686288",
             "locator": {
-              "kind": "symbol",
-              "name": "stream_events"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The body that opens a terminal by kind and harness ID.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:4ce03376dbf0034130cfde6bba4b73dc9654cb5567a926074fa13d87ade614b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalOpenRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The pump between a terminal and a WebSocket.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:5a7de850de8e1e2de9807229f0fc638efbc8ff556f72d48eaddc80ae00c12de9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_bridge_terminal"
+              "end": 126,
+              "kind": "line_range",
+              "start": 99
             }
           },
           "kind": "code"
@@ -150,15 +135,16 @@
       ]
     },
     "20": {
-      "note": "The lifespan calls the shutdown callable when serving ends.",
+      "note": "Anchor: Serving invokes the retained tree-child shutdown hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:d2930ed90cdde9d3410a7124d7f71a87752a8886850c36c59502065c71e6ca3e",
             "locator": {
-              "kind": "symbol",
-              "name": "_serving_lifespan"
+              "end": 191,
+              "kind": "line_range",
+              "start": 147
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -167,15 +153,16 @@
       ]
     },
     "21": {
-      "note": "The collaborator record and its optional fields.",
+      "note": "Anchor: Remaining collaborator fields, not the removed compiler/terminal seams.",
       "targets": [
         {
           "anchor": {
-            "blob": "917c1836824cf79f6cc01822b823375560243b9d",
-            "content": "sha256:cf36647ce2fe5b6aea9fa408500bb066fe885bb317e6d8057e49516bd808c136",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "ServingCollaborators"
+              "end": 231,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -183,15 +170,16 @@
       ]
     },
     "22": {
-      "note": "The optional summary port on the collaborator record.",
+      "note": "Anchor: Distinct optional intent-summary port.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "review_intent_summary"
+              "end": 231,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -199,15 +187,16 @@
       ]
     },
     "23": {
-      "note": "The optional tree-view port on the collaborator record.",
+      "note": "Anchor: Distinct tree-view port and its shutdown hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:1b1620f2b429c2348de5df63dd8e05a649fe5b7e70f617d5cde3acee526854fe",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "review_trees"
+              "end": 231,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -215,48 +204,16 @@
       ]
     },
     "24": {
-      "note": "The optional reader port on the collaborator record, and why it is its own port.",
+      "note": "Anchor: Path-reader capability separate from task review.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:965bfa6060b8167ce989db7d431a3b2b9ba136b474976e62d3ef8ea6696619a9",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_reader"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The port type, imported from the route module.\n\nAnchor: `KnowledgeReaderPort`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:e0043b5df8eb3b69a4e7dd90c8b9a892255068975e10ce7958a070ba779b4289",
-            "locator": {
-              "end": 32,
+              "end": 231,
               "kind": "line_range",
-              "start": 30
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Terminal assignment parses canonical document and role.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:aec0a918c2151a85b61fc623b5e0c1f657f43f58c9911ab08428d882e589af76",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalAttachTaskRequest"
+              "start": 162
             }
           },
           "kind": "code"
@@ -264,15 +221,16 @@
       ]
     },
     "27": {
-      "note": "The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`.",
+      "note": "Anchor: The retained runtime bundle shared by routes and loops.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:9a5e8ea3f5277fcd7c35c9b03120a139cb373e79443fbb51831baa9a92e50dc6",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:9aa9d3581fc47a636874039e6fb0b0b0db690873ed1884b2dea6ce56a88c5878",
             "locator": {
-              "kind": "symbol",
-              "name": "_ServingRuntime"
+              "end": 258,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "code"
@@ -280,32 +238,16 @@
       ]
     },
     "28": {
-      "note": "The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`.",
+      "note": "Anchor: Snapshot-only volatile serving build tail.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:8c67a0d5ac466e779b93acb764c053e3d40c297bdb7f3b09e33f33fa596177c5",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:56ea65b73fe840616936fd8f8a355629e64fa9f8d78c64ef436cf1abd1686288",
             "locator": {
-              "kind": "symbol",
-              "name": "stream_events"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch.\n\nAnchor: `capsule_launch`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:eecd3cbc15c4fcc1a045626ae3017c07d2d49f2cdb0d4d43b2caf09e868c6c84",
-            "locator": {
-              "end": 529,
+              "end": 126,
               "kind": "line_range",
-              "start": 520
+              "start": 99
             }
           },
           "kind": "code"
@@ -313,50 +255,17 @@
       ]
     },
     "30": {
-      "note": "**The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.**",
+      "note": "Anchor: Source-content capability is not an empty-content fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:32cc40cf1c2343bb1452befaa68d701295580ae739bc8bc1b14a8b9ce86f5c14",
             "locator": {
-              "kind": "symbol",
-              "name": "review_source_content"
+              "end": 231,
+              "kind": "line_range",
+              "start": 162
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "The composition root that fills the port with the real compiler.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving_collaborators"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "The refusals the port's presence decides, in the one gate every launch point calls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
           "kind": "code"
         }

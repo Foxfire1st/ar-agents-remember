@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/kernel/primitives/gate_vocab.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8ec9eae52d111189212dc74616cf6dc886f7799c",
+        "content": "sha256:fefd555f0dd2a46a9bc251dcb31727bc221010c65598d59b70e20a9d3ceba234",
+        "locator": {
+          "kind": "symbol",
+          "name": "STORED_GATE_WAY_OUT"
+        }
+      },
+      "id": "RLZ-QMDHPH",
+      "invariant": "INV-MM4B51",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 7",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one sentence the product gives for a gate that is still stored: no part decides it, and `agents-remember removed-stores` names the gate logs and removes them on the user's word.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Structural gate models import the producer-owned vocabulary from kernel.\n\nAnchor: \"from agents_remember.kernel.primitives.gate_vocab import (\"",

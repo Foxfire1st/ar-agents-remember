@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a7d193eeaa4ad21924002e9b53ae660f4a705e46",
+        "content": "sha256:717480f7d1585baf7d9faf0c81f97cabfab65d62548dce91e4682c54c4e75183",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NB3VVA",
+      "invariant": "INV-CQCPAD",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 10",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The frame's sentence on bindings says the same of the Architect.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Worktree adoption, terminal record, dropped-call and seat-binding rules; Architect starts without a document. [1]\n\nAnchor: lines 1-25",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
+            "content": "sha256:33b86993f9bfcb5981ada32ce63525778cd1c284073d74e63b5b114e966c77a7",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Role-bound trust checkpoint and provider degradation response boundaries; not restored provider execution authority. [2]\n\nAnchor: lines 27-58",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06937f0f60f651ef5844d74dedba11764a717c6b",
+            "content": "sha256:6389773650a4e37f8e391491f59f45a45d0244182022e3f4fa7e7d9c2329034a",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

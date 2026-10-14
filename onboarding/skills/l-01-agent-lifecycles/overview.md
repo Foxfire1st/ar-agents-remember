@@ -204,7 +204,6 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - Families use records and external documents use card references; database entry keys and manifest are retired.  Anchor: Curator-authored keys \[68] [68]
 - History preserves governing changed rows and replacement covers; admission and decision rules remain explicit.  Anchor: History; admission; decisions \[69] [69]
 - Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. \[70] [70]
-- Older task-binding admission includes taskless Curator and skips structural altitude validation for members of its set.  Anchor: `TASKLESS_SEAT_ROLES`, `_validate_binding` \[71] [71]
 - Foundation admission refuses a resolved enclosure. \[72] [72]
 - D107 grants one bounded further inspection of already-raised repaired items; memory passes remain separately governed.  Anchor: Review exception and boundaries \[73] [73]
 - Normal curation remains full scoped quality, with coherence validated before closeout and no later-tree recertification implied.  Anchor: Quality loop and authority gates \[74] [74]

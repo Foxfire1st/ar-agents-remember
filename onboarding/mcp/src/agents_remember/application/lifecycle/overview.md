@@ -12,7 +12,7 @@
 
 Application adapters for admitting configured contracts, locating durable lifecycle operations, resolving caller authority, and exposing the direct-landing route. They translate configuration and caller context into worktree-domain requests and public refusals; journal transition policy belongs to the worktree lifecycle domain.
 
-The directory also retains an internal ambient-lifecycle block builder and a typed terminal rail-failure projector. Their presence does not establish a public tool registration or an active execution caller.
+The directory retains a typed terminal rail-failure projector. It has no internal ambient-lifecycle block builder; retained envelope construction does not establish a public tool registration or active execution caller.
 
 ## Hot Path Summary
 
@@ -30,9 +30,7 @@ Configured admission confines the contract address to coordination authority, re
 
 [`certification_refusal.py`](certification_refusal.py.md) renders every typed admission finding, including nested byte evidence. Its `gateStarts: 0` refusal field reports the admission boundary; the renderer itself neither observes processes nor changes journal state. A typed `routeReview` finding adds the shared route-review refusal projection while preserving the complete findings list. Exact contract-bound next-step arguments are added when a contract is available. This projection does not record a review or mutate task state.
 
-`lifecycle_operation_location.py` binds a confined contract path to its configured task-owned location. If contract bytes become unreadable, it projects retained strict journals; when no retained operation exists, it preserves the proven initial-contract publication loss as a developer-decision refusal. `lifecycle_control_authority.py` resolves a hosted caller or an explicit declaration and derives completed-disposition ownership from live task topology.
-
-`lifecycle_tools.py` retains the internal ambient-lifecycle block builder and its response adapter. Its source documents the removal of the six model-invoked lifecycle signal tools; the retained builder is not evidence that those tools are registered.
+`lifecycle_operation_location.py` binds a confined contract path to its configured task-owned location. If contract bytes become unreadable, it projects retained strict journals; when no retained operation exists, it preserves the proven initial-contract publication loss as a developer-decision refusal. `lifecycle_control_authority.py` requires an explicit caller declaration and derives completed-disposition ownership from live task topology; it does not resolve a hosted caller.
 
 The read-only wait implementation survives in the worktree observation domain. It validates a positive revision cursor, polls the addressed generation with a bounded deadline, and returns change, unchanged timeout, or typed journal/generation outcomes. No current production caller of `wait_for_lifecycle_change` was found; it is not a public status-wait surface.
 
@@ -48,7 +46,6 @@ The read-only wait implementation survives in the worktree observation domain. I
 | `direct_landing.py` | [direct_landing.py.md](direct_landing.py.md) | covered |
 | `lifecycle_control_authority.py` | [lifecycle_control_authority.py.md](lifecycle_control_authority.py.md) | covered |
 | `lifecycle_operation_location.py` | [lifecycle_operation_location.py.md](lifecycle_operation_location.py.md) | covered |
-| `lifecycle_tools.py` | [lifecycle_tools.py.md](lifecycle_tools.py.md) | covered |
 | `terminal_rail_failure.py` | [terminal_rail_failure.py.md](terminal_rail_failure.py.md) | covered |
 
 The preserved table statuses are onboarding metadata, not operative lifecycle promises. No external Domain Documentation source is configured; the inspected boundaries are between repository-owned application and worktree owners.

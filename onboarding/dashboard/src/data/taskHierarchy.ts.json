@@ -37,35 +37,17 @@
         }
       ]
     },
-    "11": {
-      "note": "The enclosure-opened leaf's parent-task link case.\n\nAnchor: \"renders the gate respond drawer with the full request packet\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f6d94639ce269254167f467f4f452529bb1df0b7",
-            "content": "sha256:5348439330413b6d1c4b45c5308ef2a6054b88402195ec496b600fd0e2dc777e",
-            "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "dashboard/src/panels/detail-panel/gateRespond.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows.\n\nAnchor: \"export function taskDocHierarchyLabel\", \"export const LifecycleList\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 358,
+              "end": 484,
               "kind": "line_range",
-              "start": 358
+              "start": 484
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -85,35 +67,17 @@
         }
       ]
     },
-    "3": {
-      "note": "The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer.\n\nAnchor: \"export function buildRailModel\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:5733b7ff0ed46bdee283a5c96159c9b8732b9e5dc3939d2eb65bcaf55ef5a773",
-            "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 410
-            },
-            "path": "dashboard/src/data/railModel.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The task document mirror provides the required orchestrates list these helpers read.\n\nAnchor: \"export interface TaskDocNode {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:75707db60d5408eb37a4d43361d1fdda0e8e042c5c1ba17f5d733d592e027fd5",
             "locator": {
-              "end": 644,
+              "end": 580,
               "kind": "line_range",
-              "start": 644
+              "start": 580
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -126,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
             "locator": {
-              "end": 789,
+              "end": 761,
               "kind": "line_range",
-              "start": 789
+              "start": 761
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -144,12 +108,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
             "locator": {
-              "end": 556,
+              "end": 491,
               "kind": "line_range",
-              "start": 556
+              "start": 491
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -174,12 +138,12 @@
         },
         {
           "anchor": {
-            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "blob": "f96cdd9be0b6931b1633809cb781c9be0cfa0874",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
-              "end": 75,
+              "end": 71,
               "kind": "line_range",
-              "start": 75
+              "start": 71
             },
             "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },
@@ -192,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
+            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 358,
+              "end": 484,
               "kind": "line_range",
-              "start": 358
+              "start": 484
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -210,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "blob": "f96cdd9be0b6931b1633809cb781c9be0cfa0874",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
-              "end": 75,
+              "end": 71,
               "kind": "line_range",
-              "start": 75
+              "start": 71
             },
             "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },

@@ -17,9 +17,7 @@ lineage, and the durable-evidence promotion hold point.
 The opening statement is the load-bearing negative: a canonical terminal/finalizer outcome of
 `completed` means **only that the provider turn ended normally** — it does not attest that the required
 artifact exists, is current, or satisfies its requirement. `interrupted` remains an interruption, not a
-completed handoff. The relay derives and delivers the state signal but **never** opens, parses, or
-evaluates a report, verdict, coherence record, or acceptance envelope; the owner alone validates, and an
-artifact defect is owner-detected after wake.
+completed handoff. The host sends one mechanical line to the parent when an agent’s turn ends without a message to that parent; this is not the removed lifecycle-notifier sweep. It **never** opens, parses, or evaluates a report, verdict, coherence record or acceptance envelope. The owner alone validates, and an artifact defect is owner-detected after wake.
 
 `## Which artifact each seat hands over, and who validates` is the table that gives every role in the
 corpus its durable handoff artifact and its validator (worker → turn report + attempt journal, handed to the leaf's Reviewer, validated by the Reviewer for code and the Manager for the gate; curator → structured coherence record + projection, handed to the Reviewer, validated by the Reviewer for memory and the Manager for the gate; reviewer →
@@ -60,11 +58,15 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-| The completion-truth boundary and the relay's artifact-blind behavior. | `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)` | skills/l-01-agent-lifecycles/core/acceptance.md:1-14 |
-| The per-seat handoff-artifact and validator table. | `## Which artifact each seat hands over, and who validates` | skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
-| The six-part per-ID acceptance envelope and the reviewer's adjudication duty. | `## Acceptance is per stable ID and version, never aggregate` | skills/l-01-agent-lifecycles/core/acceptance.md:44-77 |
-| Revision vs attempt lineage and the two malformed-row outcomes. | `## Requirement revisions and delivery attempts are separate axes` | skills/l-01-agent-lifecycles/core/acceptance.md:79-116 |
-| The durable-evidence promotion hold point, which is independent of requirement acceptance. | `## The durable-evidence promotion hold point (a separate concern)` | skills/l-01-agent-lifecycles/core/acceptance.md:126-142 |
+- The host relays mechanical turn completion without inspecting acceptance artifacts. \[1] [1]
+
+- Each seat has its own artifact and distinct validator. \[2] [2]
+
+- Acceptance is per owned stable ID and version with complete rationale/citations/evidence. \[3] [3]
+
+- Requirement revisions and formal delivery attempts have separate immutable lineage. \[4] [4]
+
+- Stable-contract or expiry evidence promotion is independent of requirement acceptance. \[5] [5]
 
 ### Cross-Repo References
 

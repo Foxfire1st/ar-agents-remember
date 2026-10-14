@@ -57,9 +57,9 @@ Parameter objects remain domain concepts beside their entry points. `CloseoutApp
 
 `role_capsules/launch` composes the existing task or taskless admission with the same routing/compiler surface rather than defining another routing rule. Its taskless convention still spells absent task authority as `free-agent:<role>` with a digest of real admission facts; that convention is not a canonical task reference. The historical typed-absence successor remains distinct from this convention. Launch settings/model/effort/tier validation and native execution identity must remain separate facts rather than inferred from a title or harness label. Native `role_start_set` admits only the owning Manager and prepares the leaf's Worker, Reviewer and Curator with deterministic per-seat request IDs. Worker opens immediately; Reviewer opens with supplied first work or stays held; Curator stays held. Completed turns do not free leaf holders: replacement explicitly names the holder and requires starter/launcher authority plus active-turn interruption authority. Public `retire_child` calls `cli/role_retire.py` for native receipt-tracked retirement by the original starter. Workspace-local held messages and ordered delivery belong to `cli/role_held_messages.py`, with the retry sweep in the serving lifespan; permission decisions remain developer-owned and execution receipts remain separate from task acceptance.
 
-Eve materialization transports compiled instruction order and task Markdown verbatim into a carrier outside the admitted workspace. It re-derives the projection as an agreement check and requires carrier read-back equality. Worker surfaces are workspace/report; curator additionally admits memory; roles absent from the surface table receive the smaller workspace/report set. A required but unadmitted surface refuses. The local materializer raises `HarnessControlError` when compilation cannot supply a capsule; it does not return a capsule refusal value from that function. Compiler refusal is checked before carrier creation. This is a local failure contract, not a claim that every later write/read-back failure leaves no carrier.
+The removed Eve materializer/carrier, launch points and terminal resolver are not current application owners. Retained capsule launch compiles generic LaunchCapsule-or-refused values through canonical admission and the current native launcher. It does not restore a filesystem carrier or admitted workspace read-back surface.
 
-`agent_binding` records one-launch server exclusion for known harnesses and merges terminal tool filters without discarding caller arguments. Unknown harnesses have no verified exclusion record. The source explicitly distinguishes terminal argv application from a bridge agent-create call that carries workspace/agent but no exclusion consumer. Neither the binding record nor brief wording establishes host-actual suppression for bridge launches.
+`cli/role_launch_preparation` derives first-message AR guidance from the same launch exclusion record as the response. For a known AR server, the Claude provider hook applies providerOptions MCP exclusion; unknown-server or other harness cases retain their own conditional choice wording and `host_denied` is the tuple of configured host denial rules, not an outcome or status. `exclusion_agent_options` retains those rules and adds the product exclusion with ordered deduplication because a request list replaces the configured list; with no exclusion record it returns no override and leaves the configured list effective. This source fact is not a universal real-host exclusion or other-provider acceptance claim.
 
 ### Converted authoring, worklists and gate
 
@@ -241,13 +241,13 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The served tree is the packaged runtime skills copy, and a corpus travels with its origin. [102]
 - The application entry points the registration layer calls. [103]
 - The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. [104] [424]
-- The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. [105] [425]
 - The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. [106]
 - D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. [107]
 - The seat-addressed routing rule and its address type, for a caller with no task document. [108] [426]
 - The declared exports that make the new names this route's public surface. [109]
 - The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
-- The two production launch points that reach this member through the port. [111]
+
+- The retained serving launch module owns the launch request identity value; the compiler and selection live above it, and the removed terminal launch points and resolver are not current callers. [111]
 - The two MCP payload builders are declared at these entry points. [112]
 - `ResponseModel` is the public response-model base. [113]
 - `TOOL_RESPONSE_MODELS` is the registry of public response models. [114] [427]
@@ -265,14 +265,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Configured degraded location projection. [126]
 - The layer charter paragraph that fixes the one-way direction this seam implements. [132]
 - The storage operation this seam delegates to. [133]
-- The produce side added to this route, and the read-back-equals-written and no-carrier-on-refusal rules. [134]
-- The projection agreement check that makes the re-derivation a check rather than a second opinion. [135]
-- The role-authority write surfaces and the smallest-set fallback. [136]
 - The capsule surface this package consumes and does not re-implement. [137] [428]
-- The launch-time proof and the in-process reader that consume the carrier this route produces. [138]
-- The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. [139]
-- The test fixture that supplied this seam's inputs before a production caller existed. [140]
-- The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. [141]
+
 - The closeout certification's own source index, or a named refusal with the operator move. [146]
 - The candidate route that index is acquired over, so the gate sees the register the route records. [147]
 - The resolution shape whose missing dataset-identity field makes the read the only source of that value. [151]
@@ -509,7 +503,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Exclusion records do not establish bridge-host suppression. [457]
 - **Retained historical source account — superseded by the current route account:** Write admission now records repository-bootstrap only; the database enclosure adapter retired. [458]
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
-- **Retained historical source account — superseded by the current route account:** Eve compiler refusal raises before carrier creation. [460]
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
 - **Retained historical source account — superseded by the current route account:** Writer validates before finish and appends raised questions before knowledge files. [462]
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]

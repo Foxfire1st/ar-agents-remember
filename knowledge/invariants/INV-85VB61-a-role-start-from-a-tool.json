@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeping dispatch as a fallback or accepting a broader unbound selection creates a second launch authority."
+  },
+  "applicability": "Unbound MCP role_start and the dashboard's parentless start selection.",
+  "conditions": [
+    "Both use the same admitted selection table and role settings.",
+    "An Architect's start names no document argument; the durable sprint prose carries the request.",
+    "Unbound role_message remains refused and the started agent has no fabricated parent."
+  ],
+  "exclusions": [
+    "No caller-chosen permission mode, pasted launch brief or alternative session primitive."
+  ],
+  "id": "INV-85VB61",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the tests named in found_at; record 32, section 2 (a chat without a role started an Architect on a real run); notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 6",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A `role_start` from a tool server without a binding is carried out by the dashboard's own start function under the same checks, for the selections of one table of what may be started without a parent; an Architect is started without a document, and `role_message` from such a server stays refused.",
+  "status": "accepted",
+  "supersedes": []
+}

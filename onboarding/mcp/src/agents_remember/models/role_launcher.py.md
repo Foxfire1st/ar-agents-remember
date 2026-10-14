@@ -10,9 +10,13 @@ Defines canonical role selections and HTTP launcher call models.
 
 ## Code Commentary
 
-RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. RoleAgentOverride separates agent/model/effort/feature values with an optional agent id; service tier is inherited native configuration and its capability projections rather than a Boolean fast transport alias. `featureValues` carries strict booleans or option ids, and the override states no mode. RoleDispatchRequest distinguishes start/revive under the saved request UUID and carries optional replacesAgentId plus replacesInterruptTurn. Replacement remains an explicit request; the model does not authorize retirement or free an occupied seat.
+RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. RoleAgentOverride separates agent/model/effort/feature values with an optional agent id; service tier is inherited native configuration and its capability projections rather than a Boolean fast transport alias. `featureValues` carries strict booleans or option ids, and the override states no mode. RoleDispatchRequest distinguishes start/revive under the saved request UUID and carries optional replacesAgentId plus replacesInterruptTurn. Replacement remains an explicit request; the model does not authorize retirement or free an occupied seat. The default-false `chatStarted` field records a parentless start from a chat without a role under R113 rule6; dashboard/role-agent starts do not use it. This wire marker is not authority to start, attach a parent or bypass replacement admission.
 
 ## Evidence
+
+- Parentless chat-start marker is default false wire data, not launch or replacement authority. [5]
+
+
 
 
 - Frozen implementation of RoleAgentOverride supporting the stated file behavior. [2]

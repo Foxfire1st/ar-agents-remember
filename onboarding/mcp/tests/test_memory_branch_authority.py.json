@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+        "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
         "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+        "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
         "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:8e41c4113824b60aff9c58c84ec5916662ee63d2295b3139294c2638b920f2fe",
             "locator": {
               "end": 1,
@@ -72,48 +72,6 @@
         }
       ]
     },
-    "11": {
-      "note": "The taskless admission the second and fourth groups hold.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
-            "locator": {
-              "kind": "symbol",
-              "name": "TASKLESS_SEAT_ROLES"
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:0c9b608aa9711ce4e5702fd640e276603f1e58de787634706c2fed4ca331d317",
-            "locator": {
-              "kind": "symbol",
-              "name": "_binding_refusal"
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:3220bd5eefd9aedb87104cdf4e881df25eb9ca6041880626d052dd952929caa5",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "The exclusion policy the third group pins.",
       "targets": [
@@ -136,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "08655e091afbefb7cd059fc17a5ffb9fd9991d36",
             "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
             "locator": {
               "kind": "symbol",
@@ -153,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
             "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
             "locator": {
-              "end": 178,
+              "end": 168,
               "kind": "line_range",
-              "start": 178
+              "start": 168
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -171,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:fbaa18a6901c1cab746688ca663ee3f3fd28763d0e1642cd83193825a6bfa31f",
             "locator": {
               "kind": "symbol",
@@ -187,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:569c8c796139db83968044af79c457c7b11cd0fb98e66809e583ac64f29e5202",
             "locator": {
               "kind": "symbol",
@@ -198,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:710429e84c4c9b8449fad791d73409895b0bd9a1d30c783df2948521949c3a15",
             "locator": {
               "kind": "symbol",
@@ -209,7 +167,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:8cebc77b35ac07fb21cac8683fe0d21848a398ef05f58267f56c67bac5ae6e75",
             "locator": {
               "kind": "symbol",
@@ -225,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:5aedad94fe481bb42b9680bd688727f9934dc95f8cc24e02e5737055b76d235b",
             "locator": {
               "kind": "symbol",
@@ -236,7 +194,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:aebeca7d3176713ad162828fe21075045451d2affde09a872fc4279c19eff053",
             "locator": {
               "kind": "symbol",
@@ -247,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:0abb94e0799cf5d7f454365c62ea244db5d9bab195e81dd35102c34672c206d9",
             "locator": {
               "kind": "symbol",
@@ -258,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:a4c1a6309fb2ee974080250dfd50d44b13b3ba9c894bb0e7c377afa95a1d64b6",
             "locator": {
               "kind": "symbol",
@@ -286,48 +244,16 @@
       ]
     },
     "5": {
-      "note": "Group 2 — the free agent's shape, with the ruling the group protects.",
+      "note": "Group2 asserts bootstrap is published outside every task-altitude role set, not taskless policy bypass.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:aadc49e178a2b945b96d2131083fc888f56a92a2394b96f7806f7f99c89ce618",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:02d859e76e7a7ae8c9cbbc94fe81af57a0b34615898dbca3b816e843f1e102f1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_bootstrap_role_is_a_free_agent_and_has_no_task_altitude"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:6eecb3e4bcf77651132763dab64865af78de49e34aa64d2c09eef824212f2fa2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_without_a_task_document_only_the_taskless_seat_roles_are_admitted"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:4bc3275ddad8860738a7c108bbfb139566a6158716682c873523f88ac15cccaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_free_agent_set_is_named_and_readable_not_a_bare_literal"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:a5214dd1938fe30437c0057d86cc3c15326a7d5adb849bd940bbf06dc60c098f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_no_task_altitude_set_in_the_source_names_bootstrap"
+              "end": 435,
+              "kind": "line_range",
+              "start": 372
             }
           },
           "kind": "test"
@@ -339,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:50ac75f5f6b00a2b6b635be939bd7274439079f41bd54ad26039eb7049bfd939",
             "locator": {
               "kind": "symbol",
@@ -351,26 +277,16 @@
       ]
     },
     "7": {
-      "note": "Group 4 — a supplied document still resolves, and the manifest exception stays scoped.",
+      "note": "Group4 checks the manifest bootstrap altitude is nonblank and not sprint/master/leaf while task roles keep their own altitude; no supplied-document resolution coverage remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:92226cd9a35060dbd5567d0c75b49675559cd38d972ab3fa0f68668437d55e3a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_document_supplied_to_a_taskless_role_still_resolves_but_skips_the_altitude_check"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_manifest_declares_no_task_altitude_for_the_free_agent"
+              "end": 510,
+              "kind": "line_range",
+              "start": 484
             }
           },
           "kind": "test"
@@ -382,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:146937e16fd824a608ac19762df41deef935edb47841424ee14191f9d319c783",
             "locator": {
               "kind": "symbol",
@@ -394,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:17d6b151a1a6cab6499a784b624374619cc10bb2bc662f0e563be79e5808af7c",
             "locator": {
               "kind": "symbol",
@@ -406,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:f84ab27ebc2b039315ba342c8fa57216bb189da9bd6fb3efb3f21450b0c1119c",
             "locator": {
               "kind": "symbol",
@@ -418,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
             "content": "sha256:a8bf483e9d0c92132707b9fd2be141c04b1eb58ec69f8582b79c5b19f63fbaf9",
             "locator": {
               "kind": "symbol",
@@ -435,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",

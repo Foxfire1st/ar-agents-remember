@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+        "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
         "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "MCP startup migrates its owned logs before ambient installation.",
+      "note": "Retained ambient/tool-writer collaborators install without removed-store migration.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
-            "content": "sha256:d2b19b94ab8b1709bbf05887fb6d470af890ca6e85d160671b72559a2bfbfd99",
+            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+            "content": "sha256:6f621b98fc778484ac2af4b8bc641371ec84fdb67e088464a7ed9fcfa65314e4",
             "locator": {
               "kind": "symbol",
               "name": "initialize_mcp_application"
@@ -38,15 +38,15 @@
       ]
     },
     "2": {
-      "note": "The application boundary returns the one cached, strict serving-build payload.",
+      "note": "MCP ownership declaration and optional dashboard autostart precede application initialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
-            "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
+            "blob": "0a2963ea52bab5c1c53f02c7dfdc6ea61ece6523",
+            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",
-              "name": "mcp_serving_build_payload"
+              "name": "prepare_mcp_process"
             }
           },
           "kind": "code"

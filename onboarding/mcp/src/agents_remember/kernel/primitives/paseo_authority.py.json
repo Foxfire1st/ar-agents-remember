@@ -16,7 +16,7 @@
         "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
         "leaf": "260928-MIK-L96"
       },
-      "rationale": "This reader names one installation-wide authority through the harness coordinationRoot link and reads it per use; it is where missing/malformed shared data is distinguished from legacy per-harness facts.",
+      "rationale": "Reads the single migrated user-config Paseo authority per use through the common location guard; absent/malformed data is named and no per-harness or coordinationRoot/system fallback is consulted.",
       "role": "unclassified"
     },
     {

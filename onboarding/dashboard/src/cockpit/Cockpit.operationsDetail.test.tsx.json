@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Operations detail without selection: implementation/assertion boundary described above.\n\nAnchor: \"Operations detail without a selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b4cc18d65c38f8ee9478d055eacda0aecf779b3",
+            "content": "sha256:2e08f4025a85f1d7a5c4e2b84abf1a0999b2b24fd9cdcd0451c1537dff0a2914",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

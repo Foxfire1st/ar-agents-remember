@@ -3,11 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
-        "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+        "blob": "709320161c9744d9aa93d005a483faf721515e33",
+        "content": "sha256:f48cbc371d498f7aeeaa2642d5af1a5f61f4be1a823b69824ca031cb35b1e08b",
         "locator": {
           "kind": "symbol",
-          "name": "_terminal_observation_loop"
+          "name": "_leaf_archive_recovery_loop"
         }
       },
       "id": "RLZ-7Q20JH",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
-        "content": "sha256:3105e6b395b7914c343869d8aceff2568c1b9181afe8e9a913733d3d495f54c7",
+        "blob": "709320161c9744d9aa93d005a483faf721515e33",
+        "content": "sha256:d2930ed90cdde9d3410a7124d7f71a87752a8886850c36c59502065c71e6ca3e",
         "locator": {
           "kind": "symbol",
           "name": "_serving_lifespan"
@@ -40,79 +40,16 @@
   ],
   "references": {
     "11": {
-      "note": "Startup order, the background tasks, and the shutdown order with the tree route's shutdown first.",
+      "note": "Anchor: Actual startup task set and shutdown order.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:d2930ed90cdde9d3410a7124d7f71a87752a8886850c36c59502065c71e6ca3e",
             "locator": {
-              "kind": "symbol",
-              "name": "_serving_lifespan"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The observation loop sleeps after each attempt.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
-            "content": "sha256:5cb4bab997fd02e9eace95b13b78a59c4a29d144dc7bc2e7231c5207d1f62143",
-            "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observation_loop"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "One completed observation is published to the health record.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_observe_terminal_catalog"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The pre-serve observation and its contained failure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_prime_terminal_observation"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The notifier loop keeps the last good settings.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:7565dd6fd0582dc576d1375911dba9730357fc3b9dfae0272a24af6bd6a4b47f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_agent_notifier_loop"
+              "end": 191,
+              "kind": "line_range",
+              "start": 147
             }
           },
           "kind": "code"
@@ -120,97 +57,33 @@
       ]
     },
     "16": {
-      "note": "A cancelled wait drains its worker thread first.",
+      "note": "Anchor: Shielded thread worker is drained before cancellation escapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
             "locator": {
-              "kind": "symbol",
-              "name": "_to_thread_drained_on_cancel"
+              "end": 55,
+              "kind": "line_range",
+              "start": 42
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The observer-health payload at response time.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observer_health_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "Every lifespan of the fixture calls the worklist shutdown exactly once, off the main thread.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
-            "content": "sha256:dbf9d65c5a31bd10e102173aacdb227712535c8809f80c7536bcd4296f8db3bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ServingFixture"
-            },
-            "path": "mcp/tests/test_serving_observation_loop.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "A shutdown during a running leaf-wide read stops the child and its Git process.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:87651b0c5d54d6b6d81b42262cb5c8a0b29dc82b97f9a9d2ec90bfba7eeeb25f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_route_stop"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "20": {
-      "note": "Worker-thread cancellation is shielded, drained, and then re-raised.",
+      "note": "Anchor: The shared cancelled-worker drain boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
             "locator": {
-              "kind": "symbol",
-              "name": "_to_thread_drained_on_cancel"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "A completed observer call publishes this stage's own health for BOTH outcomes, and only the phase separates a startup-prime failure from a steady-pass one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_observe_terminal_catalog"
+              "end": 55,
+              "kind": "line_range",
+              "start": 42
             }
           },
           "kind": "code"
@@ -218,31 +91,16 @@
       ]
     },
     "22": {
-      "note": "The serving lifetime owns one completion-relative, non-overlapping terminal-observation caller that goes off-loop through the drained helper and sleeps after each attempt.",
+      "note": "Anchor: One completion-relative archive-recovery cadence, not terminal observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:f48cbc371d498f7aeeaa2642d5af1a5f61f4be1a823b69824ca031cb35b1e08b",
             "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observation_loop"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "One contained pre-serve terminal-catalog observation attempt through the same drained helper, whose only failure handling is an `except Exception` that logs and returns.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_prime_terminal_observation"
+              "end": 75,
+              "kind": "line_range",
+              "start": 58
             }
           },
           "kind": "code"
@@ -250,15 +108,16 @@
       ]
     },
     "24": {
-      "note": "Every blocking metrics operation uses the drained cancellation boundary.",
+      "note": "Anchor: Retained metrics operations use the drained boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:1e0e300639f62502e4650accd22e10e2eaccacb3f3bfa44d65c98f68aa03abbc",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:78ffb98d7eeb0530c95dfa9d3954d82eca36c98e4e4fb707bdce0a4a0dd1069f",
             "locator": {
-              "kind": "symbol",
-              "name": "_metrics_loop"
+              "end": 98,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "code"
@@ -266,16 +125,16 @@
       ]
     },
     "25": {
-      "note": "The observer reads the sweeper's own starting-row interval constant as its attempt cadence.\n\nAnchor: `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS`",
+      "note": "Anchor: Archive recovery sleeps using its imported tick constant after each attempt.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:248952481d348847a47586ec31a8d49499f4a7edd9cd9faa3afbe5b0ca8221fa",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:f48cbc371d498f7aeeaa2642d5af1a5f61f4be1a823b69824ca031cb35b1e08b",
             "locator": {
-              "end": 135,
+              "end": 75,
               "kind": "line_range",
-              "start": 130
+              "start": 58
             }
           },
           "kind": "code"
@@ -283,63 +142,16 @@
       ]
     },
     "26": {
-      "note": "The serving lifespan runs migration, then workspace-river compaction, then the observer-health lifetime start and its initial record, then the one observation prime, then the projection prime, then registers the recurring tasks, then cancels and awaits every background task.",
+      "note": "Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:d2930ed90cdde9d3410a7124d7f71a87752a8886850c36c59502065c71e6ca3e",
             "locator": {
-              "kind": "symbol",
-              "name": "_serving_lifespan"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation; that inline refresh publishes no observer-health transition.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:7565dd6fd0582dc576d1375911dba9730357fc3b9dfae0272a24af6bd6a4b47f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_agent_notifier_loop"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The served observer-health reader: the current lifetime's persisted row at response time, or `None` to omit the tail key, with the cutoff taken from the configured sweep cadence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observer_health_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The separate notifier heartbeat reader the observer-health reading sits beside.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:6853dc0785dda7bdc1b5839f7f251e9a105caa6d3c05adfe994b0ffa14cefb3d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_agent_notifier_heartbeat_payload"
+              "end": 191,
+              "kind": "line_range",
+              "start": 147
             }
           },
           "kind": "code"

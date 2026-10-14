@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-        "content": "sha256:8ba853a102135708be4998cfee3a097d68ca28b7b299cd90d09fce951745332c",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_proof_ownership_is_computed_from_the_catalog"
-        }
-      },
-      "facet": "On a synthetic catalog each way of owning (path, owner, sole consumer, contract owner, contract evidence node) is reported, and a clean catalog and a proof among several consumers are not.",
-      "id": "PRF-GMKAMT",
-      "invariant": "INV-RVNFEZ",
-      "origin": {
-        "handoffEntry": "L42-restore-PRF-PYKPVP-YE3FZ1",
-        "leaf": "260928-MIK-L42"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
         "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
         "locator": {
           "kind": "symbol",
@@ -34,29 +17,12 @@
         "handoffEntry": "L42-restore-PRF-113HT2",
         "leaf": "260928-MIK-L42"
       }
-    },
-    {
-      "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-        "content": "sha256:f96bcc37da6476a4c26c7d23f0c75db5a1ac15fcedea08613213c570e96d0b7d",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_production_proof_adds_no_governed_evidence_artifact"
-        }
-      },
-      "facet": "On the real catalog the proof module is ordinary test source in exactly one lane, the governed files equal the cataloged paths, and proof_ownership returns nothing.",
-      "id": "PRF-XQ0RY9",
-      "invariant": "INV-RVNFEZ",
-      "origin": {
-        "handoffEntry": "L42-restore-PRF-PYKPVP-YE3FZ1",
-        "leaf": "260928-MIK-L42"
-      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
         "content": "sha256:c0f0bd3c74e5301bb3958196c43e4518a58a350ddf492a29ccc6138a1c1a40ba",
         "locator": {
           "kind": "symbol",
@@ -71,54 +37,20 @@
       },
       "rationale": "The helper guard reads the lifecycle catalog through read_catalog, so a catalog that does not parse gives its checks the recovery sentence.",
       "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-        "content": "sha256:ab462a219a6b43c631a576386e3b5359414b2915b40246455e12cc5a04b20fb3",
-        "locator": {
-          "kind": "symbol",
-          "name": "proof_ownership"
-        }
-      },
-      "id": "RLZ-T90NKA",
-      "invariant": "INV-RVNFEZ",
-      "origin": {
-        "handoffEntry": "MIK-R51@v1-proof-owns-nothing",
-        "leaf": "260928-MIK-L51"
-      },
-      "rationale": "Defines what owning means and returns every artifact row and every contract that the proof module would own; the guard test requires that list to be empty for the real catalog.",
-      "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "The module states that every property is computed and that no byte, row count or file count is written down.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:036d44cf30caaacd72e7f55911d12930ab9ca6af6927ec39fda4fb34a4151973",
-            "locator": {
-              "end": 8,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "10": {
-      "note": "The schema, the rejected identity and declared equals referenced.",
+      "note": "Anchor: Schema and declared/reference identity equality.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:1396afda0adedcc7e8e92838bd07034857bdc3ecb6c4eb150c3acafd3d0cd19b",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:f1478000d770da2dee3e69937fb94fb64f821bac5971c1c8a7f53b24b3476787",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_the_catalog_keeps_its_identities"
+              "end": 101,
+              "kind": "line_range",
+              "start": 98
             }
           },
           "kind": "test"
@@ -126,15 +58,16 @@
       ]
     },
     "12": {
-      "note": "The discovery rule for governed files that the guard uses.",
+      "note": "Anchor: The governing artifact discovery rule.",
       "targets": [
         {
           "anchor": {
             "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
             "content": "sha256:b95aa1102a23a8f4823b7dd407a2bd73d11ade6dd2bfe159c88a1b95cba410fc",
             "locator": {
-              "kind": "symbol",
-              "name": "governed_artifact_paths"
+              "end": 57,
+              "kind": "line_range",
+              "start": 16
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/evidence_governance.py"
           },
@@ -143,32 +76,16 @@
       ]
     },
     "14": {
-      "note": "A catalog that does not parse fails these checks with the recovery sentence of the shared reader.",
+      "note": "Anchor: Malformed-catalog assertion preserves the shared recovery sentence and path.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
             "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_catalog_that_does_not_parse_fails_these_checks_with_the_recovery_sentence"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The module's constants: the repository root, the proof module, the two catalog paths, the schema and the rejected standalone identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:fad374f25c8819e741a9be78661a5d652580f5473f28e03fcde83421cbdd9027",
-            "locator": {
-              "end": 40,
+              "end": 75,
               "kind": "line_range",
-              "start": 29
+              "start": 66
             }
           },
           "kind": "test"
@@ -176,15 +93,16 @@
       ]
     },
     "3": {
-      "note": "The census builds the real graph and resolves the three kinds of input.",
+      "note": "Anchor: Actual repository-input consumers and explicit no-consumer case.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:8863221f133ef7225c0c0f3364c929ef694538c609745d5b95d6aded430eb76b",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:b3f47c9f58ffc9b10060ff4b2b970d2a0c6ff1a381e8c34b06fda3a77dfdf712",
             "locator": {
-              "kind": "symbol",
-              "name": "test_repository_inputs_reach_their_supported_consumers"
+              "end": 49,
+              "kind": "line_range",
+              "start": 35
             }
           },
           "kind": "test"
@@ -192,47 +110,16 @@
       ]
     },
     "4": {
-      "note": "The guard runs the four structural checks and requires that the proof owns nothing.",
+      "note": "Anchor: Current closure/identity test, not the removed completion-proof guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:f96bcc37da6476a4c26c7d23f0c75db5a1ac15fcedea08613213c570e96d0b7d",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:1b076a2c580d312e7644952166e9989350e31fc335d9100c122b291144b3d098",
             "locator": {
-              "kind": "symbol",
-              "name": "test_production_proof_adds_no_governed_evidence_artifact"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "What owning means: path, owner, sole consumer, contract owner, contract evidence node.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:ab462a219a6b43c631a576386e3b5359414b2915b40246455e12cc5a04b20fb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "proof_ownership"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The synthetic cases for each way of owning, the clean catalog and the proof among several consumers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:8ba853a102135708be4998cfee3a097d68ca28b7b299cd90d09fce951745332c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_proof_ownership_is_computed_from_the_catalog"
+              "end": 63,
+              "kind": "line_range",
+              "start": 53
             }
           },
           "kind": "test"
@@ -240,15 +127,16 @@
       ]
     },
     "62": {
-      "note": "Repository inputs reach their supported consumers.",
+      "note": "Anchor: The same real dependency census.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:8863221f133ef7225c0c0f3364c929ef694538c609745d5b95d6aded430eb76b",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:b3f47c9f58ffc9b10060ff4b2b970d2a0c6ff1a381e8c34b06fda3a77dfdf712",
             "locator": {
-              "kind": "symbol",
-              "name": "test_repository_inputs_reach_their_supported_consumers"
+              "end": 49,
+              "kind": "line_range",
+              "start": 35
             }
           },
           "kind": "test"
@@ -256,188 +144,16 @@
       ]
     },
     "63": {
-      "note": "The closure check over the governed inventory, and the lane-membership check.",
+      "note": "Anchor: Current complete governed/cataloged closure.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:9315682a1d7ceed0ed7f75b13b40162aa6c049747980241c23008a45c141901c",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:3672aed0c66c9a13bdcaaf2d3042e26f7c8fc9bc2049a720a17f501987701a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_the_governed_inventory_is_closed"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "64": {
-      "note": "The leaf's own case module, which is why no third fixture was registered.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
-            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_endpoint_fixture"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "65": {
-      "note": "The module whose two consumer entries are the entire catalog delta.\n\nAnchor: `mcp/tests/test_knowledge_review_comparison_generation.py`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:d5093ad51ef26d41ad8a0389066442d6304264c8a763c37f7c07585164baecbd",
-            "locator": {
-              "end": 1224,
+              "end": 95,
               "kind": "line_range",
-              "start": 1222
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "66": {
-      "note": "The two consumer rows the leaf's module joined, and the artifact identities they belong to.\n\nAnchor: `mcp/tests/test_knowledge_review_source_content.py`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:414c6d603bd29aa5ab3785de8d43accd5673a4178be176205f81d51e0ccd7cf4",
-            "locator": {
-              "end": 302,
-              "kind": "line_range",
-              "start": 300
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "67": {
-      "note": "The existing unit-regression registry contains the three relationship modules.\n\nAnchor: `test_knowledge_review_relationship_movement`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-            "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 150
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "68": {
-      "note": "The consumer line the census derived.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:d08631c68d28ff196d24b937167d5f8ce046407849bc90b02306708b17f42100",
-            "locator": {
-              "end": 1472,
-              "kind": "line_range",
-              "start": 1470
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "69": {
-      "note": "The consumer lines the census derived.\n\nAnchor: `mcp/tests/test_knowledge_route_chain.py`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:1336e9192e751b9fdcb32036b3dee0b19f6aac25b570f972632290485bc00e86",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 304
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The proof must stay `test_` source outside the governed inventory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:a33ce678c26e11dcf9cd4fc77148e51c8b0025aa3432b5191883f04830fbff34",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_the_proof_is_ordinary_test_source"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "70": {
-      "note": "The consumer line the census derived.\n\nAnchor: `mcp/tests/test_reconsideration_surfacing.py`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
-            "locator": {
-              "end": 1344,
-              "kind": "line_range",
-              "start": 1342
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "71": {
-      "note": "The three artifacts those rows belong to, each an already-governed row rather than a new registration.\n\nAnchor: \"mcp/tests/diff_scope_test_support.py\"; \"mcp/tests/read_scope_test_support.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Exactly one lane lists the proof module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:448535f341fb8ca785e3eeef9df19b44b5c5354ed8dbfb3a36fb3d7d905d2a6c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_the_proof_is_selected_by_the_lane_manifest"
+              "start": 78
             }
           },
           "kind": "test"
@@ -445,15 +161,16 @@
       ]
     },
     "9": {
-      "note": "The governed files equal the cataloged paths and the real catalog validates.",
+      "note": "Anchor: Governed/cataloged equality and inventory validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-            "content": "sha256:9315682a1d7ceed0ed7f75b13b40162aa6c049747980241c23008a45c141901c",
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:3672aed0c66c9a13bdcaaf2d3042e26f7c8fc9bc2049a720a17f501987701a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_the_governed_inventory_is_closed"
+              "end": 95,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "test"

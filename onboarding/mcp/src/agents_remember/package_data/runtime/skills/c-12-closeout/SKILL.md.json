@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:2df36e1b981a0272f8013f86cf7cec6bf4b68ee2a99e1f4b41998207b496a173",
             "locator": {
-              "end": 133,
+              "end": 142,
               "kind": "line_range",
-              "start": 124
+              "start": 133
             }
           },
           "kind": "code"
@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:05e4b46c8a37b2777e4cb6ddfe700bb8a41382fb2563af1657b250ac86288f29",
             "locator": {
-              "end": 195,
+              "end": 205,
               "kind": "line_range",
-              "start": 192
+              "start": 202
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:dd052653f02d83be41dbe24ee29cc5d4c4deee5c12843fedc88ece133ec32204",
             "locator": {
               "end": 64,
@@ -143,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:4282df6b178eb0b39554e7a59ef7fb0546b8df982fe8594446d2229f40c31b1c",
             "locator": {
-              "end": 218,
+              "end": 228,
               "kind": "line_range",
-              "start": 216
+              "start": 226
             }
           },
           "kind": "code"
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:309d390984fbe6436b1438d8f9f3164b4997035e12bb8d22643ae69ea267d1e7",
             "locator": {
               "end": 70,
@@ -203,17 +203,43 @@
         }
       ]
     },
+    "20": {
+      "note": "Current closeout instruction relays the commit ask through parent role_message or parentless chat, waits for approval outside the relay turn and preserves refusal for stored gates while no product component raises or decides them. [20]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "content": "sha256:c84ae8fa91aba02e61396efe0cc9f8be89fff047057e7ed9f090a7186f1de683",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "content": "sha256:c84ae8fa91aba02e61396efe0cc9f8be89fff047057e7ed9f090a7186f1de683",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Apply consumes prepared curator readiness and coherence without demanding certification, quality checks, suites or review records.\n\nAnchor: \"does not demand\"",
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
-              "end": 116,
+              "end": 125,
               "kind": "line_range",
-              "start": 107
+              "start": 116
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },
@@ -255,12 +281,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:6d19567445ea2ee62c35dd21765b0f731f02ddd1ba099476ace08f87b8acd7b0",
             "locator": {
-              "end": 207,
+              "end": 217,
               "kind": "line_range",
-              "start": 197
+              "start": 207
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },
@@ -303,12 +329,12 @@
         },
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:89fd1a502b17ac99ce596cba38da71a0b879995a2b59d0556b017d95ee7336b5",
             "locator": {
-              "end": 241,
+              "end": 251,
               "kind": "line_range",
-              "start": 241
+              "start": 251
             }
           },
           "kind": "code"
@@ -320,12 +346,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
-              "end": 116,
+              "end": 125,
               "kind": "line_range",
-              "start": 107
+              "start": 116
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },
@@ -338,24 +364,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:fbbfdeba68dbde8f189c9c1068d354fe2cf194d9084ba25ca32549e18b9eebb4",
             "locator": {
-              "end": 137,
+              "end": 146,
               "kind": "line_range",
-              "start": 137
+              "start": 146
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "082b988cd6f282b8426b781c94617b49c5bf16d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:f1ed709efab6017546419cade58c8fb43486b179993c0b78343eb386e73fed70",
             "locator": {
-              "end": 422,
+              "end": 432,
               "kind": "line_range",
-              "start": 422
+              "start": 432
             }
           },
           "kind": "code"

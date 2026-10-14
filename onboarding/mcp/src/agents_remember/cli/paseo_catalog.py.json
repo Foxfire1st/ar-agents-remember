@@ -196,7 +196,7 @@
         "handoffEntry": "L71-CURRENT242-W-03",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Host feature metadata and the speed/nonpermission versus permission-bearing classification gate accepted feature values at launch.",
+      "rationale": "Validates selected feature values against host-offered type/options after scoped composition. Local mode/notes/permission authority is enforced separately by _refuse_repository_role_authority and NON_PERMISSION_FEATURES; this function is not that classifier.",
       "role": "enforcement"
     }
   ],

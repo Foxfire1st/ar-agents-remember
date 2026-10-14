@@ -156,7 +156,8 @@ The same Reviewer can repair a Worker-record-only finding on its last recorded r
 - Current family and external-document authoring supersede retired database entry keys.  Anchor: The curator's authored keys beside the thirteen fields \[38] [38]
 - Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison.  Anchor: Normal workflow; Scope before ingest; Authority gates \[39] [39]
 - Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. \[40] [40]
-- Generic hosted-seat binding admits taskless Curator and bypasses its structural branch; native Curator selection still requires the leaf chain.  Anchor: `TASKLESS_SEAT_ROLES`, `_binding_refusal`, `resolve_role_launch_context` \[41] [41]
+
+- Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission. [41]
 - Foundation admission refuses an enclosure in scope.  Anchor: `_admit_resolved` \[42] [42]
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. \[43] [43]
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` \[44] [44]

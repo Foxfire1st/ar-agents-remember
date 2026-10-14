@@ -1,5 +1,16 @@
 # README.md
 
+## Current A8 source account
+
+The retained README documents run_fresh_user.py on the host, its requested reports/work-root paths and fresh-user-acceptance/run.json transcript, dev/main fixtures, scenario stages, recorder and blocked-step reporting. Its old ambient Codex/Dagger/model/tmux/replication operator account is historical, not this entry point. The README calls the fixture clean-room isolation a requirement; this curation does not independently verify isolation, run the acceptance or count blocked outcomes. The entry source writes the transcript at the supplied report destination and derives exit failure from non-passed invariants/checkpoints.
+
+- The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. \[7] [7]
+
+- The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses. \[8] [8]
+
+## Historical original source account — retained, not authority for removed behavior
+
+
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)

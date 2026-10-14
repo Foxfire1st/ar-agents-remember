@@ -16,10 +16,10 @@ These are current source/assertion-carrier meanings. The qualified attempt14 COD
 
 ## Code Commentary
 
-The tests assert that `PUBLIC_TOOL_RESPONSE_MODELS` has exactly the same keys
+The registry case asserts that the retained `TOOL_RESPONSE_MODELS` has exactly the same keys
 as `mcp.tools.PUBLIC_TOOLS` and that every registered response model can
 generate JSON Schema. This catches public tool additions that forget to declare
-a response contract and catches model definitions that are not schema-safe.
+a response contract and catches model definitions that are not schema-safe. The separate series-finalize case drives the terminal release emitter, validates the emitted atomic-series fields through the wire model, and checks that the caller-facing completed payload retains the outcome without the four token/operation envelope fields. This source inspection does not claim a fresh executed result.
 
 ## Invariants And Boundaries
 
@@ -31,6 +31,9 @@ a response contract and catches model definitions that are not schema-safe.
 ## Evidence
 
 ### Repo-Internal References
+
+- Current public-tool registry/model/schema equality and the terminal series-release emitter-to-wire-to-caller payload assertions are distinct retained cases. [3]
+
 
 - Public tool metadata lives in the `mcp/tools/` package. [1]
 - Response model registry lives in the models package. [2]

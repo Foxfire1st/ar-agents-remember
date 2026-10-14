@@ -70,8 +70,7 @@ docIdentity and persists on a same-document refresh; own-view Back restores its 
 
 ChangeSetBar retains the master net with includeLeaves:true and its own leaf attribution, not a fake
 zero when breakdown is absent. Leaf working and single Intent review controls retain their own owners,
-brief states/disclosures and task-context targets. Lifecycle GateResponder is durable-gates-only:
-ask-only conversation belongs to the adjacent native leaf chat, never a task-local response box.
+brief states/disclosures and task-context targets. No Lifecycle GateResponder or task-local gate response box is mounted. Native document chat retains its own separately owned conversation and permission boundaries.
 Spine lanes remain read-only joins of enclosure/worktree/provider facts, not command authority.
 The no-selection Panel retains EmptyStateBackdrop and its existing effects/motion gating. Memoization
 skips unchanged persistent selections but allows actual store/selection changes.
@@ -104,8 +103,6 @@ discard-before-start audit, progress ownership, durable gates and runtime spine 
 - `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). [14]
 - The task reader derives the displayed leaf key and places it on the rendered content wrapper. [15]
 - The shared qualified key is repo/master/leaf-id and requires all three parts. [16]
-- Selection attribution looks for the closest task-leaf wrapper. [17]
-- Mouse selection context carries the leaf key read from that wrapper. [18]
 - `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. [19]
 - SubTaskRow is the union of the distinct task-master and series row shapes. [20]
 - Task-master rows may carry a linked lifecycle id and masterRef. [21]
@@ -143,7 +140,6 @@ discard-before-start audit, progress ownership, durable gates and runtime spine 
 - TaskDocNode provides authored task identity, creation time and task-master references. [40]
 - Only the series sub-task row has optional createdAt. [41]
 - `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. [42]
-- The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. [43]
 
 - Shared block text remains Markdown and the relocated decision preview retains newest-authored semantics. [44]
 

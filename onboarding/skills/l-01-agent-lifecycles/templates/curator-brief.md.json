@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
             "content": "sha256:603f74ab2ddb67bbd1ec4cf0d48ba61068acfe19a221b37467e53a330501833e",
             "locator": {
-              "end": 39,
+              "end": 35,
               "kind": "line_range",
-              "start": 39
+              "start": 35
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
             "content": "sha256:abc24de372a3c706c8654d21dcccea8e5ab74a15fa259297e6877d5e16543700",
             "locator": {
-              "end": 77,
+              "end": 73,
               "kind": "line_range",
-              "start": 71
+              "start": 67
             }
           },
           "kind": "code"
@@ -99,6 +99,21 @@
               "end": 128,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it. Worker and Reviewer feed the candidate-bound list/freeze/verdict directly. The template feeds values, not new duties; current role/operation/acceptance sources remain the rule owners. No synthetic brief, grade or new acceptance is authored.\n\nAnchor: `skills/l-01-agent-lifecycles/templates/curator-brief.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

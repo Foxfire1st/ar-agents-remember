@@ -5,7 +5,7 @@
     ],
     "justification": "A negative assertion before the actual producer opportunity can pass while the intended behavior is broken."
   },
-  "applicability": "The named negative assertions for lock contention, publication, stream passes, resolver entry, delivered answers and dashboard focus/hold effects.",
+  "applicability": "The remaining durable-store mutex/publication controls and knowledge/review delivered-answer, focus and hold assertions; removed Eve stream-pass and old conversation-resolver harness cases are outside current scope.",
   "conditions": [
     "The tested producer reaches an observed opportunity before the negative outcome is asserted.",
     "A forced rewrite stays parked until a real same-inode lock refusal or completed append is witnessed."
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Negative outcomes are checked after explicit lock, publication, stream-pass, resolve-entry, delivered-answer or fake-clock opportunities.",
   "status": "proposed",

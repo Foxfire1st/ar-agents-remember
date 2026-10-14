@@ -10,19 +10,19 @@
 
 ## Hot Path Summary
 
-Start with the document for the question: `observable-lifecycle.md` for lifecycle architecture, `python-pytest-bootstrap.md` for development test policy and commands, `python-evidence-system.md` for evidence construction and maintenance, and `python-test-evidence.md` for accepting authority and consumers. The dashboard documents separate review doctrine, intended workflows, recorded candidate evidence, and serving-contract gaps. The [engine-room overview](engine-room/overview.md) covers the visual-language reference and scenario prototype.
+Start with the document for the question: `observable-lifecycle.md` for the historical session-lifecycle architecture, `python-pytest-bootstrap.md` for development test policy and commands, `python-evidence-system.md` for evidence construction and maintenance, and `python-test-evidence.md` for accepting authority and consumers. The dashboard documents separate review doctrine, intended workflows, recorded candidate evidence, and serving-contract gaps. The [engine-room overview](engine-room/overview.md) covers the visual-language reference and scenario prototype.
 
 The lifecycle design separates code and memory-content Git outputs from the computed ledger cache. The inspected closeout owner produces or reuses the memory commit before refreshing that cache. Source inspection here supplies no new CODE qualification, test result, native-host verification, whole-build result, landing acceptance, or memory acceptance.
 
 ## Construction
 
-### Lifecycle architecture
+### Historical session-lifecycle architecture
 
-`observable-lifecycle.md` describes the lifecycle entity and state machine, event substrate and retention, gates and their return channel, read packet, packaging, scope, preserved design principles, and deferred implementation questions. Its MIK-R112 amendment removes model-facing signal tools while retaining session-driven transitions and the states and gates of the design. The former overview's public `lifecycle_gate` junction is therefore superseded. This amendment does not establish that every retained design mechanism is currently implemented.
+`observable-lifecycle.md` records the former session lifecycle, events and developer gates. Its R112 amendment and its old session-driven account are historical under the R113 status banner; they are not a retained live session/gate promise. The document points to docs/reference/mcp-tools.md for the present surface. Retained task/knowledge/landing owners are not retired merely because this older session design is historical.
 
-The design also retains the operator-inbox recovery runbook: save live work, use normal daemon controls, quarantine the inbox log, preserve live-seat rows, and let normal sweep paths resolve retired or absent targets. It identifies `ladder-resolved` as legacy vocabulary after retirement of the timed escalation ladder.
+The older operator-inbox runbook is retained as historical text, including its ladder-resolved vocabulary. R113 removes that runtime inbox/seat sweep; this overview does not instruct a current user to quarantine its log or invoke removed sweep paths.
 
-`harness-matrix.md` describes ambient stdio scoping, background-completion wake, and sleep or loop capabilities. Its verification entries are recorded document metadata, not fresh host qualification from this inspection.
+`harness-matrix.md` is explicitly history under R113: its ambient-scoping, wake and loop observations record the former hosted-session design, not live capability or adapter availability. The current harness reference is docs/reference/harnesses.md.
 
 ### Python verification references
 
@@ -43,9 +43,9 @@ The authority document records retirement of Candidate A's host diagnostic comma
 ### Dashboard references and child route
 
 - `dashboard/review-doctrine.md` describes dashboard acceptance bars, observability parity, visual grammar, motion, settled-beat sampling, freshness honesty, and review posture.
-- `dashboard/scenario-catalog.md` describes intended workflows and the views meant to serve them. Its carried gaps and historical status entries are design and review material, not current implementation qualification supplied by this overview.
-- `dashboard/session-cockpit-closeout-evidence.md` indexes the recorded FEUI-L8 candidate's coverage, accessibility, performance and fetch evidence, scenario matrix, and invariant pre-audit. Its measurement command is described as internal to a nonce-attested Dagger environment with host execution refused. The recorded measurements and pre-audit do not constitute a new run or independent acceptance here.
-- `dashboard/session-cockpit-upstream-register.md` separates serving-contract asks from the Chats cutover decision and records boundaries against fabricating absent frontend authority. Its recorded cutover outcome is not fresh implementation acceptance from this inspection.
+- `dashboard/scenario-catalog.md` retains the non-session workflow design. W6 and its old AR terminal/composer inventory are specifically marked history by R113; that does not demote unrelated current workflows or qualify implementation.
+- `dashboard/session-cockpit-closeout-evidence.md` has the required R113 History banner and retains its dated FEUI-L8 measurements/pre-audit. Its historical internal Dagger measurement boundary is not a new run or acceptance. The RV01 protected certificate line is unchanged in content at current line151; the old whole-file hash and line146 are historical provenance, not a current whole-file freeze.
+- `dashboard/session-cockpit-upstream-register.md` is marked history: its former session-cockpit asks and Chats decision remain dated evidence, not current requests to reintroduce removed frontend/serving surfaces.
 - `engine-room/` contains `engine-room-visual-language.html` and `podstage.html`, the visual-language reference and choreography prototype. See the [engine-room overview](engine-room/overview.md) and the [dashboard engine-room renderer overview](../../dashboard/src/panels/engine-room/overview.md) for the linked design and implementation routes.
 
 ## Invariants And Boundaries
@@ -68,30 +68,48 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 
 ## Evidence
 
+- The RV01 dated certificate line is unchanged in content after the allowed R113 History banner; its current location is151. [36]
+
+
 
 
 - The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [27]
 
 - The scenario catalog of the cockpit dashboard. [1]
 - The upstream register and the Chats decision brief. [2]
+
 - The closeout evidence index of the session cockpit series. [3]
-- The observable lifecycle design states its scope. [6]
-- The harness capability matrix. [7]
+
+- The former observable session-lifecycle design is explicitly historical under R113. [6]
+
+- The former harness capability matrix is explicitly historical, not current adapter availability. [7]
+
 - The test commands and the need for a Git checkout. [8]
 - The one accepting authority for Python test evidence. [9]
 - The design document's statement of the catalogs' canonical form, their union merge, the write command, and that no byte or count is pinned. [10]
+
 - FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence entry point. [20]
+
 - The upstream gaps and recorded one-Chats cutover ruling entry point. [21]
+
 - The bounded series closeout evidence pack entry point. [22]
+
 - FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence reference. [23]
+
 - The upstream gaps and recorded one-Chats cutover ruling reference. [24]
+
 - The bounded series closeout evidence pack. [25]
+
 - The implementation produces or reuses memory content before refreshing its cache. [26]
-- The amended lifecycle design retains session-driven transitions and describes recovery and cache boundaries. [28]
+
+- The historical session design records former recovery/cache boundaries; its R113 status makes the session-driven promise non-operative. [28]
+
 - The Python evidence design describes selection, retry, and maintenance contracts. [29]
 - The bootstrap note and root configuration now state 5,000/1,000; host development runs and diagnostic metrics remain documented. [30]
 - The authority document records Candidate A retirement and the review consumer; the current review owner defers atomic scope. [31]
+
 - The cockpit index describes its historical candidate and internal measurement boundary. [32]
+
 - The dashboard review doctrine defines review bars and visual grammar. [33]
 - Engine-room references identify the visual-language library and choreography prototype. [34]
 - The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]

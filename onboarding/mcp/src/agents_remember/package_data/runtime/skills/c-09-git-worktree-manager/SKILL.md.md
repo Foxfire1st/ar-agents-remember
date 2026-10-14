@@ -1,5 +1,12 @@
 # mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md
 
+## Current A8 carrier and authority boundary
+
+The source still separates archive-ready from completed cleanup, exact retry arguments from defaults and task authoring from projection admission. Its initial start/attach description no longer carries fleeting on_unsaved save/discard promotion; developer-gated start/integration/finalization wait for approval relayed through the parent or parentless chat. Inspection does not select. The corrected compatibility statement excludes cache bytes as authority; historical incoming direct-recovery wording is scoped below, with current c-12 receipt recovery retained.
+
+- Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. \[18] [18]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../overview.md)
@@ -13,9 +20,9 @@ Documents `c-09-git-worktree-manager`, the Git worktree lifecycle manager for Ag
 
 ## Code Commentary
 
-Task identity is settled before worktree creation: a master owns the root `series-contract.md` plus its integration branch, and each ungranted enclosed build leaf owns its enclosure contract. The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. Standalone/new/final work stops for developer approval, while subordinate accepted-series work continues under recorded series authority.
+Task identity is settled before worktree creation: a master owns the root `series-contract.md` plus its integration branch, and each ungranted enclosed build leaf owns its enclosure contract. The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. Standalone/new/final work previews first and sends its intent to the parent through `role_message`, or ends with the intent in chat when there is no parent; start, integration or finalization runs only after approval arrives. No awaiting-developer state, automatic resume or gate-tool call is inferred. Subordinate accepted-series work continues under recorded series authority.
 
-External memory incompatibility is interactive and offers `reconciliation` or `custom` handling — there is no `disabled-memory` recovery choice. Memory cannot be disabled for a task: a start naming the removed `disabled` mode or the removed `disabled-memory` answer is refused by name (`memory-opt-out-refused`) before any worktree is created. A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (dry run first), then `worktree_start` at the same address without `memory_mode`. The common incompatibility trigger remains starting off a freshly-merged gated branch whose PR merge commit the ledger has not mapped; `memory.md` stays an ignored consumer cache whose absence, staleness, or malformed bytes never make an otherwise valid pair incompatible.
+External memory incompatibility is interactive and offers `reconciliation` or `custom` handling — there is no `disabled-memory` recovery choice. Memory cannot be disabled for a task: a start naming the removed `disabled` mode or the removed `disabled-memory` answer is refused by name (`memory-opt-out-refused`) before any worktree is created. A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (dry run first), then `worktree_start` at the same address without `memory_mode`. Historical earlier-card assumption: a newly merged gated PR commit absent from the ledger was called an incompatibility trigger. That is not the current admission criterion: actual code/memory objects, ancestry and refs govern compatibility; `memory.md` remains an ignored consumer cache whose absence, staleness or malformed bytes never make an otherwise valid pair incompatible.
 
 Integration follows applicable authority (`ff-only` for unmoved sources, `replay` for parallel work); the recorded `source_branch` is the integration target. Lifecycle finalization proves the landed commit reachable from the recorded local source branch, runs or verifies cleanup, and reconciles task documents to `Completed`. The closeout preview runs no quality/test/memory/certification/review tool but does ask the mandatory invariant gate on converted memory. Atomic-series activation is scoped to the exact canonical series contract; terminal cleanup releases only the exact still-selected contract.
 

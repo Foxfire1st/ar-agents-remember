@@ -12,7 +12,7 @@
     "Resolution runs before the actual create call."
   ],
   "exclusions": [
-    "AR harness registry consumption, which stays its own consumer.",
+    "The retained built-in agent-ID/settings compatibility vocabulary, which does not restore the removed native adapter registry.",
     "Dated candidate credits, which this invariant does not restate."
   ],
   "id": "INV-AFTG56",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Role launches resolve native provider, model, effort and speed choices against the host catalog and carry the accepted fields onto the actual create call; the AR harness registry remains its own consumer.",
+  "statement": "Role launches resolve provider, model, effort and speed choices against the host catalog and carry accepted fields onto the actual create call; the retained AR built-in agent-ID/settings vocabulary is not a native adapter catalog or execution fallback.",
   "status": "proposed",
   "supersedes": []
 }

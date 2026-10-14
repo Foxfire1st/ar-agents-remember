@@ -138,23 +138,6 @@
         }
       ]
     },
-    "17": {
-      "note": "The taskless seat set the procedure's gate rests on, which `260921-ICR-L32` changed on the developer's 2026-09-24 ruling so that it admits `curator`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
-            "locator": {
-              "kind": "symbol",
-              "name": "TASKLESS_SEAT_ROLES"
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "18": {
       "note": "Propagation is generated, not hand-maintained: the root tree is copied into the package-owned copy and the eight harness starter packages.",
       "targets": [
@@ -202,16 +185,29 @@
       ]
     },
     "2": {
-      "note": "The new-project entry is a **taskless** seat, and since the developer's 2026-09-24 ruling the procedure states that a taskless curator seat **exists** and authors the foundation when no task does, instead of asserting a refusal the product no longer makes.\n\nAnchor: `## Who Runs It`; \"A taskless *curator* seat exists\"; `\"task-binding-required\"`",
+      "note": "Before a task exists, bootstrap reads/reports and an instructed session authors under Curator rules; a Curator seat itself opens only on a selected leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
-            "content": "sha256:89b28516c83050bf9f71824659f1557bece5992fd9aa836b8fa53fdb8e5527ee",
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:7b3cba51edf1bcc4a93934c80ec0fd974c9e20d410949d25e72a460e671623fb",
             "locator": {
-              "end": 83,
+              "end": 70,
               "kind": "line_range",
-              "start": 38
+              "start": 39
+            },
+            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:7b3cba51edf1bcc4a93934c80ec0fd974c9e20d410949d25e72a460e671623fb",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"
@@ -240,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32a77cebdb94afb1d5edbe6f3189d48e212c131",
+            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
             "content": "sha256:49aca5567b2f700f827020c2a7d5dd187346776e20068983d4cea338e6249ac2",
             "locator": {
               "kind": "symbol",
@@ -252,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "e32a77cebdb94afb1d5edbe6f3189d48e212c131",
+            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
             "content": "sha256:8a8357d902c86ce8f94370eb835a3973f04fcd8188a4fda4e500e9d992f8a2cb",
             "locator": {
               "kind": "symbol",
@@ -269,8 +265,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09c85e3fce790d1ff42ef774f066a56f14bd489a",
-            "content": "sha256:33b7b822bb2db763fc0238593bbb4d6bb8042c7c79d5db0b7416dbc5b65818ce",
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:c7017eae1c0844fac8b131ba660f3b3cdcfdff3db906d8878d492f4f42446365",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
+            "content": "sha256:c7017eae1c0844fac8b131ba660f3b3cdcfdff3db906d8878d492f4f42446365",
             "locator": {
               "kind": "file"
             }
@@ -313,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "09c85e3fce790d1ff42ef774f066a56f14bd489a",
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
             "content": "sha256:d9d209c3e03eaf83cfdee4b13b6a54b2be27d3f351045d091b13607c170a87c8",
             "locator": {
-              "end": 78,
+              "end": 66,
               "kind": "line_range",
-              "start": 78
+              "start": 66
             }
           },
           "kind": "code"

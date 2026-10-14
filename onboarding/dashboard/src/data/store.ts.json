@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+        "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
         "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
         "locator": {
           "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -107,12 +107,12 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
             "locator": {
-              "end": 333,
+              "end": 292,
               "kind": "line_range",
-              "start": 333
+              "start": 292
             }
           },
           "kind": "code"
@@ -124,12 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
             "locator": {
-              "end": 416,
+              "end": 373,
               "kind": "line_range",
-              "start": 416
+              "start": 373
             }
           },
           "kind": "code"
@@ -148,40 +148,6 @@
               "name": "EventRiver"
             },
             "path": "dashboard/src/panels/EventRiver.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentNotifierHeartbeat"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "`AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentNotifierHeartbeatBadge"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
         }

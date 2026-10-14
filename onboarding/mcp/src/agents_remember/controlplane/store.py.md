@@ -199,7 +199,6 @@ into an inode with no remaining links.
 - The gate envelope serialized and validated here. [1]
 - Mirrors the observer event store (same append / read / JSONL shape). [2]
 - The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers. [3]
-- `_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116. [4]
 - `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. [5]
 - `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. [6]
 - `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. [7]

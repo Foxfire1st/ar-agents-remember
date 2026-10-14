@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 545,
+              "end": 541,
               "kind": "line_range",
-              "start": 538
+              "start": 534
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -244,59 +244,6 @@
         }
       ]
     },
-    "114": {
-      "note": "The submission authority is the only prompt queue.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
-            "content": "sha256:5aa61b3efd3956b5ab79fdde91357e478b884c8f550a4fcd55c1103293661cbc",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "115": {
-      "note": "A repeated request id is idempotent only with the same source and payload.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
-            "content": "sha256:d89262afedab35704ec6795a173337bd0442b0058eefacf973762fad2b09ab99",
-            "locator": {
-              "kind": "symbol",
-              "name": "_pre_admission_receipt_locked"
-            },
-            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "116": {
-      "note": "The opener is the one spawn path of the dashboard and of internal dispatch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
-            "content": "sha256:d212b056543d0e6d646ec0f6a691c36425ee8568c6dc025e1e08c51be534a17e",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "117": {
       "note": "The serving layer is transport over the observer projection.",
       "targets": [
@@ -328,42 +275,6 @@
               "start": 230
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "119": {
-      "note": "The gate responder posts a response to the inbox, except for an adapter interaction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
-            "content": "sha256:5216cdfc08f54b46a46e6fcceeb24afa2d00f57ecca9b27ce25a0d99f968f918",
-            "locator": {
-              "end": 486,
-              "kind": "line_range",
-              "start": 465
-            },
-            "path": "dashboard/src/panels/GateResponder.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "120": {
-      "note": "The serialized model-and-effort change.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
-            "content": "sha256:2e346e325efb1dfbce0a414412ad7e5be86becc16553187265236cf875e6a68c",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "dashboard/src/data/pairChange.ts"
           },
           "kind": "code"
         }
@@ -617,7 +528,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
             "content": "sha256:7038a04cb7fa89277eebc526c48cbc6d61b4704bc2b131d80acf38a5cab34dc7",
             "locator": {
               "end": 89,
@@ -653,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
             "locator": {
               "end": 58,
@@ -671,7 +582,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+            "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -789,7 +700,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
             "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
             "locator": {
               "kind": "symbol",
@@ -1060,12 +971,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+            "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
             "content": "sha256:10504dfc6142bea874588a95b095a471fb2fe64d00aa13f21acbe842d6f73baa",
             "locator": {
-              "end": 539,
+              "end": 535,
               "kind": "line_range",
-              "start": 539
+              "start": 535
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -1168,12 +1079,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
             "content": "sha256:f850b42ccedb338c984cb723a72cb364e5449977ef7ef318709cb1aec36c455c",
             "locator": {
-              "end": 103,
+              "end": 101,
               "kind": "line_range",
-              "start": 103
+              "start": 101
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1240,12 +1151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09c85e3fce790d1ff42ef774f066a56f14bd489a",
+            "blob": "975f43c2f7fc87b502c806d5d7d1269dc05b945e",
             "content": "sha256:3aa5642f02b79ba6e10f1587feee72fe7572f76c107f8014e3ee72f99b517da9",
             "locator": {
-              "end": 169,
+              "end": 157,
               "kind": "line_range",
-              "start": 169
+              "start": 157
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -1276,12 +1187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:3e0d284e7352197b7a755cc6479812368c704f6581caeb736137d6968202f96b",
             "locator": {
-              "end": 102,
+              "end": 101,
               "kind": "line_range",
-              "start": 102
+              "start": 101
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -1435,7 +1346,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
             "content": "sha256:04d5f0e9ddf2afdf016e7361a131f4ae802f07bc690f5c1eb5fb900e5751d5fa",
             "locator": {
               "end": 32,
@@ -1471,7 +1382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -1489,7 +1400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:8607745186f3570ef4e75ca14fcc5785bca5484e8981daeff8a1ea8552556c0b",
             "locator": {
               "end": 16,
@@ -1613,7 +1524,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
+            "blob": "c26c20413f3c139dd465b0e928e4193e04cd458f",
             "content": "sha256:5212c9894d9bcb63611f9483b53561523d0545faa9e817ce2a6fecbbb360441e",
             "locator": {
               "end": 154,
@@ -1631,12 +1542,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:3c9d63b793979da555922409c418c416f776f79561e808b9d18e55a8d29ae5a1",
             "locator": {
-              "end": 150,
+              "end": 149,
               "kind": "line_range",
-              "start": 150
+              "start": 149
             },
             "path": "AGENTS.md"
           },
@@ -2082,7 +1993,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
             "content": "sha256:da8fd4e12cb9fe2618bf026fdca96d4741d7b425aaec55764d5aa79e3aa7d12e",
             "locator": {
               "end": 59,
@@ -2113,12 +2024,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
+            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
             "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
             "locator": {
-              "end": 51,
+              "end": 47,
               "kind": "line_range",
-              "start": 48
+              "start": 44
             },
             "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
           },
@@ -2228,16 +2139,15 @@
       ]
     },
     "313": {
-      "note": "Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result.\n\nAnchor: carry_landing_answer and quality_result_answer\n\nPublic tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model.\n\nAnchor: `PUBLIC_TOOLS`, `_validated_live_names`\n\nOn the synchronized0e7afca0 successor the exact literal has41 names after removal of resolve_context from the rejected d457 freeze’s42; older39/41 accounts are historical. This is a source census, not live advertisement or execution.",
+      "note": "Current source literal PUBLIC_TOOLS has 40 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution.",
       "targets": [
         {
           "anchor": {
             "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
             "content": "sha256:8231a631e68b412e798b03b24e7915a6b33ebada2442887e77644d07b14f53bd",
             "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 202
+              "kind": "symbol",
+              "name": "carry_landing_answer"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
           },
@@ -2248,9 +2158,8 @@
             "blob": "97caa89e7f32e64af0957978f173f5f52562012a",
             "content": "sha256:cb7061e16be29da70c3fc96f2f37e4d72fe2d9ece460a324b3435d7485e39817",
             "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 242
+              "kind": "symbol",
+              "name": "quality_result_answer"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
           },
@@ -2258,25 +2167,13 @@
         },
         {
           "anchor": {
-            "blob": "52ac6ed1143d6473be3aef2aac53917a06eb4f42",
-            "content": "sha256:ed72a60cf69d1e783ee0bc5eeafa0871d93a819f9892d0d24cb3fbfcd0ebd460",
+            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "content": "sha256:b678282dd750b710810314db6feaaf211093143603358f8d45d2b8a724220219",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
-            "content": "sha256:e890eb21d9330ac951c4afefb1384b9c93ff8328954130f96cb4d052778b9702",
-            "locator": {
-              "kind": "symbol",
-              "name": "_validated_live_names"
-            },
-            "path": "mcp/src/agents_remember/mcp/public_surface.py"
           },
           "kind": "code"
         }
@@ -2300,12 +2197,12 @@
         },
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
             "content": "sha256:6a4364374bb1c56589a98126bc07037848f43cc2c50069010d893b8100a581f4",
             "locator": {
-              "end": 259,
+              "end": 257,
               "kind": "line_range",
-              "start": 259
+              "start": 257
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2326,12 +2223,12 @@
         },
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
             "locator": {
-              "end": 807,
+              "end": 1033,
               "kind": "line_range",
-              "start": 789
+              "start": 1015
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -2342,19 +2239,6 @@
     "315": {
       "note": "For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding.\n\nAnchor: Outputs: every reported cut\n\nTask-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree.\n\nAnchor: Reader scope admission",
       "targets": [
-        {
-          "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 153
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
@@ -2380,6 +2264,19 @@
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55375023d49b393a0f345693c529fe9cc982e9c0",
+            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -2388,12 +2285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
             "locator": {
-              "end": 111,
+              "end": 110,
               "kind": "line_range",
-              "start": 105
+              "start": 104
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -2680,7 +2577,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
             "content": "sha256:da8fd4e12cb9fe2618bf026fdca96d4741d7b425aaec55764d5aa79e3aa7d12e",
             "locator": {
               "end": 59,
@@ -2706,12 +2603,12 @@
         },
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
             "content": "sha256:e7afba7c85bb8777c5bafcf45b322141e8f7fac753e182d9ac3ebd8b947a9dea",
             "locator": {
-              "end": 415,
+              "end": 414,
               "kind": "line_range",
-              "start": 386
+              "start": 385
             },
             "path": "layers.toml"
           },
@@ -2769,7 +2666,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -2782,12 +2679,12 @@
         },
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
             "locator": {
-              "end": 145,
+              "end": 144,
               "kind": "line_range",
-              "start": 145
+              "start": 144
             },
             "path": "AGENTS.md"
           },
@@ -2852,12 +2749,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 206,
+              "end": 205,
               "kind": "line_range",
-              "start": 150
+              "start": 149
             },
             "path": "AGENTS.md"
           },
@@ -2888,7 +2785,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
             "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
             "locator": {
               "kind": "symbol",
@@ -3545,7 +3442,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -3558,7 +3455,7 @@
         },
         {
           "anchor": {
-            "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
               "end": 108,
@@ -3710,7 +3607,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
+            "blob": "30300016e97145717041d5a3b357267958b6bee5",
             "content": "sha256:486ac4704274ab0dc4c8466c607ce5e8f4b4e771a68afc2b4691c87fc62ea68b",
             "locator": {
               "kind": "symbol",

@@ -16,28 +16,9 @@ agents-remember.mdc`, and `.github-vscode/copilot-instructions.md`.
 
 ### Logic
 
-The shared session-start directive treats an ordinary developer session as free chat that answers
-research inline. For ordinary role-shaped work it creates or resolves the sprint and first leaf, compiles
-the canonical architect brief, and calls `dispatch_agent` exactly once on the sprint document with
-role `architect`. The launcher hands over only after the exact brief is durable and never calls an
-internal session primitive. An explicit developer-declared task-seat takeover instead targets the
-named role on its canonical task document. A present `AR_SPAWN_ROLE` is not merely a routing hint:
-it must resolve to a canonical role file and arrive with `AR_HOSTED_SESSION_ID`. An unknown role or
-incomplete hosted identity fails closed instead of falling through. A fresh role brief may start a
-role lifecycle only when no hosted identity was declared.
+The directive addresses an ordinary developer-facing free chat: read ar-coordination/AGENTS.md and answer questions inline. For managed repository work, create or resolve the sprint document and write the developer request there, then call role_start for an Architect without naming a document in that call. Tell the developer the agent is in the dashboard and which sprint holds the request. Start another role this way only when the developer names its role and task.
 
-Caller kind remains process-derived: a plane-hosted seat uses structural authority, while absence
-of hosted identity selects the ambient launcher. A plane refusal never falls back to ambient.
-
-The body states the three-condition session routing that `l-01-agent-lifecycles` owns:
-
-1. If `AR_SPAWN_ROLE` is set, validate the canonical role and hosted identity first; invalid or
-   incomplete identity stops. With valid hosted identity—or with a first-message role brief and no
-   declared hosted identity—the session ignores the remaining notice and treats the brief as start.
-2. Otherwise the session is developer-facing free chat: read `ar-coordination/AGENTS.md`, answer
-   research inline, and use the one-call canonical architect launcher for role-shaped work.
-3. The resulting sprint-bound architect receives its complete obligations in the pinned canonical
-   brief rather than relying on this launcher directive as a second role brief.
+A session whose first message is a role handover is not meant by the notice. There is no dispatch_agent, AR_SPAWN_ROLE or AR_HOSTED_SESSION_ID routing/admission instruction in this current source. Bound native agent recognition/suppression belongs to session_start_hook.has_binding, not an invented hosted environment capsule.
 
 ### Conventions
 

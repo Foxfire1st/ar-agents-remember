@@ -1,5 +1,12 @@
 # skills/c-12-closeout/SKILL.md
 
+## Current A8 carrier and authority boundary
+
+The current carrier and gate account is already source-bounded: explicit developer or recorded series authority precedes transaction apply; no lifecycle awaiting/automatic-resume event is inferred. Stored old closeout gates still refuse and require the developer-commanded removed-stores route, not silent deletion. Full Curator MEMORY quality/coherence and exact-pair invariant judgments retain their separate owners. No commit, gate cleanup, quality/test rerun or fresh acceptance is performed here.
+
+- Current closeout instruction relays the commit ask through parent role_message or parentless chat, waits for approval outside the relay turn and preserves refusal for stored gates while no product component raises or decides them. \[11] [11]
+
+
 ## Governing Overview
 
 [Onboarding overview](../../overview.md)
@@ -25,7 +32,7 @@ validator/invariant gate; the conversion itself counts as no change. A failed
 crossing plan leaves the line unchanged; a retained conflict or validator refusal
 after merge start uses the existing `continue`/`cancel` recovery.
 
-Authority is contextual but never assumed: standalone and final work relays the preview and asks the developer through the orchestrator hand-off protocol, ending the turn after the plain preview/commit ask and STOP, not after invoking a removed lifecycle notification tool; subordinate work inside an accepted series applies under delegated authority with the source recorded. The closeout-approval block is evidence of an explicitly raised human gate, never a second lifecycle, and no durable gate is created as an incident workaround.
+Authority is contextual but never assumed: developer-gated closeout previews first and sends preview facts plus the commit ask to its parent through role_message; parentless work ends with that ask in chat. Apply waits for approval and is never in the relay turn; subordinate accepted-series work retains recorded delegated authority. No product component raises or decides a gate now. An earlier stored closeout-approval gate still refuses admission until the explicit developer-commanded removed-stores route resolves it; this is neither a second lifecycle nor permission to silently discard old authority.
 
 Memory cannot be disabled for a task: every closeout runs under the invariant gate, and a contract on disk that carries the removed mode is abandoned and started again rather than closed out. Closeout order commits code then memory-content with code attribution trailers, refreshes the consumer ledger cache without staging it, and refuses before mutation on moved refs, conflicts, blank messages, or unreconciled pairs. Branch-direct landing stays a policy-gated counterpart for a canonical granted leaf without its own enclosure, never a direct-checkout path; legacy operation repair is explicit and bounded; worker and curator failures route back to their owners rather than becoming gates.
 

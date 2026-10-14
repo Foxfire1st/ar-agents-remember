@@ -3,29 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`).\n\nAnchor: \"def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:\"; \"def _task_doc_node(\"",
+      "note": "Anchor: Current task documents reuse the canonical reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:60da8267f2e86b37ad5fae623d918a1adc0702d569fa39de490a7b1ce51925ca",
+            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
+            "content": "sha256:b01e62f51ed909fab1c0782d1b8ce778659717bdbb0a37951fde8442407e6a2c",
             "locator": {
-              "end": 230,
+              "end": 174,
               "kind": "line_range",
-              "start": 229
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:ee1d15815ee505cdcc4ed5d367d1142a2a87644804ff59ac2fa6c9aa594e88de",
-            "locator": {
-              "end": 607,
-              "kind": "line_range",
-              "start": 607
+              "start": 136
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -34,15 +21,16 @@
       ]
     },
     "10": {
-      "note": "`read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`).",
+      "note": "Anchor: Captured workspace snapshot plus admitted worktree providers.",
       "targets": [
         {
           "anchor": {
-            "blob": "38df62d80b5ab01ca7ffcefb4e6a00c2b2c6d71c",
+            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
             "content": "sha256:2afdc01f0d7cc1c9c456706f668f9107e73a067613f28bf580402c5b40db9ae4",
             "locator": {
-              "kind": "symbol",
-              "name": "read_providers"
+              "end": 168,
+              "kind": "line_range",
+              "start": 150
             }
           },
           "kind": "code"
@@ -50,42 +38,16 @@
       ]
     },
     "11": {
-      "note": "`read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built.\n\nAnchor: \"def read_engine_process_facts(\"; \"contract.worktree_group.name not in active_worktree_groups\"; \"cp = contract_payload(contract)\"",
+      "note": "Anchor: Current engine fact reader excludes gate/pickup/expectation records.",
       "targets": [
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
+            "blob": "a72d91d8fc1a7048c39f3cd85885826c0f14c12a",
+            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
             "locator": {
-              "end": 240,
+              "end": 149,
               "kind": "line_range",
-              "start": 240
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:d92b95ef1f5ab0cbc7dbd070010456ab2948625d4b5627f372bceab6c861fff3",
-            "locator": {
-              "end": 268,
-              "kind": "line_range",
-              "start": 268
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:5b779d144b4941322d19930606cc839d095b59ea06b75885e7b96794c8c7e0da",
-            "locator": {
-              "end": 271,
-              "kind": "line_range",
-              "start": 271
+              "start": 90
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -94,16 +56,16 @@
       ]
     },
     "12": {
-      "note": "`read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`.\n\nAnchor: \"def read_enclosures(\"; \"def read_engine_process_facts(\"",
+      "note": "Anchor: Both enclosure and engine readers reuse the supplied ContractSnapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:f77d5d81904a212f9ddd7bb4eb29eb8d14592bbb565b77322d6b591a69373a6e",
+            "blob": "a72d91d8fc1a7048c39f3cd85885826c0f14c12a",
+            "content": "sha256:2f6940ab288c04c55a6691b11a7e8de53c87916c70766ee9b6a9b3b8dd87dc0e",
             "locator": {
               "end": 61,
               "kind": "line_range",
-              "start": 61
+              "start": 44
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -111,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
+            "blob": "a72d91d8fc1a7048c39f3cd85885826c0f14c12a",
+            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
             "locator": {
-              "end": 240,
+              "end": 149,
               "kind": "line_range",
-              "start": 240
+              "start": 90
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -125,15 +87,16 @@
       ]
     },
     "13": {
-      "note": "The shared per-tick contract snapshot + stat-identity parse cache these readers consume.",
+      "note": "Anchor: Current per-tick contract snapshot owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
+            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
+            "content": "sha256:54c7acf08be5dcf752fc9b38bbca0c509c4d6b9513c83961a60d3f785c6b0a2f",
             "locator": {
-              "kind": "symbol",
-              "name": "ContractSnapshot"
+              "end": 52,
+              "kind": "line_range",
+              "start": 41
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },
@@ -141,11 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:6dad0eac1147fe7ae4d29c6d1208475075f6ec075e7cb42ffb04fc6646ef3f6d",
+            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
+            "content": "sha256:113e8645faa0d638108e5d43da58cbeb162494e04f411fecc8d14549488d9f00",
             "locator": {
-              "kind": "symbol",
-              "name": "ContractSnapshotCache"
+              "end": 131,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },
@@ -154,65 +118,16 @@
       ]
     },
     "2": {
-      "note": "`read_series_documents` selects `kind == \"master\"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`).\n\nAnchor: \"def read_series_documents(\"",
+      "note": "Anchor: Canonical master/series document projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:2857efcc8480b99dbe9bfa2305f35720ce430ccf00b9eaad85f3d76c04a64e5c",
+            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
+            "content": "sha256:cb23ea53b24097a95f7c4fb68220bc8ddf2b925e0240ab3d34fa605b38c985a7",
             "locator": {
-              "end": 288,
+              "end": 362,
               "kind": "line_range",
-              "start": 288
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one.\n\nAnchor: \"def _series_subtask_nodes(path: Path\"; \"def _series_subtask_created_at(base_dir: Path\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:65d54d841f89e1de343802b7713d2d2a39ec8f23c0bb30d450d26328ea5dc02a",
-            "locator": {
-              "end": 336,
-              "kind": "line_range",
-              "start": 335
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:31ed431dce73217b2c2248794070fdf6a399123a14c925cea944679ae5de5553",
-            "locator": {
-              "end": 371,
-              "kind": "line_range",
-              "start": 371
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`).\n\nAnchor: \"def _task_doc_node(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:ebaaf7803c4f0e7254eea2662f914c1a33c42f36f432fd83252b254cf057f64a",
-            "locator": {
-              "end": 613,
-              "kind": "line_range",
-              "start": 607
+              "start": 304
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -221,11 +136,11 @@
       ]
     },
     "5": {
-      "note": "Every one of these task-document parse sites now reads through the one tolerant `_projected_document`, so an unknown key written by a newer build no longer deletes the whole document; every other validation failure still withholds it.",
+      "note": "The canonical projected-document reader prunes only extra_forbidden paths, revalidates in bounded passes and still withholds other malformed truth.",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
+            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
             "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
             "locator": {
               "kind": "symbol",
@@ -238,15 +153,16 @@
       ]
     },
     "6": {
-      "note": "The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`.",
+      "note": "Anchor: Current task/series projection vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
-            "content": "sha256:a42c7f9aac2b89ef456781787a5901110b8ffc60ce77dd0190dd685019683d3d",
+            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "content": "sha256:828bb254b217a4331bdc6faf39327f61951d6856a32a3fe594f46615f66c6e48",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocNode"
+              "end": 782,
+              "kind": "line_range",
+              "start": 689
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -254,23 +170,12 @@
         },
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
-            "content": "sha256:7230072b4d29082ae057db7e9b648b20072e98f7f3675429001087b45cd554d1",
+            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "content": "sha256:a783da5bd17e48448bb7ada894e59ee3665630d4039008317191593f079384cb",
             "locator": {
-              "kind": "symbol",
-              "name": "SeriesSubTaskNode"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:4e35dd4c98f5c36286f873486398e850774f8eb7e5c3f120008e3199bfd87497",
-            "locator": {
-              "kind": "symbol",
-              "name": "SeriesNode"
+              "end": 858,
+              "kind": "line_range",
+              "start": 829
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -279,15 +184,16 @@
       ]
     },
     "7": {
-      "note": "The provider current-state path + snapshot shape (surface 1).",
+      "note": "Anchor: Workspace provider current-state source path.",
       "targets": [
         {
           "anchor": {
             "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
             "content": "sha256:f415ae214ac810e36b1c38961d53f663c346f1d395a01441935aec7805ee1276",
             "locator": {
-              "kind": "symbol",
-              "name": "current_state_path"
+              "end": 65,
+              "kind": "line_range",
+              "start": 55
             },
             "path": "mcp/src/agents_remember/providers/current_state.py"
           },
@@ -296,15 +202,16 @@
       ]
     },
     "8": {
-      "note": "The provider-node projection policy used by `read_providers`.",
+      "note": "Anchor: Current provider-node reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "38df62d80b5ab01ca7ffcefb4e6a00c2b2c6d71c",
+            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
             "content": "sha256:2afdc01f0d7cc1c9c456706f668f9107e73a067613f28bf580402c5b40db9ae4",
             "locator": {
-              "kind": "symbol",
-              "name": "read_providers"
+              "end": 168,
+              "kind": "line_range",
+              "start": 150
             }
           },
           "kind": "code"
@@ -312,15 +219,16 @@
       ]
     },
     "9": {
-      "note": "Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`).",
+      "note": "Anchor: Worktree resources and active group filtering.",
       "targets": [
         {
           "anchor": {
-            "blob": "38df62d80b5ab01ca7ffcefb4e6a00c2b2c6d71c",
+            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
             "content": "sha256:953e2cb6b8399229720bbd84e25ef2db73866771957edc2a7489420d00a9c9be",
             "locator": {
-              "kind": "symbol",
-              "name": "_worktree_providers"
+              "end": 245,
+              "kind": "line_range",
+              "start": 185
             }
           },
           "kind": "code"

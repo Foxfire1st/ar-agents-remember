@@ -1,15 +1,20 @@
 # dashboard/e2e/cockpit.spec.ts
 
+## Current A10 retained-source account
+
+The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance.
+
+- The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance. [3]
+
+
+
 ## Governing Overview
 
 [agents-remember root overview](../../overview.md)
 
-There is no route-local overview for `dashboard/e2e/`, so the repository root
-overview is the nearest governing ancestor (same resolution as the
-`dashboard/e2e-production/` sidecar). The sibling suite
-[dashboard/e2e-chats overview](../e2e-chats/overview.md) drives the real composed
-app against real installed harnesses; this suite is the primary Playwright suite for
-the cockpit against the dev server and `/dev/bench` fixture gallery.
+This suite is governed by the root overview; removed chats/production suites are not current proof consumers.
+
+## Historical pre-retirement source account — not current proof
 
 ## Purpose
 

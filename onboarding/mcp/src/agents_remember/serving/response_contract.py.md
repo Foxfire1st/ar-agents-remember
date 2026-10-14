@@ -6,156 +6,25 @@
 
 ## Purpose
 
-Defines strict served HTTP response models. Terminal catalog, open, conflict, and assignment
-responses now expose canonical task-document binding rather than leaf-key identity.
+Strict immutable camel-aliased response vocabulary for retained file/onboarding, notes, task/requirement, action/refusal and change-set routes. Terminal catalog/open/conflict/task-assignment response models are removed.
 
-`serving/response_contract.py` declares the response model of every HTTP route the serving app registers. In W03 it adds the comparison change-set: a recorded review comparison as the viewer reads it, never a working or landed range.
 ## Code Commentary
 
-`WireResponse` is frozen, generates camelCase aliases and forbids extra fields. Separate refusal models declare which identifier each status may echo; an untyped status-plus-arbitrary-data envelope would discard this boundary. Internal population by field name is allowed, so wire validation must still distinguish the emitted alias form. The removed route-conformance matrices are historical evidence, not an active coverage claim. cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:89-109).
+WireResponse forbids extra fields and is frozen; route declarations describe success and explicit refusal shapes. Returning an already-built Response is not runtime model enforcement, so declarations alone are not an executed conformance claim. ComparisonChangeSet names comparison mode, comparison number and four code/memory trees. LeafChangeSet separates working/committed mode from recorded/unrecorded state and stateDetail; an unrecorded zero must not be read as a measured landed-empty range. MasterChangeSet carries net scope/currentness and optional exact generation endpoints. Existing caller mirrors and per-model fields retain their own supporting references.
 
-### Logic
+## Evidence boundary
 
-`TerminalCatalogEntryWire` mirrors the conditional catalog serializer — since 260821-ARSPAWN-L1 it
-also carries the caller-kind provenance field `spawned_by_kind` (`spawnedByKind` on the wire,
-`str | None`, None default) beside the spawned-by session/lifecycle pair, so `/api/terminal/sessions`
-rows expose caller kind only when set and old rows are unaffected; the module's key-set equality
-test against `TerminalCatalogEntry.to_json` keeps the wire and the hand-rolled serializer in
-lockstep. Open and seat-conflict models
-carry structural identity; task assignment responses return the accepted or refused document and
-role. Other serving response families remain strict and unchanged in responsibility.
-ARSPAWN-L2 also mirrors `dispatch_brief_entry_id` (`dispatchBriefEntryId` on the wire), the private
-catalog receipt used for dispatch reconciliation after inbox compaction.
-ARSPAWN-L5 mirrors `structural_parent_task_document_ref` and `structural_parent_role`, so operator
-projections can distinguish the owner of an exact reviewer generation without consulting spawn
-ancestry or a runtime id.
+This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
+## Source-bound reference inputs
 
-`ComparisonTrees` echoes the four trees the list was measured over (`code_base`, `code_tip`, `memory_base`, `memory_tip`); `ComparisonChangeSet` extends `TaskChangeSet` with `mode: "comparison"`, the comparison number and those trees, so the viewer renders it with the same columns and counters. `LeafChangeSet` documents the recorded/unrecorded leaf states beside it. No existing contract changes.
-## 260831-CCR-L23 Task-Local Requirement Models
+- [1]
+- [5]
+- [6]
+- [10]
+- [11]
+- [12]
+- [13]
+- [14]
+- [15]
 
-L23 added the strict task-local requirement response models under the shared
-scoped-read refusal table: `RequirementRow` (one canonical Markdown packet:
-name/path/address/size/sha256), `RequirementsListing` (repo/master/document/
-registered + rows for `GET /api/requirements/list`), and
-`RequirementContents` (listing metadata + decoded content for
-`GET /api/requirements/read`). The route family grew from 61 to 63 HTTP routes,
-of which 59 return a `Response` subclass directly (the module header counts were
-advanced to match).
-
-### Conventions
-
-Handlers that return raw `Response` objects rely on explicit conformance tests; declared FastAPI
-response models validate where the framework owns serialization.
-
-### Invariants And Boundaries
-
-- Current public wire responses contain no legacy leaf-binding fields.
-- Session ids remain operator/transport occupant correlation.
-- A seat conflict is reported against task-document-and-role identity.
-- The dispatch receipt is diagnostic/reconciliation evidence, not a public structural address.
-- Reviewer structural parent is a canonical document+role address and remains separate from
-  spawned-by correlation.
-
-### Todos
-
-None.
-
-## 260921-ICR-L13 Current Delta — The Master-Net Vocabulary
-
-This leaf added the three shapes the generation-bound master net is served in (declarative
-schema only; the file grows 1136 → 1155 lines, soft band, green via
-`test_file_size_detector.py`):
-
-- `MasterNetGeneration` — the exact endpoints one net comparison was computed over, and
-  their identity: `code_base`/`code_tip` plus `memory_base`/`memory_tip` (empty when the
-  master shows no memory half) and the deterministic `digest`. A completed master's
-  recorded result re-resolves from these rather than from the live branch tip.
-  cit:([`MasterNetGeneration`], mcp/src/agents_remember/serving/response_contract.py:871-883)
-- `MasterChangeSet` gains `generation: MasterNetGeneration | None` (absent only for the
-  unknown-master degradation), `currentness: "current" | "superseded" | "unmeasured"`, and
-  `scope: "integrated"` — the one scope the selection ever serves.
-  cit:([`MasterChangeSet`], mcp/src/agents_remember/serving/response_contract.py:886-902)
-- `LeafSummary` gains `state: "committed" | "working"` (default `committed`) so an
-  in-flight preview rides beside the net, never silently inside it.
-  cit:([`LeafSummary`], mcp/src/agents_remember/serving/response_contract.py:863-868)
-
-Routed boundaries recorded here, not closed here: R24 owns the leaf-history catalogue and
-drill-down UI on top of `leaves[].state` and per-view `generation`; R12 owns
-committed-leaf historical views; the browser-class journeys belong to R25.
-
-## 260921-ICR-L25 Current Delta — The Leaf View Names Whether Its Range Is Recorded
-
-**`LeafChangeSet` gains `state` and `state_detail`, and they exist to keep two states apart that were
-previously collapsed.** `state: Literal["recorded", "unrecorded"]` (default `"recorded"`, wire
-`state`) says whether the view's own endpoints are recorded; `state_detail: str` (wire `stateDetail`)
-carries the route's own sentence naming the missing endpoint and the action that produces it.
-
-`unrecorded` is a `committed` view of a leaf whose landed commit nothing has recorded yet — the state
-every live leaf is in before its closeout, and one the change-set bar probes as soon as a leaf
-document is opened. It is **answered rather than refused** because the resource exists and only its
-second endpoint does not, and because a `404` for it was a browser console error on the page whose
-accepted criterion is zero (register B6). The counters that ride beside it are a measured zero **of
-nothing**, which is exactly why the state has to be explicit: no reader may take them for "the leaf
-landed nothing", and the client withholds its total for the same reason.
-
-**`LeafChangeSet` remains a `TaskChangeSet` subclass with the `mode` echo, so this is one added
-field pair and no shape change.** The class is also now the third of the three fresh fields this
-route family publishes, so the annotate-only `TaskChangeSet` is untouched and the two
-members it inherits (`code`, `memory`, `counters`) are unchanged. The refusal table is unchanged:
-this is a `200` body contract, not a new status.
-
-- **The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.** [1]
-- **The producer that publishes it, with the counter zero it exists to annotate.** [2]
-- **The client mirror and the control that renders the state and withholds the total.** [3]
-
-- The cases that measure the discriminator and the route status. [4]
-
-
-## 260928-MIK-L114 Last-Feed Ready Marker
-
-`StreamReadyMarker` carries `last_event_ts`: the newest event timestamp across every
-source, which may be older than the replay window, so the panel names the last feed on a
-silent river. Absent when the store holds no event at all.
-
-## 260928-MIK-L126 Current Delta — Folder, Resolve And Report Models
-
-`NoteRow`/`NotesListing` are replaced by `FolderEntry` (`kind`, nullable `size`) and
-`NotesFolder` (`path`/`entries`/`total`/`offset`/`limit`/`remaining`/`exists`/`reason`):
-one folder's entries in a stable order, in parts. `NoteResolution`/`NotesResolutions`
-model the per-reference resolve answer (null staying plain text), and
-`TaskReportRow`/`TaskReports` model the recorded starts (null paths until the product
-records the report). The declared models stay the contract: handlers return `Response`
-objects, so a key added on either side must land in both in the same change.
-
-
-- One folder's entries model parts with total, remaining and reason. [10]
-
-
-- Each reference resolves to a path or null. [11]
-
-
-- Recorded starts model newest-first rows with nullable paths. [12]
-
-
-## Evidence
-
-### Docs References
-
-No Domain Documentation source is configured.
-
-### Repo-Internal References
-
-- The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state. [5]
-- **The leaf view's own recordedness: the `state` discriminator, its `recorded` default, and the route's sentence it carries (260921-ICR-L25).** [6]
-- The catalog wire mirrors structural binding, replacement, and the private dispatch receipt. [7]
-- Open and seat-conflict responses carry structural identity. [8]
-- Task assignment success/refusal use task-document identity. [9]
-
-### Cross-Repo References
-
-No cross-repository implementation dependency governs this file.
-
-- The comparison list carries its four measured code/memory trees. [13]
-- ComparisonChangeSet extends TaskChangeSet with comparison mode, number and trees. [14]
-- LeafChangeSet retains explicit working/committed and recorded/unrecorded states. [15]

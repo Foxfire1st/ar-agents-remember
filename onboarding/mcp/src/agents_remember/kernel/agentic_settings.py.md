@@ -14,12 +14,7 @@ per-level `rolesPerLevel`, incl. the free-form escape hatch), concurrency caps, 
 preference, and the harness-definition table `orchestration.harnesses` (260703-L16) — into frozen
 typed models. It is the single parser
 for the agentic family; the MCP authority file, memory-topology settings, and provider
-lifecycle settings are separate families with separate parsers. **260707-HFX2-L2 (R1/R5)** adds the
-`orchestration.agentNotifier` family (the old `supervisor` spelling is a warned alias; supplying both keys refuses) — the deterministic sweep loop's own knobs (enabled, interval
-seconds, self-liveness staleness cutoff, inbox-redelivery rate limit, and since HFX2-L8 a
-conservative per-sweep redelivery budget). HFX2-L9 makes the supervisor cadence knobs explicitly
-production-safe: `redeliverRateLimitSeconds` and the new `signalCooldownSeconds` both refuse values
-below the shared 900-second floor.
+lifecycle settings are separate families with separate parsers. Removed `orchestration.agentNotifier` and `supervisor` settings load as accepted unused data and are reported, not parsed as active sweep/redelivery knobs. The HFX2-L2/L8/L9 alias, cadence and budget account is historical; no current sweep or notifier authority follows from it.
 
 ## Code Commentary
 
@@ -38,7 +33,7 @@ the parser never derives a model/effort paste command from them.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-The current `orchestration.agentNotifier.escalationBudget` setting has default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
+Historical HFX2-L12 introduced escalationBudget with default250 beside redeliverBudget. Those removed settings/consumer are now accepted unused data; no serving supervisor reads an active escalation setting.
 
 #
 

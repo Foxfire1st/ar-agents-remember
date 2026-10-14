@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ed290801bb80c1162650eb5b582cb58bd46b8543",
+        "blob": "ee4e1cd7901b67b6e6748eed979f9e18a5632df8",
         "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed290801bb80c1162650eb5b582cb58bd46b8543",
+            "blob": "ee4e1cd7901b67b6e6748eed979f9e18a5632df8",
             "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
             "locator": {
               "kind": "symbol",
@@ -81,6 +81,22 @@
               "name": "_cleanup_settled"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "handover_gate_blocked preserves the existing master-handover refusal code, gate ID, reason and coded blocker, while stripping inherited nextTool, nextArgs and nextRequiredArgs. Its blocker names STORED_GATE_WAY_OUT: no product tool decides a stored gate; agents-remember removed-stores names the log and removes it only on the user’s word. Dry/real refusals retain their distinction from success and no approval is fabricated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee4e1cd7901b67b6e6748eed979f9e18a5632df8",
+            "content": "sha256:ed3f2cfef354c09e5aee7cb887f1761d3c183a1cfb1a65edf1c18e8da7aa7e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_gate_blocked"
+            }
           },
           "kind": "code"
         }

@@ -29,6 +29,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A control inside a row keeps its press from the list, because the list chooses a row when a press starts and not at the click; the dismissal of an overdue hand-over therefore dismisses and does not choose the row. It is offered whenever the hand-over is overdue: as \"×\" beside \"check chat\" while the hand-over is the row's word, and as \"chat ×\" beside the gate's word while an open gate is the row's word, named so that it cannot be read as a dismissal of the gate; it sends the dismissal of the hand-over's inbox entry and nothing for the gate.",
-  "status": "accepted",
+  "status": "retired",
   "supersedes": []
 }

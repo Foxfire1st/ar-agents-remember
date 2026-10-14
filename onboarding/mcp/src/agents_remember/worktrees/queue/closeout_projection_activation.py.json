@@ -32,29 +32,53 @@
       ]
     },
     "2": {
-      "note": "The queue route is a disposable rebuild projection with task truth and lifecycle state outside it.\n\nAnchor: `## 260821-CLIVE Final Disposable Projection Route`",
+      "note": "The queue rebuild derives a source snapshot and publishes only an exact-current disposable replacement; it does not make this activation observer a lifecycle or selector writer.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/worktrees/queue/overview.md:72-107"
+          "anchor": {
+            "blob": "ade1907a1a069cc93f17436db9d119803e79337c",
+            "content": "sha256:5b442a36be382a0dd47817c0488f3df25badbd74f4c9e52e88f4f82bdd8732ba",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Focused tests prove two masters sharing one protected source pair both project with no waiting reason, including the graph-less sprint where nothing serializes the masters.\n\nAnchor: \"self.assertEqual(project_series_activation(series_a).waiting, ())\"",
+      "note": "The current named cross-master test asserts both masters active and both activation projections with empty waiting tuples on one source pair; this is source evidence, not a rerun.",
       "targets": [
         {
           "anchor": {
-            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
             "content": "sha256:49a2e68dc85ea93b2aa44316fc1fce77276366330bbc42c71c4c52672fa492b6",
             "locator": {
-              "end": 162,
+              "end": 170,
               "kind": "line_range",
-              "start": 131
+              "start": 139
             },
             "path": "mcp/tests/test_cross_master_concurrency.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current read-only activation projection names worktree_start/worktree_attach as malformed-snapshot recovery and no dispatch_agent remedy. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "699fdb65949037cd2321c2070e0ebb21d86f9530",
+            "content": "sha256:a12a3e56bc43bda8a03a2b54bb1a2ac02d77d1cc3cdfd099bedb3f4b0529ffc8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

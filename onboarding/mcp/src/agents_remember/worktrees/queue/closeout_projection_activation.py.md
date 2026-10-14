@@ -19,7 +19,7 @@ record — never a shared per-source-pair slot. A valid observation returns its 
 or one waiting reason, and the only surviving reason is `atomic-series-reconciling`: vacant and
 active are never waiting states, and another master's state is never this contract's reason to wait.
 A derivation/read failure becomes a bounded `ProjectionSourceProblem` with the contract or activation
-address and an explicit repair through a selecting manager/start/attach operation. It never chooses a
+address and an explicit repair through a selecting worktree_start/worktree_attach transaction; the prior dispatch_agent manager remedy is removed. It never chooses a
 winner, because there is no winner to choose.
 
 ### Conventions
@@ -56,8 +56,12 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - Selector observation and waiting-reason derivation are owned outside the queue; the reader takes the contract and the reason is derived from the observation alone. [1]
-- The queue route is a disposable rebuild projection with task truth and lifecycle state outside it. [2]
-- Focused tests prove two masters sharing one protected source pair both project with no waiting reason, including the graph-less sprint where nothing serializes the masters. [3]
+
+- The queue rebuild derives a source snapshot and publishes only an exact-current disposable replacement; it does not make this activation observer a lifecycle or selector writer. [2]
+
+- The current named cross-master test asserts both masters active and both activation projections with empty waiting tuples on one source pair; this is source evidence, not a rerun. [3]
+
+- The current read-only activation projection names worktree_start/worktree_attach as malformed-snapshot recovery and no dispatch_agent remedy. \[4] [4]
 
 ### Cross-Repo References
 

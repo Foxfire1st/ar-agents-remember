@@ -13,6 +13,14 @@ slice-07 served-onboarding ledger surface.
 
 ## Code Commentary
 
+The current facade re-exports event/store and ID-minting primitives, `AmbientLifecycle`, `install_ambient` and `reset_ambient`, lifecycle state vocabulary, projection/reducer types and functions, timing constants and `Clock`, and the served ledger/schema/key surface including `ServedLedger`. `observer_root` is imported from `kernel.primitives.observer_paths`. The `ambient()` getter and dependency-heavy snapshot/projection I/O readers remain direct submodule imports rather than package exports.
+
+`require_ambient`, `GuardedStartError`, `AgentPickupNode`, `ExpectationRowNode` and `age_seconds` are not exported by this current facade. Their earlier slice descriptions below are historical, not a surviving signal/expectation surface. The current import/export inventory is source evidence, not execution of a reader or an independent CODE pass.
+
+### Historical slice/export provenance
+
+The prior slice account is retained at its authored source epoch. Superseded names and the older read-front-door description here establish no current capability:
+
 Re-exports the write side — `Event`, `OBSERVER_EVENT_SCHEMA`, `Actor`, `Trust`,
 `now_iso` (`events.py`), `EventStore` (`store.py`), `new_ulid` (`ulid.py`); the
 slice-2b ambient surface `AmbientLifecycle`, `install_ambient`, `require_ambient`,
@@ -63,3 +71,5 @@ importing the package never drags in the providers/worktrees machinery.
 - The shared store-root resolver re-exported here. [6]
 - The timing config + age helper now sourced here. [7]
 - The served-onboarding ledger re-exported here (`ServedStore`/`ServedRecord`/`served_key`/`SERVED_RECORD_SCHEMA`). [8]
+
+- The current explicit facade exports the retained dependency-light observer and served-ledger names, not the removed guard/pickup/expectation/age-helper surface. [9]

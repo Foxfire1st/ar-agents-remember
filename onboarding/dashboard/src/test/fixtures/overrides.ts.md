@@ -6,18 +6,9 @@
 
 ## Purpose
 
-The override parameter type every builder in `fixtures/wire.ts` and `fixtures/conversationWire.ts`
-takes, and the reason it is not a bare `Partial<T>`. Three exports in 69 lines: `RequiredKeys<T>`
-(local), `Overrides<O, T>` and `NoOverrides`.
+The override parameter type the retained builders in `fixtures/wire.ts` take, and the reason it is not a bare `Partial<T>`. `RequiredKeys<T>` is local; `Overrides<O,T>` and `NoOverrides` are the two exported types. Source length and obsolete conversation-builder populations are not current API counts.
 
-**The defect it closes.** `tsconfig.app.json` does not set `exactOptionalPropertyTypes`, so every
-optional slot of a `Partial<T>` also accepts an EXPLICIT `undefined` — and the builders' trailing
-`...over` writes it through. `conversationPage({ capabilities: undefined })` therefore compiled, and
-answered a page whose REQUIRED `capabilities` was `undefined`: verbatim the defect
-`conversationWire.ts`'s header says it fixed (`undefined as unknown as ConversationCapabilities` —
-"worse: `capabilities` is REQUIRED, so this fixture stated that a required field is absent"), reachable
-again with no cast at all. `lifecycle({ state: undefined })`, `taskDoc({ steps: undefined })` and
-`projection({ enclosures: undefined })` are the same move.
+**The defect it closes.** Without exactOptionalPropertyTypes, optional slots in Partial<T> admit an explicit undefined; the builder spread writes it into the result. `provider({state:undefined})` therefore constructs a ProviderNode whose required state is undefined, not a conversation page or missing capabilities. The retained lifecycle.state, taskDoc.steps and projection.enclosures controls are the same required-field move without a cast. Overrides rejects this move at a fresh literal call site; property-name/AST guards alone cannot detect it.
 
 Nothing in `wireFixtureGuard.ts` can see any of them, and the source says exactly why (cit:(["no assertion for rule 1"], dashboard/src/test/fixtures/overrides.ts:10-12)): there
 is no assertion for rule 1, no suppression for rule 5, and rule 4 measures property NAMES, which are
@@ -57,8 +48,8 @@ site; the local is what makes the spread ordinary.
 
 - The rejection happens at the **CALL SITE**, in whichever tsconfig project the caller sits in. That is
   the property the project-wide flag would not have given for free: it covers `tsconfig.driver.json`'s
-  Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and the wire guard's own in-memory
-  program, neither of which is `tsconfig.app.json`.
+  retained driver-project consumers and the wire guard's own in-memory
+  program, neither of which is the app project. Removed e2e-chats/production suites supply no current coverage.
 - A required key whose declared type genuinely admits `undefined` must keep passing through. Tightening
   `Exclude<O[K], undefined>` onto every required key would reject shapes the server does send.
 - This binds builder parameters only. It is not a decoder, a validator, or a runtime guard — it emits no
@@ -78,23 +69,10 @@ number — treat it as provenance for the decision rather than as a current coun
 
 ### Todos
 
-**What this does NOT cover.** The header carries three limits (cit:(["WHAT IT DOES NOT COVER"], dashboard/src/test/fixtures/overrides.ts:23-43)). They are the point of the
-file, not caveats on it:
+**What this does NOT cover.** The current source documents two limits.
 
-1. **The override must be a FRESH literal at the call site.** Widen it through a variable first —
-   `const over: Partial<ConversationPage> = { capabilities: undefined }; conversationPage(over);` — and
-   `O` infers `Partial<ConversationPage>`, every slot admits `undefined` again, and it compiles.
-   `fixtureOverrides.test.ts` asserts that case as a **KNOWN PASS** (its `honest.test.ts` probe, entry
-   `k`) rather than leaving it to be discovered. Only `exactOptionalPropertyTypes` closes it.
-2. **ONE LEVEL DEEP ONLY.** `conversationCapabilities` takes per-GROUP overrides
-   (`{ controls?: Partial<ConversationCapabilities["controls"]> }`), so
-   `conversationCapabilities({ controls: { interrupt: undefined } })` still writes `undefined` onto a
-   required leaf. Generalizing `Overrides` through a nesting level is a different and fiddlier type; it
-   was left rather than half-done.
-3. **EVERYTHING OUTSIDE THESE TWO MODULES.** This binds the builders in `fixtures/wire.ts` and
-   `fixtures/conversationWire.ts` only. Any other `Partial<WireType>` parameter in the tree — a component
-   prop, a store helper, an app-code decoder — still admits an explicit `undefined`, and only the
-   project-wide flag would change that.
+1. **Fresh literals only.** `const over: Partial<LifecycleProjection> = {state:undefined}; lifecycle(over);` widens O to Partial<LifecycleProjection>, reopening optional undefined. The retained honest.test.ts probe entry k records this widened-variable residue as a known pass; it is not a conversationPage control. Only the project-wide flag closes that general gap.
+2. **Outside wire.ts builders.** This constraint binds the retained fixtures/wire.ts parameters only. Other Partial<WireType> parameters, component props or decoders still admit explicit undefined under their own configuration. The removed conversationWire/conversationCapabilities builders supply no current scope or nested-control guarantee. This mapped type is not recursive validation, and no new nested test coverage is inferred.
 
 ## Evidence
 
@@ -110,13 +88,12 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 ### Repo-Internal References
 
-- The defect statement: `Partial<T>` admits an explicit `undefined`, the four reachable impossible fixtures, and why no `wireFixtureGuard` rule sees them. [1]
+- Partial overrides can erase required lifecycle/provider state, task steps or projection enclosures without a cast; the value hole is not seen by the property-name guard. [1]
 - The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. [2]
-- The three documented limits: fresh-literal-only, one level deep, and only these two modules. [3]
+- Current limits are fresh-literal-only and retained wire.ts builders only; the widened LifecycleProjection control is a known pass, not a removed conversation/nested builder promise. [3]
 - `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. [4]
 - The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. [5]
 - Consumer: every projection builder takes `Overrides<O, Node>`. [6]
-- Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper). [7]
 - The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. [8]
 - `tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have. [9]
 
@@ -126,4 +103,3 @@ No meaningful cross-repository or external-system boundary is involved; this is 
 in-repo test fixtures.
 
 - Import and boundary review found the same-repository `wire.ts` consumer. [10]
-- Import and boundary review found the same-repository `conversationWire.ts` consumer. [11]

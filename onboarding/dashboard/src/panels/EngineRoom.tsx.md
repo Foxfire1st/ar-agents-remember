@@ -13,7 +13,7 @@ data flow are unchanged.
 
 ## Current enclosure-only composition
 
-EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), and renders selected process or the no-enclosures empty state. No OfficialStrip, provider subscription or fallback path. Official ledger lookup, selection, gate diagnostics, leaf-first header and pulse remain.
+EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), and renders selected process or the no-enclosures empty state. No OfficialStrip, provider subscription or fallback path. Official ledger lookup, selection, leaf-first header and pulse remain; no gate responder/diagnostics surface remains.
 
 ### Maintenance boundaries
 
@@ -114,7 +114,6 @@ must be kept for the legacy projection tests.
 - The bounded-height panel variant the room uses. [6]
 - `groupEngines` (fallback) + `engineState` + `selectQueue`. [7]
 - The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). [8]
-- The shared chat-routed gate responder rendered by diagnostics. [9]
 
 ## Current L5I Maintenance
 

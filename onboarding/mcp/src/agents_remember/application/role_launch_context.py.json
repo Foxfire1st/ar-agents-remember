@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
-        "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
+        "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "parentless_selection_violation"
+        }
+      },
+      "id": "RLZ-BM98W7",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Applies the table to a selection and words the refusal that dashboard and tool give in the same words.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
+        "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
         "locator": {
           "kind": "symbol",
           "name": "resolve_role_launch_context"
@@ -18,6 +36,24 @@
       },
       "rationale": "The launch resolver admits only the three valid Investigator selections.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
+        "content": "sha256:031bcfe5b9b1ac342427dc2c0fe738beef326c73ecb96eefd8615da0fae486a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENTLESS_START_SELECTIONS"
+        }
+      },
+      "id": "RLZ-RS4WTS",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one table of what may be started without a parent; the dashboard's start and the tool's start both read it.",
+      "role": "primary-authority"
     }
   ],
   "references": {

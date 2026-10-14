@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c254dde7d859b54501eeff61d9d6f649cb76ebfa",
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
             "content": "sha256:fe0511ac6270d1088839ec1c18125dd18d9c69e3c787368dadb3d07311eda1ff",
             "locator": {
               "end": 163,
@@ -53,12 +53,27 @@
         },
         {
           "anchor": {
-            "blob": "c254dde7d859b54501eeff61d9d6f649cb76ebfa",
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
             "content": "sha256:09fc3341fad9960866b6337f2ca3aac49c8449f051fb5997ec1ad02ec3795ec5",
             "locator": {
               "end": 204,
               "kind": "line_range",
               "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.\n\nAnchor: `skills/l-01-agent-lifecycles/templates/turn-report.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
+            "content": "sha256:149a15a6ff1f8bb6f714005dbea49b28f6f7053cdda6e424bea671b85a79a120",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

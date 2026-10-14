@@ -120,7 +120,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): `progress_status` is the setup-progress status record. [15]
 - Retained reference account (no fresh execution or acceptance inferred): The ambient `end()` entry owns terminal-state publication. [16]
 - Retained reference account (no fresh execution or acceptance inferred): `projected_current` is the gate store's tolerant projected fold. [17]
-- Retained reference account (no fresh execution or acceptance inferred): The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. [18]
 - Retained reference account (no fresh execution or acceptance inferred): `gate_keep_ids` is the retention keep-set helper. [19]
 - Retained reference account (no fresh execution or acceptance inferred): The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. [20]
 - Retained reference account (no fresh execution or acceptance inferred): `StatesAreFiledOnce` is the TypeScript overlap-check type. [21]

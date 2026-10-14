@@ -90,23 +90,6 @@
         }
       ]
     },
-    "3": {
-      "note": "The Python host spawns this contract's entries and correlates handshake plus one operation per process.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
-            "content": "sha256:a5f38881525bf65b58d0ead501d2fc98fbd594f9cf9a65265aa2be1fbbe09238",
-            "locator": {
-              "kind": "symbol",
-              "name": "ConversationLibraryHelperHost"
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives.\n\nAnchor: `handleClaude`, `handlePi`",
       "targets": [

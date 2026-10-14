@@ -9,11 +9,11 @@
   "applicability": "Every dashboard surface that could link to a certain agent's chat or build navigation of its own.",
   "conditions": [
     "The launcher's execution steering (show the displayed execution's agent) keeps working.",
-    "A link that works without the removed code stays untouched; one that needed it goes with it."
+    "The retained PaseoFrameControl steers the displayed execution through its current trusted message/URL owner; no new sidebar, list or navigation command is added."
   ],
   "exclusions": [
-    "No new link, list, route or command is built so that an agent can be reached from another page.",
-    "The highlight composer's switch to the Chats view after a selection is not such a link and stays."
+    "The old L75 highlight-composer preservation exception is superseded by the explicit R113 removal, not permission to restore a dormant composer.",
+    "No claim that a deleted AR selection/highlight submit path survives; host chat content remains host-owned."
   ],
   "id": "INV-QS9SRX",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "No new chat navigation is added; existing execution steering and the Cockpit highlight transition remain.",
+  "statement": "No new dashboard chat navigation is added; existing host execution steering remains, while R113 removes the AR highlight composer and its old switch-to-Chats transition rather than creating a replacement route.",
   "status": "proposed",
   "supersedes": []
 }

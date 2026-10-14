@@ -46,6 +46,21 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance.\n\nAnchor: `dashboard/e2e/cockpit.spec.ts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74de70faf9870cb74c6975c7bf2abcd19487c9a5",
+            "content": "sha256:b93daab0b7e84ca9b809a2140a4ccb1ed24f128888551ebd2252930e60453785",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

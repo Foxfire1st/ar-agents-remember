@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Launch-aware AR tool guidance retains the host route’s other-server choice because exclusion_applied=False.
+- Launch-aware AR guidance follows the launch's actual exclusion record, not a universal exclusion_applied=False. A known AR server on Claude gets record-backed providerOptions MCP exclusion and omits the other-server choice; unknown/indeterminate acceptance and other harnesses retain their conditional choice wording. This is source-owned instruction selection, not new real-host acceptance.
 - MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and carries no file text; the agent opens named files with its harness's own file tool. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
 - The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
 

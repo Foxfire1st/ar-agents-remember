@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b5a700be1a97ca2225674bc908709583412a7ed1",
+        "content": "sha256:2a29b71e88f615bfc4589ff59ad294e0a533ef27007175cd333006d08999544d",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmptyDetailPanel"
+        }
+      },
+      "id": "RLZ-NXF3CA",
+      "invariant": "INV-8PK7FQ",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 8",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The detail panel while no task is selected: its sentence says what a selected task shows, steps, review, requirements and reports.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The task-document panel variants.",

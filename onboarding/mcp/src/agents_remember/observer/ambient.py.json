@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
+        "blob": "ffefd4016876b50b095f4cd21751cc567bef2f78",
         "content": "sha256:148e8f4aed26aff4e86450fdf83ec87b540e458704e302460ef09ed9e79f9969",
         "locator": {
-          "end": 422,
+          "end": 233,
           "kind": "line_range",
-          "start": 422
+          "start": 233
         }
       },
       "id": "RLZ-3JQQSX",
@@ -23,15 +23,16 @@
   ],
   "references": {
     "1": {
-      "note": "The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158).",
+      "note": "Anchor: Current lifecycle vocabulary and terminal coercion owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
-            "content": "sha256:8c4374938879f79e4d6802c63925956662c216e71284014a1a4b7cc3a49d882d",
+            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
+            "content": "sha256:1f14640644540370778d8205fe476fcdb07f6fea1c022f61bf216c928a1ac65b",
             "locator": {
-              "kind": "symbol",
-              "name": "TERMINAL_STATES"
+              "end": 163,
+              "kind": "line_range",
+              "start": 142
             },
             "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
           },
@@ -39,69 +40,30 @@
         },
         {
           "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "blob": "a40e70f0c1f1496f2b5e3830ef390e1e16ae1ddf",
             "content": "sha256:16c89a41b06940d0acc7318ab9be0b1d262c3a8c91045d796963373d34c09df5",
             "locator": {
-              "kind": "symbol",
-              "name": "coerce_end_outcome"
+              "end": 127,
+              "kind": "line_range",
+              "start": 118
             },
             "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
-            "content": "sha256:68300b739da1927db29cec45b98779726e7acc34b5ab1a6256f0a9bc79d96672",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleState"
-            },
-            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
-            "content": "sha256:52c1c779f9509dbee75721dac2f08957e66c4a132a86f885ddce3a6085590f6d",
-            "locator": {
-              "kind": "symbol",
-              "name": "HEARTBEAT_SECONDS"
-            },
-            "path": "mcp/src/agents_remember/observer/timeutil.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "35893ecd2b60c2f73d8d59bd85966045b0f60356",
-            "content": "sha256:ef97c60e5372125bff2b3b50c5a0a1c49e405da08332967feeac58f34ea10a9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "age_seconds"
-            },
-            "path": "mcp/src/agents_remember/controlplane/stamps.py"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned).",
+      "note": "Anchor: Reducer interprets retained and old recorded events without public signal revival.",
       "targets": [
         {
           "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:ee007ae986db048bb8506c817ea9a73f2265c6d546027d4c07d8621d1a03f7f7",
+            "blob": "769360798335525af876426016e9fadc32f697e9",
+            "content": "sha256:a92a28ad325b9ed84003ec6853fa4735027e02cfbca74a70723745cd57bb4678",
             "locator": {
-              "kind": "symbol",
-              "name": "project_lifecycle"
+              "end": 128,
+              "kind": "line_range",
+              "start": 109
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },
@@ -109,11 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
-            "content": "sha256:343deac34115dcc1ab4238e0e1fc75473be2edfb94879d7fc14479de78b967e5",
+            "blob": "769360798335525af876426016e9fadc32f697e9",
+            "content": "sha256:9735a5c18656c8ca2a2660985479b2c900fd8382efc90420cac8850c82601cd4",
             "locator": {
-              "kind": "symbol",
-              "name": "_project_inferred"
+              "end": 413,
+              "kind": "line_range",
+              "start": 398
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },
@@ -122,88 +85,32 @@
       ]
     },
     "12": {
-      "note": "The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays.",
+      "note": "emit_read_packet strips caller entry content by selecting only path/lines/status/bytes, drops lifecycle-less calls and contains emission failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
-            "content": "sha256:965527bc6b5cd78e03ec9e08ab12c4725c4c8a6d0fe1b618ac6b549ced1b9d73",
+            "blob": "ffefd4016876b50b095f4cd21751cc567bef2f78",
+            "content": "sha256:8ccd415ed2a22454ba08e1236600fc423fee3bfadf51d20d07537513444cc471",
             "locator": {
               "kind": "symbol",
-              "name": "FLEETING_INACTIVE_TTL_SECONDS"
-            },
-            "path": "mcp/src/agents_remember/observer/event_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
-            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
-            "locator": {
-              "kind": "symbol",
-              "name": "prune_expired_lifecycle_event_logs"
-            },
-            "path": "mcp/src/agents_remember/observer/event_retention.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8).\n\nAnchor: `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
-            "content": "sha256:447719a448a7fe82a7e2034972703ef6627f21776567be7076da53459ece838d",
-            "locator": {
-              "end": 133,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "docs/design/observable-lifecycle.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
-            "content": "sha256:c6abae5009729b8de306ea6d715ba20cc83da630fbb75338ffaf680960abf9fe",
-            "locator": {
-              "end": 171,
-              "kind": "line_range",
-              "start": 156
-            },
-            "path": "docs/design/observable-lifecycle.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
-            "content": "sha256:822938504779aff7cc575b5aa47f7c251301bb1488a13eb50aa0ea4991c89635",
-            "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 397
-            },
-            "path": "docs/design/observable-lifecycle.md"
+              "name": "emit_read_packet"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The append-only store the ambient writes events to.",
+      "note": "Anchor: Append-only event store still backs retained attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
-            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+            "content": "sha256:5810128edbc2a846a23bc5e2bad43873932f0bc24ea6ffb9013f780640a92de9",
             "locator": {
-              "kind": "symbol",
-              "name": "EventStore"
+              "end": 246,
+              "kind": "line_range",
+              "start": 161
             },
             "path": "mcp/src/agents_remember/observer/store.py"
           },
@@ -212,15 +119,16 @@
       ]
     },
     "3": {
-      "note": "The `ar-observer-event/v1` envelope every signal emits.",
+      "note": "Anchor: Typed observer event envelope.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "blob": "31f34dadebf6c89b987bcc33fb85dd72d7281f94",
             "content": "sha256:77305b122ad15cacc54eac6fc0d8dba20a7e6dcfcafa884335ad11c49c9838c4",
             "locator": {
-              "kind": "symbol",
-              "name": "OBSERVER_EVENT_SCHEMA"
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
             },
             "path": "mcp/src/agents_remember/observer/events.py"
           },
@@ -229,119 +137,36 @@
       ]
     },
     "4": {
-      "note": "The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists.\n\nAnchor: \"def complete_tool_response(\"",
+      "note": "Anchor: Current completion boundary distinguishes ambient from workspace-river attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
-            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
-              "end": 145,
+              "end": 400,
               "kind": "line_range",
-              "start": 131
+              "start": 279
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The optional stale-notifier banner reads the ambient root and contains errors before response enrichment.\n\nAnchor: \"def _agent_notifier_banner(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
-            "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 127
-            },
-            "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5).\n\nAnchor: \"the watcher must be code AND watched\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
-            "content": "sha256:cacb6cb026b0a9c99c392cf271c16799c845dd8b98d921544a8389a395e89d57",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`).",
+      "note": "Anchor: Served-onboarding state owner retained for read attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "blob": "b250594c4d8b56d5cb43abc24ead92d4e178b1a2",
             "content": "sha256:857300ce08b97b2670b6396a264f03bb281d1fce3f315f3ca51dc56ef3ae3099",
             "locator": {
-              "kind": "symbol",
-              "name": "ServedStore"
+              "end": 121,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/observer/served_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface.\n\nAnchor: `emit_read_packet`; `is_served`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:760f97779c9809b085f182dc10d6f92fd000eec19b5c5f26ebe9d11ba466ca25",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 180
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:b557cc8bb82167b6e805274c512af503a6798739fb532de302a1ce32fcae8634",
-            "locator": {
-              "end": 379,
-              "kind": "line_range",
-              "start": 379
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The heartbeat/stale idiom this generalizes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
-            "content": "sha256:9b5965a98db1bb69e47807e6e050f5422f54a20626c7786ef6d3846f00b87e97",
-            "locator": {
-              "kind": "symbol",
-              "name": "SetupProgressFile"
-            },
-            "path": "mcp/src/agents_remember/providers/setup_progress.py"
           },
           "kind": "code"
         }

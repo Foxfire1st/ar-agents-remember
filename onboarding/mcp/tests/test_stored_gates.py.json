@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_stored_gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stored-gate refusal preservation: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "content": "sha256:a65288d941158785adb44ce246d96b33eac44ffc20d869d0c58ce291644c110e",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFUSALS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "content": "sha256:476b900cd02c924eef93e09ba981d1fa4a8edc4a52c8689f895b85baa8af783c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_integration_refused_by_a_stored_handover_gate_names_no_next_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5deaf3790b1cf0d73b3eb97371a06763c7da968",
+            "content": "sha256:28195778a917d6c4760fe29a71a54f6ee3027b33de814894fedf99c15210f007",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -72,9 +72,7 @@ parameter so reader public signatures are unchanged.
   retried next build; only successful parses enter the cache.
 - **Retention is bounded by the live enumeration.** Every build prunes cache entries whose paths are
   no longer enumerated.
-- **Deliberate non-consumers:** the landing refresher (runs on the event-loop thread — sharing the
-  cache would need locks) and the supervisor sweep (`serving/` territory) keep their own independent
-  contract passes; they never touch this cache.
+- **Deliberate non-consumer:** the landing refresher keeps its independent contract pass and never touches this worker-thread-owned cache. The removed supervisor sweep is not an active consumer or non-consumer owner.
 
 ### Todos
 

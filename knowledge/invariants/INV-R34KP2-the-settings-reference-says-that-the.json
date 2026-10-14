@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A command with an unquoted custom configuration path can act on the wrong operands or fail to protect replacement saves."
+  },
+  "applicability": "Public settings instructions and emitted commands under the resolved HOME/XDG configuration path.",
+  "conditions": [
+    "Open both folder and file before replacement editing; close file and folder afterwards.",
+    "Shell-safe operands preserve spaces, quotes and metacharacters."
+  ],
+  "exclusions": [
+    "No product-authored user edit or change of harness configuration."
+  ],
+  "id": "INV-R34KP2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the two tests named in found_at; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2 (the final command texts); notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-for-the-architect-38.md, section 2"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R137@v1 rule 6",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The settings reference says that the user's file is closed and why, and gives the two commands for folder and file with the configuration folder the product reads, quoted so that a path with a space stays whole; the product emits the same two commands for the exact path.",
+  "status": "accepted",
+  "supersedes": []
+}

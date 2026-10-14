@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_session_start_hook.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Generated session-start hook process tests: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d1af6eadf85143252324eafa689a994dea7c9f",
+            "content": "sha256:ed4edd20a8b826e7f255630174237e82350222c244f8de4648c3abdba6609d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_role_agent_of_the_host_gets_no_text"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,16 +2,32 @@
   "path": "mcp/tests/test_leaf_retirement_wording.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Each registered obsolete sentence is caught on its own base carrier.",
+    "2": {
+      "note": "Current-source absence and source-confined reintroduction detection, not base-carrier substring membership.",
       "targets": [
         {
           "anchor": {
-            "blob": "c129f21c7486cf378a2a50d8bc53c753eb1a2a6d",
+            "blob": "3af4872c490802df8eb1c9bcb5cb7985aef87f11",
             "content": "sha256:e44669952022e4b3f6c3cc01d5e6fe9513fb210e7a9ef308cf2ececa37cead22",
             "locator": {
               "kind": "symbol",
               "name": "test_each_obsolete_sentence_has_independent_source_confined_detection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preserved sentences are appended for detector classification; original membership is not asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3af4872c490802df8eb1c9bcb5cb7985aef87f11",
+            "content": "sha256:b9d85b65c9ed4cb103f17615eb1de7173f5fe8d03aeaf6eef5a969bb0d8fcdfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preserved_no_role_and_identity_sentences_remain_valid_on_their_sources"
             }
           },
           "kind": "test"

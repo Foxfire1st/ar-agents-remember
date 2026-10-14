@@ -1,5 +1,13 @@
 # skills/l-01-agent-lifecycles/templates/turn-report.md
 
+## Current A10 retained-source account
+
+The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.
+
+- The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report. [4]
+
+
+
 ## Message/file transport
 
 This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.

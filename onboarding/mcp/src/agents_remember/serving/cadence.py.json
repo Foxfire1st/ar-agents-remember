@@ -1,0 +1,34 @@
+{
+  "path": "mcp/src/agents_remember/serving/cadence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained stdlib-only pacing declaration supplies one frozen interval/heartbeat decision and its default, not an agent-notifier capability.\n\nAnchor: `ProjectionCadence`, `DEFAULT_PROJECTION_CADENCE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e89382fa17f7fdae08b57e78af0b514a48ac395f",
+            "content": "sha256:3429c1ffd4508abfcd1d72baba2e91d041046064bafbd4538eac8c3eb68e9e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionCadence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e89382fa17f7fdae08b57e78af0b514a48ac395f",
+            "content": "sha256:b98a0bd6276983202e42255fe815cb42504127d37752b827ff160f92defdc880",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_PROJECTION_CADENCE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

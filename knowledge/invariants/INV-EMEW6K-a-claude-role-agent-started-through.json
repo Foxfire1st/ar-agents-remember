@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Assuming every provider suppresses the ambient server would let an agent call the wrong product installation."
+  },
+  "applicability": "Role agents started through pinned Paseo0.11.1, by the per-launch exclusion record.",
+  "conditions": [
+    "Claude applies the exact other-product tool exclusion.",
+    "Codex, Hermes/ACP and Pi retain the explicitly ruled per-provider exception and truthfully report the other copy."
+  ],
+  "exclusions": [
+    "Agents not started by the product.",
+    "A future host/provider mechanism requires fresh source proof and native-record qualification."
+  ],
+  "id": "INV-EMEW6K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_single_server.py; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-worker-a4868b83-d390-4b5e-9761-5097bcca689d.md, section 3"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R132@v1 rule 1",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Claude role agent started through the host does not carry the tools of the server `agents-remember`; a Codex, Hermes or Pi role agent carries them where its own configuration names that server, and the start says so.",
+  "status": "accepted",
+  "supersedes": []
+}

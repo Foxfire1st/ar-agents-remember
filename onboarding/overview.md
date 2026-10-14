@@ -48,13 +48,13 @@ Root `skills/` owns authored skill instructions. `scripts/sync-skills.py` propag
 
 `layers.toml` declares a strict import order and package charters, not a measurement of completed architecture. Inter-package imports may point only to lower ranks, with no dependency baseline or exception. Its future packages and `serving` deletion plan remain explicitly declared construction intent. The same file separately retains a scoped, named `serving/` module-count sequencing deviation with its owner and deleter; this is not a general layering exception or an indefinitely renewable grandfather entry. Historical charter wording about a changed-line coverage floor does not override current diagnostic-only coverage policy.
 
-The public MCP roster is defined once in `models/tools/public_roster.py`. It contains 41 public names on this successor after removal of `resolve_context` from the rejected freeze’s 42-name tuple; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, with older39/41 epochs retained as historical. It includes context and paired reads, runtime installation, dispatch, starter-authorized child retirement, memory/citation/index operations, worktree operations, task documents, coherence, closeout queue, role start/set/message and knowledge read/diff/integrity. Public-surface validation requires agreement among this roster, response registry, live ordered advertisement and dispatch schema. Internal compatibility models and retained implementation modules do not advertise tools. `spawn_agent_session` remains an internal response-model entry. Historical `drift_check`, lifecycle/gate tools, parent/child messaging, skill discovery/install, provider query/lifecycle and benchmark MCP rows must not be read as the current public roster.
+The current public MCP roster is the single40-name literal in models/tools/public_roster.py, re-exported by the tools base. It includes native role start/set/message and receipt-tracked retirement, memory/citation/index work, task/worktree/publication operations, and knowledge read/diff/integrity. dispatch_agent, public native-adapter/terminal/gate/inbox operations and their removed response models are not current members. Presence of retained services or original producer evidence is not current advertisement. Source inspection supplies no installed-host, CODE or MEMORY grade.
 
-The public MCP roster is defined once in `models/tools/public_roster.py`. The composed literal roster has41 public names after L109 removes resolve_context, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.
+The public MCP roster is defined once in `models/tools/public_roster.py`. The L111 predecessor had41 public names after resolve_context removal; the composed R113 source has40 after dispatch_agent removal, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.
 
 > Historical roster account, retained but superseded: It contains 41 public names, compared with 39 at `8d2e7547`; the additions are exactly `retire_child` and `role_start_set`.
 
- It includes context and paired reads, runtime installation, dispatch, starter-authorized child retirement, memory/citation/index operations, worktree operations, task documents, coherence, closeout queue, role start/set/message and knowledge read/diff/integrity. Public-surface validation requires agreement among this roster, response registry, live ordered advertisement and dispatch schema. Internal compatibility models and retained implementation modules do not advertise tools. `spawn_agent_session` remains an internal response-model entry. Historical `drift_check`, lifecycle/gate tools, parent/child messaging, skill discovery/install, provider query/lifecycle and benchmark MCP rows must not be read as the current public roster.
+ It includes context and paired reads, runtime installation and starter-authorized child retirement; dispatch_agent is removed. It retains, memory/citation/index operations, worktree operations, task documents, coherence, closeout queue, role start/set/message and knowledge read/diff/integrity. Public-surface validation requires agreement among this roster, response registry, live ordered advertisement and dispatch schema. Internal compatibility models and retained implementation modules do not advertise tools. `spawn_agent_session` remains an internal response-model entry. Historical `drift_check`, lifecycle/gate tools, parent/child messaging, skill discovery/install, provider query/lifecycle and benchmark MCP rows must not be read as the current public roster.
 
 Provider setup retains code and historical settings, but the shared enable predicate returns false for `codegraphcontext-code` and `grepai-memory`. Runtime install reports enabled old keys as unused, attempts the explicit old-watcher stop, reports a failed stop and continues. It does not reactivate provider installation, preparation, seeding, watcher start or status. Only explicit provider removal owns deletion of provider runtime folders. Retained installation knobs do not regain behavior merely because their names remain accepted.
 
@@ -233,13 +233,8 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): The CodeGraphContext seed export is bounded by the provider-setup cap. [110]
 - Retained reference account (no fresh execution or acceptance inferred): The states of the CodeGraphContext graph probe. [111]
 - Retained reference account (no fresh execution or acceptance inferred): The GrepAI indexing states. [112]
-- Retained reference account (no fresh execution or acceptance inferred): The submission authority is the only prompt queue. [114]
-- Retained reference account (no fresh execution or acceptance inferred): A repeated request id is idempotent only with the same source and payload. [115]
-- Retained reference account (no fresh execution or acceptance inferred): The opener is the one spawn path of the dashboard and of internal dispatch. [116]
 - Retained reference account (no fresh execution or acceptance inferred): The serving layer is transport over the observer projection. [117]
 - Retained reference account (no fresh execution or acceptance inferred): The dashboard records a lifecycle gate decision through the control plane. [118]
-- Retained reference account (no fresh execution or acceptance inferred): The gate responder posts a response to the inbox, except for an adapter interaction. [119]
-- Retained reference account (no fresh execution or acceptance inferred): The serialized model-and-effort change. [120]
 - Retained reference account (no fresh execution or acceptance inferred): The dashboard bundle placement, its freshness proof and its check mode. [121]
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier parks unstaged and untracked content and restores it on every exit. [123]
@@ -318,9 +313,11 @@ The retained five-gate memory-certification architecture is distinct from transa
 
 - Retrieval now uses harness-native semantics/relationships; paired reads carry scoped published intent and bounded continuations. [311]
 - Only external is supported; disabled stays readable for named recovery/status purposes without being writable. [312]
-- Public tools have one literal owner with 41 successor names (the rejected freeze had42; resolve_context removed), adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
 
-- Historical roster account, retained but superseded: Public tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
+- Current source literal PUBLIC_TOOLS has 40 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution. [313]
+
+Historical L111 predecessor account, not the composed R113 roster: - Public tools have one literal owner with 41 successor names (the rejected freeze had42; resolve_context removed), adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
+Historical L111 predecessor account, not the composed R113 roster: - Historical roster account, retained but superseded: Public tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
 - Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop. [314]
 - Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. [315]
 - Converted onboarding counts substantive content/history, keeps unreadable candidates open and names nearest-route subjects. [316]
@@ -338,7 +335,6 @@ The retained five-gate memory-certification architecture is distinct from transa
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [311]
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
-- Converted answers carry both counts, even zero, and first rows; full lists remain in logged whole result. [313]
 - Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [314]
 - For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [315]
 - Independent MEMORY review reads both reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [316]
@@ -347,4 +343,4 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Canonical independent non-author statement/diff/omission duty. [329]
 - Named validator route policies. [330]
 
-- The composed literal roster has41 public names after L109 removes resolve_context, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance. [332]
+- The L111 predecessor had41 public names after resolve_context removal; the composed R113 source has40 after dispatch_agent removal, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance. [332]

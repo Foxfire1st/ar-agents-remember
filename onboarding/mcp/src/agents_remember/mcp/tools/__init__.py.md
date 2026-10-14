@@ -18,7 +18,7 @@ Provide the current import facade for pure MCP response/payload adapters, not th
 
 ## Code Commentary
 
-The facade retains dispatch, role start/message, context/runtime/server information.
+The facade retains role start/message and context/runtime/server information; dispatch is not imported or exported.
 `resolve_context_payload` is neither imported nor exported; orientation is `context_packet`.
 It also retains
 quality sync/start/poll, citation fix, baseline/carryover/init/routes, worktree/closeout/task and
@@ -95,16 +95,10 @@ Re-export role_start_payload and role_message_payload through the same package s
 
 - `gate_response_wait_payload` is imported from `gates`. [1]
 - `gate_response_wait_payload` is listed in `__all__`. [2]
-- The gate response wait payload builder is owned by the `gates` submodule. [3]
-- The post payload builder is owned by the `operator_inbox` submodule. [4]
-- The poll payload builder is owned by the `operator_inbox` submodule. [5]
-- The consume payload builder is owned by the `operator_inbox` submodule. [6]
 - The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. [7]
-- The orchestration nudge payload builder is owned by the `orchestration` submodule. [8]
 - The orchestration nudge payload builder is re-exported by this facade. [9]
 - The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. [10]
 - The lifecycle finalizer payload builder is re-exported by this facade. [11]
-- The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. [12]
 - The terminal payload builders are re-exported by this facade. [13]
 
 ### Runtime Source References

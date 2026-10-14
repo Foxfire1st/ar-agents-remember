@@ -3,37 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module defines `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` as its public seam.",
+      "note": "Completed disposition requires orchestrator at the exact enclosing sprint or architect at the exact standalone master; both role and document must match.",
       "targets": [
         {
           "anchor": {
-            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
-            "content": "sha256:d2ed42bf7ad138394c127fadd24de34d3cb182e3864634e9889ad003dc5f92e2",
+            "blob": "fe8bbec830d9a140e90544c4130a91974a37bfae",
+            "content": "sha256:4861bb81869b6c6b69ade2ab5a5983a365f4955f0549ecc4a4a083c076a123c9",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleCallerError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
-            "content": "sha256:7eb445a1539595d18c2446aa2cbeb682736f8e45a57c7bd6500471d179048d0a",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_lifecycle_caller"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
-            "content": "sha256:7f49e1953ac0b8ff8de436678234b086b2695f6b2e8737245d811aa23fb63611",
-            "locator": {
-              "kind": "symbol",
-              "name": "completed_disposition_owner"
+              "kind": "file"
             }
           },
           "kind": "code"

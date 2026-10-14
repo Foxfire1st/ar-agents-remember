@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "What the launcher is, and the ruling that it is a launcher rather than a role seat.\n\nAnchor: `## What it is`",
+      "note": "An unbound free chat answers research inline without becoming a role.\n\nAnchor: `## What it is`",
       "targets": [
         {
           "anchor": {
-            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
-            "content": "sha256:c15b73782fdac4c10831e24fa6905c15a00530abbd0f885c0e48bb5774c9e80c",
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:e80ea2c5803309f5f077421658faee212e51a310286cc7fe6fdaf5f8be55856c",
             "locator": {
-              "end": 19,
+              "end": 18,
               "kind": "line_range",
-              "start": 8
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/core/launcher.md"
           },
@@ -21,14 +21,14 @@
       ]
     },
     "2": {
-      "note": "The one-call contract for ordinary role-shaped work.\n\nAnchor: `## Ordinary role-shaped work — the one call`",
+      "note": "Managed work is written into the sprint before one parentless Architect start without a brief or document reference.\n\nAnchor: `## Ordinary role-shaped work — the one call`",
       "targets": [
         {
           "anchor": {
-            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
-            "content": "sha256:92d071c210fef3386b8840769a1408553fa15c6f5d92457466fc7513d595281a",
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:d1607a0f40d5a2ccdd814b9f97ff3a8fc7b8c53e33ca08edf8df57a66a941459",
             "locator": {
-              "end": 40,
+              "end": 39,
               "kind": "line_range",
               "start": 20
             },
@@ -39,14 +39,14 @@
       ]
     },
     "3": {
-      "note": "The bounded task-seat-takeover exception.\n\nAnchor: `## Task-seat takeover — the bounded exception`",
+      "note": "Only an explicitly developer-named role and task takes the bounded takeover route.\n\nAnchor: `## Task-seat takeover — the bounded exception`",
       "targets": [
         {
           "anchor": {
-            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
-            "content": "sha256:0ddb12b50e745ea1ccad8dac0e5dc459a55561729a72cfc11c7db9f40d12c7ed",
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:c7719bca748b22a0fe104a13895cf876a4a4ad063b5c3b2121f443c14c1fd859",
             "locator": {
-              "end": 51,
+              "end": 50,
               "kind": "line_range",
               "start": 41
             },
@@ -57,14 +57,14 @@
       ]
     },
     "4": {
-      "note": "The launcher's prohibition list.\n\nAnchor: `## What the launcher must not do`",
+      "note": "No other start or message route and no local work after start is permitted.\n\nAnchor: `## What the launcher must not do`",
       "targets": [
         {
           "anchor": {
-            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
-            "content": "sha256:1ee097b3e1e2cbae9a8a11be74606f13672953708e8595b998bfa024396ffddf",
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
+            "content": "sha256:a63c25c484c8ab6ba7fe4ece3f6e945a1378eff36f1ee986ce568545dfd52614",
             "locator": {
-              "end": 60,
+              "end": 57,
               "kind": "line_range",
               "start": 52
             },
@@ -75,16 +75,16 @@
       ]
     },
     "5": {
-      "note": "The structural reason this block is authored outside `roles/`.\n\nAnchor: \"Why it is authored here rather than in\"",
+      "note": "The launcher remains outside roles because it is not a role seat.\n\nAnchor: `## Why it is authored here rather than in roles/`",
       "targets": [
         {
           "anchor": {
-            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "blob": "e532bbd0a49d3c16d9273ae5aa89a26c5a6edd70",
             "content": "sha256:bc82b620945d4395df4c8881c3017e712e665efb10770409d6cb2e02ec3ef311",
             "locator": {
-              "end": 66,
+              "end": 64,
               "kind": "line_range",
-              "start": 61
+              "start": 59
             },
             "path": "skills/l-01-agent-lifecycles/core/launcher.md"
           },
@@ -93,16 +93,14 @@
       ]
     },
     "6": {
-      "note": "The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file.\n\nAnchor: `routing_condition`",
+      "note": "The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set.\n\nAnchor: retained launcher metadata",
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
-            "content": "sha256:a58af0027e4188ef52a946cfdd4982ce5e58b8ec51777adcdde9f45f6e6d9d4e",
+            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+            "content": "sha256:f50b8eddaff06e86599f0abadc1df208e541378dc94b16d34b6b1ab9c43f2ea7",
             "locator": {
-              "end": 559,
-              "kind": "line_range",
-              "start": 559
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -111,12 +109,12 @@
       ]
     },
     "7": {
-      "note": "The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition.",
+      "note": "The source assertions exclude launcher from roles, retain ambient metadata and separately check the two native routing conditions; this is not an executed PASS.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
-            "content": "sha256:71f7ce77160c90cec18929123418d8fcd2589c9295ad63bfa3dc43fd230e4971",
+            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "content": "sha256:011de498f697771478b7cae1c1ebab8354b9576cc26808530646c294138ff4d8",
             "locator": {
               "kind": "symbol",
               "name": "test_manifest_resolves_every_role_and_operation_source"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
         "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,61 @@
     },
     {
       "anchor": {
-        "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:29015d79ee8a9916681d50d3c1f121579b0317ef28362118154a41fa685f9a1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "exclusion_keeps_copy_out"
+        }
+      },
+      "id": "RLZ-6ZX2VQ",
+      "invariant": "INV-HFREW1",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Says which stored record counts: only the mode the host read; a record of an earlier build kept no copy out.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "launch_server_exclusion"
+        }
+      },
+      "id": "RLZ-7AWSDS",
+      "invariant": "INV-ZKEF8F",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Its text states for each of these harnesses why nothing is handed over, and it returns no record for them.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "launch_server_exclusion"
+        }
+      },
+      "id": "RLZ-81H4FV",
+      "invariant": "INV-EMEW6K",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 1",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Decides per launch whether anything is handed to the host: a record for Claude with a task server, none for every other provider; the answer and the first message derive from this record and never from the provider's name alone.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
         "content": "sha256:57e34134e1be8ad2eb46c4f4ebdb934b09aae2470ce58a89b1f6fc87313e7c6e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
         "content": "sha256:45d918b8c4e4e6c11e09f3958839d73706654d5a1294807896295b6bcb9908ea",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
         "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
         "locator": {
           "end": 23,
@@ -76,7 +130,61 @@
     },
     {
       "anchor": {
-        "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:2a2912773cfd4b9eb5fbadd8e0836fc52dee1202575ddbbe481e892cd6307c37",
+        "locator": {
+          "kind": "symbol",
+          "name": "EXCLUSION_MODE_SUPPLIED_MAP"
+        }
+      },
+      "id": "RLZ-FZQV7G",
+      "invariant": "INV-XJJ3NX",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 preservation boundary 3 / L113-R1-F06",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The name of the earlier mode, kept so that a repeat of a saved call of that build is still recognised.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:25d7d72d389656ac3ca84833d8d9b9fe1c6bcf919fe08a5a9d4f802e8bb4fe6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "exclusion_agent_options"
+        }
+      },
+      "id": "RLZ-HAD4QD",
+      "invariant": "INV-P8F6BT",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Builds the one key the host is handed: the host's own denied rules first, each once, then the product's rule; nothing where there is no record.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+        "content": "sha256:71d7644a12655185608bc55caac9e257c278f5239db81accb0dbd8be5db0f7a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "CLAUDE_OTHER_SERVER_RULE"
+        }
+      },
+      "id": "RLZ-HEYZDS",
+      "invariant": "INV-GKNF5W",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 3",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The rule itself, built from the other server's name; the comment above it says why it carries no star.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
         "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
         "locator": {
           "kind": "symbol",

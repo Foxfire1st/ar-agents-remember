@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A historical settings file must not stop an upgrade or silently regain retired execution machinery."
+  },
+  "applicability": "Reading historical installation settings after removal of their sole consumers.",
+  "conditions": [
+    "Load the old keys without rewriting the user file.",
+    "Name keys with no current reader once in the state report."
+  ],
+  "exclusions": [
+    "Reporting unused keys does not reactivate removed behavior or authorize deletion."
+  ],
+  "id": "INV-7SARPM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_unused_settings_keys.py"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 4",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A settings key that only a removed part read is no longer read; a file that still holds one loads without an error, `server_info` names it once under `unusedSettingsKeys`, and the user's file is not changed.",
+  "status": "accepted",
+  "supersedes": []
+}

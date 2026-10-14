@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
+            "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
             "content": "sha256:622a2bddca16bbd04cbefc827fc3a75575a1f950cf0697cc6670e346e8f8abdd",
             "locator": {
               "end": 20,
@@ -41,44 +41,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
+            "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
             "content": "sha256:a7f94b7f6191cf3620be8a435277b7e9de29c019216248ebdabcc49679faa8f6",
             "locator": {
               "end": 48,
               "kind": "line_range",
               "start": 27
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The house idiom it follows: a guarded read, and a write whose storage failure never breaks the toggle.\n\nAnchor: \"House persisted-store idiom\"; \"export const thinkingPreferenceStore = createStore<ThinkingPreferenceState>((set, get) => ({\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
-            "content": "sha256:699f5be04c287c3e9be880bd7125186596edf12b5695c61f271e3e18174ccdc2",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
-            "content": "sha256:f4b304470b5c4a6503ac75ba8fe34ef785581f035f9a0817d1bcfee38df079a2",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 25
-            },
-            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
           },
           "kind": "code"
         }
@@ -99,6 +68,23 @@
             "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current module itself guards localStorage access and persistence failure while updating in-memory layout; no removed thinkingPreference import is needed. [6]\n\nAnchor: Current preference implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
+            "content": "sha256:8e1055ae688f0d41e170a01d090b18c23b388623d708b301952bd37d5c90b89a",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
         }
       ]
     }

@@ -16,11 +16,13 @@ Checks grant-inert enclosed leaf/master lifecycle answers in a source-bound base
 
 ## Contract
 
-The driver executes leaf and series preview, apply and integration in all three worlds. In the shared six-phase loop, original pristine and unrelated-grant responses are compared after only `_scrub`, **before** `_without_conversion_row` is applied. That first assertion cannot be satisfied by conversion normalization. A second assertion compares the taken-out current/grant responses, followed by the two baseline comparisons. The sibling master-checks test and separate baseline driver remain unchanged.
+The driver executes leaf and series preview, apply and integration in all three worlds. In the shared six-phase loop the current pristine and unrelated-grant responses first compare after only `_scrub`, before conversion and baseline-only seat-field normalization. This raw assertion protects grant/current equality. Existing L46 conversion scaffolding and the L113 seat-field adaptation remain separately attributed.
 
-The test-only option2 helper identifies the earliest commit adding `knowledge/layout.json`. It removes a `rowsAdded` ledger entry only when its commit matches that marker, requires at most one matched drop, and adjusts its attached `rowsAfter`, `sourceTraileredCommits` and summary count by the actual drops. The helper also removes the converted `knowledge_gate={state:pass}` promise and subtracts the marker's own row from a leaf repair's bare count when present. This conversion take-out is additional to volatile/root scrubbing and belongs to the converted-versus-before comparison, never the first raw grant/current assertion. The source module's opening historical description of “only volatile fields” is not the complete account of the current baseline comparison.
+MIK-R113 rule12, amended in place at A12, retains L111's baseline-only adaptation. The embedded before-world producer maps its own leaf_preview/leaf_apply route_index_refresh facts to refreshedCount=written, unchangedCount=unchanged and staleCount=len(staleIndexes). It has no current/grant response available to copy. ROUTE_INDEX_COUNTS_OF_THE_CURRENT, PHASES_WITH_ROUTE_INDEX_COUNTS and _without_route_index_counts are removed; no count is taken out of current answers. The four removed seat fields are still taken out only on the baseline side. Raw pristine/grant equality, all six phase comparisons and product response content remain unchanged. This source account follows the amended packet and is not fresh executed acceptance.
 
-The retained INV-F029P2/PRF-S8NQJ4 L94 obligation, original provenance and facet are not reminted or retrospectively regraded by this source renewal. The current symbol expresses the expected comparison; renewing its anchor is not evidence that every comparison passes. The corrected Worker output retained by Reviewer reports 2 failed, 2 passed and 7 subtests passed: the remaining failures are leaf baseline comparisons, not the first raw-grant assertion. Reviewer's corrected finite source-only PASS qualifies the restored predicate and preserved remainders, not the whole command, independent execution, baseline acceptance, whole-MEMORY semantics or Owner landing. No test is rerun for this card renewal.
+The existing conversion helper identifies the earliest `knowledge/layout.json` marker commit, removes at most one matching ledger row, and adjusts only its attached counts/gate data. That is prior test scaffolding, not a new rule12 deletion or the first raw assertion.
+
+The original INV-F029P2 identity and L94 provenance are retained; its former unqualified baseline clause and PRF-S8NQJ4 facet are historical, not sufficient descriptions of the current normalized comparison. The architect admitted same-ID proof repair first and an explicit qualified L113 replacement only after the ordinary writer refused; the actual old-to-new proof mapping belongs to the Curator writer receipt. Original producer lists are not altered. The old 2-failure account describes the earlier composed source; it was superseded at the historical A6 epoch by Reviewer's separately admitted rule12 round3. Its authenticated exact-A6 ordinary pytest reports **2 passed and 9 subtests passed**; absent-fourth-key, altered-grant-count and disabled-take-out controls each fail the two leaf rows at their intended assertions. This is scoped producer execution evidence, not a Curator rerun, full suite, MEMORY acceptance or landing.
 
 ## Dependencies
 
@@ -28,8 +30,10 @@ Uses the existing `QueueFixture` and public closeout/integration services for cu
 
 ## Evidence
 
-- Three source-bound worlds retain separate raw current/grant equality before conversion take-out and subsequent baseline comparisons; this is comparison structure, not a whole-test PASS [1]
-- Conversion marker provenance, at-most-one matching ledger row, attached counts, pass-gate and leaf bare-count take-out are test-only baseline comparison scaffolding [2]
+- The three worlds retain raw pristine/grant equality and the original comparison after conversion and baseline-only removed-seat-field adaptation; A12 takes no route-index counts out of current answers. [1]
+
+- Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression. [2]
+
 
 - The baseline-only subprocess maps its own written/unchanged/staleIndexes facts onto L110 count keys; no current/grant response is copied and the original comparisons remain. [3]
 

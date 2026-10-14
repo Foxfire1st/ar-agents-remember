@@ -12,9 +12,13 @@ files: `.hermes/HERMES.md`, `.agents/GEMINI.md`, and `.openclaw/workspace/AGENTS
 
 ## Code Commentary
 
-### Logic
+### Current session routing
 
-The workspace directive routes durable developer work through a separately launched,
+The current workspace notice addresses developer-facing free chat: answer a question inline; for managed-repository work, create or resolve the sprint, write the developer request there and start an Architect through role_start without naming a document in that call. Another role requires the developer to name role and task. A first-message role handover is outside this free-chat notice. These are instruction-source declarations, not a launch observation; no prompt source was changed by curation.
+
+### Historical removed plane-routing account
+
+The predecessor workspace directive routed durable developer work through a separately launched,
 sprint-bound architect rather than assigning one global architect identity to every free chat.
 For ordinary role-shaped work, free chat resolves the sprint and first leaf, compiles the canonical
 architect brief, and calls `dispatch_agent` once on the sprint document with role `architect`; it
@@ -24,11 +28,11 @@ document. A present role marker must name a canonical role and carry hosted-sess
 unknown roles and incomplete hosted identity stop instead of falling through. A first-message role
 brief is authoritative only when no hosted identity was declared.
 
-The body is the same three-condition routing as `shared/session-start-directive.md`: validate a
+The predecessor body used the same three-condition routing as `shared/session-start-directive.md`: validate a
 declared role plus hosted identity and fail closed if either is invalid; otherwise accept a fresh
 first-message role brief only in an identity-free session; otherwise remain free chat, read the
 coordinator `AGENTS.md`, answer research inline, and use the one-call architect launcher for
-role-shaped work. The complete architect obligations arrive in the pinned canonical brief.
+role-shaped work. That pinned-brief/hosted-identity routing is historical, not the current notice’s role_start procedure.
 
 **The two differences from the sibling body are deliberate and are the entire reason two
 bodies exist:**
@@ -68,3 +72,5 @@ bodies exist:**
 - The inside-the-workspace variant of the same directive uses the relative coordinator path. [2]
 - `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. [3]
 - The classification recording why the two directive bodies differ. [4]
+
+- Current free chat writes the sprint request, starts the Architect with role_start and excludes first-message role handovers; old dispatch/hosted-identity routing is removed. \[5] [5]

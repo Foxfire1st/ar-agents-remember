@@ -5,7 +5,7 @@
     ],
     "justification": "A real product timer may not receive its turn before a negative assertion on a loaded core."
   },
-  "applicability": "The named debounce, subject-hold, reread and composer product-timer cases in the dashboard suite.",
+  "applicability": "The remaining review-surface subject-hold, catalogue debounce and reread product-timer cases; the removed old-session composer and conversation-store cases are outside current scope.",
   "conditions": [
     "The actual product timers advance on fake time.",
     "Assertions observe the boundary effect and restore real timers through teardown."
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The named product-timer cases advance the fake clock and assert boundary effects instead of racing real timers.",
   "status": "proposed",

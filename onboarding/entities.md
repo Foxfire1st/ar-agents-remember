@@ -27,62 +27,17 @@ The recorded refresh from committed code `7cbda30d9a9a4c2944382fbef46ac58b853299
 
 ## Entity Fingerprints
 
-### 260915-CAPS-L5 Capsule Delivery Impact
+### MIK-R113 current entity boundary
 
-The Codex capsule-delivery seam (`serving/capsule_delivery.py` plus the carrier chain through
-`terminal_opener.py`, `harness_control_runner.py`, `harness_control_factories.py` and
-`codex_app_server_session.py`) is a **new implementation of the existing adapter instruction-channel
-boundary, not a new cross-layer entity**, so this catalog adds no entity row for it. Two existing
-entities own the affected evidence and their recorded fingerprints are therefore stale at this
-candidate:
+The removed native delivery injector, adapter capability/submission machinery and supervisor sweep have no current catalog entry or preserved historical-reference route. Task-bound seat identity and retirement belong to native host receipts; enclosure landing proof remains contract-owned and separate. The surviving source-lineage/provider duties name their actual remaining owners.
 
-- **Harness Capability Snapshot** — four of its evidence paths are edited by this leaf
-  (`codex_app_server_session.py`, `harness_control_factories.py`, `harness_control_runner.py`,
-  `terminal_opener.py`), and the boundary it describes gained a real capability rule: a delivered
-  capsule is accepted only by a harness with a verified instruction channel (`codex`), and the launch
-  configuration carries it as one optional value.
-- **Source Lineage** — `terminal_opener.py` is in its evidence set and now transports the capsule from
-  the launch boundary to the runner configuration.
+The five revised `git-blob-set-v1` rows are measured from committed code `b1fd058f854ed5edcf7c1d9b5d52c4828c70595b`, using the shipped path-NUL-blob-newline recipe. They do not attest the uncommitted A9 working tree or independent MEMORY acceptance. Unrelated older committed rows keep their explicitly historical provenance rather than being guessed forward.
 
-Both stored fingerprints remain at the prior committed baseline. `git-blob-set-v1` resolves committed
-`HEAD:<path>` blobs, so the refreshed value cannot be computed from this deliberately uncommitted
-candidate and **no value was hand-edited here**; the governed closeout recomputes both rows against the
-actual code commit, exactly as the ledger-retirement note above already requires.
-
-### 260915-CAPS-L6 Native eve Adapter Impact
-
-The native eve session adapter (`serving/eve_adapter.py`) is a **new implementation of the existing
-adapter/capability boundary, not a new cross-layer entity**, so this catalog adds no entity row for it.
-The two entities that own that boundary each gained real evidence paths, and their recorded fingerprints
-are therefore stale:
-
-- **Harness Capability Snapshot** gains the seven `serving/eve_*.py` modules, because the adapter
-  advertises a real catalog through the existing `CapabilitySnapshot`/`LaunchKnobs` port — including the
-  honest `session_settable: False` model/effort shape that a catalog reader must see.
-- **Harness Submission Authority** gains `eve_adapter.py`, `eve_protocol.py` and `eve_runtime_client.py`,
-  because the adapter now carries a real submission path: acceptance-versus-completion, the
-  never-repeat-a-possibly-accepted-write reconcile, and the queued-turn policy.
-
-Both stored fingerprints remain at the prior committed baseline. `git-blob-set-v1` resolves committed
-`HEAD:<path>` blobs, so the refreshed value cannot be computed from this deliberately uncommitted
-candidate and **no value was hand-edited here**; the governed closeout recomputes both rows against the
-actual code commit, as the existing ledger-retirement note above already requires.
-
-**A2 revision (same candidate, same entity judgment).** The A2 round repaired the candidate without
-changing what either entity's evidence set proves, so the two rows above stand and no third entity
-appears. The strengthened facts a future reader should not have to rediscover: acceptance on a
-reconciled submission is proved by the durable record holding the exact accepted message (the
-delivery-id branch was deleted as unreachable), the queued `turnPolicy` is spelled on the create **and**
-the follow-up from one literal, and the replay window has a single owner.
-
-Each row records the deterministic source evidence used by `c-02-memory-quality-control` skill for entity drift detection. The `git-blob-set-v1` fingerprint sorts the evidence paths, resolves each current `HEAD:<path>` Git blob hash, and hashes the resulting `path + blob_hash` list. A changed fingerprint means the entity entry needs review; it does not automatically prove the prose is wrong. `c-02-memory-quality-control` skill also reconciles this table against `## Entity Inventory`, so missing rows and orphaned rows are actionable catalog maintenance.
-
-<!-- merged 2026-09-19: fingerprint cells carry each line's as-of values; the closeout recomputes the rows the landed range changes -->
 
 | Entity                              | Algorithm         | Fingerprint                                                               | Evidence Paths                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------------- | ----------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Onboarding Unit                     | `git-blob-set-v1` | `sha256:a1056e376a2ef463c4283af178213f164a989df78b8aab38ca02e250414c3f85` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
-| Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:9c02f1cb69b2adbd2d3ad546e063e821a09fce99516ff72ee464ed6d35569e66` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
+| Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:a8099ac6cdccc9dcacd2bfb2d490f958eb9ea130dd4083f26fd6bf7bde85f71e` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
 | Coordination Context                | `git-blob-set-v1` | `sha256:18d360dfa3569a6004600e98f52dfdce4da74dc315e5ec614695552ba37bea79` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Path Rule                           | `git-blob-set-v1` | `sha256:7dc6271ba16a077797f4f5e20f1503919cb05e21d4df086edb85bab43c525b83` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
 | Memory Quality Control              | `git-blob-set-v1` | `sha256:1725543c4a324c14d06fc8d632c94142902a8f309f8c9b8cc84e77fc02601d26` | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md`; `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
@@ -90,23 +45,19 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:90bffff6b13e6377070fd9c68acedd2f7a730f4051d493efe144207e7c8cdfe3` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md`                                                                                                                                                                                               |
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:9062110ced32d76ed2cd571a97eb0de6def3cd97d16cddbf9c8f05d974bedac0` | `mcp/src/agents_remember/kernel/memory_attribution.py`; `mcp/src/agents_remember/kernel/memory_cache.py`; `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/ledger_projection.py` |
 | Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:dc104da6905a7bc0f026a9ed8e6919fe7582ee93ab3d6742509a2a973e46de6c` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/closeout/projection.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
-| Closeout Effective Input | `git-blob-set-v1` | sha256:679249ec4b368d39a47fdb67fe8102310634c0f3598c7053de645ee2e4f9351e | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
+| Closeout Effective Input | `git-blob-set-v1` | sha256:0e308704f3979ec945f6e0503958534e88559c1bab6772acc0debca29bc00b50 | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
 | Curator Coherence Authority         | `git-blob-set-v1` | `sha256:b756acfc47ce0be5989439543bed5769de5923a8ad2297b95cadd4aca90a4879` | `mcp/src/agents_remember/application/curator_coherence.py`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py` |
 | Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:ced19aa8c3279ad1182a75ab730b6d0906c9438969a0740aa911a589ab20dd5b` | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:a9c1c670c99d37187c8ea90758aefb5f28500cd18582636f3adc91c57f385d14` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
-| Worktree Contract                   | `git-blob-set-v1` | `sha256:d6bff21e237b245ad69d3bf4ac509cad1b196d0b578ae7365b7e98b446f30eb1` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
-| Source Lineage | `git-blob-set-v1` | sha256:8e9942c21b20578d64d0c767acfe97178543f97046b8e21517c2c7c757caa6bb | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
-| Worktree Integration                | `git-blob-set-v1` | `sha256:5c44aba90c352117786b66ce0a9bc3a1af781a410938e9f2f6a81eb0344e17f8` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
+| Worktree Contract                   | `git-blob-set-v1` | `sha256:10523f23770efc807ffbb9a2d5a4216085a737895589b04e7185149ded1791a9` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
+| Source Lineage | `git-blob-set-v1` | `sha256:eb465e80e8e99f7b04a92da5c9d85722c1dd036996b61dfa998dea8c6e6b9bda` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
+| Worktree Integration                | `git-blob-set-v1` | `sha256:78da444ef9ae321159f7adf3e35d7f353b033bfdf0171b75c8d796b2a17eb459` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:18d360dfa3569a6004600e98f52dfdce4da74dc315e5ec614695552ba37bea79` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:91680b77bb5dc38c0c81d52e4088da374f4fc61858e392901dc2e07fc786e86c` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/investigator.md` |
-| Seat Binding Identity               | `git-blob-set-v1` | `sha256:0cd78e2230af5dce640204ab7cc6fbec61b6e32fa55005c6ebf6f848a84cb03c` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessions.ts`; `dashboard/src/data/taskHierarchy.ts`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/models/declared_caller.py`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/ambient_seat.py`; `mcp/src/agents_remember/serving/structural_seats.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_task_assignment.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
-| Seat Retirement                     | `git-blob-set-v1` | `sha256:0ece0438f7cc57b0a1979bd4cf45e0a5ee5562b271650534bffcea219fca9cad` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:786c396c91939d834dcb9708f133f536c7ab9c7532cc3d77549be5b6dcc14579` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:e3513cc13b607d204491a9c1470c0f9f122ab0898fc22276af519f3bf31c5b4c` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`; `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
-| Task Document                       | `git-blob-set-v1` | `sha256:5bcc75c360cc19d2325cc0bbce81f2f1ff646f74bc58978c4f6c21931dcaa5ed` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/data/taskHierarchy.ts`; `dashboard/src/data/taskIdentity.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/projection_graph.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/tasks/document_refs.py`; `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
-| Delivery Injector                   | `git-blob-set-v1` | `sha256:ea4bf0985b523517ec6e3c1ad59c26470279d25a4476e3f42b5c3253adb0938e` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
-| Harness Capability Snapshot         | `git-blob-set-v1` | `sha256:7cd055565ead778b24130bb9a114a178afb0364d37310474ca0290474a3f66a0` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/claude_stream_protocol.py`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/codex_app_server_session.py`; `mcp/src/agents_remember/serving/eve_adapter.py`; `mcp/src/agents_remember/serving/eve_events.py`; `mcp/src/agents_remember/serving/eve_interactions.py`; `mcp/src/agents_remember/serving/eve_protocol.py`; `mcp/src/agents_remember/serving/eve_runtime_client.py`; `mcp/src/agents_remember/serving/eve_runtime_launch.py`; `mcp/src/agents_remember/serving/eve_stream_cursor.py`; `mcp/src/agents_remember/serving/harness_capabilities.py`; `mcp/src/agents_remember/serving/harness_capability_catalog.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_factories.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_control_runner.py`; `mcp/src/agents_remember/serving/harness_launch.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py`; `mcp/src/agents_remember/serving/pi_rpc_configuration.py`; `mcp/src/agents_remember/serving/pi_rpc_events.py`; `mcp/src/agents_remember/serving/terminal_opener.py` |
-| Harness Submission Authority        | `git-blob-set-v1` | `sha256:713f1a043366c8c3c2b8dff4237aaeb50fa40dab50eab05f4b66ea2c868bfd77` | `dashboard/src/data/submissionLifecycleClient.ts`; `dashboard/src/data/submitClient.ts`; `dashboard/src/data/submitMachine.ts`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/eve_adapter.py`; `mcp/src/agents_remember/serving/eve_protocol.py`; `mcp/src/agents_remember/serving/eve_runtime_client.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_ipc.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_submission_authority.py`; `mcp/src/agents_remember/serving/harness_submission_ledger.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
+| Provider Degradation Protocol | `git-blob-set-v1` | `sha256:50d53b678ef8c5d0ccc37151d854eaebe2881c3ec5b1218acfb8a18ffdbab983` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/providers/metrics.py` |
+| Seat Binding Identity | `git-blob-set-v1` | `sha256:c81c5952bdcd51b5f989a2b7d91f77f5f04a08632f3b5427dd97848558e15422` | `mcp/src/agents_remember/application/role_launch_context.py`; `mcp/src/agents_remember/cli/role_launch_receipts.py`; `mcp/src/agents_remember/models/role_launcher.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
+| Seat Retirement | `git-blob-set-v1` | `sha256:aa86fa319c8dacddc8e832a2389676bd0bdf19c507fe72b69b16ef4cc24e3b08` | `mcp/src/agents_remember/cli/role_retire.py`; `mcp/src/agents_remember/cli/role_launch_liveness.py`; `mcp/src/agents_remember/models/structural/agent.py` |
+| Seat Landing Archive | `git-blob-set-v1` | `sha256:938745dea9839f516eb1612903c4ada006d665776d8aa07bb014e7fc4e1f66da` | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py`; `mcp/src/agents_remember/models/lifecycles/enclosure.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
+| Task Document                       | `git-blob-set-v1` | `sha256:968bfc6a5293bc1edcc310afd4a182ff008b286b132cb964ddf90ded48a98b2a` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/data/taskHierarchy.ts`; `dashboard/src/data/taskIdentity.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/projection_graph.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/tasks/document_refs.py`; `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
 
 ## Entity Inventory
 
@@ -402,127 +353,21 @@ An existing legacy root returns legacy-format before drift/adopt processing. Una
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
 
-### Delivery Injector
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-### Harness Capability Snapshot
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-### Harness Submission Authority
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
 ### Provider Degradation Protocol
 
-Provider sample/alert/recovery models remain retained internal/legacy protocol evidence, not restored model-facing provider tools or a current startup/restart path. The Investigator corpus entry remains readable registry history but is not one of the seven launched role IDs; the supported System Specialist concern/report carrier does not itself grant remediation authority. Preserve historical alert/report/role identities and the requirement for explicit authorized remediation; no old fingerprint is hand-advanced or credited as current runtime proof.
-
-<details>
-<summary>Historical original entity account; preserved, not the current operative contract</summary>
-
-Provider samples and alert state remain the protocol’s authority. The canonical Investigator role is the diagnostic concern/report carrier, replacing the earlier role file without rewriting historical alert or report identities. Provider/system remediation still requires the report first and an explicit authorized order; an alert forbidding starts also forbids provider start or restart. Broader Investigator concern scope adds no protocol-owned repair or lifecycle authority. The evidence carrier path is corrected here; the existing fingerprint remains the committed baseline until the closeout-owned stamp resolves the actual landed source.
-
-</details>
+The retained provider metrics/state-transition and explicit response policy are the entity's authority. Provider degradation no longer posts through the removed operator-inbox or orchestration-artifact stores. The diagnostic role is canonical Investigator; its concern/report is not remediation permission. An authorized stop/recovery policy remains distinct from a role launch, an alert delivery or general provider-tool availability.
 
 ### Seat Binding Identity
 
-The stable identity of an agent seat is exactly one canonical real task document paired with one
-role. Sprint roles bind to the sprint document, a manager binds to its master document, and
-worker/reviewer/curator bind to their leaf documents. A terminal/session/lifecycle id identifies the
-current runtime occupant only; replacing that occupant does not change the seat or require another
-agent to learn a new address. Task-document containment and role authorize parent/child resolution,
-and zero or multiple qualified live occupants fail closed. Spawn ancestry remains internal
-provenance and a separate diagnostic projection, never the default Chats hierarchy or public address.
-
-`260815-DAG-L14 route impact:` sprint seats become first-class structure — the sprint
-document owns `SprintSeat` rows (role/label/identity/state) and seat task documents leave the
-sprint task index (existing ones stay on disk as historical records). Seat identity remains the
-canonical `(taskDocumentRef, role)` pair; a seat row identity is correlatable provenance,
-never an authority source.
-
-`260815-DAG-L3 route impact:` the public queue derives its caller from this plane-owned
-`(taskDocumentRef, role)` seat. Requests carry neither an actor nor lifecycle identity; manager and
-orchestrator transitions fail closed when the ambient structural seat lacks the required authority.
+A task-bound native role seat is the canonical real task-document selection and role, recorded in a role-execution receipt. Sprint/master/leaf containment admits the appropriate role before host creation. The host agent ID and request ID identify one execution, not a replacement canonical task or public session/lifecycle address. Receipt/binding consistency, unknown/archived status and ambiguous matches are reported rather than choosing an arbitrary occupant. Existing held/replacing execution facts do not create another authority source. Parentless Architect/Investigator scope is separately admitted; this entity does not turn compiler-only task absence into Curator seat admission.
 
 ### Seat Landing Archive
 
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-260831-LOCR-L17: the evidence path `mcp/src/agents_remember/serving/app.py` is in this entity's
-curated set and changed in this leaf, so the row is refreshed here as a reconciliation rather than a
-fingerprint edit. The leaf adds one composition value to `_build_serving_runtime` — a single
-`serving_clock` shared by the sweeper, the runtime and the new observer-health publisher, plus that
-publisher on `_ServingRuntime` — and changes nothing about landed status, cleanup outcome,
-dashboard identity, retention, or the archive's own boundary. **The evidence path set is unchanged
-and no fingerprint value was hand-edited**; `git-blob-set-v1` cannot be derived by inspection, so it
-is recomputed from the landed commit at closeout. No acceptance claim is made.
-
-260831-LOCR-L36 second pass: the evidence path
-`mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`
-changed in the L36 skill rewrite that regenerated the package-data copy, so the entity is consistent
-with the corrected orchestrator text rather than the retired rule. The corrected role document now
-says "Per-contract activation records each master's own `reconciling -> active` transition and
-serializes nothing across masters", that queue rows "only project each contract's own active/
-reconciling waiting facts", and that the atomic pre-move step must "require the master's own contract
-activation to be `active`" — i.e. per-contract activation with nothing serialized across masters.
-That is consistent with this archive's landed-status, cleanup-outcome, dashboard-identity and
-retention semantics: a master's landing no longer depends on being the single selected master of a
-protected source pair. That earlier pass left the evidence path set unchanged; the fingerprint has
-since been refreshed from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935` in the recorded 11-entity refresh.
-
-260915-CAPS-L1 — **quoted text rebased; the invariant is preserved.** The same L36-quoted sentences no
-longer exist verbatim in the rewritten orchestrator role: a `grep` for all three quoted strings
-(`serializes nothing across masters`, `only project each contract`, `require the master`) now returns
-zero hits. The rule they carried survives in the current shipped wording, so this section is rebased
-rather than retired: the role now states the graph-less default as "canonical commanded order as the
-stable tie-break, **no serialization across masters, none retired**" (`roles/orchestrator.md:155-157`),
-and the dispatch step as "The control plane publishes **each contract's own** `reconciling → active`
-activation before implementation exposure" (`roles/orchestrator.md:187-189`), with an **`atomic`** master
-requiring "their own activation `active`" before it integrates and lands
-(`roles/orchestrator.md:229-232`). The claim this archive makes is unchanged and still holds: landing
-depends on the master's **own** per-contract activation, never on being the single selected master of a
-protected source pair. Evidence path sets and the stored fingerprint are untouched — no value was
-hand-advanced, and the catalog's `git-blob-set-v1` algorithm resolves committed `HEAD` blobs, which this
-uncommitted working-tree rewrite does not move.
-
-`No content impact:` 260815-DAG-L2 changes planning and landing authority prose in shared role
-evidence, but it does not change the archive's landed status, cleanup outcome, dashboard identity,
-or retention semantics.
-
-`No content impact:` 260815-DAG-L3 adds pre-closeout scheduling and lifecycle ownership but does
-not change the archive's landed result, cleanup outcome, dashboard identity, or retention rules.
-
-`No content impact:` 260821-CLIVE-L1 changes `application/worktree_tools.py` closeout admission
-from raw messages to normalized effective input. That shared evidence path changes the fingerprint,
-but it does not change archive identity, landed status, cleanup outcome, or retention semantics.
-
-CCR cumulative source verification: No content impact: the changed shared application paths add requirement-reader route registration, task-intent refusal translation and certification-profile propagation. They do not change archive identity, landed state, cleanup results, or retention policy.
+The catalog's older seat-oriented name denotes the enclosure landing/archive record, not the removed terminal catalog. The actual current owner publishes a crash-safe terminal enclosure archive and receipt before deleting the enclosure root, under the existing contract lifecycle lease. Re-observation is idempotent and binds the accepted contract/proof; code and memory outputs remain actual separate outputs, including the accepted direct generation where applicable. Archiving a native role agent on its host launch receipt is a different operation and does not manufacture enclosure landing proof, change task identity or replace admission of the contract's own lineage.
 
 ### Seat Retirement
 
-Native leaf-seat retirement is now also receipt-bound: `cli/role_retire.py` verifies the actual original starter, refuses unknown/ambiguous targets before effects, archives without a child turn and records caller/reason. Explicit launch replacement in `cli/role_launch_liveness.py` is a related path; native retirement does not restore the removed hosted-seat messaging or spawning plane. Held-message text ends as not delivered when its native recipient is retired, while compact outcome custody remains in the launch receipt. This extends the existing retirement concept rather than adding a second entity. The older committed fingerprint below is not advanced to the uncommitted native implementation.
-
-Historical composition-only account, retained at its recorded source boundary:
-
-260831-LOCR-L17: the same `serving/app.py` change touches this entity's curated evidence set (that
-file is one of its six paths), so the row is reconciled here. The leaf's edit is composition only —
-one shared serving clock and one observer-health publisher wired onto the serving runtime — and it
-adds no retirement route, policy, or terminal-catalog behaviour: retirement authority, its refusal
-shapes, and the catalog evidence blobs are untouched. **Evidence path set unchanged; no fingerprint
-was hand-edited**, and closeout recomputes the stored value from the landed commit. No acceptance
-claim is made.
-
-CCR cumulative source verification: No content impact: the sole changed fingerprint source, serving/app.py, registers requirement-reader routes. Retirement policy and terminal-catalog evidence blobs are unchanged from the prior IAS candidate.
-
-### Supervisor Sweep
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-`No content impact:` 260815-DAG-L3 appends one public tool name through shared MCP registry
-evidence. It does not alter supervisor predicates, delivery, cooldown, heartbeat, or escalation.
-
-CCR cumulative source verification: No content impact: the shared public-tool registry adds worktree_status_wait. The listed sweep, signal, heartbeat, backoff and inbox evidence blobs are unchanged; the read-only wait tool introduces no sweep or escalation owner.
+Native leaf-seat retirement resolves the real launch receipt and original starter before an effect. Unknown/ambiguous/non-leaf targets and a caller that did not start the seat refuse. The host archives without giving the retiree another turn; caller/reason and partial archive/receipt failures are recorded truthfully. Replacement/liveness settlement is related but not a second public messaging or spawning plane. Held text for a retired native recipient becomes not delivered, with compact outcome custody retained by its receipt owner.
 
 ### Task Document
 
@@ -594,7 +439,7 @@ The status model can carry an informational taskDocumentCopies drift notice. It 
 | Key Identifiers | Canonical task document, `executionNature`, relation (`super-to-leaf`, `super-to-master`, or `master-to-leaf`), side (`code` / `memory`), Git common-directory identity, canonical local branch, and owning contract path. Checkout paths, commits, and runtime ids remain evidence rather than agent-supplied addresses. |
 | Parent / Child Relationships | Organizational managers own direct sprint-super leaves without a series contract. Atomic managers own one series ref and their leaves descend from it; the complete leaf pair chain is sealed before the series can close. |
 | Often Confused With | Remote tracking freshness, seat binding identity, a remembered base commit, or a new replacement master. |
-| Source References | `mcp/src/agents_remember/worktrees/source_lineage.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
+| Source References | `mcp/src/agents_remember/worktrees/source_lineage.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | Migration Notes | L4 completed the nature-aware mechanical cutover across start, lineage projection, closeout, integration, and dashboard schema. The retired universal-master-branch workflow must not be reintroduced as compatibility behavior. |
 
 `260815-DAG-L3 route impact, current ownership corrected by CLIVE:` waiting-door scheduling and the

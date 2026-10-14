@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The cancelled product owner's direct await witnesses the exact worker drain.",
+      "note": "Anchor: Static fixture observes direct await of the cancelled recovery worker.",
       "targets": [
         {
           "anchor": {
-            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
-            "content": "sha256:1b7d1fd6c6a8e0519567e82b84ac9976dd3ccd814067c7e9c64714267779984c",
+            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "content": "sha256:491abc2a6aa494118382ead91fd11c4b08be57a3f65e90c95de634c7096bb748",
             "locator": {
-              "kind": "symbol",
-              "name": "_observe_worker_drain"
+              "end": 522,
+              "kind": "line_range",
+              "start": 500
             }
           },
           "kind": "test"
@@ -19,15 +20,16 @@
       ]
     },
     "2": {
-      "note": "The running worker drains before host close and post-close state stays unchanged.",
+      "note": "Anchor: One actual case asserts worker/recovery/lifespan ordering, durable outcomes and no later writes.",
       "targets": [
         {
           "anchor": {
-            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
-            "content": "sha256:70f3cd2386064f073d13dc46d735ba1bddd7b0f8c785a58a468a8b76257f8b2a",
+            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "content": "sha256:1226978f856b8d278c55554e427fda41b58bc293857e5fb87120de6678a0f410",
             "locator": {
-              "kind": "symbol",
-              "name": "test_teardown_drains_an_in_flight_refresh_before_the_host_closes"
+              "end": 659,
+              "kind": "line_range",
+              "start": 590
             }
           },
           "kind": "test"
@@ -35,31 +37,28 @@
       ]
     },
     "3": {
-      "note": "Startup cancellation waits for its worker and finalizer bounds use the shared guard.",
+      "note": "Anchor: Fixture-only finalizer bounds do not bound product shutdown.",
       "targets": [
         {
           "anchor": {
-            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
-            "content": "sha256:d0141ca0c5e40d4f117fb553f8dd1aae41a4dec44acce24a88f4be4663dcfced",
+            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "content": "sha256:b97a6a1fdb0289064649a159ccb025ad2c88d0bfdd74af7e6d623ba9a07c56da",
             "locator": {
-              "kind": "symbol",
-              "name": "test_cancellation_during_the_startup_prime_waits_for_its_worker"
+              "end": 339,
+              "kind": "line_range",
+              "start": 337
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The last in-flight durable commit remains available to the next startup.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
-            "content": "sha256:255a0d3d5f4a2964662dc7f1e778fe656b490af1514a252740c69d640fce3bcf",
+            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "content": "sha256:1226978f856b8d278c55554e427fda41b58bc293857e5fb87120de6678a0f410",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_final_in_flight_commit_stays_relayable_after_the_next_startup"
+              "end": 659,
+              "kind": "line_range",
+              "start": 590
             }
           },
           "kind": "test"

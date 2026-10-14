@@ -194,12 +194,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
+            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 370,
+              "end": 324,
               "kind": "line_range",
-              "start": 370
+              "start": 324
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -291,7 +291,7 @@
       ]
     },
     "16": {
-      "note": "An updated row with a real card change answers a no-separate-item uncovered hunk identically in worklist and gate.",
+      "note": "An updated row with a real card change answers a no-separate-item uncovered hunk identically in worklist and gate.\n\nThe changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
       "targets": [
         {
           "anchor": {

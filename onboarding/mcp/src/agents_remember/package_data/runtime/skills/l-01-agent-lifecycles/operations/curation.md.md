@@ -48,13 +48,21 @@ An explicitly report-only admission supplies only its requested report/upstream 
 
 Author semantic scope and each target’s rationale. Examine a family’s own guarantee, exact memberships and unchanged siblings; retain them explicitly only when a successor is justified. Declare inspected external sources and read each measured plane’s own state. Use the existing comparison producer with the admitted source-bound package and carry its actual immutable generation or refusal, including unchanged-knowledge work.
 
+
+
+## Foundation carrier and writer admission
+
+The repository-foundation entry is carried by a taskless instructed session following Curator rules, not by opening a taskless Curator seat. Bootstrap reads/reports the foundation state; a Curator seat opened on a task document authors on that task line. Knowledge-bootstrap retains its no-enclosure admission and developer commit word, while knowledge-ingest remains the contract-scoped leaf writer. No invented task document or enclosure bridges those admissions.
+
+- Foundation authoring is taskless-session work under Curator rules; an actual Curator seat is task-document-bound and the two writer admissions do not substitute for one another. \[6] [7]
+
 ## Conventions
 
 Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
-Do not edit source/task/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer decisions stay in the agent’s own chat.
+Do not edit source/task/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat. The former own-chat-only account is historical, not the current route.
 
 ## The Same Authoring Fields, Mirrored (MIK-R48)
 

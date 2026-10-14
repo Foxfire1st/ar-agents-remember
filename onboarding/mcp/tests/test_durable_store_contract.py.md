@@ -12,7 +12,7 @@ In-process durable-store exclusion, rewrite and strict-read contracts.
 
 ### Logic
 
-Real threads prove per-log exclusion, same-thread reentrancy and dismissal preservation during prune. A non-excluding flock double causes append refusal until locking works. Future-major rows block authority reads while projection retains readable rows. Compaction reports dropped records, unlocked replace refuses and interrupted rewrite preserves the old log without temp leftovers.
+Real threads prove per-log exclusion, same-thread reentrancy and dismissal preservation during prune. A non-excluding flock double causes append refusal until locking works. Future-major rows block authority reads while projection retains readable rows. The retained interrupted rewrite case preserves the old log without temp leftovers. Removed nudge compaction-dropped-count and unlocked-replace tests are not current assertions; retain the underlying production durability contract without inventing test coverage.
 
 ### Conventions
 
@@ -45,8 +45,6 @@ The retained source anchors below support the fixture roles and assertion bounda
 - A dismissal is not lost to a prune sweeping on another thread. [3]
 - A store refuses the append itself and recovers once the lock works. [4]
 - A future row stops the authority read and only costs projection a tick. [5]
-- Compact drops what keep rejects and reports the count. [6]
-- Replace records refuses an unlocked caller and changes nothing. [7]
 - An interrupted rewrite cleans up too. [8]
 
 ### Cross-Repo References

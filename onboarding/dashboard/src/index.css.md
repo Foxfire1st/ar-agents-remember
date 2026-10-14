@@ -13,33 +13,11 @@ layer order and holds `reset` / `base` / `effects` — the layers Panda does not
 
 ### Logic
 
-`@layer reset, base, effects, webtui, tokens, recipes, utilities;` sets the order (260715-FEUI-L1
-S1 added the `webtui` slot); Panda's PostCSS plugin injects the generated
-`tokens`/`recipes`/`utilities` layers, and `styles/webtui.css`'s `layer(webtui)` imports fill
-`webtui` — slotted between `effects` and `tokens` so Panda tokens/recipes/utilities always beat
-WebTUI on a conflict, while the unlayered freeze below stays above it all. `@layer reset` (box-sizing + html/body
-reset), `@layer base` (body typography + the `h2`/`.muted`/`.raw-list` utilities moved here from the
-monolith). `effects` remains an empty slot in the order declaration: no scanline/vignette overlay rule or
-`flicker` keyframe remains, and Cockpit no longer mounts an overlay element. The two live app-wide
-keyframes are the shared `pulse` (the ≤3/s alarm flash used by blocked/alarm dots, signal-lost,
-`caution--alarm`, and the cockpit rail / topology), and —
-260715-FEUI-L2 — **`pulseSlow`** (the cockpit STATE pulse, developer ruling 2026-07-16): a SLOW
-ease-in-out opacity dip to 0.45 at 50%, driven at 2.4 s by `data/stateGrammar.ts`'s
-`PULSE_ANIMATION` and rendered only by `panels/session-cockpit/StateDot.tsx` — NEVER
-steps()/on-off blinking; frozen by the unlayered effects-off rule below and steady under
-`_motionReduce` at the consumer. **MIK-R75 rule 7 removed the fourth keyframe,
-`paseoAgentSpin`**, with the dashboard's own sidebar: it supplied the native sidebar Busy/Starting
-glyph's full rotation, and that sidebar and its glyph no longer exist in this product. **Slice
-05k deleted the nine Engine Room canvas `@keyframes`** — `chargeSweep`, `conduitDraw`, `pktRun`, `attnBreath`,
-`stopFlash`, `closeoutSweep`, `warpSurgeUp`, `warpSurgeDown`, and `landingIn` — because the canvas motion now
-lives in GSAP (`useEngineTimeline`) + Motion (`EnclosureCanvas`), never CSS (`05f` §8). A header comment
-records that removal and (2026-06-21) was extended to also drop the `powerup` keyframe: the
-indexing→nominal engine "powerup" is now a **Motion opacity pulse** owned by the charge rect, and the
-cyan→mint step is an instant `engineCharge`-class fill flip (not an animation), so there is no `powerup`
-CSS keyframe left and the canvas carries **no animation carve-out** at all. The `html[data-effects="off"] *` determinism rule (unlayered + `!important` so it
-always wins) freezes every animation + transition; the two companion display-freeze rules survive because
-their targets have no settled end-state — `[data-testid="conduit-packet"]` (the travelling packet) and
-`[data-testid="warp-surge"]` (the warp-core bands) are hidden under the freeze.
+`@layer reset, base, effects, tokens, recipes, utilities;` is the exact current order. Panda injects tokens/recipes/utilities; this entry owns reset, base and the empty effects slot. There is no webtui slot or styles/webtui.css import owner. The global keyframes are `pulse` (shared alarm) and `pulseSlow` (2.4-second slow state pulse); canvas motion belongs to GSAP/Motion, not restored CSS keyframes. Removed scanline/vignette/flicker and canvas rotation/powerup rules remain removed. The current root overflow policy is `html, body { overflow-wrap: break-word }`; raw-id spans choose their own character breaking.
+
+The unlayered `html[data-effects="off"]` rules, including pseudo-elements, freeze animations/transitions with !important. The travelling conduit packet and warp surge have no settled end-state and are hidden under the freeze. No animation carve-out is introduced.
+
+**Historical RV-1 account — the scoped WebTUI owner and corrective selector described next are not current cascade requirements.** The original computed-value findings and the general causal lesson remain qualified to that historical UI epoch.
 
 **RV-1 — the `@webtui/css` `word-break: break-all` cascade trap (260718-CHATS-L5P, LOAD-BEARING).**
 `@webtui/css`'s base layer sets `body, html { word-break: break-all }` (it lands in the `webtui` layer,
@@ -64,26 +42,11 @@ the whole rendered document with the retained raw-id spans still computing `brea
 
 Cascade layers, not specificity, order the cascade; effect/determinism rules sit unlayered + `!important` so
 they win regardless. Token values are read as `var(--…)` from `styles/tokens.css` during the migration.
-The RV-1 `word-break` override is deliberately UNLAYERED (like the effects freeze) so it beats webtui's
-layered base without needing `!important`.
+The earlier RV-1 unlayered override was a remedy for the now-removed scoped WebTUI reset, not a current dependency. Computed-value verification remains the general lesson; the present overflow rule is the source-owned root policy above.
 
 ### Invariants And Boundaries
 
-Effects stay global + isolated (note 09), never per-component. The body/utility rules reference the
-`:root` vars from `styles/tokens.css`. Component styling is Panda, not here — the RV-1 `word-break`
-override is the deliberate exception (an app-wide reset that MUST live above the webtui layer at the root;
-a component-level fix cannot neutralize an inherited `break-all`).
-The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` and `tokens`, and
-the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
-`test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
-stays sovereign only while WebTUI ships no `!important` animation/transition — also asserted). Canvas animation is GSAP/Motion,
-not CSS keyframes (`05f` §8): `pulse` + (260715-FEUI-L2) `pulseSlow` are the live global keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
-`animation: pulse …`), and `pulseSlow` is the RULED cockpit state pulse whose only sanctioned
-driver is the grammar/StateDot pair (2.4 s ease-in-out, never steps()). The native busy glyph
-and its `paseoAgentSpin` keyframe went with the dashboard sidebar (MIK-R75 rule 7). *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
-`engineReindexCharge`, the amber reindex pulse, so only `conduitDraw` was truly orphaned after the conduit
-draw-on moved to GSAP. 05k makes the point moot by deleting all nine canvas keyframes and re-driving the
-reindex pulse from GSAP `data-fx='reindex'`.)*
+Effects stay global and isolated, never per-component. Base/utility rules still read styles/tokens.css variables; component styling belongs to Panda. The current layer inventory must not grow a removed webtui slot. The effects-off freeze stays unlayered/top-level and covers pseudo-elements. Canvas animation remains GSAP/Motion; pulse/pulseSlow remain the only source-declared global keyframes, with no restoration of paseoAgentSpin, powerup or the removed canvas keyframes. Historical WebTUI-specific test/consumer requirements do not become current source owners.
 
 ### 2026-07-24 Curator Delta
 
@@ -98,13 +61,7 @@ It is not a current instruction to mount or retain a static compositor overlay.
 
 The current source extents below record the reviewed UI contract. Inline test names/facets are source-bound evidence; the installed writer cannot create typed proves from those call titles, and these citations do not claim such a proof or a rerun.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `html[data-effects="off"]` | `dashboard/src/index.css:138-143` |
+- Exact current six-layer order, root overflow and global pulse/freeze rules; removed WebTUI is not a current owner. [6]
 
 - The `:root` vars referenced by the base layer. [1]
 - The Panda PostCSS plugin that fills the layers. [2]
-- The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. [3]
-- Asserts the exact layer-order statement and the unlayered freeze. [4]
-- The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. [5]
-- Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). [6]

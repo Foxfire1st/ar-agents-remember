@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
-        "content": "sha256:793e06ec22cd166b8449fd68bd591ed3c0a34f2b6056249377eb6e7075209e58",
+        "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+        "content": "sha256:b4a74e518293797a534a6ebd2aecd23d66063d8b4242283f8c607640102544e5",
         "locator": {
           "kind": "symbol",
           "name": "McpRuntimeConfig"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
-        "content": "sha256:02d133a34a8d526aed5a4715429b42cce962256cc8279fa7b3ec23f2ecc158ba",
+        "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+        "content": "sha256:3cc02e1df8b5ebeffd683b61f140a7ccace07f67e40a5eb9a5fdb3c462631b69",
         "locator": {
           "kind": "file"
         }
@@ -38,106 +38,17 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar.\n\nAnchor: \"def main(argv:\"; \"def create_server(config: McpRuntimeConfig) -> Any:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
-            "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 166
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
-            "content": "sha256:5440abf4d376eb4e3ae1f3bd57caab9a1858be20c57e74f7f04a18d5528dff1c",
-            "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_start_tool"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:fae4c0f3996bec2951a295654b0444e81c6201ed513813d7f74af7b5cfffc1a9",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 77
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Runtime install takes dependency inputs through lifecycle_settings_from_config and retains separate watcher outcome reporting; these are the actual install owners.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
-            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "install_runtime"
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
-            "content": "sha256:6485a1d3b6cc6663127550c8a2822235e4d459859ad012d38f0370c3ba1a064f",
-            "locator": {
-              "kind": "symbol",
-              "name": "install_runtime_from_config"
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
-      "note": "Frozen implementation of McpRuntimeConfig supporting the stated file behavior.",
+      "note": "Anchor: Current authority model, with unused retirement key rather than execution policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
-            "content": "sha256:6ae16823f8b58cfc0d5d544f7d289f940dd1e018e4a6704c4e33f12ae0ad6962",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:c5e398eb7321638b65395f10397c7ac50723b7b62870218ebf5b524c7095ab1c",
             "locator": {
-              "kind": "symbol",
-              "name": "McpRuntimeConfig"
+              "end": 183,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "code"
@@ -145,15 +56,16 @@
       ]
     },
     "16": {
-      "note": "Frozen implementation of config_from_mapping supporting the stated file behavior.",
+      "note": "Anchor: Current configuration mapping and validation boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
-            "content": "sha256:c15c70c3f035ebbd3b8428edbebfa4d379966c58e725008b96aab5fe0f4804b0",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:5c80261a520684e6519eb2f35f40a297fc6fd8b8b915ef8e6ab1121ea325da3b",
             "locator": {
-              "kind": "symbol",
-              "name": "config_from_mapping"
+              "end": 342,
+              "kind": "line_range",
+              "start": 289
             }
           },
           "kind": "code"
@@ -161,95 +73,50 @@
       ]
     },
     "17": {
-      "note": "Frozen implementation of load_paseo_runtime_settings supporting the stated file behavior.",
+      "note": "Anchor: Per-use shared host settings read.",
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
-            "content": "sha256:fd613520be3ad7a2f67153d4caed742b15ab2533abdeedc33caaaf3ae14df565",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
             "locator": {
-              "kind": "symbol",
-              "name": "load_paseo_runtime_settings"
+              "end": 352,
+              "kind": "line_range",
+              "start": 345
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "Runs all three commands without the block and checks named refusal, exit two and no process operation.\n\nAnchor: `PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
-            "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
-            "locator": {
-              "end": 1011,
-              "kind": "line_range",
-              "start": 937
-            },
-            "path": "mcp/tests/test_paseo_runtime.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "19": {
-      "note": "The host settings read the config exposes.",
+      "note": "Anchor: The host block is resolved from the shared authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
             "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
             "locator": {
-              "kind": "symbol",
-              "name": "load_paseo_runtime_settings"
+              "end": 352,
+              "kind": "line_range",
+              "start": 345
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-            "content": "sha256:c4ef61acc4e075d1e30b6152559d7747fbdde4473c9e68517cf6503a7e3bf683",
-            "locator": {
-              "end": 333,
-              "kind": "line_range",
-              "start": 326
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Config tests cover authority rejection, harness-root inference, provider derivation, and include containment.\n\nAnchor: \"class McpConfigTests(unittest.TestCase):\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
-            "content": "sha256:849938a43f060976f3706239bfa9ea975db50a69a8c81f2db8f4485acb6b5a7b",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "mcp/tests/test_config.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "20": {
-      "note": "The shared authority reader.",
+      "note": "Anchor: Retained shared authority reader, not per-harness fallback.",
       "targets": [
         {
           "anchor": {
             "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
             "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
             "locator": {
-              "kind": "symbol",
-              "name": "load_shared_paseo_runtime"
+              "end": 40,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
           },
@@ -258,16 +125,16 @@
       ]
     },
     "21": {
-      "note": "The retired settings key is ignored and warned; current grants are not a runtime-config field.",
+      "note": "Anchor: Retired direct-execution switch is notice-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "7248797421f5761513df5b86aead77124a2a859f",
-            "content": "sha256:a5f6d6e673f1b6adfdb4594ae78c6eb35f3afb391a90e63899861ea04f034be0",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:021a0e8c78cb3e1ac3ae4d94599aacc8a9f7ace5962881048bc4607695dff037",
             "locator": {
-              "end": 909,
+              "end": 597,
               "kind": "line_range",
-              "start": 1
+              "start": 583
             }
           },
           "kind": "code"
@@ -290,11 +157,62 @@
       ]
     },
     "3": {
-      "note": "`DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port.",
+      "note": "Current dashboard boot settings are DashboardSettings with auto_start=False and DEFAULT_DASHBOARD_PORT, not ProviderScope.",
       "targets": [
         {
           "anchor": {
-            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor: Retained provider-degradation settings parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Provider/degradation/configuration fields survive without retirement policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:5c80261a520684e6519eb2f35f40a297fc6fd8b8b915ef8e6ab1121ea325da3b",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "DashboardSettings declares disabled-by-default auto_start and DEFAULT_DASHBOARD_PORT; this is dashboard configuration, not ProviderScope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -305,233 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
-            "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
-            "locator": {
-              "kind": "symbol",
-              "name": "maybe_autostart_dashboard"
-            },
-            "path": "mcp/src/agents_remember/serving/daemon.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
-            "content": "sha256:9e8f44b35605e32a1c5705d0a6e919d46339ff3927dce9455727426b87f1efe7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_autostart"
-            },
-            "path": "mcp/src/agents_remember/serving/daemon.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
-            "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
+            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "content": "sha256:4a0ef91fa6b220d1af6d3b8aee0c48c07920a97e254f1824a29ba6b09d44a229",
             "locator": {
               "end": 115,
               "kind": "line_range",
               "start": 110
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Gate delegation policy validation lives in controlplane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
-            "content": "sha256:31ff3167c0cd775aaa1f899ce1e5e481abdc1328328f9f2d1beaca7ef9410982",
-            "locator": {
-              "kind": "symbol",
-              "name": "make_gate_policy"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
-            "content": "sha256:5a43f39887c93f0f4c28fd22d7e98be9b489dc7af5ff7aae3dcde74265ccfd46",
-            "locator": {
-              "kind": "symbol",
-              "name": "apply_seam_verdict_requirement"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The dedicated `providerDegradation` parser validates the authority block and constructs typed settings.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
-            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_provider_degradation_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:dae7fa1b3ad2ab220545f8eec83653034bc21a281977776fc58b3c055f2413f9",
-            "locator": {
-              "kind": "symbol",
-              "name": "config_from_mapping"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:04f913abdc305eab5d5166ec139a518d5c1f54ccd29b68b18596c8e8c3498c97",
-            "locator": {
-              "end": 334,
-              "kind": "line_range",
-              "start": 285
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation.\n\nAnchor: `provider_degradation`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d89a4489679a6fd1ba5754fc4c50fc27d0d5c6b",
-            "content": "sha256:8afbf9c6eb69bf5c788c0dee107788c717d31829ca9417501296c174edf133f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "evaluate_provider_degradation"
-            },
-            "path": "mcp/src/agents_remember/providers/degradation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
-            "content": "sha256:963ee1671e9a7d807c97b60622a62f43d2922b64e7a3671619181360eddb9373",
-            "locator": {
-              "end": 323,
-              "kind": "line_range",
-              "start": 268
-            },
-            "path": "mcp/src/agents_remember/providers/degradation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "`load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block.\n\nAnchor: \"def parse_gate_delegation(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67fa388747fc66fbe35405485cd99e3e80f4f5ae",
-            "content": "sha256:1e84c582820532b6b0c42267fbcc0b8d126ccdf7b67d88c1eb3183577791ef7d",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_agentic_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "38477fad3dde7ffc069b51804ceb136426569c3d",
-            "content": "sha256:f8162da33b9110fc0395a4f6dc87bebd81e84630746caf7eb8e380636cfadf5f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_parse_orchestration"
-            },
-            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0713c0ebe520e197d1fefa5c4604429920f9a1a9",
-            "content": "sha256:d42bfce911cf2d3195326731323aba5e468478ccfff5398a15b6bc0e8d22cf10",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 28
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:1999c42b7585142fe47fd695d4d63a63d60b00f0615e3e502045a1248fd54ba6",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_orchestration_settings"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:7492668e7105712e78c760b0a7ea28cbe935436fbe691633f794b5ac4056c1eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_parse_legacy_authority_gate_delegation"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
-            "content": "sha256:dd62d34994957471e6870945ca3392b6a2c5f4a5a758902fa8f525d04cd7ef55",
-            "locator": {
-              "end": 637,
-              "kind": "line_range",
-              "start": 604
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-            "content": "sha256:30de19261c247f2299bfe05591dd0643d7185a9c10750c4c4538d0cca864a28c",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 606
             }
           },
           "kind": "code"

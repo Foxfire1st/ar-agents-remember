@@ -6,46 +6,18 @@
 
 ## Purpose
 
-260731-EFA-L7 responsibility split module for `mcp/src/agents_remember/serving/_app_routes.py`; owns the behaviours named by its top-level symbols.
+Register the retained projection reads, raw event stream, action acknowledgement/dismissal and developer direct-execution grant routes. No gate-decision or operator-inbox route is registered here.
 
 ## Code Commentary
 
-- `_state_response`
-- `_task_document_response`
-- `_register_projection_routes`
-- `_recorded_gate_decision`
-- `_gate_decision_response`
-- `_dismissal_response`
-- `_action_response`
-- `_operator_inbox_response`
-- `_inbox_dismiss_response`
-- `_register_action_routes`
+A ready state response serves a copy of the memoized projection with its build tail, while a matching weak ETag returns a bodyless 304; an unprimed projector refuses. The task-document route resolves against the current enclosures and distinguishes unavailable projection from missing document. Snapshot SSE and raw-event SSE have different payload contracts. Action evaluation is pure: only a returned dismissal intent is durably applied to AttentionDismissalStore; other accepted actions are acknowledged, not mutations. The separate developer-grant endpoint delegates to its admitted grant owner.
 
-Recorded dashboard gate decisions finalize under the internal
-`gate_decide_internal` vocabulary. This route is an internal projection/action seam and must not
-mislabel itself as the agent-facing structural `gate_decide` tool.
+## Evidence boundary
 
-The state routes assemble the serve-time tail from `_app_lifespan`'s payload readers: `_state_response`
-merges `served_state_tail(build=…, heartbeat=_agent_notifier_heartbeat_payload(runtime),
-observer_health=_terminal_observer_health_payload(runtime))` onto a copy of the memoized projection
-dump, and the SSE generator is handed the same three readers. Since `LOCR-R17@v1` that third reader
-resolves the observer stage's own persisted health row for the CURRENT serving lifetime and returns
-`None` when no valid row exists, which is what makes `terminalObserverHealth` absent rather than null.
-The routes only read: neither `/api/state` nor the SSE stream writes, repairs, creates or deletes the
-health row, and neither can change the projection revision, the ETag, the 304 path or the delta shape.
+This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
-## Invariants And Boundaries
+## Source-bound reference inputs
 
-- The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/_app_routes.py`.
+- [1]
+- [2]
 
-## Developer grant endpoint
-
-The serving router mounts the developer direct-execution-grant POST route through developer_grant_tool. Canonical task/giver/start validation and exact store behavior belong to that handler; the router does not authorize an agent or make task_doc a grant writer.
-
-## Evidence
-
-### Repo-Internal References
-
-- The state response merges the serve-time tail onto a copy of the memoized body. [1]
-- The SSE route hands the same readers to the projection stream. [2]
-- The observer-health reader whose `None` makes the key absent. [3]

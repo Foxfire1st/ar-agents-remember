@@ -90,23 +90,6 @@
           "kind": "code"
         }
       ]
-    },
-    "2": {
-      "note": "The Python Pi port calls list/read/resolve-resume-target through the locked helper host.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
-            "content": "sha256:9ce7d4a9669814732c4746d975a373a98d75f7bf6dc28055135250c9baac1967",
-            "locator": {
-              "kind": "symbol",
-              "name": "PiConversationLibrary"
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
-          },
-          "kind": "code"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

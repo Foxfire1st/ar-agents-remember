@@ -30,6 +30,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The retained production-chain proof mcp/tests/test_lifecycle_owned_completion_relay.py owns nothing in the evidence-lifecycle catalog.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

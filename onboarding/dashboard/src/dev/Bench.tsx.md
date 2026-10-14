@@ -64,7 +64,6 @@ No configured Domain Documentation source exists for this file.
 - The scenario model validates named engine-room scenarios before building frames. [4]
 - The real cockpit shell it renders (also the shell rendered against fixtures). [5]
 - The gallery fixtures hydrated by the legacy `?state=` path. [6]
-- The dev terminal mock provided via context (slice 6e-1). [7]
 - Picker styles. [8]
 - Player active-control styles. [9]
 

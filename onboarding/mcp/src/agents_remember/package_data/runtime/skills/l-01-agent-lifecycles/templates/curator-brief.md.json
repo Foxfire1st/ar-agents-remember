@@ -3,29 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address.\n\nAnchor: `# Template — Curator Brief`; `**This template feeds inputs; it does not author rules.**`",
+      "note": "Leaf documents feed exact passed-candidate/producer inputs to a Curator started held in role_start_set and opened by its first message.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
-            "content": "sha256:a1e98fc21371240ad49fb0e6f36355026cd8a59cfe2c5fb6d74c9a4182276b42",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "90be918be620c898f0d1de6f7f13fec8f677e93b",
-            "content": "sha256:3ca792ef74636bd22f240896b59f3667c5580d0cb2543da61264e0becc4c0cbd",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 17
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
           },
@@ -34,29 +19,14 @@
       ]
     },
     "2": {
-      "note": "The curator's three-way reconciliation procedure has one home outside the brief.\n\nAnchor: `# Operation — Curation`; `## Normal workflow`",
+      "note": "The Curator’s three-way reconciliation and one admitted writer remain owned by the curation operation, not the input template.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-            "content": "sha256:c8d477c28ddba2f0c2bbcea66e65c1766bf20d7f2d6561a55e35889c1356b408",
+            "blob": "fae6ca4ee58d9d12e5e2034dd28bbe5fcb9d97b9",
+            "content": "sha256:b76144c38d6fba6c7d630d0319e9dd810beef02d5a167a05b0b995d82f84d802",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:7256cc9a6b85467ad2e85a7b49d0ed6071b5436ce5d6bd7bf89ca53d1e0a354f",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 41
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -65,29 +35,14 @@
       ]
     },
     "3": {
-      "note": "The truth boundary the brief obeys, and the curator's handoff artifact, have one home.\n\nAnchor: `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates`",
+      "note": "Completion truth and acceptance remain distinct; Curator hands structured coherence to Reviewer and Manager retains gate acceptance.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
-            "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:116d9c9bcdb6575401bbd8d9737886d23fcc1d4ae4a48bf4634528e91e0e77b4",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
-            "content": "sha256:516df12454f84b82450d778bcbc54c282cc5d62252801befb3be55e2c1e5b965",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 27
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -96,16 +51,14 @@
       ]
     },
     "4": {
-      "note": "The canonical template is the doctrine owner.\n\nAnchor: `# Template — Curator Brief`",
+      "note": "The canonical template owns the document values, not independent duties or a caller-supplied dispatch brief.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
-            "content": "sha256:f2bf6365652ab4bd956193f0f6688638f4f988f94c796220bd405708300a45b0",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
           },
@@ -143,12 +96,12 @@
       ]
     },
     "6": {
-      "note": "A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional.",
+      "note": "A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional. Messages wake and complete payloads travel as files.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
-            "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
+            "blob": "c8d89e369d931e74a40fb4d2fec6622282a804c8",
+            "content": "sha256:c024c8aee204d0ee71d9f0091d568251fd14e40a8232f7dd9a22b2e523ba1f43",
             "locator": {
               "kind": "file"
             },
@@ -158,8 +111,8 @@
         },
         {
           "anchor": {
-            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
-            "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+            "blob": "fae6ca4ee58d9d12e5e2034dd28bbe5fcb9d97b9",
+            "content": "sha256:b76144c38d6fba6c7d630d0319e9dd810beef02d5a167a05b0b995d82f84d802",
             "locator": {
               "kind": "file"
             },
@@ -170,17 +123,16 @@
       ]
     },
     "7": {
-      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct.",
+      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. Curator start is held until its first message and direct passed-candidate evidence remains mandatory.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
-            "content": "sha256:f899ad49f60b3ed23ffe08b60022d66029714f29df767d418beb8f2784f533bc",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
             "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 1
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
           },
           "kind": "code"
         }

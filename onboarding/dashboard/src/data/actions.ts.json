@@ -20,23 +20,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
-            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
-            "locator": {
-              "kind": "symbol",
-              "name": "GateResponder"
-            },
-            "path": "dashboard/src/panels/GateResponder.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The attention queue that calls `postAttentionDismiss`.",
       "targets": [
@@ -47,6 +30,39 @@
             "locator": {
               "kind": "symbol",
               "name": "AttentionQueueImpl"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current module retains only the attention-dismiss client, its target-optional body and HTTP202/error mapping. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "957086c0561577ae1f33af5ea1648e95ada32924",
+            "content": "sha256:14946f08253bbffcb308a35d13073d5d918f9d0cfeb7bf1718b95fcd86c009b6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62becb3d09abb72399bc323b751556cf8ffbff4",
+            "content": "sha256:9e90e2eb042240492a8b18ea9f02d00d422f107a796f8b92adf9f8ecf87effc6",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 246
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },

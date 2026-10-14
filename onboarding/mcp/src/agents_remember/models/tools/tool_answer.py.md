@@ -28,6 +28,10 @@ The current source facts below replace the former operative inventory. The separ
 >   guard. User roots are not shortened or capped, and neither a target nor a report's size changes
 >   the guard or the detail-file byte budget.
 
+- R113 removes dispatch_agent from L112_FINAL_BOUNDS; its sole final row here is runtime_install=600. No retained bound/comment advertises the retired dispatch tool.
+- RUNTIME_INSTALL_ANSWER_FIELDS retains removedPartStores in the delivered installation answer, alongside report/recovery fields; the removed-store report obligation is not dropped during shaping.
+- FRAMEWORK_ANSWER_KEYS no longer includes agentNotifierBanner or supervisorBanner. The four stripped envelope keys and the ordinary short-form framework remain; removed session banners are not preservation exceptions.
+
 ### Current naming-reader bounds
 
 The candidate assigns final explicit bounds: read_ar_files 2400, knowledge_read 4000, knowledge_diff 1500 and context_packet 360 tokens. These four names have no L109 interim row; resolve_context is removed, and INTERIM_LEAVES no longer contains L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps and 400-token overflow shaping remain unchanged.
@@ -35,6 +39,12 @@ The candidate assigns final explicit bounds: read_ar_files 2400, knowledge_read 
 ### Superseded inventory
 
 - Pre-repair card claim: Card says L112 rows remain interim until landing. This is superseded archival wording, not a current prescription.
+
+- runtime_install is the sole retained L112 final bound; dispatch_agent is absent. [6]
+
+- The installation projection retains removedPartStores rather than suppressing its report. [7]
+
+- Removed notifier/supervisor banners are absent from the framework allowed keys. [8]
 
 ### Source and authority bounds
 

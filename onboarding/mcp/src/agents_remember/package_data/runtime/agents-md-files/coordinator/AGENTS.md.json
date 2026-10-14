@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work.\n\nAnchor: `## Start Here — Route By Role`",
+      "note": "The template separates role handovers from free-chat work, which writes sprint prose and starts an Architect through `role_start` without a document reference or brief.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
-            "content": "sha256:7e4e0ed8ba6322d03d66691d0b3fb2ecdda0ccdfebfe249aa4729402df81069a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
+            "content": "sha256:5c2369e4d9746bb79cc50e22a49170e5d5d8f786a8b3a63caf04bedc4cf2655e",
             "locator": {
-              "end": 12,
+              "end": 27,
               "kind": "line_range",
               "start": 3
             }
@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:02f31803b1820ea437dc6431f3b3193740cdaa8e15127192bc5c1cbcda7e13f2",
             "locator": {
-              "end": 62,
+              "end": 48,
               "kind": "line_range",
-              "start": 55
+              "start": 41
             }
           },
           "kind": "code"
@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:1a786a10f38c4f51f9ee5a00ab39b8fee3b3708acfab115cf0553ce61522c3ce",
             "locator": {
-              "end": 70,
+              "end": 56,
               "kind": "line_range",
-              "start": 58
+              "start": 44
             }
           },
           "kind": "code"
@@ -86,16 +86,16 @@
       ]
     },
     "5": {
-      "note": "The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled.\n\nAnchor: `## Ar-coordination & Memory Layer Resolver`",
+      "note": "The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured.",
       "targets": [
         {
           "anchor": {
-            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
-            "content": "sha256:d02d9833a33fef9e214f05be9e471b37342f2e1f543338d22ce311dc46a951c8",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
+            "content": "sha256:bb6fa9de4a777293d930fefaf76cf62c9025e4dca7b0c85cc599640872d7ed66",
             "locator": {
-              "end": 178,
+              "end": 101,
               "kind": "line_range",
-              "start": 85
+              "start": 77
             }
           },
           "kind": "code"
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:1041f92612baf62f7c5c76462eadba99314e9aafbfb6e7dc9473b63f52a8aee6",
             "locator": {
-              "end": 148,
+              "end": 134,
               "kind": "line_range",
-              "start": 135
+              "start": 121
             }
           },
           "kind": "code"
@@ -124,12 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
-              "end": 184,
+              "end": 170,
               "kind": "line_range",
-              "start": 169
+              "start": 155
             }
           },
           "kind": "code"
@@ -141,12 +141,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
-              "end": 184,
+              "end": 170,
               "kind": "line_range",
-              "start": 169
+              "start": 155
             }
           },
           "kind": "code"
@@ -158,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8dcfcfb4bcddb7fa3ea9620493ca4f027bf524a",
+            "blob": "edd9042a658492e3eeeb37c8110d081570d19d2a",
             "content": "sha256:0d595ad8a97a1e345377a2f7919e7745f25c81514e8f2a516dc87cbb31944894",
             "locator": {
-              "end": 197,
+              "end": 183,
               "kind": "line_range",
-              "start": 190
+              "start": 176
             }
           },
           "kind": "code"

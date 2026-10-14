@@ -10,17 +10,15 @@ candidate's actual advertised roster and current request schemas.
 
 ## Code Commentary
 
-The candidate literal PUBLIC_TOOLS has 41 distinct entries after L109 removes
-resolve_context. The earlier 42-entry count is historical, not this candidate's roster.
-The frozen reference source header literally states38 advertised tools, a documentation-header count distinct from the actual41-name roster. The earlier Curator header40 attribution was incorrect, not a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
+The current literal PUBLIC_TOOLS has40 distinct entries after removal of dispatch_agent and resolve_context;41/42-entry populations are historical, not this candidate roster.
+The current frozen reference header literally states40 public tools, matching the current40 distinct literal roster. Pre-L113 header38 and predecessor41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
 use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
 view/token continuations, never legacy database arguments as a workaround.
 
 Retained core operations cover information/context/paired source reads/runtime scaffold;
-dispatch remains canonical task-document/role while role start/message keep native sender
-and recipient authority. Retired structural messages/rename/retire, lifecycle signals,
+native role start/message and receipt-tracked retirement keep their own sender/recipient and starter authority; dispatch_agent is removed. Retired structural messages/rename/retire, lifecycle signals,
 public gates, provider/search, benchmark and capsule/catalog adapters are not replacements.
 Skills capability/resources/methods remain distinct from tools; session-driven source prose
 is not evidence of implemented L113 ambient handling.
@@ -106,4 +104,4 @@ review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
 (`mcp/registration/tasks.py`) and the c-09 skill.
 
-- Current literal PUBLIC_TOOLS has41 names after L109 removes resolve_context; the reference-document header literally says38, not40. Registry cardinality and documentation-header text are separate units; neither proves live advertisement. Earlier Curator caption retained, with its header40 attribution explicitly withdrawn: Current literal PUBLIC_TOOLS contains 41 names after L109 removes resolve_context, retaining direct_execution_grant, role_start_set and retire_child; this is source currency, not a fresh live-advertisement check. Historical earlier account, retained but superseded: Current literal PUBLIC_TOOLS contains the grant function alongside role_start_set and retire_child; its measured42 source names, not the reference header40, own advertisement. [1]
+- Current reference header and literal roster both declare40 public tools; older header38/roster41/42 statements are historical, not live advertisement. [1]

@@ -267,9 +267,6 @@ No external/product documentation governs this protocol; it is a repository-inte
 - The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). [3]
 - The critical-failsafe wiring supplies the stop action directly from the dashboard loop. [4]
 
-- The store this module appends/compacts durable inbox rows through. [6]
-- The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. [7]
-- The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. [8]
 - `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). [9]
 - `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. [10]
 
@@ -277,7 +274,6 @@ No external/product documentation governs this protocol; it is a repository-inte
 - The sibling provider store put on the same contract in the same change. [13]
 - The provider-store durability suite: `lost == 0`, `torn_lines == 0` and `stragglers == []` over the forced single-record window for both provider stores, asserted rather than restated as a base-commit rate. [14]
 - The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. [15]
-- The supervisor-signal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. [16]
 
 ### Cross-Repo References
 
@@ -305,7 +301,6 @@ Current alert/inbox vocabulary addresses Investigator. The degradation protocol�
 
 ## Refreshed current evidence
 
-- The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9. [5]
 - Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. [11]
 
 </details>

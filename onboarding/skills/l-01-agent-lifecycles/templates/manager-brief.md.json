@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
-        "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
+        "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
+        "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "MIK-R101@v1 rule 5",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This brief carries dispatch values with role-text repeats removed.",
+      "rationale": "Manager document-input template carries master document values subordinate to role/operation authority. Host role_start compiles from canonical references and carries no pasted dispatch brief.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
-        "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
+        "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
+        "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
         "locator": {
           "kind": "file"
         }

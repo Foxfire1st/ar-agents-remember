@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Launch admission, browser/instruction removal, no-reader settings compatibility and explicit artifact recovery must compose: any one alone leaves another way to invoke or recreate the removed plane."
+  },
+  "guarantee": "The retired AR agent/cockpit/lifecycle-gate plane cannot be invoked through current launch, browser or instructions. Parentless starts use the same host-owned selection checks rather than a restored dispatch path; retained old settings keys load but are not executed or rewritten, and leftover removed-store/gate files are reported without being read or automatically deleted. Only the explicit user removal command deletes eligible leftovers and reports failures. These jointly prevent stale configuration, UI, prose or recovery from recreating the removed authority.",
+  "id": "FAM-CR0HHJ",
+  "members": [
+    "INV-7SARPM",
+    "INV-7XBR6C",
+    "INV-85VB61",
+    "INV-8PK7FQ",
+    "INV-CQCPAD",
+    "INV-MM4B51"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "A9-ordinary-eighteen-subjects-families-membership.json"
+    },
+    "handoffEntry": "A9-retired-plane-joint-boundary",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp",
+    "dashboard/src",
+    "scripts/harness",
+    "skills"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Removal keeps one host plane and truthful legacy-state boundaries"
+}

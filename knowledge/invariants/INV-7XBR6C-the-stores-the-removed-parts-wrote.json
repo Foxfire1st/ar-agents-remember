@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Automatic cleanup or a falsely successful unreadable inventory could delete user state or hide a partial removal."
+  },
+  "applicability": "Retired product-store discovery, installation reporting and the explicit removed-stores command.",
+  "conditions": [
+    "Discovery/reporting never automatically deletes or consumes former control-plane stores.",
+    "Only the user's explicit removal command deletes eligible contained store files.",
+    "Inaccessible discovery/deletion names the path/reason, preserves failures, continues independent targets and exits nonzero."
+  ],
+  "exclusions": [
+    "Unrelated user state and paths outside the selected coordination root.",
+    "A bounded answer may carry an openable whole-result reference instead of an inline store list."
+  ],
+  "id": "INV-7XBR6C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_removed_stores.py; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-successor-A3-one-test-repaired-39.md, section 3"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 5",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The stores the removed parts wrote under a coordination root are no longer read and no install deletes them; the install's result names them with count, size, every store and the two sentences, its answer carries all but the list, and only `agents-remember removed-stores` removes them, naming what it cannot read or remove and ending 1 then.",
+  "status": "accepted",
+  "supersedes": []
+}

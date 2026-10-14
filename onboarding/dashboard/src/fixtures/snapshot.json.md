@@ -7,9 +7,9 @@
 ## Purpose
 
 The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,982 lines at the
-`260831-LOCR-L17` candidate, shaped like the persisted `latest-state.json`. Four things read it — `test/contract.test.ts` (which measures the
-TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
-base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
+`260831-LOCR-L17` candidate, shaped like the persisted `latest-state.json`. Its remaining readers include `test/contract.test.ts` (which measures the
+TypeScript mirror against the sample), `test/fixtures/wire.ts` (which takes retained builder
+bases from it), and `data/store.test.ts`. The removed production-e2e test is not a current reader.
 
 The task samples also exercise the fixed reader's model-derived form, header/type/status-note fields,
 whole review counts and step preview flags required by the current generated mirror. These are
@@ -122,9 +122,9 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
    the same three fields, so no payload and no structural walk distinguishes them.
 4. **The sample remains manual while the mirror is generated.** Do not describe this JSON payload as
    generated, and do not describe its coverage limits as a missing producer-to-TypeScript contract.
-5. **Provenance wording must preserve that split.** `test/fixtures/wire.ts`, `contract.test.ts`, and
-   `e2e-production/cockpit.production.spec.ts` all distinguish manual sample coverage from generated
-   mirror provenance.
+5. **Provenance wording must preserve that split.** The remaining `test/fixtures/wire.ts` and
+   `contract.test.ts` owners distinguish manual sample coverage from generated mirror provenance;
+   the production-e2e reader is removed.
 
 ## Manual direct-grant display samples
 
@@ -164,7 +164,6 @@ absent from the file rather than present as `null`.
 - `demandServed` and the eight anchor rows the builders require this payload to keep. [15]
 - The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. [16]
 - Store-suite consumer, which also constructs the two app-injected fields this payload omits. [17]
-- Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. [18]
 
 ### Cross-Repo References
 

@@ -477,7 +477,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cacca6669c67d4cb1ad38750ff6094487bb8df82",
+            "blob": "5ba297941c50aa39a86f83d5a0242b64565ee77e",
             "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
             "locator": {
               "kind": "symbol",
@@ -1688,7 +1688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
+            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -2496,24 +2496,6 @@
         }
       ]
     },
-    "1554": {
-      "note": "The production-chain evidence the module's in-process cases complement.\n\nAnchor: `resolve_runtime_spec`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
-            "content": "sha256:206e6813e8a1c48c153bf77a95684233a0162e21d4138642c7ca1a6f607b60d4",
-            "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/tests/live_eve_native_fixture.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1555": {
       "note": "The fixture world and the synthetic corpus every hermetic case is built from.",
       "targets": [
@@ -2536,7 +2518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef7c81539158d4b2db3433720bd395f4d34e401f",
+            "blob": "581b19091f53674143e847dd415c6c2cadc48ca5",
             "content": "sha256:bccb2a34df8aeeb72d9049f1da7f3a06c727cc27ae808b84195cc0d9d52a8027",
             "locator": {
               "kind": "symbol",
@@ -2629,75 +2611,6 @@
               "start": 1032
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1562": {
-      "note": "The Python half, whose refusal cases assert a named defect.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
-            "content": "sha256:2a4b8b17fc922800e7e21b37114157799732fcbdce39d2b6168134c2f0818e9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_launch_verification_refuses_every_declared_defect"
-            },
-            "path": "mcp/tests/test_eve_capsule_binding.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1563": {
-      "note": "The TypeScript half, executing the shipped modules under a real Node.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc4707f0134d1fef3f5f6dcbd20cbc68c185f992",
-            "content": "sha256:80065bcf476126b8866432d6a35b367385d4a2a9ad6789be4259e6a1ccd351d2",
-            "locator": {
-              "kind": "symbol",
-              "name": "RuntimeProbe"
-            },
-            "path": "mcp/tests/test_eve_capsule_runtime.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1564": {
-      "note": "The trace's effective-prompt key, which the live capsule scenarios assert against.\n\nAnchor: `the provider's own view of the effective prompt`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
-            "content": "sha256:926de113b32a63df2f04f289325b2928a464b7fddc2aed99cd373a2f188093ce",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 66
-            },
-            "path": "mcp/tests/eve_fixture_model.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1565": {
-      "note": "The live end-to-end capsule scenarios, which are the whole-seam proof rather than a unit claim.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
-            "content": "sha256:7ea77f16974c880b061864c68338931fc884233b76aae581a42024e7d420f6f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_scenario_capsule_binding"
-            },
-            "path": "mcp/tests/live_eve_native_fixture.py"
           },
           "kind": "test"
         }
@@ -2814,12 +2727,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2832,12 +2745,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2850,12 +2763,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2868,12 +2781,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2886,12 +2799,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2904,12 +2817,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2922,12 +2835,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2940,12 +2853,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
             "locator": {
-              "end": 3055,
+              "end": 2875,
               "kind": "line_range",
-              "start": 3053
+              "start": 2873
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2988,30 +2901,12 @@
         }
       ]
     },
-    "1582": {
-      "note": "The advertised roster the inventory comparison uses, in its new zero-import `models` leaf.\n\nAnchor: `models`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47f039513a0bfe66b78a9ce298beb39a63510661",
-            "content": "sha256:fa3cc391b6340b56b26aa3fa2d2c6baec1f62ad73ddbbb367e27e02ee74ee2b6",
-            "locator": {
-              "end": 9,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "mcp/tests/_adapter_event_scripts.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1583": {
       "note": "The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
             "content": "sha256:2994e908c22c262a2a4248551c5ea35649166bb1701ccd8c7480f754ddad9381",
             "locator": {
               "kind": "symbol",
@@ -3134,65 +3029,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:b9c23eecf4e308f557f14e38998ff9b02ac4d083f744c161a06c90fa6cedf3a2",
             "locator": {
-              "end": 581,
+              "end": 859,
               "kind": "line_range",
-              "start": 579
+              "start": 857
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1591": {
-      "note": "The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
-            "content": "sha256:de55f12d1192f6cc1ba7f56f7cca349ff6e46eb0ab929659403fbef3c0be6999",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_due_sweep_registers_committed_terminated_rows_before_compaction"
-            },
-            "path": "mcp/tests/test_terminal_liveness_registration_order.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1592": {
-      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
-            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
-            "locator": {
-              "kind": "symbol",
-              "name": "PaneDiagnosticAuthorityTests"
-            },
-            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1593": {
-      "note": "The shared fixtures the L27 module imports instead of rebuilding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
-            "content": "sha256:2771de31475cb646580e06f0d0fe0673366e339614acc65b46f1a8a654b49f1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_Clock"
-            },
-            "path": "mcp/tests/test_terminal_paste.py"
           },
           "kind": "test"
         }
@@ -3203,7 +3047,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
             "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
             "locator": {
               "kind": "symbol",
@@ -3268,41 +3112,6 @@
         }
       ]
     },
-    "1598": {
-      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
-            "content": "sha256:61bedbd1b4c7075e988d68ad7dd8b230c0c2a455a198619313120971778aff36",
-            "locator": {
-              "end": 1891,
-              "kind": "line_range",
-              "start": 1889
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1599": {
-      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
-            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
-            "locator": {
-              "kind": "symbol",
-              "name": "PaneDiagnosticAuthorityTests"
-            },
-            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "16": {
       "note": "The command removes the lane line and consumer lines of a file that no longer exists.",
       "targets": [
@@ -3317,23 +3126,6 @@
             "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "1600": {
-      "note": "The shared fixtures the L27 module imports instead of rebuilding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
-            "content": "sha256:2771de31475cb646580e06f0d0fe0673366e339614acc65b46f1a8a654b49f1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_Clock"
-            },
-            "path": "mcp/tests/test_terminal_paste.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -3581,12 +3373,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 27,
               "kind": "line_range",
-              "start": 30
+              "start": 25
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3599,12 +3391,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
-              "end": 34,
+              "end": 29,
               "kind": "line_range",
-              "start": 32
+              "start": 27
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3635,12 +3427,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 27,
               "kind": "line_range",
-              "start": 30
+              "start": 25
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3653,12 +3445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
-              "end": 34,
+              "end": 29,
               "kind": "line_range",
-              "start": 32
+              "start": 27
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3756,12 +3548,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 12,
               "kind": "line_range",
-              "start": 15
+              "start": 10
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3774,12 +3566,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 12,
               "kind": "line_range",
-              "start": 15
+              "start": 10
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3809,7 +3601,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",
@@ -3957,34 +3749,17 @@
         }
       ]
     },
-    "1637": {
-      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
-            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
-            "locator": {
-              "kind": "symbol",
-              "name": "PaneDiagnosticAuthorityTests"
-            },
-            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1638": {
       "note": "**260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:625ef3f6d144761540680ace49bdf598cd4131a520507bf4bfe597d1b91012c0",
             "locator": {
-              "end": 57,
+              "end": 47,
               "kind": "line_range",
-              "start": 55
+              "start": 45
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3997,12 +3772,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 27,
               "kind": "line_range",
-              "start": 30
+              "start": 25
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -4033,12 +3808,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 12,
               "kind": "line_range",
-              "start": 15
+              "start": 10
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -4176,12 +3951,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
             "locator": {
-              "end": 150,
+              "end": 83,
               "kind": "line_range",
-              "start": 148
+              "start": 81
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -4194,7 +3969,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:bf68aa0375fc7968623485b80384a11acd8d5f678294709f947d755b80675bfc",
             "locator": {
               "end": 107,
@@ -4554,7 +4329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:5803dc2ebddf21f22c0ecc5740678648209cd21d62660d6964e8666ca6f9ca9a",
             "locator": {
               "end": 363,
@@ -4572,7 +4347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
+            "blob": "a14042be29bb28a9e39fbcfc06c345803c28fdff",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",
@@ -4581,86 +4356,6 @@
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "1672": {
-      "note": "The trace's effective-prompt key, which the live capsule scenarios assert against.\n\nAnchor: \"the provider's own view of the effective prompt\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
-            "content": "sha256:687dfc49b03dbf69ddd0f0a10ea4f3bd366e0fcc3e4ae08f1874ce6da930cdd3",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/eve_fixture_model.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1673": {
-      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1674": {
-      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1675": {
-      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1676": {
-      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
-            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -4952,22 +4647,6 @@
         }
       ]
     },
-    "1695": {
-      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.\n\nAnchor: \"mcp/tests/test_terminal_liveness_pane_authority.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
-            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1696": {
       "note": "The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture.\n\nAnchor: `class ActivationFixture`",
       "targets": [
@@ -4979,40 +4658,6 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_atomic_series_activation.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1697": {
-      "note": "The shared fixture world the seam's cases are built on.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fd4bfaa2951ad9ceca924016f78a0355bc0928c1",
-            "content": "sha256:4a51051801665e9f353d8b60a6c7a718eace43f8e792ee072e6f651f4ffaa7b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "FixtureWorld"
-            },
-            "path": "mcp/tests/eve_capsule_test_support.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1698": {
-      "note": "The launch-binding fixture that makes the adapter suite's launches verifiable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
-            "content": "sha256:07865559f165c23c1652d86d3921ea35bda2e7de341dcb3a3107366b46d5a0a3",
-            "locator": {
-              "kind": "symbol",
-              "name": "fixture_launch_binding"
-            },
-            "path": "mcp/tests/eve_adapter_test_support.py"
           },
           "kind": "test"
         }
@@ -5206,7 +4851,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "blob": "dcf20f44d1a916f54346a775ee365f4babfcaff1",
             "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
             "locator": {
               "kind": "symbol",
@@ -5230,7 +4875,7 @@
         },
         {
           "anchor": {
-            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "blob": "dcf20f44d1a916f54346a775ee365f4babfcaff1",
             "content": "sha256:c2ad6d2f6e9d17270911a608716a8f0ff557d0ad777661491f2165ed41e057f1",
             "locator": {
               "kind": "symbol",
@@ -5361,7 +5006,7 @@
         },
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
             "locator": {
               "kind": "symbol",
@@ -5417,7 +5062,7 @@
         },
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:36aadd685107ad708ec5be5cd157a571432a713e162191fbbd0dfdc1bda46cae",
             "locator": {
               "end": 108,
@@ -5430,7 +5075,7 @@
         },
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "end": 177,
@@ -5684,7 +5329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
+            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -5697,12 +5342,12 @@
         },
         {
           "anchor": {
-            "blob": "63fae240be163a79286c7c7aa7725dd3dee37397",
+            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
             "content": "sha256:91cdc0e045d3d4842522760d70909168186c3a38edf7eb4c30a84d2d11d017f5",
             "locator": {
-              "end": 187,
+              "end": 159,
               "kind": "line_range",
-              "start": 181
+              "start": 153
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -5710,11 +5355,11 @@
         },
         {
           "anchor": {
-            "blob": "fb40e6dbdd4301dad5b2b6fa70d0431631637757",
-            "content": "sha256:e4c6a24c1df136e92f540a0c0935479293ce6465cc1852e9e44afa744c57762f",
+            "blob": "f84ca5ddb614391b9df661e0eebfc3ca88c1da73",
+            "content": "sha256:1fce94dd9ea9b05303d0ecc585018e9f693698e93af637a911c7175e09948f5d",
             "locator": {
               "kind": "symbol",
-              "name": "_whole_result"
+              "name": "_returned_arm"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -5722,11 +5367,11 @@
         },
         {
           "anchor": {
-            "blob": "fb40e6dbdd4301dad5b2b6fa70d0431631637757",
-            "content": "sha256:1fce94dd9ea9b05303d0ecc585018e9f693698e93af637a911c7175e09948f5d",
+            "blob": "f84ca5ddb614391b9df661e0eebfc3ca88c1da73",
+            "content": "sha256:e4c6a24c1df136e92f540a0c0935479293ce6465cc1852e9e44afa744c57762f",
             "locator": {
               "kind": "symbol",
-              "name": "_returned_arm"
+              "name": "_whole_result"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -5739,12 +5384,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:f79bef8db97aa65981c990315d691d171aae2b37052a4522c83e9851830f2fa9",
             "locator": {
-              "end": 520,
+              "end": 798,
               "kind": "line_range",
-              "start": 506
+              "start": 784
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -5765,12 +5410,12 @@
         },
         {
           "anchor": {
-            "blob": "85f673c78ea8c1c3ed03b1ffa441fb8ac073d465",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:ee46da0fe4f4f25f8c39882e722654f89b0dce25aac78ddc22222326707c9815",
             "locator": {
-              "end": 1411,
+              "end": 1449,
               "kind": "line_range",
-              "start": 1397
+              "start": 1435
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -5791,7 +5436,20 @@
         },
         {
           "anchor": {
-            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "blob": "8ff5c5145a961c4258b8dfdfbcebe8636a2b86e4",
+            "content": "sha256:9e16a6cddc574e9da2a3c546929e7c020f9816f42cfdad7221eacab5c814c715",
+            "locator": {
+              "end": 1155,
+              "kind": "line_range",
+              "start": 1124
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08726d555e9f754a8c10ba62bdd886360ce737fd",
             "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
             "locator": {
               "kind": "symbol",
@@ -5803,19 +5461,7 @@
         },
         {
           "anchor": {
-            "blob": "fb40e6dbdd4301dad5b2b6fa70d0431631637757",
-            "content": "sha256:7f3c88f5bea68a696f3eb1e5c330ecbc4c2335c58efbef45b2e6baea92fec28a",
-            "locator": {
-              "kind": "symbol",
-              "name": "STATE_DEPENDENT_RAISERS"
-            },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fb40e6dbdd4301dad5b2b6fa70d0431631637757",
+            "blob": "f84ca5ddb614391b9df661e0eebfc3ca88c1da73",
             "content": "sha256:64e72c5e53e146da7090b16a408fca013bf6b71bcbb577cc47326faacdfe4743",
             "locator": {
               "kind": "symbol",
@@ -5827,12 +5473,11 @@
         },
         {
           "anchor": {
-            "blob": "8ff5c5145a961c4258b8dfdfbcebe8636a2b86e4",
-            "content": "sha256:9e16a6cddc574e9da2a3c546929e7c020f9816f42cfdad7221eacab5c814c715",
+            "blob": "f84ca5ddb614391b9df661e0eebfc3ca88c1da73",
+            "content": "sha256:7f3c88f5bea68a696f3eb1e5c330ecbc4c2335c58efbef45b2e6baea92fec28a",
             "locator": {
-              "end": 1155,
-              "kind": "line_range",
-              "start": 1124
+              "kind": "symbol",
+              "name": "STATE_DEPENDENT_RAISERS"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -5857,12 +5502,12 @@
         },
         {
           "anchor": {
-            "blob": "51cadeb837cf0893afef223855717e8ed7662e7e",
+            "blob": "a72e2fe4d6d1f1dca6b3741808339e48979e334c",
             "content": "sha256:4f312f4a2f270eca6593f9fd8fde82630154c73b269d3378276070940811a224",
             "locator": {
-              "end": 425,
+              "end": 402,
               "kind": "line_range",
-              "start": 413
+              "start": 390
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -5870,12 +5515,12 @@
         },
         {
           "anchor": {
-            "blob": "51cadeb837cf0893afef223855717e8ed7662e7e",
+            "blob": "a72e2fe4d6d1f1dca6b3741808339e48979e334c",
             "content": "sha256:946508b8befef4ba6abb24f258846d3cd42e0ec92b9fdab6fd8d05ac100ea2a7",
             "locator": {
-              "end": 483,
+              "end": 460,
               "kind": "line_range",
-              "start": 474
+              "start": 451
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -5918,24 +5563,6 @@
         }
       ]
     },
-    "1727": {
-      "note": "Failed-pass durable identity explicitly excludes and separately measures observer health.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c355c2c097fca1ab5ce130befa1628224a2c0c59",
-            "content": "sha256:940a004ff540c62697ee46162989c112960aa1ca4739a109e1c4a3ada72aa8ed",
-            "locator": {
-              "end": 831,
-              "kind": "line_range",
-              "start": 792
-            },
-            "path": "mcp/tests/test_serving_observation_loop.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1728": {
       "note": "The retained production ref transaction checks protected heads, ancestry and exact landing output.",
       "targets": [
@@ -5971,7 +5598,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "blob": "ed7eabaf6d67f4673b70c7c473f8ae42393bc912",
             "content": "sha256:6efc058b3f944172b0c07abf8367494c8502f19ef1311ca8fab599e9d5a87272",
             "locator": {
               "kind": "symbol",
@@ -6022,7 +5649,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f2772e4ab22e5d6b13ea28359059e1c9b01e900",
+            "blob": "2dbba506cd3dc7fb1363537441b7539380ee821e",
             "content": "sha256:3fc44a9a4769d0b10674ce6539134be17fd386b325029a62881fe8cf0f68c0b6",
             "locator": {
               "end": 179,
@@ -6035,7 +5662,7 @@
         },
         {
           "anchor": {
-            "blob": "6a6807ea32cb60ac7a9838ae361ac9657caded1f",
+            "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
             "content": "sha256:d563c6f7f2573602a6b4d069c9f4b544654074f346f15688e05d8352fd800004",
             "locator": {
               "end": 54,
@@ -6048,12 +5675,12 @@
         },
         {
           "anchor": {
-            "blob": "6a6807ea32cb60ac7a9838ae361ac9657caded1f",
+            "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
             "content": "sha256:b9acc1c3322095c32577437f0d1fac4da8c959a89442ad90b99affbefc36fa31",
             "locator": {
-              "end": 200,
+              "end": 224,
               "kind": "line_range",
-              "start": 189
+              "start": 213
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -6121,7 +5748,7 @@
       ]
     },
     "1733": {
-      "note": "Current composed source declarations are41 public tools,20 adapter modules and65 handlers; declaration counts are not execution. The envelope-loss pin is empty. Pre-sync population and catalog figures in the earlier caption below are historical, not current. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: Current source pins distinguish42 advertised tools,20 modules and66 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty; its former four L111 worktree pins are historical and separate from the ambient-state/finalize population. The final assembled tool table has no L111 rows and imports ToolAnswerRow from its local support module; raw interim-map declarations and retained L100/L109 rows are separate. Removed task reads are asserted as operation-removed; rich review/linkage/retirement assertions read canonical state or retained whole logs rather than claiming every delivered field survived. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. The declarative lifecycle catalog has14 contracts/94 artifacts and adds the permanent local-composition support; declaration, source assertions and prior grades remain different evidence classes.",
+      "note": "Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed source declarations are41 public tools,20 adapter modules and65 handlers; declaration counts are not execution. The envelope-loss pin is empty. Pre-sync population and catalog figures in the earlier caption below are historical, not current. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: Current source pins distinguish42 advertised tools,20 modules and66 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty; its former four L111 worktree pins are historical and separate from the ambient-state/finalize population. The final assembled tool table has no L111 rows and imports ToolAnswerRow from its local support module; raw interim-map declarations and retained L100/L109 rows are separate. Removed task reads are asserted as operation-removed; rich review/linkage/retirement assertions read canonical state or retained whole logs rather than claiming every delivered field survived. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. The declarative lifecycle catalog has14 contracts/94 artifacts and adds the permanent local-composition support; declaration, source assertions and prior grades remain different evidence classes.",
       "targets": [
         {
           "anchor": {
@@ -6324,7 +5951,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
@@ -6358,12 +5985,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
             "content": "sha256:446b2eec78c7a962d21290fce048c34c207d39504892e6d8e251fa4bb2d79d37",
             "locator": {
-              "end": 176,
+              "end": 175,
               "kind": "line_range",
-              "start": 150
+              "start": 149
             },
             "path": "AGENTS.md"
           },
@@ -6424,7 +6051,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
             "locator": {
               "kind": "symbol",
@@ -6475,7 +6102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "kind": "symbol",
@@ -6509,7 +6136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -6611,7 +6238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",

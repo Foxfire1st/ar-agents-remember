@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
             "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
             "locator": {
               "kind": "symbol",
@@ -38,6 +38,44 @@
               "name": "_tool_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The edge is exception-contained; contract/guidance failure handling stays on existing owners.\n\nAnchor: `next_step_for`, `_guidance_for`, `_load_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "content": "sha256:4c802865c8314376d60ec3b292d315d7b70929b92c3bb9585d5fe7eb46805179",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_step_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "content": "sha256:765eac3af59a82635f4e6c038672cdd21d715fbebfb4bf51a7a77b789e3983da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guidance_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "content": "sha256:21cec50169d59995bc298df70e76b03e70a993b36026bf45ddf5a411c0c8273a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_contract"
+            }
           },
           "kind": "code"
         }
@@ -89,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "dd98eaaff718f6e42912b00f4d1fad8f565d8062",
             "content": "sha256:656888b6f80fc1973338abb55a25f4b33bd3eba3d5b4a221a5bfafaf5ce12860",
             "locator": {
               "kind": "symbol",
@@ -101,7 +139,7 @@
         },
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "dd98eaaff718f6e42912b00f4d1fad8f565d8062",
             "content": "sha256:1a47259c93d114ae5f9f094ac5cd3537012434d42944e406beb755899538e76f",
             "locator": {
               "end": 225,
@@ -216,12 +254,12 @@
         },
         {
           "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
             "content": "sha256:bc7ea17ba44e1badcdc204a07a38778a4a22c7bba61e96ccffab247036ee5670",
             "locator": {
-              "end": 16,
+              "end": 11,
               "kind": "line_range",
-              "start": 16
+              "start": 11
             },
             "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
           },
@@ -229,12 +267,12 @@
         },
         {
           "anchor": {
-            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "blob": "9030c326e5e16730e1dff8af52680f98eaa923fa",
             "content": "sha256:456bb986c16af0114076552af2472d3ca010830a6f0e8a0cddff06106786870d",
             "locator": {
-              "end": 20,
+              "end": 15,
               "kind": "line_range",
-              "start": 20
+              "start": 15
             },
             "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
           },
@@ -252,6 +290,38 @@
             "locator": {
               "kind": "symbol",
               "name": "next_step_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "No state, terminal state or no contract yields no hint; only the retained operational branch remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "content": "sha256:a87f1c5d292edb2047b51349c5a0559f92c61fb49a9224338c0387dc8fff2ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_next_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Three contract-gated stop overlays are prose, not session/gate notification operations or approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2ec08c81e4a97d5e1d4d4ea743ed9c27f6e869a",
+            "content": "sha256:0b190a2870a7c193f867b2fb6912711f3543ce3549ce7f31905fda1cfe32fc18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_turn_end_after"
             }
           },
           "kind": "code"

@@ -3,16 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Client under test.\n\nAnchor: \"export type GateDecisionStatus\"",
+      "note": "The retained client builds attention-dismiss itemId/kind and optional lifecycle target, maps 202 to dismissed and other/network failures to error; gate-decision export is removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "dd06534f6f271a26d17e7d8fed6edf3b6e6e63d1",
-            "content": "sha256:3a2a532a3469278ed94777793ffb2f7bca270250daa7b6cac3c083cd3da95b0f",
+            "blob": "957086c0561577ae1f33af5ea1648e95ada32924",
+            "content": "sha256:ff1eb86e64a5a3c571b7f2c02ca4e9325df20e15ba3cd43a9a89e3231cb65c5a",
             "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 7
+              "kind": "symbol",
+              "name": "postAttentionDismiss"
             },
             "path": "dashboard/src/data/actions.ts"
           },
@@ -21,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Targetless actionable drift dismissal omits `target` while still carrying `itemId` and `kind`.\n\nAnchor: \"distinguishes stale gates from missing open gates\"",
+      "note": "The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body.\n\nAnchor: Targetless assertion body",
       "targets": [
         {
           "anchor": {
-            "blob": "6bf14cb8b9666895ed57f89ec3d95ae916b2e9d8",
-            "content": "sha256:9c915c7acd64d50e5f981b11cceb293177376ceca32536428f2c45393e8b9bd1",
+            "blob": "2f7372c16a1997c0d021be2a35f3f10bdeae96c7",
+            "content": "sha256:4bb75363843680c2e6c1330d751ecf941f486332dcf48b0fdada87acf68ed6c3",
             "locator": {
-              "end": 64,
+              "end": 47,
               "kind": "line_range",
-              "start": 51
+              "start": 28
             }
           },
           "kind": "test"

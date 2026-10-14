@@ -10,7 +10,7 @@ Pins the registered tool-description contract and the reachable longer-explanati
 
 ## Contract And Boundaries
 
-The description probe registers the product's actual registrar set, collapses whitespace, and requires its names to equal the public roster. Ordinary finalized descriptions meet the 600-character ceiling and end with a recognized pointer. Explicitly interim-owned descriptions and the retained dispatch description keep their recorded transition lengths; those pins are not an ordinary finalized-tool exception table.
+The description probe registers the product's actual registrar set, collapses whitespace, and requires its names to equal the public roster. Ordinary finalized descriptions meet the 600-character ceiling and end with a recognized pointer. Explicitly interim-owned descriptions keep their recorded transition lengths; the removed dispatch description has no retained special pin. These pins are not an ordinary finalized-tool exception table.
 
 The argument check walks the complete advertised input schema. It checks the current node before descending through properties, model definitions, composition branches, items and additionalProperties, so a model or a container cannot hide an overlong description. The separate pure model control distinguishes the 121-character rejection from the 120-character boundary without a server fixture. A declared check is not evidence that all live published models already pass it.
 

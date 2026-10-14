@@ -252,73 +252,6 @@
         }
       ]
     },
-    "108": {
-      "note": "Active conversation reducer preserves cursor/revision recovery intent without optimistic items.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
-            "content": "sha256:1bb459cd58481129b4b21bc9efc8de06d792a81123638452edd73494248336d8",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "dashboard/src/data/conversation/reducer.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "109": {
-      "note": "Agent roster requires backend identity plus notice/system/agent predicates.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "874689c9a35a59da18383a35960269deff02da47",
-            "content": "sha256:8c3d05d4651a77cc4c9dc3e99d33945989f06f8476b7155ca46fca119c64e711",
-            "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 13
-            },
-            "path": "dashboard/src/data/conversation/agents.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "110": {
-      "note": "Historical conversation focus requires opened authority evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
-            "content": "sha256:3df8db77d5d2c00ad27050d3725e1707de669be215f4556c95df08cb8c6b3235",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "dashboard/src/data/conversation-library/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
-            "content": "sha256:bf0d3cb7b2b3471aa6bc03b74e053e403c7bc9ed6255f19ff021403da15af951",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 52
-            },
-            "path": "dashboard/src/data/conversation-library/store.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
       "note": "The three locator declarations.",
       "targets": [
@@ -411,37 +344,6 @@
         }
       ]
     },
-    "19": {
-      "note": "Catalog/session ownership and cross-tab reconciliation.\n\nAnchor: \"export function captureCatalogAuthority\", \"export function notifySessionCatalogChanged\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
-            "content": "sha256:5f144ef8c006a01bc3da388dcd0b91a0f320398073386a92de867614c2834452",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 44
-            },
-            "path": "dashboard/src/data/catalogPoll.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
-            "content": "sha256:0f69fb29f90e4595f046daea9d9f9b271d016d881ca3e154ab22b5346eb29d49",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 116
-            },
-            "path": "dashboard/src/data/sessions.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "One file's classification as a single read; a transport failure is `unavailable`.",
       "targets": [
@@ -454,101 +356,6 @@
               "name": "readFileClassification"
             },
             "path": "dashboard/src/data/reviewLane.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "Per-seat UI and evidence state.\n\nAnchor: \"export type EvidenceTier\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
-            "content": "sha256:cfd9da7e21731dd0396faa84aa2e44c22dad8de3776b32c261ba5fb470522cea",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/data/sessionCockpitStore.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "Reliable submission and authoritative withdrawal.\n\nAnchor: \"export function createFetchSubmitTransport\", \"export const VISIBLE_STATUS_POLL_MS\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
-            "content": "sha256:036b189f2d2f72cf08b6a7cb585dbcec8f416a337e6f75ad6f1638d0e6c863cd",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/data/submissionLifecycleClient.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
-            "content": "sha256:4757f69db0e731bf7b260592268ff7e6e7e6fa2a20bb98cb9e634d696bacefba",
-            "locator": {
-              "end": 238,
-              "kind": "line_range",
-              "start": 238
-            },
-            "path": "dashboard/src/data/submitClient.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "Lifecycle termination, residuals, and landed cleanup.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
-            "content": "sha256:1c31486622f48dfee78e156a15ba53c8120e75cda8612541bbd3d03f9763f35d",
-            "locator": {
-              "kind": "symbol",
-              "name": "startRetireResidualSweep"
-            },
-            "path": "dashboard/src/data/sessionLifecycle.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "Structural task hierarchy and diagnostic spawn ancestry are built as separate models.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:cb246c84cd67b13d018a14318050aeaaf2b7dbbb23881b5879637d68135b833f",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildRailModel"
-            },
-            "path": "dashboard/src/data/railModel.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:48ca2d96fb6a842a57e5088427a5d831a9c1e8d8826c3e70b9caa527a5ddd5c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildSpawnTree"
-            },
-            "path": "dashboard/src/data/railModel.ts"
           },
           "kind": "code"
         }
@@ -588,7 +395,7 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "88aaa04262766c094a76bb241c87655a34aa8414",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -630,12 +437,12 @@
         },
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:4febe9305bdcf88985d693776ac3ca954a03c75b80f6c7702ee91ba410a1f6a1",
             "locator": {
-              "end": 839,
+              "end": 769,
               "kind": "line_range",
-              "start": 831
+              "start": 761
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -643,12 +450,12 @@
         },
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:8559661a3931118b1672c7cc3d4b2f32aa157c9bdd61f407feceda1947d80a2e",
             "locator": {
-              "end": 562,
+              "end": 492,
               "kind": "line_range",
-              "start": 562
+              "start": 492
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -656,12 +463,12 @@
         },
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
             "locator": {
-              "end": 872,
+              "end": 778,
               "kind": "line_range",
-              "start": 872
+              "start": 778
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -691,7 +498,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
+            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
             "content": "sha256:c2bf5021b544e1bfe592d8e2a9412c95408aa10143a16a263841f69607846b3a",
             "locator": {
               "end": 24,
@@ -704,7 +511,7 @@
         },
         {
           "anchor": {
-            "blob": "57f5f5953cc48ef38638da1236bf0556faeb5077",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:0fe35945de3839b430de57e38d38345b5ea32cd57ba071ec316fe800bdc3d6f2",
             "locator": {
               "end": 22,
@@ -717,7 +524,7 @@
         },
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
             "locator": {
               "end": 1,
@@ -1953,7 +1760,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "blob": "b967c7e758ed50c05ed177e1eca3ae5771f9e0eb",
             "content": "sha256:65f2267c684137e9bbe30efdfeef61786eee83328daa7341dabee3c2e8c30532",
             "locator": {
               "end": 121,
@@ -2164,130 +1971,6 @@
               "start": 3
             },
             "path": "dashboard/src/data/taskArtifacts.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "94": {
-      "note": "Session creation commits only an accepted opener result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
-            "content": "sha256:ceed10eb079c468ab06dcc0afcf8eda6462a0d34946b893df13e7047a4b9388f",
-            "locator": {
-              "end": 843,
-              "kind": "line_range",
-              "start": 820
-            },
-            "path": "dashboard/src/data/sessions.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "95": {
-      "note": "Open request is identity-addressed and validates acknowledged id/kind and raw-terminal claims.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
-            "content": "sha256:0d5bf2b8c99483061cea1f83bace3dba1508825b569efb2530bfc9dc2d31549c",
-            "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 96
-            },
-            "path": "dashboard/src/data/terminalOpen.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
-            "content": "sha256:d23a7bc4cfb508df0c8b2c143bd8d1a9a83aec049ee1d0e1f74d99f2c805251b",
-            "locator": {
-              "end": 284,
-              "kind": "line_range",
-              "start": 242
-            },
-            "path": "dashboard/src/data/terminalOpen.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
-            "content": "sha256:82862272092f4ce74fefe225aec6590fb39d8367b14c36602a240dd05dc83752",
-            "locator": {
-              "end": 364,
-              "kind": "line_range",
-              "start": 350
-            },
-            "path": "dashboard/src/data/terminalOpen.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "96": {
-      "note": "Rail placement uses real task document references and role/parent predicates.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:e4b615d4a9c3c0a305b0e7eef15fe9aa443aae284d8f01ce0b48c9d2bb3985a1",
-            "locator": {
-              "end": 241,
-              "kind": "line_range",
-              "start": 229
-            },
-            "path": "dashboard/src/data/railModel.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07c3e3df751930654882aed272a3965598a20ed9",
-            "content": "sha256:78956f1092b1bf3c418f5c182d3326c9ec7f4f3772bc85999cd8d8c353231814",
-            "locator": {
-              "end": 372,
-              "kind": "line_range",
-              "start": 252
-            },
-            "path": "dashboard/src/data/railModel.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "97": {
-      "note": "Plural pending interactions count; end/fault/block/wait precede live-turn evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
-            "content": "sha256:5691d3eefd3361376e26dda2a404f6a464461cd3edff035d95b7dbeb9f16b8fb",
-            "locator": {
-              "end": 580,
-              "kind": "line_range",
-              "start": 574
-            },
-            "path": "dashboard/src/data/sessions.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b51921c3a9beb549654254430d762b078582c0",
-            "content": "sha256:886c91807acb8576c71d4e6ed0581ac436cbbaaf110316718e4895803c5a6281",
-            "locator": {
-              "end": 132,
-              "kind": "line_range",
-              "start": 106
-            },
-            "path": "dashboard/src/data/stateGrammar.ts"
           },
           "kind": "code"
         }

@@ -47,13 +47,7 @@ Starts the one configured MCP application and registrar loop.
 
 ### Closed dispatch input at the public transport boundary
 
-FastMCP 1.x generates argument models that ignore undeclared keys by default. For
-`dispatch_agent`, that would silently discard a caller-supplied `model`, `thinking`, or other spend
-override even though the public contract says settings own those choices. `AgentsRememberMCP`
-therefore uses FastMCP's public `list_tools` and `call_tool` hooks to publish
-`additionalProperties: false` and reject undeclared dispatch inputs before the registered handler
-runs. This is one closed-schema enforcement seam, not a second registrar or handler. Other tool
-registration, descriptions, and argument ownership remain in `mcp/registration/`.
+AgentsRememberMCP.list_tools delegates directly to FastMCP. call_tool carries actual arguments inside tool_call_context, delegates to FastMCP and logs raised calls through the shared boundary. There is no dispatch-specific input-schema closing or undeclared-dispatch handler hook; tool argument admission belongs to each retained registered schema.
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 

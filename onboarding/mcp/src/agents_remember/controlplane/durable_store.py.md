@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`durable_store.py` declares `ar-durable-store/1.0`, the common record, ownership and I/O contract for six control-plane JSONL stores. It owns schema validation, advisory writer/compaction policy, guarded access, durable appends, and the requirement to hold a log lock across read-filter-rewrite. Mechanical file exclusion belongs to `kernel.file_lock`; atomic temp publication belongs to `kernel.atomic_write`.
+`durable_store.py` declares `ar-durable-store/1.0`, the common record, ownership and I/O contract for retained JSONL store consumers. It owns schema validation, advisory writer/compaction policy, guarded access, durable appends, and the requirement to hold a log lock across read-filter-rewrite. Mechanical file exclusion belongs to `kernel.file_lock`; atomic temp publication belongs to `kernel.atomic_write`.
 
 This concentration was introduced after independent store implementations lost whole records through unprotected read-modify-write and unlink races. Reader validation could not recover records that never remained in the log. The historical evidence account below remains separate from the current owner map.
 
@@ -108,10 +108,7 @@ load-bearing part of this module:
 - `is_compaction_owner()` is a **question that never raises**. It returns `True` in a process that
   declared nothing and `True` for a store whose `compaction_owner` is `None`.
 
-**The ownership register** holds all six constants side by side so the differences are comparable:
-`GATE_OWNERSHIP`, `EXPECTATION_ROW_OWNERSHIP`, `ATTENTION_DISMISSAL_OWNERSHIP`,
-`OPERATOR_INBOX_OWNERSHIP`, `ORCHESTRATION_NUDGE_OWNERSHIP`, `AGENT_NOTIFIER_SIGNAL_OWNERSHIP`. Four
-logs accept MCP and dashboard writers; gate also accepts the detached lifecycle-operation writer. Attention-dismissals and supervisor-signals accept the dashboard alone. Locking is *not* one of the differences — all six lock, always.
+**The current ownership register** declares GATE_OWNERSHIP (MCP/dashboard/lifecycle-operation writers, MCP compaction owner) and ATTENTION_DISMISSAL_OWNERSHIP (dashboard writer/compaction owner). Expectation, inbox, nudge and notifier-signal ownership constants are removed; the former six-store census is historical, not a present API inventory. Ownership is advisory for undeclared processes, while serialization remains unconditional for every retained store.
 
 **Checkout target containment precedes locking.** `exclusive_access`, `append_line`, and
 `rewrite_lines` all call `require_durable_write_target`. In an undeclared linked checkout, the only
@@ -124,7 +121,7 @@ Host Dagger registry ownership uses the same kernel mechanics through its own `A
 
 **The I/O.** `read_log_text` returns raw UTF-8 text or `""` when absent. `append_line` and `append_lines` authorize the target, append under the caller's held lock and fsync before closing; the batched helper performs one flush/fsync for the batch. `rewrite_lines` authorizes the target and requires the hold, then delegates to `atomic_write_text`. Its kernel owner writes a hidden per-call pid-and-UUID temp, fsyncs it, replaces the destination, then fsyncs the directory on POSIX. Empty content remains an empty file; the destination is never unlinked.
 
-`migrate_jsonl_records` is a bounded explicit migration: transform each raw JSON object, validate all records before replacement, and rewrite only if at least one record changes. It is not a parallel permissive reader.
+The current module has no `migrate_jsonl_records` helper. Retained schema-version validation refuses unsupported major or malformed versions; generic locked I/O does not authorize a permissive migration reader.
 
 ### The Lock Is The Mechanism, Ownership Is Advisory
 
@@ -202,21 +199,7 @@ already has.
 
 ### The Ordering Across Stores (260731-EFA-L16)
 
-The intra-store order above is not sufficient. `exclusive_access`'s docstring now declares ONE
-ORDER ACROSS STORES, TOO: no thread may hold one store's lock — mutex, RLock, or flock — while
-acquiring another store's lock. Evidence a transaction needs from a second store is gathered
-BEFORE entering this one, or the side effect runs AFTER leaving it; never nested. The two nestings
-this rule forbids were each locally documented and locally defensible: the liveness sweep held the
-catalog batch lock across the hosted-interaction synchronizer's operator-inbox/gate acquisitions
-(260718-CHATS-L5 had quarantined that call's failure mode, not its placement), and the
-agent-notifier's lock-held reconcile read the catalog under the inbox lock (260712-TRH-L5's
-"intentionally held across catalog/tmux evidence"). On 2026-08-05 the two deadlocked ABBA in
-production, twice and py-spy-verified, and the uvicorn event loop then queued on the same catalog
-RLock via async endpoints doing synchronous catalog reads, so the daemon stopped accepting. Both
-nestings are un-nested now — `terminal_liveness` defers the synchronizer to after the batch
-commit, the supervisor pre-fetches the catalog before the inbox transaction — and
-`mcp/tests/test_cross_store_lock_order.py` pins the rule with a placement property and a
-rendezvous-parked ABBA reproduction over the real sweeps.
+The lock contract forbids cross-store nesting as well as preserving mutex-before-flock order within one store. Evidence from a second store must be read before this hold or its side effect deferred until after it. The historical notifier/liveness ABBA incident explains that rule, but its removed sweeps and dedicated reproduction module are not present consumers or current execution evidence. Current ownership remains with the shared lock and the actual retained store callers.
 
 ### Capability, Enforced At The Shared Owner
 
@@ -250,7 +233,7 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   lives there **and** once per lifecycle, so `gates.jsonl.lock` appears in every lifecycle directory
   too. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
   their `.json` sidecars — so the suffix rule cannot over-match.
-- Schema interpretation remains one explicit major-version rule. `migrate_jsonl_records` performs bounded, fully validated migrations under the existing log lock; it does not silently accept an unsupported record schema.
+- Schema interpretation remains one explicit major-version rule. The removed migration helper is not current calling guidance; retained writes validate through their actual record owners and lock boundary.
 
 ### Invariants And Boundaries
 

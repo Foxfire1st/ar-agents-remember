@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-        "content": "sha256:e174611ad23b81819d0afdbaaa32831dadab3010f3b105fe0b3a95a8c8550d21",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-        "content": "sha256:e174611ad23b81819d0afdbaaa32831dadab3010f3b105fe0b3a95a8c8550d21",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-        "content": "sha256:9871455b381edc6d2e8213343c5f30dd12222100de71684c9592add560a10449",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:6d13c4da947bb6f6aeba43512bb156f9fcae1edfaeb7bb5fc8df85bfd44203c0",
         "locator": {
           "kind": "symbol",
           "name": "_start_execution"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
         "content": "sha256:eb6b0792f5a3ab8ffcd5f88acc1b33a2f7b5e5af2866d9198a3a180c58aa08d1",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,26 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-        "content": "sha256:b96d720cf0cbb4569e12111eccc6bb1cb94bcfed1ccd741cb3f571b96f895f92",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_host_denied_tools"
+        }
+      },
+      "id": "RLZ-SQVEPM",
+      "invariant": "INV-P8F6BT",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Hands the launch the rules read from the host home of the product's own runtime settings; without such settings there are none.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:1208da91ea8a3b7a67d4008ea6d543b940ba995b713ee925ba01e8152486983a",
         "locator": {
           "kind": "file"
         }
@@ -110,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-        "content": "sha256:e174611ad23b81819d0afdbaaa32831dadab3010f3b105fe0b3a95a8c8550d21",
+        "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+        "content": "sha256:cdee31985ba95e459712f5539146884d471660fb29a065a9d39526cf802c2169",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -312,12 +330,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a6807ea32cb60ac7a9838ae361ac9657caded1f",
+            "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 961,
+              "end": 980,
               "kind": "line_range",
-              "start": 921
+              "start": 940
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

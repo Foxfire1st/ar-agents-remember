@@ -62,7 +62,8 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 
 ### Repo-Internal References
 
-- Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. [1]
+
+- LeafRefResolutionError and resolve_leaf_ref are the live shared failure and resolution owners; removed terminal-seat modules supply no current type or route. [1]
 - Start contract builder that calls these helpers. [2]
 - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. [3]
 

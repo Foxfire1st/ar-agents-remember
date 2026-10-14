@@ -115,6 +115,22 @@
         }
       ]
     },
+    "16": {
+      "note": "Current PUBLIC_TOOLS contains41 unique advertised names, without dispatch_agent; historical73/74 populations and runtime list_tools are separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a82ca832eb8b819b042e0d88ab4683da1cf23fc7",
+            "content": "sha256:fc1c14239d8543ffe2bcc2f6561eecf68d388a4e42c60a0a8b01d7dea4972b27",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple.\n\nAnchor: `source range`",
       "targets": [
@@ -189,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "blob": "7b421d01108b8c585e6a8a446e1723d20cc99d06",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",
@@ -265,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
             "content": "sha256:65ab14a3955048bc8c2485e1992cd01e4408f7af43094f0213bb0a355d15717b",
             "locator": {
               "kind": "symbol",

@@ -6,8 +6,8 @@
 
 ## Purpose
 
-The shipped longer explanations behind the short `server_info`, `runtime_install` and
-converted-onboarding drift descriptions. The canonical checkout document is
+The shipped longer explanations behind `server_info`, `runtime_install`, `role_start_set`,
+native `retire_child` and converted-onboarding drift descriptions. The canonical checkout document is
 `docs/tool-details.md`; this packaged copy installs under `<coordinationRoot>/docs/`,
 making the same relative explanation pointer openable in both layouts. It is
 documentation, not another callable interface.
@@ -23,10 +23,7 @@ that kind, not the reporting treatment of other stale references.
 The current canonical document also owns the long explanations relocated from citation_fix, context_packet, curator_coherence, memory_baseline_adopt, memory_carryover_plan, memory_quality_check, retire_child, role_start_set and route_index_refresh. The short registration strings retain the operation/admission cues and point here; callable signatures, handlers, guards and the installer-owned documentation-copy route remain unchanged.
 
 
-`server_info` takes no arguments and reports startup-loaded build/configuration, roots,
-allowed repositories, unused provider keys and optional role-launched binding metadata.
-It does not enumerate tools. Failure to load configuration is a startup refusal, not an
-ordinary argument failure of this no-argument read.
+`server_info` takes no arguments and reports startup-loaded build/configuration, roots, allowed repositories, unused provider and removed-part settings keys, plus optional role binding. `openUserSettings` reports live open file/folder modes with the exact user close/edit commands; the call changes no settings byte or mode and does not enumerate tools. Configuration load failure remains a startup refusal.
 
 `runtime_install` documents preview, optional benchmark fixture copying, retained provider
 knobs, and per-call experimental selection. Its `role-capsules` experiment uses request
@@ -34,11 +31,9 @@ then environment selection; unknown ids refuse before mutation, and unselected r
 restore withheld legacy startup targets. The document separates read-only host preview,
 absent-host setup information and needed-restart/outside-host remedies.
 
-Provider setup is retired; old enabled keys are unused and only watcher stop remains.
-An installer stop failure is reported while installation continues. User data is preserved;
-provider-folder deletion belongs to the explicit `providers-remove` CLI, whose failed-stop,
-busy-process and escaped-root refusals are different. Managed scaffold refresh/pruning is
-not blanket deletion of the preserved memory/provider trees.
+Provider setup is retired; old enabled keys are unused and only watcher stop remains. A failed installer stop is reported while installation continues; explicit `providers-remove` owns provider deletion. `removedPartStores` reports retained old stores and stored gates once, with `agents-remember removed-stores` as the user-commanded removal route; install deletes none of them. Managed scaffold pruning is not blanket deletion of preserved memory/provider/store data.
+
+`role_start_set` is owning-Manager-only and reconciles the same Worker/Reviewer/Curator set by request ID. Worker opens immediately; Reviewer opens with supplied first work or stays held, and Curator stays held. Native `retire_child` is original-starter-only, requires explicit interruption authority for an active turn, records its reason and is idempotent for an already retired agent. It is not the removed structural retirement plane.
 
 ## Boundaries
 

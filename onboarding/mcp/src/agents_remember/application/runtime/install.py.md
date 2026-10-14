@@ -18,7 +18,7 @@
 `no_cache` (default `False`). It does not accept host paths or provider path overrides.
 
 The dataclass is **defined in `agents_remember.install.runtime`** and this
-module re-exports it (`__all__ = ["RuntimeInstallRequest", "run_runtime_install"]`) for its
+module re-exports it (`__all__ = ["RuntimeInstallRequest", "open_user_settings_notice", "run_runtime_install"]`) for its
 runtime application surface. `run_runtime_install(config, request)` calls the lower
 service (`install_runtime_from_config(config, request)`), then calls the public host step
 (`install_host(config, request.dry_run)`), sets `result["host"]` to the host part and

@@ -8,7 +8,7 @@
 
 **The reviewer's inline / side-by-side choice for changed intent wording (MIK-R35 rule 4).** It is a
 browser-local UI preference in the house persisted-store idiom: a vanilla zustand store seeded from
-`localStorage`, as `data/conversation/thinkingPreference.ts` does. It is not review state, and no server store
+`localStorage`. The prior comparison to `data/conversation/thinkingPreference.ts` is historical: that sibling is removed, not a current dependency. It is not review state, and no server store
 holds it (packet Exclusions: no server state).
 
 ## Code Commentary
@@ -26,7 +26,7 @@ holds it (packet Exclusions: no server state).
 
 ### Conventions
 
-- Every storage read and write is guarded, following `thinkingPreference.ts`. The key carries a `.v1` suffix so a
+- Every storage read and write here is guarded; the former `thinkingPreference.ts` comparison is historical. The key carries a `.v1` suffix so a
   later shape can be versioned.
 
 ### Invariants And Boundaries
@@ -52,7 +52,8 @@ No configured live documentation source was available for this pass.
 - The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable. [1]
 - The key and the guarded read. [2]
 - The store: a guarded storage accessor, a write that never breaks the toggle, and the hook. [3]
-- The house idiom it follows: a guarded read, and a write whose storage failure never breaks the toggle. [4]
+
+- The current module itself guards localStorage access and persistence failure while updating in-memory layout; no removed thinkingPreference import is needed. \[6] [6]
 - The cases: the choice kept locally; inline when storage throws, and the toggle still works. [5]
 
 ### Cross-Repo References

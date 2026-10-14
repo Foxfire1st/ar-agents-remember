@@ -1,5 +1,16 @@
 # dashboard/src/styles/tokens.css
 
+## Current A8 source account
+
+The current CSS contains only root design variables and dark color-scheme: the retained background/ink/grid/muted, semantic and gold/purple colors, mono font and glow strength. The well variable and Panda colors.well entry are absent. The prior well/terminal/composer/WebTUI consumers and spike evidence below are historical; no fresh palette contrast, component rendering or build result is claimed. The retained color values are mirrored by the present Panda colors block.
+
+- The current root token layer retains the palette, tier colors, font and glow strength but no well variable. \[8] [8]
+
+- The current Panda colors block mirrors the retained root color palette without a well entry. \[9] [9]
+
+## Historical original source account — retained, not authority for removed behavior
+
+
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -50,12 +61,6 @@ No configured Domain Documentation source exists for this file.
 
 - The Panda token mirror declares the palette under `colors`, including `colors.well`. [1]
 
-- The pty pane consumes the `well` token for its background. [2]
-- The session composer consumes the `well` token for its background. [3]
-- The structured conversation stage consumes the `well` token for its background. [4]
-- WebTUI maps `--foreground1` to `--muted`. [5]
-- The WebTUI mapping is token-only and contains no raw color literals. [6]
-- The spike assertion that every mapped var is declared here. [7]
 
 ### Cross-Repo References
 

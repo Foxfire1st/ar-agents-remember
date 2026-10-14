@@ -13,9 +13,7 @@ The Vite entry: mounts `<App>` into `#root` (StrictMode) and loads the global st
 ### Logic
 
 Imports `./index.css` (the Panda entry + reset/base/effects layers) then `./styles/tokens.css` (the
-`:root` design-token vars), and — 260715-FEUI-L1 S1 — `./styles/webtui.css` (the scoped WebTUI skin
-for the sessions cockpit) third, AFTER index.css so the layer-order statement there (`reset, base,
-effects, webtui, tokens, recipes, utilities`) governs where its `layer(webtui)` rules land. Sets `document.documentElement.dataset.effects = "off"`
+`:root` design-token vars). Historical predecessor: 260715-FEUI-L1 added a third `./styles/webtui.css` import for the sessions cockpit under the layer-order statement `reset, base, effects, webtui, tokens, recipes, utilities`. That stylesheet and its entry import are now removed; it is not a retained bootstrap style. Sets `document.documentElement.dataset.effects = "off"`
 when `?effects=off` or `localStorage["calm-cockpit"]==="1"` (the determinism flag), before render.
 Wraps `<App>` in Motion's `<MotionConfig reducedMotion="user">` so transform-heavy animation yields
 to opacity-led motion when the OS `prefers-reduced-motion` is set (the slice-5d accessibility
@@ -38,4 +36,5 @@ while leaving production bundles and live DevTools recording behavior untouched.
 
 - The Panda entry + layer order it loads. [1]
 - The `:root` design tokens it loads. [2]
-- The scoped WebTUI skin it loads third (260715-FEUI-L1). [3]
+
+- The current entry imports index.css and tokens.css only; its StrictMode/MotionConfig, effects flag and development timeline cleanup remain. \[4] [4]

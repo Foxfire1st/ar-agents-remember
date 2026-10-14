@@ -3,32 +3,32 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced.",
+      "note": "A Manager starts through role_start with its sprint/master references; its first message is compiled from the master documents, not a caller-supplied brief. One role_start_set on each leaf starts Worker, Reviewer and held Curator, with the Curator opened by its first message and direct producer packages preserved. Host archival on leaf finalization/cleanup/abandonment retains reports and excludes Manager/Orchestrator; retire_child belongs only to the agent that started the child, not arbitrary force retirement. The old tmux/config-gated retirement and routine master-handover-approval claims are historical. Optional review, source-edge admission, protected provider recovery, canonical operation journals and Owner transaction/gate duties stay unchanged.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
-            "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
+            "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
+            "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
             "locator": {
               "kind": "file"
-            }
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.",
+      "note": "The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
-            "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
+            "blob": "7d93ce7d546d42e1512810231f775afe2cbfef4c",
+            "content": "sha256:0f28dc737b39f0d0919c8ffc81f3dda07ac082f3cbe192152d06bbec6de0a480",
             "locator": {
-              "end": 181,
-              "kind": "line_range",
-              "start": 1
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
           },
           "kind": "code"
         }

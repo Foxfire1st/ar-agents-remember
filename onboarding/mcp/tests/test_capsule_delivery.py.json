@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_capsule_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Capsule delivery value boundaries: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a19f7826f259455c66c06d9659279251fa147e0",
+            "content": "sha256:c41ec377c7a7d31c946582398d2660f3bdd872269f4507cded13c7adf72a213a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_delivery_consumes_a_genuine_compilation_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

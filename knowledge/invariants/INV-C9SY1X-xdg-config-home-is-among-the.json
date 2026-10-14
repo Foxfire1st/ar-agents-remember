@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A child server resolving a different user configuration can address the real installation instead of the selected host."
+  },
+  "applicability": "A role launch's generated bound task-tool-server environment.",
+  "conditions": [
+    "Carry XDG_CONFIG_HOME when supplied so launch and child tool server resolve the same installation host.",
+    "Carry environment facts only; do not write settings."
+  ],
+  "exclusions": [
+    "An unset variable remains unset; no fabricated configuration root."
+  ],
+  "id": "INV-C9SY1X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-sandbox-agents-read-the-real-settings-30.md; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-worker-a4868b83-d390-4b5e-9761-5097bcca689d.md, section 8"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "L113 ruling 2026-10-13 00:44 / the carried configuration folder",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`XDG_CONFIG_HOME` is among the variables a launch carries into an agent's tool server, so that the server reads the settings file the launching process read and its role tools address the same host.",
+  "status": "accepted",
+  "supersedes": []
+}

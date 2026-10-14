@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "abded34d54dee78ddaef18dde69324058812558c",
+        "blob": "6d05cef9e9d73f1e63882df1a168101cc2b67396",
         "content": "sha256:63ad8475f0cb389ef7cd97542f0f0564424b439813bb98c4005540053cd1449c",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "abded34d54dee78ddaef18dde69324058812558c",
-        "content": "sha256:d665b04807955c2744e34bb60cbd66d56f4dc33e8642da0b21e1028f218224ae",
+        "blob": "6d05cef9e9d73f1e63882df1a168101cc2b67396",
+        "content": "sha256:ca0ab496700347ff8dc8065a3f08fb24b139b248e7176c39f3fe750d490b3e69",
         "locator": {
           "kind": "symbol",
           "name": "test_no_shared_block_is_a_named_non_starting_state"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "abded34d54dee78ddaef18dde69324058812558c",
+        "blob": "6d05cef9e9d73f1e63882df1a168101cc2b67396",
         "content": "sha256:2c33923f8d72dac9b6cc9bc5b93f359dcf15643d975836213cc7cf79c6d729f3",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "abded34d54dee78ddaef18dde69324058812558c",
+        "blob": "6d05cef9e9d73f1e63882df1a168101cc2b67396",
         "content": "sha256:24daec0b9d5e0027ce12944c6867f99d4e79c27b33d448f7292ce30477641708",
         "locator": {
           "kind": "symbol",

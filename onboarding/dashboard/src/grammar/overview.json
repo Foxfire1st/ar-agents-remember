@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
             "content": "sha256:b2cecb144a46f5dcf12a6169fceed7695e8294b090de76f3661cdd0249300147",
             "locator": {
               "end": 3,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
             "content": "sha256:e16b47be0657b66a2213fd936a17a7e8131a744184a51d01c57aacf6ac1d678b",
             "locator": {
               "end": 21,
@@ -70,37 +70,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`).\n\nAnchor: `export function EvidencePane`; `export function FailedLaunchBanner`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
-            "content": "sha256:7a31b2c2f1d252ca76cdbc99ea33bfdd02e417fc02a95bd632927b861be9b048",
-            "locator": {
-              "end": 411,
-              "kind": "line_range",
-              "start": 411
-            },
-            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
-            "content": "sha256:d4b5e93772c8125f4f6fe87f206ca6993e578a2c1731db8898ab121e916323de",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            },
-            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "The action-availability shape `Affordance` renders.",
       "targets": [
@@ -123,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
             "locator": {
               "end": 15,
@@ -171,12 +140,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
             "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
             "locator": {
-              "end": 60,
+              "end": 57,
               "kind": "line_range",
-              "start": 60
+              "start": 57
             },
             "path": "dashboard/src/index.css"
           },

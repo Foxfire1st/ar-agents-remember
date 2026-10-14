@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:0b2c515bb11503a87233398cda65e4a5240106136cd9518594d2d1072c2cc4e3",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:c37c142d0b29d025924505b979d2579b21cb7c75474968056a70439b438a4626",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:c19917f3f40f043f8ea2a0888d52f73849ea2b2ccc36cf416455e07631ee2521",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:42a0bd51535fa68400030197e1e20a80c9debeae49dabe488e9d0f9a77c1cbe6",
             "locator": {
               "kind": "symbol",
@@ -80,30 +80,12 @@
         }
       ]
     },
-    "11": {
-      "note": "House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store.\n\nAnchor: \"export function openConversationStream\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
-            "content": "sha256:940a09d96098d92fbabf2dc62be3b4fa8b980bf9fd855b664e1245855b777984",
-            "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 209
-            },
-            "path": "dashboard/src/data/conversation/stream.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "`getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code.",
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
             "locator": {
               "kind": "symbol",
@@ -114,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
@@ -125,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:21bfb5b2643dd6bf18c7bfee7063b020fa02725476791b85e3d2832880586da4",
             "locator": {
               "end": 97,
@@ -137,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:a4ec5d18d9e2d69fc7161f77421ca6f300ae59ded246c4b59c8e1242906c6c57",
             "locator": {
               "end": 104,
@@ -154,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",
@@ -165,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:91575e55dc90ee57e29e251badab89c5662fd5cdc82a38e4d3c3afa8d794f3e3",
             "locator": {
               "kind": "symbol",
@@ -176,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
             "locator": {
               "kind": "symbol",
@@ -187,7 +169,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
             "locator": {
               "kind": "symbol",
@@ -198,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
             "locator": {
               "kind": "symbol",
@@ -221,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
             "locator": {
               "end": 131,
@@ -233,7 +215,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
             "locator": {
               "end": 141,
@@ -280,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7581a4059025446b6723ceaa66e7d3d9f59ed212",
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
             "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
             "locator": {
               "kind": "symbol",
@@ -292,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "7581a4059025446b6723ceaa66e7d3d9f59ed212",
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
             "content": "sha256:e4170303a7d55afacdbfe0fedf0f22c113a531a40de8fb126bd0c940f23fbd9e",
             "locator": {
-              "end": 227,
+              "end": 240,
               "kind": "line_range",
-              "start": 207
+              "start": 220
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },

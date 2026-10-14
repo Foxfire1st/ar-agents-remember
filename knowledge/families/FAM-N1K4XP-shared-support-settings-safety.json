@@ -5,7 +5,7 @@
     ],
     "justification": "A guard alone does not make its consumers call it, and current consumers alone do not detect future bypasses; the consumer and scanner obligations compose with the guard to maintain the support mutation boundary."
   },
-  "guarantee": "The protected-path guard, its three shared-support consumers and the recursive syntactic regression scan together keep the covered support settings mutations off the protected account-default path while preserving moved-configuration fixtures; the unavailable-database branch names its first-observed-home boundary, and future nested support joins the scanner without a module list.",
+  "guarantee": "The protected-path guard, its remaining world/Paseo shared-support consumers and the recursive syntactic regression scan jointly keep covered support settings mutations off the protected account-default path while preserving moved-configuration fixtures. The unavailable-database branch names its first-observed-home boundary, and future nested support joins the scanner without a module list; removed structural-seat support supplies no current third consumer.",
   "id": "FAM-N1K4XP",
   "members": [
     "INV-GT2391",
@@ -20,7 +20,7 @@
     "leaf": "260928-MIK-L135",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/tests"
   ],

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
-        "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+        "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
+        "content": "sha256:eed6ec2603c0d46304558f9b79ef8da8059702de4ab2c8d7377f3116b3441f87",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 103,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:62868fa002fa99a54365d9725c63be70830edca8bfed2bde3ea2f93fcc24eac1",
             "locator": {
               "end": 172,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:c997d18ddc1aaf492425db68b4e7529f43ff3f834bf5cd40b9ef5ea04223508f",
             "locator": {
               "end": 169,
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:063a6e8727e828ae33969c253d544d7f2353733529c83cde090b1f799f9110b3",
             "locator": {
               "end": 171,
@@ -89,17 +89,16 @@
       ]
     },
     "13": {
-      "note": "The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks.\n\nAnchor: `targeted checks`",
+      "note": "The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
-            "content": "sha256:8b9d892cee4dd8af94213a442a2ada6974c8afeef007c0c0be7fea2f3d309073",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 92
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -110,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:45ceabbe3500feb46aedc900fa419ed47b5ce7781b0faec98772988208c788d6",
             "locator": {
               "end": 166,
@@ -127,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:3b323b6d14c3508d95658cca8c5b650fbe8113e9da430c280bacc27ae444fef1",
             "locator": {
               "end": 178,
@@ -140,17 +139,16 @@
       ]
     },
     "16": {
-      "note": "The reviewer's evidence reports the affected-sidecar and route-overview checks; full suites and `drift_check` run only on an explicit developer request, and the complete `memory_quality_check` is the curator's own operation.\n\nAnchor: `memory_quality_check`",
+      "note": "Affected-sidecar/route checks and only requested full-suite/drift reporting remain distinct from Curator-owned complete MQC; drift_check is not restored.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
-            "content": "sha256:26604ac7d11b2f1f44d8fac71250d32a70f32b7e365a0372946b38dc8718ff31",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 92
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -161,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
             "locator": {
               "end": 183,
@@ -178,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
             "locator": {
               "end": 183,
@@ -195,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:8df72c04a9e104a0be92c76c4889dc66ffab28b96dbc2a95f56d15462bbf82a2",
             "locator": {
               "end": 125,
@@ -208,17 +206,16 @@
       ]
     },
     "2": {
-      "note": "The reviewer is short-lived and self-contained.\n\nAnchor: `# Reviewer`",
+      "note": "The reviewer is short-lived and self-contained.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-            "content": "sha256:282b734b0cb443ae86c692c2f8957a6502b8c3bb436bfd45b499d957dffa8181",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 8
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -229,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:00a4840ecec2a5de5465bcbd86e1dde908c2e942381683021be893c799901143",
             "locator": {
               "end": 155,
@@ -242,34 +239,32 @@
       ]
     },
     "22": {
-      "note": "The role's tools are the review surface.\n\nAnchor: `read_ar_files`",
+      "note": "The role's tools are the review surface.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-            "content": "sha256:d1e014b596f938d74404b7cbb5258db1bddcf137c0cf4eb25496d570f1674363",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 151
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "23": {
-      "note": "The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block.\n\nAnchor: `Inputs`",
+      "note": "The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
-            "content": "sha256:08afb392873a90afa9af28a851d700be0cfbcc580d675413996e335063d34843",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 30
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -280,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:2076f2dc96bf9e1b94129fd6100ffd0ac19a63a7ce4224e826f79d2858bbe9ba",
             "locator": {
               "end": 172,
@@ -293,51 +288,48 @@
       ]
     },
     "26": {
-      "note": "Bound explicit review intake and parent/dashboard transport.\n\nAnchor: lines 11-29",
+      "note": "Bound explicit review intake and parent/dashboard transport.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "dfbbd0c973f23d4a03de5afa22be53f766aeac6d",
-            "content": "sha256:d9fa9286afaf0da384f60a84aa275296728a580a049842f37d5d4924f14a189b",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 11
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "27": {
-      "note": "Complete diff, required evidence, standing criteria, exact attempts and sealed findings.\n\nAnchor: lines 63-113",
+      "note": "Complete diff, required evidence, standing criteria, exact attempts and sealed findings.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
-            "content": "sha256:d6956fae5710d90f4c37d4b5315e200c1b3476d11104d3815e8d7434c5399a36",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 63
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "28": {
-      "note": "Permitted read surface, role/recording prohibitions and retained seam duties.\n\nAnchor: lines 158-193",
+      "note": "Permitted read surface, role/recording prohibitions and retained seam duties.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
-            "content": "sha256:531c284bec156b4c95e351c56ea3de52574444a302f08c5258f06ded05e97a78",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 158
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -348,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:a53e73818ce431690928b5ed7dfc2fbb4a45476fb6035cc7cfecb2531ced0d46",
             "locator": {
               "end": 25,
@@ -361,17 +353,16 @@
       ]
     },
     "3": {
-      "note": "The reviewer receives the brief as its session start.\n\nAnchor: `# Reviewer`",
+      "note": "The reviewer receives the brief as its session start.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-            "content": "sha256:282b734b0cb443ae86c692c2f8957a6502b8c3bb436bfd45b499d957dffa8181",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 8
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -382,7 +373,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
             "locator": {
               "end": 183,
@@ -395,32 +386,32 @@
       ]
     },
     "31": {
-      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-            "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
               "kind": "file"
-            }
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "32": {
-      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.",
+      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
-            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
+            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
             "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 1
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -431,7 +422,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
             "locator": {
               "end": 110,
@@ -463,7 +454,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:95c75021c42665278a2ac9fdaa5250003acf964398dd41d393fe1f3ee06aebf3",
             "locator": {
               "end": 25,
@@ -480,7 +471,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:d83f5e6c5adb49293d6c575e9cd3c3dc9112e588235dc8212964dddd9805f5f6",
             "locator": {
               "end": 201,
@@ -497,7 +488,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
             "locator": {
               "end": 85,
@@ -514,7 +505,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:4b2f741a95c5999923addf98fbfc9f9779c5c8eedd5effd282c1e44e3124ba11",
             "locator": {
               "end": 50,
@@ -531,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:a6da1c5fa19b7ad3d738e7364190700b2e54647a06b4486c024ce801a3a6b301",
             "locator": {
               "end": 85,
@@ -548,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
             "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
             "locator": {
               "end": 85,

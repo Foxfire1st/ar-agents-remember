@@ -4,7 +4,9 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current corresponding hints are prose-only.
+- R113 removes the former front-half, blocked/awaiting-developer and terminal loop-back hints, not merely their executable tool pointers. compute_next_step returns None for no state, terminal state or no contract. With an active contract it uses the retained linear guidance owner.
+- Only the retained closeout-preview, integration and finalize decision overlays are prose-only. Their existing contract-state tests remain exact; an overlay supplies no developer approval or product execution.
+- The exception-contained edge still returns a NextStep model and leaves serialization to the response boundary. A missing/torn contract yields no hint; a guidance read failure leaves the independent turn-end overlay available.
 
 ### Superseded inventory
 
@@ -13,9 +15,11 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/next_step.py:87 (_AWAIT_GATE =)`.
-- Source comparison: `mcp/src/agents_remember/application/next_step.py:154 (def _front_half_step)`.
-- Source comparison: `mcp/src/agents_remember/application/next_step.py:181 (def _gate_after)`.
+- No state, terminal state or no contract yields no hint; only the retained operational branch remains. [8]
+
+- Three contract-gated stop overlays are prose, not session/gate notification operations or approval. [9]
+
+- The edge is exception-contained; contract/guidance failure handling stays on existing owners. [10]
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -46,7 +50,7 @@ while the lifecycle is parked there. The `lifecycle_gate`/blocked path is PARKED
 still valid if a gate is raised, its `_AWAIT_GATE` await-the-developer pointer at
 `lifecycle_resume` stays intact (carrying the chain THROUGH the open gate: raise →
 blocked/await → resume → continue), it is simply no longer the hinted route. The
-structure mirrors the leaf-26 Lifecycle Flow tab (`dashboard/src/panels/FlowTab.tsx`)
+structure mirrors the leaf-26 Lifecycle Flow tab (the earlier removed presentation)
 RUNDOWN/LINEAR spec. The hint engine only *advises*; it never fires
 `lifecycle_turn_end_notification` or `lifecycle_gate` itself — the agent acts on
 the hint.

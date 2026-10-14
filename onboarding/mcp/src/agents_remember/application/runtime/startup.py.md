@@ -15,8 +15,8 @@ produced it.
 
 ### Logic
 
-`initialize_mcp_application` migrates recognized durable logs without the dashboard-owned notifier
-log, then installs ambient lifecycle state. Since 260928-MIK-L114 it also installs the
+`initialize_mcp_application` installs worktree-bound ambient lifecycle state and the tool writer
+without reading or migrating removed durable stores. Since 260928-MIK-L114 it also installs the
 workspace-river tool writer (`build_tool_event_writer`): the launch binding and its task
 document are snapshotted once here, so a server started a second ago writes at its first
 call; an unreadable binding changes nothing about startup. `mcp_serving_build_payload` converts the cached serving
@@ -35,13 +35,14 @@ the memory-quality controller's three public entry points and the two citation t
 
 ### Conventions
 
-Migration runs before any strict store can parse current records; ownership boundaries determine
-which process may migrate which log.
+MCP process ownership is declared before authority settings load; optional dashboard autostart
+remains in `prepare_mcp_process`. Application collaborator installation is not a removed-store
+migration path.
 
 ### Invariants And Boundaries
 
-- Migration is one-way, idempotent deployment work.
-- MCP startup does not mutate the dashboard-owned notifier log.
+- MCP startup neither reads nor migrates the retired notifier/seat stores.
+- Worktree ambient state and the workspace Event River writer remain owned collaborators.
 - No dual-schema reader is installed.
 - MCP transport reaches serving identity through this application entry point only.
 
@@ -51,15 +52,5 @@ None.
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation source is configured.
-
-### Repo-Internal References
-
-- MCP startup migrates its owned logs before ambient installation. [1]
-- The application boundary returns the one cached, strict serving-build payload. [2]
-
-### Cross-Repo References
-
-No cross-repository implementation dependency governs this file.
+- Retained ambient/tool-writer collaborators install without removed-store migration. [1]
+- MCP ownership declaration and optional dashboard autostart precede application initialization. [2]

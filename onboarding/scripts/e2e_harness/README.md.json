@@ -103,6 +103,39 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. [7]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:f68df3464ac3202a786710e6b24a3f2cdd90da4d32b711efcd1b0c52c7427fa4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses. [8]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfdb836bfc18d9b6ab8567fd5923c41a1170b0bf",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

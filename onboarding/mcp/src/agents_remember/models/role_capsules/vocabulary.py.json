@@ -213,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,
@@ -257,28 +257,16 @@
       ]
     },
     "7": {
-      "note": "The free-agent shape the tenth role carries, and the exclusion list it must not be added to.",
+      "note": "The retained capsule role registry ends with bootstrap; the removed task-binding set supplies no current admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
-            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:6811946246157d4d86d1215e8aa358f70653c11feeffd6b1d134adeb2cda0c71",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
-            "locator": {
-              "kind": "symbol",
-              "name": "TASKLESS_SEAT_ROLES"
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
           },
           "kind": "code"
         }

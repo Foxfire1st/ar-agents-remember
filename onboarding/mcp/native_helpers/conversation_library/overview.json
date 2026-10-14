@@ -63,63 +63,6 @@
         }
       ]
     },
-    "3": {
-      "note": "The Python host runs handshake and operation through the repository helper entry, and the Claude/Pi ports consume that seam and mint private resume targets.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
-            "content": "sha256:8e2c84333d9047eb810c452b92171f3e81efed439c86e38d72b01fdba73e2287",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 91
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
-            "content": "sha256:73c399d4f903c5ab5c3c4e89b49a205c8a3c4116130f9369655df8b7c97a37d7",
-            "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 105
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
-            "content": "sha256:0df1c3a36cd4dbc6120b1bc79a76ade75d47f5497bf7d1a7c12b63858f8c6b67",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 108
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
-            "content": "sha256:7e311c9f6fca81446f4d8d67d22f91d548a52d5c04b2522630a39a4ec88cbe6e",
-            "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 100
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "Package identity, engine, scripts, direct pins, lock root, and strict compiler configuration are declared locally.",
       "targets": [
@@ -195,24 +138,6 @@
               "start": 1
             },
             "path": "mcp/native_helpers/conversation_library/src/pi.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The helper capability gate calls list after preflight and selects support on successful execution rather than version equality.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
-            "content": "sha256:90c6c2db607de17dd35deeba455becbe1c6bff9bf8d3d58853a89bb53f1a0e6a",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 294
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
           },
           "kind": "code"
         }

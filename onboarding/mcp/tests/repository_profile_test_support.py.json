@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Tests copy the real profile into an isolated fixture repository.",
+      "note": "Anchor: Repository profile copied into owned fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:7353cbb26c950a37b4274549efda32cfe3af97c27d10498339fbf6eb7ab98f1d",
             "locator": {
-              "kind": "symbol",
-              "name": "install_agents_remember_profile"
+              "end": 76,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "test"
@@ -19,27 +20,16 @@
       ]
     },
     "10": {
-      "note": "The fake client supplies the graph container without a daemon.",
+      "note": "Anchor: Fake graph client is not a running daemon.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:1554e862e1aeb9cb460bf49f6547288d7acbe5be4cd8722476c02e03473ba7ff",
             "locator": {
-              "kind": "symbol",
-              "name": "FakeDag"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:cd7ab80f222631f0e531b8e0787db572a58d11a4f60720f535da270a8dace558",
-            "locator": {
-              "end": 889,
+              "end": 857,
               "kind": "line_range",
-              "start": 881
+              "start": 849
             }
           },
           "kind": "test"
@@ -47,31 +37,16 @@
       ]
     },
     "11": {
-      "note": "The real profile is admitted with explicit synthetic source-selection input outside local precommit.",
+      "note": "Anchor: Actual candidate-tree/profile admission; no source-selection artifact writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:b5e12659a6e85df0f16ec3cbfeafcbc46b9f48089d8cc8ae8fb994e21ad3b40a",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:43cf9d78cb48f1bf693c3ea0394e61053fd3b151b78f7e84c3ede4f988f2cbe6",
             "locator": {
-              "kind": "symbol",
-              "name": "agents_remember_profile_execution"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Frozen applicability decisions are emitted at their exact declared paths as canonical JSON.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:a466edf772bfc9a5e599ddff9daf35efedb446f1254d187d3ee9d08202acd9f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_source_selection_artifacts"
+              "end": 122,
+              "kind": "line_range",
+              "start": 103
             }
           },
           "kind": "test"
@@ -79,27 +54,16 @@
       ]
     },
     "13": {
-      "note": "The production census owner reads actual tiny dependency files in each declared scope.",
+      "note": "Anchor: Fixture environment census reads tiny declared files.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:1263e7eb15c131f7196b83b4318667df1de839550303db2bdb2ccd23e744e45b",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture_environment_census"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:dbdb88bcdbfc8814af992e090f8b661cf3e7b003116ede0a1f6f696383dff09d",
-            "locator": {
-              "end": 628,
+              "end": 602,
               "kind": "line_range",
-              "start": 617
+              "start": 591
             }
           },
           "kind": "test"
@@ -107,27 +71,16 @@
       ]
     },
     "14": {
-      "note": "Census and reconstruction output use a detached file map and preserve the parent container.",
+      "note": "Anchor: SDK execution records detached fixture file maps.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:e0a472c88e461c0856264dd45dfddf6ca91dba4e672d992cc580286154980cd5",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:eeafd7808d9fa0110062046d1543a6c5940bc1c6e4fc087e701aceebf3ba6f7e",
             "locator": {
-              "kind": "symbol",
-              "name": "with_exec"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:bf22e1fe0489566200c237a80cd6ec75c6b1fc0e7a58bea2b6f3566edb7a634d",
-            "locator": {
-              "end": 723,
+              "end": 772,
               "kind": "line_range",
-              "start": 655
+              "start": 605
             }
           },
           "kind": "test"
@@ -135,15 +88,16 @@
       ]
     },
     "2": {
-      "note": "Portable fixture installation retains a canonical profile digest.",
+      "note": "Anchor: Generic fixture profile installation.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:37c4af49e159ebef6ed153e5da47b2acdcd47b4ed245817db509492e1a0c8129",
             "locator": {
-              "kind": "symbol",
-              "name": "install_fixture_profile"
+              "end": 100,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "test"
@@ -151,15 +105,16 @@
       ]
     },
     "3": {
-      "note": "Each language fixture declares source inventory, runtime and artifact identities.",
+      "note": "Anchor: Complete language fixture source/runtime declarations.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:3c9254a1779010caaf90d82cc57650dd8dcd5ab0ca88f0d286ad44c078e39b66",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:c2e310c64749886b9ac167105d8fcb150e40422ff80023776ee52336d7962cb3",
             "locator": {
-              "kind": "symbol",
-              "name": "FixtureRepository"
+              "end": 158,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "test"
@@ -167,15 +122,16 @@
       ]
     },
     "4": {
-      "note": "The profile builder includes complete selectors, adapters, decoder and finite binary capture publications.",
+      "note": "Anchor: Fixture profile selectors/adapters/decoder vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:992306c9df4974390e2673c044f8b07165ce7d2ca5d5ed2312a71342e2a9a670",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture_profile"
+              "end": 433,
+              "kind": "line_range",
+              "start": 276
             }
           },
           "kind": "test"
@@ -183,15 +139,16 @@
       ]
     },
     "5": {
-      "note": "Runtime source identity is recomputed from the actual Dagger module files.",
+      "note": "Anchor: Dagger runtime digest is computed from actual bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:66a18ef596cd9b7df7ed34a3357335e353465961e4ddf36b93fcfae44d4f23a8",
             "locator": {
-              "kind": "symbol",
-              "name": "dagger_runtime_digest"
+              "end": 137,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "test"
@@ -199,27 +156,16 @@
       ]
     },
     "6": {
-      "note": "Portable execution receives an explicit comparison-base placeholder and test runtime-authority manifest.",
+      "note": "Anchor: Portable execution manifest, not a fabricated Git observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:6f33a5aa2ac412639cd041a6ba44f5b0a3a59c5c08764f1f0baa375bdd3f8d61",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture_execution_manifest"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:af571810e4bd2e70a45ec5c8f87cd94f98cf113c33bb87c3ff029a9425e29d3f",
-            "locator": {
-              "end": 517,
+              "end": 484,
               "kind": "line_range",
-              "start": 484
+              "start": 451
             }
           },
           "kind": "test"
@@ -227,55 +173,16 @@
       ]
     },
     "7": {
-      "note": "The SDK graph double records operations and separates detached hash output from rail execution.",
+      "note": "Anchor: Detached container graph double.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:432b553791b082814a7f6a49bd8b6f88ccba1b8561b089a45264b6a1ac2b18b7",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:eeafd7808d9fa0110062046d1543a6c5940bc1c6e4fc087e701aceebf3ba6f7e",
             "locator": {
-              "kind": "symbol",
-              "name": "FakeContainer"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:dc1c0c424653107deb0b8feb7ea588e0d00c8a74342d0622213a3ea2a3dae04d",
-            "locator": {
-              "end": 804,
+              "end": 772,
               "kind": "line_range",
-              "start": 631
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Known producer marker bytes are populated for interpreter tests only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:af5fe1940e6bcbb12e98e782d87df294ffb097ebfaa0fee021f2503f2e6f48af",
-            "locator": {
-              "kind": "symbol",
-              "name": "_producer_fixture_files"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:77ffbb116d0d8a4f0c6a9e8aaab2177d1ca8d6c31c1b44d8ac0478fde236822b",
-            "locator": {
-              "end": 759,
-              "kind": "line_range",
-              "start": 725
+              "start": 605
             }
           },
           "kind": "test"
@@ -283,27 +190,16 @@
       ]
     },
     "9": {
-      "note": "File operations expose the retained fixture value.",
+      "note": "Anchor: Fixture file value returned by the SDK double.",
       "targets": [
         {
           "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
             "content": "sha256:07e27508c37bea26e6c151e344e25c2f19c86de43b8e093965ab247f46f83bf7",
             "locator": {
-              "kind": "symbol",
-              "name": "FakeFile"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86f0f743e65a16bed59481aed42839560c1a15e8",
-            "content": "sha256:cee7f76b51988f5dfc7195acd3407ca114f8924a0921af8396591135f3867ecb",
-            "locator": {
-              "end": 815,
+              "end": 783,
               "kind": "line_range",
-              "start": 807
+              "start": 775
             }
           },
           "kind": "test"

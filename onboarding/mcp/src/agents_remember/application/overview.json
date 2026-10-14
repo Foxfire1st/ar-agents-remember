@@ -179,28 +179,12 @@
         }
       ]
     },
-    "105": {
-      "note": "The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it.\n\nAnchor: `_compile_eve_task`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
-            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "106": {
       "note": "The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
             "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
             "locator": {
               "kind": "symbol",
@@ -212,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
             "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
             "locator": {
               "kind": "symbol",
@@ -224,7 +208,7 @@
         },
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
             "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
             "locator": {
               "kind": "symbol",
@@ -383,39 +367,15 @@
       ]
     },
     "111": {
-      "note": "The two production launch points that reach this member through the port.",
+      "note": "The retained serving launch module owns the launch request identity value; the compiler and selection live above it, and the removed terminal launch points and resolver are not current callers.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
-            "content": "sha256:a71c2da852099ae3ec9c8d735c41ede3831e66d3eb6b7e12df8812dc3ce23b39",
+            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "content": "sha256:f928cbbfb2240d0932d09326ec13526415cea995f68a076fe7bffb7c85464756",
             "locator": {
               "kind": "symbol",
-              "name": "_spawn_launch_request"
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
-            "content": "sha256:160a90a082c8c63a6d5ab9a778cd8e4b4ccf67d9f48295e8173882ff617dd393",
-            "locator": {
-              "kind": "symbol",
-              "name": "_open_terminal_response"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
+              "name": "LaunchCapsuleRequest"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -620,7 +580,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10893332b1e69cfd66783b8546ba95ff7cf10642",
+            "blob": "191f109f082ea623171ca3876abfc40bed0c871f",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -903,81 +863,6 @@
         }
       ]
     },
-    "134": {
-      "note": "The produce side added to this route, and the read-back-equals-written and no-carrier-on-refusal rules.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
-            "locator": {
-              "kind": "symbol",
-              "name": "materialize_eve_binding"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "135": {
-      "note": "The projection agreement check that makes the re-derivation a check rather than a second opinion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:b715400e5018793ea3c329a0e97c4a6066b927fed03e2c8c0685a971b359989e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admitted_projection"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:4a7c96f36ad55e5862fe73f7c66fffbe4101e941f381a505db3e306abb0f9e0b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_matching_task_context"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "136": {
-      "note": "The role-authority write surfaces and the smallest-set fallback.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:5733184c9470454262095700f434b751b03c2ff029accf1ce4b0ff8a9e818a9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_scopes_for"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:cfd12fb53caa99a78e41c8f9a438176202212bbcb4695dae4fb57e712e8e9bbc",
-            "locator": {
-              "kind": "symbol",
-              "name": "ROLE_WRITE_SURFACES"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "137": {
       "note": "The capsule surface this package consumes and does not re-implement.\n\nAnchor: `compile_task_capsule`",
       "targets": [
@@ -989,51 +874,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "138": {
-      "note": "The launch-time proof and the in-process reader that consume the carrier this route produces.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
-            "locator": {
-              "kind": "symbol",
-              "name": "verify_capsule_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
-            "content": "sha256:744cdce3083db7bb1e9b6d30818ef0e172e4f53889dcd55ba8476a74698df06d",
-            "locator": {
-              "kind": "symbol",
-              "name": "loadVerifiedCapsule"
-            },
-            "path": "eve_runtime/agent/lib/capsule.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "139": {
-      "note": "The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits.\n\nAnchor: `_compile_eve_task`, `compile_launch_capsule`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
-            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
           "kind": "code"
         }
@@ -1052,52 +892,6 @@
               "start": 359
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "140": {
-      "note": "The test fixture that supplied this seam's inputs before a production caller existed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fd4bfaa2951ad9ceca924016f78a0355bc0928c1",
-            "content": "sha256:a1ef47a23cedb547006773ea368f895e24fcb22dacc3fb680b78d97ac8036808",
-            "locator": {
-              "kind": "symbol",
-              "name": "fixture_carrier_for"
-            },
-            "path": "mcp/tests/eve_capsule_test_support.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "141": {
-      "note": "The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:a172cc340f55a94fd9b0d5efe4fb73130ea8364468d0324fae735bf1a4982eab",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_runtime_spec"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
-            "locator": {
-              "kind": "symbol",
-              "name": "verify_capsule_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
           },
           "kind": "code"
         }
@@ -5303,7 +5097,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
+            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
             "content": "sha256:0afb2afcf4382d030f2b17a5d4abd8ff3b8de798026bb5f4abc85382799cecab",
             "locator": {
               "kind": "symbol",
@@ -5315,7 +5109,7 @@
         },
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
+            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
             "content": "sha256:5eb3ad767767d947549662bc7773c7c2302bddb2d0b48cff3728ddea256a9501",
             "locator": {
               "kind": "symbol",
@@ -5332,7 +5126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d990dcc6eac569a6f753323f72e145aa24de54d",
+            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
             "content": "sha256:6faca4c637c6f850986b96dd16d34e9bd91de267852ca0546df40e8917c30079",
             "locator": {
               "kind": "symbol",
@@ -7212,7 +7006,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -7229,7 +7023,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
+            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
             "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
             "locator": {
               "kind": "symbol",
@@ -7532,29 +7326,12 @@
         }
       ]
     },
-    "425": {
-      "note": "The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
-            "content": "sha256:7b70655206e67231389d15539125636dd91c7fbcabce083605db181e095fdbee",
-            "locator": {
-              "kind": "symbol",
-              "name": "EveCapsuleCarrier"
-            },
-            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "426": {
       "note": "The seat-addressed routing rule and its address type, for a caller with no task document.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
             "content": "sha256:94faa1563c10e6343d3d6c6e42a0e0fbb9391b0d69f01053b55512d6073c1d4f",
             "locator": {
               "kind": "symbol",
@@ -7989,7 +7766,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -8001,7 +7778,7 @@
         },
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -8336,23 +8113,6 @@
             "path": "mcp/tests/test_knowledge_review_source_content.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "460": {
-      "note": "Eve compiler refusal raises before carrier creation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
-            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
-            "locator": {
-              "kind": "symbol",
-              "name": "materialize_eve_binding"
-            },
-            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -8693,12 +8453,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "blob": "7e45705913d75b0494c3fbdd477dea21727c2533",
             "content": "sha256:26c8545bfaf8c6e2f2cf621f33eb8c21300db7e4b2e3568df0f3300734082389",
             "locator": {
-              "end": 809,
+              "end": 1035,
               "kind": "line_range",
-              "start": 789
+              "start": 1015
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -8747,7 +8507,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
             "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
               "kind": "symbol",
@@ -8808,12 +8568,25 @@
         },
         {
           "anchor": {
-            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+            "blob": "87de29697f325f1ba05744f571f4771afd13270d",
+            "content": "sha256:4be98efc0a7146898b9a93d1906ec9f556f89076912a29aa8679d11a1a1aa1f8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
             "content": "sha256:853733543314f6d28a8ebdaf5289fa227b18f89eb240c7fde7a75753304b7964",
             "locator": {
-              "end": 919,
+              "end": 942,
               "kind": "line_range",
-              "start": 761
+              "start": 784
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -8829,19 +8602,6 @@
               "start": 84
             },
             "path": "mcp/src/agents_remember/cli/role_retire.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "87de29697f325f1ba05744f571f4771afd13270d",
-            "content": "sha256:4be98efc0a7146898b9a93d1906ec9f556f89076912a29aa8679d11a1a1aa1f8",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
           "kind": "code"
         }
@@ -9525,7 +9285,7 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "f166aefb31d97e1d3806e655e1aea845f5e25c53",
             "content": "sha256:6f59dd1ce2de981f4831d18db96083f8b33665595c83a8a5042db183f0a47d72",
             "locator": {
               "kind": "symbol",

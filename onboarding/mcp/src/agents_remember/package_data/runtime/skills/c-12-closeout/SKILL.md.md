@@ -1,5 +1,12 @@
 # c-12-closeout/SKILL.md
 
+## Current A8 carrier and authority boundary
+
+The current carrier and gate account is already source-bounded: explicit developer or recorded series authority precedes transaction apply; no lifecycle awaiting/automatic-resume event is inferred. Stored old closeout gates still refuse and require the developer-commanded removed-stores route, not silent deletion. Full Curator MEMORY quality/coherence and exact-pair invariant judgments retain their separate owners. No commit, gate cleanup, quality/test rerun or fresh acceptance is performed here.
+
+- Current closeout instruction relays the commit ask through parent role_message or parentless chat, waits for approval outside the relay turn and preserves refusal for stored gates while no product component raises or decides them. \[20] [20]
+
+
 ## Governing Overview
 
 [mcp overview](../../../../../../overview.md)
@@ -14,7 +21,7 @@ its refusal/recovery boundaries. Implementation, curation and Git authority stay
 
 ## Code Commentary
 
-Preview immutable inputs before applying only enabled transaction legs. Refuse unresolved
+Preview immutable inputs before applying only enabled transaction legs. For developer-gated closeout, send preview facts and the commit ask to the parent through `role_message`, or end with them in chat if parentless; apply only after approval and never in the relay turn. No product component raises or decides gates now. Existing stored `closeout-approval` logs still refuse unsafe admission until resolved through the explicit user-commanded removed-store route; they are not silently ignored. Refuse unresolved
 conflicts, wrong checkout/ref identity, blank messages or missing authority before unsafe
 mutation; resume an accepted generation through its exact journal-backed control, never
 a queue row, synthesized message or raw Git. Do not push automatically.

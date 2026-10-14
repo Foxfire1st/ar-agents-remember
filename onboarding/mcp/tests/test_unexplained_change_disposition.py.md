@@ -62,6 +62,8 @@ The added updated-card/no-separate-trace-item case writes an actual card change 
     from 2 to 1). The direct trace-result call now forwards
     `code_blobs=worktree_code_blobs(world.code, [FRESH])` instead of relying on row presence.
 
+- The new uncovered-file regression writes an actual updated row over a changed card in the Git fixture, settles an item without a separate trace item, and asserts both the worklist row ID and the gate acceptance read countedChange=true. A card edit alone still supplies no authored answer; this is source-level test intent, not execution by this Curator.
+
 ### Conventions
 
 - The module is in the `unit-regression` lane (`test-evidence-lanes.toml:124`); the evidence catalog derives it
@@ -113,5 +115,6 @@ No cross-repo boundary is crossed by this file.
 - An answering onboarding row is not unnecessary (Q3); the trace-result call supplies the candidate code_blobs map before filtering and adjusted-count assertions. [12]
 - Current source delta inspected statically: Replace counted-edit settlement and helper owner, show explicit blobs, narrow hunk stability and fix captions; prior blocked advice is superseded. [15]
 
+## Current counted-change evidence
 
-- An updated row with a real card change answers a no-separate-item uncovered hunk identically in worklist and gate. [16]
+- The changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance. [16]

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
+            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
             "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
             "locator": {
-              "end": 51,
+              "end": 47,
               "kind": "line_range",
-              "start": 48
+              "start": 44
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
+            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
             "content": "sha256:cdc29e21a0bc1843f14bbc319bf7b79a8b8c1bf76e464bc37653d5cde0107b0a",
             "locator": {
-              "end": 131,
+              "end": 127,
               "kind": "line_range",
-              "start": 130
+              "start": 126
             }
           },
           "kind": "code"
@@ -37,15 +37,16 @@
       ]
     },
     "3": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "The starting seat prepares the leaf documents, then starts Worker through role_start_set or role_start with no supplied brief; the first message is compiled from those documents. The former dispatch_agent payload is historical. The sync-only exception is unchanged: Worker continues its own worktree_sync, Curator repairs native memory conflicts and Manager captures/verifies/stages them. Outside that exception, lifecycle_finalize_task, task_doc, memory and route-index operations stay excluded; deleting wildcard lifecycle/gate names does not authorize arbitrary operations. Code-only build ownership, no commits/onboarding, exact attempts, protected settings, targeted-check truth and direct Curator producer fields remain intact.\n\nAnchor: current qualified source",
       "targets": [
         {
           "anchor": {
-            "blob": "bb5d114c1d8bf45fbb4a74560604af7101ba1813",
-            "content": "sha256:ab7c745aa5d710557753d2d17b49e51cb8212374090fff3edbc066ca5fe5cb13",
+            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
+            "content": "sha256:d9732d94ee9b01528e5af9fa557e04454aeb6e58b78ce33579e9e9e1f77a8c43",
             "locator": {
               "kind": "file"
-            }
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
           },
           "kind": "code"
         }

@@ -23,9 +23,8 @@ The dashboard knowledge-review collaborator invokes read_complete_knowledge_revi
 ### Composition (`serving_collaborators`)
 
 Every `create_app` call of this module goes through `serving_collaborators(config)`. It returns the
-execution-evidence registrars of `EXECUTION_REGISTRATION_COLLABORATORS` together with:
+explicit current `ServingCollaborators` value with:
 
-- `capsule_launch`: `compile_launch_capsule` bound to the configuration;
 - `knowledge_review`: `read_complete_knowledge_review`, which resolves the candidate once for the records
   and the composition;
 - `knowledge_review_entries`: `list_knowledge_review_entries`;
@@ -33,7 +32,8 @@ execution-evidence registrars of `EXECUTION_REGISTRATION_COLLABORATORS` together
 - `review_intent_summary`: `read_review_intent_summary`;
 - `review_trees`: `read_review_trees`, called with `processes=worklist_processes`;
 - `review_trees_shutdown`: `worklist_processes.shutdown`;
-- `knowledge_reader`: `read_knowledge_reader`.
+- `knowledge_reader`: `read_knowledge_reader`;
+- `extra_api_routes`: `register_role_launch_routes` bound to config.
 
 `worklist_processes` is one `ReviewerWorklistProcesses` object created per call of
 `serving_collaborators`, that is, one per composed app. It is the owner of the child processes that
@@ -297,11 +297,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## 260821-CLIVE Task-Execution Registration Wiring
 
-The production dashboard supplies the task-plane registrars for both terminal-catalog rows and
-operator-inbox reports when it constructs serving collaborators. Those registrars durably record
-worker/reviewer/curator first evidence before the serving retention loops may reclaim their source
-rows. This is the production dependency-injection boundary; omitted test seams remain fail-closed
-for task-bound deletion rather than using a compatibility reader.
+The production dashboard supplies the retained knowledge review/catalog/source/intent/tree/reader ports and extra native role-launch routes. It supplies neither terminal-catalog nor operator-inbox execution registrars, and does not define EXECUTION_REGISTRATION_COLLABORATORS or a capsule_launch field. Worklist-process shutdown remains explicitly injected; omission of a retained port must not be confused with restoration of deleted execution evidence.
 
 ## 260915-CAPS-L15 Capsule-Compiler Composition Root
 
@@ -313,10 +309,7 @@ place that already knows which configuration the app serves — binds it with `p
 rather than a zero-arg factory is the point: the port hands the serving gate a callable that already
 carries the config, so the serving rank never sees a `McpRuntimeConfig` it has no business resolving.
 
-The rule this section exists to state: **a dashboard process can never serve a role-configured launch
-with no compiler behind it.** `EXECUTION_REGISTRATION_COLLABORATORS` remains the config-free base
-record; `serving_collaborators` is a `dataclasses.replace` over it, so a future collaborator added to
-the base is not silently dropped by this composition.
+The composition returns one explicit ServingCollaborators value with the source-owned reader ports and config-bound native role-launch routes. There is no dataclasses.replace over a config-free execution-registration base; a source-declared field alone is not host launch/acceptance evidence.
 
 - The composition root and the config-bound compiler it binds.
 - Every `create_app` call in this module resolves its collaborators through that root.

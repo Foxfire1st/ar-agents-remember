@@ -1,5 +1,13 @@
 # docs/reference/skills.md
 
+## Current A10 retained-source account
+
+The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged.
+
+- The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged. [3]
+
+
+
 ## Governing Overview
 
 [root repo overview](../../overview.md) — governed by the route-local [docs/reference overview](overview.md).

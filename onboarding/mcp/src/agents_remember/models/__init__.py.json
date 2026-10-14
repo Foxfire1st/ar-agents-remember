@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "This initializer declares the public model export list.",
+      "note": "Anchor: Actual explicit export list.",
       "targets": [
         {
           "anchor": {
-            "blob": "70fe18a58357e0e1b0920f7cdc7f3f1f735132c2",
-            "content": "sha256:73ef96f379137650ea45e8046a0faab0809da657e44c87b835d3af1ab45fc84d",
+            "blob": "2a16db278fa8cf306fa27a9a7be04a8e0f61127d",
+            "content": "sha256:0b704913b471b2915041fda0129ac45710887b4c8aaef1e1824e2ecb7ef869ad",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 163,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "code"
@@ -19,47 +20,16 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of __all__ supporting the stated file behavior.",
+      "note": "Anchor: The facade __all__ keeps ownership with defining modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee654cdaa0c25ae6d30d7dd60b728ff21979bd8b",
-            "content": "sha256:13649b29fe7d88c3ffdae3b6df900e60ac120566fc62dd70484e7a269e3de281",
+            "blob": "2a16db278fa8cf306fa27a9a7be04a8e0f61127d",
+            "content": "sha256:0b704913b471b2915041fda0129ac45710887b4c8aaef1e1824e2ecb7ef869ad",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Current explicit imports and __all__ omit PingResponse and do not re-export the three role-binding/role-message/start models.\n\nAnchor: __all__",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9a7cb21d40139fe134b605e55e1ebc0801c829e",
-            "content": "sha256:d3abfac33d0df7ba5082be24b416ad5791799e4c50d337daf4fa8d896ccfb2d8",
-            "locator": {
-              "end": 166,
+              "end": 163,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "012f3ff3a2a845e736826b666790d2e457b9d8a6",
-            "content": "sha256:a31085eb3f182eb9d0299eb1a254c749cbb484b4ba0836e461aaa6d522f5ef69",
-            "locator": {
-              "kind": "file"
+              "start": 88
             }
           },
           "kind": "code"

@@ -167,29 +167,14 @@
       ]
     },
     "14": {
-      "note": "Backoff, opt-in cap planning, degradation parsing, report retention/redaction and metadata-or-source version resolution have explicit primitive owners.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/kernel/primitives/memory_cap.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/kernel/primitives/tool_reports.py`; `mcp/src/agents_remember/kernel/primitives/version.py`",
+      "note": "Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler.\n\nAnchor: whole current source; whole current source; whole current source; whole current source",
       "targets": [
-        {
-          "anchor": {
-            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
-            "content": "sha256:49dc0ba9a4d786080bea1f5132912b9ce5a880ba2039cc3abace299ee96cf4d2",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "471b48f301d3bd2da84048566dd7b8840efc9b56",
             "content": "sha256:1a615312493f81bf519f95e6142623ba9e7e5c2eebf8c3b1c36b30c0debb630e",
             "locator": {
-              "end": 130,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/memory_cap.py"
           },
@@ -200,9 +185,7 @@
             "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
             "content": "sha256:f83cf50f2ead77d7527b6ce79d9a48f72185c6adc140038550016b9838771b94",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
           },
@@ -213,9 +196,7 @@
             "blob": "96d40632f177b320536d7d5714aa414da5585df1",
             "content": "sha256:c12d83e46b9e8a36f475aefdc2dda5d059ca7a1a9db7c82c418f442163967d90",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
           },
@@ -226,9 +207,7 @@
             "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
             "content": "sha256:27d3ca453ff9336b9cbc0026b85ade58cc0aa2731dae0c68b2ae4d3b7fd9a64b",
             "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },
@@ -316,12 +295,12 @@
         },
         {
           "anchor": {
-            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
             "content": "sha256:237e10da6dc048ce0f8cc4613114fedd919794ce0ed3817d34006c080d03e732",
             "locator": {
-              "end": 587,
+              "end": 597,
               "kind": "line_range",
-              "start": 537
+              "start": 547
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -474,12 +453,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
             "content": "sha256:36d7702b2074245d813ac292fdddb6016cf6ecd7e92ebb721838ddcd7a8c4dfc",
             "locator": {
-              "end": 20,
+              "end": 13,
               "kind": "line_range",
-              "start": 15
+              "start": 8
             },
             "path": "mcp/src/agents_remember/models/structural/gates.py"
           },

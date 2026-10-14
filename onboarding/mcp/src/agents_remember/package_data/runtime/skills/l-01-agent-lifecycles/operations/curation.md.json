@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-        "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+        "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+        "content": "sha256:324c0e61802210751c2c135c929f7b328c5d6a312cd2c24ef7ba11769b6761c3",
         "locator": {
           "kind": "file"
         }
@@ -101,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
             "content": "sha256:1611a8d6acf1e2a3d9d4a818b1d53e1675733aea4de8ebb9775c9ee997291f79",
             "locator": {
-              "end": 165,
+              "end": 163,
               "kind": "line_range",
-              "start": 157
+              "start": 155
             }
           },
           "kind": "code"
@@ -118,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
             "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
             "locator": {
-              "end": 165,
+              "end": 163,
               "kind": "line_range",
-              "start": 151
+              "start": 149
             }
           },
           "kind": "code"
@@ -131,7 +131,7 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.",
+      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.\n\nFoundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. [6]\n\nAnchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
@@ -139,6 +139,30 @@
             "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+            "content": "sha256:d1ddba3cca503f5f3cad370e448bf88011ea98e6139536e976bfcb1d1201a5e9",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
+            "content": "sha256:9f5b328082283a5858c2b02a98ea5a9e8d03d6aedc04b72c1eca22964d95c7e5",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 182
             }
           },
           "kind": "code"

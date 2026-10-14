@@ -3,22 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The contract census observes actual code/memory and integrated output evidence, with no cache requirement.",
+      "note": "Canonical task, locator/manifest/journal, contract and commit evidence govern the unstarted proof; removed seat and report scans are absent.\n\nAnchor: `_EvidenceCensus`, `prove_task_unstarted`, `_task_facts`, `_operation_facts`, `_contract_fact`",
       "targets": [
         {
           "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
-            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_contract_fact"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
             "content": "sha256:c2dd23a0a8d579b9c53b8510203c7c91ad31844ddfb965057f177af004863083",
             "locator": {
               "kind": "symbol",
@@ -29,35 +18,29 @@
         },
         {
           "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
-            "content": "sha256:cff4cdecf35f3e664d10f5640dba777eb7aa1ea5e5aa5def86590354439a3de6",
-            "locator": {
-              "end": 297,
-              "kind": "line_range",
-              "start": 247
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
-            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
+            "content": "sha256:4a99f69370036a0cddcd0b8cdf862b526fffaf581b8347e3cdbad15a26caa27d",
             "locator": {
               "kind": "symbol",
-              "name": "_contract_fact"
+              "name": "prove_task_unstarted"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
+            "content": "sha256:92210ce5f8fd99261db8dcd698ff21a9126cf8096c90f97eb5fb136092fd0266",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
             "content": "sha256:bb0910bee354b62b90ed9fcb043d5fb93c39a14c484098ac7fe364847010c4fa",
             "locator": {
               "kind": "symbol",
@@ -68,12 +51,11 @@
         },
         {
           "anchor": {
-            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
-            "content": "sha256:cff4cdecf35f3e664d10f5640dba777eb7aa1ea5e5aa5def86590354439a3de6",
+            "blob": "993f59e48595cc0aae4945621e405e458bd5ed9e",
+            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
             "locator": {
-              "end": 297,
-              "kind": "line_range",
-              "start": 247
+              "kind": "symbol",
+              "name": "_contract_fact"
             }
           },
           "kind": "code"

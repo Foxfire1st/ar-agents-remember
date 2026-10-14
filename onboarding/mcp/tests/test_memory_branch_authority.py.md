@@ -6,9 +6,9 @@
 
 ## Purpose
 
-The shipped behavioral check for **which branch a repository's memory is founded on**, plus the two
-structures the same leaf introduced: the free agent's taskless admission, and the memory-content
-exclusion that keeps bootstrap scaffolding out of a memory commit.
+The shipped behavioral check for **which branch a repository's memory is founded on**, plus the retained
+bootstrap role/no-task-altitude shape and memory-content exclusion that keeps bootstrap scaffolding
+out of a memory commit. Removed supplied-document/taskless launch checks are not current coverage.
 
 Its leading property is stated in its own module docstring: the memory repository's initial branch
 is the branch the developer names, and every seam that later compares a branch against "the memory
@@ -23,7 +23,7 @@ exist rather than against the literal `main`.
 
 ### Logic
 
-**Twenty cases in four groups.** The module drives the real public operations
+**Seventeen source test definitions in four retained groups.** The module drives the real public operations
 (`memory_init_tool`, `memory_baseline_adopt_tool`) on real Git repositories created under
 `tmp_path`; it installs `MCP_SRC` and `MCP_TESTS` on `sys.path` so it exercises the shipped modules
 rather than a copy.
@@ -37,11 +37,7 @@ branch, refuses a branch the memory repository does not record, and the memory d
 accessor validates the recorded name against its refs while still refusing a recorded name with no
 ref. An absent coordination root is refused before anything is created.
 
-*Group 2 — the free agent's shape (4 cases).* The `bootstrap` role is a free agent with no task
-altitude; without a task document only the named taskless roles are admitted; the set is a named,
-readable export rather than a bare literal inside a refusal; and no task altitude set in the source
-names `bootstrap`. The group's own banner records the developer ruling it protects, so a later
-reader cannot "fix" the seat by giving it the altitude it must not have.
+*Group 2 — the bootstrap role's remaining shape (2 definitions).* The source asserts the bootstrap role has no task altitude and no task-altitude set names it. The removed taskless-role-set admission checks supply no present coverage.
 
 *Group 3 — the reviewed round-2 findings, pinned (2 cases).* `bootstrap/` is absent from the first
 baseline's commit and still on disk afterwards, asserted on `git ls-files` — the committed tree — not
@@ -51,42 +47,8 @@ two cases that fail if the exclusion goes inert again. Both now run under a boun
 knowledge validator instead of committing unvalidated, and the `bound_validation` fixture binds real
 worktree services (`GitKnowledgeValidation` with `GitBaseConverter`) for exactly that.
 
-*Group 4 — the taskless document and the manifest (2 cases).* A document supplied to a taskless role
-still resolves but skips the altitude check, so a bad reference is still refused; and the manifest
-declares no task altitude for the free agent while the nine task-bound roles keep theirs, which
-keeps the exception scoped.
+*Group 4 — the manifest (1 definition).* The retained manifest check asserts no task altitude for the free agent. The former supplied-document/taskless launch-argument check is removed; it supplies no current admission guarantee. These are inspected source assertions, not executed test acceptance.
 
-### Conventions
-
-- Every case creates its own repository under `tmp_path` and drives the public operation; no fixture
-  is shared across cases and the baseline-adoption case explicitly asserts `_baseline_default_branch(memory)` before its public adoption call. Public-operation coverage does not mean every assertion avoids private helpers.
-- Every comparison takes its two sides from different artifacts — the recorded config, the actual
-  ref, the returned payload, and, where a refusal is the behaviour, the refusal's own text. That is
-  what makes a case falsifiable rather than self-derived.
-- The module is registered in `mcp/tests/test-evidence-lanes.toml` under `unit-regression`; a new
-  case belongs in this module rather than in a separate ad-hoc script.
-- The one production spelling the cases read is imported, not restated:
-  `DEFAULT_BRANCH_CONFIG_KEY` comes from `kernel.memory_init` and `MEMORY_CONTENT_EXCLUDES` from
-  `models.memory_content_excludes`, so a rename fails the case instead of silently passing.
-
-### Invariants And Boundaries
-
-- **The memory branch is data, never a constant.** Every comparison validates the recorded name
-  against a real ref; no case may be "fixed" by reintroducing a comparison against `main`.
-- **`bootstrap/` is excluded from memory-content commits, not deleted from the worktree.** The
-  second half of the assertion is as load-bearing as the first: the developer's transient files stay
-  on disk as untracked content.
-- **The exclusion must ride the call that stages.** An exclusion applied to a bare `git add` before
-  `commit_if_dirty` re-stages the worktree is inert; the case exists precisely because that was
-  measured as broken.
-- **The taskless set is policy, not an implementation detail.** The case asserts the export is named
-  and readable, so the ruling stays legible to the next reader instead of collapsing into a literal.
-- **A taskless role still resolves a supplied document.** Being exempt from the altitude check is not
-  a licence to skip resolution; a bad reference stays refused.
-
-### Todos
-
-None recorded.
 
 ## Evidence
 
@@ -101,12 +63,11 @@ No relevant documentation found after checking live sources.
 - The module's own statement of the property, the four seams, and the two-sides rule. [1]
 - Group 1 — minting, inheriting and refusing to invent a branch. [2]
 - Group 1 — the repair path, the name narrowing, and the recorded spelling. [3]
-- Group 2 — the free agent's shape, with the ruling the group protects. [5]
-- Group 4 — a supplied document still resolves, and the manifest exception stays scoped. [7]
+- Group2 asserts bootstrap is published outside every task-altitude role set, not taskless policy bypass. [5]
+- Group4 checks the manifest bootstrap altitude is nonblank and not sprint/master/leaf while task roles keep their own altitude; no supplied-document resolution coverage remains. [7]
 - The branch authority the first group drives. [8]
 - The adoption seam whose hard-coded `main` the first group replaced. [9]
 - The recorded-name validation the first group holds, and its malformed-name refusal. [10]
-- The taskless admission the second and fourth groups hold. [11]
 - The exclusion policy the third group pins. [12]
 - The lane row that keeps the fail-closed evidence registry loading clean. [15]
 

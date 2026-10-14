@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "600d957fbae19a9fa062ba008b9f3ecaa8783b9b",
-        "content": "sha256:d704880dab5e83005a6408a03a2b8616a540cb622eff6f07279b2fef4954ca2a",
+        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BNWWSD",
+      "invariant": "INV-CQCPAD",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 10",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The table of which document a role is bound to: the Architect's row names none, and a start that names one is refused.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "600d957fbae19a9fa062ba008b9f3ecaa8783b9b",
-        "content": "sha256:d704880dab5e83005a6408a03a2b8616a540cb622eff6f07279b2fef4954ca2a",
+        "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+        "content": "sha256:5d85738cb8562a732ff2812b86aac6acbc9f3033396c32dfa1b06dd7478921ae",
         "locator": {
           "kind": "file"
         }

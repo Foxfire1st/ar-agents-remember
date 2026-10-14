@@ -14,6 +14,8 @@ Server creation applies this single partition after registration. A registered n
 
 knowledge_diff is marked mutating because working-tree comparison can capture loose Git objects and the naming handler publishes a comparison report. context_packet is marked mutating because include_freshness can update Git fetch metadata. Report-producing diagnostics and task/host/memory writers are also mutating; an operation’s read-like name is not authority to mark it read-only.
 
+`dispatch_agent` is absent from both mark sets after its registered surface was retired; its old mutating mark is historical, not a retained advertised tool. `retire_child` remains mutating because it changes seats.
+
 Read-only checks exclude only the derived index and logs under their owner rules. The mark does not prove that a harness will suppress its permission prompt, and it grants no write authority.
 
 
@@ -21,6 +23,6 @@ Read-only checks exclude only the derived index and logs under their owner rules
 
 ## Evidence
 
-- The explicit partition covers registered reads and mutating capabilities. [1]
+- The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent. [1]
 - An unknown registered name fails closed instead of receiving a default mark. [2]
 - Annotations are applied after registrars from the same partition. [3]

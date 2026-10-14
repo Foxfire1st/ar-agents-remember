@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The defect statement: `Partial<T>` admits an explicit `undefined`, the four reachable impossible fixtures, and why no `wireFixtureGuard` rule sees them.\n\nAnchor: `conversationPage`",
+      "note": "Partial overrides can erase required lifecycle/provider state, task steps or projection enclosures without a cast; the value hole is not seen by the property-name guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
-            "content": "sha256:8fb1383dc504ab8f16bcda8fbd3b5c971ad81d9cda08dabc3581ac81b0cde6ba",
+            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
+            "content": "sha256:abe2d5d8b22c913956ece84c9bc2c235d4f871f4a99c40b38341ef8005006c3a",
             "locator": {
-              "end": 12,
+              "end": 10,
               "kind": "line_range",
               "start": 3
             }
@@ -37,24 +37,6 @@
         }
       ]
     },
-    "11": {
-      "note": "Import and boundary review found the same-repository `conversationWire.ts` consumer.\n\nAnchor: \"import type { NoOverrides, Overrides } from \\\"./overrides\\\";\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
-            "content": "sha256:925a3664c4031608dd0ee5f13515498697685e319ea523dc680512f4f95fff32",
-            "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 48
-            },
-            "path": "dashboard/src/test/fixtures/conversationWire.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead.\n\nAnchor: `exactOptionalPropertyTypes`",
       "targets": [
@@ -73,16 +55,16 @@
       ]
     },
     "3": {
-      "note": "The three documented limits: fresh-literal-only, one level deep, and only these two modules.\n\nAnchor: `conversationCapabilities`",
+      "note": "Current limits are fresh-literal-only and retained wire.ts builders only; the widened LifecycleProjection control is a known pass, not a removed conversation/nested builder promise.",
       "targets": [
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
-            "content": "sha256:4f00d4bd915c5ae51503c550b20005b74abbb07904b61a322eee95c339f7eac7",
+            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
+            "content": "sha256:a0b8be404851af3748a2de31c296cfb49f56f1d41ea6dd32a43e2e862f120c76",
             "locator": {
-              "end": 43,
+              "end": 36,
               "kind": "line_range",
-              "start": 23
+              "start": 22
             }
           },
           "kind": "test"
@@ -94,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
             "content": "sha256:6924ba64bfcc8eb04dd9c7903f8506f57f0c8d524d4732954337e8f92940bbc2",
             "locator": {
               "kind": "symbol",
@@ -110,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
             "content": "sha256:6b6d8ca4cd7524d55a67081c6c6d3bdb0a1dba1ebde0c15aa834b64f8a34b620",
             "locator": {
               "kind": "symbol",
@@ -122,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
             "content": "sha256:2ad8cd1d8da993eb5bb244f6479871bfc6cd35e9e7585b1e773d7a7aaaa00e35",
             "locator": {
-              "end": 75,
+              "end": 70,
               "kind": "line_range",
-              "start": 72
+              "start": 67
             },
             "path": "dashboard/src/test/fixtureOverrides.test.ts"
           },
@@ -140,12 +122,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:db252c0fae8ad5bc90e596829d614d60d3f0d9606d977f2a7afa960f7dd6a9d8",
             "locator": {
-              "end": 243,
+              "end": 226,
               "kind": "line_range",
-              "start": 241
+              "start": 224
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -153,31 +135,14 @@
         },
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
             "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
             "locator": {
-              "end": 331,
+              "end": 287,
               "kind": "line_range",
-              "start": 329
+              "start": 285
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
-            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "conversationCapabilities"
-            },
-            "path": "dashboard/src/test/fixtures/conversationWire.ts"
           },
           "kind": "test"
         }

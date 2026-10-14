@@ -2,28 +2,12 @@
   "path": "mcp/tests/test_observer_projection_attention.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Blocked and provider down rank alarm first.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
-            "content": "sha256:bf41f4594bda1f6ecdff85aa0d35d25a46a1327eb19977daee14bbf5bdae6838",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_blocked_and_provider_down_rank_alarm_first"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "Dismiss suppresses actionable drift until newer snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
+            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
             "content": "sha256:36380ba9abd948e9f069974ccc0608dfe6ff451643018944c79dca9c962e9067",
             "locator": {
               "kind": "symbol",
@@ -34,16 +18,34 @@
         }
       ]
     },
-    "3": {
-      "note": "Newer turn end supersedes dismissal.",
+    "4": {
+      "note": "Provider-down ranks ahead of a quiet-session signal, whose lifecycle/time are asserted.\n\nAnchor: `AttentionQueueTests.test_provider_down_ranks_above_a_quiet_session`",
       "targets": [
         {
           "anchor": {
-            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
-            "content": "sha256:9288fe3b6a903b3b9666328393886c4659fd7a18ab7f49bc4ca98d275be4de1b",
+            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
+            "content": "sha256:c3e17816d3afebafe2ee998570f3a4aef8e39e1d2b07f6ff33bcaaaf7a31c533",
             "locator": {
-              "kind": "symbol",
-              "name": "test_newer_turn_end_supersedes_dismissal"
+              "end": 31,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Later heartbeat activity creates a newer stale-session occurrence after dismissal, not a turn-end/awaiting-developer assertion.\n\nAnchor: `AttentionDismissalTests.test_newer_activity_supersedes_dismissal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24522f5389f8d70a29ba7503c8ac343adfbaa7dc",
+            "content": "sha256:5822fb41d8212b44f35a305e4d95a8d71d98d98cf0abea98d28c5e262d6038d3",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 106
             }
           },
           "kind": "test"

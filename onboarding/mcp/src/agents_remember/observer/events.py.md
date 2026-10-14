@@ -31,7 +31,7 @@ Python attribute name — so records must be dumped with
 
 - This is a persisted-record model, **not** an MCP response: it has no token
   fields and is never returned by a tool, so it is not registered in
-  `PUBLIC_TOOL_RESPONSE_MODELS`.
+  `TOOL_RESPONSE_MODELS`; the older public-registry name was removed, without turning this persisted event into a token-bearing tool response.
 - The format must round-trip: a dumped line re-validates via `model_validate`
   (read side / replay), so aliases and `extra="forbid"` must stay consistent.
 - `data` is the open extension point; the envelope fields are fixed and
@@ -43,4 +43,4 @@ Python attribute name — so records must be dumped with
 
 - The store serializes and reads these events. [1]
 - Ids come from the local ULID mint. [2]
-- The response-contract convention this envelope mirrors (camelCase fields, strict extras). [3]
+- Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope. [4]

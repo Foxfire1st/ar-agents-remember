@@ -50,26 +50,13 @@ ordinary read route already selects**. The skill states the order those existing
 the states a run must distinguish; it adds no agent, no second database and no parallel onboarding
 track.
 
-**Which session carries it is the product's decision, and the product decides by the task document.**
-The opener admits a role with **no** task document only for the taskless seats, and the procedure
-quotes the refusal verbatim (`400 {"status": "task-binding-required", "detail": "named role scope is
-required"}`) rather than paraphrasing it. The shipped constant behind that gate is `TASKLESS_SEAT_ROLES`
-at `mcp/src/agents_remember/serving/task_binding.py:83`. **`260921-ICR-L32` changed it**: on the
-developer's **2026-09-24 ruling** the set is `{"chat", "terminal", "bootstrap", "curator"}`, and the
-carrier text this card describes now enumerates **three entries plus the taskless curator seat the
-ruling admitted** rather than asserting a fourth that does not exist:
+**The carrier depends on the task document; semantic ownership stays with the Curator role.**
 
-- **A task exists** — the curator is opened on that task's document, and the leaf entry is its writer.
-- **No task exists, first hour** — the **bootstrap** seat carries the read-and-report half: it is the
-  seat the product admits without a task document *and* instructs to read the foundation's state and
-  report it, handing the authoring on. It does **not** author records.
-- **No task exists, the foundation is to be built now** — a **taskless curator session** authors it under
-  the curator's own rules (the ruling's second carrier), and the taskless writer is run by an instructed
-  session that holds the procedure, from a workspace with **no enclosure in scope** (the writer refuses
-  one with `enclosure_in_scope`, so a bootstrap can never publish onto a task's memory line).
-- **A taskless *curator* seat exists.** `curator` joined the taskless seat roles by the developer's
-  **2026-09-24 ruling**, taken when the missing route was put to them, so a document-less `curator`
-  session is admitted and receives the curator capsule; every other role is still refused.
+- On a selected leaf, its Curator seat authors through the leaf writer into that leaf’s memory worktree.
+- Before a task exists, bootstrap carries only read/report/handoff.
+- Before a task exists and authoring is requested, an instructed session holds this procedure and Curator rules and runs the taskless `knowledge-bootstrap` writer with no enclosure in scope.
+
+No taskless Curator seat opens: native Curator launch requires sprint, master and leaf selection. The dated seat-policy observations below are history of their named bytes, not current launch admission.
 
 > **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session was refused `task-binding-required`. That was true of those bytes and is **superseded**: whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`. The carrier instructions and their ten generated copies changed first and this memory followed them.
 >
@@ -198,7 +185,7 @@ No external documentation is needed to prove this repository-local procedure con
 > Historical foundation-owner scope only: earlier database/batch/publication, taskless-seat, generated-copy and executor-pass claims below describe dated source, not current capability or acceptance. The current procedure uses the existing curator text-file writer and selected memory tree, names records then reads files natively. Unchanged admission/preservation rules must be taken from the present canonical skill, not used to revive retired routes.
 
 - The skill is the procedure that authors the knowledge foundation (invariants, families, source realizations, external sources) as distinct from Markdown onboarding, and it adds no role and no second store. [1]
-- The new-project entry is a **taskless** seat, and since the developer's 2026-09-24 ruling the procedure states that a taskless curator seat **exists** and authors the foundation when no task does, instead of asserting a refusal the product no longer makes. [2]
+- Before a task exists, bootstrap reads/reports and an instructed session authors under Curator rules; a Curator seat itself opens only on a selected leaf. [2]
 - Onboarding is optional input and never a precondition; a repository with no onboarding file is a supported starting state. [3]
 - The three reachable entries and the delegated-assistance boundary: collection may be delegated, the authored result may not. [4]
 - Step 1 separates the four knowledge states, and a refused admission is not one of them. [5]
@@ -213,7 +200,6 @@ No external documentation is needed to prove this repository-local procedure con
 - The eight preservation boundaries, including no fabricated leaf/worktree/enclosure, no invented authority, and the delivery gates that keep their owners. [14]
 - The relationship table places the procedure against its neighbours: c-13 reaches it, c-03 names it, c-00 reports the location's state, c-10 is a baseline and not a foundation, and the l-01 carriers house the owner and the first-hour seat. [15]
 - The acceptance criteria state the reachable entries, the state read before authoring, the planning default, the derived admission, the read-back, partiality, the published location and the no-new-owner boundary. [16]
-- The taskless seat set the procedure's gate rests on, which `260921-ICR-L32` changed on the developer's 2026-09-24 ruling so that it admits `curator`. [17]
 - Propagation is generated, not hand-maintained: the root tree is copied into the package-owned copy and the eight harness starter packages. [18]
 - Step 3 requires admission for every new record and gives the rule with two admitted and two refused examples (MIK-R27). [19]
 - The step-3 bullet requiring an authored realization rationale for every target. [20]

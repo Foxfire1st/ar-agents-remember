@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
             "content": "sha256:6c5c0e43f53b6eee016e18c069359056845fc54ba71ba64fae6354c4b679f7cf",
             "locator": {
-              "end": 20,
+              "end": 14,
               "kind": "line_range",
-              "start": 20
+              "start": 14
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
             "content": "sha256:d806ae5cd8aebbe43a2006d73326dfcb09be8e08b2d1ed2e601ea7fd6852a5a5",
             "locator": {
-              "end": 51,
+              "end": 36,
               "kind": "line_range",
-              "start": 51
+              "start": 36
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
             "content": "sha256:269c34b74d805a992c9ebc1897cb1c648d0aae88de46429e84cf40feddde10e9",
             "locator": {
-              "end": 36,
+              "end": 29,
               "kind": "line_range",
-              "start": 36
+              "start": 29
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -106,31 +106,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7112f472338abd10d7f68eef7c90c01662c717e7",
+            "blob": "e4a2cc38f9b5b94563eca229847b8304168179bc",
             "content": "sha256:67e050d059da499f329f1fc4fda702e7bf0bdbcb85cf2fd6d9fe696a5a4fb105",
             "locator": {
-              "end": 146,
+              "end": 145,
               "kind": "line_range",
-              "start": 146
+              "start": 145
             },
             "path": "dashboard/src/dev/fixtures.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The dev terminal mock provided via context (slice 6e-1).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d9e4a8b01a0ca35b853fc4fe7248e59cf784815e",
-            "content": "sha256:f1fb9945ba4a57e6553c1e5f220b730a9b17d234150835df6b405dbc936e4d95",
-            "locator": {
-              "kind": "symbol",
-              "name": "mockTerminalSocketFactory"
-            },
-            "path": "dashboard/src/dev/mockTerminalSocket.ts"
           },
           "kind": "code"
         }

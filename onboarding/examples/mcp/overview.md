@@ -36,11 +36,7 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 
 ## Invariants And Boundaries
 
-- The template carries no `orchestration` block and no `memorySettingsIncludes` key. Agentic choices, including gate delegation, have their standard user-settings home. The runtime parser's warning-bearing, one-cycle gate-delegation fallback is not an instruction to add another orchestration block to this example.
-- Paths shown in the template are placeholders to replace with authority-approved absolute roots, not facts about the executing workspace.
-- A certification-profile reference selects declared policy; a template is neither certifying execution nor acceptance evidence.
-- Report-gated completed-seat cleanup is subordinate to a successful completion edge. It targets the exact task's Worker/Reviewer/Curator roles only, requires the exact session's durable report before retirement and excludes Manager/Orchestrator owners. Disabling auto-close selects the landed/archive path; setting a template flag is not proof that any seat was actually closed.
-- Parser configuration, provider health, dashboard supervision and Git/seat effects are different owners. An example's defaults must not be represented as observed deployment state.
+- Canonical lifecycle finalization records its actual completion edge/contract facts; the retired automatic Worker/Reviewer/Curator closeout cleanup and auto-close/landed opt-out are not current settings or effects. Explicit receipt-tracked native retirement remains a separately authorized operation, not an automatic template consequence.
 
 ## Evidence
 
@@ -52,4 +48,3 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 - Gate delegation's standard settings home outranks the warning-bearing authority fallback. [6]
 - The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary. [7]
 - Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary. [8]
-- Completion cleanup is report-gated for the finite leaf-role set and has a separate landed/archive branch. [9]

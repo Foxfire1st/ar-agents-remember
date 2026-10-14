@@ -1,5 +1,16 @@
 # dashboard/src/data/actions.ts
 
+## Current A8 source account
+
+The only retained exported function is postAttentionDismiss; AttentionDismissStatus and AttentionDismissTarget types also remain. It sends itemId and kind to the literal same-origin /api/actions/dismiss URL, adding target only for a truthy lifecycleId; no gateId is sent. Only HTTP202 maps to dismissed; every other status or a fetch throw maps to error. It does not retry or change the store itself. Its AttentionQueue caller suppresses rows and releases them on non-dismissed results, so the historical blanket no-optimistic-UI account does not describe that caller. The gate-decision clients, GateResponder and old gate-only cleanup account below are historical; neither a live serving route nor an execution verdict is established here.
+
+- The current module retains only the attention-dismiss client, its target-optional body and HTTP202/error mapping. \[4] [4]
+
+- The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. \[5] [5]
+
+## Historical original source account — retained, not authority for removed behavior
+
+
 ## Governing Overview
 
 [data overview](overview.md)
@@ -57,7 +68,6 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - The serving route this POSTs to (records the developer/dashboard gate decision). [1]
-- The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. [2]
 - The attention queue that calls `postAttentionDismiss`. [3]
 
 ### Cross-Repo References

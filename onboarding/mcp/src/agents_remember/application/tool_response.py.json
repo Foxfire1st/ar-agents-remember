@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
+        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
         "content": "sha256:6e9ea9e2042fa35e37a3763d2ff28b50e659d2562b3d8c022eb33b39485617b4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
+        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
         "content": "sha256:6e9ea9e2042fa35e37a3763d2ff28b50e659d2562b3d8c022eb33b39485617b4",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
+        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
         "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
+        "blob": "f3a38c69f77db005f94dac33ea9106aef433d4cc",
         "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
         "locator": {
           "kind": "symbol",
@@ -75,22 +75,6 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Defines the function `_agent_notifier_banner` (lines 127-138) — Return the stale-supervisor banner without blocking a tool response.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "82511233b54099a86d5c8a35db96c7b26c4ac288",
-            "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
-            "locator": {
-              "kind": "symbol",
-              "name": "_agent_notifier_banner"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Defines the function `_attach_lifecycle_tail` (lines 139-158).",
       "targets": [

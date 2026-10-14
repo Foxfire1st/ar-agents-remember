@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+        "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
-          "end": 513,
+          "end": 509,
           "kind": "line_range",
-          "start": 498
+          "start": 494
         }
       },
       "id": "RLZ-QGSRZ5",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "7e8a73012173042fb82eb5a6f60853318fc44500",
+        "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
-          "end": 513,
+          "end": 509,
           "kind": "line_range",
-          "start": 498
+          "start": 494
         }
       },
       "id": "RLZ-YSSZK6",
@@ -147,6 +147,32 @@
               "kind": "line_range",
               "start": 146
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. [8]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
+            "content": "sha256:48c729bb252799ea7d6bf8ab718cab169915823e709bdf2f10ef2dcf53778ed0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d54f0350a8a448446781db394843bad9a2f8ab9",
+            "content": "sha256:48c729bb252799ea7d6bf8ab718cab169915823e709bdf2f10ef2dcf53778ed0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md"
           },
           "kind": "code"
         }

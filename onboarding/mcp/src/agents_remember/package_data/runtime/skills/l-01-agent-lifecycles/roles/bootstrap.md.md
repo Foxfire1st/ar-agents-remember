@@ -33,10 +33,12 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Synced current-source qualification
 
-The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The prohibition also names message_child, retire_child and rename_*; four setup tools remains a source manifest count, not an execution result.
+The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The current prohibition explicitly names `retire_child`, alongside task, role-start, closeout and other mutations outside the setup surface; it does not currently name `message_child` or `rename_*`. The earlier three-name account belongs to the predecessor wording. Four setup tools remains a source manifest count, not an execution result.
 
 The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
 
+
+- The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. \[17] [17]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -167,8 +169,6 @@ No relevant documentation found after checking live sources.
 - The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. [6]
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
 - The manifest entry declaring the free-agent altitude, its five tools and its three operations. [8]
-- The named taskless-seat admission this role's existence depends on, whose membership `260921-ICR-L32` changed on the developer's 2026-09-24 ruling. [9]
-- The second reader of the same set, so the policy has one spelling. [10]
 - The frozen vocabulary extension that publishes the role and its operation. [11]
 - The shipped checks: free-agent shape, taskless admission, no altitude, and the manifest declaration. [12]
 

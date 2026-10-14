@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Binding UUID/reference validation and seven emitted variables remain.
-- This file now also owns per-launch exclusion and caller-filter merging.
+- This file owns the per-launch host exclusion record and provider-option construction. Claude alone receives the exact `mcp__agents-remember` disallowed-tools rule, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
 - Unknown harnesses have no verified exclusion; no user/folder configuration rewrite is authorized.
 
 ### Source and authority bounds

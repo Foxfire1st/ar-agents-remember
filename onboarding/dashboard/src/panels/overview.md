@@ -7,9 +7,9 @@
 
 This route contains reusable cockpit panels and focused reading and interaction surfaces. Its parent is the dashboard/src overview. The product bar offers Chats, Operations, Knowledge and File Viewer. Chats is the default; a Knowledge reader hash opens Knowledge. Operations, File Viewer, Knowledge and Chats have retained shell layers so switching destinations preserves their mounted state. Engine Room and other retained layouts are not additional product-bar destinations.
 
-The strategic owners include session-cockpit for the retained hosted-session Chats composition; current full-page native Chats belongs to cockpit/RoleChats outside panels; lifecycle-list and detail-panel for Operations navigation and task reading; engine-room for enclosure/process visualization; file-viewer, changeset and notes-reader for their respective readers; and sprint-graph for the optional execution graph. The intent reviewer and Knowledge reader have file cards under review/ and knowledge-reader/ but no separate route overview: this parent governs their composition. Native task-document chat lives under cockpit/document-chat/, outside this panels directory, and occupies the Operations right rail rather than another full-page Chats destination.
+No session-cockpit directory remains as a current owner. Current full-page native Chats belongs to `RoleChatsPane` in cockpit/RoleChats.tsx outside panels; lifecycle-list and detail-panel for Operations navigation and task reading; engine-room for enclosure/process visualization; file-viewer, changeset and notes-reader for their respective readers; and sprint-graph for the optional execution graph. The intent reviewer and Knowledge reader have file cards under review/ and knowledge-reader/ but no separate route overview: this parent governs their composition. Native task-document chat lives under cockpit/document-chat/, outside this panels directory, and occupies the Operations right rail rather than another full-page Chats destination.
 
-Panels present canonical task hierarchy, structural document-and-role seats, current occupants, source comparisons, knowledge and operational state. The inherited structural contract addresses a seat by document plus role; replacement changes its occupant. Spawn ancestry and lifecycle/session identifiers do not substitute for the task address. Detailed submission, authority, cleanup and session-state contracts belong to the data and session-cockpit owners.
+Panels present canonical task hierarchy, structural document-and-role seats, current occupants, source comparisons, knowledge and operational state. The inherited structural contract addresses a seat by document plus role; replacement changes its occupant. Spawn ancestry and lifecycle/session identifiers do not substitute for the task address. Native chat launch, submission and host-state authority belong to RoleChatsPane and document-chat with their retained backend ports; no removed session-cockpit owner is implied.
 
 Family-center member order follows the sidebar's served outline under the same stored order, while retaining per-revision content and a no-outline fallback. Currentness state marks keep their exact entry/state/side words with supplied reasons beside them outside disclosures. Selected one-sided statements and non-authored field rows retain the explicit absent/unreadable/recorded-empty distinctions in the main reading area; Technical details remains an identity/provenance owner.
 
@@ -28,7 +28,7 @@ Knowledge is a task-independent, read-only repository reader addressed by URL ha
 
 ### Operations task column
 
-LifecycleList owns the full left-column task tree, its priority words, completed folds and selection/keyboard reach; its head mounts AttentionQueue as a bell. The bounded attention layer overlays the tree without consuming its height and retains source-scoped open/dismiss/Clear all and accessible severity. rowState separates document truth from actual lifecycle reports and keeps secondary facts in the hover. ChatActivityIndicator now supplies only the pure session summary; the independent overdue-inbox action is PickupDismiss in LifecycleList, not the removed marker component. TaskGroupDisclosure composes the shared caret cell and respects held selected descendants. These presentation changes do not widen live-worktree admission, author task state or replace the shared session feed.
+LifecycleList owns the complete left task tree, priority words, completed folds and selection/keyboard reach; AttentionQueue overlays its height with source-scoped open/dismiss/Clear all and accessible severity. rowState separates document truth from reporting lifecycle state and keeps current task/lifecycle/progress/worktree facts in the hover. Removed ChatActivityIndicator and PickupDismiss are not current presentation/action owners. TaskGroupDisclosure retains its shared caret and held-selected-descendant policy. None of these presentation facts changes worktree admission or authors task state.
 
 Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form: one complete
 head followed by the objective as its first block, before Now or Steps, with omitted empty blocks,
@@ -46,13 +46,7 @@ The meaning-state join never changes the selected subject, primary change badge,
 
 ### Shell and shared interaction surfaces
 
-Session-cockpit owns the retained hosted-session chooser, rail, context bar, structured conversation, live actions, persistent PTY composition, keyboard/palette zones and optional inspector. It is not the current native full-page Chats shell. The inherited inspector policy is default closed and toggleable. Ended and unavailable-cleanup states must remain named rather than making an empty terminal look live. Agent notifier heartbeat vocabulary replaces the former supervisor wording.
-
-Terminal owns xterm/socket composition and preserves its mounted terminal and scrollback across a serving-boot reattach. Its boot-change effect delegates one explicit reattach opportunity to the connection owner. For controlled sessions, the structured conversation is the default; runner line-log content belongs to read-only terminal diagnostics. Legacy raw sessions retain their vendor TUI. Terminal is not the structured message renderer.
-
-SessionComposer owns the shared editor surface and effective keymap/profile wiring. Its submit hook branches explicitly between interaction answers and ordinary reliable draft submission; pop-back delegates to authoritative withdrawal. The inherited answer protocol binds to the hosted session's bridge epoch and interaction-response route and locks duplicate answers, without routing them through ordinary /submit. These transport details remain the data owner's responsibility.
-
-HighlightComposer sends text context through the shared reliable submission path. Its creation branch waits for the shared opener and readiness before delivery; accepted or queued delivery determines commit behavior. Rejection or ambiguity must not move active route/focus. Images and attachments remain unavailable rather than being conveyed through paste or filesystem conventions. The old direct leaf-chat branch and RailChat were retired; native DocumentChat instead reads canonical role-launch records and native host state. Its unavailable state and Retry must not pretend a session is live.
+The removed session-cockpit, hosted-session chooser/rail, context bar, terminal, composer, reliable submit/withdraw and keyboard/palette surfaces have no current panels owner. Native full-page Chats is RoleChatsPane; native task-document chat is cockpit/document-chat, addressed by canonical document and role-launch records. Those hosts retain their own unavailable, Retry, acceptance and delivery boundaries; panels do not manufacture readiness or permission from a summary.
 
 ### Operations and operational diagnostics
 
@@ -62,7 +56,7 @@ DetailPanel resolves task, lifecycle and series reader targets. TaskSubTaskRefNo
 
 The sprint execution graph is optional. CloseoutQueue mounts independently when no execution-graph view is supplied; this rendering support does not prove graph-less atomic task authoring is admitted, and displays the producer's service/source/problem/member projection, including invalid-empty repair actions. The browser does not reconstruct readiness or mutate the queue. Discarded-before-start audit rows retain reason, timestamp and proof fingerprint; discarded counts are displayed separately and do not count as completion.
 
-Hangar displays optional lifecycle-operation kind, status, phase and currentCommand only when projected. The command is CSS-ellipsized with its full value in title. Engine Room currently composes selected enclosure processes, ledger, gate, boot and diagnostics views. Source-lineage diagnostics are read-only; recovery remains a backend worktree operation. Retirement of provider presentation does not retire enclosure, ledger, gate or landing ownership. FlowTab/flowModels are static design drawings and prose, not runtime tool authority. Historical tool labels and the unknown-label humanization in eventSummary are a separate display seam.
+Hangar displays optional lifecycle-operation kind/status/phase/currentCommand only when projected; the command is ellipsized with full value in title. Engine Room composes selected enclosure processes, official ledger, boot and diagnostics without gate response. Source-lineage diagnostics are read-only, and recovery stays backend worktree-owned. Retirement of provider/gate presentation does not retire ledger/landing authority. FlowTab/flowModels are removed, not current design or runtime owners; eventSummary retains only its actual display seam.
 
 ### Intent reviewer reads and navigation
 
@@ -126,7 +120,7 @@ KnowledgeReader owns toolbar, independently scrolling tree/document/aside compos
 
 PathViews orders prose, invariant states, local/routed families, linked records and references last; directories use bounded summaries and paged subtrees, with without-proof and census views. Empty sections are omitted. TruthView renders record fields, invariant/family details, complete decisions using derived status, both link directions with unreadable links named, and timeline source states. History rows show effect and because: record targets navigate and requirements are named. Incoming history links identify the record the row concerns rather than inventing a history-row page. Reader parts link numbered markers in text nodes only; shared Markdown and referenceMarkers own headings/markers, and ReaderCode reuses FilePane. The inherited backend ownership assigns tree coverage to a code pass plus memory enumeration, with paths delegating tree listing rather than files enumerating directories.
 
-The session rail is sprint-qualified rather than a single global spine. `buildRailModel` materializes document-keyed sprint sections with each sprint’s role seats and assigned master groups; the normal rail hierarchy renders those sections and masters while keeping unattached and completed-unattached sessions in a separate group. This is session-rail ownership, not a claim that `FlowTab` obtains live data from a store.
+The native role-chat model selects canonical role occupants without buildRailModel or a hosted session rail. FlowTab is removed and supplies no current drawing/prose, live chat or store authority.
 
 ## Invariants And Boundaries
 
@@ -214,9 +208,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The production application route is owned by `App`. [45]
 - The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
-- The terminal panel owns the shared terminal surface. [48]
-- The shared composer surface is implemented by `SessionComposer`. [49]
-- Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. [50]
 - `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. [52]
 - `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. [53]
 - The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. [54]
@@ -279,7 +270,7 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The mounted case of the key walk on real data. [152]
 - The mounted cases of the reviewer between a selection and its answer. [153]
 - The notice draws nothing for a dataset review. [154]
-- Current ownership/control, without execution or runtime tool exposure inferred. [155] [156] [157] [158] [159]
+- Current ownership/control, without execution or runtime tool exposure inferred. [155] [156] [159]
 
 
 
@@ -319,9 +310,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Master change-set read includes leaves and carries published generation [184]
 - Collapse hook has one stored key set and toggle API [185]
 - Knowledge reads bind to address; reader shares records and responsive citation navigation [186]
-- Shared composer branches between interaction answers and ordinary draft submission [187]
-- FlowTab is static design composition, not a runtime store consumer [188]
-- Session rails materialize document-keyed sprint/role/master groups and keep unattached sessions separate; FlowTab is not their live-data owner. [189]
 
 - Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
 - Exact currentness mark words coexist with an open supplied-reason sibling. [165]
@@ -329,4 +317,5 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 
 - The task list head owns the attention bell and the actual row renderer. [190]
 - The bounded Popover/Dialog retains source-scoped queue actions. [191]
-- Pure row/tree facts and chat summary retain separate state owners. [192]
+
+- The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]

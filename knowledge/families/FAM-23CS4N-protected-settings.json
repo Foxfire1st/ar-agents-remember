@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The members jointly preserve the user-controlled installation boundary across code, state reporting and agent-launch behavior; no individual local guard or notice prevents both wrong-root mutations and a misleading recovery/launch contract."
+  },
+  "guarantee": "Settings mutation has two independent protections: repository tests/support resolve an account-default guard before mutation even while environment patches are cleared, and installation creation/migration leaves both file and folder closed. State reporting and shell-safe user edit/close instructions expose and preserve those boundaries without any product-authored user edit.",
+  "id": "FAM-23CS4N",
+  "members": [
+    "INV-9E86TC",
+    "INV-R4DZS7",
+    "INV-4GV8PF",
+    "INV-R4QNJW",
+    "INV-R34KP2"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "protected-settings",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "docs/reference",
+    "mcp/src/agents_remember/install",
+    "mcp/src/agents_remember/mcp/tools",
+    "mcp/src/agents_remember/models",
+    "mcp/tests",
+    "skills/c-13-install-and-onboard"
+  ],
+  "schema": "ar-family/v1",
+  "status": "accepted",
+  "title": "Guarded tests and closed installation settings"
+}

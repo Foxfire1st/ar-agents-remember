@@ -29,8 +29,9 @@ L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser rec
 
 ### Logic
 
-Task, expectation, pickup, and attention projections can expose `TaskDocumentRef` so the dashboard
-joins the same real sprint/master/leaf hierarchy used by routing. `TaskDocNode` remains the
+Retained task-document projections expose `TaskDocumentRef` so the dashboard
+joins the same real sprint/master/leaf hierarchy used by routing. Removed pickup and expectation
+analytics DTOs are not current structural-reference carriers. `TaskDocNode` remains the
 JSON-primary task view; lifecycle attachment is optional. Since 260815-DAG-L11 the sprint graph
 projection is leaf-segmented: `TaskExecutionNode` (kind `master` lump or `segment` + `leafIds`)
 and `TaskExecutionEndpointNode` (ref + optional segment-sampling `leafId`) mirror the persisted
@@ -77,7 +78,7 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-- Pickup and expectation analytics carry structural references. [1]
+- Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed. [1]
 - The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). [3]
 - Workspace projection is the schema authority consumed by generation. [4]
 

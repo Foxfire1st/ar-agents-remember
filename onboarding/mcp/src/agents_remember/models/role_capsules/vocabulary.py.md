@@ -90,7 +90,8 @@ No relevant documentation found after checking live sources.
 - The narrowing helpers that turn an untrusted string into a role or refuse it. [4]
 - The canonical authored metadata that must agree with these tuples. [5]
 - The settings registry kept in step with this vocabulary, so a published role is configurable. [6]
-- The free-agent shape the tenth role carries, and the exclusion list it must not be added to. [7]
+
+- The retained capsule role registry ends with bootstrap; the removed task-binding set supplies no current admission. [7]
 
 ### Cross-Repo References
 

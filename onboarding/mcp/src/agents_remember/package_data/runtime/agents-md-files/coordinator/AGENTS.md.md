@@ -4,10 +4,6 @@
 
 [overview.md](../../../../../../overview.md)
 
-## Current source contract evidence
-
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [10]
-
 ## Purpose
 
 This file is the package-owned template for the installed coordinator root
@@ -18,34 +14,9 @@ runtime package is installed.
 
 ### Logic
 
-The packaged coordinator copy carries the same sprint-local launcher contract as the canonical
-runtime source. For ordinary role-shaped work, free chat resolves the sprint and first leaf, compiles
-`templates/architect-brief.md`, and calls `dispatch_agent` once on the sprint document with role
-`architect`. It hands over after the exact brief is durably pinned, never calls the internal
-session primitive, and never becomes a global architect. The ensuing architect, orchestrator, and
-managers use plane-hosted structural authority within that sprint provenance. An explicit
-developer-declared task-seat takeover instead targets the named role at its canonical altitude.
+The packaged coordinator copy carries the canonical host launcher contract. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer names the sprint document to the Architect in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route.
 
-The template combines the checkout's lifecycle routing with coordinator
-runtime guidance. It now opens with a concise `Start Here — Route By Role`
-section: sessions route by role through the `l-01-agent-lifecycles` skill — a
-spawned agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message)
-follows its brief as its session start, while a developer-facing session is the
-free-chat launcher. Research-only asks stay inline; role-shaped work uses the canonical one-call
-architect dispatch instead of turning the launcher into a role seat. Caller kind is derived from
-process identity, and a plane authorization failure never falls back to ambient. An
-already-running session must stay
-aware of managed-repo boundaries so a turn or tool target that crosses from
-outside Agents Remember scope into a managed repository enters the architect
-lifecycle first. The detailed build-mode explanation lives in
-the lifecycle skill rather than being repeated in this coordinator entrypoint.
-It requires agents to enter the architect lifecycle and clear its plan gate before
-changing code, points agents to the sibling installed `system/`, `tasks/`, and
-`skills/` `AGENTS.md` files when those scopes become relevant, resolves active
-repository context with `c-08-ar-coordination-context-resolver` before trusting memory or task surfaces, obtains roots/actions through `context_packet` when configured, and reads provider facts from authority settings/provider operations rather than from the packet. Coordinator `system/*` files remain workspace defaults. It also routes
-important developer clarifications through
-`c-01-findings-capture` and requires
-verification against code reality before onboarding propagation through `c-05-create-or-update-onboarding-files` skill.
+The template combines coordinator guidance with role routing: product-started role agents follow their handover; the rest of its opening is for free chat. Managed-source work enters the Architect workflow before code changes, with existing plan and approval boundaries. It points to the sibling installed `system/`, `tasks/` and `skills/` instructions; resolves repository context before trusting memory/tasks; obtains roots/actions through context_packet without a provider argument, reads provider facts from authority settings/provider operations rather than from that packet, and keeps coordinator system/* workspace defaults; captures durable clarifications and verifies code reality before propagating onboarding.
 The context retrieval path is routed at the coordinator entrypoint: source work
 that relies on onboarding, providers, or repository source goes through
 `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent
@@ -108,11 +79,15 @@ No relevant external documentation found.
 
 This onboarding is backed by the source template itself.
 
-- The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work. [1]
+
+- The template separates role handovers from free-chat work, which writes sprint prose and starts an Architect through `role_start` without a document reference or brief. [1]
+
 - The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. [2]
 - The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. [3]
 - The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. [4]
+
 - The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured. [5]
+
 - Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. [6]
 - The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. [7]
 - Branch/worktree approval boundaries and memory-layer authority remain listed in the template. [8]
@@ -123,3 +98,7 @@ This onboarding is backed by the source template itself.
 No sibling repository evidence is needed for this package template.
 
 No meaningful cross-repo references found.
+
+## Preserved incoming L109 source witness
+
+- Historical incoming L109 source evidence: Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [10]

@@ -60,31 +60,17 @@
         }
       ]
     },
-    "3": {
-      "note": "The response-contract convention this envelope mirrors (camelCase fields, strict extras).",
+    "4": {
+      "note": "Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
-            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
+            "blob": "31f34dadebf6c89b987bcc33fb85dd72d7281f94",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
             "locator": {
               "kind": "symbol",
-              "name": "StrictResponseModel"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
-            "content": "sha256:97a355f06bc816f40ec3e6d30faf87c55a9cec8e6da60eb216254b9c65165c90",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
+              "name": "Event"
+            }
           },
           "kind": "code"
         }

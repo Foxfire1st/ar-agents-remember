@@ -438,7 +438,7 @@
       ]
     },
     "27": {
-      "note": "The initial uncovered trace and row selection share the actual counted card change before separate-item settlement.",
+      "note": "The initial uncovered trace and row selection share the actual counted card change before separate-item settlement.\n\nThe initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item.\n\nAnchor: `mcp/src/agents_remember/application/knowledge_worklist/unexplained.py`",
       "targets": [
         {
           "anchor": {

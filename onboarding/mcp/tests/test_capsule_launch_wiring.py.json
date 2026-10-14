@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d06da38b8c8bab3c1acb0c255bdbe4f69b522e3c",
+            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
             "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
             "locator": {
               "kind": "symbol",
@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
+            "blob": "63f5e668b0bb97f9e9f77e637ad885ba95d43a30",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 21,
+              "end": 18,
               "kind": "line_range",
-              "start": 21
+              "start": 18
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -175,39 +175,15 @@
       ]
     },
     "18": {
-      "note": "The launch points this module drives, and the modules whose wiring it pins.",
+      "note": "The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3074cefd8040f8bf4cec5b2cb3bafac7dce94a45",
-            "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
+            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "content": "sha256:f928cbbfb2240d0932d09326ec13526415cea995f68a076fe7bffb7c85464756",
             "locator": {
               "kind": "symbol",
-              "name": "spawn_agent_session_tool"
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
-            "content": "sha256:160a90a082c8c63a6d5ab9a778cd8e4b4ccf67d9f48295e8173882ff617dd393",
-            "locator": {
-              "kind": "symbol",
-              "name": "_open_terminal_response"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
+              "name": "LaunchCapsuleRequest"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -215,8 +191,8 @@
         },
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "content": "sha256:c50c7ecd23847fd84872c128c914ad5909f82a26145ba3ff51ece2f0aff6d330",
             "locator": {
               "kind": "symbol",
               "name": "compile_launch_capsule"

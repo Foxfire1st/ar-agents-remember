@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba6ed9b5f830cc758ade244a573ce03c2ca8eb29",
+            "blob": "e3937980214959ecc1e7f07ca0e39bbdf9e91037",
             "content": "sha256:3eea504bf20b41c4729d3cce40c23851d3ae95b5017e6b0a1a8ca385eb3357c8",
             "locator": {
               "end": 5,
@@ -38,19 +38,18 @@
         }
       ]
     },
-    "3": {
-      "note": "The scoped WebTUI skin it loads third (260715-FEUI-L1).\n\nAnchor: \"base.css\"",
+    "4": {
+      "note": "The current entry imports index.css and tokens.css only; its StrictMode/MotionConfig, effects flag and development timeline cleanup remain. [4]\n\nAnchor: Current entry",
       "targets": [
         {
           "anchor": {
-            "blob": "4226c7769b30f0ae479e448cb3a0259f36223b45",
-            "content": "sha256:8d8d4f288ed3866f4aafe4498f1befda128a7dd406f1f7094a0017a309dcec4f",
+            "blob": "bfa67cd00c85c1ea3eda8dec05ee8089f3eae10e",
+            "content": "sha256:8e11b3afa5c3337c69478ebc4c252c0b638d4d187973788b3ee80017cc4ec41c",
             "locator": {
-              "end": 12,
+              "end": 40,
               "kind": "line_range",
-              "start": 12
-            },
-            "path": "dashboard/src/styles/webtui.css"
+              "start": 1
+            }
           },
           "kind": "code"
         }

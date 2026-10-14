@@ -1,5 +1,12 @@
 # dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md
 
+## Current A8 source account
+
+The current matrix lists lifecycle, worktree and session states, not session/TUI. It crosses scenario steps and reachable states with the forced UI-state columns; blank cells become missing-view findings, with a scenario-blocking blank Blocker/High. This describes the template, not a claim that owned-methods has deleted every provider reference or that a disposable harness was run.
+
+- The current template enumerates session rather than session/TUI while retaining the workflow-by-forced-state matrix and missing-cell output rule. \[2] [2]
+
+
 ## Current operative account — MIK-R112
 
 The matrix uses workflow steps and states the running system can actually reach, together with forced UI states. The changed source removes the provider-state row enumeration and provider_status observation; retained worktree_status/server_info and live DOM evidence decide reachability. A blank settled cell remains a finding, never proof a retired provider view should return. The conductor remains findings-only and this template grants no mutation.

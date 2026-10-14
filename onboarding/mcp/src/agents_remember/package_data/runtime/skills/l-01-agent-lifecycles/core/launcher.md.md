@@ -6,10 +6,44 @@
 
 ## Purpose
 
+Describe the developer-facing chat without a role. It answers research inline and hands managed work to a distinct host agent; it never becomes the Architect.
+
+## Code Commentary
+
+The current source has no spawn-role or plane identity selector. The launcher has no binding, worktree or lifecycle. It resolves the sprint and writes the developer’s request into its canonical document before one `role_start` call. An Architect start carries neither a brief nor a document reference; the developer is told where the request lives and speaks with the agent in the dashboard. Launch settings supply the choices. `role_message` from this unbound chat is refused, and a refused start never falls back to another tool.
+
+An explicit developer-named role and task selects the bounded takeover route through the same `role_start`; no incumbent is privately replaced and no exact-id attachment is improvised. After a start the launcher stops local role work. The launcher remains outside `roles/`, because it is not a role seat.
+
+The earlier `dispatch_agent`, queued-brief, plane-identity and conversation-switch account is historical only. It supplies no current call, restored route or independent acceptance. Retained corpus composition metadata is not proof of what a native launched agent receives.
+
+## Evidence
+
+- An unbound free chat answers research inline without becoming a role. [1]
+- Managed work is written into the sprint before one parentless Architect start without a brief or document reference. [2]
+- Only an explicitly developer-named role and task takes the bounded takeover route. [3]
+- No other start or message route and no local work after start is permitted. [4]
+- The launcher remains outside roles because it is not a role seat. [5]
+
+
+
+- The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set. [6]
+
+- The source assertions exclude launcher from roles, retain ambient metadata and separately check the two native routing conditions; this is not an executed PASS. [7]
+
+## Historical account — not operative
+
+# core/launcher.md
+
+### Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+### Purpose
+
 The **ambient launcher** block: routing condition 3's own obligations, authored here so the role
 registry holds only real roles and no file under `roles/` describes this mode.
 
-## Code Commentary
+### Code Commentary
 
 ### Logic
 
@@ -51,7 +85,7 @@ would silently create a role that does not exist.
 
 None recorded.
 
-## Evidence
+### Evidence
 
 ### Docs References
 
@@ -62,13 +96,13 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- What the launcher is, and the ruling that it is a launcher rather than a role seat. [1]
-- The one-call contract for ordinary role-shaped work. [2]
-- The bounded task-seat-takeover exception. [3]
-- The launcher's prohibition list. [4]
-- The structural reason this block is authored outside `roles/`. [5]
-- The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file. [6]
-- The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. [7]
+- What the launcher is, and the ruling that it is a launcher rather than a role seat. \[1]
+- The one-call contract for ordinary role-shaped work. \[2]
+- The bounded task-seat-takeover exception. \[3]
+- The launcher's prohibition list. \[4]
+- The structural reason this block is authored outside `roles/`. \[5]
+- The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file. \[6]
+- The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. \[7]
 
 ### Cross-Repo References
 

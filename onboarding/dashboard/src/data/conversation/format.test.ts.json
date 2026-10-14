@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afd3eaecec4dc7f066a3b6666c682a1a181267f4",
+            "blob": "d3fc6df56ecea839775099db8ed6284163e39eba",
             "content": "sha256:98c0cbef1b0cdaf405004d83eac2d64d2e7bc1b532c32f4dec65e4fb4fb691ff",
             "locator": {
               "kind": "symbol",
@@ -16,6 +16,23 @@
             "path": "dashboard/src/data/conversation/format.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Three current source cases assert duration strings, large-value humanization and em-dash for NaN/negative values; this is no execution result. [2]\n\nAnchor: Current assertion body",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5b840f9b84680a9b8dd27bb3f49f76ca119da6c",
+            "content": "sha256:e00a3d60bb6744040e618ca4434abe5adbfc918568f4a05df1eb3d5d331b446b",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
         }
       ]
     }

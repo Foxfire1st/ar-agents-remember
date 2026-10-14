@@ -40,13 +40,21 @@ Converted changed-source cards and governing overviews need current content-boun
 
 Explicit report-only admission writes its report/upstream message and claims none of the normal pass complete.
 
+
+
+## Foundation carrier and writer admission
+
+The Curator seat opens only on a leaf task document. Before any task exists, Bootstrap carries foundation read/report work and an instructed session runs knowledge-bootstrap under the Curator rules without opening a taskless Curator seat or fabricating an enclosure. This deliberately supersedes the earlier taskless-seat admission account, not the foundation writer itself. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+
+- Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. \[12] [13]
+
 ## Conventions
 
 Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
-Only admitted memory/onboarding is writable as knowledge; task-report and scratch custody remain the separate admitted evidence/working-file destinations. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. Operator harness, model, effort, serviceTier, launchArgs, sessionCommands and promptKeywords remain settings, outside Curator authority. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer decisions remain in the own chat.
+Only admitted memory/onboarding is writable as knowledge; task-report and scratch custody remain the separate admitted evidence/working-file destinations. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. The current role names harness, model, effort and serviceTier as settings outside Curator authority. The earlier launchArgs/sessionCommands/promptKeywords inventory is historical and is not a current role command surface. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer questions go to the parent when one exists, and only a parentless session uses its own chat. The former own-chat-only account is historical, not the current route.
 
 ## Working folders and reports
 

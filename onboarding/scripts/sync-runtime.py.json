@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The five explicit canonical-to-package-data runtime targets, with the per-target ignore set declared beside the tree it applies to.",
+      "note": "The four retained canonical-to-package-data runtime targets; no product-owned Eve target remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:15c2f817c9b18f21bd8f1e07b6be5df663868bed3fe799ddd08a53ef13166115",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
+            "content": "sha256:5efbfb3083d10851ac6be03d408d2938bb2df9a29cb46ac6ac4f6727f26b365e",
             "locator": {
               "kind": "file"
             }
@@ -44,7 +44,7 @@
         },
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
             "content": "sha256:eab4e6ccfbbbdde1df5a04f6d38e6e9a866ca10a5e13ad1a98326ca09f57f5f7",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
             "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
             "locator": {
               "kind": "symbol",
@@ -94,12 +94,12 @@
       ]
     },
     "4": {
-      "note": "The per-target ignore set threads into both the digest walk and the copy, so comparison and copy cannot disagree.",
+      "note": "Digest walk and copy use the same shared local-noise predicate; the per-target ignore API is removed.\n\nAnchor: `ignored`, `file_digests`, `copy_ignore`",
       "targets": [
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:590a880f193081e587afef9cbf3fd34a34fd7c4a35ce35f59cdddddd713d9617",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
+            "content": "sha256:2fcacc4f97cdfadc844e2453c48527e7cbc310d63301afaa87e461e1a828531d",
             "locator": {
               "kind": "symbol",
               "name": "ignored"
@@ -109,8 +109,8 @@
         },
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:4532bca86b9fe672ec0cf496055fc9970ffe9956bbba4a4bcd96c4a5d7df7ae2",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
+            "content": "sha256:65edcfe4cae46615ed85a9eb0d6c66516004f47b7aa7c23f3b08463ac1ed2a60",
             "locator": {
               "kind": "symbol",
               "name": "file_digests"
@@ -120,8 +120,8 @@
         },
         {
           "anchor": {
-            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
-            "content": "sha256:dda61e3ec1dda2d41e77b227dc0b3dfaa8ca7e86cb1513da8daf36fb492733cc",
+            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
+            "content": "sha256:948870a343a2dd92fde2799d324c66e9782b3412adc81cf61d5e18905e87c7cb",
             "locator": {
               "kind": "symbol",
               "name": "copy_ignore"

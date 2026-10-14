@@ -9,7 +9,7 @@
 
 The current composition is enclosure-only. Provider stacks, gauges, clone arcs, provider-specific block/dropout overlays, fault/reindex effects, and provider boot checklist rows have left the rendered surface. Provider-shaped projection fields, fixtures, helper definitions, and old comments can remain without restoring those visuals. The historical all-eight-prototype-modes account therefore describes the former design, not current visual parity.
 
-The map preserves the distinction between observed, derived, planned, missing, stale, and otherwise unresolved facts. Provisional pre-contract enclosures must communicate their block rather than impersonate a live enclosure. Ordinary affordances and canvas recovery labels describe availability; the diagnostics gate responder is a separate interactive boundary.
+The map preserves the distinction between observed, derived, planned, missing, stale, and otherwise unresolved facts. Provisional pre-contract enclosures must communicate their block rather than impersonate a live enclosure. Ordinary affordances and canvas recovery labels describe availability; no diagnostics gate responder remains. Retained action rows keep their actual source-owned availability/recovery boundaries.
 
 ## Hot Path Summary
 
@@ -112,7 +112,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Extra fields forbidden, kind/state string fields, optional lineage [22]
 - Timeline freshness differs from canvas; abandon/conflict dispositions [23]
 - Source-lineage diagnostic and responder admission [24]
-- Responder records decisions and uses inbox/adapter routing [25]
 - Motion gate, scoped context pause and cleanup [26]
 - Current sibling overlay contains surge and attention [27]
 - EngineRoom conditionally mounted, contrary to inherited keep-alive account [28]

@@ -6,10 +6,15 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current install attempts only old-watcher stop and continues on failed stop.
 - Current assets include docs and leftover/unused-provider reporting.
+- The explicit upgrade copies the complete settings bytes and metadata to an exclusively created user file before removing the old file. R137 then closes file permissions to0444 and its folder to0555; permission bits are deliberately normalized, not preserved unchanged. Closure OSError leaves the completed move and a permissionsNote/protection report. Dry-run performs no transfer or closure. This read does not run an upgrade or edit the user file.
 
 ### Superseded inventory
 
 - Pre-repair card claim: Card promises provider dependency installs and stop/start/restart recovery. This is superseded archival wording, not a current prescription.
+
+- Whole-file exclusive transfer precedes old-file removal; permission closure and its OSError report follow it. [12]
+
+- File0444/folder0555 closure is attempted, and protection reporting reads modes with exact commands. [13]
 
 ### Source and authority bounds
 
@@ -227,7 +232,6 @@ fields the entry point reads cannot drift apart.
 - The installed `skills/` tree is authored source, not the compiler's input. [4]
 - The packaged application mirror is installed into `<coordination_root>/runtime/eve-agent` with machine-local trees preserved rather than pruned. [5]
 - An already-resolved selection is what the installer consumes; only the configuration entry point reads the ambient environment. [6]
-- The launch path probes the packaged `runtime/eve-agent` path before the checkout's `eve_runtime/` and honours `AR_EVE_RUNTIME_ROOT` first; the generator writes the differently-named packaged mirror `runtime/eve-runtime`, which is why that probe path stays deliberately unpopulated in a checkout. [7]
 - Provider settings generation derives lifecycle settings from MCP authority. [8]
 - `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. [9]
 - Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. [10]

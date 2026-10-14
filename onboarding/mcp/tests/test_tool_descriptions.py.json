@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5785fe99995918f350b856ef0f3b1c4bfa282576",
-        "content": "sha256:0525ea807857b4d77c285ae9326db6eeb70c633872e3a8ee7fcf66fe67d47747",
+        "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
+        "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
           "name": "ToolDescriptionBoundsTests.test_tool_descriptions_hold_bounds_and_name_where_the_rest_is"
         }
       },
-      "facet": "Checks actual registered descriptions, roster equality, interim/retained length pins, the ordinary 600-character ceiling and the existence of the final longer-explanation pointer.",
-      "id": "PRF-605PY3",
+      "facet": "Checks actual registered descriptions and roster equality, interim-owner transition length pins, the ordinary 600-character ceiling and the existence of the final longer-explanation pointer. The removed retained dispatch-description pin is not asserted by this current test; this is source qualification, not a fresh executed PASS.",
+      "id": "PRF-2CDAAX",
       "invariant": "INV-4HS3E5",
       "origin": {
-        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
-        "leaf": "260928-MIK-L112"
+        "handoffEntry": "L113-curator-description-current-proof-qualified-replacement",
+        "leaf": "260928-MIK-L113"
       }
     },
     {
       "anchor": {
-        "blob": "5785fe99995918f350b856ef0f3b1c4bfa282576",
+        "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
         "content": "sha256:4d9e31c0efc4df117116615d822bd651db0a2eafbb615bd8099b0a2afbd87479",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5785fe99995918f350b856ef0f3b1c4bfa282576",
-        "content": "sha256:0525ea807857b4d77c285ae9326db6eeb70c633872e3a8ee7fcf66fe67d47747",
+        "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
+        "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
           "name": "ToolDescriptionBoundsTests.test_tool_descriptions_hold_bounds_and_name_where_the_rest_is"
@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
             "content": "sha256:0140a757b49a50d2a7ac9d162e6f1ae07e94c52a4e303d830452e86840c7472f",
             "locator": {
-              "end": 168,
+              "end": 162,
               "kind": "line_range",
-              "start": 112
+              "start": 106
             }
           },
           "kind": "test"
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
             "content": "sha256:5bccb0b1177b2567dde4198f4d99af0b07b54955838020456e93103bf905c8e6",
             "locator": {
-              "end": 262,
+              "end": 249,
               "kind": "line_range",
-              "start": 229
+              "start": 216
             }
           },
           "kind": "test"
@@ -113,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "blob": "5dbcf520c55bed97b58361a2b72bf112db3bd2fe",
             "content": "sha256:cf40aaf5ab05442b11d417c481a33b2dd9934d17d3d5e2f2923ecfd12aa35aa5",
             "locator": {
-              "end": 178,
+              "end": 172,
               "kind": "line_range",
-              "start": 171
+              "start": 165
             }
           },
           "kind": "test"

@@ -22,11 +22,10 @@
     {
       "anchor": {
         "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
-        "content": "sha256:f40be49911055e5237f437842411700f1943663454b754a712e621c82d9a75f0",
+        "content": "sha256:2dc86c36bc38733f0e2ac8553e5f083054aa2458024906ca11b90629d9e7698e",
         "locator": {
-          "end": 23,
-          "kind": "line_range",
-          "start": 21
+          "kind": "symbol",
+          "name": "KNOWN_PASEO_RUNTIME_FIELDS"
         }
       },
       "id": "RLZ-D7X8TF",

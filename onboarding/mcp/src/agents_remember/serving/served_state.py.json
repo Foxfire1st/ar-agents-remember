@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Serving-only fields extend the observer model and remain outside its persisted shape.",
+      "note": "Anchor: Only optional servingBuild extends the observer model.",
       "targets": [
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
+            "content": "sha256:85b9333537d5022672c28abcff27aa3aa53b098c7b4708352224df04787dceee",
             "locator": {
-              "kind": "symbol",
-              "name": "ServedWorkspaceProjection"
+              "end": 46,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"
@@ -19,15 +20,16 @@
       ]
     },
     "2": {
-      "note": "One assembly point preserves both omission and null semantics, including the observer-health key's absent-versus-null rule.",
+      "note": "Anchor: Omit absent build facts without constructing obsolete health/heartbeat payloads.",
       "targets": [
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
+            "content": "sha256:53531995e5480c8afcd6b45e3d0b165c30357f5f67acf13af6576b1df0c9679d",
             "locator": {
-              "kind": "symbol",
-              "name": "served_state_tail"
+              "end": 62,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -35,52 +37,19 @@
       ]
     },
     "3": {
-      "note": "The tail's exact key list, so assembly and contract cannot drift apart silently.",
+      "note": "Anchor: The exact current one-field tail vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:591c47b45ceb9399b98ae3e26d585c245020884edea4abff262bf3edff98dc6b",
+            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
+            "content": "sha256:0f215cf8694175753c6c8a9ed1e3955a897ecd64739c54a9dd65d2284807bf4f",
             "locator": {
-              "kind": "symbol",
-              "name": "SERVED_TAIL_FIELDS"
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The declared wire form of the fourth key.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
-            "content": "sha256:651db9ef1c066933a60bc74f05a55c7e2b7bda2a81081be02c79dcddd51c9ad9",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalObserverHealthPayload"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_observer_health.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The served-tail cases that drive this assembly through the production route handler and stream generator.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9ab9296342bff27ca4a8a88c04d0854b3ad7bc0d",
-            "content": "sha256:a2fe0aa4feeeb6823b8f7b2769b9d473e4df165d0829a51e8dfc9a30dc48c86e",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalObserverHealthServedTailTests"
-            },
-            "path": "mcp/tests/test_terminal_observer_health.py"
-          },
-          "kind": "test"
         }
       ]
     }

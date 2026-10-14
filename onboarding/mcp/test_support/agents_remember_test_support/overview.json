@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:33603f5d74bd4c4b49f002e836ad7bdb61ed11e2825ee9f42ef2ca83e4fc111c",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,12 @@
         },
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:e41dfe5fffb83217b949234fbc1670769971bf42db24934a01cabec64b0c0795",
             "locator": {
-              "end": 121,
+              "end": 110,
               "kind": "line_range",
-              "start": 85
+              "start": 74
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:bfb1b1a33e7318fac9f2713268904642fff57d513d1144dbd9e93705d2ca1728",
             "locator": {
-              "end": 89,
+              "end": 78,
               "kind": "line_range",
-              "start": 60
+              "start": 49
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
@@ -120,62 +120,6 @@
         }
       ]
     },
-    "13": {
-      "note": "The relay census covers reviewed observation authority, route handlers and wire submissions, with declared limits.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
-            "content": "sha256:8bc313d459cf9138c6518f45a02f1b3f68b8aad701df843175e431d491477f92",
-            "locator": {
-              "kind": "symbol",
-              "name": "measure_relay"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
-            "content": "sha256:f3225044152774e787d9673bd1b96dadd5b11f240cc4220ff1b665598039b67c",
-            "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "41922a8ab2a4c783b3ab2cf541e34d2d7ee530ae",
-            "content": "sha256:7ef23861e4551039c388600222fc2a2fa35c62f3b78fe694a0ddef0a46f680a1",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/completion_relay.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "36e0741040143fd772354f575e189fa9baeda7aa",
-            "content": "sha256:b13d58a1e9fbdc708ccf86f903cb543fce8ceb4b5bc0297860c28ca7201f9a4c",
-            "locator": {
-              "end": 398,
-              "kind": "line_range",
-              "start": 350
-            },
-            "path": "mcp/tests/test_completion_relay_single_owner.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "14": {
       "note": "Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates.",
       "targets": [
@@ -230,12 +174,12 @@
         },
         {
           "anchor": {
-            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
             "content": "sha256:8a1ec3a16709d860bee5ff85a7629913bfac5f3932ac24c1d429ebf2bf530e81",
             "locator": {
-              "end": 782,
+              "end": 826,
               "kind": "line_range",
-              "start": 766
+              "start": 810
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
@@ -244,44 +188,30 @@
       ]
     },
     "15": {
-      "note": "Observer-health output preserves required nulls and bounded counter refinements in the dashboard contract.",
+      "note": "Current projection generator derives serialized TypeScript/schema contracts from Pydantic declarations, including the servingBuild-only served extension; removed observer-health payloads are not current required fields.\n\nAnchor: lines 1-63",
       "targets": [
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
-            "content": "sha256:a2102606958f6917b63ecf4e51e9528fb6454f6ec65dabc7c6a0d32dd91975b3",
+            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
+            "content": "sha256:85b9333537d5022672c28abcff27aa3aa53b098c7b4708352224df04787dceee",
             "locator": {
-              "end": 66,
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
+            "content": "sha256:4388bee93dd5c81fc37ab6e5bc631c55ab7b0a8b27d3673eb563f801f8c96751",
+            "locator": {
+              "end": 63,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
-            "content": "sha256:a3107ed429865c0eaf25642269d97994ba2a0304ccb6f9a3d1a0b424439f89cc",
-            "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 130
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_observer_health.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:817ff95ebc72def85465e6f6d47b2bb0a2a0dae7242ec8c8f2211b7d5c50315d",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 93
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
           },
           "kind": "code"
         }
@@ -292,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "blob": "7e1a9fe9e6408743b43fff94eb66dff41560582e",
             "content": "sha256:0f32e088d04addeb10f51efa2a18fe84430eb08a1bf3afc9bf2c6dff1a3d4b31",
             "locator": {
               "end": 69,
@@ -305,7 +235,7 @@
         },
         {
           "anchor": {
-            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "blob": "7e1a9fe9e6408743b43fff94eb66dff41560582e",
             "content": "sha256:61675ef8d759e1e5e956a285a61215789cf95098ba051424fac96f78796ccaff",
             "locator": {
               "end": 165,
@@ -354,12 +284,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
             "content": "sha256:a6fdf020a130643ded458b7c7f1476a3750e8faedfe9301d241584f1451ac500",
             "locator": {
-              "end": 65,
+              "end": 64,
               "kind": "line_range",
-              "start": 51
+              "start": 50
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -367,12 +297,12 @@
         },
         {
           "anchor": {
-            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
             "content": "sha256:0a43c8d5259c19788d88e03b08769ef39af3456bb44248728aab0fcd8e3e7dc0",
             "locator": {
-              "end": 227,
+              "end": 226,
               "kind": "line_range",
-              "start": 208
+              "start": 207
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -385,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:b795483dcf9bb49865ff686f69efa2318d85e3234557d8d92113cc557c35d91f",
             "locator": {
               "kind": "symbol",
@@ -433,7 +363,7 @@
         },
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:7cf14af466c8dd63a6871322dca207c6861aed9732bbf169a9a85172dac6f1bc",
             "locator": {
               "end": 19,
@@ -446,12 +376,12 @@
         },
         {
           "anchor": {
-            "blob": "986be09143e040425369766ac784a16e577f181b",
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
             "content": "sha256:f72234ce3e65ff630303d30de11de6a1110c3dc749f07bd3f6c165160128aef9",
             "locator": {
-              "end": 227,
+              "end": 226,
               "kind": "line_range",
-              "start": 217
+              "start": 216
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -476,7 +406,7 @@
         },
         {
           "anchor": {
-            "blob": "8c3141aab431a6f65e7a46d4d209513a3bed4709",
+            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
               "end": 146,
@@ -610,12 +540,12 @@
         },
         {
           "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:7dcd84bec869f8693513e96d5c17d40848bb9b2fedb0e88049a832eee8b11b9b",
             "locator": {
-              "end": 89,
+              "end": 78,
               "kind": "line_range",
-              "start": 86
+              "start": 75
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },

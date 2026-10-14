@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c20cabbbf6f30ed5cb7483397bf175b4de13d99f",
+            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
             "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
             "locator": {
               "end": 82,
@@ -335,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
             "content": "sha256:bab90421ecbc4d29e1531dc6bfdb63fdeb29501bb42094964614d6f639be991d",
             "locator": {
-              "end": 1002,
+              "end": 1014,
               "kind": "line_range",
-              "start": 919
+              "start": 931
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -371,12 +371,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
             "content": "sha256:d3442e6ec15ac0a8224a0cb2fea1ce92ac3d81c8f62236f6bc90238a10335b4a",
             "locator": {
-              "end": 73,
+              "end": 64,
               "kind": "line_range",
-              "start": 68
+              "start": 59
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -392,24 +392,6 @@
               "start": 163
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "Responder records decisions and uses inbox/adapter routing\n\nAnchor: notifyAgentResponse, recordGateDecision",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
-            "content": "sha256:d8834778d6296838075e97f1722bd2e7b38e28f53fa148c0835b3695f6f966de",
-            "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 465
-            },
-            "path": "dashboard/src/panels/GateResponder.tsx"
           },
           "kind": "code"
         }
@@ -469,12 +451,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:4fd079a0a7750da80249c1ea20769e65714a652b6e4bdbd862a01b45162c4e2c",
             "locator": {
-              "end": 793,
+              "end": 754,
               "kind": "line_range",
-              "start": 786
+              "start": 747
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -548,12 +530,12 @@
         },
         {
           "anchor": {
-            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
+            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
             "content": "sha256:daf2ff19d8889ea99f9c36af2cdf9b8fd94d80e9be49204697efed0a92aafd44",
             "locator": {
-              "end": 78,
+              "end": 71,
               "kind": "line_range",
-              "start": 70
+              "start": 63
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -584,7 +566,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
             "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
             "locator": {
               "kind": "symbol",
@@ -627,12 +609,12 @@
         },
         {
           "anchor": {
-            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
+            "blob": "769360798335525af876426016e9fadc32f697e9",
             "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
             "locator": {
-              "end": 69,
+              "end": 63,
               "kind": "line_range",
-              "start": 69
+              "start": 63
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },
@@ -645,7 +627,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",

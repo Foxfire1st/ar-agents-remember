@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
-        "content": "sha256:70902db67beaf081a0f37395941df2aa610d35d3a4cbcd79ddd2cbbbdd8f10d5",
+        "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+        "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
             "locator": {
               "end": 6,
@@ -33,37 +33,6 @@
               "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The second reader of the same set, so the policy has one spelling.\n\nAnchor: `TASKLESS_SEAT_ROLES`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
-            "content": "sha256:bf7f7424891ee2b010757ae204d2a7993ec2c4bf7beb45ddc5287d8ea662ba27",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
-            "content": "sha256:413b2465840123b844f40be9e612e0bcabb386cfc37fc1ee4ebffa1fd854d21e",
-            "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 160
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py"
           },
           "kind": "code"
         }
@@ -86,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -127,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:a5214dd1938fe30437c0057d86cc3c15326a7d5adb849bd940bbf06dc60c098f",
             "locator": {
               "kind": "symbol",
@@ -139,7 +108,7 @@
         },
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
             "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
             "locator": {
               "kind": "symbol",
@@ -169,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f5e06015b413b25d9850b5cbec4666d649c85f",
+            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
             "content": "sha256:9a353fca0a318b38ea5c755fec2f90ba068ffcb9698f91fac30ff0815a5ab974",
             "locator": {
               "kind": "symbol",
@@ -228,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
             "locator": {
               "end": 129,
@@ -255,12 +224,29 @@
         }
       ]
     },
+    "17": {
+      "note": "The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. [17]\n\nAnchor: Current read surface and prohibited mutations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+            "content": "sha256:3bcf1aa6a0cf11d1aca9e62fc716944735838d36b9e9c3555dfdc16214dc3031",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call.\n\nAnchor: \"not a task seat: your brief is not a brief — you are started by a call\"",
       "targets": [
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -273,7 +259,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -291,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -330,7 +316,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -366,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -379,7 +365,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -410,7 +396,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:b1276d29fa6221147599f9ed1c13f4db489fcbea26b78eec82cad2b909098091",
             "locator": {
               "end": 59,
@@ -423,7 +409,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:3c7ed1a44ded21ad10cf8b9b5b98170c8c201f9eb385b325f85be10730182f48",
             "locator": {
               "end": 86,
@@ -436,7 +422,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:91f2c2c0861c239ad04888e7c48e94a9a4b935f6694087b0cc8d26961b0b32ea",
             "locator": {
               "end": 31,
@@ -475,7 +461,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:b09236398b19751ace1b0623aa98a5631176b6aad54ecd1a815b6a9086a8dbe4",
             "locator": {
               "end": 32,
@@ -488,7 +474,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:e00098052d2e842ec1bb6b7fefc62c595578f2d04b56384ca064bec7e8a03953",
             "locator": {
               "end": 104,
@@ -501,7 +487,7 @@
         },
         {
           "anchor": {
-            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
             "content": "sha256:40efe14b0741c4e08a0e72d714fe8ca1cb6ba8158ac4ad414b15f5d375eee261",
             "locator": {
               "end": 70,
@@ -519,7 +505,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c85a825a9eaf185f545a137ef6e6c627ac52bd2",
+            "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
             "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
             "locator": {
               "end": 1,
@@ -537,7 +523,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
             "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
             "locator": {
               "end": 510,
@@ -545,23 +531,6 @@
               "start": 510
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The named taskless-seat admission this role's existence depends on, whose membership `260921-ICR-L32` changed on the developer's 2026-09-24 ruling.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
-            "locator": {
-              "kind": "symbol",
-              "name": "TASKLESS_SEAT_ROLES"
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
           },
           "kind": "code"
         }

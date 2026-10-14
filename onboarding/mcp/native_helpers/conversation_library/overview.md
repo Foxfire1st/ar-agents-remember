@@ -50,27 +50,26 @@ Pi finds the requested session id in a fresh scope list, opens the resulting ses
 
 Both reads window the full native sequence by 1-based ordinal, return the full sequence's item count, and sign identity/count/tail information. Claude maps message or transcript records; Pi maps branch entries by native entry type.
 
-Claude resume resolution looks up session information in the requested directory. Pi re-lists the scope, finds the session file, opens it, and returns its file and header-derived working directory. The Python ports reject a returned conversation id different from the requested id and mint server-private resume targets: Claude uses `--resume`, Pi uses `--session`. Claude sub-agent transcripts have no native resume target. The standing resume contract requires identity re-proof. The request schema requires `expectedIdentityDigest`, but these TypeScript handlers do not compare it; native existence lookup and Python id comparison must not be described as a helper digest re-proof.
+Claude resume resolution looks up session information in the requested directory. Pi re-lists the scope, finds the session file, opens it, and returns its file and header-derived working directory. The removed Python ports no longer reject IDs or mint product resume targets. The retained Node handlers return their scope-bound session information only; Claude sub-agent transcripts have no native resume target. The standing resume intent requires identity re-proof, but expectedIdentityDigest is not compared by these TypeScript handlers. Native existence lookup is not a helper digest re-proof, and no deleted Python comparison or resume-orchestration guarantee is current.
 
 ## Invariants And Boundaries
 
 Repository package and lock data remain the standing dependency authority. Cache, OpenSrc, global-module, `NODE_PATH`, and `npx` fallback discovery are forbidden by this overview's intent. The host selects the repository entry and package working directory, and the observer uses standard ESM resolution; those facts alone do not prove that ambient resolution is impossible in every installation.
 
-Locked dependency presence must not promote a capability. The Python gate decides support through its live contract probe; later operations can still fail. Observed versions remain informational evidence.
+Locked dependency presence must not promote a capability. The retained Node helper/protocol only declares its own read/normalization behavior; removed Python serving/conversation gates and open orchestration are not current integration owners. Observed versions remain informational evidence, not a live product capability.
 
 The caller's authorized scope must not be widened to another checkout's history. Claude explicitly excludes worktrees from SDK listing. Sub-agent access uses the supplied scope's plain and realpath-derived project directories.
 
 Unknown request fields and fields belonging to another operation cannot cross the parsed helper seam. Optional `agentId` preserves ordinary read callers' request shape; the Claude handler consumes it, while the Pi handler does not route agent transcripts.
 
-The standing privacy intent is that raw process error detail never crosses the public boundary. Raw handler exception text and unsuccessful-process stderr are not public authority. The shared handler mapper supplies fixed copy for the errors constructed by these entries. This does not imply that every Python spawn error hides operating-system detail: the host's spawn-error message includes the caught `OSError` text.
+The standing privacy intent is that raw process error detail never crosses the public boundary. Raw handler exception text and unsuccessful-process stderr are not public authority. The shared handler mapper supplies fixed copy for the errors constructed by these entries. This does not restore a deleted Python spawn-error boundary or certify external process/dependency behavior; only the retained Node mapper and actual handler usage support current helper claims.
 
 Sub-agent identity remains evidence-bound. Unreadable metadata permits an agent-id-only row; malformed metadata fails closed. `agentsEnumerated` distinguishes an enumerating helper from one that supplies no enumeration marker over an empty catalog. It does not prove that every candidate directory was readable.
 
 | Nearby Thing | Belongs Instead In |
 | --- | --- |
-| Normalized Python conversation/page/control DTOs | `mcp/src/agents_remember/serving/conversation/`. |
-| Active-session projector behavior | `mcp/src/agents_remember/serving/conversation/active/` and focused vendor services. |
-| Python-side port normalization, gates, and open orchestration | `mcp/src/agents_remember/serving/conversation/library/`. |
+| Removed normalized Python conversation/page/control DTOs | No current owner: serving/conversation is deleted; retained Node helper data is not a replacement product DTO/port. |
+| Removed Python active-session/projector/library integration | No current owner; the retained Node helper does not restore these deleted routes. |
 | npm cache, OpenSrc, global module, `NODE_PATH`, or `npx` resolution | Nowhere; these are explicitly forbidden. |
 
 No neighboring workspace repository is read or updated by the inspected helper entries. Third-party dependency behavior is not established by package names alone.
@@ -126,7 +125,5 @@ Historical verification statement, preserved without renewing its claim:
 - Package identity, engine, scripts, direct pins, lock root, and strict compiler configuration are declared locally. [4]
 - Claude implements list, sub-agent directory candidates, metadata handling, transcript parsing, ordinal reads, and native session-info resolution. [5]
 - Pi implements scope listing, session-id lookup, branch reads, typed missing/empty failures, record mapping, and file/header resolution. [6]
-- The helper capability gate calls list after preflight and selects support on successful execution rather than version equality. [7]
 
 - The helper protocol declares exact helper pins, the 1 MiB bound, operation field validation, fixed handler-error copy, and shared serve/probe/sign/page primitives; handshake versions are informational and blank lines are skipped. [1]
-- The Python host runs handshake and operation through the repository helper entry, and the Claude/Pi ports consume that seam and mint private resume targets. [3]

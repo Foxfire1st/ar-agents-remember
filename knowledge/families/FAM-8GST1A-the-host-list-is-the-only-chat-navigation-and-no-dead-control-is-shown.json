@@ -27,10 +27,9 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/cockpit",
-    "dashboard/src/panels",
     "mcp/src/agents_remember/cli",
     "mcp/src/agents_remember/package_data/paseo_plugin/client"
   ],

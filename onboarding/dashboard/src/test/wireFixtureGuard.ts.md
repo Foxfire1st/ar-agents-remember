@@ -188,8 +188,6 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
 - Same, for the coordination-notes API client. [18]
-- Gap 3 with a proven cost: `HarnessInfo` is declared inline (id/name/detected only) beside the client-side `HarnessCatalogErrorKind`/`HarnessCatalogRead`, with no marker — and fixtures adding a `control` field to that row lived unguarded until this leaf removed them. [19]
-- The other proven cost: `WithdrawalResultWire` declares no `bridgeEpoch` (the sibling `SubmissionStatusBatchWire` does), and the fixture that gave it one was invisible to the guard. [20]
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
 
 ### Cross-Repo References

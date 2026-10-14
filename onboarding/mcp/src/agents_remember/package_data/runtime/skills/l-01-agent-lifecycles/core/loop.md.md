@@ -4,6 +4,25 @@
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current operative account — MIK-R113
+
+The loop still separates owner, builder and independent Reviewer, and preserves opt-in review, settings-owned rounds and the sealed monotone finding set. The current list of review labels no longer advertises hosted review; removing that label neither resets findings nor creates another review lane. Native, plan, integration, route, lens, replacement, resumed, bootstrap, diagnostic, delta and final labels stay subject to the same rule.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- The loop still separates owner, builder and independent Reviewer, and preserves opt-in review, settings-owned rounds and the sealed monotone finding set. The current list of review labels no longer advertises hosted review; removing that label neither resets findings nor creates another review lane. Native, plan, integration, route, lens, replacement, resumed, bootstrap, diagnostic, delta and final labels stay subject to the same rule. [1]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
 ## Purpose
 
 The **three-party loop doctrine** — its single home. OWNER → BUILDER → REVIEWER → owner at every
@@ -80,4 +99,6 @@ No meaningful cross-repo references found.
 
 ## Current Contract Evidence
 
-- Current review-budget and preserved ownership obligations are defined by these source instructions. [1]
+- Current review-budget and preserved ownership obligations are defined by these source instructions. \[1]
+
+</details>

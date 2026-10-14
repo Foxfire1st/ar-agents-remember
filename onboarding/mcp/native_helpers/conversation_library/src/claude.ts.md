@@ -86,7 +86,6 @@ ready-by-contract, so this entry's handshake no longer fails closed on a version
 drift — the observed versions are informational and the `list`/`read` operation is the gate).
 
 - The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. [1]
-- The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. [2]
 
 ### Cross-Repo References
 

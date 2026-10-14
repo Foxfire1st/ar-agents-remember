@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/acceptance.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts. [1]\n\nAnchor: source extent 1–24",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:00302694781280b8459044cdaf73071f6ef8184eb4415254abd4e43b87adacf5",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each seat has its own artifact and distinct validator. [2]\n\nAnchor: source extent 27–42",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Acceptance is per owned stable ID and version with complete rationale/citations/evidence. [3]\n\nAnchor: source extent 44–77",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Requirement revisions and formal delivery attempts have separate immutable lineage. [4]\n\nAnchor: source extent 79–116",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stable-contract or expiry evidence promotion is independent of requirement acceptance. [5]\n\nAnchor: source extent 126–142",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
+            "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

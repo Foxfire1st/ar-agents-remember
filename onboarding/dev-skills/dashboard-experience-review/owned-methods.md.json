@@ -37,6 +37,21 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The retained analyses are cognitive walkthrough, missing-view matrix, observability, motion and information-scent review. Method5 explicitly records that the dashboard embeds no interactive TUI and no longer performs a terminal-control review. The retained personas and severity rules are review doctrine, not a new executed dashboard assessment.\n\nAnchor: `dev-skills/dashboard-experience-review/owned-methods.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19976eeee3cb61288bf2f4fa316b85c7ba35ace9",
+            "content": "sha256:2b6d743d5c98af3b7e34ca7f56e451fc22e0387a9ed26c199611815d67ae058d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

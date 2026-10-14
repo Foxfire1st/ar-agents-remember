@@ -21,11 +21,7 @@ finalizer response is a separate terminal contract: it reports only the edge
 proof, cleanup result, task-document reconciliation, and blockers relevant to
 finalization.
 
-Completion-seat cleanup is additive to finalization truth. Default-on auto-close reports
-`autoClosedSeats`, `autoCloseDeferredSeats`, and `autoCloseFailedSeats`; the explicit settings
-opt-out retains `autoLandedSeats` for the historical landed/archive path. All four lists remain
-empty for dry runs or disabled edges and do not replace the finalizer state, blocker, cleanup, or
-task-document evidence.
+The response no longer declares `autoClosedSeats`, `autoCloseDeferredSeats`, `autoCloseFailedSeats`, or `autoLandedSeats`. It retains state, blockers, cleanup, task updates, bounded projection effects, task archive, agent archive, and optional atomic-series activation/release fields. Their declaration does not establish execution results or settings behavior.
 
 ## Agent archive in the finalize response (MIK-R76)
 
@@ -43,9 +39,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 - Strict tool response base class is defined here. [1]
 - Public response registry maps `lifecycle_finalize_task` to this model. [2]
-- The finalizer response model is the current wire authority; deleted representative-payload tests provide no current pass. [3]
-- `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. [4]
-- `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. [5]
+The deleted representative-payload cases are historical and provide no current pass.
+- Historical auto-land field/population witness; the current model declares no completion-seat list. [4]
+- Historical retirement-setting witness for that removed response field, not a current setting or execution claim. [5]
 
 ## Series-Contract Notes
 
@@ -58,6 +54,10 @@ Finalize responses now carry bounded typed task-document projection effects so q
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+## Current optional atomic-series declaration
+
+The current class is at lines18-51 and imports `AtomicSeriesActivationFact` and `AtomicSeriesActivationRelease`. It declares both optional activation/release fields together. The retained two-key conformance method reads the registry/class fields and asserts their declaring sets match; this account does not claim a newly run test. Earlier type names, line counts and emitter excerpts in the dated D53 section below remain historical source-epoch prose.
+
 ## 260918-TSIP-L4 — The Two Atomic-Series Projections Declared (`D53`)
 
 `LifecycleFinalizeTaskResponse` now declares the atomic-series terminal projection it was
@@ -87,3 +87,5 @@ Both are optional here for that reason. Pinned by
 `mcp/tests/test_tool_response_conformance.py`, whose
 `test_the_two_atomic_series_keys_are_declared_together` asserts the declaring set is exactly
 `{"lifecycle_finalize_task"}`.
+
+- The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]

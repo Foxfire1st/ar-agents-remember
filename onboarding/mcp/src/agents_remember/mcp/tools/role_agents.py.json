@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
-        "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
+        "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
+        "content": "sha256:a1f02b392b8b038b84cfd76e62be672f007d1193f087109a9fe2df9fedf0cf9f",
         "locator": {
           "end": 24,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+        "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
         "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+        "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
         "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
         "locator": {
           "kind": "symbol",
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+            "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
             "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
@@ -79,11 +79,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72c7c234e769df6aa47951b9debc1f24ae5ddb96",
+            "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
             "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
             "locator": {
               "kind": "symbol",
               "name": "role_message_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native retirement delegates to the existing receipt owner and wraps its answer under retire_child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f143490955e1922392c7f7f5657a917c791c69c9",
+            "content": "sha256:5d655a14898cf0a17601e04f41b2500ae81322783101de99d653992ad208a9c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_child_payload"
             }
           },
           "kind": "code"

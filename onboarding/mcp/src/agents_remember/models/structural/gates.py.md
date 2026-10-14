@@ -6,44 +6,18 @@
 
 ## Purpose
 
-Holds structural delegated-gate request/response models and the isolated internal exact-correlation
-gate response models. This is the behavior-preserving destination of the former flat
-`models/gates.py` card, with the public/internal identity boundary made explicit.
+Re-exports the retained gate vocabulary used by control-plane records from kernel.primitives.gate_vocab. This20-line compatibility module owns no delegated-gate request/response classes, public/internal identity DTOs, caller authorization or recording operation.
 
 ## Code Commentary
 
-### Logic
+Its only exports are GATE_KINDS, GateKind, GateState and coerce_gate_kind. The primitive module is the vocabulary owner; re-exporting those names does not restore the removed model-facing session/gate tools.
 
-Structural requests name a target role/document relation and decision content. Internal response
-models retain lifecycle/gate ids only for application-to-plane calls. Public summaries and responses
-replace those ids with task-document and role identity.
+### Historical delegated-gate DTO account (superseded by R113)
 
-### Conventions
-
-The `Internal*` prefix is a boundary marker: those models must never be registered as public agent
-MCP results.
-
-### Invariants And Boundaries
-
-- Agent-facing schemas never expose lifecycle or gate ids.
-- `StructuralLifecycleGateRequest`/`StructuralGateDecisionRequest` carry an optional `caller`
-  (`DeclaredCaller`) used only when the process has no plane-injected seat; the structural
-  authorization validates the declared role/document before any decision is recorded (L16-R3).
-- Internal correlation stays available for the application service to complete the transaction.
-- Strict response models reject accidental mixed public/internal payloads.
-
-### Todos
-
-None.
+The former relocated models/gates.py implementation separated structural requests from internal exact-correlation responses and used Internal* as a nonpublic marker. R113 removes that request/response implementation from this carrier. Its declared-caller/decision-recording account is historical, not authorization performed by this module.
 
 ## Evidence
 
-### Docs References
+- Only gate-vocabulary re-exports remain; no delegated-gate request/response classes or recording owner. [1]
 
-
-### Repo-Internal References
-
-- Structural requests are separated from internal exact-id responses. [1]
-- Public list summaries expose structural identity. [2]
-
-### Cross-Repo References
+- The former public gate-summary DTO is no longer owned here; the current carrier only exports primitive vocabulary. [2]

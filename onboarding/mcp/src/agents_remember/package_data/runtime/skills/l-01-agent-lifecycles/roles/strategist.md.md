@@ -46,6 +46,14 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 Read route indexes, overviews and source in the worktrees; use read_ar_files to name governing cards and states. The no-task-mutation boundary has the explicit task_doc.attach_master exception on the strategist's own draft; ruling/adoption remain with their owners.
 
 
+
+
+## Current role boundary
+
+The strategist source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach and therefore has no adopted lifecycle; lifecycle_finalize_task and other owning-seat machinery remain prohibited. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
+
+- The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[12] [12]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

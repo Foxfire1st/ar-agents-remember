@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Structural requests are separated from internal exact-id responses.",
+      "note": "Only gate-vocabulary re-exports remain; no delegated-gate request/response classes or recording owner.\n\nAnchor: retained re-exports",
       "targets": [
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
-            "content": "sha256:0903ef848545f690f79f111c4c3cc8f5807e9c3922f52639c3c32891cd88926e",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:52753d92bdd833e2f16198e51ca0ceacd058630f4022c9640d5d7d93f26790b8",
             "locator": {
-              "kind": "symbol",
-              "name": "StructuralLifecycleGateRequest"
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -19,15 +20,16 @@
       ]
     },
     "2": {
-      "note": "Public list summaries expose structural identity.",
+      "note": "The former public gate-summary DTO is no longer owned here; the current carrier only exports primitive vocabulary.\n\nAnchor: vocabulary exports",
       "targets": [
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
-            "content": "sha256:c82a0c2ac32d1bc74ca54783a6c3ade60bd72fa2515311edfd2329fd0aedffdf",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:84842b5b0f38f95f4d8a10dcd5cfa2f1755daa262d3f7a5a6edeab0245b627c2",
             "locator": {
-              "kind": "symbol",
-              "name": "StructuralGateSummary"
+              "end": 20,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"

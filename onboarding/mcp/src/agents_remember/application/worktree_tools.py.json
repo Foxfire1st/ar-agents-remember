@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+        "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
-        "content": "sha256:21def3d74b6c05eae7aa4024ad6730b8c2ed3a0b8d18d934f418cb60f93feccf",
+        "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+        "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
           "name": "worktree_integrate_tool"
@@ -71,36 +71,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
             "locator": {
-              "end": 1066,
+              "end": 1018,
               "kind": "line_range",
-              "start": 1066
+              "start": 1018
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
             "locator": {
-              "end": 1069,
+              "end": 1021,
               "kind": "line_range",
-              "start": 1069
+              "start": 1021
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
             "locator": {
-              "end": 529,
+              "end": 512,
               "kind": "line_range",
-              "start": 529
+              "start": 512
             }
           },
           "kind": "code"
@@ -175,7 +175,7 @@
         },
         {
           "anchor": {
-            "blob": "7248797421f5761513df5b86aead77124a2a859f",
+            "blob": "6f52bb676e8c7e65458034849cd35c6b49b09172",
             "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
             "locator": {
               "kind": "symbol",
@@ -187,92 +187,12 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
             "locator": {
               "kind": "symbol",
               "name": "provider_setup_config"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "`land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a30526c88d4c9cd3e076491b7bbe23155381351",
-            "content": "sha256:4ea7c4375a9fa852abe3fffc19d369751a9641fafaa589ff5e07a9622f8550b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "land_seats_for_task"
-            },
-            "path": "mcp/src/agents_remember/serving/landing.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Manual retire eligibility/role policy remains owned by `retire_policy.py`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2b19659b95e284597c630b44a0f59b6344c261cb",
-            "content": "sha256:0167fb91d6522e5a0b088f3c8f63284148d7c1c9e9e0786f8d991d429f2f7ea6",
-            "locator": {
-              "kind": "symbol",
-              "name": "check_retire_authority"
-            },
-            "path": "mcp/src/agents_remember/serving/retire_policy.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2b19659b95e284597c630b44a0f59b6344c261cb",
-            "content": "sha256:98cd4349be5fd0eb711a30cca7f0f422a4cc17678acc0c9ff6de84569df0e51f",
-            "locator": {
-              "kind": "symbol",
-              "name": "RetirePolicyError"
-            },
-            "path": "mcp/src/agents_remember/serving/retire_policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "`log_landed_event`, called once per landed entry after a successful auto-land.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
-            "content": "sha256:b8aa351028cb60279b48fd58f9333872cb196b0a4ab56d993e5852497316d453",
-            "locator": {
-              "kind": "symbol",
-              "name": "log_landed_event"
-            },
-            "path": "mcp/src/agents_remember/serving/seat_events.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "`TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
-            "content": "sha256:55daa48731d544c451294839190cc76f0b5c3c8b446e90d5b35cf10ba039e3a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalCatalog"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
           },
           "kind": "code"
         }
@@ -300,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -316,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -492,7 +412,7 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
             "content": "sha256:b05086aeb8d2c5c4ecbae68c73eb201ea9752fe2024d179121a394a049afe0b4",
             "locator": {
               "kind": "symbol",
@@ -508,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -520,7 +440,7 @@
         },
         {
           "anchor": {
-            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
             "content": "sha256:f2d48e829c48e0115cac7a0d635247156399f2224432ba170608f7bb0f1157d9",
             "locator": {
               "kind": "symbol",
@@ -532,12 +452,12 @@
         },
         {
           "anchor": {
-            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
             "content": "sha256:7589d51a4d6e9c7a67f55144cbe1b6a4b471362ce4ec250739a63f8227bced88",
             "locator": {
-              "end": 143,
+              "end": 150,
               "kind": "line_range",
-              "start": 136
+              "start": 143
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -579,7 +499,7 @@
         },
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "blob": "7b421d01108b8c585e6a8a446e1723d20cc99d06",
             "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
             "locator": {
               "kind": "symbol",

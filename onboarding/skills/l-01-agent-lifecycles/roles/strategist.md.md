@@ -14,13 +14,21 @@ This account controls the named changed seams; contradictory earlier card wordin
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
 
+
+
+## Current role boundary
+
+The strategist source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach and therefore has no adopted lifecycle; lifecycle_finalize_task and other owning-seat machinery remain prohibited. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
+
+- The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[2] [2]
+
 ## Governing Overview
 
 [l-01 role overview](overview.md)
 
 ## Purpose
 
-This source defines the strategist as a target-only role. Its spawning architect is the ordinary
+Historical removed hosting account (not a current callable): this source previously defined the strategist as a target-only role. Its spawning architect was the ordinary
 plane-hosted `dispatch_agent` caller; an identity-free developer launcher may target the strategist
 only for an explicit task-seat takeover. The strategist has no dispatch caller authority and
 therefore cannot select ambient mode or recover a plane refusal by launching another seat. Its
@@ -30,15 +38,15 @@ role-table dispatch/tools rows are structural documentation, not settings keys.
 
 ### Logic
 
-The architect submits the strategist's canonical task document, role, and complete brief through
+Historical removed hosting account (not a current launch procedure): the architect submitted the strategist's canonical task document, role, and complete brief through
 the one public dispatch transaction. Creation, readiness, initial-brief pinning, and rollback are
 private control-plane steps, not a strategist-visible multi-call workflow.
 
 ### Invariants And Boundaries
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-outputs. The strategist remains target-only, and dispatch proof remains exact-session and
-fail-closed.
+outputs. The earlier target-only/dispatch-proof account is retained as historical exact-session and
+fail-closed doctrine; it grants no current dispatch_agent capability.
 
 
 ## CCR-R12@v5 Transaction Boundary

@@ -54,18 +54,34 @@
         }
       ]
     },
-    "4": {
-      "note": "The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`).",
+    "5": {
+      "note": "The current DEV router retains the six listed prefixes and index, without pty-bench or flows branches. [5]",
       "targets": [
         {
           "anchor": {
-            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
-            "content": "sha256:fb9f28081fde3453e56f90a3b450258f870f768b49a4a0488866cea5e9e8a15e",
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:e4227fa03a7aa9b3acec21774a08c1b118b164947b0977c6b1ffe7e514e34a45",
             "locator": {
-              "kind": "symbol",
-              "name": "initialModel"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The App source keeps the dev router behind import.meta.env.DEV, a lazy import and the /dev/ pathname gate. [6]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:af5e1bfe5b6dbc691b67f13030f7ac0bb9ef71bda5f802fed7436e6acb5f1038",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 5
             },
-            "path": "dashboard/src/panels/FlowTab.tsx"
+            "path": "dashboard/src/App.tsx"
           },
           "kind": "code"
         }

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 306,
+          "end": 307,
           "kind": "line_range",
-          "start": 301
+          "start": 302
         }
       },
       "id": "RLZ-DMZR23",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
         "locator": {
-          "end": 285,
+          "end": 286,
           "kind": "line_range",
-          "start": 279
+          "start": 280
         }
       },
       "id": "RLZ-RM75GK",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:27ca657a0b1eca2fa0d6d092fd366221e2200287963218ec6bb2a35dc1a03f93",
         "locator": {
-          "end": 284,
+          "end": 285,
           "kind": "line_range",
-          "start": 283
+          "start": 284
         }
       },
       "id": "RLZ-S7NJK5",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:a91135f339e2a13f11d377b503c86f1766afbcc1b176fa3fb23c795397cd3936",
         "locator": {
-          "end": 413,
+          "end": 414,
           "kind": "line_range",
-          "start": 359
+          "start": 360
         }
       },
       "id": "RLZ-X9AC7D",
@@ -79,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 306,
+          "end": 307,
           "kind": "line_range",
-          "start": 301
+          "start": 302
         }
       },
       "id": "RLZ-YZB03G",
@@ -98,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "1efeab2e880db5af756232e34d2016be026ca8d6",
+        "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
         "content": "sha256:66eda4457cd57ba1179e3f908870e4c44ea39441a5d5ab45605aad53f399ede4",
         "locator": {
           "end": 41,
@@ -143,6 +143,32 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current closeout instruction relays the commit ask through parent role_message or parentless chat, waits for approval outside the relay turn and preserves refusal for stored gates while no product component raises or decides them. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "content": "sha256:c84ae8fa91aba02e61396efe0cc9f8be89fff047057e7ed9f090a7186f1de683",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60d63734a0c1c9069c81623632fc774c2e6e125",
+            "content": "sha256:c84ae8fa91aba02e61396efe0cc9f8be89fff047057e7ed9f090a7186f1de683",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }

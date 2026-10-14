@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "02b856c5abc15a186564c83888ec1016bd161179",
-        "content": "sha256:ef649fbdcf67961ba5bccd75c6b25d32135ff1e0fe1b5e6b80f96550d18acb28",
+        "blob": "a2601c1651a7802bb5667d6a1e3ab7805c5fff59",
+        "content": "sha256:70720c5564fb8241910252dec905d1ec988b73fc08f8b09e21f6ed3d3716db72",
         "locator": {
           "kind": "symbol",
           "name": "summarizeEvent"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+        "blob": "a2601c1651a7802bb5667d6a1e3ab7805c5fff59",
         "content": "sha256:fe55ae947b3a6fa962f00b29ba3e007c2b1a331d5ff9136f442fee3e8a425c32",
         "locator": {
           "kind": "symbol",

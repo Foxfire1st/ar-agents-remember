@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "blob": "b967c7e758ed50c05ed177e1eca3ae5771f9e0eb",
             "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
             "locator": {
               "kind": "symbol",
@@ -216,31 +216,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "blob": "a72d91d8fc1a7048c39f3cd85885826c0f14c12a",
             "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
             "locator": {
-              "end": 240,
+              "end": 90,
               "kind": "line_range",
-              "start": 240
+              "start": 90
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The shared chat-routed gate responder rendered by diagnostics.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
-            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
-            "locator": {
-              "kind": "symbol",
-              "name": "GateResponder"
-            },
-            "path": "dashboard/src/panels/GateResponder.tsx"
           },
           "kind": "code"
         }

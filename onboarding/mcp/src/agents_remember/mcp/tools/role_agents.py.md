@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Builds single-start, leaf-set-start and role-message payloads at the shared response-model/token boundary.
+Builds single-start, leaf-set-start, role-message and native seat-retirement payloads at the shared response-model/token boundary.
 
 ## Code Commentary
 
@@ -18,7 +18,11 @@ A held result supplies its complete mapping as the explicit `answer` override, b
 
 `role_start_set_payload` forwards to the one Manager-owned set entry and crosses `_tool_payload` once under its own operation. A set has three seats, so it supplies no invented single target role to the event context. Each single-role/message response completes inside its own target-role context before that context is reset.
 
+retire_child_payload calls the existing retire_native_seat owner with the typed request and optional environment override, then wraps its answer under retire_child. It introduces no second retirement store or caller authority.
+
 ## Evidence
 
 - The start builder brackets its producer and response choke with role context and resets that context afterward. [1]
 - Message completion retains the addressed-role context through the choke, with a held-answer override and reset afterward. [2]
+
+- Native retirement delegates to the existing receipt owner and wraps its answer under retire_child. [3]

@@ -1,36 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving",
   "references": {
-    "10": {
-      "note": "The one workspace rule and the selection that follows it.\n\nAnchor: `session_workspace`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
-            "locator": {
-              "kind": "symbol",
-              "name": "selection_for_workspace"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 174
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "100": {
       "note": "The bounds of a selection and the size of the route's thread pool.",
       "targets": [
@@ -243,23 +213,6 @@
         }
       ]
     },
-    "11": {
-      "note": "The runner's own agreement check, which makes the rule product-enforced rather than test-enforced.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
-            "content": "sha256:84abd36051d3c8cb2592a6830ff38d2cbf1356738395662af08da59970c039d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_runner_config"
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "110": {
       "note": "App registers three intent handlers plus separate summary, tree and reader ports before static delivery.\n\nAnchor: create_app",
       "targets": [
@@ -295,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:59ecca5d68601df173a3a4225ea044607992f1974d97a744b91ab94bdc097bec",
             "locator": {
               "kind": "symbol",
@@ -307,7 +260,7 @@
         },
         {
           "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
             "locator": {
               "kind": "symbol",
@@ -320,27 +273,14 @@
       ]
     },
     "112": {
-      "note": "Observation and archive recovery share a completion-relative loop; prime failure is contained.\n\nAnchor: `_terminal_observation_loop`, `_prime_terminal_observation`",
+      "note": "Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
-            "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
+            "content": "sha256:911cef06cba034eeae1aeb5a7c53bf4a913633546f55a119a22932e493086b23",
             "locator": {
-              "kind": "symbol",
-              "name": "_terminal_observation_loop"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
-            "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_prime_terminal_observation"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -353,12 +293,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
             "content": "sha256:affd16e2445914b0ee785578704afe0977c5d0ec9dbf98b0953294c1f6b52171",
             "locator": {
-              "end": 389,
+              "end": 379,
               "kind": "line_range",
-              "start": 291
+              "start": 281
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -371,12 +311,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
             "content": "sha256:77a550afa34aa26a377a733bf40e6b7c2d6986544288eab3291886c5a4391857",
             "locator": {
-              "end": 471,
+              "end": 461,
               "kind": "line_range",
-              "start": 411
+              "start": 401
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -397,95 +337,6 @@
               "start": 244
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "116": {
-      "note": "Encoded argument is checked before spawn argv; null capsule parses as absent.\n\nAnchor: control_runner_command; _optional_capsule_delivery",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
-            "content": "sha256:ac389d2ac60d414d1d168d2af69b5651cc9eb4ecb5ffdd600f271499382b9a0c",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 96
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "117": {
-      "note": "Non-null Codex delivery on another harness is refused by the factory.\n\nAnchor: _require_capsule_channel",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
-            "content": "sha256:95fa551122577507ce0bf6072f303b47c024cc675341cc9642afd2ea26a82843",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "118": {
-      "note": "Taskless role skips structural validation only after supplied references resolve.\n\nAnchor: resolve_task_binding; _binding_refusal",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
-            "content": "sha256:0c95107203e0767cf392528e1481d07a49270ca0041322de8f64b65d2c492da1",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 94
-            },
-            "path": "mcp/src/agents_remember/serving/task_binding.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "119": {
-      "note": "Dashboard open selects before capsule resolution and constructs default-backend launch.\n\nAnchor: _open_terminal_response",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
-            "content": "sha256:e0fa046c05c559eb9e1d82b32204272b43195d49e2d68ccfd7c4db7ea7ad31b1",
-            "locator": {
-              "end": 309,
-              "kind": "line_range",
-              "start": 239
-            },
-            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The two channels that exist, named as the only two.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:8d181cd28ebd2913419f37d834ed2e5426acb300d9d6fb6bac05e6b62eb4eb8d",
-            "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_CARRIER_HARNESSES"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
           "kind": "code"
         }
@@ -526,140 +377,6 @@
         }
       ]
     },
-    "122": {
-      "note": "Current retirement authority includes curator and structural reviewer exceptions.\n\nAnchor: check_retire_authority",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2b19659b95e284597c630b44a0f59b6344c261cb",
-            "content": "sha256:0167fb91d6522e5a0b088f3c8f63284148d7c1c9e9e0786f8d991d429f2f7ea6",
-            "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 36
-            },
-            "path": "mcp/src/agents_remember/serving/retire_policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "123": {
-      "note": "State-signal posting persists/marks before delivery, and shared action guards unmarked evidence.\n\nAnchor: _post_owner_signal; _state_signal_awaits_marker",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
-            "content": "sha256:d7ada318b660fbdfac9de1553b162c9554376c94cdeb292257244046a337c952",
-            "locator": {
-              "end": 206,
-              "kind": "line_range",
-              "start": 184
-            },
-            "path": "mcp/src/agents_remember/serving/owner_signals.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
-            "content": "sha256:d1842fd4008fca06c0c25d582b399ddee1c994ee3fcc34a787bcacd2108f1ad9",
-            "locator": {
-              "end": 145,
-              "kind": "line_range",
-              "start": 98
-            },
-            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "124": {
-      "note": "Only state-signal rows may drain without an attempt clock; other boundary predicates remain required.\n\nAnchor: _boundary_follows_last_attempt; evaluate_boundary_drain_findings",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
-            "content": "sha256:07b8f4c82e30abd0358e292d979a8449d364cbfc4f9f110743f047faa0c73cc7",
-            "locator": {
-              "end": 498,
-              "kind": "line_range",
-              "start": 440
-            },
-            "path": "mcp/src/agents_remember/serving/state_signals.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "125": {
-      "note": "Authority owns order while shared-lock ledger owns rows and eviction.\n\nAnchor: module ownership; make_room",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
-            "content": "sha256:5aa61b3efd3956b5ab79fdde91357e478b884c8f550a4fcd55c1103293661cbc",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "59e993908182aa745800e5205730dd6480edc16d",
-            "content": "sha256:b8d2be7095695622cb3ee540791c9a60e63102f9f77946566bcd6cbd85944a12",
-            "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 320
-            },
-            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "126": {
-      "note": "Conversation authorization resolves local workspace identity and refuses non-loopback peers.\n\nAnchor: LocalOperatorAuthorizationResolver",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "929e17bcc3d9f1e8d94ce1eed9ecfba647520c93",
-            "content": "sha256:8cbdb209761be938161e4cfe3363b79f612528416d2b06cf10355324fa4bcf08",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 71
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/authorization.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "127": {
-      "note": "Library reopen declares legacy to preserve exact vendor identity.\n\nAnchor: LIBRARY_REOPEN_LEGACY_REASON",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
-            "content": "sha256:e76c87988cf8b65581197aeebee0836fbbc9ee7be88bf56958787bef266ef69a",
-            "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 113
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "128": {
       "note": "Host ensure is start-only, with observation, lock, and outcome receipt.\n\nAnchor: ensure_host",
       "targets": [
@@ -679,245 +396,16 @@
       ]
     },
     "13": {
-      "note": "The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies.",
+      "note": "Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal.\n\nAnchor: `mcp/src/agents_remember/application/role_capsules/launch.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "content": "sha256:1c7719574696d357cb8e8ee5eb6a7c74f961ecec3ac8cea8615bd1fd750b9aab",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_launch_capsule"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:f16a829e3f81bb42b19c7fc4fd329ea0c03841548d5f4476abf13e34d676a3cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_compile_eve_task"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The opener's two carrier readers, and the defensive refusal beside them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
-            "content": "sha256:8cc2b852da109234944c9ecb62f1c68f777f05346781b9536dde5295588d1428",
-            "locator": {
-              "kind": "symbol",
-              "name": "_codex_capsule_delivery"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
-            "content": "sha256:638994ea9901d41f89caaf1b82facb7ae68a39b16a042e516836e176f79ac6e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_eve_capsule_env"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
-            "content": "sha256:06cbd87dc2c5c7e2582190d6192a41a1e16be96e1b47120154f64f7278940b3a",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_terminal_session"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
-            "content": "sha256:118a3d89bfad25b6492bae14dd522a582ca0d700c944302f103fd79dfdebe974",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_capsule_channel"
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
-            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_harness_protocol_adapter"
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
-            "content": "sha256:9ca90260ef63fc9656ef2dffc48f5f9f2fc63656a87247cc7d3132f755b3d1b6",
-            "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 110
-            },
-            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
-            "content": "sha256:ea60cb40eb13c58721fd67eaab4dcc1537ceeca0a55004f8761512b34f86408f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain"
-            },
-            "path": "mcp/tests/test_capsule_launch_wiring.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The declared legacy exclusion, with its reason.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
-            "content": "sha256:228d4da7030d7cfb30f7abd4610932afca8590683a8a4993d082926adb869eea",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIBRARY_REOPEN_LEGACY_REASON"
-            },
-            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
-            "content": "sha256:95087f358b1ee7c78e6d453fd4f9327cec8d6171b2b443cf1811f4f0829586b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt"
-            },
-            "path": "mcp/tests/test_capsule_launch_wiring.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
-            "content": "sha256:e63878f1d8d84c3eb1c8dae92b740660a0be1589c72f3fecc5825b6954d92a25",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt"
-            },
-            "path": "mcp/tests/test_capsule_launch_wiring.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e792ea51eb3b0a8e9da8da8e559f64e749a73276",
-            "content": "sha256:d721fec7a1ec333e78514ceae21ad3891307bedf01ba514f6870595a2fddb165",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts"
-            },
-            "path": "mcp/tests/test_capsule_launch_wiring.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:a172cc340f55a94fd9b0d5efe4fb73130ea8364468d0324fae735bf1a4982eab",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_runtime_spec"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
-            "locator": {
-              "kind": "symbol",
-              "name": "verify_capsule_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The two limitations, with their owner and the evidence that measures them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
-            "content": "sha256:d34132140a58d46cd3daab570fb6d5add4494d1e3fd3ed9b8f8e6003be8e8438",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resolve_harness_dispatch"
-            },
-            "path": "mcp/src/agents_remember/application/terminal_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
-            "content": "sha256:940970aaedcf6a6a2d6f2d3c1fbfd6740b7f4f0df7d1d13cb8494bd6ea83716f",
-            "locator": {
-              "kind": "symbol",
-              "name": "session_backend"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
           },
           "kind": "code"
         }
@@ -945,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
             "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
             "locator": {
               "kind": "symbol",
@@ -954,170 +442,6 @@
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The launch-time proof, its six refusals and its unbound case.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
-            "locator": {
-              "kind": "symbol",
-              "name": "verify_capsule_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:a2f4a673745eb8c49666f8cbf82b4fdfae40c17b919b49f51430874823b502f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "EveWorkspaceBinding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The git-identity requirement that distinguishes the admitted worktree from a directory at the same path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:980edfc68032785938edd1337cc480af7c4218ca5f5f8b7bfd5e3706ae8d513d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_admitted_git_worktree"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:289d8604724843b028a608d8c2d8853ecaca339a608594bfb6c9e0a67ffb0723",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_git_head"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The ambient-binding pops and the launch-spec-only reader.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
-            "content": "sha256:a51412f8f5b60bb4762885b8a682d3a400dcf7fdd90f6157fe3322075d79f2b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "launch_spec_binding"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The two body-less session controls and the resolver-not-rerun fact behind the system-role choice.\n\nAnchor: `compact_session`; `clear_session`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
-            "content": "sha256:b5c87ca95d0850ef636342ffe00c88d2f98a8cd5fedab06f090328319ed790a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "session_control_body"
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
-            "content": "sha256:f94aafb5ff29a28f3066608b02f8bf7bf1cf5c05b14bf35864fdfe2d98278d07",
-            "locator": {
-              "end": 254,
-              "kind": "line_range",
-              "start": 242
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
-            "content": "sha256:94469b142c3c4123cae210099c9e90c27060869fdac4ea826626083cb1fdaf8e",
-            "locator": {
-              "end": 268,
-              "kind": "line_range",
-              "start": 256
-            },
-            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The channel-level binder that refuses an unbound launch before any model work, guarding every session route.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e46a81e8a0ed7a1f534cc17fd24ef7ac979f9e36",
-            "content": "sha256:4d5e26af7ae3f91e4a142f3f23db456a5ff5ff71c91c920a4fd9f4f764c7d440",
-            "locator": {
-              "kind": "symbol",
-              "name": "arCapsuleAuth"
-            },
-            "path": "eve_runtime/agent/channels/eve.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The cases pinning the proof in both directions, including the wrong-branch workspace.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
-            "content": "sha256:2a4b8b17fc922800e7e21b37114157799732fcbdce39d2b6168134c2f0818e9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_launch_verification_refuses_every_declared_defect"
-            },
-            "path": "mcp/tests/test_eve_capsule_binding.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
-            "content": "sha256:19856cb6b5bed1749b4a69715564538ff88afca3dc834c47c48d18a6b9431b5a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_launch_verification_refuses_a_workspace_on_another_branch"
-            },
-            "path": "mcp/tests/test_eve_capsule_binding.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -1361,12 +685,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
             "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
             "locator": {
-              "end": 518,
+              "end": 224,
               "kind": "line_range",
-              "start": 513
+              "start": 219
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -1374,12 +698,12 @@
         },
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
             "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
             "locator": {
-              "end": 308,
+              "end": 170,
               "kind": "line_range",
-              "start": 308
+              "start": 170
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1750,7 +1074,7 @@
         },
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",
@@ -1902,7 +1226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
             "locator": {
               "kind": "symbol",
@@ -1914,7 +1238,7 @@
         },
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
             "locator": {
               "kind": "symbol",
@@ -1926,7 +1250,7 @@
         },
         {
           "anchor": {
-            "blob": "dc257099befcdfca02839087a16ceae303ebe9b3",
+            "blob": "fbd5d142ce6a893ebcc9cf1a67fd19252f49e586",
             "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
             "locator": {
               "kind": "symbol",
@@ -2238,7 +1562,7 @@
         },
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -2315,12 +1639,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
             "content": "sha256:50dd0902d7e386a27104a0410ddb36ccb223390dca13ced0ddf067749c2d82f2",
             "locator": {
-              "end": 304,
+              "end": 166,
               "kind": "line_range",
-              "start": 298
+              "start": 160
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -2333,7 +1657,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -2345,12 +1669,12 @@
         },
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
             "locator": {
-              "end": 95,
+              "end": 85,
               "kind": "line_range",
-              "start": 95
+              "start": 85
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2617,12 +1941,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
             "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
             "locator": {
-              "end": 511,
+              "end": 217,
               "kind": "line_range",
-              "start": 510
+              "start": 216
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -2631,63 +1955,14 @@
       ]
     },
     "9": {
-      "note": "The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal.",
+      "note": "LaunchCapsuleMode has only capsule/refused and no resolver or legacy carrier policy.\n\nAnchor: `mcp/src/agents_remember/serving/launch_capsule.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "content": "sha256:2834402057633ae819fa33e825bb3485cda5b7cf02d0003b83e65e0c069bcf6b",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:85feba1f481929b44d9a51ccaaddcbc12f7f0c2666b91df4179aa16288da9ffc",
-            "locator": {
-              "kind": "symbol",
-              "name": "LaunchCapsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b190e4936151386a15119132d254bbafcec9da1060dce8e578404695177166e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "LaunchCapsuleMode"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:3aee9ac1bb981e0d14d598c481bbeb2d7b4acdabe19ae4355955d21c1817385e",
-            "locator": {
-              "kind": "symbol",
-              "name": "legacy_seat_reason"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:c0a4a0d99162a3a8042ca40907ba0472d242718d9d81535f389761e99b2d53c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "capsule_channel_reason"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -2700,12 +1975,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
             "content": "sha256:83024a036949ee5b6e1818f3d0ef269bf21f7f9cce819b5cbd9605fc7120bec9",
             "locator": {
-              "end": 250,
+              "end": 115,
               "kind": "line_range",
-              "start": 250
+              "start": 115
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -2718,12 +1993,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:3d2f9e05a1937b981cb06170fb6bf772f132579fc2724a4c75e8bbce3c75dcba",
             "locator": {
-              "end": 376,
+              "end": 186,
               "kind": "line_range",
-              "start": 373
+              "start": 183
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -2736,12 +2011,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:fdb5da4fc7af1e5539b9c6605cb56d514cc702763bec151b051b87e84cf34daf",
             "locator": {
-              "end": 107,
+              "end": 94,
               "kind": "line_range",
-              "start": 107
+              "start": 94
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2754,12 +2029,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
             "locator": {
-              "end": 178,
+              "end": 163,
               "kind": "line_range",
-              "start": 178
+              "start": 163
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2772,12 +2047,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
             "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
             "locator": {
-              "end": 163,
+              "end": 150,
               "kind": "line_range",
-              "start": 160
+              "start": 147
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2790,7 +2065,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "516f2eb5d188ee09a0a6c60d87a063a42f913c4e",
+            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
             "content": "sha256:f81efb5898ed46aef7da4725cd3907767ca242323a14514e2d4598e87eeb3bde",
             "locator": {
               "kind": "symbol",
@@ -2848,24 +2123,6 @@
               "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "99": {
-      "note": "The lifespan fixture asserts one shutdown call per serving lifetime, off the main thread.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
-            "content": "sha256:cf670465fb42521c2ceafc405605dc5331eaba586d55e58e64f2a19c2a8d14c3",
-            "locator": {
-              "end": 384,
-              "kind": "line_range",
-              "start": 375
-            },
-            "path": "mcp/tests/test_serving_observation_loop.py"
           },
           "kind": "test"
         }

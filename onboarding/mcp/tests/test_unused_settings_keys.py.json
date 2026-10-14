@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_unused_settings_keys.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unused retired-settings reporting: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81d46f8b58df6b0660f807500e100f9d2db5b095",
+            "content": "sha256:08226b5aa1dd246a739554d852d571dfbf3fa1ff5f1c381918482d95b2734d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_server_info_names_the_keys_of_both_settings_families_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

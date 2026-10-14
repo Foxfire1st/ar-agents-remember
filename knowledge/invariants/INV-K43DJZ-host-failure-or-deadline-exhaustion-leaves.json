@@ -8,7 +8,7 @@
   "applicability": "A leaf closing while the host is unreachable or a call fails, and every later observation.",
   "conditions": [
     "The closing completes and names the owed agents.",
-    "The debt head stays in the launch receipt and the existing observation loop settles it when the host answers."
+    "The debt head stays in the launch receipt and the serving lifetime’s archive recovery loop settles it when the host answers."
   ],
   "exclusions": [
     "No second queue, timer, scheduler or fallback is created.",
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Host failure or deadline exhaustion leaves truthful receipt-owned predecessor and own-target debt without refusing admitted retirement, and the existing terminal observer recovers that debt automatically from terminal truth.",
+  "statement": "Host failure or deadline exhaustion leaves truthful receipt-owned predecessor and own-target debt without refusing admitted retirement, and the serving lifetime’s archive recovery loop recovers that debt automatically from terminal truth.",
   "status": "proposed",
   "supersedes": []
 }

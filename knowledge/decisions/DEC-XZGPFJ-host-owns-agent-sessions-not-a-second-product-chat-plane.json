@@ -1,0 +1,63 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The choice rejects retaining the product's second session/control plane and prevents later work from reintroducing dormant adapters or confusing host execution with task and knowledge authority."
+  },
+  "alternatives": [
+    {
+      "option": "Delegate agent sessions to the existing host and remove the product's earlier chat plane.",
+      "reason": "The host supplies mature session execution; the product retains task, knowledge, launch-selection and landing authority without building another agent development environment.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the product's harness adapters, session lifecycle, gates and stores alongside the host, including dormant restoration switches.",
+      "reason": "A second chat/control plane adds machinery the current role workflow no longer needs. Keeping it for a possible future restore is unnecessary because Git preserves the removed implementation.",
+      "reconsider_when": "The developer explicitly changes the product mission or identifies a required workflow the existing host cannot supply; restoration would then be a separately approved implementation, not activation of a dormant layer.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Role starts and messages use the host path; removed session tools are not alternative launch routes.",
+    "Task management, memory curation, the landing chain, the reader/reviewer/task views and the Event River keep their own owners.",
+    "Historical user stores are reported, not consumed or automatically deleted; the user's explicit command owns removal."
+  ],
+  "context": "The product carried both native-host role agents and an earlier self-hosted harness, session, lifecycle and gate plane. Keeping both duplicated execution/control ownership and contradicted the product's mission of repository knowledge and task coordination.",
+  "decider": "Developer, D115 and D126; MIK-R113@v1",
+  "id": "DEC-XZGPFJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6a3f013bb62f4d45d60686439620c0c00718d314",
+        "content": "sha256:fd13901b63b884818ab4ff83a348e2348c54ed968c292052262368fc3a87febc",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_role"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R113@v1 D126/D115, normative requirement and preservation/exclusion boundaries; Worker A4 report notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-synced-freeze-A4-40.md"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "CUR-L113-host-only-choice",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

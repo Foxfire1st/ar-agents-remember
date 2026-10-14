@@ -5,19 +5,19 @@
 
 ## Purpose
 
-The dashboard is the operator-facing React cockpit for server-composed task, lifecycle, enclosure, observer, terminal, adapter and control evidence. Its browser layer presents that evidence and requests explicitly owned operations; it does not become lifecycle, candidate-selection, certification, recovery, commit or integration authority.
+The dashboard is the operator-facing React cockpit for server-composed task, lifecycle, enclosure, observer and native-host evidence. Its browser layer presents that evidence and requests explicitly owned operations; it does not become lifecycle, candidate-selection, certification, recovery, commit or integration authority.
 
 The current product bar is Chats, Operations, Knowledge and File Viewer, in that order. Chats is the default opening destination. A knowledge-reader hash opens Knowledge instead. Engine Room, Memory, Topology and Hangar remain representable through injected `initialView` values but have no product-bar entry. Their retained source and fixtures must not be described as ordinary dashboard navigation or fresh mounted evidence.
 
 Current Chats mounts the native Role Chats pane and embedded Paseo chat. The host owns chat navigation. The dashboard owns the role-launch controls, task/workspace/request addressing and report presentation around that frame. The older FEUI/CHATS structured-conversation architecture remains important inherited intent and child-route history; it is not the present shell's full-page Chats composition.
 
-This overview governs the bounded `cockpit/` and `dev/` slices as well as the source-root composition. Focused children own transport/state, panel composition and visual grammar. The opt-in Chats end-to-end route is a sibling at `dashboard/e2e-chats/`, not a child of `dashboard/src/`.
+This overview governs the bounded `cockpit/` and `dev/` slices as well as the source-root composition. Focused children own transport/state, panel composition and visual grammar. The removed dashboard/e2e-chats route supplies no current suite or child overview.
 
 ## Hot Path Summary
 
 Start at `cockpit/Cockpit.tsx` for navigation, shell drivers, retained layers, task selection and full-page takeovers. Operations keeps its DetailPanel mounted; File Viewer and Knowledge keep their readers mounted while hidden and use activation to control reader work. Knowledge addresses and reading state belong to its reader/hash, not to a duplicate shell state. Role Chats remains mounted across view switches and receives an active flag that also accounts for a takeover.
 
-For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The literal public MCP roster now contains 41 names, compared with 39 at 8d2e7547, adding role_start_set and retire_child; this source count establishes no execution result.
+For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The literal public MCP roster now contains 40 names, compared with 39 at 8d2e7547, adding role_start_set and retire_child; this source count establishes no execution result.
 
 For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The artifact kind determines `notes-reader` versus `requirements-reader`; it does not introduce another shell mode.
 
@@ -33,7 +33,7 @@ The task reader presents one track-and-knob Direct execution switch only on a pl
 
 ### Shell and retained surfaces
 
-`Cockpit` wires live inputs and chooses the hash-derived initial view. `CockpitShell` owns one lifetime catalog poll driver, one reconciler and the screen wake-lock driver. Views consume those shared owners rather than creating competing feeds. Shell state owns navigation, selected task/lifecycle context, rail preference and widths, and artifact/change-set takeover targets.
+`Cockpit` wires live inputs and chooses the hash-derived initial view. `CockpitShell` owns the screen wake-lock driver and shell state/actions. Removed AR session catalog/reconciliation feeds supply no current driver. Shell state owns navigation, selected task/lifecycle context, rail preference and widths, and artifact/change-set takeover targets.
 
 Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment explicitly distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set takeover takes screen precedence. Change-set/review takeovers are conditionally mounted through their common target. Retention claims must therefore be scoped to the layer that actually owns them.
 
@@ -105,10 +105,8 @@ The dashboard frontend is the operator-facing React cockpit. Product views are n
 - [data overview](data/overview.md) — catalog/session state, reliable submit and withdrawal,
   lifecycle cleanup, controls, announcements, and authority boundaries.
 - [panels overview](panels/overview.md) — shared panel composition.
-- [retained session-cockpit overview](panels/session-cockpit/overview.md) — the internal/dev controlled-session surface, not the current native Chats product.
 - Existing focused child overviews under data, grammar, and panels own their routes. The bounded
   `cockpit/` and `dev/` source slices remain governed here rather than gaining thin overview files.
-- [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats end-to-end suite
   (260718-CHATS-L5F R7/FB5) is a **sibling** route to `dashboard/src/` (it lives at
   `dashboard/e2e-chats/`, not under `src/`): it boots an isolated real dashboard daemon from the
   worktree and drives the real installed harnesses through this cockpit. Governed by its own route
@@ -125,28 +123,10 @@ The terminal catalog and adapter/control routes remain authoritative for their r
 
 The current product Chats layer mounts `RoleChatsPane` in `MainLayers`, backed by the shared native `PaseoChatFrame`, and stays mounted while other dashboard views are shown. The host's own chat list and screen, not the retained controlled-session cockpit or `ConversationSurface`, own this product destination. Operations has its separate retained document-chat frame; neither route promises an additional dashboard conversation-history database.
 
-The earlier FEUI-L8 session-cockpit account describes the retained controlled-session implementation and its historical deletion of the older Chats/SessionList route. Its role/spawn rail, reliable composer, authoritative pop-back, interaction answers, lifecycle controls, evidence/capabilities/bus and status are not the renderer now mounted by product Chats. The source's retained controlled-session `ChatsStageBody` selects the structured `ConversationSurface`, the in-stage history library or legacy-raw PTY, with its default-off read-only terminal-diagnostics drawer and WorkingLine interrupt. These are that internal/dev surface's contracts, not a claim that the native role-chat iframe uses those controls.
-
 The product bar contains Chats, Operations, Knowledge and File Viewer. Detail/Notes Reader, Change-Set Viewer and review are focused takeovers with their own owners. Engine Room, Memory, Topology and Hangar have no product-bar entry; retained layouts can be exercised through injected initialView or dev/test composition. Their existing internal overviews are not an additional production destination.
 
 - Chats is the opening view and there is exactly one full-page Chats destination; Operations is a product destination (260928-MIK-L79).
-- The shell owns one catalog poll/reconciler for its lifetime. Views do not create competing feeds.
-### Retained controlled-session service constraints
-
-The following row/session/PTY/composer/inspector constraints belong to the retained controlled-session internal/dev services, not the native RoleChatsPane frame or its host-owned draft/scroll/render behavior.
-
-- Focus/inspection may name a landed row; only a live row owns action routing and reload preference.
-- Reliable submit and withdrawal preserve request/epoch identity and never blind-resend or locally
-  fake an authoritative result.
-- Session open is accepted-response-authoritative: failed requests cause no registry row, focus
-  movement, readiness transition, or dependent delivery.
-- PTYs stay mounted across focus and transient handoff gaps; ended rows never create a live socket.
-- Inspector visibility is optional presentation. Core Chats actions remain usable with it closed.
-- State words and evidence remain explicit; absent transport/capability/history facts are not
-  inferred.
-- The FEUI-L8 account used repository-local source/tests, reviewed task evidence and recovered history. No external domain-documentation witness is claimed here; this is not a statement of current registry configuration.
-
-The distinct EngineRoom dev scenario declarations preserve historical projected seed/clone fixture inputs; they are not a product-bar destination or mounted provider-visualization proof. Their source is included with the comparison-bound review presentation in the combined evidence group above.
+- The shell owns its wake lock and navigation state; native host/reader owners supply their respective data.
 
 ## Invariants And Boundaries
 
@@ -250,12 +230,6 @@ across 81 files; those are not measurements of this pair).
   one of the unmarked modules the guard cannot see. `dev/` remains fixtures, not a production
   authority.
 
-The retained controlled-session implementation renders its structured conversation surface over adapter-normalized transcript/history projections. Its controlled runner line-log remains a default-off read-only terminal-diagnostics drawer, and its legacy raw-session branch hosts the vendor TUI. The harness-neutral Claude/Codex/Pi grammar, harness identity and capability reasons described here belong to that internal/dev implementation. Product Chats instead shows the native host through RoleChatsPane/PaseoChatFrame; this block does not appoint the structured surface as its visual roof.
-
-The following active-transcript, previous-conversation-library, harness-sub-agent and interaction-multiplexing clauses likewise describe those retained controlled-session services. They preserve their internal contracts and historical evidence; they supply no fresh installation, live native-frame or current product-routing acceptance.
-
-The retained controlled-session cockpit treats its focused conversation or terminal as a persistent surface: switch and hidden-view transitions preserve that surface's mounted identity, scroll/selection/geometry state and resume visible-only work. Current native Chats retains the iframe; its draft/scroll behavior belongs to the host and is not an additional dashboard promise. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
-
 The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. The earlier L7 report described a clean file-size result. The project wrapper defines the detector's TS/TSX scope; this paragraph supplies no fresh file-size or rule6/full-final acceptance.
 
 **Superseded 2026-09-20 (260915-KS-L45): the subject stopped being a prop, because as a prop it was
@@ -294,7 +268,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 - [State and authority architecture](data/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
 - [Panel composition](panels/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
-- [Retained controlled-session cockpit account](panels/session-cockpit/overview.md) — its internal/historical route and deletion account does not define the current native Chats destination.
 
 - ReviewPanes delegates comparison-bound review presentation to ReviewWorkspace and keeps changed-file navigation bound to its shown payload; the distinct EngineRoom dev scenario group is declaration/history evidence, not mounted provider visualization.
 
@@ -312,8 +285,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Shell navigation, persistent layers and shared drivers. [6]
 - State and authority architecture. [7]
 - Panel composition. [8]
-- The retained legacy SessionsView controller/body composition is not the current full-page Chats mount. [9]
-- Dev scenario authority and end-to-end states. [10]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
 - State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
 - Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
@@ -354,19 +325,18 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Question keys and exact sequence-bound refresh prevent superseded answers writing displayed state [51]
 - Current operations projection uses physical live-worktree admission and a bare count header [52]
 - Collapse state has one persisted collapsed set [53]
-- Hosted terminal open is session-addressed and accepted response precedes store mutation [54]
 - Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs [55]
 - Wire discovery and fixture scope retain named blind spots [56]
 - Required-field override protection has explicit fresh-literal/depth/module limits [57]
 - Unknown lifecycle state warns; inferred healthy state degrades [58]
 - Engine Room's present body composes enclosure map, stack, boot and diagnostics [59]
-- Browser probe contract is intentionally import-free across TypeScript projects [60]
+
+- The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract. [60]
 - Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content. [61]
 - Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory. [64]
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
 - Shell navigation, persistent layers and shared drivers. [6]
-- Dev scenario authority and end-to-end states. [10]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
 - State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
 - Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]

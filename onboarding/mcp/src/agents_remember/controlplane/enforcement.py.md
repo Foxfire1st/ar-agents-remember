@@ -83,4 +83,3 @@ wrapper around `kind="closeout-approval"`; `CloseoutGuard` aliases `GateGuard`.
 - The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` at L350-L373 (deny-only, writes nothing) and `_claim_closeout_gate` at L376-L427 (the spend). It no longer appends an `applied` snapshot itself. [3]
 - `GateStore.claim_approval` — the compare-and-swap that calls `evaluate_gate` and appends `applied` in one held lock. [4]
 - `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. [5]
-- The dashboard write-path that produces a developer-attributed approval. [6]

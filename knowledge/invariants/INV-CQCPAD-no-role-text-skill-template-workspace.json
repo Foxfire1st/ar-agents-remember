@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Stale doctrine can cause agents to invoke removed tools or manufacture a task merely to obtain a nonexistent seat."
+  },
+  "applicability": "Canonical instruction sources and their generated shipped copies after old-agent-plane removal.",
+  "conditions": [
+    "No current instruction prescribes a removed session, lifecycle or gate tool.",
+    "Repository foundation can use the instructed-session writer; no taskless Curator seat is promised.",
+    "The leaf Curator writer and admitted no-document Architect start remain."
+  ],
+  "exclusions": [
+    "Historical designs remain explicitly historical.",
+    "This is not an additional role opener or a new lifecycle route."
+  ],
+  "id": "INV-CQCPAD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/repair-r1/f09-f10-canonical-texts.diff; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/freeze/evidence2-texts.txt; the generated-copy checks in the gate output of each freeze"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 10",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No role text, skill, template, workspace instruction file or reference tells an agent or a person to use a removed part, and the copies in every harness's folder follow: a Curator seat opens only on a leaf's task document, and an Architect is started without a document.",
+  "status": "accepted",
+  "supersedes": []
+}

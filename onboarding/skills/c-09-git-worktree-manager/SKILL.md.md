@@ -1,5 +1,12 @@
 # skills/c-09-git-worktree-manager/SKILL.md
 
+## Current A8 carrier and authority boundary
+
+The source still separates archive-ready from completed cleanup, exact retry arguments from defaults and task authoring from projection admission. Its initial start/attach description no longer carries fleeting on_unsaved save/discard promotion; developer-gated start/integration/finalization wait for approval relayed through the parent or parentless chat. Inspection does not select. The corrected compatibility statement excludes cache bytes as authority; historical incoming direct-recovery wording is scoped below, with current c-12 receipt recovery retained.
+
+- Current instruction adopts the new contract lifecycle, uses parent role_message approval relays, limits selectors to atomic start/attach and retains strict source lineage and terminal evidence; old fleeting-save/dispatch/automatic-resume accounts are not current authority. \[8] [8]
+
+
 ## Governing Overview
 
 [c-09 worktree lifecycle overview](overview.md)
@@ -16,15 +23,13 @@ hook behavior stays explicit rather than becoming a blanket waiver.
 
 ## Code Commentary
 
-Every later converted landing is judged again: leaf integration judges the closeout pair, recorded leaf landing judges the supplied landed memory against the recorded memory base, with the recorded closeout code when the landed code equals or descends from it, otherwise the landed code, and master final/checkpoint/recorded routes run validator, net staleness, chain and authentic-history checks. Direct landing may name its leaf; an intent-less direct generation's public recover currently refuses, whereas the real executor settles the kept closing receipt. This is the actual guidance boundary, not a promise of public recovery.
+Every later converted landing is judged again: leaf integration judges the closeout pair, recorded leaf landing judges the supplied landed memory against the recorded memory base, with the recorded closeout code when the landed code equals or descends from it, otherwise the landed code, and master final/checkpoint/recorded routes run validator, net staleness, chain and authentic-history checks. Direct landing may name its leaf. Historical incoming card warning: an intent-less direct generation's public recover was described as refusing while the real executor settled the kept closing receipt. That is not a blanket current refusal: present c-12 instructions state that advertised direct recovery continues its admitted generation and settles the kept closing receipt. This is an instruction-source account, not a fresh runtime verdict.
 
 ### Logic
 
 Atomic-series implementation admission is separate from task planning and is a contract-scoped
 authority: each canonical series contract owns its own activation record, so masters that share one
-exact code/memory source pair never share this state. Manager dispatch, worker dispatch, atomic
-`worktree_start`, and `worktree_attach` are selecting operations; reviewer and curator inspection is
-not. Selection first publishes `reconciling` for that exact contract, which suspends nothing — not
+exact code/memory source pair never share this state. Historical predecessor: manager and worker dispatch were listed as selecting operations. Current instruction names atomic `worktree_start` and `worktree_attach` as selectors; reviewer and curator inspection is not selection. Selection first publishes `reconciling` for that exact contract, which suspends nothing — not
 its chat, process, worktree, contract, or already-claimed lifecycle journal — then reconciles both
 protected source tips and publishes `active` only when both are current. One master's selection
 never pauses or excludes another, and multiple nonterminal contracts remain valid. A completed sync
@@ -156,7 +161,7 @@ No Domain Documentation source is configured for this memory root.
 
 No meaningful cross-repository reference applies to this repository-owned lifecycle doctrine.
 
-## Ungoverned Mirror Status (known defect)
+## Historical mirror-scope observation (known defect at its observed configuration)
 
 This card lives in the `onboarding/skills/**` tree, which mirrors the code repository's `skills/**`
 route. `skills/**` is absent from `settings.json`'s `pathRules.include`, so this whole onboarding

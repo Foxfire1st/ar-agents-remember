@@ -6,14 +6,13 @@
 
 ## Purpose
 
-``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
-agent-notifier, spawn, and the quality gate (260731-EFA-L17).
+``orchestration`` section parsers for loops, roles, concurrency, harness IDs, spawn and the quality gate. Expectations, supervisor and agent-notifier sections have no parser or typed execution consumer in this module.
 
 Parses role/default and other agentic settings sections.
 
 ## Code Commentary
 
-`_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:1-435.
+`_parse_harnesses` returns the built-in ID prefix followed by settings-added IDs. Entries must remain objects with known legacy execution keys, but those fields are not read or validated as execution choices. `_parse_roles` likewise admits unused legacy launch/session keys without placing them in `RoleKnobs`. The host catalog validates actual launch choices later; neither retained vocabulary nor ignored input is a native adapter fallback.
 
 L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
@@ -26,9 +25,9 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 - `_parse_feature_values`
 - `_optional_role_text`
 - `_parse_concurrency`
-- `_parse_expectations`
-- `_parse_agent_notifier`
-- `_require_agent_notifier_floor_seconds`
+- `_parse_harnesses`
+- `_parse_service_tier`
+- `_resolve_role_keys`
 - `_parse_spawn`
 - `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
   absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int

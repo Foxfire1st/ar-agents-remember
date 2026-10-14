@@ -1,5 +1,24 @@
 # l-01-agent-lifecycles/templates/worker-brief.md
 
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+## Current operative account — MIK-R113
+
+The starting seat prepares the leaf documents, then starts Worker through role_start_set or role_start with no supplied brief; the first message is compiled from those documents. The former dispatch_agent payload is historical. The sync-only exception is unchanged: Worker continues its own worktree_sync, Curator repairs native memory conflicts and Manager captures/verifies/stages them. Outside that exception, lifecycle_finalize_task, task_doc, memory and route-index operations stay excluded; deleting wildcard lifecycle/gate names does not authorize arbitrary operations. Code-only build ownership, no commits/onboarding, exact attempts, protected settings, targeted-check truth and direct Curator producer fields remain intact.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- The starting seat prepares the leaf documents, then starts Worker through role_start_set or role_start with no supplied brief; the first message is compiled from those documents. The former dispatch_agent payload is historical. The sync-only exception is unchanged: Worker continues its own worktree_sync, Curator repairs native memory conflicts and Manager captures/verifies/stages them. Outside that exception, lifecycle_finalize_task, task_doc, memory and route-index operations stay excluded; deleting wildcard lifecycle/gate names does not authorize arbitrary operations. Code-only build ownership, no commits/onboarding, exact attempts, protected settings, targeted-check truth and direct Curator producer fields remain intact. [3]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
@@ -37,7 +56,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [3]
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. \[3]
 
 
 ## Current naming and source qualification
@@ -170,5 +189,7 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
+
+</details>
 
 </details>

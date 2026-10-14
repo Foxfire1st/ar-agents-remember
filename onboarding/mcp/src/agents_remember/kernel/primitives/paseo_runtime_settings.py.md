@@ -10,7 +10,7 @@ Defines strict optional authority for one install prefix, home, listen endpoint,
 
 ## Code Commentary
 
-A present block must carry the five operational facts (`installPrefix`, `home`, `listen`, `providers`, `embed`) and accepts an optional `version` that never selects the release; providers/embed may be empty but cannot be malformed. The parser rejects nonabsolute paths, malformed listen/ports and unknown keys, and any provided `version` that differs from the packaged contract produces one notice rather than a refusal or a selection. Embed origins/URLs are canonicalized and validated by their own rules; absent block remains None and require_paseo_runtime names no runtime configured.
+A present block must carry the five operational facts (`installPrefix`, `home`, `listen`, `providers`, `embed`) and accepts an optional `version` that never selects the release; providers/embed may be empty but cannot be malformed. The parser rejects nonabsolute paths, malformed listen/ports and unknown keys, and any provided `version` that differs from the packaged contract produces one notice rather than a refusal or a selection. Embed origins must already match the exact browser-canonical spelling; noncanonical spelling is refused, not silently normalized. Frame URLs are validated without credentials/query/fragment, and duplicate canonical origins refuse. An absent block remains None and require_paseo_runtime names no runtime configured.
 
 ## Evidence
 

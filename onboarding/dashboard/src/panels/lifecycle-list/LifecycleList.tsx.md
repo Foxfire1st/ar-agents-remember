@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one mark, one priority word and a numeric figure; full facts remain in each row's hover. It neither authors task state nor widens row admission.
+The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one mark, one task-state word and a numeric figure; full facts remain in each row's hover. It neither authors task state nor widens row admission.
 
 ## Code Commentary
 
@@ -26,11 +26,11 @@ The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Ope
 
 ### State, signals and secondary facts
 
-rowState decides whether the document or a reporting lifecycle speaks. A lifecycle inferred without lastEventTs is not an observed pause; the document speaks, or waiting when no document exists. A reporting lifecycle retains its raw state mark and eligible local age; completed/abandoned use document-style marks. The single row word prioritizes durable gate, overdue/unacknowledged inbox, chat input, lifecycle asking/stopped state, active chat, then state. The complete hover retains kind, document status, current step, lifecycle/phase/inference, worktree fact, gate, qualified chat activity, pickup acknowledgment and repository.
+rowState chooses the document or reporting lifecycle. An inferred lifecycle without lastEventTs has not reported; the document speaks, or waiting when no document exists. Reporting lifecycle states retain their own mark/word and eligible local age; completed/abandoned use document-style status. rowWord says only that task state: it does not prioritize gates, inbox, chat input or activity. Remaining task/progress/lifecycle/worktree/repository facts stay in the actual hover without removed gate/chat/pickup fields.
 
-The compact progress figure is done/total. Abandoned tasks remain outside the denominator, and abandoned/discarded counts remain in the hover rather than masquerading as completion. Chat activity uses the shared Chats-owned session catalog, exact task-document identity first and only unclaimed lifecycle fallback; it is not inferred from task progress, inbox acknowledgment or lifecycle state. Durable gate.kind remains informational: the retired bare-ask fallback is not restored.
+The compact progress figure is done/total. Abandoned tasks remain outside the denominator, and abandoned/discarded counts remain in the hover rather than masquerading as completion. No session-catalog/chat activity, gate.kind or pickup acknowledgment fact is selected or rendered by this owner. The progress figure and current hover are not evidence of any of those removed signals.
 
-An overdue handover offers dismissal even while a gate wins the priority word. PickupDismiss says chat × beside the gate and calls only the exact operator-inbox entry helper. Pointer-down, mouse-down, keyboard and click propagation are stopped because ListBox selection begins on press; dismissing must not select the row or dismiss the gate. The mark wrapper is named inside ListBoxItem's option role; moving it outside a naming widget would require its own accessible role.
+There is no PickupDismiss or operator-inbox dismissal interaction in LifecycleList. The mark wrapper remains named inside ListBoxItem option semantics; accessibility must not depend on a removed action. Row selection/hover keep their retained owner without restoring press suppression for a deleted button.
 
 ### Selection and keyboard reach
 
@@ -40,7 +40,7 @@ Typeahead uses the displayed short id plus title for numbered master children, a
 
 ### Task-page text sizes
 
-rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, priority word, progress figure, pickup dismissal and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the column width and signal/selection behavior remain unchanged. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
+rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, state word, progress figure and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the column width and signal/selection behavior remain unchanged. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
 
 ### Bounds and kept-alive execution
 
@@ -69,7 +69,8 @@ The earlier landed-leaf admission/default-collapse extension was emergency-rever
 - Typeahead preserves title-only matching and the displayed prefix for numbered rows. [27]
 - Overdue inbox dismissal names its target, blocks the row press and calls only the inbox helper. [28]
 - Pure row state/word/hover and pure tree flattening own the presentation derivation. [29]
-- The behavioral suites preserve admission, hierarchy/phase, signal and bare-ask boundaries on the actual component. [30]
+
+- The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run. [30]
 
 
 - Root/master lifecycle binding first uses the explicit document id, otherwise its distinct sibling-enclosure join. [31]

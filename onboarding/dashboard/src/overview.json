@@ -17,23 +17,6 @@
         }
       ]
     },
-    "10": {
-      "note": "Dev scenario authority and end-to-end states.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
-            "content": "sha256:9fa9dab47e2b4b97ef674118086ff75977d0e1e40eed4bb5ea3f8e7469675260",
-            "locator": {
-              "kind": "symbol",
-              "name": "COCKPIT_SCENARIOS"
-            },
-            "path": "dashboard/src/dev/cockpitScenarios.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
       "note": "Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file.\n\nAnchor: \"the five rules\"; \"can a test assert against a payload the server could never send?\"",
       "targets": [
@@ -51,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
             "content": "sha256:f21d8eb560fed0eee217854d3ff81ab2adfb0c8f56cd97417016d5f8cb0d1806",
             "locator": {
               "end": 3,
@@ -64,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
             "content": "sha256:87d9afb339b8148bd37f0e4ad0ab30a715763943d6df7e1aa4ffe338220f0d18",
             "locator": {
               "end": 53,
@@ -140,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "blob": "0ff368dfb355b387d922b283da2266790d5c1aa8",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -174,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 368,
+              "end": 302,
               "kind": "line_range",
-              "start": 339
+              "start": 273
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -192,12 +175,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87432f256a1d00b2ed84946aff81eff25efa6d47",
+            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1300,
+              "end": 1240,
               "kind": "line_range",
-              "start": 1299
+              "start": 1239
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -245,12 +228,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
-              "end": 389,
+              "end": 363,
               "kind": "line_range",
-              "start": 388
+              "start": 362
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -263,12 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
-              "end": 414,
+              "end": 387,
               "kind": "line_range",
-              "start": 414
+              "start": 387
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -276,12 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
-              "end": 587,
+              "end": 549,
               "kind": "line_range",
-              "start": 587
+              "start": 549
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -294,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
-              "end": 35,
+              "end": 24,
               "kind": "line_range",
-              "start": 35
+              "start": 24
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -435,7 +418,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -481,12 +464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 808,
+              "end": 770,
               "kind": "line_range",
-              "start": 807
+              "start": 769
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -517,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
             "locator": {
               "kind": "symbol",
@@ -529,7 +512,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
@@ -639,7 +622,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+            "blob": "7231a6d9beb198b538ca871ca32c37c2912efe54",
             "content": "sha256:6d221491507b0821f58e3b9e1ff387180e96ce7f8c885055442d8bac06c4e4f8",
             "locator": {
               "end": 7,
@@ -657,7 +640,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
             "content": "sha256:94bd62113a653331247f545cdff0961f18765b354052ac8292df3c2cabfb0ffd",
             "locator": {
               "end": 32,
@@ -693,12 +676,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 720,
+              "end": 655,
               "kind": "line_range",
-              "start": 720
+              "start": 655
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -729,12 +712,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
             "content": "sha256:a2ac11ed1b55413d56fa1567c5596a5e15e8997affd98f7e4a990231a183818a",
             "locator": {
-              "end": 119,
+              "end": 112,
               "kind": "line_range",
-              "start": 43
+              "start": 36
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -783,12 +766,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:91c6a64109544a683017f301adcac6dcb2f765430675cea0294e067a6ee05db3",
             "locator": {
-              "end": 86,
+              "end": 74,
               "kind": "line_range",
-              "start": 71
+              "start": 59
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -796,12 +779,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:c2284faeffbc421fc22f6e3773d3a766897b368765e3150a0c5cccb22cba19ee",
             "locator": {
-              "end": 817,
+              "end": 779,
               "kind": "line_range",
-              "start": 784
+              "start": 746
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -827,12 +810,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
             "locator": {
-              "end": 609,
+              "end": 571,
               "kind": "line_range",
-              "start": 573
+              "start": 535
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1041,48 +1024,17 @@
         }
       ]
     },
-    "54": {
-      "note": "Hosted terminal open is session-addressed and accepted response precedes store mutation\n\nAnchor: openTerminalSession; createSession",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
-            "content": "sha256:c9290d8ae0db045ef36b687f271b34336dcb5bc0c9f0c92f2124ab3f2926737a",
-            "locator": {
-              "end": 364,
-              "kind": "line_range",
-              "start": 345
-            },
-            "path": "dashboard/src/data/terminalOpen.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
-            "content": "sha256:ceed10eb079c468ab06dcc0afcf8eda6462a0d34946b893df13e7047a4b9388f",
-            "locator": {
-              "end": 843,
-              "kind": "line_range",
-              "start": 820
-            },
-            "path": "dashboard/src/data/sessions.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "55": {
       "note": "Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs\n\nAnchor: _state_partition; _vocabulary_block; stale_generated_files",
       "targets": [
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
             "content": "sha256:e5812badcd58e830abed9d82f1362cda405cac5459b89e800b4a4bac73bddff0",
             "locator": {
-              "end": 465,
+              "end": 446,
               "kind": "line_range",
-              "start": 451
+              "start": 432
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1090,12 +1042,12 @@
         },
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
             "content": "sha256:70a30a4be0351dd0d5b082d0bb6c37d14c28e2fdb3e54354d9951caa84e3c0b2",
             "locator": {
-              "end": 516,
+              "end": 497,
               "kind": "line_range",
-              "start": 487
+              "start": 468
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1103,12 +1055,12 @@
         },
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
+            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 619,
+              "end": 600,
               "kind": "line_range",
-              "start": 604
+              "start": 585
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1219,21 +1171,8 @@
       ]
     },
     "60": {
-      "note": "Browser probe contract is intentionally import-free across TypeScript projects\n\nAnchor: benchProbes module contract; solution references",
+      "note": "The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract.\n\nAnchor: lines 1-8",
       "targets": [
-        {
-          "anchor": {
-            "blob": "1e7f12a004a9c74928b2e045b77929bc74a1f1e6",
-            "content": "sha256:feeb7a60d162c7bbd05f250ad5adcee9079c4e7aaff40ae4871e50535e89533b",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "dashboard/src/dev/benchProbes.ts"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "da5d2822a340c1b0eba095c24ac846e9267d3272",
@@ -1254,12 +1193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:f9921ea7ac508f2c5e4a02f67cfd6b4f8d9bb9ec7920701a77636a210a5364f9",
             "locator": {
-              "end": 609,
+              "end": 571,
               "kind": "line_range",
-              "start": 573
+              "start": 535
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1311,7 +1250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
+            "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
             "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
             "locator": {
               "kind": "symbol",
@@ -1328,7 +1267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd1aad1ff7aad35bf358710393f9778628cde8ca",
+            "blob": "7885d6f1c072a6550bb16c28bdf7c02988232427",
             "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
             "locator": {
               "kind": "symbol",
@@ -1396,23 +1335,6 @@
         {
           "kind": "unresolved",
           "text": "onboarding/dashboard/src/panels/overview.md:1-3622"
-        }
-      ]
-    },
-    "9": {
-      "note": "The retained legacy SessionsView controller/body composition is not the current full-page Chats mount.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
-            "content": "sha256:f8970f954343af4273bd981c86f115dc58eb4ad836bc893046dadac3e718c7d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "SessionsViewImpl"
-            },
-            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
-          },
-          "kind": "code"
         }
       ]
     }

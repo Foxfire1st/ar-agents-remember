@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
-        "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+        "blob": "30f5603d5029dab36b4f47fc6007c8d810db3ad1",
+        "content": "sha256:94d1d513d03ec1f9a22da4a0bd3f8c6565ef9b4d1d31e2c92e7044cff4282484",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,26 @@
   ],
   "references": {
     "1": {
-      "note": "The explicit partition covers registered reads and mutating capabilities.\n\nAnchor: file",
+      "note": "The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
-            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "blob": "30f5603d5029dab36b4f47fc6007c8d810db3ad1",
+            "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "READ_ONLY_TOOLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30f5603d5029dab36b4f47fc6007c8d810db3ad1",
+            "content": "sha256:3b3b2cfae5f57bd3d33e98f6f6f1256dfe48138237eeacc88913f25f4d344933",
+            "locator": {
+              "kind": "symbol",
+              "name": "MUTATING_TOOLS"
             }
           },
           "kind": "code"

@@ -47,9 +47,8 @@ rather than retyped:
 - cit:([`PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:115-115) is now `vocabulary_names(Phase, label="Phase")`, not
   `get_args(Phase)`. cit:([`INITIAL_PHASE`], mcp/src/agents_remember/observer/lifecycle_state.py:114-114) is unchanged.
 - cit:([`DEFAULT_END_OUTCOME`], mcp/src/agents_remember/observer/lifecycle_state.py:112-112) — deliberately *not*
-  a classification but a **policy**: `lifecycle_end` takes a free-form outcome
-  string at the tool boundary, and anything that is not the affirmative
-  completion is an abandonment.
+  a classification but a **reducer policy**: an unknown or absent recorded `lifecycle.ended`
+  outcome coerces to abandonment. The removed public lifecycle_end tool is not a current writer.
 
 cit:([`vocabulary_names`, `_collect_names`], mcp/src/agents_remember/observer/lifecycle_state.py:41-56; mcp/src/agents_remember/observer/lifecycle_state.py:59-70) returns the strings a `Literal` declares, in declaration order. It
 reads through every legal form: a flat `Literal[...]`, a composition of aliases
@@ -84,24 +83,9 @@ than defaulting it.
 
 ### Current module boundaries
 
-cit:(["Phase = Literal["], mcp/src/agents_remember/models/lifecycles/responses.py:20-27) — the session-lifecycle skill's heading vocabulary,
-orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/lifecycle-frame.md:19-19) binds the paused and
-awaiting-developer classification: `paused` is system-owned (no model signal),
-while `awaiting-developer` is the turn-end notification state on the live half.
-cit:([`await_developer`, `resume_from_await`], mcp/src/agents_remember/observer/ambient.py:205-221; mcp/src/agents_remember/observer/ambient.py:223-241)
-shows the ambient signal methods that enter and leave that state, and
-cit:([`resume_from_await`], mcp/src/agents_remember/application/tool_response.py:120-120)
-shows the next-tool auto-resume choke point for that notification path.
+`LiveState`, `TerminalState`, `State` and `Phase` are imported from the retained lifecycle response vocabulary. `check_state_partition` validates the complete live/terminal partition and supplies `STATES`; malformed vocabulary members fail by name rather than flowing into the reducer. `coerce_end_outcome` maps an unknown or absent outcome to abandonment, while `coerce_phase` raises `LifecycleError` for an unknown phase.
 
-cit:([`LifecycleError`], mcp/src/agents_remember/observer/lifecycle_state.py:130-131) is this domain's family base;
-cit:([`GuardedStartError`], mcp/src/agents_remember/observer/lifecycle_state.py:134-146) names the active lifecycle in its message.
-cit:([`LifecycleState`], mcp/src/agents_remember/observer/lifecycle_state.py:156-179) is a frozen dataclass (`id`, `state`, `phase`,
-`fleeting`, `started_at`, plus the slice-2c persistence-binding fields
-`enclosure`, `repo_id`, and `scope` — all `None` until the lifecycle is promoted)
-with an cit:([`is_terminal`], mcp/src/agents_remember/observer/lifecycle_state.py:177-179) that reads `TERMINAL_STATES` — frozen
-so each transition is a new value (no shared-mutable surprises across the request
-and heartbeat threads). cit:([`coerce_phase`], mcp/src/agents_remember/observer/lifecycle_state.py:149-153) validates a raw
-tool-boundary string into a `Phase` or raises `LifecycleError`.
+`LifecycleState` is frozen and holds `id`, `state`, `phase`, `fleeting`, `started_at`, `enclosure` and `repo_id`; `is_terminal` reads the declared terminal half. There is no `scope` field, `GuardedStartError`, session-signal transition or auto-resume-on-next-tool implementation here. The record/vocabulary remains usable by the retained worktree attribution and reducer; it does not restore the removed session lifecycle.
 
 ## Invariants And Boundaries
 
@@ -121,16 +105,13 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
   state on the terminal half ends the lifecycle. That is why an unfiled state is
   refused rather than defaulted.
 - `paused` has no signal; it is observed/inferred by the system, never declared.
-- `awaiting-developer` *is* model-declared (unlike `paused`) but is filed on the
-  **live** half, so `is_terminal` stays `False` for it and the next AR tool call
-  can auto-resume it back to `running`.
+- `awaiting-developer` remains in the declared live vocabulary, so `is_terminal` is false; no current model-signal writer or next-tool auto-resume mechanism is implemented.
 - **Two different leniencies, deliberately.** `coerce_end_outcome` defaults an
   unknown outcome to `abandoned` because the reducer reads foreign logs;
   `ambient.end` raises `LifecycleError` on the same input because a session
   ending itself must not have a typo silently recorded as an abandonment.
 - Frozen `LifecycleState`: transitions produce new values via `replace`.
-- Boundary validation (`coerce_phase`) lives here; the ambient signal methods
-  trust their already-typed `Phase`/`State` inputs.
+- Boundary validation (`coerce_phase`) lives here. The removed blocked/awaiting signal methods are not current callers; retained recorded-event reduction consumes its actual typed phase/state inputs.
 
 ## Evidence
 

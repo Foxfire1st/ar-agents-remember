@@ -51,7 +51,7 @@
       ]
     },
     "3": {
-      "note": "Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate.\n\nAnchor: Current STOP-delta source carrier Current public-tool registry/model/schema equality and the terminal series-release emitter-to-wire-to-caller payload assertions are distinct retained cases.",
       "targets": [
         {
           "anchor": {
@@ -59,6 +59,17 @@
             "content": "sha256:521acdbb2d91e077cca4412ef12b25cc72a3f627badae1c27a404721f1170ccb",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2d4019b70f9b6752903cf3bd4d74a161a072de1e",
+            "content": "sha256:5bd42c28c05d4ae498e083b3c8b06f254feb921b71e317e976df487a97546605",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicToolResponseModelTests"
             }
           },
           "kind": "test"

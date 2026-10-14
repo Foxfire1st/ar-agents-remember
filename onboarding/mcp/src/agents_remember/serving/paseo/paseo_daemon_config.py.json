@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b3fce6dbe4f9a4b57808925aa1a950395968148b",
+        "content": "sha256:5810e57b669c0bb7fb1d9f0ce8e4affa5ee7d43a1ea4b14776cc69bf93d0d9a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider_denied_tools"
+        }
+      },
+      "id": "RLZ-8N8F28",
+      "invariant": "INV-P8F6BT",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads from the host's `config.json` the rules its provider entry denies in its options, because the host lets a list in the request take the place of the configured list.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The private provider write with its rollback files.",

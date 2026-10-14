@@ -21,25 +21,7 @@ declared empty set is distinct from an absent declaration: only observed-empty e
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.
 
-The current declaration for `scripts/e2e_harness/run.py` includes cleanup readiness, knowledge-read
-boundary and real-tool review-block consumers as well as the retained lifecycle consumers. Exact
-source-derived agreement remains required; a canonical catalog alone cannot supply a missing
-selection edge.
-
-Historically, `REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in one change set, and two more in
-`260915-KS-L18`'s — the
-260913-LCA-L8 module and eleven sibling suites that the extracted shared fixtures now reach — so
-`mcp/tests/test_terminal_blocker_reasons.py`, `mcp/tests/test_checkpoint_landing_end_to_end.py`,
-`mcp/tests/test_cross_master_concurrency.py`, `mcp/tests/test_lifecycle_playthrough_end_to_end.py`,
-`mcp/tests/test_memory_attribution_producers.py`, `mcp/tests/test_pause_stop_only_end_to_end.py`,
-`mcp/tests/test_leaf_doc_master_link_binding.py`,
-`mcp/tests/test_closeout_projection_source_classification.py`,
-`mcp/tests/test_automatic_post_integration_cleanup.py`,
-`mcp/tests/test_retired_door_publication_fields.py`,
-`mcp/tests/test_terminal_enclosure_archive_sync_journal.py` and
-`mcp/tests/test_worktree_status_terminal_next_tool.py` are all declared consumers of the ambient-role
-runner `scripts/e2e_harness/run.py`. The declarations are the manifest-side half of those modules' routes
-registration; it records ownership for targeted selection and claims nothing about execution.
+The retired ambient-role scenario runner has no current repository-input declaration. Retained declarations are evaluated against independently observed consumers; catalog identity alone never supplies a missing selection edge.
 
 Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
 
@@ -74,7 +56,6 @@ The source owners below establish these file-local behaviors; this read does not
 - Transitive importer closure [2]
 - Digest binds declarations and classification authority [3]
 
-- The repository-owned exact consumer declaration and ambient-runner input identity. [4]
 
 
 - An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason. [5]

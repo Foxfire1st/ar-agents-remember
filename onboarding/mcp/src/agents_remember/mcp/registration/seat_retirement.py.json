@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native child retirement registration: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "563fbcdfbb0a941bba4d5924edf0d6917ebb3d4e",
+            "content": "sha256:023866fca584202bc568a7f914d77dbb06392ee2dbd6b1f1a4b4f47b06dfa888",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

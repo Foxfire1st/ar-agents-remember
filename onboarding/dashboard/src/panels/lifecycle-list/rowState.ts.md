@@ -6,15 +6,15 @@
 
 ## Purpose
 
-Pure presentation facts for one Operations row: the mark, single priority word, need band, numeric progress and complete hover text.
+Pure presentation facts for one Operations row: the mark, single task-state word, need band, numeric progress and complete hover text.
 
 ## Code Commentary
 
-A lifecycle inferred without any last event is not a report of pause: the document status speaks, or waiting when no document exists. Reported lifecycles speak their own state and eligible age; completed and abandoned states use document-style marks. askingWord handles only outside attention: gate, overdue inbox, pending acknowledgment, then chat needing input. rowWord consumes that result, then gives a band-zero asking/blocked state precedence, then a working chat, and finally the state text with an eligible age. A gate never consumes independent overdue inbox dismissal. Hover text preserves every signal, original lifecycle facts, document status and abandoned/discarded progress even when the compact line omits them. Short IDs are derived from an exact master-folder/id prefix, not guessed filename numbering.
+A lifecycle inferred without any last event is not a report of pause: the document status speaks, or waiting when no document exists. Reported lifecycles speak their own state and eligible age; completed and abandoned states use document-style marks. `rowWord` now returns only that task state and its eligible age. Asking and blocked lifecycle states remain band zero, ahead of working, waiting and over bands; this is the task-state classification, not the former gate/inbox/chat priority selector. Hover text preserves current lifecycle facts, document status, current step, worktree/repository and abandoned/discarded progress. Short IDs are derived from an exact master-folder/id prefix, not guessed filename numbering. The removed `askingWord` helper and gate/pickup/chat-activity inputs belong to the historical L144 priority promise, narrowed by the architect's L113 INV-7GVWYD ruling; they are not current consumers.
 
 ## Evidence
 
-- State and priority are derived without mutating lifecycle, document, inbox or chat state. [1]
+- State comes from a reporting lifecycle or the document, without mutating either. [1]
 
-
-- Outside attention is selected by askingWord; rowWord owns the remaining state and working-chat choices. [2]
+- The one word is the task state with eligible age; removed outside-attention inputs no longer participate. [2]
+- Whole-row hover retains the other current document, lifecycle and worktree facts. \[3] [3]

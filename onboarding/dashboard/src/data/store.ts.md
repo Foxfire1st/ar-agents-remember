@@ -33,19 +33,7 @@ in `useStore` for React subscribers. State mutates through these actions:
   (`stampServed`) and swapped in, and an entirely-unchanged collection returns the EXISTING map
   object. `metrics`/`analytics`/`activeWorktreeGroups`/`servingBuild` go through the same `reuse`
   gate (a replaced analytics re-anchors all its age-bearing nodes via `stampAnalytics`). When
-  NOTHING changed and `conn` is already live, the action returns early (260707-HFX2-L2 R5, fix
-  round 2): it calls `set({ agentNotifierHeartbeat })` only when `heartbeatEquals(state.
-  agentNotifierHeartbeat, agentNotifierHeartbeat)` is false, then always returns — a truly idle
-  heartbeat (including `null`/`null`) still performs zero store writes on this path. A dedicated
-  `heartbeatEquals` comparator is used instead of the general `stableEquals` gate because
-  `stableEquals` strips `ageSeconds` (it's in `VOLATILE_AGE_FIELDS`), which is exactly the field a
-  genuine heartbeat tick advances — reusing `stableEquals` here would silently treat every
-  advancing tick as unchanged. `heartbeatEquals` compares `lastTickAt`/`ageSeconds`/
-  `staleCutoffSeconds`/`stale` and, since HFX2-L8, the latest pending inbox count,
-  redeliverable inbox count, and sweep duration literally, ages included. Every other field on that early-return
-  path stays untouched (identity-preserving). On the normal (changed-content) path, `generatedAt`
-  advances only when content applied (it is the "ages as of" stamp the top bar shows — coherence
-  rule); `agentNotifierHeartbeat` is set alongside it.
+  nothing changed and conn is already live, applySnapshot returns without any store write. There is no agentNotifierHeartbeat field, dedicated heartbeat comparator or notifier early-return write. On a changed-content path, generatedAt advances only for content applied; a reconnect with unchanged content preserves that age anchor while restoring conn to live.
 - `applyDelta` — routes the server's named deltas through `reduceDelta`, which now returns
   `null` for a no-op (a stable-equal node, a removed-marker for an absent id, an equal
   whole-value) — the caller then skips `set` entirely. Real upserts stamp the node and merge as
@@ -67,7 +55,7 @@ in `useStore` for React subscribers. State mutates through these actions:
 **Slice 05o** added the `gen` number field (init `0`) and a `reset()` action. `reset()` is the one
 full dashboard-projection reset: one Zustand update increments `gen` exactly once and restores every
 scenario-owned collection to its clean initial value, including `closeoutQueues: []` alongside the
-id-keyed maps, `activeWorktreeGroups`, metrics/analytics, event state, serving/notifier state, and
+id-keyed maps, `activeWorktreeGroups`, metrics/analytics, event state, servingBuild state, and
 attention suppression. The dev bench calls `reset()` on each scenario mount; the engine-room canvas
 is keyed by `gen` so it REMOUNTS cleanly on a scenario switch, preventing an exiting Motion
 failure-overlay (e.g. the FleetingEnclosure) from the previous mode from orphaning and bleeding
@@ -87,17 +75,7 @@ change snapshot/delta queue ingestion, queue ordering/filtering, scheduling, or 
   displays can advance locally; nodes reused by identity keep their original (correct) anchor.
 - `servingBuild` is wire-optional (a pre-L15 server sends none → `null`, the stamp renders
   nothing); `reset()` clears it like every other collection.
-- **`agentNotifierHeartbeat` is deliberately EXCLUDED from the general `unchanged` change-gate check
-  (260707-HFX2-L2 R5)** — it is a live tick age injected app-side at response time (mirroring the
-  backend's own `delta.py` "volatile ages excluded" posture), so it is evaluated even on the
-  content-unchanged early-return path. Unlike a bypass of the identity-preserving no-write
-  guarantee, it has its OWN dedicated equality check gating the write (`heartbeatEquals`, fixed in
-  fix round 2 — see Update History): `if (unchanged && state.conn === "live") { if
-  (!heartbeatEquals(state.agentNotifierHeartbeat, agentNotifierHeartbeat)) { set({ agentNotifierHeartbeat
-  }); } return; }`. So the store still writes only when something actually changed — just via a
-  heartbeat-specific comparator that (unlike `stableEquals`) does not strip `ageSeconds`, since
-  that's precisely the field a genuine tick advance shows up in. `reset()` clears it to `null` like
-  every other collection.
+- Unchanged live snapshots are complete zero-write no-ops; no notifier-specific comparator bypasses the content gate. reset clears only the actual current projection/state fields.
 - The store keeps only a bounded sliding window of received Event River rows (`EVENT_WINDOW`), dropping
   the oldest past the bound — a memory bound for a long-lived tab, NOT the removed silent newest-N display
   cap. The real history bound is backend observer-log retention; `EventRiver` virtualizes this window, so
@@ -130,8 +108,6 @@ No configured Domain Documentation source exists for this file.
 - Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. [4]
 - `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. [5]
 - `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. [6]
-- `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. [7]
-- `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. [8]
 - `ScenarioPlayer` invokes the one store reset when a development scenario changes. [9]
 - The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains. [10]
 

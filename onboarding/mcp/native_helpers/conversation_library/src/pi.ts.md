@@ -60,7 +60,6 @@ consumes; the Python Pi port drives it on the production seam; the installed sui
 live gate and the real open.
 
 - The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. [1]
-- The Python Pi port calls list/read/resolve-resume-target through the locked helper host. [2]
 
 ### Cross-Repo References
 

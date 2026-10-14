@@ -1,6 +1,24 @@
 {
   "path": "scripts/harness/shared/session-start-directive.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c5e00026840ac0b98d0aa68772e2bd2cf0f9a3f3",
+        "content": "sha256:5393704ca94b1cf699dcfe2014565692aa5157b740ff8c2bb3a0621fb631e7c4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EDMVAT",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The text a chat without a role is given: answer inline, and for work on a managed repository write the request into the sprint document and start an Architect with `role_start`.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The generator that composes this body into six files with per-harness framing.\n\nAnchor: `generated_files`, `compose`",
@@ -19,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "7f05a4eee8c55a4bace727205fde9213ebc1c6fe",
+            "blob": "ece47e4e84538d74d0eaeef2d16799b0ee5ced66",
             "content": "sha256:eee1dde7aea37b3044e8fe17738f20fa3a9374fee8148eb296e7962c5f152736",
             "locator": {
               "kind": "symbol",
@@ -54,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "blob": "b1c353db87d31d02106b87c0cbe3c52303df87f0",
             "content": "sha256:5db5136cd1d282051f5c73e41cd0ac83fe7864f8d54579ffb5f54df2167efa03",
             "locator": {
               "kind": "symbol",

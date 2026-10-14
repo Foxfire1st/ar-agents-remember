@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The module guards the retirement register against the current sources: each registered sentence is a verbatim substring of the registered base text the module carries, is absent from the candidate sources, and is detected when it is put back; preserved no-role, identity, gate and artifact-validation doctrine reads clean on its own source. It reads current sources, not Git base carriers. It is the CR-003/CR-004 repair's control.
+The module reads current registered sources, confirms each obsolete sentence is absent there, detects it on its own source and not an unrelated source, and distinguishes obsolete restrictions from preserved no-role/identity/artifact-owner duties. The preserved-sentence case appends the named sentence to the current source for detector classification; it does not assert that the base/current source already contains it verbatim. These are static wording/detector controls, not Git-base membership or executed role behavior.
 
 ## Code Commentary
 
@@ -14,4 +14,6 @@ The module is part of the leaf's direct hand-over and instruction-guard evidence
 
 ## Evidence
 
-- Each registered obsolete sentence is caught on its own base carrier. [1]
+- Current-source absence and source-confined reintroduction detection, not base-carrier substring membership. [2]
+
+- Preserved sentences are appended for detector classification; original membership is not asserted. [3]

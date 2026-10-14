@@ -3,48 +3,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The request family uses structural fields only.",
+      "note": "The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO.\n\nAnchor: `StructuralRole`, `RetireChildRequest`, `RetireChildResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "af4c12b19f03aefd26a47f7ddf2047cd0cca6425",
-            "content": "sha256:772a8073516131dd78eadb4621548fd53b4a34443ccc4201b6a8ac5d5d68b5c5",
+            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "content": "sha256:96a9e5bf6b409791761e42026f4e7840c29cfdf851f2200d10536d0abf436a4d",
             "locator": {
               "kind": "symbol",
-              "name": "DispatchAgentRequest"
+              "name": "StructuralRole"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The response family returns structural targets without runtime ids.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "7bb98b8f4c9b505cf9f36dd541b2ea56345860a4",
-            "content": "sha256:bfe3f3fe9c50d622bbbc65cb6357d6cb2b023db6fcb9c8112e9af32a1b32b31e",
+            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "content": "sha256:92207c7a7b2c5909efa2533946bf10f82923f6e216bf97cf823ec61f291f05a9",
             "locator": {
               "kind": "symbol",
-              "name": "StructuralTargetResponse"
+              "name": "RetireChildRequest"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Current source section contains excerpt `StructuralRole = Literal[`; DTO/control ownership is not execution acceptance.\n\nAnchor: 14-63",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "af4c12b19f03aefd26a47f7ddf2047cd0cca6425",
-            "content": "sha256:ada6250c31d2071f63c0db6cb1d712e37ea6bb529bf6299763167cda9a169a98",
+            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "content": "sha256:b1ae3f3e8367d7483e8a5195dbc73ce53a1d4891942a35a5d28d0183a5ec81e5",
             "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 14
+              "kind": "symbol",
+              "name": "RetireChildResponse"
             }
           },
           "kind": "code"

@@ -4,40 +4,26 @@
 
 [overview.md](../overview.md)
 
-## Current source contract evidence
-
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
-
 ## Purpose
 
-`scripts/sync-runtime.py` keeps the root canonical runtime asset folders
-(`agents-md-files/`, `benchmarks/`, `providers/`, `system/`, and — since
-260915-CAPS-L9 — `eve_runtime/`) synchronized with their generated MCP
-package-data copies.
+`scripts/sync-runtime.py` keeps the four canonical runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) synchronized with their generated MCP package-data copies. The product-owned `eve_runtime/` target and package mirror are removed.
 
 ## Code Commentary
 
 ### Logic
 
 The script resolves the repository root from its own path, declares the MCP
-package-data root, and defines five explicit `RuntimeTarget` mappings:
+package-data root, and defines four explicit `RuntimeTarget` mappings:
 
 - `agents-md-files/` to `mcp/src/agents_remember/package_data/runtime/agents-md-files/`
 - `benchmarks/` to `mcp/src/agents_remember/package_data/benchmarks/`
 - `providers/` to `mcp/src/agents_remember/package_data/runtime/providers/`
 - `system/` to `mcp/src/agents_remember/package_data/runtime/system/`
-- `eve_runtime/` to `mcp/src/agents_remember/package_data/runtime/eve-runtime/`
 
-### 260915-CAPS-L9 The Fifth Target And The Two Comparison Corrections
 
-`RuntimeTarget` gained a **per-target** `ignored_names: frozenset[str]`, because the machine-local
-trees differ per canonical folder: the eve application carries `node_modules` and eve's own
-`.eve`/`.output`/`.vercel` state, and none of them is authored source. **The rule travels with
-the tree it applies to** — a global ignore would silently drop a same-named directory from any
-other target. `ignored()` and `file_digests()` take the target's set and thread it into
-`copy_ignore(names, target_ignored)`, so the digest comparison and the copy agree by
-construction. Only the `eve-runtime` target declares a non-empty set, and
-`test_only_the_eve_application_target_ignores_machine_local_trees` pins exactly that.
+### Comparison boundaries
+
+`RuntimeTarget` now carries label/source/path only; the Eve-specific `ignored_names` field and its propagation through digest/copy are gone. Comparison and copy use the same global local-noise predicate; there is no special application target to ignore machine-local Eve directories.
 
 `RuntimeDiff` gained **`source_missing`**, and `in_sync` now requires its absence. Without the
 flag a target whose canonical source and generated copy were *both* missing compared equal and
@@ -56,18 +42,14 @@ mapping.
 
 `replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
-Ignore only local/generated filesystem noise: `.DS_Store`, cache directories,
-`__pycache__`, and `.pyc` files — plus, **per target**, the machine-local trees that target's own
-canonical folder carries (`node_modules`, `.eve`, `.output`, `.vercel`, declared only by
-`eve-runtime`). Runtime asset targets are MCP package-data targets only; harness starter packages
-are intentionally not included.
+Ignore local/generated filesystem noise: `.DS_Store`, cache directories, `__pycache__` and `.pyc` files through the shared predicate. The removed Eve target no longer supplies special ignore names. Runtime targets are MCP package-data only; harness starter packages remain separate.
 
 ### Invariants And Boundaries
 
-- The five declared runtime asset folders are canonical. Root docs remain authored documentation, not a target of this synchronizer.
+- The four retained root runtime asset folders are canonical. Root docs remain authored documentation, not a target of this synchronizer.
 - The matching MCP package-data folders are generated.
 - The helper refuses to sync a target path onto its own source path.
-- The helper does not sync docs, skills, harness starter packages or user-owned installed runtime files. The unowned added documentation mirrors were removed; retained packaged tool-details.md is separate from these five generator targets.
+- The helper does not sync docs, skills, harness starter packages or user-owned installed runtime files. The unowned added documentation mirrors were removed; retained packaged tool-details.md is separate from these four generator targets.
 - **A target whose canonical source is absent is never reported in sync**, and the packaged
   application mirror is generated content: it is never hand-edited, and the read-only `--check`
   is its currency proof.
@@ -86,13 +68,23 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The five explicit canonical-to-package-data runtime targets, with the per-target ignore set declared beside the tree it applies to. [1]
+
+- The four retained canonical-to-package-data runtime targets; no product-owned Eve target remains. [1]
+
 - Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync. [2]
 - Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets. [3]
-- The per-target ignore set threads into both the digest walk and the copy, so comparison and copy cannot disagree. [4]
+
+- Digest walk and copy use the same shared local-noise predicate; the per-target ignore API is removed. [4]
+
 
 ### Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
 No meaningful cross-repo references found.
+
+## Preserved incoming L109 source witness
+
+The incoming whole-source witness is retained at its earlier source epoch, not proof that the removed fifth Eve target or per-target ignore API survives this composition.
+
+- Historical incoming L109 declaration evidence: Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]

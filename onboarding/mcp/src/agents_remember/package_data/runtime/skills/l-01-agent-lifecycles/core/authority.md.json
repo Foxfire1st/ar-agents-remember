@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "role_start records structural seat binding; Architect starts at Projects without a document. [1]\n\nAnchor: source extent 10–36",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:30fda68803fb14fc3987ed9361053aac08e26463beb6b876f08294dea74b33e9",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One role_start request reconciles the same agent; refusal has no alternate-route fallback. [2]\n\nAnchor: source extent 38–59",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:a5322eb5e8c71f2f9155c368215529fb7cd1e93e601e5da42d39df60782924ba",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Escalation stays one rung at a time, with Investigator addressed to its actual parent or developer. [3]\n\nAnchor: source extent 79–87",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:92343a9f79bfbeb88ed8ecf2445e3ca7af94afd9883271765b1b0500d98dd1e5",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A host parent wake-up names the newest report; no seat-local watcher is authorized. [4]\n\nAnchor: source extent 140–150",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:8c93598626afd4c7884986339a0950fa720e60ecdae4747cfc52da16fc03224e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained corpus inheritance is a source-text convention, not evidence that native launch injects this shared core. [5]\n\nAnchor: source extent 1–14",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9d9623cbe73bc5056696b8091f3fe78595516e",
+            "content": "sha256:36501498ac5bdbbc5b151217cb2ab02592fea4464cf0f4e930951318a7b3aa49",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

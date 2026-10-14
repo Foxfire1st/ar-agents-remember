@@ -14,11 +14,11 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
-The publication inventory is finite: 54 declared paths, including 32 stable `rail-evidence/` capture paths. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
+The publication inventory is finite: 47 declared paths, including 30 stable `rail-evidence/` capture paths. The ambient-role-chat and teardown-process-cleanliness rails and their artifacts are removed. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
 
-Dashboard browser execution writes the Playwright JSON result at the explicitly configured report path with both line and JSON reporters. Provider integration writes the actual pytest phase report to `provider-integration-result.json`. For an applicable ambient scenario, the teardown verifier checks the existing clean-room summary and both successful `L5-C10` checkpoint records before writing `teardown-proof.json`. For an admitted not-applicable scenario, it requires summary absence and writes a zero-start proof with the exact source-decision digest and empty replications. Dashboard coverage retains its existing Vitest producer location and receives the stable exported name `dashboard-coverage.json`.
+Dashboard browser execution writes its configured Playwright JSON result with line and JSON reporters. Provider integration keeps its actual pytest phase report and dashboard coverage keeps the stable `dashboard-coverage.json` export. The removed ambient scenario no longer produces an ambient summary, replication records, source-selection artifact or `teardown-proof.json`.
 
-The profile also declares a bounded dashboard dependency census and reconstruction proof for resumed Gates 2–4, generated-input source/output scopes, and exact source applicability for the ambient-role rail. Its source-selection report remains required even when that rail is not applicable; teardown treats the ambient-role prerequisite conditionally. These declarations do not narrow the unconditional dashboard suite or turn full Python ownership into a focused population.
+The profile retains bounded dashboard dependency reconstruction, generated-input scopes and the remaining full/targeted/local selections. It no longer declares ambient-role source applicability or conditional teardown prerequisites. This removal does not by itself narrow the remaining dashboard or Python test obligations.
 
 The Dagger emission/export owners retain real files and exact output captures on a separate report branch. The profile declares those paths and their bounds; the host validates the full published snapshot and nested evidence before certificates can reference them. These concrete producers close the earlier three Gate-4 mapping gaps.
 
@@ -54,7 +54,7 @@ The exact source declarations below establish the current behavior; this invento
 
 - Pinned Dagger execution adapter and actual runtime digest [2]
 - The declaration carries its own canonical profile digest. [3]
-- 54 report paths including 32 rail-evidence captures [4]
+- 47 report paths including 30 rail-evidence captures; ambient and teardown publications are removed. [4]
 - Full/targeted/local selections and explicit applicability [5]
 - Current source-owned selector configuration digest [6]
 

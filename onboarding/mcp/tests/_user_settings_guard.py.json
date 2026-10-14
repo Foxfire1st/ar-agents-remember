@@ -10,6 +10,42 @@
           "name": "user_settings_path_for_write"
         }
       },
+      "id": "RLZ-A6NJP9",
+      "invariant": "INV-9E86TC",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The single entry point of every test-side write of the user's settings: it compares the path it is about to hand out with the account's real settings path and raises `UserSettingsWriteRefused` instead of returning it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c28f8d301406f9c06a5068ba12f9e8f65395eecf",
+        "content": "sha256:d6283a4fed8a21d60f42e412242ad9ed6896f15cf158018d8ca56949cac81751",
+        "locator": {
+          "kind": "symbol",
+          "name": "_account_home"
+        }
+      },
+      "id": "RLZ-HV1BB3",
+      "invariant": "INV-9E86TC",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads the account's home from the account database and not from the environment, so that a test that clears or patches the environment cannot move what the guard takes for the real path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c28f8d301406f9c06a5068ba12f9e8f65395eecf",
+        "content": "sha256:7b048e270464dbeae383d75e7d1e76bf5361c0a5aa89db90ffbac83dbcbff9f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "user_settings_path_for_write"
+        }
+      },
       "id": "RLZ-W1FVPN",
       "invariant": "INV-GT2391",
       "origin": {

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
             "content": "sha256:0ec18f520236a5e8dc6b0e59356797713c81bad0face91e6d4f83c0986a37375",
             "locator": {
-              "end": 280,
+              "end": 244,
               "kind": "line_range",
-              "start": 280
+              "start": 244
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:2e09a4f75ec282ec2e3357dae728a08d2ac14b514ac51b4a02189c39d0f17058",
             "locator": {
-              "end": 161,
+              "end": 78,
               "kind": "line_range",
-              "start": 161
+              "start": 78
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -70,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
             "locator": {
               "kind": "symbol",
@@ -118,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
             "locator": {
               "kind": "symbol",
@@ -130,12 +130,12 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
             "locator": {
-              "end": 46,
+              "end": 44,
               "kind": "line_range",
-              "start": 46
+              "start": 44
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
             "content": "sha256:6069fd688e3dc5d198d0fa38c361eac20d23683287e688cc22036c6a9e919d00",
             "locator": {
               "end": 231,
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "blob": "95e3bb02fd723653615ef09f7220685e54b3a901",
             "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
             "locator": {
               "end": 45,
@@ -192,24 +192,6 @@
               "start": 45
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The supervisor-signal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused \"one writer\" as a reason not to lock.\n\nAnchor: \"class AgentNotifierSignalCooldownStore\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "19724595ba8611fb7389bed26521ca305c1a75da",
-            "content": "sha256:6b4c77ff708f1c7cd1778eb5cfbbe66c46c534c30ab2139e60927348e282ee64",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "mcp/src/agents_remember/controlplane/agent_notifier_signals.py"
           },
           "kind": "code"
         }
@@ -252,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
             "content": "sha256:c6792e650f7788825f47b830e6d34b6e1de4f393addc72876f18aee72691a98b",
             "locator": {
               "end": 63,
@@ -265,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
             "content": "sha256:6069fd688e3dc5d198d0fa38c361eac20d23683287e688cc22036c6a9e919d00",
             "locator": {
               "end": 231,
@@ -313,120 +295,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "blob": "709320161c9744d9aa93d005a483faf721515e33",
             "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
             "locator": {
-              "end": 172,
+              "end": 88,
               "kind": "line_range",
-              "start": 172
+              "start": 88
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "123c7eaf256393182681706fb3f5b80a98a47a12",
-            "content": "sha256:a604846687c812b3da9883e37a01fd5b473cfbd1d56b66c405e785d38ced1ff3",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/operator_inbox.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The store this module appends/compacts durable inbox rows through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
-            "content": "sha256:3907ec155d3de7b680221f8b331c0150f4a8dcf3aae32921b2a0e036d135cc84",
-            "locator": {
-              "kind": "symbol",
-              "name": "OperatorInboxStore"
-            },
-            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
-            "content": "sha256:fed301711b2c28956cbb567714c9de1f3af52f8c1f8a4be32bcda1756737b602",
-            "locator": {
-              "end": 251,
-              "kind": "line_range",
-              "start": 53
-            },
-            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
-            "content": "sha256:974d34325c8011077e0b04e031cc2250b6538d4c1ca10bbac0f9f254d38a093c",
-            "locator": {
-              "kind": "symbol",
-              "name": "deliver_inbox_entry"
-            },
-            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
-            "content": "sha256:c5cd11dfe10cbbf60c65cdcdcf1145db4086fb2b481a1bcbc45dd260588a70d3",
-            "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 141
-            },
-            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
-            "content": "sha256:55daa48731d544c451294839190cc76f0b5c3c8b446e90d5b35cf10ba039e3a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalCatalog"
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
-            "content": "sha256:bf447973e7d081b57ebe545c616fdc5b076530dc793c6f6ccded3a64d7659a13",
-            "locator": {
-              "end": 386,
-              "kind": "line_range",
-              "start": 48
-            },
-            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
           },
           "kind": "code"
         }

@@ -71,6 +71,23 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "Current free chat writes the sprint request, starts the Architect with role_start and excludes first-message role handovers; old dispatch/hosted-identity routing is removed. [5]\n\nAnchor: Current notice",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8df388ee0e92b15acd0a1d4c34e51d8e3c83124",
+            "content": "sha256:50fcb8d8e8e5bb0d59af7f8a7294208cc53eb98740541fb22e0795fcfab7bc94",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

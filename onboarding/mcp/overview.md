@@ -9,7 +9,7 @@
 
 The package separates transport from decisions. MCP registration and HTTP routes expose bounded typed requests; application owners resolve admitted context and compose services; models define shared wire vocabulary; kernel and domain owners implement the underlying behavior. A reported absence, an unavailable source, an unmeasured collection, an incomplete computation, and a successful empty result are different facts. Neither a finished agent turn nor a green diagnostic supplies AR review, curation, lifecycle, or Git acceptance.
 
-The present public roster has 41 names on this successor, after `resolve_context` was removed from the rejected freeze’s 42-name tuple; older39/41 epochs are historical. It includes structural `dispatch_agent`, native `role_start` and `role_message`, task/worktree/memory operations, and three knowledge operations: read, diff, and integrity. Public `retire_child` calls the native receipt-tracked owner; retained structural retirement code is not its handler. Historical counts of 63 or 66 tools are not the present inventory. The SEP-2640 skill surface remains resource/protocol transport: `skills/list`, `skills/get`, individual skill resources, and this server's convenience `skill://index.json`. Its registrar now registers resources rather than the historical capsule/catalog tools. Serving a skill grants no capability and does not turn supplied prose into local-file authority.
+The present public roster has 40 names on this successor, after `dispatch_agent` was removed; preceding 41/42-name source epochs stay historical; older39/41 epochs are historical. It excludes `dispatch_agent` and includes native `role_start` and `role_message`, task/worktree/memory operations, and three knowledge operations: read, diff, and integrity. Public `retire_child` calls the native receipt-tracked owner; retained structural retirement code is not its handler. Historical counts of 63 or 66 tools are not the present inventory. The SEP-2640 skill surface remains resource/protocol transport: `skills/list`, `skills/get`, individual skill resources, and this server's convenience `skill://index.json`. Its registrar now registers resources rather than the historical capsule/catalog tools. Serving a skill grants no capability and does not turn supplied prose into local-file authority.
 
 MIK-R112 changes the retrieval account: harness-native onboarding and source search replace CGC/GrepAI retrieval. Generated lifecycle settings contain an empty provider map and disabled `contextProviders`, regardless of the authority configuration. Retained provider implementation does not restore public provider tools or enabled lifecycle blocks. Runtime installation retains the old-watcher stop: a failed stop is recorded with recovery information and does not abort the install.
 
@@ -307,7 +307,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
 - **Retained historical source account — superseded by the current route account:** D13's repair, on the registered operation's own resolution path. [162]
 - **Retained historical source account — superseded by the current route account:** The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
-- **Retained historical source account — superseded by the current route account:** The production chain read at the consumer's own gate and at the live runtime's system block. [164]
 - **Retained historical source account — superseded by the current route account:** Public closeout payload delegates the current task-bound request. [165]
 - **Retained historical source account — superseded by the current route account:** Projection admission precedes staging; declined claims retain their original bytes. [166]
 - **Retained historical source account — superseded by the current route account:** Accepted batches check complete document bytes and held source/cell bindings before atomic publication. [167]
@@ -541,8 +540,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The one workspace rule and the selection that follows it. [160] [273]
 - The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
 - D13's repair, on the registered operation's own resolution path. [162]
-- The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
-- The production chain read at the consumer's own gate and at the live runtime's system block. [164]
+
+- The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
 - Public closeout payload delegates the current task-bound request. [165]
 - Projection admission precedes staging; declined claims retain their original bytes. [166]
 - Accepted batches check complete document bytes and held source/cell bindings before atomic publication. [167]
@@ -630,7 +629,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
 - The converted-card workflow's opening. [224]
 - The two lane rows. [233]
-- Present public vocabulary has 41 successor names (the rejected freeze had42; resolve_context removed), adds native retire_child and role_start_set, excludes historical provider/capsule/catalog tools and retains three knowledge operations [288]
+
+- Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The grouped bounded-landing answer and role-duty witnesses remain distinct co-targets. [288]
 - Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
 - Dispatch advertisement is closed and undeclared inputs refuse before handler [290]
 - Generated lifecycle providers are empty independently of configuration [291]
@@ -652,7 +652,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - Current declared collected-case budgets supersede historical totals [309]
-- bounded landing answer and human-review role contract [288]
 - Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution. [310]
 
 - Paired-base authoring comparison and contract write route. [315]

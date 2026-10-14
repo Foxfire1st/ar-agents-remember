@@ -22,6 +22,14 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 
 The curation operation instruction.
 
+
+
+## Foundation carrier and writer admission
+
+The repository-foundation entry is carried by a taskless instructed session following Curator rules, not by opening a taskless Curator seat. Bootstrap reads/reports the foundation state; a Curator seat opened on a task document authors on that task line. Knowledge-bootstrap retains its no-enclosure admission and developer commit word, while knowledge-ingest remains the contract-scoped leaf writer. No invented task document or enclosure bridges those admissions.
+
+- Foundation authoring is taskless-session work under Curator rules; an actual Curator seat is task-document-bound and the two writer admissions do not substitute for one another. [3]
+
 ## Code Commentary
 
 The instruction owns the curator's leaf coherence pass: the three-way reconciliation, the hand-off sections, the writer invocation, the full quality check and the coherence authority. Under MIK-R48 its family-coverage step owns the effect/revision rule to which the Curator role delegates: a restated family guarantee is named as a changed row with the curator's effect while the writer fills the family's own revision. RLZ-AHYBRR was repaired under its existing ID, origin and role: its Curator-role anchor now names lines 107–108, and its revised rationale describes delegation to this operation's Normal workflow for family coverage authoring and readback. The formerly mismatched role-file anchor was not left unchanged in this candidate; the delegation pointer is not itself an independent restatement of the effect/revision rule.

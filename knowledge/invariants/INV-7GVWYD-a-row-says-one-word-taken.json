@@ -3,12 +3,13 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Preserving the fixed priority and complete hover prevents a dominant gate or chat from silently hiding a separately actionable handover."
+    "justification": "A truthful state word and complete hover prevent the row from presenting inferred non-reporting lifecycle assumptions or omitted facts as an actual task event; the retired outside-attention priority is not promised."
   },
-  "applicability": "The single priority word and full hover of an Operations task row.",
+  "applicability": "The single task-state word and full hover of an Operations task row.",
   "conditions": [
-    "Gate, inbox handover, chat and lifecycle facts retain their separate owners.",
-    "Lower-priority facts stay recoverable in the whole-row hover."
+    "The word and mark come from the reporting lifecycle, or from the document when no lifecycle has reported an event.",
+    "Asking and blocked lifecycle states retain the developer-first band within task-state classification; removed gate, pickup and own-hosted-chat activity are not competing word inputs.",
+    "The whole-row hover keeps current document, lifecycle, progress, worktree and repository facts."
   ],
   "exclusions": [
     "Deriving a gate or lifecycle event from UI colour or a session state."
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A row says one word, taken by a fixed order of what presses most: an open gate, a hand-over that is overdue or unacknowledged, a chat that needs input, \"your turn\" or \"blocked\", a chat at work, then the state; everything else the row knows stands in the hover text of the whole row.",
+  "statement": "An Operations row says its task’s own state as its one word; asking and blocked task states occupy the developer-first band, and every other current fact the row knows remains in the whole-row hover text.",
   "status": "accepted",
   "supersedes": []
 }

@@ -1,215 +1,6 @@
 {
   "path": "scripts/e2e_harness",
   "references": {
-    "1": {
-      "note": "The controller schedules two fresh replications, zero retries and candidate-bound reports. Retained controller co-targets. Admission, replication and candidate-index predicates.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
-            "content": "sha256:e6297af676e399a560bf3ad111b4291ad1554e5c6cec8ddf272542f6349e9075",
-            "locator": {
-              "kind": "symbol",
-              "name": "main"
-            },
-            "path": "scripts/e2e_harness/run.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
-            "content": "sha256:af2ed773caeb59017488789031a72efc1db0947a29b71b47838b6b5c0b4a49d3",
-            "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "scripts/e2e_harness/run.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
-            "content": "sha256:fd4627d8655a7b6c9ab28a388a24404ac451b477f2f5cbcafd529265714eaf9f",
-            "locator": {
-              "end": 203,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "scripts/e2e_harness/run.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
-            "content": "sha256:c29660b73b77bd86e16ce3eabef807f21dea69df988eb64acf39a7c449c2af96",
-            "locator": {
-              "end": 99,
-              "kind": "line_range",
-              "start": 80
-            },
-            "path": "scripts/e2e_harness/run.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
-            "content": "sha256:81d5cce58d1bd82641fd38ce4ccefb7ac228dea6fa9ac3ff9a7b87ed101d7f63",
-            "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 206
-            },
-            "path": "scripts/e2e_harness/run.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Disposable ambient repositories represent the contract rather than supplying external implementation logic.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5118fc9498755a780eb845d3bf6448131c9e60b7",
-            "content": "sha256:9b81eea7f682e15c7c04d82de65d60b578348c2861c863cc424c7f1387173128",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_fixture"
-            },
-            "path": "scripts/e2e_harness/fixture.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Ambient Codex results record client version, MCP readiness and turn evidence. Retained Codex protocol-summary co-target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "989dd70cbd8a205e4bf097417cf933e719b211e1",
-            "content": "sha256:41be3ef34bc95bf9764fb4a030193d8a086c979de3a216a1cd57f9fe09f7f19c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_ambient_codex"
-            },
-            "path": "scripts/e2e_harness/codex_driver.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "989dd70cbd8a205e4bf097417cf933e719b211e1",
-            "content": "sha256:6d9533da7d8e8abfe4a0ddc69b802d3bcf616485f99a1dacb3047605e180511b",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 221
-            },
-            "path": "scripts/e2e_harness/codex_driver.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Canonical brief construction and tmux environment forwarding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5118fc9498755a780eb845d3bf6448131c9e60b7",
-            "content": "sha256:ae4f1c8e79a6a8e725d0bb8d53527524c3cd9e9e0c8fcec1542761413db35d1b",
-            "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 124
-            },
-            "path": "scripts/e2e_harness/fixture.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5118fc9498755a780eb845d3bf6448131c9e60b7",
-            "content": "sha256:af0e2621b8ca45370b9c7af1141e5b90f10170f2dae4647a699daeedf50d9516",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 290
-            },
-            "path": "scripts/e2e_harness/fixture.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Selection requires an applicable matching observed candidate decision.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "edf4fac9c7deeef582625adb8728f44cf16fcfb6",
-            "content": "sha256:c91ca40e957c8b3911f90e40ef934de66d431988e46b6fbca5d1609179524ac7",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 19
-            },
-            "path": "scripts/e2e_harness/selection.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Teardown preserves cleanup errors and protects destructive tmux commands.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5bd3e43efe08544adeb79d4204e6aa86116c98",
-            "content": "sha256:09a955b1f5fec1804a22efefad398d2ddb5f4c85a3a4ab51b713207f95d37b09",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "scripts/e2e_harness/scenario_runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d5bd3e43efe08544adeb79d4204e6aa86116c98",
-            "content": "sha256:aadb5804fef78a95a4718841a958c75869c79b8122e741f0e2d38ef7d1714258",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 91
-            },
-            "path": "scripts/e2e_harness/scenario_runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d5bd3e43efe08544adeb79d4204e6aa86116c98",
-            "content": "sha256:d862c33823b9a35d4b4c26ff6575ba3c5c41a2bead28146f06c9aae93f23a908",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 125
-            },
-            "path": "scripts/e2e_harness/scenario_runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
       "note": "Checkpoint values are recorded before failure is raised.",
       "targets": [
@@ -228,37 +19,6 @@
         }
       ]
     },
-    "16": {
-      "note": "Result normalization recursively searches JSON children; failure evidence collects full collections.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
-            "content": "sha256:7ab6692d0e0a47c748e851da4812d69d976c1e5fdf439f6d665999ab2058c6b0",
-            "locator": {
-              "end": 206,
-              "kind": "line_range",
-              "start": 141
-            },
-            "path": "scripts/e2e_harness/scenario_evidence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
-            "content": "sha256:e3dd6d29f37f6a176bacf0af0f2823f4d18f32b1f8cde7cf9c3411d1431e6021",
-            "locator": {
-              "end": 296,
-              "kind": "line_range",
-              "start": 269
-            },
-            "path": "scripts/e2e_harness/scenario_evidence.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "17": {
       "note": "Quality result projection names nested summary and replication reports.",
       "targets": [
@@ -272,135 +32,6 @@
               "start": 174
             },
             "path": ".dagger/src/agents_remember_quality/profile_results.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The scenario owns spawn and routing checks, including the disclosed vacancy discrepancy. Retained scenario co-target. Current checkpoint ownership, flow and replacement checks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01cd260496d9675bd6b5cda452c88ff99c9c3b5a",
-            "content": "sha256:e0422d2a5bbc9a031dd5060025a6bf7ae38423530a2160d6ab8e9a9e26f6747d",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_scenario"
-            },
-            "path": "scripts/e2e_harness/scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "01cd260496d9675bd6b5cda452c88ff99c9c3b5a",
-            "content": "sha256:c7925b6e035a01c47c4cf89f555011381269495af72c0e6cbb9102eaaa8db448",
-            "locator": {
-              "end": 536,
-              "kind": "line_range",
-              "start": 373
-            },
-            "path": "scripts/e2e_harness/scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "01cd260496d9675bd6b5cda452c88ff99c9c3b5a",
-            "content": "sha256:4b0a80f533566689cae437d6b481365e793db49856835e87cf8662d98c273414",
-            "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 66
-            },
-            "path": "scripts/e2e_harness/scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "01cd260496d9675bd6b5cda452c88ff99c9c3b5a",
-            "content": "sha256:9c2fff69b994db12f7dd58388e8a7ae0b38224a10e06cf6064b2a1db2c79c417",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "scripts/e2e_harness/scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "01cd260496d9675bd6b5cda452c88ff99c9c3b5a",
-            "content": "sha256:d341241cccf13be86a79e7a12062cdd7b3999288f20340a4d9febaa2735b7c1d",
-            "locator": {
-              "end": 583,
-              "kind": "line_range",
-              "start": 527
-            },
-            "path": "scripts/e2e_harness/scenario.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The deterministic provider validates live dispatch advertisements and selects dispatch and role-message actions. Retained provider discovery co-target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cf1208a7305ab1a09bb336d32d2291842043dd93",
-            "content": "sha256:a2d31a7612e6c3f25b9261f3338724b902d069815175c08cbdb3b97accbbb7a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "ScriptedResponses"
-            },
-            "path": "scripts/e2e_harness/responses_server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf1208a7305ab1a09bb336d32d2291842043dd93",
-            "content": "sha256:f98f423069c5dc27862be40e27061161bea9141b770cd365b85054a088e828c9",
-            "locator": {
-              "end": 381,
-              "kind": "line_range",
-              "start": 329
-            },
-            "path": "scripts/e2e_harness/responses_server.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Controlled malformed advertisements use the canonical validator. Rejection must occur with the expected canonical failure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
-            "content": "sha256:9b6dd00aadaf7892043ecf09ff51ea76dbc53f39153d48abd9ef28e8b44168f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "dispatch_rejection_sentinels"
-            },
-            "path": "scripts/e2e_harness/dispatch_sentinels.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
-            "content": "sha256:7832813024c1475ebcf71b3841732f459955d830623d2152ea666ffa364104e6",
-            "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "scripts/e2e_harness/dispatch_sentinels.py"
           },
           "kind": "code"
         }
@@ -428,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
             "content": "sha256:25cdd1f54345bac026896ac58fc1cdbe70a006f204c2c058b653f387866f3f6d",
             "locator": {
               "kind": "symbol",
@@ -452,12 +83,12 @@
         },
         {
           "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
             "content": "sha256:29aa85d00b66a53d96cfbf39aa2aaed72eb1842882b205ca3fb7df34c7ffbbc3",
             "locator": {
-              "end": 807,
+              "end": 777,
               "kind": "line_range",
-              "start": 579
+              "start": 549
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },
@@ -478,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
             "content": "sha256:b702fcc6b7224134cdfaa0f72d195586e176d0cdf299b70ea4027a156e8392d8",
             "locator": {
-              "end": 249,
+              "end": 220,
               "kind": "line_range",
-              "start": 208
+              "start": 179
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },
@@ -491,42 +122,12 @@
         },
         {
           "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
             "content": "sha256:f595acab6909f9e6e1277038d2d48e129ebee4e9e77aade37ca4c1ea6cf22dfb",
             "locator": {
-              "end": 343,
+              "end": 313,
               "kind": "line_range",
-              "start": 289
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Bootstrap capsule comparison reads a recorded launch token. The terminal-host boundary records specifications without starting a child.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
-            "content": "sha256:c8a0db03f0958941f620c5ff408982ababa2f97ae80e40f8de4a91d5965bdda2",
-            "locator": {
-              "kind": "symbol",
-              "name": "free_agent_acceptance"
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
-            "content": "sha256:167832dd7b320ce122ad56588db98dfe0cd3934af68083aea675812e626da0a5",
-            "locator": {
-              "end": 915,
-              "kind": "line_range",
-              "start": 881
+              "start": 259
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },
@@ -539,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "blob": "dfdb836bfc18d9b6ab8567fd5923c41a1170b0bf",
             "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
             "locator": {
               "kind": "symbol",
@@ -551,7 +152,7 @@
         },
         {
           "anchor": {
-            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "blob": "dfdb836bfc18d9b6ab8567fd5923c41a1170b0bf",
             "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
             "locator": {
               "kind": "symbol",
@@ -568,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "blob": "687db30efa3168587b8d434ff360ac6715666930",
             "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
             "locator": {
               "kind": "symbol",
@@ -593,12 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "b3fbdff6a73e72ef8e03195373c78f624366cb88",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:fcbdf4282886accc1dac0b35af6cab92abeaa075f409d0b3479667ec7b46c5db",
             "locator": {
-              "end": 2641,
+              "end": 2909,
               "kind": "line_range",
-              "start": 2604
+              "start": 2872
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -606,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "b3fbdff6a73e72ef8e03195373c78f624366cb88",
+            "blob": "df54be978d65ad0915b8038853f27991891cdb60",
             "content": "sha256:ffe09ef236cc70e1a86c3cb5cd9d8c935b3ec5a38f9cb98c0da7727fea7c4ce1",
             "locator": {
-              "end": 2747,
+              "end": 2947,
               "kind": "line_range",
-              "start": 2731
+              "start": 2931
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

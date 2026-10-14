@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/core.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
+        "content": "sha256:981ec6c92d9899db9e7eed5a5dff4ec5a672661eb01cbeeb2a5b72e310bcaecf",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_runtime_install_payload"
+        }
+      },
+      "id": "RLZ-0W0NBS",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Keeps count, size and the sentences in the tool's answer and leaves the list of the stores to the filed report.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
+        "content": "sha256:2b93be477e2c4ed21a42845ad2db6ef92e4c37079b88cabc156b233d44f33949",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unused_settings_keys"
+        }
+      },
+      "id": "RLZ-36M4JP",
+      "invariant": "INV-7SARPM",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Names, as dotted names, the keys the loaded settings hold that only removed parts read; it reads and reports, and writes no file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5ccf827ff1920019049ff8a2173825758a2676b0",
+        "content": "sha256:340a1de55a91dcbd2b177a9da8fadb99da301e2402868e104eda1ff82aafb858",
+        "locator": {
+          "kind": "symbol",
+          "name": "server_info_payload"
+        }
+      },
+      "id": "RLZ-968TBV",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Puts the notice into the answer of `server_info` under `openUserSettings`, the report of an installation's state that a start reads.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of server_info_payload supporting the stated file behavior.",

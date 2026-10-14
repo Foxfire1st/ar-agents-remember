@@ -7,7 +7,7 @@
 
 ## Current enclosure-only composition
 
-The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setupState/currentPhase/heartbeat, completed and failed phase text, source files and gate responder remain; cleanup/abandoned still changes completed markers to muted ◦ and setup text to powering down.
+The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setupState/currentPhase/heartbeat, completed and failed phase text, source files and retained diagnostic action rows remain, with no gate responder; cleanup/abandoned still changes completed markers to muted ◦ and setup text to powering down.
 
 ### Maintenance boundaries
 
@@ -58,7 +58,6 @@ Two exports, both presentational (no state, no effects, no mutation).
 - `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) [3]
 - `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes [4]
 - `Affordance` display-only action button (aria-disabled, no POST) [5]
-- `GateResponder` compact worktree-gate control. [6]
 - `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d [7]
 - `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes [8]
 

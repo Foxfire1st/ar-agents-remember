@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "blob": "4c5bfb1e292fbf123166776a484851f67ac6f142",
             "content": "sha256:e5c0b9f39701e93fc902434314625b8e41e4f8627df07b304467256fe1dac109",
             "locator": {
               "kind": "symbol",
@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
             "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
             "locator": {
               "kind": "symbol",
@@ -101,67 +101,12 @@
         }
       ]
     },
-    "4": {
-      "note": "`_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116.\n\nAnchor: `_reclaim_gate_log`, `record_gate_decision`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
-            "content": "sha256:9c1f77e54b06fb86d995723c5b890b5cfeab63bec654cd15d090793ea5061811",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reclaim_gate_log"
-            },
-            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
-            "content": "sha256:e8c335c3bd3e48fb27ef8fb2f3ca48f840505c727bc7d99d15d034c4a33ce0ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "record_gate_decision"
-            },
-            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
-            "content": "sha256:1fd7e3773c8bb6b493202b036586e421669b93b7420f15fbfb932cbf8b6318eb",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
-            "content": "sha256:b70c5470d101fac93aa71ecce4dead60e2d9fd490ec57173006d610f05512040",
-            "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "`CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect.\n\nAnchor: `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "blob": "627668dce374cd5ebd8fca644392303de17b6c66",
             "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
             "locator": {
               "kind": "symbol",
@@ -173,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "blob": "627668dce374cd5ebd8fca644392303de17b6c66",
             "content": "sha256:8d6f0070efbb54d7e2eb3582332406b20b8356387839b427ac2d18585a884fc9",
             "locator": {
               "kind": "symbol",

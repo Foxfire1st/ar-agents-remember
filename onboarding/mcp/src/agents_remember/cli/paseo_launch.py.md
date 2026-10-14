@@ -8,7 +8,7 @@ The current source facts below replace the former operative inventory. The separ
 
 - Saved calls carry serverExclusion alongside agent/workspace.
 - A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
-- agent_create_input removes only agents-remember from supplied MCP maps and forwards the record.
+- agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call constructed the supported Claude providerOptions.disallowedTools with existing host deny rules preserved.
 - serviceTier is projected into featureValues.service_tier.
 
 ### Source and authority bounds
@@ -19,7 +19,7 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
-The pre-successor CUR-C03 source overwrote mixed featureValues. The moving producer candidate now merges the retained map with service_tier, preserving other keys in source. Its genuine successor custody/independent disposition remains separate; the serverExclusion data/bridge projection is not host-actual suppression. That obligation stays assignedL132.
+The pre-successor CUR-C03 source overwrote mixed featureValues. The moving producer candidate now merges the retained map with service_tier, preserving other keys in source. Its genuine successor custody/independent disposition remains separate; The former metadata-only projection is historical. The current launch applies Claude disallowed-tools options; `secondCopyLoaded` is derived from the applied record. Codex, Hermes/ACP and Pi remain exception cases with the second copy reported as loaded.
 
 ## Historical original card — preserved, not the current operative account
 

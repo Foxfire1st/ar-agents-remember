@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bb72bee5301b63630b2ec6a17d3b0d507c673a69",
+        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
         "content": "sha256:b7624384d1a59a37d1bd4c095894acf62a770e90aa2af4a60d86a95044d25346",
         "locator": {
-          "end": 758,
+          "end": 705,
           "kind": "line_range",
-          "start": 738
+          "start": 685
         }
       },
       "id": "RLZ-DYXENX",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "bb72bee5301b63630b2ec6a17d3b0d507c673a69",
-        "content": "sha256:2bcdba0f0e063b3cf2ff5219895425f6822808824f2b09f1c2fb729ce07a29e1",
+        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+        "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,27 @@
     },
     {
       "anchor": {
-        "blob": "bb72bee5301b63630b2ec6a17d3b0d507c673a69",
-        "content": "sha256:2bcdba0f0e063b3cf2ff5219895425f6822808824f2b09f1c2fb729ce07a29e1",
+        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+        "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-KM0Q5C",
+      "invariant": "INV-R34KP2",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The section a user reads: why the file is closed, the command before an edit, the command that closes both again, and where the product names an open file.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+        "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
         "locator": {
           "kind": "file"
         }
@@ -56,102 +75,31 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Agentic settings parser that implements the documented `orchestration.*` families.\n\nAnchor: \"Read + merge the global (and optional repo-local) agentic settings, per use.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcf096dde111cdbf84a959f56210af540195b7d0",
-            "content": "sha256:ccdd710fc4adf1647466e7dc80cc6f36b04a32e8f93c1eac31cf192f64adb914",
-            "locator": {
-              "end": 225,
-              "kind": "line_range",
-              "start": 225
-            },
-            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
-            "content": "sha256:0dd93910f7bbe2ab45902195c7c9493a9c1742f63cf5ed7f9402bd6697a843bc",
-            "locator": {
-              "kind": "symbol",
-              "name": "spawn_agent_session_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
-            "content": "sha256:3a174871131d3eef92a2af8c931602acb4b34e131e0d6c2c97658c41e2f8a31b",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Serving app that reads supervisor settings per sweep.\n\nAnchor: \"logger.exception(\\\"agent-notifier sweep failed; retrying next interval\\\")\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:c6d6c6bcffc5811584f00458e86427bd8699c52227a2cb46a11be71b9b9a6699",
-            "locator": {
-              "end": 268,
-              "kind": "line_range",
-              "start": 268
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "Supervisor implementation consuming the redelivery budget and repeated-signal cooldown.",
+      "note": "Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]\n\nAnchor: `docs/reference/settings-json.md:3-54`",
       "targets": [
         {
           "anchor": {
-            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
-            "content": "sha256:3d4793dd9feb0a10ce5bdcc82bdb1b88f42dd316551020faf2aa6500cd44aa70",
+            "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+            "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
             "locator": {
-              "kind": "symbol",
-              "name": "run_agent_notifier_sweep"
-            },
-            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Backoff math enforcing the shared 900-second redelivery floor documented here.\n\nAnchor: \"redelivery interval\"",
+      "note": "The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]\n\nAnchor: `docs/reference/settings-json.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
-            "content": "sha256:a95b6ef893fcb37a5b0643e9bb1e82fc7c364fc9e26e25c1a4f7166817843a3a",
+            "blob": "411e5d1947986e0b5ad9fafa33e42374ea7ab077",
+            "content": "sha256:37aa741763a82d0e67f6aa0aacc2043cc506c3202d49b06ce085bea2c373e974",
             "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 67
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

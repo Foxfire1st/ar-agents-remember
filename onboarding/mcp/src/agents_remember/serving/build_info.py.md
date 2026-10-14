@@ -158,7 +158,8 @@ No relevant external or domain documentation was found for this repository-local
 
 ### Repo-Internal References
 
-- The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. [1]
+
+- Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner. [1]
 - The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. [2]
 - `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). [3]
 - The cockpit compares and renders the serving/client identity. [4]

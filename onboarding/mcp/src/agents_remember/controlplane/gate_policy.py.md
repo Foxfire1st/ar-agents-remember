@@ -58,6 +58,5 @@ already proved it. Refusal messages and their order are identical to before the 
 - Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here. [1]
 - The pure resolver consumes this policy. [2]
 - MCP settings parse the named/custom policy into this model. [3]
-- Gate decision payloads reject invalid orchestration decisions before appending. [4]
 
 As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE_KINDS; SEAM_GATE_KINDS names the seam set; `apply_seam_verdict_requirement(policy)` binds reviewer-verdict evidence to every DELEGATED seam rule (the requireReviewerVerdictAtSeams wiring — human-decided seam kinds are untouched since the human sees the attached verdict); the named policy manager-decides-leaf-gates now also routes the master-exit handover to the ORCHESTRATOR.

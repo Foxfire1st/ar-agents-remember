@@ -79,7 +79,6 @@ No configured Domain Documentation source exists for this file.
 - `FileTree` consumes the `DirEntry` and `Scope` types. [8]
 - `DualPane` consumes the `FileContent` type for its code side. [9]
 - The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. [10]
-- House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store. [11]
 
 ### Cross-Repo References
 

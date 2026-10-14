@@ -303,12 +303,10 @@ The held catalog declares the host modules test_paseo_install_contract.py, test_
 
 
 
-- Conversation-open support (`mcp/tests/conversation_open_test_support.py`) declares its permanent owner and real replacement contract. [258]
 
 
 
 
-- Eve event support (`mcp/tests/eve_adapter_event_test_support.py`) declares its permanent owner and exact consumers. [259]
 
 
 

@@ -8,7 +8,7 @@
 
 Typed agentic settings models, constants, and validation primitives. The settings family (``orchestration.*``) is merged from a global and an optional repo-local settings file. This module owns the typed models, the fail-loud key vocabularies, the shared shape/type validators, and the seeded defaults; the parsers live in responsibility-split siblings and the loader in :mod:`agents_remember.kern...
 
-Defines typed role knobs and inherited agentic settings defaults.
+Defines typed role knobs and inherited agentic settings defaults. MIK-R113 removes expectation and notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
 
 ## Code Commentary
 
@@ -22,8 +22,6 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 - `LoopSettings`
 - `RoleKnobs`
 - `ConcurrencySettings`
-- `ExpectationSettings`
-- `AgentNotifierSettings`
 - `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap; CCR-R22 removed the `executor` field -- the profile owns the adapter)
 - `AgenticSettings`
 - `agentic_settings_path`
@@ -34,9 +32,6 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 - `_require_object`
 - `_require_string`
 - `_require_positive_int`
-- `_require_positive_number`
-- `_require_bool`
-- `_require_string_list`
 - `_require_harness_id`
 
 ### Role Runtime and Scope

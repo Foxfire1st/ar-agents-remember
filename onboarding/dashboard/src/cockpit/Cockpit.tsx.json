@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-        "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+        "content": "sha256:4a41317e0bd61197a0cacd9282a3f82478b4151f0b339810a3adb96b072ad0af",
         "locator": {
           "kind": "symbol",
           "name": "Cockpit"
@@ -106,12 +106,12 @@
         "handoffEntry": "L114-W14",
         "leaf": "260928-MIK-L114"
       },
-      "rationale": "Cockpit mounts the Event River panel and hands it the hydrated ready timestamp; the last-fed line appears only if this wiring passes it through.",
+      "rationale": "Cockpit forwards ready?.lastEventTs to dashboardStore.markEventsHydrated from the Event River stream-ready callback. EventRiver mounts separately and reads store state; no timestamp prop is passed to it.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:0548775398b21f55d77c62b077eea7a89ef0c8cccded5362a6fd0d4f89577a0f",
         "locator": {
           "kind": "symbol",
@@ -147,12 +147,12 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
         "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
         "locator": {
-          "end": 739,
+          "end": 701,
           "kind": "line_range",
-          "start": 728
+          "start": 690
         }
       },
       "id": "RLZ-VF6VZ5",
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-        "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
+        "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+        "content": "sha256:db564bf178bdc8088320217bf4217ad7452fabcb414b1be3ca95091114c96563",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -445,14 +445,27 @@
       ]
     },
     "72": {
-      "note": "The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers.",
+      "note": "Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+            "content": "sha256:4a41317e0bd61197a0cacd9282a3f82478b4151f0b339810a3adb96b072ad0af",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "Cockpit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+            "content": "sha256:eacdd0229be6c6b7e9e74d0d0b9f59b2f454bb2d567ec44e1113db5bd9b34f17",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "code"
@@ -486,36 +499,6 @@
               "name": "parseReaderHash"
             },
             "path": "dashboard/src/data/knowledgeReader.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "76": {
-      "note": "The seat-event application + per-connection backlog gate this shell holds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
-            "content": "sha256:820e8b5f07443f3775f3447df60867065ff5842d5f4256202b71b434bf077fc5",
-            "locator": {
-              "kind": "symbol",
-              "name": "createGatedSeatEventApplier"
-            },
-            "path": "dashboard/src/data/seatEvents.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
-            "content": "sha256:ed99bf158d90c641608f53d99f4d80333b3b9327aaa8b63ff1dc682e79751a32",
-            "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "dashboard/src/data/seatEvents.ts"
           },
           "kind": "code"
         }
@@ -558,7 +541,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
             "locator": {
               "kind": "symbol",
@@ -575,7 +558,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:2d5c012b5da58f558f6b064bfb61d20c2f17885b0bf0f5c41396eee1d6caa4b4",
             "locator": {
               "kind": "symbol",
@@ -592,7 +575,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
             "locator": {
               "kind": "symbol",
@@ -609,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
             "locator": {
               "kind": "symbol",
@@ -626,7 +609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc1a4d8fa8ad9c2ae7d91dff5dc6eba9d3330015",
+            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
             "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
             "locator": {
               "kind": "symbol",
@@ -643,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c20cabbbf6f30ed5cb7483397bf175b4de13d99f",
+            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
             "content": "sha256:b8a4ab88879885f101a4b55f4d3a6059bf5a513b952b47ee34e7f3b1555133ef",
             "locator": {
               "kind": "symbol",

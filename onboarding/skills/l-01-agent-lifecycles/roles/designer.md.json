@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
-        "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+        "blob": "072f0b3945e8d7645ad2aba3f495678335bd61e8",
+        "content": "sha256:c40ff1515d5865bbbba90bf2d466131e2ea256e2f431453cd10a44f1b5d571f3",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
-        "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+        "blob": "072f0b3945e8d7645ad2aba3f495678335bd61e8",
+        "content": "sha256:c40ff1515d5865bbbba90bf2d466131e2ea256e2f431453cd10a44f1b5d571f3",
         "locator": {
           "kind": "file"
         }
@@ -36,6 +36,24 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The current designer role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. [1]\n\nAnchor: Prohibited mutations and settings authority",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072f0b3945e8d7645ad2aba3f495678335bd61e8",
+            "content": "sha256:2846a82cbac00d89d1da84979a1d8a6e4430bef1b80c6ce3067a8d5e4e7d92a3",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -8,7 +8,7 @@
 
 The lifecycle-detail body of the DetailPanel, extracted from `DetailPanel.tsx` by the
 260731-EFA-L8 split. Owns the master/series resolution helpers, the detail head,
-phase stepper, gate section, worktree spine, and the exported
+phase stepper, worktree spine, and the exported
 `LifecycleDetailBody`. No token gauge or aggregate figure is rendered here.
 
 `DetailHead` omits the duplicate document title for a drilled slice or a selected series;

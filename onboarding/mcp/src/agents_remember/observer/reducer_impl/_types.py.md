@@ -13,11 +13,17 @@ Input bundles shared by the reducer's assembly and its split builders. ``Workspa
 - `WorkspaceStructure`
 - `AnalyticalInputs`
 
+The frozen bundles retain structural enclosures/providers/admitted worktree groups separately from analytical inputs. R113 removes analytical gate, agent-pickup and expectation-row inputs; their old DTOs are not accepted here or materialized through this bundle. Attention dismissals remain an input for the surviving attention queue; this data carrier itself grants no action authority.
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/observer/reducer_impl/_types.py`.
 
 ## Evidence
+
+- Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation inputs. [1]
+
+
 
 ### Repo-Internal References
 

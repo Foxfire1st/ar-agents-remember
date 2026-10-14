@@ -5,7 +5,7 @@
     ],
     "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
   },
-  "applicability": "Reading the one earlier system-specialist spelling and producing new role identities.",
+  "applicability": "Reading the one earlier system-specialist spelling and producing new role identities through the remaining host, Investigator receipt, role-identity, settings and capsule owners; the removed operator-inbox producer is outside current scope.",
   "conditions": [
     "Earlier stored identities, labels, settings, receipts, reports and browser storage addresses remain intact.",
     "Reads canonicalize to Investigator with the required one notice."
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The one earlier system-specialist spelling reads as Investigator with the required notice; original stored identities, labels, settings, receipts and report paths remain where they are while new outputs use the canonical name.",
   "status": "proposed",

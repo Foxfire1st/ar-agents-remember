@@ -3,29 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as.\n\nAnchor: \"LeafRefStatus = Literal[\"; \"class LeafRefResolutionError\"; \"def resolve_leaf_ref(\"",
+      "note": "LeafRefResolutionError and resolve_leaf_ref are the live shared failure and resolution owners; removed terminal-seat modules supply no current type or route.",
       "targets": [
         {
           "anchor": {
-            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
-            "content": "sha256:92127721ca7213e4c704a7d420dff8df47cb31852746b89e56f7fe1d0597e379",
+            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "content": "sha256:db2b0eae047cc97474e39b38127c77dd16417e2ef657d8d6a5c92f83a0958d91",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "mcp/src/agents_remember/models/terminal.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
-            "content": "sha256:9f8fa1a9ed191ad793197c858a17219f7a748276de2e4cca28c33d0651c9ae5f",
-            "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 39
+              "kind": "symbol",
+              "name": "LeafRefResolutionError"
             },
             "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
           },
@@ -33,12 +19,11 @@
         },
         {
           "anchor": {
-            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
-            "content": "sha256:43366334bdfc056d4e67e0f781f1515d874b21f176c844b5cd0295266ff04e73",
+            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "content": "sha256:6f7e573fe79d9f4d925406648783d32f0dcc57de7de80db4367bd2a6e2f3326d",
             "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 88
+              "kind": "symbol",
+              "name": "resolve_leaf_ref"
             },
             "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
           },

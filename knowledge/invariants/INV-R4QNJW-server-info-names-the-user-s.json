@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An open settings folder would otherwise remain invisible, or reporting could silently lift protection."
+  },
+  "applicability": "The ordinary installation-state server_info report for current user settings.",
+  "conditions": [
+    "Report file/folder openness and exact open/edit/close commands.",
+    "Inspect modes without mutating file bytes or permissions."
+  ],
+  "exclusions": [
+    "Reporting an open installation is not permission to fix it automatically."
+  ],
+  "id": "INV-R4QNJW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_install_runtime.py::test_server_info_names_an_open_settings_file_or_folder_and_changes_nothing; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-repair-of-round-1-attempt-A2-37.md, section 2 (place and reason)"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R137@v1 rule 5",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`server_info` names the user's settings file or its folder while either is open to writing, with the command that closes them and the command the user runs before an edit, and it reads only their modes.",
+  "status": "accepted",
+  "supersedes": []
+}

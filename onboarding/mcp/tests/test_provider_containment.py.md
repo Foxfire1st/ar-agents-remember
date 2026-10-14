@@ -52,6 +52,9 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
+- This fixture supplies a bound/non-fleeting current lifecycle and asserts truthful session-local refusal; production now tests current-lifecycle presence, not fleeting. [2]
+
+
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
@@ -71,8 +74,7 @@ bound, and no longer fleeting.
 
 - `test_the_refusal_states_the_session_binding_rather_than_a_protected_lifecycle` (`:104-121`) — the
   refusal used to read *"worktree_start refuses to repoint the active persistent lifecycle"*, which
-  described a protection that does not exist: the check reads only the session's **current** lifecycle
-  and only its `fleeting` flag, so no other leaf, enclosure or session can block a start. The case
+  described a protection that does not exist. The fixture here is non-fleeting, but R113's current production guard refuses any non-null session `current` lifecycle; it no longer tests a fleeting flag. The unchanged test docstring describes the earlier guard, not the current implementation. No other leaf, enclosure or session is inspected by this guard. The case
   asserts `lifecycle-switch-required`, that the summary says the session is already bound to another
   lifecycle, that it says no other leaf, enclosure or session can block the start, and that the
   mis-stated "persistent lifecycle" claim is **gone** rather than paraphrased into the same meaning.

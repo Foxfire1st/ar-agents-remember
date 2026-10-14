@@ -13,8 +13,7 @@ builds parent selection keys, and exposes path helpers used for task-document/en
 Since 260703-L14 it also owns the **orchestration-command relation**: an orchestration task is a
 `kind:"master"` doc carrying a non-empty top-level `orchestrates` list (the owner data-model ruling
 — no new task kind), and `LifecycleList` uses these helpers to derive the current Operations command
-tiers and parent rows. The retired Chats grouping modules no longer consume this relation; the Chats
-session rail derives its role hierarchy through `railModel.ts` instead.
+tiers and parent rows. The retired Chats grouping and session-rail modules no longer consume this relation. The native document-chat model consumes canonical task hierarchy without restoring a hosted Chats rail.
 
 ## Code Commentary
 
@@ -101,7 +100,6 @@ navigation aligned with the master task reader.
 
 - The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. [1]
 - The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. [2]
-- The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. [3]
 - The task document mirror provides the required orchestrates list these helpers read. [4]
 - The task-doc master reference is distinct from a series row and may carry linkedLifecycleId. [5]
 - ParentTaskMatch uses the series-row model, which can carry createdAt. [6]
@@ -109,7 +107,6 @@ navigation aligned with the master task reader.
 - Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. [8]
 - DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. [9]
 - Focused tests cover BY REPO hierarchy nesting/indentation and numbered leaf labels; the enclosure-opened leaf parent link is pinned in the DetailPanel suite. [10]
-- The enclosure-opened leaf's parent-task link case. [11]
 
 ### Cross-Repo References
 

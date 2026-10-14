@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump.\n\nAnchor: \"payload.update(served_state_tail(\"; \"before = served_state_tail(build=runtime.build, heartbeat=heartbeat_payload)\"; \"payload = dict(_projection_body_cache.body(delta.data))\"",
+      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner.\n\nAnchor: lines 12-15; lines 114-126",
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
-            "content": "sha256:b503a4b9b1198b6890e892eed0f101821c3310e4686df511f290ad13ba622461",
+            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
+            "content": "sha256:809ddeb1544c1e0c0f0fb5ffa25e10a9d8e106278a9aeb347d99cb1db4a7a829",
             "locator": {
               "kind": "symbol",
               "name": "_state_response"
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
-            "content": "sha256:b2e58e17cdfc4b73829048700bb8c222bb8ea3923f54f4fb4b6b95b4f0c6264a",
+            "blob": "774a0f8612b76b00dccec2b920f251f4f0c79132",
+            "content": "sha256:1734f0ffe5aaf7c8a347781aa03fabd86a46d6892dd4e660c26dac8c4db461b4",
             "locator": {
-              "end": 13,
+              "end": 15,
               "kind": "line_range",
-              "start": 13
+              "start": 12
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
           },
@@ -32,25 +32,12 @@
         },
         {
           "anchor": {
-            "blob": "9ab9296342bff27ca4a8a88c04d0854b3ad7bc0d",
-            "content": "sha256:8b1f67a5171a364f5569cf363b5eced22619544a4849fb42aef6ad2e04dbc31b",
+            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "content": "sha256:180c8ba0b515930b7f8e19db5ebb47f230528e669b0c76ae50a9ed876d33f9a8",
             "locator": {
-              "end": 763,
+              "end": 126,
               "kind": "line_range",
-              "start": 763
-            },
-            "path": "mcp/tests/test_terminal_observer_health.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:73bff55f49b2bf119af9da7fb62559ae2276ff516bc21ab34b3098084e173934",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 125
+              "start": 114
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -165,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
             "content": "sha256:16b7e04c86239d1c5c424b197eeaba2da0b85f887bd40656a19ba632c58f015e",
             "locator": {
-              "end": 952,
+              "end": 909,
               "kind": "line_range",
-              "start": 952
+              "start": 909
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

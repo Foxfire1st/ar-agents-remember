@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Treating a measured current limitation as a permanent capability, or concealing it, misleads later launch work."
+  },
+  "applicability": "The admitted Codex, ACP/Hermes and Pi exception on host0.11.1.",
+  "conditions": [
+    "The lack of a supported per-launch mechanism is source-proved and architect-ruled.",
+    "The receipt/answer records the remaining copy rather than silently launching a second fallback."
+  ],
+  "exclusions": [
+    "No permanent claim about later host/provider versions."
+  ],
+  "id": "INV-ZKEF8F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-worker-a4868b83-d390-4b5e-9761-5097bcca689d.md, section 3 (the two rulings are named there); notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-R132-reading-4.md"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R132@v1 rule 6",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For Codex, for a harness the host runs over ACP such as Hermes, and for Pi the pinned host offers nothing that keeps one server out of one launch; the exception was put to the architect before it was taken, and for these the answer says that a second copy is loaded.",
+  "status": "accepted",
+  "supersedes": []
+}

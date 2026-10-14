@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A prefix or wildcard exclusion could remove the bound task tools or a user's server."
+  },
+  "applicability": "The exact-name Claude deny rule for the ambient agents-remember server.",
+  "conditions": [
+    "Match the server name for equality, with no wildcard.",
+    "Preserve agents-remember-task and unrelated or similarly named user servers."
+  ],
+  "exclusions": [
+    "User policy can independently deny other tools."
+  ],
+  "id": "INV-GKNF5W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_single_server.py (the two tests named in found_at)"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R132@v1 rule 3",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The rule handed over is `mcp__agents-remember` without a star: the harness compares the server name of such a rule for equality, so no tool of `agents-remember-task` and no server of a user is matched.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08f62e5f3898e41a9ff9aba51db3096ce63a4204",
+            "blob": "19976eeee3cb61288bf2f4fa316b85c7ba35ace9",
             "content": "sha256:78cb3e855462d37f7ab24ea70ebe8eb0b811b758178dbb776fc671f80cd6af20",
             "locator": {
               "end": 64,
@@ -15,6 +15,21 @@
               "start": 50
             },
             "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current template enumerates session rather than session/TUI while retaining the workflow-by-forced-state matrix and missing-cell output rule. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639337747b8b3d119f66ac03874307eafec7aeb3",
+            "content": "sha256:fc24ecfcb38dd79e81a1a7657d95305a463c3e98f7ffc9f5c32db85901bc1ca0",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

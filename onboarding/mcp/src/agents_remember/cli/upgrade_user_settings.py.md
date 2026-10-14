@@ -10,7 +10,7 @@ The explicit whole-file settings upgrade command: preview or move the old coordi
 
 ## Code Commentary
 
-`add_arguments` takes a required absolute `--coordination-root` and `--dry-run`. `run` refuses a relative root and delegates to the install owner's `upgrade_user_settings`, printing the result JSON; settings or OS failures print an error naming the old path and exit non-zero without migrating anything.
+`add_arguments` takes a required absolute `--coordination-root` and `--dry-run`. `run` refuses a relative root and delegates to the existing install owner, printing result JSON. Settings or OS exceptions print the old-path error and exit2; that wrapper is not an all-failure rollback guarantee. The install owner transfers the whole file exclusively, copies metadata before unlinking the old file, then attempts file0444/folder0555 closure. An OSError from that final closure is reported as permissionsNote without undoing the completed move; every normal answer includes the protection report.
 
 ## Evidence
 

@@ -53,42 +53,7 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
 
 ### Logic
 
-- **The product bar.** `VIEWS` is the single ordered list (`chats`, `operations`, `knowledge`,
-  `files`); `ModeBar` renders it. `CockpitShell` defaults `initialView` to `"chats"`. The retained
-  pages are reachable only through an injected `initialView`, which the development scenarios and the
-  layout tests use; `MainLayers` renders Memory/Topology/Hangar transiently and Engine Room only when
-  that view is explicitly selected, so a normal load mounts neither.
-- **Full-width layers.** `useCockpitShellState` derives `fullBleed` for `files`, `knowledge`,
-  `engine`, `topology` and `chats`. `MainLayers` keeps the Knowledge reader mounted in a `filesLayer`
-  `ViewLayer` that is hidden, never unmounted, so leaving and returning to Knowledge shows the same
-  document at the same place; the File Viewer, Chats and the Operations detail panel use the same
-  hidden-not-unmounted pattern.
-- **Rails and takeovers.** The left task list with its nested attention bell/layer and the right event river stay
-  mounted and are hidden while full-bleed. Takeovers (change set, intent review, notes/requirements,
-  a review target) render over the hidden railed body, and closing one returns to where it was
-  opened. `IntentEntryRevalidation` wraps the tree and re-reads the Operations entry once per showing
-  (`view === "operations" && !takeover`). The notes/requirements/decisions/report takeover
-  (`NotesTakeover`) names its `data-view` from the artifact kind (`notes-reader`,
-  `requirements-reader`, `decisions-reader`, `report-reader`); a note selection leaves the
-  folder-open state (`selectNote` sets `folder: false` on `kind === "notes"`) so the reader
-  shows the note (260928-MIK-L126).
-- **Shared consumers.** `Cockpit` wires `connectState` and one `connectEvents` connection with two
-  consumers (the Event River and the gated seat-event reconciler). `CockpitShell` owns the refcounted
-  catalog poll driver, the eager/cross-tab reconciler and the screen wake lock. The
-  top bar carries the master caution, the serving-build stamp (a proven client/serving mismatch
-  adds a tooltip cue to reload through the browser, not a shell reload button) and the
-  agent-notifier heartbeat badge (absent tick renders
-  nothing).
-- **Selection and chat.** `selectedId` is a typed selection key normalized through
-  `lifecycleSelectionKey`; `selectedLifecycleId` derives the lifecycle context. The right rail's
-  River/Chat toggle keeps the Event River on one side and `DocumentChat` on the canonical
-  viewed task on the other (MIK-R95); since MIK-R122 the toggle keeps the `DocumentChat`
-  side mounted and hides it (`display:none` + `aria-hidden`) while the Event River mounts
-  conditionally, so the single chat frame element
-  stays mounted across the toggle. Draft and scroll restoration inside the host application
-  follows from element retention by construction; it is not natively observed. The removed `RailChat` and its
-  `viewedLeafKey` plumbing are gone. The highlight composer is mounted once and filters targets by the current selection; its
-  former direct leaf-chat target was removed with the old panel.
+- **Shared streams.** Cockpit wires connectState and one connectEvents raw-line consumer into the Event River/store, with a ready marker used for hydration. There is no seat-event reconciler, catalog poll driver or eager/cross-tab hosted-seat reconciler. Native Chats remains the retained host-chat surface; screen/wake-lock behavior must be attributed only to its actual current owner.
 
 ### 260928-MIK-L114 Ready Last-Feed Handoff
 
@@ -135,30 +100,7 @@ MainLayers mounts RoleChatsPane in the existing keep-alive ViewLayer, passing cu
 The current Chats mount does not receive the old SessionsView lifecycle/leaf props; it receives
 canonical taskDocuments and series, while HighlightComposer retains its own context; RailChat's context went with its removal under MIK-R95.
 
-`Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
-`CockpitShell` (split out so the dev gallery renders the same surface against fixtures).
-**260715-FEUI-L2 (S1/S2)** makes `Cockpit` the standing owner of the shared session feed: the
-`/api/events` EventSource now feeds TWO consumers on ONE connection — the Event River
-(`pushEvent`, unchanged, still receives backlog lines) and the seat-event reconciler
-(`data/seatEvents.applySeatEventLine`), whose application is routed through
-`createGatedSeatEventApplier()` — a PER-CONNECTION backlog gate: `ready` opens it,
-the EventSource `error` (`connectEvents`' new `onInterrupt`) re-closes it, so a reconnect's
-pre-`ready` backlog replay (incl. the undecodable-cursor full-window replay) can never regress
-live rows (L2 review finding 2). A third effect starts the refcounted 2500 ms catalog poll driver
-(`data/catalogPoll.startCatalogPollDriver`) unconditionally, so the session feed stays alive with
-ANY view — or none — in front. `CockpitShell` is the sole production owner of both the driver and
-the eager/cross-tab reconciler. That shared session store still serves retained session consumers;
-the current RoleChatsPane uses its native frame/launcher channel and is not a second session-catalog
-timer owner. `CockpitShell`
-holds `view` + `selectedId` state and derives `fullBleed = view === "files" || view === "knowledge" || view === "engine" ||
-view === "topology" || view === "chats"`. Both the **File Viewer** (slice L2) and **Chats** views are
-full-bleed AND kept mounted as persistent CSS-hidden layers in `CockpitShell` (a `filesLayer` / `chatsLayer`
-div toggled by `display`), not routed through `ViewBody`, so switching tabs never unmounts them: the File
-Viewer's repo/scope selection, open file, and expanded tree state survive a switch; the current
-Role chats pane retains its native iframe and launcher/navigation state. This is not an xterm/PTY mount.
-Task 29 wires the raw Event River readiness signal through this shell: `connectEvents` receives
-`markEventsHydrated` as its `ready` callback, so the right rail can show "Syncing event history." until
-the backend has emitted the retained backlog and the explicit ready marker.
+The raw event stream calls the store Event River consumer and marks hydration on the ready event. It has no per-connection seatEvents backlog applier or onInterrupt callback; a reconnect does not restore those deleted consumers. Current ordering/hydration and the independent native host-chat mounting remain distinct source-owned behavior.
 
 The body is the `bodyGrid` cva: the railed 3-column shell when `!fullBleed`, a single full-width column
 when `fullBleed`. The two `<aside>` rails (`rail--left` = task list with its header attention bell/layer;
@@ -326,13 +268,12 @@ No relevant domain documentation was found for this file.
 - The boot-time effects flag it persists to. [70]
 - The honest-motion gate the rail transition + the toggle drive. [71]
 
-- The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers. [72]
+- Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler. [72]
 
 
 - A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
 
 - The reader's hash parser. [75]
-- The seat-event application + per-connection backlog gate this shell holds. [76]
 
 - The refcounted catalog poll driver started unconditionally here. [77]
 

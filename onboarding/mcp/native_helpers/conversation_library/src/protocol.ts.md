@@ -79,7 +79,6 @@ against this exact contract; the helper suite covers the admission and privacy m
 
 - The private manifest and lock select the exact dependency versions represented by the protocol constants. [1]
 - Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. [2]
-- The Python host spawns this contract's entries and correlates handshake plus one operation per process. [3]
 - The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. [4]
 
 ### Cross-Repo References

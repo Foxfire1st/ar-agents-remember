@@ -119,7 +119,6 @@ The following route and onboarding tables are retained metadata. Their `covered`
 | `gate_policy.py` | [`gate_policy.py.md`](gate_policy.py.md) | covered | Gate policy. |
 | `gate_vocab.py` | [`gate_vocab.py.md`](gate_vocab.py.md) | covered | Gate vocabulary. |
 | `identity.py` | [`identity.py.md`](identity.py.md) | covered | Provider identity. |
-| `inbox_backoff.py` | [`inbox_backoff.py.md`](inbox_backoff.py.md) | covered | Backoff policy. |
 | `memory_cap.py` | [`memory_cap.py.md`](memory_cap.py.md) | covered | Memory cap. |
 | `observer_paths.py` | [`observer_paths.py.md`](observer_paths.py.md) | covered | Observer paths. |
 | `provider_degradation_settings.py` | [`provider_degradation_settings.py.md`](provider_degradation_settings.py.md) | covered | Degradation settings. |
@@ -145,7 +144,8 @@ None.
 - Checkout modes, leaf-local roots and daemon-role narrowing define the execution boundary. [11]
 - Gate policy is human-first and rejects non-human delegation of pinned kinds; gate vocabulary is kernel-owned. [12]
 - Command capture, snapshot removal, observer paths and provider naming are shared primitive operations. [13]
-- Backoff, opt-in cap planning, degradation parsing, report retention/redaction and metadata-or-source version resolution have explicit primitive owners. [14]
+
+- Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
 - Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives. [15]
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
 - Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections. [17]

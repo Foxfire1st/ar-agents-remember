@@ -45,10 +45,7 @@ its application entry point takes — who the task is, what it is cut from, and 
 > falls back to a full reindex flagged `seedFallback`), and re-runs with `retry_provider_setup=true`
 > after a failed or stale setup.
 
-`worktree_attach` and `worktree_status` both pack their five locators into a `TaskRef` — the same
-bundle `resolve_context` uses. Attach is read-only (it mutates no git) and takes `on_unsaved`
-(`save` promotes an unsaved fleeting lifecycle, `discard` abandons it) to clear the save gate.
-Status reports phase, dirty flags, next-step hints, and the live provider-setup block.
+Worktree attach re-attaches to an existing task contract without mutating Git and reports its addressed state/next call. Its current signature has no on_unsaved save/discard operand or public resolve_context fallback. Status keeps actual lifecycle/dirty/next-step/provider information through the retained contract owner.
 
 > **Retained historical source account — superseded by the current contract:**
 > `worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with

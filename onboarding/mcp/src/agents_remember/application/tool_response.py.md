@@ -14,12 +14,11 @@ Complete one tool result at the application boundary.
 
 Module-level surface:
 
-- `_agent_notifier_banner` — Return the stale-agent-notifier banner without blocking a tool response.
 - `_attach_lifecycle_tail` — Preserve producer recovery guidance and bind ambient task addresses.
 - `complete_tool_response` — Validate the whole result, shape or receive its status projection, log, measure final delivery, and observe one application result.
 
 The registered response model is selected and validated before final output. Lifecycle hints
-and notifier banners are attached as model fields through the finalizer's enrichment callback,
+are attached as model fields through the finalizer's enrichment callback; the removed notifier contributes no banner,
 then whole-result serialization retains that finalized payload. An explicit caller-sized `answer`
 projection wins when supplied. Without it, `_select_shaped_answer` applies the task/landing/role
 projectors only to their owned tools; unrelated tools retain the stripped whole result. That default selection invokes `truncate_lists`. An explicit `answer` is instead dict-copied and does not pass through that default list-cap function; an under-bound explicit mapping returns unchanged by the token guard. Both paths retain whole-result validation/logging and the final delivered-token guard, whose short form is not a universal per-list cap.
@@ -70,7 +69,6 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- `_agent_notifier_banner` returns the stale-agent-notifier banner without blocking a tool response. [1]
 - `_attach_lifecycle_tail` binds lifecycle guidance to the response while preserving explicit producer recovery. [2]
 
 - The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]

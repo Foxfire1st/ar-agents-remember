@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bdfa385a684a5525430df2f6536bba8dba473a55",
+        "blob": "7d8eded520a87451a9c0c6bdede7fdffa4ecf19c",
         "content": "sha256:48d7a09f73fa36dfd21dbee55c5428912fe0efe05f899663346816278f0feaaa",
         "locator": {
           "kind": "symbol",
@@ -16,12 +16,12 @@
         "handoffEntry": "L71-CURRENT242-W-15",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Role settings enter the common user-path guard before user/repository layer loading, preserving the accepted settings schema.",
+      "rationale": "Reads the common guarded global user layer plus admitted repository layer. Removed role-setting fields are accepted and reported unused; preserving schema compatibility does not restore their removed readers or adapter behavior.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "bdfa385a684a5525430df2f6536bba8dba473a55",
+        "blob": "7d8eded520a87451a9c0c6bdede7fdffa4ecf19c",
         "content": "sha256:eb0869ac4a78fcde1bc9d344e94c053a920a69908e819b0637f88c07dcf21b2e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "bdfa385a684a5525430df2f6536bba8dba473a55",
+        "blob": "7d8eded520a87451a9c0c6bdede7fdffa4ecf19c",
         "content": "sha256:ba42e95c27da27f576a5bcc026d1761f9b3424de9984d7752d79fe75e5013146",
         "locator": {
           "kind": "symbol",

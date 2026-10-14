@@ -7,11 +7,14 @@
   },
   "applicability": "Enclosed leaf and master closeout preview, apply and integration operation-response parity.",
   "conditions": [
-    "Compare source-bound baseline, candidate pristine and unrelated-grant worlds after the explicit volatility/root scrub."
+    "For every named phase, compare raw current pristine/unrelated-grant answers after only the explicit volatility/root scrub before any take-out.",
+    "The baseline-only subprocess maps its own leaf_preview/leaf_apply written, unchanged and staleIndexes facts to refreshedCount, unchangedCount and staleCount; it has no current/grant result available to copy.",
+    "The existing conversion-marker row/count/gate scaffolding is separately attributed, and only the four named removed seat fields are taken from the baseline side. Current route-index count keys are not removed; every other field and the original post-normalization equality assertions remain."
   ],
   "exclusions": [
     "Raw timestamps, root paths and other scrubbed values are not claimed byte-identical.",
-    "A direct granted leaf is outside this preservation comparison."
+    "A direct granted leaf is outside this preservation comparison.",
+    "Unqualified raw baseline byte equality: the named conversion, baseline-only four-seat-field removal and baseline producer count-shape mapping qualify the comparison; generic metadata suppression and alteration of product answers are excluded."
   ],
   "id": "INV-F029P2",
   "origin": {
@@ -25,9 +28,9 @@
     "leaf": "260928-MIK-L94",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Ordinary closeout preview, apply and integration responses are byte-identical with and without the grant machinery, including against the pre-change baseline tree.",
+  "statement": "Ordinary enclosed leaf/master preview, apply and integration answers are grant-inert: current pristine and unrelated-grant responses compare equal after the explicit volatility/root scrub before any adaptation; the pre-change baseline compares equal to both after the named conversion and baseline-only removed-seat-field adaptation, with its own leaf route-index facts mapped to the current count shape by the baseline producer. No route-index counts are suppressed in current answers.",
   "status": "proposed",
   "supersedes": []
 }

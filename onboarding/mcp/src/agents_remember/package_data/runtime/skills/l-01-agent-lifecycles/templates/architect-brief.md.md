@@ -1,10 +1,33 @@
 # l-01-agent-lifecycles/templates/architect-brief.md
 
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
+
+## Current operative account — MIK-R113
+
+The launcher writes the complete sprint request into the canonical sprint document before starting one Architect with role_start. The start carries neither a brief nor a document reference for Architect; the developer names the sprint document in the dashboard. Document values feed inputs, not role rules. The Architect starts one Manager for one master, or an Orchestrator for concurrent masters, using role_start and role_message; a refusal never falls back to another tool. Historical dispatch_agent/hosted-seat/queued-brief claims below are not current start instructions.
+
+The named changed seams supersede the older accounts below. Unchanged duties remain in the canonical source; historical descriptions and references do not restore removed tools, hosting machinery or acceptance. This is static source qualification, not a new execution, CODE verdict, MEMORY grade or authority to change source/Git.
+
+## Current source evidence
+
+- The sprint document holds the request before one role_start; Architect start carries no brief or document and the developer selects the sprint in the dashboard. [1]
+
+- Starting agents uses role_start/role_message and forbids fallback after refusal, not the retired hosted dispatch transaction. [2]
+
+- Messages wake; complete payloads and evidence travel as files. [4]
+
+## Historical predecessor accounts — preserved, not current instructions for changed seams
+
+<details>
+<summary>Retained earlier prose, citations and recorded history</summary>
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [4]
+- Messages wake; complete payloads and evidence travel as files. \[4]
 
 
 ## Governing Overview
@@ -52,10 +75,12 @@ No external domain source governs this synchronized projection.
 
 ### Repo-Internal References
 
-- The packaged packet carries the same one-call launcher contract. [1]
-- The hosted child-authority and no-fallback boundary is embedded in the brief. [2]
+- The packaged packet carries the same one-call launcher contract. \[1]
+- The hosted child-authority and no-fallback boundary is embedded in the brief. \[2]
 - The canonical skill tree is synchronized into package data and harness mirrors. [3]
 
 ### Cross-Repo References
 
 No sibling-repository contract defines this synchronized projection.
+
+</details>

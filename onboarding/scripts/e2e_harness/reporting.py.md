@@ -13,8 +13,7 @@ Defines the structured checkpoint contract and deterministic JSON writer used by
 ### Logic
 
 A frozen `CheckpointDefinition` owns stable requirement, expectation, and evidence-owner meaning.
-`CheckpointRecorder.check` appends actual candidate evidence and raises only after preserving the
-failed record; diagnostics remain non-acceptance context.
+`CheckpointRecorder` now holds checkpoint/diagnostic containers and assembles a schema/scenario report before overlaying caller-supplied values. It does not itself append checks, classify pass/fail or raise an acceptance failure. The former `check`/`diagnostic` methods and `CheckpointFailure` belong to the removed checkpoint-driving path, not the current recorder.
 
 ### Conventions
 
@@ -23,9 +22,9 @@ assembly. JSON output is indented, key-sorted, UTF-8, and newline-terminated.
 
 ### Invariants And Boundaries
 
-- Every failed checkpoint is recorded before `CheckpointFailure` escapes.
+- Historical predecessor rule: a failed checkpoint was recorded before `CheckpointFailure` escaped. Both that exception and the check method are now removed; this module no longer enforces failure-before-raise.
 - Diagnostic rows never count as acceptance proof.
-- Report assembly is deterministic and carries the scenario name.
+- Report assembly provides the schema, scenario and containers, then overlays caller values; it is serialization support, not an acceptance verdict.
 
 ### Todos
 
@@ -41,7 +40,7 @@ No Domain Documentation source is configured or needed for this repository-owned
 
 ### Repo-Internal References
 
-- Failure is raised only after the structured checkpoint is appended. [2]
+- The current recorder holds supplied checkpoint and diagnostic containers and assembles a report; the former check/diagnostic/CheckpointFailure path is removed, not a retained acceptance check. [2]
 
 ### Cross-Repo References
 

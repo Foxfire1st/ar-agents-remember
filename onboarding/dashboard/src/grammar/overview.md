@@ -51,7 +51,6 @@ Test descriptions above report assertions present in source, not test execution 
 - The React Aria condition reconciliation (data-hovered/-focused). [2]
 - The route's React Aria owner wraps the viewport toggle group with the shared visual class. [3]
 - ModeBar and the launcher's controls share the visual definition without sharing selection or permission policy. [10]
-- The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). [4]
 - The action-availability shape `Affordance` renders. [5]
 - The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. [6]
 - The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. [7]

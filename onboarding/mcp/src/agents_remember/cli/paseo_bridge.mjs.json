@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
-        "content": "sha256:b6fe755a426528b19ea0c85bd3143cbd00df84472173cccabf3f138973cf3f7b",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
+        "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentCreation"
+        }
+      },
+      "id": "RLZ-1F9QGM",
+      "invariant": "INV-XJJ3NX",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 preservation boundary 3 / L113-R1-F06",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Applies the same filter at the bridge, for a call that reaches it by daemon or by client.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
+        "content": "sha256:4c4f17f0d8789ea3569025182be87526f0b32e151f3d6893f4075a97c531eb54",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
         "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
         "locator": {
           "kind": "symbol",
@@ -38,7 +56,25 @@
     },
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
+        "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentCreation"
+        }
+      },
+      "id": "RLZ-P34QJB",
+      "invariant": "INV-ZKV9B3",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The bridge's side of the same: it passes on the keys the host's create request has and nothing else.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -56,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -74,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -92,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+        "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
         "content": "sha256:b6baa17f873e054de1e17daa3038a235883d45284cf322049de8378983281834",
         "locator": {
           "kind": "symbol",
