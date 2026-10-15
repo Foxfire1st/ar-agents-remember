@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:d3f943ee23f297e5ca6dcd1903e12a652025340f85c79f8800c20e969a7a5d8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._observe_contract"
+        }
+      },
+      "id": "RLZ-26ZG1Z",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Rechecks interest at actual semaphore admission before entering owned remote observation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
         "content": "sha256:c428a94bdf02b347c9e6a1796e3347bb81a76582829ccc5c51e59a811d09550f",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
-        "content": "sha256:01b2e5ece6cb5ae3c9eb351a414c306eed532b215cc4d42a459448726eb4a873",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
         "locator": {
           "kind": "symbol",
           "name": "LandingStateRefresher.refresh_once"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
         "content": "sha256:7d5859b65fbddda5728e6f598061588206bd82f046b7309321ff9fe9cebb6078",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
         "content": "sha256:9bf31d98d68cbf9ec21f5e80095c3ba132b98fa56f4ba2d89a37bb8c81d53b4e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-DKE751",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Applies the due schedule only to serving-bound calls and advances it only after an actual observation is published.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
         "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,25 @@
     },
     {
       "anchor": {
-        "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-V5S9BY",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Rejects absent page interest before discovery and after the awaited discovery, without publishing or spending a finishing attempt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
         "content": "sha256:48df91965f6febf70079e7e87aefca1080c3a2777948aa85d5683a0d8856ce0e",
         "locator": {
           "kind": "symbol",
@@ -116,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
@@ -128,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:e325202903387414b02bb568217d1189ed01385915a408b5f85ffae378d9a031",
             "locator": {
-              "end": 322,
+              "end": 326,
               "kind": "line_range",
-              "start": 219
+              "start": 223
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -146,12 +200,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
             "content": "sha256:c0b41bf724fa325f718540072e6ed531f3abac3c4bbe31b6379d54edb0cb30f9",
             "locator": {
-              "end": 344,
+              "end": 152,
               "kind": "line_range",
-              "start": 344
+              "start": 152
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -159,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
             "content": "sha256:29fa95bf808f375c1e18708778b778e0975980a79ce154ac11d6079674ef7373",
             "locator": {
-              "end": 390,
+              "end": 198,
               "kind": "line_range",
-              "start": 390
+              "start": 198
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -177,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
             "content": "sha256:4bc0cfcc0c5639928057e89ff661dc693a8528a2130aa6f773eb2034a8ea7590",
             "locator": {
-              "end": 348,
+              "end": 373,
               "kind": "line_range",
-              "start": 328
+              "start": 353
             }
           },
           "kind": "code"
@@ -228,13 +282,47 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
             "content": "sha256:4f5228ce64c2d936881969172163f345a1fc4d7173c61516d8b3dcb70884bbb5",
             "locator": {
-              "end": 400,
+              "end": 425,
               "kind": "line_range",
-              "start": 350
+              "start": 375
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Bound interest gates discovery, due selection, publication-driven schedule advance and probe admission; unbound callers retain explicit refresh behavior.\n\nAnchor: `LandingStateRefresher.refresh_once`; `LandingStateRefresher._observe_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current-identity retention and semantic-answer age determine transient due times.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
           },
           "kind": "code"
         }

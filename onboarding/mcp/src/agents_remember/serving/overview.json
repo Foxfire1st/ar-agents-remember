@@ -315,12 +315,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:29bb5fcbd44a73029913d4087facbaf61d6dbe5a15980d9ec683703eeb113e74",
             "locator": {
-              "end": 430,
+              "end": 434,
               "kind": "line_range",
-              "start": 344
+              "start": 348
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -381,6 +381,23 @@
         }
       ]
     },
+    "129": {
+      "note": "Shared app composition binds real landing interest before startup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "13": {
       "note": "Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal.\n\nAnchor: `mcp/src/agents_remember/application/role_capsules/launch.py`",
       "targets": [
@@ -392,6 +409,53 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "Landing interest gates actual discovery and probe admission, while due policy retains exact identities.\n\nAnchor: `LandingStateRefresher.refresh_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "Provider safety remains an independent periodic sequence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
           "kind": "code"
         }
@@ -432,16 +496,16 @@
       ]
     },
     "29": {
-      "note": "**The comparison route's handler over its injected port.**\n\nAnchor: \"def api_review_intent(\"",
+      "note": "**The comparison route's handler over its injected port.**  Anchor: \"def api_review_intent(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e61dc1ad3498c3e348587c0a70e7dc3c638679002f2aa2cf6b5cbee228d92605",
+            "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
             "locator": {
-              "end": 662,
+              "end": 709,
               "kind": "line_range",
-              "start": 577
+              "start": 661
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -479,16 +543,29 @@
       ]
     },
     "30": {
-      "note": "**The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.**\n\nAnchor: \"def api_review_intent_entries(\"",
+      "note": "**The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.**  Anchor: \"def api_review_intent_entries(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:ac2a50ba3165b6fa9efe504af5f98e0fc6725408f52eb3d992e1b23baa0b81f9",
+            "content": "sha256:ee9f1a60afbe3df478fbfa4a2bec65e0fa96f683bc2775ee428fab15e7dad700",
             "locator": {
-              "end": 645,
+              "end": 655,
               "kind": "line_range",
-              "start": 560
+              "start": 644
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 607
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -497,16 +574,29 @@
       ]
     },
     "31": {
-      "note": "**The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**\n\nAnchor: \"def api_review_intent_source_content(\"",
+      "note": "**The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: \"def api_review_intent_source_content(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:27170f85b09283006b82535a212f703ce28f24935e82398110b243befe5c2543",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
             "locator": {
-              "end": 658,
+              "end": 659,
               "kind": "line_range",
-              "start": 573
+              "start": 657
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 720
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -578,16 +668,16 @@
       ]
     },
     "35": {
-      "note": "The query parser that admits only those two.\n\nAnchor: \"def review_request_from_query(\"",
+      "note": "The query parser that admits only those two.  Anchor: \"def review_request_from_query(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:5ea381bf95e5b51b43eede752fe6cb4782c72c873d106613eafbb52c7fad6d40",
+            "content": "sha256:213ac2fb8c7559b5e917f8c3d06d7f058864a4419125614e034f47c5f5bcea96",
             "locator": {
-              "end": 294,
+              "end": 416,
               "kind": "line_range",
-              "start": 281
+              "start": 294
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -684,12 +774,12 @@
         },
         {
           "anchor": {
-            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
             "locator": {
-              "end": 178,
+              "end": 181,
               "kind": "line_range",
-              "start": 178
+              "start": 181
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -698,18 +788,31 @@
       ]
     },
     "40": {
-      "note": "**The registration that must precede the static mount and that takes all three ports.**\n\nAnchor: \"def register_review_routes(\"",
+      "note": "**The registration that must precede the static mount and that takes all three ports.**  Anchor: \"def register_review_routes(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:ca06a18f7bf6c52f46db22100f858cda737a686b21cc53d29067f9c1d757d52f",
+            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
             "locator": {
-              "end": 627,
+              "end": 709,
               "kind": "line_range",
-              "start": 542
+              "start": 627
             },
             "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:ff5dfd4ec36ac008d5d49aa695cddc8377b58c9a6eec555ebe63d291248f7064",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
           },
           "kind": "code"
         }
@@ -796,16 +899,16 @@
       ]
     },
     "45": {
-      "note": "The GET-only route handler over the injected port.\n\nAnchor: \"def api_review_intent(\"",
+      "note": "The GET-only route handler over the injected port.  Anchor: \"def api_review_intent(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e61dc1ad3498c3e348587c0a70e7dc3c638679002f2aa2cf6b5cbee228d92605",
+            "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
             "locator": {
-              "end": 662,
+              "end": 709,
               "kind": "line_range",
-              "start": 577
+              "start": 661
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -831,16 +934,16 @@
       ]
     },
     "47": {
-      "note": "The query parser that admits only those two.\n\nAnchor: \"def review_request_from_query(\"",
+      "note": "The query parser that admits only those two.  Anchor: \"def review_request_from_query(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:5ea381bf95e5b51b43eede752fe6cb4782c72c873d106613eafbb52c7fad6d40",
+            "content": "sha256:213ac2fb8c7559b5e917f8c3d06d7f058864a4419125614e034f47c5f5bcea96",
             "locator": {
-              "end": 294,
+              "end": 416,
               "kind": "line_range",
-              "start": 281
+              "start": 294
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -849,16 +952,16 @@
       ]
     },
     "48": {
-      "note": "**The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**\n\nAnchor: \"def _status_for(\"",
+      "note": "**The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: \"def _status_for(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e769df1bb35f950f52c8ae707badbe970073631ad07a6265ed66656b667b56de",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
             "locator": {
-              "end": 607,
+              "end": 624,
               "kind": "line_range",
-              "start": 522
+              "start": 607
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -885,16 +988,16 @@
       ]
     },
     "50": {
-      "note": "**The 400 a selector kind outside the admitted set gets, inside the comparison handler.**\n\nAnchor: \"def api_review_intent(\"",
+      "note": "**The 400 a selector kind outside the admitted set gets, inside the comparison handler.**  Anchor: \"def api_review_intent(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e61dc1ad3498c3e348587c0a70e7dc3c638679002f2aa2cf6b5cbee228d92605",
+            "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
             "locator": {
-              "end": 662,
+              "end": 709,
               "kind": "line_range",
-              "start": 577
+              "start": 661
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -903,16 +1006,29 @@
       ]
     },
     "51": {
-      "note": "**The 404 for a candidate that does not resolve, is not live, or has no dataset half.**\n\nAnchor: \"def api_review_intent(\"",
+      "note": "**The 404 for a candidate that does not resolve, is not live, or has no dataset half.**  Anchor: \"def api_review_intent(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e61dc1ad3498c3e348587c0a70e7dc3c638679002f2aa2cf6b5cbee228d92605",
+            "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
             "locator": {
-              "end": 662,
+              "end": 709,
               "kind": "line_range",
-              "start": 577
+              "start": 661
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 607
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -921,16 +1037,29 @@
       ]
     },
     "52": {
-      "note": "**The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**\n\nAnchor: \"def api_review_intent_entries(\"",
+      "note": "**The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: \"def api_review_intent_entries(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:ac2a50ba3165b6fa9efe504af5f98e0fc6725408f52eb3d992e1b23baa0b81f9",
+            "content": "sha256:ee9f1a60afbe3df478fbfa4a2bec65e0fa96f683bc2775ee428fab15e7dad700",
             "locator": {
-              "end": 645,
+              "end": 655,
               "kind": "line_range",
-              "start": 560
+              "start": 644
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 607
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -939,18 +1068,31 @@
       ]
     },
     "53": {
-      "note": "The registration that must precede the static mount.\n\nAnchor: \"def register_review_routes(\"",
+      "note": "The registration that must precede the static mount.  Anchor: \"def register_review_routes(\"",
       "targets": [
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:ca06a18f7bf6c52f46db22100f858cda737a686b21cc53d29067f9c1d757d52f",
+            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
             "locator": {
-              "end": 627,
+              "end": 709,
               "kind": "line_range",
-              "start": 542
+              "start": 627
             },
             "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:ff5dfd4ec36ac008d5d49aa695cddc8377b58c9a6eec555ebe63d291248f7064",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
           },
           "kind": "code"
         }
@@ -1537,10 +1679,11 @@
         {
           "anchor": {
             "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e6dd46938e97bb07522b36aa981492ccfc4b6e800692db4d5721c1872240007f",
+            "content": "sha256:aa0f06bdb0b50307c812003e7a6b5e764b53ad9316038346e7f10d3fe50b2e54",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceContentPort"
+              "end": 110,
+              "kind": "line_range",
+              "start": 108
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -1549,25 +1692,13 @@
         {
           "anchor": {
             "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
-            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "content": "sha256:8a69c480f7f0a8e2570f89e0b221f82d1565b5be7ce77b69dc22cc82d35669f0",
             "locator": {
-              "kind": "symbol",
-              "name": "review_source_content"
+              "end": 207,
+              "kind": "line_range",
+              "start": 199
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e671733c44bd3d1dd59e8c55b31c8e03bc93ffb30f504c7c187e2b90949f6a57",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "mcp/src/agents_remember/serving/review.py"
           },
           "kind": "code"
         }
@@ -1625,12 +1756,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:50dd0902d7e386a27104a0410ddb36ccb223390dca13ced0ddf067749c2d82f2",
             "locator": {
-              "end": 174,
+              "end": 177,
               "kind": "line_range",
-              "start": 168
+              "start": 171
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1639,28 +1770,16 @@
       ]
     },
     "77": {
-      "note": "**The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**\n\nAnchor: `read_review_source_content`",
+      "note": "**The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**  Anchor: `read_review_source_content`",
       "targets": [
         {
           "anchor": {
             "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
-              "kind": "symbol",
-              "name": "review_source_content_port"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
-            "locator": {
-              "end": 87,
+              "end": 138,
               "kind": "line_range",
-              "start": 87
+              "start": 128
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1961,12 +2080,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:83024a036949ee5b6e1818f3d0ef269bf21f7f9cce819b5cbd9605fc7120bec9",
             "locator": {
-              "end": 122,
+              "end": 125,
               "kind": "line_range",
-              "start": 122
+              "start": 125
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1998,11 +2117,24 @@
         {
           "anchor": {
             "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "content": "sha256:38145f603f98f5a3d66ace1a17c55b51dd3e8d796ea6d164e3de506b82791bc5",
             "locator": {
-              "end": 110,
+              "end": 96,
               "kind": "line_range",
-              "start": 110
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:7ed03754af5faef10b7c5b0877d210cfb52c29247e675fc799a3dd1eb8d149aa",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 149
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "All three owners must limit their own recurring work while retaining truthful change/landing delivery; any single reduction still leaves another source of background contention or stale-state claims."
+    "justification": "Paced projection, bounded interested landing probes and independent provider safety together reduce unnecessary work without concealing missed inputs, completed facts or leftover fleets; no one member guarantees that combination."
   },
-  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work without hiding failed or missed inputs. A due full reconciliation is independent of partial traffic, failed invalidations remain pending, and the noncooperating append race is explicitly bounded by that healing path. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee.",
+  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work without hiding failed or missed inputs. A due full reconciliation is independent of partial traffic, failed invalidations remain pending, and the noncooperating append race is explicitly bounded by that healing path. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee. Serving-bound landing discovery and new probe admission require actual state-stream interest and use bounded current-identity semantic-answer due state; explicit unbound reads remain explicit. Provider safety remains periodic independently of page interest or launch-authority absence so labelled leftovers are not hidden.",
   "id": "FAM-CAG581",
   "members": [
     "INV-AD1MRN",
@@ -22,7 +22,10 @@
     "INV-3XG15P",
     "INV-TMY6DW",
     "INV-RQNDH6",
-    "INV-GDTTHF"
+    "INV-GDTTHF",
+    "INV-BMZ47D",
+    "INV-BY8XBH",
+    "INV-5C5086"
   ],
   "origin": {
     "handoff": {
@@ -32,11 +35,12 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/serving",
     "mcp/src/agents_remember/controlplane",
-    "mcp/src/agents_remember/application/knowledge_worklist"
+    "mcp/src/agents_remember/application/knowledge_worklist",
+    "mcp/tests"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

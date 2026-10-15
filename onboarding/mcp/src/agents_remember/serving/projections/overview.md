@@ -33,7 +33,7 @@ The serving projector passes its retained input state, provider refresher and la
 
 Full task refresh constructs contracts, enclosures, task documents and series locally before assigning the retained quartet; failure during that construction preserves the prior quartet. A failed input read leaves _task_refresh_pending set, and a later read, including a heartbeat, forces a full retry. Complete incremental task samples assign contracts and enclosures before reprojecting task documents and subsequently merging series, so failure on that branch need not preserve the entire prior quartet. Contract construction reuses successful parses only while mtime, size and ctime match, removes entries outside the live enumeration, and publishes a read-only mapping.
 
-Runtime readers copy inbox entry, subject and owner task references and expectation task references as canonical `TaskDocumentRef` values. Enclosures include the lifecycle-operation projection returned by the durable operation reader. That reader prefers the newest active operation when any exist, otherwise the newest available record; it may instead return a journal-read decision or no safely projectable operation. Durable operation state remains the authority. Keeping worker and resume identities private remains standing intent; the complete downstream field exclusion was not established in this bounded review.
+The earlier runtime reader account of copied inbox/expectation task references is historical: those readers and slots are absent from the current input schema. Current enclosure readers include the lifecycle-operation projection returned by the durable operation reader. That reader prefers the newest active operation when any exist, otherwise the newest available record; it may instead return a journal-read decision or no safely projectable operation. Durable operation state remains the authority. Keeping worker and resume identities private remains standing intent; the complete downstream field exclusion was not established in this bounded review.
 
 Task JSON supplies the task-document and series surfaces. The always-on reader projects every valid canonical document without a task-document count window, while omitting full reader bodies. Its master join table indexes every valid master payload in that set. The on-demand body reader opens the requested document and builds graph annotations for named masters and ordinary dependency facts for the owning master/listed tasks; it does not enumerate the canonical document corpus or use the shared task payload cache.
 
@@ -75,7 +75,7 @@ Landing observation has its own enclosure walk and concurrency limit. Completed 
 - A projection reader must not erase a durable task document merely because its schema does not know a field. The task reader retries validation after removing exactly the addressed `extra_forbidden` paths, with a fixed pass bound. Genuine invalidity and unaddressable validation locations remain fail-closed. The closeout reader still has a separate strict-validation boundary. Gate projection uses the tolerant store read; the enforcement fold's strict read remains distinct.
 - A request-path reader should cost what it names rather than read every document in the corpus. The body reader opens the requested document and graph-named masters; the canonical background pass lists only the three task levels. This adds no task-document index or persistent store. The always-on readers retain their existing shared payload cache; the HTTP body reader does not mutate it.
 - Atomic publication prevents a partially written individual projection file from being exposed. It does not promise a jointly atomic state/metrics pair.
-- Observer event mutation belongs to the write-side owner. This route is not wholly free of durable housekeeping: input refresh prunes expired lifecycle logs and orphaned drift snapshots, inbox reading compacts its store, and projection publication prunes attention dismissals. These current calls must be distinguished from the standing ownership intent.
+- Observer event mutation belongs to the write-side owner. This route is not wholly free of durable housekeeping: input refresh prunes expired lifecycle logs and orphaned drift snapshots, and projection publication prunes attention dismissals. The former inbox-reader compaction account is historical, not a current housekeeping call. These current calls must be distinguished from the standing ownership intent.
 - Kernel ownership of shared path conventions remains the stated intent. Serving's local path definitions currently duplicate those conventions; the overview does not endorse that discrepancy as intended architecture.
 
 ## What Does Not Belong Here
@@ -127,6 +127,12 @@ Historical route-move attribution, dashboard-edit attribution, the reported 3.86
 
 None.
 
+## Interested Landing Observation
+
+The serving app binds the landing refresher to actual Projector state-stream subscribers. It admits no discovery without interest, rechecks after awaited discovery and at semaphore admission, and leaves unbound explicit refresh callers unchanged. LandingProbeSchedule stores only current eligible exact identities; semantic-answer/contract changes and clock regression reset the epoch, with 30/120/600/3600-second due intervals at unchanged ages 120/600/3600 seconds. Observation-age noise is not a changed answer; a fact's own at and row order are semantic. Due eligibility is not a total event-to-publication latency guarantee.
+
+The schedule advances after actual publication, not a skipped probe. Existing bounded terminal admission, one finishing attempt per arc, truthful final validation and copy-on-write publication remain. The previous fixed open cadence is deliberately replaced only for serving-bound calls; provider safety and projection healing are separate owners. landing_cadence.py is the transient policy owner, not durable landing state or a frontend interest channel.
+
 ## Evidence
 
 
@@ -142,8 +148,13 @@ None.
 
 - Contract parsing uses stat identity, rejects foreign contracts and prunes departed entries. [7]
 - Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values. [8]
-- Runtime readers project operation and canonical task references, with named tolerant boundaries and inbox compaction. [9]
+
+- Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots. [9]
+
 - Closeout projection has strict sprint admission and an invalid-empty effective-state boundary. [10]
 - Landing observation excludes historical repair and evicts the exact parsed-final entry after successful publication. [11]
 - Projection files publish separately; the route also invokes durable housekeeping. [12]
 - Direct serving callers pass retained tick state and request one task-document body. [13]
+
+- Actual bound page interest gates discovery and admission; skipped work does not advance publication or terminal attempts. [14]
+- Transient due state retains current identities and uses semantic-answer age rather than observation noise. [15]

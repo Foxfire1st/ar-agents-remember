@@ -10,7 +10,13 @@ Builds the dashboard's FastAPI app. `_build_serving_runtime` constructs the long
 app owns, and `create_app` registers every route on an app whose lifespan runs the background loops. The
 app has no authentication; the command line binds it to `127.0.0.1` by default.
 
-## Code Commentary
+## Current Runtime Composition
+
+The app constructs one landing refresher with its shared background ledger, passes that exact instance to the Projector and binds its interest predicate to `Projector.has_subscribers` before any background loop starts. Only actual state-stream subscribers express landing interest; one-shot state reads and frontend signals do not. The live/sim input choice still controls whether the refresher exists. Provider safety sampling is a separate periodic lifespan owner and is not gated by page interest or launch authority.
+
+Current composition contains no terminal host/catalog/paster, liveness sweeper, notifier store, operator-inbox or harness-control registration. It builds the projector, runtime clock/build/shutdown port and metrics store; registers projection/action, files, changeset, notes, requirement, review/summary/tree/knowledge and optional collaborator routes; and mounts static assets last. The retained sections below describe earlier source epochs where those removed collaborators existed, not current endpoints or construction.
+
+## Code Commentary — Historical Source Accounts
 
 ### The runtime (`_build_serving_runtime`)
 
@@ -215,7 +221,9 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 
 - Frozen implementation of create_app supporting the stated file behavior. [12]
 - The runtime: projector, terminal objects, one serving clock, and the fields copied from the collaborators. [13]
-- The shutdown callable is copied from the collaborators onto the runtime. [14]
+
+- The current _build_serving_runtime copies the collaborators' review_trees_shutdown callable onto the runtime; this retained shutdown boundary also has a current owner, separate from the historical constructor accounts. [14]
+
 - The app: lifespan, compression, and the routes in their order with the static mount last. [15]
 - The empty collaborator record. [16]
 - The module docstring: the endpoints and the local-first posture. [17]
@@ -228,3 +236,6 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 - The one line that places the capsule-compiler port on the serving runtime.  Anchor: `capsule_launch` [25]
 - **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes` [26]
 - The composition root that binds the real compiler into the collaborator record every `create_app` call uses. [27]
+
+- Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger. [29]
+- Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent. [30]

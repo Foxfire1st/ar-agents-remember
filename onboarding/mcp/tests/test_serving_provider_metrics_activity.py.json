@@ -1,0 +1,130 @@
+{
+  "path": "mcp/tests/test_serving_provider_metrics_activity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+        "content": "sha256:78d89e6069be31031cfcbb539b9ef70a9fc14dc56567aa72e3ac8385db0cd53c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderMetricsActivityTests.test_empty_launch_authority_does_not_prove_fleet_retirement"
+        }
+      },
+      "facet": "Empty authority still runs all four periodic safety stages.",
+      "id": "PRF-0MHR9Z",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+        "content": "sha256:fb2fcfaf33fe954ee874fd800e5e8919e943774f33a930a55216480ec677eafd",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderMetricsActivityTests.test_live_admission_between_ticks_and_restart_keep_leftovers_observable"
+        }
+      },
+      "facet": "Revocation, between-tick admission and restart preserve leftover observations.",
+      "id": "PRF-0SKZJP",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+        "content": "sha256:6d623ac5f58962dafe8cda812dcfca1e9105e8d0141c3c9db83291a8f192dc3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderMetricsActivityTests.test_malformed_authority_does_not_stop_safety_or_reclaim"
+        }
+      },
+      "facet": "Malformed authority does not gate safety or authorize launches.",
+      "id": "PRF-N4FCP8",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+        "content": "sha256:fb2fcfaf33fe954ee874fd800e5e8919e943774f33a930a55216480ec677eafd",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderMetricsActivityTests.test_live_admission_between_ticks_and_restart_keep_leftovers_observable"
+        }
+      },
+      "id": "RLZ-78S71Q",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins admitted leftovers surviving cleared launch authority and restart.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+        "content": "sha256:6d623ac5f58962dafe8cda812dcfca1e9105e8d0141c3c9db83291a8f192dc3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderMetricsActivityTests.test_malformed_authority_does_not_stop_safety_or_reclaim"
+        }
+      },
+      "id": "RLZ-9FJFGZ",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins observation/reclaim for invalidUTF8and badJSONunder empty and enabled boot maps without authorizing launches.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Real-loop assertions retain periodic safety across empty, live, revoked, between-tick, restarted and malformed authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:06f1de360c11a259242e8cb97bfa92727eeda3e7f23318adfdee21427c26e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unchanged metrics owner samples, records, evaluates, compacts and sleeps without an authority/page gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

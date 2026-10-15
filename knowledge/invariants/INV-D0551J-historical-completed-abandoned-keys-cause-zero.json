@@ -9,7 +9,7 @@
   "conditions": [
     "A completed arc with no valid final gets one attempt, including startup, with four terminal admissions per sweep.",
     "Successful attempts freeze only complete matching facts; failure or final loss never re-arms the same arc.",
-    "A real reopen resets the arc; open work retains its existing cadence."
+    "A real reopen resets the arc; serving-bound calls additionally require actual page interest and use the per-identity semantic-answer due policy, while explicit unbound callers keep their existing refresh API."
   ],
   "exclusions": [
     "Abandoned or build-only keys remain probe-free.",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A completed landing with no valid final gets one attempt per completed arc per process, including at startup, and terminal admissions are capped at four per sweep; success freezes, failure stays missing, loss of a final does not repeat history probes, and reopening resets that arc.",
   "status": "proposed",

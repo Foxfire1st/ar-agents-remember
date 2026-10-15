@@ -12,7 +12,15 @@
 
 A completed arc lacking a valid current-contract final may receive exactly one finishing attempt per process, including at startup, with at most four terminal admissions per sweep. Matching valid finals serve without an attempt. The attempt stays consumed after success, failure or later final loss; only a real reopen re-arms that arc. Abandoned/build-only keys remain probe-free. This deliberately supersedes the earlier startup-zero exclusion, not the exact-key, matching-final or no-recurring-history boundaries.
 
-Missing, corrupt or contract-predating finals stay honest terminal missing facts (`no final observation recorded`), not a promise of recurring repair. Successful complete finishing facts may freeze once. Existing manual exact-current reads remain available. Real reopen invalidates the prior final; build-only phases stay probe-free until closeout or integration activates landing again. Open due probes retain 30-second cadence/four concurrency.
+Missing, corrupt or contract-predating finals stay honest terminal missing facts (`no final observation recorded`), not a promise of recurring repair. Successful complete finishing facts may freeze once. Existing manual exact-current reads remain available. Real reopen invalidates the prior final; build-only phases stay probe-free until closeout or integration activates landing again. The concurrency cap remains four. Serving-bound open probes deliberately replace the former fixed 30-second cadence with actual page interest and unchanged-answer age scheduling; explicit unbound refresh callers retain their prior API.
+
+## Page Interest And Due Scheduling
+
+The app binds actual Projector subscriber membership. Without interest, `refresh_once` returns before contract discovery, rechecks after its awaited discovery, and rechecks again after semaphore admission before each probe. A probe already admitted is not cancelled merely because the last page departs; no new admission proceeds once that boundary observes no interest. Unbound explicit refreshes remain unconditional.
+
+For bound serving refreshes, `LandingProbeSchedule` retains only the currently eligible exact identities. A new or changed contract is due immediately on the next interested pass. A published semantic answer keeps its unchanged-age epoch only while its selected fields and row order match. Due intervals are 30 seconds below 120 seconds of unchanged age, 120 below 600, 600 below 3600, and 3600 thereafter. A changed answer or a clock before the remembered epoch resets the schedule. Observation-age noise is excluded, but the fact's own `at` is semantic. Due timestamps are eligibility for the next ordinary sweep, not an end-to-end freshness guarantee.
+
+The schedule advances only after rows are actually published; a disconnect-skipped probe neither publishes nor consumes the terminal attempt. Existing shared-ref sweep scope, accounted drained offload, immutable observations, exact final validation and one-attempt-per-completed-arc protection remain. Reopen/rewrite/new identities cannot inherit a departed contract's deadline. No subscriber means no new landing discovery or remote work, not zero work for the entire dashboard.
 
 
 
@@ -53,4 +61,8 @@ Successful atomic replacement of a final file invalidates the writer's parsed-fi
 - Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions. [3]
 - A terminal finishing attempt remains consumed after success, failure and subsequent final loss until reopen. [4]
 - Final facts are served only after complete matching reducer/participant validation, otherwise as honest missing. [5]
+
+- Bound interest gates discovery, due selection, publication-driven schedule advance and probe admission; unbound callers retain explicit refresh behavior. [7]
+- Current-identity retention and semantic-answer age determine transient due times. [8]
+
 - Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps.  Anchor: `LandingStateRefresher._maybe_freeze` [6]

@@ -1,0 +1,183 @@
+{
+  "path": "mcp/tests/test_landing_page_cadence.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_disconnect_during_discovery_admits_no_probe"
+        }
+      },
+      "facet": "Loss of interest during awaited discovery admits no observation.",
+      "id": "PRF-576CM5",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_unchanged_answers_use_all_age_bands_and_changed_answer_resets"
+        }
+      },
+      "facet": "Controlled clock covers every unchanged-age band and answer reset.",
+      "id": "PRF-7TPCGJ",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_rewrites_reopen_new_and_removed_contracts_reset_bounded_schedule"
+        }
+      },
+      "facet": "Two current populations exercise identity/arc changes and eviction.",
+      "id": "PRF-CJFA83",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves"
+        }
+      },
+      "facet": "Real composed Projector subscribers sustain interest until the last departure.",
+      "id": "PRF-V2AHXV",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_unchanged_answers_use_all_age_bands_and_changed_answer_resets"
+        }
+      },
+      "id": "RLZ-3R4PWG",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins all controlled age bands and the changed semantic answer reset.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_disconnect_during_discovery_admits_no_probe"
+        }
+      },
+      "id": "RLZ-83H5TP",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins a subscriber departing across the awaited discovery boundary.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_rewrites_reopen_new_and_removed_contracts_reset_bounded_schedule"
+        }
+      },
+      "id": "RLZ-KH0Y1D",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins contract rewrites, reopen/new identity and population eviction at more than one size.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves"
+        }
+      },
+      "id": "RLZ-MRSWBJ",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Pins actual serving composition and the departure of the final subscriber, not a frontend-supplied signal.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The suite owns composition, disconnect, age/reset and bounded-population assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:461163d23b4431df77a5b9f08da5f0432afba123bcc80f4c476bc2afb80840c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Composition binds the same landing instance to the Projector's real subscriber predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

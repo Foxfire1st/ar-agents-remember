@@ -111,6 +111,12 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 The retained app shares one always-on background ledger across actual worker units, synchronous publication, event tails and startup. Diagnostics expose owner/wake facts with explicit incomplete windows rather than acceptance. Transaction-bound own-write suppression and pending invalidations retain independent full healing. Server-side host-start loading keeps its shared OS lease/progress and cancellation-drained driver without restoring the removed terminal catalogue or notifier plane.
 
+## Landing Interest And Periodic Safety
+
+Landing discovery and new remote-probe admission are conditional on the Projector's actual shared state-stream subscribers, bound by app composition before startup. Per current exact contract identity, semantic-answer age increases the due interval from 30 seconds to 120, 600 and 3600; changed answers/contracts reset it. One-shot state reads and frontend signals create no landing interest. Existing accounting, drained cancellation, sweep-local remote sharing and exact terminal-final/reopen boundaries remain.
+
+This is not a dashboard-wide stop switch. Projection/watch/healing and other owned loops retain their obligations. In particular, provider sample/record/degradation/compact remains periodic and independent of page interest or launch-authority absence: leftover labelled stacks must stay observable after revocation/restart or malformed authority. No fleet-retirement witness is inferred from permission to launch. Runtime measurements and installation acceptance remain separate from these source contracts.
+
 ## Evidence
 
 - The query, the port and the GET handler with its three answer classes. [3]
@@ -121,28 +127,53 @@ The retained app shares one always-on background ledger across actual worker uni
 
 - The shared naming primitive appends the same physical lock suffix. [21]
 - Every-directory filtering retains lock suffix exclusion. [22]
-- **The comparison route's handler over its injected port.** [29]
-- **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** [30]
-- **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).** [31]
+
+- **The comparison route's handler over its injected port.**  Anchor: "def api_review_intent(" [29]
+
+
+- **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.**  Anchor: "def api_review_intent_entries(" [30]
+
+
+- **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: "def api_review_intent_source_content(" [31]
+
 - **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** [32]
 - **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [33]
 - The two admitted selector kinds, refused rather than mapped. [34] [46]
-- The query parser that admits only those two. [35] [47]
+
+- The query parser that admits only those two.  Anchor: "def review_request_from_query(" [35]
+
+
+- The query parser that admits only those two.  Anchor: "def review_request_from_query(" [47]
+
 - **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** [36]
 - The refusal code a process with no adapter produces. [37] [49]
 - The 400 a selector kind outside the admitted set gets. [38]
 - The 404 for a candidate that does not resolve. [39]
-- **The registration that must precede the static mount and that takes all three ports.** [40]
+
+- **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes(" [40]
+
 - **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** [41]
 - **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** [42]
 - Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports. [43]
 - **The entry port type: the task context in, one typed entry result out.** [44]
-- The GET-only route handler over the injected port. [45]
-- **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.** [48]
-- **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** [50]
-- **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** [51]
-- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** [52]
-- The registration that must precede the static mount. [53]
+
+- The GET-only route handler over the injected port.  Anchor: "def api_review_intent(" [45]
+
+
+- **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: "def _status_for(" [48]
+
+
+- **The 400 a selector kind outside the admitted set gets, inside the comparison handler.**  Anchor: "def api_review_intent(" [50]
+
+
+- **The 404 for a candidate that does not resolve, is not live, or has no dataset half.**  Anchor: "def api_review_intent(" [51]
+
+
+- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries(" [52]
+
+
+- The registration that must precede the static mount.  Anchor: "def register_review_routes(" [53]
+
 - The status mapper accepts the three review result types; success is refusal absence, with distinct unavailable and missing-subject/candidate refusals. [54]
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 - **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
@@ -160,10 +191,14 @@ The retained app shares one always-on background ledger across actual worker uni
 - **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** [70]
 - **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** [71]
 - **The expansion route's own unwired answer: "not served rather than served as an empty file".** [72]
+
 - **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** [73]
+
 - **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** [74]
 - The `400` body for a query that did not name the generation whole, and the exact expected set it names. [75]
-- **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** [77]
+
+- **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**  Anchor: `read_review_source_content` [77]
+
 - **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [78]
 - **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** [79]
 - **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** [80]
@@ -174,7 +209,9 @@ The retained app shares one always-on background ledger across actual worker uni
 - The collaborator that stops the route's child computations. [89]
 - The runtime receives the shutdown callable from the collaborators. [90]
 - Serving shutdown calls it on a worker thread before the background tasks are cancelled. [91]
+
 - The composition root composes one worklist process owner. [92]
+
 - It supplies that owner's shutdown to the app. [93]
 - The tree port passes the process owner to the application. [94]
 - A live read reuses the record of the same trees, and pins before it writes a new record. [95]
@@ -207,3 +244,7 @@ The retained app shares one always-on background ledger across actual worker uni
 - The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes` [76]
 - Current imported source owns this scoped route boundary. [84]
 - Current imported source owns this scoped route boundary. [85]
+
+- Shared app composition binds real landing interest before startup. [129]
+- Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
+- Provider safety remains an independent periodic sequence. [131]

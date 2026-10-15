@@ -20,6 +20,10 @@ diff ignores volatile ages, the sequence advances only on real content changes a
 truthful `/api/state` ETag component. Since **260712-PTS-L3** an injected `change_watcher` wakes the
 loop on debounced input changes or an idle heartbeat; without one, fixed-interval replay pacing remains.
 
+## Landing Interest Ownership
+
+`has_subscribers()` is only a read-only predicate over the shared state-stream subscriber set. The app binds it to the landing refresher before startup; it adds no frontend interest protocol and does not stop projection publication, the watcher or provider safety. Existing atomic registration/current-snapshot capture and generator-finally removal remain the membership authority, so interest persists until the last subscriber departs.
+
 ## Actual tick completion and drain pacing
 
 `_tick` measures the shielded real thread tick. Its finally hook reaches the same pacer completion owner after successful/failed prime, normal ticks and cancellation only after the worker drains. Notification accumulation and publication remain separate owners; the completion floor never clears domains. Watcherless replay retains `sleep(interval)` and no live pacer. A degraded watcher requests full refreshes subject to the completed tick's added rest, which is distinct from total event-to-publication lag.
@@ -186,5 +190,10 @@ worktree cleanup while preserving cancellation as the public outcome.
 
 - The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: "def _publish_projection(" [1]
 - Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" [2]
-- The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.  Anchor: "async with contextlib.aclosing(projector.subscribe())"; "is permitted; handwritten tail keys or another"; "payload.update(" [3]
+
+- The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the build stamp and optional watcher-health tail. Missing build/health facts are omitted; deltas carry no whole-workspace tail. [3]
+
 - All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick` [4]
+
+- Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority. [5]
+- The composed runtime preserves interest until the final real subscriber leaves. [6]

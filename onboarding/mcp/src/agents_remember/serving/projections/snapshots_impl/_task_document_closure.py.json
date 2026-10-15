@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba4b4d6186626d46a2c296a16868c9b97948228b",
-        "content": "sha256:94c95f847da54aa659e9516f471b1e0595c68686dd5284494f7c92b1477d9b0f",
+        "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+        "content": "sha256:2c79e0280bf3463d41c1893990c25b1c81b2d715ca381785a6fddb7ad821f936",
         "locator": {
           "kind": "symbol",
           "name": "doc_projection_closure"

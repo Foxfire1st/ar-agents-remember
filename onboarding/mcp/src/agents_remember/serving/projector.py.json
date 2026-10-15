@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
         "content": "sha256:8c8ca524ce69a3db3143bfec8000a8950cde7d99247caa0033574585cb5a97a4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+        "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "Projector.has_subscribers"
+        }
+      },
+      "id": "RLZ-ASMCG7",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Exposes the real shared SSE subscriber set as a read-only server interest predicate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
         "content": "sha256:f426613718f681ac44c8e20977fb4eb29629b12de5a4f94dcc0aa62b6c653299",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
         "content": "sha256:4c50cf164c06270f673daf6f0ce716b7bd94a007f8726b44270542bfb58a0431",
         "locator": {
           "kind": "symbol",
@@ -62,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 403,
+              "end": 407,
               "kind": "line_range",
-              "start": 403
+              "start": 407
             }
           },
           "kind": "code"
@@ -79,24 +97,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
             "locator": {
-              "end": 457,
+              "end": 461,
               "kind": "line_range",
-              "start": 457
+              "start": 461
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
             "locator": {
-              "end": 465,
+              "end": 469,
               "kind": "line_range",
-              "start": 465
+              "start": 469
             }
           },
           "kind": "code"
@@ -104,16 +122,16 @@
       ]
     },
     "3": {
-      "note": "The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.  Anchor: \"async with contextlib.aclosing(projector.subscribe())\"; \"is permitted; handwritten tail keys or another\"; \"payload.update(\"",
+      "note": "The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the build stamp and optional watcher-health tail. Missing build/health facts are omitted; deltas carry no whole-workspace tail.",
       "targets": [
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
-            "content": "sha256:d937a19251de45be26d9491b7c037c8a460acad1984527027e8faba5ed7a08ef",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
+            "content": "sha256:f8e896637491deb00e88b80bed125b1b3e732c2d2f06eaa0de47af8d6857aa2b",
             "locator": {
-              "end": 159,
+              "end": 135,
               "kind": "line_range",
-              "start": 159
+              "start": 100
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -121,40 +139,14 @@
         },
         {
           "anchor": {
-            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
-            "content": "sha256:c7f79056394b2ea9a2ff34430d5ac5d775c5d66b0514d80a514393c0fc30cbdc",
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:19f4c65c90704bb90abb1ac2cb924cb7b8be29e5073a2e7053819bb9c57b2f47",
             "locator": {
-              "end": 13,
+              "end": 88,
               "kind": "line_range",
-              "start": 12
+              "start": 55
             },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
-            "content": "sha256:ecdb5438fdd07f0a4ce5c1df3f3847431f0c211a34c04c55ba3302ffd5340a03",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 169
-            },
-            "path": "mcp/src/agents_remember/serving/_app_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
-            "content": "sha256:b2e58e17cdfc4b73829048700bb8c222bb8ea3923f54f4fb4b6b95b4f0c6264a",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 13
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
+            "path": "mcp/src/agents_remember/serving/served_state.py"
           },
           "kind": "code"
         }
@@ -165,15 +157,50 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:c391a5c48271edb0b30a04e0e05b918e3f79c86673e460097ab9394f5b68499f",
             "locator": {
-              "end": 361,
+              "end": 365,
               "kind": "line_range",
-              "start": 344
+              "start": 348
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority.\n\nAnchor: `Projector.has_subscribers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The composed runtime preserves interest until the final real subscriber leaves.\n\nAnchor: `LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "kind": "test"
         }
       ]
     }

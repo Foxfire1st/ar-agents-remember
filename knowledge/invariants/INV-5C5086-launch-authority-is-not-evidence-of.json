@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Separately owned serving composition, observation scheduling and safety operations must not mistake missing page interest or launch permission for permission to hide required observations; operation-level tests guard the distinct boundary."
+  },
+  "applicability": "The serving lifetime periodic provider safety metrics loop observing labelled stacks.",
+  "conditions": [
+    "Sample, record, degradation evaluation and compaction keep their existing accounted offload, drain, stop callback and sample interval.",
+    "Launch authorization and fleet presence remain separate."
+  ],
+  "exclusions": [
+    "No fleet-absence or retirement mechanism is introduced.",
+    "Controlled-loop tests do not demonstrate native container launches or installation performance."
+  ],
+  "id": "INV-5C5086",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d2665764-add6-4e1c-aa4f-3cfe1d657d22/role-launch/r1-runtime-2/rule-5-record.md"
+      ],
+      "path": "curator-handoff-corrected.json"
+    },
+    "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+    "leaf": "260928-MIK-L166",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Launch authority is not evidence of fleet retirement, so the original periodic sample/record/degradation/compact sequence observes labelled leftovers regardless of page interest, empty/revoked authority, restart or decoding failure, while launch refusal stays separate.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
             "content": "sha256:ce98c322fa57386a52d92bca23b2e2e8c7aa6e835c04c2a944c4ef6405cdfd8a",
             "locator": {
-              "end": 399,
+              "end": 403,
               "kind": "line_range",
-              "start": 376
+              "start": 380
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -176,6 +176,41 @@
               "start": 115
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Actual bound page interest gates discovery and admission; skipped work does not advance publication or terminal attempts.\n\nAnchor: `LandingStateRefresher.refresh_once`; `LandingStateRefresher._observe_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Transient due state retains current identities and uses semantic-answer age rather than observation noise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
           },
           "kind": "code"
         }
@@ -380,16 +415,16 @@
       ]
     },
     "9": {
-      "note": "Runtime readers project operation and canonical task references, with named tolerant boundaries and inbox compaction.",
+      "note": "Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots.",
       "targets": [
         {
           "anchor": {
-            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
-            "content": "sha256:95387c7762045f52d2f955a83757fc451565b7d8c90c071dee9a8b2311ba3a66",
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:dda08059c825960502a94c07c87deea5f3bc3e05fab59cd04c5934431d777248",
             "locator": {
-              "end": 279,
+              "end": 149,
               "kind": "line_range",
-              "start": 81
+              "start": 1
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -405,6 +440,19 @@
               "start": 56
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3d51ffe112d7e27dcffec411eafdb57b3e349a2",
+            "content": "sha256:337f7fd5196d804871555c3d10be9be90301476cb6475044030c870a108c27b4",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
         }

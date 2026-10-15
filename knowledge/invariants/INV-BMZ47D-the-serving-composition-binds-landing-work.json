@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Separately owned serving composition, observation scheduling and safety operations must not mistake missing page interest or launch permission for permission to hide required observations; operation-level tests guard the distinct boundary."
+  },
+  "applicability": "Landing background discovery and new probe admission in a serving runtime bound to the Projector state stream.",
+  "conditions": [
+    "The app binds the real shared subscriber predicate before background startup.",
+    "Interest is rechecked after awaited discovery and at semaphore admission."
+  ],
+  "exclusions": [
+    "Explicit unbound refresh callers retain their API.",
+    "Already admitted worker operations are not cancelled merely on subscriber departure.",
+    "Provider safety and local projection/healing are not stopped by landing disinterest."
+  ],
+  "id": "INV-BMZ47D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d2665764-add6-4e1c-aa4f-3cfe1d657d22/role-launch/freeze-2/report.md"
+      ],
+      "path": "curator-handoff-corrected.json"
+    },
+    "handoffEntry": "MIK-R165@v1 §3",
+    "leaf": "260928-MIK-L166",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The serving composition binds landing work to the actual Projector subscriber set and admits no contract discovery or remote probe without a subscriber, rechecking interest after discovery and before each semaphore-admitted probe.",
+  "status": "proposed",
+  "supersedes": []
+}

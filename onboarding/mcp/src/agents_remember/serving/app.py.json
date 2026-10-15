@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/app.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+        "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_build_serving_runtime"
+        }
+      },
+      "id": "RLZ-K8504A",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Constructs one shared landing refresher and binds it to the owning Projector before background startup.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "12": {
       "note": "Frozen implementation of create_app supporting the stated file behavior.",
@@ -35,16 +54,16 @@
       ]
     },
     "14": {
-      "note": "The shutdown callable is copied from the collaborators onto the runtime.",
+      "note": "The current _build_serving_runtime copies the collaborators' review_trees_shutdown callable onto the runtime; this retained shutdown boundary also has a current owner, separate from the historical constructor accounts.",
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
             "locator": {
-              "end": 259,
+              "end": 132,
               "kind": "line_range",
-              "start": 259
+              "start": 84
             }
           },
           "kind": "code"
@@ -72,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:fd94d584cf704f759112a787d339f29819555b15105c7339d151630c57235f32",
             "locator": {
               "kind": "symbol",
@@ -139,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:62e1a313541161d26a2040048127f55ecdf8707d01fb7edd6255fb2a2e0f9a43",
             "locator": {
-              "end": 316,
+              "end": 181,
               "kind": "line_range",
-              "start": 315
+              "start": 180
             }
           },
           "kind": "code"
@@ -156,12 +175,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:f8a191bbbe913dd2a1cee2a840e0988371a0c86185cd0cfe610f08d98b3d7a90",
             "locator": {
-              "end": 315,
+              "end": 180,
               "kind": "line_range",
-              "start": 308
+              "start": 173
             }
           },
           "kind": "code"
@@ -239,12 +258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
             "content": "sha256:bac61469b34d41c6ffd7dc99390e910ede7e1e0a71aa63056dd824332428946b",
             "locator": {
-              "end": 314,
+              "end": 179,
               "kind": "line_range",
-              "start": 308
+              "start": 173
             }
           },
           "kind": "code"
@@ -280,6 +299,38 @@
               "name": "resolve_launch_capsule"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:1a65047821397155f26b7b674bddc4ce06cdda25103879be8738494699797648",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            }
           },
           "kind": "code"
         }

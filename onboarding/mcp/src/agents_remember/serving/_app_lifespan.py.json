@@ -36,6 +36,24 @@
       },
       "rationale": "Calls the runtime's review_trees_shutdown on a worker thread as the first step of serving shutdown, before the background tasks are cancelled.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+        "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_metrics_loop"
+        }
+      },
+      "id": "RLZ-QA4499",
+      "invariant": "INV-5C5086",
+      "origin": {
+        "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Original landed loop remains unconditional through accounted offload, cancellation drain, interval and stop callback, with no fleet-absence gate.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -155,6 +173,39 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:06f1de360c11a259242e8cb97bfa92727eeda3e7f23318adfdee21427c26e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "kind": "test"
         }
       ]
     }

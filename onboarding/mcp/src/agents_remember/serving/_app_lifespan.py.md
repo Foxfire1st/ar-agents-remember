@@ -14,6 +14,10 @@ Startup compacts the workspace river before projector prime, then starts project
 
 The serving lifetime retains the L81 shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch.
 
+## Periodic Provider Safety Boundary
+
+The provider loop remains periodic: sample labelled containers, record, evaluate degradation with the existing stop callback, compact, then sleep at the configured sample interval. Every stage uses the accounted cancellation-drained offload. A launch-authority map is not a fleet-retirement witness: empty, revoked or malformed authority and a dashboard restart do not prove leftover labelled stacks are gone. Neither page interest nor authority decoding gates this safety sequence. Launch refusal, sampler label discovery, degradation policy and Docker handling keep their own owners. This is the retained landed loop, not an accepted fleet-absence optimization; controlled real-loop regression tests are not a claim that a real fleet was launched.
+
 ## Evidence boundary
 
 This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
@@ -27,4 +31,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 - [24]
 - [25]
 - [26]
+
+- Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate. [27]
+- Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]
 
