@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Index absence also describes staged deletion; treating it as a missing untracked file strands product cancellation after source movement. Two real operation regressions protect deletion partition and genuine untracked binary preservation."
+  },
+  "applicability": "Dirty-path classification used by managed-sync save-first cancellation and retained-state capture in code or external-memory worktrees.",
+  "conditions": [
+    "Successful Git membership reads must show absence from both index and current HEAD before the path is treated as untracked.",
+    "A deletion tracked by HEAD remains native patch state; the pre-existing save and rollback owners preserve the staged/unstaged partition.",
+    "Genuinely untracked later bytes still require a separate mirror."
+  ],
+  "exclusions": [
+    "Classification alone proves neither transaction ownership nor safe discard.",
+    "An unsuccessful holder inspection never establishes absence.",
+    "The memory-side derived root cache retains its existing exclusion; no code-side exclusion is added."
+  ],
+  "id": "INV-ECDX9Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Exact CODE HEAD 6973fdd1f4e5df0e39c17cee446827ff1b661ea0, uncommitted tree e2b42586369b094d6e63f5cf70ec16d04f3009a2, change hash SHA-256 34984bf5cd1ae40cadf36bfef42f8eab43f5a4632fd4b56b948cd04924286950; Worker attempt c68ee3d8-a9de-4d13-a535-2561c345e83a, canonical journal anchor L61-R61-A8. In the freeze report's evidence folder: red.json/log shows staged cancellation failing with sync-cancel-save-failed before the production edit while the unstaged control passes; final-focused2.json/log shows 36 tests and 8 subtests passed; deletion-final2.json/log shows both final deletion cases passed; stop-inventory-successor.md names the added stop and holder-state property. Both real product cancel cases compare pre-sync HEAD, full index entries, binary staged/unstaged diffs, worktree bytes/status and unrelated stash census, require terminal cancelled and only own stash consumed, check deletion is only in its appropriate patch and not mirrored, verify saved-file digests in the answer and replay patches to the exact pre-cancel index/tree, including genuine untracked binary bytes. Shared native cancellation ownership and prior complete stash-inventory realizations are preservation context, not changed implementations or new Worker memory judgments."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R61@v1 rule12 staged-deletion successor S8",
+    "leaf": "260928-MIK-L61",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dirty path is untracked only when both the index and HEAD lack it, so save-first cancellation carries a staged deletion in staged.patch alone and returns parked staged or unstaged deletions with their original index/worktree partition.",
+  "status": "proposed",
+  "supersedes": []
+}

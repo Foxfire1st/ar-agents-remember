@@ -1,0 +1,136 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L61",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7CYCAG",
+      "items": [
+        "sha256:77977e43f267ec029cb6a96afba5851638de371d9e12e271c3cbffbff560880e"
+      ],
+      "reason": "Only declarative membership for test_sync_cancel_deletions.py is added to an existing catalog; no invariant, artifact lifetime/identity, lane definition or executable check policy changes. The owning card records its exact membership and distinguishes it from execution.",
+      "subject": "hunk:sha256:77977e43f267ec029cb6a96afba5851638de371d9e12e271c3cbffbff560880e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CBEKW1",
+      "items": [
+        "sha256:b5c75d04cd97a57600966ad568c6a03c1862590d0d340777f164fabca0749032"
+      ],
+      "reason": "Only declarative membership for test_sync_cancel_deletions.py is added to an existing catalog; no invariant, artifact lifetime/identity, lane definition or executable check policy changes. The owning card records its exact membership and distinguishes it from execution.",
+      "subject": "hunk:sha256:b5c75d04cd97a57600966ad568c6a03c1862590d0d340777f164fabca0749032"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HQHDDH",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Record the deletion module once in the existing unit-regression lane, without changed lane definitions, budgets or an execution claim.",
+      "sources": [
+        {
+          "blob": "956272718f1a8ff49716e7f456578137973a44c6",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J1WPV0",
+      "items": [
+        "sha256:91ee38db0234f7fc93fd8f555307c4fea0823895d650c0535f1213cb67db7959"
+      ],
+      "reason": "The route already delegates module-specific assertion sets to file cards and distinguishes declarations from execution. Two focused deletion regressions reuse the existing fixture/selection architecture; no route purpose, authority, lane policy or shared support contract changes.",
+      "sources": [
+        {
+          "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "956272718f1a8ff49716e7f456578137973a44c6",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+          "path": "mcp/tests/test_sync_cancel_deletions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TNJYAF",
+      "items": [
+        "sha256:a514081b77278a169e742d9ff771c732ce3d65a8a9a7eac48c3fbe6d776ec559"
+      ],
+      "reason": "Extend the existing exact-state account with successful two-holder classification, tracked deletion patch ownership and the distinction from transaction attribution; existing ref/inventory contracts stay true.",
+      "sources": [
+        {
+          "blob": "030da69133f3963de4c0642370796621115a5ea2",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YECBW0",
+      "items": [
+        "sha256:0e9a3901e19dad154237bcdcb948e9d49048828848f90ac4962e82a76824a29f",
+        "sha256:e3e411354fddcbefb57c110d660561b97fc837c8591afb416ebb8e2daa5189d2"
+      ],
+      "reason": "Author the new module card against all operation and replay assertions, naming exact staged/unstaged partition, saved-patch and genuine untracked preservation boundaries, not source definitions as fresh executions.",
+      "sources": [
+        {
+          "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+          "path": "mcp/tests/test_sync_cancel_deletions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_sync_cancel_deletions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YPY566",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Record only the two added source-derived consumer edges on existing settings-guard and Node-lockfile artifacts. Identities, ownership, lifetime and replacement fields do not change; declaration is not execution.",
+      "sources": [
+        {
+          "blob": "4d6983ba24be976e19d286b4fde1f86a03739d82",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "considered": [
+        "FAM-1SEJYW"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-ZQ9WM8",
+      "items": [],
+      "reason": "Examined parked-work family FAM-1SEJYW and all six current members. Its existing save-first INV-JZRBBJ and exact-restoration INV-T46B5W already carry the complete joint recovery obligation; INV-ECDX9Z isolates the local two-holder classifier mistake and its two operation regressions. Adding it as another member would duplicate a mechanism of the existing save-first member rather than introduce an independent joint promise. The family's guarantee, six members and worktrees route remain unchanged.",
+      "revision": 1,
+      "subject": "membership:INV-ECDX9Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZQ9Y7W",
+      "items": [
+        "sha256:2222a6e93b2cb2367f6f73a1e33c854a9711168f3ce7d11e7a4c0655f0274aa1"
+      ],
+      "reason": "Preserve the save-before-discard architecture and clarify native staged/unstaged deletion patches versus genuine untracked mirrors; this is a repair of the existing recovery guarantee, not an ownership relaxation.",
+      "sources": [
+        {
+          "blob": "030da69133f3963de4c0642370796621115a5ea2",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

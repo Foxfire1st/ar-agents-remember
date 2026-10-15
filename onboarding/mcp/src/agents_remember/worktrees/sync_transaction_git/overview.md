@@ -25,9 +25,12 @@ Restoration and cancellation ownership are distinct. Full parked inventory and n
 - Diagnostic samples never establish complete restoration; renamed carried paths require explicit supported matching.
 - Structural validation is not semantic approval, and a repository hook is not task acceptance.
 - Saving unattributable bytes does not make them owned transaction output; failure to save retains recovery authority rather than authorizing loss.
+- Dirty-path classification checks both index and HEAD before selecting an untracked mirror. Staged deletions remain in the staged patch, unstaged deletions in the unstaged patch, and genuine untracked bytes are mirrored separately; deletion absence is not a missing-file save failure.
 - This package owns no task acceptance, final integration decision or Git closeout authority.
 
 ## Evidence
+
+- Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback. [6]
 
 - Compatibility exports preserve qualified implementation boundaries. [1]
 - Complete stash inventory is distinct from its display sample. [2]

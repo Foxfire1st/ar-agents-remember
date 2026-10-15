@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9c165c43ce173712ff934945fc6a62ae94d0d16",
+            "blob": "030da69133f3963de4c0642370796621115a5ea2",
             "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
             "locator": {
               "kind": "symbol",
@@ -80,6 +80,35 @@
               "name": "validate_memory_fast_forward"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030da69133f3963de4c0642370796621115a5ea2",
+            "content": "sha256:53c8825ec52b6721136ea620732cb9a7bc3de365dd59dbd6771bb02db4a80842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_untracked"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:5bb0ed5b3d496d15c7b339d0f8388f0571883d6b2c43997235225bd28ae25502",
+            "locator": {
+              "kind": "symbol",
+              "name": "_save_unproven_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
           },
           "kind": "code"
         }

@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Future cancellation and retained-state refactors must preserve the two-holder boundary: returning to index-only classification strands staged deletions and tempts manual loss-prone recovery."
+  },
+  "alternatives": [
+    {
+      "option": "Require successful absence from both index and current HEAD, and preserve tracked deletions through native patches.",
+      "reason": "It retains the patch/mirror boundary while allowing the product to cancel the observed stopped sync without losing the parked partition or later genuine untracked bytes.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat absence from the index alone as untracked and attempt a file mirror.",
+      "reason": "A staged deletion is absent from the index but still HEAD-tracked; a nonexistent-file mirror refuses even though staged.patch already carries the deletion. This is the rejected prior implementation boundary, not a claim that a design meeting considered it.",
+      "reconsider_when": "Only if Git holder or save-format semantics change so that every staged deletion is independently representable and cancellation preserves its index/worktree partition without a nonexistent-file mirror.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain successful Git inspection as the absence precondition; read errors do not authorize mirroring.",
+    "Preserve the shared classifier for save-first cancellation and retained fingerprints rather than adding a bypass or second classifier."
+  ],
+  "context": "Index absence is not proof of untracked state: a staged deletion is still held by HEAD and the native staged patch. The observed old classifier sent it to a nonexistent-file mirror, preventing product cancellation.",
+  "decider": "Architect successor ruling of 2026-10-15 under unchanged MIK-R61@v1 rule12 and developer D253.",
+  "id": "DEC-GF2ZVS",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-ECDX9Z"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "030da69133f3963de4c0642370796621115a5ea2",
+        "content": "sha256:53c8825ec52b6721136ea620732cb9a7bc3de365dd59dbd6771bb02db4a80842",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_untracked"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect successor ruling, canonical S8, Worker stop-inventory-successor.md and Reviewer L61-round9-rule12-verdict.md: former index-only classification stranded staged-deletion cancellation."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "L61-S8-two-holder-boundary-ruling",
+    "leaf": "260928-MIK-L61",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

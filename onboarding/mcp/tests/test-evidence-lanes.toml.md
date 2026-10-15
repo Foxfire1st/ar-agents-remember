@@ -16,6 +16,8 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 ## Code Commentary
 
+`test_sync_cancel_deletions.py` is selected once in `unit-regression`. This adds no lane or case-budget change; its staged and unstaged cancellation assertions remain separate from a record that they executed.
+
 The archived-workspace regression module is selected once in `unit-regression`. This registration adds no lane or budget and makes no claim about a host or test invocation.
 
 Canonical-skill/worklist, generated-copy, correction-guidance, recorded-read-audit and link-target modules, plus the split writer-correction, integration, question-publication and restoration modules, are declared in unit-regression. The source-owned validator-link-target ordering repair preserves all seven lane identities and their membership sets, categories, scopes, guards and limits; selection and canonical order certify no invocation.
@@ -64,6 +66,8 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 
 
 ## Evidence
+
+- The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation. [853]
 
 - The reopened-workspace regression module is declared in unit-regression; this selects evidence and certifies no execution. [852]
 

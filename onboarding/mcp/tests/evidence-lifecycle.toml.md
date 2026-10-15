@@ -57,6 +57,8 @@ The existing `_user_settings_guard.py`, Node-profile `package-lock.json` and `pa
 
 ## Code Commentary
 
+The deletion-cancellation module is declared as a consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts. These source-derived edges preserve artifact identity, lifetime and replacement contracts; membership is dependency accounting, not proof of runtime artifact use or test execution.
+
 The exact derived consumer list for writer_worklist_test_support.py declares test_closeout_live_gate.py and test_workspace_wake_zero_census.py. The settings-guard and Node-fixture canonicalization only restores validator-link-target ordering, without changing those two membership sets. The complete owner-generated repair spans both catalogs and reinterprets no category, scope, guard, limit or replacement contract.
 
 The current artifact paths and every exact consumer list are canonically sorted. The eight L109 fixture blocks retain their identities and nonconsumer fields. The retained L109 consumer edges declare the diff-report, naming-projection and paging modules. The current refusal suite is also declared on existing reader fixtures and shared supports, through its answer-table import. These memberships add no artifact and certify no invocation.
@@ -217,6 +219,8 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 
 ## Evidence
+
+- The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts. [294]
 
 - The reopened-workspace module is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. [293]
 
