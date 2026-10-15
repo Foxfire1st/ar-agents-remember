@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_paseo_warmup_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "After a host start the tree's agents load in the background, before a click (MIK-R145).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e49d12c6813c9b8bab9ab78fa1a5d75d14bdb62",
+            "content": "sha256:6d707032a38a3d3c08d466eb5f840c0bedb71c9046670fcacafadd81a154f884",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

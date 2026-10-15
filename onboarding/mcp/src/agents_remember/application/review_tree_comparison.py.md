@@ -13,6 +13,9 @@ tree, and reopens a recorded comparison from its tree IDs. It copies no tree and
 
 ## Code Commentary
 
+Both sides may share the existing index-cache owner, but cache construction remains inside each side's unavailable/error policy. Already unavailable sides do not touch it; construction/read failures retain named unavailable-history results. Fresh live rechecks authenticate observed HEAD as well as files and private-index evidence.
+
+
 ### The four sides of a live comparison
 
 - `memory_converted(contract)` returns `True` when the memory worktree or the official

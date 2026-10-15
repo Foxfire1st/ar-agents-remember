@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+        "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
         "content": "sha256:55189ffb8ab8268ad7dd79b1e6ceb3604be043fd82c038fe3095e91c7f857e83",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:9a7c34c3900278e087fc16d20bd2b22384de0ac91527c00dcd07ef2abac2b338",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:db7d1697169f1e0c043224c9ef61fe474d6e837d4eeecfd2ec96a92d2085b522",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:1ef53b29968ac4a2eee977de56a569ae260266e7609c5781ea39729c5ad034ff",
             "locator": {
               "kind": "symbol",
@@ -135,15 +135,14 @@
       ]
     },
     "6": {
-      "note": "The write-side identity requirement for closeout/direct-landing records. (`_write`)",
+      "note": "The write-side canonical leaf task-intent requirement applies to closeout records; direct-landing series-contract/branch addresses are explicitly exempt. (`_write`)",
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
-            "content": "sha256:87461444e0b32193671801785ff6d62e12d172795e7f4e59c2a240703a3d876e",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:3724168940b2ae8f43ac0f9177c37db71689b097dc2bfe904f5d032732d5f88c",
             "locator": {
-              "kind": "symbol",
-              "name": "_write"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -155,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
             "locator": {
               "kind": "symbol",
@@ -171,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:a8c02fff05ee9bd67eda38285d93f5c546aebdf6d1fca018dd13ac4998745d9a",
             "locator": {
               "kind": "symbol",
@@ -187,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
             "content": "sha256:a8c02fff05ee9bd67eda38285d93f5c546aebdf6d1fca018dd13ac4998745d9a",
             "locator": {
               "kind": "symbol",

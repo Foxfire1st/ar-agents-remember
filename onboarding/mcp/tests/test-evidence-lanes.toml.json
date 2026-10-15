@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+        "blob": "ff09958b49bb5a729f105025dc8069e819585961",
         "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
         "locator": {
-          "end": 302,
+          "end": 320,
           "kind": "line_range",
-          "start": 302
+          "start": 320
         }
       },
       "id": "RLZ-9QPBZK",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+        "blob": "ff09958b49bb5a729f105025dc8069e819585961",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 382,
+          "end": 406,
           "kind": "line_range",
-          "start": 382
+          "start": 406
         }
       },
       "id": "RLZ-NJFH31",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+        "blob": "ff09958b49bb5a729f105025dc8069e819585961",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 277,
+          "end": 293,
           "kind": "line_range",
-          "start": 277
+          "start": 293
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -65,12 +65,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
-              "end": 20,
+              "end": 21,
               "kind": "line_range",
-              "start": 20
+              "start": 21
             }
           },
           "kind": "test"
@@ -82,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
-              "end": 181,
+              "end": 186,
               "kind": "line_range",
-              "start": 180
+              "start": 185
             }
           },
           "kind": "test"
@@ -95,14 +95,14 @@
       ]
     },
     "837": {
-      "note": "Lane lists with one row per module\n\nAnchor: `unit-regression`",
+      "note": "Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression.",
       "targets": [
         {
           "anchor": {
-            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
-            "content": "sha256:587087f60771a8a93c99e8b5d6a96407fae6acf5d9e20b831a7aaabacd7c8132",
+            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "content": "sha256:2b6ec2e252f62471e3130bfaa23bceca9fc57ce20fcea1bad0335c2185e0e21a",
             "locator": {
-              "end": 332,
+              "end": 351,
               "kind": "line_range",
               "start": 5
             }
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 334,
+              "end": 357,
               "kind": "line_range",
-              "start": 334
+              "start": 357
             }
           },
           "kind": "test"
@@ -229,12 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "end": 188,
+              "end": 193,
               "kind": "line_range",
-              "start": 186
+              "start": 191
             }
           },
           "kind": "test"
@@ -246,12 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:c372215cd621c00ce707c322b624640ee13a5cc4659d2d155c9f323929286cc9",
             "locator": {
-              "end": 260,
+              "end": 276,
               "kind": "line_range",
-              "start": 260
+              "start": 276
             }
           },
           "kind": "test"
@@ -263,24 +263,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:92ce09777615fb294c5e4872a2305ccb83a25057dbabc91371fa1688959c34b0",
             "locator": {
-              "end": 209,
+              "end": 216,
               "kind": "line_range",
-              "start": 209
+              "start": 216
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:10a9b7676e19fc0e9eabc3dce72230dbbcdaf005331b172b44b6c27f77cf716d",
             "locator": {
-              "end": 276,
+              "end": 292,
               "kind": "line_range",
-              "start": 275
+              "start": 291
             }
           },
           "kind": "test"
@@ -292,12 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:19104a5622961fcd407fd0ae93d74a947fa701acdb4417c116bcb3179481b298",
             "locator": {
-              "end": 292,
+              "end": 310,
               "kind": "line_range",
-              "start": 288
+              "start": 306
             }
           },
           "kind": "test"
@@ -321,12 +321,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
             "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "end": 188,
+              "end": 193,
               "kind": "line_range",
-              "start": 186
+              "start": 191
             }
           },
           "kind": "test"
@@ -340,6 +340,21 @@
           "anchor": {
             "blob": "9ebb222c09c1a68ab6a570901c6d323fc96a0071",
             "content": "sha256:3b0548d149f00ae671968ec741b9e3acb7cd7b0b383dd1716f0fe7eb0cdb7c07",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "850": {
+      "note": "The seven retained lane identities select surviving test-module paths; the eight local hosted memberships removed by the earlier L113 retirement remain absent. The incoming task-document Order membership is retained. Selection establishes neither execution nor a waiver of full-final coverage.\n\nAnchor: `test-evidence-lanes.toml`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff09958b49bb5a729f105025dc8069e819585961",
+            "content": "sha256:392f5a4d2dfa6f1025d98ed5ea827d424c89fe8f0b703e81d1cbce3433fe468f",
             "locator": {
               "kind": "file"
             }

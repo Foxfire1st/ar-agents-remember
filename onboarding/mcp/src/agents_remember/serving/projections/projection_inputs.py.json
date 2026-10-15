@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
-            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
+            "content": "sha256:91d0302742e71a054ec9e189541bd252571ccff79f90082d54679902f56ef9f3",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
-            "content": "sha256:065ddac2b36c48429b8296f7e366f9b1dc9b2cad5d1d31478fafa4842f232a39",
+            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
+            "content": "sha256:30913cba84ecc67ba6e46685625415ec00352ca49ef6016c1184bdee8f67f3c4",
             "locator": {
-              "end": 275,
+              "end": 229,
               "kind": "line_range",
-              "start": 212
+              "start": 155
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -37,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
-            "content": "sha256:d08508bb924901f32c9ddfe12ba1d6d80f1ae260c9d794cf9849f137417c5244",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "content": "sha256:30b9623107abc2c65c63e4d07a4fc1863a9ffcee3705c3244c47fa41a2351090",
             "locator": {
               "kind": "symbol",
               "name": "Projector"
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
-            "content": "sha256:9104a987660da97c196d75db843443e1c835a106149eb1b4cafe9e63fef449bd",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "content": "sha256:8f7b37421109ff56d5c82909a5c2b8dee902f9ec43b218a722b793ab6af8a0d1",
             "locator": {
-              "end": 330,
+              "end": 435,
               "kind": "line_range",
-              "start": 126
+              "start": 137
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },

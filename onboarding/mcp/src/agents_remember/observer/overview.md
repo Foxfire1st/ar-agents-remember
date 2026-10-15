@@ -21,7 +21,7 @@ Serving retains parsed lifecycle logs by file stat identity and merges the lates
 
 Provider refresh has a ten-second default TTL; repository sidecar/route/ledger surfaces use a 120-second TTL. Local engine status is cached separately. Remote landing observations arrive through serving's background refresher rather than remote probes in the projection fold. Lifecycle, provider, engine, workspace, drift, progress, and task domains refresh according to their declared inputs and admission changes; unrelated surfaces need not be reread for every lifecycle event.
 
-Always-on task and series nodes omit the full reader body, not every body-derived field. Task summaries retain current identity, progress, steps, navigation, graph, seats and `bodyRevision`. L127 adds model-derived form, display type/branch/status note, whole header/review/decision counts, bounded head/text previews and truncation flags; whole counts precede their preview windows. Step/sub-step note and outcome previews are projected without making every projected field a drawn page block. Selected full bodies remain on demand, and summary identity/progress/step/review facts remain authoritative. The old 250-document cap was removed: all canonical task documents are eligible, so this is no document-count or universal payload ceiling. The payload budget remains diagnostic. Historical N4 summary/step bounds, N6 raw timestamp comparison and N2 crash-window ordering stay named limits, not fresh conclusions.
+Always-on task and series nodes omit the full reader body, not every body-derived field. Task summaries retain current identity, progress, steps, navigation, graph, seats and `bodyRevision`. L127 adds model-derived form, display type/branch/status note, whole header-note and review-finding counts, bounded head/text previews and truncation flags; whole counts precede their preview windows. Step/sub-step note and outcome previews are projected without making every projected field a drawn page block. Selected full bodies remain on demand, and summary identity/progress/step/review facts remain authoritative. The old 250-document cap was removed: all canonical task documents are eligible, so this is no document-count or universal payload ceiling. The payload budget remains diagnostic. Historical N4 summary/step bounds, N6 raw timestamp comparison and N2 crash-window ordering stay named limits, not fresh conclusions.
 
 ## Construction And Ownership
 
@@ -81,7 +81,7 @@ Best-effort ledger enrichment explicitly catches both `OSError` and `subprocess.
 
 Drift is read from persisted snapshots, not reclassified by the fold. Valid snapshots remain for configured repository names or contract-backed existing code worktrees; valid orphans are physically removed and malformed snapshots are skipped. Large sidecar inventories become a histogram and bounded stalest list rather than full served inventories.
 
-Landing refresh is serving-owned, bounded, exact-contract observation. Completed arcs can use a persisted final observation only while cleanup remains completed and its provenance does not predate the contract write. Freezing requires a nonempty probe whose every row is observed; frozen rows are restricted to reducer-known keys. Open/reopened arcs can return to live observation. Already-completed history is not probed merely to repair a missing/corrupt final file: it stays explicitly missing; a tracked in-flight arc gets its finishing opportunity. Failed cycles are contained for the next cadence and cancellation propagates. PR milestone time and carryover completion remain display-only facts. Observation does not authorize landing.
+Landing refresh is serving-owned, bounded, exact-contract observation. Completed arcs can use a persisted final observation only while cleanup remains completed and its provenance does not predate the contract write. Freezing requires a nonempty probe whose every row is observed; frozen rows are restricted to reducer-known keys. Open/reopened arcs can return to live observation. A completed eligible successful-landing arc without a trusted final gets one finishing opportunity per exact contract key in this refresher lifetime, including at startup, with at most four completed admissions per sweep. An attempt that returns missing-fact placeholders after failure also spends that opportunity; later final-file loss alone does not rearm it. Reopen clears the key's spent marker. Untrusted finals remain explicitly missing until a permitted observation establishes valid history. An observation returning no applicable landing rows does not mark that key finished. Failed cycles are contained for the next cadence and cancellation propagates. PR milestone time and carryover completion remain display-only facts. Observation does not authorize landing.
 
 Serving delta removes explicitly declared volatile ages from stable comparisons to avoid heartbeat-only content churn. The inherited policy requires new `*Seconds` fields to declare volatile or content status; its historical reflection-test witness is not fresh verification here.
 
@@ -109,36 +109,39 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design. [1]
 - Retained reference account (no fresh execution or acceptance inferred): `Event` is the observer event model. [2]
 - Retained reference account (no fresh execution or acceptance inferred): `StrictResponseModel` is the shared response-model base. [3]
-- Retained reference account (no fresh execution or acceptance inferred): The raw event stream entry is `stream_raw_events`. [4]
-- Retained reference account (no fresh execution or acceptance inferred): The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`. [5]
 - Retained reference account (no fresh execution or acceptance inferred): `workspace_provider_nodes` is one of the route-local provider-node helper symbols. [6]
 - Retained reference account (no fresh execution or acceptance inferred): Active-enclosure admission is implemented by `admitted_worktree_groups`. [7]
-- Retained reference account (no fresh execution or acceptance inferred): Engine activity is admitted by projection input state. [8]
 - Retained reference account (no fresh execution or acceptance inferred): `drift_snapshot_path` is the shared drift-snapshot path helper. [10]
-- Retained reference account (no fresh execution or acceptance inferred): Projection input invokes the orphan-pruning helper. [11]
-- Retained reference account (no fresh execution or acceptance inferred): The shared helper implements orphan pruning for worktree drift snapshots. [12]
-- Retained reference account (no fresh execution or acceptance inferred): `ContractSnapshot` is declared here. [13]
-- Retained reference account (no fresh execution or acceptance inferred): `ContractSnapshotCache` is the associated snapshot-cache type. [14]
 - Retained reference account (no fresh execution or acceptance inferred): `progress_status` is the setup-progress status record. [15]
 - Retained reference account (no fresh execution or acceptance inferred): The ambient `end()` entry owns terminal-state publication. [16]
 - Retained reference account (no fresh execution or acceptance inferred): `projected_current` is the gate store's tolerant projected fold. [17]
 - Retained reference account (no fresh execution or acceptance inferred): `gate_keep_ids` is the retention keep-set helper. [19]
-- Retained reference account (no fresh execution or acceptance inferred): The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. [20]
-- Retained reference account (no fresh execution or acceptance inferred): `StatesAreFiledOnce` is the TypeScript overlap-check type. [21]
 - Retained reference account (no fresh execution or acceptance inferred): The `STATE OF THE MIRROR` comment documents the Python mirror. [22]
 - Retained reference account (no fresh execution or acceptance inferred): The primitives-only title protocol and projection lookup preserve owning-master identity. [23]
 - Retained reference account (no fresh execution or acceptance inferred): Public-reader regression proves duplicate local leaf numbers retain their owner's title. [24]
 
-- Workspace admission is locked and byte-bounded; file and cursor publication are separate writes. [25]
 - Heartbeats use an atomic sidecar; ordinary lifecycle appends and tolerant reads remain separate. [26]
-- Contract enumeration is shared on task refresh and retained across other domain refreshes. [27]
 - Document count is intentionally uncapped; canonical enumeration avoids deeper historical copies. [28]
-- Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root. [29]
-- Gate reads are nonrewriting, but pickup reads explicitly compact the inbox. [30]
 - Lifecycle aliases are model-owned and observer checks their partition. [31]
 - Terminal projection also comes from corrections, inference, and abandoned anchors. [32]
 - Missing logs do not demote admitted enclosures; all-archived groups without readable mtimes receive no grace extension. [33]
 - Public operations now include candidate/plan digests and approval observations bound to a coherent revision. [34]
 - Graph titles are master-qualified and resolved/abandoned/landed are distinct display predicates. [35]
-- Completed historical landing lacks automatic repair probes; freeze requires observed rows. [36]
+
+- Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape.  Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze` [36]
+
 - Host tool events contain selected facts, omit long strings, and count failed publication. [37]
+
+- The raw event stream entry is `stream_raw_events`.  Anchor: "def stream_raw_events" [4]
+- The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`.  Anchor: "def prune_expired_lifecycle_event_logs" [5]
+- Engine activity is admitted by projection input state. [8]
+- Projection input invokes the orphan-pruning helper.  Anchor: "prune_orphaned_drift_snapshots(config" [11]
+- The shared helper implements orphan pruning for worktree drift snapshots. [12]
+- `ContractSnapshot` is declared here.  Anchor: "class ContractSnapshot:" [13]
+- `ContractSnapshotCache` is the associated snapshot-cache type. [14]
+- The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split.  Anchor: "Read policy is part of each store's authority contract:" [20]
+- `StatesAreFiledOnce` is the TypeScript overlap-check type. [21]
+- Workspace admission is locked and byte-bounded; file and cursor publication are separate writes.  Anchor: `_compact_under_lock`, `admit_workspace_river_row` [25]
+- Contract enumeration is shared on task refresh and retained across other domain refreshes.  Anchor: `ProjectionInputState._refresh_tasks` [27]
+- Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root.  Anchor: `read_task_documents`, `read_task_document_body` [29]
+- Gate reads are nonrewriting, but pickup reads explicitly compact the inbox.  Anchor: `read_gates`, `read_agent_pickups` [30]

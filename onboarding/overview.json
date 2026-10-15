@@ -54,12 +54,12 @@
       ]
     },
     "102": {
-      "note": "A review comparison on converted memory is four Git trees pinned by refs.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs.",
       "targets": [
         {
           "anchor": {
-            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
-            "content": "sha256:7e95715c92fb646c1261df6812eebea42a8b0f0f01a6f41e9c91e4451b5e2a97",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:5e5f5ee1041e563d9bc9bd72de609ab700054ad973d67f89181cb0f2d48bdf9b",
             "locator": {
               "end": 30,
               "kind": "line_range",
@@ -228,11 +228,11 @@
       ]
     },
     "112": {
-      "note": "The GrepAI indexing states.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The GrepAI indexing states.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "blob": "3f9c4274140f2aaed8264742f0203ad318238af3",
             "content": "sha256:0646a63a5de6646f311a6b512da8b76de5f9932179098647f0364557d10c7dd5",
             "locator": {
               "kind": "symbol",
@@ -263,16 +263,16 @@
       ]
     },
     "118": {
-      "note": "The dashboard records a lifecycle gate decision through the control plane.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The dashboard records a lifecycle gate decision through the control plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "de98612d37dfd1f8deb4028168c9430b824bd987",
-            "content": "sha256:c99d34a7ed890ce1ae0acb8858f2e938702aded920ad72384c685618e4fa7cb7",
+            "blob": "1eadcc2da70e41c823649f67e3afb112e4619a71",
+            "content": "sha256:227fb2941bf749af634f9852175ed7b47ce6d5cea25c8e8a6852307ca01af196",
             "locator": {
-              "end": 243,
+              "end": 259,
               "kind": "line_range",
-              "start": 230
+              "start": 246
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -370,7 +370,7 @@
       ]
     },
     "126": {
-      "note": "A candidate tree is captured through a private index.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index.",
       "targets": [
         {
           "anchor": {
@@ -458,11 +458,11 @@
       ]
     },
     "131": {
-      "note": "The Git runner gives the child no standard input unless text is passed.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -578,11 +578,11 @@
       ]
     },
     "137": {
-      "note": "The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state.",
       "targets": [
         {
           "anchor": {
-            "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+            "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -1641,11 +1641,11 @@
       ]
     },
     "290": {
-      "note": "Root manifest/journal location authority.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
             "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
             "locator": {
               "kind": "symbol",
@@ -1696,11 +1696,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -2043,11 +2042,9 @@
         {
           "anchor": {
             "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
-            "content": "sha256:2b673dbb1e353edd22ee5953c7732b6aa49cb7396075b14f9819e3c4f2ea6f8c",
+            "content": "sha256:c590b4b20e7fb170d57e30c4a59f8136299de65b88c516909c907eb5ecd73edf",
             "locator": {
-              "end": 401,
-              "kind": "line_range",
-              "start": 353
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
@@ -2055,12 +2052,10 @@
         },
         {
           "anchor": {
-            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
-            "content": "sha256:1b1b287d394bd2fdcead3117fd12705300525b6a571d96b71eed1742e810af4a",
+            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "content": "sha256:d9d6a52ebdded4a88e5fecea5f55eeccbab5b880a4785692488bb01efc186ef4",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 12
+              "kind": "file"
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -2068,14 +2063,23 @@
         },
         {
           "anchor": {
-            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
-            "content": "sha256:180bf8999be42c254d2989d8abfff65a8bbdd0060d5f5cf09e3feb468c334aff",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "end": 197,
-              "kind": "line_range",
-              "start": 96
+              "kind": "file"
             },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+            "content": "sha256:6f08d23edc4ee778a2713c26e1347afacc0d1d87ed47ab1e736db4501bc80dd0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_names.py"
           },
           "kind": "code"
         }
@@ -2501,16 +2505,16 @@
       ]
     },
     "323": {
-      "note": "Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary.\n\nAnchor: Git environment and runner contract",
+      "note": "Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb96525be294896525624afef669abf8fd942413",
+            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
             "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
             "locator": {
-              "end": 184,
+              "end": 185,
               "kind": "line_range",
-              "start": 146
+              "start": 147
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2739,6 +2743,23 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "333": {
+      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:2b673dbb1e353edd22ee5953c7732b6aa49cb7396075b14f9819e3c4f2ea6f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_landing_report"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
           "kind": "code"
         }
@@ -3094,11 +3115,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -3213,17 +3233,38 @@
       ]
     },
     "73": {
-      "note": "The page threshold of a knowledge read.",
+      "note": "The retained internal8,000-token threshold constant; the mounted naming pager applies the separate4,000-token delivered bound and list cap.",
       "targets": [
         {
           "anchor": {
             "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
-            "content": "sha256:cbc837fa4fb1bc5445b8c9d9803511a2c2f1b7443542a6478a6a515c3ec544d2",
+            "content": "sha256:cb7285f435fad22acdb80c6c48467fb5915ac6fac7e6b72f0754a308dccc4c32",
             "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_PAGE_THRESHOLD_TOKENS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0339e46cbf7832fecb77b553a6be150412dc016c",
+            "content": "sha256:bd94801866b98c0f4c6272743ab8679f4d77c5ae77fa16c57c63e8d67916f368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
+            "content": "sha256:6663f74a814545efd5290af88c056a6a0fc1640b5a00b2b0dec9104312f73238",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
           },
           "kind": "code"
         }
@@ -3678,7 +3719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbf0b996bdf7589d2f43a62d5dfce89a2fbea2d0",
+            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
               "kind": "symbol",

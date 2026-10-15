@@ -7,9 +7,9 @@
     ],
     "justification": "An ABA task edit can leave a complete-looking worklist under inputs it never read, and successful recovery can hide an earlier failure; canonical consumed-byte observations and parent admission prevent both costly stale-success errors."
   },
-  "applicability": "The parent process's bounded memo of live leaf-wide knowledge-diff/worklist parts and their successful return.",
+  "applicability": "The parent process's bounded memo of the live leaf-wide worklist parts and their successful return; currentness is composed separately and the retained aggregate-diff helper is not part of this leaf-wide answer.",
   "conditions": [
-    "Both knowledge sides are readable, the worklist is complete, and all aggregate/blob operations succeeded on their first read.",
+    "Both knowledge sides are readable and the worklist computation and its actual consumed reads are complete and settled. The separately retained aggregate/blob diff helper keeps its own first-read-failure incompleteness rule; the current leaf-wide worklist does not invoke that helper.",
     "The files the computation reads outside the Git trees through the recording readers (task documents, the contract, settings files, requirement manifests and packets, ledgers) are recorded, in the worklist's child process as in the parent process, and the child's rows reach the parent with its reply. The path resolutions and existence probes recorded are those the request already binds; the pre-request context selections named in the exclusion below are not recorded rows. A row read at two identities, an unreadable row, a task document recorded as absent, and a task input that was changed and restored while it was read each prevent the view from being kept.",
     "Memo keys include both candidates, contract digest, parent memory tip, leaf memory HEAD, task input identities, build and comparison base/conversion trees; kept dependencies are rechecked before reuse, path selections before file bytes.",
     "The memo holds at most four views for at most 900 seconds, in process only.",
@@ -35,7 +35,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A result that involved any failed or timed-out read is never kept, including an aggregate read that failed before later recovery reads succeeded.",
   "status": "proposed",

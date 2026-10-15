@@ -6,10 +6,10 @@
 
 ## Purpose and current source account
 
-The removal census allows only named historical exceptions and plants forbidden host strings to prove detection. Former API routes answer 404 in the real composed app, ignored former settings and receipts remain unchanged, and a former schema at the new address refuses. The launcher's pinned route set is nine routes: frame, options, dispatch, result, report, progress by request ID, reports, document-chats and document-chats/tree, and the composed app answers the former host paths with 404. The tested methods are GET/POST/PUT/DELETE; unknown-API HEAD coverage is in test_static.
+The removal census allows only named historical exceptions and plants forbidden host strings to prove detection. Former API routes answer 404 in the real composed app, ignored former settings and receipts remain unchanged, and a former schema at the new address refuses. The launcher's pinned route set is ten routes: frame, options, dispatch, result, report, progress by request ID, reports, document-chats, document-chats/tree and GET warmup, and the composed app answers the former host paths with 404. The tested methods are GET/POST/PUT/DELETE; unknown-API HEAD coverage is in test_static.
 
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
 
-- Nine current launcher routes are asserted without restoring former host APIs. [2]
+- Ten current launcher routes include GET /api/role-launch/warmup while every former-path 404 check remains. [2]

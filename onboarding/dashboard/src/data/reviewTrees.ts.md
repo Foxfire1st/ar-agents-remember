@@ -13,6 +13,9 @@ the leaf-wide view and the entries of one selection. Every key of the wire types
 `data/reviewTrees.ts` is the tree-view adapter for one leaf: the four-tree comparison, knowledge-side states, per-side currentness, the worklist view, and the focused card entries. In W03 it no longer carries the memory-tree knowledge diff; changed knowledge files are read on the change-set page instead.
 ## Code Commentary
 
+Expression-card answers and in-flight requests are shared in a bounded store keyed by the complete bound comparison/question. Same-set remounts join or reuse instead of refetching; a changed invariant set is prefetched beside subject selection rather than after the subject answer. This does not replace the selected-subject cache, mix incompatible comparisons or turn unavailable data into an empty list.
+
+
 ### Types
 
 - `ReviewTreesResult` has the state `trees`, `not-converted` or `refused`, with the comparison
@@ -58,11 +61,15 @@ the leaf-wide view and the entries of one selection. Every key of the wire types
   latest. While retries run, the hook keeps returning `loading`; it returns `unavailable` only with the
   final answer. With `enabled` false it makes no request and returns `null`.
 - `useReviewTreeEntries(repo, master, leaf, comparison, invariants)` reads the entries of one selection
-  from the comparison the review payload names, with the same abort on cleanup. It returns `null` without
+  from the comparison the review payload names, joining a shared un-aborted request; cleanup suppresses only this mount’s retell. It returns `null` without
   a comparison number or without invariants, and keeps an answer together with the question it answers.
 
 The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, record/source groupings, the `knowledge_diff` field on `ReviewTreesResult`) was the Git diff of the two memory trees grouped by record and source path with per-file patches. The leaf-wide answer keeps everything else byte-identical: comparison record, knowledge sides, code sides, currentness, worklist and entries. `reviewTrees` addressing (recorded number vs live, focused card/lane/file reads), the busy-retry discipline (`TRANSIENT_CODES`, `BUSY_DELAYS_MS`) and the `ReviewTreesRead` phases are unchanged.
 ## Evidence
+
+- A superseded read is aborted and only the newer answer is shown. [21]
+- The reader keeps showing loading while it retries, and its delays add up to at least 25 seconds. [22]
+- Unavailable is shown only after the bounded number of retries. [23]
 
 - The module comment: what the adapter carries and the three answers it keeps apart. [10]
 - The answer of the route. [11]
@@ -73,10 +80,9 @@ The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, recor
 - The bounded retry of a transient refusal. [16]
 - One answer as a read state. [17]
 - The comparison a payload names. [18]
-- The entries hook aborts a superseded read. [19]
+
+- The entries hook detaches its mount without aborting the shared request; its current question key prevents stale-card rendering.  Anchor: `useReviewTreeEntries` [19]
+
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [20]
-- A superseded read is aborted and only the newer answer is shown. [21]
-- The reader keeps showing loading while it retries, and its delays add up to at least 25 seconds. [22]
-- Unavailable is shown only after the bounded number of retries. [23]
 - Busy-retry discipline is unchanged [25]
 - The trees / not-converted / unavailable phases are unchanged [26]

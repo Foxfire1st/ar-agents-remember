@@ -40,10 +40,12 @@ statement:
   one — reading recorded knowledge does not require a Git object store, and inventing a resolution (or
   dropping the recorded attribution) would be worse than saying no tree was requested.
 - A context naming **both** `repository_root` and `code_tree_id` gets `_TreeAnchorResolver`, whose
-  `tree_is_available` is decided **once at construction** (`_tree_exists`, `git cat-file -e <tree>^{tree}`),
+  `tree_is_available` is decided **once at construction** (`_tree_exists`, `git --no-replace-objects rev-parse --verify --quiet <tree>^{tree}`),
   so an unavailable tree is one failure named once instead of an identical per-item error on every page.
-  **That probe is never remembered across resolvers**: every new resolver asks Git again, because whether
-  a repository still *holds* a tree is a fact about the repository, not the id (review L56-R1-F1).
+  **No process-lifetime availability entry is retained by this module**: each resolver calls
+  `_tree_exists`. Within an active `memo_git_object_lookups` request scope, the lower Git runner may
+  reuse a successful identical replace-proofed probe; outside that scope it runs natively again.
+  Failed probes are not retained. The earlier L56-R1-F1 ruling concerned the process-lifetime memo.
 - `KnowledgeReadContext` refuses a *half-specified* resolution (tree without root, or root without tree)
   at construction, precisely so this module never has to report a caller's mistake as a fact about an
   anchor.
@@ -152,11 +154,12 @@ stale" true:
   answered; `OSError`, a non-zero exit, `_BlobUnreadable` and `GrammarUnavailableError` all leave the
   memo untouched, so a later success is observed. A question asked with a ref, `HEAD` or an abbreviation
   is never remembered (`is_complete_object_id` is the one admission test).
-- **Whether the repository holds the tree is never remembered.** `_tree_exists` runs on every resolver
-  construction and the remembered answers are consulted only behind a probe that succeeded, so a tree
-  that was released and pruned, lost its alternate or became unreadable is reported
-  `recorded_object_unavailable` for every anchor, exactly as before the memo. An earlier attempt
-  remembered positive probes and was blocked for this (review L56-R1-F1).
+- **Tree availability is not in the process-lifetime memo.** Every resolver calls `_tree_exists`
+  before consulting its content tables. The lower Git runner may reuse the successful exact
+  replace-proofed lookup only within the active request scope; a later outer scope probes afresh.
+  An unavailable probe reports `recorded_object_unavailable`; this is not a process-lifetime
+  availability guarantee. The earlier blocked positive-probe cache was process-lifetime
+  (review L56-R1-F1).
 - **Two documented residuals sit outside that guard** (they are in the module docstring, not defects to
   "fix" silently): a repository that still holds the tree but has lost one of its blobs (corruption, or
   a partial clone whose promisor never supplied it) is answered from memory for a blob read earlier in
@@ -195,7 +198,8 @@ stale" true:
   owner decision and not a leaf edit.
 - **`path_absent` is reported only for a real absence**, and every other refusal names its own cause.
 - **A remembered answer is only ever a content fact keyed by complete object ids**, never a failure,
-  never an abbreviation or ref, and never the fact that a repository holds an object; the observation
+  never an abbreviation or ref. This process-lifetime content memo does not retain availability;
+  the lower Git runner has the separate request-scoped successful-probe reuse described above. The observation
   a caller receives is the one the unremembered path gives.
 - **Boundary.** This module observes. It does not decide which anchors a selection exposes (that is
   `read.py`'s `resolve_anchor` seam), does not select, does not page, does not refuse a read, and writes
@@ -208,8 +212,9 @@ None recorded. Two carried observations belong to the owning seat rather than to
 vocabulary member (an owner decision), and `_tree_entry`'s non-zero-exit branch is disclosed as an
 unasserted defensive branch rather than presented as coverage (L9 ledger **A6**).
 
-The module is at 597 lines after 260921-ICR-L56, at the top of the 600-line healthy band, so the next
-addition here should consider a split first.
+Historical post-260921-ICR-L56 size was 597 lines, near the 600-line healthy band. That figure is
+not the current file length; a future addition should use a fresh source-size reading before
+deciding whether to split.
 
 ## Evidence
 
@@ -222,21 +227,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The three genuinely different facts, and the rule that a caller is never told "absent" for a spelling that was refused.** [1]
-- **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** [2]
-- **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** [3]
 - The shared rule the typed write and seed boundaries apply, with the measured Git table in its docstring. [4]
-- The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. [5]
 - The observation vocabulary this module reports into (seven members), declared in `read_anchor.py` and imported through `read.py`'s re-export, with the validator that refuses ranges beside any resolution other than the exact recorded blob. [6]
-- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** [7]
-- **A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.** [8]
-- **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]
-- How many lines a blob holds, where a final newline ends the last line. [10]
-- The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name. [11]
-- **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** [12]
-- **The tree probe that is never remembered, run once per resolver, and the guard that serves remembered answers only behind it; the two residuals stated in the module docstring.** [13]
 - The tables, their keys and the one admission test for a key. [14]
-- **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.** [15]
 - **The cases that pin the ranges: two members at distinct ranges in one file, a double definition carrying both ranges, a range past the blob end unresolved, and a mismatched blob carrying none.** [16]
 - **The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.** [17]
 - **The case that drives the second producer: a Git this process cannot run.** [18]
@@ -250,3 +243,18 @@ No cross-repository behavior is implemented in this file. Git is invoked as a su
 repository root the caller supplied; no second repository, ledger or coordination path is read.
 
 No meaningful cross-repo references found.
+
+- **The three genuinely different facts, and the rule that a caller is never told "absent" for a spelling that was refused.** [1]
+- **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** [2]
+- **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** [3]
+- The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. [5]
+- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** [7]
+- **A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.**  Anchor: `resolved_ranges` [8]
+- **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]
+- How many lines a blob holds, where a final newline ends the last line. [10]
+- The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name. [11]
+- **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** [12]
+
+- The resolver calls the replace-proofed `_tree_exists` probe before consulting process-lifetime content tables. Availability is not retained in those tables; the lower Git runner may reuse a successful identical probe within one active request memo scope. The two residuals remain stated in the module docstring. [13]
+
+- **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]

@@ -12,6 +12,9 @@ This concentration was introduced after independent store implementations lost w
 
 ## Code Commentary
 
+Dashboard-owned appends announce before mutation and capture the writing descriptor's identity while the existing cooperating-writer lock is held. Empty batches record no effect. A writer ignoring that lock can land in the flush-to-fstat window; accepted behavior recovers this named race through independent full healing, not an immediate identity-perfect guarantee.
+
+
 ### Historical 260731-EFA-L5 Evidence Account
 
 The original curation recorded base-commit rates as historical source claims, not retained run artifacts. The detailed historical module docstring has since been reduced to the current contract, so the rates below are preserved as earlier observations; they are not claims that the present docstring contains those measurements. The original account and its qualification remain in Update History. The current harness sensitivity and durability assertions remain separately checkable.
@@ -218,7 +221,7 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   (which is the near miss — it has `_read_unlocked` and `_replace_unlocked` halves, but filters
   between them in the public method). Even the split store splits only one of its two rewrites:
   `AttentionDismissalStore.dismiss` inlines. What must never happen is locking the write half alone:
-  that looks safe and loses records, and `require_lock_held` is where it is caught.
+  that looks safe and loses records. `require_lock_held` catches an unlocked rewrite, but a caller that reads outside the lock and acquires it only for replacement passes that check; read-filter-rewrite ordering must be verified at the caller.
 - Errors are a small tree rooted at `DurableStoreError(RuntimeError)`, with `CompactionOwnerError`
   and `UnsafeLockFilesystemError` beneath it. None is ever downgraded to a warning or a no-op.
 - Atomic publication owns hidden pid-and-UUID temp names (`.<log>.<pid>.<uuid>.tmp`), so calls use distinct temporary paths and the watcher skips them through its dot-prefix and `.tmp` filters.
@@ -242,7 +245,7 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   module was created to close re-opens silently.
 - **The lock is held across the read AND the rewrite.** A record list chosen by a read that
   happened outside the lock is already stale, and rewriting from it is the same lost update under
-  a different name. `require_lock_held` is the one place this is checked rather than remembered.
+  a different name. `require_lock_held` checks only the calling thread’s hold at replacement; it cannot establish that the earlier read and filter occurred within that same uninterrupted hold.
 - **`rewrite_lines` never unlinks.** An empty kept set is an empty file. The old `unlink` on empty
   let a concurrent appender holding an `"a"`-mode handle write into an inode with no remaining
   links — the record vanished with no torn line and no trace.
@@ -271,18 +274,9 @@ No configured external domain documentation source.
 
 The current owner map is verified against the prepared source. Kernel mechanics, coordinator authorization, and caller-specific host registry policy are separate.
 
-- Current writer declaration, advisory ownership and compaction roles. [1]
-- Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
-- Guarded coordinator entry translates the shared capability failure. [3]
-- The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
-- Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
-- Current raw read, single/batched durable append and atomic rewrite. [6]
-- Explicit migration validates every transformed record before replacement. [7]
 
-- Per-call temporary names and atomic publication have one kernel owner. [8]
 
 - The host registry has its own domain policy over the same exclusion primitive. [9]
-- Watcher exclusion derives the shared lock suffix and filters every directory. [10]
 - Undeclared host admission leaves live coordinator lock and append writes refused. [11]
 
 ### Cross-Repo References
@@ -298,3 +292,13 @@ None.
 compaction roles. Detached workers declare that execution mode and are admitted only to stores
 whose ownership record includes them; the gate and lifecycle-operation/queue paths therefore no
 longer rely on the earlier undeclared-process bypass.
+
+- Current writer declaration, advisory ownership and compaction roles. [1]
+- Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
+- Guarded coordinator entry translates the shared capability failure. [3]
+- The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
+- Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
+- Current raw read, single/batched durable append and atomic rewrite. [6]
+- Explicit migration validates every transformed record before replacement. [7]
+- Per-call temporary names and atomic publication have one kernel owner. [8]
+- Watcher exclusion derives the shared lock suffix and filters every directory. [10]

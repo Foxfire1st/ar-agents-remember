@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Whole-subject browser review answers held by their existing bounded comparison-generation cache. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Whole-subject browser review answers held by their existing bounded comparison-generation cache.",
+  "conditions": [
+    "Each answer carries its own complete display data."
+  ],
+  "exclusions": [
+    "No second read to reconstruct a retained answer; unrelated caches keep their own owners."
+  ],
+  "id": "INV-9MF6HZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R81@v1 rule7; preserved cold/warm native response parity"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "MIK-R81@v1-rule7-standalone-answer",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A subject answer repeats its complete display data so a browser can show any of its twenty-four retained answers without a second request.",
+  "status": "proposed",
+  "supersedes": []
+}

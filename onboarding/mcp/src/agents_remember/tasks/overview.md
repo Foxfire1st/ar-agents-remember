@@ -122,8 +122,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): The task reader records the bytes it parses, an absent file and a failed read. [26]
 - Retained reference account (no fresh execution or acceptance inferred): The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included. [27]
 - Retained reference account (no fresh execution or acceptance inferred): The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator. [28]
-- Retained reference account (no fresh execution or acceptance inferred): A kept view ignores every task document it did not read. [29]
-- Retained reference account (no fresh execution or acceptance inferred): A document that begins to claim the leaf is not hidden by a kept view. [30]
 - Retained reference account (no fresh execution or acceptance inferred): A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [31]
 - Retained reference account (no fresh execution or acceptance inferred): The missing-master message names the sprint, the master, the archive location and the retire operation. [32]
 - Retained reference account (no fresh execution or acceptance inferred): The retirement probe refuses a model that cannot parse a retired row. [33]
@@ -148,3 +146,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retirement census explicitly preserves different caller refusal policies [51]
 - Notes/dispositions independently make step checkbox lines visible [52]
 - Title joins use qualified leaf keys and a separate direct JSON reader [53]
+
+- A kept view ignores every task document it did not read. [29]
+- A document that begins to claim the leaf is not hidden by a kept view. [30]

@@ -68,9 +68,7 @@ cases. Coverage percentages are diagnostic and production CRAP 20 prompts review
 an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
 work. This source inspection does not claim a newly executed test or acceptance result.
 
-A branch is only ever read, never moved, by any of these scenarios: the fixture records the landed
-commit before the call and asserts the same commit after it. Adding a collected subject to this
-module is a cross-lane budget decision, not a local one.
+Existing live refs are not moved by reopen: the scenarios retain and assert their landed tips. Missing retired integration refs are re-cut at their recorded source tips, including the external-memory leg of the live-unaddressed series case. Fixture setup and commits are distinct from that reopen guarantee. Adding a collected subject remains a cross-lane budget decision, not a local one.
 
 ### Todos
 
@@ -92,10 +90,6 @@ to removed methods are superseded by this current inventory.
 
 - Resets contract doc and master index [1]
 - Contract publish failure rolls back docs and landing [2]
-- A leaf naming no master resets the row its folder master lists (MIK-R38). [3]
-- A light leaf that is the folder's `task.json` is not its own master. [4]
-- A leaf the store would write elsewhere is refused before any write. [5]
-- A named master the store would write elsewhere is refused before any write. [6]
 - The terminal series reopen, gathered as one collected subject across all three of its arrivals. [7]
 - The reset that is durable while the locator is still the collected generation is resumed, not refused. [8]
 - A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. [9]
@@ -105,3 +99,8 @@ to removed methods are superseded by this current inventory.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+- A leaf naming no master resets the row its folder master lists (MIK-R38).  Anchor: "def test_a_leaf_naming_no_master_resets_the_row_its_folder_master_lists(self) -> None:" [3]
+- A light leaf that is the folder's `task.json` is not its own master.  Anchor: "def test_a_light_leaf_that_is_the_folder_task_json_is_not_its_own_master(self) -> None:"; "self.assertEqual(planned, (None, \"no-master\"))" [4]
+- A leaf the store would write elsewhere is refused before any write.  Anchor: "def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:" [5]
+- A named master the store would write elsewhere is refused before any write.  Anchor: "def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:" [6]

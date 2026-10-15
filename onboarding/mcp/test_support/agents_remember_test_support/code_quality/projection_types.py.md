@@ -37,7 +37,7 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- The card mirrors `mcp/test_support/agents_remember_test_support/code_quality/projection_types.py` one-to-one.
 - **The served schema's extra `$defs` are asserted exhaustively**: `render_typescript` requires the served schema's folded definitions to equal `DEFINITION_RENAMES` exactly, so extending `ServedWorkspaceProjection` with a new payload model forces a declaration here AND a regeneration of `dashboard/src/types/projection.ts`. Drift is a hard gate, not a warning.
 - A schema keyword the renderer does not understand fails closed with the exact model/property path; the allowlist is never widened to make a document render.
 - A refinement TypeScript cannot enforce structurally is emitted beside its property as deterministic `JSON Schema refinements` documentation, so the generated contract never silently drops schema truth.
@@ -52,18 +52,6 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact current source range holding the anchor.
 
-- The fail-closed generation error raised for an unrepresentable schema shape. [1]
-- The persisted projection schema, copied for safe mutation. [2]
-- The declared HTTP/SSE snapshot schema, including its serve-time tail. [3]
-- Stable bytes for the committed JSON Schema artifact. [4]
-- The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename. [5]
-- The models whose nulls are MEANINGFUL and therefore stay required `T \| null` on the output contract. [6]
-- The one vocabulary for runtime-only JSON Schema refinements, `maximum` included, and the shape each refinement may attach to. [7]
-- Refinements are serialized deterministically beside their property instead of being dropped. [8]
-- The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword. [9]
-- The derived state partition and the closed TypeScript vocabulary blocks. [10]
-- The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly. [11]
-- The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently. [12]
 
 ## 260821-CLIVE-L2 Nullable Union Preservation
 
@@ -73,7 +61,6 @@ its annotations and remaining `anyOf` alternatives. An all-null field still refu
 This lets the lifecycle-operation status schema remain a closed multi-variant union instead of
 being flattened or rejected.
 
-- `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. [13]
 
 ## 260821-CLIVE Exact Runtime Refinements
 
@@ -122,3 +109,17 @@ regeneration:
 The counter ceiling is the reason the keyword exists: a bounded field declared only in the producer
 is a contract the schema does not state. The gate stays closed — an unsupported keyword still fails
 the drift check — so this is an extension of the vocabulary, not a loosening of it.
+
+- The fail-closed generation error raised for an unrepresentable schema shape. [1]
+- The persisted projection schema, copied for safe mutation. [2]
+- The declared HTTP/SSE snapshot schema, including its serve-time tail. [3]
+- Stable bytes for the committed JSON Schema artifact. [4]
+- The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename. [5]
+- The models whose nulls are MEANINGFUL and therefore stay required `T \\| null` on the output contract. [6]
+- The one vocabulary for runtime-only JSON Schema refinements, `maximum` included, and the shape each refinement may attach to. [7]
+- Refinements are serialized deterministically beside their property instead of being dropped. [8]
+- The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword. [9]
+- The derived state partition and the closed TypeScript vocabulary blocks. [10]
+- The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly. [11]
+- The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently. [12]
+- `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. [13]

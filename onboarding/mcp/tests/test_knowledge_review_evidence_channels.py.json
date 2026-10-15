@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:482f8d25a12f72a76edb7a4c782e44b21b858dc9590ec5561109f601c700ebd4",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:57068f31debe139239f0f7398d452e38cad30169379ebc0c7f0a3269efa11baf",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:33410400f680aac5cbd3606c413d7acfd2b319ae47ed217d4282d9e96e523e4e",
             "locator": {
               "kind": "symbol",
@@ -67,15 +67,14 @@
       ]
     },
     "22": {
-      "note": "**The live-enclosure fixture with the two reads every case uses, and the two halves of its candidate binding.**",
+      "note": "**The retained live-enclosure fixture exposes records() (the direct record bundle), payload() (through the knowledge_review port), and candidate dataset/tree bindings. Direct owner/model/schema cases do not all use these reads.**",
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
-            "content": "sha256:e33ae65cbd933f8ece6187e5a27aa5cc93011d64b1bfc8d895f1fb961d7d42e3",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
+            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordedFixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -83,15 +82,14 @@
       ]
     },
     "23": {
-      "note": "**The production port every case reads through — the same `serving_collaborators` the dashboard app is built with.**",
+      "note": "**The production knowledge_review port used by review_through_port/recorded.payload cases, through the same serving_collaborators factory as the dashboard; other retained cases exercise owners/models directly.**",
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
-            "content": "sha256:77d75234cabf39af2eb886c425d033d6021612aaf363aa349b1786bda11ab349",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
+            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
             "locator": {
-              "kind": "symbol",
-              "name": "review_through_port"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -103,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
-            "content": "sha256:2ce799b5481985a2a012db8be8df8899c4095de31a5ffa4ebaa15e08a5f34d7e",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
+            "content": "sha256:e145181187c13871f17436e1edfce763e48ff25e1064a3d3aa674c4b5b8538bb",
             "locator": {
               "kind": "symbol",
               "name": "_publish_assessment"
@@ -119,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:cc5279a0f0c6f49373dd26621e00b4342f8ea1a80505d72b3bbacba22e6bba5e",
             "locator": {
               "kind": "symbol",
@@ -131,15 +129,14 @@
       ]
     },
     "26": {
-      "note": "**The case that distinguishes \"not read\" from \"read and empty\" for the matrix-owned collection.**",
+      "note": "The retained matrix case asserts the retired authored-effects collection is unavailable with no count and the MIK-R74 removal reason; it does not measure an empty matrix.",
       "targets": [
         {
           "anchor": {
-            "blob": "1cb89d4b2b1b3adee4bd73989ab4a0703b287d97",
-            "content": "sha256:2bd861b6746709d34b7d6dc8a7e246d1e57256486fe893eb755b1089dd7bd0d6",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
+            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_context_review_reports_the_matrix_collection_as_not_selected"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -151,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:482f8d25a12f72a76edb7a4c782e44b21b858dc9590ec5561109f601c700ebd4",
             "locator": {
               "kind": "symbol",
@@ -167,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:33410400f680aac5cbd3606c413d7acfd2b319ae47ed217d4282d9e96e523e4e",
             "locator": {
               "kind": "symbol",
@@ -183,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58a81855a2d301336912ca7a4d0084a5c0252fdf",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/serving/background_accounting.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+        "content": "sha256:dcc3bc98109fd9171bd8672f1bd90fbfe7e5eb4b36cdfa04a5c210338335c2d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundLedger.note_wake"
+        }
+      },
+      "id": "RLZ-2403DA",
+      "invariant": "INV-RGGEX3",
+      "origin": {
+        "handoffEntry": "L81-R1-F02",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The ledger preserves wake reason and contributing evidence alongside attributed owner totals.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+        "content": "sha256:9971482e43857adc101814220d6313836cde401ce8ae3bdd6b69578dbf8fa4d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "offload"
+        }
+      },
+      "id": "RLZ-B8FAMX",
+      "invariant": "INV-0NSFFW",
+      "origin": {
+        "handoffEntry": "L81-R1-F01",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The singular offload owner measures within the worker and retrieves failures while draining repeated cancellation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+        "content": "sha256:a2280a8e654e13d583197dd86b9262894c58a5de648e25af15df281bed9aea7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "OwnerLedger.window"
+        }
+      },
+      "id": "RLZ-G78SN9",
+      "invariant": "INV-RJWTW8",
+      "origin": {
+        "handoffEntry": "L81-R1-F04",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The window reducer checks completeness instead of presenting cap-loss samples as a complete sixty-second total.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Nine retained labels account for wired serving work after three retired record owners were removed; actual executing-thread CPU, bounded detail, honest incomplete windows and worker drain remain the existing accounting contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+            "content": "sha256:7b84594e3e910e2e0af5a778c35d03342b65303c66737706e13cf96e71fde4a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

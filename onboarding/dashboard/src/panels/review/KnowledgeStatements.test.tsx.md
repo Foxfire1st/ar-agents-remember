@@ -8,7 +8,7 @@
 
 The **renderer half** of ICR-R06@v1. Nine cases drive the real `ReviewSurface` over the real
 intent-review client with only `fetch` stubbed, so the payload below travels the same route a
-browser's does: JSON in, `getJson` decode and the mounted component tree's actual selected-statement
+browser's does: JSON in, shared `getReviewJson` decode and the mounted component tree's actual selected-statement
 caller or declared-operand fallback, with shipped diff/viewer primitives — which do render in jsdom because
 `dashboard/src/test/setup.ts` supplies the `matchMedia`, `ResizeObserver` and
 `Range.getClientRects` answers jsdom omits. Nothing here renders a hand-rolled stand-in for the
@@ -64,8 +64,7 @@ against a private vocabulary of its own.
 
 - **The real component and the real client.** Only `fetch` is stubbed; no case renders a stand-in for
   the surface, the statement area, the diff or the viewer.
-- **DOM assertions only.** No case asserts a prop it passed, and no case asserts an intermediate
-  value; the statement text is read back out of the rendered DOM.
+- **DOM behavior assertions.** Rendering behavior is read from the DOM; the field-row case also asserts that its two renderer-authored structured provenance constants differ.
 - **Related obligations, independently authored fixtures.** The three matching statement literals support a source comparison, not a single fixture source or automatic cross-half failure. Each suite has its own states, detail/field values and assertions; acceptance/provenance/recorded-empty overlays here are not claimed as the Python composition's measured output.
 - **A declared-state fixture is labelled as such.** `binary` is exercised because the renderer must
   treat unsupported content distinctly from a known absence, not because a producer exists.
@@ -92,31 +91,19 @@ case bodies, the actual renderer callers, the surface/client and jsdom setup, pl
 
 **Current citation form.** References 7–11 use whole-file source ranges, while 12 and 13 bind the no-readable-operand and field-row assertion ranges. They no longer carry the former quoted case-name anchors. Source ranges and their notes are evidence locators, not named typed proofs or a claim of backend/renderer fixture identity.
 
-- The mounted suite uses the real surface/client with fetch stubbed; its authored overlays and the module comment do not establish identical backend-measured field fixtures. [1]
 
 - The real surface the cases mount, and the real client it calls — neither is stubbed. [2]
 
-- Three statement literals match the Python source constants; the acceptance and unequal structured provenance values are renderer-authored fixtures, as is the labelled binary vocabulary case. [3]
 
-- The four typed side builders and the two payload builders the cases spread overrides into. [4]
 
-- **The transport stub and the mount helper: `fetch` and nothing else, so the payload travels the production route.** [5]
 
-- The teardown that keeps a stubbed global from leaking between cases. [6]
 
-- **The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.** [7]
 
-- The removal, symmetrically. [8]
 
-- **The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.** [9]
 
-- **The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.** [10]
 
-- The three declared states carried through as their own tokens and never collapsed into one another. [11]
 
-- A selected subject with two unresolved operands has two named states, no diff and no content pane. [12]
 
-- Non-authored field rows distinguish absent acceptance reference, recorded-empty lifecycle and two unequal structured provenance values. [13]
 - The jsdom answers that let the shipped CodeMirror primitives render in these cases. [14]
 - The component under test and the rule it implements. [15]
 - The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. [16]
@@ -133,3 +120,16 @@ one browser test and carries no identity that ranges beyond the repository names
 names.
 
 No meaningful cross-repo references found.
+
+- The mounted suite uses the real surface/client with fetch stubbed; its authored overlays and the module comment do not establish identical backend-measured field fixtures. [1]
+- Three statement literals match the Python source constants; the acceptance and unequal structured provenance values are renderer-authored fixtures, as is the labelled binary vocabulary case. [3]
+- The four typed side builders and the two payload builders the cases spread overrides into. [4]
+- **The transport stub and the mount helper: `fetch` and nothing else, so the payload travels the production route.** [5]
+- The teardown that keeps a stubbed global from leaking between cases. [6]
+- **The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.** [7]
+- The removal, symmetrically. [8]
+- **The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.** [9]
+- **The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.** [10]
+- The three declared states carried through as their own tokens and never collapsed into one another. [11]
+- A selected subject with two unresolved operands has two named states, no diff and no content pane. [12]
+- Non-authored field rows distinguish absent acceptance reference, recorded-empty lifecycle and two unequal structured provenance values. [13]

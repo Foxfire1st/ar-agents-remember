@@ -1,0 +1,34 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/git_command.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared fixture primitives create and commit real temporary repositories through the guarded runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:d191a3fdba0d2ca54d6ed322269836ed315d0c282c5051b7515fa6f6cb98ecf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_init"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:6831f89fa0b1251de68bf50170db98daf170bd492e6340f8a563fd01bd566a9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

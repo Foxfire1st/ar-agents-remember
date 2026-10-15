@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Canonical family record for the joined journeys",
+      "note": "Canonical family record for the joined journeys\n\nAnchor: `familyId`",
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:8e538e9a808770a14a0339096a5d06c53ab0be773d3f76e70dd8da08553b7876",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
             "locator": {
-              "kind": "symbol",
-              "name": "familyId"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -23,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
             "content": "sha256:8877fdd8c5629a1c607526c98f3a6aebecc1686fcb9cd7502c4c0beb62de4b27",
             "locator": {
               "kind": "symbol",
@@ -34,12 +33,10 @@
         },
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:ff8172a4b99ec2259eacc40b1dc5e29d6c7b5d11ed5cbd399533d6879d7be490",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
             "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 22
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -47,15 +44,14 @@
       ]
     },
     "3": {
-      "note": "Subject mount helper for family and invariant records",
+      "note": "Subject mount helper for family and invariant records\n\nAnchor: `mount`",
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:98c43e8fca844a1eff13e471c8916683b250f89cab89bbcb543f884754ad9275",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
             "locator": {
-              "kind": "symbol",
-              "name": "mount"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
             "content": "sha256:655b25956bdf5a987d997abe70faafe573dc3a77f385cc70265ccc7e73e18a2f",
             "locator": {
               "kind": "symbol",
@@ -78,12 +74,22 @@
         },
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:5754db0b359a5e98538c367bd97e3e05cb906c3b98dd280c2aa1106034e11b18",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:0aabe35570177d604ea3198f86bb6f5e361ad611a624f3d3d0be62b8925596e6",
             "locator": {
-              "end": 71,
+              "end": 74,
               "kind": "line_range",
-              "start": 53
+              "start": 56
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -91,15 +97,14 @@
       ]
     },
     "5": {
-      "note": "Incomplete, absent and unbound wire-state builder",
+      "note": "Incomplete, absent and unbound wire-state builder\n\nAnchor: `wireWorklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:185e5af759f0858cd60ac2f225c3b108d5c3e876f6dbd90e7a0bfe5634bf1eb6",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
             "locator": {
-              "kind": "symbol",
-              "name": "wireWorklist"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -111,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26a3689c54c33671d02e34ba386f841d95773c7a",
-            "content": "sha256:984e4664a658b88f09772322f3a4d72cf9bedca6d09eeb0da493a9cbdd7736ce",
+            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
+            "content": "sha256:ea3883bd175a011889a7eb956f79d6e13a77e3e7cb1fc92dea864546061e27d1",
             "locator": {
-              "end": 157,
+              "end": 160,
               "kind": "line_range",
-              "start": 111
+              "start": 114
             }
           },
           "kind": "test"

@@ -53,27 +53,6 @@ Helpers retain kept-state/row readers, refusal replies, scroll-call recording an
 Kept-state and tree-row helpers pin the before and after of each journey, with a no-kept baseline for fresh starts. Tree routes serve lane, file, source, link and card answers per comparison, and scroll recording asserts the selected row comes into view without moving focus. Refresh, retry and failure cases assert kept-read clearing, scroll forgetting on failed reads, and view restoration on answered retries.
 ## Evidence
 
-- The kept state every case starts from. [18]
-- Historical removed all-invariants-list fresh-start probe. [19]
-- Same selected outline family preserves walk/focus with no read. [20]
-- All changes opens/returns from the viewer without walk reset or subject reads. [21]
-- Refresh clears kept reads while preserving outline rows. [22]
-- Changed comparison announces reset and clears kept tags without deleting outline rows. [23]
-- Refused selection keeps outline rows and K remains usable. [24]
-- Source-instead offer clears kept reads, not outline rows. [25]
-- Failed subject selection and its retry retain both families. [26]
-- Card-marker follow/return clears kept tags, preserving the outline. [27]
-- Bounded late-catalogue opening retains both outline families. [28]
-- No-context reply is stated in the centre while both families remain kept. [29]
-- Order/view, Worklist and comparison destinations retain walk without subject reads. [30]
-- A refresh brings the selected row into view once its answer is shown, without moving focus. [31]
-- Forced order: a refresh asked before the previous answer's effects have run waits for its own answer. [32]
-- A refresh whose read fails leaves no scroll request behind. [33]
-- The retry of a failed refresh is the refresh again: the row is brought into view when it is answered. [34]
-- A refresh asked in the turn that shows a failed read keeps its request. [35]
-- A retry made in the turn that shows the failed refresh is the refresh again. [36]
-- In-tree clicks, cached K and same-row reselection request centre reveal only under the stacked media shim; this is scroll-call evidence, not geometry. [39]
-- A stacked in-tree answer does not reveal after the reader moved focus while it was pending. [40]
 
 - The refresh and retry handlers these cases pin. [37]
 - The selection that decides keeping or starting afresh. [38]
@@ -81,11 +60,41 @@ Kept-state and tree-row helpers pin the before and after of each journey, with a
 
 ### Clock And Settlement Evidence
 
-- The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait. [41]
+- The kept state every case starts from. [18]
 
+- Reselecting the already-selected family preserves both families and its kept tag with no new read. [19]
+
+
+- All changes opens and returns without resetting the walk or reading subjects; focus returns to the trigger. [20]
+
+
+- Refresh clears kept reads while preserving both complete outline families at click and answer. [21]
+
+- Afresh at a refresh of the review. [22]
+- Afresh at an answer of another comparison, with the notice. [23]
+- A refused read keeps every row and the mark; `k` works from it. [24]
+
+- The offer to open task context clears kept tags but preserves both outline families at click and answer. [25]
+
+- A failed read keeps every row; the retry's answer leaves the tree whole. [26]
+- Afresh at a followed intent marker; its return brings no kept family back. [27]
+
+- The late catalogue selects its first family with both outline families present and no kept tags. [28]
+
+- An answer without family context keeps the families and states the subject. [29]
+
+- Order/view, Worklist and filtered comparison destinations/Back preserve families/tags and issue no subject review read. [30]
+
+- A refresh brings the selected row into view once its answer is shown, without moving focus. [31]
+- Forced order: a refresh asked before the previous answer's effects have run waits for its own answer. [32]
+- A refresh whose read fails leaves no scroll request behind. [33]
+- The retry of a failed refresh is the refresh again: the row is brought into view when it is answered. [34]
+- A refresh asked in the turn that shows a failed read keeps its request. [35]
+- A retry made in the turn that shows the failed refresh is the refresh again. [36]
+- An in-tree read reveals the reading area only in the stacked layout, by click and by key; an outside selection scrolls nothing. [39]
+- A stacked in-tree answer does not reveal after the reader moved focus while it was pending. [40]
+- The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait.  Anchor: `SUBJECT_HOLD_MS` [41]
 - Tree row resolution in the mounted rail [42]
-
 - Per-comparison tree routes for lane, file and cards [43]
-
 - Failed-refresh turn helper for scroll expectations [44]
 - Failed-refresh turn helper for scroll expectations [45]

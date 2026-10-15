@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/warmup.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Read and render the shared host-start loading picture while the document pane is active; it exposes the run line and per-agent states without starting or restarting the host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5687054d1bdb981c7b63b39b63d728589c145315",
+            "content": "sha256:838ab3ddee3e58da15587e0db2347e7f4c86f2eacc63ab44b51bd19dede7128e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -14,7 +14,7 @@ Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest b
 
 The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill copies and their harness mirrors belong to the synchronization owner, `scripts/sync-skills.py`.
 
-The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.
+The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
 ## Hot Path Summary
 
@@ -54,6 +54,8 @@ Git merges both catalogs by union. Such a merge can duplicate or reorder list li
 
 The lane loader runs during test collection. The lifecycle loader runs through the validator command, the Git hook's deterministic fast tier (also called by its targeted tier), the quality plan, the dependency selection graph, and `test_the_repository_catalogs_are_in_canonical_form`, whose file is declared in the unit lane. A change adding a test file adds its lane line and runs the canonical rewrite. Catalog rewrite and refusal cases live in `mcp/tests/test_evidence_catalog_canonical_form.py`; `mcp/tests/test_evidence_catalog_gate_boundaries.py` checks a canonical catalog whose declared consumers no longer describe the source tree.
 
+The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.
+
 ## Local Invariants And Boundaries
 
 - Ordinary pytest setup has no certifying or external-service authority. Dagger admission is mandatory at the certifying composition boundary; neither admission nor running the bootstrap alone establishes acceptance.
@@ -86,7 +88,6 @@ The generated route index lists the source files of this route and their cards.
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
 - The registry of retired curation sentences. [17]
 - The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
-- The register assigns distinct reset, restored and constant treatments. [19]
 - Condition readiness is separate from the shared hang guard. [20]
 - Content identities reuse per-file facts without freezing current graph membership. [21]
 - The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists. [22]
@@ -95,5 +96,8 @@ The generated route index lists the source files of this route and their cards.
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
 
-- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control. [26]
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
 
+- **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+
+- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/controlplane/durable_store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1844ef71d022f6b31f30ce714a2452018d2e9b8f",
+        "content": "sha256:ca209309bbbfa7a581514295808f050d319d764960a7cb1ab364eabe09339050",
+        "locator": {
+          "kind": "symbol",
+          "name": "append_lines"
+        }
+      },
+      "id": "RLZ-1JRDQ5",
+      "invariant": "INV-H9TEKD",
+      "origin": {
+        "handoffEntry": "L81-R1-F07",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "Captures the cooperating append identity under its existing file lock. The named noncooperating flush-to-fstat window relies on the independent full-healing bound within300s under successful reconciliation; this capture alone does not guarantee total publication latency while work is stuck or fails.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Current writer declaration, advisory ownership and compaction roles.",
@@ -45,8 +64,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
+            "blob": "ea2488d7e1a524583dd02dc2468d07c4ffb0d35d",
+            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
             "locator": {
               "kind": "symbol",
               "name": "is_projection_input_event"
@@ -103,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:592e3db0cf23a5975acd675c9f0ea4cd776f9197a5228977f32c151529dd34b5",
             "locator": {
               "kind": "symbol",
@@ -119,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
             "locator": {
               "kind": "symbol",
@@ -135,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -147,7 +166,7 @@
         },
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:67ef59667662f3d53dbc35e78d74c5edbd24fcccc140176be697ebc9c9c9586b",
             "locator": {
               "kind": "symbol",
@@ -159,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:9a604f8ee478c8286e362f5e67c367511038768ed2af48b155599f47e91e93fa",
             "locator": {
               "kind": "symbol",
@@ -171,8 +190,8 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:453d3b09cee82b3412379fb449e22269ec97d11c8dd64c39efe1e612b49d5aeb",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "content": "sha256:1996fc940c9364949b7810894e5de4904d201c9dfd588ee4ec9fe8130af6978e",
             "locator": {
               "kind": "symbol",
               "name": "_verify_lock_capability"
@@ -183,8 +202,8 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -195,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
             "locator": {
               "kind": "symbol",
@@ -261,8 +280,8 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
             "locator": {
               "kind": "symbol",
               "name": "append_line"
@@ -272,8 +291,8 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:c67f6aa78c07209098a7a490810a3a042f711c8a7b9a084e4a9cc52b37896907",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "content": "sha256:ca209309bbbfa7a581514295808f050d319d764960a7cb1ab364eabe09339050",
             "locator": {
               "kind": "symbol",
               "name": "append_lines"
@@ -283,8 +302,8 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
               "kind": "symbol",
               "name": "rewrite_lines"
@@ -299,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:3bb5b7ab70ad8348952df536895cf62b2790aa98ad21a26c911a591c65f3c8a5",
             "locator": {
               "kind": "symbol",
@@ -315,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
             "locator": {
               "kind": "symbol",
@@ -327,8 +346,8 @@
         },
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
-            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:dda284a873fdf52f96321c0880249feacf3e794f99349aa2f013068f3814f0e2",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -339,8 +358,8 @@
         },
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
-            "content": "sha256:d0c700917c9e903b462e26278ea741f52889300e8e516f44ce63136696510ddb",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:70361671f77b2ae15387869c875aa472b78c7df4dd95b424e7c20f8c4c12ba1c",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_text"
@@ -351,7 +370,7 @@
         },
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
             "locator": {
               "kind": "symbol",

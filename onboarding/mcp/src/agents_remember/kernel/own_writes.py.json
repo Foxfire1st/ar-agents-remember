@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/kernel/own_writes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Suppress only this process's certified completed filesystem effects from its native projection watcher. Pending announcements defer judgment; descriptor identity, event kind and optional payload digest distinguish outside writes. Missing/error/expired identities fail open; bounded drop-oldest maps expose reclamation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b7afb54b610814297d632786202974d09cf517f",
+            "content": "sha256:04fe7c0c2c248cac94b70562aecdaf131e7283042eb1cdd5d6fb50bf22dad53f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -39,14 +39,15 @@ No configured domain source could be checked.
 
 The case or captured property below records the input this card describes.
 
-- The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt. [1]
-- The case or response retains its declared selected input. [2]
 
 ### Cross-Repo References
 
 Capture provenance names disposable repository evidence; it grants no production knowledge authority.
 
 No additional production cross-repository contract is asserted.
+
+- The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt.  Anchor: "Real review-route bodies"; "adjacent receipt" [1]
+- The case or response retains its declared selected input.  Anchor: "reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions" [2]
 - Assessed family fixture with successor revision [3]
 - Family-less subject fixture for no-family intent [4]
 - Per-subject serving world with request capture [5]

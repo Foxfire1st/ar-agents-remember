@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2adb19cd1f92339101485ef073fba90e0d723aa0",
+        "blob": "d93f431577912340938e8f4cbe896e6b572b058c",
         "content": "sha256:c50e6ad9d6abafbca82e122a75cd53f3b0208eaa22e9750a946846e2e2c9eef5",
         "locator": {
           "kind": "symbol",
@@ -26,10 +26,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a367c2765aef4d1c633de6bd1fd2f4d05c45d77c",
-            "content": "sha256:9f374407974cd1833f3a1ccd016f2dc3075771debf7512792814e9c17cd66dbd",
+            "blob": "d93f431577912340938e8f4cbe896e6b572b058c",
+            "content": "sha256:33b576f091f8b4efd2f7f3cbe72919dc3a3e8c1d5ecce3dbeef8fe54fc27e462",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "SandboxCase hides named harness configuration markers at ancestors outside its owned fixture through a scoped Path.exists view. Existence inside the fixture and for all other paths uses the real filesystem; production location guards, lexical harness-path refusal and unsafe-project/symlink/escape checks remain active.\n\nAnchor: `SandboxCase.setUp`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d93f431577912340938e8f4cbe896e6b572b058c",
+            "content": "sha256:33b576f091f8b4efd2f7f3cbe72919dc3a3e8c1d5ecce3dbeef8fe54fc27e462",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

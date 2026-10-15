@@ -21,7 +21,7 @@ Start at `cockpit/Cockpit.tsx` for navigation, shell drivers, retained layers, t
 
 For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The literal public MCP roster now contains 40 names, compared with 39 at 8d2e7547, adding role_start_set and retire_child; this source count establishes no execution result.
 
-For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The artifact kind determines `notes-reader` versus `requirements-reader`; it does not introduce another shell mode.
+For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The shared artifact takeover selects `notes-reader`, `requirements-reader`, `decisions-reader` or `report-reader` from the artifact kind; these are takeover markers, not additional product-bar modes.
 
 For change sets and Intent Review, start at `panels/detail-panel/changeSetBar.tsx`, `intentReviewEntry.tsx` and the existing change-set takeover. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets, and an always-present task-context Intent Review entry. Liveness selects live versus recorded review identity. The review entry's counts are changed-intent counts from the comparison summary, not changed-line counts or catalogue size.
 
@@ -71,7 +71,7 @@ The lifecycle-operation envelope includes schema/state-matrix versions, incohere
 
 ### Change sets and Intent Review
 
-The master viewer and bar both request `includeLeaves: true`. Per-leaf rows open that leaf's committed historical range without requiring its live worktree. The adapter's net-only option remains available, but the inherited optimization describing dashboard master readers as net-only is superseded.
+The master viewer and bar both request `includeLeaves: true`. A landed/non-working per-leaf row opens that leaf's committed historical range without requiring its live worktree; a row reported as still working opens the leaf's working delta (`leaf.state === 'working'` selects working mode, otherwise committed). The adapter's net-only option remains available, but the inherited optimization describing dashboard master readers as net-only is superseded.
 
 A counter read distinguishes loading, refusal/unreadable/unanswered failure, unrecorded committed endpoints, measured empty and measured counts. An unrecorded live-leaf committed range withholds its total: `+0 −0` would falsely present an unmeasured range as a zero measurement. Named refusal details carry the owner's code, reason, offending input and next action. The viewer likewise names refusal and explicitly distinguishes a change set measured empty in both code and memory halves from the pick-a-file backdrop. Unknown leaf, invalid mode and enclosure scope remain inherited distinct route refusals; they were not newly exercised here.
 
@@ -188,8 +188,9 @@ The live-leaf "committed" change-set read used to swallow its own refusal detail
 
 **The review surface's raw colour literal is gone (B1), and the claim is stated in the form that is
 true.** `panels/review/FamilyTree.tsx` carried the only two raw literals — `oklch(0.82 0.16 75 / 0.08)`
-and `… / 0.16`, `--amber`'s channels copied by hand — and they are now one `AMBER_WASH(percent)` helper
-stating `color-mix(in oklab, var(--amber) N%, transparent)`. The interpolation space is the reason it
+and `… / 0.16`, `--amber`'s channels copied by hand — and B1 replaced them with an `AMBER_WASH(percent)` helper
+stating `color-mix(in oklab, var(--amber) N%, transparent)`. The present file retains the 8%/16%
+colour-mix declarations inline rather than that named helper. The interpolation space is the reason it
 matters: an `oklch` mix interpolates the **hue**, which is how the accepted page's own selected row first
 came out visibly teal. **What is false as worded, and must not be repeated:** *"zero `oklch` users remain
 in the review surface"* — the dashboard's own tokens are defined in `oklch` (`styles/tokens.css:8-23`) and
@@ -288,18 +289,21 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - State and authority architecture. [7]
 - Panel composition. [8]
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
-- State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
 - Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
 - JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]
 - Public lifecycle recovery commits contain only real code and memory outputs. [15]
-- The generated lifecycle mirror carries the cursor beside coherent identity and version fields. [16]
-- The fixture supplies a meaningful revision for the sample operation. [17]
 - The target variant that turns the existing takeover into a review. [18]
-- The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. [19]
+
+- At the Cockpit target dispatch, presence of the review field mounts ReviewSurface instead of ChangeSetViewer, and an empty object is the task-context entry. Within that reviewer, a separate comparison-bound changed-files overlay can mount ChangeSetViewer.  Anchor: "never mounted for one, so no change-set" [19]
+
 - The dispatch, and the `intent-review` view marker it selects. [20]
-- The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. [21]
+
+- The root review target mounts ReviewSurface. Historical ICR-L3 inline inventory openers addressed an entry's content; current InventoryLink opens All changed files on the comparison-bound change-set page, while card Full file remains bound SourceContent.  Anchor: `ReviewSurface` [21]
+
 - **The reviewer entry: offered for every leaf; since `260921-ICR-L47` it carries no subject (the reviewer chooses one) and shows the comparison's changed-intent counts.** [22]
-- **The one predicate both gated entries share.** [23]
+
+- **The shared liveness predicate gates Working and selects live versus recorded Intent Review identity; it does not gate Intent Review availability.** [23]
+
 - The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 - **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
 - **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
@@ -336,10 +340,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract. [60]
 - Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content. [61]
 - Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory. [64]
-- Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
-- Shell navigation, persistent layers and shared drivers. [6]
-- Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
+
 - State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
-- Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
-- JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]
+- The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: "export interface LifecycleOperationProjection {" [16]
+- The fixture supplies a meaningful revision for the sample operation.  Anchor: "\"meaningfulRevision\": 1," [17]
+- Unknown chat ownership does not hide the frame; only confirmed absence does. [62]

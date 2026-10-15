@@ -50,9 +50,6 @@ No configured live documentation source was available for this pass.
 
 The cache location, the reuse-or-build rule and eviction.
 
-- The cache contract: where, what, freshness, eviction, and that deleting it loses nothing. [1]
-- The chosen location and eviction defaults. [2]
-- A location inside a Git working tree is refused before anything is created. [3]
 - Lookups recompute the key and reuse or build. [4]
 - Eviction by age, then size, keeping the file just built. [5]
 - Reuse only for the matching key and format; build through a temporary file and a rename. [6]
@@ -64,3 +61,7 @@ The cache location, the reuse-or-build rule and eviction.
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
 No cross-repo boundary is crossed by this file.
+
+- The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.  Anchor: "Deleting the directory, or any file in it, loses nothing" [1]
+- The chosen location and eviction defaults. [2]
+- A location inside a Git working tree is refused before anything is created.  Anchor: "inside a Git working tree" [3]

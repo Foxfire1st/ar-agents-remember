@@ -1,0 +1,57 @@
+{
+  "condition": "CODE318f526d memory/baseline.py:402-404 calls _restore_file before bare raise. _restore_file:315-338 catches only its initial read OSError; once prepared bytes match, unlink333, write_bytes335 and chmod337 are outside that handler. A restoration mutation fails while the declared index/validator conditions and owned-byte guard hold. Concurrently changed or unreadable ignore contents are preserved separately; this concern is the owned pre-publication interval, not rollback after publication.",
+  "failure": "The inherited baseline prepare/stage/validate error path does not always restore owned bytes/mode or propagate the named validation error, contrary to INV-ZCRMS7@1 and INV-DZB7MC@2. The governing promises remain unchanged; the Architect routes code repair to a developer-authorized task.",
+  "id": "FLM-61W7PN",
+  "links": [
+    {
+      "relation": "threatens",
+      "target": "INV-ZCRMS7"
+    },
+    {
+      "relation": "threatens",
+      "target": "INV-DZB7MC"
+    },
+    {
+      "relation": "occurs_at",
+      "target": {
+        "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
+        "content": "sha256:70e8bfcc7891fd0edb321624c979a748c910189b1edf29f6fd3f6f5264892ce7",
+        "locator": {
+          "end": 338,
+          "kind": "line_range",
+          "start": 315
+        },
+        "path": "mcp/src/agents_remember/memory/baseline.py"
+      }
+    },
+    {
+      "relation": "occurs_at",
+      "target": {
+        "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
+        "content": "sha256:3cd9bb01b80c2c1fb03957b9845a98627a842f391c06ee505fb9854cc655794c",
+        "locator": {
+          "end": 404,
+          "kind": "line_range",
+          "start": 381
+        },
+        "path": "mcp/src/agents_remember/memory/baseline.py"
+      }
+    }
+  ],
+  "observable_effect": "The restore mutation error becomes the outward exception instead of the named validation error (which can remain exception context). Restoration can remain incomplete; chmod failure can leave restored bytes with unrestored mode. The private index still protects the real index, but that does not satisfy the named-error/owned-state promise. This is a conditional source-supported failure mode, not a reported executed incident.",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect ruling notes/run3/L81-C01-C02-ARE-INHERITED-GAPS-RECORDED-AS-FAILURE-MODES-NO-CODE-REOPEN-RULING.json, SHA2567b3d93b2ef5be8a9e0b6b569493e4cc527b89665aa59ef56c9081ceae3ec27e3; no CODE reopen or invariant narrowing.",
+        "Curator code-concerns-A004.json SHA256b8baf5078cda98e03a3cf2c75b6ff76092ecd0eac2fb74ab29106d5106038ea1, Worker 260928-MIK-L81-A004-worker-code-intent-answer.md SHA25626a57881db492b68b3dcd8071704964c20b404fe75d6bb714e56dea6c4b9accb and Reviewer L81-A004-C01-C02-source-answer.md SHA25697ae9f2bd001a5ee85837a8a7e43cb9425f886d03e2f34a1068e76709dfae5e9 authenticate the CODE318f526d branches. Static source inspection, not an executed failure incident or fresh test verdict; conditional behavior confidence high."
+      ],
+      "path": "additional-handoff-A004.json"
+    },
+    "handoffEntry": "L81-A004-C01-inherited-restoration-gap",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-failure-mode/v1",
+  "status": "proposed"
+}

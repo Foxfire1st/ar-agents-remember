@@ -20,11 +20,13 @@ Resolve the configured repository and its coordination, code, memory, task and t
 
 Retrieve the smallest useful route packet. Generated `overview.index.json` supplies source scope, child routes, covered files, routing terms and hot-path hints. A source absent from its route index skips the sidecar probe but remains readable. Read overview prose when the index is insufficient, then confirm named source anchors. Stop when the packet establishes the responsibility, immediate cause, user consequence and relevant contract; widen only for a named unresolved question.
 
-`read_ar_files` names each requested source path's existence, its governing card location (or no card), record counts by state and the ID, kind, state and card heading of records that ask the caller to act. Governing overviews are locations listed once per call, nearest first. It returns no source, card or overview text, no `published_intent`, no session-delivery state and no continuation; callers read the named files with their own tools. Taskless reads use configured repository/memory authority. A task-scoped reader derives roots from the admitted canonical leaf enclosure: task reference, repository, enclosure binding, contract identity and directories must agree; neither root substitutes for the other. Missing or unconverted memory is named and supplies no card rather than being filled from another repository or snapshot.
+`read_ar_files` names source-path existence or confinement refusal and a call-local nearest-first overview list. Existing source paths name a readable converted governing card or card: null; record counts/state and action-needed headings are measured only when a selected index and code HEAD tree are available. It returns no source/card/overview text, published_intent block or continuation. Taskless scope keeps configured roots; task-scoped configuration derives code/memory roots from canonical admitted enclosure authority rather than a fallback. Unconverted memory is named as memoryState: unconverted; existing paths name card: null. Open named files with harness-native reads; use knowledge_read for named invariant/family/source-context pages.
 
-The separate `knowledge_read` source-context selection is family-complete within its declared memory-tree scope: path entries and their invariants, containing families and their remaining members, advertised further families, then the governing route chain. Shared members use reference rows; the current wire projection names records and locations rather than carrying their bodies. `knowledge_read` expands invariant, family and source-context selections from the same derived index with selection-bound continuations. This is not `read_ar_files` body delivery or a `served_earlier` session mechanism.
+knowledge_read with view source_context exposes the family-complete path walk: the index selects path invariants/entries and containing/chain families, while the mounted answer names text IDs, kinds, computed states and locations rather than record prose. Shared-member/header references and counts remain paging facts. read_ar_files also uses prepare_leaf internally to compute card states/counts, but exposes no paged record walk or continuation and keeps no per-session served state. Paired published-intent delivery, deferred seeds and served_earlier response descriptions are historical carriers, not its current naming response.
 
-The separate `knowledge_read` pages share an 8,000 `tiktoken:o200k_base` token threshold. Counts describe the whole selection and the returned and remaining rows. Continue through `knowledge_read` using the memory root, continuation view and token, not the derived-index path. Continuations bind the memory tree, seed, selection policy, manifest, ordering and resolved code tree; mismatches refuse rather than returning a partial page. Deferred seeds preserve the omitted scope, an excessive seed queue requires smaller requests, and a single oversized row is returned whole and flagged. A repository root without a commit and an unresolvable anchor must be named rather than converted into an unobserved absence.
+The retained internal knowledge threshold metadata declares 8,000 tiktoken:o200k_base tokens. The mounted knowledge_read pager instead sizes the delivered naming projection against bound_for("knowledge_read") = 4,000 tokens with envelope reserve. View/scope cuts cap data rows at twenty; leaf cuts cap them at nineteen to reserve room for a continued-family header. This is not a twenty-entry aggregate across every list in the answer. Whole-selection/returned/remaining counts and continuations bind memory tree, seed, policy, manifest, ordering and resolved code tree. Resume through knowledge_read with memory root, view and token, never a database path. Indivisible oversized rows retain the internal pager flag; mounted naming rows carry no record prose. Deferred paired-read seeds and seed_queue_exceeded belong to the retired paired content route, not current read_ar_files.
+A task-scoped reader requires the task reference, repository, enclosure binding, contract identity and directories to agree; neither root substitutes for the other. Missing memory is named rather than filled from another repository or snapshot.
+
 
 Research that changes no code may finish in chat. Build work belongs to approved durable task topology and the architect plan gate. The requirement corpus precedes task authoring; semantic requirement `ID@version` changes require developer approval. A delivery attempt advances at exact-candidate independent-review handoff or its rejected successor, not on ordinary implementation, test or evidence reruns. Implementation approval and commit approval are separate authorities.
 
@@ -94,7 +96,7 @@ Canonical skills own these duties; the package and eight harness trees propagate
 
 ### Memory-format admission
 
-For unconverted memory, `read_ar_files` names `memoryState="unconverted"` and source existence but supplies no card; it does not deliver legacy-format card bodies. Legacy memory remains convertible.
+Legacy memory remains inspectable with native file tools and convertible; read_ar_files acknowledges it as memoryState: unconverted and names no card, not a legacy-format card payload.
 Ordinary checks, writes, memory sync, closeout and landing refuse it with the central legacy-format recovery message,
 even when no converted memory exists elsewhere. A root without an attributed baseline converts in place then is
 adopted; an official line makes its first conversion inside a new leaf and lands through the existing validator/gate.
@@ -193,14 +195,18 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
-- The registered read_ar_files_tool names cards/overviews and actionable records; it carries no published_intent block. [61]
+
+- Historical paired content carrier, superseded by MIK-R109: current read_ar_files names cards/states/overviews and returns no published_intent block. [61]
+
 - Retained reference account (no fresh execution or acceptance inferred): The converted-card workflow of the `c-05` skill. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The curator role's step for converted memory. [68]
 - Retained reference account (no fresh execution or acceptance inferred): The three attribute entries and their reasons. [69]
 - Retained reference account (no fresh execution or acceptance inferred): The rewrite that the `--write` command runs. [70]
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
 - Retained reference account (no fresh execution or acceptance inferred): The skill text states that retire is the only archive route and that finalize never archives a master. [72]
-- Retained reference account (no fresh execution or acceptance inferred): The page threshold of a knowledge read. [73]
+
+- The retained internal8,000-token threshold constant; the mounted naming pager applies the separate4,000-token delivered bound and list cap. [73]
+
 - Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
@@ -227,7 +233,6 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Under a sprint without a graph every commanded master executes atomically whatever it declares. [99]
 - Retained reference account (no fresh execution or acceptance inferred): The mutation classes that invalidate the closeout queue projection. [100]
 - Retained reference account (no fresh execution or acceptance inferred): The observer's graph projection reads the resolved row statuses directly. [101]
-- Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs. [102]
 - Retained reference account (no fresh execution or acceptance inferred): The route rules are reported inside the writer and refused by every commit route. [103]
 - Retained reference account (no fresh execution or acceptance inferred): The file-writer route of the two commands and the crossing route. [104]
 - Retained reference account (no fresh execution or acceptance inferred): The worklist kind for an invariant that was already stale at the base. [105]
@@ -244,18 +249,15 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier parks unstaged and untracked content and restores it on every exit. [123]
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality preparation refuses a checkout that is not a task worktree, then resets and stages. [125]
-- Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index. [126]
 - Retained reference account (no fresh execution or acceptance inferred): The pair identity of a memory candidate and what its digest covers. [127]
 - Retained reference account (no fresh execution or acceptance inferred): The final full memory-coherence certification. [128]
 - Retained reference account (no fresh execution or acceptance inferred): The charters of the certification and control-plane packages. [129]
 - Retained reference account (no fresh execution or acceptance inferred): Ruff's complexity rules and the one per-file ignore. [130]
-- Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed. [131]
 - Retained reference account (no fresh execution or acceptance inferred): The vendored vocabulary is verified before tiktoken reads it. [132]
 - Retained reference account (no fresh execution or acceptance inferred): The task workflow creates the requirement corpus before the task document. [133]
 - Retained reference account (no fresh execution or acceptance inferred): Requirement revisions and delivery attempts are separate. [134]
 - Retained reference account (no fresh execution or acceptance inferred): The start-of-task onboarding trust gate. [135]
 - Retained reference account (no fresh execution or acceptance inferred): The templates that the runtime install places in the coordination root. [136]
-- Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state. [137]
 - Retained reference account (no fresh execution or acceptance inferred): The reader config of a call that carries a task context comes from the leaf's admitted enclosure. [138]
 - Retained reference account (no fresh execution or acceptance inferred): The subcommands of the `agents-remember` command. [139]
 - Retained reference account (no fresh execution or acceptance inferred): The lane loader refuses a catalog that is not in canonical form. [140]
@@ -303,7 +305,6 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Final memory adapter requires the selected four-code-terminal prefix. [287]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
-- Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls. [291]
 - Retained reference account (no fresh execution or acceptance inferred): Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. [292]
 - Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109. [293]
@@ -315,7 +316,9 @@ The retained five-gate memory-certification architecture is distinct from transa
 - Retained reference account (no fresh execution or acceptance inferred): Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal. [309]
 - Retained reference account (no fresh execution or acceptance inferred): Generic worker inputs point to tool notes and require the actual interpreter in run records. [310]
 
-- Retrieval now uses harness-native semantics/relationships; paired reads carry scoped published intent and bounded continuations. [311]
+
+- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.  Anchor: check_landing_report  Retrieval uses harness-native reads/search; read_ar_files names scoped cards/states/overviews without content or continuation, while knowledge_read pages named records.  Anchor: Retrieval substrates and published-intent carrier [311]
+
 - Only external is supported; disabled stays readable for named recovery/status purposes without being writable. [312]
 
 - Current source literal PUBLIC_TOOLS has 40 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution. [313]
@@ -331,13 +334,15 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Proofs describe demonstrations, never execution success; absent proof is informational. [320]
 - Gate-less admission preserves existing approval; applied approval recovers only its bound operation. [321]
 - Context freshness is opt-in, and this packet disables provider discovery. [322]
-- Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary. [323]
 - Report retention is write-time, five files/seven days; this writer alone does not establish whole-read-path enforcement. [324]
 - Candidate environment bootstrap is frozen, explicit replacement restores on failure, and successful replacement removes the backup. [325]
 - Final memory certification requires an exact ordered four-gate prefix and exact admitted candidate. [326]
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. Retrieval guidance names harness-native substrates, while its inherited paired-read published-intent wording is historical and superseded by the current L109 names-only contract; bounded continuations belong to knowledge_read, not read_ar_files. [311]
+
+- Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [333]
+
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
 - Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. [314]
 - For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [315]
@@ -347,5 +352,12 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Canonical independent non-author statement/diff/omission duty. [329]
 - Named validator route policies. [330]
 
+
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs. [102]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index. [126]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed. [131]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state. [137]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
+- **Historical source-bound reference account, not an operative override:** Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary. [323]
 
 - The L111 predecessor had41 public names after resolve_context removal; the composed R113 source has40 after dispatch_agent removal, retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance. [332]

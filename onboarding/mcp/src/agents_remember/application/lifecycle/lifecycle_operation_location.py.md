@@ -38,8 +38,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-- The module defines `LifecycleOperationPublicAddress`; `LocationDecisionPayload`; `ContractReadOperationObservation` as its public seam. [1]
 
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+- The module defines `LifecycleOperationPublicAddress`; `LocationDecisionPayload`; `ContractReadOperationObservation` as its public seam. [1]

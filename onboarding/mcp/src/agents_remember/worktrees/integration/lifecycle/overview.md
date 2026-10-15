@@ -26,7 +26,7 @@ Ordinary closeout journals require canonical `taskIntent`. An admitted direct-la
 
 An independent locator addresses an enclosure manifest, which supplies the canonical journal address for each operation kind. Location resolution cross-checks the locator and manifest without scanning for a substitute. An enclosure-root journal can be read independently of the task document; an unreadable contract is projected as a developer decision with no legal controls.
 
-[The generation route](generation/overview.md) owns queued-record construction, integration-authority snapshots, and the pure same-generation resume transition. `creation.py` returns an in-memory candidate. Durable initial certification selection belongs to the store's creation/replacement boundary; the coordinator owns claims and launch. `resume.py` requires recorded termination to prove exit, retains termination and reconciled-mutation history, and requeues the accepted generation without replacing its immutable intent. Use the concrete child cards before changing these boundaries.
+[The generation route](generation/overview.md) owns queued-record construction, integration-authority snapshots, and the pure same-generation resume transition. `creation.py` returns an in-memory candidate. Durable initial certification selection belongs to the store's creation/replacement boundary; the coordinator owns claims and launch. `resume.py` requires recorded termination to prove exit, retains termination and reconciled-mutation history, and preserves the accepted generation and immutable intent, returning queued for ordinary operations and running/direct-preflight for direct landing. Use the concrete child cards before changing these boundaries.
 
 The public projector binds its identity to operation kind, contract path, generation, record revision, candidate fingerprint, and gate-policy identity. Results, approval and worker observations, recommended actions, and legal controls share that identity. Dependent identity mismatches produce an incoherent envelope. The result and decision rebinding helpers preserve component bindings; observation uses the decision binder for location and unreadable-contract decisions. Legal controls are calculated without mutating the journal, including the explicit cancellation control for `termination-required` records.
 
@@ -79,18 +79,21 @@ The following coverage statuses are retained metadata, outside the operative pro
 - Recovery state contains the actual two commit outputs. [2]
 - Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]
 - Generation construction is in memory; retained resume preserves evidence and requires recorded exit; durable creation owns initial certification selection. [6]
-- Public identity, component rebinding, incoherence handling, and termination controls derive from current generation evidence. [7]
-- Failed-generation replacement is explicit; cancelled closeout succession uses the current door, journal disposition, and exit proof. [8]
-- Closeout admission binds task intent; direct-landing writes are exempt from that leaf-intent requirement, although shared legacy predicates still mention direct landing. [9]
 - No-output cancellation preserves successor candidate differences and refuses moved protected output identities. [10]
 - Direct-closing receipts precede journal admission, preserve later edits, and preserve closings already landed in HEAD. [11]
-- Current store mutation serialization and waiting-door claims contradict the blanket plane-deletion account. [12]
-- Historical pre-change source observation: completed disposition checked retained authority while its direct-owner tuple comparison had unequal lengths. [13]
+
+- Historical pre-change completed-disposition diagnosis: the former direct-owner tuple had unequal lengths. Current disposition delegates to lifecycle_operation_identity.completed_direct_owner and retains integration/publication-claim/worker-exit restrictions.  Anchor: lifecycle_completed_disposition.py [13]
+
 - Sidecar/route refresh composition remains implemented; the current memory-quality caller distinguishes converted trace gating from legacy refresh validation. [14]
 - Default production services bind prepared memory certification and the closeout continuation used by selected execution. [15]
 
-- Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. [3]
 - The exact-generation observer returns bounded change/timeout outcomes. [4]
 
 - Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion. [5]
 - Completed direct retire is offered using the shared record-based owner predicate. [6]
+
+- Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. [3]
+- Public identity, component rebinding, incoherence handling, and termination controls derive from current generation evidence.  Anchor: lifecycle_operation_projection.py; lifecycle_operation_control_projection.py; observation/projection.py [7]
+- Failed-generation replacement is explicit; cancelled closeout succession uses the current door, journal disposition, and exit proof.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py [8]
+- Closeout admission binds task intent; direct-landing writes are exempt from that leaf-intent requirement, although shared legacy predicates still mention direct landing.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py [9]
+- Current store mutation serialization and waiting-door claims contradict the blanket plane-deletion account.  Anchor: lifecycle_operation_store.py; lifecycle_operations.py [12]

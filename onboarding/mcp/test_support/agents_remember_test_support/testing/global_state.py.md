@@ -8,7 +8,7 @@
 
 ### STOP-delta current source contract
 
-The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.
+The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
 These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
 
@@ -28,6 +28,8 @@ item-kind registrations and knowledge-validator registrations. Loaded restored o
 per test and restored before reporting leaks. Import-time-only registries retain their rows, including
 registrations from deferred imports. Reset rows are handled before and after each test module, only
 when their owner is already in `sys.modules`; resetting never imports a product module.
+
+The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.
 
 The reset register also includes measured answer-folder budgets, suspended held-message sweep walks, message-stem counters, atomic-write temporary paths and the installed tool-event writer. Sweep walks and the writer delegate cleanup to their owning resetters rather than merely clearing a wrapper mapping.
 
@@ -51,14 +53,13 @@ whose contract deliberately sets process state.
 
 - The one owned state register is explicit. [1]
 - Process snapshot/restore uses one typed owner. [2]
-
-
 - The closed register gives every state a treatment and causal rationale. [3]
 - Module reset uses already-loaded owners only. [4]
 - Worker completion precedes clearing the quality-run registry. [5]
 - Ambient reset joins the actual heartbeat before returning. [6]
 - Only process-owned spawned children are terminated and reaped. [7]
-
 - Loaded-owner reset includes delegated sweep and tool-writer cleanup. [8]
 
-- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control. [9]
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [9]
+
+- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [10]

@@ -24,7 +24,7 @@ that make it safe: the same answers, fewer Git reads, and nothing remembered tha
   a mismatched blob); `_observe` builds a fresh `_TreeAnchorResolver` per pass, as every reader does;
   `_unremembered` empties the tables before each observation to reproduce the path before the memo.
 - **Same answers, one read per object.** A remembered pass equals the unremembered one; a repeat pass runs
-  only the per-resolver `cat-file -e` probe; the first pass runs one `ls-tree` per distinct path (the
+  only the per-resolver `--no-replace-objects rev-parse --verify --quiet <tree>^{tree}` probe; the first pass runs one `ls-tree` per distinct path (the
   absent one too), one blob read per distinct blob and one parse.
 - **Failures are asked again.** A runner that fails each Git question once shows the probe, the lookup
   and the blob read each asked again and only the success remembered.
@@ -40,7 +40,7 @@ that make it safe: the same answers, fewer Git reads, and nothing remembered tha
   every anchor with no ranges.
 - **No cross-repository or cross-grammar reuse** (review L56-R1-F2): an empty neighbour observed without a
   resolver fails its lookup instead of receiving the first repository's entry; a blobless neighbour
-  holding only the trees refuses a range and a symbol rather than answering from the first repository's
+  holding only the trees preserves exact_recorded_blob for the range with no resolved ranges, and reports unsupported_locator for the symbol rather than answering from the first repository's
   lines; one blob at `a.py` and `a.ts` resolves `x` only under Python and `g` only under TypeScript, in
   either order.
 
@@ -54,8 +54,7 @@ functions, one parametrised twice, make the nine cases.
 
 ### Invariants And Boundaries
 
-The cases drive the shipped owner and the real Git binary; nothing is mocked except the spies that
-count calls while delegating. The availability and isolation cases fail on the first attempt's code
+The cases drive the shipped owner and the real Git binary; the counting spies delegate, while the failure case also monkeypatches a runner to synthesize transient Git failures before delegating successes. The availability and isolation cases fail on the first attempt's code
 (A1, which remembered positive tree probes), and the reviewer's mutants R2–R4 are killed by this module
 alone (review R2).
 
@@ -73,18 +72,19 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The real repository, the Git and parser spies, and the per-case emptied tables. [1]
-- Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path. [2]
-- Identical answers from one Git read per object and one parse per blob. [3]
-- A failed probe, lookup or blob read is asked again; only the success is remembered. [4]
-- An abbreviated id is never remembered; the admission test's refusals. [5]
-- Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound. [6]
-- **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.** [7]
-- **No repository's answers served for another, and one parse per grammar.** [8]
-- The lane registration. [9]
 
 ### Cross-Repo References
 
 No cross-repository behavior.
 
 No meaningful cross-repo references found.
+
+- The real repository, the Git and parser spies, and the per-case emptied tables. [1]
+- Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path. [2]
+- Identical answers from one Git read per object and one parse per blob.  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object" [3]
+- A failed probe, lookup or blob read is asked again; only the success is remembered.  Anchor: "test_a_failure_is_never_remembered_and_the_later_success_is_observed" [4]
+- An abbreviated id is never remembered; the admission test's refusals.  Anchor: "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered" [5]
+- Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.  Anchor: "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" [6]
+- **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**  Anchor: "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" [7]
+- **No repository's answers served for another, and one parse per grammar.**  Anchor: "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [8]
+- The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py" [9]

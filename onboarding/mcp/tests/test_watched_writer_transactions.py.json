@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_watched_writer_transactions.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7f00dd679640708c64a43a50c861885c136161d2",
+        "content": "sha256:4baa930eed682ea8f4d501c15067ed89573a9dd795c6a2c3b1689a58e985e511",
+        "locator": {
+          "kind": "symbol",
+          "name": "WatchedWriterTransactionTests.test_own_commit_before_note_is_deferred_then_suppressed"
+        }
+      },
+      "facet": "The exact controlled source case own commit before note is deferred then suppressed; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-120FRG",
+      "invariant": "INV-H9TEKD",
+      "origin": {
+        "handoffEntry": "L81-R1-F07",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F07/F08: real owned commits, late notes, outside effects and failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16a72c82bc496d5dabe7d3d51cdd1fd3d07fe9e2",
+            "content": "sha256:08e9868e5ddf03d79c95b1a8062fe549fe18ee4ebb12e6982dcfe24d48afd8f1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

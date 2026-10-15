@@ -34,7 +34,7 @@ it); the directory and index are removed when that observation exits.
 - Concurrent observations cannot unlink or reuse each other's temporary index.
 - Callers cannot supply the authoritative tree during capture.
 - Captured identity cells are immutable.
-- A direct-existing/series route is not a compatibility case and is explicitly refused.
+- Capture explicitly refuses non-leaf contracts, including series. It does not inspect a direct-existing route discriminator: a leaf is admitted by this local check, and any narrower route selection belongs to its caller.
 - The identity is semantic-acceptance input. It does not weaken the lifecycle journal's separate
   HEAD/mutation reconciliation.
 - Expected derivation failures are typed; no official-checkout or repository-id fallback exists.
@@ -58,15 +58,19 @@ No external documentation is needed for this repository-local identity owner.
 The strict model, capture sequence, and currentness check are intentionally colocated; the
 low-level Git algorithm remains separately owned.
 
-- The frozen strict route model prohibits mutation and undeclared identity fields. [1]
-- Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
-- Reuse requires exact equality of the complete bound route identity. [3]
-- Each capture gives the canonical helper its own temporary index in the system temp directory. [4]
 - Capture and stale-input outcomes use the package's central typed error family. [5]
-- The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. [6]
 
 ### Cross-Repo References
 
 No meaningful cross-repository boundary applies.
 
 This owner acts only inside the contract-resolved code worktree.
+
+- The frozen strict route model prohibits mutation and undeclared identity fields. [1]
+- Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
+- Reuse requires exact equality of the complete bound route identity. [3]
+
+- Each capture gives the canonical helper a private index inside `TemporaryDirectory(prefix=".future-code-candidate-")` without an explicit `dir=`. Its root follows the process default temporary-directory selection, rather than being explicitly allocated under enclosure reports. [4]
+
+
+- The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit. [6]

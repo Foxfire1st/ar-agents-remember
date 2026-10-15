@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-        "content": "sha256:23434087e371e7a63a15dcd767595e938f514b7d9c42f119f8f1d7fc1cd14126",
+        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "content": "sha256:0ea02c3960c70f242eb4d92552851eb64165636d41ed9fa1266e1e4cc116751e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProjectionInputWatcher._supervise_roots"
+        }
+      },
+      "id": "RLZ-6H9H95",
+      "invariant": "INV-3XG15P",
+      "origin": {
+        "handoffEntry": "L81-R1-F10",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The supervision seam treats abnormal root refresh as watch failure and drains native work before retry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "content": "sha256:5cd8cb35835c78911263c2de6b105edfe08b066fb98c34e5b8157b5de8d2d98e",
         "locator": {
           "kind": "symbol",
           "name": "ProjectionInputWatcher._watch_once"
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
+        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "content": "sha256:f705d1325d78462ed6c47528e31a09506c765313ed76a597c52cbe367c217e45",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangePacer._next_deadline"
+        }
+      },
+      "id": "RLZ-FQ8G92",
+      "invariant": "INV-1F0XGE",
+      "origin": {
+        "handoffEntry": "L81-R1-F05",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing pacer compares the full-heal deadline with other eligible wakes without extending heartbeat or rest.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
         "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
         "locator": {
           "kind": "symbol",
@@ -39,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-        "content": "sha256:9ac33691aca711cadf593eadd8370b87735d61cc821cc0361b4ca4ff959ad4ec",
+        "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+        "content": "sha256:f705d1325d78462ed6c47528e31a09506c765313ed76a597c52cbe367c217e45",
         "locator": {
           "kind": "symbol",
           "name": "ChangePacer._next_deadline"
@@ -62,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
             "content": "sha256:2cb87ad490ae8ef12ce5a6ea23b11e30b555646de177a59c71101e866b9bb4b6",
             "locator": {
               "kind": "symbol",
@@ -73,8 +109,8 @@
         },
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
             "locator": {
               "kind": "symbol",
               "name": "is_projection_input_event"
@@ -85,7 +121,7 @@
       ]
     },
     "10": {
-      "note": "Native registration is explicit and retains watcher lifecycle.\n\nAnchor: `ProjectionInputWatcher._watch_once`",
+      "note": "Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once`",
       "targets": [
         {
           "anchor": {
@@ -102,16 +138,16 @@
       ]
     },
     "11": {
-      "note": "The real completion floor preserves accumulated domains.\n\nAnchor: `ChangePacer.projection_completed`",
+      "note": "The real completion floor preserves accumulated domains.  Anchor: `ChangePacer.projection_completed`",
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
             "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
             "locator": {
-              "end": 324,
+              "end": 448,
               "kind": "line_range",
-              "start": 321
+              "start": 445
             }
           },
           "kind": "code"
@@ -119,7 +155,7 @@
       ]
     },
     "12": {
-      "note": "Completion rest participates in change/degraded/heartbeat deadlines.\n\nAnchor: `ChangePacer._next_deadline`",
+      "note": "Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline`",
       "targets": [
         {
           "anchor": {
@@ -140,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
             "content": "sha256:681a5dc2e0980891fca43c783fada3fa889ea4f6867b89d78e015f58aafd95b8",
             "locator": {
               "kind": "symbol",
@@ -156,8 +192,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:85fe05c92dd07be9cd8d58f69cf2ea8783ece0628de00a86aff22066d9f25da3",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:f7d2294a8174570e24b7a0af2751b9964fe3b0e5e95514b7f95948230733c46f",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionWake"
@@ -167,8 +203,8 @@
         },
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:0024aee435fd76231af9bd058b166566423b29f5561304c8e5ec7d2fda526a8c",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:420c8d7b01802e2fe3649edc67d8961658ea7bd988775a35c04e39dda9eff5ab",
             "locator": {
               "kind": "symbol",
               "name": "WakeTarget"
@@ -178,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
             "content": "sha256:ec2f4be59f9072063b40142e7c35683d9f83379a399a5d8f86ff75d257d8aab6",
             "locator": {
               "kind": "symbol",
@@ -189,8 +225,8 @@
         },
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
-            "content": "sha256:d0b97ace3cdc8d307eb4c750ab2d608f76fb2630e06195178df996dd014ccd5b",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:06ba9e497166b3ebc55f9b5c7db856ef36bb285fb7ceade25e2b9fc4882f9dd5",
             "locator": {
               "kind": "symbol",
               "name": "ChangePacer"
@@ -205,8 +241,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
-            "content": "sha256:4db8f10d8e86d66d426386a9db8fa9358930d52dc44de405e12d852651ac7b23",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:0a4dc25aa7478fb26addc2fbae9d53bcf4d39ff452b09c0442e4a648b6d4e29d",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionInputWatcher"
@@ -221,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -233,8 +269,8 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
+            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -250,8 +286,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
-            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
+            "content": "sha256:91d0302742e71a054ec9e189541bd252571ccff79f90082d54679902f56ef9f3",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -267,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
             "content": "sha256:4babe2064ad1955d4490d0dc029b8234dcd61c132957c66c0d0504cdba2b6b2b",
             "locator": {
               "kind": "symbol",
@@ -296,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
             "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
             "locator": {
               "kind": "symbol",
@@ -313,8 +349,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
-            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
               "name": "_dev_app"
@@ -325,12 +361,12 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:ee314be53ddf84df4e7af0f795b062e7f4bd3658c18021ca3541ce7e2f5e468c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:ecc3d2c00b6787e123a93f123127511d98473b9fbbd3f7b5d489e6e742f944bb",
             "locator": {
-              "end": 163,
+              "end": 153,
               "kind": "line_range",
-              "start": 111
+              "start": 101
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -338,12 +374,12 @@
         },
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:c6235aa994819787a4ebcf4ff4d2adbdd884eda20a29fd41a4577ecc4d315ba5",
             "locator": {
-              "end": 353,
+              "end": 355,
               "kind": "line_range",
-              "start": 353
+              "start": 355
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

@@ -15,11 +15,13 @@ the workspace; the file itself reads only the entries of the selected invariants
 The centre of the reviewer renders the family guarantee, the member context, the selected intent, the code and test expressions, and the evidence for the selected family or member. It carries the catalogue outline for member rows and draws planning marks only from a leaf-wide worklist that belongs to the comparison on screen. Layout, the open path and the leaf-wide tree read arrive by props; the file reads only the entries of the selected invariants.
 ## Code Commentary
 
+Family expression membership uses the already-shown family's member set, adding a standalone invariant identity only when no family is shown. The extracted guarantee component retains exact authored before/after text and styles; pending subject selection does not imply another same-set cards read.
+
+
 ### Recorded reviewer judgments
 
 The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history. The no-subject and member-without-identity branches use MeaningFieldGuard: a missing field is failure while a present empty collection remains valid. Recorded steps are open content outside disclosures, preserve own row revisions and reasons, and do not replace the before/after wording diff or the independent source/evidence owners.
 
-- The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history. [32]
 
 ### Which centre
 
@@ -67,7 +69,7 @@ the two texts when they differ.
 ### Expressions
 
 `CenterExpressions` asks `useReviewTreeEntries` for the entries of `cardInvariants`, every member of the
-selected family on both sides together with the selected invariant, sorted, at the comparison number
+selected family on both sides, or the selected invariant alone when no family is shown, sorted, at the comparison number
 the payload names. When the payload names no tree comparison (a dataset review) or the selection names
 no invariant, the hook returns `null` and `ReviewExpressions` renders the file view. Otherwise
 `ExpressionCards` renders the cards with the planning marks of `pinnedWorklist`, which passes the
@@ -82,29 +84,29 @@ Neither subject review nor that worklist embeds knowledge-file patches.
 
 ## Evidence
 
-- Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback. [33]
 
+
+
+
+
+
+
+- Guarantee rendering for one side or a compared pair [26]
 
 - The guarantee comparison by kind. [12]
-
 - The unselected centre. [13]
 - The completeness of a family entry's member context. [14]
 - The family centre. [15]
-
 - The independent facts of a member. [16]
 - The member centre. [17]
 - The exported wrapper sets the word-diff scope. [18]
+- Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel. [19]
 - Planning marks only from a leaf-wide read of the same comparison. [20]
-
 - Cards for a tree comparison, the file view for a dataset review. [22]
-
 - The invariants one selection reads. [23]
 - The selected entry, member, rows and listed paths. [24]
-
-- Guarantee rendering for one side or a compared pair [26]
 - One expression row per collection with verdict and occurrences [27]
 - Member review centre with subject rows and states [28]
-
 - Card read assembly for the selected centre [31]
-
-- Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel. [19]
+- The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history. [32]
+- Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback. [33]

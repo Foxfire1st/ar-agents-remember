@@ -1,22 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "Recurring historical probes multiply remote work with task history, while calling absent finals pending would falsely promise self-healing; exact transition eligibility and honest terminal state prevent both."
+    "justification": "Completed landing arcs and open landing-active contracts observed by this process. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
   },
-  "applicability": "Periodic dashboard landing observation sweeps for exact contract/code/memory/worktree keys.",
+  "applicability": "Completed landing arcs and open landing-active contracts observed by this process.",
   "conditions": [
-    "A key observed active in the preceding sweep and then completed receives exactly one finishing attempt only if no valid persisted final matches its exact key/current contract.",
-    "Success may freeze fully observed facts; missing/corrupt/stale final or failed finishing attempt remains honest missing history and gets no later periodic retry.",
-    "Open due probes retain the existing 30-second cadence and concurrency cap of four.",
-    "Successful writer-owned final replacement invalidates the prior parsed-final cache even if old/new filesystem timestamps are equal; failed writes retain their reported outcome."
+    "A completed arc with no valid final gets one attempt, including startup, with four terminal admissions per sweep.",
+    "Successful attempts freeze only complete matching facts; failure or final loss never re-arms the same arc.",
+    "A real reopen resets the arc; open work retains its existing cadence."
   ],
   "exclusions": [
-    "Startup-terminal or abandoned keys are never eligible for a finishing attempt.",
-    "Manual exact-current observation stays available through its existing owner.",
-    "A real reopen invalidates old final facts; build-only reopened phases remain probe-free until landing becomes active again."
+    "Abandoned or build-only keys remain probe-free.",
+    "No recurring repair of already-attempted terminal history."
   ],
   "id": "INV-D0551J",
   "origin": {
@@ -30,9 +27,9 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Historical completed/abandoned keys cause zero periodic Git/network probes, including after a process start.",
+  "statement": "A completed landing with no valid final gets one attempt per completed arc per process, including at startup, and terminal admissions are capped at four per sweep; success freezes, failure stays missing, loss of a final does not repeat history probes, and reopening resets that arc.",
   "status": "proposed",
   "supersedes": []
 }

@@ -34,9 +34,6 @@ Dashboard leaf Revive uses the shared grant-aware scope verifier before native b
 ## Evidence
 
 
-- Frozen implementation of _start_execution supporting the stated file behavior. [2]
-- Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
-- Frozen implementation of _revive_execution supporting the stated file behavior. [4]
 
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
 
@@ -56,19 +53,22 @@ The registration also mounts `POST /api/role-launch/document-chats/tree` through
 Investigator dispatch uses the existing selection admission lock; options expose per-request executions and omitted display rows for selected tasks. Result, retry and revive carry the exact saved UUID and canonical references through existing route owners. The one earlier spelling emits the shared notice; original receipt and report addresses remain readable without migration.
 
 
-- The current source implements this file’s stated Investigator boundary. [12]
 
 
 ## Refreshed current evidence
 
-- Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
 - The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]
 
 ## Current contract evidence
 
+- Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
+- Frozen implementation of _start_execution supporting the stated file behavior. [2]
+- Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
+- Frozen implementation of _revive_execution supporting the stated file behavior. [4]
+- The current source implements this file’s stated Investigator boundary. [12]
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]
 - The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
 
 - Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]

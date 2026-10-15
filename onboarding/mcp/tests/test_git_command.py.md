@@ -13,7 +13,7 @@ of a commit keeps exact state and refuses forged or stale authority.
 
 ## Code Commentary
 
-- The module's helpers create real repositories in temporary directories (`_init`, `_commit`).
+- The imported shared test-support helpers create real repositories in temporary directories (`_init`, `_commit`).
   `_selectors(decoy)` points all eight selector variables at a decoy repository. The redirection test sets
   them inside its own scope, because `conftest.py` removes them from the environment at import; the test
   therefore passes only when the production runner strips them.
@@ -35,6 +35,8 @@ of a commit keeps exact state and refuses forged or stale authority.
 
 Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip.
 
+The shared `_init` and `_commit` fixtures live in `agents_remember_test_support.testing.git_command` and are imported directly. `ReplaceFreshnessTests` lives in `test_git_object_memo.py`; its replacement-sensitive freshness controls moved unchanged. The runner and publication tests remain in this module.
+
 ## Evidence
 
 - The module docstring: why the redirection tests set the selectors themselves. [10]
@@ -46,3 +48,5 @@ Tree publication now runs pre-commit before ref movement and records Commit-Chec
 - The block under test. [16]
 
 - Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. Both private preparation policy spellings now exercise ordinary commit hooks; the old strict-code spelling supplies compatibility vocabulary, not a skip. [17]
+
+- Shared real-Git fixtures and replacement-freshness cases have direct owners, with no duplicated helper or re-export. [18]

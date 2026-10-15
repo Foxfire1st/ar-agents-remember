@@ -156,7 +156,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. [27]
 - Retained reference account (no fresh execution or acceptance inferred): `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. [28]
 - Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
-- Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache. [30]
 - Retained reference account (no fresh execution or acceptance inferred): Carryover completion is actual memory ancestry. [31]
 - Retained reference account (no fresh execution or acceptance inferred): Returned terminals are recorded and selected before recording/process refusal propagation. [32]
 - Retained reference account (no fresh execution or acceptance inferred): Recording requires exact admission and physically verified evidence. [33]
@@ -174,21 +173,20 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. [45]
 - Retained reference account (no fresh execution or acceptance inferred): Retained transport membership and byte limits come from frozen producer declarations. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
-- Retained reference account (no fresh execution or acceptance inferred): The frozen strict future-code route identity, and the capture that derives it without touching the real index. [48]
-- Retained reference account (no fresh execution or acceptance inferred): Currentness is exact equality of the whole bound route identity. [49]
 - Retained reference account (no fresh execution or acceptance inferred): The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. [51]
-- Retained reference account (no fresh execution or acceptance inferred): A leaf's integration is refused only by the lock. [52]
-- Retained reference account (no fresh execution or acceptance inferred): Record landing on unconverted memory returns the lock's answer. [53]
+
+- Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
+
+
+- Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf validator even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
+
 - Retained reference account (no fresh execution or acceptance inferred): The onboarding gate reads all of a leaf's history files. [54]
 - Retained reference account (no fresh execution or acceptance inferred): The validator and the mandatory gate over the leaf's exact memory output. [55]
 - Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
-- Retained reference account (no fresh execution or acceptance inferred): The index made exactly one tree. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
 - Retained reference account (no fresh execution or acceptance inferred): The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [59]
 - Retained reference account (no fresh execution or acceptance inferred): The finalization result carries the archive step's skip for a series contract. [60]
-- Retained reference account (no fresh execution or acceptance inferred): One Git command runs against a private index file; a failure keeps its name. [61]
-- Retained reference account (no fresh execution or acceptance inferred): Staging writes a private index file when asked; otherwise the worktree's own index. [62]
 - Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records. [63]
 
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
@@ -201,8 +199,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
 - Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
-- Future-code identity uses system-temporary capture and complete equality. [74]
-- Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. [75]
 - Converted trace comparison excludes mechanical anchor fields and joins every leaf history attempt. [76]
 - Finalization resolves targets before cleanup and reports cleanup/task-publication failures separately. [77]
 - Master folders are retained through the archive owner's series skip. [78]
@@ -226,7 +222,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
 - **Retained historical source account — superseded by the current route account:** Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 - **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality. [74]
-- **Retained historical source account — superseded by the current route account:** Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. [75]
+- Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. Existing historical descriptions retain their own source extent; the moved helper and shared entry are the current owners. [75]
 - **Retained historical source account — superseded by the current route account:** Converted trace comparison excludes mechanical anchor fields and joins every leaf history attempt. [76]
 - **Retained historical source account — superseded by the current route account:** Finalization resolves targets before cleanup and reports cleanup/task-publication failures separately. [77]
 - **Retained historical source account — superseded by the current route account:** Master folders are retained through the archive owner's series skip. [78]
@@ -236,3 +232,12 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1. [82]
 
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
+
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache. [30]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The frozen strict future-code route identity, and the capture that derives it without touching the real index. [48]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Currentness is exact equality of the whole bound route identity. [49]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The index made exactly one tree. [57]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): One Git command runs against a private index file; a failure keeps its name. [61]
+- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Staging writes a private index file when asked; otherwise the worktree's own index. [62]
+
+- **Historical source-bound reference account, not an operative override:** Future-code identity uses system-temporary capture and complete equality. [74]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
-        "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
+        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
+        "content": "sha256:349117148f42c41bbc0da76d4be4c9d51a5cc82b75281b5a3de4af438ee9772f",
         "locator": {
           "kind": "symbol",
           "name": "useDocumentChat"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
-        "content": "sha256:642ca6da62ef561ac126c5cd1343a53b4cecd98753d6634f15f967b31a4c23b2",
+        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
+        "content": "sha256:349117148f42c41bbc0da76d4be4c9d51a5cc82b75281b5a3de4af438ee9772f",
         "locator": {
           "kind": "symbol",
           "name": "useDocumentChat"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
+        "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
         "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.\n\nAnchor: `useDocumentChat`",
+      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.  Anchor: `useDocumentChat`",
       "targets": [
         {
           "anchor": {
-            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-            "content": "sha256:a059071e7f754f1213ec554aba026c3384129a118e7db4432c7553716078f047",
+            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
+            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
             "locator": {
               "kind": "file"
             }
@@ -73,15 +73,14 @@
       ]
     },
     "2": {
-      "note": "A dispatch receipt is adopted only for the live scope with an exact agent and request id.",
+      "note": "A dispatch receipt is adopted only for the live scope with an exact agent and request id.\n\nAnchor: `launchedRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
-            "content": "sha256:244c926bcd9bd4de80970d6ea9988adc30b45b230335c10b2848425b4829f420",
+            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
+            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
             "locator": {
-              "kind": "symbol",
-              "name": "launchedRequest"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -89,15 +88,14 @@
       ]
     },
     "3": {
-      "note": "The displayed agent is the launched request's agent or the newest live record, never a stale document's.",
+      "note": "The displayed agent is the launched request's agent or the newest live record, never a stale document's.\n\nAnchor: `displayedAgent`",
       "targets": [
         {
           "anchor": {
-            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
-            "content": "sha256:de3f4b69421ae544cefb0f88a02ec82e5d5fc8599a3977b0143b00514bbe7fb0",
+            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
+            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
             "locator": {
-              "kind": "symbol",
-              "name": "displayedAgent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -105,15 +103,14 @@
       ]
     },
     "4": {
-      "note": "Only a known agentless selection hides the retained frame; unknown agent knowledge keeps it shown and held.",
+      "note": "Only a known agentless selection hides the retained frame; unknown agent knowledge keeps it shown and held.\n\nAnchor: `chatPresentation`",
       "targets": [
         {
           "anchor": {
-            "blob": "791437ba401744b0287b9bfe5327d43b8bbd761d",
-            "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
+            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
+            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
             "locator": {
-              "kind": "symbol",
-              "name": "chatPresentation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -125,10 +122,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-            "content": "sha256:a059071e7f754f1213ec554aba026c3384129a118e7db4432c7553716078f047",
+            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
+            "content": "sha256:cc1c51b2dbc10b8e7c787191bcfc54df787d6e0386addd68fcf20be5e7903058",
             "locator": {
-              "end": 77,
+              "end": 111,
               "kind": "line_range",
               "start": 1
             }

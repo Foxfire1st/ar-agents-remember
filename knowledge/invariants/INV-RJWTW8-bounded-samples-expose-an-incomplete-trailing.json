@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Trailing CPU/unit/wake diagnostics in the bounded owner ledger. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Trailing CPU/unit/wake diagnostics in the bounded owner ledger.",
+  "conditions": [
+    "Expiry uses monotonic time.",
+    "Cutoff detail evictions set an incomplete-window flag; process samples expose their actual span."
+  ],
+  "exclusions": [
+    "No interpolation or approximate complete sixty-second claim."
+  ],
+  "id": "INV-RJWTW8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_background_accounting.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F04",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bounded samples expose an incomplete trailing window honestly when the cutoff cannot be observed, while monotonic expiry and retained sums stay accurate.",
+  "status": "proposed",
+  "supersedes": []
+}

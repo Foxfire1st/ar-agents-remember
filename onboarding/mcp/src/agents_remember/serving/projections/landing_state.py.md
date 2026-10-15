@@ -10,14 +10,11 @@
 
 ## Truthful terminal history and exact finishing eligibility
 
-Historical completed/abandoned keys receive no periodic Git/network probe, including at startup. An exact key retained from the preceding active sweep may receive one finishing attempt after completion only when it lacks a valid current-contract persisted final. Matching valid finals are served without another attempt. The active observation map drops completed keys after that attempt even if it failed or could not freeze complete facts.
+A completed arc lacking a valid current-contract final may receive exactly one finishing attempt per process, including at startup, with at most four terminal admissions per sweep. Matching valid finals serve without an attempt. The attempt stays consumed after success, failure or later final loss; only a real reopen re-arms that arc. Abandoned/build-only keys remain probe-free. This deliberately supersedes the earlier startup-zero exclusion, not the exact-key, matching-final or no-recurring-history boundaries.
 
 Missing, corrupt or contract-predating finals stay honest terminal missing facts (`no final observation recorded`), not a promise of recurring repair. Successful complete finishing facts may freeze once. Existing manual exact-current reads remain available. Real reopen invalidates the prior final; build-only phases stay probe-free until closeout or integration activates landing again. Open due probes retain 30-second cadence/four concurrency.
 
 
-- Exact keys and final validity govern finishing eligibility. [3]
-- Terminal keys leave the retained sweep after their single attempt. [4]
-- Final facts are served or honestly reported missing. [5]
 
 ## Code Commentary
 
@@ -38,8 +35,6 @@ No external Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-- Projector owns startup and cancellation. [1]
-- Landing facts are merged into projected status. [2]
 
 ### Cross-Repo References
 
@@ -53,4 +48,9 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.
 
-- Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps. [6]
+- Projector owns startup and cancellation. [1]
+- Landing facts are merged into projected status.  Anchor: "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" [2]
+- Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions. [3]
+- A terminal finishing attempt remains consumed after success, failure and subsequent final loss until reopen. [4]
+- Final facts are served only after complete matching reducer/participant validation, otherwise as honest missing. [5]
+- Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps.  Anchor: `LandingStateRefresher._maybe_freeze` [6]

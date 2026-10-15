@@ -73,8 +73,7 @@ whose `commit` is optional and whose `detail` carries why there is none; `_unrea
 
 ### Invariants And Boundaries
 
-- **No unfavourable fact is promoted into a claim.** `not-measured` and `unavailable` never become
-  `stale`: promoting an absence into a movement would report a movement nobody observed.
+- **Explicit unavailable findings are not themselves replacements.** They keep their reason and no observed tip. However `_related` converts an OSError/RuntimeError from `is_ancestor` to false, which `_ancestry` classifies as replaced/stale; this local failure fallback is not an implemented no-promotion guarantee.
 - **An absence always names its reason and carries no observed identity.** A channel that could not be
   read reports `unavailable` and carries no observed value at all rather than a favourable default
   (`_report`, `:496-527`), and the unreadable-generation state invents no generation identity
@@ -82,13 +81,10 @@ whose `commit` is optional and whose `detail` carries why there is none; `_unrea
   `_measure_generation`, and travels as `_BoundaryAbsence.detail` rather than being re-derived by the
   caller that publishes it.
 - **The closeout statement never gates.** `external_git_movement_result_block` (`:421-456`) attaches a
-  typed block to a successful result and returns a failed result untouched; the closeout door's own
-  source-lineage checks remain the only checks on that transaction.
-- **Boundary: the four named transitions are documented as three unsupported plus one stale.**
+  typed block to a successful result and returns a failed result untouched; the transaction retains its existing closeout admission, approval, certification and source-lineage checks; this descriptive block adds none.
+- **Boundary: all four named raw transitions are unsupported for reconciliation; rebase additionally reports stale.**
   `cherry-pick` and `revert` move the branch *forward*, so the recorded commit is still in history and
-  no ancestry check identifies either — the module's own docstring says so — and that measurement
-  belongs to the owners that already take it (the managed-sync rebinding on the sync route, the reopen
-  channel on the read route). The matrix says exactly that rather than implying support by silence.
+  no ancestry check identifies either. The matrix directs a successor tree comparison: managed-sync rebinding exists only after an actual carry/resolved pair, and the reopen channel measures comparison availability, not the pick or revert itself. The matrix says exactly that rather than implying support by silence.
 - **Boundary: `branch-switch` is reported as `not-measured`, not as a replacement.** The checkout left
   the declared branch, so the work-branch comparison cannot be taken at all; the state carries the
   sub-fact rather than claiming an identity was replaced, and this system never checks a branch out on a
@@ -111,14 +107,41 @@ matrix, and the assertion that binds the two is filed under Repo-Internal Refere
 ### Repo-Internal References
 
 Every claim on this card is checkable in the module's own declarations, in the owners whose reads it
-composes, and in the cases that drive them. The three details a reader should carry: **the matrix is the
-authority on which transitions are supported, and three of the packet's four named transitions are
-recorded as unsupported rather than implied supported**; **`unchanged` exists so the control state never
-names an event that did not happen**; and **every entry point answers with a state, never with an
-exception, because a measurement that could not be taken must not fail the read that needed it.**
+composes, and in the cases that drive them. The three details a reader should carry: **the matrix is the authority: all four packet-named raw transitions have unsupported reconciliation, and rebase additionally has stale boundary state**; **`unchanged` exists so the control state never
+names an event that did not happen**; and **caught expected Git/store failures are represented as states. Review measurement calls _report outside its read-error catches, so report-model validation can still raise; the named lookup deliberately raises KeyError for unknown transitions. This is not a universal never-raising guarantee.**
 
-- **The module's own statement of what is measured, what is not claimed, and that no ancestry check identifies a pick or a revert.** [1]
-- The owners this module composes, and the three guarded Git reads it borrows. [2]
+- **The value this module publishes, its four-state union and the validator that refuses every false shape.** [39]
+- **The transition vocabulary, including `unchanged` as the measured absence of a transition.** [40]
+- The task-context review boundary, which takes the same measurement and refuses nothing on it. [42]
+- **The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.** [43]
+- **The closeout preview, closeout apply and integration call sites that attach the statement.** [44]
+- The integration result block that carries the same statement. [45]
+- **The documented matrix, asserted to be the rendered production table rather than a transcription.** [46]
+
+- Uncommitted records invent no observed HEAD, and history replacement retains source identity without fabricated UUIDs. [47]
+
+
+- The documented matrix comes from the measured-operation table. [48]
+
+
+- Contradictory boundary measurements are refused. [49]
+
+
+- Untouched, advanced and rewritten history have distinct measured answers. [50]
+
+
+### Cross-Repo References
+
+The module measures multiple local code/source/memory repository identities selected by one leaf contract; it makes no remote, credential or network call. Every repository it touches is a checkout
+this same repository's own contract resolved — the code worktree, the declared source branch and the
+memory work branch all belong to the leaf whose enclosure contract was passed in — and the generation it
+reads lives under the task root the same contract names. The three reads it performs are local Git
+ancestry questions asked through `worktrees/modules/git.py`, and no remote, credential, network or
+external system is involved. No cross-repo reference row is recorded here because no cited range proves
+a repository or external-system boundary.
+
+- **The module's own statement of what is measured, what is not claimed, and that no ancestry check identifies a pick or a revert.**  Anchor: "It measures; it decides nothing." [1]
+- The owners this module composes, and the three guarded Git reads it borrows.  Anchor: `is_ancestor` [2]
 - The published surface: the matrix, its row type, the three entry points, the renderer and the lookup. [3]
 - The four states this module may report, declared once as the read surface's own vocabulary. [4]
 - **The recovery a generation that cannot be read names, kept apart from the successor generation a movement names.** [5]
@@ -145,7 +168,9 @@ exception, because a measurement that could not be taken must not fail the read 
 - The three declared channels turned into findings, in fixed order. [26]
 - **The one ancestry decision: `current` / `advanced` / `replaced` / `unavailable`, where `advanced` is a measurement of its own.** [27]
 - The failure state an unreadable channel or repository earns. [28]
-- The reads that can fail, each keeping its failure as a state rather than raising. [29]
+
+- `_tip` preserves read failure as missing tip; `_object_readable` returns false on expected errors; `_related` also returns false on errors, which `_ancestry` treats as replacement, so not every failed read stays an unavailable state. [29]
+
 - The ancestry read that answers whether a recorded identity is still in a branch's history. [30]
 - The shape measured for one finding, never the command guessed. [31]
 - The replaced identity spelled `channel:identity` for the value no longer in place. [32]
@@ -155,33 +180,4 @@ exception, because a measurement that could not be taken must not fail the read 
 - **The agreement sentence, whose `unchanged` clause never describes an advance.** [36]
 - The movement sentence: the replaced channels first, then the channels that still stood. [37]
 - The replacement spelled from the values the check read rather than from a diagnosis. [38]
-- **The value this module publishes, its four-state union and the validator that refuses every false shape.** [39]
-- **The transition vocabulary, including `unchanged` as the measured absence of a transition.** [40]
-- **The review read that calls this owner and carries the value on the payload.** [41]
-- The task-context review boundary, which takes the same measurement and refuses nothing on it. [42]
-- **The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.** [43]
-- **The closeout preview, closeout apply and integration call sites that attach the statement.** [44]
-- The integration result block that carries the same statement. [45]
-- **The documented matrix, asserted to be the rendered production table rather than a transcription.** [46]
-
-- Uncommitted records invent no observed HEAD, and history replacement retains source identity without fabricated UUIDs. [47]
-
-
-- The documented matrix comes from the measured-operation table. [48]
-
-
-- Contradictory boundary measurements are refused. [49]
-
-
-- Untouched, advanced and rewritten history have distinct measured answers. [50]
-
-
-### Cross-Repo References
-
-No cross-repository behavior is implemented in this module. Every repository it touches is a checkout
-this same repository's own contract resolved — the code worktree, the declared source branch and the
-memory work branch all belong to the leaf whose enclosure contract was passed in — and the generation it
-reads lives under the task root the same contract names. The three reads it performs are local Git
-ancestry questions asked through `worktrees/modules/git.py`, and no remote, credential, network or
-external system is involved. No cross-repo reference row is recorded here because no cited range proves
-a repository or external-system boundary.
+- **The review read that calls this owner and carries the value on the payload.**  Anchor: `external_git_movement` [41]

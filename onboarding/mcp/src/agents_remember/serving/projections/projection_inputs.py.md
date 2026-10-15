@@ -11,6 +11,9 @@ invalidated by the filesystem watcher.
 
 ## Code Commentary
 
+A complete path sample refreshes changed task/lifecycle inputs and their actual document consumers rather than rereading the corpus. Documentary changes do not force unrelated structural domains. Closeout queues separately authenticate each sprint's code/memory/source-tip/document inputs; workspace-only wakes do not demand a full census. Full/incomplete-path reconciliation retains complete semantics.
+
+
 ### Logic
 
 `ProjectionRefresh` distinguishes full, change, and heartbeat ticks across tasks, lifecycles,
@@ -56,8 +59,8 @@ retention and invalidation explicit rather than heuristic.
 
 ### Invariants And Boundaries
 
-- Heartbeats update time-derived ages without rereading heavy domains.
-- Lifecycle-only changes do not reread tasks, drift, providers, or repository surfaces.
+- Heartbeats advance display ages and reconcile lifecycles/providers/workspace; repository surfaces are read only on full passes or after their 120-second TTL, and a pending failure forces a full retry.
+- Lifecycle-only invalidation retains task/drift inputs. Providers refresh if lifecycle-derived admission changes; repository surfaces refresh when their TTL expires or full reconciliation is required.
 - Admission groups are recomputed when their task/lifecycle inputs change.
 - Deleted rows are removed on the next refresh of their owning domain.
 - The pass is re-bound, never mutated: `RefreshPass` / `ActiveGroups` / `ProjectionReaders` are all
@@ -75,8 +78,6 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-- Projection write edge consumes this retained input state. [1]
-- The serialized worker maps watcher wakes to refresh kinds. [2]
 
 
 ### Cross-Repo References
@@ -85,7 +86,7 @@ No meaningful cross-repository references found.
 
 ## 2026-08-26 Atomic Task Refresh Retry
 
-Task-domain refresh now sets a pending bit before reading and publishes contracts, enclosures, task
-documents, and series only after every read succeeds. A failure preserves the complete last-good
-snapshot and leaves the bit set; a later heartbeat retries even without another task-domain change.
-Successful publication clears the bit.
+A failed input pass sets `_task_refresh_pending`; the next read forces full reconciliation and clears the flag only after success. `_refresh_tasks_full` gathers its task nodes before replacing task slots. Incremental refresh assigns contracts/enclosures before reprojecting documents, and later domain readers can fail after task slots changed; the reader does not promise an all-slot last-good rollback. Failed passes do not return a new ProjectionInputs aggregate.
+
+- Projection write edge consumes this retained input state. [1]
+- The serialized worker maps watcher wakes to refresh kinds. [2]

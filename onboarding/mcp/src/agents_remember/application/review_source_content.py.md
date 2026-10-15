@@ -23,11 +23,11 @@ Three properties are the reason the module exists rather than living inside the 
    `submodule` (a recorded pointer with no file bytes at all) or `unavailable` (the entry could not be
    read, with the reason). `absent` and `unavailable` stay apart: one is a measured fact about the
    endpoint, the other a measurement that was not made.
-3. **The path is admitted by a measurement or a recorded realization of the same comparison, never by
+3. **The path is admitted by a measurement or a recorded realization or proof of the same comparison, never by
    the caller — and not by this module.** Since 260921-ICR-L43 the admission policy lives in
    `application/review_source_admission.py`, which admits exactly two populations: a path a measured
    change set lists (the requested generation's own, or — when that pair cannot be measured — the
-   change set this leaf's review publishes), and an unchanged path that a realization recorded in the
+   change set this leaf's review publishes), and an unchanged path that a realization or proof recorded in the
    bound comparison's own knowledge is anchored at. Every other path is refused by name. That is what
    keeps this route a comparison-bound read rather than a general file reader over the recorded base.
 
@@ -71,7 +71,7 @@ comes back. Only an admission reaches `_side_content`. The expansion's `status`,
 `path_bound`/`path_bound_detail` and `admission`/`admission_detail` are copied from the admission value,
 so this module states the admission and never re-derives it: `changed` for a listed path (with the
 entry's status, or `unknown` when the leaf change set bounded an unmeasured pair) and
-`attributed_unchanged` with status `unchanged` for context a recorded realization of the same
+`attributed_unchanged` with status `unchanged` for context a recorded realization or proof of the same
 comparison links. The byte reads are identical for both populations.
 
 **`_currentness` re-uses the shipped recheck rather than inventing one.** `require_current_candidate_identity`
@@ -89,8 +89,8 @@ recorded commit as `object_id` and no bytes, a symlink mode reads the blob as it
 (`_symlink_content`), and everything else is a regular file's bytes.
 
 **`_decoded` is where "cannot be carried as text" is decided, and the two reasons are stated
-separately.** A NUL byte inside the first `_BINARY_SNIFF_BYTES` (Git's own window) is binary; bytes that
-are simply not valid UTF-8 have no lossless spelling in this vocabulary and are reported as
+separately.** A NUL byte inside the first `_BINARY_SNIFF_BYTES` (Git's own window) is binary; bytes in the inspected complete object or capped prefix that
+are not valid UTF-8 have no lossless spelling in this vocabulary and are reported as
 unrenderable rather than re-encoded into a document this repository does not hold. Text is carried up to
 `EXPANSION_TEXT_BYTES` (2 MiB, the same bound the shipped file reader applies), and `_text_detail` says
 either "the complete content of this endpoint's N-byte object" or that the text above is the first
@@ -104,7 +104,7 @@ pathspec magic and a name holding `*` or `[` could match a neighbour — measure
 answer and its own name compared with the requested path, so a record for some *other* path is a failed
 lookup rather than a silent substitution.
 
-**`_reproduction` prints the exact commands that obtain the same bytes.** One line per side: the
+**`_reproduction` prints lookup/object-command hints, not a universally paste-safe reproduction.** One line per side: the
 `ls-tree -l` lookup, and — when the side's state is a blob state — `cat-file blob <oid>` for the exact
 object the answer rests on; a submodule side prints `cat-file -t` for the recorded commit instead, and
 a side with no object prints the lookup alone. `_quoted` adds shell quoting only when the name contains
@@ -131,7 +131,7 @@ Nothing here writes a file, holds state, or selects a record.
   working-tree path, so an entry opened after the branch advanced still shows the listed generation and
   says `superseded`.
 - **A path is read only when the admission owner admits it.** A changed path of a measured change
-  set, or an unchanged path a recorded realization of the same comparison links; both are stated on
+  set, or an unchanged path a recorded realization or proof of the same comparison links; both are stated on
   the answer (`path_bound`, `admission`) and neither widens the read to an arbitrary path. Attributed
   context is never an inventory entry and never counts as a changed file.
 - **`absent` and `unavailable` are different facts.** One is the endpoint measured and holding nothing
@@ -170,37 +170,19 @@ functions, the vocabulary it fills in `models/knowledge/review_source_content.py
 resolution owners it delegates to, the transport route that reaches it through a port, and the cases
 that measure it against real repositories.
 
-- **The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded-realization context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).** [1]
-- The published surface: the expansion's text bound, the operation's own reference, and the one entry point. [2]
-- The bound one side may carry — the same 2 MiB the shipped file reader applies — and the window Git itself inspects before this surface classifies a blob. [3]
-- The entry modes the content read interprets for itself, and the states whose object is a blob printable from its recorded identity. [4]
-- The four stated sentences a side can carry: no entry here, a link target rather than a document, a target that is not valid text, and a submodule pointer with no bytes of its own. [5]
-- **The one entry point: resolve, screen, then read — with the currentness measurement taken after the bytes so it can only qualify them.** [6]
-- **The four admission facts, each a distinct refusal: a complete object identity, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** [7]
-- **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement rather than a refusal.** [8]
-- The expansion itself: the measured pair re-asked through the inventory owner, the admission asked of the admission owner, both sides read at the requested trees, and the value assembled with the generation and admission statements. [9]
-- **The admission owner this module calls: a changed path of a measured change set, or an unchanged path a recorded realization of the same comparison links; the admission travels on the value.** [10]
+
+- **The admission owner this module calls: a changed path of a measured change set, or an unchanged path a recorded realization or proof of the same comparison links; the admission travels on the value.** [10]
+
 - The refusals that keep the read confined, now in the admission owner: an unmeasured pair with no admitting change set, a measured pair whose recorded knowledge does not link the path, and a link that could not be determined. [11]
 - The status of an admitted path — the entry's own, `unchanged` for attributed context, and `unknown` when the pair's change set was not measured, rather than a status guessed from the bytes that happen to be there. [12]
-- **Whether the requested generation is still the pair the leaf binds: the shipped recheck, and the three statements — current, superseded, unmeasured — that each end by saying the content is the requested generation's and no newer one.** [13]
-- **One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.** [14]
-- **The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.** [15]
-- A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling. [16]
-- **The two reasons no text form exists — a NUL inside Git's own sniff window, and bytes that are not valid UTF-8 — and the bounded decode that carries a prefix rather than the whole object.** [17]
-- **One path's entry in one tree, asked with a literal pathspec so a measured name is an address and not a pattern, and checked against the path that was asked about.** [18]
-- The byte-exact blob read through the kernel's own reader, so a file's content is never normalized on its way to a reader. [19]
-- **The reproduction line: the exact `ls-tree`/`cat-file` commands that obtain the same bytes, naming every object the answer rests on.** [20]
 - The second of the two path checks: the spellings Git could not have reported are refused before any argv is built, with the offending input bounded by the admission owner's helper. [21]
 - **The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.** [22]
 - The expansion value: the requested generation echoed back, the currentness statement, the bounding measurement, the admission, and the command beside the content. [23]
 - The request that carries the task context, the path and the exact generation, and the result that is either the expansion or one typed refusal and never both. [24]
-- **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
-- The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. [26]
 - **The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.** [27]
 - The third port the composition root supplies, and the wiring that gives it the real owner. [28]
 - The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. [29]
 - **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** [30]
-- **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
 - The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. [32]
 
 ### Cross-Repo References
@@ -210,3 +192,30 @@ objects at task-context-resolved roots and carries no identity that ranges beyon
 request names.
 
 No meaningful cross-repo references found.
+
+
+- **The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded realization-or-proof context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).**  Anchor: "does not decide which paths are addressable" [1]
+
+- The published surface: the expansion's text bound, the operation's own reference, and the one entry point. [2]
+- The bound one side may carry — the same 2 MiB the shipped file reader applies — and the window Git itself inspects before this surface classifies a blob. [3]
+- The entry modes the content read interprets for itself, and the states whose object is a blob printable from its recorded identity. [4]
+- The four stated sentences a side can carry: no entry here, a link target rather than a document, a target that is not valid text, and a submodule pointer with no bytes of its own. [5]
+- **The one entry point: resolve, screen, then read — with the currentness measurement taken after the bytes so it can only qualify them.** [6]
+- **The four admission facts, each a distinct refusal: a complete object identity, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** [7]
+- **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement rather than a refusal.** [8]
+- The expansion itself: the measured pair re-asked through the inventory owner, the admission asked of the admission owner, both sides read at the requested trees, and the value assembled with the generation and admission statements. [9]
+- **Whether the requested generation is still the pair the leaf binds: the shipped recheck, and the three statements — current, superseded, unmeasured — that each end by saying the content is the requested generation's and no newer one.** [13]
+- **One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.** [14]
+- **The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.** [15]
+- A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling. [16]
+
+- **The two inspected reasons for no text form: NUL in the sniff window, or UTF-8 failure in the full small object/capped prefix. Oversized uninspected suffix bytes are not validated.** [17]
+
+- **One path's entry in one tree, asked with a literal pathspec so a measured name is an address and not a pattern, and checked against the path that was asked about.** [18]
+- The byte-exact blob read through the kernel's own reader, so a file's content is never normalized on its way to a reader. [19]
+
+- **Reproduction hints name the exact object IDs. The displayed lookup omits literal pathspec magic and shell quoting is incomplete, so these strings do not guarantee reproduction for every admitted path/root spelling.** [20]
+
+- **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
+- The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. [26]
+- **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]

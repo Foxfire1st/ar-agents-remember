@@ -6,21 +6,20 @@
 
 ## Purpose
 
-`drift_snapshots.py` centralizes the observer drift-snapshot file contract and
-the retention policy for worktree-owned snapshots. It gives the drift producer,
-projection tick, and cleanup path one shared way to name and remove snapshot
-files so stale dashboard mirror rows do not survive after their worktree has
-been deleted.
+`drift_snapshots.py` owns serving-time retention of worktree drift snapshots.
+Naming and exact cleanup deletion belong to `kernel/primitives/drift_snapshot.py`;
+this serving module consumes the observer directory/schema contract and prunes
+valid orphan snapshots, optionally announcing its own removals.
 
 ## Code Commentary
 
 ### Logic
 
-`drift_snapshot_path(coordination_root, repository, branch)` sanitizes the
+`kernel/primitives/drift_snapshot.py::drift_snapshot_path(coordination_root, *, repository, branch)` sanitizes the
 repository and branch tokens the same way drift report paths are sanitized, then
 returns the corresponding `logs/observer/drift/<repo>__<branch>.json` path.
 
-`remove_drift_snapshot(...)` removes or dry-runs the exact snapshot for one
+The kernel `remove_drift_snapshot(...)` removes or dry-runs the exact snapshot for one
 repository/branch pair and returns a small result payload with the path,
 repository, branch, removal state, and an honest reason when the file is already
 absent or unlink fails.
@@ -44,7 +43,7 @@ shared across ticks and are only read here, never mutated.
 
 ### Conventions
 
-The filename contract is shared through this module rather than reconstructed in
+The filename contract is shared through the kernel primitive rather than reconstructed in
 each producer or test. Snapshot validity is schema-based
 (`ar-drift-snapshot/v1`), matching the observer reader's contract.
 
@@ -79,12 +78,6 @@ No external Domain Documentation source is configured for this memory repo.
 This helper is intentionally small but load-bearing because it sits between the
 drift producer, the observer projection tick, and worktree cleanup.
 
-- The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload. [1]
-- Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. [2]
-- `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. [3]
-- The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. [4]
-- The projection-input module exposes the `read` and refresh entries. [5]
-- The projection-store module exposes the `project_and_write` entry. [6]
 
 | Cleanup binds the `cleanup_result`. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:611-656 |
 
@@ -92,3 +85,10 @@ drift producer, the observer projection tick, and worktree cleanup.
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
+
+- The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload.  Anchor: "def drift_snapshot_path(coordination_root: Path", "def remove_drift_snapshot(", "return _remove_snapshot_file(" [1]
+- Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot` [2]
+- `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys` [3]
+- The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes.  Anchor: `ContractSnapshot`, `ContractSnapshotCache` [4]
+- The projection-input module exposes the `read` and refresh entries.  Anchor: "def read(", "def _refresh_tasks(", "def _refresh_drift(" [5]
+- The projection-store module exposes the `project_and_write` entry.  Anchor: "def project_and_write(" [6]

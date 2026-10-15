@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/data/reviewTrees.cards.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exercise the mounted reviewTrees.cards owner and its delivered read/selection states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea49e702c1c9632abbec220ad180f759166fa346",
+            "content": "sha256:5300b67a7586ec528d038c7665cb459c8f2eec4d6fdcb2557d20e77e58218d1f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

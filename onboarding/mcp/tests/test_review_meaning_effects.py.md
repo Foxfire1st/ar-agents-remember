@@ -19,5 +19,4 @@ The half-recorded family discriminator first writes valid attempt-3 text history
 - The composed answer orders attempts numerically, including attempt ten. [1]
 - The retired selection retains its after-history sequence and outline equality. [2]
 - The real historical sequences are portable checkout-owned fixtures. [3]
-
 - Invalid derived history is fault-injected by updating exactly one text-staged index row. [4]

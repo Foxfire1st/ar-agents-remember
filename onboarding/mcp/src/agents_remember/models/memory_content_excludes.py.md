@@ -75,7 +75,7 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - The declared policy: the ledger cache, the bootstrap scaffolding, and their one tuple. [1]
-- The staging helper that turns each name into `:(top,exclude)<name>` plus an `update-index --force-remove`. [2]
+- The staging helpers turn names into exclusion pathspecs and remove derived entries from the index. [2]
 - Producer 1 — baseline adoption consumes the constant on the call that stages. [3]
 - Producer 2 — memory carryover consumes the same constant in its apply path. [4]
 - Producer 3 — external closeout consumes it on the dirty check, the stage and the commit. [5]

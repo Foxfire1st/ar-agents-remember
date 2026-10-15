@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The accepted rule5/round5 qualification confines this race to the independently due full reconciliation rather than pretending the lock serializes a noncooperator."
+  },
+  "alternatives": [
+    {
+      "option": "Keep under-lock descriptor capture for cooperating writers and recover the named outside race through full healing.",
+      "reason": "The accepted rule5/round5 qualification confines this race to the independently due full reconciliation rather than pretending the lock serializes a noncooperator.",
+      "status": "chosen"
+    },
+    {
+      "option": "Demand an immediate identity-perfect guarantee for an append ignoring that lock.",
+      "reason": "Immediate race-proof observation is not credited; the independent full-healing requirement remains load-bearing.",
+      "reconsider_when": "The owner approves a stronger transaction protocol or changes the healing bound, not merely because one test is green.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Immediate race-proof observation is not credited; the independent full-healing requirement remains load-bearing."
+  ],
+  "context": "A writer ignoring the shared lock can append between flush and descriptor identity capture.",
+  "decider": "Developer requirement/ruling authority, recorded by Curator without reversal.",
+  "id": "DEC-8KWXP8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-H9TEKD"
+    },
+    {
+      "relation": "constrains",
+      "target": "FAM-CAG581"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L81-ROUND-5-FOR-THE-STRONGER-CODER-FOUR-DEFECTS-REPAIRED-F07-BOUNDED-BY-RULE-5-F08-ONE-COMPOSITION-TEST-RULING.json"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-bounded-append-healing",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

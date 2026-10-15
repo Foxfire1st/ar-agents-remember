@@ -16,6 +16,9 @@ Own the review workspace layout and its transient display state: the family navi
 - Changed files open in the change-set viewer the product already has (`ReviewChangeSetNavigation`); the reviewer keeps no file list of its own (MIK-R86). The workspace holds no source explorer and no unexplained-lane components.
 ## Code Commentary
 
+In-tree family/member selections whose family context is already loaded begin bound expression-card prefetch before selected-subject navigation; an unloaded outline family navigates without that prefetch. The mounted workspace and retained inspection state remain independent of the pending reading block; existing selection, refusal, focus and comparison-generation rules are preserved.
+
+
 ### State above the reads
 
 `useWorkspaceState` is called by the surface, above the pane switch, so a page read or a selection never resets it. It holds:
@@ -84,7 +87,7 @@ Because the effect also runs when the tree intent changes, a selection that need
 
 ### Held lane and the leaf's worklist read
 
-- `WorkspaceCenter` reads the leaf-wide `/api/review/trees` view through `useReviewTrees`, pinned to the payload's comparison number, and only for a tree comparison (the hook's `enabled` flag is false otherwise). The result goes to `FamilyReviewCenter` as `leafTrees`.
+- `WorkspaceBody` reads the leaf-wide `/api/review/trees` view through `useReviewTrees`, pinned to the payload's comparison number and enabled only for a tree comparison. It passes the same `leafTrees` result to both `WorkspaceRail` and `WorkspaceCenter`; the center passes it to `FamilyReviewCenter`.
 - Lane destinations open the comparison change-set viewer with held classification filters. The own
   worklist view receives leafTrees and comparison binding separately; no `UnexplainedLaneCenter` or
   lane-focused file view remains.
@@ -111,34 +114,39 @@ At or below 60rem the grid is one column. `markerReturn` is then sticky at `top:
 
 ## Evidence
 
+
+- The walk itself. [40]
+- The workspace's moves for an intent marker: select the target through the navigation, and restore the reading position. [41]
+- The scope header's record label lives in the header's module. [42]
+- The triage bar sticks below the way back at the workspace's offset. [43]
+
 - The workspace state: the choice, search, layout, full-file disclosure, opened path with its opener, the lane, the focus request and the numbered tree intent. [18]
 - The focus request a selection leaves: the element that had focus, the tree intent it was made after, and the scroll-only and answered flags. [19]
 - The wrapper provides the intent markers' scope around the body. [20]
 - The body: scope header, jump button, way back, rail and center in one grid, with the layout and marker-return attributes on the root. [21]
 - The unanswered subject's status and its two renderings. [22]
-- The reading-area column is one node whose content alone is swapped; it reads the leaf-wide tree view only for a tree comparison. [23]
+
+- The reading-area column is one node whose content alone is swapped. WorkspaceBody reads the leaf-wide tree view only for a tree comparison and supplies it to WorkspaceCenter. Anchor: `WorkspaceCenter`; `WorkspaceBody` [23]
+
 - The walk, the two selection marks, the row selection and the roster continuation of a kept family. [24]
 - A mark may sit only on a family that is shown to it; otherwise the answer's own first context is marked. [25]
 - A row of the walked tree, a kept family's included, is selected through the navigation with `keepTree`. [26]
 - What the tree draws: the walked entries, the kept families with the subject each was last read for, the notice and the selected subject's state. [27]
 - The label of the subject a kept family was last read for. [28]
-- The rail renders outline navigation and change-set/worklist destinations, without a source explorer or changed-file list. [29]
+- The rail renders outline navigation and change-set/worklist destinations, without a source explorer or changed-file list.  Anchor: `WorkspaceRail` [29]
 - The tree is drawn when the subject's context is composed or the walk holds a family; an unknown-membership target has its own state. [30]
 - Only a render made after the request answers it; a pending subject and an unanswered scroll-only request keep it. [31]
 - A scroll-only request brings the node into view; any other moves focus only if the reader has not moved it. [32]
-- A failed or refused in-tree selection on the stacked layout scrolls its status into view; it moves no focus and leaves the focus request for a retry. [44]
-- The one test for a reader who moved focus, shared by the answered and the unavailable paths, so neither takes focus nor scrolls after the reader moved on. [45]
-- The in-tree and stacked test that gates every reveal. [46]
-- The answered in-tree selection on the stacked layout focuses the selected row without scrolling to it and reveals the reading area; every other selection keeps its original focus call. [47]
 - What a selection focuses: a followed marker's unknown-membership state, else the tree's current node. [33]
-
 - The workspace carries the state of the way back. [37]
 - The way back's sticky box in the stacked layout. [38]
 - The sentences of the uncomposed context states. [39]
-- The walk itself. [40]
-- The workspace's moves for an intent marker: select the target through the navigation, and restore the reading position. [41]
-- The scope header's record label lives in the header's module. [42]
-- The triage bar sticks below the way back at the workspace's offset. [43]
+- A failed or refused in-tree selection on the stacked layout scrolls its status into view; it moves no focus and leaves the focus request for a retry. [44]
+
+- The moved-focus test guards non-scrollOnly answered selections and unavailable reveals, so those paths neither take focus nor scroll after the reader moves on. A scrollOnly refresh remains a separate branch. [45]
+
+- The in-tree and stacked test that gates every reveal. [46]
+- The answered in-tree selection on the stacked layout focuses the selected row without scrolling to it and reveals the reading area; every other selection keeps its original focus call. [47]
 - Display state owned above the pane switch [48]
 - Rail, center and jump control composition [50]
 - Lane counts feeding the navigation summary [52]

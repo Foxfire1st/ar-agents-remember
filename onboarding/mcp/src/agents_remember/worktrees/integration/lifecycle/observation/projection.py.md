@@ -50,9 +50,6 @@ No configured external Domain Documentation source governs this repository-inter
 
 The source defines the total observation and degraded-projection contract.
 
-- Single/latest/all readers project retained journals and keep task status from hiding siblings. [1]
-- Location contradictions and unreadable contracts become bounded developer-decision projections with no controls. [2]
-- Worker exit and closeout mutation recovery are reconciled into read-only derived records. [3]
 
 ### Cross-Repo References
 
@@ -68,5 +65,9 @@ status-change wait snapshot must be the same coherent envelope a task status rea
 exact record whose durable meaningful revision the waiter compared, so the returned cursor and
 envelope never splice facts from different journal revisions.
 
-- The read-only wait snapshot projection entry point. [4]
 The application wait controller named here was deleted with the door/operation plane (commit `41b0812e`); this projection now has no public wait caller.
+
+- Single/latest/all readers project retained journals and keep task status from hiding siblings. [1]
+- Location contradictions and unreadable contracts become bounded developer-decision projections with no controls. [2]
+- Worker exit and closeout mutation recovery are reconciled into read-only derived records. [3]
+- The read-only wait snapshot projection entry point. [4]

@@ -109,6 +109,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 - A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands.
 
+The retained app shares one always-on background ledger across actual worker units, synchronous publication, event tails and startup. Diagnostics expose owner/wake facts with explicit incomplete windows rather than acceptance. Transaction-bound own-write suppression and pending invalidations retain independent full healing. Server-side host-start loading keeps its shared OS lease/progress and cancellation-drained driver without restoring the removed terminal catalogue or notifier plane.
+
 ## Evidence
 
 - The query, the port and the GET handler with its three answer classes. [3]
@@ -145,7 +147,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 - **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
-- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
@@ -154,7 +155,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** [64]
 - The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). [65]
 - **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
-- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
 - **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
 - **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** [69]
 - **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** [70]
@@ -163,7 +163,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** [73]
 - **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** [74]
 - The `400` body for a query that did not name the generation whole, and the exact expected set it names. [75]
-- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. [76]
 - **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** [77]
 - **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [78]
 - **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** [79]
@@ -182,6 +181,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - A payload without a tree comparison number is a dataset review, for which no tree read is made. [96]
 - A busy default executor cannot delay a tree read. [97]
 - A disconnect, the deadline, shutdown and a queued request each end with the children reaped. [98]
+- Current imported source owns this scoped route boundary.   [86] [87] [88]
 - The bounds of a selection and the size of the route's thread pool. [100]
 - The value handed to the port, and whether it asks a focused question. [101]
 - The one selection value and its refusals. [102]
@@ -192,7 +192,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The host acquisition. [107]
 - A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [108] [109]
 - App registers three intent handlers plus separate summary, tree and reader ports before static delivery. [110]
-- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit. [111]
+- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload) [111]
 - Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains. [112]
 - Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound. [113]
 - Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit. [114]
@@ -201,3 +201,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - Leaf range returns empty for missing repository before endpoint-owner admission. [121]
 - Host ensure is start-only, with observation, lock, and outcome receipt. [128]
 - A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [109]
+
+- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
+- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
+- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes` [76]
+- Current imported source owns this scoped route boundary. [84]
+- Current imported source owns this scoped route boundary. [85]

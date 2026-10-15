@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
-        "content": "sha256:93e5e4d456727d00c2b6871c9d6a8a861fbba926b4feb1ca1fd15e07ec0e2e33",
+        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "content": "sha256:8c8ca524ce69a3db3143bfec8000a8950cde7d99247caa0033574585cb5a97a4",
         "locator": {
           "kind": "symbol",
           "name": "Projector._tick"
@@ -18,20 +18,56 @@
       },
       "rationale": "The shared finally hook reports elapsed real thread work after success, failure or cancellation drain.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "content": "sha256:f426613718f681ac44c8e20977fb4eb29629b12de5a4f94dcc0aa62b6c653299",
+        "locator": {
+          "kind": "symbol",
+          "name": "Projector.run"
+        }
+      },
+      "id": "RLZ-PP5Q3E",
+      "invariant": "INV-S8GHB9",
+      "origin": {
+        "handoffEntry": "L81-R1-F08",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The actual settled Projector/input-reader/project_and_write/watched-owner composition has only heartbeat/full wakes through repeated zero-input cycles; one genuine outside update in that same native-watcher test promptly publishes a change.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+        "content": "sha256:4c50cf164c06270f673daf6f0ce716b7bd94a007f8726b44270542bfb58a0431",
+        "locator": {
+          "kind": "symbol",
+          "name": "Projector._next_refresh"
+        }
+      },
+      "id": "RLZ-S8TKV9",
+      "invariant": "INV-84PT5A",
+      "origin": {
+        "handoffEntry": "L81-R1-F06",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing projector carries failed reconciliation into the next eligible same-pacer cycle.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.\n\nAnchor: \"def _publish_projection(\"",
+      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: \"def _publish_projection(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 298,
+              "end": 403,
               "kind": "line_range",
-              "start": 298
+              "start": 403
             }
           },
           "kind": "code"
@@ -39,28 +75,28 @@
       ]
     },
     "2": {
-      "note": "Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.\n\nAnchor: \"self._subscribers.add(queue)\"; \"self._subscribers.discard(queue)\"",
+      "note": "Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: \"self._subscribers.add(queue)\"; \"self._subscribers.discard(queue)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
             "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
             "locator": {
-              "end": 352,
+              "end": 457,
               "kind": "line_range",
-              "start": 352
+              "start": 457
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
             "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
             "locator": {
-              "end": 360,
+              "end": 465,
               "kind": "line_range",
-              "start": 360
+              "start": 465
             }
           },
           "kind": "code"
@@ -68,16 +104,16 @@
       ]
     },
     "3": {
-      "note": "The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.\n\nAnchor: \"async with contextlib.aclosing(projector.subscribe())\"; \"is permitted; handwritten tail keys or another\"; \"payload.update(\"",
+      "note": "The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.  Anchor: \"async with contextlib.aclosing(projector.subscribe())\"; \"is permitted; handwritten tail keys or another\"; \"payload.update(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:3ce9acbc6e3cd416d422301dabd1c484486a0b928f33fd7da8d77d54f6110226",
+            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "content": "sha256:d937a19251de45be26d9491b7c037c8a460acad1984527027e8faba5ed7a08ef",
             "locator": {
-              "end": 154,
+              "end": 159,
               "kind": "line_range",
-              "start": 154
+              "start": 159
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -98,12 +134,12 @@
         },
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:c594b38d0f2e4d1d4c5ce198985264a7036698c796c40e01403082b5aeabfdae",
+            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "content": "sha256:ecdb5438fdd07f0a4ce5c1df3f3847431f0c211a34c04c55ba3302ffd5340a03",
             "locator": {
-              "end": 164,
+              "end": 169,
               "kind": "line_range",
-              "start": 164
+              "start": 169
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -125,16 +161,16 @@
       ]
     },
     "4": {
-      "note": "All real tick outcomes reach completion only after actual work/drain.\n\nAnchor: `Projector._tick`",
+      "note": "All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
-            "content": "sha256:93e5e4d456727d00c2b6871c9d6a8a861fbba926b4feb1ca1fd15e07ec0e2e33",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "content": "sha256:c391a5c48271edb0b30a04e0e05b918e3f79c86673e460097ab9394f5b68499f",
             "locator": {
-              "end": 266,
+              "end": 361,
               "kind": "line_range",
-              "start": 244
+              "start": 344
             }
           },
           "kind": "code"

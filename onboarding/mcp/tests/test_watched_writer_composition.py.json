@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_watched_writer_composition.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6485197ec57fcccf71b04c0b2c5c1edadba69951",
+        "content": "sha256:9cbe2ca1368110e86096ffc93afd5ec53306e91e3a674b08777ddcd14455a11f",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeWriterCompositionTests.test_whole_projection_settles_and_heals_capture_window_then_wakes_on_outside_update"
+        }
+      },
+      "facet": "The exact controlled source case whole projection settles and heals capture window then wakes on outside update; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-K1JF3C",
+      "invariant": "INV-S8GHB9",
+      "origin": {
+        "handoffEntry": "L81-R1-F08",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained whole-projection witness asserts quiet own writes, bounded capture-window healing and genuine outside-write wake using lifecycle phase equality; no retired terminal/notifier/gate composition is claimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179ce71625e9e37dfaf6fa901937de8bc0a7378f",
+            "content": "sha256:075701d526f14db01b7b1b575bfdd0037f961fd79db0b216455afd641c70a102",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -54,21 +54,14 @@ No configured live documentation source was available for this pass.
 
 The filter, the two readers and the capture.
 
-- The two sources, the captured-state key and what the capture never writes. [1]
-- The snapshot value and the read error. [2]
-- The indexed JSON filter, sharing the validator's exclusion predicate. [3]
 
 - Snapshot selection retains nonexcluded onboarding Markdown and indexed-record Markdown companions as comparison bytes. [11]
 
-- The Git-object reader: one batch read, nothing checked out. [4]
-- The directory reader and its key, with the blob-id check and retry. [5]
 
-- The isolated capture and the index-flag clearing on the scratch copy. [6]
 
 - Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key. [7]
 - An index flag never hides an edit; the index reads the files the validator reads. [8]
 
-- The capture copies the index with its time. [9]
 - A rewrite in the second of the index write changes the key, and the cache builds a new index. [10]
 
 ### Cross-Repo References
@@ -76,3 +69,11 @@ The filter, the two readers and the capture.
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
 No cross-repo boundary is crossed by this file.
+
+- The two sources, the captured-state key and what the capture never writes. [1]
+- The snapshot value and the read error. [2]
+- The indexed JSON filter, sharing the validator's exclusion predicate. [3]
+- The Git-object reader: one batch read, nothing checked out. [4]
+- The directory reader and its key, with the blob-id check and retry. [5]
+- The isolated capture and the index-flag clearing on the scratch copy. [6]
+- The capture copies the index with its time. [9]

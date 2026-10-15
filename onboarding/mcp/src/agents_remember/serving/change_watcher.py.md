@@ -13,8 +13,7 @@ sample showed `_tick_sync` at 11.1s of a 15s window (~160% steady CPU on a quiet
 This module contains the three pieces that fix the *when* without touching the *what*: the derived
 watch-root list over the projection's actual input surfaces, the input-event filter (self-trigger
 safety), and the `ChangePacer` wake scheduler (debounce + max-delay + interval floor + idle
-heartbeat) fed by the `ProjectionInputWatcher` `watchfiles`/inotify task. The projector's tick body
-is byte-identical either way — only the pacemaker changed.
+heartbeat) fed by the `ProjectionInputWatcher` `watchfiles`/inotify task. The initial L3 change altered pacing, not tick contents. Current projection additionally consumes reader domains and complete path samples and performs independent full healing; byte-identity of today's tick is not claimed.
 
 ## Native events and completion-paced live wakes
 
@@ -23,11 +22,11 @@ The existing recursive watcher explicitly passes `force_polling=False` on suppor
 After real live tick completion or cancellation drain, `projection_completed` imposes `max(interval, min(duration, 3 seconds))` rest. The default adds one to three seconds; larger configured intervals keep their larger floor. Completion, failure and health transitions never clear accumulated domains: work/rest notifications participate in the next eligible tick. Degraded watches request full refresh and retain the same rest; the quiet heartbeat's existing 15-second scheduling interval remains. Native batching, running/next tick computation and publication add to total lag; this is no three-second total-freshness promise.
 
 
-- Native registration is explicit and retains watcher lifecycle. [10]
-- The real completion floor preserves accumulated domains. [11]
-- Completion rest participates in change/degraded/heartbeat deadlines. [12]
 
 ## Code Commentary
+
+Accepted native paths reach the projection refresh, with explicit incompleteness falling back to full reconciliation. Pending own-write effects are judged after completion; completed identity/event-kind checks do not certify unknown foreign writes. Discovery/refresher/native-child death share one reported outage/retry path. Independent full healing preempts partial traffic; only successful full publication advances its clock.
+
 
 ### Logic
 
@@ -45,7 +44,7 @@ changes are infrequent and heartbeat-covered, and central provider status is wat
 `logs/providers`. `awatch` also passes `ignore_permission_denied=True` as defence-in-depth. A
 regression test asserts no watch root falls under `worktrees/`. Deliberately
 NOT watched, heartbeat-covered blind spots: the per-repo memory roots (already behind the 15s
-`REPO_SURFACE_REFRESH_TTL_SECONDS`, so their freshness bound is TTL + heartbeat), landing state
+`REPO_SURFACE_REFRESH_TTL_SECONDS`, so their refresh opportunities combine TTL and heartbeat scheduling; running work and publication can extend elapsed freshness), landing state
 (an in-memory 30s git-derived refresher with no file signal), and the worktree checkouts
 themselves.
 
@@ -91,7 +90,7 @@ all scheduling rules (monotonic clock): **floor** — never two projections clos
 — a sustained burst requests its deadline within `max_delay = interval` of its *first* change, subject to interval/completion floors; **heartbeat** — with no changes, project
 every `heartbeat` seconds (default `DEFAULT_HEARTBEAT_SECONDS` = 15.0, floored to never undercut
 `interval`); **degraded** — while the watcher is unhealthy, request interval-driven full refreshes, subject to the same completion rest. The pacer **starts degraded** so there is no detection blind spot
-between boot and the watcher establishing its watches. `wait()` consumes pending changes at wake;
+between boot and the watcher establishing its watches. `wait()` snapshots pending changes at wake; only successful-publication acknowledgement from the unchanged generation clears them;
 changes observed *during* a projection accumulate for the next cycle, so nothing is lost to a tick.
 
 `ProjectionInputWatcher.run(pacer)` is the live watch task (lifecycle mirrors the landing
@@ -104,8 +103,7 @@ fresh/empty tree requests interval-driven full refreshes with completion rest an
 `_watch_once` marks the pacer healthy, emits one reconciling `notify_change()` on every
 re-establish after the first (inotify has no replay — whatever happened while the watch was down
 gets one debounced projection), then feeds `watchfiles.awatch(*roots, recursive=True)` batches
-(library batching tightened to `debounce=200ms`/`step=50ms` so first detection never exceeds the
-1s max-delay bound) into the pacer until `_stop_when_roots_change` — a 30s re-derivation task —
+(library batching tightened to `debounce=200ms`/`step=50ms` to shorten native batching; this configuration alone does not establish a one-second total detection bound) into the pacer until `_stop_when_roots_change` — a 30s re-derivation task —
 stops the generation to restart with a fresh root set. Any exception logs
 `projection input watcher FAILED` (ERROR + traceback), sets the pacer unhealthy, sleeps 30s, and
 retries.
@@ -119,8 +117,7 @@ not settings knobs; `--heartbeat` is the only operator-facing knob.
 
 ### Invariants And Boundaries
 
-- **Only *when* the projector wakes changes, never *what* a tick does.** The tick body
-  (prime, diff/broadcast, ETag revision) is untouched by this module.
+- **The original L3 pacing-only boundary is historical.** Current wakes also select reader domains/path-directed refresh or full reconciliation; publication, diff/broadcast and ETag ownership remains with the projector.
 - **Failure reports LOUDLY and requests interval-driven full refreshes with completion rest.** Missing wheels, derivation failures and crashed watches log loudly and mark the watcher unhealthy; recoverable failures retry after 30s. Zero watchable roots is explicitly not an error: it keeps interval pacing and retries discovery without logging an ERROR.
 - **Quiet heartbeat is a scheduling interval.** With no pending domains the next heartbeat deadline is based on the existing 15-second interval and the completion floor. A running tick and its publication can extend the elapsed gap; the heartbeat is not an unconditional maximum publication lag. Unwatched sources retain their existing TTL/heartbeat ownership, and volatile ages still advance through the frontend's existing served-age owner.
 - **A tick never re-wakes itself.** The projection's own outputs live outside every watched
@@ -155,15 +152,7 @@ The watch roots are derived from — and must stay in lock-step with — the rea
 `project_and_write`; the projector consumes the pacer; `create_app` decides when a watcher exists;
 the CLI/daemon own the `--heartbeat` knob's plumbing.
 
-- Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. [1]
-- Accepted paths map to reader domains; unknown accepted paths request every domain. [2]
-- Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
-- Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. [4]
-- Shared lock naming and transaction mechanics keep filtering aligned. [5]
-- Projection source readers determine the input surface. [6]
 - Projector wiring and fail-open watcher completion retain actual ownership. [7]
-- The live-input model selects actual watcher participation. [8]
-- Dashboard reload entry carries the pacing configuration. [9]
 
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
@@ -180,3 +169,15 @@ Same-repository serving concern only.
 Accepted watcher paths map to explicit projection reader domains. `ChangePacer` accumulates those
 domains through debounce/max-wait and returns a `ProjectionWake`; an unmapped accepted path returns
 all domains so correctness fails open to a full refresh.
+
+- Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. [1]
+- Accepted paths map to reader domains; unknown accepted paths request every domain. [2]
+- Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
+- Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. [4]
+- Shared lock naming and transaction mechanics keep filtering aligned. [5]
+- Projection source readers determine the input surface. [6]
+- The live-input model selects actual watcher participation. [8]
+- Dashboard reload entry carries the pacing configuration. [9]
+- Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once` [10]
+- The real completion floor preserves accumulated domains.  Anchor: `ChangePacer.projection_completed` [11]
+- Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline` [12]

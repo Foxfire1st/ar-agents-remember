@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/warmup.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Direct readWarmupStatus calls with stubbed fetch check the running line/pending list, parsed agent states/reasons and in-flight list, a completed status with null line/empty pending, and null after fetch rejection. These cases do not mount the warmup owner or exercise selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af6f67fa90fc56ce9d997ad71f0068559ab59a4f",
+            "content": "sha256:6e6b9919d757d04727b56d742358687f9041bf0a81ac71800a05a81370f7459f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

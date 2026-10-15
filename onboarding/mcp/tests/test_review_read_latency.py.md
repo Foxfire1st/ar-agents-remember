@@ -15,8 +15,7 @@ and Git children do not depend on the machine. The module also exports the helpe
 
 ## Code Commentary
 
-- **One resolution.** A subject read resolves once and captures each worktree once and once more for the
-  recheck. The recheck still refuses a candidate that moved while the review was composed.
+- **One resolution.** A subject read resolves once and captures each worktree once; the unchanged resolve-time baseline stands for the remembered trees during the publication recheck. The recheck still refuses a candidate that moved while the review was composed.
 - **Converted base.** A converted base tree that Git holds is not written again; each mismatched input
   and an absent tree are written again.
 - **Leaf-wide view.** `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`
@@ -44,22 +43,24 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 ## Evidence
 
+- Historical removed aggregate three-Git-question/per-file-reference test, not current evidence.
+- Historical removed literal-filename two-size patch test, not current evidence.
+
+- The shared owner establishes a same-size rewrite in the index-write second. [19]
+
 - The module docstring: the port every case enters through and the machine-independent counts. [6]
 - The four review ports as the routes call them. [7]
 - One resolution and the captures of one subject read. [8]
 - The recheck refuses a moved candidate. [9]
 - A held converted base tree is not written again. [10]
 - The leaf-wide view passes the captured trees and base commits and is computed once. [11]
-- Incomplete worklist recomputation, complete recovery and changed/conflicting external-read rejection; no memory patch is read. [12]
+
+- An incomplete worklist recomputes and is not kept; the next complete worklist may be memoized, while changed/conflicting external-input observations cause misses. No memory-patch failure/recovery is asserted. [12]
+
 - An unreadable or absent task input is observed and nothing is kept. [13]
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
 - The memo's bounds and keys. [15]
-- Historical removed aggregate three-Git-question/per-file-reference test, not current evidence.
-- Historical removed literal-filename two-size patch test, not current evidence.
-
-- The shared owner establishes a same-size rewrite in the index-write second. [19]
-
-- A read after an edit shows the new content. [18]
+- A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept` [18]
 - The leaf view is computed once per exact comparison [20]
-- No diff invocation spans the two memory trees [21]
-- The worklist gets the comparison's own candidate trees [22]
+- No diff invocation spans the two memory trees  Anchor: `memory_base` [21]
+- The worklist gets the comparison's own candidate trees  Anchor: `isolated_leaf_worklist` [22]

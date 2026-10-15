@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
-        "content": "sha256:530c393b0baf5ca33cb572a1e67b2703ad5369d457e732affc1a576cc0f7e76e",
+        "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
+        "content": "sha256:1b14556f2d9da90a345510da012cdf1dfb6b002c20eee053125c3ed1bc68556b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+        }
+      },
+      "facet": "The direct copy preserves index bytes and modification time, and capture invokes the shared copy owner exactly once with the repository index as its source.",
+      "id": "PRF-0JFANB",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L81-A004-replace-PRF-N39F79",
+        "leaf": "260928-MIK-L81"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
+        "content": "sha256:3637dc6820a96527ade60ce614a772678b6fb967993a63b671f781a8f9e32dbc",
         "locator": {
           "kind": "symbol",
           "name": "test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree"
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+        "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
         "content": "sha256:cddd28daf5a333f50e9866dc74a12734bfe5d24f75f70413333f9f5301cd4788",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+        "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
         "content": "sha256:8d09c03cf164f06467c2474ad62476cde820c4b9c44ca92ac571f8efbee79fd2",
         "locator": {
           "kind": "symbol",
@@ -54,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
-        "content": "sha256:4ece35e8e2817118efa21d94b5c6b12840ca24690bc43b71252762f29635cb8a",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
-        }
-      },
-      "facet": "The copy uses the source index modification time and a mutated copy-time implementation fails the intended recheck.",
-      "id": "PRF-N39F79",
-      "invariant": "INV-656CYW",
-      "origin": {
-        "handoffEntry": "L40-index-copy-shared-capture",
-        "leaf": "260928-MIK-L40"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+        "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
         "content": "sha256:34daaa5536a59eea7f80f5d75e2488529f20507770dc4870aeb57dde4e3ab634",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
             "content": "sha256:cddd28daf5a333f50e9866dc74a12734bfe5d24f75f70413333f9f5301cd4788",
             "locator": {
               "kind": "symbol",
@@ -106,12 +106,12 @@
       ]
     },
     "2": {
-      "note": "Same-size same-second rewrite changes the captured tree.\n\nAnchor: `test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree`",
+      "note": "Same-size same-second rewrite changes the captured tree.  Anchor: `test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
-            "content": "sha256:3fc680943b7f383af5f327af3ba69cda5b749f98a74532a47160021600dc0203",
+            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
+            "content": "sha256:e7d3a0fb3f5177bec0c04775a97115be7140f9303668346e3fc76847ab9c3fd6",
             "locator": {
               "kind": "file"
             }
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
             "content": "sha256:4934cc938470f023d8b8d6a48ae29506e7adaa6ba7a63e5fc5a65b849fecd963",
             "locator": {
               "kind": "symbol",
@@ -141,8 +141,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
-            "content": "sha256:530c393b0baf5ca33cb572a1e67b2703ad5369d457e732affc1a576cc0f7e76e",
+            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
+            "content": "sha256:f7b3566bc4dd507d0bfe02b837f9457baccae05f76be5a24662b433915f68ea1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree"

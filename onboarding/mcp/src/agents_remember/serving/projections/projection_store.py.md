@@ -13,7 +13,10 @@ the dashboard reads it (slice 3a).
 
 ## Code Commentary
 
-### 260712-PTS-L2 One Contract Pass Per Tick
+Semantically unchanged stable projections retain their existing publication rather than manufacturing own-write input events. Directed input reads and the shared stat-gated lifecycle-log owner feed the same reducer; subscriber publication order and immutable projected facts remain unchanged.
+
+
+### 260712-PTS-L2 One Contract Pass Per Tick — historical acquisition account; superseded by worker-owned domain refresh below
 
 A module-level `_contract_snapshot_cache = ContractSnapshotCache()` now sits beside
 `_lifecycle_log_cache`, following the same module-cache discipline: it is mutated only on the
@@ -49,9 +52,9 @@ non-empty log.
 
 `write_projection(root, projection)` writes `latest-state.json` (the whole
 `WorkspaceProjection`) and `latest-metrics.json` (just `metrics`). Both go through
-`_atomic_write_json`: write to a `<name>.<ulid>.tmp` sibling then `os.replace`
-into place — atomic on POSIX, so a polling dashboard reader never sees a
-half-written file. This is deliberately stronger than the plain `write_text` of
+`_write_json` and the kernel `atomic_write_text`: write a sibling temporary file,
+flush/fsync it and use `os.replace` — atomic on POSIX, so a polling dashboard
+reader never sees a half-written file. This is deliberately stronger than the plain `write_text` of
 the `setup_progress` precedent, which a concurrent reader can tear.
 
 `ProviderStateRefresher` is the optional dashboard-owned refresh implementation for provider
@@ -170,10 +173,10 @@ The recurring projection path uses projected status plus the latest landing snap
   pickups, task documents, and dismissals are still read every projection tick.
 - **Engine status probes are active-enclosure scoped:** `read_engine_process_facts` receives only
   non-terminal enclosure groups, preventing historical contracts from causing a long git/status tail.
-- **Contracts are read once per tick, and the shared snapshot is never mutated:** the module-level
-  `_contract_snapshot_cache` is touched only inside the serialized projection tick, the published
-  `ContractSnapshot` is immutable, and its `WorktreeContract` instances are shared across ticks —
-  any future consumer that mutated one would corrupt cross-tick state.
+- **Contracts refresh only when task inputs require it, and shared snapshots are read-only:**
+  the worker-owned input state retains its contract snapshot on unaffected ticks. Full task refresh
+  builds once; directed task refresh updates addressed contracts. The cold-read default uses the
+  module contract cache. Consumers must not mutate shared `WorktreeContract` values.
 
 ## Evidence
 
@@ -185,11 +188,6 @@ The recurring projection path uses projected status plus the latest landing snap
 - The worker-owned state refreshes task inputs. [4]
 - The worker-owned state refreshes engine facts. [5]
 - The worker-owned state refreshes progress inputs. [6]
-- Input acquisition and reclamation belong to the worker-owned state. [7]
-- The complete acquired input bundle is represented by `ProjectionInputs`. [8]
-- `project_and_write` invokes the input state rather than owning those reads itself. [9]
-- `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. [10]
-- The shared per-tick contract snapshot is built once for the projection pass. [11]
 - The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. [12]
 
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
@@ -203,7 +201,7 @@ The recurring projection path uses projected status plus the latest landing snap
 
 ## 260718-CHATS-L5I Current Delta
 
-The projection path now shares one contract/enclosure parse pass per tick and uses a slower bounded repository-surface refresh cache. These changes remove repeated whole-workspace reads from the one-second projection cadence without freezing the projection's volatile fields.
+The projection path shares a retained contract/enclosure snapshot across consumers and uses a bounded repository-surface cache. The worker-owned input state refreshes task contracts only for affected, pending or full task acquisition, preserving directed refresh rather than enumerating them on every tick.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
@@ -215,3 +213,10 @@ The reducer and atomic-write boundary are unchanged; input acquisition and recla
 the state object. `state.read(...)` is called with a `ProjectionReaders(lifecycle=read_lifecycle_logs,
 repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` and a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
+
+- Input acquisition and reclamation belong to the worker-owned state. [7]
+- The complete acquired input bundle is represented by `ProjectionInputs`. [8]
+- `project_and_write` invokes the input state rather than owning those reads itself. [9]
+- `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read.  Anchor: "def _refresh_drift(self"; "def prune_orphaned_drift_snapshots(" [10]
+
+- The shared contract snapshot is retained across unaffected ticks, built for full task refresh and updated for directed task refresh.  Anchor: "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" [11]

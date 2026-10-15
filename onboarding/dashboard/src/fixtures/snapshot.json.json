@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
-              "end": 549,
+              "end": 569,
               "kind": "line_range",
-              "start": 532
+              "start": 552
             }
           },
           "kind": "code"
@@ -80,15 +80,14 @@
       ]
     },
     "12": {
-      "note": "`INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason.",
+      "note": "INDEX_SIGNATURE_SITES exhaustively names the current absorbing nodes and reasons; the old seven-node census is historical.",
       "targets": [
         {
           "anchor": {
             "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:313f2576933f201d766ef5118c3305727c3dcdbdd25923fd4c206d3079e37c26",
+            "content": "sha256:ae5f478883acd3e2ec5f3e3eff8e8f18a85d8f640718ef3825bad75094b958e9",
             "locator": {
-              "kind": "symbol",
-              "name": "INDEX_SIGNATURE_SITES"
+              "kind": "file"
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -97,19 +96,39 @@
       ]
     },
     "13": {
-      "note": "`KnownUnsampled` — the two app-injected fields deliberately absent here, and why.\n\nAnchor: `projection`",
+      "note": "KnownUnsampled contains only projection.servingBuild; the manual sample carries watcherHealth, and the served tail declares servingBuild and watcherHealth.",
       "targets": [
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:92c6be3a3f8b5b2315de340b42ba13553963d58c397d65bc01529bbcacf39021",
+            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "content": "sha256:8fb9a20ea0f610871bc95799d33b5ebb6e9c3e551beb0becb64c75f2c0d0ace1",
             "locator": {
-              "kind": "symbol",
-              "name": "KnownUnsampled"
+              "kind": "file"
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e3c645f7b635406238b2d25ae713a0f54715c61",
+            "content": "sha256:24ab6f654e0c9f4aed99306c3c4b6e6cc60b6a38d9cc66cac3088787f2c8f042",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:76130060be0319ddc2e94da3ef89267047dfb30aee81828c12daf314afaa5602",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -203,15 +222,14 @@
       ]
     },
     "17": {
-      "note": "Store-suite consumer, which also constructs the two app-injected fields this payload omits.",
+      "note": "The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled.",
       "targets": [
         {
           "anchor": {
             "blob": "18bd42adf93a0fa0ecd3872ba944f9b3ddc5e4a2",
-            "content": "sha256:141fc96a31147071cb36426f9fdafd40ee4ab74a8ace29f17fbeed20152e4403",
+            "content": "sha256:9c1ca9504bf42f449be294a6638195f6df6d142f5b92aae079cdf1bcbe893aa0",
             "locator": {
-              "kind": "symbol",
-              "name": "projection"
+              "kind": "file"
             },
             "path": "dashboard/src/data/store.test.ts"
           },
@@ -219,13 +237,12 @@
         },
         {
           "anchor": {
-            "blob": "26e6936b4a667f530ee7c6844814d6f8236857d6",
-            "content": "sha256:b0f5d27459d80944c8db8dbe1ae118632ca30d8e6b10f40b4aa0ed2e451d9eb3",
+            "blob": "f5de7f24aac5a38162a3a5e588e1ba71fa5d4da4",
+            "content": "sha256:8fb9a20ea0f610871bc95799d33b5ebb6e9c3e551beb0becb64c75f2c0d0ace1",
             "locator": {
-              "kind": "symbol",
-              "name": "withHeartbeat"
+              "kind": "file"
             },
-            "path": "dashboard/src/data/store.test.ts"
+            "path": "dashboard/src/test/contract.test.ts"
           },
           "kind": "test"
         }
@@ -251,12 +268,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
-              "end": 337,
+              "end": 346,
               "kind": "line_range",
-              "start": 337
+              "start": 346
             }
           },
           "kind": "code"
@@ -291,11 +308,11 @@
       ]
     },
     "3": {
-      "note": "`exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have.\n\nAnchor: `None`",
+      "note": "`exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have.  Anchor: `None`",
       "targets": [
         {
           "anchor": {
-            "blob": "28c1ba054c52469712312398927791238fa0fa10",
+            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",
@@ -374,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28c1ba054c52469712312398927791238fa0fa10",
+            "blob": "c330af3e8e243b9d4ba18d458076cb53a60dd481",
             "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
             "locator": {
               "kind": "symbol",

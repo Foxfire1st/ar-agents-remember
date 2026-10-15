@@ -1,0 +1,33 @@
+{
+  "path": "mcp/tests/test_own_writes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dashboard's bounded own-write suppression tests distinguish retained own effects from expired/evicted evidence and genuine foreign mutations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dab58ffb88865d7e3126fb15e921ca8bf57ba094",
+            "content": "sha256:542b745c1a3ab2dae957040f7cbf3d7e57d4f45a8ec33e798c87e718b46c7933",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7b7afb54b610814297d632786202974d09cf517f",
+            "content": "sha256:04fe7c0c2c248cac94b70562aecdaf131e7283042eb1cdd5d6fb50bf22dad53f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/own_writes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

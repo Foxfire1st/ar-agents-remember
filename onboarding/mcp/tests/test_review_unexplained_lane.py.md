@@ -7,11 +7,11 @@
 ## Purpose
 
 **MIK-R32's backend evidence: file buckets, hunk classes, destinations, the per-file response and the entry count
-(11 collected cases, 709 lines).** Each comparison is four real Git trees: a code repository with a base and a
+(11 named test definitions, 715 source lines).** Each comparison is four real Git trees: a code repository with a base and a
 candidate commit, and a converted memory repository with a base and a candidate commit, reopened as the reviewer
 reopens a recorded comparison (`reopened_trees`), so every knowledge side is read through the derived index of its
 tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` fixture. Registered in the
-`unit-regression` lane (`test-evidence-lanes.toml:125`).
+`unit-regression` lane (`test-evidence-lanes.toml:310`).
 
 ## Code Commentary
 
@@ -92,10 +92,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The ten changed paths the fixture comparison holds. [1]
+- A comparison reopened as the reviewer reopens it. [4]
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.
+
+- The ten changed paths the fixture comparison holds.  Anchor: "the same throughout:" [1]
 - The memory tree over the code, and the curated re-record of `pkg/a.py`. [2]
 - The family records before and after. [3]
-- A comparison reopened as the reviewer reopens it. [4]
 - Buckets, destinations, paths and the summary agree. [5]
 - The entry count reads no hunk. [6]
 - Hunks on their changed lines at each side's recorded blob, before and after curation. [7]
@@ -106,8 +111,4 @@ No configured live documentation source was available for this pass.
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
 - A dataset review's entry has no attribution. [14]
-- The module's lane row. [15]
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
+- The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

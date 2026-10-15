@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_serving_owner_accounting.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f2b93d56252f14c8a153aaaac03d84c2904d923b",
+        "content": "sha256:029ddf46f3adc070d22fa33909c76815d7758b1b2a1791c4d6803f893c28e24f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
+        }
+      },
+      "facet": "The exact controlled source case every recurring caller attributes each stage and drains repeated cancel; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-X8MSAG",
+      "invariant": "INV-0NSFFW",
+      "origin": {
+        "handoffEntry": "L81-R1-F01",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F01/F02: exact thread CPU through the actual recurring owner callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86a06a23b14a20238257b952f1bffebfac9444df",
+            "content": "sha256:0393e3fb5b0f6882a301e0fbe401c98f40190be6b976f855ed1d7117ebe40007",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

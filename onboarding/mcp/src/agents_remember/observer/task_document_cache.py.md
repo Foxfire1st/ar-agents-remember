@@ -14,8 +14,8 @@ number of task roots.
 ### Logic
 
 `TaskDocumentPayloadCache.payloads` keys entries by root and source path, validates a cached parse
-against `mtime_ns`, size, and `ctime_ns`, parses only misses, and deletes entries absent from the
-current path enumeration. Roots form an eight-entry LRU by default, covering standalone
+against `mtime_ns`, size, and `ctime_ns`, parses only misses, and by default (`prune=True`) deletes entries absent from the
+current path enumeration. Incremental calls use `prune=False` to retain unenumerated paths; `cached` returns retained payloads without filesystem revalidation. Roots form an eight-entry LRU by default, covering standalone
 diagnostics without turning temporary coordination roots into unbounded process state.
 
 ### Conventions
@@ -26,7 +26,7 @@ single owner, so no lock is needed.
 ### Invariants And Boundaries
 
 - A changed stat identity forces a reparse.
-- Deleted or unreadable files leave no retained payload.
+- On a cache miss, a reader returning `None` removes that path's cached payload. A complete `prune=True` enumeration also removes unseen paths; incremental `prune=False` calls retain unenumerated entries. Stat-matching cached payloads are reused before calling the reader.
 - Root count is explicitly bounded and configurable for tests.
 - Cached payloads are reused only within the exact tasks root.
 

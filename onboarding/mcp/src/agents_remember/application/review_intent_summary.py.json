@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+        "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
         "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+        "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
         "content": "sha256:d377a0c3a0203f4c6de93667d2795a6fa494d9e0dba3f4697ba7974f7481fdf1",
         "locator": {
           "kind": "symbol",
@@ -32,12 +32,12 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Decides when one side has no single head for an identity: several heads, or a populated identity with none. _classify uses it to count that identity as unresolved (making the summary partial) instead of as an unchanged zero.",
+      "rationale": "Decides when one side has several heads or a populated identity with none. _classify increments unresolved only when the two sides' head sets differ; identical ambiguous head sets tally nothing and do not by themselves make the summary partial.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+        "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
         "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+        "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
         "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
         "locator": {
           "kind": "symbol",
@@ -72,12 +72,12 @@
   ],
   "references": {
     "1": {
-      "note": "The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32).\n\nAnchor: `resolve_review_candidate`; \"return summary.model_copy(update={\\\"attribution\\\": lane_summary(resolved.trees)})\"",
+      "note": "The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32).  Anchor: `resolve_review_candidate`; \"return summary.model_copy(update={\\\"attribution\\\": lane_summary(resolved.trees)})\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
-            "content": "sha256:49833409a0940d1b406bdcebfa65c3bd15268c2e6e9b4596d2d9070267344153",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
+            "content": "sha256:c5857cc60a98c705e60c745a84e3b7a60d7d6aff710d8dae8e619be7f8d2bded",
             "locator": {
               "kind": "symbol",
               "name": "read_review_intent_summary"
@@ -139,27 +139,14 @@
       ]
     },
     "13": {
-      "note": "Divergent heads make the answer `partial`; absent knowledge is `unavailable` with no counts.",
+      "note": "Historical divergent-head test removed under MIK-R74 rule 3; the retained missing-knowledge case asserts unavailable with no counts. The production no-single-head branch increments unresolved only for differing head sets.",
       "targets": [
         {
           "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:41faebf17042ef1336824db794c290d8b15ca5fe1e6d84800e4628b97d29456c",
+            "blob": "ff774629b2cfd2d42701073f0df40bfeb15ce298",
+            "content": "sha256:6f3e9d1236358f9861a3cd1b87bed8dc557402543486e5218aef19e14e695049",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_without_one_head_makes_the_summary_partial"
-            },
-            "path": "mcp/tests/test_review_intent_summary.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:ba11f7b16ebbb463e1f1ad1ae0f1ef727fef468c48d32dde5e9a14e935092cab",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_intent_summary.py"
           },
@@ -172,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:ebd17f93289f879070cf11a21c444e2aec77868ac3b97fd7764fcf9935af73a9",
             "locator": {
               "kind": "symbol",
@@ -185,11 +172,11 @@
       ]
     },
     "2": {
-      "note": "One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved.\n\nAnchor: `pair_preflight_refusal`; `unreadable_candidate_refusal`",
+      "note": "One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved.  Anchor: `pair_preflight_refusal`; `unreadable_candidate_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:0b016e882e8081c06350e7308dc61d86a5e4daab96d18c3c8a27603e3d5549ca",
             "locator": {
               "kind": "symbol",
@@ -205,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
             "locator": {
               "kind": "symbol",
@@ -216,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:5ca08e123f8b79b449d04c06ae50531dd22b09ec95536ccd2505c51b89add9ec",
             "locator": {
               "kind": "symbol",
@@ -228,11 +215,11 @@
       ]
     },
     "4": {
-      "note": "The classification: unresolved, after-only, before-only, relationship-only, or a counted successor.\n\nAnchor: \"tally.attached_only\"; \"tally.after_only\"",
+      "note": "The classification: unresolved, after-only, before-only, relationship-only, or a counted successor.  Anchor: \"tally.attached_only\"; \"tally.after_only\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
             "locator": {
               "kind": "symbol",
@@ -248,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:d377a0c3a0203f4c6de93667d2795a6fa494d9e0dba3f4697ba7974f7481fdf1",
             "locator": {
               "kind": "symbol",
@@ -260,12 +247,12 @@
       ]
     },
     "6": {
-      "note": "Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership.\n\nAnchor: \"invariant_of.get(invariant_revision, invariant_revision)\"",
+      "note": "Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership.  Anchor: \"invariant_of.get(invariant_revision, invariant_revision)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
-            "content": "sha256:e6952ce2bd5be42f7de1e04e0a998f7500b6bc0cdaa02fe5548df4e95728f7cf",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
+            "content": "sha256:df3f890c91ea40a21416cbd58e4980cbc83fc22ede8860938ed2a610a2072bd0",
             "locator": {
               "kind": "symbol",
               "name": "_family_side"
@@ -280,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:40eb01c86fc499996e068463e5c320223a56741d27240f4e53c771f56e07db2e",
             "locator": {
               "kind": "symbol",
@@ -296,7 +283,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "ac17d01cdad88f377b74201f5f7e00a6e83d2bc7",
             "content": "sha256:a41f10fa157c5828acde96f7c3d00513c32be7fc6b37a5dc9f1edfee7bf35001",
             "locator": {
               "kind": "symbol",
@@ -308,7 +295,7 @@
         },
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "blob": "ac17d01cdad88f377b74201f5f7e00a6e83d2bc7",
             "content": "sha256:d84cb286fa364b7acd14e99c5625f3d5fd7ddb6a86feb9b6a5ee613425ca736f",
             "locator": {
               "kind": "symbol",

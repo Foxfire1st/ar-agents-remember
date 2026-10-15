@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
-        "content": "sha256:2afe03edcb4b185de3756538c32d3f275637684bd0c772e3bc88d62ce157067a",
+        "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
+        "content": "sha256:23fb9fa0ee40073b6454d160eeb630f9c5ef8099a4967dd132f3beb1c175329e",
         "locator": {
           "kind": "file"
         }
@@ -88,12 +88,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
-            "content": "sha256:93e448c6b86608c4f5c9f0b9bad13ece196b06d740b0c62d4637989858235b10",
+            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
             "locator": {
-              "end": 158,
-              "kind": "line_range",
-              "start": 137
+              "kind": "symbol",
+              "name": "LiveProjectionInputs"
             }
           },
           "kind": "code"

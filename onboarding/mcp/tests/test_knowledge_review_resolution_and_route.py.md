@@ -70,21 +70,7 @@ None.
 
 ### Repo-Internal References
 
-- `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` owns the current boundary described above. [13]
-- `test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising` owns the current boundary described above. [14]
-- `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` owns the current boundary described above. [15]
-- `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` owns the current boundary described above. [16]
 
-- The module's own statement of the boundary it measures, and the import of the surface helpers it reuses. [17]
-- The unit marker and the per-case fixture. [18]
-- The surface module's config that names no real root, and the render helper that puts the previous identity on the request. [19]
-- The two resolution cases: the candidate comes from task context rather than a browser-chosen path, and an absent dataset refuses by name. [20]
-- **The absent before half refuses by name and the refused review creates nothing: the sibling leaf `260921-ICR-L5`'s case beside the absent-candidate one above, differing in *which* half is missing — the two halves are different facts and have different next actions.** [21]
-- **The corrupt before half is a typed refusal rather than an `apsw.NotADBError` raised from inside the read, and the refusal names the baseline rather than the candidate — only one of the two sides can be repaired by authoring knowledge again.** [22]
-- The two transport cases: exactly the two reviewable selector kinds are admitted and every other spelling refused, and the route serves the typed result and refuses by name with no adapter. [23]
-- **The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.** [24]
-- **The loader case: an unresolvable candidate yields no fabricated assessment, and its entry list refuses with the review's own code rather than answering empty.** [25]
-- The unit-regression lane row, beside its sibling's. [26]
 
 ### Docs References
 
@@ -99,3 +85,18 @@ No cross-repository behavior is implemented in this file. Every case builds its 
 `tmp_path`.
 
 No meaningful cross-repo references found.
+
+- `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` owns the current boundary described above. [13]
+- `test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising` owns the current boundary described above. [14]
+- `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` owns the current boundary described above. [15]
+- `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` owns the current boundary described above. [16]
+- The module's own statement of the boundary it measures, and the import of the surface helpers it reuses. [17]
+- The unit marker and the per-case fixture. [18]
+- The surface module's config that names no real root, and the render helper that puts the previous identity on the request. [19]
+- The two resolution cases: the candidate comes from task context rather than a browser-chosen path, and an absent dataset refuses by name. [20]
+- **The absent before half refuses by name and the refused review creates nothing: the sibling leaf `260921-ICR-L5`'s case beside the absent-candidate one above, differing in *which* half is missing — the two halves are different facts and have different next actions.** [21]
+- **The corrupt before half is a typed refusal rather than an `apsw.NotADBError` raised from inside the read, and the refusal names the baseline rather than the candidate — only one of the two sides can be repaired by authoring knowledge again.** [22]
+- The two transport cases: exactly the two reviewable selector kinds are admitted and every other spelling refused, and the route serves the typed result and refuses by name with no adapter. [23]
+- **The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.** [24]
+- **The loader case: an unresolvable candidate yields no fabricated assessment, and its entry list refuses with the review's own code rather than answering empty.** [25]
+- The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_review_resolution_and_route` [26]

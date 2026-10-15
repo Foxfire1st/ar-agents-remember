@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "aa1c36ec3cecdff24e48e47c5a789fed514036d6",
-        "content": "sha256:e4c6785adab27439221dd09a08086ce9fa8d02a6172c655fb5d8d4f620e9d72c",
+        "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+        "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
         "locator": {
           "kind": "symbol",
           "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "aa1c36ec3cecdff24e48e47c5a789fed514036d6",
+        "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
         "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "aa1c36ec3cecdff24e48e47c5a789fed514036d6",
-        "content": "sha256:e0eaca3f75f83828c1d417d1febc1e25897a2b5b6cfd001e64eadad4abf054ea",
+        "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+        "content": "sha256:28a82ff1eff26f71cfd22b5482d05a04c03c61263de5aa8d3193d7e4a292f860",
         "locator": {
           "kind": "symbol",
           "name": "BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "aa1c36ec3cecdff24e48e47c5a789fed514036d6",
-        "content": "sha256:2eb4895dc0b51adcd0edd5f6ab5b38b642377c4c7bd73e3cef9287bc2cc77982",
+        "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+        "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
         "locator": {
           "kind": "symbol",
           "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "aa1c36ec3cecdff24e48e47c5a789fed514036d6",
-        "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
+        "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+        "content": "sha256:d473b31700b902639736c66f73193694c07e5526f936978c5ee53ffae7c38ee3",
         "locator": {
           "kind": "symbol",
           "name": "BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest"
@@ -122,16 +122,16 @@
       ]
     },
     "3": {
-      "note": "The real native watcher observes the nested atomic rename.\n\nAnchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling`",
+      "note": "The real native watcher observes the nested atomic rename.  Anchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling`",
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
-            "content": "sha256:2c2a2f6d44133667f26c461d0737af95a05805d51080e5216053c1a787fe751b",
+            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
+            "content": "sha256:25885743791efb98cd61f126ed1742b5ef71d0d91e87369ae3cb6886a8df3f68",
             "locator": {
-              "end": 254,
+              "end": 256,
               "kind": "line_range",
-              "start": 219
+              "start": 221
             }
           },
           "kind": "test"
@@ -139,16 +139,16 @@
       ]
     },
     "4": {
-      "note": "Work/rest notifications and rest bounds share one timeline.\n\nAnchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest`",
+      "note": "Work/rest notifications and rest bounds share one timeline.  Anchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest`",
       "targets": [
         {
           "anchor": {
-            "blob": "c2f561e516398d201b128eafd24be4666efab81a",
-            "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
+            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
+            "content": "sha256:969b9500feedd04e51945c51cee1640d905eb6f4a696cfeeb1ecac43f8addb71",
             "locator": {
-              "end": 308,
+              "end": 315,
               "kind": "line_range",
-              "start": 276
+              "start": 278
             }
           },
           "kind": "test"
@@ -156,16 +156,16 @@
       ]
     },
     "5": {
-      "note": "Terminal history and one in-flight finishing observation are distinguished.\n\nAnchor: `BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens`",
+      "note": "Terminal history and one in-flight finishing observation are distinguished.  Anchor: `BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens`",
       "targets": [
         {
           "anchor": {
-            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
-            "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
+            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
+            "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
             "locator": {
-              "end": 408,
+              "end": 437,
               "kind": "line_range",
-              "start": 331
+              "start": 340
             }
           },
           "kind": "test"
@@ -173,16 +173,16 @@
       ]
     },
     "6": {
-      "note": "A failed finishing attempt stays honest missing and never retries history.\n\nAnchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history`",
+      "note": "A failed finishing attempt stays honest missing and never retries history.  Anchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history`",
       "targets": [
         {
           "anchor": {
-            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
-            "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
+            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
+            "content": "sha256:72e80a96d6e5b8921fb605b6a1f8f06d82b682cb006deef9d677fa24c39ceed8",
             "locator": {
-              "end": 449,
+              "end": 496,
               "kind": "line_range",
-              "start": 410
+              "start": 439
             }
           },
           "kind": "test"

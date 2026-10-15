@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+        "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
         "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+        "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
         "content": "sha256:3791a54fef67b47b16da991d2bf6aae983dd64b8c112dcfd8f9148b078cf5633",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+        "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
         "content": "sha256:3791a54fef67b47b16da991d2bf6aae983dd64b8c112dcfd8f9148b078cf5633",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
-        "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+        "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+        "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
         "locator": {
           "kind": "symbol",
           "name": "_run_daemon_command"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+        "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
         "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
         "locator": {
           "kind": "symbol",
@@ -98,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b71c2ab9bd0ba2917a722a81fdadc606e8f3ad4",
-            "content": "sha256:e92248e36d7cd71994e5b4f1583d0e05402ee5f5e682743becc9f013b155d82e",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -114,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
-            "content": "sha256:582096a89994befd90d85ff5a2a060e9896896537d05ba61cae355db27488af9",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
               "name": "_dev_app"
@@ -130,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
-            "content": "sha256:58246d6ce9b95e5a0a6420d815a604c606ec334c21e37d21d488fc896c37fbfd",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
               "name": "run"
@@ -146,8 +146,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
-            "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -162,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01bceba86dfbe3f93849ded1a55066cb984f2993",
-            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
               "name": "run"
@@ -178,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
             "locator": {
               "kind": "symbol",
@@ -194,8 +194,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01bceba86dfbe3f93849ded1a55066cb984f2993",
-            "content": "sha256:f048302f292a0f174f3c83fec9285c5949b1faf99cdd9a793039c9577c7cce42",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:f31095c7cabe1708f5e51a6406950dea50fd8f1d223da054b022c3e17b7c2ff9",
             "locator": {
               "kind": "symbol",
               "name": "_build_app"
@@ -210,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
-            "content": "sha256:0516bdc5a7c1844d736a1d0980167649c0375b30d6b597ec5728fd9c2e8b0908",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
               "kind": "symbol",
               "name": "_run_daemon_command"
@@ -243,8 +243,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
             "locator": {
               "kind": "symbol",
               "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -260,12 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
-            "content": "sha256:6a5aa29dab0ccf7d63303de3f12e68c6d6e7c7fd66f0290f296215744a9a3773",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "content": "sha256:fb1211123d1b137b7b54f71a9e045b4d5b1df56849d75d37aa26b68b6e1b0728",
             "locator": {
-              "end": 75,
+              "end": 78,
               "kind": "line_range",
-              "start": 71
+              "start": 74
             }
           },
           "kind": "code"
@@ -277,8 +277,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01bceba86dfbe3f93849ded1a55066cb984f2993",
-            "content": "sha256:1bb628e8cf0ee547bce11b4bbff628a5b0f87222a953a95f921d15e2a8264be6",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
               "name": "serving_collaborators"
@@ -293,8 +293,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01bceba86dfbe3f93849ded1a55066cb984f2993",
-            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
               "name": "_dev_app"
@@ -309,8 +309,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
-            "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
               "kind": "symbol",
               "name": "_run_daemon_command"
@@ -325,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:677c79661aac50d23a9337fcc0f2ebe8f1ab1dc5184f4236d5c524d916e374cb",
             "locator": {
               "kind": "symbol",
@@ -371,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
@@ -387,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
@@ -403,7 +403,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
@@ -415,16 +415,16 @@
       ]
     },
     "41": {
-      "note": "The entry point the port calls.\n\nAnchor: `read_knowledge_reader`",
+      "note": "The entry point the port calls.  Anchor: `read_knowledge_reader`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
-            "content": "sha256:b3983b903aab71a7c1a3e98ea3d7af36ddf1ce3256f4e1005ab92b4ebd8a4468",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
             "locator": {
-              "end": 78,
+              "end": 91,
               "kind": "line_range",
-              "start": 78
+              "start": 91
             }
           },
           "kind": "code"
@@ -436,7 +436,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
             "locator": {
               "kind": "symbol",
@@ -452,7 +452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:ebd17f93289f879070cf11a21c444e2aec77868ac3b97fd7764fcf9935af73a9",
             "locator": {
               "kind": "symbol",
@@ -481,16 +481,16 @@
       ]
     },
     "45": {
-      "note": "The trusted-settings discovery the optional `--config` falls back to.\n\nAnchor: `discover_config`",
+      "note": "The trusted-settings discovery the optional `--config` falls back to.  Anchor: `discover_config`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:9b00876c181406e03707b179339d5e114523ae858fff7142c96ed3cc62996f10",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             }
           },
           "kind": "code"
@@ -498,16 +498,16 @@
       ]
     },
     "46": {
-      "note": "The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only).\n\nAnchor: `ensure`",
+      "note": "The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only).  Anchor: `ensure`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:e2b9d361ede16e366b76e8479d1caac82f9ebb25f5fcb1ca2e719726847637ee",
             "locator": {
-              "end": 261,
+              "end": 263,
               "kind": "line_range",
-              "start": 261
+              "start": 263
             }
           },
           "kind": "code"
@@ -515,16 +515,16 @@
       ]
     },
     "47": {
-      "note": "The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`.\n\nAnchor: `DEFAULT_HEARTBEAT_SECONDS`",
+      "note": "The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`.  Anchor: `DEFAULT_HEARTBEAT_SECONDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:72f0d5a45cfd55d609bb2415661dc6f7afb64f9ee8970dc837f5eadca9baaf04",
             "locator": {
-              "end": 35,
+              "end": 37,
               "kind": "line_range",
-              "start": 35
+              "start": 37
             }
           },
           "kind": "code"
@@ -536,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
@@ -548,16 +548,16 @@
       ]
     },
     "50": {
-      "note": "The app factory it serves (and the `now`/`before_tick` seams it passes).\n\nAnchor: `create_app`",
+      "note": "The app factory it serves (and the `now`/`before_tick` seams it passes).  Anchor: `create_app`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:29aa3556d5a0b0b227960be77483a0ec73af805c5a29c0bee59340476b875816",
             "locator": {
-              "end": 34,
+              "end": 36,
               "kind": "line_range",
-              "start": 34
+              "start": 36
             }
           },
           "kind": "code"
@@ -565,16 +565,16 @@
       ]
     },
     "51": {
-      "note": "The sim builder / clock / feeder / speed parser it wires.\n\nAnchor: `build_sim`",
+      "note": "The sim builder / clock / feeder / speed parser it wires.  Anchor: `build_sim`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:1cab8a15fbbd4d7a438fcee1d95e7603d65b53022fadae22da52a4095d0b76e7",
             "locator": {
-              "end": 42,
+              "end": 44,
               "kind": "line_range",
-              "start": 42
+              "start": 44
             }
           },
           "kind": "code"
@@ -582,16 +582,16 @@
       ]
     },
     "52": {
-      "note": "The `--config` → `McpRuntimeConfig` contract it mirrors.\n\nAnchor: `McpRuntimeConfig`",
+      "note": "The `--config` → `McpRuntimeConfig` contract it mirrors.  Anchor: `McpRuntimeConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:71344a75d14b6528c97969cfbdb7087785360bcd3f7fe420db7a7584dd64fa78",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 28
+              "start": 30
             }
           },
           "kind": "code"
@@ -599,16 +599,16 @@
       ]
     },
     "53": {
-      "note": "The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead.\n\nAnchor: `declare_process_role`",
+      "note": "The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead.  Anchor: `declare_process_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:6ad5dfa48861c0714084d797ac1e234bd8e6e9faeb7ab0dddcd13e70f31201c9",
             "locator": {
-              "end": 25,
+              "end": 27,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             }
           },
           "kind": "code"
@@ -616,16 +616,16 @@
       ]
     },
     "54": {
-      "note": "The MCP server's mirror of the same declaration, in `main` rather than `create_server`.\n\nAnchor: `main`",
+      "note": "The MCP server's mirror of the same declaration, in `main` rather than `create_server`.  Anchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:ffcd56369a73da9f9a1ed39925aa9d177007f4eb3b2354f1fec0d34dcae16bec",
             "locator": {
-              "end": 47,
+              "end": 49,
               "kind": "line_range",
-              "start": 47
+              "start": 49
             }
           },
           "kind": "code"
@@ -637,7 +637,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
@@ -653,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -669,7 +669,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
             "locator": {
               "kind": "symbol",
@@ -685,7 +685,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",
@@ -701,7 +701,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
               "kind": "symbol",
@@ -734,7 +734,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",

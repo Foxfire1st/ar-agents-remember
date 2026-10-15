@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_watcher_health_body.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F10: the actual served body matches the optional watcher-health mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "361f44162d7aab5a1f484d805503b8b84425a3cc",
+            "content": "sha256:54a34320f97f3104f5e9b2bec1eb12ba2017c499f02f97179e55cfb7f57a2b63",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

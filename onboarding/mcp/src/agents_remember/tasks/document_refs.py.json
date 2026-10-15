@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
-            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
+            "content": "sha256:8dc94c15360c220e6e4de674edefdc37988c1f95b466ef3b86c707c9ee0b642b",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:7a3cd98085341a7f1d0a301fcd2964ae52220a312e940f27207ebb4f77146ad7",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:e22c5d645704895490e6d5492552357382ce2922f8530d460dce1e5c5e6f4692",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:83e7a8ecbdfd3af4083b3f78cd1384fd731c424f5af32974fdaa99dca82a433b",
             "locator": {
               "end": 44,
@@ -100,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:79c19cfd0d98ace831ea3fe271d253380d1ce64c29f540eb5acd6e73c08a887a",
             "locator": {
               "end": 76,
@@ -112,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:07e0ed222f80cd3ef8b7a5185269f4a4efbd1708623316ddd712bd5da232821b",
             "locator": {
               "end": 83,
@@ -125,16 +125,16 @@
       ]
     },
     "6": {
-      "note": "An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message.\n\nAnchor: `TaskDocumentTopology._commanded_masters_exact`",
+      "note": "An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message.  Anchor: `TaskDocumentTopology._commanded_masters_exact`",
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
             "locator": {
-              "end": 665,
+              "end": 682,
               "kind": "line_range",
-              "start": 605
+              "start": 622
             }
           },
           "kind": "code"

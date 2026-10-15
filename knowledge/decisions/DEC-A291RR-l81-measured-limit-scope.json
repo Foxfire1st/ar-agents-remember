@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The developer retained the concrete feature/structural duties while declining further pursuit of those measured limits; a bounded witness cannot substitute for a whole installed runtime."
+  },
+  "alternatives": [
+    {
+      "option": "Keep structural/native preservation and feature duties; report bounded R40/G2/G3 observations only for their exact measured fixture.",
+      "reason": "The developer retained the concrete feature/structural duties while declining further pursuit of those measured limits; a bounded witness cannot substitute for a whole installed runtime.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat every old measured-limit pursuit as a remaining acceptance requirement or broad running-installation proof.",
+      "reason": "No numeric latency, CPU, whole installation, MEMORY or lifecycle acceptance is inferred from this curation.",
+      "reconsider_when": "The developer explicitly reopens the measured requirement or changes the declared acceptance scope.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No numeric latency, CPU, whole installation, MEMORY or lifecycle acceptance is inferred from this curation."
+  ],
+  "context": "D105 separates retained structural/feature duties from further pursuit of measured limits.",
+  "decider": "Developer requirement/ruling authority, recorded by Curator without reversal.",
+  "id": "DEC-A291RR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "FAM-4ZNEN9"
+    },
+    {
+      "relation": "constrains",
+      "target": "FAM-CAG581"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L81-THE-DEVELOPERS-WORD-D105-CONTROLS-MEASURED-LIMITS-ARE-NOT-PURSUED-THE-STRUCTURAL-DUTIES-AND-THE-FEATURE-STAY-RULING.json"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-measured-limit-scope",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

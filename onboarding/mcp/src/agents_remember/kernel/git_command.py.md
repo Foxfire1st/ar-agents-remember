@@ -13,6 +13,9 @@ merge, and the two guarded mutation families: private preparation and closeout r
 
 ## Code Commentary
 
+The object memo exists only for one request and keys the repository, effective work directory/environment, exact argv and output mode. It keeps successes only. Exact-object existence/verification and explicitly replace-proof supported peels may collapse; failures, refs, index mutation and replacement-sensitive or malformed/suffixed names run natively again.
+
+
 ### The runner
 
 - `git_environment()` copies the process environment and removes the eight repository selectors of
@@ -64,7 +67,7 @@ runner itself adds none of them: a caller that does not pass them gets Git's con
   hold go to `_batch_blobs`. The dictionary is keyed by repository path and blob ID, so an ID that one
   repository holds is still read, and still fails, in a repository that lacks it. The dictionary lives in a
   context variable and ends with the block. Outside a block every call reads from Git. The reviewer's
-  worklist child is the one caller that enters the block.
+  worklist child, complete-review owner and review-tree owner enter the block; nested scopes join the existing block.
 - `merge_file_bytes` runs `git merge-file -p` over three files and returns the merged bytes and the number
   of conflicts, which is Git's exit status. It writes nothing. An exit status below 0 or above 127 raises.
 
@@ -82,6 +85,8 @@ runner itself adds none of them: a caller that does not pass them gets Git's con
   prepared commit with one `update-ref <ref> <new> <expected old>`. A ref that already names the prepared
   commit, or an output that equals the old commit, returns evidence without a command. A new memory
   publication whose tree holds `memory.md` is refused.
+
+Exact-object eligibility predicates and their regex constants live in the sibling `git_object_memo_keys.py`. This runner imports the two predicate consumers directly; request scope, memo keys, successful-result retention and Git execution remain here.
 
 ## Evidence
 
@@ -107,3 +112,5 @@ runner itself adds none of them: a caller that does not pass them gets Git's con
 - The closeout publication is one compare-and-swap of the ref. [50]
 - A repeated blob read inside the block starts no Git process and never crosses repositories. [51]
 - The parsed diffs of the reviewer and the worklist carry the options. [52]
+
+- The runner keeps memo ownership and imports exact-object eligibility from its direct sibling. [53]

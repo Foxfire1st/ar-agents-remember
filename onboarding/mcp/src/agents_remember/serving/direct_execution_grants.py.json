@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ddaef240cc8849cd800934c35d52b06bfc9c0e10",
+        "blob": "614aa98021c9f07b987ec6eb06908ebde3e5b0c1",
         "content": "sha256:a83bf7ccaa09aca17f580894712cc8c1482893085ef5c61c98a5fad149d7b2bd",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ddaef240cc8849cd800934c35d52b06bfc9c0e10",
+        "blob": "614aa98021c9f07b987ec6eb06908ebde3e5b0c1",
         "content": "sha256:a1f85392bd641be96673b6fe8ff89b0a9cf0d66c924c10861b06cc8a52eda82a",
         "locator": {
           "kind": "symbol",
@@ -34,7 +34,7 @@
         "handoffEntry": "L94-CODE-F08",
         "leaf": "260928-MIK-L94"
       },
-      "rationale": "The same post-unlink remediation on the developer (dashboard control) route, so neither writer can clobber a concurrently started grant.",
+      "rationale": "The developer dashboard route attempts the same exclusive recreation before refusing a start-interleaved revoke. Suppressed OSError can leave the removed grant absent; FileExistsError preserves another giver's grant without proving exact restoration or serial consistency. A004-C02 records this inherited gap in the unchanged promise.",
       "role": "enforcement"
     }
   ],
@@ -44,10 +44,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3d52a1546d87cf43a6fd70f7013753d28e4d739",
-            "content": "sha256:6b80f26ae374c8ef29fbaa54211e7d4205b5073f416636d38944e360c47585a9",
+            "blob": "3b2e61b1dfe9332f457c2c5f314203d0c01605b2",
+            "content": "sha256:3102a5c4b1d4564d060fd77e786d0fec840262188f8dffef3170e2f7a972b89c",
             "locator": {
-              "end": 485,
+              "end": 475,
               "kind": "line_range",
               "start": 1
             }

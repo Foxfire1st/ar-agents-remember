@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
             "locator": {
               "kind": "symbol",
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
+            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -203,12 +203,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
-            "content": "sha256:6bd406b0f45d499854d3d2dc25abf8262e6ad140e44ead99228a630b8257ada1",
+            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
+            "content": "sha256:158bf1da5b8b90226cc614de3120775d95e6ce13c2c609447275f87d72195d82",
             "locator": {
-              "end": 235,
+              "end": 237,
               "kind": "line_range",
-              "start": 203
+              "start": 205
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -216,12 +216,12 @@
         },
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
-            "content": "sha256:1d40fc985363eda8db8df6e94ff60adbb8380e4ca3f2f9b8fdbc7e003b1b7a7b",
+            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
+            "content": "sha256:75269e93d2a941817ba14ab6e312139bef7451dc129b16e5e45f512721454678",
             "locator": {
-              "end": 340,
+              "end": 342,
               "kind": "line_range",
-              "start": 308
+              "start": 310
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -229,12 +229,12 @@
         },
         {
           "anchor": {
-            "blob": "236802f5e4a2b71601e9aa37d2821ff56dc619ca",
-            "content": "sha256:7393dc273f170b87eca4842c62a9f2f7fde41b310b5aed6985623cdea90ebac1",
+            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
+            "content": "sha256:ba9201cd6c238b7c7657711235e9eae0c48fe32e9b15736d0aa7b4d0af5da270",
             "locator": {
-              "end": 610,
+              "end": 612,
               "kind": "line_range",
-              "start": 568
+              "start": 570
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -529,12 +529,12 @@
         },
         {
           "anchor": {
-            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
-            "content": "sha256:58a7a911d0407fee295161967a9796681d729150b57ea0ace94b29fc28059c49",
+            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "content": "sha256:ca0ba3c61f2c30f9e2eb61c29c37ab7e76c0384cf2c48824a19964705030991b",
             "locator": {
-              "end": 496,
+              "end": 522,
               "kind": "line_range",
-              "start": 483
+              "start": 509
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -671,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "990d00b7ffd9569f6434ef8bd1fa5576284c76df",
+            "blob": "c53333a189e401b041e0fc4e3501ee1efa2c3001",
             "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
             "locator": {
               "kind": "symbol",

@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-        "content": "sha256:c6d3fc19ab7aae8cedf36503ebb6a47ab71e0bba1bd85dcc4c2bad56d4fe306b",
+        "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+        "content": "sha256:18707450de745e56f58caa82bfb8742fac36c10913d25651a326f54b7852885d",
         "locator": {
           "kind": "symbol",
           "name": "read_complete_knowledge_review"
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+        "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+        "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_review"
+        }
+      },
+      "id": "RLZ-77JFN3",
+      "invariant": "INV-9MF6HZ",
+      "origin": {
+        "handoffEntry": "MIK-R81@v1-rule7-standalone-answer",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The composition emits a standalone answer; a browser-dependent partial response is the rejected alternative.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
         "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+        "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
         "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
         "locator": {
           "kind": "symbol",
@@ -59,11 +77,11 @@
   ],
   "references": {
     "1": {
-      "note": "The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias.\n\nAnchor: `review_source_inventory`; `review_statement_sides`; `review_revision_comparison`; `review_subject_catalogue`; `review_task_context`",
+      "note": "The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias.  Anchor: `review_source_inventory`; `review_statement_sides`; `review_revision_comparison`; `review_subject_catalogue`; `review_task_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
             "locator": {
               "kind": "symbol",
@@ -75,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:ce8f7f96670ebbce089661807af6837f837d52158ab3d9d35da87fa703b518b1",
             "locator": {
               "kind": "symbol",
               "name": "require_current_candidate_identity"
@@ -87,7 +105,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:bf2b35660e90380b885eeb16ffeb4c424c658bf32de81887aa75c3a2bd2d4810",
             "locator": {
               "end": 56,
@@ -99,10 +117,10 @@
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:4f0efbde9dda0ffc32327f6d20ebb8b165815972d91977692d032b88477c05f5",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:1628cef6016e36f2e21aef8e2649a381e90381b058aed779873e870f34f3027c",
             "locator": {
-              "end": 140,
+              "end": 142,
               "kind": "line_range",
               "start": 65
             }
@@ -111,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:73b02c606fd1a6d98dbb70c50364e9fbd9d418fec971ad53f31899bde50153c7",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:50b24169d75d7cbeb0bc16a46573021b69674868f6ad5b1143bc2a02e30284a1",
             "locator": {
-              "end": 254,
+              "end": 257,
               "kind": "line_range",
-              "start": 224
+              "start": 227
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
@@ -182,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
             "locator": {
               "kind": "symbol",
@@ -206,7 +224,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
             "locator": {
               "kind": "symbol",
@@ -256,16 +274,14 @@
       ]
     },
     "12": {
-      "note": "**The record-beside-the-bytes namespace this adapter threads through the whole render: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, the requested repository used only when neither record exists, and an unreadable record refused rather than guessed past.**",
+      "note": "The current namespace is the derived KnowledgeIndex.repository_id when the database opens as that index; otherwise review_namespace keeps the requested repository. The receipt and baseline-generation lookup described in the prior account is retired, not the current namespace mechanism.",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:06aac2b7ac1e4036b4663248ac7c8a1dda9897d9cbaaa9c485545995b2e9206a",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:86ebf1be301ea0f17958bd584e48bf13430d2713dee82065b62e3feacc05ab4a",
             "locator": {
-              "end": 359,
-              "kind": "line_range",
-              "start": 359
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
@@ -278,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:151736419cd320dfebf3e61db0f3e5f1fea5b47ed15927522a9bda5eb8768402",
             "locator": {
               "kind": "symbol",
@@ -290,110 +306,14 @@
       ]
     },
     "14": {
-      "note": "**The composition: the observation made once and handed to both renderings, the task-context branch, the three pair refusals (absent, unreadable receipt, unreadable dataset), the comparison, the matrix read through the shipped view operation with its selection channels stated, the endpoint recheck immediately before the payload, and the panes with staleness, submission and the declared limits.**",
+      "note": "Current composition compares the bound pair, rechecks candidate identity after comparison and before the later family, applicability and meaning projection reads, and renders their owner results. No review matrix is read; a records-page request receives its own refusal rather than a page. This is not a last-after-every-read recheck guarantee.",
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_current_candidate_identity"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
-            "content": "sha256:62cf6d459b3b020429a11f14244aaa2ebde11fa29514e733e81dc88c849aca92",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_knowledge_view"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_views.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6a6e9fbb6bc291a7c343c2c7435d5a6e44e62362",
-            "content": "sha256:6b647ae2b2899fda0ee87e4a0ece8ee472286d84ea3c7ae0af7c40357020543a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ViewRequest"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
-            "locator": {
-              "kind": "symbol",
-              "name": "unreadable_half_refusal"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "candidate_receipt_refusal"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
-            "content": "sha256:576e6fcb8e980ee205a75689f4ee4631affd071709ba923e22d29d3e04b60899",
-            "locator": {
-              "kind": "symbol",
-              "name": "with_selection_channels"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:5a9cc3b5eda3dbbfdc83560d5bfca425001144152c7fa7ff9d09c265037aeeb6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_matrix_rows_remaining"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:c4127302ba62d88d836254ac430d88f9a721daa32c710b398bdb837e567b9f1f",
-            "locator": {
-              "end": 627,
-              "kind": "line_range",
-              "start": 614
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -417,7 +337,7 @@
         },
         {
           "anchor": {
-            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
             "content": "sha256:d53c3239d838ce8c30e49a540ec93b5ef6dcec07826b1b2a155f79ba683ddf40",
             "locator": {
               "kind": "symbol",
@@ -429,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
             "locator": {
               "kind": "symbol",
@@ -446,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:0b94f85fa9efd6d2146ae50b3fe5bd7031a0bc94699565a8560cf1486723b69e",
             "locator": {
               "kind": "symbol",
@@ -458,15 +378,14 @@
       ]
     },
     "17": {
-      "note": "The review matrix read as its own step, so the composition reads as measure, branch, open, compare, read, recheck, publish.",
+      "note": "The historical review-matrix step is retired. Current composition reads no matrix, and page_of records publishes no records page and receives records_collection_refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:0ecc2536f73989c659700cd6ce3fc5b1400e1a1b15bfe7a989b5dd2cdd70d830",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "_review_matrix"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -478,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:05fd2b3385201155486a7ba8b77c230eb40395775f98879cdd8c6546e3db3a6b",
             "locator": {
               "kind": "symbol",
@@ -506,7 +425,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:080d639fe20f2c33e604a5aceb52e93da182a4e73218e8e0a9b1ead18a4b66c8",
             "locator": {
               "kind": "symbol",
@@ -517,7 +436,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:a5e629944865662fd63096f5e667096535f06f43318c3577af724a384ddbc1ae",
             "locator": {
               "kind": "symbol",
@@ -533,8 +452,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:2eb9758b2d9b2883df5745caba50b4529c0c4134458badcf58a5754de33981cb",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:0e4b2eb7059655fed2d681d8ab952b5f84a548eccb4080a414b34926f89481ec",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -566,7 +485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
             "locator": {
               "kind": "symbol",
@@ -577,7 +496,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
             "locator": {
               "kind": "symbol",
@@ -675,7 +594,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
             "locator": {
               "kind": "symbol",
@@ -752,39 +671,14 @@
       ]
     },
     "26": {
-      "note": "**The cases that measure this adapter's one-sided output through the real composition: an addition, a removal, a one-sided field row, and a structured value served as its own projection on both sides.**",
+      "note": "The named structured-value case currently asserts equal structured_value_text for reordered dictionary keys only. Its former fixture-driven two-sided real-composition round trip is retired; neither the method name nor its historical account establishes that stronger current proof.",
       "targets": [
         {
           "anchor": {
             "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "content": "sha256:21e8946620a21a3a1476c98296993521b40abc0a03e1c2c269d7b7c0bd8abdb2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
-            },
-            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
-            "content": "sha256:a66dedf43017f357632ebd53db6a7da972e44024adeed1da988bc30787095c62",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after"
-            },
-            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
           },
@@ -875,64 +769,26 @@
       ]
     },
     "29": {
-      "note": "**The deleted prefer-both-sides rule and what replaced it: `_identity_item` and `_selector_record_id` are gone, and the pane renders the head selection instead.** The old rule preferred the item present on both sides — the retained predecessor both snapshots happen to hold — and used a one-sided item only for additions/removals. `ICR-R07@v1` deletes that preference: `compose_review` computes the before/after head pair from authored successor edges and `_knowledge_pane` renders it through `_selected_statements`, with ambiguity or unresolved lineage rendered as an explicit non-pair.\n\nAnchor: `select_subject_revisions`; `revision_selection`",
+      "note": "The deleted prefer-both-sides rule remains retired. compose_review delegates revision selection over the comparison page items. Every retained revision in the selected population is a head, with no predecessor-edge traversal. Two unique nonempty-side heads form a pair; a known-empty side is an addition/removal only when the other side has exactly one head. Multiple heads on either nonempty side render explicit ambiguity; no selected revision on either side yields an unresolved non-pair. Retain the former successor-edge account as historical, not current. Anchor: `select_subject_revisions`; `revision_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "_selected_statements"
+              "kind": "file"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:07cfb08ca562837a930d6e041b66abd4dd55384a005ccdb61052f37deab5a873",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:be943438e7baf97d77e0fb9303170ffccf47175ba77411c1096510eeffe7f15f",
             "locator": {
-              "end": 970,
-              "kind": "line_range",
-              "start": 117
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
-            "locator": {
-              "end": 1015,
-              "kind": "line_range",
-              "start": 963
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:f78438af62f0beadad9c301b70492e5e7270dc509e52b497435fcd32da7430cc",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 92
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:95ecaf3397b450e80769e5aa36681e2928afe7c2322e7d938c3ed0290a5801b5",
-            "locator": {
-              "end": 341,
-              "kind": "line_range",
-              "start": 341
-            }
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
           },
           "kind": "code"
         }
@@ -943,7 +799,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
             "locator": {
               "kind": "symbol",
@@ -955,7 +811,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
             "locator": {
               "kind": "symbol",
@@ -967,7 +823,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
             "locator": {
               "kind": "symbol",
@@ -1025,7 +881,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca545d2a3d6de84aea0a10f30cab67cfd8022318",
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
             "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
             "locator": {
               "kind": "symbol",
@@ -1037,7 +893,7 @@
         },
         {
           "anchor": {
-            "blob": "ca545d2a3d6de84aea0a10f30cab67cfd8022318",
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
             "content": "sha256:7b693f373842feb093fce6a7f376f260d54ab05c6700b61c44e7807f79dbd409",
             "locator": {
               "kind": "symbol",
@@ -1049,7 +905,7 @@
         },
         {
           "anchor": {
-            "blob": "ca545d2a3d6de84aea0a10f30cab67cfd8022318",
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
             "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
             "locator": {
               "kind": "symbol",
@@ -1066,8 +922,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
+            "content": "sha256:0fcd19471e7ac347817421bd98af956f8bf5fda2bb0168b0740edce08eb412bd",
             "locator": {
               "kind": "symbol",
               "name": "tree_difference_observation"
@@ -1078,7 +934,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
             "locator": {
               "kind": "symbol",
@@ -1090,8 +946,8 @@
         },
         {
           "anchor": {
-            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
-            "content": "sha256:6a9494f8c9472eadac703d43bd6308db806178caa52718744135863d5ab9b8ab",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
+            "content": "sha256:dfeca8a497933e62a9d17afa766055d417ed41f3b604284cd99f785467ddcc45",
             "locator": {
               "kind": "symbol",
               "name": "inventory_command"
@@ -1102,7 +958,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
             "locator": {
               "kind": "symbol",
@@ -1114,7 +970,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:a95444f2d47722f1fa92d64b4196cb129e380792691f5ea6f9f1a723442d3d11",
             "locator": {
               "kind": "symbol",
@@ -1209,7 +1065,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
             "locator": {
               "kind": "symbol",
@@ -1272,7 +1128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -1284,8 +1140,8 @@
         },
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:9c07522003cc79886b73906cabb1c52ebcb0c0d366e2f947698688acb73af504",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "content": "sha256:913453cdff33297adbb9c8a3ef7cec36df055815981be1bddbc821af1134f615",
             "locator": {
               "kind": "symbol",
               "name": "test_an_absent_candidate_dataset_refuses_by_name_rather_than_substituting_one"
@@ -1318,8 +1174,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:96eac29a5eb0201e3cf3c107bcf5ae1414ca1ff73f3cf73c07bdfb55ef7a2ffd",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "content": "sha256:3a2190534ac8787ef1861a8fbcc06aa82fe16d7be39df7d73cf1c7b0628335ad",
             "locator": {
               "kind": "symbol",
               "name": "test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one"
@@ -1330,8 +1186,8 @@
         },
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:c516f5b1c2ffc7c0fd1c5e7acb5cf988860161a76cc2e505b525aaf1ddc2915d",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "content": "sha256:b93fa02f62d656d00b070beff442565448cab3a3f67bfd226e4fca4458e2bee2",
             "locator": {
               "kind": "symbol",
               "name": "test_a_before_side_that_is_present_but_unreadable_refuses_by_name"
@@ -1343,28 +1199,15 @@
       ]
     },
     "4": {
-      "note": "The record kinds the review matrix is asked for — an input to L20's view rather than a selection policy of this module's — and the authored kinds the knowledge pane separates from the mechanical signals, which the record owner now **declares** and this module imports back so the counted collection and the rendered one cannot drift.",
+      "note": "Historical matrix-kind selection is retired with the envelope tables. The current adapter consumes caller-supplied owner records and builds no review matrix; its collections are not a matrix read.",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:e7edee5ee01fc8fc6d55a66872db9b771355616f024f8f208fcff23c594bc9c7",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "REVIEW_MATRIX_KINDS"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
-            "content": "sha256:61b59a6b5160a907e9bf26bb4c11a903254d3ebfdacfc4e43e8dceb1b253a674",
-            "locator": {
-              "kind": "symbol",
-              "name": "AUTHORED_EFFECT_KINDS"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
           "kind": "code"
         }
@@ -1375,8 +1218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:5e465a3acf376f5e5cdbd1e4a715d2ae8db2e631f1d89afa5632d88de540c1e1",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "content": "sha256:c505791bb2ec46a640c4985ecb40eacd57c968ca109f4afba94bef7df9318883",
             "locator": {
               "kind": "symbol",
               "name": "test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising"
@@ -1392,8 +1235,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:f03a976d2b5d0824e8b2a9a67a906b472e577858e747039e9fe7aac685577999",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:bd833bff981ce44b5d48d4023459bf29448eca3d87d21cab1d828c8044005eb6",
             "locator": {
               "kind": "symbol",
               "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
@@ -1404,8 +1247,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:4ca4798e48d7f90c006c409d47aabc2b9906ef89ba63449a33ad3c9cb6a2203e",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:4759e6a91b2e31afcf7c5ad12f32fb0185d417cfd27796360d0ae29f23d92ca5",
             "locator": {
               "kind": "symbol",
               "name": "test_a_capture_input_that_moves_before_publication_is_refused_by_name"
@@ -1505,16 +1348,16 @@
       ]
     },
     "45": {
-      "note": "A tree comparison's family context carries the change facts of the returned members; a dataset review's is published as composed (MIK-L33).\n\nAnchor: \"family_context=with_change_kinds(family.context, resolved.trees),\"",
+      "note": "A tree comparison's family context carries the change facts of the returned members; a dataset review's is published as composed (MIK-L33).  Anchor: \"family_context=with_change_kinds(family.context, resolved.trees),\"",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:735029db67ae2076a984650eebf8c5265d1d88eb10a813c7c3113889dae4b5ce",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:815054028884e22307d3d059e071015b2e17b8a53d984c28db711bb1a194b85b",
             "locator": {
-              "end": 583,
+              "end": 592,
               "kind": "line_range",
-              "start": 581
+              "start": 590
             }
           },
           "kind": "code"
@@ -1543,8 +1386,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:c6d3fc19ab7aae8cedf36503ebb6a47ab71e0bba1bd85dcc4c2bad56d4fe306b",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:18707450de745e56f58caa82bfb8742fac36c10913d25651a326f54b7852885d",
             "locator": {
               "kind": "symbol",
               "name": "read_complete_knowledge_review"
@@ -1559,12 +1402,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:26a7d945c0f726ac2f1d7962e21427c1ffb92c9e1fc2916dfb048a24cddf58d4",
             "locator": {
-              "end": 323,
+              "end": 332,
               "kind": "line_range",
-              "start": 315
+              "start": 324
             }
           },
           "kind": "code"
@@ -1576,12 +1419,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:9ba040bbab96632037f13972f6f76cf3c3ca4275e5f6c10c7e0f064d53b94b91",
             "locator": {
-              "end": 323,
+              "end": 332,
               "kind": "line_range",
-              "start": 319
+              "start": 328
             }
           },
           "kind": "code"
@@ -1589,15 +1432,14 @@
       ]
     },
     "5": {
-      "note": "The record input set, its frozen shape and its single module-level empty value — now declared in the extracted record renderer and imported here, so `review_records_for` and the ingest CLI keep resolving.",
+      "note": "The frozen ReviewRecordInputs bundle and module-level EMPTY_REVIEW_RECORDS are owned by the record renderer and imported here. Current knowledge-ingest uses the converted file-writer route, not these review bundle reexports.",
       "targets": [
         {
           "anchor": {
             "blob": "083bfa8a894d7c237c473d61e2a406eb6e49c127",
-            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "content": "sha256:c08866dc681c01b3fcd21a64c87726220daa97467944217fb9af70653840d8f3",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewRecordInputs"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_record_rendering.py"
           },
@@ -1605,25 +1447,22 @@
         },
         {
           "anchor": {
-            "blob": "083bfa8a894d7c237c473d61e2a406eb6e49c127",
-            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "EMPTY_REVIEW_RECORDS"
-            },
-            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:4f0efbde9dda0ffc32327f6d20ebb8b165815972d91977692d032b88477c05f5",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 65
+              "kind": "file"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
           "kind": "code"
         }
@@ -1634,8 +1473,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:cc7cdbefcd61af3efa33d2b215c1b1ff66469e5f567067e7cd0e7498f1d674ee",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
               "kind": "file"
             }
@@ -1649,8 +1488,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:cc7cdbefcd61af3efa33d2b215c1b1ff66469e5f567067e7cd0e7498f1d674ee",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
               "kind": "file"
             }
@@ -1664,8 +1503,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
             "locator": {
               "kind": "symbol",
               "name": "ReviewCandidateResolution"
@@ -1681,7 +1520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
             "locator": {
               "kind": "symbol",
@@ -1723,7 +1562,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
             "locator": {
               "kind": "symbol",
@@ -1747,26 +1586,24 @@
       ]
     },
     "9": {
-      "note": "**The entry operation: the same resolution as the comparison, then the pair's refusals through the shared `pair_preflight_refusal` (closed-leaf record, absent half, unreadable half, unreadable receipt — the rule the changed-intent summary also uses, since `260921-ICR-L47`), then the catalogue read — every recorded identity of both snapshots listed with presence and totals, no subject compared to earn its row. The enumeration itself is `review_subject_catalogue`'s, and the per-subject compare-to-earn-a-row helpers this module used to own are deleted.**\n\nAnchor: `unreadable_half_refusal`; `candidate_receipt_refusal`",
+      "note": "The entry operation resolves the same pair, then asks pair_preflight_refusal before enumerating the catalogue. Current preflight tests legacy/unavailable knowledge first, then closed-leaf absence, absent half, unreadable half and candidate receipt. Every recorded invariant/family identity from readable sides is listed with presence and totals, without a comparison to earn its row. Anchor: `unreadable_half_refusal`; `candidate_receipt_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "list_knowledge_review_entries"
+              "kind": "file"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
-            "content": "sha256:075c9360f3cbc7bf7f22503dc169467135f7990dbe6bc32133557e18e25d0ee8",
+            "blob": "e35a60680f871cd002ce6b1ccd3a831d69561ae2",
+            "content": "sha256:efdfb539992923159232373adc01d19a3c62af719ae1b993671c6090aa4c4986",
             "locator": {
-              "kind": "symbol",
-              "name": "pair_preflight_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_pair_preflight.py"
           },
@@ -1775,10 +1612,9 @@
         {
           "anchor": {
             "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
-            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "content": "sha256:7ba4e31a80a2e5fc789796d6245beb51a74c27db7882696dd7c95c565af107cc",
             "locator": {
-              "kind": "symbol",
-              "name": "read_subject_catalogue"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
           },

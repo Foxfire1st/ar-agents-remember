@@ -18,8 +18,10 @@ The named dependency adapter joins the owning ordinary master and its explicitly
 
 ## Construction And Data Flow
 
-The task-document reader computes whole counts before bounded preview selection (six header notes,
-five decisions and twenty-five review findings); the full-body mode retains complete strings/collections.
+Incremental refresh carries complete accepted paths through actual task/lifecycle dependency consumers. Incomplete/uncertain samples reconcile fully. Closeout queue reuse separately authenticates each sprint's document, code/memory and source-tip evidence; a workspace-only wake is not a demand for whole-corpus census. Semantically identical projection publication retains its file, and unsuccessful required refresh/publication keeps invalidations owed.
+
+
+The task-document reader computes whole header-note and review-finding counts before bounded summary selection (six header notes and twenty-five review findings). Summary mode emits no decision bodies and no decisionsCount field; full-body mode retains all decisions and complete reader strings/collections.
 Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
 status, step/sub-step note/outcome and review changes participate in body revision identity. These
 read-only projection/display additions preserve the bounded canonical enumeration and explicitly named
@@ -29,7 +31,7 @@ Full body requests avoid canonical task-corpus enumeration: they read the reques
 
 The serving projector passes its retained input state, provider refresher and landing reader into `project_and_write`. Refresh kinds distinguish full refreshes, named domain changes and heartbeats. Domain retention avoids re-reading every surface for unrelated changes; closeout queues are nevertheless read on every input pass.
 
-Task refresh constructs contracts, enclosures, task documents and series in local variables before assigning the four retained values. `_task_refresh_pending` is set before construction and cleared after assignment. If construction raises, the previous published task-domain values remain and the pending flag permits another attempt, including on a heartbeat. Contract construction reuses successful parses only while mtime, size and ctime match, removes entries outside the live enumeration, and publishes a read-only mapping.
+Full task refresh constructs contracts, enclosures, task documents and series locally before assigning the retained quartet; failure during that construction preserves the prior quartet. A failed input read leaves _task_refresh_pending set, and a later read, including a heartbeat, forces a full retry. Complete incremental task samples assign contracts and enclosures before reprojecting task documents and subsequently merging series, so failure on that branch need not preserve the entire prior quartet. Contract construction reuses successful parses only while mtime, size and ctime match, removes entries outside the live enumeration, and publishes a read-only mapping.
 
 Runtime readers copy inbox entry, subject and owner task references and expectation task references as canonical `TaskDocumentRef` values. Enclosures include the lifecycle-operation projection returned by the durable operation reader. That reader prefers the newest active operation when any exist, otherwise the newest available record; it may instead return a journal-read decision or no safely projectable operation. Durable operation state remains the authority. Keeping worker and resume identities private remains standing intent; the complete downstream field exclusion was not established in this bounded review.
 
@@ -43,7 +45,7 @@ Approved requirement packet references and acceptance-obligation questions becom
 
 The closeout reader strictly validates each sprint payload, captures its current projection source and reads the effective disposable queue. It projects service condition, source classification, fingerprint, problems, and member order and reasons. The source capture supports graph and graph-less modes. The effective store returns invalid-empty for unreadable or mismatched state. Strictly invalid sprint payloads are skipped before source capture, so the invalid-empty promise applies after that admission boundary. Task-history and closeout projection do not rewrite their source authorities.
 
-Landing observation has its own enclosure walk and concurrency limit. It observes open landing arcs and one eligible finishing attempt for an exact key already observed while open. Startup-completed and abandoned contracts do not enter remote observation merely to repair history. Completed contracts serve trusted current finals; missing, corrupt, stale or unsuccessful finals remain explicitly missing rather than entering recurring historical repair. After a successful atomic final-file replacement, the writer evicts the parsed-final cache entry for that exact path, even if mtime is unchanged. Failed writes retain the warning path.
+Landing observation has its own enclosure walk and concurrency limit. Completed arcs without a valid current final receive one permitted finishing attempt per process, including startup, with four terminal admissions per sweep. Successful or failed attempts stay consumed even after later final loss; only a real reopen resets that arc. Abandoned and build-only contracts remain probe-free. Completed contracts serve trusted current finals; missing, corrupt, stale or unsuccessful finals remain explicitly missing rather than entering recurring historical repair. After a successful atomic final-file replacement, the writer evicts the parsed-final cache entry for that exact path, even if mtime is unchanged. Failed writes retain the warning path.
 
 `projection_store.py` reads lifecycle logs and gathers analytical surfaces, passes inputs to the pure workspace reducer, and writes `latest-state.json` and `latest-metrics.json`. Each file is published through the atomic-write primitive separately; these two writes are not one transaction.
 
@@ -129,12 +131,15 @@ None.
 
 
 - The observer store-root conventions are kernel-owned. [1]
-- The projection tick consumes these readers. [2]
-- The body read and its graph-only join table. [3]
 - The bounded canonical enumeration every always-on reader uses. [4]
 
 - Serving locally defines equivalent observer paths rather than importing the kernel definitions. [5]
-- Task-domain publication preserves prior values on construction failure and retries pending refreshes. [6]
+
+- The projection tick consumes these readers. [2]
+- The body read and its graph-only join table. [3]
+
+- Full task-domain construction preserves prior values on failure; complete incremental dependency updates are not quartet-rollback atomic. Both retry pending refreshes. [6]
+
 - Contract parsing uses stat identity, rejects foreign contracts and prunes departed entries. [7]
 - Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values. [8]
 - Runtime readers project operation and canonical task references, with named tolerant boundaries and inbox compaction. [9]

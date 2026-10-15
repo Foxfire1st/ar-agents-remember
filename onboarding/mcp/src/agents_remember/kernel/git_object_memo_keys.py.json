@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_object_memo_keys.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact-object and supported-peel predicates decide eligibility without holding memo state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70ca91a54d44f3dca60b41628faf1a2d4e1927f9",
+            "content": "sha256:fca8e45a0a8ce950aa3dd27a91ab855bab790794c1bb5a204c6573cbae92a2ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_object_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70ca91a54d44f3dca60b41628faf1a2d4e1927f9",
+            "content": "sha256:c956b4e2a554f354c43a1143f772ac25581c8418da2fb7b77d14890b519a5688",
+            "locator": {
+              "kind": "symbol",
+              "name": "_all_bare_shas"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70ca91a54d44f3dca60b41628faf1a2d4e1927f9",
+            "content": "sha256:77b6d4cc22dcbe0e6e1be19395651e431d1b672a16742f1d808d546193eed463",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memo_rev_parse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70ca91a54d44f3dca60b41628faf1a2d4e1927f9",
+            "content": "sha256:ebcee47508c3b529f557d9dbeb4d9ad1a852e0eee5a20976ccda2969477b8d2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memo_cat_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runner admits one exact execution-pure index-location argv, and the retained test asserts that two identical queries start one child. This is distinct from mutable index reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "content": "sha256:9b39c38f9749b83ea671c955f55270e66beb789296f77f60eda82794acc17537",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INDEX_LOCATION_ARGV"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
+            "content": "sha256:228f4980caa3a3d96933ccf66e514d1e51e62bcd7446ab903f7a3a587981b706",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memo_key"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+            "content": "sha256:56a6e46bf746782f672e0c343cf66347760cb42666bfdbf903dd74f007f193d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_index_location_of_one_execution_starts_one_child"
+            },
+            "path": "mcp/tests/test_git_object_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

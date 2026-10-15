@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Serving app background owners, startup, event-tail and conversation callbacks wired with its ledger. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Serving app background owners, startup, event-tail and conversation callbacks wired with its ledger.",
+  "conditions": [
+    "The runtime supplies its one ledger to all owned paths.",
+    "Prime and watcherless wakes also have explicit reasons."
+  ],
+  "exclusions": [
+    "Process-wide CPU is diagnostic context, not per-owner attribution."
+  ],
+  "id": "INV-RGGEX3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_serving_owner_units.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F02",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every recurring dashboard owner and each conversation/event/startup callback contributes its actual unit and every projector wake retains contributing domains, paths and counts.",
+  "status": "proposed",
+  "supersedes": []
+}

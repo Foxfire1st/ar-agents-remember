@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_warmup_driver.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3aeb60100a7255caa02bb85cdf2a8ffb1f7bfc34",
+        "content": "sha256:74ccc1b88df08d87435176532ba589fd4cf02996613a1cde57cd71026c32ca61",
+        "locator": {
+          "kind": "symbol",
+          "name": "WarmupDriver.aclose"
+        }
+      },
+      "id": "RLZ-2Q6Y4B",
+      "invariant": "INV-YYNNF1",
+      "origin": {
+        "handoffEntry": "L81-R1-F26",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "After cancelled watch intake and all owned tasks have drained, the driver closes the exact admitted unstarted claim as ended without consuming the host start; it holds the real lease while intake is still running.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own serving-lifetime driving tasks and exact warmup claim retirement. Old passes and admitted but unstarted claims close only after owned intake and resume work drain; cancellation cannot leave a lease or overlap a newer pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aeb60100a7255caa02bb85cdf2a8ffb1f7bfc34",
+            "content": "sha256:cf6b9a86be7e674ad592c6a4579866dff724995f61a04eeecd82b56dd46dc5bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

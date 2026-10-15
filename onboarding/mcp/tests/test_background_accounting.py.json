@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_background_accounting.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ea3023d7212f38d18e3551a60dadb64d9f4aec64",
+        "content": "sha256:eb6d1fdddd85ef74723c684bcb51ce8f0e1c1123f0f873efbd2df3dfa5e0784b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExactWindowTests.test_partial_second_units_and_wakes_are_exact_or_honestly_incomplete"
+        }
+      },
+      "facet": "Controlled cutoff/cap cases distinguish exact complete aggregates from honest incomplete oldest-second detail.",
+      "id": "PRF-EKR0DC",
+      "invariant": "INV-RJWTW8",
+      "origin": {
+        "handoffEntry": "L81-R1-F04",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The always-on background account (MIK-R81 rule 1): per-owner processor time and every wake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea3023d7212f38d18e3551a60dadb64d9f4aec64",
+            "content": "sha256:b36e2d55d94f80fdaabf4ff9dfe7632f2dd3684cd72de03e78fd72ff6e87b914",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under the unchanged 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.\n\nAnchor: `AccountingCostTests.test_recording_ten_thousand_units_costs_less_than_half_a_thread_cpu_second`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea3023d7212f38d18e3551a60dadb64d9f4aec64",
+            "content": "sha256:b36e2d55d94f80fdaabf4ff9dfe7632f2dd3684cd72de03e78fd72ff6e87b914",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

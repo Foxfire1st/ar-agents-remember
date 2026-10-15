@@ -31,7 +31,7 @@ Keep the existing comparison, family, roster and source/evidence owners. This mo
 ### Invariants And Boundaries
 
 - A recorded memberless family stays recorded, not absent — distinct from the measured zero and from the absent family.
-- A new primary invariant is genuinely before-absent without making its existing family before-absent.
+- A sibling joins the existing direct-family roster while the selected auxiliary invariant's primary operands remain unchanged; this case does not assert a newly before-absent primary invariant.
 - A removed member does not pin family context to its retained predecessor.
 - Fixtures and passing tests are bounded verification, not published project intent or installed product acceptance.
 
@@ -51,17 +51,8 @@ The operative contract is defined by the repository sources below.
 
 These current owners and cases establish the stated behavior.
 
-
 - A recorded memberless family retains its guarantee and measured empty roster. [2]
-
-
 - A new member retains the family's existing before counterpart. [4]
-
-
 - A retained predecessor membership cannot pin the family after selection. [5]
-
-
 - Primary knowledge, evidence and complete source inventory stay independent. [6]
-
-
 - Sparse pages preserve the recorded population and primary panes through real HTTP walks. [7]

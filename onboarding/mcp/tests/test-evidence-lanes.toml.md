@@ -8,6 +8,8 @@
 
 The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed.
 
+The source-owned regeneration removes eight memberships whose files L113 deleted: five from `unit-regression` and three from `integration`. The seven lane identities remain unchanged. Retained L81 accounting, warmup, projection, watcher and budget suites keep their declared lanes; no removed local hosted test is selected as current evidence, and no lane deletion waives full-final coverage.
+
 ## Native reapply regression registration
 
 test_sync_reapply_merge.py is declared once in unit-regression; lane membership selects evidence and certifies no invocation.
@@ -23,7 +25,7 @@ The recorded-meaning-effect regression module is selected in unit-regression. It
 
 The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
 
-`mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. The current catalog also selects `mcp/tests/test_mik_r53_judgment_rows.py`, `mcp/tests/test_mik_r53_onboarding_gate.py` and `mcp/tests/test_mik_r53_report_only_rules.py` in that lane (source rows 211–213). These memberships add no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
+`mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. The current catalog also selects `mcp/tests/test_mik_r53_judgment_rows.py`, `mcp/tests/test_mik_r53_onboarding_gate.py` and `mcp/tests/test_mik_r53_report_only_rules.py` in that lane. These memberships add no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
 
 The catalog records its declared test-module paths under evidence lanes, not an independently verified inventory of every filesystem module. On the admitted L147 successor the parsed lists are unique and sorted within each lane; that observation does not retroactively qualify the older frozen ordering. Source declarations and their loader checks, not this prose, decide current membership. The extracted capsule serving-surface and
 memory-opt-out refusal suites remain in `unit-regression`; those incoming registrations
@@ -62,20 +64,19 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
-- Extracted capsule surface suite in unit-regression [835]
-
-
-
-- Opt-out refusal suites in unit-regression [836]
 
 
 
 
-- Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
 
 
 
-- The module the lane names. [838]
+
+
+
+
+
+- The module the lane names. Anchor: `mcp/tests/test_knowledge_reader_tree_coverage.py` [838]
 
 
 
@@ -93,22 +94,32 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 
-- The worktree-environment regression module belongs to unit-regression. [841]
 
 
 
 
 
-- The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts. [842]
 
 
-- The guard and recursive scanner cases carry the support-settings contract. [843]
+- The guard and recursive scanner cases carry the support-settings contract. Anchor: `test_the_guard_refuses_the_made_up_real_path_and_creates_nothing`, `test_every_support_write_of_the_user_settings_goes_through_the_guard` [843]
 
 
-- The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
 
-- The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
 
 
 - The current source declares lane membership, including the three MIK-R53 modules in unit-regression; citation-document transaction is integration. Membership does not establish invocation or PASS. [844]
 - Current source delta inspected statically: Add the three exact R53 unit-regression declarations without totals, invocation or PASS; current witness supersedes the prior lead. [848]
+
+- Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
+- Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py` [835]
+- Opt-out refusal suites in unit-regression Anchor: `test_memory_opt_out_refused_routes.py` [836]
+- Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
+- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [839]
+- The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [840]
+- The worktree-environment regression module belongs to unit-regression. [841]
+- The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts. Anchor: 323-334 [842]
+- The role-agent and role-message modules are explicitly selected in unit-regression; membership does not establish execution. [846]
+- The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
+
+
+- The seven retained lane identities select surviving test-module paths; the eight local hosted memberships removed by the earlier L113 retirement remain absent. The incoming task-document Order membership is retained. Selection establishes neither execution nor a waiver of full-final coverage. [850]

@@ -3,16 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Anchor: Static fixture observes direct await of the cancelled recovery worker.",
+      "note": "The fixture witnesses the cancelling owner wait for the exact archive-recovery tick worker, following the measured wrapper and the asyncio.wait drain path.",
       "targets": [
         {
           "anchor": {
-            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
-            "content": "sha256:491abc2a6aa494118382ead91fd11c4b08be57a3f65e90c95de634c7096bb748",
+            "blob": "1aa6a0ab9b67338ecb7068eb18f00bbdf3054b3c",
+            "content": "sha256:927e90b9d4732c4b185eaa7e8db1802d737027b305cc28e26c6553b0757c082f",
             "locator": {
-              "end": 522,
-              "kind": "line_range",
-              "start": 500
+              "kind": "symbol",
+              "name": "_observe_worker_drain"
             }
           },
           "kind": "test"
@@ -24,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "blob": "1aa6a0ab9b67338ecb7068eb18f00bbdf3054b3c",
             "content": "sha256:1226978f856b8d278c55554e427fda41b58bc293857e5fb87120de6678a0f410",
             "locator": {
-              "end": 659,
+              "end": 678,
               "kind": "line_range",
-              "start": 590
+              "start": 609
             }
           },
           "kind": "test"
@@ -41,24 +40,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "blob": "1aa6a0ab9b67338ecb7068eb18f00bbdf3054b3c",
             "content": "sha256:b97a6a1fdb0289064649a159ccb025ad2c88d0bfdd74af7e6d623ba9a07c56da",
             "locator": {
-              "end": 339,
+              "end": 341,
               "kind": "line_range",
-              "start": 337
+              "start": 339
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d4e9aa455a7efcb0fc28679ff20328da0771fc86",
+            "blob": "1aa6a0ab9b67338ecb7068eb18f00bbdf3054b3c",
             "content": "sha256:1226978f856b8d278c55554e427fda41b58bc293857e5fb87120de6678a0f410",
             "locator": {
-              "end": 659,
+              "end": 678,
               "kind": "line_range",
-              "start": 590
+              "start": 609
             }
           },
           "kind": "test"

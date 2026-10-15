@@ -48,9 +48,7 @@ master, and the target may not itself orchestrate. Legacy rows (seat-doc `file`,
 are not checked here — `linkage_report`/`linkageFacts` surface them as drift facts instead (L14-R7
 backward tolerance). The altitude role sets (`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`) and
 `REVIEWER_ALTITUDES` are re-exported from `tasks/document.py`, their canonical home.
-`validate_role` treats reviewer as the deliberate exception to single-altitude roles: the same role
-may bind leaf, master, or sprint documents, while unsupported roles and every other altitude
-mismatch retain typed refusals. Reviewer ownership is not decided here; generation-bound parent
+`validate_role` admits reviewer at leaf, master or sprint altitude, and investigator at sprint or master altitude. Other supported roles use their declared altitude sets; unsupported roles and actual altitude mismatches retain typed refusals. Reviewer ownership is not decided here; generation-bound parent
 validation belongs to the structural seat plane.
 
 Since 260815-DAG-L15 the atomic segment node-kind rule lives here once as the shared
@@ -113,7 +111,6 @@ None.
 The task documents live in the configured coordination root, but the resolver contract is implemented
 inside agents-remember and has no sibling-repository code dependency.
 
-- An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message. [6]
 - Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [7]
 
 ## 260815-DAG-L4 Authority Boundary
@@ -139,7 +136,6 @@ their exact resolved refs.
 
 ### Reconciled Source Evidence
 
-- The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. [5]
 
 ## 260821-CLIVE Projection-Consumer Resolution
 
@@ -158,3 +154,6 @@ because it composes topology primitives without making repository census another
 responsibility of `TaskDocumentTopology`; topology methods and application callers use the same
 function. The former public `repository_masters` method and private `_master_documents` duplicate
 route are removed rather than retained as compatibility readers.
+
+- The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. [5]
+- An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message.  Anchor: `TaskDocumentTopology._commanded_masters_exact` [6]

@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.memberCards.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exercise the mounted ReviewSurface.memberCards owner and its delivered read/selection states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f4d5ce586b192ddab32754763c342785b050c36",
+            "content": "sha256:d2501c75a414c50730eeae88939f36cded6f3144d797974d61f113f740d72ce1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

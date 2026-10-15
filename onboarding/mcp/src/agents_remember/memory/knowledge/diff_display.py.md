@@ -15,7 +15,7 @@ rather than a promise.
 
 ### Logic
 
-`build_display(comparison, *, display_filter, probe, before, after) -> DiffDisplay` returns the shown
+`build_display(comparison, *, display_filter, source: SourceObservation) -> DiffDisplay` returns the shown
 items, the omissions, the limitations and the expansion, in that order:
 
 1. **`_apply_filter`** splits the union into shown items and at most **one** omission. The guard is
@@ -53,7 +53,7 @@ having established it, which `KnowledgeDiffResult` refuses at construction, so *
 here is never a quiet pass**.
 
 
-**A changed path is now an address, a status and a renderability, and the observation says when it is partial.** This leaf added `TreeChange` — the raw filename exactly as Git recorded it, Git's status letter, whether the content can be rendered (`text`/`binary`/`symlink`/`submodule`/`unknown`), a mode-change flag and the reason an `unknown` is unknown — and three fields on `TreePaths`: `entries` (the same measurement at full resolution, held in agreement with `paths` by a `__post_init__` that refuses a value whose paths are not exactly the entry paths), `partial` (the path set was measured while part of it could not be reported whole) and `unrepresentable` (the changed paths whose *name* is not valid UTF-8, kept in full rather than dropped, with `unrepresentable ⇒ partial` enforced at construction). `TREE_DIFF_COMMAND` changed with it: it is now `git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw -z --no-renames {before_tree} {after_tree}`, built from the exported `TREE_DIFF_ARGS` tuple so the advertised text and the measurement's executed arguments share one source (`PARSED_DIFF_OPTIONS` plus `--raw -z --no-renames`) — the same delimiter-safe interface the measurement itself reads — because the line-oriented `--name-only` form quotes and escapes a pathname containing a tab or a newline, so a caller who ran the advertised command would hold a different string from the address the response lists and the address the same file is expanded by. `_expansion_detail` states a partial observation's own limit beside its counts, so the two counts are never read as the whole change set.
+**A changed path is now an address, a status and a renderability, and the observation says when it is partial.** This leaf added `TreeChange` — the raw filename exactly as Git recorded it, Git's status letter, whether the content can be rendered (`text`/`binary`/`symlink`/`submodule`/`unknown`), a mode-change flag and the reason an `unknown` is unknown — and three fields on `TreePaths`: `entries` (the same measurement at full resolution, held in agreement with `paths` by a `__post_init__` that refuses a value whose paths are not exactly the entry paths), `partial` (the path set was measured while part of it could not be reported whole) and `unrepresentable` (the changed paths whose *name* is not valid UTF-8, kept in full rather than dropped, with `unrepresentable ⇒ partial` enforced at construction). `TREE_DIFF_COMMAND` changed with it: it is now `git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw --numstat --no-abbrev -z --no-renames {before_tree} {after_tree}`, built from the exported `TREE_DIFF_ARGS` tuple so the advertised text and the measurement's executed arguments share one source (`PARSED_DIFF_OPTIONS` plus `--raw --numstat --no-abbrev -z --no-renames`) — the same delimiter-safe interface the measurement itself reads — because the line-oriented `--name-only` form quotes and escapes a pathname containing a tab or a newline, so a caller who ran the advertised command would hold a different string from the address the response lists and the address the same file is expanded by. `_expansion_detail` states a partial observation's own limit beside its counts, so the two counts are never read as the whole change set.
 
 ### The expansion, and why the probe is a seam
 
@@ -65,13 +65,12 @@ way.
 
 `TreePaths.available` is separate from its `paths` on purpose: a probe that could not run (an absent
 root, a tree this repository does not hold) has **not** observed *no changes*, and reporting its silence
-as "nothing changed between the trees" would be a fabricated fact. An unavailable probe therefore
-contributes **no expansion at all** and says so through its `detail`. `no_tree_difference_probe` is the
+as "nothing changed between the trees" would be a fabricated fact. An unavailable probe contributes no measured source path population. The expansion value is still published with the requested tree identity/command and the probe's unavailable `detail`. `no_tree_difference_probe` is the
 honest answer for a comparison whose sides named no code tree: the record half is complete and the
 source half was not requested.
 
 **The published command carries the two tree ids and never a branch, a working tree or `HEAD`**
-(`git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw -z --no-renames {before_tree} {after_tree}`), so a caller can reproduce the full
+(`git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw --numstat --no-abbrev -z --no-renames {before_tree} {after_tree}`), so a caller can reproduce the full
 source diff even when this operation did not observe it, and the reference
 (`diff_knowledge_scope:full-selected-candidate-source-diff`) is a request a caller can act on rather
 than a cached artifact whose freshness would have to be trusted.
@@ -137,19 +136,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The expansion reference and the reproducing command, stated in full so neither needs this module to be read.** [1]
-- The fixed presentation order of the limitations. [2]
 - **One side's source binding, the changed path, the observation and the seam — the shared vocabulary, re-exported at this seam.** [3]
 - **The partition arithmetic, re-exported at this seam: the reader, the mapping fact, the side inspection, the partition and the licensing predicate.** [4]
-- **The source half one display is built from: the two sides and the two seams travelling as one measurement.** [5]
-- **The one entry point and the order it builds in — filter, omissions from the partition, limitations, expansion from the same one observation.** [6]
-- **The limitation table that establishes each declared limit from the omissions beside it, with the undetermined limit's second producer.** [7]
-- **The display filter, its two halves both measured in fix round 1, and the role read from whichever side holds the claim.** [8]
-- **The per-kind omission for records the other side held but did not select, stated as a selection fact and not a deletion.** [9]
-- **The two attribution omissions from the partition: confirmed-unregistered and undetermined, with their two limitations and two reasons.** [10]
 - **The deleted selection-only calculation, deliberately not replaced: what replaces it is the partition value's own bucket.** [11]
-- The noun and order tables, and the counted noun phrase. [12]
-- **The expansion builder: both trees, both roots, the path lists from the same observation, the carried partition and the detail that states what was observed.** [13]
 - The production probe, and the read-only handle the row counts are taken through. [14]
 - **The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.** [15]
 - **The node that measures the filter narrowing the display and never the comparison.** [16]
@@ -161,3 +150,14 @@ No cross-repository behavior is implemented in this file. The two sides' `root` 
 application layer runs the published command, and this module never runs it.
 
 No meaningful cross-repo references found.
+
+- **The expansion reference and the reproducing command, stated in full so neither needs this module to be read.** [1]
+- The fixed presentation order of the limitations. [2]
+- **The source half one display is built from: the two sides and the two seams travelling as one measurement.** [5]
+- **The one entry point and the order it builds in — filter, omissions from the partition, limitations, expansion from the same one observation.** [6]
+- **The limitation table that establishes each declared limit from the omissions beside it, with the undetermined limit's second producer.** [7]
+- **The display filter, its two halves both measured in fix round 1, and the role read from whichever side holds the claim.** [8]
+- **The per-kind omission for records the other side held but did not select, stated as a selection fact and not a deletion.** [9]
+- **The two attribution omissions from the partition: confirmed-unregistered and undetermined, with their two limitations and two reasons.** [10]
+- The noun and order tables, and the counted noun phrase. [12]
+- **The expansion builder: both trees, both roots, the path lists from the same observation, the carried partition and the detail that states what was observed.** [13]

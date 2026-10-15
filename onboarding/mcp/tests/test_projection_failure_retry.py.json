@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_projection_failure_retry.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e5371d09e4eaf0b62868b3d7051e44683ae9f62f",
+        "content": "sha256:1a612666e1a9f2eaa0f74227135e98c8d305a211d3cd97faf1c4a76de95c1a02",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProjectionReaderRetryTests.test_before_and_after_each_reader_failure_retries_complete_projection"
+        }
+      },
+      "facet": "The exact controlled source case before and after each reader failure retries complete projection; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-ZMQM8S",
+      "invariant": "INV-84PT5A",
+      "origin": {
+        "handoffEntry": "L81-R1-F06",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F05/F06: real projection reads, publication failures and drained tick retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5371d09e4eaf0b62868b3d7051e44683ae9f62f",
+            "content": "sha256:e8c95986e33252610af41871a9dd976716929d275987056ac9a0273d6698eb62",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -12,8 +12,8 @@ The real Node bridge script also runs against a scripted daemon client that enfo
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
 
 ## Current contract evidence
 
+- The scoped current source carries the module/document behavior described above. [1]
 - The real Node bridge script also runs against a scripted daemon client that enforces 200-entry listing pages. Cases pin complete pagination, archived-ID filtering, the ten-page bound and `hasMore` without a next cursor. A tree-reader composition proves missing IDs from an incomplete census stay `agents: null`, while a completed listing resolves the recorded live/archived agents. This is native-script/controlled-client evidence, not installed-host consumption. [2]

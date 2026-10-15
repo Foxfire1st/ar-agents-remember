@@ -48,8 +48,7 @@ clock-corrected by the 12:10:21 entry; refined by the leaf's 16:15:11 ruling on 
   (`_claim_key`: path, locator, source identity, role, rationale) or a family's members. That, and an
   unchanged head whose realizations moved, is carried as the typed `realization_only` /
   `membership_only` count and never folded into `+`/`−`.
-- An identity with several heads on a side, or a retained population with no head, is **unresolved**
-  (`_no_single_head`); the answer is then `partial`, never a guessed winner.
+- An identity with several heads on a side, or a retained population with no head, is classified by `_no_single_head`; `_classify` increments `unresolved` only when the two head sets differ. Equal ambiguous head sets (including two empty sets) tally nothing and do not by themselves make the answer `partial`.
 - A pair the preflight refuses, or a half that fails to read between preflight and read
   (`KnowledgeStorageError`/`apsw.Error`), is **`unavailable`** with the owner's refusal and no counts.
 
@@ -103,19 +102,13 @@ No relevant domain documentation was found.
 The summary composes the reviewer's resolution, the shared pair preflight and the revision comparison's
 head rule; the fixture tests pin every count class.
 
-- The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32). [1]
-- One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved. [2]
-- The compared fields, including the record status that makes a record-only successor count. [3]
-- The classification: unresolved, after-only, before-only, relationship-only, or a counted successor. [4]
-- Several heads, or a population with none, is not one head. [5]
-- Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership. [6]
-- What one realization claim asserts, independent of the claim record's own identity. [7]
-- The lane count read on a live tree leaf; none on a dataset leaf. [8]
 - The head rule reused from the revision comparison owner. [9]
 - The fixture that pins added/revised/removed as +/− and realization-only/membership-only as typed counts. [10]
 - A revised member shared by two families counts once on each side. [11]
 - A status-only or version-only successor counts once on each side (L47-R1-F3). [12]
-- Divergent heads make the answer `partial`; absent knowledge is `unavailable` with no counts. [13]
+
+- Historical divergent-head test removed under MIK-R74 rule 3; the retained missing-knowledge case asserts unavailable with no counts. The production no-single-head branch increments unresolved only for differing head sets. [13]
+
 - The composition root wires this read as the fourth review port. [14]
 
 ### Cross-Repo References
@@ -124,3 +117,12 @@ No cross-repository behavior is implemented here; the read stays inside one repo
 snapshots.
 
 No meaningful cross-repo references found.
+
+- The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32).  Anchor: `resolve_review_candidate`; "return summary.model_copy(update={\"attribution\": lane_summary(resolved.trees)})" [1]
+- One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved.  Anchor: `pair_preflight_refusal`; `unreadable_candidate_refusal` [2]
+- The compared fields, including the record status that makes a record-only successor count. [3]
+- The classification: unresolved, after-only, before-only, relationship-only, or a counted successor.  Anchor: "tally.attached_only"; "tally.after_only" [4]
+- Several heads, or a population with none, is not one head. [5]
+- Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership.  Anchor: "invariant_of.get(invariant_revision, invariant_revision)" [6]
+- What one realization claim asserts, independent of the claim record's own identity. [7]
+- The lane count read on a live tree leaf; none on a dataset leaf. [8]

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_paseo_warmup_operations.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "899b0a562147bd5947f52a9cea0dfbea8d130e1c",
+        "content": "sha256:35809d7cdf13b820f1f4064dfab9c57cfee2bb7cd80639d4127838ff6c10207e",
+        "locator": {
+          "kind": "symbol",
+          "name": "WarmupOperationTests.test_cancelled_watch_intake_releases_admitted_claim_after_worker_drains"
+        }
+      },
+      "facet": "The exact controlled source case cancelled watch intake releases admitted claim after worker drains; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-2YGGSV",
+      "invariant": "INV-YYNNF1",
+      "origin": {
+        "handoffEntry": "L81-R1-F26",
+        "leaf": "260928-MIK-L81"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92ec6d7f9b195e07b2508742199001ad9cfb9f4c",
+        "content": "sha256:915d4bf531b1f07a7313075c8c9d7ed38605f21a9bfcb7954d0bfbbdcd2d6b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "WarmupOperationTests.test_memory_pause_progress_failure_priority_and_finished_truth_are_shared"
+        }
+      },
+      "facet": "The named controlled operation compares owner/observer stopped-memory, pending/inflight and agent maps, foreign click priority and successful loaded/finished truth. It does not induce or assert shared failed-agent truth; no installed-runtime or performance acceptance is supplied.",
+      "id": "PRF-3YSXHY",
+      "invariant": "INV-3NWM5P",
+      "origin": {
+        "handoffEntry": "L81-R1-F28",
+        "leaf": "260928-MIK-L81"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92ec6d7f9b195e07b2508742199001ad9cfb9f4c",
+        "content": "sha256:0c9c5124ac1cca725bc22d5db26446a9969c316c7b39a32aa6b6feaf7c9c89d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "WarmupOperationTests.test_claim_and_progress_failure_release_and_retry_the_same_start"
+        }
+      },
+      "facet": "The named controlled case forces failure of the initial claim-record publication, checks that the start is not consumed, and checks early-holder retirement and same-start retry with a new generation. It does not separately force post-admission progress publication failure.",
+      "id": "PRF-MQ4G9K",
+      "invariant": "INV-7D1DKQ",
+      "origin": {
+        "handoffEntry": "L81-R1-F25",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F25/F26/F28: operation-level host birth, lease, drain and shared truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "899b0a562147bd5947f52a9cea0dfbea8d130e1c",
+            "content": "sha256:d7f8eba3076ce8fd0a9712b1c99a9de20862a3dafaeea13b4c92b0c193ad7f60",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

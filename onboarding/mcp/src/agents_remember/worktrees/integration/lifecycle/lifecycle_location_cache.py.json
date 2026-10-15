@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_location_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retain bounded lifecycle-location outcomes while root confinement and sampled file identities still match: contract identity is sampled before resolution; locator and manifest identities come from the same opens that consumed their bytes. Return a deep copy or equivalent named refusal; changed identities invalidate reuse, and inconsistent locator/manifest reads retry then refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6fb71f40ede2989cabfe57f5177652335153d15",
+            "content": "sha256:10c5149b4466efc3d360d38018a9625b64b2f949bb77fb416d953a6939a8efce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

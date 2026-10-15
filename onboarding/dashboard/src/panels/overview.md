@@ -28,6 +28,8 @@ Knowledge is a task-independent, read-only repository reader addressed by URL ha
 
 ## Construction And Ownership
 
+The review center preserves its mounted navigation/inspection owner while a new subject is pending; its bound expression-card prefetch starts with selection and same-set cards do not refetch on remount. Family guarantee rendering is extracted without changing authored operands, hooks or styles. The document chat pane may additionally show the shared host-start run and exact shown-agent waiting/loading/failure reason, never replacing host-owned chat navigation.
+
 ### Operations task column
 
 LifecycleList owns the complete left task tree, priority words, completed folds and selection/keyboard reach; AttentionQueue overlays its height with source-scoped open/dismiss/Clear all and accessible severity. rowState separates document truth from reporting lifecycle state and keeps current task/lifecycle/progress/worktree facts in the hover. Removed ChatActivityIndicator and PickupDismiss are not current presentation/action owners. TaskGroupDisclosure retains its shared caret and held-selected-descendant policy. None of these presentation facts changes worktree admission or authors task state.
@@ -181,7 +183,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Marks only from the owner's response, placed on its side lines. [5]
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 
-- The scope provided around the landed workspace body. [8]
 - The unknown-membership state in the rail. [9]
 - The explorer's and the details' labels from the lane. [10]
 - Unexplained and Unknown rail destinations open comparison-bound change-set pages filtered by the held lane answer. [11]
@@ -195,9 +196,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. [19]
 - The card component. [24]
 - Grouping by (path, range) and the bounded-roster scope. [25]
-- Cards for a tree comparison, marks only from the same comparison. [26]
-- The conforming example on real data. [27]
-- The one case: the landed workspace over a converted leaf's trees. [28]
 - The receipt of the captured bodies (five since L31). [29]
 - The receipt's MIK-L31 re-capture, which replaced the not-re-captured section. [30]
 - The case header stating which bodies were re-captured (both captures since MIK-L31's follow-up). [31]
@@ -215,7 +213,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. [54]
 - The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. Ranges re-derived: the `lifecycle` occurrences this row names are at `:90-90`, `:243-243` and `:257-257`. [55]
 - The typed lifecycle and projection factories are shape-aligned; the served lifecycle binding supplies copied identities without making every content/default value served-derived. [56]
-- The hand-kept snapshot payload provides the generated timestamp. [57]
 - `Dot` renders its state glyph inside `aria-hidden="true"`. [58]
 
 
@@ -227,10 +224,8 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 
 - **The entry threading the published generation into the viewer target.** [63]
 - **The generation state the button carries from a successful master read.** [64]
-- **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** [109]
 - Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. [110]
 - Per-side resolution and observed identities attach to the same recorded-address key. [111]
-- **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** [112]
 - **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** [113]
 - **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** [114]
 - The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). [115]
@@ -239,11 +234,8 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - A history row's line: its effect, and its because targets as links. [120]
 - An incoming link from a history row names the record the row is about. [121]
 - The panel, the notice, or nothing. [122]
-- Planning marks only from a leaf-wide read of the same comparison. [123]
-- The body passes the knowledge panel to the family, member and unselected centres. [124]
 - The panel: status line, degraded sides, diff, currentness, worklist. [125]
 - The notice for a loading and for an unavailable read; nothing for any other phase. [126]
-- The workspace makes the leaf-wide read only for a tree comparison, pinned to the payload's number. [127]
 - The notice says that it is computing, as a status region. [128]
 - The notice names the failure and its action. [129]
 - The cockpit mounts the reviewer for a change-set target that carries a review, with its optional subject and history view. [130]
@@ -253,7 +245,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The bounded cache of one mounted surface and its generation test. [134]
 - The one failure and refusal block, with the retry control of a network failure. [135]
 - The record panes behind the "Technical details" disclosure. [136]
-- The reading-area column is one node whose content alone is swapped. [137]
 - The weights of the change kinds and the two orders, which only reorder. [138]
 - The order preference and its storage key. [139]
 
@@ -262,12 +253,10 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The end message is given out only beside the rows it was said for and is dropped in the commit that shows other rows. [142]
 - The tree draws the walked families, hands the traversal the rows it shows, and mounts the triage bar only with change facts. [143]
 - One step of the walk: an in-tree selection keeps, any other selection and another comparison replace. [144]
-- The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree. [145]
 - Every selection numbers the tree intent, keeping only with `keepTree`. [146]
 - A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again. [147]
 - The catalogue lists a row for every family the tree shows while one is kept. [148]
 - The kept tag and the scope line that counts kept families apart. [149]
-- The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it. [150]
 - The page controls: a next page only for a published cursor, and the refusal of a requested page. [151]
 - The mounted case of the key walk on real data. [152]
 - The mounted cases of the reviewer between a selection and its answer. [153]
@@ -280,7 +269,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 
 - The compact navigation keeps its own row facts and optional recorded-label badge; semantic record content lives in the main page. [161]
 
-- Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
 
 - The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict. [163]
 
@@ -289,7 +277,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The shared leaf-liveness predicate chooses live versus recorded entry context; it is not a catalogue-subject admission gate. [61]
 - The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
 - Traversal selects displayed tree nodes with real-change primary facts and reports its ends; partial-roster continuation buttons are not traversal stops. [140]
-- Four product destinations, Chats default and retained Operations/File/Knowledge composition [164]
 - Artifact reader includes task reports and whole decision logs [165]
 - Decision preview excludes product records and limits authored entries to five [166]
 - Superseded successful whole-task reads have a guarded unshown-cache exception [167]
@@ -304,7 +291,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Marker follow/return restores subject, family, worklist and pane state through ordinary navigation [176]
 - Word-diff whitespace predicate and strict rewrite threshold [177]
 - Family expression keys use recorded identity; observed readings stay per side [178]
-- Planning marks require matching comparison; subject worklist rendering joins canonical identity and states unavailable reads [179]
 - Statement state decides diff/content branches [180]
 - Network-only retry and intent-only source alternative remain explicit [181]
 - The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable [182]
@@ -313,7 +299,6 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - Collapse hook has one stored key set and toggle API [185]
 - Knowledge reads bind to address; reader shares records and responsive citation navigation [186]
 
-- Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
 - Exact currentness mark words coexist with an open supplied-reason sibling. [165]
 - Non-authored field rows distinguish absent and recorded-empty values. [166]
 
@@ -321,3 +306,19 @@ taskReader renders one Direct execution switch only on a planning subTask's own 
 - The bounded Popover/Dialog retains source-scoped queue actions. [191]
 
 - The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]
+- The scope provided around the landed workspace body. [8]
+- Cards for a tree comparison, marks only from the same comparison. [26]
+- The conforming example on real data. [27]
+- The one case: the landed workspace over a converted leaf's trees. [28]
+- The hand-kept snapshot payload provides the generated timestamp. [57]
+- **Historical family assembly, superseded: the current FamilyCenter branch renders guarantee/meaning/member context, expressions, a separate realization-resolution collection, evidence and subject worklist. No shared explorer is mounted in this assembly; the collection is no longer a third-part-before-explorer layout.**  Anchor: `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` [109]
+- **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** [112]
+- Planning marks only from a leaf-wide read of the same comparison. [123]
+- The body passes the knowledge panel to the family, member and unselected centres. [124]
+- The workspace makes the leaf-wide read only for a tree comparison, pinned to the payload's number. [127]
+- The reading-area column is one node whose content alone is swapped. [137]
+- The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree. [145]
+- The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it. [150]
+- Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
+- Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
+- Planning marks require matching comparison; subject worklist rendering joins canonical identity and states unavailable reads [179]

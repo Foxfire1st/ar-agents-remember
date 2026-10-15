@@ -31,39 +31,14 @@
       ]
     },
     "109": {
-      "note": "**The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.**",
+      "note": "**Historical family assembly, superseded: the current FamilyCenter branch renders guarantee/meaning/member context, expressions, a separate realization-resolution collection, evidence and subject worklist. No shared explorer is mounted in this assembly; the collection is no longer a third-part-before-explorer layout.**  Anchor: `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership`",
       "targets": [
         {
           "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
-            "content": "sha256:87de9ad2eefc88f68c0d0eb3325a1f47f9963a55402f485a5f75ed4e8938da0e",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyCenter"
-            },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:49316658683ba17dfbca01d3bed03b2549d3680e5929df741f56ecdf0ccd39d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyMemberContext"
-            },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:cc8f119cfe770909fc9c8ae05f28ff757d8082502aecde2e38fb18b1aa6a8ad4",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyExpressionExcerpts"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -72,12 +47,22 @@
         {
           "anchor": {
             "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
-            "content": "sha256:f89b71ec76294961ad77314e9b0e0feae936a7c026d75885e32dfc9c26c0ea29",
+            "content": "sha256:4a0b94406a0ab63a23994e72a8ee5bb2dfa15ed0f7c766020d2b03d07312e5fc",
             "locator": {
-              "kind": "symbol",
-              "name": "carriedMembership"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
+            "content": "sha256:b70dccf9ff1ec35871d0171e55f36f615d082d0aad0bd7aece699a5202e3372d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/SubjectWorklistIdentity.tsx"
           },
           "kind": "code"
         }
@@ -88,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
             "content": "sha256:ae60df0c329316293597aaa109b9a539015c2f2ea58d8925554a591c4a6690ad",
             "locator": {
-              "end": 713,
+              "end": 721,
               "kind": "line_range",
-              "start": 674
+              "start": 682
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -215,12 +200,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4e6b085b8907f1dad4c41fe96756d5630383ad4f796a96b42e368910ebf062ac",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:0630fafb57fc6fe33a5e90dd0b661d3007d27148a673975c0c30f78c2c912f4f",
             "locator": {
-              "end": 257,
+              "end": 90,
               "kind": "line_range",
-              "start": 253
+              "start": 86
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -228,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:5ab7719aafb594b04b832b8e8dc74c4a7dad4eadf4548dc21bc3fc005fa58bd6",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:05cb40c48b5f19ebb952580eccc58e766449bbd338175675c5dd0c5ec46b33c0",
             "locator": {
-              "end": 466,
+              "end": 299,
               "kind": "line_range",
-              "start": 455
+              "start": 288
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -445,15 +430,14 @@
       ]
     },
     "123": {
-      "note": "Planning marks only from a leaf-wide read of the same comparison.",
+      "note": "Planning marks only from a leaf-wide read of the same comparison.\n\nAnchor: `pinnedWorklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "pinnedWorklist"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -462,15 +446,14 @@
       ]
     },
     "124": {
-      "note": "The body passes the knowledge panel to the family, member and unselected centres.",
+      "note": "The body passes the knowledge panel to the family, member and unselected centres.\n\nAnchor: `ReviewCenterBody`",
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewCenterBody"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -517,12 +500,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:557dc88f46e239387e8aca3daefee9d3a8b823adb7089c337a0b07b38066677c",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+            "content": "sha256:2f495efb354d10d5f5498f9662d5c94e6797f7f3065cdee835995a6ce2c9f8cb",
             "locator": {
-              "end": 481,
+              "end": 487,
               "kind": "line_range",
-              "start": 475
+              "start": 481
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -715,15 +698,14 @@
       ]
     },
     "137": {
-      "note": "The reading-area column is one node whose content alone is swapped.",
+      "note": "The reading-area column is one node whose content alone is swapped.\n\nAnchor: `WorkspaceCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:6f4392bffde82cb144f49437db6e73c9ea7a0001dac6b46a09e3c4917a322b79",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceCenter"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -928,15 +910,14 @@
       ]
     },
     "145": {
-      "note": "The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree.",
+      "note": "The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree.\n\nAnchor: `useWalkedSelection`",
       "targets": [
         {
           "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
-            "content": "sha256:50c44396aad87f3e222c99046d41890d9279b892e6d01eed5f3b59d01a244f8e",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
             "locator": {
-              "kind": "symbol",
-              "name": "useWalkedSelection"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -1069,15 +1050,14 @@
       ]
     },
     "150": {
-      "note": "The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it.",
+      "note": "The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it.\n\nAnchor: `useSelectionFocus`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:1bba0e66f72a21b8fd9796a272ffbb1dea4948a9c8f69433bf70b5268c6a7bc9",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
             "locator": {
-              "kind": "symbol",
-              "name": "useSelectionFocus"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -1289,8 +1269,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4dbe8d86dda530af3d5d2a346df4f267f844e02f7baaa91716a0366cc612710c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
               "kind": "file"
             },
@@ -1317,17 +1297,18 @@
       ]
     },
     "164": {
-      "note": "Family-center order shares the outline ranking while retaining the semantic revision roster.\n\nFour product destinations, Chats default and retained Operations/File/Knowledge composition",
+      "note": "Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster.\n\nAnchor: `orderedCenterMembers`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
+            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
-              "kind": "symbol",
-              "name": "orderedCenterMembers"
+              "end": 74,
+              "kind": "line_range",
+              "start": 69
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
         },
@@ -1359,14 +1340,12 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:d37d60ee993dee59642ee68fb8566e29ee605e4594ae0f1e0ff2f92ef971d7af",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "end": 891,
-              "kind": "line_range",
-              "start": 882
+              "kind": "file"
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
           "kind": "code"
         }
@@ -1733,12 +1712,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:d8f42d11e082320756a83770282272124bac049f705ab784ee01ef626270824a",
             "locator": {
-              "end": 1058,
+              "end": 891,
               "kind": "line_range",
-              "start": 1054
+              "start": 887
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -2101,27 +2080,14 @@
       ]
     },
     "26": {
-      "note": "Cards for a tree comparison, marks only from the same comparison.",
+      "note": "Cards for a tree comparison, marks only from the same comparison.\n\nAnchor: `pinnedWorklist`; `CenterExpressions`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "pinnedWorklist"
-            },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
-            "locator": {
-              "kind": "symbol",
-              "name": "CenterExpressions"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -2130,16 +2096,16 @@
       ]
     },
     "27": {
-      "note": "The conforming example on real data.\n\nAnchor: \"shows the family around _not_listed as focused cards: one changed range, the rest unchanged\"",
+      "note": "The conforming example on real data.",
       "targets": [
         {
           "anchor": {
-            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
-            "content": "sha256:406d47da5d25c0cb064fa98bf0cfd24c702d382cb1750ae8e4b91dd95121892e",
+            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
+            "content": "sha256:ead9a015c811f97c02647611774823deb186e4850b8c30e404b2499d428c5d91",
             "locator": {
-              "end": 227,
+              "end": 230,
               "kind": "line_range",
-              "start": 128
+              "start": 131
             },
             "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx"
           },
@@ -2148,16 +2114,16 @@
       ]
     },
     "28": {
-      "note": "The one case: the landed workspace over a converted leaf's trees.\n\nAnchor: \"renders a converted leaf family review from its trees and opens the touched member\"",
+      "note": "The one case: the landed workspace over a converted leaf's trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
-            "content": "sha256:d587138a89494a8c25231826814ac6fd72d93ae35ba88cfdb12499c6d2ca6d8d",
+            "blob": "c0d1b5287d3b02f5d0c980a0c3c1ddf6c19a2086",
+            "content": "sha256:d9ec4fdd984c6545398fc86e82f00620cd841112b319ae4a1e78102cd2db6a9c",
             "locator": {
-              "end": 126,
+              "end": 129,
               "kind": "line_range",
-              "start": 81
+              "start": 84
             },
             "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx"
           },
@@ -2666,12 +2632,12 @@
       ]
     },
     "57": {
-      "note": "The hand-kept snapshot payload provides the generated timestamp.\n\nAnchor: \"\\\"generatedAt\\\": \\\"2026-06-14T09:01:00+00:00\\\"\"",
+      "note": "The hand-kept snapshot payload provides the generated timestamp.",
       "targets": [
         {
           "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:0c548c88e13ef86a2e807800eaa698e3a067c8e29f5f78121fc4a96bfa8c3e33",
+            "blob": "5638ba7a63b244db3b3117640f0120e40144de2d",
+            "content": "sha256:f7e3a7be6563d98b1abd044704e1f71c56cd85e6a4bdb43f49a8602ee6455e45",
             "locator": {
               "end": 1929,
               "kind": "line_range",
@@ -2887,15 +2853,14 @@
       ]
     },
     "8": {
-      "note": "The scope provided around the landed workspace body.",
+      "note": "The scope provided around the landed workspace body.\n\nAnchor: `ReviewWorkspace`",
       "targets": [
         {
           "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
-            "content": "sha256:edb1ba46decafcf9f36de76522f915f3cc9b19150e179cfd1ee7f09997d50a8b",
+            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
+            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewWorkspace"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },

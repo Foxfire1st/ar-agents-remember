@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_paseo_warmup_run.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unit assertions for the background warmup scheduler (MIK-R145), with injected resume and memory callbacks; this module observes no actual host start or host request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfba3ae6d883a163e2e5d06c839f8081492d4493",
+            "content": "sha256:4cb6fa214e23a7b1612c9a3488e1f7cc4f0a1708e6223830a310684196659850",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

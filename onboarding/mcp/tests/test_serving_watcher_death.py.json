@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_serving_watcher_death.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f3615dabf426c71fbcc42d713d41b105ea166388",
+        "content": "sha256:a3094e9cf8acd0a4509f97ebe19f025c36902842c85f6b0b88a27aceb3338ba6",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefresherDeathBesideLiveWatchTests.test_common_failure_matrix_keeps_down_since_and_default_thirty_second_retry"
+        }
+      },
+      "facet": "The exact controlled source case common failure matrix keeps down since and default thirty second retry; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-K1ZQXV",
+      "invariant": "INV-3XG15P",
+      "origin": {
+        "handoffEntry": "L81-R1-F10",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rule 5 (F10): refresher death beside an established native watch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3615dabf426c71fbcc42d713d41b105ea166388",
+            "content": "sha256:184a803704c13b908f31b1644ad6c029a0c0a9439840b83189988ece458aba72",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

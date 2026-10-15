@@ -43,22 +43,14 @@ observation rather than two that could disagree.
 
 ## Code Commentary
 
+Source measurement combines raw metadata and numstat in one fixed NUL-safe Git command. Its shared diff tuple still pins prefixes, colour and external-driver behavior. Request-local tree observations retain exact tree/blob identity; they add no cross-request currentness shortcut.
+
+
 ### The measurement
 
-- `tree_difference_observation(before, after)` is the one observation both the review's inventory and
-  the comparison's expansion use. It runs two Git commands on the two tree IDs in the after side's
-  repository: `_RAW_ARGS` for status and modes and `_NUMSTAT_ARGS` for whether content is text.
-- Both argument tuples start with `diff` and `PARSED_DIFF_OPTIONS` (`--no-color`, `--no-ext-diff`,
-  `--src-prefix=a/`, `--dst-prefix=b/`) and end with `-z --no-renames`. The explicit options keep the
-  output in the parsed format whatever the user's Git configuration sets. `--no-renames` reports a rename
-  as a deletion and an addition. `-z` gives NUL-terminated records, so a path with a tab or a newline is
-  carried whole.
-- `_raw_records` reads alternating metadata and path tokens. An odd token count, a metadata token without
-  the leading `:`, fewer or more than five fields, a mode that is not six octal digits or an empty path
-  refuses the whole observation. No output at all is a measured empty change set.
-- `_content_classification` maps each path to "binary or not" from `--numstat`; when that call fails or a
-  record is malformed, the classification is `None` and the observation is `partial` with its entries
-  intact.
+- `tree_difference_observation(before, after)` delegates one combined raw/numstat observation to `_measure_tree_difference`, with request-local memoization when `memo_tree_observations` is open.
+- `_RAW_ARGS` aliases shared `TREE_DIFF_ARGS`: `diff`, `PARSED_DIFF_OPTIONS`, `--raw --numstat --no-abbrev -z --no-renames`. One command returns metadata/path and numstat records; renames remain deletion/addition and NUL delimiters preserve whole pathnames.
+- `_diff_records` parses both record kinds without assuming order. Invalid raw metadata/path/object-id data refuses the observation; malformed or incomplete numstat classification retains raw entries as partial with unknown numstat-derived content; mode-derived symlink/submodule kinds remain known. Empty output is a measured empty change set. The former separate `_NUMSTAT_ARGS`, `_raw_records` and `_content_classification` implementation is retired.
 - Each record becomes a `TreeChange` with a status (`added`, `deleted`, `modified`, `type_changed`, or
   `unknown` for another letter), a content kind (`submodule` and `symlink` from the mode, `binary` or
   `text` from the classification, else `unknown`), and the mode-change flag. Entries are sorted by path.
@@ -91,20 +83,9 @@ observation rather than two that could disagree.
 status-bearing entry per path.** It compares two sides only when each named an exact tree **and** is
 resolvable in the root it named; anything else is reported as an observation this run could not make,
 never as an empty change set, and the two trees are addressed by object id and never by a branch, a
-working tree or `HEAD`. It runs `git diff --raw -z --no-renames` once for status and modes and
-`git diff --numstat -z --no-renames` once for whether content is text at all; a failure of the second
-run does not lose the path set — the entries stay, each stating that its content was not classified,
-and the observation is `partial`. `--no-renames` is deliberate and is the shipped comparison's own
-policy: a rename is a deletion of one path and an addition of another, and reporting a rename would
-attribute the candidate's *new* path to a baseline path no recorded anchor names.
+working tree or `HEAD`. `_measure_tree_difference` runs the shared combined raw/numstat command once. Invalid raw data refuses the observation; invalid or incomplete numstat records retain the raw path set with `partial` and unknown numstat-derived content, while mode-derived symlink/submodule kinds remain known. `--no-renames` still renders a rename as deletion/addition rather than assigning a new path to an unrelated baseline anchor.
 
-**`_raw_records` refuses the whole observation rather than skipping a record.** The `-z` form is a
-NUL-terminated alternation of one metadata field and one path, so it is read as exactly that: an odd
-token count, a metadata row that does not begin with `:`, a row that does not carry Git's five fields
-or an empty path each mean the output is not this interface's and the observation is `unavailable`.
-Paths are carried verbatim — split on NUL and never trimmed — because the name *is* the address the
-same file is expanded with. Two trees that agree print nothing at all, and that one case is read as a
-**measured empty** change set rather than as a malformed one.
+**`_diff_records` refuses invalid raw data rather than skipping a change.** It consumes each metadata token with its following path, validates modes and full object IDs through `_raw_record`, and parses interleaved numstat tokens by record kind. Invalid classification alone leaves the raw entries partial; empty output is measured empty. The former `_raw_records` symbol is historical, not the current parser.
 
 **The content classification consults the mode first, then the measurement.** A gitlink (`160000`) is
 a submodule pointer and a symlink (`120000`) is a link target; neither is text or binary in the sense
@@ -171,8 +152,7 @@ sides sit under and the movement it belongs to. The three private helpers that b
 vocabulary arrived; `_location` and its address helpers now live in
 `application/review_relationship_display.py`, and the change state is
 `application/review_recorded_relationships.py`'s `recorded_change_state`. Nothing is duplicated: the
-pane composes one implementation, and the local helpers that measured the source change set
-(`_RawRecord`, `_raw_records`, `_content_classification`, the limit helpers) are untouched.
+pane composes one implementation. The source-measurement helpers now use `_diff_records`/`_raw_record` and one combined command; the former raw-only parser and separate classification helper are retired.
 
 **The counts state their unit and their scope, or their reason.** `_remaining` gained the sixth row,
 `unknown_attribution_changed_paths`, so the confirmed-unregistered zero and the undetermined count
@@ -187,17 +167,7 @@ the measured zero the requirement forbids.
 
 ### Conventions
 
-`__all__` publishes the ten names the adapter consumes: `SOURCE_INVENTORY_REFERENCE`,
-`attribution_limitations`, `byte_form`, `inventory_command`, `inventory_limitations`, `is_text_path`,
-`review_inventory`, `source_pane`, `source_tree_side` and `tree_difference_observation`. `_RawRecord` and `TreeChange` are frozen
-dataclasses, not pydantic models: they are the observation's own value while it is being built, and
-only `ReviewSourceInventory` (in `models/knowledge/review.py`) is a wire shape. The module's detail
-strings are module-level constants rather than inline sentences (`_UNCOMPARABLE_DETAIL`,
-`_UNPARSED_DETAIL`, `_NO_ROOT_DETAIL`, `_UNCLASSIFIED_DETAIL`, `_UNSTATED_DETAIL`,
-`_UNLISTED_CONTENT_DETAIL`, `_UNREPRESENTABLE_DETAIL`), because two callers and three states have to
-state the same limit identically. `_count(count, noun)` is the one counted-noun phrase, so a stated
-limit reads as a measurement. There is no state: every function is pure apart from the two Git
-subprocesses, and nothing here writes a file.
+`__all__` publishes the eleven names the adapter consumes: `SOURCE_INVENTORY_REFERENCE`, `attribution_limitations`, `byte_form`, `inventory_command`, `inventory_limitations`, `is_text_path`, `memo_tree_observations`, `review_inventory`, `source_pane`, `source_tree_side` and `tree_difference_observation`. The observation values remain frozen dataclasses and wire construction remains model-owned. Request-local ContextVar state memoizes available observations by repository and resolved endpoint trees; nested scopes join and scope exit resets the table. Unavailable observations are not memoized. The module writes no file; the measurement uses one combined Git diff, with endpoint resolution where memo-key construction requires it.
 
 ### Invariants And Boundaries
 
@@ -231,19 +201,12 @@ None recorded.
 
 ## Evidence
 
-- The module docstring: measured from the pair, delimiter-safe, three separate facts, failure as a state. [27]
-- The two Git questions with the parsed-diff options, no renames and NUL records. [28]
-- The observation: two Git calls, the unavailable answers, and the partial flag. [29]
-- A path that cannot be carried as text. [30]
-- The raw record reader that refuses a malformed stream. [31]
-- The content classification from numstat. [32]
-- The content kind of one record. [33]
-- The command text of an inventory. [34]
-- The inventory value for one pair. [35]
-- The pane: inventory, locations, relationships, attribution lists and counts. [36]
-- A count is a value or a reason, never both. [37]
-- Both argument tuples hold the parsed-diff options. [38]
-- The review body is identical under a hostile Git configuration. [39]
+
+- Historical _raw_records reference retained; the current mixed raw/numstat parser is _diff_records and validates metadata through _raw_record. [31]
+
+
+- Historical separate _content_classification reference retained; classification is now parsed with raw records inside _diff_records. [32]
+
 
 ### Docs References
 
@@ -259,35 +222,12 @@ functions, the `TreePaths`/`TreeChange`/`TreeDifferenceProbe` vocabulary it fill
 `memory/knowledge/diff_display.py`, the review models it builds, the adapter that calls it, and the
 cases that measure it against real repositories. Three details a reader should carry: the observation
 is **one** implementation now, shared with the comparison's expansion through
-`knowledge_diff.git_tree_difference_probe`; the two Git questions are `--raw -z` for status and modes
-and `--numstat -z` for renderability, each asked once per measurement; and a non-UTF-8 name is a
-*partial* result rather than a refusal, because the alternative discards a whole source review for one
-odd name.
+`knowledge_diff.git_tree_difference_probe`; raw metadata and numstat classification are asked in one combined NUL-safe measurement. A non-UTF-8 name remains a partial result with exact byte-form custody rather than losing the source inventory.
 
-- The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. [40]
-- The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers. [41]
-- **The two Git questions, once each, with `--no-renames` and `-z` and the reason for both.** [42]
-- The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read. [43]
-- The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name. [44]
-- The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates "the bytes moved" from "only the permission word moved". [45]
-- **One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.** [46]
-- **The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.** [47]
-- **The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.** [48]
-- **The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.** [49]
-- **The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.** [50]
-- **The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.** [51]
-- **The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.** [52]
-- The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one. [53]
-- **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** [54]
-- **The scope of each count and the two partition facts in the comparison route's spelling.** [55]
 - The selected source location, now rendered by the recorded relationship's own display owner from the movement side (this module no longer builds it): the recorded role kept `None` rather than guessed, the comparison's own change state carried, and the counterpart address named only when the other side records exactly one. [56]
 - The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the union-item payload the recorded side is read from. [57]
-- **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.** [58]
 - **The comparison's own expansion, which had been the second implementation of this question and is now a delegation to this module's observation.** [59]
-- The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. [60]
-- **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
 - The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. [62]
-- **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]
 
 
 
@@ -305,3 +245,43 @@ No meaningful cross-repo references found.
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [67]
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [68]
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [69]
+
+- The module docstring: measured from the pair, delimiter-safe, three separate facts, failure as a state. [27]
+
+- The current shared tuple combines raw metadata and numstat in one NUL-safe command, with parsed-diff options, --no-abbrev and no renames. [28]
+
+
+- One combined Git observation, unavailable/partial answers, and available-only request-local memoization. [29]
+
+- A path that cannot be carried as text. [30]
+- The content kind of one record. [33]
+- The command text of an inventory. [34]
+- The inventory value for one pair. [35]
+- The pane: inventory, locations, relationships, attribution lists and counts. [36]
+- A count is a value or a reason, never both. [37]
+
+- The retained parsed-diff test checks PARSED_DIFF_OPTIONS in the current combined _RAW_ARGS and prefix/colour/driver options in code.BLOB_DIFF_ARGS. The former separate raw/numstat tuple account is historical. [38]
+
+- The review body is identical under a hostile Git configuration. [39]
+- The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. [40]
+- The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers. [41]
+
+- One combined raw/numstat Git question with --no-abbrev, --no-renames and -z. [42]
+
+- The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read. [43]
+- The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name. [44]
+- The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates "the bytes moved" from "only the permission word moved". [45]
+- **One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.** [46]
+- **The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.** [47]
+- **The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.** [48]
+- **The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.** [49]
+- **The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.** [50]
+- **The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.** [51]
+- **The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.** [52]
+- The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one. [53]
+- **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** [54]
+- **The scope of each count and the two partition facts in the comparison route's spelling.** [55]
+- **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory` [58]
+- The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. [60]
+- **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
+- **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]

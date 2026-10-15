@@ -13,11 +13,12 @@ resume. It is the counterpart to the `state` channel (`app.py`): the state chann
 folded projection and re-snapshots on reconnect, while this channel resumes by byte offset
 because lifecycle event logs are append-only — a reconnecting client must resume where it
 left off, not replay history. (The shared workspace river is bounded and live-compacted,
-not unbounded.) Connect cost is bounded — the offset map is computed once and the backlog
-drains in bounded chunks — so a large history never blocks
-the loop before the first byte. It powers the future event-log panel + sim scrubbing.
+not unbounded.) Initial offsets are computed once and emitted event batches are count-bounded and offloaded. Raw bytes/lines are not batch-bounded: _read_lines_from reads the entire selected-source suffix before the first emitted event. It powers the future event-log panel + sim scrubbing.
 
 ## Code Commentary
+
+The event tail attributes its actual read/offloaded work to its own ledger owner while keeping the stream write-free. This adds diagnostics, not a new writer, cursor policy, reclamation action or event-delivery guarantee.
+
 
 ### 260928-MIK-L114 Write-Free Stream With Last-Feed Ready
 
@@ -26,8 +27,7 @@ pass alone, and a connected browser changes no file under `logs/observer/`. The 
 read holds the shared river lock without creating any observer file
 (`workspace_river_read`); with no lockfile it proceeds lockless and repeats once under
 the lock if a lockfile appears, so the base/file pair counts by construction and a lost
-or repeated row is impossible. The `ready` marker carries `lastEventTs` — the newest
-event timestamp across every source — so the panel names the last feed on a silent river.
+or repeated row is impossible. Fresh initialization (absent, invalid or empty decoded cursor) may supply lastEventTs, taking the latest parsed timestamp among each source tail's last parseable row. A nonempty decoded cursor resumes with stored_ts=None and omits the key; this is not a maximum scan of every event timestamp.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -48,7 +48,7 @@ sidecar and file read as one pair prevents a live compaction from exposing misma
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`stream_raw_events()` now offloads fresh-connect pruning and initial-offset scans to a worker thread, matching the existing `read_new_events` offload so a large retained river does not block the shared asyncio loop.
+Historical CS-6 offload account: current stream offloads fresh offset/tail-timestamp reads and recurring event reads, but no longer prunes; reclamation is projection-owned.
 
 The tail is a **pure** function so resume, multi-source ordering, and partial-line handling are
 testable without an HTTP client:
@@ -78,7 +78,7 @@ testable without an HTTP client:
   `ServerSentEvent(event="event", id=<cursor>, retry=2000)`. While a chunk is non-empty it yields to the
   loop (`await asyncio.sleep(0)`) and drains the next chunk; once the (window-bounded) backlog is empty it
   emits one `ServerSentEvent(event="ready", data={"ready": true}, id=<current cursor>)` and then
-  `sleep(interval)`. Net: no 3x scan and no whole-history materialization before the first byte.
+  `sleep(interval)`. Offsets are initialized once; emitted batches are bounded, but each source read materializes its remaining complete lines before the emitted-event limit is applied.
 
 ## Invariants And Boundaries
 
@@ -93,10 +93,7 @@ testable without an HTTP client:
 - **Heartbeats never reach the river** — `read_new_events` filters `lifecycle.heartbeat` (liveness already
   lives in the projection status file); the offset still advances past a heartbeat so a resume never
   re-reads it.
-- **Connect cost is bounded** — the offset map is computed once (not re-scanned every tick),
-  and the backlog drains in `DEFAULT_EVENT_BATCH`
-  chunks that yield between chunks, so a long history never blocks the event loop or materializes all at
-  once before the first byte.
+- **Offloaded reads, bounded emitted batches:** offsets are initialized once and emitted batches yield between calls. This does not bound source-byte reads or line allocation before the first byte: each selected suffix is read in full on the worker.
 - **Lifecycle-aware replay boundary** — valid cursor resumes are honored exactly, but fresh or malformed
   cursor connections begin at the retained windowed offsets (dormant logs at EOF, active logs at the recent
   replay window, workspace TTL) instead of replaying every historical observer event from byte zero.
@@ -139,10 +136,6 @@ No relevant external or domain documentation was found for this repository-local
 - The observer event envelope tailed here. [1]
 - The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). [2]
 - The one read/path abstraction (NS #5). [3]
-- The app that mounts this as `GET /api/events`. [4]
-- The inactivity retention helper computes windowed fresh offsets for connect; lifecycle-log reclamation belongs to the projection pass. [5]
-- `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. [6]
-- `stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it. [7]
 
 
 ### Cross-Repo References
@@ -150,3 +143,8 @@ No relevant external or domain documentation was found for this repository-local
 No meaningful cross-repository implementation source governs this repository-local event tail.
 
 The reviewed behavior is wholly repository-local.
+
+- The app that mounts this as `GET /api/events`.  Anchor: "async def stream_events(" [4]
+- The inactivity retention helper computes windowed fresh offsets for connect; lifecycle-log reclamation belongs to the projection pass. [5]
+- `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. [6]
+- `stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it. [7]

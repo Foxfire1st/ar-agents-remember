@@ -22,12 +22,15 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-- `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` supplies the current fixture or assertion described above. [10]
-- `test_every_catalogue_row_opens_through_the_normal_review` supplies the current fixture or assertion described above. [11]
 The former `test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason`
 was removed with the unselectable bare-identity fixture shape. Its historical name is retained here as
 a withdrawal disclosure, not a current assertion or a renamed guarantee.
+
+- RowStore writes text-tree fixture content and rebuilds its dataset through build_index, without the retired production admission plane or direct index-table inserts. [16]
+
+
+- `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` supplies the current fixture or assertion described above. [10]
+- `test_every_catalogue_row_opens_through_the_normal_review` supplies the current fixture or assertion described above. [11]
 - `test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` supplies the current fixture or assertion described above. [13]
 - `test_catalogue_loading_runs_no_comparison` supplies the current fixture or assertion described above. [14]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
-- RowStore writes text-tree fixture rows without the retired production admission plane. [16]

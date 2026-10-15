@@ -16,9 +16,6 @@ Git hashes only files its recorded evidence cannot prove unchanged. A same-size 
 An unchanged stat-matching file is not reconverted solely because attributes, filters or autocrlf changed after the index recorded it; this follows what the real index stages. A changed file is read and converted. Objects remain in the addressed repository because review pins need them. All gate/preview/closeout/review callers use this same capture owner.
 
 
-- One shared entry owns copied-index and existing full capture. [7]
-- The copied index is normalized without changing real-index state. [8]
-- Flag clearing uses the worktree top-level and one option per command. [9]
 
 ## Code Commentary
 
@@ -76,6 +73,8 @@ No new implementation or live-state operation is authorized by this documentatio
 
 checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. Series direct-code mutation binds intent and proof to this actual checkout while the contract anchors the repository. This reader neither commits code nor grants permission.
 
+`capture_index.py` owns `_tree_from_index_copy`, `_add_all_args` and `_excluded_pathspec`; this module calls that owner directly. The shared capture entry, full-capture recovery and publication policy remain here. The extraction preserves the copied-index timestamp, HEAD normalization, trust-flag clearing and conversion-rule boundary described above.
+
 ## Evidence
 
 ### Docs References
@@ -93,16 +92,8 @@ These repository-relative targets and exact ranges were checked against the L9 w
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
 
-- `worktree_candidate_tree` implements the retained boundary described above. [10]
-- `stage_tree` implements the retained boundary described above. [11]
-- `publish_tree_commit` implements the retained boundary described above. [12]
-- `_move_admitted_ref` implements the retained boundary described above. [13]
 
-- Ref/repository identity and transport-safe errors have shared implementations. [19]
-- Candidate trees use private indices and exact derived-path exclusions. [20]
 - The exact cache pathspec is defined beside the consumer filename. [21]
-- Changed-file reporting preserves its distinct deletion/rename/count semantics. [22]
-- `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [23]
 
 
 ### Cross-Repo References
@@ -111,7 +102,20 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+- One shared entry owns copied-index and existing full capture. [7]
+- The copied index is normalized without changing real-index state. [8]
+- Flag clearing uses the worktree top-level and one option per command. [9]
+- `worktree_candidate_tree` implements the retained boundary described above. [10]
+- `stage_tree` implements the retained boundary described above. [11]
+- `publish_tree_commit` implements the retained boundary described above. [12]
+- `_move_admitted_ref` implements the retained boundary described above. [13]
 - One Git command runs against a private index file; a failure keeps its name. [14]
 - Staging writes a private index file when asked; otherwise the worktree's own index. [15]
-
+- Ref/repository identity and transport-safe errors have shared implementations. [19]
+- Candidate trees use private indices and exact derived-path exclusions. [20]
+- Changed-file reporting preserves its distinct deletion/rename/count semantics. [22]
+- `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [23]
 - checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. [24]
+
+- Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner. [25]

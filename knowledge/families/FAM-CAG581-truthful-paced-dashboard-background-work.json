@@ -5,12 +5,24 @@
     ],
     "justification": "All three owners must limit their own recurring work while retaining truthful change/landing delivery; any single reduction still leaves another source of background contention or stale-state claims."
   },
-  "guarantee": "The live dashboard uses native input events, completion-paced projection and open-landing observation together to avoid recursive watcher polling, continuous expensive ticks and recurring historical probes, while preserving retained domains, exact one-attempt eligible terminal observations and honest missing final facts. The pacing cap bounds added rest and does not claim total publication freshness or subject-read acceptance.",
+  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work without hiding failed or missed inputs. A due full reconciliation is independent of partial traffic, failed invalidations remain pending, and the noncooperating append race is explicitly bounded by that healing path. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee.",
   "id": "FAM-CAG581",
   "members": [
     "INV-AD1MRN",
     "INV-GP90VQ",
-    "INV-D0551J"
+    "INV-D0551J",
+    "INV-0NSFFW",
+    "INV-RGGEX3",
+    "INV-RJWTW8",
+    "INV-1F0XGE",
+    "INV-84PT5A",
+    "INV-H9TEKD",
+    "INV-S8GHB9",
+    "INV-FKE909",
+    "INV-3XG15P",
+    "INV-TMY6DW",
+    "INV-RQNDH6",
+    "INV-GDTTHF"
   ],
   "origin": {
     "handoff": {
@@ -20,9 +32,11 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/src/agents_remember/serving"
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/controlplane",
+    "mcp/src/agents_remember/application/knowledge_worklist"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

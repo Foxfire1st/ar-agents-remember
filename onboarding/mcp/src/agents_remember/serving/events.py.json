@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
+        "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
         "content": "sha256:e2a3b5c09937def3837c359eab4e76e9268398a530c21298c24d41c277fd6056",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
-        "content": "sha256:ec36f539663386c78010e759ae19e7694246c824d15e26d72a3571c4d19c9e47",
+        "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
+        "content": "sha256:543e0b2edfce7c8dfbc142b5e92e1e9211df7bf4106871f5808ed01fb3beb8a7",
         "locator": {
           "kind": "symbol",
           "name": "stream_raw_events"
@@ -91,16 +91,16 @@
       ]
     },
     "4": {
-      "note": "The app that mounts this as `GET /api/events`.\n\nAnchor: \"async def stream_events(\"",
+      "note": "The app that mounts this as `GET /api/events`.  Anchor: \"async def stream_events(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:0a22dd31f715efdd8b01df2a643778b50217da2a5774e0ec0603ef7348cba52f",
+            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "content": "sha256:e5bc4711ecca0450afc832779a88676a7c6960fa3da5af410ee02d1e0151591a",
             "locator": {
-              "end": 127,
+              "end": 129,
               "kind": "line_range",
-              "start": 127
+              "start": 129
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -108,12 +108,12 @@
         },
         {
           "anchor": {
-            "blob": "e96eb27c26fbd9da56ffd32b2566982a342eaffe",
-            "content": "sha256:ab5afe9326787a6e38519a2857d379c30e17271a4c7758a4202f82b22d411054",
+            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "content": "sha256:8e5edeb641d69e13c474106df2d1b18aec18b1575842e0646fcbdd1e2002c124",
             "locator": {
-              "end": 131,
+              "end": 133,
               "kind": "line_range",
-              "start": 131
+              "start": 133
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
             "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
+            "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
             "content": "sha256:8022f04e76acc62722f3026e909ec41ff68231be9b38bf2c6969fad03626492a",
             "locator": {
               "kind": "symbol",
@@ -159,8 +159,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
-            "content": "sha256:ec36f539663386c78010e759ae19e7694246c824d15e26d72a3571c4d19c9e47",
+            "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
+            "content": "sha256:543e0b2edfce7c8dfbc142b5e92e1e9211df7bf4106871f5808ed01fb3beb8a7",
             "locator": {
               "kind": "symbol",
               "name": "stream_raw_events"

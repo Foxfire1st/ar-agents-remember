@@ -10,6 +10,9 @@ Own the shared, policy-free POSIX exclusion primitive for one local file resourc
 
 ## Code Commentary
 
+The warmup claim may retain an OS descriptor lease across thread boundaries. Closing releases exactly that hold; ownership is independent of the acquiring thread and a process death releases the OS lock rather than requiring a foreign process to delete its file.
+
+
 ### Logic
 
 `lock_path_for` appends `.lock` to the whole resource name, so `authority.lock` continues to use `authority.lock.lock`. `thread_mutex_for` returns one per-path `RLock`, with first registration serialized by a registry mutex. Each outer `exclusive_file_lock` creates the lock parent, takes the thread mutex, probes filesystem exclusion, then holds `flock` across the caller transaction.
@@ -44,9 +47,6 @@ No configured domain documentation source.
 
 These source owners establish the mechanics, caller policy, and regression boundaries described above.
 
-- One physical suffix, one mutex per resource, and thread-local nesting. [1]
-- Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
-- Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
 - The host registry supplies its own policy and domain refusal. [4]
 
 
@@ -60,5 +60,8 @@ No cross-repository evidence is required for these claims.
 
 `lock_path_for` and `exclusive_file_lock` now back the public Node acquisition: the lock file sits beside the locked resource, waits are bounded by the caller's deadline, and a timeout is the named `LockAcquisitionTimeout`. The Node invariant owns the specific use; the primitive itself keeps its log-lock contract.
 
+- One physical suffix, one mutex per resource, and thread-local nesting. [1]
+- Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
+- Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
 - The resource lock path. [5]
 - The bounded exclusive lock. [6]

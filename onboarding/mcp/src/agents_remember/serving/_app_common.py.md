@@ -12,6 +12,8 @@ Shared serving collaborators, the runtime bundle, and projection/SSE helpers. Th
 
 ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown and extra-route hooks. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset provider/landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes.
 
+The shared runtime also carries the optional background ledger. Routes, projection owners and background loops use that same account; the runtime bundle does not restore a terminal host or notifier owner.
+
 ## Evidence boundary
 
 This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
         "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
         "locator": {
-          "end": 380,
+          "end": 382,
           "kind": "line_range",
-          "start": 300
+          "start": 302
         }
       },
       "id": "RLZ-B07ZXV",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
         "content": "sha256:7b243be98a9341d2d7833d7bdc1d811f3addc59ad4d11b40f1e1f9b26860fe13",
         "locator": {
-          "end": 644,
+          "end": 646,
           "kind": "line_range",
-          "start": 510
+          "start": 512
         }
       },
       "id": "RLZ-BJ6TQM",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
         "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
         "locator": {
-          "end": 380,
+          "end": 382,
           "kind": "line_range",
-          "start": 300
+          "start": 302
         }
       },
       "id": "RLZ-HWXRDM",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
         "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
         "locator": {
-          "end": 380,
+          "end": 382,
           "kind": "line_range",
-          "start": 300
+          "start": 302
         }
       },
       "id": "RLZ-VZXBHS",
@@ -80,16 +80,16 @@
   ],
   "references": {
     "1": {
-      "note": "**The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**\n\nAnchor: \"re-captured by MIK-L31 with ICR-L44's\"; \"familyReview.capture-provenance.json\"; \"rather than relying on its position\"",
+      "note": "**The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**  Anchor: \"re-captured by MIK-L31 with ICR-L44's\"; \"familyReview.capture-provenance.json\"; \"rather than relying on its position\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
             "content": "sha256:b4675237bf275a74485899e379d72e51f78c9a467a4da861a36a52a6e229b543",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             }
           },
           "kind": "test"
@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
             "content": "sha256:4e62f773ff04213634df97c852575afd59789a9ce555bef01b74d03f5bb54cb2",
             "locator": {
               "kind": "symbol",
@@ -112,12 +112,22 @@
         },
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:45b9c7f1758ea9fe9789baf5d73ac26050b74cbdea062cf39469d4ac75e8fe29",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:964f7da5b884052a2605d488dfb2962313a95690dd5a2c3586698bce5c11989c",
             "locator": {
-              "end": 73,
+              "end": 75,
               "kind": "line_range",
-              "start": 57
+              "start": 59
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -129,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
             "content": "sha256:27fc0524b0ad4afae9f7010495647393c8c192375dff91d74ea2e34847c897f3",
             "locator": {
               "kind": "symbol",
@@ -140,12 +150,22 @@
         },
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:ac21d560f2cae6af446b2ba315dfe7796808dbc45fe526e7be4a48ba46587cbb",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:4643b13e8bd86b0e5b5263ddeedc2cf185203931f30c60445f5bf953c476eccf",
             "locator": {
-              "end": 107,
+              "end": 110,
               "kind": "line_range",
-              "start": 91
+              "start": 94
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -157,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
             "content": "sha256:2ae3228d95fe14e38b22d533e394945dd0e4a3e547b9ac06a933b8e54fbad027",
             "locator": {
               "kind": "symbol",
@@ -168,12 +188,22 @@
         },
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:9af5aebeb79ee16793c283593a654755ed78141a2fabffa0071fac028be5bb73",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:fac8d8504b6dd01cd4d5c84c6d33038ce4bbbfb7ba7b882bc0e09e8e29431d53",
             "locator": {
-              "end": 137,
+              "end": 140,
               "kind": "line_range",
-              "start": 121
+              "start": 124
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -185,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
             "content": "sha256:42915066a00f8a15aa04b06f5b50d80817cbdce071a32cc0e45c29b603166e7e",
             "locator": {
               "kind": "symbol",
@@ -196,12 +226,22 @@
         },
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:c1d128055f5e65e22d8a77d90906149f917e9de3c4c5cd63c1ea1bddbb40a624",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:eb54c0ef854162431002da3b4020bffded4930372ce63e458216c49b5753ae80",
             "locator": {
-              "end": 394,
+              "end": 397,
               "kind": "line_range",
-              "start": 378
+              "start": 381
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -209,15 +249,14 @@
       ]
     },
     "14": {
-      "note": "Late-path rendering beside preserved selection",
+      "note": "Late-path rendering beside preserved selection\n\nAnchor: `latePaths`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
-            "content": "sha256:3aaf658b7001bd212d5c48c1e6a75929bda8c6fc36f06c4c6501d53e8fb61e8c",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
             "locator": {
-              "kind": "symbol",
-              "name": "latePaths"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -225,15 +264,14 @@
       ]
     },
     "2": {
-      "note": "The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache.\n\nAnchor: `new ReviewReadCache()`",
+      "note": "The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache.  Anchor: `new ReviewReadCache()`\n\nAnchor: `mountCycle`",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:2ae3228d95fe14e38b22d533e394945dd0e4a3e547b9ac06a933b8e54fbad027",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
             "locator": {
-              "kind": "symbol",
-              "name": "mountCycle"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -241,16 +279,16 @@
       ]
     },
     "3": {
-      "note": "Independent exact walks retain content and claims.\n\nAnchor: \"retains exact content and claim identities while before and after walks advance independently\"",
+      "note": "Independent exact walks retain content and claims.  Anchor: \"retains exact content and claim identities while before and after walks advance independently\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:d872f183f1198eb5b01fe4c114507144826234323fed258718ef574c5653ca0a",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:dbbf444b22d665b14d935a2a514691225f57d83ccaefc20004f36fdab12c89fc",
             "locator": {
-              "end": 143,
+              "end": 146,
               "kind": "line_range",
-              "start": 104
+              "start": 107
             }
           },
           "kind": "test"
@@ -258,16 +296,16 @@
       ]
     },
     "4": {
-      "note": "Failed admission retains the coherent display and failure details.\n\nAnchor: \"retains the coherent display and fails a rejected continuation, including a structured page refusal\"",
+      "note": "Failed admission retains the coherent display and failure details.  Anchor: \"retains the coherent display and fails a rejected continuation, including a structured page refusal\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:364a235eda93f2966924ff4c46efaa6fdda0144833cf1a86c9d1e0318614d81d",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:edf57e3bc6a4399c180ff907fc47043d8159e849fa724c0a31d99b8a19ba5c42",
             "locator": {
-              "end": 213,
+              "end": 216,
               "kind": "line_range",
-              "start": 145
+              "start": 148
             }
           },
           "kind": "test"
@@ -275,16 +313,16 @@
       ]
     },
     "5": {
-      "note": "Unadvertised cursors are checked without weakening whole-review refusal.\n\nAnchor: \"fails an unadvertised request cursor while preserving whole-review refusal semantics\"",
+      "note": "Unadvertised cursors are checked without weakening whole-review refusal.  Anchor: \"fails an unadvertised request cursor while preserving whole-review refusal semantics\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:f08cd09088604a690ef7d259be02cad1fe965742cc83fb867fe630b8ec9e8310",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:6b9b2a008cc421a9e5795d361be804994358860cb9e6569d5c6a2b50b40ffc12",
             "locator": {
-              "end": 248,
+              "end": 251,
               "kind": "line_range",
-              "start": 215
+              "start": 218
             }
           },
           "kind": "test"
@@ -292,16 +330,16 @@
       ]
     },
     "6": {
-      "note": "The family-detail branch states loaded, complete and unavailable scope.\n\nAnchor: \"states loaded claim scope in family details for a content-only page, completed walk and unavailable side\"",
+      "note": "The family-detail branch states loaded, complete and unavailable scope.  Anchor: \"states loaded claim scope in family details for a content-only page, completed walk and unavailable side\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:31c90323e9e677e881d5d5455991e48217d3ad9e0f7be805b400800e0a3627e6",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:b367f7cbb4662b26ea1f1cea56588ff655ae447d3e05d71a3363c90bee9287d9",
             "locator": {
-              "end": 410,
+              "end": 413,
               "kind": "line_range",
-              "start": 352
+              "start": 355
             }
           },
           "kind": "test"
@@ -309,16 +347,16 @@
       ]
     },
     "7": {
-      "note": "Refresh, changed questions and late responses cannot reuse old context.\n\nAnchor: \"resets accumulated context on refresh, subject and history changes and drops late continuations\"",
+      "note": "Refresh, changed questions and late responses cannot reuse old context.  Anchor: \"resets accumulated context on refresh, subject and history changes and drops late continuations\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:fb9677ea6ef196e81a98cf4d5712c21a60fb756f3f8cf7af27e4584a476caca3",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:5fafc4595a5f80de501757f28c25ebe92909a3df74ef56588f870c9fb6ade1f6",
             "locator": {
-              "end": 465,
+              "end": 468,
               "kind": "line_range",
-              "start": 412
+              "start": 415
             }
           },
           "kind": "test"
@@ -326,16 +364,16 @@
       ]
     },
     "8": {
-      "note": "A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`.\n\nAnchor: \"keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable\"",
+      "note": "A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`.  Anchor: \"keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:1afb2308b74d34d9406b9ea4aa41fc746e1472ecc4c301dcf310bb365da31997",
+            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
+            "content": "sha256:00187761161978a93e412fcedc3ced2ef75b4c2e4d98a79de66a2a897c6f5537",
             "locator": {
-              "end": 568,
+              "end": 571,
               "kind": "line_range",
-              "start": 467
+              "start": 470
             }
           },
           "kind": "test"

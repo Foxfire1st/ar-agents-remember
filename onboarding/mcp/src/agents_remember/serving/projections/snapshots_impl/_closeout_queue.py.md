@@ -28,9 +28,6 @@ classification/fingerprint/problems, and waiting-generation members into observe
 
 ### Repo-Internal References
 
-- Top-level reader covers every orchestrating sprint. [1]
-- Effective state is joined against the exact current source. [2]
-- Waiting-generation members project classification, priority, order, and reasons. [3]
 
 ## 260821-CLIVE Effective Projection Reader
 
@@ -43,3 +40,7 @@ surface as invalid-empty; candidate lifecycle states, grades, blockers, commits,
 are not projected here.
 
 This section supersedes the earlier authoritative-queue and active-blocker description.
+
+- Top-level reader covers every orchestrating sprint. [1]
+- Effective state is joined against the exact current source. [2]
+- Waiting-generation members project classification, priority, order, and reasons. [3]

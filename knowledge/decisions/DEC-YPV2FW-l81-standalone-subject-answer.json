@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The complete standalone answer and the browser-dependent partial answer are distinct designs explicitly decided by rule 7. Recording why the partial-answer alternative was rejected constrains future response optimizations without changing the existing invariant or making a new timing/installation acceptance claim."
+  },
+  "alternatives": [
+    {
+      "option": "Repeat the complete display data in every subject answer so each answer can be shown alone, including any retained browser answer reopened without a second request.",
+      "reason": "Standalone answer ownership keeps the selected answer independently showable. The existing bounded browser cache retains whole answers, so an answer must not depend on another response or incidental browser state to reconstruct its display data.",
+      "status": "chosen"
+    },
+    {
+      "option": "Return a browser-dependent partial subject answer that omits data presumed to be already held by the browser.",
+      "reason": "A partial answer could not be shown alone: it would depend on other retained client data or another request to reconstruct its display. That contradicts rule 7 and the ability to reopen any of the twenty-four retained answers without a second request.",
+      "reconsider_when": "An explicitly approved successor requirement replaces rule 7's standalone-answer contract and defines independent reconstruction, missing-client-state and cache-eviction behavior.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Preserve the complete answer wire contract even when some display data is repeated; do not omit it merely because a browser might already hold it.",
+    "Keep the existing browser whole-answer bound and comparison-generation ownership; this decision does not add a server-kept composed review or change continuation ownership.",
+    "INV-9MF6HZ and all existing source, invariant, family, realization, proof and history bytes remain unchanged; this record supplies the previously missing decision/alternative account."
+  ],
+  "context": "A subject answer may repeat data already held in the browser. The browser keeps up to twenty-four complete subject answers and can reopen any retained answer without another request. This choice must preserve independently displayable answers rather than making their meaning depend on other client-held state.",
+  "decider": "MIK-R81@v1 rule 7; Architect D147 approval relayed by Manager: Before any grade of the first hand-over the Curator repairs its own omission against MIK-R81 rule 7 ('The leaf's curation records both designs as decision records with the rejected alternative'): one decision record for the design that every answer can be shown alone, with the rejected browser-dependent partial answer as its alternative, through the ordinary writer. It then runs coherence, freezes anew and hands over once. The Reviewer grades the new freeze only. No verdict was given on the first hand-over, so none is counted for it.",
+  "id": "DEC-YPV2FW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-9MF6HZ"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R81-v1-the-installed-dashboards-own-load-and-the-installed-reviewer-budgets.md rule 7",
+        "notes/messages/20261014T024514Z_manager-1110e042_to_curator-04adf389.md",
+        "mcp/src/agents_remember/application/knowledge_review.py::compose_review",
+        "dashboard/src/panels/review/ReviewReadCache.ts"
+      ],
+      "path": "decision-writer-input.json"
+    },
+    "handoffEntry": "L81-standalone-answer-design",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -5,7 +5,7 @@
     ],
     "justification": "Capture/index isolation, one resolved pair, confirmed conversion reuse, consumed-byte memo admission and literal patch binding each close a different way an optimization could return source/intent under the wrong observed identity; none alone preserves the complete live review operation."
   },
-  "guarantee": "Live reviewer optimizations share one source resolution and capture owner, reuse only exactly confirmed conversion/view inputs, and bind every addressed patch to its literal path, while preserving real-index isolation, actual consumed task bytes, publication rechecks and failed-read refusals. No faster path supplies a comparison, worklist or patch under inputs it did not observe.",
+  "guarantee": "Live reviewer optimizations share one source resolution and capture owner, reuse only exactly confirmed conversion/view inputs, and bind every addressed patch to its literal path, while preserving real-index isolation, actual consumed task bytes, publication rechecks and failed-read refusals. No faster path supplies a comparison, worklist or patch under inputs it did not observe. Request-local object reuse is additionally literal-execution-keyed and success-only; worktree reuse authenticates HEAD as well as file/index evidence, and subject answers remain self-contained while current-entry serialization stays baseline-compatible.",
   "id": "FAM-4ZNEN9",
   "members": [
     "INV-EKE1RV",
@@ -13,7 +13,12 @@
     "INV-61Y147",
     "INV-2172NS",
     "INV-5M9WY3",
-    "INV-7MH0BR"
+    "INV-7MH0BR",
+    "INV-N3M9G4",
+    "INV-0HBKP9",
+    "INV-TY4BR7",
+    "INV-9MF6HZ",
+    "INV-W8WBTB"
   ],
   "origin": {
     "handoff": {
@@ -23,7 +28,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/kernel",

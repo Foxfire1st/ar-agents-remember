@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Settled native-watcher projection with the actual serving writer composition. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Settled native-watcher projection with the actual serving writer composition.",
+  "conditions": [
+    "Owner writes record their transaction at the effect boundary; unchanged publications write nothing.",
+    "Scheduled heartbeat and full healing remain permitted."
+  ],
+  "exclusions": [
+    "Genuine external changes must not be suppressed; this is not zero work or a measured load guarantee."
+  ],
+  "id": "INV-S8GHB9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_watched_writer_composition.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F08",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The actual settled Projector/input-reader/project_and_write/watched-owner composition has only heartbeat/full wakes through repeated zero-input cycles; one genuine outside update in that same native-watcher test promptly publishes a change.",
+  "status": "proposed",
+  "supersedes": []
+}

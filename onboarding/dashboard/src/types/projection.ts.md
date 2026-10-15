@@ -58,7 +58,7 @@ rather than hand-maintaining parallel declarations.
 
 ### Invariants And Boundaries
 
-- The task-document reference is repository-qualified and level-explicit.
+- The task-document reference carries repository and path; task level/form is represented separately on task projections rather than as a field of TaskDocumentRef.
 - Runtime ids remain projections/correlation, not structural seat identity.
 - Generated TypeScript and schema artifacts must remain synchronized.
 - Only refinements the producer's Python schema actually carries are emitted, so a collection the
@@ -81,8 +81,8 @@ TaskDependencyNode requires id/status/title and makes docPath optional. TaskDocN
 
 - Generated task/graph display DTOs declare optional fixed prose/completion/dependencies and cycle state; absent older fields remain representable. [14]
 
-- Core nullable properties are emitted as optional non-null output properties, except explicitly null-preserving models. \[15] [15]
-- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. \[16] [16]
+- Core nullable properties are emitted as optional non-null output properties, except explicitly null-preserving models. [15] [15]
+- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16] [16]
 
 ## Evidence
 
@@ -94,8 +94,8 @@ No configured external domain-documentation source applies.
 
 ### Repo-Internal References
 
-- The lifecycle phase union mirrors the code/memory-only vocabulary. [1]
-- Structural analytics fields use the shared task-document reference. [2]
+- The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
+- Structural analytics fields use the shared task-document reference. Anchor: `string` [2]
 - TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays. [3]
 
 - Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
@@ -103,11 +103,11 @@ No configured external domain-documentation source applies.
 - An execution endpoint carries a task reference and optional leaf id. [5]
 - Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
 - The graph contains typed node and edge arrays. [7]
-- WorkspaceProjection includes core fields plus the served-only heartbeat, build and terminal-health tail. [8]
+- WorkspaceProjection declares the persisted projection core plus the served tail servingBuild and watcherHealth; retired terminal/notifier heartbeat fields are absent. Generated types describe wire shape, not live producer execution. [8]
 
 - The optional canonical task-intent identity on lifecycle operations. [9]
-- The generated `task-intent/v1` identity interface. [10]
-- The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. [11]
+- The generated `task-intent/v1` identity interface. Anchor: "task-intent/v1" [10]
+- The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. Anchor: `string` [11]
 
 ### Cross-Repo References
 
@@ -139,7 +139,6 @@ The generated TypeScript mirror now carries optional lifecycle-operation `genera
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-- The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. [12]
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -166,7 +165,6 @@ neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
 `{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
 changes: the panel still renders whatever rows the producer serves.
 
-- The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. [13]
 
 ## 260824-PDLS Invalidation Outcome Mirror
 
@@ -216,3 +214,16 @@ The generated `LifecycleOperationProjection` interface gains the optional
 `meaningfulRevision?: number` field (JSON Schema refinement `minimum: 1`), the
 dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-change wait tool
 returns on snapshots.
+
+- The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
+- Structural analytics fields use the shared task-document reference. Anchor: `string` [2]
+- TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays. [3]
+- Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
+- An execution endpoint carries a task reference and optional leaf id. [5]
+- Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
+- The graph contains typed node and edge arrays. [7]
+- The optional canonical task-intent identity on lifecycle operations. [9]
+- The generated `task-intent/v1` identity interface. Anchor: "task-intent/v1" [10]
+- The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. Anchor: `string` [11]
+- The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. Anchor: `string` [12]
+- The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. Anchor: `string`; "sourceProblems: CloseoutProjectionProblemNode[]" [13]

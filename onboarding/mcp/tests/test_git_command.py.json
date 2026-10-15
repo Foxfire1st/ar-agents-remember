@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
         "content": "sha256:3a6229ba7b175b8691e2b00a9ac2c461f0bf314317ebce471dcc175552f2cc03",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
         "content": "sha256:31e3608139d02359c84ce44d63bba969cfdd8156e0daafd13b4d46a0bd4fd442",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
         "content": "sha256:4a48a27af0bdba4a500091b9863d89a1faf0c712320a8b09083597f8cffc73ec",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
         "content": "sha256:69dc7199f5dffa790503cd032a4e556feac4af2c790f51a015a8ac30616645a1",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+        "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
         "content": "sha256:ba45f8ede8e79d36317604c3ba963101d5bd833d5a666a4dab6125ae28974187",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
             "content": "sha256:676304c234827e6348dc0cdf7d0cc0f3f0fd90ce375297f50376db3ef0de816c",
             "locator": {
               "end": 13,
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
             "content": "sha256:ee05a19a8109a1f15593c5de761babfa378111af3ccc2aca00a2753000926686",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
             "content": "sha256:f24594dae9f4ec026808a93251153b7b42cca2bfa242601eb1e504d54caf3b2c",
             "locator": {
               "kind": "symbol",
@@ -143,8 +143,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04daa88b1a4f32ce88acc3beef35840522de3afd",
-            "content": "sha256:be368dd9465d6281a8abc9eb5219f0a944a7b99fd930f5d67c20f4eebd894b9d",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
+            "content": "sha256:4c55f99f34d1f80e631348a13b53057fdb0e6990db1612c51dd593f7b395cc40",
             "locator": {
               "kind": "symbol",
               "name": "RunnerContractTests"
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
             "content": "sha256:3f91938e8a966ce5b1a2c36f1822b3abacb8ddbe05363d7d6869edf7fb1a23fe",
             "locator": {
               "kind": "symbol",
@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+            "blob": "7b8010656baf2e0d2a87dda95547fba741f68762",
             "content": "sha256:64243f0733a88419f861b673add9b5553cb8a5576687a7f6500fbc16a3a8e2ee",
             "locator": {
               "kind": "symbol",
@@ -208,12 +208,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80309f6c5c6ab9fcf58cf9dee79b83cc5197a212",
+            "blob": "4546f9eb43d9023ee75b5955fa8ef8494cffa43d",
             "content": "sha256:c41312f751c9c1847a3ff5cbf8c9f5f82d57a79fe0962e92e0e30105d8544b42",
             "locator": {
               "kind": "symbol",
               "name": "PublishTreeCommitGuardTests"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Shared real-Git fixtures and replacement-freshness cases have direct owners, with no duplicated helper or re-export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:d191a3fdba0d2ca54d6ed322269836ed315d0c282c5051b7515fa6f6cb98ecf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_init"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:6831f89fa0b1251de68bf50170db98daf170bd492e6340f8a563fd01bd566a9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+            "content": "sha256:75444170b559528ae174923b9b1caf8f8f59481562b376136cb275f29cea7aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplaceFreshnessTests"
+            },
+            "path": "mcp/tests/test_git_object_memo.py"
           },
           "kind": "test"
         }

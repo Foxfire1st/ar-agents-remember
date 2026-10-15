@@ -12,6 +12,8 @@ computation over sides that a caller names directly.
 
 ## Code Commentary
 
+Publication compares the newly evaluated document's exact serialized bytes to the existing file. Identical text retains the inode/timestamps; missing, unreadable or different bytes are atomically replaced. Evaluation and currency still run: publication reuse is not reuse of a verdict.
+
 ### The four sides
 
 - **B** is the contract's code base commit. **C** is the code worktree captured as a tree
@@ -60,9 +62,7 @@ The reviewer's worklist child passes both; the gate passes `CandidateTrees` only
   named `C` incomplete document retaining owner and pairing. An already incomplete run returns without
   that read. Settlement propagates the file trace's current-row answer, recomputes digest and open count,
   and keeps answering rows out of the unnecessary list.
-- `recompute_leaf_worklist(contract)` computes and persists and never raises: a Git failure and any other
-  exception become an `incomplete` document, and an enclosure that cannot be written returns the document
-  without a path. `LeafWorklistRecompute` is the port bound into the worktree layer.
+- `recompute_leaf_worklist(contract)` turns Git and other computation failures into an `incomplete` document, then persists under an `OSError` guard. A persistence `OSError` returns the document without a path; other publication exceptions are outside that guard. `LeafWorklistRecompute` is the port bound into the worktree layer.
 - `leaf_gate_applies(contract, candidate)` is the marker probe alone.
 - `leaf_onboarding_trace_sides(contract, memory_tree=None)` gives the onboarding gate's sides from the
   contract, `None` where neither side is converted, and an `incomplete` side for anything that cannot be
@@ -123,9 +123,7 @@ document or `None`.
 - **The worklist is inert while both memory sides are unconverted.** That is every production leaf before
   MIK-R37, so the installed runtime's memory-quality run and sync are unchanged; the reviewer confirmed that
   `recompute_leaf_worklist` on the real, unconverted L08 contract returns `None` and writes nothing.
-- **The worklist recompute never fails the route that triggered it** (review R1 F2). A run failure is a
-  persisted `incomplete` worklist, never a silently missing list (rule 4); an unwritable enclosure returns
-  the document unpersisted.
+- **Computation failure and persistence failure have distinct handling.** Git and other computation exceptions become an `incomplete` worklist. Persistence catches `OSError` and returns the document unpersisted; other serialization/publication exceptions can propagate.
 - **Trigger split (architect ruling 1).** L08 wires the curator's memory-quality run and managed-sync
   completion. Closeout validation and each landing route's pre-commit evaluation are MIK-R09's (L09), whose
   gate recomputes through `leaf_worklist(contract, persist=False, candidate=CandidateTrees(...))` over the exact
@@ -268,19 +266,6 @@ document or `None`.
 
 ## Evidence
 
-- The module docstring: the four sides, applicability and persistence. [46]
-- C and K_C given as Git trees. [47]
-- B, K_B's commit and the tree K_B is read as, given by the caller. [48]
-- The explicitly named sides, with the held base tree. [49]
-- K_B's commit by the Code-Commit trailer. [50]
-- The sides: the held tree for an unconverted K_B, the cache without one, the snapshot for a converted K_B, and the pairing. [51]
-- The conversion of an unconverted K_B through the cache. [52]
-- The marker probe, on the held tree when a base is given. [53]
-- The entry point with its three not-applicable cases and the persistence. [54]
-- Declared effects, scope and K_B's commit, from the caller's base when given. [55]
-- The recompute entry point never raises. [57]
-- The held tree gives the same document and reads as the conversion, at two sizes, with no second capture, pairing or conversion. [58]
-- The reviewer passes the comparison's candidate trees and base commits. [59]
 
 ### Docs References
 
@@ -295,49 +280,16 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The one-list step after a complete run, over the same K_B; since MIK-R11 the run reads the leaf's declaration before the pairing, and since MIK-R10 the unexplained items are settled after the onboarding items; since MIK-R09 both steps live in `worklist_over`, which `leaf_worklist` and direct landing share. [60]
-- The gate's side request from the contract. [61]
-- The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`). [62]
 - An unconverted leaf gets no sides and no worklist. [63]
-- The declaration, read through the strict lookup. [64]
-- The named sides carry the declaration. [65]
-- An unresolved leaf document is an `incomplete` run naming it (since MIK-R09 inside `_leaf_document`, together with the maintenance scope). [66]
-- The fail-closed run, tested. [67]
-- The resolved sides carry K_B's route coverage. [68]
-- Coverage over K_B's Git tree and its census blobs; over a converted base's files. [69]
-- Coverage chosen per base kind; an unreadable census names K_B. [70]
-- The coverage passed into the run. [71]
-- The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`. [72]
 - Coverage by entries, a migrated route, a later status, and an unreadable census. [74]
-- The named sides carry the coordination root. [76]
-- The run over named sides passes it on. [77]
-- A leaf's run takes it from the contract. [78]
-- The applicability docstring: a probe Git cannot answer is never unconverted memory. [79]
-- The exact candidate as Git trees. [80]
-- The cheap probe and the gate's applicability. [81]
-- A probe Git cannot answer is an `incomplete` worklist naming `layout marker`. [82]
-- The fail-closed reads, with the strict maintenance scope. [83]
-- The full worklist over explicit sides, shared with direct landing. [84]
-- The marker probe through `has_layout_marker`. [85]
 - A marker probe Git cannot answer is never unconverted memory, at the worklist and the trace sides. [86]
-- The four sides, applicability and persistence rules. [87]
-- Where a leaf's worklist lives. [88]
-- Reading the latest persisted worklist. [89]
-- The task-document flag. [90]
-- The explicitly named sides. [91]
-- K_B by trailer, or `incomplete` naming the pairing. [92]
-- The sides, the both-unconverted `None`, and the pairing document. [93]
-- K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage. [94]
-- The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`. [95]
-- A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items. [96]
-- The one recompute entry point, which never raises; since MIK-R09 a Git failure is named `git`. [97]
-- The port adapter the composition binds. [98]
 - Pairing by trailer, following the sync, and persistence beside the contract. [99]
 - No pairing commit is `incomplete` naming the pairing. [100]
 - An unconverted base is compared as its conversion. [101]
-- The recompute never raises and never fails a completed sync. [102]
+
+- The recompute converts computation failures to incomplete documents and catches persistence OSError with an absent output path; it does not catch every publication exception. [102]
+
 - Both memory sides unconverted: no worklist. [103]
-- The run reads the paired code and memory repositories named by the leaf's contract. [104]
 
 ### Cross-Repo References
 
@@ -349,3 +301,56 @@ code/memory pair of one repository, not a boundary to another code repository.
 - Settled uncovered items inherit their file trace's current answer and source facts; digest/open count are recomputed and needed rows stay out of the unnecessary list. [73]
 - The leaf-route source assertions: a counted card edit alone leaves the uncovered file open; its authored source-bound onboarding row answers it. [75]
 - Current source delta inspected statically: Bind changed paths to captured C, fail closed on missing/unreadable blobs, and replace counted-card-only settlement and leaf-route captions. [105]
+
+- The module docstring: the four sides, applicability and persistence. [46]
+- C and K_C given as Git trees. [47]
+- B, K_B's commit and the tree K_B is read as, given by the caller. [48]
+- The explicitly named sides, with the held base tree. [49]
+- K_B's commit by the Code-Commit trailer. [50]
+- The sides: the held tree for an unconverted K_B, the cache without one, the snapshot for a converted K_B, and the pairing. [51]
+- The conversion of an unconverted K_B through the cache. [52]
+- The marker probe, on the held tree when a base is given. [53]
+- The entry point with its three not-applicable cases and the persistence. [54]
+- Declared effects, scope and K_B's commit, from the caller's base when given. [55]
+
+- The recompute converts computation failures to incomplete documents and catches persistence OSError with an absent output path; it does not catch every publication exception. [57]
+
+- The held tree gives the same document and reads as the conversion, at two sizes, with no second capture, pairing or conversion. [58]
+- The reviewer passes the comparison's candidate trees and base commits. [59]
+- The one-list step after a complete run, over the same K_B; since MIK-R11 the run reads the leaf's declaration before the pairing, and since MIK-R10 the unexplained items are settled after the onboarding items; since MIK-R09 both steps live in `worklist_over`, which `leaf_worklist` and direct landing share. [60]
+- The gate's side request from the contract. [61]
+- The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`). [62]
+- The declaration, read through the strict lookup. [64]
+- The named sides carry the declaration. [65]
+- An unresolved leaf document is an `incomplete` run naming it (since MIK-R09 inside `_leaf_document`, together with the maintenance scope). [66]
+- The fail-closed run, tested. [67]
+- The resolved sides carry K_B's route coverage. [68]
+- Coverage over K_B's Git tree and its census blobs; over a converted base's files. [69]
+- Coverage chosen per base kind; an unreadable census names K_B. [70]
+- The coverage passed into the run. [71]
+- The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`. [72]
+- The named sides carry the coordination root. [76]
+- The run over named sides passes it on. [77]
+- A leaf's run takes it from the contract. [78]
+- The applicability docstring: a probe Git cannot answer is never unconverted memory. [79]
+- The exact candidate as Git trees. [80]
+- The cheap probe and the gate's applicability. [81]
+- A probe Git cannot answer is an `incomplete` worklist naming `layout marker`. [82]
+- The fail-closed reads, with the strict maintenance scope. [83]
+- The full worklist over explicit sides, shared with direct landing. [84]
+- The marker probe through `has_layout_marker`. [85]
+- The four sides, applicability and persistence rules. [87]
+- Where a leaf's worklist lives. [88]
+- Reading the latest persisted worklist. [89]
+- The task-document flag. [90]
+- The explicitly named sides. [91]
+- K_B by trailer, or `incomplete` naming the pairing. [92]
+- The sides, the both-unconverted `None`, and the pairing document. [93]
+- K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage. [94]
+- The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`. [95]
+- A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items. [96]
+
+- The recompute converts computation failures to incomplete documents and catches persistence OSError with an absent output path; it does not catch every publication exception. [97]
+
+- The port adapter the composition binds. [98]
+- The run reads the paired code and memory repositories named by the leaf's contract. [104]

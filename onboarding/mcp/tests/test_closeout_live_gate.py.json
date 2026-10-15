@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_closeout_live_gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rules 2+3 (F09/F13): the closeout gate watches code/memory/source-tip inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45a4a062baea4beeda2ffef90eee1bd916e8f734",
+            "content": "sha256:27cca8c96945ec43aa60ee4ed937398b54821ac9e6d0d3ded9f8c78c784fd395",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

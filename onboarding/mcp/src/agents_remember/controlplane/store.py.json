@@ -37,11 +37,11 @@
       ]
     },
     "3": {
-      "note": "The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.\n\nAnchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP`",
+      "note": "The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.  Anchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP`",
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
             "locator": {
               "kind": "symbol",
@@ -53,8 +53,8 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
             "locator": {
               "kind": "symbol",
               "name": "append_line"
@@ -65,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
-            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
+            "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
             "locator": {
               "kind": "symbol",
               "name": "rewrite_lines"
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:831226bd8c7be6da3e315dd64063c8ad360114e5042276b0aab2a7f9c65d30fe",
             "locator": {
               "kind": "symbol",
@@ -131,15 +131,14 @@
       ]
     },
     "6": {
-      "note": "`evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail.",
+      "note": "`evaluate_gate` is the pure verdict taken under the lock. An already-applied gate refuses a different/absent operation key but admits the same non-null `appliedOperation` recovery without another spend.",
       "targets": [
         {
           "anchor": {
             "blob": "098584045028586661c04fda59d447990277db8a",
-            "content": "sha256:e414445ab0bacda5f51e7a532caeb3f5209888a68ae89ecd5fea945db1c8035e",
+            "content": "sha256:941902f334ff927c68a2ebb1eed0c3f018dbfcb68dda3401c30bf7c086083335",
             "locator": {
-              "kind": "symbol",
-              "name": "evaluate_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/controlplane/enforcement.py"
           },
@@ -147,14 +146,11 @@
         },
         {
           "anchor": {
-            "blob": "098584045028586661c04fda59d447990277db8a",
-            "content": "sha256:ac9056bf29fdc7f43fd4493d0fdfed2ec0d27f5b82a1bc605761b2006f434af4",
+            "blob": "9c27b8b2a33c1a8572d039c05fd546bd961a30d1",
+            "content": "sha256:adcba957fab9542a3a0f7f72ca4916dc23a192e84bffe984980a7a4bed1942d2",
             "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 52
-            },
-            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -165,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
             "locator": {
               "kind": "symbol",
@@ -177,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
             "content": "sha256:16f4f5a341af61fbe46985ec477056a2017e65c0078aa3f0192d12ee8c92d182",
             "locator": {
-              "end": 549,
+              "end": 663,
               "kind": "line_range",
-              "start": 498
+              "start": 612
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -191,12 +187,12 @@
       ]
     },
     "8": {
-      "note": "`read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed.\n\nAnchor: \"def read_gates(coordination_root: Path\"",
+      "note": "`read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed.  Anchor: \"def read_gates(coordination_root: Path\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:6c13db54e0814f706ad528a2f32ee3aea154a9f18dad38cc1e43bc8eff833bd8",
+            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
+            "content": "sha256:20414df6cadd583e68e6fb313ae2539bec28f1158b0f7860c8d2d6c475774b94",
             "locator": {
               "end": 107,
               "kind": "line_range",
@@ -213,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
             "locator": {
               "kind": "symbol",

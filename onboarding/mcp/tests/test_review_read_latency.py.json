@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
-        "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "content": "sha256:ea36060b2139ab7e2e953ec363f1bf00186429937907f0973e7cbad23a69ea24",
         "locator": {
           "kind": "symbol",
           "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
-        "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "content": "sha256:2f6887446bef89667a0f49ad5d71ee3d1a5dde19cb56e551e08a743f82facc3f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
         "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
         "locator": {
           "kind": "symbol",
@@ -141,8 +141,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
-        "content": "sha256:cdc71100602f660f58eeee48cf036c7917c20027059e27fc7fe8dfa6a60e566d",
+        "blob": "150159e5bcc256365b0bf838bcd4c61640aa84bd",
+        "content": "sha256:9a3546150ac22b3fd9e8daa9b6d6f0af828a4198e900a81d23ad78f4df0b45b8",
         "locator": {
           "kind": "file"
         }
@@ -163,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
-            "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:ea36060b2139ab7e2e953ec363f1bf00186429937907f0973e7cbad23a69ea24",
             "locator": {
               "kind": "symbol",
               "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
             "locator": {
               "kind": "symbol",
               "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -191,15 +191,14 @@
       ]
     },
     "12": {
-      "note": "An incomplete worklist and a diff behind a failed read are not kept.",
+      "note": "An incomplete worklist recomputes and is not kept; the next complete worklist may be memoized, while changed/conflicting external-input observations cause misses. No memory-patch failure/recovery is asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:04cd51107de3b151f71e86f5ed4d4e449f3c7e9d7b8a2d6cf1ee5054aa2b31c5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -211,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
             "locator": {
               "kind": "symbol",
@@ -227,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
             "locator": {
               "kind": "symbol",
@@ -243,8 +242,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
             "locator": {
               "kind": "symbol",
               "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
@@ -255,12 +254,12 @@
       ]
     },
     "18": {
-      "note": "A read after an edit shows the new content.\n\nAnchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept`",
+      "note": "A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:2f2dc091045b119ebf447fb0f1d97b9f869c9cb9927ea2109fac6cc12da80224",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:04cd51107de3b151f71e86f5ed4d4e449f3c7e9d7b8a2d6cf1ee5054aa2b31c5",
             "locator": {
               "kind": "file"
             }
@@ -291,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
             "locator": {
               "kind": "symbol",
@@ -302,12 +301,12 @@
         },
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:d74f38bbf014f59438eb1804f38db829010b4b9bfca5b9c62ea28373b8cd3e97",
             "locator": {
-              "end": 404,
+              "end": 410,
               "kind": "line_range",
-              "start": 398
+              "start": 404
             }
           },
           "kind": "test"
@@ -315,16 +314,16 @@
       ]
     },
     "21": {
-      "note": "No diff invocation spans the two memory trees\n\nAnchor: `memory_base`",
+      "note": "No diff invocation spans the two memory trees  Anchor: `memory_base`",
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:429bb4b7db9f05f105b61a10cd77dd4e6c5970c6ac4ef7262dc54a64759ad3af",
             "locator": {
-              "end": 420,
+              "end": 426,
               "kind": "line_range",
-              "start": 414
+              "start": 420
             }
           },
           "kind": "test"
@@ -332,16 +331,16 @@
       ]
     },
     "22": {
-      "note": "The worklist gets the comparison's own candidate trees\n\nAnchor: `isolated_leaf_worklist`",
+      "note": "The worklist gets the comparison's own candidate trees  Anchor: `isolated_leaf_worklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:543e27839f38703ce41b4b3f677d80d4f728017db1d1269ff4de6293c0b2ebfe",
             "locator": {
-              "end": 407,
+              "end": 413,
               "kind": "line_range",
-              "start": 403
+              "start": 409
             }
           },
           "kind": "test"
@@ -353,8 +352,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:2341181197fb031b5f2fbad9095fb567798d4a69ff05aed42eeb74ef1a7e8cef",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:b61466af54b91b3256a9fd3896f54c206295f1d815d8a0cce5d13ee518fa8a12",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -370,7 +369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:48f9ee9256011b8a8b0332bf8612e863c8141989b64b25128b98eee398b4382e",
             "locator": {
               "kind": "symbol",
@@ -386,8 +385,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
-            "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
+            "content": "sha256:2f6887446bef89667a0f49ad5d71ee3d1a5dde19cb56e551e08a743f82facc3f",
             "locator": {
               "kind": "symbol",
               "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
@@ -402,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
             "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
             "locator": {
               "kind": "symbol",

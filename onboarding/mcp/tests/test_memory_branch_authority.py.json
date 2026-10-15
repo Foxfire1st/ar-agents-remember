@@ -94,13 +94,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08655e091afbefb7cd059fc17a5ffb9fd9991d36",
+            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
             "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
             "locator": {
               "kind": "symbol",
               "name": "_excluded_pathspec"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
           },
           "kind": "code"
         }
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e5ab6df08aada7bd6f6297ae5af459c4d22fb48",
+            "blob": "9528c7d46cfa2a5afad316c03c2615f3fbee45ca",
             "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
             "locator": {
-              "end": 168,
+              "end": 176,
               "kind": "line_range",
-              "start": 168
+              "start": 176
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -351,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",

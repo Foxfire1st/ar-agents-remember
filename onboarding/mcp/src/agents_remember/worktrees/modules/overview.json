@@ -510,7 +510,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1574b0cc1fc1982c2bd71b972f67235385cedcfe",
+            "blob": "888a847eacb32194186b72d538e62f3a7a6ba95d",
             "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
             "locator": {
               "kind": "symbol",
@@ -569,7 +569,7 @@
       ]
     },
     "30": {
-      "note": "Final memory staging removes and excludes the cache.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache.",
       "targets": [
         {
           "anchor": {
@@ -1029,11 +1029,11 @@
       ]
     },
     "48": {
-      "note": "The frozen strict future-code route identity, and the capture that derives it without touching the real index.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The frozen strict future-code route identity, and the capture that derives it without touching the real index.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
             "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
             "locator": {
               "kind": "symbol",
@@ -1045,8 +1045,8 @@
         },
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:92318cd71d737476df5117afaec83510a512e24e2c6c59d50aec1cbd8c211bbc",
             "locator": {
               "kind": "symbol",
               "name": "capture_future_code_candidate"
@@ -1058,11 +1058,11 @@
       ]
     },
     "49": {
-      "note": "Currentness is exact equality of the whole bound route identity.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Currentness is exact equality of the whole bound route identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
             "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
             "locator": {
               "kind": "symbol",
@@ -1138,32 +1138,41 @@
       ]
     },
     "52": {
-      "note": "A leaf's integration is refused only by the lock.",
+      "note": "Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
-            "content": "sha256:a94715293d68c9774f5fe64a9deed77f880545129eba51dfe873e0cd867fe0ab",
+            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
+            "content": "sha256:b93c9b036f1d93a9f32ff95e9cce15ca814b5e19c0c781f51dd6d3d39553df2f",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_landing_lock"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:1e9c9105ea9dbd3d1dfbb2b1ba4e15645965d49903d57a570219789613486f0b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
           "kind": "code"
         }
       ]
     },
     "53": {
-      "note": "Record landing on unconverted memory returns the lock's answer.",
+      "note": "Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf validator even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "blob": "75ca33e11666db247224ec34faf6cf9d65e76659",
+            "content": "sha256:9b47d6e52794dccc01bb27cf4e27c8856ef938f3a5d2e6642f99d280fac9bdbc",
             "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_gate_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -1223,11 +1232,11 @@
       ]
     },
     "57": {
-      "note": "The index made exactly one tree.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The index made exactly one tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
+            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
             "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
             "locator": {
               "kind": "symbol",
@@ -1320,11 +1329,11 @@
       ]
     },
     "61": {
-      "note": "One Git command runs against a private index file; a failure keeps its name.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): One Git command runs against a private index file; a failure keeps its name.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
+            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
             "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
             "locator": {
               "kind": "symbol",
@@ -1337,7 +1346,7 @@
       ]
     },
     "62": {
-      "note": "Staging writes a private index file when asked; otherwise the worktree's own index.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Staging writes a private index file when asked; otherwise the worktree's own index.",
       "targets": [
         {
           "anchor": {
@@ -1618,12 +1627,12 @@
       ]
     },
     "74": {
-      "note": "Future-code identity uses system-temporary capture and complete equality.\n\nAnchor: `capture_future_code_candidate`, `_candidate_tree`",
+      "note": "Future-code identity uses system-temporary capture and complete equality.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:92318cd71d737476df5117afaec83510a512e24e2c6c59d50aec1cbd8c211bbc",
             "locator": {
               "kind": "symbol",
               "name": "capture_future_code_candidate"
@@ -1634,7 +1643,7 @@
         },
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
             "content": "sha256:3dea30754ac75987d811f0e250d82c8bd4ace783fef0ab6e71ec71dff3cb0821",
             "locator": {
               "kind": "symbol",
@@ -1647,12 +1656,12 @@
       ]
     },
     "75": {
-      "note": "Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads.\n\nAnchor: `worktree_candidate_tree`, `_tree_from_index_copy`",
+      "note": "Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. Existing historical descriptions retain their own source extent; the moved helper and shared entry are the current owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "content": "sha256:457bf2374ac715bd7a283bd847f4954e5a05883d3b7990fc10a17ccd5e5fe20f",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -1663,13 +1672,13 @@
         },
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
+            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
             "locator": {
               "kind": "symbol",
               "name": "_tree_from_index_copy"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
           },
           "kind": "code"
         }

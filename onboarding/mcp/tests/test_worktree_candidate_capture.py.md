@@ -19,11 +19,11 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 No Domain Documentation entries are configured in this memory line's system/sources.md. These are repository source/test claims; approved task requirements and bound verification receipts live in the task reports.
 
 
-- The state matrix compares exact trees and original-index state. [1]
 
-- Changed conversion rule alone follows actual indexed staging. [3]
-- Unusable copied-index capture recovers through the original full owner. [4]
 
 - The shared owner establishes a same-size rewrite in the index-write second. [5]
 
-- Same-size same-second rewrite changes the captured tree. [2]
+- The state matrix compares exact trees and original-index state. [1]
+- Same-size same-second rewrite changes the captured tree.  Anchor: `test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree` [2]
+- Changed conversion rule alone follows actual indexed staging. [3]
+- Unusable copied-index capture recovers through the original full owner. [4]

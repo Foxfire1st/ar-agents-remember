@@ -13,10 +13,6 @@ Protects dashboard-serving behavior, including the existing two publication oper
 The retained subscription-gap and ETag operations are joined by native nested atomic-write delivery despite a polling override, completed-tick rest and retained pending domains, success/failure/prime completion ownership, two-size historical-zero-probe eligibility and reopen behavior, and honest failed finishing observations with no recurring repair. These are focused owner tests; installed CPU/lag, process isolation and whole-product acceptance remain separate evidence.
 
 
-- The real native watcher observes the nested atomic rename. [3]
-- Work/rest notifications and rest bounds share one timeline. [4]
-- Terminal history and one in-flight finishing observation are distinguished. [5]
-- A failed finishing attempt stays honest missing and never retries history. [6]
 
 ## Code Commentary
 
@@ -68,3 +64,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 No external evidence is needed for these assertions.
 
 - The unchanged ETag is checked after the volatile-only projection was actually published. [7]
+
+- The real native watcher observes the nested atomic rename.  Anchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling` [3]
+- Work/rest notifications and rest bounds share one timeline.  Anchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest` [4]
+- Terminal history and one in-flight finishing observation are distinguished.  Anchor: `BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens` [5]
+- A failed finishing attempt stays honest missing and never retries history.  Anchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history` [6]

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
-            "content": "sha256:893e75e930d39071754719aa5fb1c211770c8caa0df23750cadab6861332f2a8",
+            "blob": "6d7e0b8d0c6d389241824926e4ddda86f395044a",
+            "content": "sha256:537bf191e7ce1a541098f60a1d6e6d8abec11008aa72a6f51f941099d643ed8e",
             "locator": {
               "kind": "symbol",
               "name": "read_closeout_queues"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
-            "content": "sha256:69701aa3591bfee4652476acb0ec6307f2c14caadabb583608d86b339946ca04",
+            "blob": "6d7e0b8d0c6d389241824926e4ddda86f395044a",
+            "content": "sha256:5aaa07d10311e15012cc28940812e9b58f5b7dc41f7136190d76a40ccf05c759",
             "locator": {
               "kind": "symbol",
               "name": "_project_queue"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
+            "blob": "6d7e0b8d0c6d389241824926e4ddda86f395044a",
             "content": "sha256:ebe15ddc02d57762a26463d2aee46f26ce9fa3298cfe5730273b3a70aa1634a8",
             "locator": {
               "kind": "symbol",

@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
             "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
             "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "kind": "symbol",
@@ -52,16 +52,16 @@
       ]
     },
     "14": {
-      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: `test_knowledge_review_attribution_precedence`",
+      "note": "The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_review_attribution_precedence`",
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
+            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 145,
+              "end": 148,
               "kind": "line_range",
-              "start": 145
+              "start": 148
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -70,16 +70,16 @@
       ]
     },
     "15": {
-      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.\n\nAnchor: lines 122-151",
+      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.  Anchor: lines 122-151",
       "targets": [
         {
           "anchor": {
-            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
-            "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:7edfdc9e03455a7af97d73a53e7c78abfbf8d7a58056d1cf8bdf3b118fde124e",
             "locator": {
-              "end": 151,
+              "end": 157,
               "kind": "line_range",
-              "start": 122
+              "start": 128
             }
           },
           "kind": "test"
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "kind": "symbol",

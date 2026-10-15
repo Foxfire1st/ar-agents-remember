@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Dashboard-owned locked append transactions and their native-event suppression. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Dashboard-owned locked append transactions and their native-event suppression.",
+  "conditions": [
+    "Cooperating writers honor the existing store lock.",
+    "A noncooperating flush-to-fstat append window is recovered by independent full healing.",
+    "The within300s healing statement names the independent full-healing bound of rule 5 under successful completing reconciliation, not unconditional end-to-end recovery while a tick is stuck or publication fails."
+  ],
+  "exclusions": [
+    "Immediate identity-perfect discovery of an append racing inside that window is not promised.",
+    "A controlled injected-clock composition proof is not a measured total publication-latency or installed-runtime acceptance result; the bound and the F07 ruling remain requirements, not a waiver."
+  ],
+  "id": "INV-H9TEKD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_watched_writer_composition.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F07",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An append identity is captured under the existing file lock for cooperating writers; the named noncooperating flush-to-fstat append window is recovered by the independent full-healing deadline within300s.",
+  "status": "proposed",
+  "supersedes": []
+}

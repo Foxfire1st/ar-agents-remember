@@ -20,6 +20,9 @@ The dashboard knowledge-review collaborator invokes read_complete_knowledge_revi
 
 ## Code Commentary
 
+Status observes the background diagnostics route and prints cumulative and trailing per-owner units/CPU/wall time plus projector wake reasons and paths. A failed diagnostics read yields an unavailable line without changing status supervision, exit policy or the host.
+
+
 ### Composition (`serving_collaborators`)
 
 Every `create_app` call of this module goes through `serving_collaborators(config)`. It returns the
@@ -170,6 +173,8 @@ facts.
 
 ## 260921-ICR-L14 The Review Port Supplies The Complete Record Collection
 
+> **Historical record-reach account, superseded:** current complete review shares one resolution, but `review_records_for_resolution` supplies curator assessments/artifacts and currentness. Detection signals, verification observations and evidence claims are retired channels; `review_matrix` is removed. The old list below and the port docstring do not describe current readable collections.
+
 `serving_collaborators`'s `review_port` is unchanged in *shape* — it still serves one review through the application adapter, now calling `read_complete_knowledge_review(config, request)` after resolving once for both halves (MIK-R40 rule 2) — and what changed is what
 that loader is: `review_records_for` is now
 [`application/review_evidence_records.py`](../application/review_evidence_records.py.md)'s complete
@@ -244,48 +249,18 @@ existing process-role stamps are unchanged.
 
 ## Evidence
 
-- The bounded graceful shutdown and the registrar collaborators. [32]
-- The composition: one worklist process owner per app, the ports, and the owner's shutdown. [33]
-- The reload worker's factory declares the process role and composes the same collaborators. [34]
-- The command-line arguments. [25]
-- The entry: role, settings, daemon commands, reload, foreground, and the fixture's cleanup. [26]
-- The reload server passes its configuration through the environment. [27]
-- The live app and the replayed fixture are both composed through serving_collaborators. [28]
-- The daemon commands. [29]
 - The process owner that the composition creates. [30]
-- The dashboard's tree port resolves once and computes the leaf-wide view once per comparison. [31]
 
 ### Runtime Source References
 
-- Frozen implementation of serving_collaborators supporting the stated file behavior. [22]
-- Frozen implementation of _dev_app supporting the stated file behavior. [23]
-- Frozen implementation of run supporting the stated file behavior. [24]
 
-- The actual serving collaborator calls the complete-review owner. [38]
-- The deferred import of the reader. [39]
-- The reader port, bound on the collaborator record beside the reviewer ports. [40]
-- The entry point the port calls. [41]
 - The deferred import and the fifth port bound on the collaborator record. [42]
 - The deferred import and the fourth port bound on the collaborator record. [43]
 - The umbrella dispatcher that registers this subcommand. [44]
-- The trusted-settings discovery the optional `--config` falls back to. [45]
-- The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). [46]
-- The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. [47]
-- This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) [48]
 - The dashboard CLI argument parser (`add_arguments`).
 
 - The discovery config tests — convention-wins at 43, nearest-directory at 53, malformed-skipped at 63, miss-error at 80; the discovery behavior lives in the test module, not in this CLI's `add_arguments`. [62]
 
-- The app factory it serves (and the `now`/`before_tick` seams it passes). [50]
-- The sim builder / clock / feeder / speed parser it wires. [51]
-- The `--config` → `McpRuntimeConfig` contract it mirrors. [52]
-- The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. [53]
-- The MCP server's mirror of the same declaration, in `main` rather than `create_server`. [54]
-- Frozen implementation of serving_collaborators supporting the stated file behavior. [55]
-- Frozen implementation of _dev_app supporting the stated file behavior. [56]
-- Frozen implementation of run supporting the stated file behavior. [57]
-- The composition root and the config-bound compiler it binds. [58]
-- Every `create_app` call in this module resolves its collaborators through that root. [59]
 - The port the bound callable satisfies, and the record it is placed on. [60]
 - **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** [61]
 
@@ -320,6 +295,37 @@ The composition returns one explicit ServingCollaborators value with the source-
 
 `--daemon` now also makes sure the configured host runs: it prints the dashboard line, ensures the host, and ends 0 when dashboard and host are up (or no host is configured) and 3 when the dashboard is up and a configured host is not. `--status` prints the host's line after the dashboard's and uses the same exit statuses; `--stop` still signals only the dashboard's recorded process, and the dashboard's own stop, restart, TERM/KILL and Ctrl-C paths leave the host untouched. A foreground or background serve starts the host from a bounded worker without delaying the dashboard, and an adopting start records the host outcome for the running daemon.
 
+- The host observation the status line comes from. [37]
+
+- Frozen implementation of serving_collaborators supporting the stated file behavior. [22]
+- Frozen implementation of _dev_app supporting the stated file behavior. [23]
+- Frozen implementation of run supporting the stated file behavior. [24]
+- The command-line arguments. [25]
+- The entry: role, settings, daemon commands, reload, foreground, and the fixture's cleanup. [26]
+- The reload server passes its configuration through the environment. [27]
+- The live app and the replayed fixture are both composed through serving_collaborators. [28]
+- The daemon commands. [29]
+- The dashboard's tree port resolves once and computes the leaf-wide view once per comparison. [31]
+- The bounded graceful shutdown and the registrar collaborators. [32]
+- The composition: one worklist process owner per app, the ports, and the owner's shutdown. [33]
+- The reload worker's factory declares the process role and composes the same collaborators. [34]
 - The status/stop/daemon dispatch with host handling. [35]
 - The background host-start worker. [36]
-- The host observation the status line comes from. [37]
+- The actual serving collaborator calls the complete-review owner. [38]
+- The deferred import of the reader. [39]
+- The reader port, bound on the collaborator record beside the reviewer ports. [40]
+- The entry point the port calls.  Anchor: `read_knowledge_reader` [41]
+- The trusted-settings discovery the optional `--config` falls back to.  Anchor: `discover_config` [45]
+- The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only).  Anchor: `ensure` [46]
+- The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`.  Anchor: `DEFAULT_HEARTBEAT_SECONDS` [47]
+- This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) [48]
+- The app factory it serves (and the `now`/`before_tick` seams it passes).  Anchor: `create_app` [50]
+- The sim builder / clock / feeder / speed parser it wires.  Anchor: `build_sim` [51]
+- The `--config` → `McpRuntimeConfig` contract it mirrors.  Anchor: `McpRuntimeConfig` [52]
+- The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead.  Anchor: `declare_process_role` [53]
+- The MCP server's mirror of the same declaration, in `main` rather than `create_server`.  Anchor: `main` [54]
+- Frozen implementation of serving_collaborators supporting the stated file behavior. [55]
+- Frozen implementation of _dev_app supporting the stated file behavior. [56]
+- Frozen implementation of run supporting the stated file behavior. [57]
+- The composition root and the config-bound compiler it binds. [58]
+- Every `create_app` call in this module resolves its collaborators through that root. [59]

@@ -10,7 +10,7 @@ The production-composition evidence for the source endpoints a live curator revi
 
 ## Code Commentary
 
-`build_endpoint_fixture` defaults to `memory_mode="external"`, which adds the enclosure's second half — a real external-memory repository and its linked worktree on the same contract — while every other fact about the enclosure stays shared with the single builder so parallel fixtures cannot drift apart. `_enclosure` builds the leaf contract, its source branch and its linked worktree really on disk, attaching the memory plan for any mode but `disabled`. The case population is unchanged: the live candidate binds the recorded base and captured tree, the rendered review publishes the endpoints across the whole candidate, moved inputs and heads are refused by name, and the inventory cases cover unrecorded, damaged and non-text paths.
+Current public endpoint cases use the converted World/source_world fixture and the production resolver/capture path. The separately retained build_endpoint_fixture(memory_mode="external") builds real code/memory linked worktrees with synthetic row indexes for composition units; its explicit assembly does not test production candidate selection, and _place_datasets is not a production placement route. Public assertions retain index isolation, whole-candidate endpoints, named moved-input/head refusals and unrecorded/damaged/nontext/byte-form inventories.
 
 ## Evidence
 

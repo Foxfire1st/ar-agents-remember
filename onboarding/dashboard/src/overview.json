@@ -61,15 +61,14 @@
       ]
     },
     "12": {
-      "note": "State/phase/severity vocabularies and the derived `Metrics` bucket fields.",
+      "note": "State/phase/severity vocabularies and the derived `Metrics` bucket fields.\n\nAnchor: `Metrics`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
-            "content": "sha256:6b3522b1e1d7d47339d79f2635e766c4be81d53a534547cec343cab534dbc7cd",
+            "blob": "515f0ba8c943b7277a947fc67dd4459490674de3",
+            "content": "sha256:cf758045089f0c1f5cd5dbd9870dbe1a7464a70448c82f34b89873dd83b10907",
             "locator": {
-              "kind": "symbol",
-              "name": "Metrics"
+              "kind": "file"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -157,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
+            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 302,
@@ -175,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1251,
+              "end": 1308,
               "kind": "line_range",
-              "start": 1250
+              "start": 1307
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -206,18 +205,38 @@
       ]
     },
     "19": {
-      "note": "The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry.\n\nAnchor: \"never mounted for one, so no change-set\"",
+      "note": "At the Cockpit target dispatch, presence of the review field mounts ReviewSurface instead of ChangeSetViewer, and an empty object is the task-context entry. Within that reviewer, a separate comparison-bound changed-files overlay can mount ChangeSetViewer.  Anchor: \"never mounted for one, so no change-set\"",
       "targets": [
         {
           "anchor": {
             "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
-            "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
+            "content": "sha256:9c9b27ee0e7f147e6abc60cce474321f9c5fa305d79d661c79e0318c95ffe1b4",
             "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 57
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:23ccb17888adac4f5d2e46a8b0b8a12de0d42329d7e6dd9e952c84cdbef824f2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -273,18 +292,27 @@
       ]
     },
     "21": {
-      "note": "The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content.\n\nAnchor: `ReviewSurface`",
+      "note": "The root review target mounts ReviewSurface. Historical ICR-L3 inline inventory openers addressed an entry's content; current InventoryLink opens All changed files on the comparison-bound change-set page, while card Full file remains bound SourceContent.  Anchor: `ReviewSurface`",
       "targets": [
         {
           "anchor": {
             "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
+            "content": "sha256:e7ea9f946b6ed2b2d854b1b0daa61cd6e81737a10799c6ff17ae34d05f5951fe",
             "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 24
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
+            "content": "sha256:ce2f8c008a9e3c0a2560e98c0bf915642be765538f9618deeee91b24f5041c8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
           "kind": "code"
         }
@@ -309,15 +337,14 @@
       ]
     },
     "23": {
-      "note": "**The one predicate both gated entries share.**",
+      "note": "**The shared liveness predicate gates Working and selects live versus recorded Intent Review identity; it does not gate Intent Review availability.**",
       "targets": [
         {
           "anchor": {
             "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
+            "content": "sha256:353a1e8a0d421d610e212ec654f56ba695e3ce09af5895c9d4cae37128106d6d",
             "locator": {
-              "kind": "symbol",
-              "name": "leafIsLive"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -1025,16 +1052,16 @@
       ]
     },
     "55": {
-      "note": "Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs\n\nAnchor: _state_partition; _vocabulary_block; stale_generated_files",
+      "note": "Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs  Anchor: _state_partition; _vocabulary_block; stale_generated_files",
       "targets": [
         {
           "anchor": {
-            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
+            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
             "content": "sha256:e5812badcd58e830abed9d82f1362cda405cac5459b89e800b4a4bac73bddff0",
             "locator": {
-              "end": 446,
+              "end": 449,
               "kind": "line_range",
-              "start": 432
+              "start": 435
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1042,12 +1069,12 @@
         },
         {
           "anchor": {
-            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
+            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
             "content": "sha256:70a30a4be0351dd0d5b082d0bb6c37d14c28e2fdb3e54354d9951caa84e3c0b2",
             "locator": {
-              "end": 497,
+              "end": 500,
               "kind": "line_range",
-              "start": 468
+              "start": 471
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1055,12 +1082,12 @@
         },
         {
           "anchor": {
-            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
+            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 600,
+              "end": 603,
               "kind": "line_range",
-              "start": 585
+              "start": 588
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1246,11 +1273,11 @@
       ]
     },
     "62": {
-      "note": "Unknown chat ownership does not hide the frame; only confirmed absence does.",
+      "note": "Unknown chat ownership does not hide the frame; only confirmed absence does.\n\nAnchor: `chatPresentation`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf347724006925cfdb4b162022a8fbf6c1ae7dd6",
+            "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
             "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
             "locator": {
               "kind": "symbol",

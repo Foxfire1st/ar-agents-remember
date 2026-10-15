@@ -10,6 +10,9 @@ Provides strict atomic enclosure-local storage and transition validation for lon
 
 ## Code Commentary
 
+Bounded journal-record reuse compares the observed stat identity with an entry accessed under the in-process cache lock and returns a deep copy of the same journal truth; read() itself does not acquire the journal publication lock. It adds no lifecycle decision, transaction state, foreign-content repair or permission to retain a moved input.
+
+
 ### Logic
 
 Recovery-cell monotonicity now protects only `codeCommit` and `memoryContentCommit`. The store has no immutable direct-ledger intent transition; immutable task/operation identity, exact mutation evidence, private preparation, publication proof, and record revisions remain the durable validation boundary.
@@ -27,9 +30,7 @@ generation contract and preserves legacy bytes on retirement:
   `{stem}.legacy-missing-intent-generation-{generation}.json` (atomic, idempotent, contradiction-
   checked, rolled back on write failure) and then publishes the validated intent-bound successor —
   so a legacy record stays readable but is replaced by one canonical generation.
-- `_write` refuses any closeout/direct-landing record whose `taskIntent` is not a canonical
-  identity, translating `TaskIntentError` into a loud `RuntimeError`; writers
-  cannot emit the sentinel.
+- `_write` requires canonical `taskIntent` only for closeout records, translating `TaskIntentError` into a loud `RuntimeError`. Direct landing is series-contract/branch-addressed and has no leaf task document or closeout door to bind; its retained missing-intent sentinel is not refused by this closeout-only guard.
 
 ### Conventions
 
@@ -43,7 +44,7 @@ the public function or model instead of re-deriving its lower-level state machin
   fallback or compatibility shadow.
 - Legacy missing-intent bytes are archived verbatim before any intent-bound successor is written;
   the archive is the only retained copy of the old generation.
-- No new or republished lifecycle record may carry the missing-intent sentinel.
+- No new or republished closeout lifecycle record may carry the missing-intent sentinel. The write-side leaf-intent requirement does not apply to series-contract/branch-addressed direct landing.
 
 ### Todos
 
@@ -53,7 +54,6 @@ None recorded.
 
 Private preparation is selected after generation creation, never injected into a new record. Starting a private command requires the same fully identified active running worker, no cancellation and a validated preparation transition. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
 
-- The current `_validate_private_preparation_transition` boundary implements the preparation contract above. [1]
 
 ## Evidence
 
@@ -67,14 +67,13 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. [2]
-- `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. [3]
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-- Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) [4]
 - Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) [5]
-- The write-side identity requirement for closeout/direct-landing records. (`_write`) [6]
+
+- The write-side canonical leaf task-intent requirement applies to closeout records; direct-landing series-contract/branch addresses are explicitly exempt. (`_write`) [6]
+
 
 ### Cross-Repo References
 
@@ -85,7 +84,7 @@ No additional cross-repository evidence applies.
 
 ## CCR-R02@v2 Legacy Retirement In The Store
 
-Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, a legacy container with
+Historical `requirements/CCR-R02-v2-normative-task-intent-identity.md` cutover account (missing-intent retirement/archive handling still covers closeout and direct landing, while the current write-side canonical leaf-intent guard applies only to closeout): a legacy container with
 `missing-intent` remains readable only so its owner can report the exact stale/unavailable state
 and republish. The store's `_retire_missing_intent_generation` preserves the exact legacy bytes and
 publishes one canonical intent-bound successor generation; the enclosed archive is then owned,
@@ -106,8 +105,13 @@ revisions after validation and refuses transforms that pre-assign either. The su
 supersede writers bump `meaningfulRevision` alongside the generation/record-revision
 advance, so a successor is always visible to an old-generation waiter.
 
+- A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) [10]
+- The shared meaningful-change comparison. (`meaningful_state_changed`) [11]
+
+- The current `_validate_private_preparation_transition` boundary implements the preparation contract above. [1]
+- `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. [2]
+- `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. [3]
+- Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) [4]
 - Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) [7]
 - Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) [8]
 - The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) [9]
-- A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) [10]
-- The shared meaningful-change comparison. (`meaningful_state_changed`) [11]

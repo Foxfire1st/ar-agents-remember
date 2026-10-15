@@ -16,10 +16,9 @@ The bridge module carries native host integration loaded beside the runtime. A p
 
 ## Evidence
 
-- The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing. [1]
 
 ## Current contract evidence
 
+- The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing. [1]
 - `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`. [2]
-
 - A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values. [3]

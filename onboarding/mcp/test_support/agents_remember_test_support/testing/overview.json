@@ -143,8 +143,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
-            "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+            "blob": "d576cee120863a47cf54be4129b79182b670a99c",
+            "content": "sha256:c888cdda4aabdabf8588725d5f23286295f19ec55431ea1899924dbce233b2f7",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -315,14 +315,32 @@
       ]
     },
     "26": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.\n\nAnchor: Current scoped route",
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.",
       "targets": [
         {
           "anchor": {
-            "blob": "a511c60f4845f2ef92f4dc559d3592b66019f8fd",
-            "content": "sha256:d37f23dac6b524c54dc066ae8dad73d382d447cc919bea4cba52cb96e3563997",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },

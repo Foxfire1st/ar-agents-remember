@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A new request must observe the current worktrees and keep the old response protocol; composing a kept server answer would hide changed inputs."
+  },
+  "alternatives": [
+    {
+      "option": "Reuse exact immutable reads only within the request; browser retains complete answers under its existing bound.",
+      "reason": "A new request must observe the current worktrees and keep the old response protocol; composing a kept server answer would hide changed inputs.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a composed server-side review answer between requests.",
+      "reason": "Cross-request composed reuse is excluded; request-local immutable reuse and existing worklist-child memo owners are not abolished.",
+      "reconsider_when": "An approved later requirement explicitly permits composed cross-request reuse with a new exact-input currency authority.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Cross-request composed reuse is excluded; request-local immutable reuse and existing worklist-child memo owners are not abolished."
+  ],
+  "context": "Fresh open-leaf review and complete standalone browser answers must coexist with reduced repeated Git work.",
+  "decider": "Developer requirement/ruling authority, recorded by Curator without reversal.",
+  "id": "DEC-PJ195M",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "FAM-4ZNEN9"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R81-v1-the-installed-dashboards-own-load-and-the-installed-reviewer-budgets.md rule7"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-request-local-reuse",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

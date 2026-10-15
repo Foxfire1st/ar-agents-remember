@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt.\n\nAnchor: \"Real review-route bodies\"; \"adjacent receipt\"",
+      "note": "The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt.  Anchor: \"Real review-route bodies\"; \"adjacent receipt\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f8b6422d2952adb8e5c1a87c748c2c3f198ad12b",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
             "content": "sha256:7452c5726be60b1b5d131983e035c93ecfb243d3ba94da2ee37b27fc3a82c25b",
             "locator": {
               "end": 2,
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The case or response retains its declared selected input.\n\nAnchor: \"reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions\"",
+      "note": "The case or response retains its declared selected input.  Anchor: \"reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f8b6422d2952adb8e5c1a87c748c2c3f198ad12b",
-            "content": "sha256:26bc088fa348232b386a82fc0d19538d86201c6ceeb69d34aab4049fc5b0f17f",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:007e9022e21781f821e9c67a6427a3c219b119db02861e0fbeaab83322b2196b",
             "locator": {
-              "end": 149,
+              "end": 152,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             }
           },
           "kind": "test"
@@ -37,15 +37,14 @@
       ]
     },
     "3": {
-      "note": "Assessed family fixture with successor revision",
+      "note": "Assessed family fixture with successor revision\n\nAnchor: `assessedFamily`",
       "targets": [
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
-            "content": "sha256:0d008e2d05d73286d0bbf97ee98fa97099e8d358bdfd4a26283cdde4cf66523f",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
             "locator": {
-              "kind": "symbol",
-              "name": "assessedFamily"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -53,15 +52,14 @@
       ]
     },
     "4": {
-      "note": "Family-less subject fixture for no-family intent",
+      "note": "Family-less subject fixture for no-family intent\n\nAnchor: `noFamily`",
       "targets": [
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
-            "content": "sha256:070d659b2121a72a6c1b8bdffc49e157c4646c8c09e2dc2ad2a2f6df56de4a0c",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
             "locator": {
-              "kind": "symbol",
-              "name": "noFamily"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -73,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
             "content": "sha256:d646b7ccab93d270d364ac25ab80f57cffe8ba46885b4316ac14226bbc5f13d5",
             "locator": {
               "kind": "symbol",
@@ -84,12 +82,22 @@
         },
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
-            "content": "sha256:bd73f7e1cb504e5879c4a569fd41896eefd931c150e18883a74e2a090221271f",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:6857238d9fda9b6b4d7b9068a59c909368c1355525ed156dbd51621fc2fb1901",
             "locator": {
-              "end": 43,
+              "end": 46,
               "kind": "line_range",
-              "start": 25
+              "start": 28
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -101,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
             "content": "sha256:e56d1bd09b823300e3ee2681891e4b19695696d75bfd1365554d3bafa4f377c5",
             "locator": {
               "kind": "symbol",
@@ -112,12 +120,10 @@
         },
         {
           "anchor": {
-            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
-            "content": "sha256:ed28654e297b9f8c4c205ce4714165de1dfdc9a3a97906bb3418697f6183c588",
+            "blob": "e08c86af3d373093e732745db3de97edc41f9b7c",
+            "content": "sha256:318f1d1ed0c606be02b521fb317fdc076d45c22147236674226ca47311c92165",
             "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 83
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -37,7 +37,7 @@
       ]
     },
     "11": {
-      "note": "Projection input invokes the orphan-pruning helper.\n\nAnchor: \"prune_orphaned_drift_snapshots(config\"",
+      "note": "Projection input invokes the orphan-pruning helper.  Anchor: \"prune_orphaned_drift_snapshots(config\"",
       "targets": [
         {
           "anchor": {
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
-            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
+            "content": "sha256:9e8accfe394d6a556e9fc4457092cc23b97b7cfa4824353885310ba49365227f",
             "locator": {
               "kind": "symbol",
               "name": "prune_orphaned_drift_snapshots"
@@ -72,16 +72,16 @@
       ]
     },
     "13": {
-      "note": "`ContractSnapshot` is declared here.\n\nAnchor: \"class ContractSnapshot:\"",
+      "note": "`ContractSnapshot` is declared here.  Anchor: \"class ContractSnapshot:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:8d1efc19c36180f62c59d70753c8e50dc619df01d31668cbc9bef341503534f8",
+            "blob": "87ddf3e7bc98c88968d898c9015557ca7e7145f3",
+            "content": "sha256:5a571279c0a8ff9f4ff7332e117445d64995faf5a28ef0ae4042d3cd7f011e27",
             "locator": {
-              "end": 41,
+              "end": 43,
               "kind": "line_range",
-              "start": 41
+              "start": 43
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },
@@ -94,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:6dad0eac1147fe7ae4d29c6d1208475075f6ec075e7cb42ffb04fc6646ef3f6d",
+            "blob": "87ddf3e7bc98c88968d898c9015557ca7e7145f3",
+            "content": "sha256:44c4cb5f4bc6789d4ef0d90decc659bd1afd279a48ccb1d0ce6f7d25ec7e4166",
             "locator": {
               "kind": "symbol",
               "name": "ContractSnapshotCache"
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1574b0cc1fc1982c2bd71b972f67235385cedcfe",
+            "blob": "888a847eacb32194186b72d538e62f3a7a6ba95d",
             "content": "sha256:c61f28479b14565bfa962e51a8c0e18b5c499cd5f4277ceef4660cf0a08dc54e",
             "locator": {
               "kind": "symbol",
@@ -157,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "1574b0cc1fc1982c2bd71b972f67235385cedcfe",
+            "blob": "888a847eacb32194186b72d538e62f3a7a6ba95d",
             "content": "sha256:71a099ce8ab34bf06b28222b214319b51f56266ce7d29a7421124dca65c2ff0d",
             "locator": {
               "end": 303,
@@ -218,11 +218,11 @@
       ]
     },
     "20": {
-      "note": "The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split.\n\nAnchor: \"Read policy is part of each store's authority contract:\"",
+      "note": "The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split.  Anchor: \"Read policy is part of each store's authority contract:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d392d8cbf6d4794e8787608af948dfc9059bba33",
+            "blob": "1844ef71d022f6b31f30ce714a2452018d2e9b8f",
             "content": "sha256:9de255cbab58f707c3d292a621b20d00fc7e0cacd917142b8141d59e8d5f9b47",
             "locator": {
               "kind": "symbol",
@@ -234,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "blob": "938131908d1c91afc46e26f64e36ef90306c0971",
             "content": "sha256:ec00bc2fea0f83fd0c9e970066167d0a34be98885c75c1d51e155564a4649ded",
             "locator": {
               "end": 24,
@@ -252,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
+            "blob": "7d1876a2998158cdcdd603f7e0dcd547eb99c4c5",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -368,11 +368,11 @@
       ]
     },
     "25": {
-      "note": "Workspace admission is locked and byte-bounded; file and cursor publication are separate writes.\n\nAnchor: `_compact_under_lock`, `admit_workspace_river_row`",
+      "note": "Workspace admission is locked and byte-bounded; file and cursor publication are separate writes.  Anchor: `_compact_under_lock`, `admit_workspace_river_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
             "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
             "locator": {
               "kind": "symbol",
@@ -384,7 +384,7 @@
         },
         {
           "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
             "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
             "locator": {
               "kind": "symbol",
@@ -426,7 +426,7 @@
       ]
     },
     "27": {
-      "note": "Contract enumeration is shared on task refresh and retained across other domain refreshes.\n\nAnchor: `ProjectionInputState._refresh_tasks`",
+      "note": "Contract enumeration is shared on task refresh and retained across other domain refreshes.  Anchor: `ProjectionInputState._refresh_tasks`",
       "targets": [
         {
           "anchor": {
@@ -461,12 +461,12 @@
       ]
     },
     "29": {
-      "note": "Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root.\n\nAnchor: `read_task_documents`, `read_task_document_body`",
+      "note": "Full reader bodies are omitted from always-on summaries with bounded body-derived previews; the selected full body is confined to the tasks root.  Anchor: `read_task_documents`, `read_task_document_body`",
       "targets": [
         {
           "anchor": {
-            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
-            "content": "sha256:b01e62f51ed909fab1c0782d1b8ce778659717bdbb0a37951fde8442407e6a2c",
+            "blob": "fc86b4692eee537d0b0c117e72098e4cdb33062e",
+            "content": "sha256:1764830b8d100b4c6ebcc231e028e5878d2fa4caac75061863d946f32d341dba",
             "locator": {
               "kind": "symbol",
               "name": "read_task_documents"
@@ -477,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
+            "blob": "4ad034f2c786af9281d3d7fe9b6575c6bf86670e",
             "content": "sha256:1b66d5110479a2097cf2f897e8b7cf4c57ee1f1bdbb4eec9599769b525e40a58",
             "locator": {
               "kind": "symbol",
@@ -520,12 +520,12 @@
       ]
     },
     "30": {
-      "note": "Gate reads are nonrewriting, but pickup reads explicitly compact the inbox.\n\nAnchor: `read_gates`, `read_agent_pickups`",
+      "note": "Gate reads are nonrewriting, but pickup reads explicitly compact the inbox.  Anchor: `read_gates`, `read_agent_pickups`",
       "targets": [
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:1162dee7d7aa306f62a8a2ff37e3492822a161111f3651d26f9bb0503dcba12b",
+            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
+            "content": "sha256:c1ac3c1b380081b14f42889e4cb56d153dc30e83d18416d15e81dd337b356895",
             "locator": {
               "kind": "symbol",
               "name": "read_gates"
@@ -536,8 +536,8 @@
         },
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:add4af3288c46e5f09ffcf61c4fa88ebb8dcd3fc8ead157f3b3cdd1cd92bf726",
+            "blob": "df32deacb6a4361f29bf225adf9a60ef91947857",
+            "content": "sha256:1e9903a39e95a2871ed15a7de95125e228099731de17a9a248c68f7149088237",
             "locator": {
               "kind": "symbol",
               "name": "read_agent_pickups"
@@ -700,27 +700,14 @@
       ]
     },
     "36": {
-      "note": "Completed historical landing lacks automatic repair probes; freeze requires observed rows.\n\nAnchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
+      "note": "Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape.  Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
       "targets": [
         {
           "anchor": {
-            "blob": "415619660e455af26af116e1bcc86102575be608",
-            "content": "sha256:090ed7c9dd23f1f2c08bf1c0847565b0c7a0cd6aa93e363a53ee0547a8183eb9",
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:25cc191049c4508c0eb91582783ecbda98164af392a9ff3c2de19480daf059cc",
             "locator": {
-              "kind": "symbol",
-              "name": "_needs_live_probe"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "415619660e455af26af116e1bcc86102575be608",
-            "content": "sha256:67058c7cb85cbadda9b499e5b1de44bf8e6593f2c1d4799ffe64dc8989424a82",
-            "locator": {
-              "kind": "symbol",
-              "name": "_maybe_freeze"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
           },
@@ -746,16 +733,16 @@
       ]
     },
     "4": {
-      "note": "The raw event stream entry is `stream_raw_events`.\n\nAnchor: \"def stream_raw_events\"",
+      "note": "The raw event stream entry is `stream_raw_events`.  Anchor: \"def stream_raw_events\"",
       "targets": [
         {
           "anchor": {
-            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
-            "content": "sha256:8faa54e8e14ffcf77fa1c1e6c756cb7945cc8e20ffecdd066949c4660e3a7206",
+            "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
+            "content": "sha256:381755151f4027dfc1433aaf0ada55e1bcc4e78d2bc41d230f23645c85e6532d",
             "locator": {
-              "end": 277,
+              "end": 284,
               "kind": "line_range",
-              "start": 230
+              "start": 237
             },
             "path": "mcp/src/agents_remember/serving/events.py"
           },
@@ -764,16 +751,16 @@
       ]
     },
     "5": {
-      "note": "The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`.\n\nAnchor: \"def prune_expired_lifecycle_event_logs\"",
+      "note": "The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`.  Anchor: \"def prune_expired_lifecycle_event_logs\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
-            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
+            "content": "sha256:308b7c7a925706c02729417fdaa3bd5abf7ca8b647619e101df139d436a6882b",
             "locator": {
-              "end": 126,
+              "end": 123,
               "kind": "line_range",
-              "start": 92
+              "start": 94
             },
             "path": "mcp/src/agents_remember/observer/event_retention.py"
           },
@@ -820,8 +807,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:f8468360c9249bfceaee84a39190d7cc8cc699bd9cb22e17ba58fb59b46e06b8",
+            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
+            "content": "sha256:19add99b4c190e674aa1c2fc1f446d38b2ee9986118ea3b72ed22dc8fdd22580",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionInputState"
@@ -832,12 +819,12 @@
         },
         {
           "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:6fccbb1f525ecec233d981c30d7f3bfa24bb6412ae9e12e79dfad9592af3fee2",
+            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
+            "content": "sha256:b8320bf8f86f6de6db7ab1871db486ea80b0e586c8d94ec8b590a7de8338b040",
             "locator": {
-              "end": 407,
+              "end": 842,
               "kind": "line_range",
-              "start": 189
+              "start": 354
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },

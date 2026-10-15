@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-        "content": "sha256:2e30414d0e5676ee52b7538f321f94fdefb8f8af39d63e6bf44893f940e06ca1",
+        "blob": "87ddf3e7bc98c88968d898c9015557ca7e7145f3",
+        "content": "sha256:5b806fc7db0020a90078216e041a449dbd3a46410158b2fa9a941156ffd586cd",
         "locator": {
           "kind": "symbol",
           "name": "ContractSnapshotCache.build"
@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.\n\nAnchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"",
+      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"",
       "targets": [
         {
           "anchor": {
@@ -66,7 +66,7 @@
       ]
     },
     "3": {
-      "note": "The cache retains stat-identity reuse but evicts failures and foreign nonmembers before publishing one shared pass.",
+      "note": "Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds.",
       "targets": [
         {
           "anchor": {
@@ -82,16 +82,16 @@
       ]
     },
     "4": {
-      "note": "`_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.\n\nAnchor: \"def build_contract_snapshot\"",
+      "note": "`_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: \"def build_contract_snapshot\"",
       "targets": [
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:d522b541eb43142ec423fcfe15db51017db1afd723e4203e43c97aead7cac722",
+            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
+            "content": "sha256:df7ea781396690ce5aaa0902cd952e30373c9e90204eeb1e95ecbd9ae9fea1b7",
             "locator": {
-              "end": 144,
+              "end": 185,
               "kind": "line_range",
-              "start": 144
+              "start": 185
             }
           },
           "kind": "code"
@@ -99,16 +99,16 @@
       ]
     },
     "5": {
-      "note": "Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\", \"from agents_remember.worktrees.worktree_contract import (\"",
+      "note": "Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.  Anchor: \"from agents_remember.tasks.task_paths import (\", \"from agents_remember.worktrees.worktree_contract import (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:d693f84da45ee44d36475a8dab24c4323e4a3f7475a1b63f076a0e058e56f10b",
+            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
+            "content": "sha256:2a2071e8ef1ebe7747ecd821a0b86d23e8ed33edf280e41d120be6377c6be391",
             "locator": {
-              "end": 37,
+              "end": 39,
               "kind": "line_range",
-              "start": 29
+              "start": 31
             }
           },
           "kind": "code"
@@ -116,16 +116,16 @@
       ]
     },
     "6": {
-      "note": "`projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.\n\nAnchor: \"class ProjectionTickState\"",
+      "note": "`projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.  Anchor: \"class ProjectionTickState\"",
       "targets": [
         {
           "anchor": {
-            "blob": "28c1ba054c52469712312398927791238fa0fa10",
-            "content": "sha256:02f065190e0e3a4119c8fcabefa4f1ed7a7ebd5f4531530064bb659b1ed931b4",
+            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
+            "content": "sha256:f69a13975c256ec8320e2016083c96df637ca3d35bebde2314bee3a4711b56ca",
             "locator": {
-              "end": 203,
+              "end": 146,
               "kind": "line_range",
-              "start": 203
+              "start": 146
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -134,7 +134,7 @@
       ]
     },
     "7": {
-      "note": "Task-domain refresh, first use or pending retry builds one snapshot; unaffected ticks retain it.\n\nAnchor: `ProjectionInputState._refresh_tasks`",
+      "note": "Task-domain refresh, first use or pending retry builds one snapshot; unaffected ticks retain it.  Anchor: `ProjectionInputState._refresh_tasks`",
       "targets": [
         {
           "anchor": {
@@ -152,7 +152,7 @@
       ]
     },
     "8": {
-      "note": "`read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.\n\nAnchor: \"def read_enclosures\"",
+      "note": "`read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.  Anchor: \"def read_enclosures\"",
       "targets": [
         {
           "anchor": {
@@ -170,16 +170,16 @@
       ]
     },
     "9": {
-      "note": "Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.\n\nAnchor: \"def prune_orphaned_drift_snapshots\"",
+      "note": "Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.  Anchor: \"def prune_orphaned_drift_snapshots\"",
       "targets": [
         {
           "anchor": {
-            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
-            "content": "sha256:29ca7c6a0bfb978435b5f26e0b833fb21fe1a0081f0da8cd67da240678ad71f7",
+            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
+            "content": "sha256:17d366d5a60720f4ff7013f661dedce028ee72f176348b3eac3ef3a0fa195df9",
             "locator": {
-              "end": 23,
+              "end": 25,
               "kind": "line_range",
-              "start": 23
+              "start": 25
             },
             "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
           },

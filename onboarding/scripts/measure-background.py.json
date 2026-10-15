@@ -1,0 +1,22 @@
+{
+  "path": "scripts/measure-background.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sample the installed dashboard's read-only background diagnostics beside this machine's load average, producing attributed JSONL observations. It starts, stops and restarts neither dashboard nor host; observations are not automatic acceptance or a substituted performance proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc175d417f1d579f03c6ca7dc7994d795b0b2d35",
+            "content": "sha256:700bc25dcab8e6e86f160de594f784597eb5001fc261e4c5688031647a30e4ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

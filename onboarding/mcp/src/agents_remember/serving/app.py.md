@@ -75,15 +75,9 @@ None.
 
 ## Evidence
 
-- The module docstring: the endpoints and the local-first posture. [17]
-- The runtime: projector, terminal objects, one serving clock, and the fields copied from the collaborators. [13]
-- The shutdown callable is copied from the collaborators onto the runtime. [14]
-- The app: lifespan, compression, and the routes in their order with the static mount last. [15]
-- The empty collaborator record. [16]
 
 ### Runtime Source References
 
-- Frozen implementation of create_app supporting the stated file behavior. [12]
 
 ### Docs References
 
@@ -91,16 +85,7 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-- The import and the registration after the tree view route, before the static mount. [18]
 - The route it registers. [19]
-- The import and the registration after the summary route. [20]
-- The import and the registration after the reviewer family. [21]
-- App creation composes the serving route and lifespan families. [22]
-- One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. [23]
-- The facade exports structural task-assignment names. [24]
-- The one line that places the capsule-compiler port on the serving runtime. [25]
-- **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.** [26]
-- The composition root that binds the real compiler into the collaborator record every `create_app` call uses. [27]
 - The gate whose behaviour the port's presence decides. [28]
 
 ### Cross-Repo References
@@ -227,3 +212,19 @@ know what it is beyond the port type — the composition root (`cli/dashboard.py
 binds the `application`-rank callable, because `serving` may not import that tier. The consequence is
 deliberate: a dashboard app whose collaborator record omits the port still builds, and its launch route
 then **refuses** a role-configured launch by name rather than opening a seat with no instructions.
+
+- Frozen implementation of create_app supporting the stated file behavior. [12]
+- The runtime: projector, terminal objects, one serving clock, and the fields copied from the collaborators. [13]
+- The shutdown callable is copied from the collaborators onto the runtime. [14]
+- The app: lifespan, compression, and the routes in their order with the static mount last. [15]
+- The empty collaborator record. [16]
+- The module docstring: the endpoints and the local-first posture. [17]
+- The import and the registration after the tree view route, before the static mount.  Anchor: `register_knowledge_reader_route` [18]
+- The import and the registration after the summary route.  Anchor: `register_review_trees_route` [20]
+- The import and the registration after the reviewer family.  Anchor: `register_review_summary_route` [21]
+- App creation composes the serving route and lifespan families. [22]
+- One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. [23]
+- The facade exports structural task-assignment names.  Anchor: `TerminalAttachTaskRequest` [24]
+- The one line that places the capsule-compiler port on the serving runtime.  Anchor: `capsule_launch` [25]
+- **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes` [26]
+- The composition root that binds the real compiler into the collaborator record every `create_app` call uses. [27]

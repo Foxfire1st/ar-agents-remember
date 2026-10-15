@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "12": {
-      "note": "`test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity` owns the current boundary described above.",
+      "note": "Historical target names the former moved-realization test. Current test_a_removed_claim_and_a_new_claim_display_as_a_retraction_and_an_addition asserts separate unpaired retraction/addition under the retained invariant identity, not one movement carrying both addresses.",
       "targets": [
         {
           "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:c541cc58ebe13ea87b050db72ad1eef4ed93ef7c75d4b2b8a9c2a79d16724e49",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:d48782df1cc07dc9fa8556307192ab80fe5651cdc798afaab7fd5d94fd22b31e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -23,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "178c7825a21e17d9dbc07d9eff56ca795fde11cc",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
             "content": "sha256:cd28b5baa9453d357d67c831a8e4ca357a1c6368ab99fa464988ee73fcec6a8b",
             "locator": {
               "kind": "symbol",
@@ -39,7 +38,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "178c7825a21e17d9dbc07d9eff56ca795fde11cc",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
             "content": "sha256:abdee66ffdb9bb1ec2aacbfb304a67bde6ff1f9f5d68085f48b2f0b97cd770ab",
             "locator": {
               "kind": "symbol",
@@ -55,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:a3228e55bfb2cfb17777ec323257d38273b2c23ca70020ac9e3201deb902eebb",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:7a88a26130090bf4b55fadf1b248d6c1f651ab484508d73e2a715e9273df27d7",
             "locator": {
               "kind": "symbol",
               "name": "test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned"

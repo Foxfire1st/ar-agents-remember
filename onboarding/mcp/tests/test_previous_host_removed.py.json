@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2ccf8e2d1f9bce06fa98b3d984bc822370d360ff",
+        "blob": "83f32fb5dceb737865cf534d81b47831d43b3e97",
         "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3dc3eebd9399f47e6859148c150e98949387766",
-            "content": "sha256:5689cd8b1af62b9f15828ada24a2bfeda8891b236581d1ae49e4e27f8c5c0031",
+            "blob": "83f32fb5dceb737865cf534d81b47831d43b3e97",
+            "content": "sha256:631a776dad4860cdb121656fd2deded6d8d21f05d90b37a699e0d3cedf66df57",
             "locator": {
               "kind": "file"
             }
@@ -37,14 +37,15 @@
       ]
     },
     "2": {
-      "note": "Nine current launcher routes are asserted without restoring former host APIs.",
+      "note": "Ten current launcher routes include GET /api/role-launch/warmup while every former-path 404 check remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ccf8e2d1f9bce06fa98b3d984bc822370d360ff",
-            "content": "sha256:e0317e42f5a2354b371c035a244d416bd3fbe51d89c7f8867dc9ffaefb3b9f52",
+            "blob": "83f32fb5dceb737865cf534d81b47831d43b3e97",
+            "content": "sha256:11d5b12bee9b21d5bc4475eff5add35d82e6e38d86d6f4f32161e5ccc4fb0162",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ROUTES"
             }
           },
           "kind": "test"

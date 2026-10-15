@@ -14,11 +14,9 @@ Reply replacement layers synthetic leaf and card answers over the served capture
 
 ## Evidence
 
-- The F06 journey checks the supplied reason sibling by entry and side outside disclosures. [6]
-
-
 - Canonical family record for the joined journeys [1]
 - Reply replacement over served captures [2]
 - Subject mount helper for family and invariant records [3]
 - Entry-identity disclosure check with side blobs [4]
 - Incomplete, absent and unbound wire-state builder [5]
+- The F06 journey checks the supplied reason sibling by entry and side outside disclosures. [6]

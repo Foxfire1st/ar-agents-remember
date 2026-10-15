@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38423e04feedc1824e017110ec9f4cd40eaf5917",
+        "content": "sha256:9b4711bab06a351b18433aa09d2e997bc474952583ee117b160dab8626e7dc6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_baseline_unchanged"
+        }
+      },
+      "id": "RLZ-BKXN1R",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L81-R1-F17",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review, while subject reads keep the40-child limit.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Hold a request-local proof of equal physical snapshots spanning a private-index capture. Reuse requires the same tree and current index/file snapshot, plus current HEAD when the caller supplied a head binding. Memory review supplies the bracketed memory HEAD; the future-code helper omits this optional binding and checks its route identity separately. Unreadable or changed bound operands force re-derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38423e04feedc1824e017110ec9f4cd40eaf5917",
+            "content": "sha256:aa1492025dfd9094508e76444d640608731c94ef9881937c0ab339d4844c199c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:877612ca9d29d80b2ea0b9c614fda61f6b617340f8d3286969eff953370c6123",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:167424acbfe005f3d28eff9f03fc7e2d3e764fd2493123fe008fa1aed8dbb5c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

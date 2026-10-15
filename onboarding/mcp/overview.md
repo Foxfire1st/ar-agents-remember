@@ -30,7 +30,7 @@ For memory retrieval, select the repository and task scope before selecting file
 
 Converted knowledge is authored text: onboarding cards and sidecars plus records, histories, and census files. SQLite here is a disposable derived index, keyed by a captured memory tree and stored outside Git working trees, not a canonical write destination. Partial index input cannot become a complete-looking result. The family-complete leaf read returns the seed's invariants and entries, containing families and their remaining members, reference rows for already returned members, and an advertised one-hop frontier. Mechanical governing route-chain families follow that content, including for an entry-less governed path. This is retained internal family-complete content. Mounted `read_ar_files` is stateless naming and carries no chain body or session-served state; mounted `knowledge_read` projects its selected content to names.
 
-Knowledge pages share the declared 8,000 `tiktoken:o200k_base` threshold across the whole block. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. A single indivisible oversized row is returned whole with its explicit flag. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
+The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted knowledge_read leaf pages instead cut their delivered naming projection against bound_for("knowledge_read") and TOOL_ANSWER_LIST_MAX - 1, reserving the header entry; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. A single indivisible oversized row is returned whole with its explicit flag. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
 
 For authoring, `knowledge-ingest` admits a leaf or crossing through its contract; `knowledge-bootstrap` admits a taskless wave. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
@@ -46,6 +46,8 @@ For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations
 > Ordinary memory operations on legacy-format input refuse before writes, including never-converted repositories (MIK-R46). Recovery is first conversion or exact crossing sync with merge-memory from converted source; card reads return no knowledge, and existing continue/cancel recovery stays with its transaction owner. Unreadable Git/object probes retain named errors rather than becoming legacy absence. Converted/converting validation is unchanged; retired citation_migrate and memory-citations --migrate are not current routes.
 
 ## Construction And Ownership
+
+The existing CLI/serving boundary admits automatic loading after a real configured host process start, not after a page load. PID, birth ticks and boot identity bind one shared OS lease/progress record; two timeline-resume lanes admit only eligible tree agents with a known sufficient memory reading, clicked-pending priority and drained retirement. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries within the give-up window; persistent failure in that branch reaching the window consumes the exact start with its given-up reason. Claim publication, candidate-read and initial-progress failures have separate retry/release paths without that branch's give-up check. Per-agent failures remain explicit. No message, refresh/unarchive or host restart is part of this feature.
 
 Root `docs/` remains authored documentation, not one of the five current runtime synchronizer targets. The removed unowned documentation mirrors confer no current packaging guarantee; the retained package tool-details.md is separate. Mirror-only cards with no realization/proof entries are retired with their complete original bytes in Git and the renewal intake archive; canonical docs and existing governing cards retain their authority.
 
@@ -128,7 +130,7 @@ Every unexplained changed hunk/nontext change needs its coverage-appropriate dis
 
 Expected effects are keyed by declared subject/effect, not list position. With no declaration items are unplanned; unreadable task input is not an absent declaration. A declared strengthening is not delivered by `no_impact`. An undelivered declaration needs a planned row with a resolvable disposition reference; taskless waves cannot invent the task owner's decision for a dropped effect. Optional declaration absence preserves existing intent digests.
 
-Ordinary onboarding traces require the leaf's latest eligible source-bound row for each card and nearest governing overview: `updated` also needs an authored Markdown or nonmechanical reference change; `no_impact` binds unchanged contract meaning. Realizes/proves-only edits and mechanical reanchoring do not count. Source movement reopens the row; sourceless historical rows remain valid only in their own closed files. Mixed or unreadable sides cannot pass. The inherited L53 account's amended R53 rule 1 separately permits its own measured changed card under the pre-landing producer, with no unsupported updated row, no changed-card no_impact and no later backfill. Converted semantic gating is not Update History ordering. Closed-history checks preserve base/recorded-closeout scope and cannot be bypassed by setting a flag.
+Ordinary onboarding traces require the leaf's latest eligible source-bound row for each card and nearest governing overview: `updated` also needs an authored Markdown or nonmechanical reference change; `no_impact` binds unchanged contract meaning. Realizes/proves-only edits and mechanical reanchoring do not count. Source movement reopens the row; sourceless historical rows remain valid only in their own closed files. Mixed or unreadable sides cannot pass. The inherited L53 amended R53 rule 1 measured changed-card account is historical, not a current row-free exemption. Current gating requires the latest eligible onboarding row: source-bound rows must match current blobs, updated additionally needs countedChange, and no_impact records review needing no card change. A sourceless historical row can still answer in its own closed file, but not an open one. Converted semantic gating is not Update History ordering. Closed-history checks preserve base/recorded-closeout scope and cannot be bypassed by setting a flag.
 
 New invariant/family/decision admission needs a supported criterion and justification in words. Former blanket existing/exported/unrealized reporting is replaced by named route rules: merge_reports refuses existing-admission failure, gone family routes, unrealized live families, anchors at gone paths and merge-moved history at commit/landing, reporting only during sync merge. Existing-path blob/content drift is not the gone-path rule. Migration_debt reports base-carried missing-card, unresolved-citation, route-unassigned and legacy-unassessed debt only until every onboarding route is migrated/excluded; new debt refuses at once. R13.3-governs refuses a decision governing nothing. Writer-only reports permit across-run repair, never permanent publication exemption. Decisions retain two alternatives, exactly one chosen and reconsideration grounds for rejected/deferred options; supersession is derived. Unresolved requirement endpoints remain separately reported.
 
@@ -185,6 +187,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/application/memory_quality/answer.py:202-239`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:107-110`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:147-148`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:105-111`; `mcp/src/agents_remember/memory_quality/converted_check.py:127-189`; `mcp/src/agents_remember/memory_quality/landing_report.py:353-401`; `mcp/src/agents_remember/memory_quality/landing_report.py:717-810`; `mcp/src/agents_remember/application/memory_quality/controller.py:618-632`; `mcp/src/agents_remember/application/memory_quality/controller.py:757-781`; `mcp/src/agents_remember/mcp/tools/memory.py:116-141`; `skills/l-01-agent-lifecycles/roles/curator.md:107-110`; `skills/l-01-agent-lifecycles/roles/curator.md:147-148`; `skills/l-01-agent-lifecycles/roles/reviewer.md:105-111`.
 
+Historical prior wording (superseded by the current namespace/matrix account): **Historical source-bound reference account, not an operative override:** **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** (prior reference 105)
+
 ## Evidence
 
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
@@ -227,7 +231,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** A decision is never an export. [42]
 - **Retained historical source account — superseded by the current route account:** The leaf package statement. [43]
 - **Retained historical source account — superseded by the current route account:** A path seed of the published-intent block is read as a leaf. [44]
-- **Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [45]
+
+- **Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [317]
+
 - **Retained historical source account — superseded by the current route account:** The module statement. [46]
 - **Retained historical source account — superseded by the current route account:** The stored predicate for the gate. [47]
 - **Retained historical source account — superseded by the current route account:** Step 6 of the run. [48]
@@ -278,7 +284,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** The template's informational section. [97]
 - **Retained historical source account — superseded by the current route account:** The realization admission owner. [100]
 - **Retained historical source account — superseded by the current route account:** The package-owned template copy stating the superseding target shape. [102]
-- **Retained historical source account — superseded by the current route account:** **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** [105]
+- The current review namespace is the derived KnowledgeIndex.repository_id when that index opens; otherwise the requested repository is retained. The receipt/baseline-generation lookup is historical, not a current namespace mechanism. [105]
 - **Retained historical source account — superseded by the current route account:** **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
 - **Retained historical source account — superseded by the current route account:** Current curator records and explicit retired-channel unavailability [109]
 - **Retained historical source account — superseded by the current route account:** Actual absent/unreadable authority and task-context matrix cases [112]
@@ -287,7 +293,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
 - **Retained historical source account — superseded by the current route account:** **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** [123]
 - **Retained historical source account — superseded by the current route account:** The adapter's delegation, with the composition unchanged. [124]
-- **Retained historical source account — superseded by the current route account:** **The served-value change measured through the real composition.** [125]
+
+- Retained historical caption, superseded: the served-value change was described as measured through real composition. The current structured-value case explicitly retires its fixture-driven round-trip and retains only helper key-order equality. [322]
+
 - **Retained historical source account — superseded by the current route account:** The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
 - **Retained historical source account — superseded by the current route account:** The renderer that decides the four branches from declared state. [127]
 - **Retained historical source account — superseded by the current route account:** Published intent selects converted memory and its derived index [128]
@@ -331,9 +339,17 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
 - **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
-- **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [209]
-- **Retained historical source account — superseded by the current route account:** **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** [210]
-- **Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [211]
+
+- **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [318]
+
+
+
+- **Retained historical source account — superseded by the current route account:** **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** Original range 173-282 lies beyond the file's current end. [319]
+
+
+
+- **Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [320]
+
 - **Retained historical source account — superseded by the current route account:** **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
 - **Retained historical source account — superseded by the current route account:** **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
 - **Retained historical source account — superseded by the current route account:** **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
@@ -345,7 +361,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** **The two actions the bodies gained, and the not-found body's offending input.** [220]
 - **Retained historical source account — superseded by the current route account:** **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
 - **Retained historical source account — superseded by the current route account:** The crossing owner's route of knowledge-ingest. [222]
-- **Retained historical source account — superseded by the current route account:** The bootstrap's database route takes the cutover lock. [223]
+
+- **Retained historical source account — superseded by the current route account:** The bootstrap's database route takes the cutover lock. [321]
+
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
 - **Retained historical source account — superseded by the current route account:** A copied Git index keeps the index file's modification time. [226]
 - **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. [227]
@@ -421,127 +439,12 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **Retained historical source account — superseded by the current route account:** bounded landing answer and human-review role contract [288]
 - **Retained historical source account — superseded by the current route account:** Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution. [310]
 
-- The facts and where they come from. [1]
-- Their vocabulary. [2]
-- The gate over a leaf's exact candidate. [3]
-- Each kind's own predicate, registered beside the kind. [4]
-- The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
-- The history-row rule over every file's subjects and the leaf's own file. [6]
-- The one rule, named for its three writers. [8]
-- The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
-- The placement guard. [10]
-- The one classification and where it differs from the gate. [11]
-- The three reads. [12]
-- The lane's shapes and validators. [13]
-- The worklist registrant: what is read, the triggers, route and superseded rulings, the items. [14]
-- The writer's rows, the refresh and its link states. [15]
-- The manifest lookup. [16]
-- The reorder guard, registered on import. [17]
-- The reader's entry point: one read-only question per call, the envelope and the typed failures. [19]
-- The route: 200 for typed answers, 400 for invalid requests, 503 unwired. [20]
-- The Knowledge area's own statement. [21]
-- The entries module statement. [22]
-- The on-demand cards read at the route. [23]
-- The card component's own statement. [24]
-- The chain module statement. [25]
-- The compact row with its family seed. [26]
-- The family seed on the mounted read. [27]
-- The two kinds and the coverage lookup. [29]
-- The subjects and the gate predicate. [30]
-- A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [31]
-- The four-tree comparison, pinned and recorded. [33]
-- The four-tree comparison, pinned and recorded. [269]
-- The archive hook's identity sources and confinement. [34]
-- The tree view route. [35]
-- The index format bump for the seal fix. [36]
-- The content rules and derived reads. [38]
-- The five registered decision rules. [39]
-- The owner resolves each requirement endpoint; unresolved is reported. [40] [270]
-- The writer reports each endpoint of the records the run touched. [41]
-- A decision is never an export. [42]
-- The leaf package statement. [43]
-- A path seed of the published-intent block is read as a leaf. [44]
-- The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [45]
-- The module statement. [46]
-- The stored predicate for the gate. [47]
-- Step 6 of the run. [48]
-- The admission rule's module statement. [49]
-- The three registered rules. [50]
-- The export test. [51]
-- The reconciliation module statement. [52]
-- The declaration on the task document. [53]
-- The planned row. [54]
-- The task owner's strict lookup and decision answer. [55]
-- The paging package statement. [56]
-- The mounted read's converted-tree branch. [57]
-- The whole-block bound of the published-intent block. [58]
-- The rule's statement for converted trees. [59]
-- The memory-quality dispatch between the two gates. [60]
-- The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
-- The package statement. [62]
-- The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
-- The published-intent surface. [64]
-- The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate instead). [65]
-- The CLI subcommand. [66]
-- The two readings of proofs. [67]
-- The package template copy's proof guidance. [68]
-- The umbrella registers the conversion command. [69]
-- The command converts, validates before writing, and commits nothing. [70]
-- The pinned conversion-format version. [71]
-- A raw three-way line merge that writes nothing. [72]
-- A new memory repository is created with the layout marker. [73]
-- A converted overview's sidecar feeds the hot-path hints. [74]
-- The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree. [75]
-- The subcommand registration. [80]
-- Inventory pins the baseline and writes through the census writer. [81]
-- The writer refuses an unconverted memory tree. [82] [256]
-- The subcommand registration. [83]
-- The command reads the families and prints them; it writes nothing. [84]
-- The six route rules in the registry. [85]
-- The subcommand registration. [86]
-- The command's report and exit statuses. [87]
-- The one dataset resolution every knowledge read applies. [88]
-- The cache that refuses any location inside a Git working tree. [89]
-- The subcommand registration. [90]
-- The command's inputs, scope answer and exit statuses. [91]
-- The shared exclusion predicate. [92]
-- The batch blob reader. [93]
-- The format package's own map and its shape-only boundary. [94]
-- The subcommand registration. [95]
-- The command's exit statuses. [96]
-- The template's informational section. [97]
-- The realization admission owner. [100]
-- The package-owned template copy stating the superseding target shape. [102]
-- **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** [105]
-- **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
-- Current curator records and explicit retired-channel unavailability [109]
-- Actual absent/unreadable authority and task-context matrix cases [112]
-- Custody and release remain; creation is retired [118]
-- Exact retained comparison after cleanup/restart/later landing [121]
-- The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
-- **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** [123]
-- The adapter's delegation, with the composition unchanged. [124]
-- **The served-value change measured through the real composition.** [125]
-- The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
-- The renderer that decides the four branches from declared state. [127]
-- Published intent selects converted memory and its derived index [128]
-- File-only ingest arguments/dispatch [131]
-- Only three mounted operations [133]
-- Read-side index preflight without canonical placement [142]
-- Current four-tree capture [147]
-- Development commands, budgets, diagnostic metrics and isolation. [150]
-- Certifying publication and accepting consumers. [151]
-- Exact contract scope, full check and curator worklist publication. [152]
-- Interactive catalog names missing authority without eligibility. [153]
-- Final memory adapter requires the selected four-code-terminal prefix. [154]
-- Finalization consumes original selected fifth-certificate inputs. [155]
-- A ledger view is derived from Git and cache write failure is only an availability result. [156]
-- Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
-- Baseline adoption commits memory content and returns a cache observation. [158]
-- The one decision point every launch point calls, with its three answers and named refusals. [159]
-- The one workspace rule and the selection that follows it. [160] [273]
-- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
-- D13's repair, on the registered operation's own resolution path. [162]
+
+- The retained internal family-complete leaf payload supports path/family seeds; current mounted knowledge_read cuts/projects that payload to naming rows, not full content. [45]
+
+
+- The structured-value case retains a direct helper key-order equality assertion; it does not exercise a changed served field through composition or round-trip both sides. [125]
+
 
 - The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
 - Public closeout payload delegates the current task-bound request. [165]
@@ -568,9 +471,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
 - Current contract-scoped file writing [199]
 - **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
-- **The response field the block travels on, carried by the strict response model rather than re-declared.** [209]
-- **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** [210]
-- **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [211]
+- Historical published_intent response carrier; current strict ReadArFilesResponse names files and overview locations with state/refusal metadata and has no published_intent field. [209]
+- Historical Published Intent Before Planning carrier section; package sync remains, while current retrieval skill requests names and opens files natively. [210]
+- Historical published_intent carrier test reference; the current CarrierParityTests case checks naming answer keys and rejects retired carrier spellings, including published_intent. [211]
 - **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
 - **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
 - **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
@@ -582,7 +485,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - **The two actions the bodies gained, and the not-found body's offending input.** [220]
 - **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
 - The crossing owner's route of knowledge-ingest. [222]
-- Retained historical database-bootstrap witness: that former route took the cutover lock; this is not a current database publication capability. The current bootstrap is the converted-file route described above. [223]
+- Historical bootstrap database route took the cutover lock; that writer route is retired. Current _run writes converted files via run_wave_write or refuses unconverted memory with conversion/cutover guidance. [223]
 - The lock every memory route asks. [225]
 - A copied Git index keeps the index file's modification time. [226]
 - The cache's ignore rule alone. [227]
@@ -635,28 +538,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - The two lane rows. [233]
 
 - Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The grouped bounded-landing answer and role-duty witnesses remain distinct co-targets. [288]
-- Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
-- Dispatch advertisement is closed and undeclared inputs refuse before handler [290]
-- Generated lifecycle providers are empty independently of configuration [291]
-- Old-watcher stop failure is reported and installation continues [292]
-- Retrieval uses harness search and bounded source confirmation [293]
-- Ingest plans by default, writes files only, and refuses unconverted memory [294]
-- Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
-- Closeout invokes mandatory candidate gate before publication [296]
-- Exact memory output is validated/gated against parent tip with leaf-publication context [297]
-- Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
-- Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
-- Retired canonical/matrix collections remain unavailable without measured counts [300]
-- Investigator refuses leaf selection and validates canonical topology [301]
-- Leaf sibling handover supplies canonical role/task arguments [302]
-- Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt [303]
-- Candidate environment setup and interpreter disclosure are repository-tool-note obligations [304]
-- Read revalidation checks selections first and excludes failed observations from memo reuse [305]
-- Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap [306]
-- Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
-- Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
-- Current declared collected-case budgets supersede historical totals [309]
-- Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution. [310]
 
 - Paired-base authoring comparison and contract write route. [315]
 - Named reporting and refusing routes. [312]

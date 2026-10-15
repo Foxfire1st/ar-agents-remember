@@ -17,9 +17,9 @@ kind and the review rounds' extra cases. It is the world the dashboard's `triage
 
 ### Logic
 
-- **The world.** `INV-AAAAAA` (revision 1→2, its realization met by a hunk: `intent` `+impl`), `INV-BBBBBB` (a hunk:
+- **The world.** `INV-AAAAAA` (revision 1→2, its realization met by a hunk: `intent` `+impl` `+unknown`), `INV-BBBBBB` (a hunk:
   `implementation`), `INV-CCCCCC` (re-anchored in an unchanged file: `implementation`, definition 7), `INV-DDDDDD` (a
-  proof of a changed test: `implementation` `+test`), `INV-EEEEEE` (`unchanged`), `INV-FFFFFF` (shared: `unchanged` in
+  proof of a changed test: `implementation` `+test` `+unknown`), `INV-EEEEEE` (`unchanged`), `INV-FFFFFF` (shared: `unchanged` in
   `FAM-F00001`, joins `FAM-F00002`: `membership`), `INV-GGGGGG` (recorded at a blob neither side holds: `unknown`),
   `INV-KKKKKK` (carried mechanically: `unchanged`), `INV-HHHHHH` (added, joins `FAM-F00001`: `intent` `+membership`),
   `INV-PPPPPP` (same revision, applicability reworded: `intent` `text_differs`), and `FAM-F00003`'s `INV-MMMMMM` (a
@@ -57,7 +57,7 @@ R1 fix round, 4 of 4 at R2, 9 of 9 at the merge round) were run against these ca
 
 No additional work is asserted by this card.
 
-`test_the_outline_reads_only_indexes_and_preserves_catalogue_fields` rewrites family membership (a leave-and-join) and an invariant statement, then forbids source, roster, subject-review, lane-classify, blob, index-family/invariant and compose calls: the catalogue entries must equal the subject catalogue's, the dump without `outline` must keep its exact fields, and the outline must show added/removed/changed/unchanged with candidate-first member order, `joined`/`left` membership, word-cut summaries and `text_uuid` selector ids — including that a code-changed but meaning-unchanged invariant reads `unchanged`. `test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes` covers corrupt invariant/family records (`unknown` / `unavailable` naming unparseable files), the dataset case (`trees=None`, no converted memory) and a missing index database.
+`test_the_outline_reads_only_indexes_and_preserves_catalogue_fields` rewrites family membership (a leave-and-join) and an invariant statement, then replaces TreeLane.classify, CodeTrees._blob, KnowledgeIndex.family/invariant and knowledge_review.compose_review with refusing callbacks: the catalogue entries must equal the subject catalogue's, the dump without `outline` must keep its exact fields, and the outline must show added/removed/changed/unchanged with candidate-first member order, `joined`/`left` membership, word-cut summaries and `text_uuid` selector ids — including that a code-changed but meaning-unchanged invariant reads `unchanged`. `test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes` covers corrupt invariant/family records (`unknown` / `unavailable` naming unparseable files), the dataset case (`trees=None`, no converted memory) and a missing index database.
 ## Evidence
 
 ### Docs References
@@ -68,17 +68,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The fixture's members, one per badge kind, and the three families. [1]
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.
+
+- The fixture's members, one per badge kind, and the three families.  Anchor: "one member per badge kind"; "its members are reordered" [1]
 - The world: a live leaf over four Git trees. [2]
 - Every occurrence's kind from the recorded comparison, and the shared member. [3]
 - Returned members only, and the failure states that are unknown, never unchanged. [4]
 - Definition 8, the moved entry, the unresolved range and the unread sidecar beside an established fact. [5]
 - The total, the derived facts and the dataset review. [6]
-- Its lane row. [7]
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
+- Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
 - The outline reads indexes only and keeps catalogue bytes [8]
-- Families, membership and summaries match the detail's facts [9]
+- Families, membership and summaries match the detail's facts  Anchor: `outline` [9]
 - Corrupt records, dataset reviews and lost indexes are named states [10]

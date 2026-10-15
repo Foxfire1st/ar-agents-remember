@@ -16,7 +16,7 @@ the frontend `orderDecisionsNewestFirst` helper orders by parsed time) and sets
 `is_product_record_decision(item.decision)` (exact/prefix string match). The
 projection preserves order; it does not decide recency.
 
-The two kinds of reader have different costs. Always-on task summaries and series readers enumerate the canonical corpus through `_common._iter_task_document_payloads`; it admits raw `schema == ar-task-document/v1` payloads, and only successful tolerant parses become task nodes. Summary Order uses that already-read document map, not per-leaf rereads.
+The two kinds of reader have different costs. Full task summaries and series refreshes enumerate the canonical corpus through `_common._iter_task_document_payloads`, which admits raw `schema == ar-task-document/v1` payloads; only successful tolerant parses become task nodes. Summary Order uses that already-read document map. Complete path-directed live refreshes instead project named task inputs and their dependency closure from retained state. The on-demand body reader never enumerates the canonical task corpus.
 
 The on-demand body resolves an existing requested file within `tasks/`, requires its raw schema key, and parses it without corpus enumeration. Its sprint join remains `_graph_master_docs`: no graph means an empty graph-master table; otherwise canonical candidates for graph-named tails are schema-filtered before `_master_docs_by_ref`. Separately, `read_order_fields` starts with the requested parsed document. For a master it uses that path; for a non-master it reads `path.parent / Path(doc.master or "task.md").with_suffix(".json")`. An unreadable/unparseable owner returns no Order. An owner that is not a master, or is a sprint, returns before child reads. An ordinary owner reads only explicit nonempty `subTasks[].file` JSON paths, skipping paths already in its document map; it neither recursively follows dependency names nor enumerates unrelated masters. Thus a graph-less ordinary master/leaf may read its owner/listed tasks, but a graph-less sprint requests no listed Order children. External grant census is a separate cost.
 
@@ -133,8 +133,8 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - The four-pass retry bound and augmented-location limitation belong to the extracted parser. Retained L10 measurements motivate the bound; no new run or derived pass-count guarantee is claimed. [6]
 
 
-- The repository's own stated read-versus-enforcement split this change follows. [7]
-- Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. [8]
+- The repository's own stated read-versus-enforcement split this change follows. Anchor: "The read is deliberately the TOLERANT one" [7]
+- Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. Anchor: `Step.note` [8]
 - The durable-data writer takes an already-validated document, so it can write no unknown key. [9]
 
 - No summary count cap remains, but the current population is canonical direct task-root JSON with the explicit raw task schema and a successful tolerant parse; summaries project each admitted doc and series projects admitted masters. Missing/bad-schema/failed parses are not a completeness promise. Retain the silent-eviction removal rationale. [10]
@@ -146,6 +146,8 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 
 - The only consumer of `master_docs`, which looks masters up solely by graph ref. [17]
 - The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`. [18]
+
+- Retained L42 regression account: byte identity against the corpus-wide join and same touched files at 4/40 unrelated tasks concerned the earlier graph-only closure. It remains historical execution evidence, not a result from this reconciliation. RF01 source updates the leaf-touch expectation to include its owner and adds owner/listed-child admission assertions; those compare dependency/graph fields, not complete serialized bodies for every possible Order population. [19]
 
 - Retained L42 regression account: byte identity against the corpus-wide join and same touched files at 4/40 unrelated tasks concerned the earlier graph-only closure. It remains historical execution evidence, not a result from this reconciliation. RF01 source updates the leaf-touch expectation to include its owner and adds owner/listed-child admission assertions; those compare dependency/graph fields, not complete serialized bodies for every possible Order population. [19]
 ## 260815-DAG-L12 Render-Ready Graph View Wiring
@@ -236,12 +238,10 @@ Current ownership note: this entire L10 account retains the original diagnosis, 
 ## 260921-ICR-L42 The Body Read Opens Only What It Names
 
 > **Retained historical source account — superseded by the current contract:**
-> **What changed.** `read_task_document_body` used to call `_iter_task_document_payloads(tasks_root, now=now)`,
-> which enumerated and parsed the whole canonical corpus. It built `_master_docs_by_ref` from the result
-> for every document, including leaves and masters that have no graph and consume no master. The read now
-> resolves and reads the one requested file and takes its join table from `_graph_master_docs`. A leaf,
-> a master or a standalone document therefore lists no directory and reads no other file. A sprint lists
-> the repository folders and the task folders its graph names, and reads the files at those paths.
+**What changed.** `read_task_document_body` used to call `_iter_task_document_payloads(tasks_root, now=now)`,
+which enumerated and parsed the whole canonical corpus. It built `_master_docs_by_ref` from the result
+for every document, including leaves and masters that have no graph and consume no master. The read now
+resolves and reads the one requested task file and takes its join table from `_graph_master_docs`. A document without an execution graph skips graph-master lookup. Graph-master lookup scans repository/task directory names, lists JSON entries only in task folders matching the graph's master paths, and reads the named matching master files. The complete body projection also calls the grant helper, which performs the external grant census only for a leaf (`subTask`) with a coordination root; addressed and legacy glob/read I/O is separate. Neither graph-bearing lookup nor the complete leaf projection has an unconditional zero-directory-read or single-file total-I/O guarantee.
 
 Current extension: that L42 graph-only request closure is historical. Ordinary-master/leaf dependency display opens the addressed owner and explicit listed task files through `read_order_fields`; no corpus-wide scan is reintroduced. Graph-less sprint and unusable/non-master owners return before Order-child reads. RF01 checks the raw task schema on newly read owner/listed-child dicts before tolerant parsing; the earlier missing-check concern remains historical.
 

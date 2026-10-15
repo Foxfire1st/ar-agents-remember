@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
+        "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
         "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
         "locator": {
-          "end": 45,
+          "end": 67,
           "kind": "line_range",
-          "start": 45
+          "start": 67
         }
       },
       "id": "RLZ-6TQESZ",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R122@v1 rule 5",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "The hideFrame wrapper is what hides the loaded frame without unloading it while the launcher or problem text takes its visual place.",
+      "rationale": "The hideFrame wrapper hides the mounted frame only for an available, known selection with no effective target; pending and unreadable lookups retain the native screen, with holding or Retry text beside it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
+        "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
         "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
         "locator": {
-          "end": 45,
+          "end": 67,
           "kind": "line_range",
-          "start": 45
+          "start": 67
         }
       },
       "id": "RLZ-DZNJEW",
@@ -42,15 +42,14 @@
   ],
   "references": {
     "1": {
-      "note": "The panel composes selection state, the bound launcher and the shared frame, exposing the launch control only when a target is shown.",
+      "note": "The panel composes selection state, the bound launcher and the shared frame, exposing the launch control only when a target is shown.\n\nAnchor: `DocumentChatImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
-            "content": "sha256:73ea67dd69cf37ffb0920a5b27f35e9d7d086931e5e5d009741a4d6f853b6fd1",
+            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
+            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentChatImpl"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -58,15 +57,14 @@
       ]
     },
     "2": {
-      "note": "Unknown selections keep the native screen visible under a holding line; unreadable answers add one-line Retry without replacing it.",
+      "note": "Unknown selections keep the native screen visible under a holding line; unreadable answers add one-line Retry without replacing it.\n\nAnchor: `DocumentChatView`",
       "targets": [
         {
           "anchor": {
-            "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
-            "content": "sha256:6c3c2436b6265a2b1ecdbbac698ec949a6237c4dd984b00a7a4a5c07d0b96342",
+            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
+            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentChatView"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -74,15 +72,14 @@
       ]
     },
     "3": {
-      "note": "The exported panel is memoized so a parent re-render does not remount it.",
+      "note": "The exported panel is memoized so a parent re-render does not remount it.\n\nAnchor: `DocumentChat`",
       "targets": [
         {
           "anchor": {
-            "blob": "3781e5ec313af1d82dee19d131cc83793b498d5c",
-            "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
+            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
+            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentChat"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -90,15 +87,14 @@
       ]
     },
     "4": {
-      "note": "The hidden frame wrapper stays mounted behind display:none and aria-hidden.",
+      "note": "The hidden frame wrapper stays mounted behind display:none and aria-hidden.\n\nAnchor: `DocumentChatView`",
       "targets": [
         {
           "anchor": {
-            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
-            "content": "sha256:37c8c4ffdd2aac706cd129cae2846e5d7a26beb0359eee205470094e31b4cf6e",
+            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
+            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentChatView"
+              "kind": "file"
             }
           },
           "kind": "code"

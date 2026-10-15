@@ -25,9 +25,11 @@ loop on debounced input changes or an idle heartbeat; without one, fixed-interva
 `_tick` measures the shielded real thread tick. Its finally hook reaches the same pacer completion owner after successful/failed prime, normal ticks and cancellation only after the worker drains. Notification accumulation and publication remain separate owners; the completion floor never clears domains. Watcherless replay retains `sleep(interval)` and no live pacer. A degraded watcher requests full refreshes subject to the completed tick's added rest, which is distinct from total event-to-publication lag.
 
 
-- All real tick outcomes reach completion only after actual work/drain. [4]
 
 ## Code Commentary
+
+Every prime/live/watcherless projection wake records its actual reason, domains and path evidence. Consumed invalidations are acknowledged only after required refresh and publication succeed; failures and cancellation-drained work retain them alongside later arrivals. Stable projection/metrics files write only on semantic change; heartbeat and independent full healing remain permitted.
+
 
 ### Logic
 
@@ -135,9 +137,6 @@ No configured domain documentation was available for this repository-local proje
 The projector sits between the observer read/fold and the app's wire decoration. The source and
 regression suite below prove the ordering rather than relying on timing observations.
 
-- The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. [1]
-- Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. [2]
-- The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. [3]
 
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:109-109 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
@@ -184,3 +183,8 @@ Projection ticks now run as shielded thread tasks. On serving shutdown,
 cancellation is returned to the caller only after the real filesystem tick is
 drained, preventing a late atomic projection write from racing temporary
 worktree cleanup while preserving cancellation as the public outcome.
+
+- The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: "def _publish_projection(" [1]
+- Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" [2]
+- The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.  Anchor: "async with contextlib.aclosing(projector.subscribe())"; "is permitted; handwritten tail keys or another"; "payload.update(" [3]
+- All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick` [4]

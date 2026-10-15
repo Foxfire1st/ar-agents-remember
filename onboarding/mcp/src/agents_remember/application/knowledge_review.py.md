@@ -10,11 +10,13 @@ The complete read resolves the bound candidate once, collects owner records and 
 
 ## Code Commentary
 
+One subject request nests the exact-input Git-object, source-tree, blob and capture-baseline scopes. Repeated successful immutable observations share a request-local result; failed reads, new worktree captures and publication rechecks keep their existing owners. A complete subject answer repeats its standalone display data, not a server-kept composed review.
+
+
 ### One comparison, existing public routes
 
 compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist.
 
-- The complete read resolves the bound candidate once, collects owner records and composes over that resolution. Catalogue and subject routes use that same bound pair and the public source inventory; there is no stored composed answer or caller-chosen memory path. Current converted memory comes from the two derived Git-tree indexes; canonical dataset constants and review-matrix construction are retired. The input recheck precedes the later family/applicability and meaning projection reads, so this module does not promise a last-after-every-read recheck. compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist. [51]
 
 <details>
 <summary>Historical prior account (not the current contract)</summary>
@@ -40,7 +42,6 @@ The review adapter assembles the shipped source, knowledge and owner-record oper
 
 compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist.
 
-- compose_review attaches recorded meaning effects from the candidate index already held by its resolution. [50]
 
 ### Logic
 
@@ -319,54 +320,42 @@ CLI authors into the same root; and the candidate side resolves to **both** a co
 from the capture, because a recorded base commit is a precondition and the add-all candidate tree is
 what the anchors are resolved against.
 
-- The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias. [1]
-- The public adapter surface includes the complete dashboard review operation alongside the existing review/catalogue/summary entry points, models and re-exported owner types. [2]
 
-- The current resolver binds converted code/memory trees and index namespace; canonical path-constant reexports are retired. [3]
 
-- The record kinds the review matrix is asked for — an input to L20's view rather than a selection policy of this module's — and the authored kinds the knowledge pane separates from the mechanical signals, which the record owner now **declares** and this module imports back so the counted collection and the rendered one cannot drift. [4]
-- The record input set, its frozen shape and its single module-level empty value — now declared in the extracted record renderer and imported here, so `review_records_for` and the ingest CLI keep resolving. [5]
-- **The resolution value — now the sibling module's: the two datasets, the two code roots, the two tree ids, the carried contract and the captured identity the recheck re-derives, and the record a closed leaf's review was reopened from.** [6]
+- Historical matrix-kind selection is retired with the envelope tables. The current adapter consumes caller-supplied owner records and builds no review matrix; its collections are not a matrix read. [4]
+
+- The frozen ReviewRecordInputs bundle and module-level EMPTY_REVIEW_RECORDS are owned by the record renderer and imported here. Current knowledge-ingest uses the converted file-writer route, not these review bundle reexports. [5]
+
 - The one contract locator, now the sibling module's: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. [7]
 - **The whole comparison operation: delegate the resolution, then compose, with a refused resolution returned as a refused result before any comparison runs.** [8]
-- **The entry operation: the same resolution as the comparison, then the pair's refusals through the shared `pair_preflight_refusal` (closed-leaf record, absent half, unreadable half, unreadable receipt — the rule the changed-intent summary also uses, since `260921-ICR-L47`), then the catalogue read — every recorded identity of both snapshots listed with presence and totals, no subject compared to earn its row. The enumeration itself is `review_subject_catalogue`'s, and the per-subject compare-to-earn-a-row helpers this module used to own are deleted.** [9]
+
+- The entry operation resolves the same pair, then asks pair_preflight_refusal before enumerating the catalogue. Current preflight tests legacy/unavailable knowledge first, then closed-leaf absence, absent half, unreadable half and candidate receipt. Every recorded invariant/family identity from readable sides is listed with presence and totals, without a comparison to earn its row. Anchor: `unreadable_half_refusal`; `candidate_receipt_refusal` [9]
+
 - **The catalogue's own population read, which the entry operation delegates to: both snapshots' identities through the store's own two list operations, and the globally kind-grouped union with per-row presence.** [10]
 - **The pair preflight and the pair this leaf opened out of it: the absent half named as `baseline` or `candidate`, the sibling fact beside it (a side that is present but cannot be read), the unreadable receipt refused through the shared owner, and the step that runs both only when a subject was named — because a task-context review compares no dataset.** [11]
 
-- **The record-beside-the-bytes namespace this adapter threads through the whole render: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, the requested repository used only when neither record exists, and an unreadable record refused rather than guessed past.** [12]
-- The entry route's single refusal builder, carrying the resolution's own refusal verbatim. [13]
-- **The composition: the observation made once and handed to both renderings, the task-context branch, the three pair refusals (absent, unreadable receipt, unreadable dataset), the comparison, the matrix read through the shipped view operation with its selection channels stated, the endpoint recheck immediately before the payload, and the panes with staleness, submission and the declared limits.** [14]
+- Current composition compares the bound pair, rechecks candidate identity after comparison and before the later family, applicability and meaning projection reads, and renders their owner results. No review matrix is read; a records-page request receives its own refusal rather than a page. This is not a last-after-every-read recheck guarantee. [14]
 - **The recorded before/after relationship union traversed from the comparison's own page items and threaded into the source pane (`ICR-R08@v1`): one call, and the adapter adds no traversal logic of its own.** [15]
-- **The comparison's own partition carried verbatim — never recomputed, because a second measurement could only disagree.** [16]
-- The review matrix read as its own step, so the composition reads as measure, branch, open, compare, read, recheck, publish. [17]
+- The historical review-matrix step is retired. Current composition reads no matrix, and page_of records publishes no records page and receives records_collection_refusal. [17]
 - The shipped comparison call over the two already-resolved sides, with the probe and the candidate's own namespace passed through and no side or selector added. [18]
-- The narrowing that lets a comparison refusal name a selector that is *absent* as `"no selector"` instead of reading `kind` through `None`, and the refusal it feeds. [19]
 - **The comparison identity carried verbatim — now owned by [`application/review_comparison_staleness.py`](review_comparison_staleness.py.md): this leaf moved the identity helper out of this adapter and **deleted** its private `_comparison_identity` rather than keeping it as an alias, because nothing under `mcp/` imported it.** [20]
-- The comparison's declared limits, omissions and side-absences **plus the inventory's own state**, carried as counted facts at the top level. [21]
 - **The staleness rule — now owned by the sibling module: agreement, or an absent previous binding, is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named. This leaf deleted the private `_staleness` rather than keeping it as an alias.** [22]
 - **Submission as the other statement of the same fact, and the payload validators that refuse a payload where the two disagree — including the one that ties `comparison is None` to `not_compared` and to the knowledge pane's selection state.** [23]
 - The panes: identities never rendered as mechanical facts and no authored rows at all, the whole-task inventory, the six published remaining counts and the measured partition, and the evidence pane's two independent absence states — the last two now the extracted modules' own functions, called by both compositions. [24]
 - **Pane 1's delegation, and the one wire-visible change this leaf made: the import of the statement-side module and the four calls inside `_knowledge_pane` that replaced the adapter's private `_side_content`/`_conditions`/`_field_changes`, where a changed structured field is now served as each side's own projection instead of `None`.** [25]
-- **The cases that measure this adapter's one-sided output through the real composition: an addition, a removal, a one-sided field row, and a structured value served as its own projection on both sides.** [26]
+- The named structured-value case currently asserts equal structured_value_text for reordered dictionary keys only. Its former fixture-driven two-sided real-composition round trip is retired; neither the method name nor its historical account establishes that stronger current proof. [26]
 - The per-subject assessment projection that reports an unmeasured assessment as not measured and a subject without an authored assessment as unassessed — now the extracted record renderer's, so both compositions display an unassessed collection identically. [27]
 - The assessment displays and the observation displayed exactly with no sufficiency field, and the detection fact with no severity — all the extracted renderer's. [28]
-- **The deleted prefer-both-sides rule and what replaced it: `_identity_item` and `_selector_record_id` are gone, and the pane renders the head selection instead.** The old rule preferred the item present on both sides — the retained predecessor both snapshots happen to hold — and used a one-sided item only for additions/removals. `ICR-R07@v1` deletes that preference: `compose_review` computes the before/after head pair from authored successor edges and `_knowledge_pane` renders it through `_selected_statements`, with ambiguity or unresolved lineage rendered as an explicit non-pair. [29]
 - The selected source location, now rendered by the recorded-relationship display owner from the movement side (`ICR-R08@v1`), with the recorded role kept `None` rather than guessed and the counterpart address named only when the other side records exactly one. [30]
 - The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the realization payload the recorded side is read from — the deleted `_realization_read_item` was that payload selection, now `side_payload`/`read_snapshot_relationships` in the same owner. [31]
-- **The source half's own measurement: the delimiter-safe probe, the inventory value, its command, whether a name can be carried as text, and the byte form a name that cannot is carried by.** [32]
 - **The entry that needs no subject: `comparison=None`, `staleness.state="not_compared"`, a knowledge pane in the `task_context` selection state, the measured pair attribution, and the reason it names — including an absent or unreadable dataset half when there is one.** [33]
 - The refusal builder the composition reaches (`refused`, the extracted renderer's), the resolution module's refusal constructor it uses, and the **re-exported** record resolver the production port calls — whose owner is now the record module, and whose old assessment-only body is gone rather than kept beside it. [34]
 - **The case that proves the surface stores nothing: the two datasets' row counts are identical across a full render.** [35]
 - **The case that proves the adapter selects nothing: the comparison identity, item identities and counts are the shipped operation's own, compared value for value.** [36]
-- The case that proves the candidate is resolved from task context and never from a browser-chosen path, and the case that proves an absent dataset refuses by name. [37]
 - The case that proves a stale comparison keeps its previous input and disables submission, and the case that proves a current one cannot be built with submission disabled for staleness. [38]
-- **The two cases the sibling leaf `260921-ICR-L5` added for the before half: an absent side refuses by name rather than being substituted with an empty one, and a side that is present but cannot be read refuses by name instead of raising.** [39]
-- **The entry route's own before-half case, and the fact that it proves the damage is the cause: a damaged half is refused by name rather than raising from inside the comparison.** [40]
-- **The case that measures the delegated resolution through the real composition: the bound endpoints published in the served payload.** [41]
 - **The cases this leaf added for the task-context entry: a review with neither dataset half lists the complete source inventory and answers 200 on the real route with no selector parameters; and a knowledge-only change leaves an openable review whose inventory is a *measured* empty set while the comparison is untouched.** [42]
 - The composition root that wires this adapter into the serving port. [43]
 - **The composition measures what this leaf's own managed syncs recorded against the published generation and folds that measurement into the staleness it publishes (`ICR-R22@v1`): a measured movement outranks the reader's carried previous identity, so a review whose inputs a sync moved can never read `current`, and the payload carries the same measurement beside it.** [44]
-- A tree comparison's family context carries the change facts of the returned members; a dataset review's is published as composed (MIK-L33). [45]
 - The facts' owner. [46]
 
 
@@ -380,12 +369,9 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References
 
-- The dashboard operation shares one resolution with records and composition. [47]
-
-- The catalogue answer attaches the outline to the resolved candidate [48]
 
 
-- The answered outcome carries entries, totals and outline [49]
+
 
 ## 260921-ICR-L10 The Adapter Offers A Cursor To The Collection It Names
 
@@ -560,3 +546,27 @@ The summary itself is a separate port wired by the composition root; it does not
 adapter.
 
 </details>
+
+- The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias.  Anchor: `review_source_inventory`; `review_statement_sides`; `review_revision_comparison`; `review_subject_catalogue`; `review_task_context` [1]
+- The public adapter surface includes the complete dashboard review operation alongside the existing review/catalogue/summary entry points, models and re-exported owner types. [2]
+- The current resolver binds converted code/memory trees and index namespace; canonical path-constant reexports are retired. [3]
+- **The resolution value — now the sibling module's: the two datasets, the two code roots, the two tree ids, the carried contract and the captured identity the recheck re-derives, and the record a closed leaf's review was reopened from.** [6]
+- The current namespace is the derived KnowledgeIndex.repository_id when the database opens as that index; otherwise review_namespace keeps the requested repository. The receipt and baseline-generation lookup described in the prior account is retired, not the current namespace mechanism. [12]
+- The entry route's single refusal builder, carrying the resolution's own refusal verbatim. [13]
+- **The comparison's own partition carried verbatim — never recomputed, because a second measurement could only disagree.** [16]
+- The narrowing that lets a comparison refusal name a selector that is *absent* as `"no selector"` instead of reading `kind` through `None`, and the refusal it feeds. [19]
+- The comparison's declared limits, omissions and side-absences **plus the inventory's own state**, carried as counted facts at the top level. [21]
+
+- The deleted prefer-both-sides rule remains retired. compose_review delegates revision selection over the comparison page items. Every retained revision in the selected population is a head, with no predecessor-edge traversal. Two unique nonempty-side heads form a pair; a known-empty side is an addition/removal only when the other side has exactly one head. Multiple heads on either nonempty side render explicit ambiguity; no selected revision on either side yields an unresolved non-pair. Retain the former successor-edge account as historical, not current. Anchor: `select_subject_revisions`; `revision_selection` [29]
+
+- **The source half's own measurement: the delimiter-safe probe, the inventory value, its command, whether a name can be carried as text, and the byte form a name that cannot is carried by.** [32]
+- The case that proves the candidate is resolved from task context and never from a browser-chosen path, and the case that proves an absent dataset refuses by name. [37]
+- **The two cases the sibling leaf `260921-ICR-L5` added for the before half: an absent side refuses by name rather than being substituted with an empty one, and a side that is present but cannot be read refuses by name instead of raising.** [39]
+- **The entry route's own before-half case, and the fact that it proves the damage is the cause: a damaged half is refused by name rather than raising from inside the comparison.** [40]
+- **The case that measures the delegated resolution through the real composition: the bound endpoints published in the served payload.** [41]
+- A tree comparison's family context carries the change facts of the returned members; a dataset review's is published as composed (MIK-L33).  Anchor: "family_context=with_change_kinds(family.context, resolved.trees)," [45]
+- The dashboard operation shares one resolution with records and composition. [47]
+- The catalogue answer attaches the outline to the resolved candidate [48]
+- The answered outcome carries entries, totals and outline [49]
+- compose_review attaches recorded meaning effects from the candidate index already held by its resolution. [50]
+- The complete read resolves the bound candidate once, collects owner records and composes over that resolution. Catalogue and subject routes use that same bound pair and the public source inventory; there is no stored composed answer or caller-chosen memory path. Current converted memory comes from the two derived Git-tree indexes; canonical dataset constants and review-matrix construction are retired. The input recheck precedes the later family/applicability and meaning projection reads, so this module does not promise a last-after-every-read recheck. compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist. [51]

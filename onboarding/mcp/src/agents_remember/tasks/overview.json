@@ -467,11 +467,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
+            "content": "sha256:652b10933379dbe7532866126282bad53c1c786c1d8756376c161eb2afc1bfb0",
+            "locator": {
+              "end": 953,
+              "kind": "line_range",
+              "start": 927
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -501,11 +514,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
             "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
+            "content": "sha256:11f73fead97f325668096cc63aaff9f0c43dcb64b9dc3e1a960de82401c70497",
+            "locator": {
+              "end": 970,
+              "kind": "line_range",
+              "start": 956
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -931,7 +957,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
             "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
             "locator": {
               "kind": "symbol",
@@ -1085,7 +1111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05b62416f0146aa362a6a2de1571c45918e8f1ea",
+            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
               "kind": "symbol",

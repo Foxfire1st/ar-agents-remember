@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
+        "content": "sha256:5d4342a80589c7b2af3ef34b8e7213feb083db3f82e601c6560380fb184afa81",
+        "locator": {
+          "kind": "symbol",
+          "name": "listLiveAgents"
+        }
+      },
+      "id": "RLZ-ZX4HN0",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Sets complete only on the host's own word that no agents follow; a page without a next page ends the read, not the listing.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Read the bounded live-agent census and stable OS process-start identity through the existing bridge. Only hasMore=false establishes completeness; an unreached agent remains unknown. PID, birth tick and boot identity are confirmed across the same host observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
+            "content": "sha256:0dc3e06131daf18e1420ea8c1ff79b970b971b17b4199923730eb56f7b62f30f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

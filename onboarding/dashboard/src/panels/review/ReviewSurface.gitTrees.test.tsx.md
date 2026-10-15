@@ -42,7 +42,7 @@ navigation behave exactly as over datasets.
 
 No additional work is asserted by this card.
 
-The world serves captured entries, cards, leaf trees and lane answers with per-route replies, distinguishing member and family card sets by the requested invariants. Cases assert the touched member's rationale, excerpt and proof voices, the unchanged remainder labels, the dataset file view without tree requests, and the cross-comparison planning-mark refusal on the R2-3 regression.
+The stub routes captured entries, the shared cards body for any named invariants, leaf-wide trees and a lane-less answer. The member-opening case checks its statement, family identity and first two entry IDs; the family case checks rationale/excerpt/proof voices and subject worklist. The dataset case alone checks the landed remaining-count block and no tree requests; the cross-comparison case refuses planning marks. These tests do not distinguish per-member card reply bodies or assert converted leaf-wide remaining-count labels.
 ## Evidence
 
 ### Docs References
@@ -55,17 +55,25 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The five real bodies, including the cards read and the leaf-wide tree view. [1]
-- The stub: cards body for a named selection, a lane-less answer for the lane read (MIK-L32), leaf-wide body otherwise, every URL recorded. [2]
-- Case 1: the family review from trees, then the touched member with its own entries first. [3]
-- Case 2: comparison-pinned focused cards, planning marks, subject worklist and unavailable destinations; Worklist renders delivered items without patches. [4]
-- Case 3: dataset-shaped review makes no tree read, keeps the expression file view and open landed remaining counts. [5]
-- Case 4: no planning mark from another comparison's read (R2-3). [6]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The five real bodies, including the cards read and the leaf-wide tree view.  Anchor: "gitTrees.family.captured.json"; "gitTrees.invariant.captured.json"; "gitTrees.entries.captured.json"; "gitTrees.cards.captured.json"; "reviewTrees.captured.json" [1]
+- The stub: cards body for a named selection, a lane-less answer for the lane read (MIK-L32), leaf-wide body otherwise, every URL recorded.  Anchor: "const withoutLane = (body: ReviewTreesResult) => ({"; "function serve(" [2]
+- Case 1: the family review from trees, then the touched member with its own entries first.  Anchor: "renders a converted leaf family review from its trees and opens the touched member" [3]
+
+- Case 2: focused cards, comparison-pinned reads, planning voices and subject/worklist view; both attribution destinations explicitly unavailable. No explorer-label or technical-details assertion is made. [4]
+
+
+- Case 3: a dataset review makes no tree read, retains the landed expression file view and an open remaining-count block using landed attribution and the captured unattributed count. [5]
+
+- Case 4: no planning mark from another comparison's read (R2-3).  Anchor: "takes no planning mark from a leaf-wide read of another comparison (review R2-3)" [6]
 - Changed-invariants fixture for the converted leaf [7]
-- Per-route captured world with member and family cards [8]
+
+- Per-route captured world with one shared cards body for all named invariant selections [8]
+
 - Touched member resolution in the rendered centre [9]
-- Leaf-wide remaining counts beside the cards [10]
+
+- Dataset remaining-count block; converted card cases do not assert leaf-wide remaining counts  Anchor: `remaining` [10]

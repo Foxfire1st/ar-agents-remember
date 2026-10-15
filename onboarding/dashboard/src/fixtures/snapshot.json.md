@@ -39,15 +39,10 @@ including public identity/component fingerprints and approval state, but no priv
 or worker PID, preserving the
 producer's private-plane boundary while making the generated dashboard contract measurable.
 
-L17 extends the manual sample with the observer stage's own health reading: a **degraded**
-`terminalObserverHealth` row (`generatedAt` 09:01:00, `lastAttemptAt` 09:00:57 so `ageSeconds` is 3.0
-against `staleCutoffSeconds` 60.0, `lastSuccessAt` 09:00:17 so `lastSuccessAgeSeconds` is 43.0,
-`consecutiveFailureCount` 2 with `initialObservationSucceeded` true). The reading is degraded rather
-than healthy because three of the payload's five closed unions are nullable: a payload carrying the
-healthy case's nulls could not satisfy a string-vocabulary check at all, so only a non-null reading
-can be sampled. The row is arithmetically coherent with the fixture's fabricated `2026-06-14T09:00`
-window, and it is what makes the five new `projection.terminalObserverHealth.*` vocabulary paths in
-`test/contract.test.ts` non-vacuous.
+The current sample carries `watcherHealth` and omits `servingBuild`. The retired
+`terminalObserverHealth`, `agentNotifierHeartbeat` and `supervisorHeartbeat` surfaces are no
+current fixture or served-tail fields. The contract guard's sole `KnownUnsampled` path is
+`projection.servingBuild`; its vocabulary checks apply to the current generated schema.
 
 ## Code Commentary
 
@@ -72,13 +67,7 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
 
 ### Conventions
 
-- Shaped like the **persisted** `latest-state.json`, not like an HTTP response: the two app-injected
-  response-time fields `servingBuild` and `agentNotifierHeartbeat` are deliberately absent and are the
-  entire content of `contract.test.ts::KnownUnsampled`; the fourth serve-time field,
-  `terminalObserverHealth` (`LOCR-R17@v1`), is now SAMPLED here and therefore deliberately NOT on that
-  residue. `data/store.test.ts` exercises the two absent ones by construction instead, including the
-  "never ticked" (`lastTickAt: null`) reading that a payload always carrying a heartbeat could not
-  express.
+- The sample combines the persisted projection core with sampled watcherHealth. servingBuild is absent and is the sole current contract.test.ts::KnownUnsampled residue. The served tail declares only servingBuild and watcherHealth; the removed terminal/notifier heartbeat surfaces are not fixture gaps.
 - Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so one lifecycle carrying
   `staleSeconds` samples it for all of them. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
@@ -151,15 +140,12 @@ The payload's shape is fixed by pydantic serialization behaviour on this reposit
 `model_dump(by_alias=True, exclude_none=True)` — which is what makes a null-valued optional field
 absent from the file rather than present as `null`.
 
-- Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. [1]
-- Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. [2]
-- `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. [3]
 
 
 - Hand-maintained taskDocuments samples carry fixed task-reader form/header/review/step data, not producer execution. [4]
 
 
-- Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. [5]
+- Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. Anchor: `activeWorktreeGroups` [5]
 
 
 - Manual decision and task-reader values are sample data, not source-derived provenance. [6]
@@ -172,14 +158,18 @@ absent from the file rather than present as `null`.
 - The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution. [9]
 
 
-- The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
+- The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. Anchor: "served ⊇ mirror" [10]
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
-- `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. [12]
-- `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. [13]
-- The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. [14]
+
+- INDEX_SIGNATURE_SITES exhaustively names the current absorbing nodes and reasons; the old seven-node census is historical. [12]
+
+
+- KnownUnsampled contains only projection.servingBuild; the manual sample carries watcherHealth, and the served tail declares servingBuild and watcherHealth. [13]
+
+- The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated` [14]
 - `demandServed` and the eight anchor rows the builders require this payload to keep. [15]
-- The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. [16]
-- Store-suite consumer, which also constructs the two app-injected fields this payload omits. [17]
+- The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. Anchor: "as unknown as" [16]
+- The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled. [17]
 
 ### Cross-Repo References
 
@@ -219,3 +209,7 @@ while writer constants mark records.
 
 
 - Manual fixture includes native operation/source-lineage wire samples, not live operation evidence. [19]
+
+- Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; "ledgers" [1]
+- Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Anchor: `lifecycle`; "commit-approval-pending" [2]
+- `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]

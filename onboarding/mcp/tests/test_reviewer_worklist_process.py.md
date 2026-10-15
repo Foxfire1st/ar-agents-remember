@@ -82,8 +82,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
 
 - `test_actual_disconnect_deadline_shutdown_and_queue_reap_children`: through the real route, a client
   disconnect and an owner shutdown each end a child that is blocked in `git cat-file --batch`, and its Git
-  process; a child that sleeps past a deadline of 0.2 seconds raises a deadline error and leaves no active
-  process; with two computations running and a third waiting, a shutdown ends all three requests and both
+  process; a blocked child whose owner-local clock is advanced past DEADLINE_SECONDS raises a deadline error and leaves no active process; with two computations running and a third waiting, a shutdown ends all three requests and both
   children.
 - `test_the_child_and_its_git_children_end_at_its_own_deadline` (Linux only): a child armed with a
   deadline of 0.8 seconds and blocked in Git is killed with its Git process.
@@ -94,8 +93,8 @@ comparison pin is idempotent. The module is in the `integration` lane.
 ### Git configuration, executor, pin
 
 - `test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration`: reading under clean and hostile global Git configurations produces equal leaf-wide/review bodies; both tree bodies explicitly lack `knowledge_diff`. This case no longer loops through aggregate memory patches or asserts every patch prefix.
-- `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`: the two argument tuples of the source
-  inventory hold `PARSED_DIFF_OPTIONS`, and the worklist's blob diff holds the prefix options, `--no-color`
+- `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`: the combined raw/numstat argument tuple of the source
+  inventory holds `PARSED_DIFF_OPTIONS`, and the worklist's blob diff holds the prefix options, `--no-color`
   and `--no-ext-diff`.
 - `test_a_busy_default_executor_cannot_delay_a_tree_read`: while the event loop's default executor
   has both real workers held and a third job queued, a request to the route answers while every executor job is still unfinished. Release and draining happen afterwards.
@@ -104,6 +103,8 @@ comparison pin is idempotent. The module is in the `integration` lane.
   another tree is refused and not moved; a held ref lock is released only after the actual `update-ref` lock refusal is observed, and the retry succeeds.
 
 ## Evidence
+
+- The process owner under test. [22]
 
 - The child's document, reads and body equal the in-process computation at two sizes. [1]
 - Fourteen faulty children, the numeric cases through the route, and a failed launch. [2]
@@ -126,10 +127,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
 - Twelve identical reads share one child. [19]
 - The deadline runs from the request's arrival. [20]
 - The bound counts computations, not requests. [21]
-- The process owner under test. [22]
-
 - Owner-local time proves the remaining child deadline without an elapsed-speed assertion. [23]
-- Parity bodies carry no knowledge diff under hostile gitconfig [24]
-
+- Parity bodies carry no knowledge diff under hostile gitconfig  Anchor: `knowledge_diff` [24]
 - Published rename and raw-diff command texts equal the intercepted executed arguments; the raw/numstat commands carry the parsed-diff options. [25]
 - Published rename and raw-diff command texts equal the intercepted executed arguments; the raw/numstat commands carry the parsed-diff options. [26]

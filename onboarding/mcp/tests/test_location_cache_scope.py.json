@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_location_cache_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rule 3 (F14): the warm location cache authenticates what it serves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff217182d4166bde32cb8445eca662543c0638e",
+            "content": "sha256:9fcbc4561817259aab4782692aebbd2403ae998b7b841bcf3430566ea6933612",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -37,13 +37,7 @@ the shared FalkorDB backend plus one watcher resource per repo. Disabled
 configured providers are represented explicitly as `disabled` and do not poison
 aggregate readiness.
 
-GrepAI readiness is additionally gated on workspace presence.
-`grepai_workspace_present()` inspects the watcher's `workspaceStatus` **stdout**
-(not just its exit code, because `grepai workspace status` exits 0 even when it
-prints "No workspaces configured"). `grepai_current_state()` downgrades a
-container-ready GrepAI to `degraded` when no searchable workspace exists, and
-`grepai_indexing_state()` reports `noWorkspace` in that case. With a workspace
-present, it maps the watcher's `initialScan` log-marker probe (provided by
+GrepAI readiness also uses the workspace-status gate: `grepai_workspace_present()` requires a successful `workspaceStatus` exit and stdout without the literal "No workspaces configured" marker. It does not independently verify workspace content or searchability; blank stdout passes this predicate. A missing or nonzero status fails it, downgrading a container-ready GrepAI to `degraded` with `noWorkspace`. When this predicate passes, it maps the watcher's `initialScan` log-marker probe (provided by
 `grepai/lifecycle/runner.py`) to `indexing` (scan in progress) or `indexed`
 (scan complete), falling back to `unknown` only when markers are absent —
 parity with the CGC graph probe.
@@ -68,9 +62,7 @@ exclude restarting containers.
 - `targetRepos` is coverage/addressing evidence for topology and query routing,
   not per-root health evidence. Keep GrepAI readiness provider-level until the
   provider exposes root-level health.
-- GrepAI is only `ready` when its watcher reports a real, searchable workspace;
-  container liveness alone is not readiness. A missing/empty workspace is
-  `degraded` with `indexingState: noWorkspace`.
+- GrepAI readiness requires successful workspace status without the literal no-workspaces marker; container liveness alone is insufficient. This gate admits blank stdout and establishes no independent searchability proof.
 - A `restarting` (crash-looping) container must never count as a ready
   watcher — observed during the 2.5.0 rollout, when a crash loop surfaced as
   `running: true` → `ready`.
@@ -92,20 +84,27 @@ No relevant external documentation is needed for this provider state projection.
 
 ### Repo-Internal References
 
-- Current state payloads include version, kind, instance, aggregate state, `ok` (`state == "ready"`), check time, settings file, enabled providers, process namespace, and per-provider state. [1]
-- Current state files are written under `logs/providers/status/<scope>/<instance>/current.json` by `current_state_path`. [2]
-- Instance identity uses the shared configured provider scope/id or a deterministic mixed digest through `current_state_instance`. [3]
-- GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate through `grepai_current_state` and `cgc_current_state`. [4]
-- GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. [5]
 - GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`) through `_grepai_roots`. [6]
-- GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. [7]
-- Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload through `normalize_container_state` and `resource_state`. [8]
-- Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts through `aggregate_state`. [9]
-- Provider status writes this current-state payload and returns both the file path and current-state object to MCP callers through `provider_status_packet` and `refresh_current_provider_state`. [10]
-- Unit tests assert the file path, current truth shape, disabled-provider behavior, workflow-local instance paths, and provider-status integration in `ProviderCurrentStateTests`. [11]
+
+- `provider_status_packet` builds a nonpersisting normalized provider summary; `provider_diagnostics_packet` exposes the current-state object. `refresh_current_provider_state` explicitly persists the payload and returns that object; its path is supplied by the lower writer. [10]
+
+
+- `ProviderCurrentStateTests` asserts the workspace current-state path and truth shape, disabled aggregation, CGC degradation/restart exclusion, and provider-status recovery integration. Workflow-local instance paths are not asserted by this retained test class.  Anchor: "class ProviderCurrentStateTests(unittest.TestCase):" [11]
+
 
 ### Cross-Repo References
 
 No sibling repository boundary is needed to explain this file.
 
 No meaningful cross-repo references found.
+
+- Current state payloads include version, kind, instance, aggregate state, `ok` (`state == "ready"`), check time, settings file, enabled providers, process namespace, and per-provider state.  Anchor: "def build_current_provider_state("; "def aggregate_state(" [1]
+- Current state files are written under `logs/providers/status/<scope>/<instance>/current.json` by `current_state_path`. [2]
+- Instance identity uses the shared configured provider scope/id or a deterministic mixed digest through `current_state_instance`. [3]
+- GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate through `grepai_current_state` and `cgc_current_state`. [4]
+- GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state.  Anchor: `targetRepos` [5]
+
+- The workspace gate requires workspaceStatus returncode0 and stdout without the literal No workspaces configured marker. Missing/nonzero status fails but blank stdout passes; this predicate does not independently verify content or searchability. [7]
+
+- Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload through `normalize_container_state` and `resource_state`. [8]
+- Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts through `aggregate_state`. [9]

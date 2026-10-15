@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_worklist_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "F09/F13: the worklist publisher changes only different text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "970768f793aaeea41dc8785a7899cfab0d35a53b",
+            "content": "sha256:ccb48be62a432a3e7db58ac11964e2c092d3a43748382c05cdb8025479d957c9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

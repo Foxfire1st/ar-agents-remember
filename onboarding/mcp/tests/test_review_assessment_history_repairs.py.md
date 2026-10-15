@@ -34,9 +34,6 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-- `_nonempty_fixture` supplies the current fixture or assertion described above. [6]
-- `_request` supplies the current fixture or assertion described above. [7]
-- `test_integrity_rejection_precedes_canonical_authority_replacement` supplies the current fixture or assertion described above. [8]
 
 The cited owners carry the behavior and failure boundaries described above.
 
@@ -46,10 +43,14 @@ No Domain Documentation source is configured. The repository declarations below 
 
 No configured domain source could be checked.
 
-- Integrity failure preserves the previous authority. [9]
 
 ### Cross-Repo References
 
 No separate repository supplies this contract.
 
 No cross-repository reference is required.
+
+- `_nonempty_fixture` supplies the current fixture or assertion described above. [6]
+- `_request` supplies the current fixture or assertion described above. [7]
+- `test_integrity_rejection_precedes_canonical_authority_replacement` supplies the current fixture or assertion described above. [8]
+- Integrity failure preserves the previous authority. [9]

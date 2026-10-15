@@ -16,7 +16,7 @@ The capture supplies before and after walks at a fixed page size. The positive f
 
 The negative cases begin with coherent accumulated context. Wrong cursor, comparison, snapshot, subject, namespace, family revision, stale state, immutable content and structured page refusal must fail visibly without installing the rejected response. An unadvertised request cursor receives the same admission check. Whole-review refusal still suppresses the display through the existing outcome rule.
 
-Mounted cases inspect the displayed statement, evidence, sibling rows, inventory, continuation and owner recovery text. The actual family-detail branch distinguishes content-only pages, a fully accumulated roster and unavailable scope. Refresh and changed subject/history reset accumulation; a late superseded response cannot restore an older question. Focus, layout and open-file state survive a legitimate continuation.
+Mounted cases inspect the displayed statement, evidence, sibling rows, source-inventory count, continuation and owner recovery text. A separate ChangeSetViewer helper projects captured inventory entries into synthetic changeset/diff responses and asserts their count/order; it makes no HTTP or recorded-range claim. The actual family-detail branch distinguishes content-only pages, a fully accumulated roster and unavailable scope. Refresh and changed subject/history reset accumulation; a late superseded response cannot restore an older question. Focus, layout and open-file state survive a legitimate continuation.
 
 ### Conventions
 
@@ -43,14 +43,6 @@ No configured domain source could be checked.
 
 The cases below exercise the actual read cycle and rendered outcome boundary.
 
-- **The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.** [1]
-- The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache. [2]
-- Independent exact walks retain content and claims. [3]
-- Failed admission retains the coherent display and failure details. [4]
-- Unadvertised cursors are checked without weakening whole-review refusal. [5]
-- The family-detail branch states loaded, complete and unavailable scope. [6]
-- Refresh, changed questions and late responses cannot reuse old context. [7]
-- A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`. [8]
 - The production owner admits or rejects continuation before retaining data: the read cycle decides when (`familyContinuationRead`), and since L48 the merge it applies lives in `familyWalkMerge.ts`. [9]
 
 ### Cross-Repo References
@@ -58,6 +50,15 @@ The cases below exercise the actual read cycle and rendered outcome boundary.
 No external repository or live service is exercised by these mounted cases.
 
 No cross-repository reference is required.
+
+- **The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**  Anchor: "re-captured by MIK-L31 with ICR-L44's"; "familyReview.capture-provenance.json"; "rather than relying on its position" [1]
+- The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache.  Anchor: `new ReviewReadCache()` [2]
+- Independent exact walks retain content and claims.  Anchor: "retains exact content and claim identities while before and after walks advance independently" [3]
+- Failed admission retains the coherent display and failure details.  Anchor: "retains the coherent display and fails a rejected continuation, including a structured page refusal" [4]
+- Unadvertised cursors are checked without weakening whole-review refusal.  Anchor: "fails an unadvertised request cursor while preserving whole-review refusal semantics" [5]
+- The family-detail branch states loaded, complete and unavailable scope.  Anchor: "states loaded claim scope in family details for a content-only page, completed walk and unavailable side" [6]
+- Refresh, changed questions and late responses cannot reuse old context.  Anchor: "resets accumulated context on refresh, subject and history changes and drops late continuations" [7]
+- A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`.  Anchor: "keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable" [8]
 - Captured outline families and members [10]
 - Complete-inventory expectation helper [11]
 - Cycle mount helper with cache and fetch [12]

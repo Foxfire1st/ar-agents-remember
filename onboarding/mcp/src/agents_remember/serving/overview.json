@@ -214,16 +214,16 @@
       ]
     },
     "110": {
-      "note": "App registers three intent handlers plus separate summary, tree and reader ports before static delivery.\n\nAnchor: create_app",
+      "note": "App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:5bfd391993e236227d9744cb6ec32017628dd77d1cad4f7767d50b7bcad9d0e6",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:8f6d32862f2a1973691bcacc36d0eed925b511c61a3f277355d99e985796bbd1",
             "locator": {
-              "end": 331,
+              "end": 341,
               "kind": "line_range",
-              "start": 291
+              "start": 300
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -232,15 +232,14 @@
       ]
     },
     "111": {
-      "note": "Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.\n\nAnchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_drained_on_cancel`",
+      "note": "Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload)",
       "targets": [
         {
           "anchor": {
-            "blob": "3f1f9f396a6957d7388f5a40863c8009281d6a57",
-            "content": "sha256:3105e6b395b7914c343869d8aceff2568c1b9181afe8e9a913733d3d495f54c7",
+            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "content": "sha256:d611c322f5d50093d401dba735281fe9c26be428a0f031cfec079aae88f26fd0",
             "locator": {
-              "kind": "symbol",
-              "name": "_serving_lifespan"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -248,25 +247,12 @@
         },
         {
           "anchor": {
-            "blob": "709320161c9744d9aa93d005a483faf721515e33",
-            "content": "sha256:59ecca5d68601df173a3a4225ea044607992f1974d97a744b91ab94bdc097bec",
+            "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+            "content": "sha256:7b84594e3e910e2e0af5a778c35d03342b65303c66737706e13cf96e71fde4a0",
             "locator": {
-              "kind": "symbol",
-              "name": "_held_delivery_loop"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "709320161c9744d9aa93d005a483faf721515e33",
-            "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
-            "locator": {
-              "kind": "symbol",
-              "name": "_to_thread_drained_on_cancel"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
           },
           "kind": "code"
         }
@@ -289,7 +275,7 @@
       ]
     },
     "113": {
-      "note": "Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.\n\nAnchor: projection_completed; _next_deadline",
+      "note": "Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline",
       "targets": [
         {
           "anchor": {
@@ -307,7 +293,7 @@
       ]
     },
     "114": {
-      "note": "Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.\n\nAnchor: run; _watch_once",
+      "note": "Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once",
       "targets": [
         {
           "anchor": {
@@ -325,16 +311,16 @@
       ]
     },
     "115": {
-      "note": "Tick cancellation drains filesystem work; state commits before subscriber notification.\n\nAnchor: _tick; _publish_projection",
+      "note": "Tick cancellation drains filesystem work; state commits before subscriber notification.  Anchor: _tick; _publish_projection",
       "targets": [
         {
           "anchor": {
-            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
-            "content": "sha256:f770d795ebcff0f160b328260f2191cfd45e87baad99e895b5b11bc9e1255ec6",
+            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
+            "content": "sha256:29bb5fcbd44a73029913d4087facbaf61d6dbe5a15980d9ec683703eeb113e74",
             "locator": {
-              "end": 325,
+              "end": 430,
               "kind": "line_range",
-              "start": 244
+              "start": 344
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -416,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -433,8 +419,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d31a421160e67d9b9cf8e11e2617356e5cffd2b",
-            "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
+            "blob": "bd70cad04d4d11b23090b53911254c046d080daf",
+            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
             "locator": {
               "kind": "symbol",
               "name": "is_projection_input_event"
@@ -681,16 +667,16 @@
       ]
     },
     "4": {
-      "note": "The collaborator port and the registration before the static mount.\n\nAnchor: \"knowledge_reader: KnowledgeReaderPort\"; \"register_knowledge_reader_route(app, collaborators.knowledge_reader)\"",
+      "note": "The collaborator port and the registration before the static mount.  Anchor: \"knowledge_reader: KnowledgeReaderPort\"; \"register_knowledge_reader_route(app, collaborators.knowledge_reader)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
             "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
             "locator": {
-              "end": 224,
+              "end": 233,
               "kind": "line_range",
-              "start": 219
+              "start": 228
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -698,12 +684,12 @@
         },
         {
           "anchor": {
-            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
+            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
             "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
             "locator": {
-              "end": 170,
+              "end": 178,
               "kind": "line_range",
-              "start": 170
+              "start": 178
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1091,8 +1077,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:e4b153a740fbd51671f089dea80c8dda8f42b7736a56f9ae8a62c3a6cc496712",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
             "locator": {
               "kind": "symbol",
               "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
@@ -1103,8 +1089,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
@@ -1115,8 +1101,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
             "locator": {
               "kind": "symbol",
               "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
@@ -1127,8 +1113,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:d7f70d5eb85ad859d8eadcf0670a3003b32eddd695b99761d4546485a3671db9",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
@@ -1412,7 +1398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
             "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
             "locator": {
               "kind": "symbol",
@@ -1424,8 +1410,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:618694acaac3b3addb44a457fedda5723b373051acf3391df76ded38c069e017",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:b68bf652eb5ef6f597dec0fa6645f944b25bdcfea03dd859fa980cf7d57540da",
             "locator": {
               "kind": "symbol",
               "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
@@ -1562,7 +1548,7 @@
         },
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -1635,16 +1621,16 @@
       ]
     },
     "76": {
-      "note": "The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.\n\nAnchor: `register_review_routes`",
+      "note": "The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
+            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
             "content": "sha256:50dd0902d7e386a27104a0410ddb36ccb223390dca13ced0ddf067749c2d82f2",
             "locator": {
-              "end": 166,
+              "end": 174,
               "kind": "line_range",
-              "start": 160
+              "start": 168
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1657,7 +1643,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -1669,12 +1655,12 @@
         },
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
             "locator": {
-              "end": 85,
+              "end": 87,
               "kind": "line_range",
-              "start": 85
+              "start": 87
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1861,8 +1847,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
-            "content": "sha256:231e4d908e086d34fb52210ac2e8782be9be806ea8534612a3982fbb255ca5be",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "content": "sha256:5a958343dd1f4bae5f93de39abaa4cee0b08588e7bbc6f4b847e4577bfdceac4",
             "locator": {
               "kind": "file"
             },
@@ -1877,8 +1863,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
-            "content": "sha256:441ded2f0474a3226a3452b9785559b6df226d5e821fa4e2729fd70febb5f703",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:644a4c8da462e476952f96c415828b5e6ef6de7196863dc55ec449f15152cbf2",
             "locator": {
               "kind": "file"
             },
@@ -1941,12 +1927,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
             "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
             "locator": {
-              "end": 217,
+              "end": 226,
               "kind": "line_range",
-              "start": 216
+              "start": 225
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -1975,12 +1961,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d2111cc665320628975a77a44e4a4759ae4e70",
+            "blob": "2061752f78b2eefa75fabe5d45a8e95a8df014e2",
             "content": "sha256:83024a036949ee5b6e1818f3d0ef269bf21f7f9cce819b5cbd9605fc7120bec9",
             "locator": {
-              "end": 115,
+              "end": 122,
               "kind": "line_range",
-              "start": 115
+              "start": 122
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -2011,12 +1997,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
-            "content": "sha256:fdb5da4fc7af1e5539b9c6605cb56d514cc702763bec151b051b87e84cf34daf",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
-              "end": 94,
+              "end": 110,
               "kind": "line_range",
-              "start": 94
+              "start": 110
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2029,12 +2015,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
             "locator": {
-              "end": 163,
+              "end": 165,
               "kind": "line_range",
-              "start": 163
+              "start": 165
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2047,12 +2033,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
             "locator": {
-              "end": 150,
+              "end": 152,
               "kind": "line_range",
-              "start": 147
+              "start": 149
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2065,8 +2051,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
-            "content": "sha256:f81efb5898ed46aef7da4725cd3907767ca242323a14514e2d4598e87eeb3bde",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:0f5a02032bd057765954215f43ab2554833a51162f92fcda2cbac5627e18630b",
             "locator": {
               "kind": "symbol",
               "name": "_recorded"
@@ -2078,15 +2064,14 @@
       ]
     },
     "96": {
-      "note": "A payload without a tree comparison number is a dataset review, for which no tree read is made.",
+      "note": "A payload without a tree comparison number is a dataset review, for which no tree read is made.\n\nAnchor: `treeComparisonNumber`",
       "targets": [
         {
           "anchor": {
-            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
-            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "treeComparisonNumber"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -2099,8 +2084,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:20dc6b3df66ec1d9e7ac98996c7191cd23684b8942a209bcd98ebf4ca8ae51f8",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+            "content": "sha256:70af368c577d7976553c7af0697fc514b5f8853c37291dcff61d2a58753d2404",
             "locator": {
               "kind": "symbol",
               "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
@@ -2116,8 +2101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+            "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
             "locator": {
               "kind": "symbol",
               "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"

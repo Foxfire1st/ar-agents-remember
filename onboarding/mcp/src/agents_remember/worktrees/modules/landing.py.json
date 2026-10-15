@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:45b26a8b0a279bdd72416d85b11c3e768d1ee61c66a78bbbbde9b7b784427f6c",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
             "content": "sha256:9c490b890097d893a4f8f2bf5817e0fc69921498c255a4842a304cff7af49111",
             "locator": {
-              "end": 472,
+              "end": 476,
               "kind": "line_range",
-              "start": 464
+              "start": 468
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -49,7 +49,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
             "content": "sha256:be2b0955bbe767a5616d8badba2144b66a3a28fffa78a35c2c03fbf32fadfb2f",
             "locator": {
               "kind": "symbol",
@@ -84,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
               "kind": "symbol",
@@ -96,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
             "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
             "locator": {
               "kind": "symbol",
@@ -108,8 +108,8 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
               "name": "git_environment"
@@ -120,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
+            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -129,29 +129,16 @@
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
-            "locator": {
-              "end": 230,
-              "kind": "line_range",
-              "start": 166
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.\n\nAnchor: \"observe: LandingObserver = landing_refs\"",
+      "note": "The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: \"observe: LandingObserver = landing_refs\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cb726d4977576722049db05c92f7ea8ad8f32718",
-            "content": "sha256:f75d8b665649dbad22afd263de12647c50270621a7e57e8cdf90679779c1733a",
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:78e3c9c0518417175047233e93b70c83216915d72427f6ef48572090be89180a",
             "locator": {
               "kind": "symbol",
               "name": "LandingStateRefresher"

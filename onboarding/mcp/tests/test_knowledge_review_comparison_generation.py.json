@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98331806067a43bedcffb1ffac35019e5772051a",
+            "blob": "8782f874fb743422a5c03599845ebe464f324be4",
             "content": "sha256:0ce1481071e6c2182697b99af633c14a2c08c04aed9fae81fdbfad2f272745e2",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98331806067a43bedcffb1ffac35019e5772051a",
+            "blob": "8782f874fb743422a5c03599845ebe464f324be4",
             "content": "sha256:ac412f75b07d1887e41fb9abae94a35df7ee71fe77fa64d861cfe79161e188a9",
             "locator": {
               "kind": "symbol",
@@ -36,16 +36,16 @@
       ]
     },
     "27": {
-      "note": "The lane row this module was registered under, inside the array whose own key declares the classification.\n\nAnchor: `test_knowledge_review_comparison_generation`",
+      "note": "The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation`",
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "content": "sha256:a3eb2d9a5729e7ae15ee83368041e3670c063c5122f172d793bafd8bb4485581",
             "locator": {
-              "end": 146,
+              "end": 149,
               "kind": "line_range",
-              "start": 146
+              "start": 149
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

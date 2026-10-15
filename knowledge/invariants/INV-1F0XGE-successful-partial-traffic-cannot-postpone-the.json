@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Native-watch ChangePacer scheduling of independent full reconciliation. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Native-watch ChangePacer scheduling of independent full reconciliation.",
+  "conditions": [
+    "Full deadline is measured from successful full publication.",
+    "A running tick and completion-rest floor remain separate scheduling constraints."
+  ],
+  "exclusions": [
+    "The scheduling bound does not certify total publication latency during a stuck or failing tick."
+  ],
+  "id": "INV-1F0XGE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pacer_healing.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F05",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Successful partial traffic cannot postpone the independent three-hundred-second full-healing deadline.",
+  "status": "proposed",
+  "supersedes": []
+}

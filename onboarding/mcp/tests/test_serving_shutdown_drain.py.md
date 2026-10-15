@@ -10,7 +10,7 @@ Source-level teardown tests for the retained leaf-archive recovery owner and its
 
 ## Code Commentary
 
-The current suite parks a real LeafArchiveRecovery.tick worker under the real serving lifetime and observes the cancellation owner directly await that worker before release. Its virtual clock drives archive-recovery cadence, not terminal observation. Fixture/finalizer bounds and patched-surface restoration belong to the test, not production shutdown deadlines. Current assertions concern in-flight recovery drain and the final durable archive result; no current pytest run is claimed by this card.
+The current suite parks a real LeafArchiveRecovery.tick worker under the real serving lifetime and observes the cancelling owner wait for that exact worker, including through the current asyncio.wait drain path, before release. Its virtual clock drives archive-recovery cadence, not terminal observation. Fixture/finalizer bounds and patched-surface restoration belong to the test, not production shutdown deadlines. Current assertions concern in-flight recovery drain and the final durable archive result; no current pytest run is claimed by this card.
 
 ## Evidence boundary
 
@@ -18,7 +18,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 ## Source-bound reference inputs
 
-- [1]
 - [2]
 - [3]
 
+- The fixture witnesses the cancelling owner wait for the exact archive-recovery tick worker, following the measured wrapper and the asyncio.wait drain path. [1]

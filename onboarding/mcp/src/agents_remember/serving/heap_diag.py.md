@@ -38,7 +38,6 @@ No relevant external documentation is configured for this opt-in daemon diagnost
 
 The serving lifespan owns scheduling; this module owns only flags, snapshots, formatting, and allocator trimming.
 
-- The app lifespan starts the diagnostic and trim loops only when their flags are enabled. [1]
 
 
 ### Cross-Repo References
@@ -46,3 +45,5 @@ The serving lifespan owns scheduling; this module owns only flags, snapshots, fo
 No meaningful cross-repository boundary participates in this module.
 
 The diagnostic is wholly repository-local.
+
+- The app lifespan starts the diagnostic and trim loops only when their flags are enabled.  Anchor: "def _serving_lifespan(" [1]

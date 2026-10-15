@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_serving_owner_units.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4f1ed217e1b15712debdffbf370a007b6c96911d",
+        "content": "sha256:7556cf90e810c482700b562ee7993ea75d0b4468311080b0ccabebf4130b4800",
+        "locator": {
+          "kind": "symbol",
+          "name": "MaterialOwnerUnitTests.test_each_wake_keeps_its_exact_reason_domain_and_paths_on_failed_ticks"
+        }
+      },
+      "facet": "The exact controlled source case each wake keeps its exact reason domain and paths on failed ticks; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-S1JHE4",
+      "invariant": "INV-RGGEX3",
+      "origin": {
+        "handoffEntry": "L81-R1-F02",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained projection, event-tail, warmup, landing and startup/teardown cases check executing-thread attribution and drain; startup failure/cancellation uses river compaction, and retired native-conversation/migration stages are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb08fcaf080bbd5e7bc1a071259b1cd8223b731",
+            "content": "sha256:5a85f26b3feb0143bc4f58791b514cc005e280985653d4ba7fbfd78aad471aaf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

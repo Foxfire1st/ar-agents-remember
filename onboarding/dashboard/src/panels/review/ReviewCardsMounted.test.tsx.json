@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/ReviewCardsMounted.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exercise the mounted ReviewCardsMounted owner and its delivered read/selection states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d6b562a8b7ea4916150c0fa5804007b01c85277",
+            "content": "sha256:acc76612cb728edb484067d0e7f9d69371b8029d682359d2ede83abac3547259",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

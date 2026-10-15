@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:0c261ffcf03be4a482c04d84095506cfa08a1f3773835c09056bd9f857c49836",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
             "locator": {
               "kind": "symbol",
               "name": "create_app"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:99a8dfdf9d67b75378cd6fa7186bbbd9aa9daee4438e2eb51c8ee18d65bc33ab",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:39b5a49dcdfb1b2de61aadfe1828f7a79ea20da0732107d0233214b581fcf686",
             "locator": {
               "kind": "symbol",
               "name": "_build_serving_runtime"
@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:83024a036949ee5b6e1818f3d0ef269bf21f7f9cce819b5cbd9605fc7120bec9",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
             "locator": {
-              "end": 250,
+              "end": 259,
               "kind": "line_range",
-              "start": 250
+              "start": 259
             }
           },
           "kind": "code"
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e56dc4058a156a9726ab1378ebb125c4789613f",
-            "content": "sha256:f283eec28d13eae9e01fc8bfe9030ecf5a98690d3b375da40f966808071a6569",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
             "locator": {
               "kind": "symbol",
               "name": "create_app"
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
             "content": "sha256:fd94d584cf704f759112a787d339f29819555b15105c7339d151630c57235f32",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
             "content": "sha256:33b06af08dbf700dbd8a248f079f85d2cc95b07f49a539d52e5da1053597e446",
             "locator": {
               "end": 31,
@@ -101,16 +101,16 @@
       ]
     },
     "18": {
-      "note": "The import and the registration after the tree view route, before the static mount.\n\nAnchor: `register_knowledge_reader_route`",
+      "note": "The import and the registration after the tree view route, before the static mount.  Anchor: `register_knowledge_reader_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:67384fe33fa994dd78396955e2575c4a90f48a146251473ec78e484170d6c627",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:4ef18c9b235a42a3b81d999a381385da07e8dcff27b106f21811053b6f1cc9ef",
             "locator": {
-              "end": 308,
+              "end": 317,
               "kind": "line_range",
-              "start": 306
+              "start": 315
             }
           },
           "kind": "code"
@@ -135,16 +135,16 @@
       ]
     },
     "20": {
-      "note": "The import and the registration after the summary route.\n\nAnchor: `register_review_trees_route`",
+      "note": "The import and the registration after the summary route.  Anchor: `register_review_trees_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:1d8a504bca790a85e65b48ae1c1784b410d45e15541e527e9d950c49ea2c9739",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:62e1a313541161d26a2040048127f55ecdf8707d01fb7edd6255fb2a2e0f9a43",
             "locator": {
-              "end": 307,
+              "end": 316,
               "kind": "line_range",
-              "start": 306
+              "start": 315
             }
           },
           "kind": "code"
@@ -152,16 +152,16 @@
       ]
     },
     "21": {
-      "note": "The import and the registration after the reviewer family.\n\nAnchor: `register_review_summary_route`",
+      "note": "The import and the registration after the reviewer family.  Anchor: `register_review_summary_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:4f0e972acc5df98f8e7b9bc4da0a64f8cf33ccb246033810b87060bfc4072f95",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:f8a191bbbe913dd2a1cee2a840e0988371a0c86185cd0cfe610f08d98b3d7a90",
             "locator": {
-              "end": 306,
+              "end": 315,
               "kind": "line_range",
-              "start": 299
+              "start": 308
             }
           },
           "kind": "code"
@@ -173,8 +173,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:0c261ffcf03be4a482c04d84095506cfa08a1f3773835c09056bd9f857c49836",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:4de58c27491cfdc03b99307fb296cacb08c522d7b3164e1738445bbb86cce216",
             "locator": {
               "kind": "symbol",
               "name": "create_app"
@@ -189,8 +189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:99a8dfdf9d67b75378cd6fa7186bbbd9aa9daee4438e2eb51c8ee18d65bc33ab",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:39b5a49dcdfb1b2de61aadfe1828f7a79ea20da0732107d0233214b581fcf686",
             "locator": {
               "kind": "symbol",
               "name": "_build_serving_runtime"
@@ -201,16 +201,16 @@
       ]
     },
     "24": {
-      "note": "The facade exports structural task-assignment names.\n\nAnchor: `TerminalAttachTaskRequest`",
+      "note": "The facade exports structural task-assignment names.  Anchor: `TerminalAttachTaskRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:f6e2ba847dded42ccadf2a9b81237e63ce769c973ff7cc4e58d0249ba40b376b",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:fa197ea3b563c49beffeb8d8b9b42491f654774c4c8d7e5f73f14e691a1abb10",
             "locator": {
-              "end": 352,
+              "end": 362,
               "kind": "line_range",
-              "start": 348
+              "start": 358
             }
           },
           "kind": "code"
@@ -218,16 +218,16 @@
       ]
     },
     "25": {
-      "note": "The one line that places the capsule-compiler port on the serving runtime.\n\nAnchor: `capsule_launch`",
+      "note": "The one line that places the capsule-compiler port on the serving runtime.  Anchor: `capsule_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:aa81b0b375bc1b1043cc2d63ee4dab2253a2bab8f5d3fb026ba4605f0d252edc",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:00bdfbd87947673a205b8a5fd534e52a4c8162086f4a50603ad1f432c4945edb",
             "locator": {
-              "end": 250,
+              "end": 259,
               "kind": "line_range",
-              "start": 245
+              "start": 253
             }
           },
           "kind": "code"
@@ -235,16 +235,16 @@
       ]
     },
     "26": {
-      "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**\n\nAnchor: `register_review_routes`",
+      "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
-            "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
+            "blob": "12d6cb3bc032e00e82aca12cc5a55851a52edb24",
+            "content": "sha256:bac61469b34d41c6ffd7dc99390e910ede7e1e0a71aa63056dd824332428946b",
             "locator": {
-              "end": 305,
+              "end": 314,
               "kind": "line_range",
-              "start": 299
+              "start": 308
             }
           },
           "kind": "code"
@@ -256,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
             "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
             "locator": {
               "kind": "symbol",

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
             "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:92318cd71d737476df5117afaec83510a512e24e2c6c59d50aec1cbd8c211bbc",
             "locator": {
               "kind": "symbol",
               "name": "capture_future_code_candidate"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
             "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
             "locator": {
               "kind": "symbol",
@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Each capture gives the canonical helper its own enclosure-local temporary index.",
+      "note": "Each capture gives the canonical helper a private index inside `TemporaryDirectory(prefix=\".future-code-candidate-\")` without an explicit `dir=`. Its root follows the process default temporary-directory selection, rather than being explicitly allocated under enclosure reports.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
-            "content": "sha256:a42a04a3e185a34d878318280fd887fdf01ee711a89cfdebf9107f9f53667ec4",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:167424acbfe005f3d28eff9f03fc7e2d3e764fd2493123fe008fa1aed8dbb5c7",
             "locator": {
-              "kind": "symbol",
-              "name": "_candidate_tree"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -97,28 +96,14 @@
       ]
     },
     "6": {
-      "note": "The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index.",
+      "note": "The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
-            "content": "sha256:f8f4b48042939ace0b2a4d95c1c51b0fbf8e9c25fd9dca108d935a5d4a36007e",
+            "blob": "dac9461da555a17e7e1718931011a29553718739",
+            "content": "sha256:b5b19834000ff01b45fea75f1b92e93a2f535b772bb7f85deb7848327404b5c8",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_candidate_tree"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
-            "content": "sha256:e2dc929d479d6d0683345623c9d060c840952a37e56157674726c1d0577996bd",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 32
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },

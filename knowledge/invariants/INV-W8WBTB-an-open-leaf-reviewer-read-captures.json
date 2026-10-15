@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Open-leaf subject review resolution. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Open-leaf subject review resolution.",
+  "conditions": [
+    "The current worktrees are captured for each new request."
+  ],
+  "exclusions": [
+    "Recorded closed-comparison reads and existing request-local immutable/worklist-child caches remain separate."
+  ],
+  "id": "INV-W8WBTB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R81@v1 rule7; preserved cold/warm native response parity"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "MIK-R81@v1-rule7-no-server-review-copy",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An open-leaf reviewer read captures the current worktrees rather than serving a kept composed review.",
+  "status": "proposed",
+  "supersedes": []
+}

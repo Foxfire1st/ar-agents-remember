@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
-        "content": "sha256:b2cc1c2e151e09d2f86c5fc3d18c1940532a4cb9b8edfdde15fa2d7db34a93fd",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+        "content": "sha256:cd5dd909cec8407b35807ff19b247463cf56ac141d12e7664089fd462486d901",
         "locator": {
           "kind": "symbol",
           "name": "read_live_agents"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
         "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
         "locator": {
-          "end": 193,
+          "end": 226,
           "kind": "line_range",
-          "start": 121
+          "start": 154
         }
       },
       "id": "RLZ-DAV61S",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
-        "content": "sha256:0272520db5d18fa886092a36d254cfd3ad672a62e710559a96de0485b95c8574",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+        "content": "sha256:a961e7f7f5512667ae5a3eb5690b1a39faa397f19a3601c1cb637b383371e335",
         "locator": {
           "kind": "symbol",
           "name": "LiveAgents"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
         "content": "sha256:90c7cc2782435d56e81d482cf7dbccd5efe77b81da445f48b7126510be9a181b",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
         "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
         "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
         "locator": {
           "kind": "symbol",
@@ -112,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+        "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
         "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
         "locator": {
-          "end": 193,
+          "end": 226,
           "kind": "line_range",
-          "start": 121
+          "start": 154
         }
       },
       "id": "RLZ-Q7ENH5",
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
             "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
             "locator": {
               "kind": "symbol",
@@ -148,20 +148,29 @@
       ]
     },
     "10": {
-      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
+      "note": "Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:41a8b5fde8f0cf2820197b2f5eb5fc9ed2e0c763039bb79b3a2cbd90745710dd",
             "locator": {
-              "end": 689,
-              "kind": "line_range",
-              "start": 677
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -188,8 +197,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
-            "content": "sha256:7c815434f84f89b1754beaca88bda991eb0d69783512541f03ab51fb430ca816",
+            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+            "content": "sha256:488b61ed8085322726826614a70df1cb31e0b1edbac0469388f608954d7abad0",
             "locator": {
               "kind": "file"
             }
@@ -203,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
             "content": "sha256:ad9437ac9b34bee309093119ba6a63944674aecfc09a1e80bfaf240f0671dfde",
             "locator": {
               "kind": "symbol",
@@ -219,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
             "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
             "locator": {
               "kind": "symbol",
@@ -235,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdfc02c855e53f34befc7847a3a81679a6bb94e8",
+            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
             "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
             "locator": {
               "kind": "symbol",
@@ -251,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
             "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
             "locator": {
               "end": 148,
@@ -287,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
             "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
             "locator": {
-              "end": 873,
+              "end": 871,
               "kind": "line_range",
-              "start": 859
+              "start": 857
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -305,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
-              "end": 588,
+              "end": 586,
               "kind": "line_range",
-              "start": 568
+              "start": 566
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -323,12 +332,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efa51d3e384fbc435e1e222845e720c4c8833f7e",
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
-              "end": 336,
+              "end": 334,
               "kind": "line_range",
-              "start": 320
+              "start": 318
             },
             "path": "mcp/tests/test_paseo_status.py"
           },

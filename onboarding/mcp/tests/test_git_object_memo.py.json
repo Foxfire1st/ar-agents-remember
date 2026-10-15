@@ -1,0 +1,81 @@
+{
+  "path": "mcp/tests/test_git_object_memo.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+        "content": "sha256:1a988956f53e9321cccde6cadcb79169938dcc16faa49ed97858afeb0fc493ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeMemoResultTests.test_exact_object_grammar_rejects_suffixes_for_all_supported_forms"
+        }
+      },
+      "facet": "The exact controlled source case exact object grammar rejects suffixes for all supported forms; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-5DNDMY",
+      "invariant": "INV-0HBKP9",
+      "origin": {
+        "handoffEntry": "L81-R1-F20",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One request makes the same Git lookup of the same object once (MIK-R81 rule 7).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b57ec374610be6638fc80e739ef50d057fe4ffb",
+            "content": "sha256:fc59d7f275279ea852197dd70a41a75c46b20be9f40dfab73a8e3176acb9c209",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Replacement-sensitive freshness remains executable in its moved test class; shared fixture helpers keep their own direct owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+            "content": "sha256:75444170b559528ae174923b9b1caf8f8f59481562b376136cb275f29cea7aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplaceFreshnessTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:d191a3fdba0d2ca54d6ed322269836ed315d0c282c5051b7515fa6f6cb98ecf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_init"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f21a21b5fd7bf8763722176aaad1fb8d32dfca4",
+            "content": "sha256:6831f89fa0b1251de68bf50170db98daf170bd492e6340f8a563fd01bd566a9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

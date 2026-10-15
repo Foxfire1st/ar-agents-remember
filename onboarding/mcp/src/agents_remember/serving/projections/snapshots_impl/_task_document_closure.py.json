@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba4b4d6186626d46a2c296a16868c9b97948228b",
+        "content": "sha256:94c95f847da54aa659e9516f471b1e0595c68686dd5284494f7c92b1477d9b0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "doc_projection_closure"
+        }
+      },
+      "id": "RLZ-0QQ4J3",
+      "invariant": "INV-FKE909",
+      "origin": {
+        "handoffEntry": "L81-R1-F09",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This closure identifies the necessary graph consumers rather than selecting unrelated corpus members.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Computes changed/folder-master/explicitly-listed-child/graph-consumer/file-join transitive closure from retained payloads. Avoiding under-approximation is standing intent, not an implemented general ambiguity detector: invalid/unresolved links are skipped. Caller full refresh is selected by incomplete wake paths, first use or pending retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:fcdca737c58313749c51e0a186b4c311df039a1988e9900deac4d7bcee048ebb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3d51ffe112d7e27dcffec411eafdb57b3e349a2",
+            "content": "sha256:c82729d19808c4d95d6bb4e986b7ad6aab4ed2693719ac9d0789b544afc73780",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit same-folder and cross-folder listed children join the retained-payload fixpoint so sibling-derived Order display is recomputed; resolution normalizes listed paths to JSON and performs no filesystem read.\n\nAnchor: `_file_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:fcdca737c58313749c51e0a186b4c311df039a1988e9900deac4d7bcee048ebb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

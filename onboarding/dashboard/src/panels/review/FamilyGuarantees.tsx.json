@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/FamilyGuarantees.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Render the recorded before/after family guarantee comparison as an extracted direct component, preserving existing branches, hooks, authored text and style values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
+            "content": "sha256:c3817cfc7c210b5767759c4b557c40c43aa7a55418c85e6c967a90e21c65cf79",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

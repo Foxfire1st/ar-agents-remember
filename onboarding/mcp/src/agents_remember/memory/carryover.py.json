@@ -109,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
+            "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
             "locator": {
               "kind": "symbol",
               "name": "stage_worktree_content"
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "blob": "efee7fe64f98139d46ac0ff8997b4d38d2e6af7b",
             "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
             "locator": {
               "kind": "symbol",
@@ -133,13 +133,13 @@
         },
         {
           "anchor": {
-            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
             "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
             "locator": {
               "kind": "symbol",
               "name": "_excluded_pathspec"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
           },
           "kind": "code"
         }

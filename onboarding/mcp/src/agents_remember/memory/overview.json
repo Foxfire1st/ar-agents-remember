@@ -19,11 +19,11 @@
       ]
     },
     "100": {
-      "note": "Source-path observation cases moved with meaning preserved.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved.",
       "targets": [
         {
           "anchor": {
-            "blob": "076fb4941f2eeec4b274ef7e06ea8b092a6a33da",
+            "blob": "2f717500d3b859f633528b98e41bca9f020cf3d7",
             "content": "sha256:f0f43de32e8cd755b024eab0e9acfca616f939f266f363845e1c2021a0ae3c95",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "076fb4941f2eeec4b274ef7e06ea8b092a6a33da",
+            "blob": "2f717500d3b859f633528b98e41bca9f020cf3d7",
             "content": "sha256:ae13ef3cff3cb4e125647c5dffc8ac4861902df54e37ea54ea17086281a1079b",
             "locator": {
               "kind": "symbol",
@@ -66,12 +66,12 @@
       ]
     },
     "102": {
-      "note": "The captured-state key.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The captured-state key.",
       "targets": [
         {
           "anchor": {
-            "blob": "582da28616300feeac710c95524d20442709d1f4",
-            "content": "sha256:483f6b1f99fa60d3400b933bdfd57049d8905257d12bb4e678280c4c36d4da75",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
             "locator": {
               "kind": "symbol",
               "name": "directory_snapshot"
@@ -82,11 +82,37 @@
         },
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
             "locator": {
               "kind": "symbol",
               "name": "_capture"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:6f2429263c660671cc84bd53e55eb339b8406605a026bee3cd5430729ae1daca",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 140
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -153,12 +179,12 @@
       ]
     },
     "105": {
-      "note": "The cache refuses a Git working tree.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The cache refuses a Git working tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
-            "content": "sha256:9993be682c3ec3bee41ec6e5d539a6e237a1192441f2303b640aa25d4a2558c0",
+            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "content": "sha256:e6ab6a9950c1de95aa672c31da131ff3bc1f26c3746a19f36fdffa881ec2cd60",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeIndexCache"
@@ -411,11 +437,11 @@
       ]
     },
     "119": {
-      "note": "The capture copies the index with its time.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time.",
       "targets": [
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
             "locator": {
               "kind": "symbol",
@@ -424,16 +450,29 @@
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:6f2429263c660671cc84bd53e55eb339b8406605a026bee3cd5430729ae1daca",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "120": {
-      "note": "The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -446,16 +485,16 @@
       ]
     },
     "121": {
-      "note": "The registry rows this leaf added: two integration lane rows.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb6db94b6a94c7c3ea9b968f6b38be2492f093a7",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "content": "sha256:72cf239a42d6d0450e87e4af1bbf17006485882ebed6036192f3b7cec96adb0b",
             "locator": {
-              "end": 378,
+              "end": 395,
               "kind": "line_range",
-              "start": 378
+              "start": 395
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -464,11 +503,11 @@
       ]
     },
     "122": {
-      "note": "The registered support artifact the two integration lane rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "0451ac2edeae556865143e4959e6c2edf5710425",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
             "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
             "locator": {
               "end": 25,
@@ -482,12 +521,12 @@
       ]
     },
     "123": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -500,12 +539,12 @@
       ]
     },
     "124": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -518,12 +557,12 @@
       ]
     },
     "125": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -536,12 +575,12 @@
       ]
     },
     "126": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -554,12 +593,12 @@
       ]
     },
     "127": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -572,12 +611,12 @@
       ]
     },
     "128": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -675,15 +714,28 @@
       ]
     },
     "133": {
-      "note": "The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
             "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
             "locator": {
               "kind": "symbol",
               "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
+            "content": "sha256:257a377fa2e712613aae2168af963169d25fcc286156247430943bcbf35590e8",
+            "locator": {
+              "end": 1068,
+              "kind": "line_range",
+              "start": 1037
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -879,11 +931,11 @@
       ]
     },
     "145": {
-      "note": "Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver.",
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -914,11 +966,11 @@
       ]
     },
     "147": {
-      "note": "Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation.\n\nAnchor: `_converted_tree_refusal`, `_prepare_stage_validate`, `_publish_validated_tree`",
+      "note": "Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:d3e116a96e6d7929b31fe3c88ea4d9b85e6c85ded5dd86bb71b855d1ca40c500",
             "locator": {
               "kind": "symbol",
@@ -930,7 +982,7 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
             "locator": {
               "kind": "symbol",
@@ -942,7 +994,7 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:16574456357e2ebd9f54cb1c9f92f87d55f506ae015b435dc8ea01fa24abebc1",
             "locator": {
               "kind": "symbol",
@@ -955,11 +1007,11 @@
       ]
     },
     "148": {
-      "note": "Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two.\n\nAnchor: `_converted_base_payload`, `_converted_adopt_gate`",
+      "note": "Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two.",
       "targets": [
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:eb2963d90eda099691facce8ee9412d683057ae44ae0123d49dd5788efed4b0b",
             "locator": {
               "kind": "symbol",
@@ -971,7 +1023,7 @@
         },
         {
           "anchor": {
-            "blob": "00dc29b96c884b0f82fd5a67b0de544d71f3917e",
+            "blob": "66d05b9b717c4cc62d4c92fcf7aa7d1fd57dea30",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -1001,11 +1053,11 @@
       ]
     },
     "150": {
-      "note": "Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion.\n\nAnchor: `directory_snapshot`, `_capture`, `_clear_index_flags`",
+      "note": "Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion.",
       "targets": [
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
             "locator": {
               "kind": "symbol",
@@ -1017,7 +1069,7 @@
         },
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
             "locator": {
               "kind": "symbol",
@@ -1029,11 +1081,50 @@
         },
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
             "locator": {
               "kind": "symbol",
               "name": "_clear_index_flags"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:6f2429263c660671cc84bd53e55eb339b8406605a026bee3cd5430729ae1daca",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
+            "content": "sha256:734ea7e1808f3b94b2e4936022c1b14da3c8722063682c604230ca968821315a",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 167
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -1117,8 +1208,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
-            "content": "sha256:9993be682c3ec3bee41ec6e5d539a6e237a1192441f2303b640aa25d4a2558c0",
+            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "content": "sha256:e6ab6a9950c1de95aa672c31da131ff3bc1f26c3746a19f36fdffa881ec2cd60",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeIndexCache"
@@ -1248,11 +1339,11 @@
       ]
     },
     "158": {
-      "note": "Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range.\n\nAnchor: Observation limits, `_observed_line_range`",
+      "note": "Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range.",
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -1264,7 +1355,7 @@
         },
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
             "locator": {
               "end": 34,
@@ -1307,11 +1398,11 @@
       ]
     },
     "16": {
-      "note": "The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals.\n\nAnchor: \"What is never remembered is whether the repository still *holds* the tree\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals.",
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
             "locator": {
               "end": 34,
@@ -1531,7 +1622,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "716aab9e165a95aa3e5b8cde64d09a51444ab24c",
+            "blob": "e65398e2db3f42831009347a88bda655ae04901c",
             "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
             "locator": {
               "end": 100,
@@ -1646,11 +1737,11 @@
       ]
     },
     "18": {
-      "note": "The bound-checked line-range observation.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -1663,11 +1754,11 @@
       ]
     },
     "19": {
-      "note": "The symbol observation carrying every defining extent.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent.",
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
             "locator": {
               "kind": "symbol",
@@ -1792,11 +1883,11 @@
       ]
     },
     "22": {
-      "note": "**The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.**",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.**",
       "targets": [
         {
           "anchor": {
-            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
             "content": "sha256:618780a5ec8c9c2ea4d11d6780c5d4b42dff46395026c720b55d645bfc8a09cf",
             "locator": {
               "kind": "symbol",
@@ -1808,7 +1899,7 @@
         },
         {
           "anchor": {
-            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
             "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
             "locator": {
               "kind": "symbol",
@@ -1820,7 +1911,7 @@
         },
         {
           "anchor": {
-            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
             "content": "sha256:4442cc696e17fc4d9de3df7c445015c378fb0d98885254848a58d7b3c71bbdf9",
             "locator": {
               "kind": "symbol",
@@ -1999,11 +2090,11 @@
       ]
     },
     "31": {
-      "note": "Real authority availability and unmeasured count contract.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Real authority availability and unmeasured count contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b7eb718954c2ad6cde1304a278144695388f26",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:cc5279a0f0c6f49373dd26621e00b4342f8ea1a80505d72b3bbacba22e6bba5e",
             "locator": {
               "kind": "symbol",
@@ -2015,7 +2106,7 @@
         },
         {
           "anchor": {
-            "blob": "d8b7eb718954c2ad6cde1304a278144695388f26",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
             "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
             "locator": {
               "kind": "symbol",
@@ -2165,7 +2256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -2177,7 +2268,7 @@
         },
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",
@@ -2444,16 +2535,16 @@
       ]
     },
     "52": {
-      "note": "The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node.",
       "targets": [
         {
           "anchor": {
-            "blob": "88714311407a37f95353c9f2404e5a48b00f8d9d",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
             "locator": {
-              "end": 1149,
+              "end": 1153,
               "kind": "line_range",
-              "start": 1149
+              "start": 1153
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2822,12 +2913,12 @@
       ]
     },
     "97": {
-      "note": "**The advertised command, now the delimiter-safe interface the measurement itself reads.**",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): **The advertised command, now the delimiter-safe interface the measurement itself reads.**",
       "targets": [
         {
           "anchor": {
-            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
-            "content": "sha256:2d398f7505a2fade4d37b4109089113cdf4db07f284784289e51ccce6109ded2",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
+            "content": "sha256:2577d5d195333cd5287528c829669829306ac38fce365cfd802c293316f23899",
             "locator": {
               "kind": "symbol",
               "name": "TREE_DIFF_COMMAND"
@@ -2839,11 +2930,11 @@
       ]
     },
     "98": {
-      "note": "**The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.**",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.**",
       "targets": [
         {
           "anchor": {
-            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
             "content": "sha256:2c879aabb35c70ccc7d48f79ff320ed667716ee59e0f55e1b2e819bf266bc132",
             "locator": {
               "kind": "symbol",

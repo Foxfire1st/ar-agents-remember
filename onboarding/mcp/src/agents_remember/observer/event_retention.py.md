@@ -13,8 +13,7 @@ event — per lifecycle type, rather than by a written `lifecycle.ended` event (
 sessions almost never emit one; they die silently). Heartbeats are liveness theater
 and do not count as activity, so a parked lifecycle that only keeps beating is still
 "inactive" and its throwaway log can be cleaned up regardless of lifecycle type.
-Active logs remain replayable, but a fresh connection only re-streams a bounded recent
-window per active source rather than an entire long-lived log from byte zero.
+Active logs remain replayable. Fresh replay selects the first event not provably older than the time cutoff; it can start at byte zero and retain a whole log, including when the first timestamp is unparseable.
 
 ## Code Commentary
 
@@ -56,13 +55,7 @@ heartbeat never advances the activity timestamp), reads `data.fleeting` off
 `lifecycle.started`, and clears the fleeting flag once a `lifecycle.promoted` row is
 seen. `last_activity_at(path)` exposes just that activity timestamp.
 
-`initial_event_offsets(root, *, now)` builds the initial byte-offset map used when a
-client connects without `Last-Event-ID`. A **dormant** lifecycle log starts at EOF
-(`st_size`) so ancient history is never replayed; an **active** log starts at a bounded
-recent window via `_first_retained_offset(cutoff=now - REPLAY_WINDOW_SECONDS)` — NOT byte
-zero — so a reload keeps useful task-local history without re-streaming the whole log. The
-reserved `workspace` source starts at the first row inside the workspace TTL. Cursor
-resumes stay owned by `serving.events.decode_cursor`.
+`initial_event_offsets` sends dormant logs to EOF and active logs to `_first_retained_offset`; workspace adds its virtual base to the TTL-selected physical offset. The first retained offset can be zero (recent or unparseable first timestamp), so no strict recent-only byte/count bound follows. Resume remains decode_cursor-owned.
 
 `prune_expired_lifecycle_event_logs(root, *, now, protected_lifecycle_ids=frozenset())`
 physically removes the lifecycle directory for **any** dormant, unprotected log
@@ -104,8 +97,7 @@ without a live dashboard server.
   out; only real (non-heartbeat) events reset the inactivity clock.
 - No global raw-event count cap lives here; retention is inactivity-time based, and active
   lifecycle logs are never pruned by count.
-- A fresh connection replays only the recent window per active source
-  (`REPLAY_WINDOW_SECONDS`), never the whole log from byte zero; dormant logs replay nothing.
+- Fresh active replay skips only the provably old prefix; unparseable timestamps or a retained first row can select byte zero and the whole log. Dormant fresh replay starts at EOF.
 - Workspace events have a separate age window because they have no lifecycle identity.
 - An event whose timestamp cannot be parsed is never aged out — it is kept rather than dropped.
 - The module reads only complete JSONL rows and never consumes a partial append.
@@ -128,13 +120,7 @@ No relevant external documentation found after checking in-repo design docs for 
 The serving layer calls this policy for windowed fresh-offset reads before raw event replay. The production owners below
 define dormant pruning, heartbeat-skipping activity reads and bounded active replay. Lifecycle-log reclamation itself belongs to the projection pass, not to any raw-event reader.
 
-- Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. [1]
-- `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. [2]
-- Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. [3]
-- `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. [4]
 - The protection set is derived from durable enclosure state (a live master series) by the admission module. [5]
-- `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. [6]
-- The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass. [7]
 
 ### Cross-Repo References
 
@@ -142,3 +128,12 @@ No meaningful cross-repo references found. This policy is local to the observer
 log layout.
 
 No meaningful cross-repo references found.
+
+
+- Fresh offsets use dormant EOF, active first-not-provably-old physical offset and workspace virtual base plus TTL-selected physical offset. Active/workspace physical starts can be zero (the returned workspace cursor is then its base); this is a time-selection policy, not a strict byte/count bound. [1]
+
+- `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. [2]
+- Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. [3]
+- `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history.  Anchor: `protected_lifecycle_ids` [4]
+- `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. [6]
+- The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass. [7]

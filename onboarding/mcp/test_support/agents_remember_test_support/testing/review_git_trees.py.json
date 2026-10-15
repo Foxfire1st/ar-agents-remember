@@ -1,0 +1,22 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Build the shared isolated real-Git code/memory world used by focused recorded-tree reviewer tests. Preserve paired-tree identity, converted records, history and native capture semantics while keeping each fixture independent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb89b7a62d7a5d2ace7d7d4059221d7eaee1879",
+            "content": "sha256:8ccc29a3951ed322180adb3a8d085315322dc92d3bb3d4762e7dd1ef384c044f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

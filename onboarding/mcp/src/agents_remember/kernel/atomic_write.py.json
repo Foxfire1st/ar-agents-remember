@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
         "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
         "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
         "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
         "locator": {
           "kind": "symbol",
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
             "locator": {
               "kind": "symbol",
@@ -75,15 +75,14 @@
       ]
     },
     "11": {
-      "note": "- The directory flush that makes a completed rename survive a host loss.",
+      "note": "The directory flush runs where supported; on Windows this helper returns without flushing a directory handle.",
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
-            "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:0d39c408c8aeab5e6a05b206e425027381fa898ef96c19be56040e6ec972b839",
             "locator": {
-              "kind": "symbol",
-              "name": "_fsync_directory"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -95,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
-            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:dda284a873fdf52f96321c0880249feacf3e794f99349aa2f013068f3814f0e2",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -111,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -127,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad90ae505610018f1c93533e8edfdecb6d23bc6a",
-            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:dda284a873fdf52f96321c0880249feacf3e794f99349aa2f013068f3814f0e2",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -143,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -159,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
             "locator": {
               "kind": "symbol",
@@ -175,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
             "locator": {
               "kind": "symbol",
@@ -186,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
             "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
             "locator": {
               "kind": "symbol",

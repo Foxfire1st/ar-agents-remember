@@ -123,39 +123,14 @@
       ]
     },
     "103": {
-      "note": "The application entry points the registration layer calls.",
+      "note": "Historical MCP tool-wrapper account; references and targets retained for custody. Current boundary: skill_resources.operation declares typed capsule/catalog request values and builds skill_catalog_registry through the shared catalog builder; the former MCP compile/list/read entry functions are absent. Role start compiles capsules through role_capsules.launch, and skill resources are served separately. Historical account: The application entry points the registration layer calls.",
       "targets": [
         {
           "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
+            "content": "sha256:a996823b0716179e8c5dcb1004f3567552d6257040ef2fa23f68d1390b6e6037",
             "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_compile_tool"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:5fbdf557958300c14da8a4f0432c62e3bc804136fe2221d2e9cbf3c8779f6346",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_list_tool"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:82eefdaf02b663fb22ca10337f2dab01ae502c37c1bfbf162f533f48288ead12",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_read_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
           },
@@ -338,15 +313,14 @@
       ]
     },
     "110": {
-      "note": "The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on.",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The cited compile-tool boundary is retired; current capsule preparation uses the native launch/compiler route. Historical account: The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on.",
       "targets": [
         {
           "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
+            "content": "sha256:a996823b0716179e8c5dcb1004f3567552d6257040ef2fa23f68d1390b6e6037",
             "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_compile_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
           },
@@ -354,15 +328,25 @@
         },
         {
           "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
-            "content": "sha256:1da30b548faaf479ac900db05bca426b879c58bf5c89fb0d399ebb1fe11c189c",
+            "blob": "d06da38b8c8bab3c1acb0c255bdbe4f69b522e3c",
+            "content": "sha256:45ec2d063903879d6ac508127ccdd39a039786acdf59d57e91d0000a2bb22715",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_registered_capsule_operation_resolves_a_repository_through_its_schema"
+              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -597,7 +581,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
             "locator": {
               "kind": "symbol",
@@ -632,11 +616,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
             "locator": {
-              "kind": "symbol",
-              "name": "FileReadStatus"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -645,29 +628,14 @@
       ]
     },
     "122": {
-      "note": "Historical FileReadStatus import/onboarding-body resolver account. The current application names governing files and card states without returning their bodies.\n\nHistorical anchors: FileReadStatus; _resolve_onboarding",
+      "note": "Historical FileReadStatus import/onboarding-status account; references and targets remain for custody. The current application naming route uses _name_one to check source existence before naming a converted card; it carries no FileReadStatus import or _resolve_onboarding body-serving route.",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:9a66ab5751a0c5d87c4b10112ca4c4b5b15812649b5683f1fa5d265c3cb686c1",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 73
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:97a4a7b12ba42df25201e2d6625a60786c393bdd160fb4540fb39f454fe53e60",
-            "locator": {
-              "end": 294,
-              "kind": "line_range",
-              "start": 262
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -780,7 +748,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4d67f84bd23a4361eb79de28d45cb09c22aaf1c",
+            "blob": "e20f740e4bfd122c85ee0915d77bf8df43010cce",
             "content": "sha256:1cc137cd41f94224bcc125ed75da065f56c5e940fa643644f7658df82df8d1c2",
             "locator": {
               "kind": "symbol",
@@ -792,7 +760,7 @@
         },
         {
           "anchor": {
-            "blob": "e4d67f84bd23a4361eb79de28d45cb09c22aaf1c",
+            "blob": "e20f740e4bfd122c85ee0915d77bf8df43010cce",
             "content": "sha256:3ab278bcb350cc5339671391b4cfaf8a4426e7646d30ee236ae7026212c9b009",
             "locator": {
               "kind": "symbol",
@@ -804,7 +772,7 @@
         },
         {
           "anchor": {
-            "blob": "e4d67f84bd23a4361eb79de28d45cb09c22aaf1c",
+            "blob": "e20f740e4bfd122c85ee0915d77bf8df43010cce",
             "content": "sha256:ebe65138228550c44640e9d00045d1b09378ba225f6823710c23e30afc2cd880",
             "locator": {
               "kind": "symbol",
@@ -816,7 +784,7 @@
         },
         {
           "anchor": {
-            "blob": "e4d67f84bd23a4361eb79de28d45cb09c22aaf1c",
+            "blob": "e20f740e4bfd122c85ee0915d77bf8df43010cce",
             "content": "sha256:75465d54235a998a82879085b9cdc9e9d8b05c4d45c555ac44162dcc3232222b",
             "locator": {
               "kind": "symbol",
@@ -847,15 +815,14 @@
       ]
     },
     "133": {
-      "note": "The storage operation this seam delegates to.",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge store retains reads/index operations; canonical create_revision is retired. Historical account: The storage operation this seam delegates to.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
             "locator": {
-              "kind": "symbol",
-              "name": "create_revision"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
@@ -880,16 +847,14 @@
       ]
     },
     "14": {
-      "note": "**The record-beside-the-bytes namespace: the candidate's receipt when there is one, otherwise the before half's own generation record, otherwise (since MIK-R25) a derived knowledge index's own namespace, and the requested repository only when none of these answers.**",
+      "note": "The current review namespace comes only from the derived knowledge index, with the requested repository as fallback. Receipt and baseline-generation precedence are retired historical mechanisms.",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:06aac2b7ac1e4036b4663248ac7c8a1dda9897d9cbaaa9c485545995b2e9206a",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:86ebf1be301ea0f17958bd584e48bf13430d2713dee82065b62e3feacc05ab4a",
             "locator": {
-              "end": 359,
-              "kind": "line_range",
-              "start": 359
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
@@ -1000,39 +965,14 @@
       ]
     },
     "17": {
-      "note": "The closed-leaf resolution the record now feeds: the generation path first, the recorded source range only when no generation exists.",
+      "note": "Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: With no explicit generation_id, closed-leaf resolution first reopens retained four-tree comparisons. Otherwise it still reads a retained legacy generation manifest, preserving its recorded source/evidence with canonical knowledge unavailable; a leaf with no comparison manifest falls back to recorded committed ranges. No new canonical dataset generation is authored. Historical account: The closed-leaf resolution the record now feeds: the generation path first, the recorded source range only when no generation exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:58038a310151a61d25b10a51bb65ccc8bb7ba5d8f5f1d3f1c04838f6d5993be1",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
-            },
-            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:2c60f2206692a6fc6bf1b6350c4f004a2e0da19b82fb8cb67a5665df39ad10c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_RECORDED_COMPARISON"
-            },
-            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:69b11d7d16505cd8244b9dfcfe4783d23885eb5caa2d42399f305d6aec473155",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_RECORDED_SOURCE_RANGE"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
           },
@@ -1244,7 +1184,7 @@
         },
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:d4531f57e5c69f17628ad313df7a9555b7b0492aa986e742f7ea79ab28a539a6",
             "locator": {
               "kind": "symbol",
@@ -1569,51 +1509,14 @@
       ]
     },
     "19": {
-      "note": "**The whole authored line is read, and the pairing rules: member-wise family pairing, the strict successor form, the withdrawal half.**",
+      "note": "Historical successor-line traversal account; references and targets retained for custody. Current boundary: Movement pairs the same recorded relationship identity, without authored successor-line traversal. Unpaired baseline sides remain displayed with the candidate exact-citation search rather than losing the withdrawal half. Historical account: **The whole authored line is read, and the pairing rules: member-wise family pairing, the strict successor form, the withdrawal half.**",
       "targets": [
         {
           "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:196d015ac2afd1fcdbc8904aec7a53a4582442cb2bb1f45366e9e30c8f056434",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
             "locator": {
-              "kind": "symbol",
-              "name": "_line_relationships"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:3db221f79409735ac8d61a306e08bf50a5be2726fe315c526ee241bc707d21c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_replaced"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:602503f0bbf6f8ec03fe10c88560437e2b703d7edd714d2bc99ff4b0929f68d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_continues"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:b7764422c2c95c9981815bc52d0110cb951a066a9891ee4384d274b175eb8bbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_pairing_basis"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
           },
@@ -1656,12 +1559,12 @@
         },
         {
           "anchor": {
-            "blob": "d007a9784b5cd8e74cc978725ce60f7c247d22b1",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:655daeea8c7739c8acf8c22fca10bb4dbb9e0d472e7a811076be7efadb4188e6",
             "locator": {
-              "end": 335,
+              "end": 352,
               "kind": "line_range",
-              "start": 316
+              "start": 333
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -1669,12 +1572,12 @@
         },
         {
           "anchor": {
-            "blob": "d007a9784b5cd8e74cc978725ce60f7c247d22b1",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:607e3d4bebd3f0c84df14f480ac9e4f2029b3e97b2f4f5ddff156b67141b518c",
             "locator": {
-              "end": 508,
+              "end": 525,
               "kind": "line_range",
-              "start": 468
+              "start": 485
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -1986,16 +1889,16 @@
       ]
     },
     "208": {
-      "note": "The comparison operation: resolve, then compose, with a refused resolution returned before any comparison runs.\n\nAnchor: \"def read_knowledge_review(\"",
+      "note": "The comparison operation: resolve, then compose, with a refused resolution returned before any comparison runs.",
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:8c863ed191cbc427a0041567a30073654d4af97641c6c8e837df13d040447c58",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:23a207f233860951045ab43bf436abe060c9a7d188445b704ef21104aae27e3e",
             "locator": {
-              "end": 207,
+              "end": 211,
               "kind": "line_range",
-              "start": 207
+              "start": 211
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -2020,7 +1923,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:05fd2b3385201155486a7ba8b77c230eb40395775f98879cdd8c6546e3db3a6b",
             "locator": {
               "kind": "symbol",
@@ -2033,15 +1936,14 @@
       ]
     },
     "21": {
-      "note": "**The reach: the head rule called from ICR-R07, the whole-line read, and the owner chosen by the kind of revision.**",
+      "note": "Historical predecessor/successor-line account; references and targets retained for custody. Current boundary: Every retained revision in the selected population is a head, sorted for rendering. Two nonempty sides compare only when each has a unique head; a known-empty side remains one-sided, and multiple heads remain explicitly ambiguous. No predecessor/successor-line traversal narrows the population. Historical account: **The reach: the head rule called from ICR-R07, the whole-line read, and the owner chosen by the kind of revision.**",
       "targets": [
         {
           "anchor": {
-            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
-            "content": "sha256:84f74eecc2fdfaa33e34d94b3d7f9bb7c34f917ea8256d0aa83659accea9a6ac",
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:ac3d42e2a8fa33698b9937753008ca7e73f2a743f9db5a6c05a4d71644841914",
             "locator": {
-              "kind": "symbol",
-              "name": "successor_line"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
           },
@@ -2049,23 +1951,10 @@
         },
         {
           "anchor": {
-            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
-            "content": "sha256:dbee53c97e2dfb3d420cecb4729fc582b755be6fa5aac19bb77b48a02b9ad020",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:be943438e7baf97d77e0fb9303170ffccf47175ba77411c1096510eeffe7f15f",
             "locator": {
-              "kind": "symbol",
-              "name": "read_line_relationships"
-            },
-            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
-            "locator": {
-              "kind": "symbol",
-              "name": "revision_heads"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
           },
@@ -2074,27 +1963,14 @@
       ]
     },
     "210": {
-      "note": "L20's review-matrix view, asked for the five record kinds, and the extracted step that reads it.",
+      "note": "Historical L20 matrix/view-kind selection is retired with the envelope tables. The current review adapter reads no matrix; a requested records collection publishes no records page and receives its named refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
-            "content": "sha256:62cf6d459b3b020429a11f14244aaa2ebde11fa29514e733e81dc88c849aca92",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "read_knowledge_view"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_views.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:0ecc2536f73989c659700cd6ce3fc5b1400e1a1b15bfe7a989b5dd2cdd70d830",
-            "locator": {
-              "kind": "symbol",
-              "name": "_review_matrix"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -2173,39 +2049,14 @@
       ]
     },
     "222": {
-      "note": "**The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.**",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The old ingest placement/baseline adapter is retired; current file ingest does not place that database half. Historical account: **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.**",
       "targets": [
         {
           "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:79d153a26adbfdc10a1440a5f2cd12b058d35cb9b6449b7412b70dcd91dd2f78",
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
-            "locator": {
-              "kind": "symbol",
-              "name": "run"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:72582eb0d17429a92ca9237178ef8c48135b0e8bd2d37e0c2549e45f7b1abf4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_place_review_baseline"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -2214,27 +2065,14 @@
       ]
     },
     "224": {
-      "note": "The adapter that now declares the baseline argument and passes it into that selection.",
+      "note": "Historical baseline-argument account; references and targets remain for custody. Current knowledge-ingest declares contract, hand-off list, authorization, commit/json, crossing and config arguments and dispatches the admitted converted file writer. The baseline-placement argument and route are retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:79d153a26adbfdc10a1440a5f2cd12b058d35cb9b6449b7412b70dcd91dd2f78",
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
-            "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -2318,11 +2156,11 @@
       ]
     },
     "230": {
-      "note": "**The resolution's new home: the module's own statement of what it binds, why the working tree is never an endpoint, and that every failure is a named state.**\n\nAnchor: `code_base_commit`; `capture_future_code_candidate`",
+      "note": "**The resolution's new home: the module's own statement of what it binds, why the working tree is never an endpoint, and that every failure is a named state.**",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:42e0df7ca27f44850654f14960c48998c456f1322a8ffd1bb6389e912e2ecfe8",
             "locator": {
               "end": 28,
@@ -2340,7 +2178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
             "locator": {
               "kind": "symbol",
@@ -2352,8 +2190,8 @@
         },
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
             "locator": {
               "kind": "symbol",
               "name": "ReviewCandidateResolution"
@@ -2365,11 +2203,11 @@
       ]
     },
     "232": {
-      "note": "The recorded base as a precondition, refused by name rather than half-resolved.\n\nAnchor: `resolve_review_candidate` (recorded-base refusal)",
+      "note": "The recorded base as a precondition, refused by name rather than half-resolved.",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
             "locator": {
               "kind": "symbol",
@@ -2386,7 +2224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:de50cfc9953fa37050355e720edbd8db5b1da17e46885bc80b09ce707a4ee694",
             "locator": {
               "kind": "symbol",
@@ -2398,8 +2236,8 @@
         },
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "content": "sha256:92318cd71d737476df5117afaec83510a512e24e2c6c59d50aec1cbd8c211bbc",
             "locator": {
               "kind": "symbol",
               "name": "capture_future_code_candidate"
@@ -2415,8 +2253,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:ce8f7f96670ebbce089661807af6837f837d52158ab3d9d35da87fa703b518b1",
             "locator": {
               "kind": "symbol",
               "name": "require_current_candidate_identity"
@@ -2427,7 +2265,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:54760985fe298df2564471a2a5d88d3ae26c50cd98714347b95ecfe75a987d7f",
             "locator": {
               "kind": "symbol",
@@ -2439,7 +2277,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:3d666b1f8a9f03bb8c9e6b44bae0931f22fe1efb8d4296bb988ab868265f4190",
             "locator": {
               "kind": "symbol",
@@ -2452,12 +2290,12 @@
       ]
     },
     "235": {
-      "note": "**The adapter's new call site: the recheck runs after the reads and before the payload, and a moved input refuses the whole render.**\n\nAnchor: `compose_review` (endpoint recheck)",
+      "note": "**The adapter's new call site: the recheck runs after the reads and before the payload, and a moved input refuses the whole render.**",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
             "locator": {
               "kind": "symbol",
               "name": "compose_review"
@@ -2469,27 +2307,14 @@
       ]
     },
     "237": {
-      "note": "**The pair preflight and the record-beside-the-bytes namespace remain the sibling module's, and this route's two operations still call them. The namespace rows' ranges and their wording were corrected by `260921-ICR-L34`, which made the second record answer.**",
+      "note": "The historical ICR-L34 receipt/generation namespace account is superseded. Current review_namespace reads the derived KnowledgeIndex repository identity or keeps the requested repository; it does not consult receipt or baseline-generation files. Pair preflight remains its separate shared owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:86ebf1be301ea0f17958bd584e48bf13430d2713dee82065b62e3feacc05ab4a",
             "locator": {
-              "kind": "symbol",
-              "name": "missing_dataset_half"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:7f5ce855ce3dfb30ab5c65f92bf2e989104ce00f061705ee89d95bcaf3c06054",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_namespace"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
@@ -2502,8 +2327,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:f03a976d2b5d0824e8b2a9a67a906b472e577858e747039e9fe7aac685577999",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:bd833bff981ce44b5d48d4023459bf29448eca3d87d21cab1d828c8044005eb6",
             "locator": {
               "kind": "symbol",
               "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
@@ -2514,8 +2339,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:4ca4798e48d7f90c006c409d47aabc2b9906ef89ba63449a33ad3c9cb6a2203e",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:4759e6a91b2e31afcf7c5ad12f32fb0185d417cfd27796360d0ae29f23d92ca5",
             "locator": {
               "kind": "symbol",
               "name": "test_a_capture_input_that_moves_before_publication_is_refused_by_name"
@@ -2527,39 +2352,14 @@
       ]
     },
     "239": {
-      "note": "**The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.**",
+      "note": "Historical canonical-publication dataset-path account; references and targets retained for custody. Current boundary: published_dataset_path is absent. select_knowledge_dataset accepts only converted memory roots and selects their derived index. published_intent_block still resolves the converted tree, seeds the requested paths and calls the retained bounded read_published_intent route; it is not attached to the names-only read_ar_files response. Historical account: **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.**",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:9df28d01bdd06d4670b119bf1698d341b0570a324c25e00ae22243148854db52",
             "locator": {
-              "kind": "symbol",
-              "name": "published_intent_block"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_dataset_path"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_published_intent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -2584,7 +2384,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
             "locator": {
               "kind": "symbol",
@@ -2609,78 +2409,14 @@
       ]
     },
     "240": {
-      "note": "**The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**",
+      "note": "Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**",
       "targets": [
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:e07a36d9636237d7159935ddee807a32cc372ff323ebddd11e37ad0857e4d981",
-            "locator": {
-              "kind": "symbol",
-              "name": "_absence_state"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:13484540acfd4419039caed76414ebef3c9f81840187d82c9df7e9b63744ac7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_authority_mismatch"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:36692d6da88577c46bd0b45b9886806d0c1dcb704b5d475e1127aac242e3bddc",
+            "content": "sha256:9df28d01bdd06d4670b119bf1698d341b0570a324c25e00ae22243148854db52",
             "locator": {
-              "end": 158,
-              "kind": "line_range",
-              "start": 134
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:9f5ea27af7db0b6e8edc4a8f00497457347a7c3b34be8a02d044688f4c223db3",
-            "locator": {
-              "end": 402,
-              "kind": "line_range",
-              "start": 385
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:49826eefc7819c5b77fa594db36c4107480c8adced6cb51f4f61ffc37657dbfa",
-            "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 391
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -2722,11 +2458,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -2734,11 +2469,10 @@
         },
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
             "locator": {
-              "kind": "symbol",
-              "name": "published_intent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -2751,11 +2485,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:b308d52b4802de13375700d8fc6d9bdab663bc534b365983b08ea9259f5df69d",
+            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
+            "content": "sha256:2515b79eb10278f0c3e45076e4c215f7136f78a3d890c9ab8dfdb28c7d344a8a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities"
+              "kind": "file"
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -2763,36 +2496,23 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:49850fffbf29a3d4bbda2f3cb864baa593cc0360da1601184951db73ae8175ca",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_repository_that_publishes_nothing_reports_not_recorded"
+              "kind": "file"
             },
-            "path": "mcp/tests/test_read_ar_files.py"
+            "path": "mcp/src/agents_remember/application/read_files.py"
           },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
     "244": {
-      "note": "**The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.**\n\nAnchor: `partial`; `available`",
+      "note": "**The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.**",
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:7e542c12ec1f89ec6c947b5ac26e481e31cc4a30879a3d86d1d019d79dd70a46",
             "locator": {
               "end": 30,
@@ -2806,12 +2526,12 @@
       ]
     },
     "245": {
-      "note": "**The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.**\n\nAnchor: `tree_difference_observation`, `_RAW_ARGS`, `_NUMSTAT_ARGS`",
+      "note": "The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.",
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:093d02b89751940d23f2e5609d7af4b2542e1911c06f4f4c973b41a34031a905",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
+            "content": "sha256:ac3a44ab3040c56730fb36e03ae2017d8f2e5a8f0e266230e0f335bf0e7dfb63",
             "locator": {
               "kind": "file"
             },
@@ -2826,7 +2546,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
             "locator": {
               "kind": "symbol",
@@ -2838,7 +2558,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
             "locator": {
               "kind": "symbol",
@@ -2850,7 +2570,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:a95444f2d47722f1fa92d64b4196cb129e380792691f5ea6f9f1a723442d3d11",
             "locator": {
               "kind": "symbol",
@@ -2862,7 +2582,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
             "locator": {
               "kind": "symbol",
@@ -2879,7 +2599,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
             "locator": {
               "kind": "symbol",
@@ -3090,64 +2810,14 @@
       ]
     },
     "250": {
-      "note": "**The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.**",
+      "note": "Current boundary: compose_review still measures the bound source pair and inventory before selector or knowledge-availability branching, independently of record selection. The old _review_matrix acquisition step alone is retired; no records page is composed from it. References and targets retained for custody. Historical account: **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.**",
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:f3a1e763b5a58bfeea6ef2341b85a518e5ef6e36afabfaa26f8dcd0d7c2a9309",
-            "locator": {
-              "kind": "symbol",
-              "name": "_open_dataset_pair"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:0ecc2536f73989c659700cd6ce3fc5b1400e1a1b15bfe7a989b5dd2cdd70d830",
-            "locator": {
-              "kind": "symbol",
-              "name": "_review_matrix"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:080d639fe20f2c33e604a5aceb52e93da182a4e73218e8e0a9b1ead18a4b66c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selector_kind_or_absence"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:5acc0c2a15a7133bba6819c8c2f71ef964eaa846abc0a92f2ccb1df62b92dab6",
-            "locator": {
-              "end": 778,
-              "kind": "line_range",
-              "start": 769
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -3160,7 +2830,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
             "locator": {
               "kind": "symbol",
@@ -3172,7 +2842,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
             "locator": {
               "kind": "symbol",
@@ -3230,8 +2900,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:618694acaac3b3addb44a457fedda5723b373051acf3391df76ded38c069e017",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:b68bf652eb5ef6f597dec0fa6645f944b25bdcfea03dd859fa980cf7d57540da",
             "locator": {
               "kind": "symbol",
               "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
@@ -3242,8 +2912,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:827c418883c9705869809f432857ec7b702f3953563689c3eea8bb9114cf5399",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:9d28c71bdbf0fce29f7812bc3f7b52d8741c45a5417d8fbb5282671e4dd8733f",
             "locator": {
               "kind": "symbol",
               "name": "test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by"
@@ -3254,8 +2924,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:610d78e821e91e30e31bec264b710624cf7ed1297d1594259f6240d0e0853a20",
+            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "content": "sha256:70908d33b59472dab68a0ad49673e31ecba0f54f176d4dea5fc0e4c8de759771",
             "locator": {
               "kind": "symbol",
               "name": "test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial"
@@ -3322,7 +2992,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:0b016e882e8081c06350e7308dc61d86a5e4daab96d18c3c8a27603e3d5549ca",
             "locator": {
               "kind": "symbol",
@@ -3334,7 +3004,7 @@
         },
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
             "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
             "locator": {
               "kind": "symbol",
@@ -3364,12 +3034,12 @@
       ]
     },
     "259": {
-      "note": "The catalogue caller delegating to it.\n\nAnchor: `pair_preflight_refusal`",
+      "note": "The catalogue caller delegating to it.",
       "targets": [
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:61f1efd860a099f9c8e88ed536b26ebf35ea1f587eb600924986fed44a2afe30",
             "locator": {
               "kind": "symbol",
               "name": "list_knowledge_review_entries"
@@ -3881,7 +3551,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
             "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
             "locator": {
               "kind": "symbol",
@@ -3893,11 +3563,24 @@
         },
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
             "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
             "locator": {
               "kind": "symbol",
               "name": "LeafWorklistRecompute"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
+            "content": "sha256:f1624d51df2f35ecd557f8151caf9ce68c81c7d0e17b607110f9fe43467a9d0a",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 703
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -3927,7 +3610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5b0196561842deea697712b502e18db20a9a70d",
+            "blob": "95ae92e03995a158e235c77289677246a5fa8ff3",
             "content": "sha256:721204869dfe8e932e7ed24149b7e6f9ceec74fcd15d94d42efcb6b28d2b7fad",
             "locator": {
               "kind": "symbol",
@@ -3939,8 +3622,8 @@
         },
         {
           "anchor": {
-            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
-            "content": "sha256:bf4086501773acf9b3cebc3bcab978acc4f94d2ab9d488b89fe1a41d3c58f2f1",
+            "blob": "95ae92e03995a158e235c77289677246a5fa8ff3",
+            "content": "sha256:94eedcf69cd83e5ad3444c1af91a4f65d306c3250901b7f1efb9df293f44dbb3",
             "locator": {
               "kind": "symbol",
               "name": "test_catalogue_loading_runs_no_comparison"
@@ -3951,12 +3634,12 @@
         },
         {
           "anchor": {
-            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
             "content": "sha256:f883d905a36add6fc72d730f269365a61b8b58ddbd34441911afc334c0a50ff2",
             "locator": {
-              "end": 322,
+              "end": 329,
               "kind": "line_range",
-              "start": 252
+              "start": 259
             },
             "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
           },
@@ -4276,22 +3959,9 @@
         {
           "anchor": {
             "blob": "2d10c30230af8a19eb691102524e70a13b507781",
-            "content": "sha256:26b495a4b771e6ac17ccba2e352355bce05be6cebe8f860e5a82c472b7cdfd82",
+            "content": "sha256:dde911a853a2d508203439d114f9adc75652c54333c56d0a2235ecb9ff0f3c0b",
             "locator": {
-              "kind": "symbol",
-              "name": "bounded_block"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/block_pages.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
-            "content": "sha256:6d3cfc849ff11f5a523d6f2ae885c90414565775ab7273ca6f3a40ef711584a3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tail"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/block_pages.py"
           },
@@ -4380,12 +4050,12 @@
       ]
     },
     "30": {
-      "note": "**The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.**\n\nAnchor: `select_subject_revisions`",
+      "note": "**The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.**",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:5c68824fa9e8bb09303d0bab0d25b0f72df9699b6ee62135eea518500358d0e2",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_pane"
@@ -4396,7 +4066,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
             "locator": {
               "kind": "symbol",
@@ -4408,12 +4078,12 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:4d1b7b70a80121d98b6db5c9eb1c04c54a91c50bf88679ebebc5c255dbabaf5e",
             "locator": {
-              "end": 446,
+              "end": 455,
               "kind": "line_range",
-              "start": 446
+              "start": 455
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -4421,12 +4091,12 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:f06579e4caeac74bc134a04fae7b8439c3c8f8f2a084e1bd6b9be75a53487c40",
             "locator": {
-              "end": 440,
+              "end": 449,
               "kind": "line_range",
-              "start": 440
+              "start": 449
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -4466,11 +4136,11 @@
       ]
     },
     "301": {
-      "note": "The declaration read fail-closed.\n\nAnchor: `strict_leaf_doc`",
+      "note": "The declaration read fail-closed.",
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
             "content": "sha256:99b15b43198323ca8643ac652f1978df4a7ca581ba73ef74534e8d413af007d1",
             "locator": {
               "kind": "symbol",
@@ -4947,8 +4617,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "516f2eb5d188ee09a0a6c60d87a063a42f913c4e",
-            "content": "sha256:e0dd90e9fda341d2ed3d92c30d6326582d149cf1f7dcb6a574c925c77f49fa4a",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:5c6a4532e5e103cadf907bc05e730ae5677a8947c046d2101c577e69d9d1e506",
             "locator": {
               "kind": "symbol",
               "name": "live_review_trees"
@@ -4959,8 +4629,8 @@
         },
         {
           "anchor": {
-            "blob": "e5ba470a927f972ee01c373d9769d291b48a5d34",
-            "content": "sha256:abcaf313d3098adef9b446766801d9879bc157dd80d21c15034a621bed4724bf",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
             "locator": {
               "kind": "symbol",
               "name": "_record"
@@ -4971,8 +4641,8 @@
         },
         {
           "anchor": {
-            "blob": "e5ba470a927f972ee01c373d9769d291b48a5d34",
-            "content": "sha256:357f536dd51e7e3b04da9ad05adb39a49c166404d338baed067a055dc8d0335f",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:277fc4cc3d8d25a34722a471ea0905ed5fa8a8d5ea03712b4c0ca84dc5fd9a25",
             "locator": {
               "kind": "symbol",
               "name": "_pin"
@@ -4988,7 +4658,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
             "content": "sha256:7913348d998fe98645a4557b35b36af6ba4e4d22d6a6207e93a1c70c971f8829",
             "locator": {
               "kind": "symbol",
@@ -5005,7 +4675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
             "content": "sha256:0775a3adfb2086247f3c50d5bfe4c2b070b9b516519dc2b186f3a3a3802bdee3",
             "locator": {
               "kind": "symbol",
@@ -5017,7 +4687,7 @@
         },
         {
           "anchor": {
-            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
             "content": "sha256:a91f76394218b2571e524c7fd3b7a1766a4be8816de72018cea12565513d626b",
             "locator": {
               "kind": "symbol",
@@ -5034,8 +4704,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e519bc0d2d773cee130aca4461fcedd473af79f7",
-            "content": "sha256:757cbc2ec59f7021cf0c27b579a47581825a6b6121395dddf2c75bd6ecdb6b97",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
             "locator": {
               "kind": "symbol",
               "name": "read_review_trees"
@@ -5080,8 +4750,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:23120a4008584d9acc23e29ab195f570ea02b967048fd0ceba39e954debcf790",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
             "locator": {
               "kind": "symbol",
               "name": "_live_resolution"
@@ -5178,7 +4848,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
             "locator": {
               "kind": "symbol",
@@ -5190,7 +4860,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:beb8c2c44a804daa1ca95428dd98d744663d53504c17ba100124dacf8f01846d",
             "locator": {
               "kind": "symbol",
@@ -5207,11 +4877,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
             "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
             "locator": {
               "kind": "symbol",
               "name": "_settled_unexplained"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
+            "content": "sha256:aa94232017b1afb63f21511a151272ae0d464e587cd7e9280411c3956303db6c",
+            "locator": {
+              "end": 618,
+              "kind": "line_range",
+              "start": 599
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -5358,11 +5041,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:1b9074eed8dc40a09a932f74fc30a81a93f2abf322f480e1548b3ac6b03cc8e4",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "_chain_rendered"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -5392,8 +5074,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
-            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
             "locator": {
               "kind": "symbol",
               "name": "read_review_source_content"
@@ -5446,11 +5128,11 @@
       ]
     },
     "341": {
-      "note": "The cards view (answered through `_focused` since MIK-L32, which replaced `_entries_view`), the pinned comparison, and the one wire casing.\n\nAnchor: \"return _focused(query, trees, entries=tree_entries(trees, query.invariants))\"; \"def _comparison(\"",
+      "note": "The cards view (answered through `_focused` since MIK-L32, which replaced `_entries_view`), the pinned comparison, and the one wire casing.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
             "content": "sha256:dc0ec326b53c9081e2c7254de6fc1c598dcfa41fe0795d2d0d41243cab2c3146",
             "locator": {
               "kind": "symbol",
@@ -5462,12 +5144,12 @@
         },
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:8c8aaa41f7f372cd711ed33f978af10060820f6f2ba9107c78715e2bceef5b06",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:1f8026c3b18ce899acb2495bd1cbd96e1e7a26541115188aefe5643c5e75a6df",
             "locator": {
-              "end": 165,
+              "end": 184,
               "kind": "line_range",
-              "start": 164
+              "start": 183
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -5475,12 +5157,12 @@
         },
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:9c92527674d0f47ceab571fe67aff14f40ef8cc8f72a2b31257832bab3ab686d",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:c5033bec5644b3606d1b91022e453609443b78309aec1b3ff06b98136bebca8b",
             "locator": {
-              "end": 190,
+              "end": 209,
               "kind": "line_range",
-              "start": 169
+              "start": 188
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -5493,7 +5175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
             "content": "sha256:1868095f0bdbc8a5ab5c1a9ec35b3a48e57c7c38426fdc4adeaa43cefd1490e2",
             "locator": {
               "kind": "symbol",
@@ -5705,7 +5387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:de237539bab3bf29e8c326dc4f9af52f779ef61b4e571237a29d800b044a2e76",
             "locator": {
               "kind": "symbol",
@@ -5981,7 +5663,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:ac2e8f6676debd1ee2da4dffc1267922985b0ca3235fc2a6e37f808518958a06",
             "locator": {
               "kind": "symbol",
@@ -6023,16 +5705,16 @@
       ]
     },
     "361": {
-      "note": "The lane and file reads dispatched; a focused answer.\n\nAnchor: \"return _focused(query, trees, lane=unexplained_lane(trees))\"; \"def _file_view(\"",
+      "note": "The lane and file reads dispatched; a focused answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:a688c1224f2be9ecb85828129bc30a1f5dcae4f101d4f05642bb3f770bbe43d3",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:329bf93f920af0305ecf39233fd831592114859f3e388e6e100480cac73a7083",
             "locator": {
-              "end": 165,
+              "end": 184,
               "kind": "line_range",
-              "start": 160
+              "start": 179
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -6040,12 +5722,12 @@
         },
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:8909ea19186c7dadd146f94df56cc37f6d86845361fe5a2f380f9acbf0c633d1",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:1e32b4f7d6e0505c6703c7eb9bc2594a9d5347aa06c788346abc914e65a43d05",
             "locator": {
-              "end": 345,
+              "end": 364,
               "kind": "line_range",
-              "start": 331
+              "start": 350
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -6054,16 +5736,16 @@
       ]
     },
     "362": {
-      "note": "The entry's count on the summary.\n\nAnchor: \"return summary.model_copy(update={\\\"attribution\\\": lane_summary(resolved.trees)})\"",
+      "note": "The entry's count on the summary.",
       "targets": [
         {
           "anchor": {
-            "blob": "1071b5365bb3c2042e5899694f28c2718462ae44",
-            "content": "sha256:04c32bbcb03310e7b6c2018d5b8868df4a809ddb6065012c019c7e0c9f3736ad",
+            "blob": "bc176e401d8fc44d60f14591188edd96d54f993d",
+            "content": "sha256:62ccf5827b9b9a8d8fecc0fd72eeea0a82ddb3dd176cc17a42a344aab9d842a6",
             "locator": {
-              "end": 141,
+              "end": 142,
               "kind": "line_range",
-              "start": 138
+              "start": 139
             },
             "path": "mcp/src/agents_remember/application/review_intent_summary.py"
           },
@@ -6209,7 +5891,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
             "content": "sha256:f5d8300b814e840f6944c81e645fddf760438e8723b58f8c7f26ce69c56b572f",
             "locator": {
               "kind": "symbol",
@@ -6221,8 +5903,8 @@
         },
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
-            "content": "sha256:bdd0ef20017a99676355757e48b3ee057ffdc5d23afc399ef9e98c7ea9d48975",
+            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
+            "content": "sha256:6e5deb00b1706f431f98aed7c9742267098f516ca5374d7a73befef21abafab1",
             "locator": {
               "kind": "symbol",
               "name": "worklist_over"
@@ -6343,16 +6025,16 @@
       ]
     },
     "373": {
-      "note": "The composition's one call.\n\nAnchor: \"family_context=with_change_kinds(family.context, resolved.trees),\"",
+      "note": "The composition's one call.",
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
             "locator": {
-              "end": 551,
+              "end": 560,
               "kind": "line_range",
-              "start": 551
+              "start": 560
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -6395,15 +6077,14 @@
       ]
     },
     "376": {
-      "note": "The database writer's front door refuses a frozen or locked database.",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge_write_admission declares repository-bootstrap provenance only; the frozen database writer guard is retired. Historical account: The database writer's front door refuses a frozen or locked database.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:48240d76706b6814071190f752ced0d208695746365055fb8212d06fad7a49b7",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_unfrozen_database"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
           },
@@ -6578,7 +6259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
             "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
             "locator": {
               "kind": "symbol",
@@ -6677,7 +6358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:e7f82746491e11a15a321f83abc0a40f2a79458cebea620dff21a3a6ee48c073",
             "locator": {
               "kind": "symbol",
@@ -6794,7 +6475,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa0699b43a3139aa2255e745c9fcd2a5361a7121",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
             "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
             "locator": {
               "kind": "symbol",
@@ -6807,12 +6488,12 @@
       ]
     },
     "397": {
-      "note": "One pin: the same tree is success, another tree is refused, a held lock is retried.\n\nAnchor: `_create_pin`",
+      "note": "One pin: the same tree is success, another tree is refused, a held lock is retried.",
       "targets": [
         {
           "anchor": {
-            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
-            "content": "sha256:e37c2fcd2cae532495fdab6e7aa3f400140937e7c9cebac50543ba20c055efe5",
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:877612ca9d29d80b2ea0b9c614fda61f6b617340f8d3286969eff953370c6123",
             "locator": {
               "kind": "file"
             },
@@ -6827,12 +6508,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb96525be294896525624afef669abf8fd942413",
+            "blob": "df5edfba8893347476b297d9d8664953015ae4ae",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 107
+              "start": 108
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -6845,8 +6526,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-            "content": "sha256:0a5d60c4071eacd09af72106062521fa47da31547ee1bbd4fcf22a36036d8855",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
             "locator": {
               "kind": "symbol",
               "name": "_measured_tree_diff"
@@ -6862,7 +6543,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
             "locator": {
               "kind": "symbol",
@@ -6874,7 +6555,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:a5a422ceed02ef1b4316876f67da1f6a7cce1d44a555e16cd3bae81a6742a484",
             "locator": {
               "kind": "symbol",
@@ -6891,7 +6572,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
             "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
             "locator": {
               "kind": "symbol",
@@ -6908,7 +6589,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
             "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
             "locator": {
               "kind": "symbol",
@@ -6969,12 +6650,12 @@
       ]
     },
     "405": {
-      "note": "Four concurrent first reads answer alike from one child.\n\nAnchor: `test_four_concurrent_first_reads_answer_alike_from_one_child`",
+      "note": "Four concurrent first reads answer alike from one child.",
       "targets": [
         {
           "anchor": {
-            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
-            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+            "content": "sha256:443c00ec3df518b067e0b38db098cc33a978d3f32f9dfbfab3e7fc022f1787d4",
             "locator": {
               "kind": "file"
             },
@@ -6989,8 +6670,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
-            "content": "sha256:5b03fe63549e3eedcc584efa6c275d69a040e66dbd62d1c07562b55a8317b65c",
+            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
+            "content": "sha256:08db73be2e9e8e5bef50cfd8de5ef65754d258fb290cb2af54edfd6fc215cc48",
             "locator": {
               "kind": "symbol",
               "name": "test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration"
@@ -7006,7 +6687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -7023,7 +6704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
             "locator": {
               "kind": "symbol",
@@ -7036,12 +6717,12 @@
       ]
     },
     "409": {
-      "note": "The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept.\n\nAnchor: `_leaf_wide_parts`",
+      "note": "The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-            "content": "sha256:d70330b299a97d51f9081ad9eb2b094e89dd910e64cf7db99cdeb778a1ed5e62",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:bc49e2984cd48308fd306bf2fa6e7467240c21bf19b945682638ba128edb2f8b",
             "locator": {
               "kind": "file"
             },
@@ -7056,7 +6737,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:e8939bd768d1cac4d901b6569777b6e1f5fe6bfa002cc508d31726466d6e2702",
             "locator": {
               "kind": "symbol",
@@ -7068,7 +6749,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:a132e1065d88a34f684cc4664a7746825d5e575bf9ad3232fcd1db8e5593db86",
             "locator": {
               "kind": "symbol",
@@ -7080,7 +6761,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:3b78b5be6238743fb3b3af30fc0ba6400c2cfaed8e943b4b0f8a9fb4d59c1074",
             "locator": {
               "kind": "symbol",
@@ -7097,7 +6778,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
             "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
             "locator": {
               "kind": "symbol",
@@ -7217,7 +6898,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "091ddadd2d4f4e30e71f798c050ea011606bc638",
+            "blob": "d624a37ecd8800604aa5b08f6343e8e771bd8cb7",
             "content": "sha256:8b8d065dfdc9ae5b35c45ab235479a6adaf8b021a4a6d717992ce35e2e70bb99",
             "locator": {
               "kind": "symbol",
@@ -7251,7 +6932,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:d3803f61520d8afce2a5340df2179b9ae6efbde0d8171f4990e805ab57677287",
             "locator": {
               "kind": "symbol",
@@ -7263,7 +6944,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:636497054c33f6d732f84fbe2bb07f98cfba3dfc29b0bb8728dca386c4613a7c",
             "locator": {
               "kind": "symbol",
@@ -7400,7 +7081,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:3af9c5e42c294a2d61caaaeab053f82b9ceb37d3d2493efa6ed46061ddbf9ab5",
             "locator": {
               "kind": "symbol",
@@ -7412,7 +7093,7 @@
         },
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:eebf7779c7f45fcc0a1a360b1dc4735d96075ea97f3b3e35c0ff4dd8f57c491b",
             "locator": {
               "kind": "symbol",
@@ -7425,28 +7106,38 @@
       ]
     },
     "431": {
-      "note": "**The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**",
+      "note": "Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
-            "content": "sha256:b7977a7dbd7a5b08844d8436851e24e1d7505d874e34b4ea6e8714abf11fe5b8",
+            "blob": "126a64801a1628c8cc4eafa3bfa4dd8c6d076bde",
+            "content": "sha256:dcc4cd42b07894fec5d27cb7dc92de8861622f78be191b3b2ce28c1c29948f9b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_one_repositorys_answers_are_never_served_for_another"
+              "kind": "file"
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:9df28d01bdd06d4670b119bf1698d341b0570a324c25e00ae22243148854db52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "432": {
-      "note": "**The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.**",
+      "note": "The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.",
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:309eedecc668fb7e1277931a49c4137fd4a9d405f14bbd54118f42043f43d1cf",
             "locator": {
               "kind": "symbol",
@@ -7546,7 +7237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
             "locator": {
               "kind": "symbol",
@@ -7558,7 +7249,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
             "locator": {
               "kind": "symbol",
@@ -7570,7 +7261,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
             "locator": {
               "kind": "symbol",
@@ -7582,8 +7273,8 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
-            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
+            "content": "sha256:ce8f7f96670ebbce089661807af6837f837d52158ab3d9d35da87fa703b518b1",
             "locator": {
               "kind": "symbol",
               "name": "require_current_candidate_identity"
@@ -7599,8 +7290,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
-            "content": "sha256:1ef2673b255d1e5062fd4f55873d76caf46ae73cc295396a298aac348959de3c",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
             "locator": {
               "kind": "symbol",
               "name": "_leaf_wide_parts"
@@ -7697,11 +7388,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
             "locator": {
-              "kind": "symbol",
-              "name": "FileReadStatus"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -7710,16 +7400,14 @@
       ]
     },
     "447": {
-      "note": "Historical removed FileReadStatus import. Current application reading names files and card states.\n\nHistorical anchor: FileReadStatus",
+      "note": "Historical FileReadStatus import/onboarding-status account; references and targets remain for custody. The current application naming route uses _name_one to check source existence before naming a converted card; it carries no FileReadStatus import or _resolve_onboarding body-serving route.",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:9a66ab5751a0c5d87c4b10112ca4c4b5b15812649b5683f1fa5d265c3cb686c1",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 73
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -7732,11 +7420,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
             "locator": {
-              "kind": "symbol",
-              "name": "FileReadStatus"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -7749,11 +7436,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:6157b2420e3e8ea571063520975efc61eb411d5bd407360bc6b6d77d28fd30e3",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_onboarding"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -7766,7 +7452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
+            "blob": "2c0373c265618b820bcf5acdd0f43f477567c3f4",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -7778,7 +7464,7 @@
         },
         {
           "anchor": {
-            "blob": "a37806363d99a9e29e6db9515164e401ffd1664c",
+            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -7791,16 +7477,16 @@
       ]
     },
     "450": {
-      "note": "The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving.\n\nAnchor: lines 201-213",
+      "note": "The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving.",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:10110ca458fa1c4248fc3becb609cee9f1e8b88d05860fae458d5d90e6b23f96",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:c999e015d237d2ef477b4f1a7b6fc6b5b1a6290e39bb9cfc540709d74b6225fc",
             "locator": {
-              "end": 213,
+              "end": 217,
               "kind": "line_range",
-              "start": 201
+              "start": 205
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -7809,16 +7495,16 @@
       ]
     },
     "451": {
-      "note": "The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving.\n\nAnchor: lines 201-213",
+      "note": "The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving.",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:10110ca458fa1c4248fc3becb609cee9f1e8b88d05860fae458d5d90e6b23f96",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:c999e015d237d2ef477b4f1a7b6fc6b5b1a6290e39bb9cfc540709d74b6225fc",
             "locator": {
-              "end": 213,
+              "end": 217,
               "kind": "line_range",
-              "start": 201
+              "start": 205
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -8028,10 +7714,9 @@
         {
           "anchor": {
             "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
-            "content": "sha256:525e943813ad7f452188b51dae51b429d6795e8e1f8dc3d64c19c856da113ddb",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_format"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files_format.py"
           },
@@ -8039,25 +7724,23 @@
         },
         {
           "anchor": {
-            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
-            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
+            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
+            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "legacy_published_intent"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/read_files_format.py"
+            "path": "mcp/src/agents_remember/application/read_files.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
-            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
+            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_card_parts"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/read_files_format.py"
+            "path": "mcp/src/agents_remember/models/read_files.py"
           },
           "kind": "code"
         }
@@ -8581,12 +8264,12 @@
         },
         {
           "anchor": {
-            "blob": "7dc79d7e246d546ecd7d6eba76b0075cc99c6062",
+            "blob": "69d90a2f14a2cda0d67106b08cf0eb8cb6eaa1eb",
             "content": "sha256:853733543314f6d28a8ebdaf5289fa227b18f89eb240c7fde7a75753304b7964",
             "locator": {
-              "end": 942,
+              "end": 944,
               "kind": "line_range",
-              "start": 784
+              "start": 786
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -8612,12 +8295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:d840897cb0c6e7c8ca353468e3c15753b9ce08a39a5d8e9ba6e6e7a93266ac22",
             "locator": {
-              "end": 317,
+              "end": 326,
               "kind": "line_range",
-              "start": 303
+              "start": 312
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -8638,12 +8321,12 @@
         },
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:0c52fd40d3d5697b74f5a9ab1bcfb6287b965ce78c772437a4791d095d64e456",
+            "blob": "5ea5df2cf694eec99b36b6695d06c40dbf6e731d",
+            "content": "sha256:97c1f48159294ad2b6d0357bface298b62f7ec98cdb8bd925199673dc3f3e261",
             "locator": {
-              "end": 307,
+              "end": 326,
               "kind": "line_range",
-              "start": 239
+              "start": 258
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -8790,6 +8473,22 @@
         }
       ]
     },
+    "488": {
+      "note": "**Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars.\n\nAnchor: `memory_format`; `legacy_published_intent`; `converted_card_parts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "49": {
       "note": "**The availability vocabulary, and the validator that refuses a count no owner measured.**",
       "targets": [
@@ -8865,7 +8564,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:f78438af62f0beadad9c301b70492e5e7270dc509e52b497435fcd32da7430cc",
             "locator": {
               "end": 92,
@@ -8879,15 +8578,14 @@
       ]
     },
     "52": {
-      "note": "**The cases that measure the whole thing through the production port, including the two per-record damage cases.**",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current detection/evidence-claim/observation channels are explicitly retired/unavailable; curator assessment acquisition remains separate. Historical account: **The cases that measure the whole thing through the production port, including the two per-record damage cases.**",
       "targets": [
         {
           "anchor": {
-            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
-            "content": "sha256:407b581c83319a5b5ee9d6b622f4f2d75e25b749177087c6b216b1fd9b03ef17",
+            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
+            "content": "sha256:91f91b34a2240eace03810bedeba5859c5a53e497f7925721b567915132ce6ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_production_composition_supplies_every_owner_produced_record_class"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
           },
@@ -8895,27 +8593,14 @@
         },
         {
           "anchor": {
-            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
-            "content": "sha256:5c4cd466787687552aa32609179a7677dffc2ba8733811ad9372e54702199e4b",
+            "blob": "07c5dd5a94d8b14a8d703da903c1d9cc166288a0",
+            "content": "sha256:906990c167bb9489ebb80748271e6025d4b7d3c8c3d9dcf4ae6d53c393fcd545",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied"
+              "kind": "file"
             },
-            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
-            "content": "sha256:9d94d1f1181c23e2f3af3405dd683e998a88f791ae7a6767f8db3da6d4008e15",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied"
-            },
-            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
-          },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
@@ -9018,7 +8703,7 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:0b94f85fa9efd6d2146ae50b3fe5bd7031a0bc94699565a8560cf1486723b69e",
             "locator": {
               "kind": "symbol",
@@ -9035,7 +8720,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
             "locator": {
               "kind": "symbol",
@@ -9047,7 +8732,7 @@
         },
         {
           "anchor": {
-            "blob": "51ca485eb0d1f384907b4f1fa45102f13a27e991",
+            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
             "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
             "locator": {
               "kind": "symbol",
@@ -9298,51 +8983,14 @@
       ]
     },
     "68": {
-      "note": "**The cases that measure the whole journey, the convergence, the typed absences and the per-channel damage.**",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: These old freeze/publication tests are no longer the current test functions; retained legacy manifests remain readers, not a current freeze producer. Historical account: **The cases that measure the whole journey, the convergence, the typed absences and the per-channel damage.**",
       "targets": [
         {
           "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "blob": "8782f874fb743422a5c03599845ebe464f324be4",
+            "content": "sha256:eeb361c2ddf7e4b884df73f3b06abac94174c85197d2a317b7be32a5efa6a51b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
-            },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:a87b30d7eca60b82c23a0b0df2f0c528e8dcde8ef7a52baa9f588743f20b275a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor"
-            },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:58754f42d9606a638f36fc3c1df5aadd182f97ad413bc4186496f4301c71e8d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference"
-            },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:37802682dfb1bb71ff447de4184d4e1153a89cd46e207befc48faf8feea19307",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_missing_or_damaged_retained_input_is_reported_per_channel"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
           },
@@ -9511,12 +9159,12 @@
       ]
     },
     "72": {
-      "note": "**The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.**\n\nAnchor: `side_content`; `side_conditions`; `field_changes`",
+      "note": "**The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.**",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:5c68824fa9e8bb09303d0bab0d25b0f72df9699b6ee62135eea518500358d0e2",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_pane"
@@ -9527,12 +9175,12 @@
         },
         {
           "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
             "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
             "locator": {
-              "end": 939,
+              "end": 948,
               "kind": "line_range",
-              "start": 916
+              "start": 925
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -9541,12 +9189,12 @@
       ]
     },
     "73": {
-      "note": "**The production composition case: a changed structured field carries each side's own projection, the two differ, and each round-trips back to the stored authorship envelope.**",
+      "note": "The structured-value helper assertion checks equal canonical text for equal mappings with different key order. Its fixture-driven both-sides composition/round-trip is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
-            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "blob": "dc6a0fb1abcb7408ed5e6b137794f6871206f7f7",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
             "locator": {
               "kind": "symbol",
               "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
@@ -9604,65 +9252,14 @@
       ]
     },
     "78": {
-      "note": "The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged.",
+      "note": "Historical canonical-publication declaration account; references and targets remain for custody. Current resolve_published_intent selects the converted memory tree through its derived index; published_dataset_path and PUBLISHED_DATASET_NAME are retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_dataset_path"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cd2dea47f4656356861ff6ee5742f8762eac9429df94c7868a7102ebc0de1930",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLISHED_DATASET_NAME"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:d94b8560cb2dcb79546d66a21bad36db65df188277459791482aa3ad1c165015",
+            "content": "sha256:9df28d01bdd06d4670b119bf1698d341b0570a324c25e00ae22243148854db52",
             "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 66
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 147
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -9688,76 +9285,14 @@
       ]
     },
     "80": {
-      "note": "**The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.**",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The current CLI is the converted file handoff route, not this retired destination/allocation/publication adapter. Historical account: **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.**",
       "targets": [
         {
           "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:0cb5964780ea6f2c4d3245ff51be3314482a43c1e42c7422b48d2cb0fd4e64b6",
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
             "locator": {
-              "kind": "symbol",
-              "name": "_Destination"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:5a8b40d6cfdbb85f2462f15650a63084c3ca9fc55dc43c4057a6cf4568d40503",
-            "locator": {
-              "kind": "symbol",
-              "name": "_destination_conflict"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:14f0f78f80edb47d0f1e69b71197976a549690acb164d74b03f240a6885e9814",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected_destination"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:315fd4b106cd55709863b2aceca54e8de4b741de8cd79b4d60e9f135dd3e63ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publication_route"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:aeb50e2e50169935c868d394391b74f9446682c594acff4edc6e4ad1f8c18831",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_back"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:9f2804389a085716d74946261f2fd167739a04edaca31aaea61396fc58f460d1",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 297
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -9783,27 +9318,14 @@
       ]
     },
     "88": {
-      "note": "**The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.**",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The before-half placement adapter retired; current file authoring uses the admitted memory route. Historical account: **The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.**",
       "targets": [
         {
           "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:ba25683411433cfaa3d733cf1908caea019f858fed090b648978abc3f10b87da",
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
             "locator": {
-              "kind": "symbol",
-              "name": "_placement_refusal"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:72582eb0d17429a92ca9237178ef8c48135b0e8bd2d37e0c2549e45f7b1abf4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_place_review_baseline"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -9812,12 +9334,12 @@
       ]
     },
     "89": {
-      "note": "The new argument, and the invocation refusal that fires before the contract is read.\n\nAnchor: `run`",
+      "note": "Historical baseline-placement argument/refusal account; references and targets remain for custody. The current run loads its contract before dispatching the converted leaf or crossing writer. The baseline-placement argument/check is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:29976faa9a7fa519b6e6313a1052fed8cb5da6187f42435dcfa00e70393f56ed",
+            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
             "locator": {
               "kind": "file"
             },
@@ -9828,15 +9350,14 @@
       ]
     },
     "93": {
-      "note": "The before half's layout, its origin record, and the four states a writer must consult before it writes anything.",
+      "note": "Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge_before_half retains dataset-identity readability checks and NOT_RECORDED, not the old BeforeHalf writer product. Historical account: The before half's layout, its origin record, and the four states a writer must consult before it writes anything.",
       "targets": [
         {
           "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:20593e75be84f9692bca97772b0636bbe09a4d3b7c1c80c6572bf3a64d07ce6b",
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:5789fd898ab73cd24188c5890fab9eb79b7c9a4e7869eb8970b139ca9737bc57",
             "locator": {
-              "kind": "symbol",
-              "name": "read_before_half"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
           },
@@ -9844,48 +9365,10 @@
         },
         {
           "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:03af7b59b249e37e320f79338e06d2408c93ece1eaa348736cc86f7b8e57ea76",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "BeforeHalf"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:713d05b1c3053c0ca5a02a29203e1a6cdc67813c91d8c44d83ccdd543886d667",
-            "locator": {
-              "kind": "symbol",
-              "name": "BaselineOrigin"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
-            "locator": {
-              "kind": "symbol",
-              "name": "unreadable_half_refusal"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
-            "content": "sha256:97485f9c8817632b02ef8897b655f39bc81f81daa1a7bd63575c21fb1a55e57a",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 136
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -9894,15 +9377,14 @@
       ]
     },
     "95": {
-      "note": "**The two call sites this leaf added to the adapter, and the one refusal they state.**",
+      "note": "Historical before-half adapter call-site account; references and targets remain for custody. The retained unreadable_half_refusal is a separate helper; current knowledge_review has no import or call of that retired preflight and reads its resolved derived-index pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
+            "content": "sha256:7a6f9186fb93c103a8bc1a66f053c3a283ce3926b9f357f82b1fbc22a72c357d",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -9910,23 +9392,10 @@
         },
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:5789fd898ab73cd24188c5890fab9eb79b7c9a4e7869eb8970b139ca9737bc57",
             "locator": {
-              "kind": "symbol",
-              "name": "list_knowledge_review_entries"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
-            "locator": {
-              "kind": "symbol",
-              "name": "unreadable_half_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
           },
@@ -9935,16 +9404,14 @@
       ]
     },
     "96": {
-      "note": "The admission's own check of a selected baseline, which reads it on every run, resume included.",
+      "note": "Historical baseline-admission read account; references and targets remain for custody. The retained selected_input_unavailable_refusal constructs a named refusal and restoration action and performs no baseline read.",
       "targets": [
         {
           "anchor": {
             "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
-            "content": "sha256:c009e408592b8d2fc0ca668064392c866637489708ae991dd30bfa999518cbe3",
+            "content": "sha256:2099bfd152b50163842165bdec0ba44837211478324e9d2e55aad5120bc4792a",
             "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 56
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
           },
@@ -9957,12 +9424,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
             "content": "sha256:c772e97ba2afad7e7eb09cbdb2c583708e0b0aefeb749587fd3c3371a0bd4665",
             "locator": {
-              "end": 136,
+              "end": 143,
               "kind": "line_range",
-              "start": 136
+              "start": 143
             },
             "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
           },

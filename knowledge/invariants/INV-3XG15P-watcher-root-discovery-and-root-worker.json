@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Configured native dashboard watcher generations. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Configured native dashboard watcher generations.",
+  "conditions": [
+    "Discovery, refresher and native-child failure share reported outage and retry.",
+    "downSince is omitted while healthy; no watcher configuration omits the whole health field."
+  ],
+  "exclusions": [
+    "No recursive polling compatibility path is introduced."
+  ],
+  "id": "INV-3XG15P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_serving_watcher_death.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F10",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Watcher root-discovery and root-worker failure enter the same stable reported outage and thirty-second retry, and healthy payloads omit downSince.",
+  "status": "proposed",
+  "supersedes": []
+}

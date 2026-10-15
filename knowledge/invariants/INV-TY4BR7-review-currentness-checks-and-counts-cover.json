@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reviewer currentness response serialization for the resolved tree pair. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Reviewer currentness response serialization for the resolved tree pair.",
+  "conditions": [
+    "All entries contribute checks and counts.",
+    "Only non-current entries are listed, preserving the baseline wire shape."
+  ],
+  "exclusions": [
+    "Reproduction-aid command strings are the separately named allowed exception."
+  ],
+  "id": "INV-TY4BR7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F21-field-addressed-disposition.json"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F21",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Review currentness checks and counts cover all entries but response serialization lists only the non-current rows that the baseline lists.",
+  "status": "proposed",
+  "supersedes": []
+}

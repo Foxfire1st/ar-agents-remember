@@ -59,14 +59,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The real bodies, the transport and the scope stand-in. [1]
-- A full diff's marks, lists, follow, proofs and the unread side. [2]
-- Files without per-hunk marks, the partial inventory and past-text notes. [3]
-- The return: list, view and focus; the hold never against the reader. [4]
 **Historical pre-R86 card account — superseded, not current assertion evidence.**
 
 > - The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. [5]
-- Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file. [6]
 
 ### Cross-Repo References
 
@@ -75,9 +70,16 @@ No cross-repo boundary is crossed by this file.
 
 ### Clock And Settlement Evidence
 
-- The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read. [7]
+- The real bodies, the transport and the scope stand-in.  Anchor: "hunkMarkers.classifier.captured.json" [1]
+- A full diff's marks, lists, follow, proofs and the unread side.  Anchor: "marks each owner hunk on the owner's side lines, a deletion in the before editor"; "lists a proof entry as a test with its facet, apart from the intents" [2]
+- Files without per-hunk marks, the partial inventory and past-text notes.  Anchor: "gives a confirmed-unregistered file one file-level unexplained mark"; "says why a changed file a partial inventory does not list carries no marks" [3]
+- The return: list, view and focus; the hold never against the reader.  Anchor: "reopens its list, brings its hunk into view and focuses it"; "keeps the returned mark focused while the pane settles, never against the reader" [4]
+- Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file.  Anchor: "reopens the card a marker was followed from, not the first card of its path"; "never reads, nor speaks for, an unchanged file's card" [6]
+- The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read.  Anchor: `advanceTimersToNextFrame` [7]
 - Per-side expansion builder for mark scenarios [8]
 - Scope builder for files under test [9]
 - Hunk-order helpers for mark assertions [10]
 - Shown-mark extraction from the rendered diff [11]
-- Unchanged-file classifier for no-mark shapes [12]
+- Unchanged-file classifier for no-mark shapes  Anchor: `classify` [12]
+
+- Historical lane-window assertion account, superseded: in the pinned source, the retained reference range contains card Full file and excerpt scenarios, not the claimed every-drawn-window-hunk test. Preserve the historical anchor/target without presenting it as current lane-window assertion evidence.  Anchor: "marks every hunk a window draws: the focused one and each neighbour its context shows" [5]

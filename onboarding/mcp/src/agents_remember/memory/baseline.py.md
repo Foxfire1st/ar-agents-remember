@@ -23,8 +23,7 @@ memory-content commit; the consumer ledger is computed from Git and refreshed as
 a disposable cache. On a converted tree the first baseline is validated before
 it is made: adoption stages content on a private index, validates the staged tree
 with no comparison bases paired with the attributed code commit, and records
-exactly that tree. A refusal, a dry run or validation exception leaves the index,
-refs and every owned file as they were.
+exactly that tree. The prepare/stage/validate interval uses a private index and attempts restoration of provably-owned ignore bytes on refusal or error. Restoration mutations can themselves fail; the required named-error and owned-state guarantees of INV-ZCRMS7 and INV-DZB7MC do not hold on that inherited branch. This is not a promise of rollback after publication starts.
 
 ## Code Commentary
 
@@ -97,13 +96,9 @@ converted validation.
 
 The converted adoption never writes the worktree's own index before validation passes.
 `_private_staging_index` holds a mtime-preserving copy of the worktree index for one interval (an
-absent index stages from an empty private file, exactly as `git add` would; any other copy failure
+absent index leaves the private index path nonexistent, which Git stages as an empty index; any other copy failure
 refuses loudly with no fallback). `_prepare_stage_validate` runs cache preparation, staging and
-validation against that copy; any exception first restores the prepared `.gitignore` if and only if
-its bytes are provably still ours — a concurrent external edit or an unreadable file is preserved,
-never overwritten — then propagates with its name. A dry run validates and gives everything back;
-a refusal gives the file back and raises `BaselineValidationRefused` with the worktree index
-untouched. Only after validation passes does `_adopt_validated_converted_tree` publish: the commit
+validation against that copy; on an exception it calls `_restore_file` before re-raising, preserving concurrent edits and unreadable files. Once the bytes are proved ours, unlink/write/chmod failures can escape instead of the original validation error; chmod failure can leave the mode unrestored. A dry run or refusal returns prepared bytes when restoration succeeds, with the real index untouched. The restoration-failure branch is a recorded failure of the unchanged governing promise, not a narrower invariant. Only after validation passes does `_adopt_validated_converted_tree` publish: the commit
 object is built from the immutable validated tree (`commit-tree`), the branch ref moves to it only
 while it still points at the HEAD read on entry to `_publish_validated_tree` (expected-old
 `update-ref`), and the recorded tree is verified — so a hook or a concurrent index change cannot smuggle different bytes into the
@@ -154,8 +149,6 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L13 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-- Context, drift, and Git-history adoption decisions. [1]
-- Bootstrap branch proof and the one attributed content commit. [2]
 - The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. [5]
 - The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. [8]
 - The recorded-default authority this file now follows instead of a literal. [11]
@@ -168,21 +161,28 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
-- Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
-- Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals. [13]
-- First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
-- The whole owned interval runs on a private index copy; an exception restores owned bytes, then keeps its name. [15]
-- A dry run, a refusal or an exception leaves the index, the refs and every owned file as they were. [16]
-- Publication records exactly the validated tree; expected-old ref publication compares against the HEAD read at publication entry, not an independently retained pre-validation HEAD. [17]
-- Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
 
-- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. \[19] [19]
 
-- Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]
 
 - Cache preparation and refresh are separate from Git commit publication. [3]
+- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
+
+- Context, drift, and Git-history adoption decisions. [1]
+- Bootstrap branch proof and the one attributed content commit. [2]
 - Shared staging excludes derived paths from the content commit. [4]
 - Context, drift and Git-history adoption decisions. [6]
 - Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. [7]
 - Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
-- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
+- Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
+- Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals. [13]
+- First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
+
+- The owned prepare/stage/validate interval uses a private index. Restoration is called before re-raising, but unlink/write/chmod errors can replace the named validation error and leave owned state unrestored, contrary to INV-ZCRMS7 and INV-DZB7MC. [15]
+
+
+- Dry runs and validation refusals discard the private index and attempt restoration of provably-owned ignore bytes; concurrent or unreadable contents are preserved. The inherited restore-mutation failure violates the unchanged owned-state/named-error promise. [16]
+
+- Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
+- Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
+- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. \[19] [19]
+- Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]

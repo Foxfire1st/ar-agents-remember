@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
-        "content": "sha256:f1993667c502930c56f674c326f429d9f68e989e311a659eb17af7e654f74af5",
+        "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+        "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
         "locator": {
           "kind": "symbol",
           "name": "PROCESS_MUTABLE_STATES"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+        "blob": "3007b1080588e8baa67a2353791d8715f232f416",
         "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
         "locator": {
           "kind": "symbol",
@@ -44,11 +44,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
-            "content": "sha256:db74eee153cea3fe9daa054f6ff4f5dc735fca7f5385c5649605c592da9bffeb",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:ffcae9eeee6545e17885b99259aff32e190c7f7246443f57580d5dc308160253",
             "locator": {
               "kind": "symbol",
               "name": "OWNED_MUTABLE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
             }
           },
           "kind": "code"
@@ -60,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -98,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
-            "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -114,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
             "content": "sha256:80068ea5fda12ee371d15fa0b0015285dc018e4d29308d159ed6f4214ffcab8d",
             "locator": {
               "kind": "symbol",
@@ -130,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
             "content": "sha256:fecf325cce31d06171e585a777aa0d59ef6f55ee13e0b4b5e09a9b3c28567d37",
             "locator": {
               "kind": "symbol",
@@ -146,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
             "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
             "locator": {
               "kind": "symbol",
@@ -162,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49666fdcdba33495b2f8a2943bc57eda636d3ea7",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
             "content": "sha256:b526214cf1d90732f739832b696528694ec2db83e24ee3732b5b86a29b7e6201",
             "locator": {
               "kind": "symbol",
@@ -178,8 +194,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
-            "content": "sha256:e8c66074641905127c4ccfe3a9e81d60e52dd93355f665b25e3cc7a1791e984e",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:e757060e53c608802aca4ea1adc34f930a36abb1298e83754f6138e267f452cd",
             "locator": {
               "kind": "file"
             }
@@ -189,14 +205,15 @@
       ]
     },
     "9": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and all other rows/treatments remain unchanged; registration is not execution of the reset control.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.",
       "targets": [
         {
           "anchor": {
-            "blob": "a511c60f4845f2ef92f4dc559d3592b66019f8fd",
-            "content": "sha256:d37f23dac6b524c54dc066ae8dad73d382d447cc919bea4cba52cb96e3563997",
+            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
+            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
             }
           },
           "kind": "code"

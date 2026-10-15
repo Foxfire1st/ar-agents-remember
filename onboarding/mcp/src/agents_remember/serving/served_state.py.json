@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/serving/served_state.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5d9706f19d45f3924fd5479d69902c1048f7e4c7",
+        "content": "sha256:13de6dd9b653c15154585f8dc9fb6c8a04ee8c03cd03c28b648d01a7761ba80a",
+        "locator": {
+          "kind": "symbol",
+          "name": "served_state_tail"
+        }
+      },
+      "id": "RLZ-RHMYS8",
+      "invariant": "INV-GDTTHF",
+      "origin": {
+        "handoffEntry": "MIK-R81@v1-F10-typed-health-body",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing served-state tail serializes the watcher model with exclude_none, so wire shape and generated field optionality agree.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Anchor: Only optional servingBuild extends the observer model.",
+      "note": "Optional servingBuild and watcherHealth extend the observer projection; notifier, supervisor and terminal-health tails remain removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
-            "content": "sha256:85b9333537d5022672c28abcff27aa3aa53b098c7b4708352224df04787dceee",
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:482ef4f3d1fa7dd0e45118a18b64d3cdbdfd2c76e22282ce97b1f66391af522a",
             "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 39
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
             }
           },
           "kind": "code"
@@ -20,16 +38,15 @@
       ]
     },
     "2": {
-      "note": "Anchor: Omit absent build facts without constructing obsolete health/heartbeat payloads.",
+      "note": "Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted.",
       "targets": [
         {
           "anchor": {
-            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
-            "content": "sha256:53531995e5480c8afcd6b45e3d0b165c30357f5f67acf13af6576b1df0c9679d",
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:a59dc76e2252180bac54d810a0a0005a5db0436cc7bee4983796d965e3778b4b",
             "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 54
+              "kind": "symbol",
+              "name": "served_state_tail"
             }
           },
           "kind": "code"
@@ -37,16 +54,16 @@
       ]
     },
     "3": {
-      "note": "Anchor: The exact current one-field tail vocabulary.",
+      "note": "The current tail vocabulary is exactly servingBuild and watcherHealth.",
       "targets": [
         {
           "anchor": {
-            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
-            "content": "sha256:0f215cf8694175753c6c8a9ed1e3955a897ecd64739c54a9dd65d2284807bf4f",
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:37fb13b405084c654be9385c4310541c1bc9aa14db597ddc3871060a7eccdb18",
             "locator": {
-              "end": 49,
+              "end": 68,
               "kind": "line_range",
-              "start": 49
+              "start": 66
             }
           },
           "kind": "code"

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Task and lifecycle projection refreshes with complete accepted wake paths. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Task and lifecycle projection refreshes with complete accepted wake paths.",
+  "conditions": [
+    "Dependency consumers are closed transitively over retained payloads.",
+    "Incomplete or uncertain paths fall back to full reconciliation."
+  ],
+  "exclusions": [
+    "Full reconciliation still checks all domains; quiet workspace-only wakes do not imply a full closeout census."
+  ],
+  "id": "INV-FKE909",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_projection_path_directed.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F09",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A path-directed refresh reads the changed document and its actual dependency consumers, while explicit full reconciliation preserves complete projection semantics.",
+  "status": "proposed",
+  "supersedes": []
+}

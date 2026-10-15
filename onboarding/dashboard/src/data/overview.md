@@ -20,6 +20,10 @@ This route owns retained dashboard projection state, task/document identity and 
 
 The route has a child review-keymap overview and separate panel/view owners. Keymaps retain browser-forbidden validation and chrome/review routing, not composer profiles or PTY interception. React consumers own rendering; Python applications and configured serving ports own canonical authority and answer classification.
 
+The bound reviewer expression-card store retains answers and shares in-flight reads across pending-center remounts, keyed on the complete comparison and invariant set. Selection prefetches a changed set in parallel with its subject answer. This is separate from the retained selected-subject/walk stores and does not mix incompatible questions or infer empty unavailable data.
+
+reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, memory diff grouped by record/source, currentness, worklist/history linkage and realization/proof entries on both code sides. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
+
 ## Invariants And Boundaries
 
 Missing/unavailable/refused answers stay distinguishable from empty data. A declared client type is not a runtime validation guarantee. Source inspection, inherited fixtures and citation renewal provide no new UI, host, test or whole-build acceptance.
@@ -63,9 +67,6 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - The entry's summary read and its re-validation generation. [18]
 - The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. [24]
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
-- Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
-- The server series builder sorts only fully stamped rows before projection. [27]
-- The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
 - The route's read-only client and its comparison call. [29]
 - **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
 - **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
@@ -80,10 +81,14 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - The payload whose comparison may be absent, and the pane that says which question was answered. [40]
 - **The request that omits the selector when there is none — the task-context entry.** [41]
 - Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. [42]
-- **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** [43]
+
+- **The six-member state literal and optional-text side mirror preserve the server contract. This interface is not a discriminated text/state validator and shared transport does not enforce a complete payload guarantee.** [43]
+
 - **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [44]
 - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
-- **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** [46]
+
+- **Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.** [46]
+
 - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
 - Central expression cards mount SourceContent at the inventory exact tree IDs. [48]
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
@@ -93,17 +98,6 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
 - **The optional family context whose absence says the body did not come from this route.** [58]
 - An incoming link may carry the record its history-row source is about. [59]
-- The module comment: what the adapter carries and the three answers it keeps apart. [60]
-- The answer of the route. [61]
-- One entry on both code sides. [62]
-- The request, addressed by number, recorded or invariants, with the optional signal. [63]
-- The transient codes and the retry delays. [64]
-- The bounded retry of a transient refusal. [65]
-- One answer as a read state. [66]
-- The comparison a payload names; without it no tree read is made. [67]
-- The entries hook aborts a superseded read and returns null without a comparison. [68]
-- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
-- The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
 - A superseded request is aborted and only the newer answer is shown. [71]
 - Loading stays shown during the retries. [72]
 - Unavailable is shown only after the bounded number of retries. [73]
@@ -131,10 +125,28 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 - Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based. [100]
 - Entry intent counts and attribution share one response with distinct counted/partial/unavailable states. [101]
 - Family change facts and source locator meanings are mirrored rather than recomputed. [102]
-- Tree retry is bounded and superseded hooks abort and guard their results. [103]
 - Creation ordering preserves partially stamped input. [104]
 - Volatile-age equality includes elapsedSeconds. [105]
 - Full scenario reset increments generation once and clears closeout queues. [106]
 - Drift display consumes reporting counts while provider selector definitions remain. [107]
 
 - The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
+
+- Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
+- The server series builder sorts only fully stamped rows before projection. [27]
+- The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
+- The module comment: what the adapter carries and the three answers it keeps apart. [60]
+- The answer of the route. [61]
+- One entry on both code sides. [62]
+- The request, addressed by number, recorded or invariants, with the optional signal. [63]
+- The transient codes and the retry delays. [64]
+- The bounded retry of a transient refusal. [65]
+- One answer as a read state. [66]
+- The comparison a payload names; without it no tree read is made. [67]
+
+- The entries hook shares cached/in-flight card reads, suppresses unmounted retell callbacks without aborting the shared read, and returns null without a comparison or invariant set.  Anchor: `useReviewTreeEntries` [68]
+
+- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
+- The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
+
+- Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer. [103]

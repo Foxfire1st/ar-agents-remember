@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
+        "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
         "content": "sha256:f2ff0ca348be835eff180ffa1b7fd9adf6dcf061294bb33e422c0e6b100e264c",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
-            "content": "sha256:eae8de670d47cbd25f9bd8947592a3b56f543feb97558b3857d9e1d58b252933",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:f8d2f2474da63691f741b3f50f0616627b666f9a853c16db22daff59b6637a04",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -39,15 +39,14 @@
       ]
     },
     "11": {
-      "note": "The answer of the route.",
+      "note": "The answer of the route.\n\nAnchor: `ReviewTreesResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:cb1d6a3d437f5c0f0a68f283288c1a28c3fe5eb636486b94c9696e8f7f83a59e",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesResult"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,15 +54,14 @@
       ]
     },
     "12": {
-      "note": "The worklist view.",
+      "note": "The worklist view.\n\nAnchor: `ReviewWorklistView`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:ac623a989c9fdf4a0fa53c98746eebc2476b2e7d7bae2f6145abad212a268018",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewWorklistView"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -71,15 +69,14 @@
       ]
     },
     "13": {
-      "note": "The request, addressed by number, recorded or invariants, with the optional signal.",
+      "note": "The request, addressed by number, recorded or invariants, with the optional signal.\n\nAnchor: `reviewTrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:978feec7230dd633853c6e090a9ce5f9be60deb92c96b5e2f446663990e4ab4b",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewTrees"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -91,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:3e2f91b4b9179d96bad8b6cdd9d3bc1f2c1a8ce7219632f90c3ddcba12f8d5eb",
             "locator": {
               "end": 274,
               "kind": "line_range",
@@ -104,15 +101,14 @@
       ]
     },
     "15": {
-      "note": "A wait that an abort ends.",
+      "note": "A wait that an abort ends.\n\nAnchor: `pause`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:40b25b3f1e93401d554239d9f7d148e88756c0a8002b370b88fda13a403e942d",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "pause"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,15 +116,14 @@
       ]
     },
     "16": {
-      "note": "The bounded retry of a transient refusal.",
+      "note": "The bounded retry of a transient refusal.\n\nAnchor: `reviewTreesRetryingBusy`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewTreesRetryingBusy"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -136,15 +131,14 @@
       ]
     },
     "17": {
-      "note": "One answer as a read state.",
+      "note": "One answer as a read state.\n\nAnchor: `reviewTreesRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewTreesRead"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -152,15 +146,14 @@
       ]
     },
     "18": {
-      "note": "The comparison a payload names.",
+      "note": "The comparison a payload names.\n\nAnchor: `treeComparisonNumber`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "treeComparisonNumber"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -168,15 +161,14 @@
       ]
     },
     "19": {
-      "note": "The entries hook aborts a superseded read.",
+      "note": "The entries hook detaches its mount without aborting the shared request; its current question key prevents stale-card rendering.  Anchor: `useReviewTreeEntries`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:a4f5fdb7032e410d21d177f20618f471832c1e58a8e6aa56a4ee3b630e392b3d",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewTreeEntries"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -184,15 +176,14 @@
       ]
     },
     "20": {
-      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.",
+      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.\n\nAnchor: `useReviewTrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
-            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewTrees"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -254,15 +245,14 @@
       ]
     },
     "25": {
-      "note": "Busy-retry discipline is unchanged",
+      "note": "Busy-retry discipline is unchanged\n\nAnchor: `TRANSIENT_CODES`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7b8e86cf0840761ccfe208e9946045b59a7e757",
-            "content": "sha256:2332d9911e48030dc495c1cf2190d1252b337b2282ee85801a638237cd3ce47d",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "TRANSIENT_CODES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -270,15 +260,14 @@
       ]
     },
     "26": {
-      "note": "The trees / not-converted / unavailable phases are unchanged",
+      "note": "The trees / not-converted / unavailable phases are unchanged\n\nAnchor: `ReviewTreesRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7b8e86cf0840761ccfe208e9946045b59a7e757",
-            "content": "sha256:81a11dfb791b2edc493db8a893333ac5cbce9b3b5b65050f3875edc86f6da04a",
+            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesRead"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:f7c968787e1b958cceed458df4784ac3c3704147164999904730fd82b8f1c875",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
-        "content": "sha256:9a8f6d172a165765f243c3a42d5dd25f8d33e03e111dff7dd20456c5cb1ed370",
+        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+        "content": "sha256:3ac1637713f98fd28f7cb32557da391451fd2344f832ee8650c0d3d63e4a55db",
         "locator": {
           "kind": "symbol",
           "name": "document_chats"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:a77458e9e828325f3fd044c17eea1c64be4e9babd2c4b3505f9654b7f6d99352",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
+        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
         "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
         "locator": {
           "kind": "symbol",
@@ -94,12 +94,12 @@
   ],
   "references": {
     "1": {
-      "note": "The route resolves the admitted context and serves the read endpoint.\n\nAnchor: `register_document_chat_route`",
+      "note": "The route resolves the admitted context and serves the read endpoint.  Anchor: `register_document_chat_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
             "locator": {
               "kind": "file"
             }
@@ -109,12 +109,12 @@
       ]
     },
     "2": {
-      "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.\n\nAnchor: `_records`",
+      "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.  Anchor: `_records`",
       "targets": [
         {
           "anchor": {
-            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
             "locator": {
               "kind": "file"
             }
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-            "content": "sha256:dc3d146082f43bf738a68d3d705944a244dbd8adc4b86bf01b3d931025e54cc7",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:fbebb34033fa3fb5a65e2788ff29137384a32bbd4396b1c6cef268c03eb9582a",
             "locator": {
               "kind": "symbol",
               "name": "_document_agent"
@@ -144,8 +144,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-            "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:3ac1637713f98fd28f7cb32557da391451fd2344f832ee8650c0d3d63e4a55db",
             "locator": {
               "kind": "symbol",
               "name": "document_chats"
@@ -160,8 +160,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
-            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:7ca3b097f9a380bcd22f081447eb88348a0f8ad4aa3c815ae779a8f314a818d9",
             "locator": {
               "end": 132,
               "kind": "line_range",
@@ -177,8 +177,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c868fc065e038b59923169c0acd85c33b6c8664",
-            "content": "sha256:e2349ee340b8a756cc30f03355fe63c063e033d3428bad6434c2ceababa65103",
+            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
             "locator": {
               "kind": "file"
             }

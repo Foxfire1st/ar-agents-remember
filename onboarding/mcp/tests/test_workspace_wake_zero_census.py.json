@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_workspace_wake_zero_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two retained workspace-only wake cases assert zero closeout read/census calls and retained queue objects, while unscoped/live touches still verify; probe.json is an inert workspace input and no retired health-publisher case remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d92eb28762756de6700bd0712e6b0e9a2503119",
+            "content": "sha256:084724414c223d2da18bccdf3e20669c8720722fa3fcd4df29ea1cb4dcd1925c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

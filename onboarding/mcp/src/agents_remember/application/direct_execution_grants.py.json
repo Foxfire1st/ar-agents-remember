@@ -16,7 +16,7 @@
         "handoffEntry": "L94-CODE-F08",
         "leaf": "260928-MIK-L94"
       },
-      "rationale": "Post-unlink re-proof on the architect route: when the leaf started between proof and removal, the exact removed record is re-created and the revoke is refused with the started words.",
+      "rationale": "The architect route attempts exclusive recreation of the exact removed record before refusing a start-interleaved revoke. It suppresses recreation OSError and preserves another giver on FileExistsError; those branches prove neither exact restoration nor full serial consistency and are the inherited A004-C02 failure mode threatening the unchanged promise.",
       "role": "enforcement"
     },
     {

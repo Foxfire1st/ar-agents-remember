@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_pacer_healing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "aabbc6cdb4f5b362a92890b27762ac894e03088a",
+        "content": "sha256:6de38cdc98b6d20a185a82d5c191d33cdbd06d25a8cb8e92ee0fcbb67f76f3ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "PacerHealingTests.test_failed_full_wake_does_not_advance_the_heal_bound"
+        }
+      },
+      "facet": "The exact controlled source case failed full wake does not advance the heal bound; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-5EH5Q8",
+      "invariant": "INV-1F0XGE",
+      "origin": {
+        "handoffEntry": "L81-R1-F05",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rules 5/6 (F05/F06): healing wakes and invalidation acknowledgement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aabbc6cdb4f5b362a92890b27762ac894e03088a",
+            "content": "sha256:c5e03cf30ebf70a003b4ebde03698bd37bc23936de92c15675bf110164101135",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

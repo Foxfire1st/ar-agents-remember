@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-        "content": "sha256:632c95b22eb1567f95235d6c309315fc63419a364303d1e38a92f1f50e556153",
+        "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+        "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
         "locator": {
           "kind": "file"
         }
@@ -21,26 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "The real bodies, the transport and the scope stand-in.\n\nAnchor: \"hunkMarkers.classifier.captured.json\"",
+      "note": "The real bodies, the transport and the scope stand-in.  Anchor: \"hunkMarkers.classifier.captured.json\"\n\nAnchor: `scopeOf`; `expansionOf`",
       "targets": [
         {
           "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
             "locator": {
-              "kind": "symbol",
-              "name": "scopeOf"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
-            "locator": {
-              "kind": "symbol",
-              "name": "expansionOf"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -48,15 +36,14 @@
       ]
     },
     "10": {
-      "note": "Hunk-order helpers for mark assertions",
+      "note": "Hunk-order helpers for mark assertions\n\nAnchor: `inHunkOrder`",
       "targets": [
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-            "content": "sha256:e5720a484468ca6d0eb07d71afa25433681927a26fb8a9285a739ca244ff5713",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
             "locator": {
-              "kind": "symbol",
-              "name": "inHunkOrder"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -64,15 +51,14 @@
       ]
     },
     "11": {
-      "note": "Shown-mark extraction from the rendered diff",
+      "note": "Shown-mark extraction from the rendered diff\n\nAnchor: `shownMarks`",
       "targets": [
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-            "content": "sha256:91e944c6d5dfc991cca6f8ede6c98d5de09b74b567e903c7bfa2ae9579fe841a",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
             "locator": {
-              "kind": "symbol",
-              "name": "shownMarks"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -80,16 +66,16 @@
       ]
     },
     "12": {
-      "note": "Unchanged-file classifier for no-mark shapes\n\nAnchor: `classify`",
+      "note": "Unchanged-file classifier for no-mark shapes  Anchor: `classify`",
       "targets": [
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-            "content": "sha256:6fe63a3555b9b2d6f832eb7a552ffbe9fccf80828c0a6d9f7a0480ad051172f5",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:66fe426fe761380ca8905a6ec1800c71506150b2cb2b48d6af8066197b851ffb",
             "locator": {
-              "end": 333,
+              "end": 336,
               "kind": "line_range",
-              "start": 319
+              "start": 322
             }
           },
           "kind": "test"
@@ -97,16 +83,16 @@
       ]
     },
     "2": {
-      "note": "A full diff's marks, lists, follow, proofs and the unread side.\n\nAnchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"lists a proof entry as a test with its facet, apart from the intents\"",
+      "note": "A full diff's marks, lists, follow, proofs and the unread side.  Anchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"lists a proof entry as a test with its facet, apart from the intents\"",
       "targets": [
         {
           "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:03845bfa4144458cae40649ba65734073f61cbe1716dffca790bf705708bd0a2",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:c40a8ced1814d59fbb2ea9d1d461f5f045cea465acb8991585f5ba6995a30d72",
             "locator": {
-              "end": 294,
+              "end": 297,
               "kind": "line_range",
-              "start": 181
+              "start": 184
             }
           },
           "kind": "test"
@@ -114,16 +100,16 @@
       ]
     },
     "3": {
-      "note": "Files without per-hunk marks, the partial inventory and past-text notes.\n\nAnchor: \"gives a confirmed-unregistered file one file-level unexplained mark\"; \"says why a changed file a partial inventory does not list carries no marks\"",
+      "note": "Files without per-hunk marks, the partial inventory and past-text notes.  Anchor: \"gives a confirmed-unregistered file one file-level unexplained mark\"; \"says why a changed file a partial inventory does not list carries no marks\"",
       "targets": [
         {
           "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:3f9e690f083331a88ea713d7552415e794596f01d0db2fafeaa60ab3db02507d",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7e775f21a69fae07b5fd2d5b4c7b061e4e6864039a2b8b0e428110105399f631",
             "locator": {
-              "end": 392,
+              "end": 395,
               "kind": "line_range",
-              "start": 296
+              "start": 299
             }
           },
           "kind": "test"
@@ -131,16 +117,16 @@
       ]
     },
     "4": {
-      "note": "The return: list, view and focus; the hold never against the reader.\n\nAnchor: \"reopens its list, brings its hunk into view and focuses it\"; \"keeps the returned mark focused while the pane settles, never against the reader\"",
+      "note": "The return: list, view and focus; the hold never against the reader.  Anchor: \"reopens its list, brings its hunk into view and focuses it\"; \"keeps the returned mark focused while the pane settles, never against the reader\"",
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
-            "content": "sha256:33880d2441503c9bd9c032a2eb11fc9bbd3367dc6d06e6176dc4457befbff73d",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:1cf616942e5f3118aa0842043c36e24a3d4e0b6503876c687d0bb4d5a2e22b1c",
             "locator": {
-              "end": 438,
+              "end": 441,
               "kind": "line_range",
-              "start": 393
+              "start": 396
             }
           },
           "kind": "test"
@@ -148,16 +134,14 @@
       ]
     },
     "5": {
-      "note": "The lane's windows: every drawn hunk marked (F5), the wording, the full file's return.\n\nAnchor: \"marks every hunk a window draws: the focused one and each neighbour its context shows\"",
+      "note": "Historical lane-window assertion account, superseded: in the pinned source, the retained reference range contains card Full file and excerpt scenarios, not the claimed every-drawn-window-hunk test. Preserve the historical anchor/target without presenting it as current lane-window assertion evidence.  Anchor: \"marks every hunk a window draws: the focused one and each neighbour its context shows\"",
       "targets": [
         {
           "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:3936375db05cf3935f645cc98fd2b5d8d805c1a4c9fce224e9c70e4fd9bd6be0",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
             "locator": {
-              "end": 568,
-              "kind": "line_range",
-              "start": 444
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -165,16 +149,16 @@
       ]
     },
     "6": {
-      "note": "Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file.\n\nAnchor: \"reopens the card a marker was followed from, not the first card of its path\"; \"never reads, nor speaks for, an unchanged file's card\"",
+      "note": "Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file.  Anchor: \"reopens the card a marker was followed from, not the first card of its path\"; \"never reads, nor speaks for, an unchanged file's card\"",
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
-            "content": "sha256:5f6277ede4d62ef1d70540b756d8cd327a197f00d8667c15eae435a04c80cf62",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:a16579aec42ce41c8289573111f9ecd97705531b42ad65b82c8fd97c610ebfcf",
             "locator": {
-              "end": 770,
+              "end": 649,
               "kind": "line_range",
-              "start": 566
+              "start": 569
             }
           },
           "kind": "test"
@@ -182,16 +166,16 @@
       ]
     },
     "7": {
-      "note": "The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read.\n\nAnchor: `advanceTimersToNextFrame`",
+      "note": "The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read.  Anchor: `advanceTimersToNextFrame`",
       "targets": [
         {
           "anchor": {
-            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-            "content": "sha256:e8dc61d6f59e6411b747c9d1a2625a9e19490402733d3ec044b94a963b0b1fbd",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:3050d8e1460cc290f242be6ff3680cb26eae0a26f8184bf9f1717082b2cf8662",
             "locator": {
-              "end": 432,
+              "end": 435,
               "kind": "line_range",
-              "start": 414
+              "start": 417
             }
           },
           "kind": "test"
@@ -203,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
             "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
             "locator": {
               "kind": "symbol",
@@ -214,12 +198,22 @@
         },
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-            "content": "sha256:8ee36b060fdfa3b5ad7aa404a05ccf4fe0b605e3ad7e61b43680d7164ae377ae",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:e139c9bbed7638c4129d1289bc17863368ae600c41281499ff311ac1fb5425c2",
             "locator": {
-              "end": 76,
+              "end": 79,
               "kind": "line_range",
-              "start": 60
+              "start": 63
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -231,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
             "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
             "locator": {
               "kind": "symbol",
@@ -242,12 +236,22 @@
         },
         {
           "anchor": {
-            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
-            "content": "sha256:d42562153644bfd9bdee9d3c493425299ffda316dd50083d243d6d70dae4b198",
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:860bfc785f553c060d346ff19fdd0ee68696daaaec01539461cdef6b27232037",
             "locator": {
-              "end": 121,
+              "end": 124,
               "kind": "line_range",
-              "start": 105
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
+            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

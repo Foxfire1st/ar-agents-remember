@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_warmup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
+        "content": "sha256:b39bb14feefec7b9a611175aa02e8108b2b6b6e9c6adfddad2d89e3fd17b5a15",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_host_once"
+        }
+      },
+      "id": "RLZ-AJJHFC",
+      "invariant": "INV-7D1DKQ",
+      "origin": {
+        "handoffEntry": "L81-R1-F25",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing tree-chat intake recognizes authoritative start identity and retries incomplete intake before admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
+        "content": "sha256:51dbed287220e16e1d277a490d2e9de2d48d3d3bd8a3776ca7d81d24140056c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "resume_agent"
+        }
+      },
+      "id": "RLZ-BQ33S1",
+      "invariant": "INV-AA2N76",
+      "origin": {
+        "handoffEntry": "MIK-R145@v1-bounded-resume-admission",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This transport issues only the timeline-read resume command and preserves the host refusal.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Intake the configured host's real process start and eligible tree agents once through the shared OS claim; expose progress through the existing role-launch read route. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries while the give-up window is open; when that failure reaches the configured window, it consumes that exact start and records a `given-up` outcome with its reason. Claim-publication, candidate-read and initial-progress failures use separate retry/release paths and are not subject to this branch's give-up check. The transport performs only a timeline resume, not a message, refresh, interruption or unarchive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
+            "content": "sha256:648a3cb48f72161c1d4b561ea07942f426ccc73677f9b0c5bc06b75e0b6e5279",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

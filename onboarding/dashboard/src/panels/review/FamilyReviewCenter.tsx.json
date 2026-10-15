@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:b567ee6915ee1c9fca9925a25fad2b9ad0151c27e6c20d818e21a7cf8f91ad27",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:ac7527b346f65bf4501f58177628cd648ffaac83d0c2d6297c6b44dc9a4b2aea",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
         "locator": {
           "kind": "symbol",
@@ -108,7 +108,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
         "locator": {
           "kind": "symbol",
@@ -126,7 +126,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:e1ce9a8a3f098e668996ff97e8cfa6d42a4e0b2b32620d231035d31265e43e46",
         "locator": {
           "kind": "symbol",
@@ -144,7 +144,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
         "locator": {
           "kind": "symbol",
@@ -162,7 +162,7 @@
     },
     {
       "anchor": {
-        "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+        "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
         "content": "sha256:2a6e86d4b2952915b36c083e08763415e668937544ddbf9c369f370f0178607b",
         "locator": {
           "kind": "symbol",
@@ -181,15 +181,14 @@
   ],
   "references": {
     "12": {
-      "note": "The guarantee comparison by kind.",
+      "note": "The guarantee comparison by kind.\n\nAnchor: `GuaranteeComparisonBlock`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4bd343ec56f5c6446e70265c1614de46d0cfd31d45437d79dc7b4a842f6c23a5",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "GuaranteeComparisonBlock"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -197,15 +196,14 @@
       ]
     },
     "13": {
-      "note": "The unselected centre.",
+      "note": "The unselected centre.\n\nAnchor: `UnselectedCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "UnselectedCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -213,15 +211,14 @@
       ]
     },
     "14": {
-      "note": "The completeness of a family entry's member context.",
+      "note": "The completeness of a family entry's member context.\n\nAnchor: `membersComplete`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:213f9df01bcaec61c984b00cbdcffffc910aaf9274175d8cccf67254ecd7d816",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "membersComplete"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -229,15 +226,14 @@
       ]
     },
     "15": {
-      "note": "The family centre.",
+      "note": "The family centre.\n\nAnchor: `FamilyCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:e1ce9a8a3f098e668996ff97e8cfa6d42a4e0b2b32620d231035d31265e43e46",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -245,15 +241,14 @@
       ]
     },
     "16": {
-      "note": "The independent facts of a member.",
+      "note": "The independent facts of a member.\n\nAnchor: `IndependentFacts`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:2c6781d39960e1c72f46cc3b195c463595b4085f55f9e13c13d455cf9d8727e1",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "IndependentFacts"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -261,15 +256,14 @@
       ]
     },
     "17": {
-      "note": "The member centre.",
+      "note": "The member centre.\n\nAnchor: `MemberCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "MemberCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -277,15 +271,14 @@
       ]
     },
     "18": {
-      "note": "The exported wrapper sets the word-diff scope.",
+      "note": "The exported wrapper sets the word-diff scope.\n\nAnchor: `FamilyReviewCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyReviewCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -293,15 +286,14 @@
       ]
     },
     "19": {
-      "note": "Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel.",
+      "note": "Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel.\n\nAnchor: `SelectedCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:51a2ff4c2aa9583f2548ae5accd0d7d20b76a80ca45bcf77d3e1dd6e1c6a3459",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "SelectedCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -309,15 +301,14 @@
       ]
     },
     "20": {
-      "note": "Planning marks only from a leaf-wide read of the same comparison.",
+      "note": "Planning marks only from a leaf-wide read of the same comparison.\n\nAnchor: `pinnedWorklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "pinnedWorklist"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -325,15 +316,14 @@
       ]
     },
     "22": {
-      "note": "Cards for a tree comparison, the file view for a dataset review.",
+      "note": "Cards for a tree comparison, the file view for a dataset review.\n\nAnchor: `CenterExpressions`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "CenterExpressions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -341,15 +331,14 @@
       ]
     },
     "23": {
-      "note": "The invariants one selection reads.",
+      "note": "The invariants one selection reads.\n\nAnchor: `cardInvariants`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:83a5e0d2563d6cb3c95a4e2703398f9266533abecb267ee5a532f3d1973ab95b",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "cardInvariants"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -357,15 +346,14 @@
       ]
     },
     "24": {
-      "note": "The selected entry, member, rows and listed paths.",
+      "note": "The selected entry, member, rows and listed paths.\n\nAnchor: `centerSelection`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:1ae8a407aec5579d0318999ae2df118422e510ff0c1cba32ece9c64e9c00edc2",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "centerSelection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -405,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
             "content": "sha256:faef715c94226048b5b745c58260017be12348faad48f1af8f9cf054dc14fce6",
             "locator": {
               "kind": "symbol",
@@ -416,12 +404,22 @@
         },
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:55cd11703891fbabf3b434450b569f39863f6224a98a8ba9eac9cb7bcda5c617",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:a41b750f5dcb81372685023b13aff888ec19380a8c16efc14bb5c70da5f3f1d3",
             "locator": {
-              "end": 410,
+              "end": 243,
               "kind": "line_range",
-              "start": 392
+              "start": 225
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -429,15 +427,14 @@
       ]
     },
     "28": {
-      "note": "Member review centre with subject rows and states",
+      "note": "Member review centre with subject rows and states\n\nAnchor: `MemberCenter`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "MemberCenter"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -445,15 +442,14 @@
       ]
     },
     "31": {
-      "note": "Card read assembly for the selected centre",
+      "note": "Card read assembly for the selected centre\n\nAnchor: `CenterExpressions`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "CenterExpressions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -465,10 +461,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4dbe8d86dda530af3d5d2a346df4f267f844e02f7baaa91716a0366cc612710c",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "end": 1209,
+              "end": 1045,
               "kind": "line_range",
               "start": 1
             }
@@ -478,15 +474,14 @@
       ]
     },
     "33": {
-      "note": "Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback.",
+      "note": "Member revisions follow outline positions under the stored order, with stable unknown-last and no-outline fallback.\n\nAnchor: `orderedCenterMembers`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f2f05a6d2634aea0f18aa59d0c2f88e50c4e9c2",
-            "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
+            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
+            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
             "locator": {
-              "kind": "symbol",
-              "name": "orderedCenterMembers"
+              "kind": "file"
             }
           },
           "kind": "code"

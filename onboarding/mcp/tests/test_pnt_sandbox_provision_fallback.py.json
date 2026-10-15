@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox_provision_fallback.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "L81-F29: provision reads the filed report's host part when the tool answer cut it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a5cafc07c9527ac9160b55361fe4a721840cdfe",
+            "content": "sha256:5e132b6431ce89150d746db81c26192d65f8b03d1177accf693f48ae2f8e6205",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -71,7 +71,7 @@ re-reads, which is what makes the same assessment a previous generation's record
     shapes refuse at construction the two lies this requirement is about: a `direct` label naming no
     subject, and a summary whose counts do not partition its population.
 
-**The fixture produces every record class through its owner, and the publication is real.** `_build_journey`
+**The fixture publishes curator assessments through their owner; other canonical producer classes are retired.** `_build_journey`
 (`:561-598`) builds the enclosure through the shared endpoint fixture with an external memory half — a
 real memory repo with a linked worktree, because the assessment channel goes through the curator
 authority — writes the task topology the publication binds, then publishes the five assessments
@@ -105,10 +105,7 @@ None recorded.
 
 ### Repo-Internal References
 
-- `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` owns the current boundary described above. [21]
 - `test_every_page_size_classifies_the_same_records_the_same_way` compares treatments/context signatures across page sizes and checks unrelated==1 and the summary partition on each page; it does not compare whole summaries. [22]
-- `test_the_source_inventory_is_independent_of_the_record_selection` owns the current boundary described above. [23]
-- `_publish_assessments` owns the current boundary described above. [24]
 
 ### Docs References
 
@@ -117,6 +114,21 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
+- **The F-V2 case: treatments and context signatures match across pages; unrelated==1 and the summary partition are asserted separately per page, not whole-summary equality.** [34]
+- **The production policy these cases measure.** [40]
+- **The vocabulary these cases read their assertions from.** [41]
+
+
+### Cross-Repo References
+
+No cross-repository behavior is exercised by this module. Its enclosure is one repository's own leaf
+worktree with an external memory half.
+
+No meaningful cross-repo references found.
+
+- `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` owns the current boundary described above. [21]
+- `test_the_source_inventory_is_independent_of_the_record_selection` owns the current boundary described above. [23]
+- `_publish_assessments` owns the current boundary described above. [24]
 - **The module's own statement of the defect it pins, the records its fixture produces and the properties its cases measure.** [25]
 - **The live enclosure and the reads the cases use, with a refusal failing the case rather than changing the assertion.** [26]
 - **The one enclosure per module, and the read after the source moved.** [27]
@@ -126,20 +138,9 @@ No configured domain documentation could be checked.
 - **An unresolvable binding displayed with its references and never as support.** [31]
 - **A previous generation's record labelled historical with the tree it examined, and never current.** [32]
 - **The F-V1 case: a malformed revision binding is unresolved and claims no retained revision.** [33]
-- **The F-V2 case: treatments and context signatures match across pages; unrelated==1 and the summary partition are asserted separately per page, not whole-summary equality.** [34]
 - **The F-V6 case: a `direct` sentence cites ICR-R07 only when R07's own published list carries the matched revisions.** [35]
 - **The complete populations: the channels' counts beside the pane's own, and every summary a partition.** [36]
 - **The source inventory is a measurement of the two bound trees and is untouched by record selection.** [37]
 - **The two vocabulary refusals, measured at construction.** [38]
 - **The production port every case reads through.** [39]
-- **The production policy these cases measure.** [40]
-- **The vocabulary these cases read their assertions from.** [41]
-
 - The lane row that registers this module — `unit-regression` is a bare TOML key, so it is named here rather than anchored — and the first of the two consumer rows its cases are derived for. [42]
-
-### Cross-Repo References
-
-No cross-repository behavior is exercised by this module. Its enclosure is one repository's own leaf
-worktree with an external memory half.
-
-No meaningful cross-repo references found.

@@ -12,6 +12,8 @@ Register the retained projection reads, raw event stream, action acknowledgement
 
 A ready state response serves a copy of the memoized projection with its build tail, while a matching weak ETag returns a bodyless 304; an unprimed projector refuses. The task-document route resolves against the current enclosures and distinguishes unavailable projection from missing document. Snapshot SSE and raw-event SSE have different payload contracts. Action evaluation is pure: only a returned dismissal intent is durably applied to AttentionDismissalStore; other accepted actions are acknowledged, not mutations. The separate developer-grant endpoint delegates to its admitted grant owner.
 
+GET /api/diagnostics/background is a read-only view of the shared serving ledger, not projection mutation or acceptance. Event-tail accounting and watcher-health serialization retain their existing runtime owners; removed gate and inbox routes stay absent.
+
 ## Evidence boundary
 
 This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.

@@ -84,8 +84,9 @@ state a live review reads. `World.contract()` writes the leaf's enclosure contra
 
 ### Conventions
 
-- The module's docstring still ends "… archive" although the archive cases moved out (reviewer R6 note 3,
-  cosmetic).
+- The module's docstring retains "… archive". Broader cleanup cases are owned elsewhere, but
+  `test_pins_are_named_by_the_task_directory_and_archival_removes_them` still exercises the
+  archival hook here; the older reviewer R6 note is historical, not absence of all archive cases.
 
 ### Invariants And Boundaries
 
@@ -98,13 +99,6 @@ No additional work is asserted by this card.
 The renamed `test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff` asserts `"knowledge_diff" not in view.model_dump(by_alias=True)` alongside per-side currentness against each side's own code tree (body edit makes the after side stale), the computed bound worklist with items, history rows and gate linkage, and per-selection (never leaf-wide) card entries. The unconverted-base case carries the same absence assertion. Fixture, pin, legacy and archive behaviour are unchanged.
 ## Evidence
 
-- The module docstring: the fixture world. [15]
-- The fixture's state and helpers. [16]
-- Four trees, pinned candidates, and reuse. [17]
-- A repeat read writes nothing. [18]
-- Reopening names a tree Git cannot produce. [20]
-- The route serves the port and refuses without one. [21]
-- Rows are found by the row subject an item names, through the real isolated computation. [22]
 
 ### Docs References
 
@@ -114,24 +108,33 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The converted-memory fixture world with its live leaf. [23]
-- Pins and reuse. [24]
-- A repeat read writes nothing. [25]
-- Committed candidates and the refused pin. [26]
-- Reopen, the converted base, and the legacy comparison. [28]
-- No database but the derived index; unconverted leaf is source-only with explicit legacy-unavailable knowledge. [29]
-- Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds. [30]
-- The cards read: four entries located on both sides, each helper's per-entry facts. [31]
-- Unavailable against absent, and the history row found through `facts.row`. [32]
-- The excerpt bound and the placement cache (review F3). [33]
-- The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1). [34]
-- The lane row. [35]
-- Only an owner's latest attempt's row is shown; another owner's row stays. [36]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
 
+- The module docstring: the fixture world. [15]
+- The fixture's state and helpers. [16]
+- Four trees, pinned candidates, and reuse. [17]
+- A repeat read writes nothing. [18]
 - The tree-view fixture preserves per-side currentness and computed linked worklist while omitting knowledge_diff. [19]
+- Reopening names a tree Git cannot produce. [20]
+- The route serves the port and refuses without one. [21]
+- Rows are found by the row subject an item names, through the real isolated computation. [22]
+- The converted-memory fixture world with its live leaf. [23]
+- Pins and reuse. [24]
+- A repeat read writes nothing. [25]
+- Committed candidates and the refused pin. [26]
 - The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index. [27]
+- Reopen, the converted base, and the legacy comparison. [28]
+
+- Derived-index-only reads; unconverted leaves keep source and name knowledge `legacy-unavailable` without a candidate database or pins. The former dataset-preservation account is historical. [29]
+
+- Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds. [30]
+- The cards read: four entries located on both sides, each helper's per-entry facts. [31]
+- Unavailable against absent, and the history row found through `facts.row`. [32]
+- The excerpt bound and the placement cache (review F3). [33]
+- The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1). [34]
+- The lane row.  Anchor: `test_review_git_trees` [35]
+- Only an owner's latest attempt's row is shown; another owner's row stays. [36]
 - The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index. [37]
