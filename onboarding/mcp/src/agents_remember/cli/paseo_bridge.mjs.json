@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
         "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
-        "content": "sha256:70670dd36466bdca2b489368c6e6f54d293c66918e4149b7c38f1d95f1d0b878",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
+        "content": "sha256:23e390a1f6eb32f6f8a7b9658a1c747980dfb809fcddef4358c5c9650a6436ca",
         "locator": {
           "kind": "file"
         }
@@ -38,25 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
-        "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
-        "locator": {
-          "kind": "symbol",
-          "name": "openWorkspace"
-        }
-      },
-      "id": "RLZ-EAQ0QW",
-      "invariant": "INV-ZVQ7E3",
-      "origin": {
-        "handoffEntry": "MIK-R95@v1 rule6",
-        "leaf": "260928-MIK-L95"
-      },
-      "rationale": "This native bridge operation obtains task-placement created/found from the initial public create snapshot. Its unchanged masterless Projects open returns opened without pretending that the host supplied a creation result.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
         "content": "sha256:89e5ade058c87206179011306caa16ff235cf7ffc5bb792b3936354217a35492",
         "locator": {
           "kind": "symbol",
@@ -74,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -92,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -110,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+        "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -167,6 +149,22 @@
             "content": "sha256:cb888b64b2901d8e45599177afa1a9280f8f80869ca3f1b4c6f88822c1905d69",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
+            "content": "sha256:d0ced06b9aef60ab870f041a2f09ff7d9b3838cb5dfe941b2059809f6c6b269e",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMMANDS"
             }
           },
           "kind": "code"

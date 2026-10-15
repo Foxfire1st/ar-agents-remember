@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A changed retry key would duplicate workspaces or permanently strand a reopened task; the key-chain regression guards retry convergence."
+  },
+  "applicability": "Explicit canonical master/task workspace creation and replay through the native bridge.",
+  "conditions": [
+    "The host supplies stable workspace IDs and idempotent create replay.",
+    "The master/task identity and placement are complete."
+  ],
+  "exclusions": [
+    "Folder-only workspace opening.",
+    "Random or time-derived successor identities.",
+    "Host retention and archive initiation."
+  ],
+  "id": "INV-5KTZYC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L169-freeze-A02.md; evidence/A02/focused.log; ReopenedWorkspaceTests.test_retry_follows_the_same_keys_through_archiving_and_archived_generations; evidence/sandbox-A001/host-successor-creation.json and role-start-repeat.json are retained prior-run host evidence, not an A02 host rerun."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R169@v1-W1-identity",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A live task keeps its original canonical workspace key, while each archived predecessor produces a deterministic successor from the previous key and predecessor workspace id so retries converge.",
+  "status": "proposed",
+  "supersedes": []
+}

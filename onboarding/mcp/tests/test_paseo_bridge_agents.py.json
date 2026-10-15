@@ -31,6 +31,23 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "Keyed completed creation replay, pre-refresh current identity and selectively hidden live listing support the real-bridge archive tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "644531dac204d1ae16e9166a942d966b18983753",
+            "content": "sha256:2b65b9c73e88e00e53428936bb9e7ab495e8532da493ba1346a982c61350d3e2",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

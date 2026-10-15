@@ -43,13 +43,13 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "10f6f886d12940d8703cbf93a0860539bcdc8158",
+        "blob": "f56826a17887834f619a63425e06602c15715faa",
         "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
         "locator": {
           "kind": "symbol",
           "name": "_ReapplyMerge"
         },
-        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
       }
     }
   ],
@@ -64,7 +64,7 @@
     "leaf": "260928-MIK-L163",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

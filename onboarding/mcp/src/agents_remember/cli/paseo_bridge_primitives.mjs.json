@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Share the bridge's literal non-empty-string and daemon-server-identity primitives without introducing a new host command.",
+      "note": "Shared primitives preserve nonempty text and server identity and now share required/optional text validation and typed bridge errors with the workspace owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "72feebc94b4343857ce049d2478ffbead6ba86d8",
-            "content": "sha256:2d6d8f270c3d6268e7a937c241e1f44ddbaf993d32f036feb1bd5301d7d270a4",
+            "blob": "366353cfc1f18022ebd8e9fcdb82b7d7bbcd4bef",
+            "content": "sha256:7c50d4fe4aef47a440e6055e47c270ad54f842c207df8c3a36574e574f06572c",
             "locator": {
               "kind": "file"
             }

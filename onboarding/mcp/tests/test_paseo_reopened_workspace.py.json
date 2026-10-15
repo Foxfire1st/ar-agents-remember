@@ -1,0 +1,179 @@
+{
+  "path": "mcp/tests/test_paseo_reopened_workspace.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+        "content": "sha256:94133d85968e7f6aaedcd3ccac8c79ffe6a8cdd65af92dfc3b4f844d7614a6b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReopenedWorkspaceTests.test_archived_replay_opens_a_successor_without_touching_the_archive"
+        }
+      },
+      "facet": "The visible archive is not returned or titled and only the successor receives the task title.",
+      "id": "PRF-38JDCS",
+      "invariant": "INV-S50VDC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W3-placement-and-preservation",
+        "leaf": "260928-MIK-L169"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+        "content": "sha256:a3de276e2a66e3d18f7c4c19b2a5f7b67d19566b422053a531a9d48e323b877f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReopenedWorkspaceTests.test_archive_traversal_has_a_fixed_bound_and_names_the_task_and_count"
+        }
+      },
+      "facet": "Exhaustion makes nine creates, names the task and count, performs no title write, and permits a live final candidate.",
+      "id": "PRF-6CJZZ9",
+      "invariant": "INV-QQ3071",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W2-bound",
+        "leaf": "260928-MIK-L169"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+        "content": "sha256:d9a27c2ea8b857ddf15a725825e3e600d56c619dfd94d98b484caf6123bcf8ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReopenedWorkspaceTests.test_retry_follows_the_same_keys_through_archiving_and_archived_generations"
+        }
+      },
+      "facet": "Two predecessor generations derive the same exact key chain and final workspace identity on retry.",
+      "id": "PRF-6EZAPQ",
+      "invariant": "INV-5KTZYC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W1-identity",
+        "leaf": "260928-MIK-L169"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+        "content": "sha256:719e3dc2454bcb34ea875f3b359a9dfb8d9293f758b3f35652a2b5deb6075356",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReopenedWorkspaceTests.test_completed_replay_hidden_from_live_listing_uses_its_original_identity"
+        }
+      },
+      "facet": "A replay hidden from the live listing derives its successor from the old ID, never returns it, and repeats into the same final workspace.",
+      "id": "PRF-6PZDBG",
+      "invariant": "INV-DHYX3Y",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W4-hidden-replay",
+        "leaf": "260928-MIK-L169"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+        "content": "sha256:966df2cfb5ef3d315bda92ead40fac02b36dc2f7cf2febc4037fb6dd0ed78da4",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReopenedWorkspaceTests.test_successor_placement_mismatch_stops_without_renaming_or_further_creation"
+        }
+      },
+      "facet": "Wrong project, directory or empty ID stops before any title or further continuation, including an initially misplaced archive.",
+      "id": "PRF-SPQ8NE",
+      "invariant": "INV-S50VDC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W3-placement-and-preservation",
+        "leaf": "260928-MIK-L169"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A visible archived replay advances without titling the archive.\n\nAnchor: `ReopenedWorkspaceTests.test_archived_replay_opens_a_successor_without_touching_the_archive`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+            "content": "sha256:94133d85968e7f6aaedcd3ccac8c79ffe6a8cdd65af92dfc3b4f844d7614a6b7",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A hidden completed replay supplies its original identity for repeatable successor selection.\n\nAnchor: `ReopenedWorkspaceTests.test_completed_replay_hidden_from_live_listing_uses_its_original_identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+            "content": "sha256:719e3dc2454bcb34ea875f3b359a9dfb8d9293f758b3f35652a2b5deb6075356",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Archiving and archived generations derive identical keys on retry and report the final workspace found.\n\nAnchor: `ReopenedWorkspaceTests.test_retry_follows_the_same_keys_through_archiving_and_archived_generations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+            "content": "sha256:d9a27c2ea8b857ddf15a725825e3e600d56c619dfd94d98b484caf6123bcf8ac",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Nine archived candidates refuse with task/count; the last allowed live candidate still succeeds.\n\nAnchor: `ReopenedWorkspaceTests.test_archive_traversal_has_a_fixed_bound_and_names_the_task_and_count`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+            "content": "sha256:a3de276e2a66e3d18f7c4c19b2a5f7b67d19566b422053a531a9d48e323b877f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Invalid successor or initial placement stops before another continuation or workspace-title write.\n\nAnchor: `ReopenedWorkspaceTests.test_successor_placement_mismatch_stops_without_renaming_or_further_creation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+            "content": "sha256:966df2cfb5ef3d315bda92ead40fac02b36dc2f7cf2febc4037fb6dd0ed78da4",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

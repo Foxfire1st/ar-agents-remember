@@ -61,6 +61,8 @@ The five-file landing repair changes fixture admission and assertion carriers, n
 
 ### Pytest composition and evidence catalogs
 
+`test_paseo_reopened_workspace.py` uses the existing bridge-agent process fixture and key-addressed fake host to protect deterministic archive successors, hidden completed replay, retry convergence, bounded exhaustion and placement refusal. Existing bridge-agent cases retain live/folder-only behavior. Unit-regression and derived artifact-consumer declarations select the module but establish neither a native host journey nor a provider's completed turn.
+
 `conftest.py` puts candidate `mcp/src` and `mcp/test_support` first on the import path, declares the actual test process through the hermetic bootstrap, creates disposable HOME/XDG/Codex/tmux locations, isolates Git configuration, and removes specified inherited credentials and live-service opt-ins. Each case receives its own user-settings configuration directory. Ordinary integration cases automatically request bound worktree services unless certification is selected; units request that fixture explicitly. Teardown resets services and releases the owned environment. This is a bounded isolation design, not a promise about every possible environment variable or external effect.
 
 Three plugins are registered: pytest bootstrap, evidence lanes and database retirement. The latter is intended to catch production database access/file mutation outside its named allowed modules. `--certify` takes a separate genuine-Dagger admission path; ordinary test bootstrap supplies no lifecycle-worker or Dagger capability. The source policy distinguishes ordinary development feedback from immutable candidate-bound evidence issued by the pinned delivery graph and existing lifecycle owners.
@@ -345,6 +347,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 Both the principal account and repeated operative captions use the same current source epochs; historical counts are not a parallel current limit or a claim of executed collection.
 
 ## Evidence
+
+- Controlled-host cases protect archive successor identity, live-only use, bounded traversal and placement refusal; catalog declarations do not prove execution. [1775]
 
 
 - A controlled actual-serving-runtime case uses two real Projector subscriptions to check landing interest until the final subscriber leaves. Separate direct controlled-refresher cases check disconnect during discovery, clock/age bands and current-identity resets; they do not build the serving composition. [1766]

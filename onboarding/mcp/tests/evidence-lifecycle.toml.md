@@ -51,6 +51,10 @@ The existing Node-profile package-lock.json artifact declares test_sync_reapply_
 
 The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_envelope.py` among its exact consumers. This is the transitive dependency through `test_tool_answer_table`: the refusal suite imports `ROW_CASE_FRAMEWORK_KEYS` from that module, which imports `L110_ROW_DATA` from the shared support. Registration adds no artifact or replacement contract and proves no test invocation or acceptance. Other consumers and all non-consumer lifecycle fields remain unchanged.
 
+### Reopened workspace regression consumers
+
+The existing `_user_settings_guard.py`, Node-profile `package-lock.json` and `paseo_runtime_test_support.py` artifacts declare `test_paseo_reopened_workspace.py` as a consumer. These three consumer additions preserve artifact/contract identities, ownership, lifetime and replacement contracts; they do not promote the task's sandbox captures into fixtures or establish execution.
+
 ## Code Commentary
 
 The exact derived consumer list for writer_worklist_test_support.py declares test_closeout_live_gate.py and test_workspace_wake_zero_census.py. The settings-guard and Node-fixture canonicalization only restores validator-link-target ordering, without changing those two membership sets. The complete owner-generated repair spans both catalogs and reinterprets no category, scope, guard, limit or replacement contract.
@@ -213,6 +217,8 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 
 ## Evidence
+
+- The reopened-workspace module is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. [293]
 
 Source declarations, mirrors and fixture assertions are not executed acceptance.
 

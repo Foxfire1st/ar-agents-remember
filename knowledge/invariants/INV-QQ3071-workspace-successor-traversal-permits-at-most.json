@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unbounded archive chain could consume host operations without terminating; the exact exhaustion and last-live case guards the finite resource boundary."
+  },
+  "applicability": "Archive-successor traversal during explicit task workspace preparation.",
+  "conditions": [
+    "At most eight successor steps follow the original key.",
+    "A ninth observed archived descriptor refuses before another create and names task and count."
+  ],
+  "exclusions": [
+    "An unlimited search or a local archive-history store.",
+    "Host retention policy."
+  ],
+  "id": "INV-QQ3071",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/A02/focused.log; ReopenedWorkspaceTests.test_archive_traversal_has_a_fixed_bound_and_names_the_task_and_count covers exhaustion and a live final allowed successor."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R169@v1-W2-bound",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Workspace successor traversal permits at most eight successor steps and nine create/refresh calls, then refuses with the task identity and observed archived count.",
+  "status": "proposed",
+  "supersedes": []
+}

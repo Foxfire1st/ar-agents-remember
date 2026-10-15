@@ -16,6 +16,8 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 ## Code Commentary
 
+The archived-workspace regression module is selected once in `unit-regression`. This registration adds no lane or budget and makes no claim about a host or test invocation.
+
 Canonical-skill/worklist, generated-copy, correction-guidance, recorded-read-audit and link-target modules, plus the split writer-correction, integration, question-publication and restoration modules, are declared in unit-regression. The source-owned validator-link-target ordering repair preserves all seven lane identities and their membership sets, categories, scopes, guards and limits; selection and canonical order certify no invocation.
 
 L109 registers test_context_packet_slim.py, test_knowledge_diff_report.py and test_knowledge_name_projection.py in unit-regression. Each is selected once in the parsed catalog; this is membership only and establishes neither execution nor acceptance. The repaired lists are unique and canonically ordered; the naming-projection module precedes overview-order without changing either module’s lane membership.
@@ -62,6 +64,8 @@ The grant and developer-dashboard modules have their declared L3 lanes; direct-l
 
 
 ## Evidence
+
+- The reopened-workspace regression module is declared in unit-regression; this selects evidence and certifies no execution. [852]
 
 Source declarations, mirrors and fixture assertions are not executed acceptance.
 

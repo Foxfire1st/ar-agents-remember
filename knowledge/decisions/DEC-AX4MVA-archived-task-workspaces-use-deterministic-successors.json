@@ -1,0 +1,93 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The Architect explicitly supplies the rejected random/time-key, archive-reuse, all-task-rekey and Python-generation designs and their reasons. Preserving retry convergence, existing live-task identity and a single host-owned generation marker constrains later workspace refactors."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the live legacy key and derive successors from the previous key and immutable archived workspace ID.",
+      "reason": "The archived workspace's own ID marks the generation without a second Python record. A repeated start derives the same successor, and never-archived tasks continue to find their existing workspace under the legacy key.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reuse or unarchive the old workspace.",
+      "reason": "The Architect's F01 ruling rejects taking the archived workspace back: the host has no unarchive route, and MIK-R169 preserves the archive and its contents.",
+      "reconsider_when": "The archive-preservation requirement is explicitly changed and the host supplies an admitted lifecycle route for that behavior.",
+      "status": "rejected"
+    },
+    {
+      "option": "Use random or time-based successor keys.",
+      "reason": "The Architect's F01 ruling rejects this design because repeating the same start would make a second workspace, contrary to MIK-R169 rule 2 and its Examples.",
+      "reconsider_when": "An approved identity contract explicitly replaces same-start retry convergence.",
+      "status": "rejected"
+    },
+    {
+      "option": "Change the workspace key for every task, including tasks whose workspace was never archived.",
+      "reason": "The Architect's F01 ruling rejects a changed key for every task because existing workspaces would no longer be found; MIK-R169 rule 2 preserves their present key.",
+      "reconsider_when": "An approved migration explicitly replaces live-task identity while preserving or deliberately superseding discovery of existing workspaces.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep a separate reopen-generation record in Python.",
+      "reason": "The Architect's F01 ruling rejects a second generation record: the archived workspace's own immutable ID already marks the generation, so the successor key can be derived without another state owner.",
+      "reconsider_when": "The host no longer supplies a stable predecessor identity and an approved recovery design explicitly assigns a durable generation owner.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Archived workspaces and their actors remain intact.",
+    "The traversal has a finite cap; exhaustion is an actionable refusal.",
+    "The host owns replay retention; no new local store is introduced."
+  ],
+  "context": "The host replays a task creation key even after the workspace is archived, and live refresh can hide that archived identity. A reopened task must start without changing its old archive or duplicating retries. The Architect's F01 ruling, relayed in notes/messages/20261015T143103Z_manager-1110e042_to_curator-5ebdb8e9.md, explicitly identifies the four rejected alternatives below and directs completion of this existing decision in place. That ruling supplies the deliberation authority missing from the original M01 record; this is not a claim that the Curator's original exclusions alone proved a weighed design history.",
+  "decider": "Architect's F01 ruling relayed by Manager 1110e042-ff6b-4f46-b436-8771c7b36434 in 20261015T143103Z_manager-1110e042_to_curator-5ebdb8e9.md; approved MIK-R169@v1 required behavior 2, Examples and Exclusions supply the stated behavior constraints. D300 remains the developer's new-workspace direction, not a claim that the developer personally weighed each alternative.",
+  "id": "DEC-AX4MVA",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-5KTZYC"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-QQ3071"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-S50VDC"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-DHYX3Y"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTaskWorkspace"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_workspaces.mjs"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L169-freeze-A02.md; evidence/A02/focused.log; ReopenedWorkspaceTests.test_retry_follows_the_same_keys_through_archiving_and_archived_generations; evidence/sandbox-A001/host-successor-creation.json and role-start-repeat.json are retained prior-run host evidence, not an A02 host rerun."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R169@v1-W1-identity",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_workspaces.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTaskWorkspace"
+        }
+      },
+      "id": "RLZ-76TQH0",
+      "invariant": "INV-DHYX3Y",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W4-hidden-replay",
+        "leaf": "260928-MIK-L169"
+      },
+      "rationale": "The function retains the replay before refresh clears it, limits the null-refresh fallback to a found replay, validates its placement, and returns only a refreshed live descriptor.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTaskWorkspace"
+        }
+      },
+      "id": "RLZ-C0NZY1",
+      "invariant": "INV-5KTZYC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W1-identity",
+        "leaf": "260928-MIK-L169"
+      },
+      "rationale": "The traversal seeds the legacy master/task key and advances only by the prior key and observed archived identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:98784a14aa26f1174ab8239ce7c3f01dc3fcaba58d51d91a8ceb0254c8ae0542",
+        "locator": {
+          "kind": "symbol",
+          "name": "openWorkspace"
+        }
+      },
+      "id": "RLZ-EAQ0QW",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The workspace owner delegates task traversal and carries the final live create call initial-snapshot created/found value; the separate folder-only open reports opened without inventing a creation outcome.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:977f5729f645519537e318d7f0fa6bab9a9e8a6c702faa287dc8fae3d99d0106",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspaceKey"
+        }
+      },
+      "id": "RLZ-T066WE",
+      "invariant": "INV-5KTZYC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W1-identity",
+        "leaf": "260928-MIK-L169"
+      },
+      "rationale": "The hash construction determines the preserved base identity and each reproducible successor identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTaskWorkspace"
+        }
+      },
+      "id": "RLZ-WS7Q2H",
+      "invariant": "INV-QQ3071",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W2-bound",
+        "leaf": "260928-MIK-L169"
+      },
+      "rationale": "The finite loop and exhaustion branch enforce resource bounds and the task/count diagnostic without a local history store.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8b338888948e46a0443726262c389786c20143c0",
+        "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTaskWorkspace"
+        }
+      },
+      "id": "RLZ-Z3JZBR",
+      "invariant": "INV-S50VDC",
+      "origin": {
+        "handoffEntry": "MIK-R169@v1-W3-placement-and-preservation",
+        "leaf": "260928-MIK-L169"
+      },
+      "rationale": "Descriptor validation precedes both continuation and title writes, while the live-only return branch prevents archived-handle mutation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The original and successor keys share a deterministic SHA-256 construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b338888948e46a0443726262c389786c20143c0",
+            "content": "sha256:977f5729f645519537e318d7f0fa6bab9a9e8a6c702faa287dc8fae3d99d0106",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The traversal bounds retries, validates placement and titles only the refreshed live workspace; a hidden completed replay supplies successor identity only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b338888948e46a0443726262c389786c20143c0",
+            "content": "sha256:6ed5e93dbc7c761be61dd83235fa6208f4d5948bd8750a41fa236e4beb0cb142",
+            "locator": {
+              "kind": "symbol",
+              "name": "openTaskWorkspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Folder-only opening and explicit validated task placement retain the public reply envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b338888948e46a0443726262c389786c20143c0",
+            "content": "sha256:98784a14aa26f1174ab8239ce7c3f01dc3fcaba58d51d91a8ceb0254c8ae0542",
+            "locator": {
+              "kind": "symbol",
+              "name": "openWorkspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

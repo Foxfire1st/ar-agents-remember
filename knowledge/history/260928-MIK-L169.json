@@ -1,0 +1,348 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L169",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1KTGPX",
+      "items": [
+        "sha256:af553f59152e6ad86ff1e3c2fe0503ca2d44969101e18a27398011acb0ed8baa"
+      ],
+      "reason": "Examined all eight member statements/scopes against the complete seven-file diff: only the broad bridge realization is touched, its provider/model/permission/server-binding behavior is preserved. Workspace successor recovery adds no launch-choice layer, grant or catalog fallback; member identities/revisions and routes remain unchanged. This is delta reconciliation, not a fresh whole-installation witness.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2QCYMS",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "After the Manager accepted landed L54 sidecar bytes, restored the L169 three-consumer citation through the native citation writer under a fresh reference number, preserving the landed reference 292 and all incoming catalog semantics. The current residual diff adds only the reopened-workspace module to the existing settings guard, Node fixture and Paseo-runtime support consumers; artifact identities, ownership, lifetime and replacement contracts remain unchanged. Declarations are not execution evidence. Renew this same history row to the composed source blobs.",
+      "sources": [
+        {
+          "blob": "a7da1cb3002e61e68b3f421548f79f6e90201864",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3CDAXE",
+      "items": [
+        "sha256:ef6f0493ed91af8ad11bf1bdc80abd158dca38dd3516ba1dcf8df37c84e2b9f5"
+      ],
+      "reason": "Only the new reopened-workspace test module membership/derived consumer string is added; existing lane and artifact/contract policy, owners, lifetime, replacement and budgets are unchanged. Selection/reachability metadata is not a new invariant or an executed result.",
+      "subject": "hunk:sha256:ef6f0493ed91af8ad11bf1bdc80abd158dca38dd3516ba1dcf8df37c84e2b9f5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-63A09R",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Restored the L169 archived-workspace unit-regression commentary and native citation on top of the landed L54 card and sidecar. The landed reference 851 and source-owned canonicalization account remain intact; L169 receives a fresh reference number. Current residual source adds only this module membership, with no lane, budget, guard, scope or execution claim change. Renew this same history row to the current source blob.",
+      "sources": [
+        {
+          "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6WYW63",
+      "items": [
+        "sha256:0f8ba05fea6298e482cfb9d529e3f8157cde293ddeaee9813e509021ab56d958"
+      ],
+      "reason": "The new card accounts for the whole new owner: deterministic keys, finite traversal, placement validation, hidden replay and archive/actor boundaries.",
+      "sources": [
+        {
+          "blob": "8b338888948e46a0443726262c389786c20143c0",
+          "path": "mcp/src/agents_remember/cli/paseo_workspaces.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_workspaces.mjs"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BSQ6Y6",
+      "items": [],
+      "reason": "The card records extraction and dispatch ownership without altering retained provider, reply or live-agent contracts.",
+      "sources": [
+        {
+          "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_bridge.mjs"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-CBCD60",
+      "items": [],
+      "reason": "Architect-admitted one-link relocation after L61 split 58e76b87 moved sync_transaction_git.py into a package. L54 R22.6 refused the carried link because the old file is absent. The unique same _ReapplyMerge symbol is in sync_transaction_git/_proof.py; native writer resolves its new path/blob/content. Restore the existing constrains link without changing alternatives, context, consequences, decider, status or origin and without minting another decision. The native record revision may advance for the link representation; the chosen design is not reversed. Admission: Manager message 20261015T141704Z_manager-1110e042_to_curator-5ebdb8e9.md.",
+      "revision": 2,
+      "subject": "DEC-FBSDCR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K5F6GV",
+      "items": [
+        "sha256:0ab42cb0f504dd20dbf5128a7aa7f6611448017953331eefb4f488efac51a152"
+      ],
+      "reason": "After L54 sync, retained the incoming tests route prose and references, restored the L169 controlled-host regression citation through the native citation writer without repointing incoming reference 1768, and retained the recovery paragraph. The composed route continues to distinguish deterministic successor/hidden replay/placement unit evidence from catalog selection, retained prior sandbox evidence and a provider's completed turn. This row binds the current composed source files; it does not newly certify inherited route semantics or code execution.",
+      "sources": [
+        {
+          "blob": "a7da1cb3002e61e68b3f421548f79f6e90201864",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "50b7ea1107a61ba7967777c5590f9a95e22f8eb6",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "644531dac204d1ae16e9166a942d966b18983753",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        },
+        {
+          "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+          "path": "mcp/tests/test_paseo_reopened_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KY3YN0",
+      "items": [
+        "sha256:34c9ba171991a08b46bade2f2cf4baa6db9dbc99dac71eef9363eeacefe116a2"
+      ],
+      "reason": "The card explains the shared unchanged text/failure primitives, including absent versus nontext and preservation of nonempty values.",
+      "sources": [
+        {
+          "blob": "366353cfc1f18022ebd8e9fcdb82b7d7bbcd4bef",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge_primitives.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_bridge_primitives.mjs"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NM3BYT",
+      "items": [
+        "sha256:fc488ef325a91c7ff6f0d4309c6bdffc376b2fd476222d34231a303546391ccf"
+      ],
+      "reason": "The construction section now names workspace ownership, deterministic archive successors, placement/live-only use and the unchanged folder/host-retention boundary.",
+      "sources": [
+        {
+          "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "366353cfc1f18022ebd8e9fcdb82b7d7bbcd4bef",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge_primitives.mjs"
+        },
+        {
+          "blob": "8b338888948e46a0443726262c389786c20143c0",
+          "path": "mcp/src/agents_remember/cli/paseo_workspaces.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NYNNSF",
+      "items": [
+        "sha256:32d4c380319b4fa0e729431ea738381f2c03dfe5fd6b9d7ce37c29c736c5407b"
+      ],
+      "reason": "Post-L54 supported sync renewed this examination against family revision 5 and all nine current member statements/scopes. Incoming revision 5 removes two redundant subroutes while retaining their mcp/src/agents_remember ancestor; the family guarantee and members do not change in this leaf. The L169 residual seven-file delta preserves controls-only layout, exact execution/report identity, ordinary and Investigator start admission, recovery ownership and failure presentation. Only task workspace preparation relocates, preserving final-live-call created/found versus folder opened. This is current delta reconciliation, not a new whole-installation witness.",
+      "revision": 5,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PJZJ83",
+      "items": [
+        "sha256:342ad5fbf10d475b232e540dafeaedbc6d8942a5f9bd5ab182f7beb29d776e88",
+        "sha256:a40c36044b650440c7b3a97d6cb02aa595cc2f5a427bf51f7acd7bd983db66bd"
+      ],
+      "reason": "The new card accounts for the five distinct controlled-host regression cases and their limits.",
+      "sources": [
+        {
+          "blob": "869b91c811d58f991d71f53f9217cc9a3e31d108",
+          "path": "mcp/tests/test_paseo_reopened_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_reopened_workspace.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8b338888948e46a0443726262c389786c20143c0",
+            "content": "sha256:98784a14aa26f1174ab8239ce7c3f01dc3fcaba58d51d91a8ceb0254c8ae0542",
+            "locator": {
+              "kind": "symbol",
+              "name": "openWorkspace"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_workspaces.mjs"
+          },
+          "before": {
+            "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+            "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
+            "locator": {
+              "kind": "symbol",
+              "name": "openWorkspace"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-EAQ0QW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XHMEAB",
+      "items": [
+        "sha256:ddfe7a7799608fe003315999dd06a7524eed904cf070582856a75837748e87d5"
+      ],
+      "reason": "The workspace operation moves from the bridge to its dedicated owner. Task preparation remains the initial create snapshot of the final live candidate (created/found), not the archived predecessor; folder-only Projects open remains opened without invented creation truth. Existing model, answer projection and tests are untouched.",
+      "revision": 1,
+      "subject": "INV-ZVQ7E3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YQCBNQ",
+      "items": [
+        "sha256:23cae89e7a252612eec69c0a2d6b54610380e809f56de89a8510e8ad06fbcf6c"
+      ],
+      "reason": "Only the new reopened-workspace test module membership/derived consumer string is added; existing lane and artifact/contract policy, owners, lifetime, replacement and budgets are unchanged. Selection/reachability metadata is not a new invariant or an executed result.",
+      "subject": "hunk:sha256:23cae89e7a252612eec69c0a2d6b54610380e809f56de89a8510e8ad06fbcf6c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54c725f21a05ef4878b1da265ef35e27d02be6a4",
+            "content": "sha256:23e390a1f6eb32f6f8a7b9658a1c747980dfb809fcddef4358c5c9650a6436ca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "7d30a8d5233735b6f30204ffcef5e740e8ee08a7",
+            "content": "sha256:70670dd36466bdca2b489368c6e6f54d293c66918e4149b7c38f1d95f1d0b878",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZB5040",
+      "items": [
+        "sha256:424ed8cc31b937ba0d1ece27b63690e680ea1e391857b7760e991554426ac8d9"
+      ],
+      "reason": "The workspace/helper extraction changes the whole-file bridge anchor but not catalog resolution, provider offerings, model/effort/speed validation or agent create propagation. The unchanged provider/create functions and surrounding call route preserve the invariant; no permission or adapter fallback is introduced.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZJJYCR",
+      "items": [
+        "sha256:3a1c3a66aa75b596d109602db7a4367063c158cb4970f4b8cdf64b37fc39b020",
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a",
+        "sha256:ab196976f59b90fe2875d4511dcef023797c161c9689bdcc055148de4e3dd6a1",
+        "sha256:bac2bb4acf138ab29a55c33d94579d8381fa488d0804c12e5b9ea4c9d12abe7a",
+        "sha256:dff1e49af29910a4d565d70495c49b77da520d56c172d6b894b122ab48c2ce78"
+      ],
+      "reason": "The card explains keyed replay/current-before-refresh/hidden listing fixture support while preserving its existing protocol scope.",
+      "sources": [
+        {
+          "blob": "644531dac204d1ae16e9166a942d966b18983753",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

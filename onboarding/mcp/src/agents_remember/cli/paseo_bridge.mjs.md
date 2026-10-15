@@ -14,10 +14,14 @@ The bridge module carries native host integration loaded beside the runtime. A p
 
 `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.
 
+`workspace-open` dispatches to `paseo_workspaces.mjs`, which owns task workspace keys, archive-successor traversal and placement. The bridge imports its unchanged text-validation and typed-failure helpers from `paseo_bridge_primitives.mjs`; provider/model resolution, agent creation, live-agent listing and reply transport retain their own owners. Extraction does not move actors or change launch permission policy.
+
 ## Evidence
 
 
 ## Current contract evidence
+
+- The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
 
 - The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing. [1]
 - `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`. [2]

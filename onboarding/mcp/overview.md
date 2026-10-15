@@ -47,6 +47,8 @@ For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations
 
 ## Construction And Ownership
 
+Task workspace preparation is owned by `cli/paseo_workspaces.mjs`, dispatched by `cli/paseo_bridge.mjs` with shared validation from `cli/paseo_bridge_primitives.mjs`. A live task retains its original master/task key. Archived, archiving or hidden completed replays select deterministic successor keys; traversal is finite and returns only a refreshed live workspace with the master's project and task directory/title. Archived workspaces and their actors are not moved or mutated. Folder-only opening is separate, and host retention remains host-owned.
+
 The existing CLI/serving boundary admits automatic loading after a real configured host process start, not after a page load. PID, birth ticks and boot identity bind one shared OS lease/progress record; two timeline-resume lanes admit only eligible tree agents with a known sufficient memory reading, clicked-pending priority and drained retirement. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries within the give-up window; persistent failure in that branch reaching the window consumes the exact start with its given-up reason. Claim publication, candidate-read and initial-progress failures have separate retry/release paths without that branch's give-up check. Per-agent failures remain explicit. No message, refresh/unarchive or host restart is part of this feature.
 
 Root `docs/` remains authored documentation, not one of the five current runtime synchronizer targets. The removed unowned documentation mirrors confer no current packaging guarantee; the retained package tool-details.md is separate. Mirror-only cards with no realization/proof entries are retired with their complete original bytes in Git and the renewal intake archive; canonical docs and existing governing cards retain their authority.
@@ -190,6 +192,8 @@ Source account retained from the parked claim (anchor currency not renewed here)
 Historical prior wording (superseded by the current namespace/matrix account): **Historical source-bound reference account, not an operative override:** **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** (prior reference 105)
 
 ## Evidence
+
+- Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
 - **Retained historical source account — superseded by the current route account:** Their vocabulary. [2]
