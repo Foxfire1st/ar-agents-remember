@@ -12,7 +12,7 @@ Own task-page-local layout, ground, typography and state-colour recipes shared b
 
 The page root is an inline-size query container: narrow is default, 36rem adds the middle-panel columns and 56rem gives the full row. It uses the proposal ground inside its containing panel; it does not repaint the shared panel or token system. Code ground, prose links, dim/line colours and form/status accents remain scoped to the page.
 
-The objective-first head, one-line tables and hidden-column/own-view affordances use the same recipes across forms. Long individual values wrap or clip instead of dictating page width. Reduced-motion handling belongs to the graph interaction and its fade variant; layout thresholds are container widths, not browser-window breakpoints.
+The objective after the complete head/series chrome, one-line tables and hidden-column/own-view affordances use the same recipes across forms. Long individual values wrap or clip instead of dictating page width. Reduced-motion handling belongs to the graph interaction and its fade variant; layout thresholds are container widths, not browser-window breakpoints. ObjectiveLead combines the shared block margin with the lead recipe. decisionReading centers whole-log content at maxWidth 100ch; productRecords styles its muted, counted disclosure. These recipes do not establish measured viewport or tooltip acceptance.
 
 ## Boundaries
 

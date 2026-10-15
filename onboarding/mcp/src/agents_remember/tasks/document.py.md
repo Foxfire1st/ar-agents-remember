@@ -20,9 +20,9 @@ parsing markdown back.
 name or alias both validate. The `schema_` field defaults to `TASK_DOCUMENT_SCHEMA`
 and serializes under the `schema` alias. `DocKind` is `light`|`subTask`|`master` — `light` is
 retained only so any legacy `light` document still loads; the `task_doc` application entry point no longer authors
-new ones (every task is master/leaf). `DocStatus` stays in the `w-02-light-task-workflow` template vocabulary
-(`planning`|`inProgress`|`Completed`) so the rendered `**Status:**` line is always
-valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
+new ones (every task is master/leaf). `DocStatus` uses the shared model vocabulary
+(`planning`|`inProgress`|`Completed`|`abandoned`), including the deliberate
+not-taken terminal state, so the rendered `**Status:**` line is always valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
 dashboard's granularity. `seriesContractPath` names the root task series contract when one exists, and
 `enclosures[]` names leaf enclosure contracts (`leafId` + `enclosurePath`) that can bind the doc to a
 lifecycle through observer projection. A `master` carries the series index — `subTasks` (`SubTaskRef`:
@@ -86,9 +86,12 @@ shapes unknown/unplaced placements as reported facts (never silent, never auto-w
 `numbering_drift_hints` reports leaf-numbering inversions across derived waves as facts that never
 refuse.
 
-`step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
-substeps when it has any, else the step itself), and `current_step` returns the first
-in-progress/blocked step, else the first unfinished one, else `None`.
+> **Retained historical source account — superseded by the current contract:**
+> `step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
+> substeps when it has any, else the step itself), and `current_step` returns the first
+> in-progress/blocked step, else the first unfinished one, else `None`.
+
+Current presentation owner: [progress](progress.py.md) supplies the re-exported `step_total`, `step_done`, and `current_step`. Counts are major-only (`len(doc.steps)` and major status `done`), not a nested-leaf rollup. Current selection still walks nested units: in declaration order, prefer each major active/blocked step then its active/blocked substeps; if none is active, prefer each unfinished major then its unfinished substeps, else None. Completion readiness remains [readiness](readiness.py.md), which independently checks every major and nested status; a full display count is not proof of completion.
 
 Series progress reads the master's declared rows. `series_total` counts non-abandoned rows,
 `series_done` counts rows declared `Completed`, and `series_abandoned` reports abandoned rows separately.
@@ -130,6 +133,11 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
 
 - Persisted/served contract, **not** an MCP response model (peer of
   `observer.projection`); it round-trips, so changes must stay backward-readable.
+- New optional slots `completedAt: str | None`, `waitsFor: list[str] | None`,
+  `nonGoals: str | None`, and `acceptance: str | None` default to None. The model
+  declares no new timestamp format, dependency-ID/cycle or field-home gates for them;
+  explicit dependency writes and reserved prose homes are checked by task_doc_field_homes.
+  Persisted executionGraph remains sprint-only; ordinary-master Order is derived elsewhere.
 - The markdown checkbox is binary; the richer `StepStatus` lives only in the JSON.
 - `schema_` must serialize as `schema` (alias) — always dump `by_alias=True`.
 - **`light` is load-compatibility only:** the `DocKind` literal keeps `light` so legacy documents still
@@ -184,7 +192,7 @@ written. The field is optional, so every existing document still loads unchanged
 
 - It is classified `LIFECYCLE`, not `NORMATIVE` (architect ruling 4): a normative slot outside the
   `task-intent/v1` allowlist would be refused, so the field stays out of the intent digest.
-- `set_field` may set it (`application/task_docs/task_doc_tools.py`'s `_MUTABLE_FIELDS`), and the renderer
+- `set_field` may set it (`application/task_docs/task_doc_phrases.py`'s `_MUTABLE_FIELDS`), and the renderer
   shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
 - The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`, which since MIK-R09 (260928-MIK-L09, the L11 carry) uses the strict lookup (`strict_leaf_doc`): a document that exists but cannot be read makes the run `incomplete`, never the default scope.
 
@@ -240,7 +248,10 @@ No relevant external documentation was available after checking the configured s
 - The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
 - Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
 - The route-review record validates its typed dependency declaration and self-digest. [13]
-- The R03 route-review dependency vocabulary. [14]
+
+- EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent. [14]
+
+
 - Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. [15]
 
 - A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [16]
@@ -285,7 +296,10 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 The structural role vocabulary uses canonical Investigator. Renaming that value preserves task-document ownership, index and seat classification; it does not make a task document or display label into runtime start authority. The launch-selection resolver separately admits Investigator’s non-leaf reference patterns.
 
-- This source owns the stated current Investigator scope and canonical vocabulary. [20]
+
+- Canonical role constants include Investigator at sprint altitude and Reviewer at sprint/master/leaf altitudes; this is role vocabulary, not launch authority. [20]
+
+
 
 
 ## Refreshed current evidence
@@ -298,9 +312,12 @@ The structural role vocabulary uses canonical Investigator. Renaming that value 
 
 `is_product_record_decision` marks a decision-log entry as a product-written record (not an
 authored decision) from the writers' own constants: exact `PRODUCT_RECORD_DECISION_EXACT`
-(the finalizer's lifecycle decision) or the `PRODUCT_RECORD_DECISION_PREFIXES` (removed-step
+(retained legacy Finalize lifecycle text) or the `PRODUCT_RECORD_DECISION_PREFIXES` (removed-step
 and skip-step prefixes). The page matches no text and the stored shape is unchanged; the
 projection carries the marking for the newest-five rule (Parent ruling
 L126-LIFECYCLE-RECORDS-IN-THE-DECISION-LOG-RULING).
 
-- Writer constants mark product records; the marking is provenance-based (exact/prefix string match), and no enforced authorship separation keeps authored text from colliding — the tests pin named positives and near-misses, not impossibility. [21]
+Current finalization no longer appends that exact decision; it stamps own `completedAt` on first completion and retains existing decisions. The exact constant is still a legacy-display classifier, not a current writer contract.
+
+
+- Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing. [21]

@@ -27,7 +27,10 @@ live in `agents_remember.tasks`.
 - `TaskExecutionPredecessorNode` / `TaskExecutionNodeView` / `TaskExecutionGraphView`
   (`extra="forbid"`): the served per-node model. `nodeId` is a stable semantic identity — a
   lump's master ref key, or the ref key plus a segment ordinal for a segmented master
-  (`node_identity`). `waveIndex` is the 1-based derived wave.
+  (`node_identity`). `waveIndex` is producer-supplied: sprint waves are positive, while ordinary-master state anchors can be zero; it is not stored execution permission.
+  `TaskExecutionNodeView.cycle` defaults to `None`; the sprint builder leaves it unset.
+  The ordinary-master Order adapter sets it to `True` for cycle members. It is a
+  display annotation, not a stored dependency, ordering field, or start gate.
 - `MasterGraphFacts`: primitives-only per-master facts (task status, execution nature,
   per-leaf declared statuses) the frontier derivation needs; missing entries project a
   conservative frontier state (never landed, never in-flight).
@@ -38,9 +41,12 @@ live in `agents_remember.tasks`.
   cannot overwrite the projected title; an absent qualified key falls back only to the local raw
   leaf id.
 - `_frontier_state`: mechanical precedence — landed (master `Completed`, or every sampled
-  leaf `Completed`) → waiting (any predecessor not landed) → in-flight (master or any
-  sampled leaf `inProgress`/`blocked`) → ready. Reads statuses and edges only; never
-  invents priority/reason judgment.
+  leaf `Completed`) → abandoned (master abandoned, or a non-landed sampled segment with an
+  abandoned leaf) → waiting (any predecessor unresolved) → in-flight (master or any
+  sampled leaf `inProgress`/`blocked`) → ready. A predecessor resolves through Completed
+  or abandoned status; resolved does not mean landed. Missing facts are never landed or
+  in-flight and fall to ready only if no unresolved predecessor keeps them waiting.
+  Reads statuses and edges only; never invents priority/reason judgment.
 - `build_execution_graph_view`: takes `nodes` in declaration order, `waves` ordered by
   derived wave (nodes within a wave in declaration order), `predecessor_edges` keyed by
   successor node, per-master facts, and joined titles; emits the view ordered by derived
@@ -49,8 +55,10 @@ live in `agents_remember.tasks`.
 ### Conventions
 
 - Missing masters project ref-key/leaf-id fallback labels and a conservative frontier.
-- A missing-master frontier falls back to `ready` (never landed, never in-flight) — the
-  optimistic-mechanical default, documented and test-pinned (reviewer finding F6).
+- A missing-master frontier falls back to `ready` only when no unresolved predecessor
+  makes it waiting (never landed, abandoned, or in-flight from missing facts). The
+  earlier F6 ready-default account remains the historical motivation, not an
+  unconditional rule or a test-run claim.
 
 ### Invariants And Boundaries
 

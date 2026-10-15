@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module's own statement of what it protects.\n\nAnchor: \"The on-demand task-document body reads one document, not the task corpus.\"",
+      "note": "The module protects bounded named-input body reads and corpus admission; its RF01 docstring names owning masters and explicit children, not a one-file-only closure.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
-            "content": "sha256:c35836f79f7a16822387f797e6a1e77efaaca653e7c13bf759f739b77e6a0e76",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "content": "sha256:8ffee803f6bdd67a4251ed9f4de7abc75b132843b165156877b982558700e831",
             "locator": {
-              "end": 7,
+              "end": 6,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "ce39e43c081a7a78de49dfa60e14f7a8ec7f17b1",
             "content": "sha256:e482c45e3d110a00982634d3608a4d43b38463d26bd5f3a5a4a7a06ab59ea07a",
             "locator": {
-              "end": 296,
+              "end": 335,
               "kind": "line_range",
-              "start": 296
+              "start": 335
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -42,11 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
             "content": "sha256:4863ce9cde2ec96c8439f7ae4ee87549025c043435f3f474def99fe3780fa531",
             "locator": {
-              "kind": "symbol",
-              "name": "_corpus"
+              "end": 120,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "test"
@@ -58,11 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
             "content": "sha256:eed2639788bea62ea33ab181a0d7c8b682857b3386259cf016a0a96e12f637ac",
             "locator": {
-              "kind": "symbol",
-              "name": "_corpus_wide_body"
+              "end": 136,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "test"
@@ -70,15 +72,28 @@
       ]
     },
     "4": {
-      "note": "Byte identity for every document kind, the sprint's graph titles and fallback, and `None` for an absent path.",
+      "note": "Original fixture-specific serialized body comparison, sprint graph titles/fallback and absent-path refusal remain; RF01 separately asserts owner/listed-child schema admission by comparing dependency/graph fields with the corpus reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
             "content": "sha256:c58d52f97e6690c15e95fcd8bd702d8ca5cf8ae16fead946dc30b19f8f7d14a6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join"
+              "end": 160,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "content": "sha256:ae54882e6527fb0983f62b4d6e2ec6c8e90ae98703f6e72310316cdf7b116df3",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 272
             }
           },
           "kind": "test"
@@ -86,15 +101,28 @@
       ]
     },
     "5": {
-      "note": "The recorder that counts listed directories and read files.",
+      "note": "The recorder counts listings and task JSON reads through all three reader modules; a separate counted-ready wrapper asserts one ready-tuple indexing pass per graph at two sizes and entry points.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
-            "content": "sha256:d2e3b094b7a3a6d9df29c17eac1e08a8f89c74d27ed07489554c0000a02701ff",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "content": "sha256:577184d3f1cf64cdd1f0aa8e0df4c29374a676435216f7da008a6f738e4dd238",
             "locator": {
-              "kind": "symbol",
-              "name": "touches"
+              "end": 189,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "content": "sha256:e790ae5298a15dcbbfa8c555ed0515f5eefeea3fd07d65c47c5f3d0a2b54d9ff",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 322
             }
           },
           "kind": "test"
@@ -102,15 +130,16 @@
       ]
     },
     "6": {
-      "note": "The same touched files at 4 and at 40 unrelated tasks; no listing at all for a leaf or a master.",
+      "note": "At 4/40 unrelated tasks, the fixture asserts identical touched-file lists: leaf plus owner, master alone, or sprint plus graph-named candidates; leaf/master fixtures list no directories.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
-            "content": "sha256:d1fda4fe44bcfa06e31703aa14cb656ecabf9212f3f7ea366d4d1c1a39d2aca2",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
+            "content": "sha256:203f0ef76713f787a8e34033feca44e5c88d57e5af8d919bc67044c8f021faf7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_one_body_read_touches_the_same_files_whatever_the_corpus_size"
+              "end": 232,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "test"
@@ -122,11 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "blob": "f96369f98348ae7d84d5fa7345534ad4471fa3f0",
             "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept"
+              "end": 267,
+              "kind": "line_range",
+              "start": 235
             }
           },
           "kind": "test"
@@ -134,15 +164,16 @@
       ]
     },
     "8": {
-      "note": "The production read under test, and the only place that reads masters for it.",
+      "note": "The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing.",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
+            "blob": "a382f504b5dd0695e6ef308060dfd298f4cf5184",
+            "content": "sha256:6af862751831a64220cbb80a2492445c5160cd1febcdfe9d1078ce47a9331a04",
             "locator": {
-              "kind": "symbol",
-              "name": "read_task_document_body"
+              "end": 171,
+              "kind": "line_range",
+              "start": 128
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -150,13 +181,27 @@
         },
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
+            "blob": "a382f504b5dd0695e6ef308060dfd298f4cf5184",
             "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
             "locator": {
-              "kind": "symbol",
-              "name": "_graph_master_docs"
+              "end": 194,
+              "kind": "line_range",
+              "start": 174
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+            "content": "sha256:307a81f2c42eb040782f72d01018e69039bac7bc4576b44c79dbd2a2a50bf825",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
           },
           "kind": "code"
         }

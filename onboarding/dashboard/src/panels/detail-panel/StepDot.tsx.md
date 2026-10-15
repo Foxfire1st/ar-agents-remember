@@ -1,0 +1,19 @@
+# dashboard/src/panels/detail-panel/StepDot.tsx
+
+## Governing Overview
+
+[Area overview](../overview.md)
+
+## Purpose
+
+Show a cached major-step state mark and pointer-rest details without fetching data or adding a focus stop.
+
+## Code Commentary
+
+After 300ms of non-touch pointer rest, a supplied step opens a body portal showing its ID, Markdown title, display state and ordered nested states. The optional-payload fallback still draws the state mark but cannot open details. Layout measures the portal and clamps its initial placement near the anchor within the viewport.
+
+Pointer leave/down cancels the timer and closes details; unmount cancels a pending timer. This is pointer interaction, not keyboard tooltip or continuous scroll-tracking ownership. Details use already supplied step data, not a body request or lifecycle authority.
+
+## Evidence
+
+- Optional cached step details use a cancelable non-touch pointer-rest timer and a body portal, with no fetch or tab stop. [1]

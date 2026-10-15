@@ -12,6 +12,8 @@ The supported memory topology and writable task mode are `external` alone. `inte
 
 ## Hot Path Summary
 
+Canonical light-task composition uses stable creation numbers and a master index; exact leaf waitsFor IDs derive ordinary-master Order. Same-master dependencies remain informational rather than a task-start permission gate. Non-goals/acceptance have optional fixed homes; new duplicated section/header labels are refused while existing prose remains. Package and harness copies propagate the canonical instructions without independent semantic authority. Native finalization keeps decisions intact and completion time separate from authored history.
+
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 Resolve the configured repository and its coordination, code, memory, task and temporary roots before trusting onboarding. Repository guidance belongs in the resolved memory layer's `system/` files, including settings, tools, sources and coding guidelines; root runtime defaults are examples rather than the active policy of this checkout. Context packets compose repository, paths, memory, worktree, providers, drift, freshness and diagnostics. The inspected packet explicitly requests no provider discovery. Freshness is opt-in: without it no freshness fetch occurs; with it the reader compares configured code and eligible memory branches with their upstreams.

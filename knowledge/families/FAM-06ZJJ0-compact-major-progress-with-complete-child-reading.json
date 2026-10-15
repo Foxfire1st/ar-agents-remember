@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Major-only counts and display-state precedence alone conceal what each compact unit contains; child disclosure alone does not fix a child-inclusive denominator or canonical readiness confusion, so the existing progress invariant and the new detail invariant together retain compact truthful progress and accessible hierarchy."
+  },
+  "guarantee": "The task-tool answer, sidebar, master row and task-page summary use major-step progress units and marks, while begun/done children promote only the unfinished major’s display state. The same major/child hierarchy remains fully readable in cached pointer-rest dot details and the task-page nested list without new requests or dot focus stops; progress-bar rows do not gain tooltips, and display never rewrites canonical task state or closeout readiness.",
+  "id": "FAM-06ZJJ0",
+  "members": [
+    "INV-DMAS27",
+    "INV-SQ7NQA"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "compact-major-progress-with-complete-child-reading",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/tasks",
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/panels/lifecycle-list"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Compact major progress with complete child reading"
+}

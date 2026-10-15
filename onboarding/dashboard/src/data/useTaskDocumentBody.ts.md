@@ -20,8 +20,11 @@ only the currently displayed document through `fetchTaskDocument`, stores the su
 separately under the combined key, and merges that payload into the current summary at render time.
 The effect depends on the stable path/revision identity rather than the projected `TaskDocNode` object,
 so analytics projection replacement does not cancel or duplicate an unchanged request. The body supplies
-long-form objective, requirements, design, code, decisions, questions, references, sections and sub-task
-content; absent response fields retain the summary. Identity, status, progress and review facts remain
+long-form objective, nonGoals, acceptance, requirements, design, code, decisions, questions, references,
+sections and sub-task content. `mergeFixedProse` restores nonGoals and acceptance from the body with
+nullish summary fallback; empty strings remain supplied values. These fixed-prose fields, like the
+other long reader content, are merged before the revision gate; absent/null response fields retain
+the summary. Identity, status, progress and review facts remain
 those of the current summary. For a matching body revision, marked truncated status/step text is restored
 only when the body carries a strictly longer string; steps must agree in count and ordered IDs. A matching
 review round can restore the full findings list or longer marked descriptions without replacing the
@@ -70,13 +73,20 @@ No configured external document defines this same-repository React state seam.
 ### Repo-Internal References
 
 - The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. [1]
-- `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. [2]
-- The enclosure change-set controls wait until the body reader is no longer loading. [3]
-- The task-document reader delays its notes until the body reader is no longer loading. [4]
-- The transport adapter owns the same-origin endpoint and non-OK rejection. [5]
-- Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. [6]
-- Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. [7]
 
+- `DetailPanelImpl` delegates reader selection to `useDetailPanelState`; that state owner resolves the displayed document and calls the body hook. [2]
+
+- The enclosure change-set controls and reader-head controls wait until the body reader is no longer loading. [3]
+
+- The task-document reader delays its notes/reference/report readers until the body reader is no longer loading. [4]
+
+- The transport adapter owns the same-origin endpoint and non-OK rejection. [5]
+
+- Source-defined taskBody.test.tsx component assertions hold the body request open, check body-first ordering, cover long fields and fallback, and pin revision caching. Source inspection only; no fresh execution. [6]
+
+- Source-defined Cockpit composition assertions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. Source inspection only; no fresh execution. [7]
+
+- Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance. [8]
 ### Cross-Repo References
 
 No meaningful cross-repo boundary exists; selection, hydration, serving, and task-document parsing all

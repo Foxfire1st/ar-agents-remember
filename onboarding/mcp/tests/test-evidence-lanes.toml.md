@@ -16,7 +16,8 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 L109 registers test_context_packet_slim.py, test_knowledge_diff_report.py and test_knowledge_name_projection.py in unit-regression. Each is selected once in the parsed catalog; this is membership only and establishes neither execution nor acceptance. The repaired lists are unique and canonically ordered; the naming-projection module precedes overview-order without changing either module’s lane membership.
 
-- test_sync_reapply_merge.py is declared once in unit-regression and current lane lists retain membership in canonical order; lane membership selects evidence and proves no invocation. [847]
+- Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
+
 
 The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
 
@@ -48,6 +49,14 @@ The landing, ownership, strict-refusal and dependency-bound suites are selected 
 
 The grant and developer-dashboard modules have their declared L3 lanes; direct-leaf integration-refusal, role-start and no-grant closeout-parity modules have their declared L2 lanes. These are catalog maintenance and routing facts, not case counts or a live acceptance result.
 
+## Task-Document Order Lane
+
+`mcp/tests/test_task_document_order.py` is declared in unit-regression between the copies and graph-projection modules. This adds no lane or policy, changes no other module's classification, and proves no test invocation. Sorted/unique/exactly-one-lane membership remains a catalog property, not an executed suite result.
+
+
+- Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution. [849]
+
+
 ## Evidence
 
 Source declarations, mirrors and fixture assertions are not executed acceptance.
@@ -70,13 +79,15 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 
-- The new module joins this lane. [839]
+- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [839]
 
 
 
 
 
-- The lane catalog with the host module rows. [840]
+
+- The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [840]
+
 
 
 

@@ -16,6 +16,8 @@ The screen shares the File Viewer's `DualPane` content primitive and the rail-an
 
 ## Hot Path Summary
 
+The whole decision log shares the task-page authored row, newest-first recorded-time ordering and oldest-based authored numbering. Product records contribute to neither authored counts nor numbers; a muted counted end disclosure retains them unnumbered. Exact/prefix text provenance remains classification, not an impossibility guarantee against authored collisions.
+
 An entry surface opens a typed artifact target in Cockpit. Notes load folders lazily through `ExplorerTree`; requirements load their task-document-selected flat listing. Selection updates the controlled target and fetches the selected content for `DualPane`. Recorded reports fetch their scoped report, supplied reports render directly, and decisions render their supplied log. The screen header and `data-artifact-kind` identify the artifact kind; Back hides the retained takeover.
 
 ## Construction
@@ -26,7 +28,7 @@ The notes rail reuses `ExplorerTree`. It opens ancestors of the selected note, f
 
 Fetched notes, requirements, and reports share `DualPane`: markdown occupies its partnerless markdown pane, other text uses its read-only `FilePane`, and binary content produces a byte-count placeholder. `NotePane` supplies local failure and empty/loading placeholders and adds the truncation banner for truncated markdown.
 
-A `task-report` target fetches its recorded report through `readRoleReport`, using the role, request ID, and task-document reference. A supplied `role-report` renders the content already passed to the component. The decisions target renders the supplied whole log, ordered newest first by recorded time, with product-written records muted.
+A `task-report` target fetches its recorded report through `readRoleReport`, using the role, request ID, and task-document reference. A supplied `role-report` renders the content already passed to the component. The decisions target renders the supplied whole log, with authored rows newest-first and product records in a separate muted counted end disclosure.
 
 Cockpit owns the target and selection callbacks. Selecting a note clears folder-open mode; selecting a requirement changes its path. Back hides the takeover without clearing its target, and Cockpit retains the reader mounted with `display: none`. A mode-bar change, node opening, or Change-Set opening also hides it. Retention preserves component state while that reader remains mounted; it is not browser-history persistence.
 

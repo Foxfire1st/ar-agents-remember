@@ -3,14 +3,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The rich exports are deliberately made-up developer-view documents and answers.",
+      "note": "The rich exports and supported API answers are invented; leaf counts/times and the retained master product record are fixture examples, not native proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2262d6a78f28bc5cefd9f0c79c8c81f9935a526",
-            "content": "sha256:247322910d242b986d2532d6b0f5412e84dbfce838cefb4ef03b601a3a02532d",
+            "blob": "8eea162efb1116ee0c6bc34a8500cbe4b49cc0ed",
+            "content": "sha256:d7ccc88d965633f200c967fbe3c1359a7c5cbe77dfc93098992940107d46e77d",
             "locator": {
-              "kind": "file"
+              "end": 281,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8eea162efb1116ee0c6bc34a8500cbe4b49cc0ed",
+            "content": "sha256:da120bd53497463befc08a662a0c4bdb5fe4e56ffb12b383827c751cb0cd0b93",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8eea162efb1116ee0c6bc34a8500cbe4b49cc0ed",
+            "content": "sha256:580792df9e208d925dfaeba0786300fc5e030c68dd707da1dbdf38b89f56e9ee",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 715
             }
           },
           "kind": "code"

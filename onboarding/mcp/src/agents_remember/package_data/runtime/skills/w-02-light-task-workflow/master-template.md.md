@@ -2,9 +2,7 @@
 
 ## Purpose
 
-This is the canonical scaffold for a `w-02-light-task-workflow` skill **master + light sub-task series** — the composition that
-replaces the retired heavy workflow when a task outgrows a single-page plan. It defines the series
-convention, the master `task.md` scaffold, and the per-slice sub-task scaffold.
+This is the packaged synchronized copy of the canonical `skills/w-02-light-task-workflow/master-template.md` scaffold for a master plus light leaf series. It describes the series convention, master index and per-leaf scaffold; it is not an independent canonical runtime owner.
 
 ## Code Commentary
 
@@ -14,27 +12,15 @@ The synchronized master template projects only formal review-handoff attempts, e
 protocol events from counts, and links lightweight leaf records to content-addressed expanded
 evidence.
 
-The file states when to escalate to a series (`l-01-agent-lifecycles` architect lifecycle `decide` step, once size is apparent), the
-series convention (one wrapper folder = master `task.md` + flat numbered `NN_<name>.md` sub-task files
-in execution order), and the lifecycle: **one task = one workflow = one worktree**, a commit per slice
-via `c-09-git-worktree-manager` skill closeout behind a commit gate, the worktree open across slices, and a single integrate +
-`lifecycle_finalize_task` + release at the end with the master owning the version bump. It then gives a master `task.md` scaffold
-(Objective, Sub-tasks execution order, Single Release, Shared Decisions, Open Questions, References)
-and a sub-task `NN_<name>.md` scaffold, plus usage rules.
+Escalation is decided by the architect lifecycle when one plan becomes several slices. A wrapper holds the master and flat numbered leaf files; numbers are stable creation IDs, the Sub-tasks list is an index, and each leaf's exact same-master `waitsFor` through `task_doc` derives Order. The master owns an integration branch/root contract, while each active leaf has its own enclosure, work branch and worktree, then closes out behind its commit gate, integrates and finalizes that edge. The scaffold names Objective, the filtered requirement/attempt summaries, Sub-tasks, Single Release, Shared Decisions, Open Questions and References. Fixed prose uses `objective`, `requirements`, `design`, `nonGoals`, `acceptance`; decisions and the index use `append_decision`/`set_subtask`, not duplicate prose sections.
 
 ### Conventions
 
-Sub-task files are flat and numbered, never nested phase folders. File numbers are stable creation IDs
-while the master's Sub-tasks list is the authoritative execution order. The template was derived from
-the hand-rolled master this very lifecycle-reshape series used (`260601_l01-lifecycle-reshape`).
+Sub-task files remain flat and append-friendly with stable creation numbers. The master's Sub-tasks list is an index, not an authoritative execution-order list: the product derives Order from exact leaf `waitsFor` task IDs. Create a new JSON-primary master through `task_doc` `create` with `kind:"master"` in the wrapper, then create its indexed child documents before leaf `waitsFor` writes. The master scaffold is a render specification, not a Markdown-only new-master authoring route. Existing hand-authored Markdown remains unchanged until intentionally migrated, and a Markdown-only master cannot satisfy the prerequisite for those writes. The historical hand-rolled origin (`260601_l01-lifecycle-reshape`) is retained as provenance, not the current scheduling contract. This packaged source does not prove installation or migration. [5]
 
 ### Invariants And Boundaries
 
-A master series runs in one shared worktree (never one per sub-task). Only the master records the
-version bump and release; sub-tasks never bump. `lifecycle_finalize_task` proves the landed edge and
-performs terminal cleanup/task-document reconciliation after integration. Each slice reports its relevant targeted checks, including any
-failed or not-run result, before its commit transaction. Decision
-logs are append-only in both the master and the sub-task files.
+The master series uses one integration branch plus a distinct enclosure/worktree per active leaf, never one shared worktree for all slices. Only the master owns the version bump/release. Each leaf closes out, integrates into the master and finalizes its own edge. Usage rules require relevant targeted/requirement checks with honest failed or not-run reporting and append-only decision logs; they distinguish those checks from explicit full tests, full code quality and independent review. The earlier series-convention sentence still asks for suite-green checks; this card preserves that source tension rather than pretending it was removed.
 
 ### Todos
 
@@ -51,13 +37,20 @@ No external domain documentation applies to this repository-local template.
 
 No relevant external documentation found.
 
+## Packaged Index Scaffold
+
+The Sub-tasks scaffold declares an index and exact waitsFor-derived Order. Fixed fields and primary/adjacent constraints replace the stale execution-order/dependency-prose account, without discarding the separate attempt and targeted-check lessons.
+
+- Current index/waitsFor and fixed-content authoring rules. \[3] [3]
+
+- Exactly one owned primary requirement; adjacent constraints do not confer closure. \[4] [4]
 ## Evidence
 
 ### Repo-Internal References
 
-- The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. [1]
-- The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. [2]
+- Packaged skill names the template companion and defines stable-ID/waitsFor composition plus master/leaf worktree invariant. [1]
 
+- Packaged workflow distinguishes master integration branch from per-leaf enclosure/worktree, closeout, integration and finalization; master alone releases. [2]
 As of HFX-L6 the escalation line names the architect lifecycle's `decide` step plainly.
 
 ### Cross-Repo References
@@ -72,17 +65,11 @@ The master template's execution model now says a master provides the integration
 
 ## M38 Series Requirement Projection
 
-Master and leaf scaffolds now use stable series-qualified IDs, declare ownership, and require each
-leaf handoff/review pair to cover its exact leaf-owned plus inherited master set. Every row receives
-worker evidence and independent accepted/rejected adjudication; any rejection prevents completion.
-The durable-evidence promotion hold point is recorded separately. This installed file is a
-synchronized projection only.
-Filtered rows link immutable version-addressed packets carrying their durable corpus approval;
-neither master nor leaf rewrites or silently upgrades an approved revision.
+The master projects stable approved requirement IDs/versions and packet links, without rewriting the corpus. Each leaf owns exactly one primary requirement revision and separately names adjacent dependency/preservation constraints; it cannot claim to close those adjacent requirements. A revision may have multiple independently executable leaf manifestations, but a leaf closing several independent requirements must be split. Each primary gets worker evidence and independent accepted/rejected adjudication; the master cannot pass with a rejected ID or an accepted-but-worker-blocked manifestation. Durable-evidence promotion remains a separate hold. The packaged file is a synchronized projection only. Immutable version-addressed packet links and durable corpus approval remain unchanged.
 
 ## M40-M45 Master-Summary Projection
 
-The installed master scaffold exposes attempts, rejection history, current state, dominant class,
+The packaged master scaffold exposes attempts, rejection history, current state, dominant class,
 and leaf-journal refs through a rebuildable observation that is explicitly never a task,
 lifecycle, closeout, integration, or queue authority.
 
@@ -91,3 +78,5 @@ lifecycle, closeout, integration, or queue authority.
 This packaged projection preserves the canonical phase boundary: validate before append; a
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
+
+- The master scaffold is a render specification; use task_doc create kind master, then indexed children, before waitsFor; existing Markdown remains until intentional migration. [5]

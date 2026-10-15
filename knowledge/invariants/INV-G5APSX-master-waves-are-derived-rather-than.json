@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Deriving from prerequisite IDs and current master-row states prevents a separately stored or manually edited wave plan from lying about which unfinished work blocks the next task."
+  },
+  "applicability": "The current derived waves of an ordinary master’s explicitly listed task population.",
+  "conditions": [
+    "waitsFor and authoritative master-row task states are the inputs; waves are computed rather than persisted.",
+    "Tasks in work precede ready tasks; a waiting task follows its latest unfinished prerequisite."
+  ],
+  "exclusions": [
+    "Sprint graph authoring changes.",
+    "An automatic task-start gate."
+  ],
+  "id": "INV-G5APSX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_field_write_refreshes_derived_markdown_and_projected_heads_without_storing_waves"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 2",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Master waves are derived rather than stored from waitsFor and authoritative task-row states, placing work first, ready tasks next and waiting tasks after their latest unfinished prerequisite.",
+  "status": "proposed",
+  "supersedes": []
+}

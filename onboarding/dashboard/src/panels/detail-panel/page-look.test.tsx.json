@@ -3,14 +3,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module owns the regression assertions and fixture boundaries described above.\n\nAnchor: `dashboard/src/panels/detail-panel/page-look.test.tsx`",
+      "note": "Seeded head/table/review/navigation assertions; the Steps case preserves nested rows but requires a 1-of-4 major heading and four marks.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4c5d215fd91937ad860caa69ac2d26a32e40375",
-            "content": "sha256:c91d9d93224fbe5a3145284a86e221778fea4b351a786d78fa620b6c6c4f32cb",
+            "blob": "26327ca8267fad04091602919f142945e732b447",
+            "content": "sha256:134befbc6dbd0dd870a77823ce5469145b91114d47433a5e153b9a0bdcd8c061",
             "locator": {
-              "kind": "file"
+              "end": 169,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26327ca8267fad04091602919f142945e732b447",
+            "content": "sha256:02b599779a054b1cbf1da372a2185d72b6fe8deb9cc216f56e1474b8f040c6c1",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26327ca8267fad04091602919f142945e732b447",
+            "content": "sha256:bb09613b98bd48d2c02a05f27b074af4b7aaa81f019cb2df52425f76fc43008a",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "test"

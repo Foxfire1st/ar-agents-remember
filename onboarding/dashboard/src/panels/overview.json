@@ -2477,7 +2477,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
             "content": "sha256:c8150dcbcc14f9af288755d9698b804f56e7e450b0df2f2af54283478deb6825",
             "locator": {
               "kind": "symbol",
@@ -2489,7 +2489,7 @@
         },
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
             "locator": {
               "kind": "symbol",
@@ -2558,12 +2558,12 @@
         },
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 484,
+              "end": 326,
               "kind": "line_range",
-              "start": 484
+              "start": 326
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },

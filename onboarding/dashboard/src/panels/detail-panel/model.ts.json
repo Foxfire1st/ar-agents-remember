@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:5cd27bafa78bfa61a0991b4eb80aac562a66ab8a42403d18e0d2abf593c75d80",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "content": "sha256:4e96913fa6978e0b2934686c11dbecfeccedbb216c0b86a0515fc78bc2676b33",
+        "locator": {
+          "end": 233,
+          "kind": "line_range",
+          "start": 230
+        }
+      },
+      "id": "RLZ-7660ZX",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Extends the reader content-block union to nonGoals/acceptance/completedAt/waitsFor; this is supporting reachability/type vocabulary, not dependency derivation or a lifecycle gate.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:c89be5656420ad59749572504b8c0778b970d4220b0da996b106d307b7c5917b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
         "locator": {
           "kind": "symbol",
@@ -88,12 +107,31 @@
         "handoffEntry": "MIK-R127@v1 rule 10 (c)",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Maps the status of a nested step to the same four states a top step has.",
+      "rationale": "Maps a nested status to done/current/blocked/pending, never the page-level next mark; it does not increment the major count or author task state.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "content": "sha256:d040fcb9ca18ef81dc73abeeb0af8d97c2ef5b0fef5ccd8bc87f302dc5bb47d3",
+        "locator": {
+          "end": 699,
+          "kind": "line_range",
+          "start": 673
+        }
+      },
+      "id": "RLZ-MAT6CH",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These major-step display and mark extents create one mark per major and promote an unfinished major when any child is begun or done.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:a6e281fc366a73b40645259ceb48f01a70f69881db8bd4bc083b4b8bb3b8fda0",
         "locator": {
           "kind": "symbol",
@@ -111,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
         "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
         "locator": {
           "kind": "symbol",
@@ -129,8 +167,27 @@
     },
     {
       "anchor": {
-        "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
-        "content": "sha256:4f7c453d2eb641318c96b4529fa89aab08c835b73020cc5b99a5c63b218dbac9",
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "content": "sha256:6d5612df2abb16a6145f4ac74248565770fbafd592d9fcedb952eeb9c7fb9229",
+        "locator": {
+          "end": 200,
+          "kind": "line_range",
+          "start": 197
+        }
+      },
+      "id": "RLZ-Q4GTQ8",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This summary accessor reuses producer-supplied major-step done and total values instead of reconstructing a different child-inclusive denominator.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+        "content": "sha256:5b6c60e522cfe63faea8e6a4689dceb96e0eb7a44199ba51285bc3c7b736c665",
         "locator": {
           "kind": "symbol",
           "name": "stepMarkStates"
@@ -142,32 +199,22 @@
         "handoffEntry": "MIK-R127@v1 rule 10 (c)",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Gives one state per declared step, parents and nested steps alike, so the marks and the count agree on the task page and in a master's table.",
+      "rationale": "Produces one compact state per major step, aligning heading marks with major-only producer counts while child activity can promote an unfinished parent. Nested rows remain separate.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The reader-doc resolution entry points.",
+      "note": "displayedReaderDoc and displayedLeafDoc resolve projected selections through their shared lifecycle/series helpers without fabricating a leaf for an overview.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:4964fe68aa3c975f552f2e17aaa78397f5fbb9de4af93e005e065f753f10e667",
+            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "content": "sha256:76513cc32814f2f35094eb5efda1146fbb4a01a0a54e21d6dec59c259b74078e",
             "locator": {
-              "kind": "symbol",
-              "name": "displayedReaderDoc"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:3d99a36ecfb8da35eefdb5797b0f9c4c4dd1ca73e5a07d08dea5cb152ca30721",
-            "locator": {
-              "kind": "symbol",
-              "name": "displayedLeafDoc"
+              "end": 196,
+              "kind": "line_range",
+              "start": 87
             }
           },
           "kind": "code"
@@ -175,15 +222,16 @@
       ]
     },
     "2": {
-      "note": "The master/series view assembly builds the master view from a series node.",
+      "note": "seriesAsMasterDoc adapts a series as a master, creation-orders its rows, passes discarded audit values and leaves absent document blocks absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:3eb45b9fcbe45fb037ebe332efb219aba93c1ac431eaef89ccb4a26ba3c003b0",
+            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
             "locator": {
-              "kind": "symbol",
-              "name": "seriesAsMasterDoc"
+              "end": 285,
+              "kind": "line_range",
+              "start": 249
             }
           },
           "kind": "code"
@@ -191,27 +239,16 @@
       ]
     },
     "3": {
-      "note": "Decisions order newest-first by recorded time with a stable fallback.",
+      "note": "Decision ordering is parsed-time descending, stable for ties and invalid peers, with invalid timestamps after valid ones.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:b500adade27093aeef1c49a094b3d928f2901b440ec4f1e610f01b3a4b9c32db",
+            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
             "locator": {
-              "kind": "symbol",
-              "name": "orderDecisionsNewestFirst"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
-            "content": "sha256:95c4326ac851f2576dae8fd2fda59a816d9c25641474ea7f25ab971e42306e34",
-            "locator": {
-              "end": 42,
+              "end": 54,
               "kind": "line_range",
-              "start": 26
+              "start": 42
             }
           },
           "kind": "code"

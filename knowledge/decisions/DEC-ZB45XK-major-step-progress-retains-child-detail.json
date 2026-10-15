@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The developer explicitly rejects child-inclusive compact marks/counts in favor of major-only progress plus hierarchical child disclosure, which constrains all later step-summary surfaces. The choice governs future authoring and consumers, not this leaf’s schedule."
+  },
+  "alternatives": [
+    {
+      "option": "Use one progress/count unit per major step across tool and dashboard surfaces; keep child activity in the major display state and child detail in cached hover and the task list.",
+      "reason": "The developer explicitly rejects child-inclusive compact marks/counts in favor of major-only progress plus hierarchical child disclosure, which constrains all later step-summary surfaces.",
+      "status": "chosen"
+    },
+    {
+      "option": "Flatten major steps and sub-steps into separate compact marks and counted progress units.",
+      "reason": "D283 explicitly calls showing each child as a task dot a mistake; it changes the visible denominator and obscures the requested hover hierarchy.",
+      "reconsider_when": "Only a new developer-approved progress-unit contract that deliberately counts children while retaining the distinction from canonical closeout readiness.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Major-only count and compact marks must agree across the tool response, sidebar, master row and task page.",
+    "Nested task-page detail remains available; hover adds no request or keyboard stop; bar rows do not acquire dot tooltips.",
+    "Child activity changes the unfinished major’s display state, not canonical state or closeout obligations."
+  ],
+  "context": "The previous implementation gives 5 majors and 8 children 13 compact marks and a child-inclusive denominator, contrary to the developer’s intended task-level summary.",
+  "decider": "Developer D239, widened/corrected by D283 in MIK-R128@v1 rules11-12.",
+  "id": "DEC-ZB45XK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-DMAS27"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-SQ7NQA"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 11",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

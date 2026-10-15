@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Cycle identification and component scheduling in master_order.py and cycle propagation in _task_order.py prevent legacy cycles from looking like independent ready work or being split apart when one member is already in work."
+  },
+  "applicability": "Dependency cycles already present in legacy master task data, including cycle members already in work.",
+  "conditions": [
+    "The cycle’s task IDs are identified and its members remain together in one marked wave."
+  ],
+  "exclusions": [
+    "Permitting new cyclic explicit writes.",
+    "Using the marked wave as task-start permission."
+  ],
+  "id": "INV-R7YJ4E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_removed_prerequisite_projects_gone_and_a_legacy_cycle_stays_one_wave"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dependency cycles already held in legacy data are identified and kept together in one marked wave, including members already in work.",
+  "status": "proposed",
+  "supersedes": []
+}

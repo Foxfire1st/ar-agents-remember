@@ -42,6 +42,8 @@ without task-driven queue refresh. `validate_task_document_mutation_classes` ref
 vocabulary change without a corresponding mutation class, and unclassified schema models refuse
 before write.
 
+The new root memberships are exact: `completedAt` is `AUDIT`, `waitsFor` is `STRUCTURAL`, and `nonGoals`/`acceptance` are `NORMATIVE`. Consequently a time-only change is operational-audit, a dependency change topology, and fixed-prose changes intent. Classification still follows the complete recursive delta, not an operation name. Major-only display counting does not remove nested step/substep progress/readiness field memberships or change all-unit completion checks.
+
 The taxonomy declares `SubTaskRef.retirement`, the fields of `MasterRetirementProof`, and the endpoints
 of `RetirementEdgeSelection` as `AUDIT`. Exact mutation classification also includes nested model effects:
 `TaskDocumentRef.repository` and `.path` are normative and structural. Adding or changing a proof can
@@ -94,14 +96,20 @@ the classification and invalidation semantics this file implements:
 It is an authority link, not a resolved dependency-version source; current behavior is
 evidenced by the repository-owned references below.
 
-- R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver. [1]
+
+- R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
+
+
 
 ### Repo-Internal References
 
 - MIK-R08's task-document field is classified with the lifecycle plane. [2]
 - MIK-R11's declaration and its nested fields are classified normative. [3]
 - The closed effect vocabulary and projector are declared together. [4]
-- The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts. [5]
+
+- The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]
+
+
 - The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. [6]
 - Missing or stale mutation mappings and unclassified models refuse before write. [7]
 - Runtime schema discovery refuses missing, stale, or empty classifications. [8]

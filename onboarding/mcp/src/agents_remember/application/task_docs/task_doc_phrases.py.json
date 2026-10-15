@@ -35,15 +35,28 @@
       ]
     },
     "3": {
-      "note": "Field phrases omit keys outside the shared mutable-field allowlist.",
+      "note": "Field phrases omit keys outside the shared allowlist, now also containing `nonGoals`, `acceptance`, and `waitsFor`; this is a presentation filter, not dependency admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e4e2d29d2b6fdc640f79bbcd880d0b58b15fc15",
-            "content": "sha256:b71b5e0814a4654c5080962aca9cf2296709ed4bebb7b57d9d98018b5518e3b6",
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:f3ef1975f8eec493bcd76793fd5d34788da84651d606f6b0a6a0caa7f06f5119",
             "locator": {
-              "kind": "symbol",
-              "name": "_phrase_set_field"
+              "end": 161,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:83d61980851e82eb0dade76b2682509dd5a605a7c4fdc74c8e3cad066740298f",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"

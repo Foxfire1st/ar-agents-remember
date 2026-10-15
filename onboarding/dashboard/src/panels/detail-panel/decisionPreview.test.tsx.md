@@ -6,14 +6,14 @@
 
 ## Purpose
 
-Unit tests for the decision-log preview: six entries show five with a link, five show five with no link, the five newest come first by recorded time from an unsorted log, product-written records are excluded with both counts named, and finalizer-shaped input is ordered correctly.
+Unit assertions for the decision-log preview: five authored decisions have no link; seven authored decisions show the newest five with an `all 7 decisions` link. Product records stay out of authored row numbering and link counts (`#2`/`#1`, `all 2 decisions`, and `all 1 decision`). Unsorted input and a fabricated legacy finalizer-shaped sample retain recorded-time ordering coverage.
 
 ## Code Commentary
 
-Six mounted cases pin the preview contract from rule 6: the five/​no-link boundary, newest-first time order (not array tail), product-record exclusion including the lifecycle-only-omitted link, and finalizer-shaped input ordered by its parsed time within the preview. The suite mounts DecisionPreview only and omits the product record; it never mounts the whole-log page (the reader's whole log puts the newest finalizer record first, muted — see the reader suite). Three time-order cases fail on an array-order revert, so the suite guards the ordering helper rather than the fixture order.
+Six mounted cases declare the preview contract: five/no-link boundary, newest-first recorded time rather than array tail, authored-only numbering/counts, and a link when only product records are omitted. This suite mounts DecisionPreview only. Its finalizer-shaped input is a hand-built legacy sample; it does not exercise or establish the current writer, which no longer adds a decision. The whole-log reader instead keeps product records behind a collapsed muted disclosure at the end (see that reader suite). The historical account of three time-order cases failing an array-order mutation is not a fresh mutation run or current acceptance result.
 
 ## Evidence
 
-- Five entries show five with no link; six show five with a link. [1]
-- The newest five come first by recorded time from an unsorted log. [2]
-- Product-written records are excluded and both counts are named. [3]
+- Five authored decisions omit the link; seven show five with all 7 decisions and forward the complete original array. [1]
+- Unsorted preview input selects newest authored decisions by recorded time, not the array tail; legacy finalizer-shaped input is fabricated. [2]
+- Product records do not contribute to #2/#1 authored numbering or all 2/all 1 decision link counts. [3]

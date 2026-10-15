@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+        "content": "sha256:38e85062975ff4236ae8af2b451b60fbd74e6d1b361a6702aca3271cc3082f89",
+        "locator": {
+          "end": 166,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "id": "RLZ-B0ZF1M",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "The extracted presentation declarations preserve owned row/group font sizes, bounded cells and focus treatments. Earlier mounted typography evidence is historical and does not certify the new major-step progress lane.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Extracted column styling and controlled grouping pivot preserve separate row derivation and task-own state; there is no pickup dismissal control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+            "content": "sha256:3d4d0b001d0255d85830beaba6620ba8d8198532e32f3f6cdf4f14f18891d2ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

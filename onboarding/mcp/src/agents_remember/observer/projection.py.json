@@ -1,33 +1,14 @@
 {
   "path": "mcp/src/agents_remember/observer/projection.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-        "content": "sha256:9b9ecd7507b3c0591253e8909a192475860e40271f60eb252e8c9337e50ff1fa",
-        "locator": {
-          "kind": "symbol",
-          "name": "TaskReviewStateNode"
-        }
-      },
-      "id": "RLZ-N23E8J",
-      "invariant": "INV-Z8HF38",
-      "origin": {
-        "handoffEntry": "F5-V03",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "The wire shape of a review round; openFindings is the open findings of the whole round beside totalFindings.",
-      "role": "primary-authority"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:9a4144b04dd4ce8584d2af67e3b707cd42fe6528769c6fbaef3f51c745287af4",
+            "blob": "382dde142bea5ed15623ddf66bea97d062d113b3",
+            "content": "sha256:59956047c687b6708ef1f4bb004e02daa0660300e9c1447b342e097492ee70c7",
             "locator": {
               "kind": "file"
             }
@@ -37,15 +18,29 @@
       ]
     },
     "2": {
-      "note": "Task documents remain the real projected hierarchy.",
+      "note": "Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:828bb254b217a4331bdc6faf39327f61951d6856a32a3fe594f46615f66c6e48",
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:d7fb2dddc8bf5031b984dc305e85acfd56a98935064f9ec6609eea2df705f64e",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocNode"
+              "end": 404,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bba48b7fdd013a1ad1cee94f907890109b34bba9",
+            "content": "sha256:de79c4a33aa4606e79cab9e24fe885dc53cacd4eeea2535d9d0f674139e3cddf",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"
@@ -53,27 +48,18 @@
       ]
     },
     "3": {
-      "note": "The leaf-segmented graph projection (lump/segment nodes and sampling endpoints).",
+      "note": "Lump/segment nodes and sampling endpoints retain strict served shapes and bare-ref lifting in the extracted DTO owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:3c5b0deeea54280d46b94c7551915ee21f2ffc4cb5e550a8b23839285ddae9be",
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:9e5fbef4b35c61eae4c730c9a1058e310652578ac1b75fd0d827e3eb33b59e6a",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskExecutionNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:1b42cd30fcb75529cf09dafdb0ec608b81f19a5e9b6fe962972d6dcdb939e636",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskExecutionEndpointNode"
-            }
+              "end": 260,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
           "kind": "code"
         }
@@ -84,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "blob": "bba48b7fdd013a1ad1cee94f907890109b34bba9",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
               "kind": "symbol",
@@ -92,81 +78,40 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:2dfa2f1d1342ac25ff477dbf50ad77de717e45968146868d957a99aa22099c1e",
-            "locator": {
-              "end": 1157,
-              "kind": "line_range",
-              "start": 1135
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings.",
+      "note": "Extracted CloseoutQueueNode has unbounded members; sourceProblems and candidate reasons retain their 256-item ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:de26022adbde2d8feda137766068daf6bd80d13c4907529c1cf0b6427fec3530",
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:5feea319a1076436bf2e752353cc8e7de062d74fb6849d1db0a27a0427cc7e4e",
             "locator": {
-              "kind": "symbol",
-              "name": "CloseoutQueueNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:2d4a75d62f16a75d3345f723e697f6d66d16d239c6668f87ccf4eed300c625e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "CloseoutCandidateNode"
-            }
+              "end": 291,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt).\n\nAnchor: `TaskDocNode` `SeriesSubTaskNode` `DirectGrantNode`",
+      "note": "Task nodes and series-child rows carry optional strict directGrant evidence defined by the extracted DTO owner; it is display, not authorization.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:828bb254b217a4331bdc6faf39327f61951d6856a32a3fe594f46615f66c6e48",
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:45ec49b559bfcd1d1dd670795868b08a69c930c528c9dcc3a989a1b5ecb79daf",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:2c17a34ef4fa435c9ff42909e6870e89b0d3bff288189674e4e622f0bcbb00bd",
-            "locator": {
-              "kind": "symbol",
-              "name": "SeriesSubTaskNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:d2998046b35a3d29c636d7b449cef5ac67bfbea541439977db22833427dbd891",
-            "locator": {
-              "kind": "symbol",
-              "name": "DirectGrantNode"
-            }
+              "end": 438,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
           "kind": "code"
         }

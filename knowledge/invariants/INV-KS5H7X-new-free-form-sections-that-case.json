@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Refusing newly restated reserved headings with an actionable field or operation prevents authors from creating a second competing source of objective, design, requirements or task order while preserving historical text."
+  },
+  "applicability": "New free-form section headings submitted through task_doc when the heading is reserved for a fixed field or structured block.",
+  "conditions": [
+    "A single case-insensitive heading map supplies the authoring remedy.",
+    "Existing matching sections may be edited or removed; grandfathering does not permit an additional newly duplicated reserved heading."
+  ],
+  "exclusions": [
+    "Deleting or migrating existing sections solely because their headings are now reserved.",
+    "Assuming all future synonyms are already recognized; a new word requires an authored map extension and test."
+  ],
+  "id": "INV-KS5H7X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 7",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "New free-form sections that case-insensitively restate a fixed field or block are refused from one central heading map with the proper field or operation, while existing sections remain editable and removable.",
+  "status": "proposed",
+  "supersedes": []
+}

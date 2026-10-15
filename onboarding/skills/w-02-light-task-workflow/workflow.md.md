@@ -34,7 +34,10 @@ any task, lifecycle, closeout, integration, or queue operation.
 ### Conventions
 
 - Use one planning wrapper with `requirements/README.md` and immutable revision packets.
-- Tool-managed light tasks are JSON-primary and rendered through `task_doc`.
+- Tool-managed `light`, `subTask`, and new `master` documents are JSON-primary and rendered
+  through `task_doc`; generated Markdown is not hand-edited. Create a new series master with
+  `create` and `kind:"master"` first, then indexed child documents before leaf `waitsFor` writes.
+  Existing hand-authored Markdown remains unchanged until intentionally migrated. [6]
 - Decision logs are append-only and timestamps use `YYYY-MM-DDTHH:MM`.
 - Escalate to a master series when the implementation plan no longer fits one page.
 
@@ -66,11 +69,14 @@ No external Domain Documentation source governs this workflow.
 ### Repo-Internal References
 
 - Requirement compilation, cold read, and approval precede topology. [1]
-- Tasks carry filtered projections rather than rewritten contracts. [2]
-- Implementation maintains one acceptance block per exact revision. [3]
-- Requirement changes version, invalidate, update, and rebrief affected work. [4]
-- Phase 2 and closure append exact worker/reviewer records, while master-series summaries remain rebuildable and non-gating. [5]
 
+- Tasks carry filtered projections rather than rewritten contracts. [2]
+
+- Implementation maintains one acceptance block per exact revision. [3]
+
+- Requirement changes version, invalidate, update, and rebrief affected work. [4]
+
+- Phase 2 and closure append exact worker/reviewer records, while master-series summaries remain rebuildable and non-gating. [5]
 ### Cross-Repo References
 
 The context resolver supplies target-repository paths, tools, and memory policy; this workflow does
@@ -82,3 +88,5 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+- JSON-primary current authoring and master-first series creation precede child waitsFor; generated renders are not hand-edited and existing Markdown is not automatically migrated. [6]

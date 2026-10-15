@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/tasks/master_order.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:117cf11c0828775f1b56b948879c541782e828208fbb89880b663ca48a119689",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependency_components"
+        }
+      },
+      "id": "RLZ-5RV51J",
+      "invariant": "INV-R7YJ4E",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This strongly connected component computation supplies one component identity for each legacy dependency cycle.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
+        "locator": {
+          "kind": "symbol",
+          "name": "_component_waves"
+        }
+      },
+      "id": "RLZ-H1FD2Z",
+      "invariant": "INV-G5APSX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 2",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This wave calculation derives SCC identity and cycle membership from the full stored dependency population before excluding Completed work from scheduling. Unfinished remnants of each stored component stay together, and all cycle members regain that component wave (or -1 for an all-Completed cycle). State anchors and prerequisite waves remain scheduling inputs, not start authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:665053f8d2822bfd03cee886c0d16ad38befd56ec6b3ea59830aba8c0e5c0a76",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependency_cycles"
+        }
+      },
+      "id": "RLZ-JN8K3H",
+      "invariant": "INV-R7YJ4E",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This derivation identifies the exact members of cyclic dependency components, including self loops, for refusal or marked legacy display.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
+        "locator": {
+          "kind": "symbol",
+          "name": "_component_waves"
+        }
+      },
+      "id": "RLZ-MAE1W3",
+      "invariant": "INV-R7YJ4E",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This wave calculation identifies stored legacy cycles before Completed filtering, retains Completed members in cycle_ids, condenses unfinished members by the same stored SCC, and restores one wave across all members (or -1 if all are Completed). The previous unfinished-only cycle scope remains historical, not a governing-rule relaxation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
+        "locator": {
+          "kind": "symbol",
+          "name": "derive_master_order"
+        }
+      },
+      "id": "RLZ-QPKY0E",
+      "invariant": "INV-G5APSX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 2",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This derivation constructs the current master Order from the listed matched-child prerequisites and authoritative row states, retaining full stored cycle identity supplied by _component_waves. It indexes cyclic IDs once, excludes every cyclic member from ready_ids, admits only planning tasks whose prerequisites are Completed, and returns no Order when no matching listed child supplies nonempty dependency data.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:44498f2232bb9b100eac2b7be315665eb32c12ca28028b04005f0cd80e0b45dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_population"
+        }
+      },
+      "id": "RLZ-YXXT68",
+      "invariant": "INV-G5APSX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 2",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "For each indexed task, this population builder uses the matching subTask child's title when that child exists, otherwise the master row's name, and always takes status from the master row; it combines matched-child prerequisite data while retaining rows without a readable matching child.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+        "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
+        "locator": {
+          "kind": "symbol",
+          "name": "derive_master_order"
+        }
+      },
+      "id": "RLZ-Z9VGMG",
+      "invariant": "INV-XKS34Z",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery absent order",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This derivation constructs the current master Order from prerequisite fields and states, and returns no Order when none of its listed children supplies nonempty dependency data.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Explicit child loading and authoritative row status determine the read-only population; full stored SCC identity survives Completed filtering, while unfinished scheduling derives waves and cyclic members never become ready.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0102ac360df50ba77dd71ffd151b6884a98b36c6",
+            "content": "sha256:b7ef5712cdb12e130a824b8c3da294b9c0dfaed4f69baae3bfb034b535c62a4f",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

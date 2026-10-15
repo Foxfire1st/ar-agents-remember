@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The master projects requirements to manifestation subtasks.\n\nAnchor: \"## Filtered Requirement Projection\"",
+      "note": "The master projects requirements to manifestation subtasks.",
       "targets": [
         {
           "anchor": {
-            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
-            "content": "sha256:e7bbb4a566f27adb9f7d5027aea3e309567b95aaa201da0eb85f7d363bebba37",
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:4abe63b2e8cee4ac19863e9d4bb813f070a3bcaf3081959aa2a424a2933355da",
             "locator": {
-              "end": 65,
+              "end": 68,
               "kind": "line_range",
-              "start": 53
+              "start": 58
             }
           },
           "kind": "code"
@@ -20,16 +20,28 @@
       ]
     },
     "2": {
-      "note": "Each subtask names one primary revision and adjacent constraints separately.\n\nAnchor: \"## Primary Requirement Revision\"; \"## Adjacent Requirement Constraints\"",
+      "note": "Each subtask names one primary revision and adjacent constraints separately.",
       "targets": [
         {
           "anchor": {
-            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
-            "content": "sha256:eb79d11e6a888bb605ed717b943a6a0564bf28d5e40e8bc79f337320af687d3e",
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:2d9cf6787b62071789f164be2df7b52fe171c9f52489e8e072bbe99074450e55",
             "locator": {
-              "end": 139,
+              "end": 148,
               "kind": "line_range",
-              "start": 137
+              "start": 144
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:f47fc9523064ce73701e5b83ab511585f1102a9230286cefbb493e9701e30899",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 187
             }
           },
           "kind": "code"
@@ -37,16 +49,16 @@
       ]
     },
     "3": {
-      "note": "Usage rules preserve approval, versioning, and evidence boundaries.\n\nAnchor: `## Usage rules`",
+      "note": "Usage rules preserve approval, versioning, and evidence boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
-            "content": "sha256:5a7b5e0c814cf90d59ed45f6535ea85f1af87fc25f08c83773bf1d098a8296b5",
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:8fb518891fd6d440708d4bb3dddb318a22e2314928ea1c8dfe7746a2541a463f",
             "locator": {
-              "end": 159,
+              "end": 186,
               "kind": "line_range",
-              "start": 125
+              "start": 155
             }
           },
           "kind": "code"
@@ -54,16 +66,86 @@
       ]
     },
     "4": {
-      "note": "The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary.\n\nAnchor: \"## Requirement Attempt Summary (rebuildable projection — never a gate)\"",
+      "note": "The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
-            "content": "sha256:871ba8fbc44d366dfb170e49e9c922a3ddbfc3ac870b6db1abee4a42f4376887",
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:3fa9b1ff33922bac3ce79f9f081e73820141376550132e068b6a430bef60ca8e",
             "locator": {
-              "end": 83,
+              "end": 85,
               "kind": "line_range",
-              "start": 67
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:8ce3b7b8780beffd4a3a4ef84d23d72c8605c16a9863fc616e5df51c74d0332d",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Flat numbers are stable creation IDs; Sub-tasks is an index and exact same-master waitsFor authored through task_doc derives Order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:0cfd3c914fbd84fea9ad3f4851a94db0d6d789a4b441a1e17f57a8f0857b8ce3",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:3a85fffc0cd5641e3ac4bfe1d546b5c1d66eb1e9baf71c2c7591ef4d73558305",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "After corpus approval, create a JSON-primary master first, then indexed child documents before waitsFor writes; no Markdown-only new-master route or automatic migration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:ce1cd65e1e275cb0a8dfb5757d0895b1d3c008f7269a323c9359fa2b412bc3c5",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f124bbd477efa8c85cbe2192489a5b12b7c20ab",
+            "content": "sha256:5ba450805138d4059fccda6d67a150ca6817c6c6b00b505aa8efc8c4cd94d070",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 155
             }
           },
           "kind": "code"

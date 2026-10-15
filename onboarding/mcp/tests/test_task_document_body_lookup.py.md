@@ -6,11 +6,7 @@
 
 ## Purpose
 
-Unit evidence that the dashboard's on-demand task-document body read
-(`read_task_document_body`, served by `/api/task-document`) is **bounded by what it names**, not by the
-task corpus, and that it still projects **exactly the bytes** the earlier corpus-wide projection
-produced. The same module also checks that the corpus enumeration the always-on projection still
-needs (`_iter_task_json`) returns exactly the list the earlier recursive glob returned.
+Source assertions for the dashboard’s on-demand task-document body reader: bounded named inputs rather than unrelated corpus enumeration, retained graph-join byte comparisons on the original fixture, and RF01 owner/listed-child raw-schema admission parity for dependency/graph fields. The same module checks canonical corpus enumeration against the earlier recursive glob. The original _corpus_wide_body oracle supplies no OrderFields; its fixture comparison must not be generalized to arbitrary dependency-bearing populations.
 
 The cost is checked by counting what a call touches, not by timing it. The module records every
 directory listed and every task JSON read during one call, and requires those two lists to be
@@ -37,7 +33,7 @@ The model gives a missing schema a default, so the schema-less decoy would valid
 last-wins join. Only the schema filter in `_graph_master_docs` keeps it out (added in L42-A2 for
 review finding L42-R1-F2).
 
-**Cases** (3 functions, 5 collected cases):
+**Cases** (source assertions; no tests were collected or executed for this reconciliation):
 
 - `test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join` compares
   `read_task_document_body` with `_corpus_wide_body` for the master, leaf, standalone, both named
@@ -45,19 +41,15 @@ review finding L42-R1-F2).
   `_iter_task_document_payloads` enumeration fed to `_master_docs_by_ref`. The case compares the
   serialized bodies, then checks that the sprint graph shows `Master A`, `Master B` and the
   `repo-a/missing/task.json` fallback, and that an absent path returns `None`.
-- `test_one_body_read_touches_the_same_files_whatever_the_corpus_size[leaf|master|sprint]` uses the
-  `touches` fixture, which monkeypatches `os.scandir` and both modules' `_read_json`, to record
-  listings and reads. At 4 and at 40 unrelated tasks the recorded lists must be equal. For a leaf or
-  a master the only read is the document itself and **no directory is listed**. For the sprint the
-  reads are the sprint plus the three files at graph-named paths (the schema-less decoy is read and
-  then refused). The listings are the tasks root, its three real repository folders, and only the
-  named task folders.
+- `test_one_body_read_touches_the_same_files_whatever_the_corpus_size[leaf|master|sprint]` uses `touches`, now patching _common, _task_documents and _task_order _read_json plus os.scandir. Recorded read/listing lists must match at 4 and 40 unrelated tasks. The leaf now expects its own JSON then its owner task.json, while the master fixture expects only itself; neither lists directories in this fixture because its master rows have no explicit child files. The sprint still expects itself and the three graph-named candidate files, including the refused schema-less decoy, and only the specified repository/task-folder listings. This is not a claim that dependency-bearing ordinary masters read no children.
 - `test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept` adds edge
   entries: a directory named `folder.json`, JSON under `enclosures/` at two depths, a top-level JSON
   in a repository folder, and a symlinked task folder. It then requires `_iter_task_json` to equal
   the old `rglob` comprehension element for element and in order. The `folder.json` directory is
   kept, because the enumeration lists any entry named `*.json` and leaves refusal to the reader. The
   notes copy, top-level, archive, enclosure and symlinked paths are excluded.
+- `test_named_order_reads_preserve_raw_corpus_admission` crosses owner versus listed-child boundaries with absent, correct and wrong raw schema. Every mutated payload also carries a futureVersionField. The requested leaf waits on L2, L2 points back to L1 and to absent L404, and the owner lists a missing L3 child. The body must remain readable; an inadmissible owner stops after leaf+owner reads, while an admitted owner attempts the named gate and missing child, with no directory listings or unrelated task read. The case compares body and corpus waitsForTasks, neededByTasks and executionGraphView, checks the expected forward/reverse IDs, and compares the four pre-existing JSON files’ bytes. It demonstrates declared tolerance for schema-bearing unknown fields and refusal of missing/wrong schema at both new boundaries, not whole-body serialized equality or a directory-wide no-new-file assertion.
+- `test_ready_membership_is_indexed_once_per_native_call` uses 32 and 128 planning leaves all waiting on Completed L0, separately for body and corpus reader entry points. It saves uninstrumented serialized output, wraps derive_master_order to return counted ready IDs/iteration, and on each of two instrumented calls asserts unchanged serialized output, no more than 2*size counted equality comparisons, exactly one ready-tuple iteration and exactly size yielded items. It records those operation counts. This checks the graph adapter’s ready-membership indexing, not wall-clock timing, all reader work, SCC complexity, or an instrumented execution result from this reconciliation.
 
 ### Conventions
 
@@ -73,15 +65,8 @@ review finding L42-R1-F2).
 
 - Keep the scaling case **count-based**. Replacing it with a timing threshold would make it flaky
   and would stop it from saying which file was touched.
-- Do not remove a decoy to make a case pass. Each one fails a specific mutation. The worker's
-  mutation check caught 4 of 4 mutations. The reviewer's M2 (dropping the schema filter) survived
-  until the schema-less decoy was added, and now fails the byte-identity case with
-  `AssertionError: sprint`.
-- `mcp/tests/conftest.py` puts this worktree's `mcp/src` first on the path. A PYTHONPATH swap
-  therefore cannot run these cases against another tree. A base comparison needs an extracted copy
-  of that tree, which is how the scaling cases were shown to fail on base (3 failed, 2 passed).
-- The file is registered in the `unit-regression` lane. It uses only `tmp_path` and `monkeypatch`
-  and composes no application.
+> Retained historical L42 evidence: the Worker mutation check caught 4 of 4 mutations; dropping the graph schema filter survived until the schema-less decoy made the byte-identity case fail with `AssertionError: sprint`. The original base comparison used an extracted tree because conftest put the worktree mcp/src first, and reported 3 failed/2 passed. These are predecessor task reports, not RF01 executions or collection counts. Keep each decoy and its mutation purpose; none of those checks was rerun in this reconciliation.
+- The existing card records unit-regression lane registration; that external lane file was not re-adjudicated in this bounded reconciliation. Original cases use temporary paths and monkeypatching; the RF01 ready-membership case also uses record_property. The module invokes real projection readers on disposable data, not a browser or installed HTTP application.
 
 ### Todos
 
@@ -99,14 +84,21 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-- The module's own statement of what it protects. [1]
+- The module protects bounded named-input body reads and corpus admission; its RF01 docstring names owning masters and explicit children, not a one-file-only closure. [1]
+
 - The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes. [2]
+
 - The reference projection: the corpus-wide enumeration fed to the unchanged join builder. [3]
-- Byte identity for every document kind, the sprint's graph titles and fallback, and `None` for an absent path. [4]
-- The recorder that counts listed directories and read files. [5]
-- The same touched files at 4 and at 40 unrelated tasks; no listing at all for a leaf or a master. [6]
+
+- Original fixture-specific serialized body comparison, sprint graph titles/fallback and absent-path refusal remain; RF01 separately asserts owner/listed-child schema admission by comparing dependency/graph fields with the corpus reader. [4]
+
+- The recorder counts listings and task JSON reads through all three reader modules; a separate counted-ready wrapper asserts one ready-tuple indexing pass per graph at two sizes and entry points. [5]
+
+- At 4/40 unrelated tasks, the fixture asserts identical touched-file lists: leaf plus owner, master alone, or sprint plus graph-named candidates; leaf/master fixtures list no directories. [6]
+
 - The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. [7]
-- The production read under test, and the only place that reads masters for it. [8]
+
+- The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing. [8]
 - The bounded enumeration and the named-path probe under test. [9]
 - The lane registration. [10]
 

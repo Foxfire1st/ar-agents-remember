@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:09b11c5fdd27f27353fab155f48d03bab6985b755e9acfc0d67edf7596de915e",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:65057cee68f645165f00c0c22bd77372014ccc54cc26f79fd6ddd61b6031af0b",
         "locator": {
           "kind": "symbol",
           "name": "DirectExecutionSwitch"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:0642d50a5e7087af2ed9352804e45e7affdb528096f490e56011897b57f00a49",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:b12975886d9916cbd01cc81462d0195dce184e751f1b6e14fba01e4e44973897",
         "locator": {
           "kind": "symbol",
           "name": "MasterViewBody"
@@ -57,7 +57,45 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:f49bb3daf1c58039a11c042c4cfc1ed59d01a4e9802c64ef0c8c73bda85028ae",
+        "locator": {
+          "end": 551,
+          "kind": "line_range",
+          "start": 543
+        }
+      },
+      "id": "RLZ-42QH5Y",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master-body extent places the fixed Acceptance block immediately after Design.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:cff80ee8eec549eb0ba9637d9249a9c7d08e3ea0d143438f78b2849262fd8a22",
+        "locator": {
+          "end": 794,
+          "kind": "line_range",
+          "start": 779
+        }
+      },
+      "id": "RLZ-4EETEC",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This task-page extent orders the direct-execution line, body notice and series chrome before Objective and Steps without removing their existing callbacks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
         "locator": {
           "kind": "symbol",
@@ -75,8 +113,27 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:b144b27f78f15e30a54d930b72464b0182d8d57a8feef01e808a214c0e8a9f0e",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:e22e56a33b34be97dbe38683f72672b64757c1a632e1d02e6c15eec298b6e993",
+        "locator": {
+          "end": 803,
+          "kind": "line_range",
+          "start": 791
+        }
+      },
+      "id": "RLZ-6XKJAP",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This task-body extent places Non-goals after Objective and Acceptance after Design while retaining the intervening task-specific blocks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:8a71db1a5ff20ed637f040a07faccf8351e7096d49dc77891d249a80224994a2",
         "locator": {
           "kind": "symbol",
           "name": "TaskReaderPage"
@@ -88,12 +145,31 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "This form page composes its fixed body and shared head instead of authored arbitrary section order.",
+      "rationale": "Composes the task fixed form with complete head/series chrome and direct-grant slot before Objective, then optional Non-goals and its remaining fixed nonempty body.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:fd23e3947282832496a9937a7fa3fc84712c726d44e48a9762efc514af9b2b43",
+        "locator": {
+          "end": 534,
+          "kind": "line_range",
+          "start": 518
+        }
+      },
+      "id": "RLZ-BM077Q",
+      "invariant": "INV-5PPM67",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 3",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These adjacent master-body blocks place Now before Order and pass the master graph and actual row handlers into the shared drawing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:6f86a46734ed1ee086caffff3fed8e72cc4896dbea53914f2efd7a101f100b58",
         "locator": {
           "kind": "symbol",
@@ -111,25 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:2bd524db0bebdba85ca53bb4b8f6c7f4c1e5c9237bd9251a733193e7f683ba8c",
-        "locator": {
-          "kind": "symbol",
-          "name": "TaskBodyNotice"
-        }
-      },
-      "id": "RLZ-CE8WSX",
-      "invariant": "INV-S18MK6",
-      "origin": {
-        "handoffEntry": "curator-body-revision-hydration-currentness",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "Loading and unavailable body states remain explicit rather than pretending previews are complete.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
         "locator": {
           "kind": "symbol",
@@ -147,7 +205,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:144e2cf21263143010633b0c1560c1798a73aad91932d45cf3a102f6f1bd7b7e",
         "locator": {
           "kind": "symbol",
@@ -165,7 +223,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
         "locator": {
           "kind": "symbol",
@@ -183,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
         "locator": {
           "kind": "symbol",
@@ -201,7 +259,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
         "locator": {
           "kind": "symbol",
@@ -219,7 +277,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:b2cbfa30b47b310d2ca5bad90a32d28abf69a916ae96969b11069b584c11fb4e",
         "locator": {
           "kind": "symbol",
@@ -237,7 +295,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
         "locator": {
           "kind": "symbol",
@@ -255,25 +313,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:ded4da04e5c9ff3f119ac089ee3e8e9c0137a0ac5bbd9712a41be66114625ba3",
-        "locator": {
-          "kind": "symbol",
-          "name": "OverviewTop"
-        }
-      },
-      "id": "RLZ-SKSCWV",
-      "invariant": "INV-PHG1PR",
-      "origin": {
-        "handoffEntry": "curator-fixed-form-and-optional-blocks",
-        "leaf": "260928-MIK-L127"
-      },
-      "rationale": "One common head establishes objective-first composition across both overview forms.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:8df664e2fe24761610c3c7dca8d0b22e89d0b3cc895f0cce8a67ff0132b0c97a",
         "locator": {
           "kind": "symbol",
@@ -291,7 +331,7 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
         "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
         "locator": {
           "kind": "symbol",
@@ -309,8 +349,8 @@
     },
     {
       "anchor": {
-        "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-        "content": "sha256:bab9d24dbb09fd1f7e58d99d88700fe58d012d0e27b186b25650a9dfc69fcef9",
+        "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+        "content": "sha256:2dc94a9040249e616e877b430e19a9224e5bbc533ca2d215940c5a0d800f1866",
         "locator": {
           "kind": "symbol",
           "name": "MasterPageBody"
@@ -322,7 +362,7 @@
         "handoffEntry": "curator-fixed-form-and-optional-blocks",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "The master form owns its nonempty fixed body order.",
+      "rationale": "Composes the ordinary master fixed body with optional Non-goals, projected Order and Acceptance in their owned slots, without authored arbitrary section order.",
       "role": "enforcement"
     }
   ],
@@ -332,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
             "locator": {
               "kind": "symbol",
@@ -344,31 +384,34 @@
       ]
     },
     "10": {
-      "note": "Sprint and master composition draws the complete head, then one bounded objective, before body and Now.",
+      "note": "readerTop’s OverviewTop draws identity, body notice and series/change-set chrome before the bounded objective, then optional Non-goals on non-sprint forms.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-            "content": "sha256:ded4da04e5c9ff3f119ac089ee3e8e9c0137a0ac5bbd9712a41be66114625ba3",
+            "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
+            "content": "sha256:1d88819d8fcf06e0da4f6e4a718f34e504a3712ee4cbbb5baf663e7591d7fa84",
             "locator": {
-              "kind": "symbol",
-              "name": "OverviewTop"
-            }
+              "end": 43,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/detail-panel/readerTop.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "Task composition draws the complete head, then the objective, before the task body and Steps.",
+      "note": "TaskReaderPage draws DocHead, the task direct-grant slot, body notice and ReaderHead before ObjectiveLead and optional Non-goals, then Steps.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-            "content": "sha256:b144b27f78f15e30a54d930b72464b0182d8d57a8feef01e808a214c0e8a9f0e",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:9c91cc3fc4effef4697e52afd9f07798ca4c7b2f45f56affc9a8aa382bcf93c6",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskReaderPage"
+              "end": 795,
+              "kind": "line_range",
+              "start": 780
             }
           },
           "kind": "code"
@@ -380,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:91a574b8a85a110788822e80737698d9174ee6a637ef1a59915db5cc1ab8df2e",
             "locator": {
               "kind": "symbol",
@@ -396,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:26a5ae1d241cf92d32d9a1ea2245201b15395d984d1628742c36bdde17015ef1",
             "locator": {
               "kind": "symbol",
@@ -408,34 +451,60 @@
       ]
     },
     "4": {
-      "note": "Task-only steps are rendered by the shared table owner rather than the retired StepList primitive.",
+      "note": "StepsBlock owns the task’s full step table and receives cached major-step payloads for header marks; reader composition only supplies served steps and counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
-            "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
             "locator": {
-              "kind": "symbol",
-              "name": "StepsBlock"
+              "end": 160,
+              "kind": "line_range",
+              "start": 129
             },
             "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:910c7fcfbadcea54c94c5330574519dd5d7e2459a58bfe17fd0c4c2c4ef9eb87",
+            "locator": {
+              "end": 795,
+              "kind": "line_range",
+              "start": 791
+            }
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The relocated preview preserves newest-authored selection and whole-log navigation.",
+      "note": "The relocated DecisionPreview keeps five newest authored decisions and an authored-only all-link to the records-retaining whole-log target.",
       "targets": [
         {
           "anchor": {
-            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
-            "content": "sha256:9e5060df5ed7f24433425132325bf4cdf358d354da4db8e768c9c329966d26cd",
+            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
+            "content": "sha256:32ab283daa0ee36e5993928a28412835196db8bb609b3ecf64ef3a04254ad545",
             "locator": {
-              "kind": "symbol",
-              "name": "DecisionPreview"
+              "end": 319,
+              "kind": "line_range",
+              "start": 274
             },
             "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:888fa610f5d1acafc89aa9d7ca03fb356010584af5183e55dd6b83b05696785f",
+            "locator": {
+              "end": 986,
+              "kind": "line_range",
+              "start": 984
+            }
           },
           "kind": "code"
         }
@@ -446,7 +515,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
             "locator": {
               "kind": "symbol",
@@ -458,15 +527,16 @@
       ]
     },
     "7": {
-      "note": "The planning-task switch keeps served position while pending and exposes giver and server notice.",
+      "note": "The planning-task switch stays rendered while pending, disables its action and displays served giver words and adapter notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
-            "content": "sha256:09b11c5fdd27f27353fab155f48d03bab6985b755e9acfc0d67edf7596de915e",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:65057cee68f645165f00c0c22bd77372014ccc54cc26f79fd6ddd61b6031af0b",
             "locator": {
-              "kind": "symbol",
-              "name": "DirectExecutionSwitch"
+              "end": 649,
+              "kind": "line_range",
+              "start": 619
             }
           },
           "kind": "code"
@@ -478,7 +548,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
             "locator": {
               "kind": "symbol",
@@ -494,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
             "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
             "locator": {
               "kind": "symbol",

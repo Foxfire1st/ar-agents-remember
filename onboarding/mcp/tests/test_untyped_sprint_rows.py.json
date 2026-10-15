@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
+        "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
         "content": "sha256:c5fcdb8272971695d51836c757997b7c59efc672711e0865916c2cf22e13916c",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
-            "content": "sha256:2b1a00d74635e30339c9cdf0f694295d4658b0ef941637b242e75226558e66f1",
+            "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+            "content": "sha256:2110b0dfb9b4c3272d604ed90e9c0cf6856a44f9ae7590c38e1cddebb08a8e60",
             "locator": {
               "kind": "file"
             }
@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fabba6c0f05d615d3058c4df85df206b4fd21a9",
-            "content": "sha256:2b1a00d74635e30339c9cdf0f694295d4658b0ef941637b242e75226558e66f1",
+            "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+            "content": "sha256:2110b0dfb9b4c3272d604ed90e9c0cf6856a44f9ae7590c38e1cddebb08a8e60",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
-            "content": "sha256:c083e5119b16ff458daad64241effeb6d4b3aa26a0a6cdc93615dce11779b46b",
+            "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+            "content": "sha256:3187b249faccb749c4972dac89d2578514becb0bf81f2c9caed39a17c231fc83",
             "locator": {
               "kind": "symbol",
               "name": "test_finalize_completes_the_master_and_reports_the_sprint_row_as_skipped"
@@ -68,12 +68,12 @@
       ]
     },
     "4": {
-      "note": "Navigation of raw whole application results is direct. Existing row, file and proof assertions remain unchanged; source porting does not reinstate a retired public reader.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Navigation of raw whole application results stays direct and does not reinstate a retired public reader. The later rule-14 repair changes only the skipped-row completion predicate and its comment; other row, file, linkage and retirement assertions remain unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a4a9a6539be6408d9403bb3cd3300eb7acda79b",
-            "content": "sha256:3f0490466744047f9322e1fadcd723f4694b142570a6d1da4cae2c7d18dafd4c",
+            "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+            "content": "sha256:2110b0dfb9b4c3272d604ed90e9c0cf6856a44f9ae7590c38e1cddebb08a8e60",
             "locator": {
               "kind": "file"
             }

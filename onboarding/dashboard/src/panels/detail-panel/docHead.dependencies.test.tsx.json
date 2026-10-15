@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/docHead.dependencies.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Preprojected dependency-head cases assert direction/state/navigation and absent/empty omission, not backend derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b08815328496a09492039dd4559f50167d2ba3d0",
+            "content": "sha256:d09741f1158da21fa7c908cfaed0eb45d8e71041cdc674e4e504fc2a350b6d57",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

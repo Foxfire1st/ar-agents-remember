@@ -8,9 +8,10 @@
   },
   "applicability": "Every decision log surface: the task-page preview and the whole-log reader page.",
   "conditions": [
-    "Both order by parsed recorded time, newest first; invalid stamps sort after all valid stamps, stable among invalid peers (never inventing order).",
-    "The preview shows the five newest authored decisions with an all-entries link naming both counts; product-written records are muted from the authored count.",
-    "Product-record marking comes only from the writers' own constants via exact/prefix match; authored collisions are unguarded (no enforced separation)."
+    "Shared parsed-time descending order retains stable ties and places invalid stamps after valid stamps.",
+    "Product records count toward neither authored totals nor decision numbers; a records-only log remains reachable through the all-link.",
+    "The whole log expands authored text and rationale; records remain in their own counted end disclosure.",
+    "Exact legacy Finalize text and removed/skip-step prefixes still classify product records; authored collisions remain possible."
   ],
   "exclusions": [
     "Storage order carries no invariant; neither surface invents an order.",
@@ -28,9 +29,9 @@
     "leaf": "260928-MIK-L126",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Decision logs show the five newest authored decisions by recorded time with an all-entries link naming both counts, and the whole log opens newest-first by time on its own reader page with product-written records muted.",
+  "statement": "Decision surfaces count and number authored decisions only: the preview shows the five newest by recorded time and its omitted-entry link names only the authored count; the whole log shows authored entries newest-first and retains product-written records unnumbered in a separate muted counted end disclosure. Product-record marking remains exact/prefix provenance classification, not enforced authorship separation.",
   "status": "proposed",
   "supersedes": []
 }

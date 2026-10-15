@@ -3,25 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-        "content": "sha256:71de536c39397dd3789c578358c46b82e0f3d34de25cc494734560b9ed0dd72e",
-        "locator": {
-          "kind": "symbol",
-          "name": "GroupViewBody"
-        }
-      },
-      "id": "RLZ-0Q2WJ2",
-      "invariant": "INV-07RDCZ",
-      "origin": {
-        "handoffEntry": "L150-R9",
-        "leaf": "260928-MIK-L150"
-      },
-      "rationale": "Assembles grouped rows without any grant hand-through.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
         "content": "sha256:3a76eff7e606222874ff9e11f60d9e83ce1a40a217b4450ec5ecf45670cf2e22",
         "locator": {
           "kind": "symbol",
@@ -39,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
         "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
         "locator": {
           "kind": "symbol",
@@ -57,11 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-        "content": "sha256:5a2a68d432af3d32b485d8b269ffdac3a1f9b4dd5662ffb6cf9b7873a7e2967c",
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+        "content": "sha256:cc99540bcbbdcbeb0e6697b995e244195cdea1f474292bc40d7c7f55d266dcfe",
         "locator": {
-          "kind": "symbol",
-          "name": "MasterNowBlock"
+          "end": 246,
+          "kind": "line_range",
+          "start": 113
         }
       },
       "id": "RLZ-G8WYZY",
@@ -70,16 +53,36 @@
         "handoffEntry": "L150-R9",
         "leaf": "260928-MIK-L150"
       },
-      "rationale": "Assembles now-rows without any grant hand-through; rows show links and steps only.",
+      "rationale": "Assembles master Now rows with cached major-step details, supplied review counts and informational ready targets, without any direct-execution control or grant mark.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-        "content": "sha256:41dd8d53d78ca2a43e6a684beddc2ad275564334a16c123caafa9750610066eb",
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+        "content": "sha256:b23126a1f952f07af798bc30b2ec872b0deedd0cc56c4035518b6661fd8a5afc",
         "locator": {
-          "kind": "symbol",
-          "name": "MasterTasksBlock"
+          "end": 532,
+          "kind": "line_range",
+          "start": 515
+        }
+      },
+      "id": "RLZ-VFXNP6",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master Tasks placement supplies only the completed group to the capped newest-first preview and keeps the completed-count navigation below it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+        "content": "sha256:e4b59b2e5cdb64c20105014632d146acf05705ff7b8191f7f935bdce21120095",
+        "locator": {
+          "end": 541,
+          "kind": "line_range",
+          "start": 439
         }
       },
       "id": "RLZ-WKA99C",
@@ -88,37 +91,72 @@
         "handoffEntry": "L150-R9",
         "leaf": "260928-MIK-L150"
       },
-      "rationale": "Assembles task rows without any grant hand-through; rows show links, requirements and history only.",
+      "rationale": "Assembles the master task index with requirements/history and a completed-time preview, but no direct-execution control or grant mark.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+        "content": "sha256:9b2d76f558d292da3d2aacb53fa2cef43145273bfb920de860bb412e64ae1933",
+        "locator": {
+          "end": 122,
+          "kind": "line_range",
+          "start": 113
+        }
+      },
+      "id": "RLZ-XRDYTZ",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master-index row uses the shared major-only count and mark functions with the same resolved task steps, preserving the major/child data needed by the dot tooltip.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Every group retains exact commanded-master, linked-series and authored-slice navigation precedence.",
+      "note": "indexRows owns exact commanded-master, linked-series and authored-slice target precedence and stable full-index positions.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:aba38f42661a875610cbed5400f820a24b1ddfe100be1eae71e4172339a646d1",
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:70a4cc7a9a3bb3a08d5016a9018ee310f85b9da0444f5db471a129ae6e6c8b37",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveRowTarget"
-            }
+              "end": 100,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Rows lacking a projected master remain in status groups and the all-row view.",
+      "note": "indexRows retains unresolved and seat rows with their authored status for grouping; task-groups renders them in the raw all-row view.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:804d93a098cfc83451d08690a5a1f125bd2eec7b14fd76e5f3303b21350c91b0",
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:e7552cee2147a934ca0041d96ea7882705af709f14d08f0a04022fdf467b4482",
             "locator": {
-              "kind": "symbol",
-              "name": "sprintEntries"
+              "end": 173,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 700
             }
           },
           "kind": "code"
@@ -126,16 +164,42 @@
       ]
     },
     "3": {
-      "note": "The gone group keeps discarded-before-start history reachable without live tasks.",
+      "note": "Master Tasks keeps discarded-before-start history reachable beside abandoned rows, and GroupViewBody renders that audit even without live group rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
-            "content": "sha256:40e30c5752b1f7cdaf23837da71e1aa16366667f48d8dbd43fb341824c6f8440",
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:f71c0e31c3f231795e1d090b4fa16d295c4215fcbdd10e11d434b45fda256cef",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterTasksBlock"
+              "end": 485,
+              "kind": "line_range",
+              "start": 476
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:75a41c69c2fbb3d1a8c590c6a8d5d483c13cb9132be77594e65937371b4a8832",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
+            "content": "sha256:0abf911a07d8fb836a98454a977203546a1ede36edc703ed3e2cdafcb636c049",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/panels/detail-panel/TaskGroupView.tsx"
           },
           "kind": "code"
         }
@@ -146,11 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
             "content": "sha256:4c07780fe519c32dbdbfae1022ce862674b1095a2d0e8d5409b8e84d681a0311",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintRowsViewBody"
+              "end": 749,
+              "kind": "line_range",
+              "start": 700
             }
           },
           "kind": "code"
@@ -158,15 +223,58 @@
       ]
     },
     "5": {
-      "note": "Master Now retains its dedicated step count and no grant addition.",
+      "note": "Master Now keeps served step counts and cached major-step dots without grant controls; readiness remains a navigation-only graph display.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:b9ba042f4ff89c80636bc99795e62081ec385b871cb94b34700e6929bc7fa7bf",
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:cc99540bcbbdcbeb0e6697b995e244195cdea1f474292bc40d7c7f55d266dcfe",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterNowRow"
+              "end": 246,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e9348bf45a919572856585dacbda62cbfd292808",
+            "content": "sha256:303f86859199f6069c2bca474c1ac301e62b3336168e86ac36b1e2266663e3a7",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "MasterTasksBlock shares one call-local matcher between completed preview facts and navigation, with the completed count/all-link below the preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:79c932363d385119f11d7027493c41f3075074b07cf9411ed99a65f7fdc8c80e",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
+            "content": "sha256:b23126a1f952f07af798bc30b2ec872b0deedd0cc56c4035518b6661fd8a5afc",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 515
             }
           },
           "kind": "code"

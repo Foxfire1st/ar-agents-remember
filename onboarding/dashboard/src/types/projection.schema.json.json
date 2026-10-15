@@ -7,13 +7,76 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
             "locator": {
-              "end": 2008,
+              "end": 1583,
               "kind": "line_range",
-              "start": 1971
+              "start": 1546
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Generated schema declares optional fixed-prose/completion/dependency fields and the dependency graph DTO; generated declarations are not validation or rendering execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "content": "sha256:4478e3921085c23f35aa437c136193fda2dbdf834284b2d3c55136fcbbb3ad90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Optional nullable graph cycle flag. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
+            "locator": {
+              "end": 3752,
+              "kind": "line_range",
+              "start": 3737
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. [12]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
+            "content": "sha256:7393dc273f170b87eca4842c62a9f2f7fde41b310b5aed6985623cdea90ebac1",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 549
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
           "kind": "code"
         }
@@ -24,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
             "locator": {
               "end": 2,
@@ -41,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
             "locator": {
               "end": 46,
@@ -58,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "4652e03517c9ef5da2e88ff18c8e62100d5084e8",
             "content": "sha256:6379cfe6838a961c57e2883c15c3479f8ec65094e92ac0d79c992fd32e1a5ec7",
             "locator": {
               "end": 304,
@@ -71,28 +134,16 @@
       ]
     },
     "5": {
-      "note": "The generated `task-intent/v1` identity definition with closed schema and digest pattern.\n\nAnchor: `intent`; \"task-intent/v1\"",
+      "note": "TaskIntentIdentity forbids extras, requires digest with a lowercase 64-hex pattern, and fixes schema to task-intent/v1 with a default.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
-            "content": "sha256:7c9c07e9264aac31ebfeac06d869ce69ab70065b06e305e381d0894b6f14d017",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
+            "content": "sha256:fcf650a3fd01fe3945118f8e0c9bdb72c1d2a351d7a14bdf2be25943648b7480",
             "locator": {
-              "end": 4218,
+              "end": 3908,
               "kind": "line_range",
-              "start": 4197
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66947ced736f83e78dfa55560f92fbbcfd38c0cd",
-            "content": "sha256:8aa535c287e16e0d225379b56512b2ae58b338741b32ac400b2d37ff4de589e0",
-            "locator": {
-              "end": 4133,
-              "kind": "line_range",
-              "start": 4113
+              "start": 3888
             }
           },
           "kind": "code"
@@ -104,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
             "locator": {
-              "end": 2094,
+              "end": 1669,
               "kind": "line_range",
-              "start": 2084
+              "start": 1659
             }
           },
           "kind": "code"
@@ -121,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
             "locator": {
-              "end": 692,
+              "end": 408,
               "kind": "line_range",
-              "start": 630
+              "start": 346
             }
           },
           "kind": "code"
@@ -138,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe120ad7962d28044d14e48e64564e962a20d1c",
+            "blob": "9c8a6da231a27bda33292696a47cd970aaeba894",
             "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
             "locator": {
-              "end": 2116,
+              "end": 1691,
               "kind": "line_range",
-              "start": 1830
+              "start": 1405
             }
           },
           "kind": "code"
@@ -155,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21c6b062d0f4c84ca6635300493ed60aac220707",
+            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",

@@ -32,12 +32,17 @@ exception-failure rollback across roots, not a claim of multi-file crash atomici
 for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_for` /
 `markdown_path_for` derive the sibling `.json` / `.md` paths in the task folder.
 
-Since 260831-CCR (commit `99dc249b`) the batch writer refuses to publish a document whose route
-review carries a missing or stale task intent: `_require_publishable_task_document` (line 221)
-runs on every document before the batch prepares target paths and calls
-`require_task_intent_identity(review.taskIntent, owner="route-review",
-next_action="record_route_review")` (line 225-227). A legacy review with no canonical identity can
-therefore no longer be written back to disk as current task truth.
+Before rendering, `write_task_doc_batch` builds an exact candidate JSON-path override map for the whole prepared batch. For an ordinary master (`kind == master` and not `is_sprint`) it calls `load_master_children` on explicit nonempty listed files, prefers matching prepared overrides, skips OSError/ValueError/ValidationError child failures, accepts only subTask children keyed by their id, and supplies `derive_master_order` to the renderer. Sprint/non-master documents receive no master Order. The derivation returns None unless a same-number listed subTask has a nonempty waitsFor; row status remains the authoritative Order status. This introduces named-child read cost, not a corpus census or waitsFor permission check. Prepared parent/child writes see candidate dependency bytes rather than stale disk data.
+
+> **Retained historical source account — superseded by the current contract:**
+> Since 260831-CCR (commit `99dc249b`) the batch writer refuses to publish a document whose route
+> review carries a missing or stale task intent: `_require_publishable_task_document` (line 221)
+> runs on every document before the batch prepares target paths and calls
+> `require_task_intent_identity(review.taskIntent, owner="route-review",
+> next_action="record_route_review")` (line 225-227). A legacy review with no canonical identity can
+> therefore no longer be written back to disk as current task truth.
+
+Current store gate: for a route-review-bearing document, `_require_publishable_task_document` calls `require_task_intent_identity` with owner `route-review` and next action `record_route_review`. This checks canonical identity presence/shape; it does not recompute current normative intent or compare against it. Missing canonical identity still blocks publication. Fresh-currentness belongs to the owners that compute/compare intent, not this store gate.
 
 ### Invariants And Boundaries
 
@@ -61,9 +66,18 @@ Markdown publication reads the external grant census once per batch and coordina
 
 ### Repo-Internal References
 
-- The task-document model the store writes, and reads back through `model_validate_json`. [1]
-- The renderer invoked on every write. [2]
-- The application entry point uses batch writes when a leaf mutation also changes its parent master row. [3]
+
+- The TaskDocument class is the JSON-primary schema the store serializes with aliases/exclude_none and reads through model_validate_json. [1]
+
+
+
+- Every prepared write renders Markdown from the candidate and supplied contexts; ordinary masters receive derived Order from explicit listed children and batch overrides. [2]
+
+
+
+- Application publication batches the leaf and resolved parent when sync changed or waitsFor was explicitly supplied by create/replace/set_field; parent accepted source bytes are required. [3]
+
+
 - Publishability gate refusing legacy review intent. [4]
 - The shared identity rejection seam it calls. [5]
 
@@ -99,4 +113,5 @@ Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, newly published
 carry the exact canonical intent identity and writers may not emit the sentinel. The batch writer
 enforces this for route-review-bearing documents, so a legacy review cannot be persisted as current.
 
-- Markdown publication reads the external grant census once per batch and coordination-root/repository/task key, then reuses that batch-local value; the next batch reads again. [8]
+
+- Markdown grant lookup caches one census per batch task key and reads anew for the next batch; prepared candidate overrides and explicit child Order reads are separate inputs/costs. [8]

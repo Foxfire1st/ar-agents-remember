@@ -1,17 +1,67 @@
 {
   "path": "mcp/src/agents_remember/tasks/render.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+        "content": "sha256:074658d0ac91e8c9480b3b28dc56fb2635ac317eaccb25610986f78d4a12bf44",
+        "locator": {
+          "kind": "symbol",
+          "name": "_master_order_lines"
+        }
+      },
+      "id": "RLZ-239GGQ",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This supplied-Order renderer counts Completed tasks and omits their individual rows, renders stable wave/task/state/prerequisite rows with cycle annotations, and when any cycle member is unfinished emits the complete supplied cycle_ids in a legacy-cycle banner, including Completed members. It does not derive order or authorize starts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+        "content": "sha256:12c3925765bc8cc86ce7f5a521634700e5ce3d2de67d3d1b849d7b7fb455c6ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render_master"
+        }
+      },
+      "id": "RLZ-91799E",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master Markdown renderer emits truthy fixed Objective/Non-goals/Requirements/Design/Acceptance fields before graph/derived Order and preserves authored sections in order without deduplicating legacy fixed-heading sections. It inserts only the supplied master_order, retaining fallback index/discarded-history behavior and remaining a formatting consumer.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The header line is drawn only when the field is true.\n\nAnchor: \"**Knowledge maintenance scope:**\"",
+      "note": "The maintenance-scope header is drawn only for a truthy field; the current header also conditionally carries the raw waitsFor line.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
-            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
             "locator": {
-              "kind": "symbol",
-              "name": "_header_lines"
+              "end": 289,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:a113be1d972065ae8c54fec4ead29f0000840d892dac88be8f322fd3c21812e0",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 247
             }
           },
           "kind": "code"
@@ -19,16 +69,64 @@
       ]
     },
     "10": {
-      "note": "render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store.",
+      "note": "render_markdown formats external leaf-grant and supplied graph/master Order inputs; the master emits truthy fixed fields before preserved authored sections and renders full legacy-cycle identity when unfinished cycle work remains. It neither reads the grant store nor derives Order.",
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
-            "content": "sha256:2ab0b63ff63a42240fdb520dd134b119b72d56e5607d666f36817085938c03d2",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
             "locator": {
-              "end": 553,
+              "end": 88,
               "kind": "line_range",
-              "start": 1
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:12c3925765bc8cc86ce7f5a521634700e5ce3d2de67d3d1b849d7b7fb455c6ee",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:63f72ff72365a4db1f1b611cb3eec730e64dc71373c92331e0a9d8cea1533ee6",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:074658d0ac91e8c9480b3b28dc56fb2635ac317eaccb25610986f78d4a12bf44",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "code"
@@ -36,15 +134,16 @@
       ]
     },
     "2": {
-      "note": "The block is drawn only when the field is set.\n\nAnchor: \"**Expected knowledge effects:**\"",
+      "note": "Expected-knowledge-effects header bullets are drawn only when the declaration is truthy and retain declared order.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
-            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
             "locator": {
-              "kind": "symbol",
-              "name": "_header_lines"
+              "end": 289,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "code"
@@ -56,11 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
             "locator": {
-              "kind": "symbol",
-              "name": "_step_lines"
+              "end": 548,
+              "kind": "line_range",
+              "start": 524
             }
           },
           "kind": "code"
@@ -72,11 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
-              "kind": "symbol",
-              "name": "_execution_graph_lines"
+              "end": 343,
+              "kind": "line_range",
+              "start": 302
             }
           },
           "kind": "code"
@@ -88,44 +189,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:438b013392b3b2ea016579e6904827709cff96f2de795bd04f4147913cdcc06e",
             "locator": {
-              "kind": "symbol",
-              "name": "_mermaid_node_lines"
+              "end": 426,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:4b2bcadfd37bab97438a7a3b4c5ac867eeb4a3548f42b7560eeb3e3f0d5ee053",
             "locator": {
-              "kind": "symbol",
-              "name": "_mermaid_segment_lines"
+              "end": 443,
+              "kind": "line_range",
+              "start": 429
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:9a7bd108253926ee04cbb9f6c22d5acf8ba72f934971c99cb639dad5152b5ad5",
             "locator": {
-              "kind": "symbol",
-              "name": "_mermaid_edge_lines"
+              "end": 461,
+              "kind": "line_range",
+              "start": 446
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:c99939524914cfb4097970fe2abc4c079ce8e3db309882971face50560c039cc",
             "locator": {
-              "kind": "symbol",
-              "name": "_mermaid_endpoint_id"
+              "end": 480,
+              "kind": "line_range",
+              "start": 464
             }
           },
           "kind": "code"
@@ -137,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -154,33 +259,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:dab15127874a6faca082c2c89a1ff50cd9fd14d9e0a7e4534fdcfff2a1faebcc",
             "locator": {
-              "kind": "symbol",
-              "name": "_requirement_lines"
+              "end": 498,
+              "kind": "line_range",
+              "start": 491
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:70b3e7c579112c56ee08a0039ccd6461d122f0f147498a0d7e235e9ae5fe729a",
             "locator": {
-              "kind": "symbol",
-              "name": "_question_lines"
+              "end": 508,
+              "kind": "line_range",
+              "start": 501
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:da30910faffa5606c471509f982b4e62616740804f58ac7f25336857cdc0784b",
             "locator": {
-              "kind": "symbol",
-              "name": "_route_review_lines"
+              "end": 609,
+              "kind": "line_range",
+              "start": 587
             }
           },
           "kind": "code"
@@ -192,11 +300,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
-            "content": "sha256:5aff2bbe351758a6f7744f6fab401c3bed09292617d6207c6a9d9b9216e335da",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:47da8f33e3becfde5a50a1be71a810621dc9ab324414cc328fc9c04fd3cf7e02",
             "locator": {
-              "kind": "symbol",
-              "name": "_MARKER"
+              "end": 106,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"
@@ -208,11 +317,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5132595922352e3c822e6b92d4808ef31a248b",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
             "content": "sha256:de68815e461e3996c4f9de72a716cb6332ce5b433e03a35b404daaa75da9a87c",
             "locator": {
-              "kind": "symbol",
-              "name": "_subtask_lines"
+              "end": 217,
+              "kind": "line_range",
+              "start": 201
             }
           },
           "kind": "code"

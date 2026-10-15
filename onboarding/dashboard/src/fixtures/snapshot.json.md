@@ -11,10 +11,7 @@ The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,98
 TypeScript mirror against the sample), `test/fixtures/wire.ts` (which takes retained builder
 bases from it), and `data/store.test.ts`. The removed production-e2e test is not a current reader.
 
-The task samples also exercise the fixed reader's model-derived form, header/type/status-note fields,
-whole review counts and step preview flags required by the current generated mirror. These are
-manual sampled values, not evidence that every fixture-base initializer was copied from a served row.
-The builder card distinguishes copied identities, recomputed form and admitted neutral values.
+The task samples exercise the fixed reader's form, header/type/status-note fields, whole review counts and step preview flags. The sample includes six optional task-document samples (`nonGoals`, `acceptance`, `completedAt`, `waitsFor`, `waitsForTasks`, `neededByTasks`) and one graph-node `cycle: false` sample. These are hand-authored wire values, not evidence of a native completion timestamp, dependency resolution or Order derivation. The `SIM-2`/`SIM-3` dependency objects are fabricated shape samples, not a joined same-master scenario. The builder card separately distinguishes copied identities, recomputed form and admitted neutral values.
 
 **It is NOT generated.** This file is a hand-maintained sample. The TypeScript mirror it is checked
 against is generated and stale-checked from the Pydantic projection schema, so sample coverage and
@@ -70,8 +67,8 @@ The CCR-R03@v1 curation entry records a formatting-only reserialization at sourc
 `fbc89847233b1c5959f56475f2cb51f936d5ef0b`. That historical statement does not describe
 all later fixture changes: the current operation sample also carries the L15 meaningful revision
 field described below. The current lifecycle sample is
-cit:(["\"lifecycles\": ["], dashboard/src/fixtures/snapshot.json:1791-1928);
-the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/snapshot.json:1929-1940).
+cit:(["\"lifecycles\": ["], dashboard/src/fixtures/snapshot.json:1878-1998);
+the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/snapshot.json:1999-2009).
 
 ### Conventions
 
@@ -130,6 +127,14 @@ the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/sn
 
 The L94 sync adds two `directGrant` examples: the first series child's row and the first task-document row each carry the same fabricated developer giver/time node. These hand-maintained shape samples exercise display fields in the generated mirror; they are not live external grants, proof of ordinary-start eligibility, or browser authorization. The current sample remains manual, and no new visual/sandbox qualification is claimed for the port.
 
+## Manual Order and Completion Samples
+
+The added fields extend wire coverage only. The fixture remains hand-maintained; no producer run, finalization or same-master dependency join is established by these samples.
+
+
+- Six optional task fields and graph cycle=false values are hand-maintained contract examples, not joined dependencies or native Order derivation. [20]
+
+
 ## Evidence
 
 ### Docs References
@@ -150,12 +155,23 @@ absent from the file rather than present as `null`.
 - Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. [2]
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. [3]
 
-- Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. [4]
+
+- Hand-maintained taskDocuments samples carry fixed task-reader form/header/review/step data, not producer execution. [4]
+
+
 - Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. [5]
-- `metrics` with one bucket per live state and no bucket for the terminal pair. [6]
-- All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. [7]
+
+
+- Manual decision and task-reader values are sample data, not source-derived provenance. [6]
+
+
+- Eleven nonempty analytics collections remain manual coverage samples, including engineProcesses and taskDocuments; not a scenario or execution receipt. [7]
+
 - The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. [8]
-- The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. [9]
+
+- The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution. [9]
+
+
 - The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
 - `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. [12]
@@ -201,4 +217,5 @@ Two sampled decisions carry explicit `product_record: false`, so the hand-mainta
 exercises the product-record marking the projection serves: authored decisions stay unmarked
 while writer constants mark records.
 
-- Two hand-maintained giver/time samples exercise directGrant display shape, not external authority. [19]
+
+- Manual fixture includes native operation/source-lineage wire samples, not live operation evidence. [19]

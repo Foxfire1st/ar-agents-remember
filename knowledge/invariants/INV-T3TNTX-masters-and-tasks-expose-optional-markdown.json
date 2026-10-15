@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Typed optional homes in document.py and fixed placements in readerTop.tsx and taskReader.tsx prevent recurring non-goal and acceptance text from being present only in arbitrary, unrendered prose sections."
+  },
+  "applicability": "Typed nonGoals and acceptance Markdown fields and their fixed dashboard placements on ordinary masters and tasks.",
+  "conditions": [
+    "Both fields are optional.",
+    "Non-goals follows Objective; Acceptance follows Design; absent or empty content does not require a heading."
+  ],
+  "exclusions": [
+    "Adding these fixed blocks to sprint pages.",
+    "Migrating historical free-form text into the fields."
+  ],
+  "id": "INV-T3TNTX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54",
+        "Parent examination of actual F01 changed extents; no new execution or acceptance."
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 6",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Masters and tasks expose optional Markdown nonGoals and acceptance fields at fixed page positions after Objective and Design respectively.",
+  "status": "proposed",
+  "supersedes": []
+}

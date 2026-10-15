@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/panels/detail-panel/completed-tasks.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seeded completed-table cases assert time/number ordering, preview and retained non-completed/sprint order, not timestamp production.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
+            "content": "sha256:c89d650d60dfea3d98aff420302dbce81d7cf5dfb743d8932accee53b525fab6",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact legacy-time controls assert valid-date selection independently of storage order, completedAt precedence, nonmutation and rejection of similar prose/absent documents without a finalizer opportunity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
+            "content": "sha256:bd4892c8be0795e998f43b25db9100d1f6a6a782e091a0be4a65cc7d82090b13",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Instrumented preparation and mounted whole-list/preview controls declare unchanged output/navigation and bounded docPath reads at 100 and 300 rows; not a fresh test or performance run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
+            "content": "sha256:55a3bc062976f5f3bd31d532f99aa79a2feb4f45696b690b47846806bf4474ab",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
+            "content": "sha256:8f5ce1400cfd88fa435f94322e6bf1268464eabf1b2f90dadcf9d349589a9cce",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

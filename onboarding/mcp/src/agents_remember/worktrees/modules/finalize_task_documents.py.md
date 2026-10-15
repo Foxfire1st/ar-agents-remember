@@ -40,7 +40,11 @@ selected documents: the master alone, or the master and proven sprint row togeth
 row stands for the commanded master, the result reports `sprint.state="skipped"`,
 `reason="sprint-holds-no-single-row-for-this-master"` and its `linkageFact`, without writing the sprint.
 
-Leaf checks remain; named-parent resolution delegates to master_json_path_from_ref with shared refusal text.
+> **Retained historical source account — superseded by the current contract:**
+> The leaf path (`_reconcile_task_documents`, `_leaf_completion_candidate`, `_parent_completion_candidate`,
+> `_require_finalize_sources_current`) is the unchanged logic that was moved here.
+
+Current leaf/master completion changes the own non-Completed document to Completed and stamps `completedAt` using local aware ISO time to seconds. An already Completed own document is returned unchanged: there is no timestamp backfill or log migration. The series-master path calls the same own-document helper. A selected parent row alone becomes Completed under the existing demotion rule; that row update does not stamp the parent completedAt. Neither helper appends a Finalize decision; all preexisting decision entries are retained. Kind/path/linkage/retired-row guards, exact captured-source rechecks, previews and publication ownership remain separate from the timestamp/log change. Named-parent resolution delegates to master_json_path_from_ref with the actual leaf id; ValueError is converted to FinalizeTaskDocumentError with the shared refusal text. This path guard neither discards L162 completion-time/decision preservation nor grants a parent-address fallback.
 
 ### Conventions
 
@@ -59,5 +63,9 @@ Leaf checks remain; named-parent resolution delegates to master_json_path_from_r
 - Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [1]
 - Targets are resolved by contract kind. [2]
 - The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [3]
-- A selected sprint row is completed, and a Completed sprint with unresolved rows is demoted. [4]
-- Static cases distinguish a correlated seat row, absent or ambiguous correlation reported as skipped, and preserved linkage refusals. [5]
+
+- Selected parent row becomes Completed after retired-row and exact-number checks, then existing unresolved-row demotion applies. Decisions and parent completedAt are not rewritten by row completion. [4]
+
+
+
+- Retained survey concern: the former static correlated/absent/ambiguous-row evidence includes an obsolete Finalize-decision assertion and cannot establish current behavior. Current source selects targets as before, stamps own completion time once, and preserves own/parent decisions. No test was run or offered as current proof. [5]

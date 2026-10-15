@@ -6,8 +6,9 @@
 
 ## Purpose
 
-Defines the canonical workspace projection models. It now carries structural task-document references
-on task-aware analytics while preserving runtime ids only as observation/correlation.
+Defines the canonical workspace projection models and re-exports the extracted task DTOs. Retained task-document projections carry structural references; removed pickup and expectation analytics DTOs are not current carriers. Runtime ids remain observation/correlation, not routing authority.
+
+Current ownership split: workspace/lifecycle/process/analytics composition remains here; task-reader, graph-shape, closeout and series DTO definitions now live in [projection_task_documents](projection_task_documents.py.md). This file imports that module and keeps public task DTO class names as aliases. The canonical `TaskDocumentRef` identity is defined in `models.task_document_ref`, not exported as an incidental import by this schema facade; readers import that defining module directly. Retained DTO contracts below describe those definitions, not an alias as independent schema authority. `TaskDependencyNode` and optional completion/dependency/fixed-prose fields are served display data, never task mutation or execution permission.
 
 ## Code Commentary
 
@@ -56,6 +57,8 @@ the writers' own constants in `tasks.document`. The marking is provenance-based
 (exact/prefix string match); no enforced authorship separation keeps authored
 text from colliding (see INV-NBCGCF). The stored decision shape is unchanged.
 
+The marking definition now lives in `projection_task_documents.TaskDecisionNode`. Exact Finalize text remains recognized for retained legacy records, but the current finalizer stamps `completedAt` on its own newly completed document and appends no Finalize decision to either own or parent logs. Removed/skip-step recognition and the collision caveat remain.
+
 ### Invariants And Boundaries
 
 - Projected task references identify work, not runtime occupants.
@@ -78,9 +81,16 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
+
 - Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed. [1]
-- The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). [3]
+
+
+- Lump/segment nodes and sampling endpoints retain strict served shapes and bare-ref lifting in the extracted DTO owner. [3]
+
+
+
 - Workspace projection is the schema authority consumed by generation. [4]
+
 
 ### Cross-Repo References
 
@@ -101,7 +111,10 @@ projection remain unchanged; this is an ownership-only model move.
 
 ## 260815-DAG-L12 Render-Ready Graph View
 
-`TaskDocNode` gains the optional `executionGraphView` field (L12-R4): the render-ready per-node sprint graph (`observer/projection_graph.TaskExecutionGraphView`) the dashboard renders directly — node kind, master ref + title, leaf ids + titles, derived wave index, mechanically derived frontier state, execution nature, and predecessors with reasons. The field is `None` for documents without a graph (backward compatible); the dashboard never joins raw refs or re-derives waves.
+> **Retained historical source account — superseded by the current contract:**
+> `TaskDocNode` gains the optional `executionGraphView` field (L12-R4): the render-ready per-node sprint graph (`observer/projection_graph.TaskExecutionGraphView`) the dashboard renders directly — node kind, master ref + title, leaf ids + titles, derived wave index, mechanically derived frontier state, execution nature, and predecessors with reasons. The field is `None` for documents without a graph (backward compatible); the dashboard never joins raw refs or re-derives waves.
+
+Current view: the field is defined by `projection_task_documents.TaskDocNode`. A sprint may receive its persisted-graph view; an ordinary master may instead receive a derived dependency Order graph without a persisted `executionGraph`. The server prefers a nonempty Order graph over the sprint-view fallback. The DTO remains optional, and the browser renders served nodes rather than joining refs or deriving waves.
 
 
 ## 260821-CLIVE Disposable Queue And Discard History Projection
@@ -123,8 +136,15 @@ however many candidates the sprint has waiting. `sourceProblems` keeps `max_leng
 `CloseoutCandidateNode.reasons` keeps its own `max_length=256`; nothing else on this node is bounded
 by that number.
 
-- The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings. [5]
+
+- Extracted CloseoutQueueNode has unbounded members; sourceProblems and candidate reasons retain their 256-item ceilings. [5]
 
 
-- Task documents remain the real projected hierarchy. [2]
-- Task nodes and series-child rows may carry strict directGrant evidence (grantedBy/grantedAt). [6]
+
+
+
+- Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them. [2]
+
+
+
+- Task nodes and series-child rows carry optional strict directGrant evidence defined by the extracted DTO owner; it is display, not authorization. [6]

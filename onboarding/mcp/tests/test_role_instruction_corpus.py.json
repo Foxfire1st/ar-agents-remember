@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+        "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+        "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
         "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+        "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+        "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+        "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
         "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
         "locator": {
           "kind": "symbol",
@@ -90,16 +90,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The resolver under test.\n\nAnchor: \"the resolver under test\"",
+      "note": "The resolver under test reports missing manifest sources rather than silently accepting them.",
       "targets": [
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:7bc833a6cd3bd98c48dbb8fd036ca62aa269f7588b64e7771e074918b9db671a",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:661dffee802e82084f6713b5f70e2619b8d89e9da6a0c6936eff222b688f4c17",
             "locator": {
-              "end": 143,
+              "end": 163,
               "kind": "line_range",
-              "start": 143
+              "start": 150
             }
           },
           "kind": "test"
@@ -107,12 +107,12 @@
       ]
     },
     "2": {
-      "note": "The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`.\n\nAnchor: \"Focused behavioral check for the consolidated role-instruction corpus\"",
+      "note": "The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. Anchor: \"Focused behavioral check for the consolidated role-instruction corpus\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
-            "content": "sha256:d68f61afda9387a781d54117da5b0d986010ee722c0c12c1c8e350e68b116fd3",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:fd569c8598a8912594e6daf688c311950d49b100252666ab97ac72e49c85b451",
             "locator": {
               "end": 116,
               "kind": "line_range",
@@ -172,36 +172,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:d5e8d49ffb50a5c3b700c73fbb98d7b650160c6a9b7197642c59ee2372e6d494",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:167f9d45bdb5669d7ef0014f353c6f43073799895e3561fc580baec78697c906",
             "locator": {
-              "end": 636,
+              "end": 646,
               "kind": "line_range",
-              "start": 634
+              "start": 628
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:b6ee0a87c1b50ee215e38f6c2af44480794fe3b4962fb7e4264d6a5a29ec4562",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:37a97c0a467d6777d6d90b5e3fd35814ab20acfd61246a98ee5ca7b4286e7865",
             "locator": {
-              "end": 659,
+              "end": 669,
               "kind": "line_range",
-              "start": 656
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:bda71826ed0921fe0cc0104413508a670aa3d64b8565689bb33d5e5e1e199a52",
-            "locator": {
-              "end": 630,
-              "kind": "line_range",
-              "start": 621
+              "start": 650
             }
           },
           "kind": "test"
@@ -209,40 +197,28 @@
       ]
     },
     "5": {
-      "note": "Current source delta inspected statically: Replace the blanket generated-copies-not-checked claim with the test-source contract for two narrow copy loops, preserving retired-sentence controls, positive-policy limits and propagation-owner equality responsibility.",
+      "note": "RF01 source adds w-02 guidance token checks across declared canonical/generated roots and a separate real task_doc legacy-refusal/new-JSON-master authoring fixture. Neither is an intentional migration, copy-equality result or executed acceptance; existing retired-sentence controls and propagation-owner equality responsibility remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:d5e8d49ffb50a5c3b700c73fbb98d7b650160c6a9b7197642c59ee2372e6d494",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:45e5a172b94a90ddb17cb18a6db40dcea5df2835f34a2bfd36b9718f24992c1d",
             "locator": {
-              "end": 636,
+              "end": 981,
               "kind": "line_range",
-              "start": 634
+              "start": 972
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:b6ee0a87c1b50ee215e38f6c2af44480794fe3b4962fb7e4264d6a5a29ec4562",
+            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "content": "sha256:7020da9e33011db12df983119555d90e2149e62c74b13524e8cd4d13a2acee9d",
             "locator": {
-              "end": 659,
+              "end": 1009,
               "kind": "line_range",
-              "start": 656
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
-            "content": "sha256:bda71826ed0921fe0cc0104413508a670aa3d64b8565689bb33d5e5e1e199a52",
-            "locator": {
-              "end": 630,
-              "kind": "line_range",
-              "start": 621
+              "start": 984
             }
           },
           "kind": "test"

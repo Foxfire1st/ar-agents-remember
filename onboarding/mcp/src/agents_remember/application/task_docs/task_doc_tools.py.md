@@ -30,7 +30,15 @@
 
 ### Current Contract
 
-task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are instead checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError during candidate validation, before publication; the complete retirement-row comparison still runs first. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
+The parent-master publication predicate includes an available parent when master synchronization changes it, when a create/replace/set_field payload explicitly contains waitsFor, or when an existing document’s normalized dependency list changes: (original.waitsFor or []) != (doc.waitsFor or []). Thus replacing a nonempty waitsFor list by omitting that field now triggers parent refresh, even if the parent row itself is unchanged. None and [] compare as the same empty dependency list. The resolved parent must still have accepted source bytes. This is the operative RF01 source account, not an unconditional all-path no-stale-master or execution-currentness finding. Historically, F01 cc238585 used only the explicit-key trigger in addition to master_sync.changed and left omitted-replacement dependency removal outside that trigger; retain that earlier defect and evidence as history, not as a current implementation claim.
+
+task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
+
+Current candidate validation first calls `task_doc_field_homes.enforce_prose_field_homes`, then `enforce_waits_for_write`, before retirement-proof comparison and the shared named-master validation, then disposition/review authority, unresolved-work preservation, terminal status, master completion, register shape and execution-topology checks. Reserved freeform headings/header labels are grandfathered by normalized multiplicity: existing occurrences may be edited or removed, but a new extra reserved occurrence refuses. Nonempty `waitsFor` is validated only when explicitly supplied by `create`, `replace`, or `set_field`; `None`/empty lists return before kind/target checks. That nonempty write requires a subTask, not self, a readable non-sprint master, listed non-abandoned targets, no detected foreign-master child, and no dependency cycle containing the candidate. Missing child payloads are not themselves a target refusal; list membership and the loader predicates matter. This is write-time validation, not start authorization.
+
+The scalar/prose implementations `_apply_set_status`, `_apply_set_field`, `_apply_append_decision`, `_upsert_subtask`, and `_upsert_section` now live in [task_doc_content_edits](task_doc_content_edits.py.md), imported here for dispatch. The shared mutable allowlist remains in [task_doc_phrases](task_doc_phrases.py.md); it includes `nonGoals`, `acceptance`, and `waitsFor`, not `completedAt`, `seriesContractPath`, or `enclosures`. Status requires a non-None input; field updates need at least one allowlisted key; decision append and number/heading upserts retain their distinct payload semantics. This move does not transfer candidate validation or publication ownership.
+
+An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed normalized dependency list on an existing candidate, republishes a resolved parent master even when `master_sync.changed` is false, so its derived Order rendering sees the candidate dependency edit. The parent must have accepted source bytes; a selected changed/Order-refreshed parent with a named path must also pass require_task_document_in_place so the read and write target agree. Otherwise publication refuses. Dry-run passes a path-keyed override map for the prepared document batch into task_doc_preview, including nested master-sync rendering. Special linkage, graph-authoring and remove operations keep their separate paths. No persisted sprint graph does not imply no ordinary-master derived Order.
 
 ### Settings-owned review state
 
@@ -186,8 +194,6 @@ task_doc is the canonical mutating author. get/read_steps are removed and return
 >   raw sections. It validates the raw container and all members first, appends only missing
 >   scaffolds, and leaves semantic register validation to the existing model/validator owners.
 
-L61 current master-sync qualification: manual scope is preserved; invalid named masters and misplaced changed masters refuse before preview/apply. This does not restore removed get/read_steps observations or the historical generic derived-field allowlist.
-
 ## External grant display and branch review
 
 > **Retained historical source account — superseded by the current contract:**
@@ -197,34 +203,52 @@ L61 current master-sync qualification: manual scope is preserved; invalid named 
 
 ### Repo-Internal References
 
-- **Retained historical source account — superseded by the current contract:** The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. [1]
-- **Retained historical source account — superseded by the current contract:** The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
-- **Retained historical source account — superseded by the current contract:** The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. [3]
-- **Retained historical source account — superseded by the current contract:** `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. [4]
-- **Retained historical source account — superseded by the current contract:** The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
-- **Retained historical source account — superseded by the current contract:** `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
-- **Retained historical source account — superseded by the current contract:** Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
-- **Retained historical source account — superseded by the current contract:** Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. [8]
 
+- `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface. [1]
+
+- The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
+
+- The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. [3]
+
+- Retained history: `read_steps` formerly returned only a checklist without publication. Currently `get` and `read_steps` return the removed-operation refusal with file guidance before normal dispatch. [4]
+
+- The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
+
+- `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
+- **Retained historical source account — superseded by the current contract:** Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
+
+- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
 - The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
 
-- The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser. [10]
-- The markdown renderer this application entry point drives. [11]
+
+- The strict TaskDocument schema this author validates, including the new optional slots and its integration-branch normalizer. [10]
+
+
+
+- The renderer this author drives accepts supplied graph titles, direct-grant evidence and master Order; it does not derive Order or read files. [11]
 - The JSON/markdown store this application entry point drives. [12]
 - The payload builder that wraps this application entry point. [13]
-- The contract helpers used to resolve the task root + lifecycle key. [14]
-- The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. [15]
+
+- WorktreeContract supplies task-root, contract and lifecycle coordinates used by resolution; this is not a caller-supplied execution grant. [14]
+
+
+
+- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
+
 - Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
 - The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. [17]
+
 - The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. [18]
+
 - The `elif` arm that reaches the guard from the shared create/replace builder. [19]
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
-- Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. [21]
 
+- Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]
 - Generic task-document edits preserve complete retired rows. [27]
-- A special operation's answer reads its identity from the archive path when the called master has moved. [28]
-- The operation list takes the sprint linkage operations, `retire_master` among them, from the linkage module. [29]
 
+- A special operation's answer reads its identity from the archive path when the called master has moved. [28]
+
+- The live operation list incorporates sprint-linkage operations from the linkage module; removed get/read_steps are not listed. [29]
 ## 260928-MIK-L08 `knowledgeMaintenanceScope` Is Settable
 
 > **Retained historical source account — superseded by the current contract:**
@@ -233,7 +257,10 @@ L61 current master-sync qualification: manual scope is preserved; invalid named 
 > leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
 > not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
 
-- **Retained historical source account — superseded by the current contract:** The settable flat fields, now including the maintenance-scope flag. [22]
+
+- The shared settable allowlist belongs to task_doc_phrases, including `knowledgeMaintenanceScope`; the extracted applier consumes it. [22]
+
+
 - **Retained historical source account — superseded by the current contract:** The field's `LIFECYCLE` classification. [23]
 
 ## 260928-MIK-L11 `expectedKnowledgeEffects` Is Settable
@@ -249,7 +276,10 @@ L61 current master-sync qualification: manual scope is preserved; invalid named 
 > declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
 > (ruling Q2, 2026-09-29T21:56:18+02:00).
 
-- **Retained historical source account — superseded by the current contract:** The settable flat fields, now including the declaration. [24]
+
+- The shared settable allowlist belongs to task_doc_phrases, including `expectedKnowledgeEffects`; model validation remains the declaration-shape backstop. [24]
+
+
 - **Retained historical source account — superseded by the current contract:** `set_field` sets it, the digest changes, and clearing restores it. [25]
 
 ## Current Task-First Publication Boundary
@@ -268,11 +298,15 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260815-DAG-L12 Title Threading
 
-The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1).
+The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1). The earlier account below stated the locking intent; callback placement alone is not lock evidence.
+
+> Retained historical lock-placement account:
 Ordinary and remove publication route through `task_doc_publication.py`, where the shared
 zero-or-one graph-document owner validates batch cardinality before the transaction; the actual
-on-disk title read remains inside the publisher callback and therefore inside its task-publication
-lock. Documents without an `executionGraph` render without a title context.
+on-disk title read remains inside the publisher callback; the standing task-publication
+lock policy must be checked in the full caller path, not inferred from this callback. Documents without an `executionGraph` render without a title context.
+
+That historical graph-title statement remains scoped to the supplied sprint title context. Ordinary-master dependency Order is a separate renderer input: the store derives it from explicit listed children and the prepared batch overrides, rather than manufacturing a sprint executionGraph.
 
 
 ## 260815-DAG Master Full-Gate Repair
@@ -289,8 +323,8 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 ### Reconciled Source Evidence
 
-- The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. [26]
 
+- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
 ## 260913-LCA-L5 Leaf Authoring Fails Closed On A Missing Master Link
 
 The authoring plane must not silently drop a derived field. `_build_doc` stamps
@@ -328,7 +362,7 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
-- **Retained historical source account — superseded by the current contract:** get returns readable directGrant as response-only evidence; TaskDocument and set_field acquire no grant field. [30]
 
+- Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON. [30]
 
-- task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are instead checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError during candidate validation, before publication; the complete retirement-row comparison still runs first. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields. [31]
+- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]

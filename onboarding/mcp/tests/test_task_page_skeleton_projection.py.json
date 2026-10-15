@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "note": "The module declares form/bounded-summary/whole-body assertions and RF01 completion-time subcases for array order, invalid records, non-finalization exclusion, explicit precedence and unchanged task JSON. These are fixture-scoped source assertions, not execution or browser acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "29ad1ea0b9e4a72cc76e66be63dbc0bd0a63bcbc",
-            "content": "sha256:cbdc66439773739c9ef533a35ba83a140207c7f6650d11a756c4bedb44e2c332",
+            "blob": "2611505bc4848b09397494bbe51c573c0f8be797",
+            "content": "sha256:f3c71a68df1f6eae94696a95bf39e1ed8610844e1f90f29782ef50177da7bde9",
             "locator": {
-              "kind": "file"
+              "end": 366,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

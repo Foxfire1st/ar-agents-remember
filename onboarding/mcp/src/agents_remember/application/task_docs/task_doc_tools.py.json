@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
-        "content": "sha256:7cefc2f5a4c88d3c5e1d1dd50f5bdcb8fa185e67ce37913cb18670278d04136f",
+        "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+        "content": "sha256:e1d4e6f390890a00451ccd505945555d4ad47c4ee63ea85b8936e07ebfedce1c",
         "locator": {
           "kind": "symbol",
           "name": "_validate_task_doc_candidate"
@@ -16,21 +16,83 @@
         "handoffEntry": "MIK-R41@v3-retirement-proof-protected",
         "leaf": "260928-MIK-L41"
       },
-      "rationale": "Calls the comparison first for every generic candidate, so replace, set_subtask and every other generic operation pass through it.",
+      "rationale": "Runs retirement-proof comparison for every otherwise-valid generic candidate after field-home and explicit waitsFor checks; earlier refusals write nothing and do not grant proof mutation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+        "content": "sha256:d248bc6dd4d56890a5e82d0dccb018f05085c037bcd779a7a994eb00ad754686",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_task_doc_candidate"
+        }
+      },
+      "id": "RLZ-D0NMQA",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This publication boundary includes the available parent master in the native batch when master synchronization changes it, when a create/replace/set_field payload explicitly contains waitsFor, or when an existing candidate changes the normalized dependency list. Removing nonempty dependencies by omitting waitsFor in a replacement is now covered; None and [] are equivalent for that comparison. Accepted parent source bytes are still required. Dry-run forwards prepared-batch overrides into ordinary-master preview rendering. The F01 explicit-key-only omission defect remains historical; this scoped source account is not an unconditional no-stale-master or runtime acceptance result.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+        "content": "sha256:33c13a52705c29d7c1c2178bd67aa79056b43e683db6782fad32c0e27c92ba23",
+        "locator": {
+          "end": 441,
+          "kind": "line_range",
+          "start": 440
+        }
+      },
+      "id": "RLZ-ZE90BR",
+      "invariant": "INV-8W6XYQ",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 1",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These calls run prose-home and explicit dependency validation on the ordinary prepared candidate before the existing publication path can accept it.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path.",
+      "note": "`replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc939b3b8e0f0fa3fd6b0f47d16aa32bb3a6e8ab",
-            "content": "sha256:c5e5d3c19c9aca5e0937b969a951cb243f2bcc7c8254727bd435e5474dca9d5c",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:38ad2caf36ea127be79167f9533ef046160a56252055eb7d6b7b12299b82da3d",
             "locator": {
-              "kind": "symbol",
-              "name": "VALID_OPERATIONS"
+              "end": 147,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:caff2847224e910fa75fd5bf41f30ed2f62407f7edcdbfc246d5ec9d8502d5eb",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 559
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:b9b008a3198f4a0ad5e5731f2bff1d591b56959e94fc324c2127673f1de6d43c",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 356
             }
           },
           "kind": "code"
@@ -38,16 +100,16 @@
       ]
     },
     "10": {
-      "note": "The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "note": "The strict TaskDocument schema this author validates, including the new optional slots and its integration-branch normalizer.",
       "targets": [
         {
           "anchor": {
-            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
-            "content": "sha256:391a969cef80f65d44bcbe9b54926bd96a4c2c7fc4b806858361219ddc940c78",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "content": "sha256:7fccc6ef1f4386cf270decc5f62741eedbbe18150ccf2bdf6776abd3cb492aec",
             "locator": {
-              "end": 805,
+              "end": 867,
               "kind": "line_range",
-              "start": 628
+              "start": 669
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -56,15 +118,42 @@
       ]
     },
     "11": {
-      "note": "The markdown renderer this application entry point drives.",
+      "note": "The renderer this author drives accepts supplied graph titles, direct-grant evidence and master Order; it does not derive Order or read files.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
-            "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
             "locator": {
-              "kind": "symbol",
-              "name": "render_markdown"
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:12c3925765bc8cc86ce7f5a521634700e5ce3d2de67d3d1b849d7b7fb455c6ee",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:63f72ff72365a4db1f1b611cb3eec730e64dc71373c92331e0a9d8cea1533ee6",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -77,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:26f14716ec7356df142cc72f837f7380517426151aa6a6dededcc04065042010",
             "locator": {
               "kind": "symbol",
@@ -107,15 +196,16 @@
       ]
     },
     "14": {
-      "note": "The contract helpers used to resolve the task root + lifecycle key.",
+      "note": "WorktreeContract supplies task-root, contract and lifecycle coordinates used by resolution; this is not a caller-supplied execution grant.",
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "content": "sha256:38d624acd3e04b9a21161f22f18e389bd0052af14896728bdf9976d8361182c6",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
+              "end": 303,
+              "kind": "line_range",
+              "start": 245
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -124,23 +214,24 @@
       ]
     },
     "15": {
-      "note": "The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary.",
+      "note": "Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering.",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:b9b008a3198f4a0ad5e5731f2bff1d591b56959e94fc324c2127673f1de6d43c",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "end": 430,
+              "kind": "line_range",
+              "start": 356
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
-            "content": "sha256:cb8263e287fd5f2e566a4fea125b7761b0726b6f337cdc05e5e6ee09bcd69d07",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:d248bc6dd4d56890a5e82d0dccb018f05085c037bcd779a7a994eb00ad754686",
             "locator": {
               "kind": "symbol",
               "name": "_publish_task_doc_candidate"
@@ -155,11 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_doc"
+              "end": 800,
+              "kind": "line_range",
+              "start": 767
             }
           },
           "kind": "code"
@@ -200,11 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_bindable_leaf_authoring"
+              "end": 833,
+              "kind": "line_range",
+              "start": 803
             }
           },
           "kind": "code"
@@ -216,11 +309,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_doc"
+              "end": 800,
+              "kind": "line_range",
+              "start": 767
             }
           },
           "kind": "code"
@@ -232,11 +326,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:48d14f39461c7ca9cfd7782f34f5c2cc37dd362690a7d01fc8f875e4d366d354",
             "locator": {
-              "kind": "symbol",
-              "name": "_MUTATIONS"
+              "end": 912,
+              "kind": "line_range",
+              "start": 902
             }
           },
           "kind": "code"
@@ -273,15 +368,16 @@
       ]
     },
     "21": {
-      "note": "Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution.",
+      "note": "Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:602b3736d4dcedb69d96ac3152989d8c28cbcf5c2a0d472e20922bf63975d379",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:caff2847224e910fa75fd5bf41f30ed2f62407f7edcdbfc246d5ec9d8502d5eb",
             "locator": {
-              "kind": "symbol",
-              "name": "_prepare_task_doc_edit"
+              "end": 615,
+              "kind": "line_range",
+              "start": 559
             }
           },
           "kind": "code"
@@ -289,16 +385,31 @@
       ]
     },
     "22": {
-      "note": "The settable flat fields, now including the maintenance-scope flag.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "note": "The shared settable allowlist belongs to task_doc_phrases, including `knowledgeMaintenanceScope`; the extracted applier consumes it.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc939b3b8e0f0fa3fd6b0f47d16aa32bb3a6e8ab",
-            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:83d61980851e82eb0dade76b2682509dd5a605a7c4fdc74c8e3cad066740298f",
             "locator": {
-              "kind": "symbol",
-              "name": "_MUTABLE_FIELDS"
-            }
+              "end": 46,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d7806b5114e1fcbb76736d7f767de0ae406955d",
+            "content": "sha256:ba7b242de4950eec2f516957813cea2f63357e2a370a83674dabe6f86ed422d8",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py"
           },
           "kind": "code"
         }
@@ -309,12 +420,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c578b146925c0cff5fc3d1506e2a34039bdc6358",
+            "blob": "fde5524639c0730cc86d3f2603b24a53f4cd6d61",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
-              "end": 168,
+              "end": 170,
               "kind": "line_range",
-              "start": 168
+              "start": 170
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -323,16 +434,31 @@
       ]
     },
     "24": {
-      "note": "The settable flat fields, now including the declaration.\n\nAnchor: \"expectedKnowledgeEffects\"",
+      "note": "The shared settable allowlist belongs to task_doc_phrases, including `expectedKnowledgeEffects`; model validation remains the declaration-shape backstop.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc939b3b8e0f0fa3fd6b0f47d16aa32bb3a6e8ab",
-            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:83d61980851e82eb0dade76b2682509dd5a605a7c4fdc74c8e3cad066740298f",
             "locator": {
-              "kind": "symbol",
-              "name": "_MUTABLE_FIELDS"
-            }
+              "end": 46,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d7806b5114e1fcbb76736d7f767de0ae406955d",
+            "content": "sha256:ba7b242de4950eec2f516957813cea2f63357e2a370a83674dabe6f86ed422d8",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py"
           },
           "kind": "code"
         }
@@ -356,37 +482,52 @@
       ]
     },
     "26": {
-      "note": "The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary.",
+      "note": "This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits.",
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
-            "content": "sha256:70023d0f7d81395410f449bb13a29b0e18702552db38a6e5b86e2f25f4c25599",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:49f7a70c9c77903c15174b9d4042b0a0c2a0653e8e5947070394cc2df66b3796",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocTarget"
+              "end": 167,
+              "kind": "line_range",
+              "start": 156
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "429317a2a845e4ecf305dd9be840537d84bfa738",
-            "content": "sha256:6258f112e9bcb48462e5e72744d6a092f9fcd51003f09c0a7560a083102d895f",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:55db5af1c6715ca246c401200f5d01103b1d395021ea9f127e1c54ca381c4732",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocEdit"
+              "end": 189,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:b9b008a3198f4a0ad5e5731f2bff1d591b56959e94fc324c2127673f1de6d43c",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "end": 430,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:434b7b924ab41df74305d4e0a84c456ecb48eb56622b235178460e41cc17525a",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
@@ -415,11 +556,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
-              "kind": "symbol",
-              "name": "_sprint_doc_identity"
+              "end": 647,
+              "kind": "line_range",
+              "start": 618
             }
           },
           "kind": "code"
@@ -427,16 +569,16 @@
       ]
     },
     "29": {
-      "note": "The operation list takes the sprint linkage operations, `retire_master` among them, from the linkage module.",
+      "note": "The live operation list incorporates sprint-linkage operations from the linkage module; removed get/read_steps are not listed.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc939b3b8e0f0fa3fd6b0f47d16aa32bb3a6e8ab",
-            "content": "sha256:c5e5d3c19c9aca5e0937b969a951cb243f2bcc7c8254727bd435e5474dca9d5c",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:38ad2caf36ea127be79167f9533ef046160a56252055eb7d6b7b12299b82da3d",
             "locator": {
-              "end": 134,
+              "end": 147,
               "kind": "line_range",
-              "start": 111
+              "start": 126
             }
           },
           "kind": "code"
@@ -448,44 +590,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_set_step"
+              "end": 858,
+              "kind": "line_range",
+              "start": 857
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_add_step"
+              "end": 862,
+              "kind": "line_range",
+              "start": 861
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_remove_step"
+              "end": 866,
+              "kind": "line_range",
+              "start": 865
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_skip_step"
+              "end": 875,
+              "kind": "line_range",
+              "start": 869
             }
           },
           "kind": "code"
@@ -493,47 +639,123 @@
       ]
     },
     "30": {
-      "note": "Historical pre-L109 get response carried readable directGrant as response-only evidence; current task_doc.get refuses with operation-removed, and grants are read from rendered task/dashboard files. TaskDocument and set_field acquire no grant field.",
+      "note": "Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON.",
       "targets": [
         {
           "anchor": {
-            "blob": "a574ca5e4a8897fbf541e78854b7d433c94a9b55",
-            "content": "sha256:b92647a675b08882eaff1e5bff5714217249dfdf591aff3c821aaeef99d38a5a",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:eaca4e0315e3be7bfac266398c2018cbf86fcca69136446f3884bb0efd0741ba",
             "locator": {
-              "end": 1213,
+              "end": 372,
               "kind": "line_range",
-              "start": 1
+              "start": 356
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:41d3cdcb96170d8852fd5a121f591b7ba698a88ffad8ce430a747955ba0670c4",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
           },
           "kind": "code"
         }
       ]
     },
     "31": {
-      "note": "task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain reviewState, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, changed reviewState, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are instead checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError during candidate validation, before publication; the complete retirement-row comparison still runs first. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.",
+      "note": "Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant.",
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
-            "content": "sha256:e3dae8d7970758d5e32e8d870e90ed6f31e5eb5214a4186a392d95a8de356b17",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:0e26c6d0da5140ad6829be82c27e78a04f1c21fa30f47c1d8a496743a66c2508",
             "locator": {
-              "kind": "file"
+              "end": 294,
+              "kind": "line_range",
+              "start": 273
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:a358a45f88f3e15c40a0950f9fb9c8c20367bdc263f62aac04de93e029bdfb5e",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:e1d4e6f390890a00451ccd505945555d4ad47c4ee63ea85b8936e07ebfedce1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_task_doc_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:d248bc6dd4d56890a5e82d0dccb018f05085c037bcd779a7a994eb00ad754686",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_task_doc_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "content": "sha256:83d61980851e82eb0dade76b2682509dd5a605a7c4fdc74c8e3cad066740298f",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Historical pre-L109 read_steps was a read-only checklist projection. Current task_doc.read_steps returns operation-removed with canonical JSON/rendered-file guidance; the retained anchor is history, not a current successful projection.",
+      "note": "Retained history: `read_steps` formerly returned only a checklist without publication. Currently `get` and `read_steps` return the removed-operation refusal with file guidance before normal dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc939b3b8e0f0fa3fd6b0f47d16aa32bb3a6e8ab",
-            "content": "sha256:8a497c2c649140f6c9f5c38bfc176ef1e8d9421c704f2a97ebfa52d782bd681d",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:eaca4e0315e3be7bfac266398c2018cbf86fcca69136446f3884bb0efd0741ba",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_steps"
+              "end": 372,
+              "kind": "line_range",
+              "start": 356
             }
           },
           "kind": "code"
@@ -545,11 +767,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
             "locator": {
-              "kind": "symbol",
-              "name": "_enforce_terminal_status"
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1041
             }
           },
           "kind": "code"
@@ -561,11 +784,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
             "content": "sha256:57a94856797aaa2f4d3299470732dfe199c46838e0d113bca960ba43f5677cb2",
             "locator": {
-              "kind": "symbol",
-              "name": "_replace"
+              "end": 764,
+              "kind": "line_range",
+              "start": 752
             }
           },
           "kind": "code"
@@ -577,7 +801,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f882be287f74d761803afafeb41378bbbba6dff2",
+            "blob": "181eab68118c02583a154260f09010d3b25dd27e",
             "content": "sha256:9b183eb2a268c4dea11f7e281db45a46fc7ef5f55f6aa512ff1237dec94910f6",
             "locator": {
               "kind": "symbol",
@@ -590,16 +814,15 @@
       ]
     },
     "8": {
-      "note": "Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together.\n\nAnchor: \"master_sync = plan_master_sync(task_root\"",
+      "note": "Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: \"master_sync = plan_master_sync(task_root\"",
       "targets": [
         {
           "anchor": {
-            "blob": "664c0cb732f5eeb6bdf9241fa3c597a30ddc6537",
-            "content": "sha256:0234011a9670a0dc815223b9c940729ef6d16426010a2b97f169b68ef5d0ec14",
+            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
+            "content": "sha256:d248bc6dd4d56890a5e82d0dccb018f05085c037bcd779a7a994eb00ad754686",
             "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 474
+              "kind": "symbol",
+              "name": "_publish_task_doc_candidate"
             }
           },
           "kind": "code"
@@ -611,8 +834,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
-            "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
+            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
+            "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"

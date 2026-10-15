@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
         "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "content": "sha256:78969f4c06da9779d1706a664260eb348de4f9bfb555ca77328e2faac1c9fee3",
+        "locator": {
+          "end": 290,
+          "kind": "line_range",
+          "start": 262
+        }
+      },
+      "id": "RLZ-5CZ9GT",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This objective extent uses the common block spacing with its existing lead style and retains local expansion, measured bounds and the more-reader link.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
         "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
         "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
         "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "content": "sha256:572ecf3770713a5ae098e124f8bece9369774ef3736c810c6d370c92f545c43b",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 114
+        }
+      },
+      "id": "RLZ-NVR4JZ",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These two fact placements bind the task head to the projected waits-for and needed-by collections rather than reading dependency prose.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
         "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
         "locator": {
           "kind": "symbol",
@@ -93,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
-        "content": "sha256:f7454094b7a01fb3368c54aa7400d3a07ed564c000b0c648e6c994c95e34f906",
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "content": "sha256:78969f4c06da9779d1706a664260eb348de4f9bfb555ca77328e2faac1c9fee3",
         "locator": {
           "kind": "symbol",
           "name": "ObjectiveLead"
@@ -108,19 +146,97 @@
       },
       "rationale": "The only place the objective is drawn; the body of the page has no objective block any more.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "content": "sha256:d37396429351441084354d627e2eb82cf216d6d9882754ac1bfde0ae370b1c12",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-WX7MVM",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Extends the HeadDoc type with the two projected dependency collections, enabling task-head propagation of producer-owned references.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+        "content": "sha256:fd07fa0256c61a6d28d423e27e2c30ea24e3f2775608248125b6eb8718c5bc99",
+        "locator": {
+          "end": 343,
+          "kind": "line_range",
+          "start": 313
+        }
+      },
+      "id": "RLZ-ZAEPG4",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This dependency fact extent displays each reference title and state and disables navigation when no document path is known.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Every form shares the complete identity, fact strip and note head; objective placement belongs to the skeleton composition.\n\nAnchor: `DocHead`",
+      "note": "DocHead draws identity, facts and notes, including projected dependency facts; objective placement belongs to readerTop and taskReader composition.",
       "targets": [
         {
           "anchor": {
-            "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
-            "content": "sha256:5e21dd5e5b3319ac02798af3b7a2356bdfc04c6489f187f603514101758befc3",
+            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+            "content": "sha256:41193d78b0df3c10f889b002a65784a223b5ebb5415a07a7af1f8bde24ed6bce",
             "locator": {
-              "kind": "file"
+              "end": 131,
+              "kind": "line_range",
+              "start": 81
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+            "content": "sha256:ed43277cfec2514408065e33095e85da824bab07f7eee6da93846f5482f5454d",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc5f265ecd8e05888dc19f2e710fc5d3cb81da70",
+            "content": "sha256:141f6d3619fc577db99eeae541559f440e18c504cfb9722448eacbff8cf38e89",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/detail-panel/readerTop.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:69122f63fa843f551f421c1cb20450c32f00c62e61e841fb50bad4512c23ba60",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 780
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
           "kind": "code"
         }
@@ -131,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
             "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
             "locator": {
               "kind": "symbol",
@@ -143,15 +259,16 @@
       ]
     },
     "3": {
-      "note": "The objective exposes bounded text in place and offers its long full text through a counted own view.",
+      "note": "ObjectiveLead uses shared block spacing, opens its bounded text in place and retains the counted long-full-text own-view link.",
       "targets": [
         {
           "anchor": {
-            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
-            "content": "sha256:1ec5a815bf7fa2da75cef49002d09e9efbb173924c0087ef4ef70687d19cf10a",
+            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
+            "content": "sha256:0b903bbb0b6d0297b4685d6e24cba40f89090cc574932fa36915771ca273f264",
             "locator": {
-              "kind": "symbol",
-              "name": "ObjectiveLead"
+              "end": 290,
+              "kind": "line_range",
+              "start": 254
             }
           },
           "kind": "code"

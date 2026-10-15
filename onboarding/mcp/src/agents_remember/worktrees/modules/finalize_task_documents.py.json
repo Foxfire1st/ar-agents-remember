@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:bdb61772ecafce4d0bc4cc81a4f3d5424c2a03e5027edfc2e152d691cef5d29b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,45 @@
     },
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
+        "locator": {
+          "end": 363,
+          "kind": "line_range",
+          "start": 357
+        }
+      },
+      "id": "RLZ-2RMDT8",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This completion candidate changes status and writes completedAt only on a new completion, while carrying the existing decision list unchanged and leaving an already completed document untouched.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
+        "locator": {
+          "end": 380,
+          "kind": "line_range",
+          "start": 366
+        }
+      },
+      "id": "RLZ-AY53HV",
+      "invariant": "INV-MFZR5A",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 14",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This parent candidate changes the exact child row to Completed without synthesizing a master decision, and retains the existing unresolved-master demotion rule.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -39,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -57,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:e903a5f1fff0200e2cc55c6317ecb2f8e5af4593be6d77cdf6b94a9b19a5d2eb",
         "locator": {
           "kind": "symbol",
@@ -75,7 +113,26 @@
     },
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+        "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
+        "locator": {
+          "end": 363,
+          "kind": "line_range",
+          "start": 357
+        }
+      },
+      "id": "RLZ-F6YV1A",
+      "invariant": "INV-MFZR5A",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 14",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This completion candidate changes status and writes completedAt only on a new completion, while carrying the existing decision list unchanged and leaving an already completed document untouched.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
         "locator": {
           "kind": "symbol",
@@ -93,7 +150,7 @@
     },
     {
       "anchor": {
-        "blob": "471082802727d562a439135d2393de74c82bc831",
+        "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
         "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
         "locator": {
           "kind": "symbol",
@@ -116,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
             "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
             "locator": {
               "kind": "symbol",
@@ -132,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -148,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -160,15 +217,16 @@
       ]
     },
     "4": {
-      "note": "A selected sprint row is completed, and a Completed sprint with unresolved rows is demoted.",
+      "note": "Selected parent row becomes Completed after retired-row and exact-number checks, then existing unresolved-row demotion applies. Decisions and parent completedAt are not rewritten by row completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
-            "content": "sha256:660a54a9cf2bc7f82176be21e55ad608068c7efaa8706a49172a6e373ffa8ad1",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
             "locator": {
-              "kind": "symbol",
-              "name": "_parent_completion_candidate"
+              "end": 380,
+              "kind": "line_range",
+              "start": 366
             }
           },
           "kind": "code"
@@ -176,32 +234,31 @@
       ]
     },
     "5": {
-      "note": "Static cases distinguish a correlated seat row, absent or ambiguous correlation reported as skipped, and preserved linkage refusals.",
+      "note": "Retained survey concern: the former static correlated/absent/ambiguous-row evidence includes an obsolete Finalize-decision assertion and cannot establish current behavior. Current source selects targets as before, stamps own completion time once, and preserves own/parent decisions. No test was run or offered as current proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
-            "content": "sha256:0699c175cfe1121f742b19761c400dc30c9f5fb64883e0a24049848a635379a6",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
             "locator": {
-              "kind": "symbol",
-              "name": "test_finalize_completes_the_master_and_reports_the_sprint_row_as_skipped"
-            },
-            "path": "mcp/tests/test_untyped_sprint_rows.py"
+              "end": 380,
+              "kind": "line_range",
+              "start": 357
+            }
           },
-          "kind": "test"
+          "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b01ec9987e575aaca103b3426a9aed1295db5c7b",
-            "content": "sha256:9f6bd4ffd5253f3158434a182a007662935f62e2558e148b684dfbc6c5cf314e",
+            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
+            "content": "sha256:3813921e25b4100369731a7c274133d3987d9c946df362dcb806497734504781",
             "locator": {
-              "end": 154,
+              "end": 422,
               "kind": "line_range",
-              "start": 108
-            },
-            "path": "mcp/tests/test_untyped_sprint_rows.py"
+              "start": 417
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     }

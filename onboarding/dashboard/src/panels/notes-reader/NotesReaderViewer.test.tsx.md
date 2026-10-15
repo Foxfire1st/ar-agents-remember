@@ -31,7 +31,7 @@ takeover/content-pane behavior):
   to the note with the way folders open and the note marked.
 - **Fill/vanish/cache** — fill-to-note, vanish (twice), and LRU-plus-pin cache
   cases.
-- **Whole log** — the whole-log cases assert newest-first recorded time with product records muted, independently of storage order.
+- **Whole log** — two authored rows use shared numbering (`#2`, `#1`), short times, formatted decision/rationale and reading/block classes. Product records remain in a closed muted disclosure at the end, and opening it creates no authored decision row. Input bytes stay unchanged, fetch is not called and Back invokes the supplied callback. Empty, records-only and authored-only inputs assert row/disclosure presence. The mixed fixture is reversed into descending time order; the former independently unsorted whole-log case was removed, so this suite no longer independently establishes storage-order independence.
 - **Folder callback stability** — an unrelated rerender does not refetch a retained folder; expanding another folder still performs the demanded load.
 - **Task-report read** — exact task-report read by recorded identity; existing
   role-report preservation kept.
@@ -136,13 +136,17 @@ A frontend component test; nothing crosses repositories.
 
 ### Repo-Internal References
 
-- The cases mount the shell explicitly on Operations. [8]
+
+- Current whole-log assertions cover authored numbering/times/formatted text/rationale, muted counted product-record end disclosure, input preservation and no fetch; seeded cases are not execution. [8]
+
+
 - The viewer routes takeover content through the shared pane without a second reader. [9]
 
 - The current viewer integrates the extracted folder cache while retaining content kinds. [17]
 - The shell driven by the takeover-wiring test. [18]
 - `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. [19]
-- The seed task document is checked against the generated TaskDocNode. [20]
+- The cast-free seed is typed against generated TaskDocNode; optional new task fields do not make omitted seed properties runtime-null values. [20]
+
 - Analytics requires agentPickups and expectationRows arrays, along with the other projected collections. [21]
 - The seeded snapshot satisfies the generated workspace contract. [22]
 - The seed derives metrics through the shared lifecycle rollup helper. [23]

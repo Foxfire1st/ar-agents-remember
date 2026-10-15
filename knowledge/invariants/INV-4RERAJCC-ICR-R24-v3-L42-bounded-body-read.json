@@ -2,7 +2,7 @@
   "admission": "legacy-unassessed",
   "applicability": "Task-document body projection with optional external direct-grant annotation.",
   "conditions": [
-    "Canonical task reads remain limited to the requested document and graph-named masters.",
+    "Canonical task reads are addressed by the requested document, graph-named masters or the owning master and its explicit file-bearing task rows.",
     "Grant records use the per-task addressed census."
   ],
   "exclusions": [
@@ -15,9 +15,9 @@
     "legacyId": "6000fdad-5fec-40c2-a5d8-254cec86312c",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "A task-document body read avoids canonical task-corpus enumeration: it opens the requested document and only graph-named master documents, and separately reads the task-addressed direct-grant census for its external plan annotation. Retained legacy unaddressed grant files use the explicitly supported fallback, not a constant-I/O guarantee.",
+  "statement": "A task-document body read avoids canonical task-corpus enumeration: it opens the requested document, explicitly graph-named masters for sprint graph annotation, and for ordinary master or leaf dependency facts the owning master and the task files that master explicitly lists. It enumerates no other master and separately reads the task-addressed direct-grant census for its external plan annotation. Retained legacy unaddressed grant files use the explicitly supported fallback, not a constant-I/O guarantee.",
   "status": "proposed",
   "supersedes": []
 }

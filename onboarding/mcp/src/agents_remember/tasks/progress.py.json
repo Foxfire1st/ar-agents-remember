@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/tasks/progress.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4032f6b05c16ae96a5dffe53412bfe1b2738069",
+        "content": "sha256:f2db132f3d3b491488bb5d5f42e9cc1bb8b8447667188492b6d7d63f0a664c70",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DS3HET",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This standalone progress owner defines major-step total and done counts shared by native responses and projection; nested children are not progress units.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Major-only display counts coexist with nested current-work labels and separate readiness ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4032f6b05c16ae96a5dffe53412bfe1b2738069",
+            "content": "sha256:f2db132f3d3b491488bb5d5f42e9cc1bb8b8447667188492b6d7d63f0a664c70",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

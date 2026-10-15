@@ -3,7 +3,121 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
+        "locator": {
+          "end": 711,
+          "kind": "line_range",
+          "start": 711
+        }
+      },
+      "id": "RLZ-0937DQ",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for non-goals without requiring an old document to invent the field.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
+        "locator": {
+          "end": 682,
+          "kind": "line_range",
+          "start": 682
+        }
+      },
+      "id": "RLZ-0H4VAS",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional document field retains completion time independently of decision records and permits old completed documents to omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
+        "locator": {
+          "end": 712,
+          "kind": "line_range",
+          "start": 712
+        }
+      },
+      "id": "RLZ-23AWS9",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for acceptance text without changing the validity of documents that omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
+        "locator": {
+          "end": 711,
+          "kind": "line_range",
+          "start": 711
+        }
+      },
+      "id": "RLZ-2R29WN",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for non-goals without requiring an old document to invent the field.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
+        "locator": {
+          "end": 712,
+          "kind": "line_range",
+          "start": 712
+        }
+      },
+      "id": "RLZ-4JAJH2",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for acceptance text without changing the validity of documents that omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
+        "locator": {
+          "end": 683,
+          "kind": "line_range",
+          "start": 683
+        }
+      },
+      "id": "RLZ-BF10PN",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional schema field is the canonical persisted home for same-master prerequisite IDs; absence remains valid for old documents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
         "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +135,26 @@
     },
     {
       "anchor": {
-        "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
+        "locator": {
+          "end": 683,
+          "kind": "line_range",
+          "start": 683
+        }
+      },
+      "id": "RLZ-NWTXT1",
+      "invariant": "INV-8W6XYQ",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 1",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional schema field is the canonical persisted home for same-master prerequisite IDs; absence remains valid for old documents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
         "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
         "locator": {
           "kind": "symbol",
@@ -39,7 +172,26 @@
     },
     {
       "anchor": {
-        "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+        "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
+        "locator": {
+          "end": 682,
+          "kind": "line_range",
+          "start": 682
+        }
+      },
+      "id": "RLZ-T61Y2X",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional document field retains completion time independently of decision records and permits old completed documents to omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
         "content": "sha256:95fbc0f6e572d9309481769bda1cccb6877bb53beb4d5cb43db19db86fbe374b",
         "locator": {
           "kind": "symbol",
@@ -62,12 +214,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:fe527ac72f6dcfb35046946f2aaae515023edbe4faf06f161d5484ffa04b2c0e",
             "locator": {
-              "end": 698,
+              "end": 702,
               "kind": "line_range",
-              "start": 698
+              "start": 702
             }
           },
           "kind": "code"
@@ -79,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -95,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:cd1d33519541245a873eee5269a5fa220a1674e2396ff94e629c6ca601b5430d",
             "locator": {
               "kind": "symbol",
@@ -111,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:6ebfab34f5e4da086f68937803178e20cdbbfe4116b44c641f12cff8458160ec",
             "locator": {
               "kind": "symbol",
@@ -127,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
             "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
             "locator": {
               "kind": "symbol",
@@ -140,15 +292,16 @@
       ]
     },
     "14": {
-      "note": "The R03 route-review dependency vocabulary.",
+      "note": "EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent.",
       "targets": [
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
-            "content": "sha256:83efbdf93120a13fe6a3b7137a5a3297300880ed6579fb9463720a9b358974fb",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:d494eee35e72faaa38064fb46eed8c686a13113da442f34a75052a5faaeb04dc",
             "locator": {
-              "kind": "symbol",
-              "name": "EvidenceDependencies"
+              "end": 148,
+              "kind": "line_range",
+              "start": 126
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },
@@ -156,11 +309,12 @@
         },
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
             "content": "sha256:c8927de77cb08539e36e313e6eff3cb3667e095cb90dfe85e801a2556a2359b1",
             "locator": {
-              "kind": "symbol",
-              "name": "require_evidence_dependencies"
+              "end": 331,
+              "kind": "line_range",
+              "start": 296
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },
@@ -168,11 +322,12 @@
         },
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
             "content": "sha256:ad0862ac2a1361ae755a88c92e51edca629d34721ef01d299f45cf4037086b8c",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_sha256"
+              "end": 387,
+              "kind": "line_range",
+              "start": 383
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },
@@ -185,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:de083a3ccb2ff5c3c153fe764e71894d9576297fe6f68e11f48dc2457674021e",
             "locator": {
               "kind": "symbol",
@@ -196,7 +351,7 @@
         },
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:256c7233d8ec35bb9a24f2456fe797b31c9351c37e34d295cb4093e211129eac",
             "locator": {
               "kind": "symbol",
@@ -212,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
             "locator": {
-              "end": 515,
+              "end": 517,
               "kind": "line_range",
-              "start": 507
+              "start": 509
             }
           },
           "kind": "code"
@@ -247,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:2d4a1dd578a5da15c4a8be69e7c73caa1e165ff34215981b8024fc1821b6321a",
             "locator": {
               "kind": "symbol",
@@ -263,12 +418,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:e664c98c094efa6cd37780093c0c1bc3009e294aa3d30c2d556f801133a39d51",
             "locator": {
-              "end": 861,
+              "end": 867,
               "kind": "line_range",
-              "start": 812
+              "start": 818
             }
           },
           "kind": "code"
@@ -280,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
+            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
             "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
             "locator": {
               "end": 164,
@@ -294,14 +449,16 @@
       ]
     },
     "20": {
-      "note": "This source owns the stated current Investigator scope and canonical vocabulary.",
+      "note": "Canonical role constants include Investigator at sprint altitude and Reviewer at sprint/master/leaf altitudes; this is role vocabulary, not launch authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
-            "content": "sha256:4b5eecf8da91b1c0128970de60ae1010a4195223ce6bdf70883ba081127ed082",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "content": "sha256:69b5a12daf6a2e7a5ea84071de02bd9bcf14f8a0e89f7eac3eaf899f38f86828",
             "locator": {
-              "kind": "file"
+              "end": 82,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"
@@ -309,16 +466,30 @@
       ]
     },
     "21": {
-      "note": "Writer constants mark product records; the match is exact/prefix with no enforced authorship separation (named decisions pinned, collisions unguarded).",
+      "note": "Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing.",
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
-            "content": "sha256:95fbc0f6e572d9309481769bda1cccb6877bb53beb4d5cb43db19db86fbe374b",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "content": "sha256:d1a563ac63d3b034a80cef5eb62399fc6e2130c297bdc9a937b8d0771deee6d2",
             "locator": {
-              "kind": "symbol",
-              "name": "is_product_record_decision"
+              "end": 165,
+              "kind": "line_range",
+              "start": 150
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bf84a4567878da6f47dc52a6e556c0a69b32ffb",
+            "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 359
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         }
@@ -329,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -345,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
             "locator": {
               "kind": "symbol",
@@ -361,12 +532,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
-              "end": 703,
+              "end": 707,
               "kind": "line_range",
-              "start": 701
+              "start": 705
             }
           },
           "kind": "code"
@@ -378,12 +549,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:1c1a21ee6d3265d4f8bad42874a04696f0615c020d99b4b1edd501e127ca6543",
             "locator": {
-              "end": 746,
+              "end": 752,
               "kind": "line_range",
-              "start": 746
+              "start": 752
             }
           },
           "kind": "code"
@@ -441,7 +612,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
             "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
             "locator": {
               "kind": "symbol",

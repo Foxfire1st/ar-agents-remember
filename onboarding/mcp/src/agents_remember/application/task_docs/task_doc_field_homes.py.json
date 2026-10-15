@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:7bc76cf88925b870954cc873e4aa1b81912efc28244d18b4f7ed016df20dcf5d",
+        "locator": {
+          "end": 160,
+          "kind": "line_range",
+          "start": 138
+        }
+      },
+      "id": "RLZ-10EYBN",
+      "invariant": "INV-8W6XYQ",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 1",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This validator uses master-index membership and the master row's abandoned status to reject unknown or retired prerequisites; a readable child's explicit master link supplies the separate cross-master check, not status authority. The surrounding explicit-write boundary leaves legacy references unchanged on unrelated edits.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:7bc76cf88925b870954cc873e4aa1b81912efc28244d18b4f7ed016df20dcf5d",
+        "locator": {
+          "end": 160,
+          "kind": "line_range",
+          "start": 138
+        }
+      },
+      "id": "RLZ-3W6P2F",
+      "invariant": "INV-DQ11Q9",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This validator uses master-index membership and the master row's abandoned status to reject unknown or retired prerequisites; a readable child's explicit master link supplies the separate cross-master check, not status authority. The surrounding explicit-write boundary leaves legacy references unchanged on unrelated edits.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:ce356151aacb501ccc407d8a4c50d3f9665a9506bb9719303d7b45842d38f042",
+        "locator": {
+          "end": 135,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-7PKWE2",
+      "invariant": "INV-8W6XYQ",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 1",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This candidate-write boundary detects an explicit waitsFor write, rejects self references, checks admitted sibling targets and refuses the precise cycle participants before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:70aa901aad28ac9b9eb7f79b0289fe4706b8739ab902675723949ed05168482b",
+        "locator": {
+          "end": 100,
+          "kind": "line_range",
+          "start": 69
+        }
+      },
+      "id": "RLZ-AMXNZ2",
+      "invariant": "INV-7F81PT",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 8",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This validator distinguishes newly created sections and header notes from grandfathered entries and names the canonical authoring field or operation when a new entry restates a fixed home.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:7a9cfdcb7e5646dedf97286b6d732c84197d6127267b46eedfb75868bd49d333",
+        "locator": {
+          "end": 46,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-GZH3D0",
+      "invariant": "INV-KS5H7X",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 7",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This single case-insensitive heading-to-remedy map gives fixed fields and structured blocks one authoring home and names the operation a refused section must use.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:08b6bf83ded1ea069b0031bbd320395a3bafdc919286c7245f03d690545282dc",
+        "locator": {
+          "end": 62,
+          "kind": "line_range",
+          "start": 48
+        }
+      },
+      "id": "RLZ-N393G8",
+      "invariant": "INV-7F81PT",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 8",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This canonical label-to-field map identifies newly restated master, sprint, dependency, execution nature and integration branch header notes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "content": "sha256:70aa901aad28ac9b9eb7f79b0289fe4706b8739ab902675723949ed05168482b",
+        "locator": {
+          "end": 100,
+          "kind": "line_range",
+          "start": 69
+        }
+      },
+      "id": "RLZ-WGSQ8S",
+      "invariant": "INV-KS5H7X",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 7",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This validator distinguishes newly created sections and header notes from grandfathered entries and names the canonical authoring field or operation when a new entry restates a fixed home.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Original-occurrence prose grandfathering and explicit nonempty waitsFor write validation have separate predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+            "content": "sha256:44b225be3313994baf90b0d563f3807f5d2e6671d1841153d9ebf60ee8de721b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

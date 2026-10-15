@@ -26,18 +26,19 @@ shows for a selection; `seriesAsMasterDoc` builds the master view from a series 
 
 ### 260928-MIK-L126 Current Delta — Newest-First Decision Ordering
 
-`orderDecisionsNewestFirst` orders decisions by parsed recorded time, newest first, with a
-stable fallback: writers stamp `at` as ISO-8601, the finalizer prepends its newest record, and
-storage order carries no invariant, so both the preview and the whole-log page order by time.
-An unparseable stamp keeps its input position among its peers, never inventing an order.
+`orderDecisionsNewestFirst` orders entries by parsed recorded time, newest first, independently of storage order. Equal timestamps retain input order. Unparseable timestamps follow parseable entries and retain their input order among invalid peers. The preview and whole-log reader call this shared helper; its comparator does not establish how a backend writer stores records.
 
-- Decisions order newest-first by recorded time with a stable fallback. [3]
+
 
 ### Form and bounded-reader model
 
 `docForm` trusts a valid projected form and uses the model rule for an older cache: a master commanding masters is a sprint; any other master is a master; non-masters are tasks. `docIdentity` is the document path or repository-qualified ID, never a transient projection object. Grouping retains unknown statuses as waiting, excludes abandoned rows from live completion totals, and keeps the received task order.
 
-Registers require a register heading and a parseable table; canonical slots are Judgment then Priority. Free-form Further notes exclude structured sections, recognized registers and a byte-identical objective repeat. `boundedText` checks both eight-line and character limits so a single huge paragraph cannot render unbounded. Review summaries read the supplied whole-round count rather than deriving it from a capped list. An ancestry chain uses qualified projected documents and a series fallback, never invented parents.
+Registers require a register heading and a parseable table; canonical slots are Judgment then Priority. Free-form Further notes exclude structured sections, recognized registers and a byte-identical objective repeat. `boundedText` checks both eight-line and character limits so a single huge paragraph cannot render unbounded. Review summaries read the supplied whole-round count rather than deriving it from a capped list. An ancestry chain uses qualified projected documents and a series fallback, never invented parents. MasterDocView includes optional nonGoals, acceptance, completedAt and waitsFor; seriesAsMasterDoc does not invent those absent fields. stepMarkStates emits one state per major step, not nested marks. A done parent stays done; otherwise an inProgress or done child promotes the parent to current before blocked/next fallback. taskStepProgress returns served done/total counts unchanged; full nested rendering stays with taskBlocks.
+
+### Execution-graph and discarded-subtask view fields
+
+MasterDocView retains the optional executionGraphView field for projected Order rendering on sprint and master pages. The series-only adapter does not fabricate that graph. MasterDocView also retains discardedCount and discardedSubTasks; seriesAsMasterDoc passes those served audit values through separately from live subTasks and completion. Its creation-ordering safety net and qualified task-reference resolution remain in this model.
 
 ### Conventions
 
@@ -45,8 +46,7 @@ Pure functions only — no React, no stores.
 
 ### Invariants And Boundaries
 
-The cross-series `→` jump is reachable only when `linkedLifecycleId` is present on a
-`TaskSubTaskRefNode`; this module keeps that guard.
+The cross-series `→` navigation guard belongs to `indexRows.tsx::resolveRowTarget`: only rows carrying linkedLifecycleId take that branch, after exact commanded-master resolution and before local slice fallback. This model retains pure key/label and document-resolution helpers.
 
 ### Todos
 
@@ -63,24 +63,21 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The reader-doc resolution entry points. [1]
-- The master/series view assembly builds the master view from a series node. [2]
+- Decision ordering is parsed-time descending, stable for ties and invalid peers, with invalid timestamps after valid ones. [3]
+
+
+
+
+- displayedReaderDoc and displayedLeafDoc resolve projected selections through their shared lifecycle/series helpers without fabricating a leaf for an overview. [1]
+
+
+
+- seriesAsMasterDoc adapts a series as a master, creation-orders its rows, passes discarded audit values and leaves absent document blocks absent. [2]
+
+
 
 ### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
-
-
-## 260815-DAG-L12 Execution Graph View
-
-`MasterDocView` (the master-document view assembly) now includes the optional `executionGraphView` field (L12-R4/R5), so the sprint page can open the render-ready whole wave-grid graph from the projected master document in its Order own view.
-
-
-## 260821-CLIVE Discarded-Subtask Model
-
-`MasterDocView` now carries `discardedCount` and `discardedSubTasks`, and `seriesAsMasterDoc()`
-passes both producer-owned values through without folding them into live subtasks or completion.
-The existing execution-graph view, repository-qualified `masterRef` resolution, and ordering
-behavior are unchanged.

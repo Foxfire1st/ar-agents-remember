@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/stepDotStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pointer-inert fixed tooltip styles and ordered nested-row layout remain separate from interaction/data ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adaf9af9d87f91aabf4db69240d1793aa79448ba",
+            "content": "sha256:3e31289b26c813df8f0e835652124e7130d29e983c20d5830b5ebb96a509beaf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

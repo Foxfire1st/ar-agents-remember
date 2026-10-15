@@ -12,6 +12,8 @@ This area reads producing subsystems' file surfaces and assembles inputs for the
 
 ## Hot Path Summary
 
+The named dependency adapter joins the owning ordinary master and its explicitly listed child files; source state feeds the same pure master-order derivation used by publication. Requested-body/corpus readers and newly read named owner/child inputs require the raw task schema before tolerant parsing. Missing/wrong-schema neighbors are not admitted. The earlier defaulted-schema admission gap remains historical diagnosis, not a current source defect; these predicates and scoped dependency-field assertions do not establish universal serialized-body parity or an executed result.
+
 `snapshots.py` supplies provider readers and re-exports the split readers. `projection_inputs.py` refreshes retained inputs by domain; `contract_snapshot.py` builds one immutable enclosure snapshot for each task refresh. `landing_state.py` observes eligible landing arcs in the background. `projection_store.py::project_and_write` connects input reading, reduction and publication. `paths.py` resolves serving's observer store paths locally; the kernel has equivalent path definitions, but this module is not currently a wrapper around them.
 
 ## Construction And Data Flow
@@ -20,10 +22,10 @@ The task-document reader computes whole counts before bounded preview selection 
 five decisions and twenty-five review findings); the full-body mode retains complete strings/collections.
 Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
 status, step/sub-step note/outcome and review changes participate in body revision identity. These
-read-only projection/display additions preserve the bounded canonical enumeration and graph-only
+read-only projection/display additions preserve the bounded canonical enumeration and explicitly named
 on-demand joins below; they create no task, acceptance or scheduling authority.
 
-Full body requests still avoid canonical task-corpus enumeration and read only graph-named masters. External direct-grant annotation adds an explicit task-addressed grant census and retained legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. Summary/series canonical enumeration and ordering remain unchanged.
+Full body requests avoid canonical task-corpus enumeration: they read the requested document, graph-named masters for sprint annotations, and the owning master plus its explicitly listed task files for ordinary dependency facts. External direct-grant annotation adds an explicit task-addressed grant census and retained legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. Summary/series canonical enumeration and ordering remain unchanged.
 
 The serving projector passes its retained input state, provider refresher and landing reader into `project_and_write`. Refresh kinds distinguish full refreshes, named domain changes and heartbeats. Domain retention avoids re-reading every surface for unrelated changes; closeout queues are nevertheless read on every input pass.
 
@@ -31,11 +33,11 @@ Task refresh constructs contracts, enclosures, task documents and series in loca
 
 Runtime readers copy inbox entry, subject and owner task references and expectation task references as canonical `TaskDocumentRef` values. Enclosures include the lifecycle-operation projection returned by the durable operation reader. That reader prefers the newest active operation when any exist, otherwise the newest available record; it may instead return a journal-read decision or no safely projectable operation. Durable operation state remains the authority. Keeping worker and resume identities private remains standing intent; the complete downstream field exclusion was not established in this bounded review.
 
-Task JSON supplies the task-document and series surfaces. The always-on reader projects every valid canonical document without a task-document count window, while omitting full reader bodies. Its master join table indexes every valid master payload in that set. The on-demand body reader opens the requested document and builds a join table only for masters named by its execution graph; it does not enumerate the canonical document corpus or use the shared task payload cache.
+Task JSON supplies the task-document and series surfaces. The always-on reader projects every valid canonical document without a task-document count window, while omitting full reader bodies. Its master join table indexes every valid master payload in that set. The on-demand body reader opens the requested document and builds graph annotations for named masters and ordinary dependency facts for the owning master/listed tasks; it does not enumerate the canonical document corpus or use the shared task payload cache.
 
 The canonical enumeration lists repository folders, task folders and their direct JSON entries. It excludes archive and enclosure paths and does not descend into notes. Graph-master lookup still lists repository and task directories before selecting the named task folders; its JSON reads follow the graph references rather than all documents. Equality with an earlier recursive glob is not a general promise: the current source explicitly describes excluding historical copies below notes.
 
-Task projection carries explicit execution nature, typed `SubTaskRef.masterRef`, seats, persisted execution graph, derived waves and a render-ready execution graph view. The serving seam resolves graph endpoints, titles and master facts for the primitives-only graph-view builder. Documents without a graph project no graph view. Reader-body and graph fields are constructed separately. Body revision includes subtask links, discarded rows, seats, execution nature and graph, so those edits invalidate a fetched body.
+Task projection carries explicit execution nature, typed `SubTaskRef.masterRef`, seats, persisted execution graph, derived waves and a render-ready execution graph view. The serving seam resolves graph endpoints, titles and master facts for the primitives-only graph-view builder. Ordinary masters can project a derived waitsFor graph; absent dependency data supplies no Order. Sprints retain their explicitly authored graph contract. Reader-body and graph fields are constructed separately. Body revision includes subtask links, discarded rows, seats, execution nature and graph, so those edits invalidate a fetched body.
 
 Approved requirement packet references and acceptance-obligation questions become readable strings in reader bodies. The revision digest retains their full typed JSON values. Master task and series projections also expose discarded-unstarted rows and counts, including reason, timestamp and proof; discarded rows participate in body revision identity.
 

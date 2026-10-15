@@ -252,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -269,12 +269,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "blob": "bba48b7fdd013a1ad1cee94f907890109b34bba9",
             "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
             "locator": {
-              "end": 173,
+              "end": 198,
               "kind": "line_range",
-              "start": 173
+              "start": 198
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -287,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:581894bb44cb259c9092f3630395eaa1578e923c0201c524a0447e4d441f0ac5",
             "locator": {
               "kind": "symbol",
@@ -299,7 +299,7 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
             "locator": {
               "kind": "symbol",
@@ -311,7 +311,7 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:e92f491b30b7186686235ced915c39305d53731e299559b3e09529c74d7f6c15",
             "locator": {
               "end": 44,
@@ -324,7 +324,7 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:333263397ba73982b45521d84e92d30a1682b3cd6bee839ecb956a4817b46f8f",
             "locator": {
               "end": 54,
@@ -673,7 +673,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
             "locator": {
               "end": 56,
@@ -686,12 +686,12 @@
         },
         {
           "anchor": {
-            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
             "content": "sha256:55a6e185ab3481a0318b3151f7b3be39395f136fa533ca22ee621e56509f7261",
             "locator": {
-              "end": 246,
+              "end": 247,
               "kind": "line_range",
-              "start": 145
+              "start": 146
             },
             "path": "mcp/src/agents_remember/observer/projection_graph.py"
           },

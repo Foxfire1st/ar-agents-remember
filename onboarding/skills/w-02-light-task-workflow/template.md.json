@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The rendered task links exact approved requirement revisions.\n\nAnchor: `## Requirement Projection`",
+      "note": "The rendered task links exact approved requirement revisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
-            "content": "sha256:c6664ea7a0f142947c6b8fcf349909ccefe978040cdcc21b1f459c2ca91c653e",
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:949e3f68d5e440a6afae5cddf49f71b5a1ca409231f2c7e6196fa04a410cb393",
             "locator": {
-              "end": 39,
+              "end": 35,
               "kind": "line_range",
-              "start": 25
+              "start": 29
             }
           },
           "kind": "code"
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Usage rules preserve one-primary ownership and per-revision evidence.\n\nAnchor: `## Usage Rules`",
+      "note": "Usage rules preserve one-primary ownership and per-revision evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
-            "content": "sha256:07600896a3e30dcc1c2d94bc9e6a6fc564fd4e9499369af57cfea172aebd2ce0",
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:1eb96f74f4acc7ead8915026825144f2d00f459b6b38c646de639794c70123b6",
             "locator": {
-              "end": 149,
+              "end": 160,
               "kind": "line_range",
-              "start": 91
+              "start": 139
             }
           },
           "kind": "code"
@@ -37,16 +37,33 @@
       ]
     },
     "3": {
-      "note": "Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths.\n\nAnchor: `## Usage Rules`",
+      "note": "Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
-            "content": "sha256:a4ef27970f5ff84fcd13a02f3ce24304733b0dcb97018c3ed2b3a40aaf0d31d3",
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:0747eeeeff4e3d16d34a96955c58f9ae8ac5b25fb910a7c1a2182bcc60c3e037",
             "locator": {
-              "end": 175,
+              "end": 185,
               "kind": "line_range",
-              "start": 110
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Light/subTask render ownership, new-series master-first creation, children before waitsFor, and intentionally unmigrated existing Markdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:9c7eef8ba11f4f4183a1b4d79e822bf797155125643205e317b059be8c73fd50",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"

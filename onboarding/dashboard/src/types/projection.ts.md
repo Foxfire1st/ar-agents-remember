@@ -7,7 +7,7 @@
 ## Purpose
 
 Generated TypeScript mirror of the served workspace projection plus its enumerable runtime
-vocabularies. It carries canonical `TaskDocumentRef` values on task-aware analytics without
+vocabularies. It carries canonical `TaskDocumentRef` values on retained task-document projections, not removed pickup/expectation DTOs, without
 turning runtime session/lifecycle ids into work identity. Since 260831-CCR (commit `99dc249b`)
 it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
 digest) and attaches it optionally to the lifecycle operation projection.
@@ -51,10 +51,7 @@ generated file belong to other collections — `CloseoutCandidateNode.reasons` (
 
 ## L126 Product-Record Wire Flag
 
-`TaskDecisionNode` carries `product_record: boolean` (line ~640): true when the
-decision-log entry is a product-written record (finalize lifecycle, removed/skip
-step), set server-side from the writers' own constants. The page mutes such
-records from the newest-five authored count; the stored entry shape is unchanged.
+`TaskDecisionNode` carries `product_record: boolean`: the server classifies legacy exact finalizer strings and remove/skip prefixes as product records, while the stored entry shape is unchanged. Existing finalizer-shaped records remain marked; current finalization does not emit a new decision. Authored-only preview numbering/counts exclude such records, and the whole-log page preserves them in the muted end disclosure. The type declaration itself does not call a writer or prove classification.
 
 This file is generated from the Python projection schemas; edit the model/generator and resynchronize
 rather than hand-maintaining parallel declarations.
@@ -77,6 +74,16 @@ None.
 
 Generated TaskDocNode and SeriesChild shapes carry optional directGrant evidence with giver/time data, mirroring the Python observer schema. This is display evidence only; task authoring and grant mutation remain distinct owners. Regenerate from the schema rather than hand-maintain these types.
 
+## Dependency Display Shape
+
+TaskDependencyNode requires id/status/title and makes docPath optional. TaskDocNode adds optional nonGoals/acceptance/completedAt strings, waitsFor IDs and waitsForTasks/neededByTasks arrays. TaskExecutionNodeView adds optional cycle and is reused for sprint/master display. These are generated output types, not scheduling or validation functions. Default-null core schema properties become optional non-null TypeScript properties because the generator models exclude_none serialization; they are not `string | null` fields.
+
+
+- Generated task/graph display DTOs declare optional fixed prose/completion/dependencies and cycle state; absent older fields remain representable. [14]
+
+- Core nullable properties are emitted as optional non-null output properties, except explicitly null-preserving models. \[15] [15]
+- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. \[16] [16]
+
 ## Evidence
 
 ### Docs References
@@ -89,12 +96,15 @@ No configured external domain-documentation source applies.
 
 - The lifecycle phase union mirrors the code/memory-only vocabulary. [1]
 - Structural analytics fields use the shared task-document reference. [2]
-- Generated task documents carry real hierarchy and optional runtime attachment. [3]
-- Execution nodes name their kind, leaf-id segment and task reference. [4]
+- TaskDocNode preserves hierarchy/runtime separation and adds six optional task fields: nonGoals, acceptance, completedAt, waitsFor and resolved dependency-direction arrays. [3]
+
+- Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
+
 - An execution endpoint carries a task reference and optional leaf id. [5]
 - Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
 - The graph contains typed node and edge arrays. [7]
-- Workspace projection remains the generated top-level wire contract. [8]
+- WorkspaceProjection includes core fields plus the served-only heartbeat, build and terminal-health tail. [8]
+
 - The optional canonical task-intent identity on lifecycle operations. [9]
 - The generated `task-intent/v1` identity interface. [10]
 - The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. [11]
@@ -135,8 +145,8 @@ they do not make the dashboard or disposable closeout projection an operation au
 
 The generated mirror removes `AtomicBlockerNode` and the old mutable queue candidate fields.
 `CloseoutQueueNode` now exposes exact-current service/source condition, bounded problems, and
-generation-keyed `CloseoutProjectionMemberNode` rows; member classification is the closed
-`ready | waiting | blocked` display vocabulary. These interfaces describe a disposable producer view
+generation-keyed `CloseoutCandidateNode` rows; the current generated declaration types
+`classification` and `priority` as `string`, not a closed `ready | waiting | blocked` union. These interfaces describe a disposable producer view
 only and transfer no scheduling or operation authority to the browser. The `members` array itself
 carries no item ceiling since 260913-LCA-L6 — see that section below — while `sourceProblems` and
 each row's `reasons` keep their 256-entry refinements.

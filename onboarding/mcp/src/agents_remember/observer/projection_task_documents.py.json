@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/observer/projection_task_documents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+        "content": "sha256:9b9ecd7507b3c0591253e8909a192475860e40271f60eb252e8c9337e50ff1fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskReviewStateNode"
+        }
+      },
+      "id": "RLZ-N23E8J",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The wire shape of a review round; openFindings is the open findings of the whole round beside totalFindings.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Extracted closed reader DTOs retain preview/count, legacy-reference, dependency and grant boundaries without semantic derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:f8918c68b74afba3d8bdec99a4cb29a6916d5b823c60fba5e219994fed08636c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

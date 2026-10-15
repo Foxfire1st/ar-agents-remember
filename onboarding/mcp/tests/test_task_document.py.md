@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Checks JSON-primary task rendering and persistence: progress counts parent and child obligations, current-step selection is deterministic, light/master golden projections and extension fields retain content, pipes/newlines/fences render correctly, and writes round-trip without temporary residue. A later batch failure removes newly published earlier files. Historical application and tool-registration assertions are not all present here.
+Checks JSON-primary task rendering and persistence: presentation progress counts major steps only, while completion readiness still names unfinished parent and nested obligations. Current-step selection remains deterministic; light/master golden projections and extension fields retain content, pipes/newlines/fences render correctly, and writes round-trip without temporary residue. A later batch failure removes newly published earlier files. The shared ApplicationTests base supports native application suites elsewhere; its fixture presence is not execution of those cases here.
 
 ## Code Commentary
 
@@ -17,13 +17,13 @@ history describe prior populations and must not be used to recreate removed test
 still run. The retained behavior and its fixture limits, described above, govern this card.
 
 The shared `ApplicationTests` fixture gained a master prerequisite in 260913-LCA-L5:
-`_create` (`:476-496`) now calls `_ensure_parent_master` (`:498-501`) before authoring its leaf, and
-`_ensure_parent_master` writes the parent master through `_create_parent_master` (`:503-520`) only when
+`_create` (`:581-601`) now calls `_ensure_parent_master` (`:603-606`) before authoring its leaf, and
+`_ensure_parent_master` writes the parent master through `_create_parent_master` (`:608-625`) only when
 it is absent. This is not incidental scaffolding: the task-doc authoring plane refuses a leaf document
 authored under a task root with no master document at all, because nothing would ever bind the leaf's
 derived `seriesContractPath` and `enclosures[]` (see the `application/task_docs/task_doc_tools.py`
 card). The helper keeps every leaf operation in this module on the flow the plane allows — master
-document present, series contract not yet bootstrapped — rather than weakening the refusal.
+document present, series contract not yet bootstrapped — rather than weakening the refusal. This class is shared fixture support; these helpers are not themselves application-case execution in this module.
 
 ### Conventions
 
@@ -56,7 +56,8 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows. [1]
-- Progress counts every declared parent and child [2]
+- Major-step presentation reports (1,2), while completion blockers still include active S1 and pending nested S1.b. [2]
+
 - Current step prefers active then first unfinished then none [3]
 - Golden small light doc [4]
 - Decision cell escapes pipe and newline [5]

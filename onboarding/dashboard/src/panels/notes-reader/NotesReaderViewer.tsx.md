@@ -10,9 +10,9 @@
 reading experience rebuilt on the SAME full-view pattern the Change-Set / File Viewer use. It is a
 task-scoped **takeover** whose LEFT RAIL is the shared `ExplorerTree` (the File viewer's tree, no
 second tree written) fed one folder at a time by rule 2, with the open note highlighted, and whose
-content pane renders the opened note by **reusing the
+content pane renders fetched notes by **reusing the
 File Viewer's `DualPane` primitive**. It replaces the retired inline `TaskNotes` reading pane; the compact
-`TaskNotes` line + resolved references stay as the ENTRY surfaces that open this reader.
+`TaskNotes` line + resolved references stay as the ENTRY surfaces that open this reader. The wider artifact target also includes a whole decision log: that branch uses the shared task-page DecisionList rather than DualPane.
 
 
 ## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
@@ -30,14 +30,16 @@ only). Listing/content hooks branch on the kind:
   into the notes rail shape (`language: "markdown"`, `truncated: false`).
 - `kind === "task-report"`: one recorded report by its exact recorded identity.
 - `kind === "decisions"`: the whole log on its own page (`DecisionsPane`,
-  newest-first, product records muted).
+  authored decisions newest-first, with product records in a separate counted end disclosure).
 - `kind === "role-report"` / supplied report content: the recorded body in the
   shared pane with no rail.
 
 The rail header, open-path label, and failure copy are kind-aware (`notes` vs
 `requirements`), the screen root carries `data-artifact-kind`, and
 `CockpitShell` keys the takeover marker on the kind. Rendering still reuses
-`DualPane`; no second bespoke reader exists.
+`DualPane` for fetched notes, requirements and reports; the whole decision log reuses DecisionList in a dedicated DecisionsPane instead of DualPane.
+
+The whole-log page counts and numbers authored decisions only. It shows every authored entry newest-first with its recorded time, Markdown decision text and rationale already expanded; whole rows have no more/less control. The reading area uses the shared centered 100ch recipe. Product-written records are retained after the authored list in a muted native details disclosure with its own count, time, text and rationale, but no decision number. Opening the disclosure is not a new fetch.
 
 ## Code Commentary
 
@@ -77,10 +79,9 @@ Panda `css` local styles mirroring the `ChangeSetViewer` takeover chrome (screen
 ### Invariants And Boundaries
 
 Folder/read transport over the L126 `/api/notes/*` server contract (allow-listing, confinement, binary/oversize
-all stay server-side; the whole-tree list route is gone). No store mutation. There is **no second bespoke reader** — the content pane is the
-File Viewer's `DualPane`, and the only file-viewer leaf stubbed in tests is `FilePane` (the CodeMirror
-editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`. The whole-log
-`DecisionsPane`, task-report and role-report readers render their kinds in the same pane.
+all stay server-side; the whole-tree list route is gone). No store mutation. Fetched note, requirement and report bodies use the File Viewer’s DualPane through NotePane. DecisionsPane is a separate branch within the same takeover chrome, reusing shared DecisionList and the already supplied decision array rather than fetching a log.
+
+For the fetched-content path, the existing test accommodation remains recorded here: the only file-viewer leaf stubbed in tests is `FilePane` (the CodeMirror editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`. This pass does not reverify that test claim or use it as acceptance evidence for whole-log layout.
 
 ## Role-report kind
 
@@ -88,6 +89,12 @@ The viewer also accepts a **role report** as one more artifact kind (`kind: "rol
 `RoleReportContent`): the header shows `Report` and the recorded path, the pane reuses `DualPane`
 through the same `noteAsFileContent` mapping, and no rail is rendered. `RoleChatsPane` opens it from
 Result through `readRoleReport`, so the launcher needs no second viewer (MIK-R75 rule 4).
+
+## Current L5I Maintenance
+
+The controlled Notes Reader is memoized as a persistent cockpit view. Shell view switches with
+unchanged route props no longer reconstruct its reader subtree, while its own selected-note state
+and data reads remain unchanged.
 
 ## Evidence
 
@@ -100,11 +107,20 @@ A same-origin view over the local notes API; nothing crosses repositories.
 ### Repo-Internal References
 
 
-- The reused File Viewer content pane (markdown/code/placeholder). [1]
+
+- NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. [1]
+
+
 
 - The `FileContent` type the text path maps a note into. [2]
-- The shell that hosts the takeover + lifts its selection. [4]
-- The entry surface (Notes line + references) that opens this reader. [5]
+
+- Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover. [4]
+
+
+
+- TaskNotes composes resolved references and the Notes line; its data callbacks open exact notes, folders and report targets through the supplied artifact callback. [5]
+
+
 
 
 - The component test suite covers the tree, open path, parts and depth. [7]
@@ -121,14 +137,10 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - The extracted folder cache owns paging, fill, vanish recovery and the protected LRU target. [8]
 
 
-- The whole-log pane keeps newest-first decisions with product records muted. [9]
+
+- The whole-log pane shows authored decisions newest-first with expanded shared rows; retained product records are unnumbered in a separate counted native disclosure. [9]
+
+
 
 
 - The notes-target reader retains the same note and keyed tree lifetime. [10]
-
-
-## Current L5I Maintenance
-
-The controlled Notes Reader is memoized as a persistent cockpit view. Shell view switches with
-unchanged route props no longer reconstruct its reader subtree, while its own selected-note state
-and data reads remain unchanged.

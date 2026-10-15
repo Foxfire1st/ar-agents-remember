@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
         "content": "sha256:a35aab99f13fd4512cf7c8c83b318a6a7c130dd4cfcb7e556a1d15e30c96aa3b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
-        "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+        "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+        "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
         "locator": {
           "kind": "symbol",
           "name": "StepsBlock"
@@ -34,12 +34,31 @@
         "handoffEntry": "MIK-R127@v1 rule 10 (c)",
         "leaf": "260928-MIK-L127"
       },
-      "rationale": "Draws the table and its heading with the progress; it is the only place a task's steps are drawn.",
+      "rationale": "Owns the full task Steps table and its major-only heading marks/count; nested states remain displayed in table rows while cached header marks carry pointer details. Other surfaces may also show compact step marks.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+        "content": "sha256:f17ab219c7c66267e38cbd9bff0e40e24e05cc9f5f9028425beac826250206e9",
+        "locator": {
+          "end": 127,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-5JFBQB",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 12",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These task-page step-row extents retain ordered nested child titles and states, providing the pointer-independent reading surface for dot details.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
         "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+        "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
         "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
         "locator": {
           "kind": "symbol",
@@ -76,16 +95,30 @@
   ],
   "references": {
     "1": {
-      "note": "The step table carries projected progress and delegates state/mark mappings to the pure model.",
+      "note": "StepsBlock carries served progress, passes cached major steps to header marks, and retains the full top-level/nested table with model-owned display states.",
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
-            "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:006a8a99daa98f40ae2737d50f84b50827987f1ccf33acc5870e20d99b3f0496",
             "locator": {
-              "kind": "symbol",
-              "name": "StepsBlock"
+              "end": 160,
+              "kind": "line_range",
+              "start": 57
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "content": "sha256:e3b1e8d8a26057c75476ce5b8640d7c24d2cfd1bbcddc6099a49499c5bac7e16",
+            "locator": {
+              "end": 699,
+              "kind": "line_range",
+              "start": 669
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
           },
           "kind": "code"
         }
@@ -96,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
             "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
             "locator": {
               "kind": "symbol",
@@ -112,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
             "content": "sha256:a35aab99f13fd4512cf7c8c83b318a6a7c130dd4cfcb7e556a1d15e30c96aa3b",
             "locator": {
               "kind": "symbol",

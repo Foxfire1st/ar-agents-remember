@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
+        "locator": {
+          "end": 309,
+          "kind": "line_range",
+          "start": 275
+        }
+      },
+      "id": "RLZ-87M1SJ",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-NBCGCF",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This whole-log pane separates authored decisions from product records, uses the shared decision list and numbers, and exposes retained records in a muted disclosure below the reading column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
         "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
         "content": "sha256:016ca306847ee42c005234e3ce8edab2b4d2d087da80acf92c20b936452d31c8",
         "locator": {
           "kind": "symbol",
@@ -39,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
-        "content": "sha256:74ea34aa3ba59fb78acb97e8224a41a84d724ce2d48515df021e374affbbee95",
+        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "content": "sha256:705b2cffeb7744a6a1bfc01483dd597de62a64a2cea7abc3d20cf5703d6d4da6",
         "locator": {
           "kind": "symbol",
           "name": "Reader"
@@ -57,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
-        "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
+        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
         "locator": {
           "kind": "symbol",
           "name": "DecisionsPane"
@@ -70,20 +89,34 @@
         "handoffEntry": "MIK-R126@v1 rule 6",
         "leaf": "260928-MIK-L126"
       },
-      "rationale": "This pane renders the whole log newest-first by time with product-written records muted.",
+      "rationale": "Separates parsed-time-sorted authored decisions from records, expands authored rows with authored-only numbering, and retains unnumbered product records in a muted counted end disclosure.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The reused File Viewer content pane (markdown/code/placeholder).",
+      "note": "NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
-            "content": "sha256:79f02fb61f76f4f5c833cbb6a6ac6922621e5ca0a5807df19b06ef17f835379e",
+            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+            "content": "sha256:d669bc11390d00fe214d281ff05f8f92381ea4e037af0d31b153eeeeb66328bb",
             "locator": {
-              "kind": "file"
+              "end": 157,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+            "content": "sha256:6e9b16f481236482f390d17f6479eeb17eb02b58100a72e0fc5f3d455390c374",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 242
             }
           },
           "kind": "code"
@@ -95,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
             "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
             "locator": {
               "kind": "symbol",
@@ -141,16 +174,42 @@
       ]
     },
     "4": {
-      "note": "The shell that hosts the takeover + lifts its selection.\n\nAnchor: \"export type CockpitView\"",
+      "note": "Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover.",
       "targets": [
         {
           "anchor": {
-            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
-            "content": "sha256:bfeaf57796ee542d46cf39a6a14592f32b01475c2f57d3970685d8a2cfcd7c70",
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:4a501001c9a3ceb59fba94a41c863cd694ee6e32519f522134cd2193193bc088",
             "locator": {
-              "end": 71,
+              "end": 433,
               "kind": "line_range",
-              "start": 71
+              "start": 428
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:4227521a559393760676d9097170c3c3da8434f47b9ab6605f72c4a09775a8c9",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:6276dba8eb48e7c6196cd7acd930da937fbdad3be83702719acce18304041f1f",
+            "locator": {
+              "end": 650,
+              "kind": "line_range",
+              "start": 612
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -159,16 +218,42 @@
       ]
     },
     "5": {
-      "note": "The entry surface (compact list + references) that opens this reader.\n\nAnchor: \"export function TaskNotes\"",
+      "note": "TaskNotes composes resolved references and the Notes line; its data callbacks open exact notes, folders and report targets through the supplied artifact callback.",
       "targets": [
         {
           "anchor": {
             "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
-            "content": "sha256:3bea27808b67f7f2b14f06944df6213fd5be26b2a5702573b0708157a21edd33",
+            "content": "sha256:27aab1596102ad536583332285e0776bdd9e33aec0555e54133ce7f254843e4a",
             "locator": {
-              "end": 535,
+              "end": 356,
               "kind": "line_range",
-              "start": 535
+              "start": 318
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:cd9689c30e27562e9f6811814be70f43752ffe1ef1f03b0cdeb9f1479be17c95",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:58852596cbf47d6dcc86521585d4be572596ec397f5b2549b3e22ef6223208f9",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 526
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },
@@ -227,16 +312,43 @@
       ]
     },
     "9": {
-      "note": "The whole-log pane keeps newest-first decisions with product records muted.",
+      "note": "The whole-log pane shows authored decisions newest-first with expanded shared rows; retained product records are unnumbered in a separate counted native disclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
-            "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
+            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+            "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
             "locator": {
-              "kind": "symbol",
-              "name": "DecisionsPane"
+              "end": 309,
+              "kind": "line_range",
+              "start": 275
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
+            "content": "sha256:114e1d6e62e9b9a0d449c4bbc4329658044705427a0a722ad0ce7e7bb4d876c8",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
+            "content": "sha256:db0be40cafa62166f0623b27f322a5773da5eda7ede00cb85560db2a258c9032",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 595
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
           },
           "kind": "code"
         }

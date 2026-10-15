@@ -13,7 +13,7 @@ leaf that names none and is listed by its folder's `task.json` master.
 
 ### Logic
 
-Finalization marks the leaf Completed and its parent subtask row Completed, records the finalization decision and leaves the master inProgress. Failure while publishing the second document rolls back the leaf, parent and their rendered files to exact previous bytes.
+The named-master happy-path case calls the native `finalize_result` over a landed, cleaned fixture. It asserts Completed leaf and immediate parent row while the master stays inProgress with no completedAt. Leaf completedAt is bracketed by actual before/after clock readings. Both decision arrays retain their preexisting authored and legacy product-record entries exactly: finalization adds no decision. Returned landedCommit, targetBranch, taskUpdates and summary are asserted, and a retry preserves leaf/master JSON and Markdown bytes. A separate already-Completed legacy case asserts no timestamp backfill/migration or byte changes. The retained injected second-document publication failure compares rollback bytes.
 
 **Fixtures (260928-MIK-L38).** The contract and document builders moved to the base class `_FinalizeFixtures`: a
 landed, cleaned leaf contract (`_contract`, whose `fixture_name` keeps subtests apart), `_docs` (a folder master plus
@@ -22,9 +22,7 @@ the leaf; `leaf_master`, `rows` and `master_status` vary the pair), `_leaf_doc`,
 `_sources` captures each document's JSON and rendered Markdown bytes, so every refusal can assert that nothing was
 written.
 
-**`LifecycleFinalizeTests`** keeps its two named-master cases unchanged and gains the parent-side placement case
-(ruling 2026-09-30T13:35:32): a leaf naming a hand-made master `other.json` is refused with "`<other.json>` would be
-rewritten to `<task.json>`", and the leaf, `other.json` and the series master are byte-identical afterwards.
+`LifecycleFinalizeTests` retains the parent-side placement refusal (ruling 2026-09-30T13:35:32): a hand-made other.json master that would be rewritten to task.json is refused before document writes. Its named-master happy path is not unchanged: L162 replaces appended-finalizer-decision expectations with exact decision-array preservation, clock-bracketed completedAt and stable retry bytes, and adds the already-Completed legacy no-migration case.
 
 **`FolderMasterFinalizeTests`** (MIK-R38; every leaf has `master: null`):
 - the listing folder master's row completes, a second open row stays `inProgress`, and a `Completed` master is
@@ -39,12 +37,11 @@ rewritten to `<task.json>`", and the leaf, `other.json` and the series master ar
 - a hand-made `light` leaf `14_finalize.json`, which the store would write as `task.json`, is refused before any
   write (review R1 finding 1).
 
-The worker and both review rounds removed each guard in turn; every removal failed at least one of these cases, and
-the base build fails the folder-master cases while passing the standalone ones.
+Historical MIK-R38 evidence reported worker/reviewer guard-removal failures and base-build folder-master failures. That is preserved as the earlier qualification account, not a new execution or mutation result for the changed L162 happy-path cases.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The earlier retained-source account was recorded at IAS `d3610903`; current L162 prose describes changed source assertions, not a rerun of that candidate or a refreshed acceptance result. Historical populations do not require restoring removed tests. Static source inspection is memory preparation, not test execution.
 
 ### Invariants And Boundaries
 
@@ -58,6 +55,12 @@ so a refusal that wrote anything fails.
 
 No file-local implementation change is requested by this reconciliation.
 
+## Legacy Completed Document Boundary
+
+Already-Completed legacy documents remain unchanged; no completedAt is synthesized and the captured JSON/Markdown bytes remain identical.
+
+- Already-Completed leaf and parent row are not migrated during a native finalization call. \[10] [10]
+
 ## Evidence
 
 ### Docs References
@@ -70,7 +73,8 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- Finalized updates leaf and immediate parent row. [1]
+- Native finalization case asserts status/time, unchanged leaf/master decisions including legacy product records, exact return fields and byte-stable retry; authored assertions, not an executed result. [1]
+
 - Second document publish failure rolls back leaf and parent. [2]
 - The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture. [3]
 - A named master the store would write elsewhere is refused before any write. [4]

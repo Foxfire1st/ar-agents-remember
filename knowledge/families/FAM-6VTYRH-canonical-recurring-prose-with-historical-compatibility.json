@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "New fields and fixed placement alone still allow competing prose authorities; refusals alone would erase or strand old documents without grandfathering, retained reading and optional-field compatibility, so only the members together provide one forward authoring home without destroying historical access."
+  },
+  "guarantee": "Optional nonGoals and acceptance have typed homes at fixed master/task positions. One reserved-home policy refuses new restated headings and header labels while keeping existing sections/notes editable and removable; old documents load, render and accept ordinary edits without supplying the new optional fields. Dependencies inform display, not start or readiness authority. Existing Further-notes deduplication and complete-content navigation retain their separate owners.",
+  "id": "FAM-6VTYRH",
+  "members": [
+    "INV-T3TNTX",
+    "INV-KS5H7X",
+    "INV-7F81PT",
+    "INV-TXS01Y"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "canonical-recurring-prose-with-historical-compatibility",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/application/task_docs",
+    "dashboard/src/panels/detail-panel"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Canonical recurring prose with historical compatibility"
+}

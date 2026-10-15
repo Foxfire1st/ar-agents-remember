@@ -19,11 +19,11 @@ This section supersedes contrary earlier prose only for these changed seams; ret
 
 ## Purpose
 
-### STOP-delta current source contract
+### Historical STOP-delta source contract (prior epoch, not L162)
 
-The fifteen already governed artifacts gain consumer declarations only. Their owners, authority, category, fidelity, cadence, lifetime, introduction provenance and replacement contracts remain distinct from consumer membership; membership establishes neither execution nor acceptance.
+At the earlier STOP-delta epoch, fifteen already governed artifacts gained consumer declarations only. This is a retained historical change account, not the L162 delta. Owners, authority, category, fidelity, cadence, lifetime, introduction provenance and replacement contracts remain distinct from consumer membership; membership establishes neither execution nor acceptance.
 
-These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
+The qualified attempt14 CODE verdict cited by that earlier account is inherited history, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance of L162. Unaffected contracts and typed provenance remain; the L162 current consumer declarations are the Node-lockfile and canonical user-settings guard memberships described below. Landed L61 guard consumers coexist with those declarations.
 
 At the earlier L109 sync3 epoch, the source-owner repair closed the prior consumers array before the L109 artifact table; parent stdlib TOML parsing counted 101 artifacts on that exact pair. That is a dated source observation, not a current catalog total or execution/certification result. Metadata and consumer membership remain declarations.
 
@@ -58,15 +58,14 @@ The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_e
 
 The current artifact paths and every exact consumer list are canonically sorted. The eight L109 fixture blocks retain their identities and nonconsumer fields. The retained L109 consumer edges declare the diff-report, naming-projection and paging modules. The current refusal suite is also declared on existing reader fixtures and shared supports, through its answer-table import. These memberships add no artifact and certify no invocation.
 
+The L109 incoming 101-artifact caption and the refusal-suite registration account are retained historical observations, not the current population or L162 additions. The current Node-lockfile artifact still declares native reapply and now also task-document Order; membership alone proves no invocation.
 
-
-- The current composed catalog declares12 contracts and70 artifacts; CODE6/passed14-contract102-artifact and incoming101-artifact counts are historical on their own objects. The existing Node-profile package-lock.json artifact declares test_sync_reapply_merge.py as a consumer. Declarations and canonical ordering establish no loader/test invocation or acceptance. The _user_settings_guard.py artifact now also declares test_l61_remaining_findings.py, test_landing_commit_check.py and test_master_ref_resolution.py consumers; all other artifact metadata and consumer lists remain unchanged from the preceding source object. [271]
-
+- Current catalog declares12 contracts/70 artifacts; earlier14/102/101 populations are historical. The Node-lockfile list retains native reapply and task-document Order. The canonical _user_settings_guard.py list carries test_l61_remaining_findings.py, test_landing_commit_check.py and test_master_ref_resolution.py alongside test_task_document_order.py. Membership and canonical order establish no invocation or acceptance. [271]
 
 
 ### Current Contract
 
-The current composed source TOML declares12 contract rows and70 artifact rows, measured from this candidate. The CODE6/passed14-contract102-artifact population and the incoming101-artifact repair belong to their historical objects, not this current census. Counts and consumer declarations are source inventory, not executed loader/catalog validation, tests or acceptance. Native source-reference currency alone cannot establish semantic correspondence.
+The current composed TOML declares12 contracts and70 artifacts; earlier14/102 and incoming101 populations are historical on their own objects. These counts and consumer memberships are static inventory, not executed catalog validation, tests or acceptance.
 
 The R111 pre-sync declarative catalog had14 contract rows and94 artifact rows; that population is historical, not the composed catalog. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical.
 
@@ -202,6 +201,17 @@ The unit-regression lane declares test_f07_missing_lock_cursor.py, test_f08_regi
 
 The catalog declares the grant, dashboard, direct-leaf integration/role-start and no-grant parity modules as consumers of its fixture/support rows. Node lockfile membership is syntactic dependency accounting and does not establish that this particular fixture was read. Membership and lifetime metadata establish declared ownership, never that these cases or a live host ran here; retained numeric history is not a current total.
 
+## Task-Document Order Consumer
+
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 12 contracts and 70 artifacts. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+
+
+- Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
+
+- The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution. [291]
+
+
+
 ## Evidence
 
 Source declarations, mirrors and fixture assertions are not executed acceptance.
@@ -238,7 +248,8 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 
-- The Node lockfile artifact's metadata and exact consumer scope. [94]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [94]
+
 
 
 
@@ -388,7 +399,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [216]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [216]
+
 
 
 
@@ -416,7 +428,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The diff-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers. [220] The exact consumer entries are maintained in canonical ascending order; earlier additions are historical registration observations, not a newest-last ordering rule.
+- Diff-scope support declares line/movement/reach as canonically ordered exact consumers; the prior newest-last caption is historical, not a current ordering rule. [220]
+
 
 
 
@@ -464,7 +477,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [227]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [227]
+
 
 
 
@@ -478,7 +492,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [229]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [229]
+
 
 
 
@@ -492,7 +507,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [231]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [231]
+
 
 
 
@@ -517,7 +533,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [235]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [235]
+
 
 
 
@@ -535,7 +552,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [238]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [238]
+
 
 
 
@@ -549,7 +567,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [240]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [240]
+
 
 
 
@@ -570,7 +589,8 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The Node lockfile fixture declares an exact-scope artifact row. [243]
+- Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation. [243]
+
 
 
 
@@ -634,9 +654,7 @@ The references below distinguish present catalog declarations, implementation so
 
 - The referenced transaction test definition exists in the current source. [257]
 
-The converted-drift test module is declared on the consumer lists it exercises, with rule-specific
-case definitions. The retained earlier fail-before/pass-after account is historical; this source
-reread supplies no before/after invocation receipts or fresh execution result.
+The converted-drift test module is declared on the consumer lists it exercises, with rule-specific case definitions. Its earlier fail-before/pass-after account is historical; this source reconciliation supplies no new invocation receipts.
 
 
 
@@ -690,7 +708,8 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 - The R111 pre-sync declarative catalog had14 contract rows and94 artifact rows; that population is historical, not the composed catalog. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [273]
 
-- The fifteen already governed artifacts gain consumer declarations only. Their owners, authority, category, fidelity, cadence, lifetime, introduction provenance and replacement contracts remain distinct from consumer membership; membership establishes neither execution nor acceptance. [274]
+- The fifteen-artifact STOP-delta caption retains its prior epoch and scoped source/grade history. Current L162 task-order consumers on existing Node-lockfile/user-settings guard artifacts coexist with landed L61 guard-consumer maintenance; identities and metadata are distinct from consumer membership, and neither establishes execution or acceptance. [274]
+
 
 - Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [275]
 - Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. [276]

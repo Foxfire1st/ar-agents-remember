@@ -6,10 +6,11 @@
     ],
     "justification": "Whole declared progress and one next-step mark prevent a visually bounded table from lying about the task; the state derivation and table live separately."
   },
-  "applicability": "The task-page Steps table and step/substep progress marks.",
+  "applicability": "Task-tool responses and dashboard major-step summaries, compact marks and the complete Steps table with nested detail.",
   "conditions": [
-    "Counts/marks include every declared step and nested step.",
-    "The first not-done step is the next mark; derived skipped/done state is not a second task authority."
+    "Heading counts and compact marks contain one unit per major step; the full table retains nested rows.",
+    "A done major is never visually uncompleted by a nested unit.",
+    "An unfinished major with an inProgress or done child displays current before blocked/next fallback; nested rows never receive the page next mark."
   ],
   "exclusions": [
     "Drawing nested notes, which is deferred separately.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L127",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The steps of a task are one table with mark, number, title and state per step; the marks and the count in the heading run over every declared step, nested ones too, and the first step that is not done is marked as the next one.",
+  "statement": "The task Steps table retains mark, number, title and state for all major and nested units, while heading counts and compact marks count only major steps. A done major remains done; begun or done children can make an unfinished major current, and the first unfinished major is next only after current/blocked precedence. Display state does not rewrite canonical task state or completion readiness.",
   "status": "proposed",
   "supersedes": []
 }

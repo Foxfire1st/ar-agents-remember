@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/detail-panel/StepDot.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5d6b1775664c1768f5d4dec5275c1fd867c641cd",
+        "content": "sha256:2b0f5cc3d648d305b402a6f610577d15b993507d2729db1d67d95affcaebf215",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KXCBQY",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 12",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This standalone dot-and-tooltip component delays pointer disclosure of the supplied major step and its existing ordered children; its local pointer timer and state do not fetch task data or add keyboard focus stops.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Optional cached step details use a cancelable non-touch pointer-rest timer and a body portal, with no fetch or tab stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6b1775664c1768f5d4dec5275c1fd867c641cd",
+            "content": "sha256:2b0f5cc3d648d305b402a6f610577d15b993507d2729db1d67d95affcaebf215",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -48,12 +48,17 @@ Review section (`_route_review_lines`, line 492) emits a `**Task intent:** `{sch
 line under the candidate tree when the review carries a `TaskIntentIdentity` (line 500-501),
 pinned to the new normative intent identity.
 
-A `master` (`doc.kind == "master"`) dispatches to `_render_master`: the header block,
-then an ordered walk of `doc.sections`. A `freeform` section renders `## {heading}` +
-its `body` verbatim; a `subTasks` / `sharedDecisions` section renders the generated
-block (the `subTasks` index list — `_MARKER` maps `DocStatus` to check/emoji — or the
-`decisions` table) after an optional `body` intro. The `light`/`subTask` path is
-unchanged.
+> **Retained historical source account — superseded by the current contract:**
+> A `master` (`doc.kind == "master"`) dispatches to `_render_master`: the header block,
+> then an ordered walk of `doc.sections`. A `freeform` section renders `## {heading}` +
+> its `body` verbatim; a `subTasks` / `sharedDecisions` section renders the generated
+> block (the `subTasks` index list — `_MARKER` maps `DocStatus` to check/emoji — or the
+> `decisions` table) after an optional `body` intro. The `light`/`subTask` path is
+> unchanged.
+
+Current Markdown sequence for a master is header; the truthy fixed fields Objective, Non-goals, Requirements, Design and Acceptance in that order; persisted Execution Graph when present; Order when the supplied `master_order` is not None; authored sections in order; fallback Master Index when orchestrates/rows require it; discarded history. _master_fixed_prose_lines formats the fixed fields before authored sections and does not rewrite, deduplicate or migrate legacy freeform sections, so a legacy Objective section can coexist with the fixed Objective. Historically, the predecessor emitted only the fixed Non-goals/Acceptance fields here and did not automatically emit master Objective, Requirements or Design. The leaf sequence still places truthy Non-goals after Objective and truthy Acceptance after Design, retaining its existing later sections and bespoke extras. Nonempty raw waitsFor adds a header line in declared order; empty/None adds none. This is Markdown behavior, not the browser page skeleton.
+
+Order is consumed, never read or derived here. It reports the number of Completed tasks and omits their rows, sorts remaining rows stably by wave, shows non-cycle inProgress as `in work`, adds the cycle annotation, and preserves gone/cycle/dependency facts supplied by the owner. When at least one cycle member is unfinished, it also emits `Legacy cycle members: ...` using the complete supplied cycle_ids, including Completed members; an entirely Completed cycle contributes to the Completed count but does not trigger that banner. The earlier renderer lacked that full-member banner; cycle identity itself is derived upstream.
 
 Since 260815-DAG-L14 the master renderer also emits real sprint structure: a typed `masterRef`
 row renders as a relative markdown link to the commanded master document (`_master_ref_link` —
@@ -92,7 +97,9 @@ durable task identity.
 - The single writer of the rendered markdown; nothing parses markdown back.
 - Determinism is a contract (golden + round-trip tests depend on byte-stability);
   preserve the no-global-normalization approach so code-fence content survives.
-- Follows the `w-02` `template.md` section order; that template is the render spec.
+- Retains the fixed leaf-template backbone, with conditional Non-goals after Objective
+  and Acceptance after Design; the master has its own header/prose/graph/Order/section
+  sequence. Neither the browser skeleton nor authored freeform duplicates replace it.
 - A single ordinal allocation table serves declarations and edge endpoints. Do not reintroduce a
   sanitizer, a collision suffix branch, or a second endpoint-id authority.
 - Typed intent slots render as stable strings; decision prose and generic questions stay literal.
@@ -106,8 +113,8 @@ None.
 
 ## 260928-MIK-L08 The Maintenance-Scope Header Line
 
-- The header line is drawn only when the field is true. [1]
 
+- The maintenance-scope header is drawn only for a truthy field; the current header also conditionally carries the raw waitsFor line. [1]
 ## 260928-MIK-L11 The Expected-Knowledge-Effects Header Block
 
 MIK-R11 adds a header block after the maintenance-scope line: when the leaf's document declares
@@ -116,11 +123,13 @@ declaration, in declared order, naming its subject, effect and `requirementRef`.
 field renders exactly as before (the worker's and reviewer's render hashes over every real task document are
 byte-identical).
 
-- The block is drawn only when the field is set. [2]
 
+- Expected-knowledge-effects header bullets are drawn only when the declaration is truthy and retain declared order. [2]
 ## External annotation input
 
-render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. No grant argument gives the former rendering, and a master ignores the annotation. Determinism is over the document plus supplied graph/grant inputs, not the document alone. Authored JSON stays primary and there is no TaskDocument grant field.
+render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. No grant argument gives the former rendering, and a master ignores the annotation. Determinism is over the document plus supplied graph/grant/master_order inputs, not the document alone. Authored JSON stays primary and there is no TaskDocument grant field.
+
+The renderer accepts `master_order` alongside `graph_titles` and `direct_grant`. It uses Order only on the master path; a master ignores the leaf grant argument. Callers own Order derivation and any read cost; this formatting owner remains one-way.
 
 ## Evidence
 
@@ -133,14 +142,17 @@ No relevant external documentation was available after checking the configured s
 ### Repo-Internal References
 
 - The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. [3]
+
 - The renderer allocates private leaf ids once and supplies the same map to declarations and edges. [4]
+
 - Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. [5]
 - The graph node model provides structural keys for the allocation. [6]
+
 - The typed requirement/question renderers and the review task-intent line. [7]
+
 - The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. [8]
 
 - A retired master's row shows the retirement time and reason after its scope. [9]
-
 ## 260815-DAG-L12 Mermaid Document Diagram
 
 The `## Execution Graph` section leads with a deterministic fenced mermaid `flowchart TD` diagram
@@ -159,4 +171,5 @@ and renders typed approved-packet refs / acceptance obligations in their section
 (`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Rendering remains deterministic
 and one-way; markdown never becomes authority.
 
-- render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. [10]
+
+- render_markdown formats external leaf-grant and supplied graph/master Order inputs; the master emits truthy fixed fields before preserved authored sections and renders full legacy-cycle identity when unfinished cycle work remains. It neither reads the grant store nor derives Order. [10]

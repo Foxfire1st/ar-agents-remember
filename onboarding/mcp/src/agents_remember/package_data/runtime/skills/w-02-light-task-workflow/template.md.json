@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references.\n\nAnchor: `# Light Task Template`",
+      "note": "The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references.",
       "targets": [
         {
           "anchor": {
-            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
-            "content": "sha256:581120b382df9679e7c8e18e35f20cb51155966aed932ff45c257fd7ac5d7ae2",
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:da374b15efa3bbb31d0a7093da70d485eff58582d1916a8da6cdd75edbb9630e",
             "locator": {
-              "end": 116,
+              "end": 112,
               "kind": "line_range",
-              "start": 1
+              "start": 13
             }
           },
           "kind": "code"
@@ -20,17 +20,47 @@
       ]
     },
     "2": {
-      "note": "Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request.\n\nAnchor: \"# Task: <Title>\"",
+      "note": "Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request.",
       "targets": [
         {
           "anchor": {
-            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
-            "content": "sha256:9e6c902679b1021ef33324403701c21ce193ce96068d074bc274af41f7fc14d5",
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:8c142a6e6fdf143ae1bbe6405163073b32c161b833964d1d16c60076495af33e",
             "locator": {
-              "end": 10,
+              "end": 129,
               "kind": "line_range",
-              "start": 10
+              "start": 117
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Light/subTask render specification and JSON-primary master-first creation; existing Markdown may remain until intentional migration but cannot satisfy the waitsFor prerequisite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df5d83eaba65a67a8157e3a33b608a0b970109c",
+            "content": "sha256:9c7eef8ba11f4f4183a1b4d79e822bf797155125643205e317b059be8c73fd50",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33130ba9e787e8ed97e511c2e3453263efe14360",
+            "content": "sha256:49b437557577d5741fc2e5182374d1315cf69e44974a1456e5b825c31f7d53c5",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md"
           },
           "kind": "code"
         }

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Filtering decision rows alone does not stop future finalizer pollution, stopping appends alone would remove the old time source, and a completion-time field alone does not preserve authored-only reading; together the members separate human history from lifecycle evidence while retaining completion recency and old records."
+  },
+  "guarantee": "Finalization leaves authored task/master decision arrays intact and lifecycle proof in status, the exact master row and landing record; decision surfaces count and number authored entries and disclose retained product records separately. An independent completion fact for new landings and read-only legacy fallback let the ordinary master’s completion list and newest-five preview report recency after finalizer decision appends stop, without rewriting old documents or persisting sort choice. Existing exact/prefix product-record classification, including possible authored collisions, remains a disclosed boundary rather than an enforced authorship guarantee.",
+  "id": "FAM-FAK38P",
+  "members": [
+    "INV-NBCGCF",
+    "INV-MFZR5A",
+    "INV-TRENNF"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "authored-decision-history-and-durable-completion-recency",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees/modules",
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/panels/notes-reader",
+    "mcp/src/agents_remember/serving/projections"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Authored decision history and durable completion recency"
+}

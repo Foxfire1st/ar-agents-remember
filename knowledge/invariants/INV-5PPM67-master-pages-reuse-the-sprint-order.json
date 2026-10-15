@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The shared Order/ready rendering in orderGraph.tsx and placement in taskReader.tsx jointly keep the master’s visible order and next-task list tied to the projected dependency frontier."
+  },
+  "applicability": "Dashboard ordinary-master Order and Now blocks composed from the master’s derived task graph.",
+  "conditions": [
+    "Order follows Now and uses the drawing shared with sprint Order.",
+    "Completed tasks are counted; work and ready states are distinguished; pointer rest discloses both dependency directions with the shared fade behavior.",
+    "Now lists tasks that can start next."
+  ],
+  "exclusions": [
+    "Changing the sprint executionGraph authoring contract.",
+    "Treating displayed readiness as a tool-enforced start decision."
+  ],
+  "id": "INV-5PPM67",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54",
+        "Parent examination of actual F01 changed extents; no new execution or acceptance."
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 3",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Master pages reuse the sprint Order drawing after Now, distinguish work and ready tasks, count completed tasks, expose both dependency directions on pointer rest and list tasks that can start next in Now.",
+  "status": "proposed",
+  "supersedes": []
+}

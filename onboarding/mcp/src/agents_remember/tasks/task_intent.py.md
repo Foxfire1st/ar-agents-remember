@@ -17,17 +17,24 @@ packet.
 ### Projection and identity
 
 - `TaskIntentV1` holds the leaf identity, objective, requirements, design, steps with substeps, code
-  examples with their note, acceptance obligations and the optional `expectedKnowledgeEffects`. Every model
-  is frozen and forbids extra fields. `canonical_value` drops `expectedKnowledgeEffects` when it is `None`,
-  so a document that declares none projects without the key.
+  examples with their note, acceptance obligations, and optional `expectedKnowledgeEffects`,
+  `nonGoals`, and `acceptance`. Models remain frozen and extra-forbidding. `canonical_value`
+  drops only these three slots when their value is None; empty fixed-prose strings remain
+  meaningful canonical values. Thus adding absent optional slots does not add keys to the
+  intent input; this is a construction account, not a measured corpus hash/parity verdict.
 - `_ROOT_FIELDS` and `_NESTED_FIELDS` name the fields the projection consumes.
   `_validate_allowlisted_classifications` compares them with the shared field taxonomy
   (`document_field_effects`) in both directions and raises `task-intent-schema-unclassified` for a slot
   that is not classified normative and for a normative field outside the projection.
+  The root normative inventory now includes `nonGoals` and `acceptance`; structural
+  `waitsFor` and audit `completedAt` stay outside normative intent.
 - `task_intent_projection` refuses a master (`task-intent-leaf-required`) and an unsupported schema
   version. `task_intent_identity` is the SHA-256 of the projection's canonical JSON with sorted keys and
   compact separators. `task_intent_master_projection` projects a master's own normative fields as a plain
   mapping and refuses a leaf.
+  Leaf construction passes the fixed-prose slots explicitly. Master projection applies
+  the same None-only omission to `expectedKnowledgeEffects`, `nonGoals`, and `acceptance`;
+  it does not make empty strings absent or turn display dependency/time fields normative.
 - `require_current_task_intent(observed, current, owner=..., next_action=...)` raises
   `<owner>-task-intent-stale` when the observed identity differs from the current one.
 - `_requirements` refuses blank requirement text, and refuses packet references without any exact text
@@ -60,9 +67,18 @@ and its answers and errors are the same.
 
 ## Evidence
 
-- The strict projection and the dropped key for an absent declaration. [12]
-- The fields the projection consumes. [13]
-- The projection entry point refuses a master. [14]
+
+- The strict leaf projection declares optional expectedKnowledgeEffects/nonGoals/acceptance and drops each only when None, retaining empty prose values. [12]
+
+
+
+- The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt. [13]
+
+
+
+- Leaf projection refuses a master and passes nonGoals/acceptance explicitly; the separate master projection refuses leaves and shares the None-only optional-slot omission. [14]
+
+
 - The digest of the canonical projection. [15]
 - The currentness assertion. [16]
 - The allowlist and the taxonomy must agree in both directions. [17]

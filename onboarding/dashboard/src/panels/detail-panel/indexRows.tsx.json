@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/detail-panel/indexRows.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Master/lifecycle/slice target precedence, stable full-list positions and retained sprint rows belong to the extracted row seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:70a4cc7a9a3bb3a08d5016a9018ee310f85b9da0444f5db471a129ae6e6c8b37",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:f8a9503cc5c452c2f967d3ad4df553b0ad74e043de84f28b239dc9d3dceb1b3c",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The call-local slice index retains the first duplicate and exact legacy file spelling; target resolution optionally uses that matcher without changing precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:a328f1b9ca729b956401c63a238961ed621902031fc3518834e7d3f30b8e8eef",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:b39f18a53e570a97d11c09a52ee2ce8e0b24367e93e954e933de8f390eeab8dc",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddb18f9c1c1c0e58a53ffcf70977c948079a69a",
+            "content": "sha256:fdfe9d62f77f8699b76bbd79438cf3403e37e15d7bdf94d2b27d2b584ed09a8c",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

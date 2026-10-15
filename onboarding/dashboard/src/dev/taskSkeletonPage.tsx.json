@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The selected DEV fixture and limited fetch override are scoped and restored.\n\nAnchor: `TaskSkeletonPage`",
+      "note": "The selected projection precedes reader mount, the rich fetch override is restored, and local artifact state switches between DetailPanel and NotesReaderViewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "489f957c0e84a77512f8863658e3baf091574cc1",
-            "content": "sha256:7e5692b21d4dc2a9aeae4f98c0bb9de04231f6d8065d1ed74b855c288f5aaf8f",
+            "blob": "612270a45b8134be2e7a3e286cc64634d5bfe842",
+            "content": "sha256:34274b36d7b734402ff56c352f450908250cb6d2235f010d619a26a73359c27c",
             "locator": {
-              "kind": "file"
+              "end": 104,
+              "kind": "line_range",
+              "start": 65
             }
           },
           "kind": "code"

@@ -1,0 +1,44 @@
+{
+  "path": "dashboard/src/panels/detail-panel/TaskGroupView.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
+        "content": "sha256:5ce9e35bd9be543af71427bd93f5cd7295e499db4f184e540b10b2a82edcdb11",
+        "locator": {
+          "end": 111,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-0Q2WJ2",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles grouped rows without any grant hand-through.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Completed-master sorting is conditional and shares one call-local slice index for facts/navigation; other groups and discarded audit keep their separate ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
+            "content": "sha256:5ce9e35bd9be543af71427bd93f5cd7295e499db4f184e540b10b2a82edcdb11",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

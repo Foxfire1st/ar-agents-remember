@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_task_document_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real task_doc writes and separate pure/projection assertions cover exact dependency/prose predicates, RF01 omitted-replacement refresh, candidate-aware dry-runs, fixed-field section preservation and Completed-cycle identity; none is an execution result or universal no-write/schema-less-parity claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "877d47f211887b1184d026029cf8bcd4c96835b7",
+            "content": "sha256:b685f3d090296664ac55e9d66f502003f62ff7cffc43463032527de8cd67bab6",
+            "locator": {
+              "end": 523,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

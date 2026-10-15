@@ -6,8 +6,12 @@
 
 ## Purpose
 
-This file is both the human scaffold and render specification for a JSON-primary light task. It
-defines the stable section structure, live checklist shape, and filtered requirement projection.
+This file is the scaffold and render specification for JSON-primary `light` and `subTask`
+documents: author through `task_doc` and do not hand-edit generated Markdown. For a new series,
+create the JSON-primary master with `task_doc` `create` and `kind:"master"` first, then create its
+indexed child documents before leaf `waitsFor` writes. Existing hand-authored Markdown remains
+unchanged until intentionally migrated. The scaffold defines the stable section structure, live
+checklist shape, and filtered requirement projection. [4]
 
 ## Code Commentary
 
@@ -56,9 +60,10 @@ No external Domain Documentation source governs this render specification.
 ### Repo-Internal References
 
 - The rendered task links exact approved requirement revisions. [1]
-- Usage rules preserve one-primary ownership and per-revision evidence. [2]
-- Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths. [3]
 
+- Usage rules preserve one-primary ownership and per-revision evidence. [2]
+
+- Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths. [3]
 ### Cross-Repo References
 
 Concrete repository fields and commands arrive through the resolved target-repository context.
@@ -69,3 +74,5 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+- Light/subTask render ownership, new-series master-first creation, children before waitsFor, and intentionally unmigrated existing Markdown. [4]

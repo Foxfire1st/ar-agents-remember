@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:8a1100ca6e9f474666fdc6496effb9f125fd8be2ec26c4fcb0fe79bfcda47f39",
             "locator": {
               "end": 5,
@@ -20,16 +20,75 @@
       ]
     },
     "10": {
-      "note": "The master owns the final release step, while sub-tasks never bump the version.\n\nAnchor: \"The master owns only the final release step\"",
+      "note": "Only the master performs the final version bump/release after all leaves land; leaves do not bump.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
-            "content": "sha256:780e2ff9c56bed642e9580757cff327a28dfdbe24b49142574aa2bee124ddc1a",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:15e1d705dc7dff52139a2b33a51bd937da622f610aba0a871162fd6063fd85da",
             "locator": {
-              "end": 367,
+              "end": 372,
               "kind": "line_range",
-              "start": 367
+              "start": 364
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Stable IDs/index and waitsFor-derived ordering in package and canonical owner. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:d4fd66db5b81d63f70e2974d8321f95e8b69d66a239fca4dc1200f87e7e63d90",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:d4fd66db5b81d63f70e2974d8321f95e8b69d66a239fca4dc1200f87e7e63d90",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "skills/w-02-light-task-workflow/workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "One owned primary acceptance block and separate dependency/preservation checks. [12]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:209ddab310ae04fc496b9ccedb7680d54c275154d8c228d0cbcc9cc5d2096df4",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:430844314083aeb747bad7cd25b9f7967ab22564b40a89f1051f316defbb7da5",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 346
             }
           },
           "kind": "code"
@@ -41,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:17909dd504d4f984500042cc6f15648dfe9b43322c567d94b57e58a78e72142e",
             "locator": {
               "end": 14,
@@ -58,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:049ef35c21e87d63d03d713aa748a6ae70f9a5d7033f2e89a36da146b6fb0795",
             "locator": {
               "end": 54,
@@ -71,16 +130,16 @@
       ]
     },
     "4": {
-      "note": "A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`.\n\nAnchor: \"places its leaf contract at\"",
+      "note": "A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
-            "content": "sha256:6f60b26062bf974ea9999391b3ef3c3e18cd6982a18679db8881b1200fb25ba0",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:eb2ce660992a84f49a0522cd117763f5ee1182fffc58e19ac7bd69c157008c79",
             "locator": {
-              "end": 62,
+              "end": 63,
               "kind": "line_range",
-              "start": 62
+              "start": 60
             }
           },
           "kind": "code"
@@ -88,14 +147,14 @@
       ]
     },
     "5": {
-      "note": "The task document is JSON-primary with schema `ar-task-document/v1`.\n\nAnchor: \"ar-task-document/v1\"",
+      "note": "The task document is JSON-primary with schema `ar-task-document/v1`.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
-            "content": "sha256:04fa4a5adbe94eec20015e218b5c8fd75b6bbd9873340b97f3386434293a6780",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:2e0a2042f24bf98b88a730f25dab9ceb9cc3b4d4dc3e81cab40582aacf4ad01b",
             "locator": {
-              "end": 114,
+              "end": 118,
               "kind": "line_range",
               "start": 114
             }
@@ -105,16 +164,16 @@
       ]
     },
     "6": {
-      "note": "`codeExamplesNote` records deferred code examples distinctly from none-needed.\n\nAnchor: `codeExamplesNote`",
+      "note": "`codeExamplesNote` records deferred code examples distinctly from none-needed.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:f41ad5851a68d400a028def603105d3ef6765c5c9c897d75b8cbe0c0cd517f5b",
             "locator": {
-              "end": 125,
+              "end": 129,
               "kind": "line_range",
-              "start": 125
+              "start": 129
             }
           },
           "kind": "code"
@@ -122,16 +181,16 @@
       ]
     },
     "7": {
-      "note": "Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped.\n\nAnchor: `lifecycle_finalize_task`",
+      "note": "Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:a25c1ec9ca55cc08d02c909180bae1ba0cf6e9c44f14a7c09d2c1fc939577288",
             "locator": {
-              "end": 256,
+              "end": 260,
               "kind": "line_range",
-              "start": 256
+              "start": 260
             }
           },
           "kind": "code"
@@ -139,16 +198,16 @@
       ]
     },
     "8": {
-      "note": "Final closure verifies that referenced workflow or skill paths still resolve.\n\nAnchor: \"verify any referenced workflow or skill paths still resolve\"",
+      "note": "Final closure verifies that referenced workflow or skill paths still resolve.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
             "content": "sha256:db6b4f7da39ac50936a4dd7e1b022d7b12392148e188c3ec36379aae9ecd6667",
             "locator": {
-              "end": 277,
+              "end": 281,
               "kind": "line_range",
-              "start": 277
+              "start": 281
             }
           },
           "kind": "code"
@@ -156,16 +215,28 @@
       ]
     },
     "9": {
-      "note": "A master series uses one master integration branch plus leaf enclosure worktrees.\n\nAnchor: \"one master integration branch plus leaf enclosure worktrees\"",
+      "note": "Stable creation filenames and master index are separate from exact same-master waitsFor-derived Order; the master provides integration and each active leaf its enclosure/worktree.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
-            "content": "sha256:e372555e7cfdfd77e85ef9ade2d6a91d838d380d784751045dccfa7e33d5e54b",
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:d4fd66db5b81d63f70e2974d8321f95e8b69d66a239fca4dc1200f87e7e63d90",
             "locator": {
-              "end": 359,
+              "end": 344,
               "kind": "line_range",
-              "start": 359
+              "start": 339
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "content": "sha256:1b0060e434a45e6f29c0d93723f9481825edb998b8cb7a7cc04bb46ab9d28e73",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 364
             }
           },
           "kind": "code"

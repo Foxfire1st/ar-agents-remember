@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
               "end": 549,
@@ -232,16 +232,14 @@
       ]
     },
     "19": {
-      "note": "Two hand-maintained giver/time samples exercise directGrant display shape, not external authority.",
+      "note": "Manual fixture includes native operation/source-lineage wire samples, not live operation evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "87432f256a1d00b2ed84946aff81eff25efa6d47",
-            "content": "sha256:f023d534bc00dd12836b1145b32f1fe1cc49b71c41d572990dcb180ee1bf431b",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
             "locator": {
-              "end": 2040,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -253,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
               "end": 337,
@@ -265,12 +263,27 @@
         },
         {
           "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
             "content": "sha256:4407611e9fb68657eca80fe7a58690d9b0fd595f6e254a5beff93acd8e7476f7",
             "locator": {
-              "end": 1805,
+              "end": 1816,
               "kind": "line_range",
-              "start": 1182
+              "start": 1193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Six optional task fields and graph cycle=false values are hand-maintained contract examples, not joined dependencies or native Order derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -295,16 +308,14 @@
       ]
     },
     "4": {
-      "note": "Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row.\n\nAnchor: `false`; \"evidenceRefs\"",
+      "note": "Hand-maintained taskDocuments samples carry fixed task-reader form/header/review/step data, not producer execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:46d4626b8bd41a074f75c46766223a0cd01f4f848734f1cea9c3b028566020b8",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
             "locator": {
-              "end": 1929,
-              "kind": "line_range",
-              "start": 1792
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -316,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
             "content": "sha256:f8f905f07141c8e18288d136810b169d10609ca229a5e116b06d07633d028e0c",
             "locator": {
               "end": 2,
@@ -329,16 +340,14 @@
       ]
     },
     "6": {
-      "note": "`metrics` with one bucket per live state and no bucket for the terminal pair.\n\nAnchor: `awaitingDeveloperCount`; `metrics`",
+      "note": "Manual decision and task-reader values are sample data, not source-derived provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:63b8e78ba186f2f42199de2860280d6caefdb63eb192f2fd41ec6b10f75beb78",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
             "locator": {
-              "end": 1941,
-              "kind": "line_range",
-              "start": 1930
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -346,16 +355,14 @@
       ]
     },
     "7": {
-      "note": "All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths.",
+      "note": "Eleven nonempty analytics collections remain manual coverage samples, including engineProcesses and taskDocuments; not a scenario or execution receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
-            "content": "sha256:46ce2176a72a83d2f8e710bc1f9e92e2d1be7bfe09b615efe0e20f0c14480afa",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
+            "content": "sha256:10b599f2f86bdb21e89a30ea12d06a7cdd3d7fd82e254553fecad1b25f90ceae",
             "locator": {
-              "end": 1113,
-              "kind": "line_range",
-              "start": 3
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -380,15 +387,14 @@
       ]
     },
     "9": {
-      "note": "The models that define every key here, and the `extra=\"forbid\"` rule that makes an invented field impossible on the wire.\n\nAnchor: \"extra=\\\"forbid\\\"\"",
+      "note": "The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "382dde142bea5ed15623ddf66bea97d062d113b3",
+            "content": "sha256:59956047c687b6708ef1f4bb004e02daa0660300e9c1447b342e097492ee70c7",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceProjection"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -396,27 +402,12 @@
         },
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:4f7b34e8c56c04f3c9cd07d09589101b72528a840b0e00f184c5930cc9dee6b7",
+            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
+            "content": "sha256:f8918c68b74afba3d8bdec99a4cb29a6916d5b823c60fba5e219994fed08636c",
             "locator": {
-              "end": 323,
-              "kind": "line_range",
-              "start": 54
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:2dfa2f1d1342ac25ff477dbf50ad77de717e45968146868d957a99aa22099c1e",
-            "locator": {
-              "end": 1157,
-              "kind": "line_range",
-              "start": 1135
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
           },
           "kind": "code"
         }

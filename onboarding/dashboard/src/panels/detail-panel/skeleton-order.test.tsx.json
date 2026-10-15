@@ -3,14 +3,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module owns the regression assertions and fixture boundaries described above.\n\nAnchor: `dashboard/src/panels/detail-panel/skeleton-order.test.tsx`",
+      "note": "Original full/bare form order and head-only boundary checks remain; new actual series chrome, block classes, fixed nonGoals/acceptance and in-place expansion have separate DOM assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8ffc54392134a1e82009e46c5bc1f86d24515d",
-            "content": "sha256:d525a5924c082c083b3de86a733cf8b138cbc4f4a8849d008ed221ae90622ae7",
+            "blob": "99f00be8417a402b5c7bbd03ed896bfbea377b9f",
+            "content": "sha256:0702e63282b9f765ec61250ead12f993657dffcdaee04425d9ea81e7c4f54517",
             "locator": {
-              "kind": "file"
+              "end": 416,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "99f00be8417a402b5c7bbd03ed896bfbea377b9f",
+            "content": "sha256:bd3d3489c55a22b4f498d8f1ac309ef18934a75c6396739fb4c3cf0f51eec613",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 418
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "99f00be8417a402b5c7bbd03ed896bfbea377b9f",
+            "content": "sha256:6083a0473ff26812bbf45017d6a8d113447ced7fc27011d86599573841778dbf",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 558
             }
           },
           "kind": "test"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a241681cc2f911f78b6e50d2e930ae727c24ccd5",
+        "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
         "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
         "locator": {
           "kind": "symbol",
@@ -37,15 +37,28 @@
       ]
     },
     "2": {
-      "note": "A proven canonical unreadable sibling is reported as a fact; an unbound title and a missing member refuse by name.",
+      "note": "Canonical unreadable sibling is reported by file while native master finalization timestamps only the completed master and preserves master/sprint decisions; dry run preserves the world. Unbound title/missing member refusals remain separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
-            "content": "sha256:5ed2137bfe86e6acfbc0ba82d04d2a29db57a325e519add0346f590e9739df94",
+            "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
+            "content": "sha256:d79a8ecc71e28916f002d592fdcf45320d466564fc27be9b49c617464cc5a411",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_finalize_requires_canonical_identity_for_an_unreadable_member"
+              "end": 162,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fba32f056c0bb27bfa817d510e47e14b17743c16",
+            "content": "sha256:f7735a33f1b81c982313d8a1e8ca3b2228d621a8cd659d94d759accfb57e3f07",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 183
             }
           },
           "kind": "test"
@@ -72,11 +85,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abd8faec9f9728350c502466385e2d214d6482b8",
+            "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
             "content": "sha256:6ed613a81d1f81ced9727b4749e5e286174ba8dbb0f632345568caa7bfb50fc1",
             "locator": {
               "kind": "symbol",
               "name": "_leaf_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Finalization assertion setup forces real master completion; dry-run preserves complete world, real call requires completedAt and unchanged master/sprint decisions with absent sprint completedAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e89ec5efe67ba51352880546dd6e198b930fca93",
+            "content": "sha256:f7074ed77a68e2c99bb382303c50b5d418e35f8b1f10cb8dd61cde5d399d810d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

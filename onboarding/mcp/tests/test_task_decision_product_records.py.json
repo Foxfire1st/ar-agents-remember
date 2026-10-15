@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
-        "content": "sha256:110697161e68adaba209f67416a74c5c362d2f9ea65503b69a1480e8f04f4f9a",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_finalizer_entry_keeps_its_shape_and_is_marked"
-        }
-      },
-      "facet": "The finalizer record keeps its shape and is marked as a product record.",
-      "id": "PRF-3GSFRB",
-      "invariant": "INV-NBCGCF",
-      "origin": {
-        "handoffEntry": "MIK-R126@v1 rule 6",
-        "leaf": "260928-MIK-L126"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+        "blob": "3bc8825a2186f6b84453ddaab0f76d312d8702e3",
         "content": "sha256:a24057bd3f0c6b444f6b4e7b44ab3456dce498d28c9b24af1f2a1b2869add479",
         "locator": {
           "kind": "symbol",
@@ -39,32 +22,53 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Writer constants are marked and authored text is not.",
+      "note": "Exact legacy finalize constant and remove/skip prefixes mark records; the named authored controls/near-misses do not match, with no impossibility guarantee for arbitrary text.",
       "targets": [
         {
           "anchor": {
-            "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+            "blob": "3bc8825a2186f6b84453ddaab0f76d312d8702e3",
             "content": "sha256:a24057bd3f0c6b444f6b4e7b44ab3456dce498d28c9b24af1f2a1b2869add479",
             "locator": {
-              "kind": "symbol",
-              "name": "test_writer_constants_are_marked_and_authored_text_is_not"
+              "end": 26,
+              "kind": "line_range",
+              "start": 19
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "A finalizer entry keeps its shape and is marked.",
+    "3": {
+      "note": "Leaf/native finalization preserves authored and legacy decisions and stable retry bytes. [3]",
       "targets": [
         {
           "anchor": {
-            "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
-            "content": "sha256:110697161e68adaba209f67416a74c5c362d2f9ea65503b69a1480e8f04f4f9a",
+            "blob": "e2dce3b365c62b9ccb8b26962ee2a4b8d85d1ea8",
+            "content": "sha256:04b62cca9a4e9ab4d1db3df293e74daa5d7247482db406dd7a3f935d74101ccc",
             "locator": {
-              "kind": "symbol",
-              "name": "test_finalizer_entry_keeps_its_shape_and_is_marked"
-            }
+              "end": 236,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/tests/test_lifecycle_finalize.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Master completion preserves its decisions and the sprint decisions while only the completed master receives time. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba32f056c0bb27bfa817d510e47e14b17743c16",
+            "content": "sha256:d79a8ecc71e28916f002d592fdcf45320d466564fc27be9b49c617464cc5a411",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/tests/test_series_finalize_rules.py"
           },
           "kind": "test"
         }

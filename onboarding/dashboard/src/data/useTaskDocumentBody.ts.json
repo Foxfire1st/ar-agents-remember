@@ -3,11 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0023b5ebee87ba18db185d17163f865e3f3ea332",
-        "content": "sha256:95bc04aaaadf24db1bc94bac01115d5a9a6ff66c200d480fd21240752ef15128",
+        "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
+        "content": "sha256:1de9357b27e349ecd68e79749107cace67e1a2fd397c5ebac633ca44a6b91064",
         "locator": {
-          "kind": "symbol",
-          "name": "mergeTaskDocumentBody"
+          "end": 157,
+          "kind": "line_range",
+          "start": 16
         }
       },
       "id": "RLZ-ZJ4AM6",
@@ -26,11 +27,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
-            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
+            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
+            "content": "sha256:2cb44bcb92dcaed905d6a31066c54e37c1476f17af14831516a0a7cea23ddc69",
             "locator": {
-              "kind": "symbol",
-              "name": "useTaskDocumentBody"
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
+            "content": "sha256:a819d5032c59381ed5bdb09fd2f73e8f2a39dd0f776636975c5ea25e67641c3b",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 138
             }
           },
           "kind": "code"
@@ -38,59 +52,29 @@
       ]
     },
     "2": {
-      "note": "`DetailPanelImpl` resolves the displayed reader document and passes it through the body hook.\n\nAnchor: \"function DetailPanelImpl({\"; \"export function useTaskDocumentBody(\"",
+      "note": "`DetailPanelImpl` delegates reader selection to `useDetailPanelState`; that state owner resolves the displayed document and calls the body hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
-            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 29
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "5fc47d2f0162a9f76bea5427359161727342a013",
-            "content": "sha256:3e75639dc967c5251bc603dfa3620f2b36b8ff690c74215c355fdf044a6bea04",
+            "content": "sha256:cf37a68b51bebfa60c8554376ad0fcf4ffe269be68b78e066ff064513413a932",
             "locator": {
-              "end": 67,
+              "end": 43,
               "kind": "line_range",
               "start": 14
             },
             "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The enclosure change-set controls wait until the body reader is no longer loading.\n\nAnchor: \"import { ChangeSetButton } from \\\"./changeSetBar\\\";\"; \"const { documentFor: fullTaskDoc\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f4e9afd7108cec3fab17316ea7bdfd7a4f650dfc",
-            "content": "sha256:1f251117bc549daf67a1c264d6fa01e7158a78ec43aa08b83b9f276ae91b2994",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
-          },
-          "kind": "code"
         },
         {
           "anchor": {
             "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
-            "content": "sha256:7d5cf8caafd020b417a03d88b57c257b444a5481480e6d9acd8b5f69cb13552d",
+            "content": "sha256:8f4b16b718a008b9af2671bdcb5b68ef408ef875bf8058913ae9112ac1e893c9",
             "locator": {
-              "end": 150,
+              "end": 151,
               "kind": "line_range",
-              "start": 150
+              "start": 143
             },
             "path": "dashboard/src/panels/detail-panel/state.ts"
           },
@@ -98,31 +82,76 @@
         }
       ]
     },
-    "4": {
-      "note": "The task-document reader delays its notes until the body reader is no longer loading.",
+    "3": {
+      "note": "The enclosure change-set controls and reader-head controls wait until the body reader is no longer loading.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
-            "content": "sha256:d8274e76e06cec70165ab206f3f5700b8405bb0643825cd82c8ac85c3200c401",
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:2b7388c967a97b88992198f03cf00766f8a1906a9d05290882c1678b8bf868aa",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskNotes"
+              "end": 450,
+              "kind": "line_range",
+              "start": 410
             },
-            "path": "dashboard/src/panels/TaskNotes.tsx"
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
-            "content": "sha256:c06c43dd2b9dd67466ff17a202cc625577d29adb1d58f26b63c1b4ddb4c376d7",
+            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
+            "content": "sha256:9daa3680863669c5022b237e0425c1b2f4628b854d391ab433723c18f21a9fa1",
             "locator": {
-              "end": 189,
+              "end": 745,
               "kind": "line_range",
-              "start": 146
+              "start": 711
             },
-            "path": "dashboard/src/panels/TaskNotes.tsx"
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task-document reader delays its notes/reference/report readers until the body reader is no longer loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:2926c33e8a22c5e5fe171059aa1e50cc7cb3980a7607bf39057bc6fd97d7762f",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:2926c33e8a22c5e5fe171059aa1e50cc7cb3980a7607bf39057bc6fd97d7762f",
+            "locator": {
+              "end": 561,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
+            "content": "sha256:aad14a1d983f8889af0aad4eab8163d09d766c9bd6fb7781b05948c908ae9b71",
+            "locator": {
+              "end": 810,
+              "kind": "line_range",
+              "start": 806
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
           "kind": "code"
         }
@@ -136,8 +165,9 @@
             "blob": "e556f123a00e478e3cda966c38b2f5f480d44563",
             "content": "sha256:d23293d031664a859281a7265df52025938e3fdac9a61838eb3ea0b58b43dad7",
             "locator": {
-              "kind": "symbol",
-              "name": "fetchTaskDocument"
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
             },
             "path": "dashboard/src/data/taskDocuments.ts"
           },
@@ -146,49 +176,117 @@
       ]
     },
     "6": {
-      "note": "Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching.\n\nAnchor: \"DetailPanel doc-reader change-set bar (L4a)\"",
+      "note": "Source-defined taskBody.test.tsx component assertions hold the body request open, check body-first ordering, cover long fields and fallback, and pin revision caching. Source inspection only; no fresh execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "9155347210d400d84d8b8af599c4c32b4bfb86e4",
+            "content": "sha256:c56ce8fc9ad3515f842fed5321e80152ba72517cce216349bca0a6796548f322",
             "locator": {
-              "end": 14,
+              "end": 140,
               "kind": "line_range",
-              "start": 14
+              "start": 8
             },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:7af1a225fc7e267d320260cbfb3d9e44a3981692e63fd0a321cdd37971dc0489",
+            "blob": "9155347210d400d84d8b8af599c4c32b4bfb86e4",
+            "content": "sha256:15580c20698d7336aa73ca3facdb679ae730155ab3ee078401910726e76c6b53",
             "locator": {
-              "end": 15,
+              "end": 226,
               "kind": "line_range",
-              "start": 15
+              "start": 142
             },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9155347210d400d84d8b8af599c4c32b4bfb86e4",
+            "content": "sha256:b57ea8b88536d1b2b7c9a26658456ee9535d4be8f58e3d0cacc499b141a7b9d7",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9155347210d400d84d8b8af599c4c32b4bfb86e4",
+            "content": "sha256:79a2c8596612afa837f696bc6cee39c478402c4053660962586a75a942b78a72",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
           },
           "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths.\n\nAnchor: \"Operations click-to-detail body hydration\"",
+      "note": "Source-defined Cockpit composition assertions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. Source inspection only; no fresh execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "76abf41ae07c7b89a71f1ad16b21b8a93570329c",
-            "content": "sha256:d759b51404419114782f79de36f7ad7b29ee94f28584784d87bee08bf7cafa14",
+            "blob": "310ecdeb85c617d0ac5a90969e89d37249179541",
+            "content": "sha256:411af7a820e2eba7312723b5074932aceba52b1d0dadd176c5496e3844d40d6f",
             "locator": {
-              "end": 440,
+              "end": 449,
               "kind": "line_range",
-              "start": 334
+              "start": 335
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
+            "content": "sha256:5979375bce87224082085c87bd84d712723df2f69cbc3caa9287ccf268a7396e",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af22582bd9d5d67626d9be4d1441a3d1843d84da",
+            "content": "sha256:c5f71133f45707ced7d9220feb535b9b0fde0a1443b8889b103c9089a48e5e2d",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:308af72d724b7c463ab9ec7d926eaca19fecb35a2c710bfc19196de3cbede7be",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/panels/detail-panel/body-hydration.test.tsx"
           },
           "kind": "test"
         }

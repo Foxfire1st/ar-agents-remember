@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeping landing machinery out of authored decision arrays prevents repeated finalization events from crowding out the human decisions that constrain later work while preserving landing proof in its actual lifecycle stores."
+  },
+  "applicability": "Finalization candidates for a task and its parent master at landing.",
+  "conditions": [
+    "Existing decision arrays are preserved; no new finalization decision is appended to either array.",
+    "Landing proof remains in task status, the exact master row and the landing record.",
+    "Previously stored product records remain for read-only disclosure."
+  ],
+  "exclusions": [
+    "Migration or deletion of old finalizer records.",
+    "Removing the existing unresolved-master completion rule."
+  ],
+  "id": "INV-MFZR5A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-source-ready-evidence.zip::checks/python-finalizer-final.log"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 14",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalization preserves task and master decision arrays instead of appending landing decisions, leaving landing proof in task status, the master row and the landing record while retaining old records for disclosure.",
+  "status": "proposed",
+  "supersedes": []
+}

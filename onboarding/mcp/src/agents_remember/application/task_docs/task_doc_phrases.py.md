@@ -14,9 +14,14 @@ Own the compact changed-unit/value phrase for a successful task-document write. 
 
 Step updates describe only `_STEP_UPDATE_KEYS`; parent and id address the step and are not claimed as changes. Field phrases select only `_MUTABLE_FIELDS`, omitting ignored keys. Creation/replacement identify the slug, status comes from the supplied fields, and review/retirement/archive/linkage phrases use their operation's result. These distinct sources must stay aligned with the applier rather than using a generic input dump.
 
+The shared allowlist now includes `nonGoals`, `acceptance`, and `waitsFor`. `_phrase_set_field` still claims only allowlisted keys; dependency validation and write authorization do not live in this presentation owner.
+
 ## Evidence
 
 - A displayed new value has a fixed character clipping rule, independent of the delivered token guard. [1]
 - Step phrases separate addressing keys from allowed changes. [2]
-- Field phrases omit keys outside the shared mutable-field allowlist. [3]
+
+- Field phrases omit keys outside the shared allowlist, now also containing `nonGoals`, `acceptance`, and `waitsFor`; this is a presentation filter, not dependency admission. [3]
+
+
 - Operation-specific phrase builders have one dispatch owner and an explicit fallback. [4]

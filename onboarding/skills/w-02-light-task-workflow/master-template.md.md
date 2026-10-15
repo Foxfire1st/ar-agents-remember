@@ -33,15 +33,19 @@ invalidation authorities apply.
 
 ### Conventions
 
-- Flat numbered files are stable creation identities; the master's list determines execution
-  order.
+- Flat numbered files are stable creation identities; the master's Sub-tasks list is an index,
+  not execution order. Author exact same-master task IDs in each leaf's `waitsFor` through
+  `task_doc`; the product derives Order from them. [5]
 - One master integration branch holds all leaf integrations.
 - Each active subtask receives its own enclosure/worktree.
 - Decision logs stay append-only.
 
 ### Invariants And Boundaries
 
-- Corpus approval precedes both master and leaf creation.
+- Corpus approval precedes both master and leaf creation. Create a new JSON-primary master
+  through `task_doc` `create` with `kind:"master"` first, then create its indexed child documents
+  before leaf `waitsFor` writes. Existing hand-authored Markdown remains unchanged until
+  intentionally migrated; a Markdown-only master cannot meet the prerequisite for those writes. [6]
 - A master summarizes but never rewrites requirement contracts.
 - No leaf may claim closure of multiple independently falsifiable requirements.
 - Every revision appears in worker evidence and independent adjudication.
@@ -67,10 +71,12 @@ No external Domain Documentation source governs this topology template.
 ### Repo-Internal References
 
 - The master projects requirements to manifestation subtasks. [1]
-- Each subtask names one primary revision and adjacent constraints separately. [2]
-- Usage rules preserve approval, versioning, and evidence boundaries. [3]
-- The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary. [4]
 
+- Each subtask names one primary revision and adjacent constraints separately. [2]
+
+- Usage rules preserve approval, versioning, and evidence boundaries. [3]
+
+- The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary. [4]
 ### Cross-Repo References
 
 The target repository supplies its integration, check, and release policy; this template supplies
@@ -82,3 +88,7 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+- Flat numbers are stable creation IDs; Sub-tasks is an index and exact same-master waitsFor authored through task_doc derives Order. [5]
+
+- After corpus approval, create a JSON-primary master first, then indexed child documents before waitsFor writes; no Markdown-only new-master route or automatic migration. [6]

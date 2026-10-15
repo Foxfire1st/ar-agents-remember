@@ -1,0 +1,121 @@
+{
+  "path": "dashboard/src/panels/detail-panel/body-hydration.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Operand declarations, four-case parameterization and same-revision/missing-summary-field assertions. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:76dff450f36fb68858273ba6c97654392b7fb9c65675a4a89bf59bed4238b1b7",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:475289785505d63f1e73f481a504a7dc2840e4180e4925a92c7e2ce0e8d3e8e0",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stubbed body-request path assertion and mounted exact selection key. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:04c41a6d40b6541c04fd530e2045da0fc5e0a3abab61e13bace693b0224130e3",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Body-only fixed prose and design restoration assertions. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:7f74c18da19404de2df03ad85e0c3eea8d72733dfcc127e61a6d2773784cb9da",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fixed-block adjacency assertions. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:944c09eef277fa972524bb196c9299cf55a34e8ec7c45ffa8071032446cc187a",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Legacy freeform content remains reachable through Further notes. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:b6afd79b940486b174b7c349f29b660e110f0ea27cd94bce27fcd06855bb1af2",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Exactly one task-document request is asserted. Source-defined assertions; not fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c345d9266ea428d1f70579874852326571d7bf",
+            "content": "sha256:d0f444d42f8ffeefa92200d4e2ec3fa224179215c9e14a80f70d8d2b25bb7758",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Optional-field compatibility prevents existing task documents from becoming uneditable after an additive schema change and prevents a presentation-only dependency field from accidentally gaining authority over task starts or closeout."
+  },
+  "applicability": "Task documents authored before waitsFor, nonGoals, acceptance and completedAt were added, throughout loading, rendering and ordinary edits.",
+  "conditions": [
+    "The newly optional fields need not be supplied.",
+    "Dependency display is informative and adds no task-start or lifecycle-readiness gate.",
+    "Existing document kind, review and step-operation meanings are preserved."
+  ],
+  "exclusions": [
+    "The explicitly authorized task-local migration of this master’s open tasks.",
+    "Changing closeout obligations for major steps or their children."
+  ],
+  "id": "INV-TXS01Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-source-ready-evidence.zip::checks/python-sprint-preservation-final.log"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 preservation optional fields",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Documents predating the new optional fields still load, render and accept ordinary edits without supplying those fields, and dependency display does not add a task-start or lifecycle-readiness gate.",
+  "status": "proposed",
+  "supersedes": []
+}

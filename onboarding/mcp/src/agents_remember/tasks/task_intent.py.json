@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+        "content": "sha256:ad98f41357803e614888b1c877161432a866e4d747480445dc62b38c734bef4e",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 117
+        }
+      },
+      "id": "RLZ-0VN3QY",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Adds optional nonGoals and acceptance to canonical TaskIntentV1; these authored prose fields now participate in intent identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
         "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
         "locator": {
           "kind": "symbol",
@@ -18,19 +37,96 @@
       },
       "rationale": "Resolves the task root and the packet locator through observed_resolve and records the packet's bytes under the caller's locator, which gives the gate the selection rows that a retargeted packet link changes.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+        "content": "sha256:d9ed4674f4881ff0e65120e61e6eb1d07b3b971438654eeb617e11741d3cc6ea",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-8379RC",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Drops absent expectedKnowledgeEffects/nonGoals/acceptance before snapshot serialization so old documents retain absent-field identity instead of hashing new null keys.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+        "content": "sha256:05f9327e3e6cb3a25a22128b6410755be417904c6deb7ff047dd677f6f0b51ec",
+        "locator": {
+          "end": 190,
+          "kind": "line_range",
+          "start": 189
+        }
+      },
+      "id": "RLZ-EK1G64",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Projects candidate nonGoals/acceptance into TaskIntentV1; this is normative prose propagation into identity, not just a view field.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+        "content": "sha256:eca43fd415764946df9485bc308f410f1330cf5594d94b6b75cc8d9f7c170d37",
+        "locator": {
+          "end": 250,
+          "kind": "line_range",
+          "start": 248
+        }
+      },
+      "id": "RLZ-QG9M7D",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Applies the same absent-field omission in projected intent payloads; old identities stay stable while present nonGoals/acceptance affect the canonical intent.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+        "content": "sha256:90bf2b1b2b7eed377ed611e3b0fc6cfb14ee5bbe0f3a966535fb0b02b7580fac",
+        "locator": {
+          "end": 140,
+          "kind": "line_range",
+          "start": 139
+        }
+      },
+      "id": "RLZ-VJBMV7",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Includes nonGoals and acceptance in authored-intent field selection, so those edits reach the canonical identity rather than disappearing from it.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "12": {
-      "note": "The strict projection and the dropped key for an absent declaration.",
+      "note": "The strict leaf projection declares optional expectedKnowledgeEffects/nonGoals/acceptance and drops each only when None, retaining empty prose values.",
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
-            "content": "sha256:0b76c5e934d54f4353235bb43f6a18d76cf6609e16036edbfe84770b874e2e5a",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+            "content": "sha256:6b35bbf688102c0902c119c7e24cbabfec1cccb252ae8dbc9b2f50d791053e91",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskIntentV1"
+              "end": 125,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"
@@ -38,32 +134,58 @@
       ]
     },
     "13": {
-      "note": "The fields the projection consumes.",
+      "note": "The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt.",
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
-            "content": "sha256:9c41842d946376af6e088b51349731d2a07fd9b9abd129625b25c92f0f1bbb98",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+            "content": "sha256:067652ced50745112919ca49b6558bc0a71f3328e23c505d06ad37bcd26b76c6",
             "locator": {
-              "end": 150,
+              "end": 156,
               "kind": "line_range",
-              "start": 125
+              "start": 128
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fde5524639c0730cc86d3f2603b24a53f4cd6d61",
+            "content": "sha256:f5bcd889dc61ec577832233796c75e049452fc1c855b0af143bba71b22e3e5be",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
           "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "The projection entry point refuses a master.",
+      "note": "Leaf projection refuses a master and passes nonGoals/acceptance explicitly; the separate master projection refuses leaves and shares the None-only optional-slot omission.",
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
-            "content": "sha256:b6c57b3c112cf07eea9f0be46ca5f0fb7d94e36200a72abaf34a5ba2adeabb2c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+            "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
             "locator": {
-              "kind": "symbol",
-              "name": "task_intent_projection"
+              "end": 207,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
+            "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 226
             }
           },
           "kind": "code"
@@ -75,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
             "locator": {
               "kind": "symbol",
@@ -91,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:ea3980c42105e1d218003016208a3a85fd50428adb3f555b921a9b2d7d25fed0",
             "locator": {
               "kind": "symbol",
@@ -107,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:6eae6a754590ffe8be0ff968d8637d0aa25df24272c66dbd915697bc158f668e",
             "locator": {
               "kind": "symbol",
@@ -123,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
             "locator": {
               "kind": "symbol",
@@ -139,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
             "locator": {
               "kind": "symbol",
@@ -155,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
             "content": "sha256:acdb3914cfd938ab271b758c82005f53fbaa51c5e714f9b8fcc33f1486f809e8",
             "locator": {
               "kind": "symbol",
@@ -188,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
@@ -205,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
+            "blob": "a6709dd580ba72d5fcfb96916cada0a9723c26ba",
             "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
             "locator": {
               "kind": "symbol",

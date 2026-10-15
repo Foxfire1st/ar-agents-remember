@@ -17,6 +17,10 @@ coordination-owned and symbolic names retain their stated resolution limits.
 
 Compact native role/operation sources remain manifest-resolved. Positive compact-curation checks use CURATION_POLICY_STATEMENTS; the exact retired-sentence guard retains seeded re-insertion/removal controls and developer-request doctrine. The handoff-contract test now declares canonical-plus-nine-generated containment checks for current onboarding rows, no counted-card-edit-alone answer and references-only counted sidecar edits; c-05 workflow copies are checked for current overview rows and updated/no_impact wording. These narrow text assertions are not propagation-owner byte equality.
 
+RF01 adds two separate witnesses. test_new_series_guidance_requires_json_primary_master_before_dependencies declares a normalized-text loop over the canonical w-02 SKILL.md, template.md, master-template.md and workflow.md plus every declared generated skill-copy root. It rejects the three obsolete guidance fragments and requires the literal `kind:"master"`, `before`, `waitsFor`, `task_doc` and `intentionally migrated` markers. This is token containment, not proof of sentence ordering, generated-copy byte equality or an intentional migration run. No generated/private tree was opened in this reconciliation.
+
+The separate test_native_new_master_then_indexed_leaf_dependencies uses the real application task_doc_tool on temporary coordination data. Its legacy control seeds a leaf through write_task_doc and a Markdown-only master, expects a master-naming refusal for waitsFor, and compares the pre-existing fixture files’ bytes. In a fresh sibling series it then calls create for a JSON-primary master and two leaves, asserts parent row IDs [A, B], accepts A waiting for B, and checks persisted waitsFor and the generated Order heading. It does not migrate the legacy series, assert every possible write artifact is absent, or execute a role/worktree lifecycle. These are added source assertions, not a run result.
+
 ## Code Commentary
 
 ### Logic
@@ -25,7 +29,7 @@ The module resolves its subject from the repository root (`REPOSITORY_ROOT` → 
 `LIFECYCLE_ROOT` → `MANIFEST_PATH`), so it always tests the worktree it runs from. Its declared
 vocabulary is the corpus contract in miniature: `ROLE_ORDER` and `OPERATION_KEYS` bind the
 role and operation registries. `MACHINE_SECTION` identifies a retired knob block that
-concise role sources must not carry.
+concise role sources must not carry. The new JSON-primary authoring case separately builds disposable coordination fixtures and invokes task_doc_tool; it is not a pure corpus-text check.
 
 The resolver is deliberately split into small cohesive helpers — `_check_core`, `_check_operations`,
 `_check_roles` (with `_check_role_order` and `_check_one_role`), and `_check_launcher_and_references` —
@@ -88,10 +92,7 @@ wording remains outside this matcher.
 
 ### Conventions
 
-Module-level helpers and disposable tree fixtures use no network or provider access.
-The manifest/role cases read the canonical tree; curation cases and the handoff-contract test
-are written to inspect declared generated copies. This review inspected only test source, not
-private/generated trees, and establishes no copy synchronization or PASS.
+Corpus helpers and disposable fixtures declare no network/provider access. Corpus-shape cases read the canonical tree; curation, handoff-contract and new w-02 guidance cases declare generated-copy reads. RF01 also adds a temporary task_doc authoring/refusal case, distinct from those text loops. This reconciliation inspected test source and the admitted canonical c-05 instruction copies only; it opened no generated/private trees and establishes no copy synchronization, test execution or PASS.
 
 ### Invariants And Boundaries
 
@@ -123,8 +124,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- The resolver under test. [1]
-- The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. [2]
+- The resolver under test reports missing manifest sources rather than silently accepting them. [1]
+
+- The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. Anchor: "Focused behavioral check for the consolidated role-instruction corpus" [2]
 - The manifest this module resolves, and the corpus it governs. [3]
 
 ### Cross-Repo References
@@ -134,4 +136,5 @@ No sibling-repository contract defines this corpus check.
 No meaningful cross-repo references found.
 
 - This module declares narrow normalized-text R53 assertions over canonical plus nine generated handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this review. [4]
-- Current source delta inspected statically: Replace the blanket generated-copies-not-checked claim with the test-source contract for two narrow copy loops, preserving retired-sentence controls, positive-policy limits and propagation-owner equality responsibility. [5]
+
+- RF01 source adds w-02 guidance token checks across declared canonical/generated roots and a separate real task_doc legacy-refusal/new-JSON-master authoring fixture. Neither is an intentional migration, copy-equality result or executed acceptance; existing retired-sentence controls and propagation-owner equality responsibility remain. [5]

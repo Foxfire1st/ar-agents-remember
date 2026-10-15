@@ -157,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "beed4630e21dc2735b84b146d4ff9a6e1b18512d",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 302,
@@ -175,12 +175,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d73af07a73ab6150d44276142f7a83df6a9d6e1",
+            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1240,
+              "end": 1251,
               "kind": "line_range",
-              "start": 1239
+              "start": 1250
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one mark, one task-state word and a numeric figure; full facts remain in each row's hover. It neither authors task state nor widens row admission.
+The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one state mark, one task-state word and a progress figure, with cached major-step marks for non-master document rows; full facts remain in each row's hover. It neither authors task state nor widens row admission.
 
 ## Code Commentary
 
@@ -28,7 +28,7 @@ The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Ope
 
 rowState chooses the document or reporting lifecycle. An inferred lifecycle without lastEventTs has not reported; the document speaks, or waiting when no document exists. Reporting lifecycle states retain their own mark/word and eligible local age; completed/abandoned use document-style status. rowWord says only that task state: it does not prioritize gates, inbox, chat input or activity. Remaining task/progress/lifecycle/worktree/repository facts stay in the actual hover without removed gate/chat/pickup fields.
 
-The compact progress figure is done/total. Abandoned tasks remain outside the denominator, and abandoned/discarded counts remain in the hover rather than masquerading as completion. No session-catalog/chat activity, gate.kind or pickup acknowledgment fact is selected or rendered by this owner. The progress figure and current hover are not evidence of any of those removed signals.
+The compact progress figure is done/total. Abandoned tasks remain outside the denominator, and abandoned/discarded counts remain in the hover rather than masquerading as completion. No session-catalog/chat activity, gate.kind or pickup acknowledgment fact is selected or rendered by this owner. The progress figure and current hover are not evidence of any of those removed signals. Non-master document rows carry doc.steps to StepMarks beside the served done/total figure; nested steps do not add marks. A done parent stays done; a started or done child promotes an unfinished parent to current. Up to twelve marks can expose cached pointer details via StepDot; larger populations use the aggregate bar. Masters, series fallbacks and runtime-only rows carry no steps payload for that display. docProgress now owns document numeric-progress mapping; none of these presentation additions admit landed leaves.
 
 There is no PickupDismiss or operator-inbox dismissal interaction in LifecycleList. The mark wrapper remains named inside ListBoxItem option semantics; accessibility must not depend on a removed action. Row selection/hover keep their retained owner without restoring press suppression for a deleted button.
 
@@ -40,7 +40,7 @@ Typeahead uses the displayed short id plus title for numbered master children, a
 
 ### Task-page text sizes
 
-rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, state word, progress figure and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the column width and signal/selection behavior remain unchanged. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
+columnPresentation.tsx owns these recipes: rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, state word, progress figure and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the text-size recipes retain their bounded lanes. The new major-step marks use additional progress-lane space; source inspection does not re-establish mounted narrow-column acceptance for that addition. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
 
 ### Bounds and kept-alive execution
 
@@ -54,27 +54,82 @@ The earlier landed-leaf admission/default-collapse extension was emergency-rever
 
 ## Evidence
 
-- Group headings use 0.72rem; row titles inherit 0.8rem. [34]
-- Ids, completed-fold text, repository, priority word, progress and dismissal use explicit 0.72rem while titles retain ellipsis. [35]
+
+
+- columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text. [34]
+
+
+
+
+
+- columnPresentation gives IDs, fold text, repository, state word and figure explicit 0.72rem while rowTitle retains ellipsis. [35]
+
+
+
 - The shared caret uses 0.72rem without changing its fixed lane. [36]
 - Task-page rows and smaller labels/counts supply the two text sizes. [37]
 
-- Admission is derived from documents and physical worktree enclosures with one row per enclosure, then augmented by exact session identity. [20]
-- Exact case-insensitive stem/id and taskRoot joins determine leaf admission. [21]
-- BY REPO uses the bounded need-ordered tree; BY PHASE stays flat with its own phase ordering. [22]
-- The task row renders caret, named mark, id/title, priority word and figure within its hover-bearing line. [23]
-- Lifecycle selection and carrying-row marking are deliberately separate. [24]
-- A bell request reveals its current carrying row once and consumes an absent-row request without later motion. [25]
-- Unmodified horizontal arrows act on a parent without overriding held selection reach. [26]
+
+- Admission is derived only from documents and physical live-worktree enclosures with one row per enclosure; removed session-catalog selection is not an admission input. [20]
+
+
+
+- enclosureForDoc matches taskRoot and exact case-insensitive leafId against document stem or ID, with no display-number or reopen-suffix heuristic. [21]
+
+
+
+
+
+- groupRows uses the need-ordered tree for BY REPO and creation-ordered flat rows for BY PHASE, counting admitted members. [22]
+
+
+
+
+
+- TaskRow composes caret, named state mark, ID/title, task-state word and progress; non-master document payloads add cached major-step marks in the figure lane. [23]
+
+
+
+
+
+- readChoice preserves lifecycle selection while independently marking its carrying task row. [24]
+
+
+
+
+
+- useRevealChosen consumes each bell request once, reveals/focuses a current carrying row and consumes an absent-row request without later motion. [25]
+
+
+
+
+
+- Unmodified horizontal arrows affect only a focused parent and do not collapse a held parent; modifiers remain untouched. [26]
+
+
+
 - Typeahead preserves title-only matching and the displayed prefix for numbered rows. [27]
-- Overdue inbox dismissal names its target, blocks the row press and calls only the inbox helper. [28]
+
+
+
+
 - Pure row state/word/hover and pure tree flattening own the presentation derivation. [29]
 
 - The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run. [30]
 
 
-- Root/master lifecycle binding first uses the explicit document id, otherwise its distinct sibling-enclosure join. [31]
 
-- Parent holding is derived by treeItems; heldFoldKeys only collects already-held fold keys. [32]
+
+- runtimeForDoc first returns the explicit document lifecycle lookup; without it, a distinct sibling-enclosure join supplies the fallback. [31]
+
+
+
+
+
+
+- treeItems derives held ancestors and completed folds; heldFoldKeys collects only emitted fold keys already marked held. [32]
+
+
+
 
 - Applied-object arrival stamps advance only server-served ages and preserve missing values. [33]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:7dce572328bdbf25a516134940f2382a7f915f628119e7e49de9264539d576b0",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "6529e325f36258a0ec0002389a22d6c65c62bd56",
+        "content": "sha256:b7618357ebe31177eec8d0aa94d94a8d6089dc6fa876c8dc57a2dddc90014ebc",
+        "locator": {
+          "end": 375,
+          "kind": "line_range",
+          "start": 375
+        }
+      },
+      "id": "RLZ-8FGD85",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Adds optional cached steps to OperationRow; this propagates row-held major/child detail for rule-12 dot disclosure.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
         "locator": {
           "kind": "symbol",
@@ -57,26 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-        "content": "sha256:7abf16b91c5a55b6446bafcdcac0ba05de860ef16715043a2ab32b1240208b1e",
-        "locator": {
-          "end": 258,
-          "kind": "line_range",
-          "start": 145
-        }
-      },
-      "id": "RLZ-B0ZF1M",
-      "invariant": "INV-8WM5H4",
-      "origin": {
-        "handoffEntry": "MIK-R163@v1",
-        "leaf": "260928-MIK-L164"
-      },
-      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+        "content": "sha256:3013286fbf8ae473dfc512c591398005641695822d9b8b0bc51015401c7011be",
+        "locator": {
+          "end": 610,
+          "kind": "line_range",
+          "start": 610
+        }
+      },
+      "id": "RLZ-CSAQ91",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This sidebar row passes its existing steps through the same major-only mark function and supplies those steps to the shared dots rather than flattening the children.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:d35ebde20d7026521a43b2ba947725d6c4039736a6f01dd8d0737eca177cddd8",
         "locator": {
           "kind": "symbol",
@@ -112,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
         "locator": {
           "kind": "symbol",
@@ -130,8 +149,27 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-        "content": "sha256:19666ef36f7d4344e9061f7b56540a9b52170430584337d1a3c956f93786b599",
+        "blob": "6529e325f36258a0ec0002389a22d6c65c62bd56",
+        "content": "sha256:f46c0324d2ee7fd1ee35428a052a89e728e4be8e7dfd73891f153ec69fe81890",
+        "locator": {
+          "end": 825,
+          "kind": "line_range",
+          "start": 825
+        }
+      },
+      "id": "RLZ-RKKZ22",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Supplies document steps on non-master OperationRows and leaves masters without them; this is sidebar cached tooltip data propagation, not a document request.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+        "content": "sha256:7c877a960c9fc40e5a518c7c65a5041f85303b2b27698fc87b26083481165514",
         "locator": {
           "kind": "symbol",
           "name": "TaskRow"
@@ -143,12 +181,12 @@
         "handoffEntry": "MIK-R144@v1 rule 5 / typing",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Gives the list item that text as its text value, which is what the list matches typing against.",
+      "rationale": "Current TaskRow preserves textValue=typedText and named state-mark composition, renders task-own RowWord without removed gate/chat/pickup controls, and adds only non-master cached major-step marks to the progress lane. No admission/typeahead reach is added.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:0d9e3559368d6d704459e972e889f1637b0c26b44b4c1458414df583dffe687a",
         "locator": {
           "kind": "symbol",
@@ -166,7 +204,7 @@
     },
     {
       "anchor": {
-        "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+        "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
         "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
         "locator": {
           "kind": "symbol",
@@ -185,12 +223,12 @@
   ],
   "references": {
     "20": {
-      "note": "Admission is derived from documents and physical worktree enclosures with one row per enclosure, then augmented by exact session identity.",
+      "note": "Admission is derived only from documents and physical live-worktree enclosures with one row per enclosure; removed session-catalog selection is not an admission input.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
-            "content": "sha256:8eafd66502a5ea6a0908a00fc3cbcdee1f2fe73da417c55f3e938ce287d9412e",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+            "content": "sha256:5ac82df4883f9c32ab138c76ced46589dbf54da56afc65d934d8d0db31b821ec",
             "locator": {
               "kind": "symbol",
               "name": "operationRows"
@@ -201,11 +239,11 @@
       ]
     },
     "21": {
-      "note": "Exact case-insensitive stem/id and taskRoot joins determine leaf admission.",
+      "note": "enclosureForDoc matches taskRoot and exact case-insensitive leafId against document stem or ID, with no display-number or reopen-suffix heuristic.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:be3cbe49e68cee9d1eb8ba5f714ccd806d9cedbb4221099eb756c5b3ec23de04",
             "locator": {
               "kind": "symbol",
@@ -217,11 +255,11 @@
       ]
     },
     "22": {
-      "note": "BY REPO uses the bounded need-ordered tree; BY PHASE stays flat with its own phase ordering.",
+      "note": "groupRows uses the need-ordered tree for BY REPO and creation-ordered flat rows for BY PHASE, counting admitted members.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:d4724f8c139e60f57b42d8c14197f5ba2a603a0d46f98a672317793ea08d63b6",
             "locator": {
               "kind": "symbol",
@@ -233,12 +271,12 @@
       ]
     },
     "23": {
-      "note": "The task row renders caret, named mark, id/title, priority word and figure within its hover-bearing line.",
+      "note": "TaskRow composes caret, named state mark, ID/title, task-state word and progress; non-master document payloads add cached major-step marks in the figure lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-            "content": "sha256:19666ef36f7d4344e9061f7b56540a9b52170430584337d1a3c956f93786b599",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+            "content": "sha256:7c877a960c9fc40e5a518c7c65a5041f85303b2b27698fc87b26083481165514",
             "locator": {
               "kind": "symbol",
               "name": "TaskRow"
@@ -249,11 +287,11 @@
       ]
     },
     "24": {
-      "note": "Lifecycle selection and carrying-row marking are deliberately separate.",
+      "note": "readChoice preserves lifecycle selection while independently marking its carrying task row.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
             "locator": {
               "kind": "symbol",
@@ -265,11 +303,11 @@
       ]
     },
     "25": {
-      "note": "A bell request reveals its current carrying row once and consumes an absent-row request without later motion.",
+      "note": "useRevealChosen consumes each bell request once, reveals/focuses a current carrying row and consumes an absent-row request without later motion.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
             "locator": {
               "kind": "symbol",
@@ -281,15 +319,16 @@
       ]
     },
     "26": {
-      "note": "Unmodified horizontal arrows act on a parent without overriding held selection reach.",
+      "note": "Unmodified horizontal arrows affect only a focused parent and do not collapse a held parent; modifiers remain untouched.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-            "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+            "content": "sha256:659aa7cc8535dd51cebb6943711c1d53552cbb7f5a636e45b285ab1030519005",
             "locator": {
-              "kind": "symbol",
-              "name": "treeKey"
+              "end": 237,
+              "kind": "line_range",
+              "start": 200
             }
           },
           "kind": "code"
@@ -301,27 +340,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
             "locator": {
               "kind": "symbol",
               "name": "typedText"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "Overdue inbox dismissal names its target, blocks the row press and calls only the inbox helper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
-            "content": "sha256:aa5afb91f79f8cfe340b576408a591a80b99610fbac2653bbd088351b3c6706c",
-            "locator": {
-              "kind": "symbol",
-              "name": "PickupDismiss"
             }
           },
           "kind": "code"
@@ -333,8 +356,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
-            "content": "sha256:4d8790f814f12157c16127781fa9bcf09a6ed6322c9d772ad658c01fbba7c822",
+            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
+            "content": "sha256:0d027e307a6eecdc58c883570a3e50663fbd5da290363a28f52b8f45ce5ee66b",
             "locator": {
               "kind": "file"
             },
@@ -394,11 +417,11 @@
       ]
     },
     "31": {
-      "note": "Root/master lifecycle binding first uses the explicit document id, otherwise its distinct sibling-enclosure join.",
+      "note": "runtimeForDoc first returns the explicit document lifecycle lookup; without it, a distinct sibling-enclosure join supplies the fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
             "content": "sha256:7cbfb93e6e8a6766fcd191e0cf28ac77b6863dfad12d24dd4fb062d6638df1f8",
             "locator": {
               "kind": "symbol",
@@ -410,28 +433,28 @@
       ]
     },
     "32": {
-      "note": "Parent holding is derived by treeItems; heldFoldKeys only collects already-held fold keys.",
+      "note": "treeItems derives held ancestors and completed folds; heldFoldKeys collects only emitted fold keys already marked held.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
+            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
+            "content": "sha256:1d0eaecf0fb741da9958a1461919552ef70d3502e816452f34b4b8050a79a924",
             "locator": {
-              "kind": "symbol",
-              "name": "treeItems"
-            },
-            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+              "end": 925,
+              "kind": "line_range",
+              "start": 901
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-            "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
+            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
+            "content": "sha256:0dd8f0689c2d4497fef085255807b034f654610df83322b9b62f5b8c3eb08db6",
             "locator": {
-              "kind": "symbol",
-              "name": "heldFoldKeys"
-            }
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
           },
           "kind": "code"
         }
@@ -467,34 +490,36 @@
       ]
     },
     "34": {
-      "note": "Group headings use 0.72rem; row titles inherit 0.8rem.",
+      "note": "columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-            "content": "sha256:494143f64cd0b7b59aebe073a0f0ba8d66184ded84eacc5e3cec482b0911ea6e",
+            "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+            "content": "sha256:c0161d4662536728b1f47a477c0236a9f3dacc3a3e72e8853e1dd4baf4fb9d68",
             "locator": {
-              "end": 156,
+              "end": 127,
               "kind": "line_range",
-              "start": 122
-            }
+              "start": 49
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "35": {
-      "note": "Ids, completed-fold text, repository, priority word, progress and dismissal use explicit 0.72rem while titles retain ellipsis.",
+      "note": "columnPresentation gives IDs, fold text, repository, state word and figure explicit 0.72rem while rowTitle retains ellipsis.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb9e3c2ee8a036adbafc26db28df353cf12ab709",
-            "content": "sha256:a9cae11d5c086f2b15236b3e835596703abf2ba59cc5ccf09753859ab45796a1",
+            "blob": "b3584fb65433d45a91df8120d205194541bcfc75",
+            "content": "sha256:f80e5b888af5462b4cef92e7b8cb8972cdba700ff47b7914c4a955517062d443",
             "locator": {
-              "end": 258,
+              "end": 166,
               "kind": "line_range",
-              "start": 203
-            }
+              "start": 124
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },
           "kind": "code"
         }
@@ -522,7 +547,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
             "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
             "locator": {
               "end": 218,

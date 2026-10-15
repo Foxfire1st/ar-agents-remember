@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+        "content": "sha256:62472323947b36f6e3aea347ca454404ad005901f0b3493434bdd12642287aa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_dependency"
+        }
+      },
+      "id": "RLZ-4JWQGP",
+      "invariant": "INV-DQ11Q9",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This adapter copies id and title from the supplied derived MasterOrderTask, maps its abandoned status to gone and otherwise preserves its status, and derives a document path only when its file is present. Missing-reference discovery and child-title versus row-name selection occur upstream in the population builder, not in this adapter.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+        "content": "sha256:632cc2ec8eb280fa8e7f4c26a53c664a4d52fad580ec4fa122dfe63a7c15db71",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_order_fields"
+        }
+      },
+      "id": "RLZ-A87D83",
+      "invariant": "INV-DQ11Q9",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This snapshot adapter publishes the derived graph and both forward and reverse dependency references from the master population without treating missing child JSON as permission to erase a known row.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+        "content": "sha256:dd94032a5dfc13ca09014f4aa8443c8c4b4da32a782487403ae46714aba8fe2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_graph"
+        }
+      },
+      "id": "RLZ-DHJSXY",
+      "invariant": "INV-R7YJ4E",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This graph adapter carries supplied computed waves and full stored-cycle flags, including Completed members, into the shared graph DTO. Cyclic inProgress members are not placed in the special in-flight state; Completed members remain landed with their cycle annotation. It materializes ready_ids once as a set for graph membership. Cycle identity is derived upstream, not repaired here.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+        "content": "sha256:632cc2ec8eb280fa8e7f4c26a53c664a4d52fad580ec4fa122dfe63a7c15db71",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_order_fields"
+        }
+      },
+      "id": "RLZ-PH0PGN",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This snapshot adapter publishes the derived graph and both forward and reverse dependency references from the master population without treating missing child JSON as permission to erase a known row.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Named ordinary-master/listed-child reads derive informational dependency fields, explicitly filter newly read dicts by raw task schema before tolerant parsing, and index graph ready membership once. These predicates are not universal body-byte parity or start authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a57ea9ec3e2d3fb2a1ec042829d63dd3f127cc81",
+            "content": "sha256:7739b1d31cdb3773e06316108e517f681723d4da66afe30f378417866858cb2a",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

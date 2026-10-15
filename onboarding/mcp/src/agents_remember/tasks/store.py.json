@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
         "content": "sha256:26f14716ec7356df142cc72f837f7380517426151aa6a6dededcc04065042010",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,26 @@
     },
     {
       "anchor": {
-        "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:26a692e49ee6edef385b416ac243b3300effa93e5320c2f1c59fe2de1b905b90",
+        "locator": {
+          "end": 254,
+          "kind": "line_range",
+          "start": 250
+        }
+      },
+      "id": "RLZ-67CQAR",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-3TFHGH",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Supplies derive_master_order over indexed children with batch overrides to ordinary master Markdown rendering; sprint documents do not enter the master-specific path.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
         "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
         "locator": {
           "kind": "symbol",
@@ -35,54 +54,124 @@
       },
       "rationale": "Records the exact original bytes that the one canonical JSON parser consumes; universal newline handling and strict UTF-8 remain preserved.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:b4bced6b6c67e520da06b34819450a89a3daa2b0fd8ff8c59dbb05b476eb4a27",
+        "locator": {
+          "end": 232,
+          "kind": "line_range",
+          "start": 232
+        }
+      },
+      "id": "RLZ-VJAXHV",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-3TFHGH",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Builds one batch-local map of candidate documents to JSON paths so derived master rendering sees supplied child candidates rather than only old disk documents.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The task-document model the store writes, and reads back through `model_validate_json`.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "note": "The TaskDocument class is the JSON-primary schema the store serializes with aliases/exclude_none and reads through model_validate_json.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef54a14f41a34d2429445ca5239646f05daf6eac",
-            "content": "sha256:bb2a5b99e2a3d919c309c6b4595e621a9ab9bd100439c8d876cae009b9a9cd34",
+            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
+            "content": "sha256:7fccc6ef1f4386cf270decc5f62741eedbbe18150ccf2bdf6776abd3cb492aec",
             "locator": {
-              "end": 826,
+              "end": 867,
               "kind": "line_range",
-              "start": 649
+              "start": 669
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:ae29df98d23f1d2a2570cde79786c736b6b729f49d2e612ff8b10280e73c8d6d",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 232
+            }
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The renderer invoked on every write.",
+      "note": "Every prepared write renders Markdown from the candidate and supplied contexts; ordinary masters receive derived Order from explicit listed children and batch overrides.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
-            "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
+            "blob": "68f7241f96662f55310c1271f460185d5f18b373",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
             "locator": {
-              "kind": "symbol",
-              "name": "render_markdown"
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68f7241f96662f55310c1271f460185d5f18b373",
+            "content": "sha256:4c03cd9254260eb467af827c67fc2e1e1d46edcdcf2fde0801c5734937cc9c4d",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:ddd0a442a1400c63c65a201696d93e527fb9e327c158dc0c891042ded85b4151",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 232
+            }
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The application entry point uses batch writes when a leaf mutation also changes its parent master row.",
+      "note": "Application publication batches the leaf and resolved parent when sync changed or waitsFor was explicitly supplied by create/replace/set_field; parent accepted source bytes are required.",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "5cf479d2c9cb218f38baf4928a4178c5b2a3c2af",
+            "content": "sha256:3a753ad61c62b311565977a57997d3adce66876162f690dd1a3b58528e905b12",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "end": 533,
+              "kind": "line_range",
+              "start": 488
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -95,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
             "locator": {
               "kind": "symbol",
@@ -128,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
             "locator": {
               "kind": "symbol",
@@ -139,7 +228,7 @@
         },
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
             "locator": {
               "kind": "symbol",
@@ -150,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:9cc60d900e0fc4a0e0612ea1e9791e036dcd0221107502bf09a5d57393be13c9",
             "locator": {
               "kind": "symbol",
@@ -166,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
             "locator": {
               "kind": "symbol",
@@ -178,17 +267,42 @@
       ]
     },
     "8": {
-      "note": "Markdown publication reads the external grant census once per batch and coordination-root/repository/task key, then reuses that batch-local value; the next batch reads again.",
+      "note": "Markdown grant lookup caches one census per batch task key and reads anew for the next batch; prepared candidate overrides and explicit child Order reads are separate inputs/costs.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ba52889850dfeb0b50848a1f500eb0926165f61",
-            "content": "sha256:f6e23704abafc4a0dba5eb3efbe4a2e42c957939a6f1c0f667a31b6e83a37816",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:41d3cdcb96170d8852fd5a121f591b7ba698a88ffad8ce430a747955ba0670c4",
             "locator": {
-              "end": 322,
+              "end": 218,
               "kind": "line_range",
-              "start": 1
+              "start": 193
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:4fb3b335a9567e7d2543561948c94aa61ee0e9dcc6adbb347f6a2b0b47261134",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+            "content": "sha256:b6f104c7da776633978bede296b738fcce541db855792b999aa0e6b151dbed26",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
           },
           "kind": "code"
         }

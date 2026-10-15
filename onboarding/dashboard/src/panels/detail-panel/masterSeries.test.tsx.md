@@ -23,8 +23,7 @@ in-panel drill-in, and the `linkedLifecycleId` cross-series jump.
 
 Uses the shared `test-utils.tsx` seeds (`seedSeriesOrdering`, `seedTaskDocuments`).
 Current skeleton assertions require one index, separate step/substep cells, skip/done state text,
-Now-row authoritative progress and Markdown inside the Further-notes views; they adapt the former
-monolithic display assertions without changing qualified drill-in/cross-series ownership.
+Now-row projected major-step progress (`6/7`) with seven step marks and the opened task reader's `6 of 7 done`; the former `46/49` parent-plus-child summary is absent. Markdown remains inside Further-notes views. These are seeded DOM assertions, not backend count derivation or an executed navigation result.
 
 ### Todos
 
@@ -41,7 +40,10 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The master-series navigation suite. [1]
+
+- Seeded navigation/static-target and discarded-history assertions remain; projected major progress is 6/7 with seven marks and 6 of7 done, not executed evidence. [1]
+
+
 
 ### Cross-Repo References
 
@@ -51,10 +53,7 @@ No applicable cross-repository source was found.
 
 ## 260821-CLIVE Discarded-Before-Start Proof
 
-The suite proves that a master exposes a counted gone-history link separately from its live
-sub-task index; opening it shows the discarded audit row, and Back returns to the page. That row
-retains reason, timestamp and proof fingerprint, while live progress remains `0/1`: discarding an
-unstarted task is audited removal, never synthetic completion.
+The discarded-history case asserts a counted gone-history link separate from the live sub-task index; opening it exposes the discarded row's number/name, reason and proof fingerprint, and Back restores the live row. The fixture supplies `discardedAt`, but this case does not assert its rendered timestamp or live `0/1` progress. The historical lesson remains: discarding unstarted work is audited removal, not synthetic completion.
 The inline proof also carries the exact generated contract's required `childJson` and
 `childMarkdown` missing-state witnesses. Those opaque records establish fixture conformance; the UI
 continues to render the proof fingerprint rather than interpreting or exposing their contents.

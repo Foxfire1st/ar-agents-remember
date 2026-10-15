@@ -12,11 +12,11 @@ Own shared task-document result and dry-run rendering.
 
 ### Logic
 
-The helpers render applied task mutations, preview JSON/Markdown diffs, progress counts, graph titles, and optional master-sync effects from the same candidate TaskDocument used by publication.
+The helpers render applied task mutations, preview JSON/Markdown diffs, progress counts, graph titles, and optional master-sync effects from the prepared candidate. For an ordinary-master preview, _render_preview loads only explicit listed children, honoring supplied path-keyed candidate overrides before disk reads, derives master Order, and supplies it to render_markdown. task_doc_preview forwards the same overrides to its own render and the nested master-sync preview; sprint/non-master inputs do not derive ordinary-master Order here. The publisher supplies the prepared document batch as the override map. Rendered diffs and wouldLose still compare against on-disk Markdown; external grant reads remain separate observations.
 
 ### Invariants And Boundaries
 
-- Preview and apply expose the same candidate task truth.
+- Preview and apply use prepared candidate task truth; ordinary-master previews derive Order with the prepared batch overrides. Separate disk/grant observations are not an atomic freshness or byte-equality guarantee.
 - Rendering does not consult queue rows or operation state.
 - Graph and master-sync details are response evidence, not publication authority.
 
@@ -37,8 +37,8 @@ No configured domain-documentation source applies to this repository-internal ro
 ### Repo-Internal References
 
 - Applied results and previews share one response shape. [1]
-- Graph-title and master-sync helpers render bounded supporting evidence. [2]
 
+- Graph-title and master-sync helpers render supporting evidence; ordinary-master previews derive Order from explicit children and supplied candidate overrides. [2]
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
